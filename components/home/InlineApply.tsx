@@ -12,7 +12,7 @@ export const InlineApply = () => {
   return (
     <section className="section">
       <div className="container">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center", background: "var(--ink)", color: "var(--paper)", borderRadius: 24, padding: 48, position: "relative", overflow: "hidden" }}>
+        <div className="bipe-split bipe-pad-box" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center", background: "var(--ink)", color: "var(--paper)", borderRadius: 24, padding: 48, position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", right: -100, top: -100, width: 340, height: 340, borderRadius: "50%", background: "color-mix(in oklab, var(--accent) 50%, transparent)", filter: "blur(80px)", opacity: 0.4 }} />
           <div style={{ position: "relative" }}>
             <div className="pill" style={{ background: "color-mix(in oklab, var(--paper) 12%, transparent)", color: "var(--paper)" }}>Quick Enquiry · 30 seconds</div>

@@ -276,6 +276,18 @@ body.no-motion .live-dot { animation: none; }
   background: color-mix(in oklab, var(--accent) 70%, transparent);
   display: inline-block;
 }
+@media (max-width: 640px) {
+  .adm-strip { font-size: 11px; padding: 8px 0; }
+  .adm-strip .adm-strip-label,
+  .adm-strip [data-adm="label"] { display: none; }
+  .adm-cell { padding: 2px 6px; }
+  .adm-cell-num { font-size: 12px; }
+  .adm-cell-lbl { font-size: 9px; }
+}
+@media (max-width: 420px) {
+  .adm-strip .adm-strip-cta-text { display: none; }
+  .adm-strip .adm-strip-cta-text-short { display: inline !important; }
+}
 
 .nav {
   position: sticky; top: 0; z-index: 40;
@@ -813,6 +825,36 @@ body.no-motion .skeleton { animation: none; }
   [style*="justifySelf: end"] {
     justify-self: start !important;
   }
+}
+
+/* HeroFull-specific tweaks */
+@media (max-width: 860px) {
+  .bipe-hero-pad { padding: 56px 0 36px !important; }
+  .bipe-hero-stats {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+  }
+  .bipe-hero-stats > div {
+    text-align: left !important;
+    border-right: none !important;
+    border-left: 2px solid var(--accent) !important;
+    padding-right: 0 !important;
+    padding-left: 14px !important;
+  }
+  .bipe-hero-alumni { margin-top: 26px !important; padding-top: 16px !important; }
+  .bipe-hero-alumni-list {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    font-size: 13px !important;
+  }
+}
+@media (max-width: 480px) {
+  .bipe-hero-pad { padding: 44px 0 28px !important; }
+  .bipe-hero-alumni-list span { font-size: 12.5px !important; }
 }
 
 /* ====== Mobile nav: hide utility strip, tighten inner padding ====== */

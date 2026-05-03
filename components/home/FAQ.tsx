@@ -23,7 +23,7 @@ export const FAQ = () => {
   return (
     <section className="section" style={{ position: "relative" }}>
       <div className="container">
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 48, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
+        <div className="reveal bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 48, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
           <div>
             <div className="eyebrow">§ FAQ</div>
             <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
@@ -40,7 +40,7 @@ export const FAQ = () => {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: 48, alignItems: "start" }}>
+        <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: 48, alignItems: "start" }}>
           <aside className="reveal" style={{ position: "sticky", top: 90 }}>
             <div style={{ position: "relative", marginBottom: 24 }}>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "var(--ink-3)" }}>

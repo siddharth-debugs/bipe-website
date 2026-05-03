@@ -30,7 +30,7 @@ export const FinalCTA = () => (
           </div>
         </div>
 
-        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 0, minHeight: 420 }}>
+        <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 0, minHeight: 420 }}>
           <div style={{ padding: "64px 56px 56px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--accent)" }}>One last step</div>

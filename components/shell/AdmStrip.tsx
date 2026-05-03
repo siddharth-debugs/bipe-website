@@ -28,7 +28,7 @@ export function AdmStrip() {
     <div className="adm-strip">
       <div className="container between" style={{ gap: 24 }}>
         <div className="row" style={{ alignItems: "center", gap: 14, flex: 1, minWidth: 0, overflow: "hidden" }}>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", whiteSpace: "nowrap", flexShrink: 0, fontWeight: 600 }}>
+          <span className="adm-strip-label" style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", whiteSpace: "nowrap", flexShrink: 0, fontWeight: 600 }}>
             Counselling closes in
           </span>
           <span className="row" style={{ gap: 8, flexShrink: 0, alignItems: "center" }}>
@@ -46,7 +46,8 @@ export function AdmStrip() {
           </span>
         </div>
         <Link href="/apply" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "var(--paper)", whiteSpace: "nowrap", textDecoration: "none", flexShrink: 0, padding: "5px 12px", borderRadius: 999, border: "1px solid color-mix(in oklab, var(--paper) 22%, transparent)", transition: "background .2s, border-color .2s" }}>
-          Begin application
+          <span className="adm-strip-cta-text">Begin application</span>
+          <span className="adm-strip-cta-text-short" style={{ display: "none" }}>Apply</span>
           <ArrowIcon size={12} />
         </Link>
       </div>

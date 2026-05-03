@@ -20,8 +20,8 @@ export const HeroFull = () => (
       pointerEvents: "none"
     }} />
 
-    <div className="container" style={{ position: "relative", padding: "72px 0 48px", color: "var(--paper)", zIndex: 2 }}>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: 48, alignItems: "end" }}>
+    <div className="container bipe-hero-pad" style={{ position: "relative", padding: "72px 0 48px", color: "var(--paper)", zIndex: 2 }}>
+      <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: 48, alignItems: "end" }}>
         <div>
           <h1 style={{
             fontFamily: "var(--font-display, var(--font-sans))",
@@ -62,7 +62,7 @@ export const HeroFull = () => (
           </div>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 20, alignItems: "flex-end", paddingBottom: 6 }}>
+        <div className="bipe-hero-stats" style={{ display: "flex", flexDirection: "column", gap: 20, alignItems: "flex-end", paddingBottom: 6 }}>
           {[
             { num: "12+", lbl: "Years" },
             { num: "1,000+", lbl: "Placed" },
@@ -80,7 +80,7 @@ export const HeroFull = () => (
         </div>
       </div>
 
-      <div style={{
+      <div className="bipe-hero-alumni" style={{
         marginTop: 36,
         paddingTop: 18,
         borderTop: "1px solid color-mix(in oklab, #fff 18%, transparent)",
@@ -90,7 +90,7 @@ export const HeroFull = () => (
           <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "color-mix(in oklab, #fff 55%, transparent)", flexShrink: 0 }}>
             Alumni at →
           </span>
-          <div className="row" style={{ gap: 30, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 16, color: "color-mix(in oklab, #fff 80%, transparent)", overflow: "hidden", flex: 1, justifyContent: "flex-end", whiteSpace: "nowrap" }}>
+          <div className="row bipe-hero-alumni-list" style={{ gap: 30, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 16, color: "color-mix(in oklab, #fff 80%, transparent)", overflow: "hidden", flex: 1, justifyContent: "flex-end", whiteSpace: "nowrap" }}>
             {DATA.recruiters.slice(0, 6).map((r, i) => (
               <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 12 }}>
                 {r}

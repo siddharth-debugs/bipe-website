@@ -67,7 +67,7 @@ export const Footer = () => {
               "linear-gradient(90deg, transparent 0%, color-mix(in oklab, var(--accent) 50%, transparent) 30%, color-mix(in oklab, var(--brand) 80%, transparent) 70%, transparent 100%)",
           }} />
 
-          <div style={{
+          <div className="bipe-split" style={{
             display: "grid",
             gridTemplateColumns: "auto minmax(0, 1fr) auto",
             gap: 40,
@@ -197,7 +197,7 @@ export const Footer = () => {
           gridTemplateColumns: "1.4fr 1fr 1.1fr",
           gap: 14,
           alignItems: "stretch",
-        }}>
+        }} className="bipe-grid-3">
           {/* CTA card */}
           <div style={{
             padding: "22px 24px",
@@ -359,7 +359,7 @@ export const Footer = () => {
           </a>
         </div>
 
-        <div style={{ padding: "56px 0 40px", display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr 1fr 1fr", gap: 48, alignItems: "start" }}>
+        <div className="bipe-grid-4" style={{ padding: "56px 0 40px", display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr 1fr 1fr", gap: 48, alignItems: "start" }}>
           <div>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 50%, transparent)", marginBottom: 18, paddingBottom: 10, borderBottom: "1px solid color-mix(in oklab, var(--paper) 12%, transparent)" }}>Address</div>
             <p style={{ fontSize: 14, color: "color-mix(in oklab, var(--paper) 75%, transparent)", lineHeight: 1.7, maxWidth: 280 }}>
