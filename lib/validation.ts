@@ -77,7 +77,7 @@ const optionalEmail = z
   .or(z.literal(""));
 
 const branchField = z.enum(BRANCH_OPTIONS, {
-  errorMap: () => ({ message: "Pick a branch you're interested in" }),
+  message: "Pick a branch you're interested in",
 });
 
 const consentField = z
@@ -89,7 +89,7 @@ const consentField = z
 // ===================================================================
 export const applyFormSchema = z
   .object({
-    formType: z.literal("apply").default("apply"),
+    formType: z.literal("apply"),
 
     // Step 1 — your details
     name: nameField,
@@ -104,7 +104,7 @@ export const applyFormSchema = z
 
     // Step 2 — branch interest
     branch: branchField,
-    category: z.enum(CATEGORY_OPTIONS).default("General"),
+    category: z.enum(CATEGORY_OPTIONS),
     board: z
       .enum(BOARD_OPTIONS)
       .optional()
@@ -121,7 +121,7 @@ export const applyFormSchema = z
       .enum(SOURCE_OPTIONS)
       .optional()
       .or(z.literal("" as unknown as (typeof SOURCE_OPTIONS)[number])),
-    visit: z.enum(VISIT_OPTIONS).default("yes"),
+    visit: z.enum(VISIT_OPTIONS),
     visitDate: z.string().optional().or(z.literal("")),
     visitTime: z
       .enum(VISIT_TIME_OPTIONS)
@@ -151,7 +151,7 @@ export type ApplyFormData = z.infer<typeof applyFormSchema>;
 // CONTACT FORM — simple single-page
 // ===================================================================
 export const contactFormSchema = z.object({
-  formType: z.literal("contact").default("contact"),
+  formType: z.literal("contact"),
   name: nameField,
   phone: phoneField,
   email: optionalEmail,
