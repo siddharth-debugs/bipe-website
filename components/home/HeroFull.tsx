@@ -23,7 +23,7 @@ export const HeroFull = () => (
     <div className="container bipe-hero-pad" style={{ position: "relative", padding: "72px 0 48px", color: "var(--paper)", zIndex: 2 }}>
       <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: 48, alignItems: "end" }}>
         <div>
-          <h1 style={{
+          <h1 className="bipe-hero-h1" style={{
             fontFamily: "var(--font-display, var(--font-sans))",
             fontSize: "clamp(48px, 8vw, 132px)",
             lineHeight: 0.95,

@@ -1057,6 +1057,51 @@ body.no-motion .skeleton { animation: none; }
   .bipe-recruiter { font-size: 20px !important; gap: 22px !important; }
 }
 
+/* Hero H1 — tighter mobile clamp so 48px floor doesn't dominate phone screens */
+@media (max-width: 640px) {
+  .bipe-hero-h1 { font-size: clamp(36px, 9vw, 56px) !important; }
+}
+@media (max-width: 420px) {
+  .bipe-hero-h1 { font-size: clamp(32px, 9vw, 44px) !important; }
+}
+
+/* Display .serif italic numerals/labels — common pattern across pages.
+   Many use clamp() with high floors like 48-72px which stay big on phone.
+   We force-cap them via the .serif class + font-size pattern. */
+@media (max-width: 640px) {
+  /* Any clamp() that starts with a high floor — match the inline string */
+  [style*="font-size:clamp(72px"],
+  [style*="font-size:clamp(64px"],
+  [style*="font-size:clamp(56px"] {
+    font-size: 38px !important;
+    line-height: 0.95 !important;
+  }
+  [style*="font-size:clamp(48px"] {
+    font-size: 32px !important;
+    line-height: 0.98 !important;
+  }
+  [style*="font-size:clamp(40px"],
+  [style*="font-size:clamp(36px"] {
+    font-size: 26px !important;
+    line-height: 1.05 !important;
+  }
+  [style*="font-size:clamp(30px"],
+  [style*="font-size:clamp(28px"] {
+    font-size: 22px !important;
+    line-height: 1.15 !important;
+  }
+}
+@media (max-width: 420px) {
+  [style*="font-size:clamp(72px"],
+  [style*="font-size:clamp(64px"],
+  [style*="font-size:clamp(56px"] {
+    font-size: 32px !important;
+  }
+  [style*="font-size:clamp(48px"] {
+    font-size: 28px !important;
+  }
+}
+
 /* ====== Mobile nav: hide utility strip, tighten inner padding ====== */
 @media (max-width: 860px) {
   .nav-utility { display: none; }
