@@ -708,18 +708,110 @@ body.no-motion .skeleton { animation: none; }
   }
 }
 
-/* Display headings inside dark/featured boxes —
-   target the ".serif" italic display numbers (fontSize: 48-88 inline) */
+/* Display fontSize values from inline styles — comprehensive clamp.
+   Matches React's minified inline format (no space after colon).
+   Tightens all >=36px display text on phones. */
 @media (max-width: 640px) {
-  .serif[style*="font-size: 88"],
-  .serif[style*="font-size:88"],
-  .serif[style*="fontSize: 88"] { font-size: 56px !important; line-height: 0.95 !important; }
+  [style*="font-size:88px"] { font-size: 52px !important; line-height: 0.96 !important; }
+  [style*="font-size:84px"] { font-size: 50px !important; line-height: 0.96 !important; }
+  [style*="font-size:80px"] { font-size: 48px !important; line-height: 0.96 !important; }
+  [style*="font-size:72px"] { font-size: 44px !important; line-height: 0.96 !important; }
+  [style*="font-size:68px"] { font-size: 42px !important; line-height: 0.96 !important; }
+  [style*="font-size:64px"] { font-size: 40px !important; line-height: 0.98 !important; }
+  [style*="font-size:60px"] { font-size: 38px !important; line-height: 0.98 !important; }
+  [style*="font-size:56px"] { font-size: 36px !important; line-height: 1 !important; }
+  [style*="font-size:54px"] { font-size: 36px !important; line-height: 1 !important; }
+  [style*="font-size:52px"] { font-size: 34px !important; line-height: 1 !important; }
+  [style*="font-size:48px"] { font-size: 32px !important; line-height: 1 !important; }
+  [style*="font-size:44px"] { font-size: 30px !important; line-height: 1.02 !important; }
+  [style*="font-size:42px"] { font-size: 28px !important; line-height: 1.05 !important; }
+  [style*="font-size:40px"] { font-size: 28px !important; line-height: 1.05 !important; }
+  [style*="font-size:38px"] { font-size: 26px !important; line-height: 1.05 !important; }
+  [style*="font-size:36px"] { font-size: 24px !important; line-height: 1.1 !important; }
+  [style*="font-size:32px"] { font-size: 22px !important; line-height: 1.15 !important; }
+  [style*="font-size:30px"] { font-size: 22px !important; line-height: 1.15 !important; }
+  [style*="font-size:28px"] { font-size: 20px !important; line-height: 1.2 !important; }
+}
+@media (max-width: 420px) {
+  [style*="font-size:88px"],
+  [style*="font-size:84px"],
+  [style*="font-size:80px"] { font-size: 44px !important; }
+  [style*="font-size:72px"],
+  [style*="font-size:68px"] { font-size: 38px !important; }
+  [style*="font-size:64px"],
+  [style*="font-size:60px"] { font-size: 34px !important; }
+  [style*="font-size:56px"],
+  [style*="font-size:54px"],
+  [style*="font-size:52px"] { font-size: 32px !important; }
+  [style*="font-size:48px"] { font-size: 28px !important; }
+}
 
-  .serif[style*="font-size: 72"],
-  .serif[style*="font-size:72"] { font-size: 48px !important; line-height: 0.95 !important; }
+/* Padding clamps — any inline padding >=40 collapses on phone */
+@media (max-width: 560px) {
+  [style*="padding:64px"],
+  [style*="padding:60px"],
+  [style*="padding:56px"],
+  [style*="padding:52px"],
+  [style*="padding:48px"],
+  [style*="padding:44px"],
+  [style*="padding:40px"] { padding: 24px !important; }
 
-  .serif[style*="font-size: 64"],
-  .serif[style*="font-size:64"] { font-size: 44px !important; line-height: 0.95 !important; }
+  [style*="padding-left:64px"],
+  [style*="padding-left:56px"],
+  [style*="padding-left:48px"],
+  [style*="padding-left:44px"],
+  [style*="padding-left:40px"] { padding-left: 22px !important; }
+  [style*="padding-right:64px"],
+  [style*="padding-right:56px"],
+  [style*="padding-right:48px"],
+  [style*="padding-right:44px"],
+  [style*="padding-right:40px"] { padding-right: 22px !important; }
+}
+
+/* Asymmetric paddings like "44px 36px" or "64px 56px 56px" — collapse on phone */
+@media (max-width: 560px) {
+  [style*="padding:44px 36px"],
+  [style*="padding:44px 44px 44px 8px"],
+  [style*="padding:48px 36px"],
+  [style*="padding:56px 56px 48px"],
+  [style*="padding:64px 56px 56px"],
+  [style*="padding:44px 40px"],
+  [style*="padding:40px 36px"],
+  [style*="padding:36px 32px"],
+  [style*="padding:36px 28px 32px"],
+  [style*="padding:32px 28px"] { padding: 22px !important; }
+}
+
+/* Gaps too — large inline gaps collapse */
+@media (max-width: 720px) {
+  [style*="gap:64px"] { gap: 28px !important; }
+  [style*="gap:56px"] { gap: 24px !important; }
+  [style*="gap:48px"] { gap: 22px !important; }
+  [style*="gap:40px"] { gap: 20px !important; }
+}
+@media (max-width: 480px) {
+  [style*="gap:36px"] { gap: 18px !important; }
+  [style*="gap:32px"] { gap: 16px !important; }
+}
+
+/* Min-height / min-width fixed pixel constraints — release on mobile */
+@media (max-width: 720px) {
+  [style*="min-height:520px"],
+  [style*="min-height:500px"],
+  [style*="min-height:480px"],
+  [style*="min-height:420px"] { min-height: 0 !important; }
+  [style*="min-width:560px"],
+  [style*="min-width:480px"],
+  [style*="min-width:420px"] { min-width: 0 !important; }
+}
+
+/* Margins large inline values */
+@media (max-width: 560px) {
+  [style*="margin-top:64px"] { margin-top: 32px !important; }
+  [style*="margin-top:56px"] { margin-top: 28px !important; }
+  [style*="margin-top:48px"] { margin-top: 26px !important; }
+  [style*="margin-bottom:56px"] { margin-bottom: 28px !important; }
+  [style*="margin-bottom:48px"] { margin-bottom: 26px !important; }
 }
 
 /* Force every grid item, flex item to allow shrink (prevents long words from pushing out) */
@@ -855,6 +947,14 @@ body.no-motion .skeleton { animation: none; }
 @media (max-width: 480px) {
   .bipe-hero-pad { padding: 44px 0 28px !important; }
   .bipe-hero-alumni-list span { font-size: 12.5px !important; }
+}
+
+/* Recruiters marquee — shrink on mobile */
+@media (max-width: 640px) {
+  .bipe-recruiter { font-size: 24px !important; gap: 28px !important; }
+}
+@media (max-width: 420px) {
+  .bipe-recruiter { font-size: 20px !important; gap: 22px !important; }
 }
 
 /* ====== Mobile nav: hide utility strip, tighten inner padding ====== */

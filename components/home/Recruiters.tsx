@@ -9,7 +9,7 @@ export const Recruiters = () => (
     <div className="marquee">
       <div className="marquee-track" style={{ animationDuration: "55s" }}>
         {[0, 1].flatMap((i) => DATA.recruiters.map((r, j) => (
-          <span key={`${i}-${j}`} style={{ fontFamily: "var(--font-serif)", fontSize: 38, fontStyle: "italic", color: "var(--ink-3)", whiteSpace: "nowrap", display: "flex", alignItems: "center", gap: 48 }}>
+          <span key={`${i}-${j}`} className="bipe-recruiter" style={{ fontFamily: "var(--font-serif)", fontSize: 38, fontStyle: "italic", color: "var(--ink-3)", whiteSpace: "nowrap", display: "flex", alignItems: "center", gap: 48 }}>
             {r}
             <span style={{ color: "var(--accent)", fontFamily: "var(--font-sans)", fontStyle: "normal", fontSize: 8 }}>●</span>
           </span>
