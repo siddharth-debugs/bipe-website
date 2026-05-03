@@ -10,7 +10,7 @@ export const metadata: Metadata = metaFor("fees");
 // TODO: confirm exact admission / examination / library / caution / ID-card fees
 // with Accounts Office once 2026-27 AFRC notification is published.
 const COMPONENTS: { k: string; v: string; note: string }[] = [
-  { k: "Tuition", v: "₹30,150", note: "AFRC-approved · same for all 10 branches · per year" },
+  { k: "Tuition", v: "₹30,150", note: "AFRC-approved · same for all 5 branches · per year" },
   { k: "Admission fee", v: "TBD", note: "Year 1 only · payable at reporting" },
   { k: "Examination fee", v: "TBD", note: "BTEUP norms · pass-through · per semester" },
   { k: "Library fee", v: "TBD", note: "Annual" },
@@ -63,7 +63,7 @@ export default function Page() {
                 a year. Every other rupee accounted for.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                AFRC-approved, identical across all 10 branches. No capitation, no donation, no surprise charge at any semester. Receipts for every transaction — itemised and stamped.
+                AFRC-approved, identical across all 5 branches. No capitation, no donation, no surprise charge at any semester. Receipts for every transaction — itemised and stamped.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
@@ -72,7 +72,7 @@ export default function Page() {
               <div style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "₹30,150", l: "annual tuition" },
-                  { num: "10", l: "branches · same fee" },
+                  { num: "5", l: "branches · same fee" },
                   { num: "0", l: "capitation · donation" },
                 ].map((s) => (
                   <div key={s.l}>
@@ -166,7 +166,7 @@ export default function Page() {
                 ₹30,150
               </div>
               <div style={{ marginTop: 8, opacity: 0.88, fontSize: 14 }}>
-                Tuition · AFRC-approved · same across all 10 branches
+                Tuition · AFRC-approved · same across all 5 branches
               </div>
             </div>
             <div>

@@ -13,11 +13,10 @@ const BRANCH_ICONS: Record<string, string> = {
   "322": "M3 21h18M5 21V11l7-6 7 6v10M9 21v-6h6v6",
   "328": "M11 2L4 14h6l-1 8 8-12h-6l1-8z",
   "343": "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3M9 12a3 3 0 106 0 3 3 0 00-6 0z",
-  "341": "M3 13l2-5h14l2 5v6h-3v-2H6v2H3zM7 17a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM17 17a1.5 1.5 0 110-3 1.5 1.5 0 010 3z",
 };
 
 export const Branches = () => {
-  const list = DATA.branches.filter((b) => !b.lateral);
+  const list = DATA.branches;
   const [active, setActive] = useState(0);
   const b = list[active];
 
@@ -38,12 +37,12 @@ export const Branches = () => {
               Pick a branch. <span className="serif" style={{ color: "var(--accent)" }}>Build a life.</span>
             </h2>
             <p className="lead" style={{ color: "color-mix(in oklab, var(--paper) 70%, transparent)", marginTop: 14, maxWidth: "50ch" }}>
-              Six core diplomas. One mentor for every twenty students. Hover or tap to explore.
+              Five BTEUP-licensed diplomas. One mentor for every twenty students. Hover or tap to explore.
             </p>
           </div>
           <Link href="/courses" className="btn"
             style={{ color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 25%, transparent)" }}>
-            All 10 branches <ArrowIcon />
+            All 5 branches <ArrowIcon />
           </Link>
         </div>
 
@@ -128,11 +127,11 @@ export const Branches = () => {
               </div>
             </div>
 
-            <Link href="/courses" style={{ display: "block", marginTop: 14, padding: "18px 22px", borderRadius: 14, border: "1px dashed color-mix(in oklab, var(--paper) 30%, transparent)", color: "var(--paper)", textDecoration: "none" }}>
+            <Link href="/approvals" style={{ display: "block", marginTop: 14, padding: "18px 22px", borderRadius: 14, border: "1px dashed color-mix(in oklab, var(--paper) 30%, transparent)", color: "var(--paper)", textDecoration: "none" }}>
               <div className="between">
                 <div>
-                  <div className="eyebrow" style={{ color: "var(--accent)" }}>+ 4 lateral-entry diplomas</div>
-                  <div style={{ fontSize: 14, marginTop: 4, color: "color-mix(in oklab, var(--paper) 80%, transparent)" }}>From ITI to Diploma in 2 years · Codes 375 · 378 · 384 · 386</div>
+                  <div className="eyebrow" style={{ color: "var(--accent)" }}>480 sanctioned seats · 2026-27</div>
+                  <div style={{ fontSize: 14, marginTop: 4, color: "color-mix(in oklab, var(--paper) 80%, transparent)" }}>AICTE-approved · BTEUP-affiliated · JEECUP code 4455</div>
                 </div>
                 <ArrowIcon />
               </div>

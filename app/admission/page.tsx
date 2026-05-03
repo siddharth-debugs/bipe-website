@@ -19,7 +19,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "02",
     title: "Take the JEECUP exam",
-    body: "Computer-based test on Class-10 Mathematics & Science. Group A for the 3-year diploma; Group K for lateral entry from ITI / 12th PCM.",
+    body: "Computer-based test on Class-10 Mathematics & Science. Group A is the entrance for the 3-year BTEUP diploma — multiple shifts, results in late May.",
   },
   {
     n: "03",
@@ -34,7 +34,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "05",
     title: "Pay tuition fees",
-    body: "Annual tuition ₹30,150 — AFRC-approved, identical for all 10 branches. UPI · NetBanking · DD · or cash at the Accounts Office.",
+    body: "Annual tuition ₹30,150 — AFRC-approved, identical for all 5 branches. UPI · NetBanking · DD · or cash at the Accounts Office.",
   },
   {
     n: "06",
@@ -56,7 +56,7 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
   {
     roman: "i",
     title: "AFRC-approved fees, no capitation",
-    body: "₹30,150 a year, identical for all 10 branches. Every component itemised. Receipts for every rupee. No donation, no surprise charge at any semester.",
+    body: "₹30,150 a year, identical for all 5 branches. Every component itemised. Receipts for every rupee. No donation, no surprise charge at any semester.",
     metric: "₹30,150",
     metricLabel: "annual · AFRC",
   },
@@ -118,7 +118,7 @@ export default function Page() {
                 JEECUP code 4455.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                BIPE is an AICTE-approved, BTEUP-affiliated diploma institute. Admissions are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 10 branches.
+                BIPE is an AICTE-approved, BTEUP-affiliated diploma institute. Admissions are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 5 branches.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Begin application <ArrowIcon size={16} /></Link>
@@ -158,7 +158,7 @@ export default function Page() {
                 <div style={{ marginTop: 22, display: "grid", gap: 14 }}>
                   {[
                     ["01", "Feb 2026", "Application opens", "Register on JEECUP"],
-                    ["02", "May 2026", "Entrance exam", "Group A · Group K"],
+                    ["02", "May 2026", "Entrance exam", "JEECUP Group A · CBT"],
                     ["03", "Aug 2026", "Classes begin", "Orientation week"],
                   ].map(([n, d, t, sub]) => (
                     <div key={n} style={{
@@ -332,69 +332,62 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Eligibility · Two routes</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Eligibility · The route</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch", color: "var(--paper)" }}>
                 One college.{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
-                  Two ways
-                </span>{" "}
-                in.
+                  One straight path.
+                </span>
               </h2>
             </div>
             <p style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              JEECUP runs two parallel groups. Pick the one that matches your last qualification — the form will route you correctly.
+              JEECUP Group A is the only entrance for BIPE&rsquo;s 3-year diploma. Pass Class 10 with Mathematics and Science, sit the test, and choose code 4455 in counselling.
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
-            {/* Group A */}
-            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
-              <span className="pill" style={{ background: "var(--accent)", color: "var(--ink)" }}>GROUP A</span>
-              <div className="serif" style={{ marginTop: 18, fontSize: 44, lineHeight: 1, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
-                3-year diploma
+          <div style={{ border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
+            <div style={{ padding: "44px 36px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36, alignItems: "center" }}>
+              <div>
+                <span className="pill" style={{ background: "var(--accent)", color: "var(--ink)" }}>JEECUP GROUP A</span>
+                <div className="serif" style={{ marginTop: 18, fontSize: 44, lineHeight: 1, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
+                  3-year diploma
+                </div>
+                <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
+                  After Class 10 · Maths & Science
+                </div>
+                <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "44ch" }}>
+                  The single route into BIPE. Three years, six semesters, five BTEUP branches open to you — Computer Science &amp; Engineering, Civil, Electrical, Mechanical Engineering (Production), and the rare Dairy Engineering.
+                </p>
+                <Link href="/courses" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--accent)", fontWeight: 600, fontSize: 14 }}>
+                  See all 5 branches <ArrowIcon size={14} />
+                </Link>
               </div>
-              <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                After Class 10 · Maths & Science
+              <div style={{ paddingLeft: 36, borderLeft: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexDirection: "column", gap: 22 }}>
+                <div>
+                  <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 64, color: "var(--accent)", lineHeight: 0.9 }}>
+                    <Counter to="480" />
+                  </span>
+                  <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
+                    Total seats · 5 branches
+                  </div>
+                </div>
+                <div>
+                  <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 40, color: "var(--paper)", lineHeight: 0.95 }}>
+                    4455
+                  </span>
+                  <div style={{ marginTop: 6, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
+                    JEECUP code · BIPE
+                  </div>
+                </div>
+                <div>
+                  <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 40, color: "var(--paper)", lineHeight: 0.95 }}>
+                    ₹30,150
+                  </span>
+                  <div style={{ marginTop: 6, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
+                    Tuition · per year · AFRC
+                  </div>
+                </div>
               </div>
-              <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "40ch" }}>
-                The standard route. Three years. Six branches open to you — Computer Science, Civil, Electrical, Mechanical (Production / Automobile), and the rare Dairy Engineering.
-              </p>
-              <div style={{ marginTop: 22, display: "grid", gridTemplateColumns: "auto 1fr", gap: 8, alignItems: "baseline" }}>
-                <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 56, color: "var(--accent)", lineHeight: 0.9 }}>
-                  <Counter to="480" />
-                </span>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                  Group A seats · 6 branches
-                </span>
-              </div>
-              <Link href="/courses" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--accent)", fontWeight: 600, fontSize: 14 }}>
-                See all branches <ArrowIcon size={14} />
-              </Link>
-            </div>
-
-            {/* Group K */}
-            <div style={{ padding: "44px 36px", background: "color-mix(in oklab, var(--brand) 14%, var(--ink))", position: "relative", overflow: "hidden" }}>
-              <span className="pill" style={{ background: "var(--accent)", color: "var(--ink)" }}>GROUP K</span>
-              <div className="serif" style={{ marginTop: 18, fontSize: 44, lineHeight: 1, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
-                2-year lateral
-              </div>
-              <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                After ITI · or 12th PCM
-              </div>
-              <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "40ch" }}>
-                Direct entry into semester three. Civil, Electrical, Mechanical Production and Mechanical Automobile lateral seats — finish the diploma in two years instead of three.
-              </p>
-              <div style={{ marginTop: 22, display: "grid", gridTemplateColumns: "auto 1fr", gap: 8, alignItems: "baseline" }}>
-                <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 56, color: "var(--accent)", lineHeight: 0.9 }}>
-                  <Counter to="540" />
-                </span>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                  Total seats · incl. lateral
-                </span>
-              </div>
-              <Link href="/courses" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--accent)", fontWeight: 600, fontSize: 14 }}>
-                See lateral branches <ArrowIcon size={14} />
-              </Link>
             </div>
           </div>
         </div>

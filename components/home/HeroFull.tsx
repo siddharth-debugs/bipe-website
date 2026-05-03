@@ -46,7 +46,7 @@ export const HeroFull = () => (
             maxWidth: "54ch",
             marginBottom: 28
           }}>
-            AICTE-approved diplomas across 10 branches.<br />
+            AICTE-approved diplomas across 5 branches.<br />
             Mentor 1:20 · Tuition from ₹30,150/yr · 1,000+ placed.
           </p>
 

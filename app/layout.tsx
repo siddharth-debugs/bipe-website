@@ -78,13 +78,11 @@ const jsonLd = {
         { "@type": "PropertyValue", propertyID: "BTEUP", value: "Affiliated · 4455" },
         { "@type": "PropertyValue", propertyID: "ISO", value: "9001:2015" },
       ],
-      department: DATA.branches
-        .filter((b) => !b.lateral)
-        .map((b) => ({
-          "@type": "EducationalOrganization",
-          name: `Department of ${b.name}`,
-          identifier: b.code,
-        })),
+      department: DATA.branches.map((b) => ({
+        "@type": "EducationalOrganization",
+        name: `Department of ${b.name}`,
+        identifier: b.code,
+      })),
       sameAs: DATA.social.map((s) => s.url),
     },
     {
@@ -95,18 +93,16 @@ const jsonLd = {
       inLanguage: ["en-IN", "hi-IN"],
       publisher: { "@id": `${SITE_URL}#org` },
     },
-    ...DATA.branches
-      .filter((b) => !b.lateral)
-      .map((b) => ({
-        "@type": "Course",
-        "@id": `${SITE_URL}/courses#${b.slug}`,
-        name: `Diploma in ${b.name}`,
-        description: b.desc,
-        courseCode: b.code,
-        provider: { "@id": `${SITE_URL}#org` },
-        educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
-        inLanguage: ["en-IN", "hi-IN"],
-      })),
+    ...DATA.branches.map((b) => ({
+      "@type": "Course",
+      "@id": `${SITE_URL}/courses#${b.slug}`,
+      name: `Diploma in ${b.name}`,
+      description: b.desc,
+      courseCode: b.code,
+      provider: { "@id": `${SITE_URL}#org` },
+      educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
+      inLanguage: ["en-IN", "hi-IN"],
+    })),
   ],
 };
 

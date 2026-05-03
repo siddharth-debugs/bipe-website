@@ -87,7 +87,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                A six-acre AICTE-approved diploma institute in Phoolpur, Varanasi. Ten BTEUP-licensed branches, 550+ students drawn from six districts, 33 faculty &mdash; built to make rural Eastern UP a credible address for technical education.
+                A six-acre AICTE-approved diploma institute in Phoolpur, Varanasi. Five BTEUP-licensed branches, 550+ students drawn from six districts, 33 faculty &mdash; built to make rural Eastern UP a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
@@ -157,7 +157,7 @@ export default function Page() {
                 Our catchment is six districts &mdash; <strong style={{ color: "var(--ink)" }}>Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur and Varanasi</strong>. The campus sits on six acres in Phoolpur, off the Varanasi&ndash;Ghazipur axis. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
               </p>
               <p style={{ marginTop: 18 }}>
-                We run ten BTEUP-licensed branches &mdash; including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our dairy alumni work at Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB. Civil and Mechanical alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science graduates clear lateral B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
+                We run <em>five</em> BTEUP-licensed branches &mdash; including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our dairy alumni work at Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
               </p>
               <p style={{ marginTop: 18 }}>
                 Sixteen years in, more than a thousand BIPE alumni serve at <strong style={{ color: "var(--ink)" }}>Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro</strong> and dozens of other employers. Most of them came from villages within 80 kilometres of our gate. That is the story we are most proud of.

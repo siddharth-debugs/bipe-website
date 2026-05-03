@@ -15,7 +15,7 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
     title: "Fee transparency",
     sub: "AFRC-approved tuition · published in writing",
     body:
-      "Annual tuition is ₹30,150 — the AFRC-approved figure, identical for all 10 branches. Every component (admission fee, exam fee, library, caution money) is itemised on the Fees page. Receipts are issued for every rupee.",
+      "Annual tuition is ₹30,150 — the AFRC-approved figure, identical for all 5 branches. Every component (admission fee, exam fee, library, caution money) is itemised on the Fees page. Receipts are issued for every rupee.",
   },
   {
     roman: "ii",
@@ -109,7 +109,7 @@ export default function Page() {
                 {[
                   { num: "16", l: "yrs at BIPE" },
                   { num: "1,000+", l: "placed" },
-                  { num: "10", l: "branches" },
+                  { num: "5", l: "branches" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, lineHeight: 0.9, color: "var(--brand)" }}>{s.num}</div>
@@ -208,7 +208,7 @@ export default function Page() {
                 Our students sit in lecture halls, but they also stand at lathes, surveying tripods, dairy pasteurisers and PLC panels. They graduate with a diploma <em>and</em> with hands. Our alumni today work at <strong style={{ color: "var(--ink)" }}>Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Asian Paints, JCB, Amul, Mother Dairy, Parag and the NDDB</strong>. Several have cleared SSC JE and RRB JE on the first attempt.
               </p>
               <p style={{ marginTop: 22 }}>
-                If your family is considering a polytechnic diploma &mdash; whether for industry, for lateral B.Tech, or for SSC JE / RRB JE pathways &mdash; I welcome you to <strong style={{ color: "var(--brand)" }}>visit, talk to current students, and decide for yourself.</strong> The campus is open Monday through Saturday. We will arrange a free shuttle from Varanasi Cantt if you write to us.
+                If your family is considering a polytechnic diploma &mdash; whether for industry, for a B.Tech onward, or for SSC JE / RRB JE pathways &mdash; I welcome you to <strong style={{ color: "var(--brand)" }}>visit, talk to current students, and decide for yourself.</strong> The campus is open Monday through Saturday. We will arrange a free shuttle from Varanasi Cantt if you write to us.
               </p>
             </div>
           </div>

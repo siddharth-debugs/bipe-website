@@ -6,7 +6,7 @@ import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 
 export const InlineApply = () => {
-  const [form, setForm] = useState({ name: "", phone: "", branch: "Computer Science Engineering", mode: "visit" });
+  const [form, setForm] = useState({ name: "", phone: "", branch: "Computer Science & Engineering", mode: "visit" });
   const [sent, setSent] = useState(false);
   const submit = (e: React.FormEvent) => { e.preventDefault(); setSent(true); };
   return (
@@ -51,8 +51,8 @@ export const InlineApply = () => {
               <div className="field">
                 <select value={form.branch} onChange={e => setForm({ ...form, branch: e.target.value })}
                   style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
-                  {DATA.branches.filter(b => !b.lateral).map(b => <option key={b.code} style={{ color: "var(--ink)" }}>{b.name}</option>)}
-                  <option style={{ color: "var(--ink)" }}>Lateral entry / Other</option>
+                  {DATA.branches.map(b => <option key={b.code} style={{ color: "var(--ink)" }}>{b.name}</option>)}
+                  <option style={{ color: "var(--ink)" }}>Other / Not sure yet</option>
                 </select>
               </div>
               <button type="submit" className="btn btn-primary btn-lg" style={{ justifyContent: "center" }}>

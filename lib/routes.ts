@@ -3,7 +3,7 @@ export type RouteKey =
   | "contact" | "placements" | "campus" | "fees" | "scholarships"
   | "documents" | "jeecup" | "hostel" | "faculty" | "events"
   | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
-  | "mandatoryDisclosure" | "aiPolicy" | "lateralEntry"
+  | "mandatoryDisclosure" | "aiPolicy"
   | "privacy" | "terms" | "antiRagging";
 
 export const SITE_URL = "https://bipevns.org";
@@ -12,7 +12,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   home: {
     path: "/",
     title: "BIPE Varanasi — AICTE Polytechnic · JEECUP Code 4455",
-    description: "AICTE-approved diploma engineering in Phoolpur, Varanasi. 10 BTEUP branches including rare Dairy Engineering. JEECUP code 4455. Apply for 2026-27.",
+    description: "AICTE-approved diploma engineering in Phoolpur, Varanasi. 5 BTEUP branches including rare Dairy Engineering. JEECUP code 4455. Apply for 2026-27.",
   },
   about: {
     path: "/about",
@@ -21,13 +21,13 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   courses: {
     path: "/courses",
-    title: "Courses · 10 BTEUP-licensed diploma branches | BIPE",
-    description: "CSE, Civil, Electrical, Mech (Production / Automobile), Dairy + 4 lateral-entry diplomas. AICTE-approved · AFRC fees ₹30,150/year · JEECUP 4455.",
+    title: "Courses · 5 BTEUP-licensed diploma branches | BIPE",
+    description: "CS&E, Civil, Electrical, Mechanical Engineering (Production), Dairy. AICTE-approved · AFRC fees ₹30,150/year · JEECUP 4455.",
   },
   admission: {
     path: "/admission",
     title: "Admission 2026-27 · JEECUP code 4455 | BIPE",
-    description: "Apply via JEECUP (UPJEE Polytechnic) — institute code 4455. Lateral entry from ITI also supported. Counselling May–July, classes begin August 2026.",
+    description: "Apply via JEECUP (UPJEE Polytechnic) — institute code 4455. Counselling May–July, classes begin August 2026.",
   },
   apply: {
     path: "/apply",
@@ -128,11 +128,6 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     path: "/ai-policy",
     title: "Responsible AI in Teaching · BIPE Policy",
     description: "How BIPE uses Claude and other AI tools to augment — never replace — faculty. Five published principles, reviewed annually by the academic council.",
-  },
-  lateralEntry: {
-    path: "/lateral-entry",
-    title: "Lateral Entry · ITI / 12th PCM to Diploma in 2 years | BIPE",
-    description: "Skip first year. Lateral entry to BTEUP diploma at BIPE for ITI graduates and 12th PCM students — Civil, Electrical, Mech Production, Mech Automobile.",
   },
   privacy: {
     path: "/privacy",

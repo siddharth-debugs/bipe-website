@@ -188,7 +188,7 @@ export function Nav() {
 
           <NavMenuWrap
             trigger={
-              <Link href="/admission" className={"nav-link " + (["admission", "fees", "scholarships", "jeecup", "apply", "documents", "lateral-entry"].includes(route) ? "active" : "")}>
+              <Link href="/admission" className={"nav-link " + (["admission", "fees", "scholarships", "jeecup", "apply", "documents"].includes(route) ? "active" : "")}>
                 {lang === "hi" ? "प्रवेश" : "Admission"}<span className="nav-caret" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
               </Link>
             }
@@ -197,10 +197,9 @@ export function Nav() {
               Join BIPE — Session 2026-27
             </div>
             <div className="nav-mega-grid">
-              <MegaItem to="/admission" title="Admission Overview" desc="JEECUP, lateral entry, key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
+              <MegaItem to="/admission" title="Admission Overview" desc="JEECUP Group A · key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
               <MegaItem to="/apply" title="Apply now" desc="4-step form · 5 minutes" icon="M14 3l7 7-11 11H3v-7L14 3z" />
               <MegaItem to="/jeecup" title="JEECUP Guidance" desc="6-step counselling explainer" icon="M12 2v20M5 8l7-6 7 6M5 16l7 6 7-6" />
-              <MegaItem to="/lateral-entry" title="Lateral Entry" desc="ITI / 12th PCM · skip a year" icon="M3 12h18M13 6l6 6-6 6" />
               <MegaItem to="/fees" title="Fees" desc="₹30,150/year — AFRC-approved" icon="M3 7h18v10H3zM7 12h2M14 12h3" />
               <MegaItem to="/scholarships" title="Scholarships" desc="UP post-matric & EWS support" icon="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" />
               <MegaItem to="/documents" title="Documents" desc="Required certificates checklist" icon="M6 2h9l5 5v15H6zM15 2v5h5" />

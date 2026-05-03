@@ -1,19 +1,11 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon } from "@/components/shell/Icons";
-
-type Filter = "all" | "regular" | "lateral";
-
-const FILTERS: { v: Filter; label: string }[] = [
-  { v: "all", label: "All branches" },
-  { v: "regular", label: "Regular · after 10th" },
-  { v: "lateral", label: "Lateral · after ITI" },
-];
 
 const BRANCH_ICONS: Record<string, string> = {
   "355": "M4 5h16v10H4zM2 19h20M9 9l2 2 4-4",
@@ -21,33 +13,12 @@ const BRANCH_ICONS: Record<string, string> = {
   "322": "M3 21h18M5 21V11l7-6 7 6v10M9 21v-6h6v6",
   "328": "M11 2L4 14h6l-1 8 8-12h-6l1-8z",
   "343": "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3M9 12a3 3 0 106 0 3 3 0 00-6 0z",
-  "341": "M3 13l2-5h14l2 5v6h-3v-2H6v2H3zM7 17a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM17 17a1.5 1.5 0 110-3 1.5 1.5 0 010 3z",
-  "375": "M3 21h18M5 21V11l7-6 7 6v10M9 21v-6h6v6",
-  "378": "M11 2L4 14h6l-1 8 8-12h-6l1-8z",
-  "384": "M3 13l2-5h14l2 5v6h-3v-2H6v2H3zM7 17a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM17 17a1.5 1.5 0 110-3 1.5 1.5 0 010 3z",
-  "386": "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3M9 12a3 3 0 106 0 3 3 0 00-6 0z",
 };
 
 export function CoursesView() {
-  const [filter, setFilter] = useState<Filter>("all");
   const [active, setActive] = useState<string>(DATA.branches[0].code);
 
-  const list = useMemo(
-    () =>
-      DATA.branches.filter((b) =>
-        filter === "all" ? true : filter === "lateral" ? !!b.lateral : !b.lateral
-      ),
-    [filter]
-  );
-
-  const counts = useMemo(
-    () => ({
-      all: DATA.branches.length,
-      regular: DATA.branches.filter((b) => !b.lateral).length,
-      lateral: DATA.branches.filter((b) => !!b.lateral).length,
-    }),
-    []
-  );
+  const list = DATA.branches;
 
   // Ensure active is in the visible list; if not, fall back to first.
   const visibleActive = list.find((b) => b.code === active) ?? list[0];
@@ -119,7 +90,7 @@ export function CoursesView() {
               className="bipe-h1"
               style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}
             >
-              Ten branches.{" "}
+              Five branches.{" "}
               <span
                 className="serif"
                 style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}
@@ -134,7 +105,7 @@ export function CoursesView() {
                 maxWidth: "52ch",
               }}
             >
-              Every BTEUP-licensed diploma BIPE offers — six 3-year branches and four 2-year lateral entries. Switch the filter, browse the index, watch the panel update.
+              Every BTEUP-licensed diploma BIPE offers — five 3-year branches, three years to a career. Browse the index, watch the panel update.
             </p>
           </div>
           <div
@@ -147,69 +118,6 @@ export function CoursesView() {
           >
             BIPE / COURSES · 03
           </div>
-        </div>
-
-        {/* Segmented filter */}
-        <div
-          role="tablist"
-          aria-label="Branch filter"
-          style={{
-            display: "inline-flex",
-            padding: 4,
-            borderRadius: 999,
-            border: "1px solid color-mix(in oklab, var(--paper) 16%, transparent)",
-            background: "color-mix(in oklab, var(--paper) 4%, transparent)",
-            marginBottom: 36,
-            flexWrap: "wrap",
-            gap: 4,
-          }}
-        >
-          {FILTERS.map((f) => {
-            const on = filter === f.v;
-            const count = counts[f.v];
-            return (
-              <button
-                key={f.v}
-                role="tab"
-                aria-selected={on}
-                onClick={() => setFilter(f.v)}
-                style={{
-                  appearance: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  padding: "10px 18px",
-                  borderRadius: 999,
-                  fontFamily: "var(--font-mono)",
-                  fontSize: 11,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  color: on ? "var(--ink)" : "color-mix(in oklab, var(--paper) 78%, transparent)",
-                  background: on ? "var(--accent)" : "transparent",
-                  transition: "background .25s var(--ease), color .25s var(--ease)",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 10,
-                }}
-              >
-                <span>{f.label}</span>
-                <span
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 700,
-                    padding: "2px 7px",
-                    borderRadius: 999,
-                    background: on
-                      ? "color-mix(in oklab, var(--ink) 14%, transparent)"
-                      : "color-mix(in oklab, var(--paper) 12%, transparent)",
-                    color: on ? "var(--ink)" : "color-mix(in oklab, var(--paper) 90%, transparent)",
-                  }}
-                >
-                  {count}
-                </span>
-              </button>
-            );
-          })}
         </div>
 
         {/* Two-column index + featured */}
@@ -393,8 +301,7 @@ export function CoursesView() {
                     BTEUP {b.code}
                   </span>
                   <div className="row" style={{ gap: 6 }}>
-                    {b.lateral && <span className="pill">Lateral</span>}
-                    {b.tag && b.tag !== "Lateral" && (
+                    {b.tag && (
                       <span className="pill pill-accent">{b.tag}</span>
                     )}
                   </div>
@@ -478,7 +385,7 @@ export function CoursesView() {
                 >
                   {(
                     [
-                      ["Duration", b.lateral ? "2 YR · 4 SEM" : "3 YR · 6 SEM"],
+                      ["Duration", "3 YR · 6 SEM"],
                       ["Seats", `${b.seats}`],
                       ["Fee/yr", `₹${b.fee}`],
                     ] as [string, string][]
@@ -551,7 +458,7 @@ export function CoursesView() {
                 Same campus · Same mentors
               </span>
               <div style={{ marginTop: 6 }}>
-                All branches share the same six-acre Phoolpur campus, library and faculty mentorship structure — the diploma you graduate with is identical across regular and lateral pathways.
+                All five branches share the same six-acre Phoolpur campus, library and faculty mentorship structure — the BTEUP diploma you graduate with is identical, regardless of branch.
               </div>
             </div>
           </div>

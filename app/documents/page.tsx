@@ -23,11 +23,6 @@ const MANDATORY: { n: string; title: string; sub: string }[] = [
 
 const CONDITIONAL: { group: string; chips: string[]; note: string }[] = [
   {
-    group: "For lateral entry",
-    chips: ["12th Marksheet", "ITI Marksheet", "ITI Certificate"],
-    note: "Required only for Group K candidates entering directly into semester three.",
-  },
-  {
     group: "For other-board students",
     chips: ["Migration Certificate"],
     note: "Required if your 10th board is anything other than UP Board (CBSE / ICSE / state boards).",
@@ -197,7 +192,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Most students need only the nine mandatory items. Lateral candidates, scholarship applicants and out-of-state students need additional papers — listed below by reason.
+              Most students need only the nine mandatory items. Scholarship applicants and out-of-state students need additional papers — listed below by reason.
             </p>
           </div>
 

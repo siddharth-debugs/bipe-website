@@ -18,12 +18,12 @@ const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
   {
     num: "02",
     title: "Read the seat count.",
-    body: "Civil 120, Electrical 120, Mech-Production 120 — bigger cohorts mean wider alumni networks and stronger cross-batch mentorship. Smaller branches like Dairy and Auto run more intimate cohorts.",
+    body: "Civil 120, Electrical 120, Mechanical Engineering (Production) 120 — bigger cohorts mean wider alumni networks and stronger cross-batch mentorship. Smaller branches like CS&E and Dairy run more intimate cohorts.",
   },
   {
     num: "03",
-    title: "Lateral if you've done ITI.",
-    body: "Skip a year, cover the same syllabus, save tuition. Group K admits join directly into semester 3 and graduate with the identical BTEUP diploma in two years.",
+    title: "Look at the workshop, not the cut-off.",
+    body: "Walk through the lab the branch lives in. Three years on a CNC, behind a survey instrument or beside a pasteuriser shape the engineer you become — far more than where you ranked at 16.",
   },
   {
     num: "04",
@@ -57,19 +57,15 @@ const CAREER_TILES: { tag: string; title: string; body: string; chips: string[] 
     chips: ["SSC JE", "RRB JE", "UPPCL", "Indian Railways", "Loco Pilot", "NDDB", "State Dairy Boards"],
   },
   {
-    tag: "LATERAL B.TECH",
-    title: "Skip the first year of engineering.",
-    body: "JEECUP also conducts the second-year B.Tech lateral entry. BIPE diploma holders enter B.Tech directly into year 2 — a year of fees and a year of life saved.",
-    chips: ["BBDU", "MMMUT", "UP B.Tech colleges", "AKTU lateral"],
+    tag: "B.TECH PATHWAY",
+    title: "Continue to a B.Tech, your call.",
+    body: "BIPE diploma holders are eligible for AKTU and other UP B.Tech entrances. A diploma plus three further years of engineering — same destination, two well-paid pathways instead of one.",
+    chips: ["BBDU", "MMMUT", "UP B.Tech colleges", "AKTU"],
   },
 ];
 
 export default function Page() {
-  const regular = DATA.branches.filter((b) => !b.lateral);
-  const lateral = DATA.branches.filter((b) => b.lateral);
   const totalSeats = DATA.branches.reduce((s, b) => s + b.seats, 0);
-  const regularSeats = regular.reduce((s, b) => s + b.seats, 0);
-  const lateralSeats = lateral.reduce((s, b) => s + b.seats, 0);
 
   return (
     <div className="page-enter">
@@ -126,14 +122,13 @@ export default function Page() {
             <div>
               <div className="eyebrow">§ Courses · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
-                Ten BTEUP branches.{" "}
                 <span
                   className="serif"
                   style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
                 >
-                  Three years
+                  Five
                 </span>{" "}
-                to a career.
+                BTEUP branches. Three years to a career.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
                 AICTE-approved diplomas, AFRC-published tuition of ₹30,150 a year, {totalSeats} seats across 2026-27 — including Dairy Engineering, offered by under 1.1% of UP polytechnics. Every branch listed here is BTEUP-licensed, taught on the same six-acre Phoolpur campus, under the same mentor structure.
@@ -157,7 +152,7 @@ export default function Page() {
                 }}
               >
                 {[
-                  { num: "10", l: "BTEUP branches" },
+                  { num: "5", l: "BTEUP branches" },
                   { num: `${totalSeats}`, l: "seats · 2026-27" },
                   { num: "₹30,150", l: "tuition · per year" },
                 ].map((s) => (
@@ -290,7 +285,7 @@ export default function Page() {
                     color: "var(--accent)",
                     letterSpacing: "-0.04em",
                   }}>
-                    10
+                    5
                   </div>
                   <div style={{ paddingTop: 14, flex: 1 }}>
                     <div style={{
@@ -318,7 +313,7 @@ export default function Page() {
                       fontSize: 18,
                       color: "color-mix(in oklab, var(--paper) 75%, transparent)",
                     }}>
-                      Six core, four lateral.
+                      Three years each.
                     </div>
                   </div>
                 </div>
@@ -338,13 +333,11 @@ export default function Page() {
                   color: "color-mix(in oklab, var(--paper) 78%, transparent)",
                 }}>
                   {[
-                    "01 · Computer Science",
+                    "01 · Computer Science & Engg.",
                     "02 · Dairy Engg.",
-                    "03 · Civil",
-                    "04 · Electrical",
-                    "05 · Mech Production",
-                    "06 · Mech Automobile",
-                    "07–10 · Lateral · 4 branches",
+                    "03 · Civil Engg.",
+                    "04 · Electrical Engg.",
+                    "05 · Mech Engg. (Prod.)",
                   ].map((b) => (
                     <span key={b} style={{ display: "block" }}>
                       {b}
@@ -421,7 +414,7 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 2. PATHWAYS                                                             */}
+      {/* 2. THE PATH                                                             */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
         <div className="container" style={{ position: "relative" }}>
@@ -437,49 +430,49 @@ export default function Page() {
             }}
           >
             <div>
-              <div className="eyebrow">§ Pathways</div>
+              <div className="eyebrow">§ Eligibility</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                Two pathways.{" "}
+                One path.{" "}
                 <span
                   className="serif"
                   style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
                 >
-                  Same diploma.
+                  Class 10, JEECUP, BIPE.
                 </span>
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "48ch", justifySelf: "end", textAlign: "right" }}>
-              Whether you finished Class 10 last spring or finished an ITI three years ago, the BTEUP diploma you graduate with is identical — the same syllabus, the same workshops, the same recruiters. JEECUP places you on the right rung.
+              Every BIPE diploma is a 3-year, 6-semester BTEUP programme. Eligibility is a Class 10 pass with Mathematics and Science. JEECUP Group A is the entrance — choose institute code 4455 in counselling.
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
-            <article
-              className="card"
+          <article
+            className="card"
+            style={{
+              padding: 32,
+              position: "relative",
+              overflow: "hidden",
+              background: "color-mix(in oklab, var(--brand) 8%, var(--white))",
+            }}
+          >
+            <div
+              aria-hidden="true"
               style={{
-                padding: 32,
-                position: "relative",
-                overflow: "hidden",
-                background: "color-mix(in oklab, var(--brand) 8%, var(--white))",
+                position: "absolute",
+                right: -50,
+                top: -50,
+                width: 220,
+                height: 220,
+                borderRadius: "50%",
+                background: "color-mix(in oklab, var(--brand) 18%, transparent)",
+                pointerEvents: "none",
               }}
-            >
-              <div
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  right: -50,
-                  top: -50,
-                  width: 220,
-                  height: 220,
-                  borderRadius: "50%",
-                  background: "color-mix(in oklab, var(--brand) 18%, transparent)",
-                  pointerEvents: "none",
-                }}
-              />
-              <div style={{ position: "relative" }}>
+            />
+            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "center" }}>
+              <div>
                 <div className="row" style={{ gap: 8, marginBottom: 14 }}>
                   <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>
-                    Group A
+                    JEECUP Group A
                   </span>
                   <span className="pill">3 years · 6 sem</span>
                 </div>
@@ -496,138 +489,36 @@ export default function Page() {
                   After 10th
                 </div>
                 <p style={{ marginTop: 16, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7 }}>
-                  The standard 3-year diploma. Open to anyone with a Class 10 pass that includes Mathematics and Science. JEECUP Group A covers the Class 10 syllabus in Maths, Physics and Chemistry.
+                  Open to anyone with a Class 10 pass that includes Mathematics and Science. JEECUP Group A is a Class-10-syllabus paper in Maths, Physics and Chemistry. Counselling places you in the branch of your choice subject to your rank.
                 </p>
-                <div
-                  style={{
-                    marginTop: 22,
-                    paddingTop: 18,
-                    borderTop: "1px solid var(--line)",
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: 14,
-                  }}
-                >
-                  <div>
-                    <div
-                      className="serif"
-                      style={{
-                        fontStyle: "italic",
-                        fontWeight: 400,
-                        fontSize: 32,
-                        color: "var(--brand)",
-                        lineHeight: 0.9,
-                      }}
-                    >
-                      {regularSeats}
-                    </div>
-                    <div
-                      style={{
-                        marginTop: 6,
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 10,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--ink-3)",
-                      }}
-                    >
-                      Seats · 6 branches
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      className="serif"
-                      style={{
-                        fontStyle: "italic",
-                        fontWeight: 400,
-                        fontSize: 32,
-                        color: "var(--brand)",
-                        lineHeight: 0.9,
-                      }}
-                    >
-                      10th
-                    </div>
-                    <div
-                      style={{
-                        marginTop: 6,
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 10,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--ink-3)",
-                      }}
-                    >
-                      Maths · Science pass
-                    </div>
-                  </div>
-                </div>
               </div>
-            </article>
-
-            <article
-              className="card"
-              style={{
-                padding: 32,
-                position: "relative",
-                overflow: "hidden",
-                background: "color-mix(in oklab, var(--accent) 12%, var(--white))",
-              }}
-            >
               <div
-                aria-hidden="true"
                 style={{
-                  position: "absolute",
-                  right: -50,
-                  top: -50,
-                  width: 220,
-                  height: 220,
-                  borderRadius: "50%",
-                  background: "color-mix(in oklab, var(--accent) 24%, transparent)",
-                  pointerEvents: "none",
+                  paddingLeft: 32,
+                  borderLeft: "1px solid var(--line)",
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 18,
                 }}
-              />
-              <div style={{ position: "relative" }}>
-                <div className="row" style={{ gap: 8, marginBottom: 14 }}>
-                  <span className="pill pill-accent">Group K</span>
-                  <span className="pill">2 years · 4 sem</span>
-                </div>
-                <div
-                  className="serif"
-                  style={{
-                    fontStyle: "italic",
-                    fontWeight: 400,
-                    fontSize: 56,
-                    lineHeight: 0.95,
-                    color: "var(--accent-deep)",
-                  }}
-                >
-                  Lateral entry
-                </div>
-                <p style={{ marginTop: 16, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7 }}>
-                  For ITI-holders or 12th PCM-pass students. You enter directly into semester 3, cover the remaining four semesters and graduate with the same BTEUP diploma — saving a full year of fees and time.
-                </p>
-                <div
-                  style={{
-                    marginTop: 22,
-                    paddingTop: 18,
-                    borderTop: "1px solid var(--line)",
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: 14,
-                  }}
-                >
-                  <div>
+              >
+                {[
+                  { num: `${totalSeats}`, l: "Seats · 5 branches" },
+                  { num: "10th", l: "Maths · Science pass" },
+                  { num: "4455", l: "JEECUP code · BIPE" },
+                  { num: "₹30,150", l: "Tuition · per year" },
+                ].map((s) => (
+                  <div key={s.l}>
                     <div
                       className="serif"
                       style={{
                         fontStyle: "italic",
                         fontWeight: 400,
-                        fontSize: 32,
-                        color: "var(--accent-deep)",
-                        lineHeight: 0.9,
+                        fontSize: 28,
+                        color: "var(--brand)",
+                        lineHeight: 0.95,
                       }}
                     >
-                      {lateralSeats}
+                      {s.num}
                     </div>
                     <div
                       style={{
@@ -639,39 +530,13 @@ export default function Page() {
                         color: "var(--ink-3)",
                       }}
                     >
-                      Seats · 4 branches
+                      {s.l}
                     </div>
                   </div>
-                  <div>
-                    <div
-                      className="serif"
-                      style={{
-                        fontStyle: "italic",
-                        fontWeight: 400,
-                        fontSize: 32,
-                        color: "var(--accent-deep)",
-                        lineHeight: 0.9,
-                      }}
-                    >
-                      ITI
-                    </div>
-                    <div
-                      style={{
-                        marginTop: 6,
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 10,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--ink-3)",
-                      }}
-                    >
-                      or 12th PCM
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
-            </article>
-          </div>
+            </div>
+          </article>
 
           <div
             style={{
@@ -751,8 +616,8 @@ export default function Page() {
             }}
           >
             {[
-              { num: "480", suffix: "", l: "seats · 2026-27", sub: "across 10 branches" },
-              { num: "10", suffix: "", l: "BTEUP branches", sub: "6 regular · 4 lateral" },
+              { num: "480", suffix: "", l: "seats · 2026-27", sub: "across 5 branches" },
+              { num: "5", suffix: "", l: "BTEUP branches", sub: "Civil · CS&E · Dairy · Elec · Mech (Prod.)" },
               { num: "30,150", suffix: "", l: "₹ tuition / year", sub: "AFRC-approved · all branches" },
               { num: "1.1", suffix: "%", l: "of UP polytechnics", sub: "offer Dairy · BIPE does" },
             ].map((s, i) => (
@@ -1301,7 +1166,7 @@ export default function Page() {
                       maxWidth: "44ch",
                     }}
                   >
-                    Apply once on JEECUP, choose any of the ten branches in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
+                    Apply once on JEECUP, choose any of the five branches in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
                   </p>
                 </div>
 
@@ -1312,7 +1177,7 @@ export default function Page() {
                   {[
                     { num: "16", l: "years" },
                     { num: "1,000+", l: "alumni" },
-                    { num: "10", l: "branches" },
+                    { num: "5", l: "branches" },
                     { num: "6-acre", l: "campus" },
                   ].map((s, i) => (
                     <React.Fragment key={s.l}>

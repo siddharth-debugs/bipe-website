@@ -23,7 +23,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "03",
     title: "Sit the entrance exam",
-    body: "Computer-based test in May 2026, multiple shifts. Group A is 10th-pass; Group K is lateral. Syllabus is Class-10 Maths and Science.",
+    body: "Computer-based test in May 2026, multiple shifts. BIPE&rsquo;s 3-year diploma uses Group A — Class-10-pass with Maths and Science. Syllabus is Class-10 Maths and Science.",
   },
   {
     n: "04",
@@ -223,7 +223,7 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 3. GROUP A vs GROUP K (dark editorial split)                             */}
+      {/* 3. JEECUP GROUP A — single panel (dark editorial)                        */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--ink)", color: "var(--paper)", position: "relative", overflow: "hidden" }}>
         <div aria-hidden="true" style={{
@@ -239,53 +239,30 @@ export default function Page() {
 
         <div className="container" style={{ position: "relative" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Group A · Group K</div>
+            <div className="eyebrow" style={{ color: "var(--accent)" }}>§ JEECUP · Group A</div>
             <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch", marginInline: "auto" }}>
-              Two groups.{" "}
+              One group.{" "}
               <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
-                Same campus.
+                Five branches.
               </span>
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
-            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+          <div style={{ border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
+            <div style={{ padding: "44px 36px" }}>
               <span className="pill" style={{ background: "var(--accent)", color: "var(--ink)" }}>GROUP A</span>
               <div className="serif" style={{ marginTop: 18, fontSize: 36, lineHeight: 1.05, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
                 10th-pass route
               </div>
               <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                Three years · six branches
+                Three years · five branches
               </div>
-              <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ marginTop: 22, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
                   ["Eligibility", "Class 10 pass with Maths & Science"],
-                  ["Branches", "CSE · Civil · Electrical · Mech (Prod / Auto) · Dairy"],
+                  ["Branches", "CS&E · Civil · Electrical · Mech (Prod.) · Dairy"],
                   ["Duration", "3 years · 6 semesters"],
                   ["Best for", "Students leaving Class 10 in 2026"],
-                ].map(([k, v]) => (
-                  <div key={k} style={{ paddingBottom: 12, borderBottom: "1px solid color-mix(in oklab, var(--paper) 12%, transparent)" }}>
-                    <div className="eyebrow" style={{ color: "var(--accent)" }}>{k}</div>
-                    <div style={{ marginTop: 6, fontSize: 15, color: "color-mix(in oklab, var(--paper) 88%, transparent)" }}>{v}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ padding: "44px 36px", background: "color-mix(in oklab, var(--brand) 14%, var(--ink))" }}>
-              <span className="pill" style={{ background: "var(--accent)", color: "var(--ink)" }}>GROUP K</span>
-              <div className="serif" style={{ marginTop: 18, fontSize: 36, lineHeight: 1.05, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
-                Lateral entry route
-              </div>
-              <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                Two years · direct to sem 3
-              </div>
-              <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 12 }}>
-                {[
-                  ["Eligibility", "12th PCM pass · or relevant ITI certificate"],
-                  ["Branches", "Civil · Electrical · Mech Prod · Mech Auto"],
-                  ["Duration", "2 years · 4 semesters · enters at sem 3"],
-                  ["Best for", "ITI completers · 12th science failures of B.Tech entrance"],
                 ].map(([k, v]) => (
                   <div key={k} style={{ paddingBottom: 12, borderBottom: "1px solid color-mix(in oklab, var(--paper) 12%, transparent)" }}>
                     <div className="eyebrow" style={{ color: "var(--accent)" }}>{k}</div>
@@ -298,7 +275,7 @@ export default function Page() {
 
           <div style={{ marginTop: 28, display: "flex", justifyContent: "center" }}>
             <Link href="/courses" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)" }}>
-              See all 10 branches <ArrowIcon size={16} />
+              See all 5 branches <ArrowIcon size={16} />
             </Link>
           </div>
         </div>

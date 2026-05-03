@@ -30,7 +30,7 @@ const ALL_RECRUITERS: string[] = Array.from(
 
 type Branch = { code: string; name: string; count: number; note: string };
 const BRANCH_COUNTS: Branch[] = [
-  { code: "MP", name: "Mechanical Production", count: 522, note: "Largest cohort. Longest pipeline — Mahindra, Tata Steel, JCB, Motherson, JBM." },
+  { code: "MP", name: "Mechanical Engineering (Production)", count: 522, note: "Largest cohort. Longest pipeline — Mahindra, Tata Steel, JCB, Motherson, JBM." },
   { code: "EE", name: "Electrical Engineering", count: 326, note: "RRB JE / SSC JE pathway · UPPCL, Tata Power, Indian Railways, Mumbai Metro." },
   { code: "CE", name: "Civil Engineering", count: 145, note: "Smart Cities, Bharatmala, Kashi corridor — site engineering and JE roles." },
 ];

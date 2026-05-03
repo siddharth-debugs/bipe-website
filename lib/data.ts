@@ -8,7 +8,6 @@ export type Branch = {
   desc: string;
   tag: string | null;
   color: number;
-  lateral?: boolean;
 };
 
 export type Stat = { num: string; label: string; sub: string };
@@ -118,21 +117,16 @@ export const DATA: DataShape = {
   stats: [
     { num: "16", label: "Years serving Eastern UP", sub: "since 2010" },
     { num: "1,000+", label: "Successful alumni", sub: "Mahindra · Tata · BEL" },
-    { num: "10", label: "BTEUP-licensed branches", sub: "incl. rare Dairy" },
+    { num: "5", label: "BTEUP-licensed branches", sub: "incl. rare Dairy" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
   ],
   branches: [
-    { code: "355", slug: "computer-science-engineering", name: "Computer Science Engineering", hi: "कंप्यूटर साइंस इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Programming, data structures, networks, AI/ML — taught with our 120-computer lab. Lateral entry to B.Tech CSE supported.", tag: "Popular", color: 1 },
+    { code: "355", slug: "computer-science-engineering", name: "Computer Science & Engineering", hi: "कंप्यूटर साइंस एंड इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Programming, data structures, networks, AI/ML — taught with our 120-computer lab. Strong B.Tech CSE pathway.", tag: "Popular", color: 1 },
     { code: "327", slug: "dairy-engineering", name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Rare diploma — fewer than 1.1% of UP polytechnics offer this. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.", tag: "Rare", color: 2 },
     { code: "322", slug: "civil-engineering", name: "Civil Engineering", hi: "सिविल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Smart Cities, Bharatmala, Kashi Vishwanath corridor — India's infra boom needs civil diploma holders. SSC JE / RRB JE eligible.", tag: null, color: 3 },
     { code: "328", slug: "electrical-engineering", name: "Electrical Engineering", hi: "इलेक्ट्रिकल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. UPPCL, Tata Power, Adani Solar recruit our graduates.", tag: null, color: 4 },
-    { code: "343", slug: "mechanical-engineering-production", name: "Mechanical Production", hi: "मैकेनिकल प्रोडक्शन", seats: 120, fee: "30,150", desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, Tata Motors, BHEL apprentice pathways.", tag: null, color: 5 },
-    { code: "341", slug: "mechanical-engineering-automobile", name: "Mechanical Automobile", hi: "मैकेनिकल ऑटोमोबाइल", seats: 60, fee: "30,150", desc: "India's automobile sector is in EV transition — Tata EV, Mahindra Electric, Ola, Ather, Bajaj Chetak need diploma holders.", tag: "EV-track", color: 6 },
-    { code: "375", slug: "lateral-civil", name: "Lateral · Civil", hi: "लेटरल सिविल", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 3, lateral: true },
-    { code: "378", slug: "lateral-electrical", name: "Lateral · Electrical", hi: "लेटरल इलेक्ट्रिकल", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 4, lateral: true },
-    { code: "384", slug: "lateral-auto", name: "Lateral · Mech Auto", hi: "लेटरल मैकेनिकल ऑटो", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 6, lateral: true },
-    { code: "386", slug: "lateral-production", name: "Lateral · Mech Prod", hi: "लेटरल मैकेनिकल प्रोडक्शन", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 5, lateral: true },
+    { code: "343", slug: "mechanical-engineering-production", name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)", seats: 120, fee: "30,150", desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, Tata Motors, BHEL apprentice pathways.", tag: null, color: 5 },
   ],
   recruiters: [
     "Mahindra", "Tata Steel", "BEL", "Indian Railways", "Krishna Maruti", "JCB", "Asian Paints", "Tata Motors", "BHEL", "UPPCL", "Tata Power", "Adani Solar", "Amul", "Mother Dairy", "Parag", "Nestlé", "NDDB", "Bajaj", "Ola Electric", "Ather", "Hero MotoCorp",
@@ -145,17 +139,17 @@ export const DATA: DataShape = {
   ],
   testimonials: [
     { name: "Ravi Kumar", role: "Mech (2022) → JE, Indian Railways", quote: "Mentor visits made my parents trust the diploma route. Workshop hours here got me through SSC JE on the first try." },
-    { name: "Priya Singh", role: "CSE (2024) → Lateral B.Tech, BBDU", quote: "120-computer lab, no waiting. Faculty were available after hours. I cleared my B.Tech entrance from BIPE labs." },
+    { name: "Priya Singh", role: "CSE (2024) → B.Tech, BBDU", quote: "120-computer lab, no waiting. Faculty were available after hours. I cleared my B.Tech entrance from BIPE labs." },
     { name: "Mr. Mishra", role: "Parent of Dairy '23 batch", quote: "बेटे के टीचर हमारे घर आए — यह विश्वास और कोई कॉलेज नहीं देगा। Amul में placement भी हुआ।" },
     { name: "Aman Yadav", role: "Civil (2021) → Bharatmala project", quote: "Survey camp in 4th sem put me on a real highway alignment crew. That experience got me my first site engineer role." },
     { name: "Sunita Devi", role: "Parent of Electrical '24 batch", quote: "Fees पूरी तरह transparent. हर rupee का receipt मिला। Hostel भी secure है — बेटी के लिए सही choice।" },
-    { name: "Faisal Ahmad", role: "Auto (2023) → Tata EV", quote: "EV training is real here — battery packs, motor controllers, hands-on. Walked into Tata EV interview with portfolio." },
+    { name: "Faisal Ahmad", role: "Mech Prod (2023) → Tata Motors", quote: "Workshop hours, CNC, foundry — every machine got real hours. Walked into Tata Motors interview with a portfolio of finished pieces." },
   ],
   faq: [
     { cat: "Admission", q: "How do I apply to BIPE?", a: "Admissions are exclusively through JEECUP counselling under college code 4455. Register at jeecup.admissions.nic.in, take the entrance, and choose BIPE 4455 during counselling. You can also fill our Apply form for personal guidance from our admissions team." },
-    { cat: "Admission", q: "What is the eligibility?", a: "For the 3-year diploma you need a Class 10 pass with Mathematics and Science. For 2-year lateral entry you need 12th PCM or a relevant ITI certificate, and you appear in JEECUP Group K." },
+    { cat: "Admission", q: "What is the eligibility?", a: "For the 3-year diploma you need a Class 10 pass with Mathematics and Science. Admission is through JEECUP Group A (UPJEE Polytechnic), with BIPE listed as institute code 4455 during counselling." },
     { cat: "Admission", q: "What documents do I need?", a: "Mandatory: JEECUP rank card / allotment letter, Class 10 marksheet, school transfer & character certificate, Aadhaar, 8 passport photos, bank passbook front page and an anti-ragging undertaking. Category and scholarship documents are optional. See the Documents page for the full list." },
-    { cat: "Fees", q: "What is the annual tuition?", a: "Annual tuition is ₹30,150 — AFRC-approved and the same for all 10 branches. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the Fees page; some are still being finalised. Hostel and mess are separate." },
+    { cat: "Fees", q: "What is the annual tuition?", a: "Annual tuition is ₹30,150 — AFRC-approved and the same for all 5 branches. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the Fees page; some are still being finalised. Hostel and mess are separate." },
     { cat: "Fees", q: "What scholarships are available?", a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority categories. BIPE also offers merit-based waivers of 25–50% for high JEECUP ranks and 10–25% for Class 10 toppers. Many BIPE students pay much less than the published fee." },
     { cat: "Fees", q: "What is the refund policy?", a: "Refunds follow AICTE norms: 100% (less ₹1,000) if you withdraw 15+ days before classes start, 90% within 15 days, 80% within the first 15 days of classes (if the seat is filled), 50% after that, and no refund after 30 days. Refunds are processed within 30 working days." },
     { cat: "Hostel & Campus", q: "Is hostel available for girls?", a: "Yes. The 6-acre campus has separate boys' and girls' hostel blocks with gender-specific wardens, staffed gates, visitor registration, fire safety, anti-ragging measures and a 9:30 PM curfew (extendable on parental authorisation)." },
@@ -168,9 +162,9 @@ export const DATA: DataShape = {
   events: [
     { date: "May 18, 2026", tag: "Admission", title: "JEECUP 2026 results declared", body: "Counselling rounds open from May 24. Book your campus visit now to lock in your branch preferences." },
     { date: "May 04, 2026", tag: "Campus", title: "Annual Tech Fest 'Kashi Tech 2026'", body: "Robotics, hackathon, dairy-tech showcase. Registration open for visitors and school students." },
-    { date: "Apr 22, 2026", tag: "Placement", title: "Tata Motors campus drive — 14 selected", body: "Mechanical Production & Automobile branches. Joining package ₹3.6 LPA + benefits." },
+    { date: "Apr 22, 2026", tag: "Placement", title: "Tata Motors campus drive — 14 selected", body: "Mechanical Engineering (Production) branch. Joining package ₹3.6 LPA + benefits." },
     { date: "Apr 11, 2026", tag: "Admission", title: "Open House for Class 10 students", body: "Lab tours, mentor meetings, and JEECUP guidance. Saturday, 10am–3pm. Free transport from Varanasi Cantt." },
-    { date: "Mar 28, 2026", tag: "Faculty", title: "Workshop: AI in diploma curriculum", body: "Faculty development on integrating AI/ML into Computer Science Engineering coursework." },
+    { date: "Mar 28, 2026", tag: "Faculty", title: "Workshop: AI in diploma curriculum", body: "Faculty development on integrating AI/ML into Computer Science & Engineering coursework." },
   ],
   jeecupSteps: [
     { step: "01", title: "Apply on JEECUP portal", body: "Register at jeecup.admissions.nic.in. Application opens January, closes April. Fee ₹300 (₹200 for SC/ST)." },

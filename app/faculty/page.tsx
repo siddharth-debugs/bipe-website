@@ -11,10 +11,10 @@ import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 export const metadata: Metadata = metaFor("faculty");
 
 const DEPARTMENTS: { name: string; count: number; note: string }[] = [
-  { name: "Computer Science Engineering", count: 6, note: "Headed by HOD — CS · 120-PC lab" },
+  { name: "Computer Science & Engineering", count: 6, note: "Headed by HOD — CS · 120-PC lab" },
   { name: "Civil Engineering", count: 5, note: "Survey yard, soil and concrete labs" },
   { name: "Electrical Engineering", count: 5, note: "Machines, PLC, renewables" },
-  { name: "Mechanical Engineering", count: 6, note: "Production + Automobile streams" },
+  { name: "Mechanical Engineering (Production)", count: 6, note: "Workshop, CNC, foundry" },
   { name: "Dairy Engineering", count: 3, note: "Rare faculty cluster — pilot plant" },
   { name: "Applied Sciences & Humanities", count: 5, note: "Maths, Physics, Chemistry, English" },
   { name: "Workshop & Practical Training", count: 3, note: "Welding, foundry, machining" },
@@ -414,7 +414,7 @@ export default function Page() {
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>02</span>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 16 }}>Explore departments</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 60%, transparent)", marginTop: 2 }}>10 BTEUP-licensed branches</div>
+                    <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 60%, transparent)", marginTop: 2 }}>5 BTEUP-licensed branches</div>
                   </div>
                   <ArrowIcon size={16} />
                 </Link>

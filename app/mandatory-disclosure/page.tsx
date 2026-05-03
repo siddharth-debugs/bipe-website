@@ -90,10 +90,10 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p>
-          BIPE offers <strong>10 BTEUP-licensed diploma branches</strong> at JEECUP college code 4455 — six regular 3-year tracks and four 2-year lateral-entry tracks for ITI / 12th-PCM students.
+          BIPE offers <strong>5 BTEUP-licensed diploma branches</strong> at JEECUP college code 4455, all 3-year programmes admitted via JEECUP Group A.
         </p>
         <p>
-          Total sanctioned intake (2026-27): <strong>480 seats</strong> across regular and lateral entry combined. Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical across branches.
+          Total sanctioned intake (2026-27): <strong>480 seats</strong> — Civil 120, Electrical 120, Mechanical Engineering (Production) 120, Computer Science &amp; Engineering 60, Dairy Engineering 60. Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical across branches.
         </p>
         <p>See the <Link href="/courses">Courses page</Link> for the full branch catalogue and the <Link href="/fees">Fees page</Link> for the AFRC-approved fee structure.</p>
       </>
@@ -117,7 +117,7 @@ const SECTIONS: Section[] = [
     title: "Fee structure",
     body: (
       <>
-        <p>Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical for all 10 BTEUP branches. Refunds follow AICTE norms: 100% (less ₹1,000 processing) if you withdraw 15+ days before classes start, and a tapered scale thereafter — full schedule on the <Link href="/fees">Fees page</Link>.</p>
+        <p>Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical for all 5 BTEUP branches. Refunds follow AICTE norms: 100% (less ₹1,000 processing) if you withdraw 15+ days before classes start, and a tapered scale thereafter — full schedule on the <Link href="/fees">Fees page</Link>.</p>
         <p>{`// TODO: upload the AFRC fee notification PDF for 2026-27 once the printed copy is available from the trust office.`}</p>
       </>
     ),

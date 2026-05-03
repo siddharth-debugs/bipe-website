@@ -16,7 +16,7 @@ const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "120", suffix: "+", label: "Networked PCs", sub: "Computer centre" },
   { num: "50", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
   { num: "33", label: "Faculty", sub: "1:20 mentor ratio" },
-  { num: "10", label: "BTEUP branches", sub: "Including Dairy" },
+  { num: "5", label: "BTEUP branches", sub: "Including Dairy" },
 ];
 
 const LIB_PILLS: string[] = [
@@ -39,7 +39,7 @@ const LABS: { eyebrow: string; title: string; body: string; img: string; tags: s
   {
     eyebrow: "ELECTRICAL · POWER",
     title: "Electrical & Power",
-    body: "Machines, power systems, PLC automation and renewable-energy testing benches. EV battery and motor controller setups for the Mechanical Auto cohort.",
+    body: "Machines, power systems, PLC automation and renewable-energy testing benches. Renewable and battery-test setups support the Electrical and Mechanical Engineering (Production) cohorts.",
     img: BIPE_IMG.electrical,
     tags: ["Machines", "PLC", "Renewables", "EV"],
   },
@@ -109,7 +109,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Our 6-acre Phoolpur campus houses ten BTEUP branches, 33 faculty and 550+ students. Library, 120-computer lab, dairy pilot plant, mechanical workshops, hostels and a sports ground — all within one boundary.
+                Our 6-acre Phoolpur campus houses five BTEUP branches, 33 faculty and 550+ students. Library, 120-computer lab, dairy pilot plant, mechanical workshops, hostels and a sports ground — all within one boundary.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a campus visit <ArrowIcon size={16} /></Link>

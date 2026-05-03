@@ -91,11 +91,6 @@ export const BIPE_IMG = {
     "322": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop",
     "328": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=900&q=80&auto=format&fit=crop",
     "343": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
-    "341": "https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?w=900&q=80&auto=format&fit=crop",
-    "375": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop",
-    "378": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=900&q=80&auto=format&fit=crop",
-    "384": "https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?w=900&q=80&auto=format&fit=crop",
-    "386": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
     default: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80&auto=format&fit=crop",
   } as Record<string, string>,
 };

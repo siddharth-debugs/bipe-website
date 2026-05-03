@@ -108,13 +108,12 @@ const APPROVALS: Approval[] = [
   },
 ];
 
-const SEAT_MATRIX: { name: string; code: string; intake: string; le?: string }[] = [
-  { name: "Civil Engineering", code: "322", intake: "120", le: "+ 12 LE" },
-  { name: "Computer Science Engineering", code: "355", intake: "60" },
+const SEAT_MATRIX: { name: string; code: string; intake: string }[] = [
+  { name: "Civil Engineering", code: "322", intake: "120" },
+  { name: "Electrical Engineering", code: "328", intake: "120" },
+  { name: "Mechanical Engineering (Production)", code: "343", intake: "120" },
+  { name: "Computer Science & Engineering", code: "355", intake: "60" },
   { name: "Dairy Engineering", code: "327", intake: "60" },
-  { name: "Electrical Engineering", code: "328", intake: "120", le: "+ 12 LE" },
-  { name: "Mechanical Engineering — Production", code: "343", intake: "120", le: "+ 18 LE" },
-  { name: "Mechanical Engineering — Automobile", code: "341", intake: "60", le: "+ 6 LE" },
 ];
 
 const DISCLOSURE: { num: string; label: string }[] = [
@@ -414,13 +413,13 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              The 2026-27 intake under JEECUP college code 4455. LE = Lateral Entry from ITI / 12th PCM.
+              The 2026-27 sanctioned intake under JEECUP college code 4455 — five 3-year BTEUP diplomas.
             </p>
           </div>
 
           <div className="card" style={{ padding: 0, overflow: "hidden" }}>
             <div style={{
-              display: "grid", gridTemplateColumns: "auto 2.4fr 1fr 1fr",
+              display: "grid", gridTemplateColumns: "auto 3fr 1fr",
               padding: "16px 24px",
               background: "var(--ink)", color: "var(--paper)",
               fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase",
@@ -428,11 +427,10 @@ export default function Page() {
               <div>Code</div>
               <div>Branch</div>
               <div>Intake</div>
-              <div>Lateral</div>
             </div>
             {SEAT_MATRIX.map((row, i) => (
               <div key={row.code} style={{
-                display: "grid", gridTemplateColumns: "auto 2.4fr 1fr 1fr",
+                display: "grid", gridTemplateColumns: "auto 3fr 1fr",
                 padding: "20px 24px",
                 background: i % 2 === 0 ? "var(--white)" : "var(--paper-2)",
                 borderBottom: i < SEAT_MATRIX.length - 1 ? "1px solid var(--line)" : "none",
@@ -441,22 +439,18 @@ export default function Page() {
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 700, color: "var(--brand)", minWidth: 40 }}>{row.code}</div>
                 <div style={{ fontWeight: 600, fontSize: 16 }}>{row.name}</div>
                 <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.01em" }}>{row.intake}</div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: row.le ? "var(--brand)" : "var(--ink-3)", fontWeight: row.le ? 600 : 400 }}>
-                  {row.le ?? "—"}
-                </div>
               </div>
             ))}
             <div style={{
-              display: "grid", gridTemplateColumns: "auto 2.4fr 1fr 1fr",
+              display: "grid", gridTemplateColumns: "auto 3fr 1fr",
               padding: "20px 24px",
               background: "color-mix(in oklab, var(--brand) 8%, var(--paper))",
               borderTop: "2px solid var(--brand)",
               alignItems: "center",
             }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand)" }}>TOTAL</div>
-              <div style={{ fontWeight: 700, fontSize: 15, color: "var(--ink)" }}>2026-27 intake (incl. lateral)</div>
+              <div style={{ fontWeight: 700, fontSize: 15, color: "var(--ink)" }}>2026-27 sanctioned intake</div>
               <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, color: "var(--brand)", letterSpacing: "-0.02em" }}>480</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--brand)", fontWeight: 600 }}>+ 60 LE</div>
             </div>
           </div>
         </div>

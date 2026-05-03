@@ -19,7 +19,7 @@ const STEPS: Step[] = [
   { num: "02", title: "Principal's overview", body: "Ten to fifteen minutes with the Principal or admissions head — pedagogy, AFRC fees, the placement record, and what makes a BIPE diploma different from the seven other polytechnics in the district." },
   { num: "03", title: "Lab & workshop tour", body: "Walk the spaces that match your branch interest — the 120-computer lab, the dairy pilot plant, the welding-and-fitting workshop, the electrical machines bench. Touch the equipment. Ask the lab assistant questions." },
   { num: "04", title: "Hostel + mess walkthrough", body: "Visit the boys' or girls' block depending on whose admission you're considering. Meet the warden if available. Look at a real room. Eat lunch with current students if you're around at noon." },
-  { num: "05", title: "Q&A — Hindi or English", body: "Sit down with the admissions team. Ask anything — fees, scholarships, JEECUP counselling strategy, lateral entry, hostel curfew, mess menu. We answer in your language, with no salesman script." },
+  { num: "05", title: "Q&A — Hindi or English", body: "Sit down with the admissions team. Ask anything — fees, scholarships, JEECUP counselling strategy, hostel curfew, mess menu. We answer in your language, with no salesman script." },
 ];
 
 const MODES: Mode[] = [
@@ -31,7 +31,6 @@ const MODES: Mode[] = [
 const BRING: Bring[] = [
   { who: "Students", title: "If you have a JEECUP rank card,", body: "bring it. We'll show you which branches your rank can realistically secure at BIPE 4455, and which to put as backup. A list of branch questions helps too — no question is small." },
   { who: "Parents", title: "If you have fee comparisons,", body: "bring those sheets. We're happy to walk through any line item and explain why ours is set where it is. A list of placement queries — names of companies, salaries, joining locations — saves time." },
-  { who: "Lateral applicants", title: "If you're coming from an ITI,", body: "bring your ITI marksheet so we can map credit transfer for the 2-year lateral diploma in real time. We'll tell you on the same visit whether your trade qualifies for which lateral branch." },
   { who: "Anyone", title: "Always bring", body: "a notebook. This is an engineering campus — you'll see things you'll want to write down. And bring curiosity. The campus tells you things a brochure can't." },
 ];
 

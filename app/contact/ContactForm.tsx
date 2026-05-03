@@ -18,8 +18,8 @@ const SOURCES = ["Friend / family", "Google search", "Newspaper / hoarding", "Vi
 
 export function ContactForm() {
   const branchOptions = [
-    ...DATA.branches.filter((b) => !b.lateral).map((b) => b.name),
-    "Lateral entry / Other",
+    ...DATA.branches.map((b) => b.name),
+    "Other / Not sure",
   ];
 
   const [data, setData] = useState<FormState>({
