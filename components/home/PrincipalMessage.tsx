@@ -1,12 +1,19 @@
 import React from "react";
+import Image from "next/image";
 import { BIPE_IMG } from "@/lib/images";
 
 export const PrincipalMessage = () => (
   <section className="section" style={{ background: "var(--ink)", color: "var(--paper)" }}>
     <div className="container">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 60, alignItems: "center" }}>
-        <div className="reveal" style={{ aspectRatio: "4/5", borderRadius: 18, overflow: "hidden", border: "1px solid color-mix(in oklab, var(--paper) 20%, transparent)" }}>
-          <img src={BIPE_IMG.principal} alt="Principal" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <div className="reveal" style={{ position: "relative", aspectRatio: "4/5", borderRadius: 18, overflow: "hidden", border: "1px solid color-mix(in oklab, var(--paper) 20%, transparent)" }}>
+          <Image
+            src={BIPE_IMG.principal}
+            alt="Principal of BIPE"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
         </div>
         <div className="reveal">
           <div className="eyebrow" style={{ color: "var(--accent)" }}>Principal&apos;s Message</div>

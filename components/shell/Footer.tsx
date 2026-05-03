@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "./Icons";
@@ -85,8 +86,15 @@ export const Footer = () => {
               flexShrink: 0,
               boxShadow: "0 18px 36px -16px rgba(0,0,0,0.6), 0 0 0 1px color-mix(in oklab, var(--paper) 22%, transparent)",
             }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/bipe-logo.svg" alt="" aria-hidden="true" style={{ height: 72, width: "auto", display: "block" }} draggable={false} />
+              <Image
+                src="/bipe-logo.svg"
+                alt=""
+                aria-hidden="true"
+                width={2162}
+                height={2497}
+                style={{ height: 72, width: Math.round(72 * 2162 / 2497), display: "block" }}
+                draggable={false}
+              />
             </div>
 
             {/* Wordmark + sub-eyebrow */}

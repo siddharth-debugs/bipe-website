@@ -7,7 +7,7 @@ import { DATA } from "@/lib/data";
 
 export const HeroFull = () => (
   <section style={{ position: "relative", overflow: "hidden", background: "#000" }}>
-    <Img src={BIPE_IMG.heroWide} label="" style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
+    <Img src={BIPE_IMG.heroWide} label="" priority style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
 
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,

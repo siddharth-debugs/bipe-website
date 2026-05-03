@@ -6,7 +6,7 @@ import { ArrowIcon } from "@/components/shell/Icons";
 
 const cell = (n: number, l: string) => (
   <div style={{ textAlign: "center", padding: "18px 8px", background: "var(--white)", border: "1px solid var(--line)", borderRadius: 14, minWidth: 84 }}>
-    <div className="serif" style={{ fontSize: 48, lineHeight: 1, color: "var(--brand)" }}>{String(n).padStart(2, "0")}</div>
+    <div className="serif" style={{ fontSize: 48, lineHeight: 1, color: "var(--brand)" }} suppressHydrationWarning>{String(n).padStart(2, "0")}</div>
     <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", marginTop: 6, color: "var(--ink-3)", textTransform: "uppercase" }}>{l}</div>
   </div>
 );

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { CSSProperties, useState } from "react";
+import NextImage from "next/image";
 
 export type ImgProps = {
   src: string;
@@ -9,9 +10,30 @@ export type ImgProps = {
   style?: CSSProperties;
   className?: string;
   aspectRatio?: string;
+  /** Use for above-the-fold imagery — eager load + high fetchPriority. */
+  priority?: boolean;
+  /** Optional sizes hint passed to next/image for responsive selection. */
+  sizes?: string;
 };
 
-export function Img({ src, alt, label, style, className, aspectRatio }: ImgProps) {
+/**
+ * App-wide image wrapper.
+ *
+ * Renders a `next/image` with `fill` inside a positioned container, so the
+ * image always covers its parent at any size. Falls back to the striped
+ * `.ph` placeholder while loading or on error, and shows the optional
+ * mono-cap label tag in the bottom-left corner once the image is ready.
+ */
+export function Img({
+  src,
+  alt,
+  label,
+  style,
+  className,
+  aspectRatio,
+  priority = false,
+  sizes = "(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 50vw",
+}: ImgProps) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
   const wrapStyle: CSSProperties = {
@@ -25,16 +47,20 @@ export function Img({ src, alt, label, style, className, aspectRatio }: ImgProps
   return (
     <div className={className} style={wrapStyle}>
       {!errored && (
-        <img
+        <NextImage
           src={src}
           alt={alt || label || ""}
-          loading="lazy"
+          fill
+          sizes={sizes}
+          priority={priority}
+          fetchPriority={priority ? "high" : "auto"}
           onLoad={() => setLoaded(true)}
           onError={() => setErrored(true)}
           style={{
-            position: "absolute", inset: 0, width: "100%", height: "100%",
-            objectFit: "cover", objectPosition: "center",
-            opacity: loaded ? 1 : 0, transition: "opacity .5s var(--ease)",
+            objectFit: "cover",
+            objectPosition: "center",
+            opacity: loaded ? 1 : 0,
+            transition: "opacity .5s var(--ease)",
           }}
         />
       )}
