@@ -298,53 +298,103 @@ export function Nav() {
             </svg>
           </button>
         </div>
-        <nav className="nav-drawer-list">
-          {[
-            { to: "/", label: lang === "hi" ? "होम" : "Home" },
-            { to: "/about", label: lang === "hi" ? "हमारे बारे में" : "About" },
-            { to: "/principal", label: lang === "hi" ? "प्रिंसिपल" : "Principal" },
-            { to: "/courses", label: lang === "hi" ? "पाठ्यक्रम" : "Courses" },
-            { to: "/admission", label: lang === "hi" ? "प्रवेश" : "Admission" },
-            { to: "/apply", label: lang === "hi" ? "आवेदन करें" : "Apply" },
-            { to: "/jeecup", label: "JEECUP guidance" },
-            { to: "/fees", label: lang === "hi" ? "शुल्क" : "Fees" },
-            { to: "/scholarships", label: lang === "hi" ? "छात्रवृत्ति" : "Scholarships" },
-            { to: "/documents", label: lang === "hi" ? "दस्तावेज़" : "Documents" },
-            { to: "/faculty", label: lang === "hi" ? "संकाय" : "Faculty" },
-            { to: "/teaching", label: "Teaching" },
-            { to: "/campus", label: lang === "hi" ? "कैम्पस" : "Campus" },
-            { to: "/hostel", label: lang === "hi" ? "छात्रावास" : "Hostel" },
-            { to: "/placements", label: lang === "hi" ? "प्लेसमेंट" : "Placements" },
-            { to: "/events", label: lang === "hi" ? "इवेंट्स" : "Events" },
-            { to: "/visit", label: lang === "hi" ? "विज़िट" : "Visit" },
-            { to: "/contact", label: lang === "hi" ? "संपर्क" : "Contact" },
-            { to: "/approvals", label: "Approvals" },
-            { to: "/mandatory-disclosure", label: "Mandatory Disclosure" },
-            { to: "/grievance", label: "Grievance" },
-          ].map((item) => {
-            const id = item.to === "/" ? "home" : item.to.replace(/^\//, "");
-            const active = route === id;
-            return (
-              <Link
-                key={item.to}
-                href={item.to}
-                className={"nav-drawer-link" + (active ? " is-active" : "")}
-              >
-                {item.label}
-                <ArrowIcon size={13} />
-              </Link>
-            );
-          })}
-        </nav>
+
+        <div className="nav-drawer-cta">
+          <Link href="/apply" className="btn btn-primary" style={{ justifyContent: "center" }}>
+            Apply for 2026-27 <ArrowIcon size={14} />
+          </Link>
+          <div className="nav-drawer-lang">
+            <button onClick={() => setLang("en")} data-on={lang === "en"} aria-pressed={lang === "en"}>EN</button>
+            <button onClick={() => setLang("hi")} data-on={lang === "hi"} aria-pressed={lang === "hi"}>हिंदी</button>
+          </div>
+        </div>
+
+        <div className="nav-drawer-scroll">
+          {DRAWER_GROUPS.map((g) => (
+            <div key={g.title} className="nav-drawer-group">
+              <div className="nav-drawer-eyebrow">{g.title}</div>
+              <div className="nav-drawer-list">
+                {g.items.map((item) => {
+                  const id = item.to === "/" ? "home" : item.to.replace(/^\//, "");
+                  const active = route === id;
+                  const label = lang === "hi" && item.hi ? item.hi : item.label;
+                  return (
+                    <Link
+                      key={item.to}
+                      href={item.to}
+                      className={"nav-drawer-link" + (active ? " is-active" : "")}
+                    >
+                      <span>{label}</span>
+                      <ArrowIcon size={13} />
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className="nav-drawer-footer">
           <a href={`tel:${C.phone}`} className="btn btn-ghost" style={{ justifyContent: "center" }}>
             Call {C.phone}
           </a>
           <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ justifyContent: "center" }}>
-            <WhatsAppIcon /> WhatsApp
+            <WhatsAppIcon /> WhatsApp admissions
           </a>
         </div>
       </aside>
     </nav>
   );
 }
+
+type DrawerItem = { to: string; label: string; hi?: string };
+const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
+  {
+    title: "Main",
+    items: [
+      { to: "/", label: "Home", hi: "होम" },
+      { to: "/about", label: "About BIPE", hi: "हमारे बारे में" },
+      { to: "/principal", label: "Principal's Message" },
+    ],
+  },
+  {
+    title: "Admission · 2026-27",
+    items: [
+      { to: "/admission", label: "Admission Overview", hi: "प्रवेश" },
+      { to: "/apply", label: "Apply now", hi: "आवेदन करें" },
+      { to: "/jeecup", label: "JEECUP Guidance" },
+      { to: "/fees", label: "Fees", hi: "शुल्क" },
+      { to: "/scholarships", label: "Scholarships", hi: "छात्रवृत्ति" },
+      { to: "/documents", label: "Documents", hi: "दस्तावेज़" },
+    ],
+  },
+  {
+    title: "Academics",
+    items: [
+      { to: "/courses", label: "Courses", hi: "पाठ्यक्रम" },
+      { to: "/faculty", label: "Faculty", hi: "संकाय" },
+      { to: "/teaching", label: "Teaching & Learning" },
+      { to: "/placements", label: "Placements", hi: "प्लेसमेंट" },
+    ],
+  },
+  {
+    title: "Campus",
+    items: [
+      { to: "/campus", label: "Campus tour", hi: "कैम्पस" },
+      { to: "/hostel", label: "Hostel", hi: "छात्रावास" },
+      { to: "/events", label: "Events", hi: "इवेंट्स" },
+      { to: "/visit", label: "Book a visit", hi: "विज़िट" },
+      { to: "/contact", label: "Contact", hi: "संपर्क" },
+    ],
+  },
+  {
+    title: "Statutory",
+    items: [
+      { to: "/approvals", label: "Approvals" },
+      { to: "/mandatory-disclosure", label: "Mandatory Disclosure" },
+      { to: "/ai-policy", label: "AI Policy" },
+      { to: "/anti-ragging", label: "Anti-Ragging" },
+      { to: "/grievance", label: "Grievance" },
+    ],
+  },
+];
