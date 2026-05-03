@@ -546,3 +546,78 @@ body.no-motion .page-enter { animation: none; }
 .skeleton.circle { border-radius: 999px; }
 .skeleton.pill { border-radius: 999px; }
 body.no-motion .skeleton { animation: none; }
+
+/* ====== Pinterest masonry — events gallery ====== */
+.bipe-masonry {
+  column-count: 4;
+  column-gap: 14px;
+}
+@media (max-width: 1080px) { .bipe-masonry { column-count: 3; } }
+@media (max-width: 720px)  { .bipe-masonry { column-count: 2; } }
+@media (max-width: 420px)  { .bipe-masonry { column-count: 1; } }
+
+.bipe-masonry-tile {
+  display: block;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  text-align: left;
+  transition: transform .25s var(--ease);
+  isolation: isolate;
+}
+.bipe-masonry-tile:hover { transform: translateY(-2px); }
+.bipe-masonry-tile:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+.bipe-masonry-tile img {
+  border-radius: 14px;
+  transition: transform .35s var(--ease), filter .35s var(--ease);
+}
+.bipe-masonry-tile:hover img {
+  transform: scale(1.025);
+  filter: brightness(0.92);
+}
+.bipe-masonry-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px 12px 10px;
+  background: linear-gradient(180deg, transparent 0%, rgba(10,26,63,0.55) 60%, rgba(10,26,63,0.85) 100%);
+  color: var(--paper);
+  border-radius: 0 0 14px 14px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+  pointer-events: none;
+}
+.bipe-masonry-tile:hover .bipe-masonry-caption,
+.bipe-masonry-tile:focus-visible .bipe-masonry-caption {
+  opacity: 1;
+  transform: none;
+}
+.bipe-masonry-caption-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+.bipe-masonry-caption-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: color-mix(in oklab, var(--paper) 70%, transparent);
+  flex-shrink: 0;
+}

@@ -6,6 +6,8 @@ import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { EventsGallery } from "@/components/events/EventsGallery";
+import { EVENT_PHOTOS, EVENT_YEARS } from "@/lib/events-gallery";
 
 export const metadata: Metadata = metaFor("events");
 
@@ -198,6 +200,54 @@ export default function Page() {
           </section>
         );
       })}
+
+      {/* ====================================================================== */}
+      {/* 4.5 PHOTO GALLERY — Pinterest masonry + lightbox                        */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--paper)", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden="true" style={{
+          position: "absolute", left: -180, top: -120, width: 460, height: 460, borderRadius: "50%",
+          background: "color-mix(in oklab, var(--brand) 14%, transparent)",
+          filter: "blur(120px)", pointerEvents: "none",
+        }} />
+        <div className="container" style={{ position: "relative" }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "auto 1fr auto",
+            gap: 32,
+            alignItems: "end",
+            marginBottom: 32,
+            paddingBottom: 22,
+            borderBottom: "1px solid var(--line)",
+            flexWrap: "wrap",
+          }}>
+            <div>
+              <div className="eyebrow">§ Photo gallery</div>
+              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "22ch" }}>
+                {EVENT_PHOTOS.length} moments,{" "}
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  one campus.
+                </span>
+              </h2>
+            </div>
+            <div />
+            <p style={{
+              color: "var(--ink-3)",
+              fontSize: 13,
+              fontFamily: "var(--font-mono)",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              maxWidth: "32ch",
+              lineHeight: 1.6,
+              textAlign: "right",
+              paddingBottom: 8,
+            }}>
+              {EVENT_YEARS.length} years on record · click any photo
+            </p>
+          </div>
+          <EventsGallery />
+        </div>
+      </section>
 
       {/* ====================================================================== */}
       {/* 5. OPEN TO FAMILIES — DARK                                              */}

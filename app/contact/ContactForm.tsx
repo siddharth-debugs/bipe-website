@@ -1,57 +1,88 @@
 "use client";
 
 import React, { useState } from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import {
+  contactFormSchema,
+  contactDefaults,
+  BRANCH_OPTIONS,
+  SOURCE_OPTIONS,
+  type ContactFormData,
+} from "@/lib/validation";
 
-type FormState = {
-  name: string;
-  mobile: string;
-  email: string;
-  branch: string;
-  source: string;
-  message: string;
-  consent: boolean;
-};
-
-const SOURCES = ["Friend / family", "Google search", "Newspaper / hoarding", "Visited the campus", "Social media", "Other"];
+type SubmitStatus =
+  | { state: "idle" }
+  | { state: "submitting" }
+  | { state: "success"; mocked: boolean; firstName: string; phone: string }
+  | { state: "error"; message: string };
 
 export function ContactForm() {
-  const branchOptions = [
-    ...DATA.branches.map((b) => b.name),
-    "Other / Not sure",
-  ];
+  const [status, setStatus] = useState<SubmitStatus>({ state: "idle" });
 
-  const [data, setData] = useState<FormState>({
-    name: "",
-    mobile: "",
-    email: "",
-    branch: "",
-    source: "",
-    message: "",
-    consent: false,
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: contactDefaults,
+    mode: "onTouched",
   });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [sent, setSent] = useState(false);
 
-  const update = <K extends keyof FormState>(k: K, v: FormState[K]) => setData({ ...data, [k]: v });
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const next: Record<string, string> = {};
-    if (!data.name.trim()) next.name = "Required";
-    if (!/^[0-9 +()-]{8,}$/.test(data.mobile)) next.mobile = "Enter a valid mobile";
-    if (data.email && !/.+@.+\..+/.test(data.email)) next.email = "Invalid email";
-    if (!data.consent) next.consent = "Please tick the consent box";
-    setErrors(next);
-    if (Object.keys(next).length === 0) {
-      // TODO: wire to admissions backend / CRM endpoint
-      setSent(true);
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
+    setStatus({ state: "submitting" });
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = (await res.json()) as {
+        ok: boolean;
+        error?: string;
+        fieldErrors?: Record<string, string[]>;
+        mocked?: boolean;
+      };
+      if (!res.ok || !json.ok) {
+        if (json.fieldErrors) {
+          for (const [field, msgs] of Object.entries(json.fieldErrors)) {
+            if (msgs && msgs.length > 0) {
+              setError(field as keyof ContactFormData, { message: msgs[0] });
+            }
+          }
+        }
+        setStatus({
+          state: "error",
+          message: json.error ?? "Could not send. Please try again.",
+        });
+        return;
+      }
+      setStatus({
+        state: "success",
+        mocked: json.mocked === true,
+        firstName: data.name.trim().split(/\s+/)[0] || "there",
+        phone: data.phone,
+      });
+    } catch {
+      setStatus({
+        state: "error",
+        message: "Network error. Try again or WhatsApp us.",
+      });
     }
   };
 
-  if (sent) {
-    const firstName = data.name.trim().split(/\s+/)[0] || "there";
+  const fieldError = (k: keyof ContactFormData): string | undefined => {
+    const e = errors[k as keyof typeof errors];
+    return e?.message ? String(e.message) : undefined;
+  };
+
+  // ============ SUCCESS STATE ============
+  if (status.state === "success") {
     return (
       <div style={{ position: "relative", overflow: "hidden" }}>
         <div aria-hidden="true" style={{
@@ -64,24 +95,43 @@ export function ContactForm() {
           <span className="pill" style={{ background: "color-mix(in oklab, var(--success) 16%, transparent)", color: "var(--success)" }}>
             Received · we&apos;ll reply in &lt;24h
           </span>
-          <p className="serif" style={{
-            marginTop: 22,
-            fontStyle: "italic", fontWeight: 400,
-            fontSize: "clamp(36px, 4.6vw, 64px)",
-            lineHeight: 1.05, letterSpacing: "-0.02em",
-            maxWidth: "18ch", margin: "22px auto 0",
-            color: "var(--ink)",
-          }}>
-            Thanks, <span style={{ color: "var(--brand)" }}>{firstName}.</span>
+          <p
+            className="serif"
+            style={{
+              marginTop: 22,
+              fontStyle: "italic", fontWeight: 400,
+              fontSize: "clamp(36px, 4.6vw, 64px)",
+              lineHeight: 1.05, letterSpacing: "-0.02em",
+              maxWidth: "18ch", margin: "22px auto 0",
+              color: "var(--ink)",
+            }}
+          >
+            Thanks, <span style={{ color: "var(--brand)" }}>{status.firstName}.</span>
           </p>
           <p style={{ marginTop: 20, color: "var(--ink-2)", fontSize: 16, lineHeight: 1.6, maxWidth: "52ch", margin: "20px auto 0" }}>
-            Admissions has your message. We&apos;ll call <span style={{ fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--brand)" }}>{data.mobile}</span> within 24 hours, Monday to Saturday — in Hindi or English.
+            Admissions has your message. We&apos;ll call{" "}
+            <span style={{ fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--brand)" }}>
+              {status.phone}
+            </span>{" "}
+            within 24 hours, Monday to Saturday — in Hindi or English.
           </p>
+          {status.mocked && (
+            <p style={{ marginTop: 14, fontSize: 12, color: "var(--ink-3)", fontStyle: "italic" }}>
+              Note: email backend not configured (WEB3FORMS_ACCESS_KEY missing). Submission was logged server-side only.
+            </p>
+          )}
           <div style={{ marginTop: 28, display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
             <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
               <WhatsAppIcon /> WhatsApp instead
             </a>
-            <button type="button" onClick={() => { setSent(false); setData({ name: "", mobile: "", email: "", branch: "", source: "", message: "", consent: false }); }} className="btn btn-ghost">
+            <button
+              type="button"
+              onClick={() => {
+                reset(contactDefaults);
+                setStatus({ state: "idle" });
+              }}
+              className="btn btn-ghost"
+            >
               Send another <ArrowIcon size={14} />
             </button>
           </div>
@@ -90,75 +140,170 @@ export function ContactForm() {
     );
   }
 
-  const errClass = (k: keyof FormState) => (errors[k] ? "field field-error" : "field");
+  const errClass = (k: keyof ContactFormData) => (fieldError(k) ? "field field-error" : "field");
 
   return (
-    <form onSubmit={submit} noValidate>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
         <div className={errClass("name")}>
-          <label htmlFor="cf-name">Full name <span style={{ color: "var(--danger)" }}>*</span></label>
-          <input id="cf-name" type="text" value={data.name} onChange={(e) => update("name", e.target.value)} placeholder="Your name (or guardian's)" />
-          {errors.name && <span className="error-msg">{errors.name}</span>}
+          <label htmlFor="cf-name">
+            Full name <span style={{ color: "var(--danger)" }}>*</span>
+          </label>
+          <input
+            id="cf-name"
+            type="text"
+            autoComplete="name"
+            placeholder="Your name (or guardian's)"
+            {...register("name")}
+          />
+          {fieldError("name") && <span className="error-msg">{fieldError("name")}</span>}
         </div>
-        <div className={errClass("mobile")}>
-          <label htmlFor="cf-mobile">Mobile <span style={{ color: "var(--danger)" }}>*</span></label>
-          <input id="cf-mobile" type="tel" value={data.mobile} onChange={(e) => update("mobile", e.target.value)} placeholder="+91 9XXX-XXXX-XX" />
-          {errors.mobile && <span className="error-msg">{errors.mobile}</span>}
+        <div className={errClass("phone")}>
+          <label htmlFor="cf-mobile">
+            Mobile <span style={{ color: "var(--danger)" }}>*</span>
+          </label>
+          <input
+            id="cf-mobile"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="+91 9XXXX-XXXXX"
+            {...register("phone")}
+          />
+          {fieldError("phone") && <span className="error-msg">{fieldError("phone")}</span>}
         </div>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 14 }}>
         <div className={errClass("email")}>
-          <label htmlFor="cf-email">Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span></label>
-          <input id="cf-email" type="email" value={data.email} onChange={(e) => update("email", e.target.value)} placeholder="you@example.com" />
-          {errors.email && <span className="error-msg">{errors.email}</span>}
+          <label htmlFor="cf-email">
+            Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+          </label>
+          <input
+            id="cf-email"
+            type="email"
+            autoComplete="email"
+            placeholder="you@example.com"
+            {...register("email")}
+          />
+          {fieldError("email") && <span className="error-msg">{fieldError("email")}</span>}
         </div>
-        <div className="field">
-          <label htmlFor="cf-branch">Branch interest</label>
-          <select id="cf-branch" value={data.branch} onChange={(e) => update("branch", e.target.value)}>
-            <option value="">Not sure yet — please advise</option>
-            {branchOptions.map((b) => (
+        <div className={errClass("branch")}>
+          <label htmlFor="cf-branch">
+            Branch interest <span style={{ color: "var(--danger)" }}>*</span>
+          </label>
+          <select id="cf-branch" {...register("branch")} defaultValue="">
+            <option value="" disabled>
+              — Choose a branch —
+            </option>
+            {BRANCH_OPTIONS.map((b) => (
               <option key={b} value={b}>{b}</option>
             ))}
           </select>
+          {fieldError("branch") && <span className="error-msg">{fieldError("branch")}</span>}
         </div>
       </div>
 
       <div className="field" style={{ marginTop: 14 }}>
-        <label htmlFor="cf-source">How did you hear about BIPE?</label>
-        <select id="cf-source" value={data.source} onChange={(e) => update("source", e.target.value)}>
-          <option value="">Pick one (optional)</option>
-          {SOURCES.map((s) => (
+        <label htmlFor="cf-source">How did you hear about BIPE? <span className="muted" style={{ fontSize: 11 }}>(optional)</span></label>
+        <select id="cf-source" {...register("source")} defaultValue="">
+          <option value="">— Pick one —</option>
+          {SOURCE_OPTIONS.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}
         </select>
       </div>
 
-      <div className="field" style={{ marginTop: 14 }}>
-        <label htmlFor="cf-message">Your message <span className="muted" style={{ fontSize: 11 }}>(optional)</span></label>
-        <textarea id="cf-message" rows={4} value={data.message} onChange={(e) => update("message", e.target.value)} placeholder="Anything specific you'd like answered before we call back?" />
+      <div className={errClass("message")} style={{ marginTop: 14 }}>
+        <label htmlFor="cf-message">
+          Your message <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+        </label>
+        <textarea
+          id="cf-message"
+          rows={4}
+          placeholder="Anything specific you'd like answered before we call back?"
+          {...register("message")}
+        />
+        {fieldError("message") && <span className="error-msg">{fieldError("message")}</span>}
       </div>
 
-      <label style={{
-        marginTop: 18, display: "flex", gap: 12, alignItems: "flex-start",
-        padding: "14px 16px",
-        background: "color-mix(in oklab, var(--brand) 5%, var(--white))",
-        border: errors.consent ? "1px solid var(--danger)" : "1px solid var(--line)",
-        borderRadius: 12,
-        cursor: "pointer",
-      }}>
-        <input type="checkbox" checked={data.consent} onChange={(e) => update("consent", e.target.checked)} style={{ marginTop: 4, accentColor: "var(--brand)" }} />
+      <label
+        htmlFor="cf-consent"
+        style={{
+          marginTop: 18,
+          display: "flex",
+          gap: 12,
+          alignItems: "flex-start",
+          padding: "14px 16px",
+          background: "color-mix(in oklab, var(--brand) 5%, var(--white))",
+          border: fieldError("consent") ? "1px solid var(--danger)" : "1px solid var(--line)",
+          borderRadius: 12,
+          cursor: "pointer",
+        }}
+      >
+        <input
+          id="cf-consent"
+          type="checkbox"
+          {...register("consent")}
+          style={{ marginTop: 4, accentColor: "var(--brand)" }}
+        />
         <span style={{ fontSize: 13.5, color: "var(--ink-2)", lineHeight: 1.5 }}>
           I agree to be contacted by BIPE Admissions on the mobile number above for the purpose of this query. We&apos;ll never share your details with third parties.
         </span>
       </label>
-      {errors.consent && <div className="error-msg" style={{ marginTop: 6 }}>{errors.consent}</div>}
+      {fieldError("consent") && (
+        <div className="error-msg" style={{ marginTop: 6 }}>
+          {fieldError("consent")}
+        </div>
+      )}
 
-      <div style={{ marginTop: 22, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
-        <button type="submit" className="btn btn-primary btn-lg">
-          Send to admissions <ArrowIcon size={14} />
+      {status.state === "error" && (
+        <div
+          role="alert"
+          style={{
+            marginTop: 14,
+            padding: "12px 14px",
+            borderRadius: 10,
+            background: "color-mix(in oklab, var(--danger) 12%, var(--paper))",
+            border: "1px solid color-mix(in oklab, var(--danger) 30%, transparent)",
+            color: "var(--danger)",
+            fontSize: 14,
+          }}
+        >
+          {status.message}
+        </div>
+      )}
+
+      <div
+        style={{
+          marginTop: 22,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 14,
+          flexWrap: "wrap",
+        }}
+      >
+        <button
+          type="submit"
+          className="btn btn-primary btn-lg"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending…" : <>Send to admissions <ArrowIcon size={14} /></>}
         </button>
-        <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, color: "var(--brand)", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: 6 }}>
+        <a
+          href={DATA.contact.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            fontSize: 14,
+            color: "var(--brand)",
+            fontWeight: 600,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+          }}
+        >
           Or, just WhatsApp us instantly <ArrowIcon size={14} />
         </a>
       </div>

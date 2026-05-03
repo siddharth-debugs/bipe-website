@@ -13,3 +13,6 @@ next-env.d.ts
 
 # Local-only audits and strategic docs — do NOT publish to a public repo
 docs/
+
+# Claude Code local settings
+.claude/

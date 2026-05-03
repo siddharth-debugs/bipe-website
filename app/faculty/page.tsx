@@ -2,438 +2,1072 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { metaFor } from "@/lib/routes";
-import { DATA } from "@/lib/data";
-import { BIPE_IMG } from "@/lib/images";
-import { Img } from "@/components/ui/Img";
+import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { Counter } from "@/components/ui/Counter";
-import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { Avatar } from "@/components/ui/Avatar";
+import {
+  FACULTY,
+  OFFICE_STAFF,
+  FACULTY_BY_DEPT,
+  DEPT_LABELS,
+  type Faculty,
+  type Department,
+} from "@/lib/faculty";
+import { DATA } from "@/lib/data";
+import Image from "next/image";
 
 export const metadata: Metadata = metaFor("faculty");
 
-const DEPARTMENTS: { name: string; count: number; note: string }[] = [
-  { name: "Computer Science & Engineering", count: 6, note: "Headed by HOD — CS · 120-PC lab" },
-  { name: "Civil Engineering", count: 5, note: "Survey yard, soil and concrete labs" },
-  { name: "Electrical Engineering", count: 5, note: "Machines, PLC, renewables" },
-  { name: "Mechanical Engineering (Production)", count: 6, note: "Workshop, CNC, foundry" },
-  { name: "Dairy Engineering", count: 3, note: "Rare faculty cluster — pilot plant" },
-  { name: "Applied Sciences & Humanities", count: 5, note: "Maths, Physics, Chemistry, English" },
-  { name: "Workshop & Practical Training", count: 3, note: "Welding, foundry, machining" },
-];
-const TOTAL = DEPARTMENTS.reduce((a, d) => a + d.count, 0);
-
-const DEV: { eyebrow: string; title: string; body: string }[] = [
-  {
-    eyebrow: "AICTE FDP",
-    title: "Faculty Development Programmes",
-    body: "Faculty regularly attend AICTE-sponsored FDPs in pedagogy, outcome-based education and emerging technologies. Certificates and content flow back into BIPE classrooms each semester.",
-  },
-  {
-    eyebrow: "INDUSTRY",
-    title: "Industry training & visits",
-    body: "CII workshops, Engineers&rsquo; Day participation, manufacturing-floor exposure visits. Faculty teach what they have seen running, not only what is on the page.",
-  },
-  {
-    eyebrow: "RESEARCH",
-    title: "Research & publications",
-    body: "Conference proceedings, journal contributions, BTEUP committee work. Departmental research is folded into student project guidance and final-year submissions.",
-  },
+const DEPT_ORDER: Department[] = [
+  "Electrical",
+  "Civil",
+  "Mechanical",
+  "Computer Science",
+  "Dairy",
 ];
 
-const PHOTOS: { img: string; eyebrow: string; caption: string }[] = [
-  { img: BIPE_IMG.industryVisit, eyebrow: "CII INDUSTRY VISIT · 2019", caption: "Faculty cohort at the regional CII workshop." },
-  { img: BIPE_IMG.engineersDay, eyebrow: "ENGINEERS&rsquo; DAY · 2019", caption: "Engineers&rsquo; Day · annual technical observance." },
-  { img: BIPE_IMG.facultyMeet, eyebrow: "INDUSTRY-READY WORKSHOP · 2025", caption: "Industry-Ready Workshop, 2025 · pedagogy refresh." },
-];
+const PRINCIPAL = FACULTY.find((f) => f.designation === "Principal");
+const OFFICERS = FACULTY.filter((f) => f.isLeadership && f.designation !== "Principal");
+const HODS = FACULTY.filter((f) => f.isHOD);
 
+const TOTAL_FACULTY = FACULTY.length;
+const TOTAL_PUBLICATIONS = FACULTY.reduce((s, f) => s + (f.publications ?? 0), 0);
+
+// =====================================================================
+// Portrait card — photo on top (4:5), info below
+// =====================================================================
+function PortraitCard({
+  f,
+  dark = false,
+  aspect = "4 / 5",
+  size = 320,
+}: {
+  f: Faculty;
+  dark?: boolean;
+  aspect?: string;
+  size?: number;
+}) {
+  const muted = dark
+    ? "color-mix(in oklab, var(--paper) 70%, transparent)"
+    : "var(--ink-3)";
+  const body = dark
+    ? "color-mix(in oklab, var(--paper) 82%, transparent)"
+    : "var(--ink-2)";
+  const cardBg = dark
+    ? "color-mix(in oklab, var(--paper) 5%, transparent)"
+    : "var(--white)";
+  const cardBorder = dark
+    ? "1px solid color-mix(in oklab, var(--paper) 14%, transparent)"
+    : "1px solid var(--line)";
+
+  return (
+    <article
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        borderRadius: 20,
+        background: cardBg,
+        border: cardBorder,
+        display: "flex",
+        flexDirection: "column",
+        transition: "transform .35s var(--ease), border-color .25s, box-shadow .35s",
+      }}
+    >
+      {/* Photo / avatar area — top */}
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          aspectRatio: aspect,
+          background: dark
+            ? "color-mix(in oklab, var(--paper) 8%, transparent)"
+            : "var(--paper-2)",
+          overflow: "hidden",
+        }}
+      >
+        {f.photo ? (
+          <Image
+            src={f.photo}
+            alt={f.name}
+            fill
+            sizes={`(max-width: 768px) 100vw, ${size}px`}
+            style={{ objectFit: "cover", objectPosition: "center top" }}
+          />
+        ) : (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Avatar name={f.name} size={size * 0.55} shape="circle" />
+          </div>
+        )}
+
+        {/* Gradient bar at the bottom of the photo for legibility */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: 60,
+            background:
+              "linear-gradient(180deg, transparent 0%, color-mix(in oklab, var(--ink) 55%, transparent) 100%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Department / role chip — bottom-left of photo */}
+        {(f.isHOD || f.isLeadership) && (
+          <span
+            style={{
+              position: "absolute",
+              left: 14,
+              bottom: 12,
+              padding: "5px 10px",
+              borderRadius: 999,
+              fontFamily: "var(--font-mono)",
+              fontSize: 9.5,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              fontWeight: 600,
+              background: f.isLeadership ? "var(--accent)" : "var(--brand)",
+              color: f.isLeadership ? "var(--ink)" : "var(--paper)",
+            }}
+          >
+            {f.isLeadership ? "Leadership" : "HOD"}
+          </span>
+        )}
+
+        {/* Papers chip — bottom-right of photo */}
+        {f.publications && f.publications > 0 && (
+          <span
+            style={{
+              position: "absolute",
+              right: 14,
+              bottom: 12,
+              padding: "5px 10px",
+              borderRadius: 999,
+              fontFamily: "var(--font-mono)",
+              fontSize: 9.5,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              fontWeight: 600,
+              background: "color-mix(in oklab, var(--paper) 90%, transparent)",
+              color: "var(--brand-deep)",
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            {f.publications} paper{f.publications === 1 ? "" : "s"}
+          </span>
+        )}
+      </div>
+
+      {/* Info area — below photo */}
+      <div
+        style={{
+          padding: "20px 22px 22px",
+          display: "flex",
+          flexDirection: "column",
+          gap: 12,
+          flex: 1,
+        }}
+      >
+        <div>
+          <div
+            style={{
+              fontSize: 19,
+              fontWeight: 600,
+              color: dark ? "var(--paper)" : "var(--ink)",
+              letterSpacing: "-0.015em",
+              lineHeight: 1.18,
+            }}
+          >
+            {f.name}
+          </div>
+          <div
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 10,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: muted,
+              marginTop: 6,
+              lineHeight: 1.4,
+            }}
+          >
+            {f.designation}
+          </div>
+        </div>
+
+        {f.qualifications.length > 0 && (
+          <ul
+            style={{
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              gap: 5,
+            }}
+          >
+            {f.qualifications.slice(0, 2).map((q, i) => (
+              <li
+                key={i}
+                style={{
+                  fontSize: 12.5,
+                  lineHeight: 1.5,
+                  color: body,
+                  display: "grid",
+                  gridTemplateColumns: "auto 1fr",
+                  columnGap: 8,
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    width: 4,
+                    height: 4,
+                    borderRadius: 999,
+                    background: "var(--accent)",
+                    marginTop: 8,
+                  }}
+                />
+                <span>{q}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {f.highlight && (
+          <div
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+              fontSize: 13.5,
+              lineHeight: 1.4,
+              color: body,
+              borderLeft: `2px solid ${dark ? "var(--accent)" : "var(--brand)"}`,
+              paddingLeft: 12,
+            }}
+          >
+            {f.highlight}
+          </div>
+        )}
+
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: 12,
+            borderTop: dark
+              ? "1px dashed color-mix(in oklab, var(--paper) 16%, transparent)"
+              : "1px dashed var(--line-2)",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 8,
+            fontFamily: "var(--font-mono)",
+            fontSize: 10,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+          }}
+        >
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 6, color: muted }}>
+            <span
+              aria-hidden="true"
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: 999,
+                background: "var(--brand)",
+              }}
+            />
+            {f.experience || "—"}
+          </span>
+          <span style={{ color: muted }}>BIPE</span>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+// =====================================================================
+// Page
+// =====================================================================
 export default function Page() {
   return (
     <div className="page-enter">
-      {/* ====================================================================== */}
-      {/* 1. HERO                                                                 */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
-        <div aria-hidden="true" style={{
-          position: "absolute", inset: 0, opacity: 0.05,
-          backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
-          backgroundSize: "64px 64px", pointerEvents: "none",
-        }} />
-        <div aria-hidden="true" style={{
-          position: "absolute", left: -180, top: -120, width: 460, height: 460, borderRadius: "50%",
-          background: "color-mix(in oklab, var(--brand) 26%, transparent)",
-          filter: "blur(120px)", pointerEvents: "none",
-        }} />
-        <div aria-hidden="true" style={{
-          position: "absolute", right: -160, bottom: -160, width: 420, height: 420, borderRadius: "50%",
-          background: "color-mix(in oklab, var(--accent) 30%, transparent)",
-          filter: "blur(120px)", pointerEvents: "none",
-        }} />
+      {/* ============================================================ */}
+      {/* 1. EDITORIAL HERO                                            */}
+      {/* ============================================================ */}
+      <section
+        className="section"
+        style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 64 }}
+      >
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            opacity: 0.05,
+            backgroundImage:
+              "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: -180,
+            top: -120,
+            width: 460,
+            height: 460,
+            borderRadius: "50%",
+            background: "color-mix(in oklab, var(--brand) 26%, transparent)",
+            filter: "blur(120px)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            right: -160,
+            bottom: -160,
+            width: 420,
+            height: 420,
+            borderRadius: "50%",
+            background: "color-mix(in oklab, var(--accent) 28%, transparent)",
+            filter: "blur(140px)",
+            pointerEvents: "none",
+          }}
+        />
+
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "center" }}>
-            <div>
-              <div className="eyebrow">§ Faculty</div>
-              <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
-                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  Thirty-three
-                </span>{" "}
-                mentors. One ratio: 1:20.
-              </h1>
-              <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Every faculty member at BIPE personally mentors twenty students through the full diploma — with periodic home visits to parents in Mau, Ghazipur, Azamgarh and beyond. All thirty-three are BTEUP-recognised.
-              </p>
-              <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/visit" className="btn btn-primary btn-lg">Visit on a teaching day <ArrowIcon size={16} /></Link>
-                <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa"><WhatsAppIcon /> WhatsApp admissions</a>
+          <div className="eyebrow">§ Faculty · {DATA.contact.aicte}</div>
+          <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
+            The teachers,{" "}
+            <span
+              className="serif"
+              style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
+            >
+              in their own names.
+            </span>
+          </h1>
+          <p className="lead" style={{ marginTop: 22, maxWidth: "62ch" }}>
+            A diploma is the product of who teaches it. Below — every academic
+            faculty member at BIPE, with their qualifications, experience and
+            published work. No anonymous &ldquo;33 faculty&rdquo; counts; we name them.
+          </p>
+          <div
+            style={{
+              marginTop: 36,
+              paddingTop: 22,
+              borderTop: "1px solid var(--line)",
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: 28,
+            }}
+          >
+            {[
+              { num: TOTAL_FACULTY, lbl: "academic faculty", sub: "Named on this page" },
+              { num: 5, lbl: "departments", sub: "BTEUP-licensed" },
+              { num: TOTAL_PUBLICATIONS, lbl: "papers published", sub: "Journals + conferences" },
+              { num: HODS.length, lbl: "department heads", sub: "One per branch" },
+            ].map((s) => (
+              <div key={s.lbl}>
+                <div
+                  className="serif"
+                  style={{
+                    fontStyle: "italic",
+                    fontWeight: 400,
+                    fontSize: "clamp(40px, 4.4vw, 60px)",
+                    lineHeight: 0.9,
+                    color: "var(--brand)",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  <Counter to={String(s.num)} />
+                </div>
+                <div
+                  style={{
+                    marginTop: 10,
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    color: "var(--ink-2)",
+                    fontWeight: 600,
+                  }}
+                >
+                  {s.lbl}
+                </div>
+                <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 4 }}>{s.sub}</div>
               </div>
-              <div style={{ marginTop: 36, paddingTop: 20, borderTop: "1px solid var(--line)", display: "flex", gap: 28, flexWrap: "wrap", alignItems: "center" }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink-3)" }}>
-                  Across &rarr;
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 2. PRINCIPAL — featured split                                */}
+      {/* ============================================================ */}
+      {PRINCIPAL && (
+        <section className="section" style={{ background: "var(--paper-2)", paddingTop: 56, paddingBottom: 56 }}>
+          <div className="container">
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.05fr)",
+                gap: 48,
+                alignItems: "stretch",
+                background: "var(--white)",
+                border: "1px solid var(--line)",
+                borderRadius: 24,
+                overflow: "hidden",
+              }}
+            >
+              {/* Portrait */}
+              <div
+                style={{
+                  position: "relative",
+                  aspectRatio: "4 / 5",
+                  background: "var(--paper-2)",
+                  minHeight: 420,
+                }}
+              >
+                {PRINCIPAL.photo && (
+                  <Image
+                    src={PRINCIPAL.photo}
+                    alt={PRINCIPAL.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    style={{ objectFit: "cover", objectPosition: "center top" }}
+                    priority
+                  />
+                )}
+                <span
+                  style={{
+                    position: "absolute",
+                    left: 22,
+                    top: 22,
+                    padding: "6px 12px",
+                    borderRadius: 999,
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    fontWeight: 700,
+                    background: "var(--accent)",
+                    color: "var(--ink)",
+                  }}
+                >
+                  Principal
                 </span>
-                {["7 departments", "BTEUP-recognised", "AICTE FDP-trained"].map((t, i) => (
-                  <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 17, color: "var(--ink-2)" }}>
-                    {t}
-                    {i < 2 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}
+              </div>
+
+              {/* Editorial bio */}
+              <div
+                style={{
+                  padding: "44px 44px 44px 8px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  gap: 22,
+                }}
+              >
+                <div>
+                  <div className="eyebrow">§ Office of the Principal</div>
+                  <h2
+                    className="bipe-h2"
+                    style={{ marginTop: 12, maxWidth: "16ch", letterSpacing: "-0.02em" }}
+                  >
+                    {PRINCIPAL.name}
+                  </h2>
+                  <div
+                    style={{
+                      marginTop: 10,
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--ink-3)",
+                    }}
+                  >
+                    {PRINCIPAL.experience}
+                  </div>
+                </div>
+
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 10,
+                  }}
+                >
+                  {PRINCIPAL.qualifications.map((q, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        fontSize: 14.5,
+                        lineHeight: 1.55,
+                        color: "var(--ink-2)",
+                        display: "grid",
+                        gridTemplateColumns: "auto 1fr",
+                        gap: 12,
+                      }}
+                    >
+                      <span
+                        className="serif"
+                        style={{
+                          fontStyle: "italic",
+                          fontWeight: 400,
+                          fontSize: 22,
+                          lineHeight: 1,
+                          color: "var(--brand)",
+                          letterSpacing: "-0.02em",
+                        }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span>{q}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {PRINCIPAL.highlight && (
+                  <p
+                    className="serif"
+                    style={{
+                      fontStyle: "italic",
+                      fontSize: 18,
+                      lineHeight: 1.45,
+                      color: "var(--ink-2)",
+                      borderLeft: "3px solid var(--accent)",
+                      paddingLeft: 14,
+                    }}
+                  >
+                    {PRINCIPAL.highlight}
+                  </p>
+                )}
+
+                <div
+                  style={{
+                    paddingTop: 16,
+                    borderTop: "1px dashed var(--line-2)",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 8,
+                  }}
+                >
+                  {PRINCIPAL.publications && (
+                    <span
+                      style={{
+                        padding: "5px 12px",
+                        borderRadius: 999,
+                        background: "color-mix(in oklab, var(--accent) 18%, var(--paper))",
+                        color: "var(--accent-deep)",
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 10,
+                        letterSpacing: "0.16em",
+                        textTransform: "uppercase",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {PRINCIPAL.publications} papers published
+                    </span>
+                  )}
+                  {(PRINCIPAL.certifications ?? []).map((c) => (
+                    <span
+                      key={c}
+                      style={{
+                        padding: "5px 12px",
+                        borderRadius: 999,
+                        border: "1px solid var(--line)",
+                        background: "var(--paper-2)",
+                        color: "var(--ink-2)",
+                        fontSize: 11,
+                      }}
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+
+                <Link
+                  href="/principal"
+                  className="btn btn-ghost"
+                  style={{ alignSelf: "flex-start", marginTop: 8 }}
+                >
+                  Read principal&rsquo;s message <ArrowIcon size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ============================================================ */}
+      {/* 3. OFFICERS — Admin & Welfare                                */}
+      {/* ============================================================ */}
+      {OFFICERS.length > 0 && (
+        <section className="section" style={{ paddingTop: 32 }}>
+          <div className="container">
+            <div
+              style={{
+                display: "flex",
+                alignItems: "end",
+                justifyContent: "space-between",
+                gap: 20,
+                marginBottom: 28,
+                paddingBottom: 18,
+                borderBottom: "1px solid var(--line)",
+                flexWrap: "wrap",
+              }}
+            >
+              <div>
+                <div className="eyebrow">§ Student services</div>
+                <h2 className="bipe-h2" style={{ marginTop: 12, maxWidth: "20ch" }}>
+                  Two offices,{" "}
+                  <span
+                    className="serif"
+                    style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
+                  >
+                    one phone number.
                   </span>
+                </h2>
+              </div>
+              <p
+                style={{
+                  color: "var(--ink-3)",
+                  fontSize: 13,
+                  maxWidth: "42ch",
+                  lineHeight: 1.6,
+                  textAlign: "right",
+                }}
+              >
+                Admissions, training &amp; placements, and student welfare —
+                each with a name, a face, and a working phone number.
+              </p>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(320px, 460px))",
+                gap: 18,
+                justifyContent: "start",
+              }}
+            >
+              {OFFICERS.map((f) => (
+                <PortraitCard key={f.id} f={f} aspect="5 / 4" size={400} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ============================================================ */}
+      {/* 4. HEADS OF DEPARTMENT                                       */}
+      {/* ============================================================ */}
+      <section
+        className="section"
+        style={{
+          background: "var(--ink)",
+          color: "var(--paper)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            opacity: 0.06,
+            backgroundImage:
+              "linear-gradient(var(--paper) 1px, transparent 1px), linear-gradient(90deg, var(--paper) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            right: -200,
+            top: -120,
+            width: 480,
+            height: 480,
+            borderRadius: "50%",
+            background: "color-mix(in oklab, var(--brand) 60%, transparent)",
+            filter: "blur(140px)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="container" style={{ position: "relative" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "end",
+              justifyContent: "space-between",
+              gap: 20,
+              marginBottom: 32,
+              paddingBottom: 22,
+              borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
+              flexWrap: "wrap",
+            }}
+          >
+            <div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>
+                § Heads of department
+              </div>
+              <h2
+                className="bipe-h2"
+                style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}
+              >
+                Four HODs.{" "}
+                <span
+                  className="serif"
+                  style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}
+                >
+                  One per branch.
+                </span>
+              </h2>
+            </div>
+            <p
+              style={{
+                color: "color-mix(in oklab, var(--paper) 70%, transparent)",
+                fontSize: 13,
+                maxWidth: "42ch",
+                lineHeight: 1.6,
+                textAlign: "right",
+              }}
+            >
+              Curriculum, mentorship, and recruiter relationships sit with these four. Their door is open Mon&ndash;Sat.
+            </p>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 340px))",
+              gap: 16,
+              justifyContent: "start",
+            }}
+          >
+            {HODS.map((f) => (
+              <PortraitCard key={f.id} f={f} dark size={300} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 5. DEPARTMENT-WISE FACULTY                                   */}
+      {/* ============================================================ */}
+      {DEPT_ORDER.map((dept, i) => {
+        const list = (FACULTY_BY_DEPT[dept] || []).filter((f) => !f.isHOD);
+        if (list.length === 0) return null;
+        const isOdd = i % 2 === 1;
+        return (
+          <section
+            key={dept}
+            className="section"
+            style={{
+              background: isOdd ? "var(--paper-2)" : "var(--paper)",
+            }}
+          >
+            <div className="container">
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "end",
+                  justifyContent: "space-between",
+                  gap: 20,
+                  marginBottom: 32,
+                  paddingBottom: 18,
+                  borderBottom: "1px solid var(--line)",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div>
+                  <div
+                    className="eyebrow"
+                    style={{ color: "var(--brand)", fontWeight: 700 }}
+                  >
+                    § Department / 0{i + 1}
+                  </div>
+                  <h2
+                    className="bipe-h2"
+                    style={{ marginTop: 12, maxWidth: "24ch" }}
+                  >
+                    {DEPT_LABELS[dept]}
+                  </h2>
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    color: "var(--ink-3)",
+                    paddingBottom: 8,
+                  }}
+                >
+                  {list.length} member{list.length === 1 ? "" : "s"} ·{" "}
+                  <Link
+                    href="/courses"
+                    style={{
+                      color: "var(--brand)",
+                      textDecoration: "none",
+                      borderBottom: "1px solid var(--brand)",
+                      paddingBottom: 1,
+                    }}
+                  >
+                    branch page →
+                  </Link>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(280px, 360px))",
+                  gap: 16,
+                  justifyContent: "start",
+                }}
+              >
+                {list.map((f) => (
+                  <PortraitCard key={f.id} f={f} size={320} />
                 ))}
               </div>
             </div>
+          </section>
+        );
+      })}
 
-            {/* Vertical stat stack */}
-            <div style={{ display: "grid", gap: 14 }}>
-              {[
-                { num: "33", suffix: "", lbl: "Faculty", sub: "All BTEUP-recognised" },
-                { num: "1", suffix: ":20", lbl: "Mentor : student", sub: "Across the diploma" },
-                { num: "2", suffix: "", lbl: "Home visits", sub: "Per semester · per cohort" },
-              ].map((s) => (
-                <div key={s.lbl} style={{
-                  position: "relative", overflow: "hidden",
-                  padding: "26px 28px",
-                  background: "var(--white)",
-                  border: "1px solid var(--line)",
-                  borderRadius: 18,
-                  display: "grid", gridTemplateColumns: "auto 1fr", gap: 22, alignItems: "center",
-                }}>
-                  <div aria-hidden="true" style={{
-                    position: "absolute", right: -40, top: -40, width: 140, height: 140, borderRadius: "50%",
-                    background: "color-mix(in oklab, var(--brand) 9%, transparent)",
-                  }} />
-                  <div style={{ position: "relative" }}>
-                    <span className="serif" style={{
-                      fontStyle: "italic", fontWeight: 400,
-                      fontSize: 64, lineHeight: 0.9, color: "var(--brand)",
-                    }}>
-                      <Counter to={s.num} />{s.suffix}
-                    </span>
-                  </div>
-                  <div style={{ position: "relative" }}>
-                    <div style={{ fontWeight: 600, fontSize: 15 }}>{s.lbl}</div>
-                    <div className="muted" style={{ fontSize: 12.5, marginTop: 4, fontFamily: "var(--font-mono)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{s.sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* ============================================================ */}
+      {/* 6. RESEARCH HIGHLIGHTS                                       */}
+      {/* ============================================================ */}
+      <section
+        className="section"
+        style={{
+          background: "var(--ink)",
+          color: "var(--paper)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "50%",
+            top: "-30%",
+            transform: "translateX(-50%)",
+            width: 700,
+            height: 700,
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, color-mix(in oklab, var(--accent) 35%, transparent), transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="container" style={{ position: "relative", textAlign: "center" }}>
+          <div className="eyebrow" style={{ color: "var(--accent)" }}>
+            § Faculty research
           </div>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
-      {/* 2. DEPARTMENT BREAKDOWN                                                 */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
-        <div aria-hidden="true" style={{
-          position: "absolute", left: -120, top: -120, width: 320, height: 320, borderRadius: "50%",
-          background: "color-mix(in oklab, var(--brand) 18%, transparent)",
-          filter: "blur(120px)", pointerEvents: "none",
-        }} />
-        <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
-            <div>
-              <div className="eyebrow">§ Seven departments</div>
-              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                Where the{" "}
-                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  thirty-three
-                </span>{" "}
-                sit.
-              </h2>
-            </div>
-            <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Department headcounts as of the 2026 Mandatory Disclosure. Individual faculty roster lives in Annexure-18 of that PDF.
-            </p>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
-            {DEPARTMENTS.map((d) => (
-              <article key={d.name} className="card" style={{ padding: 24, position: "relative", overflow: "hidden" }}>
-                <div aria-hidden="true" style={{
-                  position: "absolute", right: -40, top: -40, width: 140, height: 140, borderRadius: "50%",
-                  background: "color-mix(in oklab, var(--brand) 8%, transparent)",
-                }} />
-                <div style={{ position: "relative" }}>
-                  <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 56, lineHeight: 0.9, color: "var(--brand)" }}>
-                    {String(d.count).padStart(2, "0")}
-                  </div>
-                  <div className="eyebrow" style={{ marginTop: 12, color: "var(--brand)" }}>Faculty</div>
-                  <h3 className="bipe-h3" style={{ marginTop: 6, fontSize: 17 }}>{d.name}</h3>
-                  <p style={{ marginTop: 10, color: "var(--ink-2)", fontSize: 13, lineHeight: 1.6 }}>{d.note}</p>
-                </div>
-              </article>
-            ))}
-            {/* Total card */}
-            <article style={{ padding: 24, borderRadius: 18, background: "var(--ink)", color: "var(--paper)", position: "relative", overflow: "hidden" }}>
-              <div aria-hidden="true" style={{
-                position: "absolute", right: -50, top: -50, width: 180, height: 180, borderRadius: "50%",
-                background: "color-mix(in oklab, var(--accent) 36%, transparent)",
-                filter: "blur(50px)",
-              }} />
-              <div style={{ position: "relative" }}>
-                <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 72, lineHeight: 0.9, color: "var(--accent)" }}>
-                  <Counter to={String(TOTAL)} />
-                </div>
-                <div className="eyebrow" style={{ marginTop: 12, color: "var(--accent)" }}>Total</div>
-                <h3 className="bipe-h3" style={{ marginTop: 6, fontSize: 17, color: "var(--paper)" }}>BIPE faculty</h3>
-                <p style={{ marginTop: 10, color: "color-mix(in oklab, var(--paper) 70%, transparent)", fontSize: 13, lineHeight: 1.6 }}>
-                  Across seven departments — see Annexure-18 for names, qualifications and years of experience.
-                </p>
-              </div>
-            </article>
-          </div>
-
-          {/* TODO: Individual faculty roster — names, qualifications, years of experience — lives in the AICTE Mandatory Disclosure (Annexure-18). Pull once the disclosure PDF is digitised into structured rows. */}
-          <p className="muted" style={{ marginTop: 22, fontSize: 13, maxWidth: "70ch" }}>
-            The individual faculty roster — names, qualifications and years of experience — is published in Annexure-18 of the AICTE Mandatory Disclosure.
-            {" "}
-            <Link href="/approvals" style={{ color: "var(--brand)", fontWeight: 600 }}>See Approvals &amp; downloads &rarr;</Link>
+          <p
+            className="serif"
+            style={{
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(28px, 3.6vw, 48px)",
+              lineHeight: 1.2,
+              maxWidth: "26ch",
+              margin: "18px auto 0",
+              color: "var(--paper)",
+              letterSpacing: "-0.015em",
+            }}
+          >
+            <Counter to={String(TOTAL_PUBLICATIONS)} /> peer-reviewed papers across power systems, photovoltaics, mechanical CAD,{" "}
+            <span style={{ color: "var(--accent)" }}>energy management</span> and welding optimisation.
           </p>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
-      {/* 3. WHAT 1:20 MEANS — DARK EDITORIAL                                     */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--ink)", color: "var(--paper)", position: "relative", overflow: "hidden" }}>
-        <div aria-hidden="true" style={{
-          position: "absolute", inset: 0, opacity: 0.06,
-          backgroundImage: "linear-gradient(var(--paper) 1px, transparent 1px), linear-gradient(90deg, var(--paper) 1px, transparent 1px)",
-          backgroundSize: "72px 72px", pointerEvents: "none",
-        }} />
-        <div aria-hidden="true" style={{
-          position: "absolute", right: -180, top: -120, width: 460, height: 460, borderRadius: "50%",
-          background: "color-mix(in oklab, var(--brand) 50%, transparent)",
-          filter: "blur(140px)", pointerEvents: "none",
-        }} />
-        <div aria-hidden="true" style={{
-          position: "absolute", left: -120, bottom: -160, width: 380, height: 380, borderRadius: "50%",
-          background: "color-mix(in oklab, var(--accent) 38%, transparent)",
-          filter: "blur(120px)", pointerEvents: "none",
-        }} />
-
-        <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr 1fr", gap: 56, alignItems: "center" }}>
-            {/* Rotated label */}
-            <div style={{
-              writingMode: "vertical-rl", transform: "rotate(180deg)",
-              fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase",
-              color: "color-mix(in oklab, var(--paper) 55%, transparent)",
-            }}>
-              Mentorship · BIPE
-            </div>
-
-            {/* Center — huge ratio */}
-            <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>§ The 1:20 promise</div>
-              <div className="serif" style={{
-                marginTop: 14, fontStyle: "italic", fontWeight: 400,
-                fontSize: "clamp(120px, 13vw, 200px)", lineHeight: 0.85,
-                color: "var(--paper)", letterSpacing: "-0.04em",
-              }}>
-                1<span style={{ color: "var(--accent)" }}>:</span>20
-              </div>
-              <div style={{ marginTop: 14, fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                Mentor : student
-              </div>
-              <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 80%, transparent)", maxWidth: "44ch" }}>
-                Each mentor sits with the same twenty students for the full diploma — coursework support, project guidance, parent meetings off-campus, and a phone that does not stop ringing in the week before exams.
-              </p>
-            </div>
-
-            {/* Right column — three small stats */}
-            <div style={{ display: "grid", gap: 14 }}>
-              {[
-                { n: "2", lbl: "Home visits / sem", sub: "Off-campus, with parents" },
-                { n: "60", lbl: "Cohort average", sub: "3 mentors per branch" },
-                { n: "45+", lbl: "Years combined exp.", sub: "HOD-level seniority" },
-              ].map((s) => (
-                <div key={s.lbl} style={{
-                  padding: "18px 20px",
-                  background: "color-mix(in oklab, var(--paper) 6%, transparent)",
-                  border: "1px solid color-mix(in oklab, var(--paper) 16%, transparent)",
-                  borderRadius: 14,
-                }}>
-                  <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 40, lineHeight: 0.9, color: "var(--accent)" }}>{s.n}</div>
-                  <div style={{ marginTop: 10, fontWeight: 600, fontSize: 14, color: "var(--paper)" }}>{s.lbl}</div>
-                  <div style={{ marginTop: 4, fontSize: 12, color: "color-mix(in oklab, var(--paper) 64%, transparent)", fontFamily: "var(--font-mono)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{s.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
-      {/* 4. FACULTY DEVELOPMENT                                                  */}
-      {/* ====================================================================== */}
-      <section className="section">
-        <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
-            <div>
-              <div className="eyebrow">§ Faculty development</div>
-              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
-                The classroom{" "}
-                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  refreshes itself.
-                </span>
-              </h2>
-            </div>
-            <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Three streams keep the faculty current — pedagogy, industry, research. Each shows up in the next semester&rsquo;s lesson plans.
-            </p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
-            {DEV.map((d) => (
-              <article key={d.title} className="card" style={{ padding: 28, position: "relative", overflow: "hidden" }}>
-                <div aria-hidden="true" style={{
-                  position: "absolute", right: -40, top: -40, width: 140, height: 140, borderRadius: "50%",
-                  background: "color-mix(in oklab, var(--brand) 8%, transparent)",
-                }} />
-                <div style={{ position: "relative" }}>
-                  <div className="eyebrow" style={{ color: "var(--brand)" }}>{d.eyebrow}</div>
-                  <h3 className="bipe-h3" style={{ marginTop: 8, fontSize: 21 }}>{d.title}</h3>
-                  <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.65 }} dangerouslySetInnerHTML={{ __html: d.body }} />
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
-      {/* 5. PHOTOS IN LIEU OF ROSTER                                             */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--paper-2)" }}>
-        <div className="container">
-          <div className="eyebrow">§ In the field</div>
-          <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch", marginBottom: 36 }}>
-            Faculty,{" "}
-            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-              outside the classroom.
-            </span>
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
-            {PHOTOS.map((p) => (
-              <figure key={p.eyebrow} style={{ margin: 0 }}>
-                <Img src={p.img} label={p.eyebrow.replace("&rsquo;", "'")} style={{ height: 280, borderRadius: 16 }} />
-                <figcaption style={{ marginTop: 12, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--ink-3)", textTransform: "uppercase" }} dangerouslySetInnerHTML={{ __html: p.caption }} />
-              </figure>
-            ))}
-          </div>
-          <div style={{
-            marginTop: 28, padding: "20px 24px",
-            background: "var(--white)", border: "1px solid var(--line)", borderRadius: 14,
-            display: "flex", flexWrap: "wrap", gap: 18, alignItems: "center", justifyContent: "space-between",
-          }}>
-            <div style={{ fontSize: 14, color: "var(--ink-2)", maxWidth: "60ch" }}>
-              The full faculty roster — names, qualifications and years of experience — is published in Annexure-18 of the AICTE Mandatory Disclosure.
-            </div>
-            <Link href="/approvals" className="btn btn-ghost btn-sm">
-              See Approvals & downloads <ArrowIcon size={14} />
+          <p
+            style={{
+              marginTop: 20,
+              fontSize: 14,
+              color: "color-mix(in oklab, var(--paper) 70%, transparent)",
+              maxWidth: "60ch",
+              marginLeft: "auto",
+              marginRight: "auto",
+              lineHeight: 1.6,
+            }}
+          >
+            Diploma teaching at BIPE is anchored by faculty who actively publish &mdash; from journal papers on virtual synchronous machines and EV-grid integration to conference work on dye-sensitised solar cells and ZnO nanostructures.
+          </p>
+          <div style={{ marginTop: 28, display: "inline-flex", gap: 10, flexWrap: "wrap" }}>
+            <Link
+              href="/teaching"
+              className="btn"
+              style={{ background: "var(--paper)", color: "var(--ink)" }}
+            >
+              Outcome-based teaching <ArrowIcon size={14} />
+            </Link>
+            <Link
+              href="/approvals"
+              className="btn btn-ghost"
+              style={{
+                color: "var(--paper)",
+                borderColor: "color-mix(in oklab, var(--paper) 28%, transparent)",
+              }}
+            >
+              Annexure-18 disclosure
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ====================================================================== */}
-      {/* 6. CTA                                                                  */}
-      {/* ====================================================================== */}
-      <section className="section">
+      {/* ============================================================ */}
+      {/* 7. OFFICE STAFF — minimal compact list                       */}
+      {/* ============================================================ */}
+      <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container">
-          <div style={{
-            position: "relative", overflow: "hidden",
-            borderRadius: 28, border: "1px solid var(--line)",
-            background: "var(--white)",
-            padding: "56px 56px",
-          }}>
-            <div aria-hidden="true" style={{
-              position: "absolute", left: -160, top: -120, width: 360, height: 360, borderRadius: "50%",
-              background: "color-mix(in oklab, var(--brand) 22%, transparent)",
-              filter: "blur(110px)", pointerEvents: "none",
-            }} />
-            <div aria-hidden="true" style={{
-              position: "absolute", right: -120, bottom: -120, width: 320, height: 320, borderRadius: "50%",
-              background: "color-mix(in oklab, var(--accent) 32%, transparent)",
-              filter: "blur(110px)", pointerEvents: "none",
-            }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
-              <div>
-                <div className="eyebrow">§ Meet a mentor</div>
-                <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                  Visit on a{" "}
-                  <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                    teaching day.
-                  </span>
-                </h2>
-                <p className="lead" style={{ marginTop: 18, maxWidth: "44ch" }}>
-                  We will pair you with a mentor from the branch you are considering. Sit in on a class. Ask the questions a brochure cannot answer.
-                </p>
-                <div style={{ marginTop: 22, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
-                  <a href={`tel:${DATA.contact.phone}`} className="btn btn-ghost btn-sm">
-                    <PhoneIcon /> {DATA.contact.phone}
-                  </a>
-                  <a href={`tel:${DATA.contact.phone2}`} className="btn btn-ghost btn-sm">
-                    <PhoneIcon /> {DATA.contact.phone2}
-                  </a>
+          <div
+            style={{
+              marginBottom: 28,
+              paddingBottom: 18,
+              borderBottom: "1px solid var(--line)",
+            }}
+          >
+            <div className="eyebrow">§ Office staff</div>
+            <h2 className="bipe-h3" style={{ marginTop: 12, maxWidth: "30ch" }}>
+              Records, fees, library, day-to-day operations.
+            </h2>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 320px))",
+              gap: 12,
+              justifyContent: "start",
+            }}
+          >
+            {OFFICE_STAFF.map((f) => (
+              <div
+                key={f.id}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 14,
+                  padding: 18,
+                  borderRadius: 14,
+                  background: "var(--white)",
+                  border: "1px solid var(--line)",
+                  transition: "border-color .25s, transform .25s var(--ease)",
+                }}
+              >
+                <Avatar name={f.name} photo={f.photo} size={48} />
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--ink)" }}>
+                    {f.name}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "var(--ink-3)",
+                      marginTop: 3,
+                    }}
+                  >
+                    {f.designation}
+                  </div>
                 </div>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <Link href="/visit" style={{
-                  display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
-                  padding: "20px 22px", borderRadius: 14,
-                  background: "var(--brand)", color: "#fff", textDecoration: "none",
-                }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>01</span>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Visit on a teaching day</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Mon–Sat · paired with a mentor</div>
-                  </div>
-                  <ArrowIcon size={16} />
-                </Link>
-                <Link href="/courses" style={{
-                  display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
-                  padding: "20px 22px", borderRadius: 14,
-                  background: "var(--ink)", color: "var(--paper)", textDecoration: "none",
-                }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>02</span>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Explore departments</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 60%, transparent)", marginTop: 2 }}>5 BTEUP-licensed branches</div>
-                  </div>
-                  <ArrowIcon size={16} />
-                </Link>
-                <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" style={{
-                  display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
-                  padding: "20px 22px", borderRadius: 14,
-                  background: "var(--paper-2)", color: "var(--ink)", textDecoration: "none",
-                  border: "1px solid var(--line)",
-                }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>03</span>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Ask about a department</div>
-                    <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>WhatsApp · same-day reply</div>
-                  </div>
-                  <span style={{ width: 28, height: 28, borderRadius: 999, background: "#25D366", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <WhatsAppIcon />
-                  </span>
-                </a>
-              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* 8. CTA                                                       */}
+      {/* ============================================================ */}
+      <section className="section" style={{ paddingTop: 48 }}>
+        <div className="container">
+          <div
+            style={{
+              padding: "44px 40px",
+              borderRadius: 24,
+              background: "var(--white)",
+              border: "1px solid var(--line)",
+              display: "grid",
+              gridTemplateColumns: "1.4fr 1fr",
+              gap: 36,
+              alignItems: "center",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                right: -80,
+                top: -80,
+                width: 280,
+                height: 280,
+                borderRadius: "50%",
+                background: "color-mix(in oklab, var(--brand) 12%, transparent)",
+                pointerEvents: "none",
+              }}
+            />
+            <div style={{ position: "relative" }}>
+              <div className="eyebrow">§ Talk to a teacher</div>
+              <h3 className="bipe-h3" style={{ marginTop: 12, maxWidth: "22ch" }}>
+                Pick a branch you&rsquo;re considering &mdash; we&rsquo;ll connect you with the lecturer who runs that lab.
+              </h3>
+              <p
+                style={{
+                  color: "var(--ink-2)",
+                  fontSize: 14,
+                  marginTop: 12,
+                  maxWidth: "58ch",
+                  lineHeight: 1.6,
+                }}
+              >
+                Most parents reach out before counselling to talk to the actual faculty teaching the branch. We respond within 24 hours, in English or Hindi.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, position: "relative" }}>
+              <Link href="/visit" className="btn btn-primary">
+                Book a campus visit <ArrowIcon size={14} />
+              </Link>
+              <a
+                href={DATA.contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-wa"
+                style={{ justifyContent: "center" }}
+              >
+                <WhatsAppIcon /> WhatsApp admissions
+              </a>
+              <a
+                href={`tel:${DATA.contact.phone}`}
+                className="btn btn-ghost"
+                style={{ justifyContent: "center" }}
+              >
+                Call {DATA.contact.phone}
+              </a>
             </div>
           </div>
         </div>
