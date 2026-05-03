@@ -73,7 +73,7 @@ export default function Page() {
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
       <section
-        className="section"
+        className="section bipe-pad"
         style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}
       >
         <div
@@ -118,7 +118,7 @@ export default function Page() {
         />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Courses · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
@@ -142,6 +142,7 @@ export default function Page() {
                 </Link>
               </div>
               <div
+                className="bipe-stats"
                 style={{
                   marginTop: 36,
                   paddingTop: 22,
@@ -346,7 +347,7 @@ export default function Page() {
                 </div>
 
                 {/* Metadata strip — three stamped facts */}
-                <div style={{
+                <div className="bipe-grid-3" style={{
                   marginTop: 20,
                   paddingTop: 16,
                   borderTop: "1px dashed color-mix(in oklab, var(--paper) 22%, transparent)",
@@ -468,7 +469,7 @@ export default function Page() {
                 pointerEvents: "none",
               }}
             />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
                 <div className="row" style={{ gap: 8, marginBottom: 14 }}>
                   <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>
@@ -605,6 +606,7 @@ export default function Page() {
           </div>
 
           <div
+            className="bipe-grid-4"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(4, 1fr)",
@@ -714,7 +716,7 @@ export default function Page() {
         />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 56, alignItems: "start" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 56, alignItems: "start" }}>
             <div style={{ position: "sticky", top: 100 }}>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>
                 § What alumni do
@@ -899,7 +901,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
+          <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
             {PATHWAY_TIPS.map((t) => (
               <article
                 key={t.num}
@@ -1109,6 +1111,7 @@ export default function Page() {
             </div>
 
             <div
+              className="bipe-split"
               style={{
                 position: "relative",
                 display: "grid",

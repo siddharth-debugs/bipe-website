@@ -13,7 +13,7 @@ export const JeecupSteps = () => (
         </div>
         <Link href="/jeecup" className="btn btn-ghost">Full guide <ArrowIcon /></Link>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 18, overflow: "hidden", background: "var(--white)" }}>
+      <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 18, overflow: "hidden", background: "var(--white)" }}>
         {DATA.jeecupSteps.map((s, i) => (
           <div key={i} className="reveal"
             style={{ padding: 28, borderRight: (i + 1) % 3 ? "1px solid var(--line)" : "none", borderBottom: i < 3 ? "1px solid var(--line)" : "none", transitionDelay: `${i * 50}ms` }}>

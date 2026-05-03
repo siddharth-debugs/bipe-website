@@ -39,7 +39,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO (server)                                                        */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 56 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 56 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -56,7 +56,7 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Apply · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
@@ -130,7 +130,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
             {AFTER.map((a) => (
               <article key={a.n} className="card" style={{ padding: 28, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -191,7 +191,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
             {DISCUSS.map((d) => (
               <article key={d.n} style={{
                 padding: 32,
@@ -234,7 +234,7 @@ export default function Page() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
             <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="card" style={{
               padding: 28, display: "block", textDecoration: "none", color: "var(--ink)",
             }}>

@@ -81,7 +81,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -99,7 +99,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Campus · Phoolpur</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
@@ -131,7 +131,7 @@ export default function Page() {
             </div>
 
             {/* Image collage */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+            <div className="bipe-img-strip" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               <Img src={BIPE_IMG.workshop} label="MECH · WORKSHOP" style={{ height: 220, borderRadius: 18 }} />
               <Img src={BIPE_IMG.dairy} label="DAIRY · PILOT PLANT" style={{ height: 220, borderRadius: 18, marginTop: 28 }} />
               <Img src={BIPE_IMG.library} label="LIBRARY" style={{ height: 220, borderRadius: 18, marginTop: -28 }} />
@@ -146,7 +146,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", background: "var(--white)" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 0 }}>
+          <div className="bipe-stats" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 0 }}>
             {STATS.map((s, i) => (
               <div key={s.label} style={{
                 padding: "32px 22px",
@@ -168,7 +168,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 56, alignItems: "center" }}>
             <div style={{ position: "relative" }}>
               <Img src={BIPE_IMG.library} label="LIBRARY · STUDY HALL" style={{ height: 480, borderRadius: 22 }} />
               <div style={{
@@ -232,7 +232,7 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Computer centre · ERP</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch", color: "var(--paper)" }}>
@@ -245,7 +245,7 @@ export default function Page() {
               <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 80%, transparent)", maxWidth: "54ch" }}>
                 A networked computer centre with 120+ machines on licensed operating systems. 50 Mbps firewalled internet across the campus, an in-house ERP for attendance and library, and 100% Wi-Fi coverage from the workshop floor to the hostel mess.
               </p>
-              <div style={{ marginTop: 32, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+              <div className="bipe-stats" style={{ marginTop: 32, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
                 {[
                   ["120+", "PCs networked"],
                   ["50 Mbps", "Internet · firewalled"],
@@ -295,7 +295,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 22 }}>
+          <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 22 }}>
             {LABS.map((lab, idx) => (
               <article key={lab.title} className="card" style={{
                 padding: 0, overflow: "hidden",
@@ -336,7 +336,7 @@ export default function Page() {
           filter: "blur(140px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Recreation</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch", color: "var(--paper)" }}>
@@ -404,7 +404,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
+          <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
             {SUSTAIN.map((s) => (
               <article key={s.title} className="card" style={{ padding: 0, overflow: "hidden" }}>
                 <Img src={s.img} label={s.eyebrow} style={{ height: 160, borderRadius: 0 }} />
@@ -456,7 +456,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--accent) 32%, transparent)",
               filter: "blur(110px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
               <div>
                 <div className="eyebrow">§ Visit</div>
                 <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>

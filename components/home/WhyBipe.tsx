@@ -13,7 +13,7 @@ export const WhyBipe = () => {
   return (
     <section className="section" style={{ position: "relative" }}>
       <div className="container">
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 56, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
+        <div className="reveal bipe-split" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 56, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
           <div>
             <div className="eyebrow">§ Why BIPE</div>
             <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "14ch" }}>
@@ -25,11 +25,11 @@ export const WhyBipe = () => {
           </p>
         </div>
 
-        <div className="reveal" style={{ position: "relative", background: "var(--ink)", color: "var(--paper)", borderRadius: 24, padding: "56px 56px 48px", overflow: "hidden", marginBottom: 24 }}>
+        <div className="reveal bipe-pad-box" style={{ position: "relative", background: "var(--ink)", color: "var(--paper)", borderRadius: 24, padding: "56px 56px 48px", overflow: "hidden", marginBottom: 24 }}>
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, opacity: 0.06, backgroundImage: "linear-gradient(var(--paper) 1px, transparent 1px), linear-gradient(90deg, var(--paper) 1px, transparent 1px)", backgroundSize: "56px 56px", pointerEvents: "none" }} />
           <div aria-hidden="true" style={{ position: "absolute", right: -120, top: -120, width: 380, height: 380, borderRadius: "50%", background: "radial-gradient(circle, color-mix(in oklab, var(--brand) 60%, transparent), transparent 70%)", pointerEvents: "none" }} />
 
-          <div style={{ position: "relative", display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
+          <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", color: "var(--accent)", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
               SIGNATURE COMMITMENT — 01 / 04
             </div>
@@ -68,7 +68,7 @@ export const WhyBipe = () => {
           </div>
         </div>
 
-        <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 24, overflow: "hidden", background: "var(--white)" }}>
+        <div className="grid bipe-grid-3" style={{ gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 24, overflow: "hidden", background: "var(--white)" }}>
           {rest.map((w, i) => (
             <div key={i}
               className="reveal"

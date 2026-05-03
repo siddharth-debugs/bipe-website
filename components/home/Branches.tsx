@@ -46,7 +46,7 @@ export const Branches = () => {
           </Link>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 32, alignItems: "stretch" }}>
+        <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 32, alignItems: "stretch" }}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             {list.map((br, i) => {
               const on = i === active;
@@ -108,7 +108,7 @@ export const Branches = () => {
 
               <p style={{ color: "var(--ink-2)", fontSize: 15, marginTop: 18, lineHeight: 1.6, position: "relative" }}>{b.desc}</p>
 
-              <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 12, overflow: "hidden", position: "relative" }}>
+              <div className="bipe-grid-3" style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 12, overflow: "hidden", position: "relative" }}>
                 {([
                   ["Duration", "3 YR · 6 SEM"],
                   ["Seats", `${b.seats}`],

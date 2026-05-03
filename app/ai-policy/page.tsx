@@ -67,7 +67,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 64 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 64 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -171,7 +171,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18 }}>
             {[
               {
                 eyebrow: "DIAGNOSTIC",
@@ -279,7 +279,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--brand) 50%, transparent)",
               filter: "blur(140px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
                 <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Concerns or feedback</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}>

@@ -114,7 +114,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 76, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 76, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -132,7 +132,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Placements · Sixteen years</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
@@ -216,7 +216,7 @@ export default function Page() {
           filter: "blur(110px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
               <div className="eyebrow">§ Branch-wise · verified through 2024</div>
               <h2 className="bipe-h2" style={{ marginTop: 14 }}>
@@ -325,7 +325,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 36 }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 36 }}>
             <div>
               <div className="eyebrow" style={{ color: "color-mix(in oklab, var(--paper) 65%, transparent)" }}>
                 § 44 verified recruiters
@@ -452,7 +452,7 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
               <div className="eyebrow">§ Notable alumni</div>
               <h2 className="bipe-h2" style={{ marginTop: 14 }}>
@@ -467,7 +467,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
             {ALUMNI.map((a) => (
               <article key={a.name} className="card" style={{ padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>
                 <div>
@@ -532,7 +532,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
               <div className="eyebrow" style={{ color: "color-mix(in oklab, var(--paper) 65%, transparent)" }}>
                 § Pre-placement programmes
@@ -572,7 +572,7 @@ export default function Page() {
               filter: "blur(120px)", pointerEvents: "none",
             }} />
 
-            <div style={{
+            <div className="bipe-split" style={{
               display: "grid",
               gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr)",
               gap: 48,
@@ -736,7 +736,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
               <div className="eyebrow">§ Voices</div>
               <h2 className="bipe-h2" style={{ marginTop: 14 }}>
@@ -751,7 +751,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
             {PLACEMENT_VOICES.map((t) => (
               <figure
                 key={t.name}
@@ -795,7 +795,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 64, alignItems: "start" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 64, alignItems: "start" }}>
             <div style={{ position: "sticky", top: 100 }}>
               <div className="eyebrow">§ The placement cell</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
@@ -841,7 +841,7 @@ export default function Page() {
 
             <div>
               {/* 2×2 grid of the four cell jobs */}
-              <div style={{
+              <div className="bipe-form-row" style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
                 gap: 14,
@@ -916,7 +916,7 @@ export default function Page() {
               </div>
 
               {/* Two images below, integrated as one cohesive strip */}
-              <div style={{
+              <div className="bipe-img-strip" style={{
                 marginTop: 18,
                 display: "grid",
                 gridTemplateColumns: "1.3fr 1fr",
@@ -997,7 +997,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 0, minHeight: 420 }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 0, minHeight: 420 }}>
               <div style={{ padding: "64px 56px 48px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>
                   <div style={{

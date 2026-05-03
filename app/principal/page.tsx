@@ -46,7 +46,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO PORTRAIT                                                        */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 64, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 64, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -58,7 +58,7 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 64, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 64, alignItems: "center" }}>
             <div style={{ position: "relative" }}>
               <div style={{
                 position: "absolute", inset: -10, borderRadius: 24,
@@ -105,7 +105,7 @@ export default function Page() {
                 <Link href="/teaching" className="btn btn-ghost">How we teach</Link>
               </div>
 
-              <div style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+              <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "16", l: "yrs at BIPE" },
                   { num: "1,000+", l: "placed" },
@@ -240,7 +240,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {PROMISES.map((p) => (
               <article key={p.roman} className="card" style={{ padding: 32 }}>
                 <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 24, alignItems: "start" }}>
@@ -329,7 +329,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--accent) 36%, transparent)",
               filter: "blur(120px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
                 <div className="eyebrow" style={{ color: "var(--accent)" }}>§ MEET THE PRINCIPAL</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)" }}>

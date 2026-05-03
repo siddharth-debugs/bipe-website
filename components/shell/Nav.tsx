@@ -118,6 +118,14 @@ export function Nav() {
   const route = routeForPath(pathname);
   const { lang, setLang } = useLang();
   const C = DATA.contact;
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  React.useEffect(() => { setDrawerOpen(false); }, [pathname]);
+  React.useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [drawerOpen]);
 
   return (
     <nav className="nav">
@@ -252,8 +260,91 @@ export function Nav() {
             <span style={{ display: "none" }} className="show-md">Apply</span>
             <ArrowIcon size={14} />
           </Link>
+          <button
+            type="button"
+            className="nav-hamburger"
+            aria-label={drawerOpen ? "Close menu" : "Open menu"}
+            aria-expanded={drawerOpen}
+            onClick={() => setDrawerOpen((v) => !v)}
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
         </div>
       </div>
+
+      {/* Mobile drawer */}
+      <div
+        className={"nav-drawer-backdrop" + (drawerOpen ? " is-open" : "")}
+        onClick={() => setDrawerOpen(false)}
+        aria-hidden="true"
+      />
+      <aside
+        className={"nav-drawer" + (drawerOpen ? " is-open" : "")}
+        aria-hidden={!drawerOpen}
+        role="dialog"
+      >
+        <div className="nav-drawer-header">
+          <BrandMark />
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(false)}
+            aria-label="Close menu"
+            className="nav-drawer-close"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+        <nav className="nav-drawer-list">
+          {[
+            { to: "/", label: lang === "hi" ? "होम" : "Home" },
+            { to: "/about", label: lang === "hi" ? "हमारे बारे में" : "About" },
+            { to: "/principal", label: lang === "hi" ? "प्रिंसिपल" : "Principal" },
+            { to: "/courses", label: lang === "hi" ? "पाठ्यक्रम" : "Courses" },
+            { to: "/admission", label: lang === "hi" ? "प्रवेश" : "Admission" },
+            { to: "/apply", label: lang === "hi" ? "आवेदन करें" : "Apply" },
+            { to: "/jeecup", label: "JEECUP guidance" },
+            { to: "/fees", label: lang === "hi" ? "शुल्क" : "Fees" },
+            { to: "/scholarships", label: lang === "hi" ? "छात्रवृत्ति" : "Scholarships" },
+            { to: "/documents", label: lang === "hi" ? "दस्तावेज़" : "Documents" },
+            { to: "/faculty", label: lang === "hi" ? "संकाय" : "Faculty" },
+            { to: "/teaching", label: "Teaching" },
+            { to: "/campus", label: lang === "hi" ? "कैम्पस" : "Campus" },
+            { to: "/hostel", label: lang === "hi" ? "छात्रावास" : "Hostel" },
+            { to: "/placements", label: lang === "hi" ? "प्लेसमेंट" : "Placements" },
+            { to: "/events", label: lang === "hi" ? "इवेंट्स" : "Events" },
+            { to: "/visit", label: lang === "hi" ? "विज़िट" : "Visit" },
+            { to: "/contact", label: lang === "hi" ? "संपर्क" : "Contact" },
+            { to: "/approvals", label: "Approvals" },
+            { to: "/mandatory-disclosure", label: "Mandatory Disclosure" },
+            { to: "/grievance", label: "Grievance" },
+          ].map((item) => {
+            const id = item.to === "/" ? "home" : item.to.replace(/^\//, "");
+            const active = route === id;
+            return (
+              <Link
+                key={item.to}
+                href={item.to}
+                className={"nav-drawer-link" + (active ? " is-active" : "")}
+              >
+                {item.label}
+                <ArrowIcon size={13} />
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="nav-drawer-footer">
+          <a href={`tel:${C.phone}`} className="btn btn-ghost" style={{ justifyContent: "center" }}>
+            Call {C.phone}
+          </a>
+          <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ justifyContent: "center" }}>
+            <WhatsAppIcon /> WhatsApp
+          </a>
+        </div>
+      </aside>
     </nav>
   );
 }

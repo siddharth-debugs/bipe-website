@@ -51,7 +51,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO                                                                  */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -64,7 +64,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 64, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ TEACHING · LEARNING</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
@@ -81,7 +81,7 @@ export default function Page() {
                 <Link href="/visit" className="btn btn-ghost">Book a campus visit</Link>
               </div>
 
-              <div style={{
+              <div className="bipe-stats" style={{
                 marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)",
                 display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18,
               }}>
@@ -98,7 +98,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 14, height: 540 }}>
+            <div className="bipe-collage" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 14, height: 540 }}>
               <Img src={BIPE_IMG.weldingHands} label="Workshop · welding" style={{ gridRow: "1 / 3", borderRadius: 18, height: "100%" }} />
               <Img src={BIPE_IMG.computerLab} label="120-PC lab" style={{ borderRadius: 18, height: "100%" }} />
               <Img src={BIPE_IMG.surveying} label="Survey camp" style={{ borderRadius: 18, height: "100%" }} />
@@ -132,7 +132,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="bipe-grid-3" style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {/* Connecting line */}
             <div aria-hidden="true" style={{
               position: "absolute", left: "16.6%", right: "16.6%", top: 92,
@@ -194,7 +194,7 @@ export default function Page() {
               filter: "blur(140px)", pointerEvents: "none",
             }} />
 
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", color: "var(--accent)", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
                 SIGNATURE COMMITMENT · MENTORSHIP
               </div>
@@ -263,7 +263,7 @@ export default function Page() {
           </div>
 
           {/* Mosaic */}
-          <div style={{
+          <div className="bipe-collage" style={{
             display: "grid",
             gridTemplateColumns: "1.4fr 1fr 1fr",
             gridTemplateRows: "260px 240px",
@@ -340,7 +340,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{
+          <div className="bipe-grid-4" style={{
             display: "grid", gridTemplateColumns: "repeat(5, 1fr)",
             border: "1px solid var(--line)", borderRadius: 24, overflow: "hidden",
             background: "var(--white)",
@@ -392,7 +392,7 @@ export default function Page() {
             Industry exposure that makes a{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>resume</span>.
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {[
               {
                 eyebrow: "AICTE-MANDATED",
@@ -441,7 +441,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--brand) 50%, transparent)",
               filter: "blur(140px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
                 <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Ready when you are</div>
                 <h2 style={{ fontSize: "clamp(34px, 4vw, 56px)", lineHeight: 1.05, fontWeight: 600, letterSpacing: "-0.025em", marginTop: 14, color: "var(--paper)", maxWidth: "16ch" }}>

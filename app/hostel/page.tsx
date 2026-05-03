@@ -53,7 +53,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -71,7 +71,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Hostel · Mess</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "18ch" }}>
@@ -115,7 +115,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section">
         <div className="container" style={{ maxWidth: 1080 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
             <div>
               <div className="eyebrow">§ Annual fees</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "14ch" }}>
@@ -193,7 +193,7 @@ export default function Page() {
               Eight things you should not have to ask about. Listed here so the conversation moves on.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {AMENITIES.map((a) => (
               <div key={a.title} style={{
                 padding: "22px 22px",
@@ -225,7 +225,7 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 56, alignItems: "start" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 56, alignItems: "start" }}>
             <div>
               <div className="eyebrow">§ Safety · Discipline</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "14ch" }}>
@@ -327,7 +327,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--accent) 32%, transparent)",
               filter: "blur(110px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
               <div>
                 <div className="eyebrow">§ Hostel enquiries</div>
                 <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>

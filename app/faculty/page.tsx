@@ -306,7 +306,7 @@ export default function Page() {
       {/* 1. EDITORIAL HERO                                            */}
       {/* ============================================================ */}
       <section
-        className="section"
+        className="section bipe-pad"
         style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 64 }}
       >
         <div
@@ -367,6 +367,7 @@ export default function Page() {
             published work. No anonymous &ldquo;33 faculty&rdquo; counts; we name them.
           </p>
           <div
+            className="bipe-stats"
             style={{
               marginTop: 36,
               paddingTop: 22,
@@ -420,9 +421,10 @@ export default function Page() {
       {/* 2. PRINCIPAL — featured split                                */}
       {/* ============================================================ */}
       {PRINCIPAL && (
-        <section className="section" style={{ background: "var(--paper-2)", paddingTop: 56, paddingBottom: 56 }}>
+        <section className="section bipe-pad" style={{ background: "var(--paper-2)", paddingTop: 56, paddingBottom: 56 }}>
           <div className="container">
             <div
+              className="bipe-split"
               style={{
                 display: "grid",
                 gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.05fr)",
@@ -475,6 +477,7 @@ export default function Page() {
 
               {/* Editorial bio */}
               <div
+                className="bipe-pad-box"
                 style={{
                   padding: "44px 44px 44px 8px",
                   display: "flex",
@@ -757,15 +760,15 @@ export default function Page() {
             </p>
           </div>
           <div
+            className="bipe-hod-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 340px))",
+              gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
               gap: 16,
-              justifyContent: "start",
             }}
           >
             {HODS.map((f) => (
-              <PortraitCard key={f.id} f={f} dark size={300} />
+              <PortraitCard key={f.id} f={f} dark size={280} />
             ))}
           </div>
         </div>
@@ -1005,6 +1008,7 @@ export default function Page() {
       <section className="section" style={{ paddingTop: 48 }}>
         <div className="container">
           <div
+            className="bipe-split bipe-pad-box"
             style={{
               padding: "44px 40px",
               borderRadius: 24,

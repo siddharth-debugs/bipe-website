@@ -63,7 +63,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -75,7 +75,7 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Documents</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "18ch" }}>
@@ -93,7 +93,7 @@ export default function Page() {
                   <WhatsAppIcon /> Missing a doc? Ask
                 </a>
               </div>
-              <div style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+              <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "9", l: "Mandatory" },
                   { num: "10+", l: "Conditional" },
@@ -137,7 +137,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
             {MANDATORY.map((m) => (
               <article key={m.n} className="card" style={{ padding: 26, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -196,7 +196,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
             {CONDITIONAL.map((c) => (
               <article key={c.group} style={{
                 padding: 32,
@@ -240,7 +240,7 @@ export default function Page() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
             {TIPS.map((t) => (
               <article key={t.n} className="card" style={{ padding: 32, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -286,7 +286,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--accent) 32%, transparent)",
               filter: "blur(110px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
                 <div className="eyebrow">§ Missing a document?</div>
                 <p className="serif" style={{
@@ -319,7 +319,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+          <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
             <Img src={BIPE_IMG.documentStack} label="Verification desk · day one" style={{ height: 220, borderRadius: 18 }} />
             <Img src={BIPE_IMG.documentSeal} label="Seal & signature" style={{ height: 220, borderRadius: 18 }} />
           </div>

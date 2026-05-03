@@ -89,7 +89,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -107,7 +107,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Admission · Session 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "18ch" }}>
@@ -216,7 +216,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
             {STEPS.map((s) => (
               <article key={s.n} className="card" style={{ padding: 28, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -262,7 +262,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section">
         <div className="container" style={{ maxWidth: 980 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
             <div>
               <div className="eyebrow">§ Calendar · 2026-27</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "14ch" }}>
@@ -346,7 +346,7 @@ export default function Page() {
           </div>
 
           <div style={{ border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
-            <div style={{ padding: "44px 36px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36, alignItems: "center" }}>
+            <div className="bipe-split bipe-pad-box" style={{ padding: "44px 36px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 36, alignItems: "center" }}>
               <div>
                 <span className="pill" style={{ background: "var(--accent)", color: "var(--ink)" }}>JEECUP GROUP A</span>
                 <div className="serif" style={{ marginTop: 18, fontSize: 44, lineHeight: 1, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
@@ -418,7 +418,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
             {REASONS.map((r) => (
               <article key={r.roman} className="card" style={{ padding: 32, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -479,7 +479,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--accent) 32%, transparent)",
               filter: "blur(110px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
               <div>
                 <div className="eyebrow">§ Three pathways</div>
                 <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
@@ -545,7 +545,7 @@ export default function Page() {
           </div>
 
           {/* Image strip */}
-          <div style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14 }}>
+          <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14 }}>
             <Img src={BIPE_IMG.studentsForms} label="Application desk" style={{ height: 200, borderRadius: 18 }} />
             <Img src={BIPE_IMG.counsellingHall} label="Counselling round" style={{ height: 200, borderRadius: 18 }} />
             <Img src={BIPE_IMG.classroom} label="Day one · August" style={{ height: 200, borderRadius: 18 }} />

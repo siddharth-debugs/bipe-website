@@ -181,7 +181,7 @@ export function ApplyView() {
               filter: "blur(110px)", pointerEvents: "none",
             }} />
 
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "320px 1fr", gap: 0, borderRadius: 24, overflow: "hidden" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "320px 1fr", gap: 0, borderRadius: 24, overflow: "hidden" }}>
               {/* LEFT RAIL */}
               <aside style={{
                 background: "var(--ink)", color: "var(--paper)",
@@ -274,7 +274,7 @@ export function ApplyView() {
                   {/* ── Step 0 ── */}
                   {step === 0 && (
                     <div className="grid" style={{ gap: 18 }}>
-                      <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
+                      <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                         <div className={"field " + (fieldError("name") ? "field-error" : "")}>
                           <label htmlFor="name">Your full name</label>
                           <input
@@ -298,7 +298,7 @@ export function ApplyView() {
                           {fieldError("phone") && <span className="error-msg">{fieldError("phone")}</span>}
                         </div>
                       </div>
-                      <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
+                      <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                         <div className={"field " + (fieldError("email") ? "field-error" : "")}>
                           <label htmlFor="email">Email <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
                           <input
@@ -336,7 +336,7 @@ export function ApplyView() {
                         </select>
                         {fieldError("branch") && <span className="error-msg">{fieldError("branch")}</span>}
                       </div>
-                      <div className="grid" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
+                      <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
                         <div className="field">
                           <label htmlFor="category">Category</label>
                           <select id="category" {...register("category")}>
@@ -405,7 +405,7 @@ export function ApplyView() {
                         </div>
                       </div>
                       {visit === "yes" && (
-                        <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
+                        <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                           <div className={"field " + (fieldError("visitDate") ? "field-error" : "")}>
                             <label htmlFor="visitDate">Visit date</label>
                             <input
@@ -530,7 +530,7 @@ function ReviewBlock({
   ];
   return (
     <div>
-      <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+      <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr", gap: 12 }}>
         {rows.map(([k, val]) => (
           <div key={k} style={{ padding: 14, background: "var(--paper-2)", borderRadius: 10 }}>
             <div className="eyebrow" style={{ fontSize: 10 }}>{k}</div>

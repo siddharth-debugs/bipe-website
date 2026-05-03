@@ -75,7 +75,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -93,7 +93,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ Annual events · February</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
@@ -124,7 +124,7 @@ export default function Page() {
             </div>
 
             {/* 3-tile collage */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+            <div className="bipe-img-strip" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               <Img src={BIPE_IMG.culturalDance} label="UTKARSH" style={{ height: 280, borderRadius: 18, gridRow: "span 2" }} />
               <Img src={BIPE_IMG.projectFair} label="TECHNOFEST" style={{ height: 130, borderRadius: 18 }} />
               <Img src={BIPE_IMG.trackField} label="SPARDHA" style={{ height: 138, borderRadius: 18 }} />
@@ -269,7 +269,7 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Open all week</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch", color: "var(--paper)" }}>
@@ -281,7 +281,7 @@ export default function Page() {
               <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.75, color: "color-mix(in oklab, var(--paper) 80%, transparent)", maxWidth: "54ch" }}>
                 Parents, siblings, prospective students &mdash; everyone is welcome. Gates stay open through the week of February events. School visits are arranged on request; we&rsquo;ll pair your group with a senior student for a guided walk-through.
               </p>
-              <div style={{ marginTop: 28, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+              <div className="bipe-stats" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
                 {[
                   ["Free", "Entry · all events"],
                   ["EN/हिं", "Bilingual hosts"],
@@ -357,7 +357,7 @@ export default function Page() {
               Recent announcements from the campus &mdash; admissions windows, placement drives, faculty workshops, open houses for Class 10 students.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
             {upcoming.map((e) => (
               <article key={e.title} className="card" style={{ padding: 28, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{

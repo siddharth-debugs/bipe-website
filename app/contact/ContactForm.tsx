@@ -144,7 +144,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+      <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
         <div className={errClass("name")}>
           <label htmlFor="cf-name">
             Full name <span style={{ color: "var(--danger)" }}>*</span>
@@ -174,7 +174,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 14 }}>
+      <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 14 }}>
         <div className={errClass("email")}>
           <label htmlFor="cf-email">
             Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span>

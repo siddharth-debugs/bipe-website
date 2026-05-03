@@ -122,6 +122,7 @@ export function CoursesView() {
 
         {/* Two-column index + featured */}
         <div
+          className="bipe-split"
           style={{
             display: "grid",
             gridTemplateColumns: "1.05fr 1fr",
@@ -372,6 +373,7 @@ export function CoursesView() {
                 </p>
 
                 <div
+                  className="bipe-grid-3"
                   style={{
                     marginTop: 24,
                     display: "grid",

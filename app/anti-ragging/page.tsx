@@ -13,7 +13,7 @@ export const metadata: Metadata = metaFor("antiRagging");
 export default function Page() {
   return (
     <div className="page-enter">
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 56 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 56 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -45,7 +45,7 @@ export default function Page() {
           <div className="eyebrow">§ How to report</div>
           <h2 className="bipe-h2" style={{ marginTop: 14, marginBottom: 28 }}>If you see it. If you experience it.</h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             <article className="card" style={{ padding: 28 }}>
               <div className="eyebrow" style={{ color: "var(--brand)" }}>BIPE COMMITTEE</div>
               <h3 className="bipe-h3" style={{ marginTop: 10, fontSize: 22 }}>Anti-Ragging Committee</h3>

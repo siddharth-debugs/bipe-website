@@ -143,7 +143,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO + SEAL                                                          */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 72 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -156,7 +156,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 64, alignItems: "center" }}>
             <div>
               <div className="eyebrow">§ APPROVALS · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
@@ -276,7 +276,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {APPROVALS.map((a) => (
               <article key={a.key} className="card" style={{ padding: 32, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -365,7 +365,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{
+          <div className="bipe-grid-4" style={{
             display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
             border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
             borderRadius: 24, overflow: "hidden",
@@ -481,7 +481,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
+          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
             {DOWNLOADS.map((d, i) => (
               // TODO: real PDFs not yet uploaded — placeholder hrefs only
               <a key={d.title} href={d.href} download style={{
@@ -578,7 +578,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--accent) 36%, transparent)",
               filter: "blur(120px)", pointerEvents: "none",
             }} />
-            <div style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
+            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
                 <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Verify independently</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}>

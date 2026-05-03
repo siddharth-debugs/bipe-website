@@ -5,7 +5,7 @@ import { BIPE_IMG } from "@/lib/images";
 export const PrincipalMessage = () => (
   <section className="section" style={{ background: "var(--ink)", color: "var(--paper)" }}>
     <div className="container">
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 60, alignItems: "center" }}>
+      <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 60, alignItems: "center" }}>
         <div className="reveal" style={{ position: "relative", aspectRatio: "4/5", borderRadius: 18, overflow: "hidden", border: "1px solid color-mix(in oklab, var(--paper) 20%, transparent)" }}>
           <Image
             src={BIPE_IMG.principal}

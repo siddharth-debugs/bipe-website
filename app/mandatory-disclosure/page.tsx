@@ -223,7 +223,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 56 }}>
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden", paddingTop: 72, paddingBottom: 56 }}>
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.05,
           backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
@@ -261,7 +261,7 @@ export default function Page() {
       <section className="section" style={{ background: "var(--paper-2)", paddingTop: 40, paddingBottom: 40 }}>
         <div className="container">
           <div className="eyebrow">§ Index</div>
-          <div style={{
+          <div className="bipe-grid-4" style={{
             marginTop: 18,
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",

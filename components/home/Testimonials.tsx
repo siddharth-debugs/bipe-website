@@ -8,7 +8,7 @@ export const Testimonials = () => (
         <div className="eyebrow">Voices · Students & Parents</div>
         <h2 className="bipe-h1" style={{ maxWidth: "22ch", margin: "14px auto 0" }}>What families say about <span className="serif">three years</span> at BIPE.</h2>
       </div>
-      <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+      <div className="grid bipe-grid-3" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
         {DATA.testimonials.map((q, i) => (
           <div key={i} className="card reveal" style={{ padding: 24, transitionDelay: `${i * 40}ms` }}>
             <div className="serif" style={{ fontSize: 48, lineHeight: 0.7, color: "var(--brand)", opacity: 0.5 }}>&quot;</div>

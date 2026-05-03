@@ -556,6 +556,220 @@ body.no-motion .skeleton { animation: none; }
 @media (max-width: 720px)  { .bipe-masonry { column-count: 2; } }
 @media (max-width: 420px)  { .bipe-masonry { column-count: 1; } }
 
+/* ====== Faculty HOD 4-column grid ====== */
+@media (max-width: 1024px) {
+  .bipe-hod-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 560px) {
+  .bipe-hod-grid { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* ============================================================
+   Responsive utilities
+   ============================================================
+   Apply alongside inline `gridTemplateColumns` etc. — the class
+   adds !important media-query overrides at mobile breakpoints
+   so the desktop inline style keeps acting as the desktop default.
+   ============================================================ */
+
+/* 4-column content grid → 2-up on tablet, 1-up on phone */
+@media (max-width: 1024px) {
+  .bipe-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 560px) {
+  .bipe-grid-4 { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* 3-column content grid → 2-up on tablet, 1-up on phone */
+@media (max-width: 900px) {
+  .bipe-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 560px) {
+  .bipe-grid-3 { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* Stat row (3 or 4 stats) → 2-up at tablet, 1-up at small phone */
+@media (max-width: 860px) {
+  .bipe-stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 22px !important; }
+}
+@media (max-width: 460px) {
+  .bipe-stats { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* Asymmetric 2-col hero / split → stacks at 860, shrinks gap */
+@media (max-width: 860px) {
+  .bipe-split {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 32px !important;
+    align-items: start !important;
+  }
+  .bipe-split > * { grid-column: auto !important; grid-row: auto !important; }
+}
+
+/* Form rows: 2-col / 3-col → 1-col at phone width */
+@media (max-width: 640px) {
+  .bipe-form-row { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* Image strip (2/3 cols, possibly with gridRow spans) → single column at phone */
+@media (max-width: 640px) {
+  .bipe-img-strip { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: auto !important; }
+  .bipe-img-strip > * { grid-row: auto !important; grid-column: auto !important; }
+}
+
+/* Tile collage with fixed pixel heights (540px / 260px etc) — release rows on mobile */
+@media (max-width: 860px) {
+  .bipe-collage {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    height: auto !important;
+  }
+  .bipe-collage > * { grid-row: auto !important; grid-column: auto !important; height: auto !important; min-height: 220px; }
+}
+
+/* Section vertical padding — shrink heavy hero/section padding on phone.
+   Pages set inline paddingTop/paddingBottom: 72 etc.; this class overrides. */
+@media (max-width: 860px) {
+  .bipe-pad { padding-top: 48px !important; padding-bottom: 48px !important; }
+}
+@media (max-width: 560px) {
+  .bipe-pad { padding-top: 36px !important; padding-bottom: 36px !important; }
+}
+
+/* Card / box internal padding shrink */
+@media (max-width: 640px) {
+  .bipe-pad-box { padding: 24px !important; }
+}
+
+/* Horizontal scroll wrapper for data tables that don't gracefully reflow */
+.bipe-x-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.bipe-x-scroll > * { min-width: 560px; }
+
+/* Heading mobile clamp — most bipe-h1/2/3 use clamp already, top up safety net */
+@media (max-width: 480px) {
+  .bipe-h1 { font-size: clamp(34px, 9vw, 44px) !important; }
+  .bipe-h2 { font-size: clamp(26px, 7vw, 34px) !important; }
+  .bipe-h3 { font-size: clamp(20px, 5.5vw, 26px) !important; }
+}
+
+/* ====== Mobile nav: hamburger button (hidden on desktop) ====== */
+.nav-hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+@media (max-width: 860px) {
+  .nav-hamburger { display: inline-flex; }
+}
+
+/* ====== Mobile nav drawer ====== */
+.nav-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in oklab, var(--ink) 55%, transparent);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s var(--ease);
+  z-index: 90;
+}
+.nav-drawer-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(360px, 88vw);
+  background: var(--paper);
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .3s var(--ease);
+  z-index: 100;
+  overflow-y: auto;
+}
+.nav-drawer.is-open { transform: translateX(0); }
+
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 1;
+}
+.nav-drawer-close {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-drawer-list {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 12px;
+}
+.nav-drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: var(--ink-2);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .15s, color .15s;
+}
+.nav-drawer-link:hover,
+.nav-drawer-link:focus-visible { background: var(--paper-2); color: var(--ink); outline: none; }
+.nav-drawer-link.is-active { background: var(--brand-tint); color: var(--brand); font-weight: 600; }
+
+.nav-drawer-footer {
+  padding: 18px 18px 22px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  background: var(--paper);
+}
+@media (min-width: 861px) {
+  .nav-drawer, .nav-drawer-backdrop { display: none !important; }
+}
+
 .bipe-masonry-tile {
   display: block;
   width: 100%;

@@ -15,14 +15,14 @@ export const CampusLife = () => (
         </div>
         <Link href="/campus" className="btn btn-ghost">All facilities <ArrowIcon /></Link>
       </div>
-      <div className="reveal" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "260px 200px", gap: 14 }}>
+      <div className="reveal bipe-collage" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "260px 200px", gap: 14 }}>
         <Img src={BIPE_IMG.workshop} label="WORKSHOP · MACHINING BAY" style={{ gridRow: "span 2", height: "100%" }} />
         <Img src={BIPE_IMG.dairy} label="DAIRY PILOT PLANT" style={{ height: "100%" }} />
         <Img src={BIPE_IMG.computerLab} label="120-COMPUTER LAB" style={{ height: "100%" }} />
         <Img src={BIPE_IMG.hostel} label="HOSTEL · BLOCK A" style={{ height: "100%" }} />
         <Img src={BIPE_IMG.library} label="LIBRARY" style={{ height: "100%" }} />
       </div>
-      <div className="grid" style={{ gridTemplateColumns: "repeat(4, 1fr)", marginTop: 24 }}>
+      <div className="grid bipe-grid-4" style={{ gridTemplateColumns: "repeat(4, 1fr)", marginTop: 24 }}>
         {DATA.facilities.slice(0, 4).map((f, i) => (
           <div key={i} className="reveal" style={{ transitionDelay: `${i * 40}ms` }}>
             <div className="eyebrow" style={{ color: "var(--brand)" }}>{f.count}</div>

@@ -26,7 +26,7 @@ export const Countdown = () => {
   return (
     <section className="section">
       <div className="container">
-        <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 40, alignItems: "center", border: "1px solid var(--line)", background: "var(--brand-tint)", borderRadius: 24, padding: 40 }}>
+        <div className="reveal bipe-split bipe-pad-box" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 40, alignItems: "center", border: "1px solid var(--line)", background: "var(--brand-tint)", borderRadius: 24, padding: 40 }}>
           <div>
             <div className="row" style={{ alignItems: "center", gap: 10, marginBottom: 14 }}>
               <span className="live-dot" />

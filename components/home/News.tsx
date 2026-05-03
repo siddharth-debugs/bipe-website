@@ -13,7 +13,7 @@ export const News = () => (
         </div>
         <Link href="/events" className="btn btn-ghost">All events <ArrowIcon /></Link>
       </div>
-      <div className="grid" style={{ gridTemplateColumns: "1.2fr 1fr 1fr" }}>
+      <div className="grid bipe-grid-3" style={{ gridTemplateColumns: "1.2fr 1fr 1fr" }}>
         {DATA.events.slice(0, 3).map((e, i) => (
           <div key={i} className="card reveal" style={{ padding: i === 0 ? 28 : 22, gridRow: i === 0 ? "span 1" : "auto", transitionDelay: `${i * 50}ms` }}>
             <div className="row" style={{ gap: 10, marginBottom: 14 }}>
@@ -25,7 +25,7 @@ export const News = () => (
           </div>
         ))}
       </div>
-      <div style={{ marginTop: 18, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+      <div className="bipe-img-strip" style={{ marginTop: 18, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
         {DATA.events.slice(3).map((e, i) => (
           <div key={i} className="card reveal" style={{ padding: 18, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14 }}>
             <div>
