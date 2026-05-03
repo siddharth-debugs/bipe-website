@@ -515,89 +515,34 @@ body.no-motion .page-enter { animation: none; }
   .footer { padding: 56px 0 30px; }
 }
 
-/* ====== Route loader ====== */
-@keyframes bipe-loader-overlay-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* ====== Skeleton shimmer (used by app/loading.tsx) ====== */
+@keyframes bipe-skeleton-shimmer {
+  0%   { background-position: -160% 0; }
+  100% { background-position: 160% 0; }
 }
-@keyframes bipe-loader-overlay-out {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+.skeleton {
+  display: block;
+  border-radius: 8px;
+  background-color: color-mix(in oklab, var(--ink) 7%, var(--paper-2));
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in oklab, var(--paper) 70%, transparent) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: bipe-skeleton-shimmer 1.6s linear infinite;
 }
-@keyframes bipe-loader-stage-in {
-  from { opacity: 0; transform: translateY(6px) scale(0.985); }
-  to   { opacity: 1; transform: none; }
+.skeleton.dark {
+  background-color: color-mix(in oklab, var(--paper) 12%, var(--ink));
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in oklab, var(--paper) 12%, transparent) 50%,
+    transparent 100%
+  );
 }
-@keyframes bipe-loader-gear-cw {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes bipe-loader-gear-ccw {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
-}
-@keyframes bipe-loader-pulse {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.04); }
-}
-@keyframes bipe-loader-bar {
-  0%   { transform: translateX(-110%); }
-  60%  { transform: translateX(120%); }
-  100% { transform: translateX(120%); }
-}
-
-.bipe-loader {
-  position: fixed; inset: 0; z-index: 1000;
-  display: flex; align-items: center; justify-content: center;
-  background: color-mix(in oklab, var(--paper) 90%, transparent);
-  -webkit-backdrop-filter: saturate(140%) blur(6px);
-  backdrop-filter: saturate(140%) blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .22s var(--ease);
-}
-.bipe-loader.is-on {
-  opacity: 1;
-  pointer-events: auto;
-  animation: bipe-loader-overlay-in .22s var(--ease);
-}
-.bipe-loader-stage {
-  display: flex; flex-direction: column; align-items: center;
-  animation: bipe-loader-stage-in .35s var(--ease);
-}
-.bipe-loader-track {
-  width: 220px; height: 2px;
-  margin-top: 26px;
-  background: color-mix(in oklab, var(--brand) 14%, transparent);
-  border-radius: 999px;
-  overflow: hidden;
-  position: relative;
-}
-.bipe-loader-bar {
-  position: absolute; left: 0; top: 0;
-  width: 38%; height: 100%;
-  background: linear-gradient(90deg,
-    color-mix(in oklab, var(--brand) 0%, transparent) 0%,
-    var(--brand) 40%,
-    var(--brand) 60%,
-    color-mix(in oklab, var(--brand) 0%, transparent) 100%);
-  border-radius: 999px;
-  animation: bipe-loader-bar 1.25s cubic-bezier(.65,.05,.36,1) infinite;
-}
-.bipe-loader-eyebrow {
-  margin-top: 18px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  display: inline-flex; align-items: center;
-}
-.bipe-loader-logo {
-  animation: bipe-loader-pulse 1.8s ease-in-out infinite;
-  filter: drop-shadow(0 22px 40px color-mix(in oklab, #005fff 22%, transparent));
-}
-body.no-motion .bipe-loader-bar,
-body.no-motion .bipe-loader-logo {
-  animation: none !important;
-}
+.skeleton.circle { border-radius: 999px; }
+.skeleton.pill { border-radius: 999px; }
+body.no-motion .skeleton { animation: none; }

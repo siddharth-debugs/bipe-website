@@ -8,7 +8,6 @@ import { AdmStrip } from "@/components/shell/AdmStrip";
 import { Nav } from "@/components/shell/Nav";
 import { Footer } from "@/components/shell/Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
-import { RouteLoader } from "@/components/ui/RouteLoader";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
 
@@ -119,7 +118,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <Footer />
           <RevealObserver />
-          <RouteLoader />
         </LangProvider>
       </body>
     </html>

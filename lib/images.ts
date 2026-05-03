@@ -1,6 +1,6 @@
 export const BIPE_IMG = {
   heroGroup: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
-  heroWide: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80&auto=format&fit=crop",
+  heroWide: "/hero.png",
 
   workshop: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80&auto=format&fit=crop",
   cncLab: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=900&q=80&auto=format&fit=crop",
