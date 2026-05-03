@@ -697,14 +697,103 @@ body.no-motion .skeleton { animation: none; }
   .card.bipe-card-flat { padding: 14px !important; }
 }
 
-/* Two-column / asymmetric grids: any grid with literal "1fr 1fr",
-   "Xfr Yfr" patterns set inline — collapse to single column */
+/* Generic n-column grid collapse for inline grid-template-columns
+   with no manual class. The CSS minifier emits `grid-template-columns:`
+   without trailing space. */
+
+/* 2-col 1fr 1fr — single column at <=720 */
 @media (max-width: 720px) {
-  /* matches inline gridTemplateColumns containing "fr" twice — i.e. 2-col */
-  [style*="grid-template-columns: 1fr 1fr"]:not(.bipe-keep-grid),
-  [style*="gridTemplateColumns: 1fr 1fr"]:not(.bipe-keep-grid),
-  [style*="grid-template-columns:1fr 1fr"]:not(.bipe-keep-grid) {
+  [style*="grid-template-columns:1fr 1fr"]:not(.bipe-keep-grid):not(.bipe-form-row):not(.bipe-img-strip) {
     grid-template-columns: minmax(0, 1fr) !important;
+  }
+  [style*="grid-template-columns:1fr 1fr 1fr"]:not(.bipe-keep-grid):not(.bipe-img-strip) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* 3-col / 4-col / 5-col `repeat(N, 1fr)` — collapse on tablet/phone */
+@media (max-width: 900px) {
+  [style*="grid-template-columns:repeat(3, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(3,1fr)"]:not(.bipe-keep-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 1024px) {
+  [style*="grid-template-columns:repeat(4, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(4,1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(5, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(5,1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(6, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(6,1fr)"]:not(.bipe-keep-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 560px) {
+  [style*="grid-template-columns:repeat(3, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(3,1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(4, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(4,1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(5, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(5,1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(6, 1fr)"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:repeat(6,1fr)"]:not(.bipe-keep-grid) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Asymmetric 2-column splits — anything like "Xfr Yfr" or "Xpx 1fr"
+   with two parts. Match the most common patterns inline. */
+@media (max-width: 860px) {
+  [style*="grid-template-columns:1.1fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1fr 1.1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.15fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.2fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1fr 1.2fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.25fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1fr 1.25fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.3fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1fr 1.3fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.35fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.4fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1fr 1.4fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.5fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1fr 1.5fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1fr 2fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:2fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.05fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:auto 1fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.1fr 1fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.2fr 1fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.3fr 1fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.4fr 1fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.4fr 1fr 1.1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:320px 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:260px 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:280px 1fr"]:not(.bipe-keep-grid),
+  [style*="grid-template-columns:240px 1fr"]:not(.bipe-keep-grid) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+  /* Children that were placed via grid-row/column spans need to flow normally */
+  [style*="grid-template-columns:1.1fr 1fr"] > *,
+  [style*="grid-template-columns:1.2fr 1fr"] > *,
+  [style*="grid-template-columns:1.3fr 1fr"] > *,
+  [style*="grid-template-columns:1.4fr 1fr"] > *,
+  [style*="grid-template-columns:1.5fr 1fr"] > *,
+  [style*="grid-template-columns:1.35fr 1fr"] > *,
+  [style*="grid-template-columns:1.25fr 1fr"] > *,
+  [style*="grid-template-columns:1.15fr 1fr"] > *,
+  [style*="grid-template-columns:1.05fr 1fr"] > *,
+  [style*="grid-template-columns:1fr 1.1fr"] > *,
+  [style*="grid-template-columns:1fr 1.2fr"] > *,
+  [style*="grid-template-columns:1fr 1.3fr"] > *,
+  [style*="grid-template-columns:1fr 1.4fr"] > *,
+  [style*="grid-template-columns:1fr 1.5fr"] > *,
+  [style*="grid-template-columns:1fr 2fr"] > *,
+  [style*="grid-template-columns:320px 1fr"] > *,
+  [style*="grid-template-columns:260px 1fr"] > * {
+    grid-area: auto !important;
   }
 }
 
