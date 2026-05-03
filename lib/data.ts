@@ -1,0 +1,139 @@
+export type Branch = {
+  code: string;
+  slug: string;
+  name: string;
+  hi: string;
+  seats: number;
+  fee: string;
+  desc: string;
+  tag: string | null;
+  color: number;
+  lateral?: boolean;
+};
+
+export type Stat = { num: string; label: string; sub: string };
+export type WhyItem = {
+  num: string;
+  metric: string;
+  metricLabel: string;
+  title: string;
+  body: string;
+  icon: string;
+};
+export type Testimonial = { name: string; role: string; quote: string };
+export type FAQItem = { cat: string; q: string; a: string };
+export type EventItem = { date: string; tag: string; title: string; body: string };
+export type JeecupStep = { step: string; title: string; body: string };
+export type Facility = { name: string; count: string; body: string };
+
+export type ContactInfo = {
+  phone: string;
+  phone2: string;
+  email: string;
+  whatsapp: string;
+  address: string;
+  jeecup: string;
+  aicte: string;
+};
+
+export type DataShape = {
+  contact: ContactInfo;
+  stats: Stat[];
+  branches: Branch[];
+  recruiters: string[];
+  whyBipe: WhyItem[];
+  testimonials: Testimonial[];
+  faq: FAQItem[];
+  events: EventItem[];
+  jeecupSteps: JeecupStep[];
+  facilities: Facility[];
+};
+
+export const DATA: DataShape = {
+  contact: {
+    phone: "+91-9198646464",
+    phone2: "+91-9198767676",
+    email: "admissions@bipevns.org",
+    whatsapp:
+      "https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20would%20like%20to%20know%20about%20admissions%20for%202026-27.",
+    address:
+      "Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, Uttar Pradesh",
+    jeecup: "4455",
+    aicte: "1-488233171",
+  },
+  stats: [
+    { num: "16", label: "Years serving Eastern UP", sub: "since 2010" },
+    { num: "1,000+", label: "Successful alumni", sub: "Mahindra · Tata · BEL" },
+    { num: "10", label: "BTEUP-licensed branches", sub: "incl. rare Dairy" },
+    { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
+    { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
+  ],
+  branches: [
+    { code: "355", slug: "computer-science-engineering", name: "Computer Science Engineering", hi: "कंप्यूटर साइंस इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Programming, data structures, networks, AI/ML — taught with our 120-computer lab. Lateral entry to B.Tech CSE supported.", tag: "Popular", color: 1 },
+    { code: "327", slug: "dairy-engineering", name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Rare diploma — fewer than 1.1% of UP polytechnics offer this. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.", tag: "Rare", color: 2 },
+    { code: "322", slug: "civil-engineering", name: "Civil Engineering", hi: "सिविल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Smart Cities, Bharatmala, Kashi Vishwanath corridor — India's infra boom needs civil diploma holders. SSC JE / RRB JE eligible.", tag: null, color: 3 },
+    { code: "328", slug: "electrical-engineering", name: "Electrical Engineering", hi: "इलेक्ट्रिकल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. UPPCL, Tata Power, Adani Solar recruit our graduates.", tag: null, color: 4 },
+    { code: "343", slug: "mechanical-engineering-production", name: "Mechanical Production", hi: "मैकेनिकल प्रोडक्शन", seats: 120, fee: "30,150", desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, Tata Motors, BHEL apprentice pathways.", tag: null, color: 5 },
+    { code: "341", slug: "mechanical-engineering-automobile", name: "Mechanical Automobile", hi: "मैकेनिकल ऑटोमोबाइल", seats: 60, fee: "30,150", desc: "India's automobile sector is in EV transition — Tata EV, Mahindra Electric, Ola, Ather, Bajaj Chetak need diploma holders.", tag: "EV-track", color: 6 },
+    { code: "375", slug: "lateral-civil", name: "Lateral · Civil", hi: "लेटरल सिविल", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 3, lateral: true },
+    { code: "378", slug: "lateral-electrical", name: "Lateral · Electrical", hi: "लेटरल इलेक्ट्रिकल", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 4, lateral: true },
+    { code: "384", slug: "lateral-auto", name: "Lateral · Mech Auto", hi: "लेटरल मैकेनिकल ऑटो", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 6, lateral: true },
+    { code: "386", slug: "lateral-production", name: "Lateral · Mech Prod", hi: "लेटरल मैकेनिकल प्रोडक्शन", seats: 24, fee: "30,150", desc: "Lateral entry from ITI to Diploma in 2 years.", tag: "Lateral", color: 5, lateral: true },
+  ],
+  recruiters: [
+    "Mahindra", "Tata Steel", "BEL", "Indian Railways", "Krishna Maruti", "JCB", "Asian Paints", "Tata Motors", "BHEL", "UPPCL", "Tata Power", "Adani Solar", "Amul", "Mother Dairy", "Parag", "Nestlé", "NDDB", "Bajaj", "Ola Electric", "Ather", "Hero MotoCorp",
+  ],
+  whyBipe: [
+    { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },
+    { num: "02", metric: "3-layer", metricLabel: "assessment", title: "Outcome-based pedagogy.", body: "Semester exam + continuous assessment + project work, calibrated against published Program Outcomes. We measure progress, not attendance.", icon: "M3 17l6-6 4 4 8-8" },
+    { num: "03", metric: "<1.1%", metricLabel: "of UP polytechnics", title: "Rare Dairy Engineering diploma.", body: "BTEUP-licensed Dairy Engineering (Code 327). Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
+    { num: "04", metric: "1,000+", metricLabel: "alumni in 16 yrs", title: "Eastern UP-built. Thousands placed.", body: "Alumni at Mahindra, Tata Steel, BEL, Indian Railways. Six-acre Phoolpur campus. AFRC-approved fees with no hidden charges.", icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
+  ],
+  testimonials: [
+    { name: "Ravi Kumar", role: "Mech (2022) → JE, Indian Railways", quote: "Mentor visits made my parents trust the diploma route. Workshop hours here got me through SSC JE on the first try." },
+    { name: "Priya Singh", role: "CSE (2024) → Lateral B.Tech, BBDU", quote: "120-computer lab, no waiting. Faculty were available after hours. I cleared my B.Tech entrance from BIPE labs." },
+    { name: "Mr. Mishra", role: "Parent of Dairy '23 batch", quote: "बेटे के टीचर हमारे घर आए — यह विश्वास और कोई कॉलेज नहीं देगा। Amul में placement भी हुआ।" },
+    { name: "Aman Yadav", role: "Civil (2021) → Bharatmala project", quote: "Survey camp in 4th sem put me on a real highway alignment crew. That experience got me my first site engineer role." },
+    { name: "Sunita Devi", role: "Parent of Electrical '24 batch", quote: "Fees पूरी तरह transparent. हर rupee का receipt मिला। Hostel भी secure है — बेटी के लिए सही choice।" },
+    { name: "Faisal Ahmad", role: "Auto (2023) → Tata EV", quote: "EV training is real here — battery packs, motor controllers, hands-on. Walked into Tata EV interview with portfolio." },
+  ],
+  faq: [
+    { cat: "Admission", q: "How do I apply to BIPE?", a: "Admissions are exclusively through JEECUP counselling under college code 4455. Register at jeecup.admissions.nic.in, take the entrance, and choose BIPE 4455 during counselling. You can also fill our Apply form for personal guidance from our admissions team." },
+    { cat: "Admission", q: "What is the eligibility?", a: "For the 3-year diploma you need a Class 10 pass with Mathematics and Science. For 2-year lateral entry you need 12th PCM or a relevant ITI certificate, and you appear in JEECUP Group K." },
+    { cat: "Admission", q: "What documents do I need?", a: "Mandatory: JEECUP rank card / allotment letter, Class 10 marksheet, school transfer & character certificate, Aadhaar, 8 passport photos, bank passbook front page and an anti-ragging undertaking. Category and scholarship documents are optional. See the Documents page for the full list." },
+    { cat: "Fees", q: "What is the annual tuition?", a: "Annual tuition is ₹30,150 — AFRC-approved and the same for all 10 branches. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the Fees page; some are still being finalised. Hostel and mess are separate." },
+    { cat: "Fees", q: "What scholarships are available?", a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority categories. BIPE also offers merit-based waivers of 25–50% for high JEECUP ranks and 10–25% for Class 10 toppers. Many BIPE students pay much less than the published fee." },
+    { cat: "Fees", q: "What is the refund policy?", a: "Refunds follow AICTE norms: 100% (less ₹1,000) if you withdraw 15+ days before classes start, 90% within 15 days, 80% within the first 15 days of classes (if the seat is filled), 50% after that, and no refund after 30 days. Refunds are processed within 30 working days." },
+    { cat: "Hostel & Campus", q: "Is hostel available for girls?", a: "Yes. The 6-acre campus has separate boys' and girls' hostel blocks with gender-specific wardens, staffed gates, visitor registration, fire safety, anti-ragging measures and a 9:30 PM curfew (extendable on parental authorisation)." },
+    { cat: "Hostel & Campus", q: "Is the mess vegetarian?", a: "The mess serves three meals a day with both vegetarian and non-vegetarian options. Annual mess fee is ₹36,000." },
+    { cat: "Placements & Career", q: "Where do graduates work?", a: "Alumni work at Wipro Infrastructure Engineering, Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Asian Paints, JCB, Motherson Sumi, JBM Group and many others — 44 verified recruiters and 993+ placements through 2024." },
+    { cat: "Placements & Career", q: "Can I get a government job after a diploma?", a: "Yes — diploma engineers from BIPE qualify for SSC JE, RRB JE, UPPCL, NDDB, State Dairy Boards, Indian Army Technical and similar central and state recruitment. Several BIPE alumni work as Junior Engineers and Assistant Loco Pilots in Indian Railways and Mumbai Metro." },
+    { cat: "Approvals & Trust", q: "Is BIPE AICTE-approved?", a: "Yes. BIPE holds AICTE Permanent ID 1-488233171 and the EoA letter for 2026-27 (F.No. Northern/1-46216893240/2026/EOA, dated 16 March 2026). It is BTEUP-affiliated under JEECUP code 4455, ISO 9001:2015 certified and AISHE-registered." },
+    { cat: "Approvals & Trust", q: "How do I file a grievance?", a: "Email grievance@bipevns.org or write to the Principal's office. Complaints are treated as confidential and acknowledged within 7 working days. Four statutory committees handle different categories — Anti-Ragging, Internal (POSH), SC/ST and PWD Cell." },
+  ],
+  events: [
+    { date: "May 18, 2026", tag: "Admission", title: "JEECUP 2026 results declared", body: "Counselling rounds open from May 24. Book your campus visit now to lock in your branch preferences." },
+    { date: "May 04, 2026", tag: "Campus", title: "Annual Tech Fest 'Kashi Tech 2026'", body: "Robotics, hackathon, dairy-tech showcase. Registration open for visitors and school students." },
+    { date: "Apr 22, 2026", tag: "Placement", title: "Tata Motors campus drive — 14 selected", body: "Mechanical Production & Automobile branches. Joining package ₹3.6 LPA + benefits." },
+    { date: "Apr 11, 2026", tag: "Admission", title: "Open House for Class 10 students", body: "Lab tours, mentor meetings, and JEECUP guidance. Saturday, 10am–3pm. Free transport from Varanasi Cantt." },
+    { date: "Mar 28, 2026", tag: "Faculty", title: "Workshop: AI in diploma curriculum", body: "Faculty development on integrating AI/ML into Computer Science Engineering coursework." },
+  ],
+  jeecupSteps: [
+    { step: "01", title: "Apply on JEECUP portal", body: "Register at jeecup.admissions.nic.in. Application opens January, closes April. Fee ₹300 (₹200 for SC/ST)." },
+    { step: "02", title: "Sit for the entrance", body: "Computer-based test, usually in May/June. Diploma engineering is Group A — Maths, Physics, Chemistry from Class 10 syllabus." },
+    { step: "03", title: "Get your rank card", body: "Result in mid-June. Note your Group A rank — it determines counselling slot." },
+    { step: "04", title: "Counselling — choose BIPE 4455", body: "Online choice-filling. Add BIPE Varanasi (institute code 4455) and your branch preferences in priority order." },
+    { step: "05", title: "Seat allotment & report", body: "Seat allotted based on rank + choices. Pay the seat-confirmation fee online, then report to BIPE with documents within the deadline." },
+    { step: "06", title: "Classes begin · August", body: "Orientation, mentor allocation, hostel allotment. Three years that change your career." },
+  ],
+  facilities: [
+    { name: "Computer Lab", count: "120 systems", body: "Latest specs, dual monitors. Open 8am–10pm. Programming, simulation, GIS." },
+    { name: "Mechanical Workshop", count: "8 sections", body: "Fitting, welding, foundry, machining, CNC, sheet metal — every diploma student gets hands-on hours." },
+    { name: "Dairy Pilot Plant", count: "Rare in UP", body: "Pasteurization, cream separation, packaging — mirrors what Amul, Parag floor processes look like." },
+    { name: "Electrical Lab", count: "12 benches", body: "Machines, electronics, control systems, renewables, EV battery & motor lab." },
+    { name: "Civil Survey Yard", count: "6 acres", body: "Total stations, theodolites, level instruments. On-site survey camp every 4th semester." },
+    { name: "Library", count: "12,000+ titles", body: "Print + digital. Subscription to e-resources, IEEE digital library, NPTEL." },
+    { name: "Hostels", count: "Boys + Girls", body: "Separate blocks, on-campus mess, Wi-Fi, study halls, 24×7 security." },
+    { name: "Sports & Ground", count: "On-campus", body: "Cricket, football, volleyball, indoor games. Annual sports week in February." },
+  ],
+};
