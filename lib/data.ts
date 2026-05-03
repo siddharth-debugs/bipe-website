@@ -30,14 +30,38 @@ export type ContactInfo = {
   phone: string;
   phone2: string;
   email: string;
+  emailGrievance: string;
+  emailPrincipal: string;
+  emailAntiRagging: string;
+  emailIC: string;
+  emailScSt: string;
+  emailPwd: string;
   whatsapp: string;
   address: string;
   jeecup: string;
   aicte: string;
+  aicteEoaRef: string;
+  aicteEoaDate: string;
+  bteup: string;
+  iso: string;
+};
+
+export type SocialLink = {
+  name: string;
+  handle: string;
+  url: string;
+};
+
+export type Regulator = {
+  name: string;
+  full: string;
+  url: string;
 };
 
 export type DataShape = {
   contact: ContactInfo;
+  social: SocialLink[];
+  regulators: Regulator[];
   stats: Stat[];
   branches: Branch[];
   recruiters: string[];
@@ -54,13 +78,43 @@ export const DATA: DataShape = {
     phone: "+91-9198646464",
     phone2: "+91-9198767676",
     email: "admissions@bipevns.org",
+    emailGrievance: "grievance@bipevns.org",
+    emailPrincipal: "principal@bipevns.org",
+    emailAntiRagging: "antiragging@bipevns.org",
+    emailIC: "ic@bipevns.org",
+    emailScSt: "scst@bipevns.org",
+    emailPwd: "pwd@bipevns.org",
     whatsapp:
       "https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20would%20like%20to%20know%20about%20admissions%20for%202026-27.",
     address:
       "Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, Uttar Pradesh",
     jeecup: "4455",
     aicte: "1-488233171",
+    aicteEoaRef: "Northern/1-46216893240/2026/EOA",
+    aicteEoaDate: "16 March 2026",
+    bteup: "Affiliated · College Code 4455",
+    iso: "ISO 9001:2015",
   },
+  social: [
+    // From Phase-2 Social Media Audit — these are the actual public handles
+    { name: "Facebook", handle: "bipevns", url: "https://www.facebook.com/bipevns/" },
+    { name: "Instagram", handle: "bipevns", url: "https://www.instagram.com/bipevns/" },
+    { name: "X", handle: "bipevns", url: "https://x.com/bipevns" },
+    // YouTube/LinkedIn channels are recommended in Phase-2 but not yet live —
+    // see TODOs on Footer.tsx — link is added once the channel is launched.
+  ],
+  regulators: [
+    { name: "AICTE", full: "All India Council for Technical Education", url: "https://www.aicte-india.org/" },
+    { name: "AICTE Dashboard", full: "AICTE Approval Dashboard (Public)", url: "https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php" },
+    { name: "BTEUP", full: "Board of Technical Education, Uttar Pradesh", url: "https://bteup.ac.in/" },
+    { name: "JEECUP", full: "Joint Entrance Examination Council, UP — Polytechnic", url: "https://jeecup.admissions.nic.in/" },
+    { name: "AFRC UP", full: "Admission & Fee Regulatory Committee, UP", url: "http://afrcup2018.in/" },
+    { name: "IRDT UP", full: "Institute of Research, Development & Training, UP", url: "https://irdtup.in/" },
+    { name: "UPTED", full: "UP Department of Technical Education", url: "http://upted.gov.in/" },
+    { name: "URISE", full: "URISE — UP Govt. portal · BIPE 4455", url: "https://urise.up.gov.in/poly/4455" },
+    { name: "AISHE", full: "All India Survey on Higher Education (MoE)", url: "https://aishe.gov.in/" },
+    { name: "UGC Anti-Ragging", full: "UGC Anti-Ragging Portal", url: "https://www.antiragging.in/" },
+  ],
   stats: [
     { num: "16", label: "Years serving Eastern UP", sub: "since 2010" },
     { num: "1,000+", label: "Successful alumni", sub: "Mahindra · Tata · BEL" },

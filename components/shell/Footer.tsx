@@ -362,10 +362,39 @@ export const Footer = () => {
               <ArrowIcon size={12} />
             </Link>
           </div>
-          <Col heading="Courses" items={[["All courses", "/courses"], ["Computer Science", "/courses"], ["Dairy Engineering", "/courses"], ["Civil", "/courses"], ["Electrical", "/courses"], ["Mechanical", "/courses"], ["Lateral Entry", "/courses"]]} />
+          <Col heading="Courses" items={[["All courses", "/courses"], ["Computer Science", "/courses"], ["Dairy Engineering", "/courses"], ["Civil", "/courses"], ["Electrical", "/courses"], ["Mechanical", "/courses"], ["Lateral Entry", "/lateral-entry"]]} />
           <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["Apply now", "/apply"]]} />
-          <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Approvals", "/approvals"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Events", "/events"]]} />
-          <Col heading="Connect" items={[["Contact", "/contact"], ["Visit", "/visit"], ["FAQ", "/faq"], ["Grievance", "/grievance"], ["Blog", "/blog"]]} />
+          <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["AI Policy", "/ai-policy"], ["Approvals", "/approvals"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Events", "/events"]]} />
+          <Col heading="Disclosures" items={[["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["Privacy", "/privacy"], ["Terms", "/terms"], ["Contact", "/contact"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
+        </div>
+
+        {/* Social handles strip — Phase-2 audit: surface real handles */}
+        <div style={{
+          padding: "26px 0",
+          borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
+          display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 18,
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>
+              Follow BIPE
+            </span>
+            {DATA.social.map((s) => (
+              <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" style={{
+                display: "inline-flex", alignItems: "center", gap: 8,
+                padding: "8px 14px", borderRadius: 999,
+                border: "1px solid color-mix(in oklab, var(--paper) 18%, transparent)",
+                background: "color-mix(in oklab, var(--paper) 4%, transparent)",
+                color: "var(--paper)", textDecoration: "none",
+                fontSize: 13, fontWeight: 600,
+              }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>{s.name}</span>
+                <span>@{s.handle}</span>
+              </a>
+            ))}
+          </div>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", color: "color-mix(in oklab, var(--paper) 50%, transparent)", textTransform: "uppercase" }}>
+            YouTube · LinkedIn launching 2026-27
+          </div>
         </div>
 
         <div style={{ padding: "28px 0", borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexWrap: "wrap", gap: 24, alignItems: "center", justifyContent: "space-between" }}>
@@ -393,14 +422,18 @@ export const Footer = () => {
 
         <div style={{ padding: "24px 0 36px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14, fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", alignItems: "center" }}>
           <div>© 2026 Banaras Institute of Polytechnic &amp; Engineering. Engineering education that changes lives in Eastern UP — since 2010.</div>
-          <div className="row" style={{ gap: 18, fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase" }}>
+          <div className="row" style={{ gap: 18, fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", flexWrap: "wrap" }}>
+            <Link href="/mandatory-disclosure" style={{ color: "inherit", textDecoration: "none" }}>Mandatory Disclosure</Link>
+            <span>·</span>
             <Link href="/grievance" style={{ color: "inherit", textDecoration: "none" }}>Grievance</Link>
             <span>·</span>
-            <span>Privacy</span>
+            <Link href="/anti-ragging" style={{ color: "inherit", textDecoration: "none" }}>Anti-Ragging</Link>
             <span>·</span>
-            <span>Terms</span>
+            <Link href="/privacy" style={{ color: "inherit", textDecoration: "none" }}>Privacy</Link>
             <span>·</span>
-            <span>Crafted with care</span>
+            <Link href="/terms" style={{ color: "inherit", textDecoration: "none" }}>Terms</Link>
+            <span>·</span>
+            <Link href="/ai-policy" style={{ color: "inherit", textDecoration: "none" }}>AI Policy</Link>
           </div>
         </div>
       </div>

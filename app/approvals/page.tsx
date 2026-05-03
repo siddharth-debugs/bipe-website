@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { metaFor } from "@/lib/routes";
 import { ArrowIcon } from "@/components/shell/Icons";
+import { DATA } from "@/lib/data";
 
 export const metadata: Metadata = metaFor("approvals");
 
@@ -173,6 +174,14 @@ export default function Page() {
                 <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>JEECUP 4455</span>
                 <span className="pill">ISO 9001:2015</span>
                 <span className="pill">AISHE ACTIVE</span>
+              </div>
+              <div className="row" style={{ marginTop: 18, gap: 12, flexWrap: "wrap" }}>
+                <Link href="/mandatory-disclosure" className="btn btn-primary">
+                  Mandatory Disclosure 2026-27 <ArrowIcon size={14} />
+                </Link>
+                <Link href="/grievance" className="btn btn-ghost">
+                  Statutory committees
+                </Link>
               </div>
             </div>
 
@@ -514,6 +523,40 @@ export default function Page() {
                 }}>
                   <ArrowIcon size={14} />
                 </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* 5b. REGULATOR PORTALS — full directory                                  */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--paper-2)", paddingTop: 40, paddingBottom: 40, position: "relative", overflow: "hidden" }}>
+        <div className="container">
+          <div className="eyebrow">§ Regulator portals · directory</div>
+          <h2 className="bipe-h3" style={{ marginTop: 12, fontSize: 22, marginBottom: 22 }}>
+            Every government and regulatory portal that lists or governs BIPE.
+          </h2>
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+            gap: 12,
+          }}>
+            {DATA.regulators.map((r) => (
+              <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" style={{
+                padding: "16px 18px",
+                borderRadius: 14,
+                border: "1px solid var(--line)",
+                background: "var(--white)",
+                color: "var(--ink)",
+                textDecoration: "none",
+                display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14,
+              }}>
+                <div>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand)" }}>{r.name}</div>
+                  <div style={{ marginTop: 4, fontSize: 13, color: "var(--ink-2)" }}>{r.full}</div>
+                </div>
+                <ArrowIcon size={14} />
               </a>
             ))}
           </div>

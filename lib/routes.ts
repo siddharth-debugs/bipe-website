@@ -2,15 +2,17 @@ export type RouteKey =
   | "home" | "about" | "courses" | "admission" | "apply" | "visit"
   | "contact" | "placements" | "campus" | "fees" | "scholarships"
   | "documents" | "jeecup" | "hostel" | "faculty" | "events"
-  | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance";
+  | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
+  | "mandatoryDisclosure" | "aiPolicy" | "lateralEntry"
+  | "privacy" | "terms" | "antiRagging";
 
 export const SITE_URL = "https://bipevns.org";
 
 export const ROUTES: Record<RouteKey, { path: string; title: string; description: string }> = {
   home: {
     path: "/",
-    title: "BIPE — Banaras Institute of Polytechnic & Engineering · Diploma in Eastern UP",
-    description: "AICTE-approved, BTEUP-affiliated 3-year diploma engineering institute in Phoolpur, Varanasi. 10 branches incl. rare Dairy Engineering. JEECUP code 4455.",
+    title: "BIPE Varanasi — AICTE Polytechnic · JEECUP Code 4455",
+    description: "AICTE-approved diploma engineering in Phoolpur, Varanasi. 10 BTEUP branches including rare Dairy Engineering. JEECUP code 4455. Apply for 2026-27.",
   },
   about: {
     path: "/about",
@@ -20,7 +22,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   courses: {
     path: "/courses",
     title: "Courses · 10 BTEUP-licensed diploma branches | BIPE",
-    description: "Computer Science, Civil, Electrical, Mechanical (Production / Automobile), Dairy Engineering — plus 4 lateral-entry diplomas. AFRC-approved fees ₹30,150/year.",
+    description: "CSE, Civil, Electrical, Mech (Production / Automobile), Dairy + 4 lateral-entry diplomas. AICTE-approved · AFRC fees ₹30,150/year · JEECUP 4455.",
   },
   admission: {
     path: "/admission",
@@ -79,8 +81,8 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   faculty: {
     path: "/faculty",
-    title: "Faculty · 45+ mentors · 1:20 ratio | BIPE",
-    description: "Each faculty member personally mentors 20 students with periodic home visits to parents. Outcome-based pedagogy.",
+    title: "Faculty · 33 BTEUP-recognised mentors · 1:20 ratio | BIPE",
+    description: "33 BTEUP-recognised faculty across 7 departments. 1:20 mentor ratio with periodic home visits. AICTE FDP-trained, OBE-aligned pedagogy.",
   },
   events: {
     path: "/events",
@@ -94,13 +96,13 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   teaching: {
     path: "/teaching",
-    title: "Teaching & Learning · Outcome-based pedagogy | BIPE",
-    description: "Semester exam + continuous assessment + project work, calibrated against published Program Outcomes.",
+    title: "Teaching & Learning · OBE + AI-augmented pedagogy | BIPE",
+    description: "Outcome-Based Education aligned to AICTE 2024-27. Diagnostic, formative, summative assessment. AI-augmented with Claude. Faculty-led, human-first.",
   },
   approvals: {
     path: "/approvals",
-    title: "Approvals · AICTE, BTEUP, ISO 9001:2015 | BIPE",
-    description: "AICTE approval 1-488233171. BTEUP-affiliated. ISO 9001:2015 certified. AFRC fee approval. JEECUP code 4455.",
+    title: "Approvals · AICTE, BTEUP, ISO 9001:2015, AISHE | BIPE",
+    description: "AICTE permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026. BTEUP-affiliated under JEECUP 4455. ISO 9001:2015 certified. AISHE registered.",
   },
   faq: {
     path: "/faq",
@@ -114,8 +116,38 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   grievance: {
     path: "/grievance",
-    title: "Grievance Redressal | BIPE",
-    description: "Raise a grievance with the BIPE Grievance Redressal Cell.",
+    title: "Grievance Redressal · 4 statutory committees | BIPE",
+    description: "Anti-Ragging, POSH Internal Committee, SC/ST Committee and PWD Cell. Confidential grievance handling per AICTE, UGC, POSH 2013 and RPWD 2016.",
+  },
+  mandatoryDisclosure: {
+    path: "/mandatory-disclosure",
+    title: "Mandatory Disclosure 2026-27 · AICTE Annexure-18 | BIPE",
+    description: "AICTE-mandated public disclosure: institute, governance, programmes, faculty, fees, infrastructure, committees and approvals. 2026-27 cycle.",
+  },
+  aiPolicy: {
+    path: "/ai-policy",
+    title: "Responsible AI in Teaching · BIPE Policy",
+    description: "How BIPE uses Claude and other AI tools to augment — never replace — faculty. Five published principles, reviewed annually by the academic council.",
+  },
+  lateralEntry: {
+    path: "/lateral-entry",
+    title: "Lateral Entry · ITI / 12th PCM to Diploma in 2 years | BIPE",
+    description: "Skip first year. Lateral entry to BTEUP diploma at BIPE for ITI graduates and 12th PCM students — Civil, Electrical, Mech Production, Mech Automobile.",
+  },
+  privacy: {
+    path: "/privacy",
+    title: "Privacy Policy · DPDP-aligned | BIPE",
+    description: "How BIPE collects, processes, stores and protects personal data of applicants, students, parents and staff. Aligned with the DPDP Act 2023.",
+  },
+  terms: {
+    path: "/terms",
+    title: "Terms of Use | BIPE",
+    description: "Terms governing the use of bipevns.org and BIPE digital services. Includes IT Rules 2021 grievance officer details.",
+  },
+  antiRagging: {
+    path: "/anti-ragging",
+    title: "Anti-Ragging Pledge & Committee | BIPE",
+    description: "Zero-tolerance anti-ragging at BIPE. Committee composition, complaint flow, UGC anti-ragging portal link and Supreme-Court-mandated undertaking.",
   },
 };
 

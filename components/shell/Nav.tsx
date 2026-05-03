@@ -160,7 +160,7 @@ export function Nav() {
 
           <NavMenuWrap
             trigger={
-              <Link href="/about" className={"nav-link " + (["about", "principal", "teaching", "approvals"].includes(route) ? "active" : "")}>
+              <Link href="/about" className={"nav-link " + (["about", "principal", "teaching", "approvals", "ai-policy", "mandatory-disclosure", "anti-ragging", "grievance"].includes(route) ? "active" : "")}>
                 {lang === "hi" ? "हमारे बारे में" : "About"}<span className="nav-caret" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
               </Link>
             }
@@ -171,8 +171,12 @@ export function Nav() {
             <div className="nav-mega-grid">
               <MegaItem to="/about" title="About BIPE" desc="Sixteen years in Eastern UP" icon="M3 21V10l9-6 9 6v11M9 21V12h6v9" />
               <MegaItem to="/principal" title="Principal's Message" desc="A note from our leadership" icon="M3 5h18v14H3zM3 5l9 7 9-7" />
-              <MegaItem to="/teaching" title="Teaching & Learning" desc="Outcome-based pedagogy" icon="M2 4h20v12H2zM2 20h20" />
-              <MegaItem to="/approvals" title="Approvals" desc="AICTE, BTEUP, ISO 9001:2015" icon="M9 12l2 2 4-4M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z" />
+              <MegaItem to="/teaching" title="Teaching & Learning" desc="OBE + AI-augmented pedagogy" icon="M2 4h20v12H2zM2 20h20" />
+              <MegaItem to="/ai-policy" title="AI Policy" desc="How we use Claude in class" icon="M12 2a8 8 0 100 16 8 8 0 000-16zm0 4v8m-4-4h8" />
+              <MegaItem to="/approvals" title="Approvals" desc="AICTE, BTEUP, ISO, AISHE" icon="M9 12l2 2 4-4M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z" />
+              <MegaItem to="/mandatory-disclosure" title="Mandatory Disclosure" desc="AICTE Annexure-18 · 2026-27" icon="M6 2h9l5 5v15H6zM15 2v5h5" />
+              <MegaItem to="/grievance" title="Grievance & Committees" desc="Anti-Ragging · POSH · SC/ST · PWD" icon="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" />
+              <MegaItem to="/anti-ragging" title="Anti-Ragging" desc="Zero-tolerance · UGC helpline" icon="M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z" />
             </div>
             <div className="nav-mega-footer">
               <span>Est. 2010 · Phoolpur</span>
@@ -184,7 +188,7 @@ export function Nav() {
 
           <NavMenuWrap
             trigger={
-              <Link href="/admission" className={"nav-link " + (["admission", "fees", "scholarships", "jeecup", "apply", "documents"].includes(route) ? "active" : "")}>
+              <Link href="/admission" className={"nav-link " + (["admission", "fees", "scholarships", "jeecup", "apply", "documents", "lateral-entry"].includes(route) ? "active" : "")}>
                 {lang === "hi" ? "प्रवेश" : "Admission"}<span className="nav-caret" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
               </Link>
             }
@@ -196,6 +200,7 @@ export function Nav() {
               <MegaItem to="/admission" title="Admission Overview" desc="JEECUP, lateral entry, key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
               <MegaItem to="/apply" title="Apply now" desc="4-step form · 5 minutes" icon="M14 3l7 7-11 11H3v-7L14 3z" />
               <MegaItem to="/jeecup" title="JEECUP Guidance" desc="6-step counselling explainer" icon="M12 2v20M5 8l7-6 7 6M5 16l7 6 7-6" />
+              <MegaItem to="/lateral-entry" title="Lateral Entry" desc="ITI / 12th PCM · skip a year" icon="M3 12h18M13 6l6 6-6 6" />
               <MegaItem to="/fees" title="Fees" desc="₹30,150/year — AFRC-approved" icon="M3 7h18v10H3zM7 12h2M14 12h3" />
               <MegaItem to="/scholarships" title="Scholarships" desc="UP post-matric & EWS support" icon="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" />
               <MegaItem to="/documents" title="Documents" desc="Required certificates checklist" icon="M6 2h9l5 5v15H6zM15 2v5h5" />

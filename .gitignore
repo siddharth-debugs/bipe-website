@@ -10,3 +10,6 @@ build
 next-env.d.ts
 
 .vercel
+
+# Local-only audits and strategic docs — do NOT publish to a public repo
+docs/

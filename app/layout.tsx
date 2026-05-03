@@ -10,6 +10,7 @@ import { Footer } from "@/components/shell/Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { ROUTES, SITE_URL } from "@/lib/routes";
+import { DATA } from "@/lib/data";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans-next", display: "swap" });
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif-next", display: "swap" });
@@ -54,10 +55,13 @@ const jsonLd = {
       "@type": "CollegeOrUniversity",
       "@id": `${SITE_URL}#org`,
       name: "Banaras Institute of Polytechnic & Engineering",
-      alternateName: "BIPE",
+      alternateName: ["BIPE", "BIPE Varanasi", "Banaras Institute of Polytechnic and Engineering"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo.png`,
+      logo: `${SITE_URL}/bipe-logo.svg`,
+      image: `${SITE_URL}/bipe-logo.svg`,
       foundingDate: "2010",
+      slogan: "Engineering education that changes lives in Eastern UP — since 2010.",
+      areaServed: { "@type": "AdministrativeArea", name: "Eastern Uttar Pradesh" },
       address: {
         "@type": "PostalAddress",
         streetAddress: "Village Gajokhar, Post Parsara, Phoolpur",
@@ -66,9 +70,22 @@ const jsonLd = {
         addressRegion: "Uttar Pradesh",
         addressCountry: "IN",
       },
-      telephone: "+91-9198646464",
-      email: "admissions@bipevns.org",
-      sameAs: [],
+      telephone: DATA.contact.phone,
+      email: DATA.contact.email,
+      identifier: [
+        { "@type": "PropertyValue", propertyID: "AICTE Permanent ID", value: DATA.contact.aicte },
+        { "@type": "PropertyValue", propertyID: "JEECUP Code", value: DATA.contact.jeecup },
+        { "@type": "PropertyValue", propertyID: "BTEUP", value: "Affiliated · 4455" },
+        { "@type": "PropertyValue", propertyID: "ISO", value: "9001:2015" },
+      ],
+      department: DATA.branches
+        .filter((b) => !b.lateral)
+        .map((b) => ({
+          "@type": "EducationalOrganization",
+          name: `Department of ${b.name}`,
+          identifier: b.code,
+        })),
+      sameAs: DATA.social.map((s) => s.url),
     },
     {
       "@type": "WebSite",
@@ -78,6 +95,18 @@ const jsonLd = {
       inLanguage: ["en-IN", "hi-IN"],
       publisher: { "@id": `${SITE_URL}#org` },
     },
+    ...DATA.branches
+      .filter((b) => !b.lateral)
+      .map((b) => ({
+        "@type": "Course",
+        "@id": `${SITE_URL}/courses#${b.slug}`,
+        name: `Diploma in ${b.name}`,
+        description: b.desc,
+        courseCode: b.code,
+        provider: { "@id": `${SITE_URL}#org` },
+        educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
+        inLanguage: ["en-IN", "hi-IN"],
+      })),
   ],
 };
 
