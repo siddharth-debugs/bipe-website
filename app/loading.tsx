@@ -18,7 +18,7 @@ export default function Loading() {
       {/* Editorial hero — paper bg */}
       <section className="section" style={{ paddingTop: 64, paddingBottom: 64 }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <Skeleton width={160} height={12} variant="pill" />
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 14 }}>
@@ -88,7 +88,7 @@ export default function Loading() {
             <Skeleton width="68%" height={40} radius={10} />
             <Skeleton width="92%" height={14} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
             {Array.from({ length: 3 }).map((_, i) => (
               <div
                 key={i}
@@ -126,7 +126,7 @@ export default function Loading() {
             <Skeleton dark width={140} height={11} variant="pill" />
             <Skeleton dark width="56%" height={36} radius={10} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14 }}>
+          <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14 }}>
             {Array.from({ length: 4 }).map((_, i) => (
               <div
                 key={i}

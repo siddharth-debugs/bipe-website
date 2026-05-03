@@ -151,7 +151,7 @@ export default function Page() {
               filter: "blur(120px)", pointerEvents: "none",
             }} />
             <div className="container" style={{ position: "relative" }}>
-              <div style={{
+              <div className="bipe-split" style={{
                 display: "grid",
                 gridTemplateColumns: isLeft ? "1.1fr 1fr" : "1fr 1.1fr",
                 gap: 56, alignItems: "center",
@@ -379,7 +379,7 @@ export default function Page() {
           </div>
 
           {/* Bottom CTA */}
-          <div style={{
+          <div className="bipe-split" style={{
             marginTop: 36,
             padding: "32px 36px",
             borderRadius: 22,
