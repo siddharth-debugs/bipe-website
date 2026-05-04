@@ -51,10 +51,10 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Hero strip — logo mark + wordmark + tagline as one composed band */}
+        {/* Brand strip — logo + height-matched institute name + tagline */}
         <div style={{
-          paddingTop: 28,
-          paddingBottom: 36,
+          paddingTop: 18,
+          paddingBottom: 20,
           borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
           position: "relative",
         }}>
@@ -68,76 +68,63 @@ export const Footer = () => {
 
           <div className="bipe-split" style={{
             display: "grid",
-            gridTemplateColumns: "auto minmax(0, 1fr) auto",
-            gap: 40,
+            gridTemplateColumns: "auto 1fr auto",
+            gap: 24,
             alignItems: "center",
           }}>
-            {/* Logo mark — pure white silhouette on the dark footer bg.
-                `filter: brightness(0) invert(1)` flattens every coloured
-                path in the SVG to white in one go. */}
-            <Image
-              src="/bipe-logo.svg"
-              alt=""
-              aria-hidden="true"
-              width={2162}
-              height={2497}
-              style={{
-                height: 96,
-                width: Math.round(96 * 2162 / 2497),
-                display: "block",
+            {/* Logo + height-matched institute name (mirrors header BrandMark) */}
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 14, flexShrink: 0 }}>
+              <Image
+                src="/bipe-logo.svg"
+                alt=""
+                aria-hidden="true"
+                width={2162}
+                height={2497}
+                style={{
+                  height: 56,
+                  width: Math.round(56 * 2162 / 2497),
+                  display: "block",
+                  flexShrink: 0,
+                  filter: "brightness(0) invert(1)",
+                }}
+                draggable={false}
+              />
+              <span style={{
+                display: "inline-flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: 56,
+                width: 320,
                 flexShrink: 0,
-                filter: "brightness(0) invert(1)",
-              }}
-              draggable={false}
-            />
-
-            {/* Wordmark + sub-eyebrow */}
-            <div style={{ minWidth: 0 }}>
-              <div style={{
-                fontSize: "clamp(48px, 7.4vw, 120px)",
-                lineHeight: 0.9,
-                fontWeight: 600,
-                letterSpacing: "-0.045em",
+                fontFamily: "var(--font-sans)",
+                fontSize: 21,
+                lineHeight: 1.2,
+                fontWeight: 700,
+                letterSpacing: "0.005em",
+                textTransform: "uppercase",
                 color: "var(--paper)",
                 whiteSpace: "nowrap",
-                display: "flex",
-                alignItems: "baseline",
-                gap: 4,
               }}>
-                BIPE
-                <span className="serif" style={{
-                  color: "var(--accent)",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  letterSpacing: "-0.04em",
-                  fontSize: "0.5em",
-                  alignSelf: "flex-end",
-                }}>.</span>
-              </div>
-              <div style={{
-                marginTop: 12,
-                fontFamily: "var(--font-mono)",
-                fontSize: 10.5,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "color-mix(in oklab, var(--paper) 55%, transparent)",
-              }}>
-                Banaras Institute of Polytechnic &amp; Engineering · Est. 2010
-              </div>
+                <span>Banaras Institute of</span>
+                <span>Polytechnic &amp; Engineering</span>
+              </span>
             </div>
+
+            {/* Spacer — keeps tagline pinned right on wide screens */}
+            <div />
 
             {/* Tagline + back-to-top — right */}
             <div style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-end",
-              gap: 18,
-              paddingLeft: 24,
+              gap: 12,
+              paddingLeft: 20,
               borderLeft: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
             }}>
               <div className="serif" style={{
                 fontStyle: "italic",
-                fontSize: "clamp(24px, 2.4vw, 38px)",
+                fontSize: "clamp(18px, 1.8vw, 24px)",
                 lineHeight: 1.1,
                 color: "color-mix(in oklab, var(--paper) 92%, transparent)",
                 maxWidth: "16ch",
