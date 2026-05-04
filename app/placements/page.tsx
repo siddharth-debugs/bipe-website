@@ -7,6 +7,7 @@ import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { PlacementsGallery } from "@/components/placements/PlacementsGallery";
 
 export const metadata: Metadata = metaFor("placements");
 
@@ -732,7 +733,31 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 6. VOICES                                                               */}
+      {/* 6. PLACEMENT GALLERY — Pinterest-style                                  */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--paper)", position: "relative" }}>
+        <div className="container">
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
+            <div>
+              <div className="eyebrow">§ On-campus drives · Gallery</div>
+              <h2 className="bipe-h2" style={{ marginTop: 14 }}>
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  Placement drives,
+                </span>{" "}
+                in pictures.
+              </h2>
+            </div>
+            <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right", lineHeight: 1.7 }}>
+              Photos from real placement drives on the BIPE campus &mdash; recruiter visits, student interviews and offer-letter moments. Filter by branch or year; tap any tile for the full image.
+            </p>
+          </div>
+
+          <PlacementsGallery />
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* 7. VOICES                                                               */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
         <div className="container" style={{ position: "relative" }}>

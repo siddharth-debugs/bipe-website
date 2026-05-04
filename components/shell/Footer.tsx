@@ -360,10 +360,10 @@ export const Footer = () => {
                 height={750}
                 priority={false}
                 style={{
-                  height: 26,
+                  height: 44,
                   width: "auto",
                   display: "block",
-                  opacity: 0.85,
+                  opacity: 0.92,
                 }}
               />
             </div>
