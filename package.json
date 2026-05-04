@@ -24,7 +24,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "image-size": "^2.0.2",
-    "pdfkit": "^0.18.0",
     "postcss": "^8",
     "tailwindcss": "^4.0.0",
     "typescript": "^5"
