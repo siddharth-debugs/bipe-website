@@ -81,7 +81,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Separate boys&rsquo; and girls&rsquo; blocks within the 6-acre campus. 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
+                Separate boys&rsquo; and girls&rsquo; blocks on campus. 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a hostel viewing <ArrowIcon size={16} /></Link>

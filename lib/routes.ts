@@ -21,7 +21,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   courses: {
     path: "/courses",
-    title: "Courses · 5 BTEUP-licensed diploma branches | BIPE",
+    title: "Academics · 5 BTEUP-licensed diploma branches | BIPE",
     description: "CS&E, Civil, Electrical, Mechanical Engineering (Production), Dairy. AICTE-approved · AFRC fees ₹30,150/year · JEECUP 4455.",
   },
   admission: {
@@ -77,7 +77,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   hostel: {
     path: "/hostel",
     title: "Hostel · Boys' & Girls' blocks | BIPE",
-    description: "Separate boys' and girls' hostel blocks on the 6-acre Phoolpur campus. On-campus mess, Wi-Fi, study halls, 24×7 security.",
+    description: "Separate boys' and girls' hostel blocks on the Phoolpur campus. On-campus mess, Wi-Fi, study halls, 24×7 security.",
   },
   faculty: {
     path: "/faculty",

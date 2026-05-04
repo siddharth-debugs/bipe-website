@@ -61,7 +61,7 @@ export const FinalCTA = () => (
                 { num: "16", l: "years" },
                 { num: "1,000+", l: "alumni" },
                 { num: "5", l: "branches" },
-                { num: "6-acre", l: "campus" },
+                { num: "JEECUP", l: "code 4455" },
               ].map((s, i) => (
                 <React.Fragment key={s.l}>
                   <div>

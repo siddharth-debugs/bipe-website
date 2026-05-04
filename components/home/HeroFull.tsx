@@ -50,7 +50,7 @@ export const HeroFull = () => (
             marginBottom: 28
           }}>
             AICTE-approved diplomas across 5 branches.<br />
-            Mentor 1:20 · Tuition from ₹30,150/yr · 1,000+ placed.
+            Mentor 1:20 · 1,000+ placed · Eastern UP since 2010.
           </p>
 
           <div className="row" style={{ gap: 12, alignItems: "center", flexWrap: "wrap" }}>
@@ -67,9 +67,9 @@ export const HeroFull = () => (
 
         <div className="bipe-hero-stats" style={{ display: "flex", flexDirection: "column", gap: 20, alignItems: "flex-end", paddingBottom: 6 }}>
           {[
-            { num: "12+", lbl: "Years" },
+            { num: "16+", lbl: "Years" },
             { num: "1,000+", lbl: "Placed" },
-            { num: "₹30K", lbl: "From / yr" },
+            { num: "5", lbl: "Branches" },
           ].map((s, i) => (
             <div key={i} style={{ textAlign: "right", borderRight: "2px solid var(--accent)", paddingRight: 16 }}>
               <div className="serif" style={{ fontStyle: "italic", fontSize: "clamp(30px, 3.4vw, 48px)", lineHeight: 0.9, color: "var(--paper)", letterSpacing: "-0.02em" }}>

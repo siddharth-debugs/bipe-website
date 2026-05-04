@@ -193,7 +193,7 @@ export default function Page() {
                 }}>
                   S
                 </span>
-                ixteen years ago, Purwanchal Educational Trust set up BIPE on six acres in Phoolpur with one stated intent &mdash; to build a polytechnic the families of Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur and Varanasi could trust without reservation. We are now in our seventeenth admission cycle. More than a thousand students who once sat in our lecture halls now hold engineering jobs across India.
+                ixteen years ago, Purwanchal Educational Trust set up BIPE in Phoolpur with one stated intent &mdash; to build a polytechnic the families of Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur and Varanasi could trust without reservation. We are now in our seventeenth admission cycle. More than a thousand students who once sat in our lecture halls now hold engineering jobs across India.
               </p>
               <p style={{ marginTop: 22 }}>
                 When a family in our catchment sends their child to BIPE, they are placing trust in us. We honour that trust with four commitments &mdash; <strong style={{ color: "var(--ink)" }}>fee transparency, verifiable approvals, a working grievance mechanism, and outcome accountability.</strong> Each is enumerated on this site, in writing, and audited annually.

@@ -334,7 +334,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Six-acre campus on the Phoolpur–Parsara road, off NH-56, in the Gajokhar village limits. Eighteen minutes from the airport, two minutes from Khalishpur railway station.
+              On the Phoolpur–Parsara road, off NH-56, in the Gajokhar village limits. Eighteen minutes from the airport, two minutes from Khalishpur railway station.
             </p>
           </div>
 

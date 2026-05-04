@@ -186,7 +186,7 @@ export function Nav() {
             </div>
           </NavMenuWrap>
 
-          <NavLink to="/courses" label="Courses" hi="पाठ्यक्रम" currentRoute={route} />
+          <NavLink to="/courses" label="Academics" hi="शैक्षणिक" currentRoute={route} />
 
           <NavMenuWrap
             trigger={
@@ -225,7 +225,7 @@ export function Nav() {
             }
           >
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 12, paddingLeft: 14 }}>
-              Six-acre campus, Phoolpur
+              Phoolpur, Varanasi
             </div>
             <div className="nav-mega-grid">
               <MegaItem to="/campus" title="Facilities" desc="Labs, library, workshops" icon="M3 21V8l9-6 9 6v13M9 21V12h6v9" />
@@ -242,7 +242,7 @@ export function Nav() {
 
           <NavMenuWrap
             trigger={
-              <Link href="/approvals" className={"nav-link " + (["approvals", "ai-policy", "mandatory-disclosure", "anti-ragging", "grievance"].includes(route) ? "active" : "")}>
+              <Link href="/approvals" className={"nav-link " + (["approvals", "mandatory-disclosure", "anti-ragging", "grievance"].includes(route) ? "active" : "")}>
                 {lang === "hi" ? "अनुपालन" : "Compliances"}<span className="nav-caret" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
               </Link>
             }
@@ -251,7 +251,6 @@ export function Nav() {
               Statutory · Public disclosures
             </div>
             <div className="nav-mega-grid">
-              <MegaItem to="/ai-policy" title="AI Policy" desc="How we use Claude in class" icon="M12 2a8 8 0 100 16 8 8 0 000-16zm0 4v8m-4-4h8" />
               <MegaItem to="/approvals" title="Approvals" desc="AICTE, BTEUP, ISO, AISHE" icon="M9 12l2 2 4-4M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z" />
               <MegaItem to="/mandatory-disclosure" title="Mandatory Disclosure" desc="AICTE Annexure-18 · 2026-27" icon="M6 2h9l5 5v15H6zM15 2v5h5" />
               <MegaItem to="/grievance" title="Grievance & Committees" desc="Anti-Ragging · POSH · SC/ST · PWD" icon="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" />
@@ -385,7 +384,7 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
   {
     title: "Academics",
     items: [
-      { to: "/courses", label: "Courses", hi: "पाठ्यक्रम" },
+      { to: "/courses", label: "Academics", hi: "शैक्षणिक" },
       { to: "/faculty", label: "Faculty", hi: "संकाय" },
       { to: "/teaching", label: "Teaching & Learning" },
       { to: "/placements", label: "Placements", hi: "प्लेसमेंट" },
@@ -404,7 +403,6 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
   {
     title: "Compliances",
     items: [
-      { to: "/ai-policy", label: "AI Policy" },
       { to: "/approvals", label: "Approvals" },
       { to: "/mandatory-disclosure", label: "Mandatory Disclosure" },
       { to: "/grievance", label: "Grievance & Committees" },

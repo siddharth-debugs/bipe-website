@@ -120,7 +120,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">§ Courses · 2026-27</div>
+              <div className="eyebrow">§ Academics · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 <span
                   className="serif"
@@ -131,7 +131,7 @@ export default function Page() {
                 BTEUP branches. Three years to a career.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                AICTE-approved diplomas, AFRC-published tuition of ₹30,150 a year, {totalSeats} seats across 2026-27 — including Dairy Engineering, offered by under 1.1% of UP polytechnics. Every branch listed here is BTEUP-licensed, taught on the same six-acre Phoolpur campus, under the same mentor structure.
+                AICTE-approved diplomas, AFRC-published tuition of ₹30,150 a year, {totalSeats} seats across 2026-27 — including Dairy Engineering, offered by under 1.1% of UP polytechnics. Every branch listed here is BTEUP-licensed, taught on the same Phoolpur campus, under the same mentor structure.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
@@ -358,7 +358,7 @@ export default function Page() {
                   {[
                     { l: "Seats", v: `${totalSeats}` },
                     { l: "Tuition", v: "₹30,150/yr" },
-                    { l: "Campus", v: "6 acres" },
+                    { l: "Branches", v: "5" },
                   ].map((m, i, arr) => (
                     <div key={m.l} style={{
                       paddingLeft: i === 0 ? 0 : 14,
@@ -1181,7 +1181,7 @@ export default function Page() {
                     { num: "16", l: "years" },
                     { num: "1,000+", l: "alumni" },
                     { num: "5", l: "branches" },
-                    { num: "6-acre", l: "campus" },
+                    { num: "1:20", l: "mentor ratio" },
                   ].map((s, i) => (
                     <React.Fragment key={s.l}>
                       <div>

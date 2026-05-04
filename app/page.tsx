@@ -7,8 +7,6 @@ import { Countdown } from "@/components/home/Countdown";
 import { WhyBipe } from "@/components/home/WhyBipe";
 import { Branches } from "@/components/home/Branches";
 import { JeecupSteps } from "@/components/home/JeecupSteps";
-import { FeeCallout } from "@/components/home/FeeCallout";
-import { PrincipalMessage } from "@/components/home/PrincipalMessage";
 import { CampusLife } from "@/components/home/CampusLife";
 import { Testimonials } from "@/components/home/Testimonials";
 import { InlineApply } from "@/components/home/InlineApply";
@@ -28,8 +26,6 @@ export default function HomePage() {
       <WhyBipe />
       <Branches />
       <JeecupSteps />
-      <FeeCallout />
-      <PrincipalMessage />
       <CampusLife />
       <Testimonials />
       <InlineApply />

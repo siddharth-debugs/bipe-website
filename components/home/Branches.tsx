@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
-import { Img } from "@/components/ui/Img";
+import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { ArrowIcon } from "@/components/shell/Icons";
 
 const BRANCH_ICONS: Record<string, string> = {
@@ -94,13 +94,25 @@ export const Branches = () => {
                 {b.tag && <span className="pill pill-accent">{b.tag}</span>}
               </div>
 
-              <div style={{ position: "relative", marginTop: 20, borderRadius: 16, overflow: "hidden" }}>
-                <Img src={(BIPE_IMG.byCode[b.code] || BIPE_IMG.byCode.default)} label={`BTEUP ${b.code}`} aspectRatio="16/9" style={{ borderRadius: 16 }} />
-                <div style={{ position: "absolute", left: 14, top: 14, width: 48, height: 48, borderRadius: 12, background: "var(--brand)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 18px -4px rgba(10,26,63,0.3)" }}>
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                    <path d={BRANCH_ICONS[b.code] || "M3 12h18"} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
+              <div style={{ position: "relative", marginTop: 20 }}>
+                <CrossfadeSlider
+                  images={[
+                    { src: BIPE_IMG.workshop, alt: "Workshop / machining bay" },
+                    { src: BIPE_IMG.computerLab, alt: "120-computer lab" },
+                    { src: BIPE_IMG.dairy, alt: "Dairy pilot plant" },
+                  ]}
+                  aspectRatio="16/9"
+                  radius={16}
+                  interval={4000}
+                  fadeMs={900}
+                  overlay={
+                    <div style={{ position: "absolute", left: 14, top: 14, width: 48, height: 48, borderRadius: 12, background: "var(--brand)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 18px -4px rgba(10,26,63,0.3)", zIndex: 2 }}>
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                        <path d={BRANCH_ICONS[b.code] || "M3 12h18"} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  }
+                />
               </div>
 
               <h3 className="bipe-h2" style={{ marginTop: 20, position: "relative" }}>{b.name}</h3>
@@ -108,13 +120,12 @@ export const Branches = () => {
 
               <p style={{ color: "var(--ink-2)", fontSize: 15, marginTop: 18, lineHeight: 1.6, position: "relative" }}>{b.desc}</p>
 
-              <div className="bipe-grid-3" style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 12, overflow: "hidden", position: "relative" }}>
+              <div className="bipe-form-row" style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 12, overflow: "hidden", position: "relative" }}>
                 {([
                   ["Duration", "3 YR · 6 SEM"],
                   ["Seats", `${b.seats}`],
-                  ["Fee/yr", `₹${b.fee}`],
                 ] as [string, string][]).map(([k, v], j) => (
-                  <div key={k} style={{ padding: "14px 16px", borderRight: j < 2 ? "1px solid var(--line)" : "none", background: "var(--white)" }}>
+                  <div key={k} style={{ padding: "14px 16px", borderRight: j < 1 ? "1px solid var(--line)" : "none", background: "var(--white)" }}>
                     <div className="eyebrow" style={{ fontSize: 10 }}>{k}</div>
                     <div style={{ fontWeight: 700, fontSize: 15, marginTop: 4, color: "var(--ink)", fontFamily: "var(--font-mono)" }}>{v}</div>
                   </div>

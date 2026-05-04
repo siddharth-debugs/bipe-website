@@ -460,7 +460,7 @@ export function CoursesView() {
                 Same campus · Same mentors
               </span>
               <div style={{ marginTop: 6 }}>
-                All five branches share the same six-acre Phoolpur campus, library and faculty mentorship structure — the BTEUP diploma you graduate with is identical, regardless of branch.
+                All five branches share the same Phoolpur campus, library and faculty mentorship structure — the BTEUP diploma you graduate with is identical, regardless of branch.
               </div>
             </div>
           </div>
