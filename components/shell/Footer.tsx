@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
@@ -151,37 +150,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Stat pill row — visual richness under the wordmark */}
-          <div style={{
-            marginTop: 28,
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 8,
-            paddingTop: 20,
-            borderTop: "1px solid color-mix(in oklab, var(--paper) 10%, transparent)",
-          }}>
-            {[
-              ["6-acre", "Phoolpur campus"],
-              ["5", "BTEUP branches"],
-              ["1,000+", "Alumni placed"],
-              ["33", "Faculty"],
-              ["1:20", "Mentor ratio"],
-              ["16 yrs", "Eastern UP"],
-            ].map(([n, l]) => (
-              <div key={l} style={{
-                display: "inline-flex",
-                alignItems: "baseline",
-                gap: 8,
-                padding: "8px 14px",
-                borderRadius: 999,
-                border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
-                background: "color-mix(in oklab, var(--paper) 4%, transparent)",
-              }}>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, fontWeight: 700, color: "var(--paper)" }}>{n}</span>
-                <span style={{ fontFamily: "var(--font-mono)", fontSize: 9.5, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>{l}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* CTA + contact strip — three matched cards */}
@@ -213,15 +181,15 @@ export const Footer = () => {
             }}>
               Take the next step
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              <Link href="/apply" className="btn btn-sm" style={{ background: "var(--paper)", color: "var(--ink)", fontWeight: 600 }}>
-                Apply for 2026-27 <ArrowIcon size={12} />
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              <Link href="/apply" className="btn btn-sm bipe-footer-cta" style={{ background: "var(--paper)", color: "var(--ink)", fontWeight: 600 }}>
+                Apply <ArrowIcon size={11} />
               </Link>
-              <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-sm" style={{ background: "#25D366", color: "#fff", border: "none" }}>
+              <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-sm bipe-footer-cta" style={{ background: "#25D366", color: "#fff", border: "none" }}>
                 <WhatsAppIcon /> WhatsApp
               </a>
-              <Link href="/visit" className="btn btn-sm" style={{ color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 28%, transparent)" }}>
-                Visit campus
+              <Link href="/visit" className="btn btn-sm bipe-footer-cta" style={{ color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 28%, transparent)" }}>
+                Visit
               </Link>
             </div>
           </div>
@@ -395,48 +363,17 @@ export const Footer = () => {
               </a>
             ))}
           </div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", color: "color-mix(in oklab, var(--paper) 50%, transparent)", textTransform: "uppercase" }}>
-            YouTube · LinkedIn launching 2026-27
+          <div className="row" style={{ gap: 18, fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", flexWrap: "wrap" }}>
+            <Link href="/terms" style={{ color: "color-mix(in oklab, var(--paper) 65%, transparent)", textDecoration: "none" }}>Terms</Link>
+            <span style={{ color: "color-mix(in oklab, var(--paper) 30%, transparent)" }}>·</span>
+            <Link href="/privacy" style={{ color: "color-mix(in oklab, var(--paper) 65%, transparent)", textDecoration: "none" }}>Privacy</Link>
           </div>
         </div>
 
-        <div style={{ padding: "28px 0", borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexWrap: "wrap", gap: 24, alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 50%, transparent)" }}>
-            Approvals &amp; Affiliations
-          </div>
-          <div className="row" style={{ gap: 0, flexWrap: "wrap" }}>
-            {([
-              { l: "JEECUP", v: C.jeecup },
-              { l: "AICTE", v: C.aicte },
-              { l: "BTEUP", v: "Affiliated" },
-              { l: "ISO", v: "9001:2015" },
-              { l: "AFRC", v: "Approved" },
-            ]).map((a, i, arr) => (
-              <React.Fragment key={a.l}>
-                <div style={{ padding: "4px 22px" }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", color: "color-mix(in oklab, var(--paper) 50%, transparent)" }}>{a.l}</div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "var(--paper)", marginTop: 2 }}>{a.v}</div>
-                </div>
-                {i < arr.length - 1 && <span style={{ width: 1, height: 32, background: "color-mix(in oklab, var(--paper) 14%, transparent)" }} />}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-
-        <div style={{ padding: "24px 0 36px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14, fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", alignItems: "center" }}>
-          <div>© 2026 Banaras Institute of Polytechnic &amp; Engineering. Engineering education that changes lives in Eastern UP — since 2010.</div>
-          <div className="row" style={{ gap: 18, fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", flexWrap: "wrap" }}>
-            <Link href="/mandatory-disclosure" style={{ color: "inherit", textDecoration: "none" }}>Mandatory Disclosure</Link>
-            <span>·</span>
-            <Link href="/grievance" style={{ color: "inherit", textDecoration: "none" }}>Grievance</Link>
-            <span>·</span>
-            <Link href="/anti-ragging" style={{ color: "inherit", textDecoration: "none" }}>Anti-Ragging</Link>
-            <span>·</span>
-            <Link href="/privacy" style={{ color: "inherit", textDecoration: "none" }}>Privacy</Link>
-            <span>·</span>
-            <Link href="/terms" style={{ color: "inherit", textDecoration: "none" }}>Terms</Link>
-            <span>·</span>
-            <Link href="/ai-policy" style={{ color: "inherit", textDecoration: "none" }}>AI Policy</Link>
+        <div style={{ padding: "20px 0 28px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14, fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", alignItems: "center", borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+          <div>© 2026 Banaras Institute of Polytechnic &amp; Engineering.</div>
+          <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 45%, transparent)" }}>
+            Phoolpur · Varanasi · since 2010
           </div>
         </div>
       </div>

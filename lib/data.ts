@@ -95,12 +95,13 @@ export const DATA: DataShape = {
     iso: "ISO 9001:2015",
   },
   social: [
-    // From Phase-2 Social Media Audit — these are the actual public handles
-    { name: "Facebook", handle: "bipevns", url: "https://www.facebook.com/bipevns/" },
+    // Public handles. YouTube + LinkedIn URLs are placeholders —
+    // swap when the user supplies the real handles.
+    { name: "Facebook",  handle: "bipevns", url: "https://www.facebook.com/bipevns/" },
     { name: "Instagram", handle: "bipevns", url: "https://www.instagram.com/bipevns/" },
-    { name: "X", handle: "bipevns", url: "https://x.com/bipevns" },
-    // YouTube/LinkedIn channels are recommended in Phase-2 but not yet live —
-    // see TODOs on Footer.tsx — link is added once the channel is launched.
+    { name: "X",         handle: "bipevns", url: "https://x.com/bipevns" },
+    { name: "YouTube",   handle: "bipevns", url: "https://www.youtube.com/@bipevns" },
+    { name: "LinkedIn",  handle: "bipevns", url: "https://www.linkedin.com/school/bipevns/" },
   ],
   regulators: [
     { name: "AICTE", full: "All India Council for Technical Education", url: "https://www.aicte-india.org/" },
