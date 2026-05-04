@@ -22,14 +22,15 @@ export const BrandMark = () => (
       style={{
         display: "inline-flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "space-between",
         height: 50,
-        maxWidth: 180,
+        maxWidth: 280,
         fontFamily: "var(--font-sans)",
-        fontSize: 13,
-        lineHeight: 1.18,
+        // Two lines × line-height ≈ 50px so text height matches logo height
+        fontSize: 22,
+        lineHeight: 1.13,
         fontWeight: 600,
-        letterSpacing: "-0.005em",
+        letterSpacing: "-0.018em",
         color: "var(--ink)",
         whiteSpace: "normal",
       }}

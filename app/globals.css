@@ -1108,8 +1108,10 @@ body.no-motion .skeleton { animation: none; }
   .nav-utility { display: none; }
   .nav-inner { padding: 10px 16px; gap: 10px; }
 }
-@media (max-width: 560px) {
-  /* On small phones drop the full-name text — logo alone is enough */
+/* Below 860px the primary nav already hides; the brand lockup would
+   compete with Apply + hamburger. Drop the height-matched name there
+   so we never break the "same height as logo" promise. */
+@media (max-width: 860px) {
   .brand-mark-name { display: none !important; }
 }
 @media (max-width: 480px) {
