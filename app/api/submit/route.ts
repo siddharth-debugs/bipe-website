@@ -6,6 +6,7 @@ import {
   type ApplyFormData,
 } from "@/lib/validation";
 import { sendFormEmail } from "@/lib/email-service";
+import { forwardToBackend } from "@/lib/backend";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -72,6 +73,22 @@ export async function POST(req: Request) {
         { status: 502 },
       );
     }
+    void forwardToBackend("apply", {
+      name: d.name,
+      phone: d.phone,
+      email: d.email,
+      branch: d.branch,
+      consent: d.consent,
+      parent: d.parent,
+      category: d.category,
+      board: d.board,
+      marks: d.marks,
+      source: d.source,
+      visit: d.visit,
+      visitDate: d.visit === "yes" ? d.visitDate : "",
+      visitTime: d.visit === "yes" ? d.visitTime : "",
+      notes: d.notes,
+    });
     return NextResponse.json({ ok: true, mocked: sent.mocked === true });
   }
 
@@ -109,6 +126,18 @@ export async function POST(req: Request) {
         { status: 502 },
       );
     }
+    void forwardToBackend("visit", {
+      name: d.name,
+      phone: d.phone,
+      email: d.email,
+      branch: d.branch,
+      consent: d.consent,
+      visitDate: d.visitDate,
+      visitTime: d.visitTime,
+      party: d.party,
+      needsShuttle: !!d.needsShuttle,
+      notes: d.notes,
+    });
     return NextResponse.json({ ok: true, mocked: sent.mocked === true });
   }
 
@@ -142,5 +171,14 @@ export async function POST(req: Request) {
       { status: 502 },
     );
   }
+  void forwardToBackend("contact", {
+    name: d.name,
+    phone: d.phone,
+    email: d.email,
+    branch: d.branch,
+    consent: d.consent,
+    source: d.source,
+    message: d.message,
+  });
   return NextResponse.json({ ok: true, mocked: sent.mocked === true });
 }

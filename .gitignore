@@ -16,3 +16,8 @@ docs/
 
 # Claude Code local settings
 .claude/
+
+# Private SSH / cloud keys — NEVER commit
+*.pem
+*.key
+acces.pem
