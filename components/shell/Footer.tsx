@@ -343,8 +343,43 @@ export const Footer = () => {
 
         <div style={{ padding: "20px 0 28px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14, fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", alignItems: "center", borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
           <div>© 2026 Banaras Institute of Polytechnic &amp; Engineering.</div>
-          <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 45%, transparent)" }}>
-            Phoolpur · Varanasi · since 2010
+
+          <div style={{ display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 45%, transparent)" }}>
+              Phoolpur · Varanasi · since 2010
+            </div>
+
+            {/* Designed & developed credit */}
+            <div style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              paddingLeft: 18,
+              borderLeft: "1px solid color-mix(in oklab, var(--paper) 18%, transparent)",
+            }}>
+              <span style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "color-mix(in oklab, var(--paper) 45%, transparent)",
+              }}>
+                Designed &amp; developed by
+              </span>
+              <Image
+                src="/credit-logo.png"
+                alt="SortString"
+                width={1700}
+                height={750}
+                priority={false}
+                style={{
+                  height: 26,
+                  width: "auto",
+                  display: "block",
+                  opacity: 0.85,
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
