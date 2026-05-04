@@ -4,7 +4,7 @@ export type RouteKey =
   | "documents" | "jeecup" | "hostel" | "faculty" | "events"
   | "chairman" | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
   | "mandatoryDisclosure" | "aiPolicy"
-  | "privacy" | "terms" | "antiRagging";
+  | "privacy" | "terms" | "antiRagging" | "brand";
 
 export const SITE_URL = "https://bipevns.org";
 
@@ -148,6 +148,11 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     path: "/anti-ragging",
     title: "Anti-Ragging Pledge & Committee | BIPE",
     description: "Zero-tolerance anti-ragging at BIPE. Committee composition, complaint flow, UGC anti-ragging portal link and Supreme-Court-mandated undertaking.",
+  },
+  brand: {
+    path: "/brand",
+    title: "Brand Kit · Logo, Colours, Typography | BIPE",
+    description: "BIPE brand kit — logo, primary palette, accents and typography. For press, partners and media.",
   },
 };
 
