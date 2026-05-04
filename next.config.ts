@@ -9,7 +9,7 @@ import type { NextConfig } from "next";
  * /api/admin and substitutes /api/v1.
  */
 const BACKEND_BASE =
-  process.env.BIPE_BACKEND_URL?.replace(/\/+$/, "") ||
+  process.env.BIPE_BACKEND_URL?.trim().replace(/\/+$/, "") ||
   "http://127.0.0.1:8000/api/v1";
 
 const nextConfig: NextConfig = {
