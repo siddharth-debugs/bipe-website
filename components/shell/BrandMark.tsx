@@ -24,13 +24,15 @@ export const BrandMark = () => (
         flexDirection: "column",
         justifyContent: "space-between",
         height: 50,
-        maxWidth: 280,
+        maxWidth: 290,
         fontFamily: "var(--font-sans)",
-        // Two lines × line-height ≈ 50px so text height matches logo height
-        fontSize: 22,
-        lineHeight: 1.13,
-        fontWeight: 600,
-        letterSpacing: "-0.018em",
+        // Two uppercase lines × line-height ≈ 50px to match logo height.
+        // Caps read taller visually so size drops slightly vs. mixed case.
+        fontSize: 19,
+        lineHeight: 1.18,
+        fontWeight: 700,
+        letterSpacing: "0.005em",
+        textTransform: "uppercase",
         color: "var(--ink)",
         whiteSpace: "normal",
       }}
