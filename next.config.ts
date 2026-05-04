@@ -1,15 +1,36 @@
 import type { NextConfig } from "next";
 
+/**
+ * Backend URL used by the admin proxy below. Set on Vercel via
+ *   BIPE_BACKEND_URL = http://<ec2-host>/api/v1
+ * Locally falls back to the dev Django on 127.0.0.1:8000.
+ *
+ * Trailing /api/v1 is part of the URL — the rewrite source strips
+ * /api/admin and substitutes /api/v1.
+ */
+const BACKEND_BASE =
+  process.env.BIPE_BACKEND_URL?.replace(/\/+$/, "") ||
+  "http://127.0.0.1:8000/api/v1";
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
-    // Required to serve our BIPE logo SVG through next/image.
-    // The CSP keeps the SVG sandboxed so an arbitrary uploaded SVG can't
-    // execute scripts — safe because we only ship a static asset we control.
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+
+  // Proxy admin API calls through Vercel so the browser only ever sees
+  // the HTTPS Vercel origin. Vercel does the server-to-server fetch to
+  // the (HTTP) backend on EC2 — no mixed-content block, no CORS preflight.
+  async rewrites() {
+    return [
+      {
+        source: "/api/admin/:path*",
+        destination: `${BACKEND_BASE}/:path*`,
+      },
+    ];
   },
 };
 

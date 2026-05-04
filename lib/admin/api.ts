@@ -6,8 +6,17 @@
  * - Throws ApiError with `.status` and `.data` on non-2xx responses.
  */
 
+/**
+ * The dashboard talks to its OWN origin under /api/admin, which Next.js
+ * (next.config.ts → rewrites) proxies server-side to the real Django
+ * backend. Browser only sees HTTPS Vercel; the HTTP hop to EC2 is
+ * server-to-server. No CORS preflight, no mixed content.
+ *
+ * Override with NEXT_PUBLIC_API_BASE_URL for local dev hitting Django
+ * directly (e.g. http://127.0.0.1:8000/api/v1).
+ */
 export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://127.0.0.1:8000/api/v1";
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? "/api/admin";
 
 const ACCESS_KEY = "bipe.access";
 const REFRESH_KEY = "bipe.refresh";
@@ -78,7 +87,12 @@ export async function api<T = unknown>(
 ): Promise<T> {
   const { method = "GET", body, searchParams, authed = true } = opts;
 
-  const url = new URL(`${API_BASE_URL}${path.startsWith("/") ? path : "/" + path}`);
+  // API_BASE_URL may be absolute (http://...) or relative (/api/admin).
+  // For relative paths, anchor against window.location so URL() can parse.
+  const raw = `${API_BASE_URL}${path.startsWith("/") ? path : "/" + path}`;
+  const url = /^https?:\/\//i.test(raw)
+    ? new URL(raw)
+    : new URL(raw, isBrowser() ? window.location.origin : "http://localhost");
   if (searchParams) {
     for (const [k, v] of Object.entries(searchParams)) {
       if (v === undefined || v === "") continue;
