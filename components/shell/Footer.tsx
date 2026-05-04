@@ -152,29 +152,28 @@ export const Footer = () => {
 
         </div>
 
-        {/* CTA + contact strip — three matched cards */}
+        {/* CTA + contact strip — three compact matched cards */}
         <div style={{
-          padding: "32px 0",
+          padding: "20px 0",
           borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
           display: "grid",
           gridTemplateColumns: "1.4fr 1fr 1.1fr",
-          gap: 14,
+          gap: 10,
           alignItems: "stretch",
         }} className="bipe-grid-3">
           {/* CTA card */}
           <div style={{
-            padding: "22px 24px",
-            borderRadius: 16,
+            padding: "14px 16px",
+            borderRadius: 12,
             border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
             background: "color-mix(in oklab, var(--paper) 5%, transparent)",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
-            gap: 18,
+            gap: 10,
           }}>
             <div style={{
               fontFamily: "var(--font-mono)",
-              fontSize: 10,
+              fontSize: 9.5,
               letterSpacing: "0.16em",
               textTransform: "uppercase",
               color: "color-mix(in oklab, var(--paper) 55%, transparent)",
@@ -198,59 +197,46 @@ export const Footer = () => {
           <a
             href={`tel:${C.phone}`}
             style={{
-              padding: "22px 24px",
-              borderRadius: 16,
+              padding: "14px 16px",
+              borderRadius: 12,
               border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
               background: "color-mix(in oklab, var(--paper) 5%, transparent)",
               display: "flex",
-              flexDirection: "column",
+              alignItems: "center",
               gap: 12,
               textDecoration: "none",
               color: "var(--paper)",
               transition: "border-color .2s, background .2s",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{
-                width: 32,
-                height: 32,
-                borderRadius: 10,
-                background: "color-mix(in oklab, var(--brand) 28%, transparent)",
-                color: "var(--paper)",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
-              }}>
-                <PhoneIcon />
-              </span>
-              <span style={{
+            <span style={{
+              width: 32, height: 32, borderRadius: 9,
+              background: "color-mix(in oklab, var(--brand) 28%, transparent)",
+              color: "var(--paper)",
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}>
+              <PhoneIcon />
+            </span>
+            <div style={{ minWidth: 0 }}>
+              <div style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 10,
+                fontSize: 9.5,
                 letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 color: "color-mix(in oklab, var(--paper) 55%, transparent)",
               }}>
                 Call admissions
-              </span>
-            </div>
-            <div>
-              <div style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 19,
-                fontWeight: 700,
-                color: "var(--paper)",
-                letterSpacing: "-0.005em",
-              }}>
-                {C.phone}
               </div>
               <div style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 13.5,
-                color: "color-mix(in oklab, var(--paper) 60%, transparent)",
-                marginTop: 4,
+                fontSize: 16,
+                fontWeight: 700,
+                color: "var(--paper)",
+                letterSpacing: "-0.005em",
+                marginTop: 2,
               }}>
-                Alt · {C.phone2}
+                {C.phone}
               </div>
             </div>
           </a>
@@ -259,64 +245,49 @@ export const Footer = () => {
           <a
             href={`mailto:${C.email}`}
             style={{
-              padding: "22px 24px",
-              borderRadius: 16,
+              padding: "14px 16px",
+              borderRadius: 12,
               border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
               background: "color-mix(in oklab, var(--paper) 5%, transparent)",
               display: "flex",
-              flexDirection: "column",
+              alignItems: "center",
               gap: 12,
               textDecoration: "none",
               color: "var(--paper)",
               transition: "border-color .2s, background .2s",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{
-                width: 32,
-                height: 32,
-                borderRadius: 10,
-                background: "color-mix(in oklab, var(--accent) 22%, transparent)",
-                color: "var(--paper)",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
-              }}>
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M2 4h12v8H2zM2 4l6 5 6-5" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" strokeLinecap="round" />
-                </svg>
-              </span>
-              <span style={{
+            <span style={{
+              width: 32, height: 32, borderRadius: 9,
+              background: "color-mix(in oklab, var(--accent) 22%, transparent)",
+              color: "var(--paper)",
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
+            }}>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 4h12v8H2zM2 4l6 5 6-5" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" strokeLinecap="round" />
+              </svg>
+            </span>
+            <div style={{ minWidth: 0 }}>
+              <div style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 10,
+                fontSize: 9.5,
                 letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 color: "color-mix(in oklab, var(--paper) 55%, transparent)",
               }}>
                 Email · Mon–Sat 9–6
-              </span>
-            </div>
-            <div>
+              </div>
               <div style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: 15,
+                fontSize: 13,
                 fontWeight: 700,
                 color: "var(--paper)",
                 wordBreak: "break-all",
                 letterSpacing: "-0.005em",
+                marginTop: 2,
               }}>
                 {C.email}
-              </div>
-              <div style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "color-mix(in oklab, var(--paper) 55%, transparent)",
-                marginTop: 6,
-              }}>
-                Same-day reply on working days
               </div>
             </div>
           </a>
