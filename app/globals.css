@@ -306,7 +306,7 @@ body.no-motion .live-dot { animation: none; }
   border-bottom: 1px solid color-mix(in oklab, var(--paper) 8%, transparent);
 }
 .nav-utility-inner {
-  max-width: var(--container);
+  max-width: 1480px;
   margin: 0 auto;
   padding: 7px 24px;
   display: flex; justify-content: space-between; align-items: center;
@@ -351,8 +351,8 @@ body.no-motion .live-dot { animation: none; }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   padding: 12px 24px;
-  max-width: var(--container); margin: 0 auto;
-  gap: 24px;
+  max-width: 1480px; margin: 0 auto;
+  gap: 20px;
 }
 .nav-links { display: flex; gap: 2px; align-items: center; }
 .nav-links > * { display: inline-flex; align-items: center; }

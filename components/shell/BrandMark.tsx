@@ -23,18 +23,19 @@ export const BrandMark = () => (
         display: "inline-flex",
         flexDirection: "column",
         justifyContent: "space-between",
+        flexShrink: 0,
         height: 50,
-        maxWidth: 290,
+        // Lock the width so flex can't squeeze the lockup into 4 lines
+        // when the primary nav grows. Each line of caps fits in ≤290px.
+        width: 290,
         fontFamily: "var(--font-sans)",
-        // Two uppercase lines × line-height ≈ 50px to match logo height.
-        // Caps read taller visually so size drops slightly vs. mixed case.
         fontSize: 19,
         lineHeight: 1.18,
         fontWeight: 700,
         letterSpacing: "0.005em",
         textTransform: "uppercase",
         color: "var(--ink)",
-        whiteSpace: "normal",
+        whiteSpace: "nowrap",
       }}
     >
       <span>Banaras Institute of</span>
