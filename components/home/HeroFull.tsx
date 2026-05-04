@@ -9,14 +9,17 @@ export const HeroFull = () => (
   <section style={{ position: "relative", overflow: "hidden", background: "#000" }}>
     <Img src={BIPE_IMG.heroWide} label="" priority style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
 
+    {/* Flat dark overlay — replaces the multi-stop vignette so text
+        contrast is uniform across the whole hero. A soft bottom fade
+        keeps the section seam clean. */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 24%, rgba(0,0,0,0.4) 58%, rgba(0,0,0,0.88) 90%, rgba(0,0,0,0.96) 100%)",
+      background: "rgba(0, 0, 0, 0.55)",
       pointerEvents: "none"
     }} />
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 22%, transparent 45%)",
+      background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.75) 100%)",
       pointerEvents: "none"
     }} />
 
