@@ -229,7 +229,7 @@ export function Nav() {
             </div>
             <div className="nav-mega-grid">
               <MegaItem to="/campus" title="Facilities" desc="Labs, library, workshops" icon="M3 21V8l9-6 9 6v13M9 21V12h6v9" />
-              <MegaItem to="/hostel" title="Hostel" desc="Boys' & girls' blocks · mess" icon="M3 11l9-8 9 8v10H3zM9 21v-6h6v6" />
+              <MegaItem to="/hostel" title="Hostel" desc="Boys' block · on-campus mess" icon="M3 11l9-8 9 8v10H3zM9 21v-6h6v6" />
               <MegaItem to="/faculty" title="Faculty" desc="45+ mentors · 1:20 ratio" icon="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" />
             </div>
             <div className="nav-mega-footer">

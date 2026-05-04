@@ -76,8 +76,8 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   hostel: {
     path: "/hostel",
-    title: "Hostel · Boys' & Girls' blocks | BIPE",
-    description: "Separate boys' and girls' hostel blocks on the Phoolpur campus. On-campus mess, Wi-Fi, study halls, 24×7 security.",
+    title: "Hostel · Boys' on-campus block | BIPE",
+    description: "Boys' hostel on the Phoolpur campus — furnished rooms, on-campus mess, Wi-Fi, study halls, resident warden, 24×7 security.",
   },
   faculty: {
     path: "/faculty",

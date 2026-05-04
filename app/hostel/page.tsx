@@ -21,7 +21,7 @@ const AMENITIES: { icon: React.ReactNode; title: string; body: string }[] = [
   { icon: <BedIcon />, title: "Furnished room", body: "Bed, mattress, study desk and chair." },
   { icon: <PlateIcon />, title: "3 meals a day", body: "Vegetarian and non-vegetarian options." },
   { icon: <DropIcon />, title: "24/7 water", body: "Backed by 6-bore rainwater + tank reserve." },
-  { icon: <BoltIcon />, title: "Backup power", body: "Generator + UPS across hostel blocks." },
+  { icon: <BoltIcon />, title: "Backup power", body: "Generator + UPS across the hostel." },
   { icon: <WifiIcon />, title: "Wi-Fi in commons", body: "50 Mbps firewalled · campus-wide." },
   { icon: <CrossIcon />, title: "Medical room", body: "On-call doctor and emergency access." },
   { icon: <ShieldIcon />, title: "24×7 security", body: "Staffed gate and visitor register." },
@@ -31,7 +31,7 @@ const AMENITIES: { icon: React.ReactNode; title: string; body: string }[] = [
 const SAFETY: { n: string; body: string }[] = [
   { n: "01", body: "Boundary walls and a staffed gate — entries logged after 7 PM." },
   { n: "02", body: "Visitor registration with photo-ID. Parents only after verification." },
-  { n: "03", body: "Gender-specific wardens resident in each hostel block." },
+  { n: "03", body: "Resident warden on duty round the clock; on-call doctor reachable from the warden's desk." },
   { n: "04", body: "Anti-ragging committee, 24×7 helpline, anonymous complaint box." },
   { n: "05", body: "Fire safety equipment on every floor and quarterly fire drills." },
   { n: "06", body: "9:30 PM curfew — extensions only with parental authorisation." },
@@ -81,7 +81,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Separate boys&rsquo; and girls&rsquo; blocks on campus. 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
+                Boys&rsquo; hostel on campus &mdash; 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a hostel viewing <ArrowIcon size={16} /></Link>
@@ -92,19 +92,19 @@ export default function Page() {
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink-3)" }}>
                   Within the boundary &rarr;
                 </span>
-                {["Boys block", "Girls block", "Mess", "Medical room"].map((t, i) => (
+                {["Boys hostel", "Mess", "Medical room"].map((t, i, arr) => (
                   <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 17, color: "var(--ink-2)" }}>
                     {t}
-                    {i < 3 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}
+                    {i < arr.length - 1 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}
                   </span>
                 ))}
               </div>
             </div>
 
-            {/* Stacked image pair */}
+            {/* Stacked image pair — boys hostel exterior + interior */}
             <div style={{ display: "grid", gap: 14 }}>
-              <Img src={BIPE_IMG.hostelBoys} label="HOSTEL · BOYS BLOCK" style={{ height: 260, borderRadius: 18 }} />
-              <Img src={BIPE_IMG.hostelGirls} label="HOSTEL · GIRLS BLOCK" style={{ height: 220, borderRadius: 18, marginLeft: 40 }} />
+              <Img src={BIPE_IMG.hostelBoys} label="HOSTEL · EXTERIOR" style={{ height: 260, borderRadius: 18 }} />
+              <Img src={BIPE_IMG.hostel} label="HOSTEL · INTERIOR" style={{ height: 220, borderRadius: 18, marginLeft: 40 }} />
             </div>
           </div>
         </div>
@@ -235,7 +235,7 @@ export default function Page() {
                 </span>
               </h2>
               <p style={{ color: "var(--ink-2)", marginTop: 18, fontSize: 15.5, lineHeight: 1.7, maxWidth: "46ch" }}>
-                Every protocol below is written for the parent in Mau, Ghazipur or Azamgarh who is putting their child on a train. The seven rules apply identically to the boys&rsquo; and girls&rsquo; blocks.
+                Every protocol below is written for the parent in Mau, Ghazipur or Azamgarh who is putting their son on a train. The seven rules apply across every floor of the hostel.
               </p>
               <div style={{ marginTop: 26, padding: "22px 24px", background: "var(--white)", border: "1px solid var(--line)", borderRadius: 16 }}>
                 <div className="serif" style={{ fontStyle: "italic", fontSize: 26, lineHeight: 1.35, color: "var(--ink)" }}>

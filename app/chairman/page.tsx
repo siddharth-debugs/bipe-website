@@ -233,7 +233,7 @@ export default function Page() {
               </p>
 
               <p style={{ marginTop: 22 }}>
-                I want to say something specifically to <strong style={{ color: "var(--brand)" }}>the daughters of Eastern UP and to the parents who hesitate to send them.</strong> A girl student at BIPE is treated with the same expectation, the same respect, and the same opportunity as any other student. We have separate hostel blocks. We have a working Internal Committee under the POSH Act. We have faculty who answer phones at night when a parent worries. Send your daughters to us. We will return them as engineers.
+                I want to say something specifically to <strong style={{ color: "var(--brand)" }}>the daughters of Eastern UP and to the parents who hesitate to send them.</strong> A girl student at BIPE is treated with the same expectation, the same respect, and the same opportunity as any other student. We have a working Internal Committee under the POSH Act. We have faculty who answer phones at night when a parent worries. Our on-campus hostel is, at present, for boys only &mdash; a girls&rsquo; block is on the trust&rsquo;s roadmap, and until it opens, our admissions team will personally help any out-of-Varanasi family find safe local accommodation for their daughter. Send your daughters to us. We will return them as engineers.
               </p>
 
               <p style={{ marginTop: 22 }}>

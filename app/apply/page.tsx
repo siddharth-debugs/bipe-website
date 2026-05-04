@@ -29,7 +29,7 @@ const AFTER: { n: string; title: string; body: string }[] = [
 const DISCUSS: { n: string; title: string; body: string }[] = [
   { n: "01", title: "Best branch fit by rank", body: "Given your JEECUP rank (or expected) and 10th marks, which of the five branches give the strongest career return?" },
   { n: "02", title: "Fee + scholarship eligibility", body: "Net annual figure after every reimbursement and waiver you qualify for — in writing, before any deposit." },
-  { n: "03", title: "Hostel availability", body: "Boys' and girls' blocks, semester-wise rates, current vacancy, mess options. Book early or be on the waitlist." },
+  { n: "03", title: "Hostel availability", body: "Boys' hostel block, semester-wise rates, current vacancy, mess options. Book early or be on the waitlist." },
   { n: "04", title: "Document gaps you can fix", body: "Missing TC? Migration certificate stuck at the board? We tell you what is fixable in the verification window — and how." },
 ];
 
