@@ -4,7 +4,6 @@ import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 import { LangProvider } from "@/lib/lang";
-import { AdmStrip } from "@/components/shell/AdmStrip";
 import { Nav } from "@/components/shell/Nav";
 import { Footer } from "@/components/shell/Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
@@ -113,7 +112,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {JSON.stringify(jsonLd)}
         </Script>
         <LangProvider>
-          <AdmStrip />
           <Nav />
           <main>{children}</main>
           <Footer />

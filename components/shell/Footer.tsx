@@ -73,29 +73,24 @@ export const Footer = () => {
             gap: 40,
             alignItems: "center",
           }}>
-            {/* Logo mark — left. Light card so the dark navy parts of the
-                logo are visible against the dark footer bg. */}
-            <div style={{
-              width: 96,
-              height: 110,
-              borderRadius: 20,
-              background: "var(--paper)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-              boxShadow: "0 18px 36px -16px rgba(0,0,0,0.6), 0 0 0 1px color-mix(in oklab, var(--paper) 22%, transparent)",
-            }}>
-              <Image
-                src="/bipe-logo.svg"
-                alt=""
-                aria-hidden="true"
-                width={2162}
-                height={2497}
-                style={{ height: 72, width: Math.round(72 * 2162 / 2497), display: "block" }}
-                draggable={false}
-              />
-            </div>
+            {/* Logo mark — pure white silhouette on the dark footer bg.
+                `filter: brightness(0) invert(1)` flattens every coloured
+                path in the SVG to white in one go. */}
+            <Image
+              src="/bipe-logo.svg"
+              alt=""
+              aria-hidden="true"
+              width={2162}
+              height={2497}
+              style={{
+                height: 96,
+                width: Math.round(96 * 2162 / 2497),
+                display: "block",
+                flexShrink: 0,
+                filter: "brightness(0) invert(1)",
+              }}
+              draggable={false}
+            />
 
             {/* Wordmark + sub-eyebrow */}
             <div style={{ minWidth: 0 }}>

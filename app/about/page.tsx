@@ -14,7 +14,7 @@ type Stat = { num: string; label: string; suffix?: string };
 const STATS: Stat[] = [
   { num: "2010", label: "Founded" },
   { num: "6", label: "Acres" },
-  { num: "10", label: "Branches" },
+  { num: "5", label: "Branches" },
   { num: "550", label: "Students", suffix: "+" },
   { num: "33", label: "Faculty" },
   { num: "1:20", label: "Mentor ratio" },
@@ -118,7 +118,86 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 2. LONG-FORM STORY                                                      */}
+      {/* 2. VISION · MISSION · VALUES                                            */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--ink)", color: "var(--paper)", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0, opacity: 0.06,
+          backgroundImage: "linear-gradient(var(--paper) 1px, transparent 1px), linear-gradient(90deg, var(--paper) 1px, transparent 1px)",
+          backgroundSize: "72px 72px", pointerEvents: "none",
+        }} />
+        <div aria-hidden="true" style={{
+          position: "absolute", left: "30%", top: -160, width: 520, height: 520, borderRadius: "50%",
+          background: "color-mix(in oklab, var(--brand) 50%, transparent)",
+          filter: "blur(140px)", pointerEvents: "none",
+        }} />
+        <div aria-hidden="true" style={{
+          position: "absolute", right: -120, bottom: -160, width: 380, height: 380, borderRadius: "50%",
+          background: "color-mix(in oklab, var(--accent) 40%, transparent)",
+          filter: "blur(120px)", pointerEvents: "none",
+        }} />
+
+        <div className="container" style={{ position: "relative" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 56, paddingBottom: 28, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+            <div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Why we exist</div>
+              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch", color: "var(--paper)" }}>
+                Vision. Mission.{" "}
+                <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>Values.</span>
+              </h2>
+            </div>
+            <p style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
+              The three sentences a board can read in a minute and parents can hold us accountable to for a decade.
+            </p>
+          </div>
+
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
+            {/* Vision */}
+            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>VISION</div>
+              <div className="serif" style={{ marginTop: 16, fontSize: 40, lineHeight: 1.05, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
+                Recognised.
+              </div>
+              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
+                Eastern UP recognised &mdash; nationally &mdash; for accountable, hands-on technical education. A region whose diploma engineers are sought after, not apologised for.
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>MISSION</div>
+              <div className="serif" style={{ marginTop: 16, fontSize: 40, lineHeight: 1.05, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
+                Work-ready.
+              </div>
+              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
+                AICTE-approved diplomas, industry- and government-aligned. Practical training plus mentorship that prepares students for engineering roles in private industry, central PSUs and state government recruitment.
+              </p>
+            </div>
+
+            {/* Values */}
+            <div style={{ padding: "44px 36px", background: "color-mix(in oklab, var(--brand) 12%, var(--ink))", position: "relative", overflow: "hidden" }}>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>VALUES</div>
+              <div className="serif" style={{
+                marginTop: 16,
+                fontSize: "clamp(28px, 3vw, 44px)",
+                lineHeight: 1.1, color: "var(--paper)",
+                fontStyle: "italic", fontWeight: 400,
+              }}>
+                सत्यं शिवं<br />सुन्दरम्
+              </div>
+              <div style={{ marginTop: 12, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--accent)" }}>
+                truth · goodness · beauty
+              </div>
+              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
+                Transparent fees. Hands-on training. Respect for the family. The student, the institution and the parent &mdash; bonded.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* 3. LONG-FORM STORY                                                      */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
         <div aria-hidden="true" style={{

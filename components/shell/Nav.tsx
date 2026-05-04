@@ -134,10 +134,10 @@ export function Nav() {
           <div className="nav-utility-left">
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent)" }} />
-              <span style={{ textTransform: "uppercase", color: "var(--ink-2)", fontWeight: 600 }}>Admissions Open · 2026-27</span>
+              <span style={{ textTransform: "uppercase", color: "var(--accent)", fontWeight: 600 }}>Admissions Open · 2026-27</span>
             </span>
             <span className="nav-utility-divider" />
-            <span style={{ textTransform: "uppercase", color: "var(--ink-3)" }}>JEECUP {C.jeecup}</span>
+            <span style={{ textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 70%, transparent)" }}>JEECUP {C.jeecup}</span>
           </div>
           <div className="nav-utility-right">
             <a href={`tel:${C.phone}`} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
@@ -164,8 +164,6 @@ export function Nav() {
         </div>
 
         <div className="nav-links primary">
-          <NavLink to="/" label="Home" hi="होम" currentRoute={route} />
-
           <NavMenuWrap
             trigger={
               <Link href="/about" className={"nav-link " + (["about", "chairman", "principal", "teaching", "approvals", "ai-policy", "mandatory-disclosure", "anti-ragging", "grievance"].includes(route) ? "active" : "")}>
@@ -251,11 +249,6 @@ export function Nav() {
         </div>
 
         <div className="row" style={{ alignItems: "center", gap: 10 }}>
-          <a href={C.whatsapp} target="_blank" rel="noopener noreferrer"
-            title="WhatsApp"
-            style={{ width: 36, height: 36, borderRadius: 10, background: "var(--brand-tint)", color: "var(--ink)", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none", transition: "background .2s" }}>
-            <WhatsAppIcon />
-          </a>
           <Link href="/apply" className="btn btn-primary btn-sm" style={{ paddingLeft: 14, paddingRight: 14, whiteSpace: "nowrap" }}>
             <span className="hide-md">Apply for 2026-27</span>
             <span style={{ display: "none" }} className="show-md">Apply</span>
