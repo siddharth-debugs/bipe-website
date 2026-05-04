@@ -168,7 +168,7 @@ export function Nav() {
 
           <NavMenuWrap
             trigger={
-              <Link href="/about" className={"nav-link " + (["about", "principal", "teaching", "approvals", "ai-policy", "mandatory-disclosure", "anti-ragging", "grievance"].includes(route) ? "active" : "")}>
+              <Link href="/about" className={"nav-link " + (["about", "chairman", "principal", "teaching", "approvals", "ai-policy", "mandatory-disclosure", "anti-ragging", "grievance"].includes(route) ? "active" : "")}>
                 {lang === "hi" ? "हमारे बारे में" : "About"}<span className="nav-caret" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
               </Link>
             }
@@ -178,6 +178,7 @@ export function Nav() {
             </div>
             <div className="nav-mega-grid">
               <MegaItem to="/about" title="About BIPE" desc="Sixteen years in Eastern UP" icon="M3 21V10l9-6 9 6v11M9 21V12h6v9" />
+              <MegaItem to="/chairman" title="Chairman's Message" desc="Dr. Chandrika Rai, IPS (Retd.)" icon="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" />
               <MegaItem to="/principal" title="Principal's Message" desc="A note from our leadership" icon="M3 5h18v14H3zM3 5l9 7 9-7" />
               <MegaItem to="/teaching" title="Teaching & Learning" desc="OBE + AI-augmented pedagogy" icon="M2 4h20v12H2zM2 20h20" />
               <MegaItem to="/ai-policy" title="AI Policy" desc="How we use Claude in class" icon="M12 2a8 8 0 100 16 8 8 0 000-16zm0 4v8m-4-4h8" />
@@ -354,7 +355,8 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
     items: [
       { to: "/", label: "Home", hi: "होम" },
       { to: "/about", label: "About BIPE", hi: "हमारे बारे में" },
-      { to: "/principal", label: "Principal's Message" },
+      { to: "/chairman", label: "Chairman's Message", hi: "अध्यक्ष का संदेश" },
+      { to: "/principal", label: "Principal's Message", hi: "प्रिंसिपल का संदेश" },
     ],
   },
   {

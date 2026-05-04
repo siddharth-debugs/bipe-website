@@ -2,7 +2,7 @@ export type RouteKey =
   | "home" | "about" | "courses" | "admission" | "apply" | "visit"
   | "contact" | "placements" | "campus" | "fees" | "scholarships"
   | "documents" | "jeecup" | "hostel" | "faculty" | "events"
-  | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
+  | "chairman" | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
   | "mandatoryDisclosure" | "aiPolicy"
   | "privacy" | "terms" | "antiRagging";
 
@@ -88,6 +88,11 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     path: "/events",
     title: "News & Events on campus | BIPE",
     description: "Tech fest, placement drives, open house for Class 10 students, faculty workshops, JEECUP guidance sessions.",
+  },
+  chairman: {
+    path: "/chairman",
+    title: "Chairman's Message — Dr. Chandrika Rai, IPS (Retd.) | BIPE",
+    description: "A vision rooted in service. From Pantnagar Agriculture University to the Indian Police Service to founding Purwanchal Educational Trust — a personal note from BIPE's Chairman to every family considering us.",
   },
   principal: {
     path: "/principal",
