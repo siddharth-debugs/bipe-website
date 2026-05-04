@@ -81,7 +81,7 @@ export default function Page() {
               }} />
               <div style={{ position: "relative", aspectRatio: "4 / 5", borderRadius: 18, overflow: "hidden", background: "var(--paper-2)" }}>
                 <Image
-                  src="/faculty/chairman-dr-chandrika-rai.webp"
+                  src="/faculty/chairman-dr-chandrika-rai.png"
                   alt="Dr. Chandrika Rai, IPS (Retd.) — Chairman, Purwanchal Educational Trust"
                   fill
                   sizes="(max-width: 768px) 100vw, 36vw"

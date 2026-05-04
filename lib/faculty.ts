@@ -133,7 +133,7 @@ export const FACULTY: Faculty[] = [
     department: "Computer Science",
     qualifications: [],
     experience: "—",
-    photo: "/faculty/shubham-gond.jpeg",
+    photo: "/faculty/shubham-gond.png",
     highlight: "NIIT National Aptitude Test (top 20%) · National Science Olympiad (Level 2)",
     isHOD: true,
   },
@@ -159,7 +159,7 @@ export const FACULTY: Faculty[] = [
       "B.Sc (Mathematics), Obera Degree College, Sonbhadra",
     ],
     experience: "1 Year",
-    photo: "/faculty/alok-kumar-gautam.jpeg",
+    photo: "/faculty/alok-kumar-gautam.png",
   },
 
   // ─────── Civil Department ───────
@@ -256,7 +256,7 @@ export const FACULTY: Faculty[] = [
       "B.Sc (Mathematics), Mahatma Gandhi Kashi Vidyapith University",
     ],
     experience: "2 Years Teaching",
-    photo: "/faculty/rashi-vishwakarma.jpeg",
+    photo: "/faculty/rashi-vishwakarma.png",
   },
 ];
 
