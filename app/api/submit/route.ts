@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { applyFormSchema, contactFormSchema, type ApplyFormData } from "@/lib/validation";
+import {
+  applyFormSchema,
+  contactFormSchema,
+  visitFormSchema,
+  type ApplyFormData,
+} from "@/lib/validation";
 import { sendFormEmail } from "@/lib/email-service";
 
 export const runtime = "nodejs";
@@ -64,6 +69,43 @@ export async function POST(req: Request) {
     if (!sent.ok) {
       return NextResponse.json(
         { ok: false, error: sent.message ?? "Could not deliver your application" },
+        { status: 502 },
+      );
+    }
+    return NextResponse.json({ ok: true, mocked: sent.mocked === true });
+  }
+
+  if (formType === "visit") {
+    const result = visitFormSchema.safeParse(body);
+    if (!result.success) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error: "Validation failed",
+          fieldErrors: result.error.flatten().fieldErrors,
+        },
+        { status: 400 },
+      );
+    }
+    const d = result.data;
+    const sent = await sendFormEmail({
+      formType: "visit",
+      name: d.name,
+      phone: d.phone,
+      email: d.email,
+      branch: d.branch,
+      message: d.notes,
+      consent: d.consent,
+      extras: {
+        visit_date: d.visitDate,
+        visit_time: d.visitTime,
+        party: d.party,
+        needs_shuttle: d.needsShuttle ? "Yes" : "No",
+      },
+    });
+    if (!sent.ok) {
+      return NextResponse.json(
+        { ok: false, error: sent.message ?? "Could not deliver your visit booking" },
         { status: 502 },
       );
     }

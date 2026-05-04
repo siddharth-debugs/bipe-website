@@ -1,0 +1,381 @@
+"use client";
+
+import React, { useState } from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { DATA } from "@/lib/data";
+import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import {
+  visitFormSchema,
+  visitDefaults,
+  BRANCH_OPTIONS,
+  VISIT_TIME_OPTIONS,
+  VISIT_PARTY_OPTIONS,
+  type VisitFormData,
+} from "@/lib/validation";
+
+type SubmitStatus =
+  | { state: "idle" }
+  | { state: "submitting" }
+  | { state: "success"; mocked: boolean; firstName: string; date: string; time: string }
+  | { state: "error"; message: string };
+
+// Today's date as YYYY-MM-DD for the date input min.
+function todayIso(): string {
+  const d = new Date();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+
+export function VisitForm() {
+  const [status, setStatus] = useState<SubmitStatus>({ state: "idle" });
+
+  const {
+    register,
+    handleSubmit,
+    setError,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<VisitFormData>({
+    resolver: zodResolver(visitFormSchema),
+    defaultValues: visitDefaults,
+    mode: "onTouched",
+  });
+
+  const onSubmit: SubmitHandler<VisitFormData> = async (data) => {
+    setStatus({ state: "submitting" });
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = (await res.json()) as {
+        ok: boolean;
+        error?: string;
+        fieldErrors?: Record<string, string[]>;
+        mocked?: boolean;
+      };
+      if (!res.ok || !json.ok) {
+        if (json.fieldErrors) {
+          for (const [field, msgs] of Object.entries(json.fieldErrors)) {
+            if (msgs && msgs.length > 0) {
+              setError(field as keyof VisitFormData, { message: msgs[0] });
+            }
+          }
+        }
+        setStatus({
+          state: "error",
+          message: json.error ?? "Could not book. Please try again.",
+        });
+        return;
+      }
+      setStatus({
+        state: "success",
+        mocked: json.mocked === true,
+        firstName: data.name.trim().split(/\s+/)[0] || "there",
+        date: data.visitDate,
+        time: data.visitTime,
+      });
+    } catch {
+      setStatus({
+        state: "error",
+        message: "Network error. Try again or WhatsApp us.",
+      });
+    }
+  };
+
+  const fieldError = (k: keyof VisitFormData): string | undefined => {
+    const e = errors[k as keyof typeof errors];
+    return (e as { message?: string } | undefined)?.message;
+  };
+
+  const errClass = (k: keyof VisitFormData) =>
+    "field" + (fieldError(k) ? " field-error" : "");
+
+  if (status.state === "success") {
+    return (
+      <div
+        style={{
+          background: "var(--white)",
+          border: "1px solid var(--line)",
+          borderRadius: 18,
+          padding: 32,
+          textAlign: "center",
+        }}
+      >
+        <div style={{ fontSize: 44 }}>📅</div>
+        <h3 className="bipe-h3" style={{ marginTop: 8 }}>
+          See you on campus, {status.firstName}.
+        </h3>
+        <p style={{ color: "var(--ink-2)", fontSize: 15, marginTop: 12, lineHeight: 1.6, maxWidth: "44ch", margin: "12px auto 0" }}>
+          Your visit is provisionally booked for{" "}
+          <strong style={{ color: "var(--ink)" }}>{status.date}</strong> at{" "}
+          <strong style={{ color: "var(--ink)" }}>{status.time}</strong>. We&apos;ll
+          confirm by phone within a working day.
+        </p>
+        {status.mocked && (
+          <div
+            style={{
+              marginTop: 14,
+              padding: 10,
+              background: "var(--paper-2)",
+              border: "1px dashed var(--line-2)",
+              borderRadius: 10,
+              fontFamily: "var(--font-mono)",
+              fontSize: 11,
+              color: "var(--ink-3)",
+            }}
+          >
+            Dev mode · email skipped (SMTP env not set). Booking was logged to the server console.
+          </div>
+        )}
+        <button
+          type="button"
+          onClick={() => {
+            reset(visitDefaults);
+            setStatus({ state: "idle" });
+          }}
+          className="btn btn-ghost"
+          style={{ marginTop: 22 }}
+        >
+          Book another visit
+        </button>
+      </div>
+    );
+  }
+
+  const hasError = (k: keyof VisitFormData) => !!fieldError(k);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      {/* Row 1 — name + phone */}
+      <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+        <div className={errClass("name")}>
+          <label htmlFor="vf-name">Your full name</label>
+          <input
+            id="vf-name"
+            type="text"
+            autoComplete="name"
+            placeholder="As you'd like to be greeted"
+            aria-invalid={hasError("name")}
+            {...register("name")}
+          />
+          {fieldError("name") && (
+            <span className="field-msg">{fieldError("name")}</span>
+          )}
+        </div>
+        <div className={errClass("phone")}>
+          <label htmlFor="vf-phone">Mobile number</label>
+          <input
+            id="vf-phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="98XXXXXXXX"
+            aria-invalid={hasError("phone")}
+            {...register("phone")}
+          />
+          {fieldError("phone") && (
+            <span className="field-msg">{fieldError("phone")}</span>
+          )}
+        </div>
+      </div>
+
+      {/* Row 2 — email + branch */}
+      <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 12 }}>
+        <div className={errClass("email")}>
+          <label htmlFor="vf-email">
+            Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+          </label>
+          <input
+            id="vf-email"
+            type="email"
+            autoComplete="email"
+            placeholder="you@example.com"
+            aria-invalid={hasError("email")}
+            {...register("email")}
+          />
+          {fieldError("email") && (
+            <span className="field-msg">{fieldError("email")}</span>
+          )}
+        </div>
+        <div className={errClass("branch")}>
+          <label htmlFor="vf-branch">Branch you want to see</label>
+          <select id="vf-branch" aria-invalid={hasError("branch")} {...register("branch")}>
+            <option value="">Choose a branch…</option>
+            {BRANCH_OPTIONS.map((b) => (
+              <option key={b} value={b}>
+                {b}
+              </option>
+            ))}
+          </select>
+          {fieldError("branch") && (
+            <span className="field-msg">{fieldError("branch")}</span>
+          )}
+        </div>
+      </div>
+
+      {/* Row 3 — date + time + party */}
+      <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginTop: 12 }}>
+        <div className={errClass("visitDate")}>
+          <label htmlFor="vf-date">Preferred date</label>
+          <input
+            id="vf-date"
+            type="date"
+            min={todayIso()}
+            aria-invalid={hasError("visitDate")}
+            {...register("visitDate")}
+          />
+          {fieldError("visitDate") && (
+            <span className="field-msg">{fieldError("visitDate")}</span>
+          )}
+        </div>
+        <div className={errClass("visitTime")}>
+          <label htmlFor="vf-time">Preferred slot</label>
+          <select id="vf-time" aria-invalid={hasError("visitTime")} {...register("visitTime")}>
+            {VISIT_TIME_OPTIONS.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+          {fieldError("visitTime") && (
+            <span className="field-msg">{fieldError("visitTime")}</span>
+          )}
+        </div>
+        <div className={errClass("party")}>
+          <label htmlFor="vf-party">Who&apos;s coming</label>
+          <select id="vf-party" aria-invalid={hasError("party")} {...register("party")}>
+            {VISIT_PARTY_OPTIONS.map((p) => (
+              <option key={p} value={p}>
+                {p}
+              </option>
+            ))}
+          </select>
+          {fieldError("party") && (
+            <span className="field-msg">{fieldError("party")}</span>
+          )}
+        </div>
+      </div>
+
+      {/* Notes */}
+      <div className={errClass("notes")} style={{ marginTop: 12 }}>
+        <label htmlFor="vf-notes">
+          Anything we should know? <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+        </label>
+        <textarea
+          id="vf-notes"
+          rows={3}
+          placeholder="e.g. travelling from Mau, would like to meet a CS faculty mentor"
+          {...register("notes")}
+        />
+        {fieldError("notes") && (
+          <span className="field-msg">{fieldError("notes")}</span>
+        )}
+      </div>
+
+      {/* Shuttle + consent */}
+      <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 10 }}>
+        <label
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: 10,
+            fontSize: 14,
+            color: "var(--ink-2)",
+            cursor: "pointer",
+          }}
+        >
+          <input
+            type="checkbox"
+            {...register("needsShuttle")}
+            style={{ marginTop: 3, accentColor: "var(--brand)" }}
+          />
+          <span>Free shuttle from Varanasi Cantt — please pick us up</span>
+        </label>
+
+        <div className={errClass("consent")}>
+          <label
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: 10,
+              fontSize: 14,
+              color: "var(--ink-2)",
+              cursor: "pointer",
+            }}
+          >
+            <input
+              type="checkbox"
+              {...register("consent")}
+              aria-invalid={hasError("consent")}
+              style={{ marginTop: 3, accentColor: "var(--brand)" }}
+            />
+            <span>
+              I agree that BIPE may contact me about this visit and 2026-27
+              admissions. <span className="muted">No spam, ever.</span>
+            </span>
+          </label>
+          {fieldError("consent") && (
+            <span className="field-msg">{fieldError("consent")}</span>
+          )}
+        </div>
+      </div>
+
+      {status.state === "error" && (
+        <div
+          role="alert"
+          style={{
+            marginTop: 14,
+            padding: 12,
+            background: "color-mix(in oklab, var(--danger) 10%, var(--paper))",
+            border: "1px solid color-mix(in oklab, var(--danger) 30%, transparent)",
+            borderRadius: 10,
+            fontSize: 13,
+            color: "var(--danger)",
+          }}
+        >
+          {status.message}
+        </div>
+      )}
+
+      <div
+        className="row"
+        style={{ marginTop: 18, gap: 10, flexWrap: "wrap", alignItems: "center" }}
+      >
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={isSubmitting || status.state === "submitting"}
+        >
+          {isSubmitting || status.state === "submitting"
+            ? "Booking…"
+            : "Confirm visit booking"}
+          <ArrowIcon size={14} />
+        </button>
+        <a
+          href={DATA.contact.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-wa"
+        >
+          <WhatsAppIcon /> Or WhatsApp us
+        </a>
+      </div>
+
+      <p
+        style={{
+          marginTop: 14,
+          fontFamily: "var(--font-mono)",
+          fontSize: 11,
+          letterSpacing: "0.06em",
+          color: "var(--ink-3)",
+        }}
+      >
+        We confirm by phone within one working day. Visits run Mon–Sat, 10 AM–4 PM.
+      </p>
+    </form>
+  );
+}

@@ -28,7 +28,7 @@ import nodemailer from "nodemailer";
 
 export interface FormPayload {
   /** Used to brand the subject line and segment in analytics */
-  formType: "apply" | "contact";
+  formType: "apply" | "contact" | "visit";
   name: string;
   phone: string;
   email?: string | "";
@@ -101,9 +101,15 @@ function escapeHtml(s: string): string {
     .replace(/'/g, "&#39;");
 }
 
+function formLabel(t: FormPayload["formType"]): string {
+  if (t === "apply") return "Apply 2026-27";
+  if (t === "visit") return "Visit booking";
+  return "Contact";
+}
+
 function formatRows(payload: FormPayload): Array<[string, string]> {
   const rows: Array<[string, string]> = [
-    ["Form", payload.formType === "apply" ? "Apply 2026-27" : "Contact"],
+    ["Form", formLabel(payload.formType)],
     ["Name", payload.name],
     ["Mobile", payload.phone],
     ["Email", payload.email || "(not provided)"],
@@ -128,7 +134,7 @@ function formatRows(payload: FormPayload): Array<[string, string]> {
 
 function buildText(payload: FormPayload): string {
   const lines = [
-    `New ${payload.formType === "apply" ? "Apply 2026-27" : "Contact"} form submission`,
+    `New ${formLabel(payload.formType)} form submission`,
     "",
     ...formatRows(payload).map(([k, v]) => `${k}: ${v}`),
     "",
@@ -139,10 +145,7 @@ function buildText(payload: FormPayload): string {
 }
 
 function buildHtml(payload: FormPayload): string {
-  const heading =
-    payload.formType === "apply"
-      ? "New <em>Apply 2026-27</em> submission"
-      : "New <em>Contact</em> submission";
+  const heading = `New <em>${formLabel(payload.formType)}</em> submission`;
   const rows = formatRows(payload)
     .map(
       ([k, v]) => `
@@ -177,10 +180,7 @@ export async function sendFormEmail(payload: FormPayload): Promise<EmailResult> 
     return { ok: true, mocked: true };
   }
 
-  const subject =
-    payload.formType === "apply"
-      ? `Apply 2026-27 · ${payload.name} · ${payload.branch}`
-      : `Contact · ${payload.name} · ${payload.branch}`;
+  const subject = `${formLabel(payload.formType)} · ${payload.name} · ${payload.branch}`;
 
   try {
     const transport = getTransport(cfg);

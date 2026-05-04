@@ -171,6 +171,44 @@ export const contactFormSchema = z.object({
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
+// ===================================================================
+// VISIT FORM — book a campus visit
+// ===================================================================
+export const VISIT_PARTY_OPTIONS = [
+  "Just me",
+  "With parent / guardian",
+  "With family (3+)",
+  "School group",
+] as const;
+
+export const visitFormSchema = z.object({
+  formType: z.literal("visit"),
+  name: nameField,
+  phone: phoneField,
+  email: optionalEmail,
+  branch: branchField,
+  visitDate: z
+    .string()
+    .trim()
+    .min(1, "Pick a preferred date for your visit"),
+  visitTime: z.enum(VISIT_TIME_OPTIONS, {
+    message: "Pick a preferred slot",
+  }),
+  party: z.enum(VISIT_PARTY_OPTIONS, {
+    message: "Tell us who's coming",
+  }),
+  needsShuttle: z.boolean().optional(),
+  notes: z
+    .string()
+    .trim()
+    .max(1000, "Notes must be under 1000 characters")
+    .optional()
+    .or(z.literal("")),
+  consent: consentField,
+});
+
+export type VisitFormData = z.infer<typeof visitFormSchema>;
+
 // Default form values — keep all fields controlled to avoid React warnings.
 export const applyDefaults: Partial<ApplyFormData> = {
   formType: "apply",
@@ -198,6 +236,20 @@ export const contactDefaults: Partial<ContactFormData> = {
   branch: undefined,
   source: "" as unknown as (typeof SOURCE_OPTIONS)[number],
   message: "",
+  consent: false,
+};
+
+export const visitDefaults: Partial<VisitFormData> = {
+  formType: "visit",
+  name: "",
+  phone: "",
+  email: "",
+  branch: undefined,
+  visitDate: "",
+  visitTime: "11:30 AM" as (typeof VISIT_TIME_OPTIONS)[number],
+  party: "With parent / guardian" as (typeof VISIT_PARTY_OPTIONS)[number],
+  needsShuttle: false,
+  notes: "",
   consent: false,
 };
 

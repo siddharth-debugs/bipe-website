@@ -6,6 +6,7 @@ import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { VisitForm } from "./VisitForm";
 
 export const metadata: Metadata = metaFor("visit");
 
@@ -205,7 +206,56 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 3. BOOKING STRIP — BRAND TINTED                                         */}
+      {/* 3. BOOKING FORM                                                         */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden="true" style={{
+          position: "absolute", left: -160, top: -120, width: 380, height: 380, borderRadius: "50%",
+          background: "color-mix(in oklab, var(--brand) 18%, transparent)",
+          filter: "blur(120px)", pointerEvents: "none",
+        }} />
+        <div aria-hidden="true" style={{
+          position: "absolute", right: -140, bottom: -120, width: 320, height: 320, borderRadius: "50%",
+          background: "color-mix(in oklab, var(--accent) 22%, transparent)",
+          filter: "blur(120px)", pointerEvents: "none",
+        }} />
+        <div className="container" style={{ position: "relative" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
+            <div>
+              <div className="eyebrow" style={{ color: "var(--brand)" }}>§ Book your visit</div>
+              <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
+                Pick a date.{" "}
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  We&rsquo;ll be ready.
+                </span>
+              </h2>
+              <p style={{ color: "var(--ink-2)", marginTop: 18, fontSize: 15.5, lineHeight: 1.7 }}>
+                Tell us when you&rsquo;d like to come and which branch you want to see. A faculty mentor for that branch will be available, and we&rsquo;ll arrange a free shuttle from Varanasi Cantt if you ask.
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: "22px 0 0", display: "flex", flexDirection: "column", gap: 10 }}>
+                {[
+                  "Confirmation by phone within one working day",
+                  "Mon–Sat · 10 AM to 4 PM slots",
+                  "Free shuttle from Varanasi Cantt",
+                  "Talk to actual faculty, not just admissions staff",
+                ].map((s) => (
+                  <li key={s} style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 12, alignItems: "start", color: "var(--ink-2)", fontSize: 14, lineHeight: 1.55 }}>
+                    <span style={{ color: "var(--brand)", fontWeight: 700, marginTop: 1 }}>✓</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="card" style={{ padding: 28 }}>
+              <VisitForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* 4. ALT CHANNELS — BRAND TINTED                                          */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "color-mix(in oklab, var(--brand) 8%, var(--paper))", position: "relative", overflow: "hidden" }}>
         <div aria-hidden="true" style={{
@@ -216,16 +266,16 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 36 }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--brand)" }}>§ Three ways to book</div>
-              <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "18ch" }}>
-                Pick the channel that{" "}
+              <div className="eyebrow" style={{ color: "var(--brand)" }}>§ Or use another channel</div>
+              <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch" }}>
+                Don&rsquo;t want a form?{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  fits your family.
+                  Reach us directly.
                 </span>
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "40ch", justifySelf: "end", textAlign: "right" }}>
-              Walk-ins are welcome too. Booking ahead just means a faculty mentor will be ready for the branch you care about.
+              Walk-ins are welcome too. Use whichever channel feels easiest — we&rsquo;ll have a mentor ready either way.
             </p>
           </div>
 
