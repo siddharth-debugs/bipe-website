@@ -1,0 +1,110 @@
+/* Admin-only styles. Imported once from app/admin/dashboard/layout.tsx
+   so they don't leak into the public site. The public site already
+   defines var(--brand), var(--ink), etc. — we reuse them. */
+
+/* Type — admin uses simpler scale than public-site .bipe-h1/2/3 */
+.admin-h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin: 0; color: var(--ink); }
+.admin-h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; margin: 0; color: var(--ink); }
+.admin-h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.25; margin: 0; color: var(--ink); }
+
+/* Inputs */
+.admin-input, .admin-select, .admin-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.admin-input:focus, .admin-select:focus, .admin-textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 18%, transparent);
+}
+.admin-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.admin-field-msg {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--danger, #C13B2B);
+}
+
+/* Sidebar nav links */
+.admin-sidebar-link {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 14px; margin: 2px 0;
+  border-radius: 10px;
+  color: var(--ink-2);
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.admin-sidebar-link:hover { background: var(--paper-2); color: var(--ink); }
+.admin-sidebar-link.is-active {
+  background: var(--brand-tint);
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* Pill variants — public site has .pill but no colour variants. */
+.admin-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--paper-2);
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.admin-pill-brand { background: var(--brand-tint); color: var(--brand); border-color: color-mix(in oklab, var(--brand) 22%, transparent); }
+.admin-pill-accent { background: color-mix(in oklab, var(--accent) 18%, var(--paper)); color: var(--accent-deep); border-color: color-mix(in oklab, var(--accent) 30%, transparent); }
+.admin-pill-success { background: color-mix(in oklab, var(--success, #2E7D52) 14%, var(--paper)); color: var(--success, #2E7D52); border-color: color-mix(in oklab, var(--success, #2E7D52) 30%, transparent); }
+.admin-pill-danger { background: color-mix(in oklab, var(--danger, #C13B2B) 12%, var(--paper)); color: var(--danger, #C13B2B); border-color: color-mix(in oklab, var(--danger, #C13B2B) 30%, transparent); }
+.admin-pill-warning { background: color-mix(in oklab, var(--warning, #C58E1D) 14%, var(--paper)); color: var(--warning, #C58E1D); border-color: color-mix(in oklab, var(--warning, #C58E1D) 30%, transparent); }
+.admin-pill-ink { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* Tables */
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+}
+.admin-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.admin-table thead th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+  white-space: nowrap;
+}
+.admin-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: var(--ink);
+}
+.admin-table tbody tr:hover td { background: var(--paper-2); }
+.admin-table tbody tr:last-child td { border-bottom: none; }
+
+/* Strip the public site's mobile-nav-link active-state hover that would
+   otherwise affect the admin sidebar. Scoped via the admin-sidebar-link
+   class so this is a no-op outside the admin tree. */

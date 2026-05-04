@@ -4,9 +4,7 @@ import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 import { LangProvider } from "@/lib/lang";
-import { Nav } from "@/components/shell/Nav";
-import { Footer } from "@/components/shell/Footer";
-import { RevealObserver } from "@/components/ui/RevealObserver";
+import { ConditionalChrome } from "@/components/shell/ConditionalChrome";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
 
@@ -112,10 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {JSON.stringify(jsonLd)}
         </Script>
         <LangProvider>
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-          <RevealObserver />
+          <ConditionalChrome>{children}</ConditionalChrome>
         </LangProvider>
       </body>
     </html>
