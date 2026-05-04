@@ -364,53 +364,6 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 6. SIGNATURE CARD                                                       */}
-      {/* ====================================================================== */}
-      <section className="section">
-        <div className="container">
-          <div style={{
-            position: "relative", overflow: "hidden",
-            border: "1px solid var(--line)",
-            borderRadius: 24,
-            background: "color-mix(in oklab, var(--brand) 6%, var(--paper))",
-            padding: "56px 56px",
-            maxWidth: 880, margin: "0 auto",
-          }}>
-            <div aria-hidden="true" style={{
-              position: "absolute", right: -120, bottom: -120, width: 320, height: 320, borderRadius: "50%",
-              background: "color-mix(in oklab, var(--brand) 22%, transparent)",
-              filter: "blur(110px)", pointerEvents: "none",
-            }} />
-            <div style={{ position: "relative" }}>
-              <div className="eyebrow">§ Signed</div>
-              <div className="serif" style={{
-                fontStyle: "italic", fontWeight: 400,
-                fontSize: "clamp(40px, 5.4vw, 76px)",
-                lineHeight: 0.95, letterSpacing: "-0.02em",
-                color: "var(--brand)",
-                marginTop: 18,
-              }}>
-                &mdash; Dr. Chandrika Rai
-              </div>
-              <div style={{
-                marginTop: 18, paddingTop: 18,
-                borderTop: "1px solid var(--line)",
-                display: "flex", justifyContent: "space-between", alignItems: "center",
-                flexWrap: "wrap", gap: 12,
-              }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)" }}>
-                  IPS (Retd.) · Chairman, Purwanchal Educational Trust
-                </div>
-                <a href="mailto:chairman@bipevns.org" style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--brand)", fontWeight: 600 }}>
-                  chairman@bipevns.org
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
       {/* 7. CTA PAIR                                                             */}
       {/* ====================================================================== */}
       <section className="section" style={{ paddingTop: 32 }}>

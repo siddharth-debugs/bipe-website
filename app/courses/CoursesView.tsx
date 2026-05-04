@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
-import { Img } from "@/components/ui/Img";
+import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { ArrowIcon } from "@/components/shell/Icons";
 
 const BRANCH_ICONS: Record<string, string> = {
@@ -308,46 +308,36 @@ export function CoursesView() {
                   </div>
                 </div>
 
-                <div
-                  style={{
-                    position: "relative",
-                    marginTop: 20,
-                    borderRadius: 16,
-                    overflow: "hidden",
-                  }}
-                >
-                  <Img
-                    src={BIPE_IMG.byCode[b.code] || BIPE_IMG.byCode.default}
-                    label={`BTEUP ${b.code}`}
+                <div style={{ position: "relative", marginTop: 20 }}>
+                  <CrossfadeSlider
+                    images={[
+                      { src: BIPE_IMG.workshop, alt: "Workshop / machining bay" },
+                      { src: BIPE_IMG.computerLab, alt: "120-computer lab" },
+                      { src: BIPE_IMG.dairy, alt: "Dairy pilot plant" },
+                    ]}
                     aspectRatio="16/9"
-                    style={{ borderRadius: 16 }}
+                    radius={16}
+                    interval={4000}
+                    fadeMs={900}
+                    overlay={
+                      <div style={{
+                        position: "absolute", left: 14, top: 14, width: 48, height: 48,
+                        borderRadius: 12, background: "var(--brand)", color: "#fff",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        boxShadow: "0 6px 18px -4px rgba(10,26,63,0.3)", zIndex: 2,
+                      }}>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d={BRANCH_ICONS[b.code] || "M3 12h18"}
+                            stroke="currentColor"
+                            strokeWidth="1.6"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    }
                   />
-                  <div
-                    style={{
-                      position: "absolute",
-                      left: 14,
-                      top: 14,
-                      width: 48,
-                      height: 48,
-                      borderRadius: 12,
-                      background: "var(--brand)",
-                      color: "#fff",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxShadow: "0 6px 18px -4px rgba(10,26,63,0.3)",
-                    }}
-                  >
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d={BRANCH_ICONS[b.code] || "M3 12h18"}
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
                 </div>
 
                 <h3 className="bipe-h2" style={{ marginTop: 20, position: "relative" }}>

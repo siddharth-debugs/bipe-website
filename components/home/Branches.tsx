@@ -83,7 +83,7 @@ export const Branches = () => {
           </div>
 
           <div style={{ position: "sticky", top: 100, alignSelf: "flex-start", height: "fit-content" }}>
-            <div key={b.code} className="page-enter" style={{
+            <div style={{
               background: "var(--paper)", color: "var(--ink)",
               borderRadius: 24, padding: 32, position: "relative", overflow: "hidden"
             }}>
@@ -94,6 +94,8 @@ export const Branches = () => {
                 {b.tag && <span className="pill pill-accent">{b.tag}</span>}
               </div>
 
+              {/* Slider sits OUTSIDE the keyed branch-text block so it
+                  doesn't remount on branch switch — autoplay keeps running. */}
               <div style={{ position: "relative", marginTop: 20 }}>
                 <CrossfadeSlider
                   images={[
@@ -105,18 +107,12 @@ export const Branches = () => {
                   radius={16}
                   interval={4000}
                   fadeMs={900}
-                  overlay={
-                    <div style={{ position: "absolute", left: 14, top: 14, width: 48, height: 48, borderRadius: 12, background: "var(--brand)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 18px -4px rgba(10,26,63,0.3)", zIndex: 2 }}>
-                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                        <path d={BRANCH_ICONS[b.code] || "M3 12h18"} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                  }
                 />
               </div>
 
-              <h3 className="bipe-h2" style={{ marginTop: 20, position: "relative" }}>{b.name}</h3>
-              <div className="serif" style={{ fontSize: 24, color: "var(--ink-3)", marginTop: 4 }}>{b.hi}</div>
+              <div key={b.code} className="page-enter">
+                <h3 className="bipe-h2" style={{ marginTop: 20, position: "relative" }}>{b.name}</h3>
+                <div className="serif" style={{ fontSize: 24, color: "var(--ink-3)", marginTop: 4 }}>{b.hi}</div>
 
               <p style={{ color: "var(--ink-2)", fontSize: 15, marginTop: 18, lineHeight: 1.6, position: "relative" }}>{b.desc}</p>
 
@@ -135,6 +131,7 @@ export const Branches = () => {
               <div className="row" style={{ marginTop: 24, gap: 8, position: "relative" }}>
                 <Link href="/apply" className="btn btn-primary">Apply for this <ArrowIcon /></Link>
                 <Link href="/courses" className="btn btn-ghost">Syllabus</Link>
+              </div>
               </div>
             </div>
 

@@ -283,6 +283,95 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
+      {/* 4. BRANCH-WISE SEAT ALLOTMENT                                           */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden="true" style={{
+          position: "absolute", left: -160, top: -120, width: 380, height: 380, borderRadius: "50%",
+          background: "color-mix(in oklab, var(--brand) 16%, transparent)",
+          filter: "blur(120px)", pointerEvents: "none",
+        }} />
+        <div className="container" style={{ position: "relative" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 36, paddingBottom: 22, borderBottom: "1px solid var(--line)" }}>
+            <div>
+              <div className="eyebrow">§ Sanctioned intake · 2026-27</div>
+              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
+                Branch-wise{" "}
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  seat allotment.
+                </span>
+              </h2>
+            </div>
+            <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
+              The 2026-27 sanctioned intake under JEECUP college code 4455 &mdash; five 3-year BTEUP-licensed diplomas, total {DATA.branches.reduce((s, b) => s + b.seats, 0)} seats.
+            </p>
+          </div>
+
+          <div className="card" style={{ padding: 0, overflow: "hidden", maxWidth: 980, margin: "0 auto" }}>
+            {/* Header row */}
+            <div style={{
+              display: "grid", gridTemplateColumns: "auto minmax(0, 3fr) 1fr",
+              padding: "16px 24px",
+              background: "var(--ink)", color: "var(--paper)",
+              fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase",
+            }}>
+              <div style={{ minWidth: 80 }}>Code</div>
+              <div>Branch</div>
+              <div style={{ textAlign: "right" }}>Seats</div>
+            </div>
+
+            {DATA.branches.map((b, i) => (
+              <div key={b.code} style={{
+                display: "grid", gridTemplateColumns: "auto minmax(0, 3fr) 1fr",
+                padding: "20px 24px",
+                background: i % 2 === 0 ? "var(--white)" : "var(--paper)",
+                borderBottom: i < DATA.branches.length - 1 ? "1px solid var(--line)" : "none",
+                alignItems: "center",
+              }}>
+                <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 700, color: "var(--brand)", minWidth: 80 }}>{b.code}</div>
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 16, color: "var(--ink)" }}>{b.name}</div>
+                  <div className="serif" style={{ fontStyle: "italic", color: "var(--ink-3)", fontSize: 14, marginTop: 2 }}>{b.hi}</div>
+                </div>
+                <div className="serif" style={{
+                  fontStyle: "italic", fontWeight: 400, fontSize: 30,
+                  color: "var(--ink)", letterSpacing: "-0.01em",
+                  textAlign: "right",
+                }}>
+                  {b.seats}
+                </div>
+              </div>
+            ))}
+
+            {/* Total footer */}
+            <div style={{
+              display: "grid", gridTemplateColumns: "auto minmax(0, 3fr) 1fr",
+              padding: "20px 24px",
+              background: "color-mix(in oklab, var(--brand) 8%, var(--paper))",
+              borderTop: "2px solid var(--brand)",
+              alignItems: "center",
+            }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand)", minWidth: 80 }}>TOTAL</div>
+              <div style={{ fontWeight: 700, fontSize: 15, color: "var(--ink)" }}>2026-27 sanctioned intake · 5 BTEUP branches</div>
+              <div className="serif" style={{
+                fontStyle: "italic", fontWeight: 400, fontSize: 36,
+                color: "var(--brand)", letterSpacing: "-0.02em",
+                textAlign: "right",
+              }}>
+                {DATA.branches.reduce((s, b) => s + b.seats, 0)}
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 18, textAlign: "center" }}>
+            <Link href="/courses" className="btn btn-ghost btn-sm">
+              See branch syllabi <ArrowIcon size={12} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
       {/* 5. CATCHMENT MAP                                                        */}
       {/* ====================================================================== */}
       <section className="section" style={{ position: "relative", overflow: "hidden" }}>

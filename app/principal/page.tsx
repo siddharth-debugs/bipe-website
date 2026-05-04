@@ -266,47 +266,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ====================================================================== */}
-      {/* 5. SIGNATURE CARD                                                       */}
-      {/* ====================================================================== */}
-      <section className="section">
-        <div className="container">
-          <div style={{
-            position: "relative", overflow: "hidden",
-            border: "1px solid var(--line)",
-            borderRadius: 24,
-            background: "color-mix(in oklab, var(--brand) 6%, var(--paper))",
-            padding: "56px 56px",
-            maxWidth: 880, margin: "0 auto",
-          }}>
-            <div aria-hidden="true" style={{
-              position: "absolute", right: -120, bottom: -120, width: 320, height: 320, borderRadius: "50%",
-              background: "color-mix(in oklab, var(--brand) 22%, transparent)",
-              filter: "blur(110px)", pointerEvents: "none",
-            }} />
-            <div style={{ position: "relative" }}>
-              <div className="eyebrow">§ Signed</div>
-              <div className="serif" style={{
-                fontStyle: "italic", fontWeight: 400,
-                fontSize: "clamp(48px, 6vw, 88px)",
-                lineHeight: 0.95, letterSpacing: "-0.02em",
-                color: "var(--brand)",
-                marginTop: 18,
-              }}>
-                &mdash; Rahul Srivastava
-              </div>
-              <div style={{ marginTop: 18, paddingTop: 18, borderTop: "1px solid var(--line)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)" }}>
-                  Principal · BIPE Varanasi
-                </div>
-                <a href="mailto:principal@bipevns.org" style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--brand)", fontWeight: 600 }}>
-                  principal@bipevns.org
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ====================================================================== */}
       {/* 6. CTA PAIR                                                             */}

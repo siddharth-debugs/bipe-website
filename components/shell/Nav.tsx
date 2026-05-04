@@ -175,7 +175,7 @@ export function Nav() {
               The institution
             </div>
             <div className="nav-mega-grid">
-              <MegaItem to="/about" title="About BIPE" desc="Sixteen years in Eastern UP" icon="M3 21V10l9-6 9 6v11M9 21V12h6v9" />
+              <MegaItem to="/about" title="BIPE" desc="Sixteen years in Eastern UP" icon="M3 21V10l9-6 9 6v11M9 21V12h6v9" />
               <MegaItem to="/chairman" title="Chairman's Message" desc="Dr. Chandrika Rai, IPS (Retd.)" icon="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" />
               <MegaItem to="/principal" title="Principal's Message" desc="A note from our leadership" icon="M3 5h18v14H3zM3 5l9 7 9-7" />
               <MegaItem to="/teaching" title="Teaching & Learning" desc="OBE + AI-augmented pedagogy" icon="M2 4h20v12H2zM2 20h20" />
@@ -199,7 +199,7 @@ export function Nav() {
               Join BIPE — Session 2026-27
             </div>
             <div className="nav-mega-grid">
-              <MegaItem to="/admission" title="Admission Overview" desc="JEECUP Group A · key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
+              <MegaItem to="/admission" title="Overview" desc="JEECUP Group A · key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
               <MegaItem to="/apply" title="Apply now" desc="4-step form · 5 minutes" icon="M14 3l7 7-11 11H3v-7L14 3z" />
               <MegaItem to="/jeecup" title="JEECUP Guidance" desc="6-step counselling explainer" icon="M12 2v20M5 8l7-6 7 6M5 16l7 6 7-6" />
               <MegaItem to="/fees" title="Fees" desc="₹30,150/year — AFRC-approved" icon="M3 7h18v10H3zM7 12h2M14 12h3" />
@@ -262,7 +262,6 @@ export function Nav() {
             </div>
           </NavMenuWrap>
 
-          <NavLink to="/visit" label="Visit" hi="विज़िट" currentRoute={route} />
           <NavLink to="/contact" label="Contact" hi="संपर्क" currentRoute={route} />
         </div>
 
@@ -396,7 +395,6 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
       { to: "/campus", label: "Campus tour", hi: "कैम्पस" },
       { to: "/hostel", label: "Hostel", hi: "छात्रावास" },
       { to: "/events", label: "Events", hi: "इवेंट्स" },
-      { to: "/visit", label: "Book a visit", hi: "विज़िट" },
       { to: "/contact", label: "Contact", hi: "संपर्क" },
     ],
   },

@@ -306,7 +306,7 @@ export const Footer = () => {
           </div>
           <Col heading="Academics" items={[["All branches", "/courses"], ["Computer Science & Engineering", "/courses"], ["Dairy Engineering", "/courses"], ["Civil Engineering", "/courses"], ["Electrical Engineering", "/courses"], ["Mechanical Engineering (Production)", "/courses"]]} />
           <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["Apply now", "/apply"]]} />
-          <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["AI Policy", "/ai-policy"], ["Approvals", "/approvals"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Events", "/events"]]} />
+          <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Approvals", "/approvals"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Events", "/events"]]} />
           <Col heading="Disclosures" items={[["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["Privacy", "/privacy"], ["Terms", "/terms"], ["Contact", "/contact"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
         </div>
 

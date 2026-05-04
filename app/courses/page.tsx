@@ -4,7 +4,6 @@ import React from "react";
 import { metaFor } from "@/lib/routes";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
-import { Counter } from "@/components/ui/Counter";
 import { CoursesView } from "./CoursesView";
 
 export const metadata: Metadata = metaFor("courses");
@@ -574,98 +573,6 @@ export default function Page() {
       {/* 3. INTERACTIVE BRANCH INDEX (CLIENT)                                    */}
       {/* ====================================================================== */}
       <CoursesView />
-
-      {/* ====================================================================== */}
-      {/* 4. METRICS BAND                                                         */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden" }}>
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            opacity: 0.04,
-            backgroundImage:
-              "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-            pointerEvents: "none",
-          }}
-        />
-        <div className="container" style={{ position: "relative" }}>
-          <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <div className="eyebrow">§ By the numbers</div>
-            <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "22ch", marginInline: "auto" }}>
-              The catalogue,{" "}
-              <span
-                className="serif"
-                style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
-              >
-                in figures.
-              </span>
-            </h2>
-          </div>
-
-          <div
-            className="bipe-grid-4"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: 0,
-              border: "1px solid var(--line)",
-              borderRadius: 18,
-              overflow: "hidden",
-              background: "var(--white)",
-            }}
-          >
-            {[
-              { num: "480", suffix: "", l: "seats · 2026-27", sub: "across 5 branches" },
-              { num: "5", suffix: "", l: "BTEUP branches", sub: "Civil · CS&E · Dairy · Elec · Mech (Prod.)" },
-              { num: "30,150", suffix: "", l: "₹ tuition / year", sub: "AFRC-approved · all branches" },
-              { num: "1.1", suffix: "%", l: "of UP polytechnics", sub: "offer Dairy · BIPE does" },
-            ].map((s, i) => (
-              <div
-                key={s.l}
-                style={{
-                  padding: "44px 32px",
-                  borderRight: i < 3 ? "1px solid var(--line)" : "none",
-                  textAlign: "center",
-                  background: i % 2 === 0 ? "var(--white)" : "var(--paper)",
-                }}
-              >
-                <div
-                  className="serif"
-                  style={{
-                    fontStyle: "italic",
-                    fontWeight: 400,
-                    fontSize: "clamp(48px, 5.5vw, 80px)",
-                    lineHeight: 0.95,
-                    color: "var(--brand)",
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  {i === 3 ? "<" : ""}
-                  <Counter to={s.num} />
-                  {s.suffix}
-                </div>
-                <div
-                  style={{
-                    marginTop: 14,
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 11,
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "var(--ink)",
-                    fontWeight: 700,
-                  }}
-                >
-                  {s.l}
-                </div>
-                <div style={{ marginTop: 6, fontSize: 13, color: "var(--ink-3)" }}>{s.sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ====================================================================== */}
       {/* 5. CAREER PATHWAYS (DARK)                                               */}

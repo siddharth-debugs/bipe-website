@@ -43,13 +43,14 @@ const STEPS: { n: string; title: string; body: string }[] = [
   },
 ];
 
-const DATES: [string, string, string][] = [
-  ["JEECUP application opens", "Feb 2026", "Online portal"],
-  ["Application closes", "Apr 2026", "Late fee window thereafter"],
-  ["Entrance exam", "May 2026", "CBT · multiple shifts"],
-  ["Results declared", "30 May 2026", "Rank cards downloadable"],
-  ["Counselling rounds", "Jun 2026", "Online choice-filling"],
-  ["Session begins", "Aug 2026", "Orientation week"],
+type CalEntry = { month: string; day?: string; year: string; title: string; sub: string };
+const DATES: CalEntry[] = [
+  { month: "FEB", year: "2026",                title: "JEECUP application opens",  sub: "Online portal · jeecup.admissions.nic.in" },
+  { month: "APR", year: "2026",                title: "Application closes",        sub: "Late fee window thereafter" },
+  { month: "MAY", year: "2026",                title: "Entrance exam",             sub: "CBT · multiple shifts across UP" },
+  { month: "MAY", day: "30", year: "2026",     title: "Results declared",          sub: "Rank cards downloadable" },
+  { month: "JUN", year: "2026",                title: "Counselling rounds",        sub: "Online choice-filling · seat allotment" },
+  { month: "AUG", year: "2026",                title: "Session begins",            sub: "Orientation week at BIPE" },
 ];
 
 const REASONS: { roman: string; title: string; body: string; metric: string; metricLabel: string }[] = [
@@ -282,29 +283,97 @@ export default function Page() {
                 jeecup.admissions.nic.in <ArrowIcon size={12} />
               </a>
             </div>
-            <div className="card" style={{ padding: 0, overflow: "hidden" }}>
-              {DATES.map(([k, v, sub], i) => (
-                <div key={k} style={{
-                  display: "grid", gridTemplateColumns: "auto 1fr auto",
-                  gap: 18,
-                  padding: "20px 26px",
-                  borderBottom: i < DATES.length - 1 ? "1px solid var(--line)" : "none",
+            <ol className="card" style={{
+              listStyle: "none",
+              padding: "8px 0",
+              margin: 0,
+              overflow: "hidden",
+              position: "relative",
+            }}>
+              {/* Vertical guide line */}
+              <span aria-hidden="true" style={{
+                position: "absolute",
+                left: 86,
+                top: 24,
+                bottom: 24,
+                width: 1,
+                background: "var(--line)",
+              }} />
+              {DATES.map((d, i) => (
+                <li key={`${d.month}-${i}`} style={{
+                  display: "grid",
+                  gridTemplateColumns: "70px 32px 1fr",
+                  gap: 16,
+                  padding: "16px 22px",
                   alignItems: "center",
-                  background: i % 2 === 0 ? "var(--white)" : "var(--paper)",
+                  position: "relative",
                 }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)", width: 24 }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 15 }}>{k}</div>
-                    <div className="muted" style={{ fontSize: 12, marginTop: 2 }}>{sub}</div>
+                  {/* Month / day chip */}
+                  <div style={{
+                    width: 70, height: 70,
+                    borderRadius: 12,
+                    border: "1px solid var(--line)",
+                    background: "var(--paper-2)",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    overflow: "hidden",
+                  }}>
+                    <div style={{
+                      width: "100%",
+                      background: "var(--brand)",
+                      color: "#fff",
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.16em",
+                      fontWeight: 700,
+                      textAlign: "center",
+                      padding: "3px 0",
+                    }}>{d.month}</div>
+                    <div className="serif" style={{
+                      fontStyle: "italic",
+                      fontWeight: 400,
+                      fontSize: d.day ? 28 : 18,
+                      lineHeight: 1,
+                      color: "var(--ink)",
+                      marginTop: d.day ? 4 : 6,
+                      letterSpacing: "-0.01em",
+                    }}>
+                      {d.day ?? d.year}
+                    </div>
+                    {d.day && <div style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 9,
+                      letterSpacing: "0.1em",
+                      color: "var(--ink-3)",
+                      marginTop: 2,
+                    }}>{d.year}</div>}
                   </div>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 700, color: "var(--brand)", letterSpacing: "0.03em" }}>
-                    {v}
-                  </span>
-                </div>
+
+                  {/* Timeline dot */}
+                  <span aria-hidden="true" style={{
+                    width: 14, height: 14,
+                    borderRadius: 999,
+                    background: "var(--accent)",
+                    border: "3px solid var(--white)",
+                    boxShadow: "0 0 0 1px var(--line)",
+                    justifySelf: "center",
+                  }} />
+
+                  {/* Body */}
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: 15.5, color: "var(--ink)", letterSpacing: "-0.005em" }}>
+                      {d.title}
+                    </div>
+                    <div style={{ marginTop: 4, color: "var(--ink-3)", fontSize: 13, lineHeight: 1.5 }}>
+                      {d.sub}
+                    </div>
+                  </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </div>
       </section>
