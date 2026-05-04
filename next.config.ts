@@ -13,6 +13,10 @@ const BACKEND_BASE =
   "http://127.0.0.1:8000/api/v1";
 
 const nextConfig: NextConfig = {
+  // Django URLs end in `/` (DRF default). Don't 308-redirect them — let
+  // the rewrite forward the trailing-slash URL straight to the backend.
+  skipTrailingSlashRedirect: true,
+
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
