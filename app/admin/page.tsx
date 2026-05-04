@@ -24,10 +24,20 @@ export default function LoginPage() {
       await login(u.trim(), p);
       router.replace("/admin/dashboard");
     } catch (ex) {
-      const msg =
-        ex instanceof ApiError
-          ? (ex.data as { detail?: string })?.detail ?? ex.message
-          : "Could not sign in.";
+      let msg: string;
+      if (ex instanceof ApiError) {
+        msg = (ex.data as { detail?: string })?.detail ?? ex.message;
+      } else if (
+        ex instanceof TypeError &&
+        /failed to fetch|networkerror|load failed/i.test(ex.message)
+      ) {
+        // Browser-thrown network error — likely the backend isn't reachable
+        // from this origin. Tell the user something useful.
+        msg =
+          "Could not reach the admin backend. The API server is unreachable — verify that NEXT_PUBLIC_API_BASE_URL is set on this deployment and the backend is running.";
+      } else {
+        msg = ex instanceof Error ? ex.message : "Could not sign in.";
+      }
       setErr(msg);
     } finally {
       setBusy(false);
