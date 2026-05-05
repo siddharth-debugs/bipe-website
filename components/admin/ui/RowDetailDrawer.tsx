@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { X, Phone, Mail, Clock, MessageCircle, Check, Loader2 } from "lucide-react";
 import { formatDate } from "@/lib/admin/utils";
 import type { SubmissionStatus } from "@/lib/admin/api";
 import { Pill } from "./Pill";
@@ -20,7 +21,7 @@ export interface DetailField {
   mono?: boolean;
 }
 
-interface Props<T extends { id: number; status: SubmissionStatus; created_at: string; updated_at: string; phone?: string; email?: string }> {
+interface Props<T extends { id: number; status: SubmissionStatus; created_at: string; updated_at: string; phone?: string; email?: string; admin_notes?: string }> {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   row: T | null;
@@ -31,6 +32,8 @@ interface Props<T extends { id: number; status: SubmissionStatus; created_at: st
   /** Field rows displayed in grouped sections. */
   fields: DetailField[];
   onStatusChange: (next: SubmissionStatus) => void;
+  /** Persist admin remarks back to the row. */
+  onSaveRemarks?: (remarks: string) => Promise<void>;
 }
 
 /**
@@ -38,8 +41,8 @@ interface Props<T extends { id: number; status: SubmissionStatus; created_at: st
  * a status changer in the header.
  */
 export function RowDetailDrawer<
-  T extends { id: number; status: SubmissionStatus; created_at: string; updated_at: string; phone?: string; email?: string },
->({ open, onOpenChange, row, kind, title, fields, onStatusChange }: Props<T>) {
+  T extends { id: number; status: SubmissionStatus; created_at: string; updated_at: string; phone?: string; email?: string; admin_notes?: string },
+>({ open, onOpenChange, row, kind, title, fields, onStatusChange, onSaveRemarks }: Props<T>) {
   const grouped = groupBySection(fields);
   const phone = row?.phone || pickField(fields, /phone|mobile/);
   const email = row?.email || pickField(fields, /email/);
@@ -91,6 +94,14 @@ export function RowDetailDrawer<
             {grouped.map(({ section, items }) => (
               <Section key={section} title={section} items={items} />
             ))}
+
+            {row && onSaveRemarks && (
+              <RemarksEditor
+                rowId={row.id}
+                value={row.admin_notes ?? ""}
+                onSave={onSaveRemarks}
+              />
+            )}
           </div>
 
           {/* Footer */}
@@ -203,4 +214,96 @@ function pickField(fields: DetailField[], pattern: RegExp): string | undefined {
     if (pattern.test(f.label.toLowerCase())) return f.value;
   }
   return undefined;
+}
+
+// -------------------------------------------------------------------------
+// RemarksEditor — admin-only internal note attached to the submission
+// -------------------------------------------------------------------------
+
+type SaveState =
+  | { kind: "idle" }
+  | { kind: "saving" }
+  | { kind: "saved" }
+  | { kind: "error"; message: string };
+
+function RemarksEditor({
+  rowId,
+  value,
+  onSave,
+}: {
+  rowId: number;
+  value: string;
+  onSave: (next: string) => Promise<void>;
+}) {
+  const [draft, setDraft] = useState(value);
+  const [save, setSave] = useState<SaveState>({ kind: "idle" });
+
+  // Reset the draft whenever the user opens a different row.
+  useEffect(() => {
+    setDraft(value);
+    setSave({ kind: "idle" });
+  }, [rowId, value]);
+
+  const dirty = draft !== value;
+
+  async function handleSave() {
+    setSave({ kind: "saving" });
+    try {
+      await onSave(draft);
+      setSave({ kind: "saved" });
+      setTimeout(
+        () =>
+          setSave((s) => (s.kind === "saved" ? { kind: "idle" } : s)),
+        1800,
+      );
+    } catch (e) {
+      setSave({
+        kind: "error",
+        message: e instanceof Error ? e.message : "Could not save.",
+      });
+    }
+  }
+
+  return (
+    <section className="admin-drawer-section">
+      <h3 className="admin-drawer-section-title">Internal remarks</h3>
+      <p className="admin-drawer-helper">
+        Private notes for the admissions team. Not visible to the applicant.
+      </p>
+      <textarea
+        className="admin-textarea admin-drawer-remarks"
+        value={draft}
+        onChange={(e) => setDraft(e.target.value)}
+        placeholder="e.g. Called on 5 May, parent will visit Wed; needs hostel info"
+        rows={4}
+        disabled={save.kind === "saving"}
+      />
+      <div className="admin-drawer-remarks-foot">
+        <span className="admin-drawer-remarks-status">
+          {save.kind === "saving" && (
+            <>
+              <Loader2 size={12} className="admin-spin" /> Saving…
+            </>
+          )}
+          {save.kind === "saved" && (
+            <>
+              <Check size={12} /> Saved
+            </>
+          )}
+          {save.kind === "error" && (
+            <span style={{ color: "var(--danger)" }}>{save.message}</span>
+          )}
+          {save.kind === "idle" && dirty && "Unsaved changes"}
+        </span>
+        <button
+          type="button"
+          onClick={handleSave}
+          disabled={!dirty || save.kind === "saving"}
+          className="admin-btn-primary-sm"
+        >
+          {save.kind === "saving" ? "Saving…" : "Save remarks"}
+        </button>
+      </div>
+    </section>
+  );
 }

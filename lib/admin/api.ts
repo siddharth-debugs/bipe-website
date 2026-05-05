@@ -185,7 +185,10 @@ export interface BaseSubmission {
   email: string;
   branch: string;
   consent: boolean;
+  /** Notes the user wrote in the form. */
   notes: string;
+  /** Internal staff remarks added from the dashboard. Never seen by the user. */
+  admin_notes: string;
   status: SubmissionStatus;
   source_ip: string | null;
   user_agent: string;

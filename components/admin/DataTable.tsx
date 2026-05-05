@@ -66,6 +66,7 @@ interface BaseRow {
   name: string;
   phone: string;
   email: string;
+  admin_notes: string;
 }
 
 interface DataTableProps<T extends BaseRow> {
@@ -487,6 +488,15 @@ export function DataTable<T extends BaseRow>({
         fields={drawerRow ? detailFields(drawerRow) : []}
         onStatusChange={(s) => {
           if (drawerRow) patchRow(drawerRow.id, { status: s });
+        }}
+        onSaveRemarks={async (admin_notes) => {
+          if (!drawerRow) return;
+          const updated = await api<T>(`/submissions/${resource}/${drawerRow.id}/`, {
+            method: "PATCH",
+            body: { admin_notes },
+          });
+          setDrawerRow(updated);
+          await load();
         }}
       />
     </div>
