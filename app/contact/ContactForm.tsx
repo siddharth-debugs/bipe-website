@@ -17,7 +17,7 @@ import {
 type SubmitStatus =
   | { state: "idle" }
   | { state: "submitting" }
-  | { state: "success"; mocked: boolean; firstName: string; phone: string }
+  | { state: "success"; firstName: string; phone: string }
   | { state: "error"; message: string };
 
 export function ContactForm() {
@@ -46,9 +46,9 @@ export function ContactForm() {
       });
       const json = (await res.json()) as {
         ok: boolean;
+        id?: number;
         error?: string;
         fieldErrors?: Record<string, string[]>;
-        mocked?: boolean;
       };
       if (!res.ok || !json.ok) {
         if (json.fieldErrors) {
@@ -66,7 +66,6 @@ export function ContactForm() {
       }
       setStatus({
         state: "success",
-        mocked: json.mocked === true,
         firstName: data.name.trim().split(/\s+/)[0] || "there",
         phone: data.phone,
       });

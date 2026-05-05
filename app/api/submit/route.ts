@@ -1,22 +1,20 @@
-import { NextResponse, after } from "next/server";
+import { NextResponse } from "next/server";
 import {
   applyFormSchema,
   contactFormSchema,
   visitFormSchema,
-  type ApplyFormData,
 } from "@/lib/validation";
-import { sendFormEmail } from "@/lib/email-service";
 import { forwardToBackend } from "@/lib/backend";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
- * POST /api/submit — handles both /apply and /contact form submissions.
+ * POST /api/submit — handles /apply, /contact, /visit form submissions.
  *
- * Validates with Zod (server-side trust boundary; clients also validate
- * with the same schema for instant feedback), then forwards to Web3Forms
- * which sends an email to admissions@bipevns.org.
+ * Validates with Zod (server-side trust boundary), then persists to the
+ * BIPE Django backend. The backend is now the single source of truth
+ * for submissions — there is no SMTP / email path.
  */
 export async function POST(req: Request) {
   let body: unknown;
@@ -44,36 +42,8 @@ export async function POST(req: Request) {
         { status: 400 },
       );
     }
-    const d = result.data as ApplyFormData;
-
-    // Apply form has rich context — fold the extras into the email body.
-    const sent = await sendFormEmail({
-      formType: "apply",
-      name: d.name,
-      phone: d.phone,
-      email: d.email,
-      branch: d.branch,
-      source: d.source,
-      message: d.notes,
-      consent: d.consent,
-      extras: {
-        parent_guardian: d.parent || "(not provided)",
-        category: d.category,
-        tenth_board: d.board || "(not provided)",
-        tenth_marks_pct: d.marks || "(not provided)",
-        wants_visit: d.visit,
-        visit_date: d.visit === "yes" ? d.visitDate : undefined,
-        visit_time: d.visit === "yes" ? d.visitTime : undefined,
-      },
-    });
-
-    if (!sent.ok) {
-      return NextResponse.json(
-        { ok: false, error: sent.message ?? "Could not deliver your application" },
-        { status: 502 },
-      );
-    }
-    const applyPayload = {
+    const d = result.data;
+    const r = await forwardToBackend("apply", {
       name: d.name,
       phone: d.phone,
       email: d.email,
@@ -88,9 +58,10 @@ export async function POST(req: Request) {
       visitDate: d.visit === "yes" ? d.visitDate : "",
       visitTime: d.visit === "yes" ? d.visitTime : "",
       notes: d.notes,
-    };
-    after(() => forwardToBackend("apply", applyPayload));
-    return NextResponse.json({ ok: true, mocked: sent.mocked === true });
+    });
+    return r.ok
+      ? NextResponse.json({ ok: true, id: r.id })
+      : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
   }
 
   if (formType === "visit") {
@@ -106,28 +77,7 @@ export async function POST(req: Request) {
       );
     }
     const d = result.data;
-    const sent = await sendFormEmail({
-      formType: "visit",
-      name: d.name,
-      phone: d.phone,
-      email: d.email,
-      branch: d.branch,
-      message: d.notes,
-      consent: d.consent,
-      extras: {
-        visit_date: d.visitDate,
-        visit_time: d.visitTime,
-        party: d.party,
-        needs_shuttle: d.needsShuttle ? "Yes" : "No",
-      },
-    });
-    if (!sent.ok) {
-      return NextResponse.json(
-        { ok: false, error: sent.message ?? "Could not deliver your visit booking" },
-        { status: 502 },
-      );
-    }
-    const visitPayload = {
+    const r = await forwardToBackend("visit", {
       name: d.name,
       phone: d.phone,
       email: d.email,
@@ -138,9 +88,10 @@ export async function POST(req: Request) {
       party: d.party,
       needsShuttle: !!d.needsShuttle,
       notes: d.notes,
-    };
-    after(() => forwardToBackend("visit", visitPayload));
-    return NextResponse.json({ ok: true, mocked: sent.mocked === true });
+    });
+    return r.ok
+      ? NextResponse.json({ ok: true, id: r.id })
+      : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
   }
 
   // Contact form path
@@ -156,32 +107,16 @@ export async function POST(req: Request) {
     );
   }
   const d = result.data;
-  const sent = await sendFormEmail({
-    formType: "contact",
+  const r = await forwardToBackend("contact", {
     name: d.name,
     phone: d.phone,
     email: d.email,
     branch: d.branch,
+    consent: d.consent,
     source: d.source,
     message: d.message,
-    consent: d.consent,
   });
-
-  if (!sent.ok) {
-    return NextResponse.json(
-      { ok: false, error: sent.message ?? "Could not deliver your message" },
-      { status: 502 },
-    );
-  }
-  const contactPayload = {
-    name: d.name,
-    phone: d.phone,
-    email: d.email,
-    branch: d.branch,
-    consent: d.consent,
-    source: d.source,
-    message: d.message,
-  };
-  after(() => forwardToBackend("contact", contactPayload));
-  return NextResponse.json({ ok: true, mocked: sent.mocked === true });
+  return r.ok
+    ? NextResponse.json({ ok: true, id: r.id })
+    : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
 }

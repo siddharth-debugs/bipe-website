@@ -30,7 +30,7 @@ const STEP_TITLES: { title: string; sub: string }[] = [
 type SubmitStatus =
   | { state: "idle" }
   | { state: "submitting" }
-  | { state: "success"; mocked: boolean; ref: string }
+  | { state: "success"; ref: string }
   | { state: "error"; message: string };
 
 export function ApplyView() {
@@ -71,12 +71,11 @@ export function ApplyView() {
       });
       const json = (await res.json()) as {
         ok: boolean;
+        id?: number;
         error?: string;
         fieldErrors?: Record<string, string[]>;
-        mocked?: boolean;
       };
       if (!res.ok || !json.ok) {
-        // Surface server-side field errors back into the form
         if (json.fieldErrors) {
           for (const [field, msgs] of Object.entries(json.fieldErrors)) {
             if (msgs && msgs.length > 0) {
@@ -90,8 +89,10 @@ export function ApplyView() {
         });
         return;
       }
-      const ref = `BIPE-${Math.floor(Math.random() * 900000 + 100000)}`;
-      setSubmitStatus({ state: "success", mocked: json.mocked === true, ref });
+      const ref = json.id
+        ? `BIPE-${String(json.id).padStart(6, "0")}`
+        : "BIPE-PENDING";
+      setSubmitStatus({ state: "success", ref });
       setStep(4);
     } catch {
       setSubmitStatus({

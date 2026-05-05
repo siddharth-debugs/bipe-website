@@ -77,13 +77,16 @@ export default function ContactListPage() {
           },
         ]}
         detailFields={(r) => [
-          { label: "Phone", value: r.phone, mono: true },
-          { label: "Email", value: r.email },
-          { label: "Branch", value: r.branch },
-          { label: "Heard about us via", value: r.source },
-          { label: "Message", value: r.message, wide: true },
-          { label: "Source IP", value: r.source_ip, mono: true },
-          { label: "User agent", value: r.user_agent, mono: true, wide: true },
+          { section: "Contact", label: "Phone", value: r.phone, mono: true },
+          { section: "Contact", label: "Email", value: r.email },
+
+          { section: "Enquiry", label: "Branch interest", value: r.branch },
+          { section: "Enquiry", label: "Heard about us via", value: r.source },
+
+          { section: "Message", label: "Message", value: r.message, kind: "note" },
+
+          { section: "Technical", label: "Source IP", value: r.source_ip, kind: "tech" },
+          { section: "Technical", label: "User agent", value: r.user_agent, kind: "tech" },
         ]}
       />
     </>

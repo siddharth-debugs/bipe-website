@@ -81,20 +81,24 @@ export default function ApplyListPage() {
           },
         ]}
         detailFields={(r) => [
-          { label: "Phone", value: r.phone, mono: true },
-          { label: "Email", value: r.email },
-          { label: "Branch", value: r.branch },
-          { label: "Parent / guardian", value: r.parent },
-          { label: "Category", value: r.category },
-          { label: "Class 10 board", value: r.board },
-          { label: "Marks (%)", value: r.marks, mono: true },
-          { label: "Heard about us via", value: r.source },
-          { label: "Wants campus visit", value: r.visit },
-          { label: "Preferred visit date", value: r.visit_date },
-          { label: "Preferred slot", value: r.visit_time },
-          { label: "Notes", value: r.notes, wide: true },
-          { label: "Source IP", value: r.source_ip, mono: true },
-          { label: "User agent", value: r.user_agent, mono: true, wide: true },
+          { section: "Contact", label: "Phone", value: r.phone, mono: true },
+          { section: "Contact", label: "Email", value: r.email },
+          { section: "Contact", label: "Parent / guardian", value: r.parent },
+
+          { section: "Application", label: "Branch", value: r.branch },
+          { section: "Application", label: "Category", value: r.category },
+          { section: "Application", label: "Class 10 board", value: r.board },
+          { section: "Application", label: "Marks", value: r.marks ? `${r.marks}%` : "", mono: true },
+          { section: "Application", label: "Heard about us via", value: r.source },
+
+          { section: "Campus visit", label: "Wants visit", value: r.visit },
+          { section: "Campus visit", label: "Preferred date", value: r.visit_date },
+          { section: "Campus visit", label: "Preferred slot", value: r.visit_time },
+
+          { section: "Notes", label: "Notes from applicant", value: r.notes, kind: "note" },
+
+          { section: "Technical", label: "Source IP", value: r.source_ip, kind: "tech" },
+          { section: "Technical", label: "User agent", value: r.user_agent, kind: "tech" },
         ]}
       />
     </>

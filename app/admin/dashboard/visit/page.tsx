@@ -82,16 +82,19 @@ export default function VisitListPage() {
           },
         ]}
         detailFields={(r) => [
-          { label: "Phone", value: r.phone, mono: true },
-          { label: "Email", value: r.email },
-          { label: "Branch", value: r.branch },
-          { label: "Visit date", value: r.visit_date },
-          { label: "Visit time", value: r.visit_time },
-          { label: "Party", value: r.party },
-          { label: "Needs shuttle", value: r.needs_shuttle ? "Yes" : "No" },
-          { label: "Notes", value: r.notes, wide: true },
-          { label: "Source IP", value: r.source_ip, mono: true },
-          { label: "User agent", value: r.user_agent, mono: true, wide: true },
+          { section: "Contact", label: "Phone", value: r.phone, mono: true },
+          { section: "Contact", label: "Email", value: r.email },
+
+          { section: "Visit", label: "Branch interest", value: r.branch },
+          { section: "Visit", label: "Date", value: r.visit_date },
+          { section: "Visit", label: "Slot", value: r.visit_time },
+          { section: "Visit", label: "Party", value: r.party },
+          { section: "Visit", label: "Needs shuttle", value: r.needs_shuttle ? "Yes" : "No" },
+
+          { section: "Notes", label: "Notes from visitor", value: r.notes, kind: "note" },
+
+          { section: "Technical", label: "Source IP", value: r.source_ip, kind: "tech" },
+          { section: "Technical", label: "User agent", value: r.user_agent, kind: "tech" },
         ]}
       />
     </>

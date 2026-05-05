@@ -19,7 +19,7 @@ import {
 type SubmitStatus =
   | { state: "idle" }
   | { state: "submitting" }
-  | { state: "success"; mocked: boolean; firstName: string; date: string; time: string }
+  | { state: "success"; firstName: string; date: string; time: string }
   | { state: "error"; message: string };
 
 // Today's date as YYYY-MM-DD for the date input min.
@@ -56,9 +56,9 @@ export function VisitForm() {
       });
       const json = (await res.json()) as {
         ok: boolean;
+        id?: number;
         error?: string;
         fieldErrors?: Record<string, string[]>;
-        mocked?: boolean;
       };
       if (!res.ok || !json.ok) {
         if (json.fieldErrors) {
@@ -76,7 +76,6 @@ export function VisitForm() {
       }
       setStatus({
         state: "success",
-        mocked: json.mocked === true,
         firstName: data.name.trim().split(/\s+/)[0] || "there",
         date: data.visitDate,
         time: data.visitTime,
