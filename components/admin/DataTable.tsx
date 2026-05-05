@@ -16,6 +16,25 @@ import {
   type SubmissionStatus,
 } from "@/lib/admin/api";
 import { formatDate } from "@/lib/admin/utils";
+import { statusLabel as fullStatusLabel } from "./ui/StatusDropdown";
+
+/**
+ * Append a timestamped audit line to existing admin notes. Used when an
+ * admin changes the status — the trail lets the team see who/what moved
+ * the lead through the funnel without dropping their own remarks.
+ */
+function appendStatusAudit(existing: string, next: SubmissionStatus): string {
+  const stamp = new Date().toLocaleString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const line = `[${stamp}] Status changed to ${fullStatusLabel(next)}`;
+  const trimmed = existing.trim();
+  return trimmed ? `${trimmed}\n${line}` : line;
+}
 
 import { Pill } from "./ui/Pill";
 import { SearchInput } from "./ui/SearchInput";
@@ -159,6 +178,26 @@ export function DataTable<T extends BaseRow>({
     }
   }
 
+  /**
+   * Status change with an automatic audit line appended to admin_notes.
+   * Skips the audit if the new status equals the current one.
+   */
+  async function changeStatus(row: T, next: SubmissionStatus) {
+    if (row.status === next) return;
+    const admin_notes = appendStatusAudit(row.admin_notes ?? "", next);
+    try {
+      const updated = await api<T>(`/submissions/${resource}/${row.id}/`, {
+        method: "PATCH",
+        body: { status: next, admin_notes },
+      });
+      // Keep the open drawer in sync with the freshly patched row.
+      if (drawerRow && drawerRow.id === row.id) setDrawerRow(updated);
+      await load();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Could not update row.");
+    }
+  }
+
   async function deleteRow(id: number) {
     if (!confirm("Delete this submission permanently? This can't be undone.")) return;
     try {
@@ -170,16 +209,23 @@ export function DataTable<T extends BaseRow>({
   }
 
   async function bulkSetStatus(s: SubmissionStatus) {
-    if (selected.size === 0) return;
+    if (selected.size === 0 || !data) return;
+    const rowsById = new Map(data.results.map((r) => [r.id, r]));
     setLoading(true);
     try {
       await Promise.all(
-        [...selected].map((id) =>
-          api(`/submissions/${resource}/${id}/`, {
+        [...selected].map((id) => {
+          const row = rowsById.get(id);
+          // Skip rows already at target status — no spurious audit lines.
+          if (!row || row.status === s) return Promise.resolve();
+          return api(`/submissions/${resource}/${id}/`, {
             method: "PATCH",
-            body: { status: s },
-          }),
-        ),
+            body: {
+              status: s,
+              admin_notes: appendStatusAudit(row.admin_notes ?? "", s),
+            },
+          });
+        }),
       );
       setSelected(new Set());
       await load();
@@ -421,7 +467,7 @@ export function DataTable<T extends BaseRow>({
                   <td>
                     <StatusDropdown
                       value={row.status}
-                      onChange={(s) => patchRow(row.id, { status: s })}
+                      onChange={(s) => changeStatus(row, s)}
                     />
                   </td>
                   <td style={{ textAlign: "right" }}>
@@ -431,7 +477,7 @@ export function DataTable<T extends BaseRow>({
                       onView={() => setDrawerRow(row)}
                       onMarkSpam={
                         row.status !== "spam"
-                          ? () => patchRow(row.id, { status: "spam" })
+                          ? () => changeStatus(row, "spam")
                           : undefined
                       }
                       onDelete={() => deleteRow(row.id)}
@@ -487,7 +533,7 @@ export function DataTable<T extends BaseRow>({
         title={drawerRow?.name || ""}
         fields={drawerRow ? detailFields(drawerRow) : []}
         onStatusChange={(s) => {
-          if (drawerRow) patchRow(drawerRow.id, { status: s });
+          if (drawerRow) changeStatus(drawerRow, s);
         }}
         onSaveRemarks={async (admin_notes) => {
           if (!drawerRow) return;

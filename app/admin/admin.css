@@ -231,7 +231,8 @@
   padding: 4px;
   box-shadow: 0 12px 32px -10px rgba(10, 26, 63, 0.2), 0 0 0 1px rgba(228, 226, 218, 0.5);
   min-width: 180px;
-  z-index: 1000;
+  /* Above the drawer (1001) so dropdowns work inside the detail panel. */
+  z-index: 1100;
   animation: admin-menu-in .14s ease-out;
 }
 @keyframes admin-menu-in {
