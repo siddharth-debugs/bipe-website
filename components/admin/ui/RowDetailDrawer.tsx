@@ -2,11 +2,27 @@
 
 import { useEffect, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, Phone, Mail, Clock, MessageCircle, Check, Loader2 } from "lucide-react";
-import { formatDate } from "@/lib/admin/utils";
+import { X, Phone, Mail, Clock, MessageCircle, Check, Loader2, Plus } from "lucide-react";
+import { formatDate, appendRemark } from "@/lib/admin/utils";
 import type { SubmissionStatus } from "@/lib/admin/api";
 import { Pill } from "./Pill";
 import { StatusDropdown, statusTone, statusLabel } from "./StatusDropdown";
+
+/**
+ * Common one-click remarks the admissions team logs frequently.
+ * Clicking one appends a timestamped line to admin_notes and saves
+ * immediately — no need to type the same phrase + date over and over.
+ */
+const QUICK_REMARKS: { label: string; line: string }[] = [
+  { label: "Called — no answer", line: "Called — no answer" },
+  { label: "Spoke to applicant", line: "Spoke to applicant" },
+  { label: "Spoke to parent", line: "Spoke to parent" },
+  { label: "Sent WhatsApp", line: "Sent WhatsApp follow-up" },
+  { label: "Visit scheduled", line: "Campus visit scheduled" },
+  { label: "Visit completed", line: "Campus visit completed" },
+  { label: "Docs pending", line: "Documents pending from applicant" },
+  { label: "Awaiting decision", line: "Awaiting applicant decision" },
+];
 
 export interface DetailField {
   label: string;
@@ -264,18 +280,56 @@ function RemarksEditor({
     }
   }
 
+  async function handleQuickRemark(line: string) {
+    setSave({ kind: "saving" });
+    const next = appendRemark(draft, line);
+    setDraft(next);
+    try {
+      await onSave(next);
+      setSave({ kind: "saved" });
+      setTimeout(
+        () =>
+          setSave((s) => (s.kind === "saved" ? { kind: "idle" } : s)),
+        1800,
+      );
+    } catch (e) {
+      setSave({
+        kind: "error",
+        message: e instanceof Error ? e.message : "Could not save.",
+      });
+    }
+  }
+
   return (
     <section className="admin-drawer-section">
       <h3 className="admin-drawer-section-title">Internal remarks</h3>
       <p className="admin-drawer-helper">
         Private notes for the admissions team. Not visible to the applicant.
       </p>
+
+      <div className="admin-quick-remarks">
+        <span className="admin-meta admin-quick-remarks-label">Quick log</span>
+        {QUICK_REMARKS.map((q) => (
+          <button
+            key={q.label}
+            type="button"
+            className="admin-quick-remark"
+            disabled={save.kind === "saving"}
+            onClick={() => handleQuickRemark(q.line)}
+            title={`Append "${q.line}" with the current time`}
+          >
+            <Plus size={11} />
+            {q.label}
+          </button>
+        ))}
+      </div>
+
       <textarea
         className="admin-textarea admin-drawer-remarks"
         value={draft}
         onChange={(e) => setDraft(e.target.value)}
         placeholder="e.g. Called on 5 May, parent will visit Wed; needs hostel info"
-        rows={4}
+        rows={5}
         disabled={save.kind === "saving"}
       />
       <div className="admin-drawer-remarks-foot">

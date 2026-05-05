@@ -561,6 +561,49 @@
 @keyframes admin-spin { to { transform: rotate(360deg); } }
 .admin-spin { animation: admin-spin 0.9s linear infinite; }
 
+/* ---- Quick-remark chips --------------------------------------------- */
+.admin-quick-remarks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+}
+.admin-quick-remarks-label {
+  margin-right: 4px;
+}
+.admin-quick-remark {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink-2);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, color .12s, transform .1s;
+  white-space: nowrap;
+}
+.admin-quick-remark:hover {
+  background: var(--brand-tint);
+  border-color: color-mix(in oklab, var(--brand) 28%, transparent);
+  color: var(--brand);
+}
+.admin-quick-remark:active { transform: translateY(1px); }
+.admin-quick-remark:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+.admin-quick-remark svg {
+  opacity: 0.6;
+}
+
 /* ---- Responsive --------------------------------------------------- */
 @media (max-width: 860px) {
   .admin-table thead th { font-size: 9px; padding: 10px 12px; }

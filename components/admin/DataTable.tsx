@@ -15,25 +15,11 @@ import {
   type Paginated,
   type SubmissionStatus,
 } from "@/lib/admin/api";
-import { formatDate } from "@/lib/admin/utils";
+import { formatDate, appendRemark } from "@/lib/admin/utils";
 import { statusLabel as fullStatusLabel } from "./ui/StatusDropdown";
 
-/**
- * Append a timestamped audit line to existing admin notes. Used when an
- * admin changes the status — the trail lets the team see who/what moved
- * the lead through the funnel without dropping their own remarks.
- */
 function appendStatusAudit(existing: string, next: SubmissionStatus): string {
-  const stamp = new Date().toLocaleString("en-IN", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  const line = `[${stamp}] Status changed to ${fullStatusLabel(next)}`;
-  const trimmed = existing.trim();
-  return trimmed ? `${trimmed}\n${line}` : line;
+  return appendRemark(existing, `Status changed to ${fullStatusLabel(next)}`);
 }
 
 import { Pill } from "./ui/Pill";
