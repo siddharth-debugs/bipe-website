@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
+import { DatePicker } from "@/components/ui/DatePicker";
 import {
   applyFormSchema,
   applyDefaults,
@@ -144,12 +145,7 @@ export function ApplyView() {
             </b>
             . Our admissions cell will call within 24 hours.
           </p>
-          {submitStatus.mocked && (
-            <p style={{ marginTop: 14, fontSize: 12, color: "var(--ink-3)", maxWidth: "50ch", margin: "14px auto 0" }}>
-              <em>Note: email backend not yet configured (WEB3FORMS_ACCESS_KEY missing). Submission was logged server-side only.</em>
-            </p>
-          )}
-          <div className="row" style={{ justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
+<div className="row" style={{ justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
             <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
               <WhatsAppIcon /> Continue on WhatsApp
             </a>
@@ -450,11 +446,20 @@ export function ApplyView() {
                         <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                           <div className={"field " + (fieldError("visitDate") ? "field-error" : "")}>
                             <label htmlFor="visitDate">Visit date</label>
-                            <input
-                              id="visitDate"
-                              type="date"
-                              {...register("visitDate")}
-                              min={new Date().toISOString().slice(0, 10)}
+                            <Controller
+                              control={control}
+                              name="visitDate"
+                              render={({ field }) => (
+                                <DatePicker
+                                  id="visitDate"
+                                  value={field.value || ""}
+                                  onChange={field.onChange}
+                                  onBlur={field.onBlur}
+                                  invalid={!!fieldError("visitDate")}
+                                  min={new Date().toISOString().slice(0, 10)}
+                                  placeholder="Pick a date"
+                                />
+                              )}
                             />
                             {fieldError("visitDate") && <span className="error-msg">{fieldError("visitDate")}</span>}
                           </div>

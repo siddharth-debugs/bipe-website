@@ -679,6 +679,181 @@ body.no-motion .skeleton { animation: none; }
 /* When the parent .field-error is set on the Apply form's wrapper, flag the
    select trigger too. */
 .field-error .bipe-select-trigger { border-color: var(--danger); }
+.field-error .bipe-date-trigger { border-color: var(--danger); }
+
+/* ====== DatePicker (Radix Popover-based calendar) ====== */
+.bipe-date-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14.5px;
+  text-align: left;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.bipe-date-trigger:hover { border-color: var(--line-2); }
+.bipe-date-trigger[data-state="open"],
+.bipe-date-trigger:focus-visible {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 18%, transparent);
+}
+.bipe-date-trigger.is-invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--danger) 14%, transparent);
+}
+.bipe-date-icon {
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.bipe-date-panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow:
+    0 22px 44px -16px rgba(10, 26, 63, 0.22),
+    0 0 0 1px rgba(228, 226, 218, 0.5);
+  padding: 14px;
+  z-index: 1000;
+  width: 320px;
+  animation: bipe-date-in .14s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@keyframes bipe-date-in {
+  from { opacity: 0; transform: translateY(-3px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bipe-date-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.bipe-date-title {
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.bipe-date-nav {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, color .12s;
+}
+.bipe-date-nav:hover {
+  background: var(--paper-2);
+  color: var(--ink);
+  border-color: var(--ink-3);
+}
+
+.bipe-date-dow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: center;
+}
+.bipe-date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.bipe-date-cell {
+  height: 36px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .12s, color .12s, border-color .12s;
+  position: relative;
+}
+.bipe-date-cell:hover:not(:disabled) {
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+.bipe-date-cell.is-out { color: var(--ink-4); }
+.bipe-date-cell.is-weekend { color: var(--ink-3); }
+.bipe-date-cell.is-today {
+  border-color: color-mix(in oklab, var(--brand) 32%, transparent);
+  font-weight: 700;
+}
+.bipe-date-cell.is-selected {
+  background: var(--brand) !important;
+  color: var(--paper) !important;
+  font-weight: 700;
+  border-color: var(--brand);
+}
+.bipe-date-cell:disabled {
+  color: var(--ink-4);
+  cursor: not-allowed;
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.bipe-date-foot {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line-2);
+}
+.bipe-date-quick {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .12s, border-color .12s, color .12s;
+}
+.bipe-date-quick:hover:not(:disabled) {
+  background: var(--paper-2);
+  color: var(--ink);
+  border-color: var(--ink-3);
+}
+.bipe-date-quick:disabled {
+  color: var(--ink-4);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.bipe-date-quick.is-primary {
+  background: var(--brand);
+  color: var(--paper);
+  border-color: var(--brand);
+}
+.bipe-date-quick.is-primary:hover { background: var(--brand-deep); }
 
 /* ====== Faculty HOD 4-column grid ====== */
 @media (max-width: 1024px) {

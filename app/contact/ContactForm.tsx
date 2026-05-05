@@ -117,12 +117,7 @@ export function ContactForm() {
             </span>{" "}
             within 24 hours, Monday to Saturday — in Hindi or English.
           </p>
-          {status.mocked && (
-            <p style={{ marginTop: 14, fontSize: 12, color: "var(--ink-3)", fontStyle: "italic" }}>
-              Note: email backend not configured (WEB3FORMS_ACCESS_KEY missing). Submission was logged server-side only.
-            </p>
-          )}
-          <div style={{ marginTop: 28, display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
+<div style={{ marginTop: 28, display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
             <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
               <WhatsAppIcon /> WhatsApp instead
             </a>

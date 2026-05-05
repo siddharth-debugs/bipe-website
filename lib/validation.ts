@@ -42,11 +42,22 @@ export const BOARD_OPTIONS = ["UP Board", "CBSE", "ICSE", "Other"] as const;
 
 export const VISIT_OPTIONS = ["yes", "maybe", "no"] as const;
 export const VISIT_TIME_OPTIONS = [
+  "9:30 AM",
   "10:00 AM",
+  "10:30 AM",
+  "11:00 AM",
   "11:30 AM",
+  "12:00 PM",
+  "12:30 PM",
   "1:00 PM",
+  "1:30 PM",
+  "2:00 PM",
   "2:30 PM",
+  "3:00 PM",
+  "3:30 PM",
   "4:00 PM",
+  "4:30 PM",
+  "5:00 PM",
 ] as const;
 
 // Indian mobile — accepts +91 prefix optionally, must start 6-9, ten digits.

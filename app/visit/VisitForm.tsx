@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
+import { DatePicker } from "@/components/ui/DatePicker";
 import {
   visitFormSchema,
   visitDefaults,
@@ -117,23 +118,7 @@ export function VisitForm() {
           <strong style={{ color: "var(--ink)" }}>{status.time}</strong>. We&apos;ll
           confirm by phone within a working day.
         </p>
-        {status.mocked && (
-          <div
-            style={{
-              marginTop: 14,
-              padding: 10,
-              background: "var(--paper-2)",
-              border: "1px dashed var(--line-2)",
-              borderRadius: 10,
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              color: "var(--ink-3)",
-            }}
-          >
-            Dev mode · email skipped (SMTP env not set). Booking was logged to the server console.
-          </div>
-        )}
-        <button
+<button
           type="button"
           onClick={() => {
             reset(visitDefaults);
@@ -230,12 +215,20 @@ export function VisitForm() {
       <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginTop: 12 }}>
         <div className={errClass("visitDate")}>
           <label htmlFor="vf-date">Preferred date</label>
-          <input
-            id="vf-date"
-            type="date"
-            min={todayIso()}
-            aria-invalid={hasError("visitDate")}
-            {...register("visitDate")}
+          <Controller
+            control={control}
+            name="visitDate"
+            render={({ field }) => (
+              <DatePicker
+                id="vf-date"
+                value={field.value || ""}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                invalid={hasError("visitDate")}
+                min={todayIso()}
+                placeholder="Pick a date"
+              />
+            )}
           />
           {fieldError("visitDate") && (
             <span className="field-msg">{fieldError("visitDate")}</span>
