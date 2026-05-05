@@ -31,11 +31,14 @@ export async function forwardToBackend(
   const base = envBase();
   const token = envToken();
   if (!base || !token) {
-    // Not configured (e.g. local dev without a backend). Silently skip.
+    console.warn(
+      `[backend] ${kind} ingest skipped — BIPE_BACKEND_URL=${base ? "set" : "missing"} BIPE_INGEST_TOKEN=${token ? "set" : "missing"}`,
+    );
     return;
   }
 
   const url = `${base.replace(/\/+$/, "")}/submissions/ingest/${kind}/`;
+  const started = Date.now();
   try {
     const res = await fetch(url, {
       method: "POST",
@@ -44,17 +47,20 @@ export async function forwardToBackend(
         [HEADER]: token,
       },
       body: JSON.stringify(payload),
-      // 5s ceiling — never block the user's email confirmation.
-      signal: AbortSignal.timeout(5000),
+      signal: AbortSignal.timeout(8000),
     });
+    const ms = Date.now() - started;
     if (!res.ok) {
       const txt = await res.text().catch(() => "");
       console.warn(
-        `[backend] ${kind} ingest returned ${res.status}: ${txt.slice(0, 240)}`,
+        `[backend] ${kind} ingest -> ${url} ${res.status} in ${ms}ms: ${txt.slice(0, 240)}`,
       );
+      return;
     }
+    console.log(`[backend] ${kind} ingest -> ${url} 201 in ${ms}ms`);
   } catch (err) {
+    const ms = Date.now() - started;
     const msg = err instanceof Error ? err.message : "unknown error";
-    console.warn(`[backend] ${kind} ingest failed: ${msg}`);
+    console.warn(`[backend] ${kind} ingest -> ${url} failed in ${ms}ms: ${msg}`);
   }
 }

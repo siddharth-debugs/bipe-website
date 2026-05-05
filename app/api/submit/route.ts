@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import {
   applyFormSchema,
   contactFormSchema,
@@ -73,7 +73,7 @@ export async function POST(req: Request) {
         { status: 502 },
       );
     }
-    void forwardToBackend("apply", {
+    const applyPayload = {
       name: d.name,
       phone: d.phone,
       email: d.email,
@@ -88,7 +88,8 @@ export async function POST(req: Request) {
       visitDate: d.visit === "yes" ? d.visitDate : "",
       visitTime: d.visit === "yes" ? d.visitTime : "",
       notes: d.notes,
-    });
+    };
+    after(() => forwardToBackend("apply", applyPayload));
     return NextResponse.json({ ok: true, mocked: sent.mocked === true });
   }
 
@@ -126,7 +127,7 @@ export async function POST(req: Request) {
         { status: 502 },
       );
     }
-    void forwardToBackend("visit", {
+    const visitPayload = {
       name: d.name,
       phone: d.phone,
       email: d.email,
@@ -137,7 +138,8 @@ export async function POST(req: Request) {
       party: d.party,
       needsShuttle: !!d.needsShuttle,
       notes: d.notes,
-    });
+    };
+    after(() => forwardToBackend("visit", visitPayload));
     return NextResponse.json({ ok: true, mocked: sent.mocked === true });
   }
 
@@ -171,7 +173,7 @@ export async function POST(req: Request) {
       { status: 502 },
     );
   }
-  void forwardToBackend("contact", {
+  const contactPayload = {
     name: d.name,
     phone: d.phone,
     email: d.email,
@@ -179,6 +181,7 @@ export async function POST(req: Request) {
     consent: d.consent,
     source: d.source,
     message: d.message,
-  });
+  };
+  after(() => forwardToBackend("contact", contactPayload));
   return NextResponse.json({ ok: true, mocked: sent.mocked === true });
 }
