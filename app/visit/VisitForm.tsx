@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { FormSelect } from "@/components/ui/FormSelect";
 import {
   visitFormSchema,
   visitDefaults,
@@ -33,6 +34,7 @@ export function VisitForm() {
 
   const {
     register,
+    control,
     handleSubmit,
     setError,
     reset,
@@ -203,14 +205,21 @@ export function VisitForm() {
         </div>
         <div className={errClass("branch")}>
           <label htmlFor="vf-branch">Branch you want to see</label>
-          <select id="vf-branch" aria-invalid={hasError("branch")} {...register("branch")}>
-            <option value="">Choose a branch…</option>
-            {BRANCH_OPTIONS.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
+          <Controller
+            control={control}
+            name="branch"
+            render={({ field }) => (
+              <FormSelect
+                id="vf-branch"
+                value={field.value || ""}
+                onValueChange={field.onChange}
+                onBlur={field.onBlur}
+                invalid={hasError("branch")}
+                placeholder="Choose a branch…"
+                options={BRANCH_OPTIONS.map((b) => ({ value: b, label: b }))}
+              />
+            )}
+          />
           {fieldError("branch") && (
             <span className="field-msg">{fieldError("branch")}</span>
           )}
@@ -234,26 +243,42 @@ export function VisitForm() {
         </div>
         <div className={errClass("visitTime")}>
           <label htmlFor="vf-time">Preferred slot</label>
-          <select id="vf-time" aria-invalid={hasError("visitTime")} {...register("visitTime")}>
-            {VISIT_TIME_OPTIONS.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+          <Controller
+            control={control}
+            name="visitTime"
+            render={({ field }) => (
+              <FormSelect
+                id="vf-time"
+                value={field.value || ""}
+                onValueChange={field.onChange}
+                onBlur={field.onBlur}
+                invalid={hasError("visitTime")}
+                placeholder="Pick a slot"
+                options={VISIT_TIME_OPTIONS.map((t) => ({ value: t, label: t }))}
+              />
+            )}
+          />
           {fieldError("visitTime") && (
             <span className="field-msg">{fieldError("visitTime")}</span>
           )}
         </div>
         <div className={errClass("party")}>
           <label htmlFor="vf-party">Who&apos;s coming</label>
-          <select id="vf-party" aria-invalid={hasError("party")} {...register("party")}>
-            {VISIT_PARTY_OPTIONS.map((p) => (
-              <option key={p} value={p}>
-                {p}
-              </option>
-            ))}
-          </select>
+          <Controller
+            control={control}
+            name="party"
+            render={({ field }) => (
+              <FormSelect
+                id="vf-party"
+                value={field.value || ""}
+                onValueChange={field.onChange}
+                onBlur={field.onBlur}
+                invalid={hasError("party")}
+                placeholder="Choose"
+                options={VISIT_PARTY_OPTIONS.map((p) => ({ value: p, label: p }))}
+              />
+            )}
+          />
           {fieldError("party") && (
             <span className="field-msg">{fieldError("party")}</span>
           )}

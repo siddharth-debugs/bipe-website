@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { FormSelect } from "@/components/ui/FormSelect";
 import {
   contactFormSchema,
   contactDefaults,
@@ -24,6 +25,7 @@ export function ContactForm() {
 
   const {
     register,
+    control,
     handleSubmit,
     reset,
     setError,
@@ -192,26 +194,41 @@ export function ContactForm() {
           <label htmlFor="cf-branch">
             Branch interest <span style={{ color: "var(--danger)" }}>*</span>
           </label>
-          <select id="cf-branch" {...register("branch")} defaultValue="">
-            <option value="" disabled>
-              — Choose a branch —
-            </option>
-            {BRANCH_OPTIONS.map((b) => (
-              <option key={b} value={b}>{b}</option>
-            ))}
-          </select>
+          <Controller
+            control={control}
+            name="branch"
+            render={({ field }) => (
+              <FormSelect
+                id="cf-branch"
+                value={field.value || ""}
+                onValueChange={field.onChange}
+                onBlur={field.onBlur}
+                invalid={!!fieldError("branch")}
+                placeholder="Choose a branch…"
+                options={BRANCH_OPTIONS.map((b) => ({ value: b, label: b }))}
+              />
+            )}
+          />
           {fieldError("branch") && <span className="error-msg">{fieldError("branch")}</span>}
         </div>
       </div>
 
       <div className="field" style={{ marginTop: 14 }}>
         <label htmlFor="cf-source">How did you hear about BIPE? <span className="muted" style={{ fontSize: 11 }}>(optional)</span></label>
-        <select id="cf-source" {...register("source")} defaultValue="">
-          <option value="">— Pick one —</option>
-          {SOURCE_OPTIONS.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
+        <Controller
+          control={control}
+          name="source"
+          render={({ field }) => (
+            <FormSelect
+              id="cf-source"
+              value={field.value || ""}
+              onValueChange={field.onChange}
+              onBlur={field.onBlur}
+              placeholder="Pick the closest match"
+              options={SOURCE_OPTIONS.map((s) => ({ value: s, label: s }))}
+            />
+          )}
+        />
       </div>
 
       <div className={errClass("message")} style={{ marginTop: 14 }}>

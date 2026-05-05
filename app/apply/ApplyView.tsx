@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { FormSelect } from "@/components/ui/FormSelect";
 import {
   applyFormSchema,
   applyDefaults,
@@ -37,6 +38,7 @@ export function ApplyView() {
 
   const {
     register,
+    control,
     handleSubmit,
     trigger,
     watch,
@@ -328,27 +330,57 @@ export function ApplyView() {
                     <div className="grid" style={{ gap: 18 }}>
                       <div className={"field " + (fieldError("branch") ? "field-error" : "")}>
                         <label htmlFor="branch">Preferred branch</label>
-                        <select id="branch" {...register("branch")}>
-                          <option value="">— Choose a branch —</option>
-                          {BRANCH_OPTIONS.map((b) => (
-                            <option key={b} value={b}>{b}</option>
-                          ))}
-                        </select>
+                        <Controller
+                          control={control}
+                          name="branch"
+                          render={({ field }) => (
+                            <FormSelect
+                              id="branch"
+                              value={field.value || ""}
+                              onValueChange={field.onChange}
+                              onBlur={field.onBlur}
+                              invalid={!!fieldError("branch")}
+                              placeholder="Choose a branch…"
+                              options={BRANCH_OPTIONS.map((b) => ({ value: b, label: b }))}
+                            />
+                          )}
+                        />
                         {fieldError("branch") && <span className="error-msg">{fieldError("branch")}</span>}
                       </div>
                       <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
                         <div className="field">
                           <label htmlFor="category">Category</label>
-                          <select id="category" {...register("category")}>
-                            {CATEGORY_OPTIONS.map((c) => <option key={c} value={c}>{c}</option>)}
-                          </select>
+                          <Controller
+                            control={control}
+                            name="category"
+                            render={({ field }) => (
+                              <FormSelect
+                                id="category"
+                                value={field.value || ""}
+                                onValueChange={field.onChange}
+                                onBlur={field.onBlur}
+                                placeholder="Select category"
+                                options={CATEGORY_OPTIONS.map((c) => ({ value: c, label: c }))}
+                              />
+                            )}
+                          />
                         </div>
                         <div className="field">
                           <label htmlFor="board">10th board</label>
-                          <select id="board" {...register("board")}>
-                            <option value="">— Select —</option>
-                            {BOARD_OPTIONS.map((c) => <option key={c} value={c}>{c}</option>)}
-                          </select>
+                          <Controller
+                            control={control}
+                            name="board"
+                            render={({ field }) => (
+                              <FormSelect
+                                id="board"
+                                value={field.value || ""}
+                                onValueChange={field.onChange}
+                                onBlur={field.onBlur}
+                                placeholder="Select board"
+                                options={BOARD_OPTIONS.map((c) => ({ value: c, label: c }))}
+                              />
+                            )}
+                          />
                         </div>
                         <div className={"field " + (fieldError("marks") ? "field-error" : "")}>
                           <label htmlFor="marks">10th marks (%)</label>
@@ -369,10 +401,20 @@ export function ApplyView() {
                     <div className="grid" style={{ gap: 18 }}>
                       <div className="field">
                         <label htmlFor="source">How did you hear about BIPE? <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
-                        <select id="source" {...register("source")}>
-                          <option value="">— Select —</option>
-                          {SOURCE_OPTIONS.map((s) => <option key={s} value={s}>{s}</option>)}
-                        </select>
+                        <Controller
+                          control={control}
+                          name="source"
+                          render={({ field }) => (
+                            <FormSelect
+                              id="source"
+                              value={field.value || ""}
+                              onValueChange={field.onChange}
+                              onBlur={field.onBlur}
+                              placeholder="Pick the closest match"
+                              options={SOURCE_OPTIONS.map((s) => ({ value: s, label: s }))}
+                            />
+                          )}
+                        />
                       </div>
 
                       <div className="field">
@@ -418,9 +460,20 @@ export function ApplyView() {
                           </div>
                           <div className="field">
                             <label htmlFor="visitTime">Slot</label>
-                            <select id="visitTime" {...register("visitTime")}>
-                              {VISIT_TIME_OPTIONS.map((t) => <option key={t} value={t}>{t}</option>)}
-                            </select>
+                            <Controller
+                              control={control}
+                              name="visitTime"
+                              render={({ field }) => (
+                                <FormSelect
+                                  id="visitTime"
+                                  value={field.value || ""}
+                                  onValueChange={field.onChange}
+                                  onBlur={field.onBlur}
+                                  placeholder="Choose a slot"
+                                  options={VISIT_TIME_OPTIONS.map((t) => ({ value: t, label: t }))}
+                                />
+                              )}
+                            />
                           </div>
                         </div>
                       )}
