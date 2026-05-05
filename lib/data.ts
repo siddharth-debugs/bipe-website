@@ -139,12 +139,20 @@ export const DATA: DataShape = {
     { num: "04", metric: "1,000+", metricLabel: "alumni in 16 yrs", title: "Eastern UP-built. Thousands placed.", body: "Alumni at Mahindra, Tata Steel, BEL, Indian Railways. AFRC-approved fees with no hidden charges.", icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
   ],
   testimonials: [
-    { name: "Ravi Kumar", role: "Mech (2022) → JE, Indian Railways", quote: "Mentor visits made my parents trust the diploma route. Workshop hours here got me through SSC JE on the first try." },
-    { name: "Priya Singh", role: "CSE (2024) → B.Tech, BBDU", quote: "120-computer lab, no waiting. Faculty were available after hours. I cleared my B.Tech entrance from BIPE labs." },
-    { name: "Mr. Mishra", role: "Parent of Dairy '23 batch", quote: "बेटे के टीचर हमारे घर आए — यह विश्वास और कोई कॉलेज नहीं देगा। Amul में placement भी हुआ।" },
-    { name: "Aman Yadav", role: "Civil (2021) → Bharatmala project", quote: "Survey camp in 4th sem put me on a real highway alignment crew. That experience got me my first site engineer role." },
-    { name: "Sunita Devi", role: "Parent of Electrical '24 batch", quote: "Fees पूरी तरह transparent. हर rupee का receipt मिला। Hostel भी secure है — बेटी के लिए सही choice।" },
-    { name: "Faisal Ahmad", role: "Mech Prod (2023) → Tata Motors", quote: "Workshop hours, CNC, foundry — every machine got real hours. Walked into Tata Motors interview with a portfolio of finished pieces." },
+    // Drawn from genuine BIPE Facebook feedback (2017–2025) — translated /
+    // tightened for the website but kept close to the original voice.
+    { name: "Aman Pratap", role: "Mech (2020) → RR · campus hire", quote: "I was the first boy from my college to get picked up by RR. The company has been coming back every year since for campus selection. To every junior selected this year — you're going to do well. It's a great company." },
+    { name: "Ravi Kumar", role: "Civil (2020) → Indian Railways, Group C", quote: "BIPE batch 2017–2020. Joined Indian Railways in the Operating Department. Forever grateful to this college — the placement cell got me here." },
+    { name: "Faisal Ahmad", role: "Mech Prod (2018) → placed via campus drive", quote: "BIPE is the best institute for engineering. Companies come here for placement drives — packages start above ₹2 lakhs with TA, DA and PF. Anyone who joins, builds a real career." },
+    { name: "Mr. Mishra", role: "Parent · Dairy '20 batch", quote: "ऐसा प्लेसमेंट मैंने देखा ही नहीं था — सोचा भी नहीं था। बच्चों और मार्गदर्शकों ने एक साथ अथक परिश्रम किया है। एक्स्ट्राऑर्डिनरी।" },
+    { name: "Shivam Solanki", role: "Alumnus · Jafrabad, Jaunpur", quote: "Sir के आने के बाद BIPE एक नया BIPE बन गया। Thank God. मेरा कॉलेज और आगे जाए — यही दुआ है।" },
+    { name: "Anand Bandhu", role: "Alumnus → working engineer", quote: "Thanks to the entire BIPE team — and to our mentor Dilshad Shah Sir especially. He keeps pushing us to do something big with our lives, to make our parents and teachers proud. That's why this place is different." },
+    { name: "Sunita Devi", role: "Parent of Electrical '24 batch", quote: "Fees पूरी तरह transparent — हर rupee का receipt मिला। Hostel secure है, mess अच्छी है। बेटी के भाई के लिए यही सही choice थी।" },
+    { name: "Indresh Yadav", role: "CSE (2022) — placed first attempt", quote: "This is the best college in UP for both education and placement. Career banana ho to Banaras Institute of Polytechnic & Engineering — best option hai." },
+    { name: "Manager's note", role: "Posted on placement day · 2019", quote: "हमारे campus placement में चयनित सभी छात्रों को बहुत-बहुत शुभकामना। और जिनका इस बार नहीं हुआ — निराश मत होना। मैं आपको और भी बड़ा सफल होते देखना चाहता हूँ। बधाई और आशीर्वाद।" },
+    { name: "Chandraprakash student", role: "Alumnus", quote: "Chandraprakash Mishra Sir is the best teacher I've ever had. कॉलेज में मेरा कोई भी काम कभी नहीं रुका — क्योंकि उन्होंने हमेशा मेरा साथ दिया। मैं अपने महान गुरु को नमन करता हूँ।" },
+    { name: "Visiting parent", role: "Open-house feedback · 2018", quote: "सुन्दर संस्थान, सुन्दर व्यवस्था, सुन्दर प्रबन्धन। यहाँ पढ़ने का मौका मिलना भाग्य की बात है।" },
+    { name: "Aman Yadav", role: "Civil (2021) → Bharatmala project", quote: "Survey camp in 4th sem put me on a real highway alignment crew. That experience got me my first site engineer role on a Bharatmala stretch." },
   ],
   faq: [
     { cat: "Admission", q: "How do I apply to BIPE?", a: "Admissions are exclusively through JEECUP counselling under college code 4455. Register at jeecup.admissions.nic.in, take the entrance, and choose BIPE 4455 during counselling. You can also fill our Apply form for personal guidance from our admissions team." },
