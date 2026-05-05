@@ -1707,3 +1707,120 @@ body.no-motion .skeleton { animation: none; }
   color: color-mix(in oklab, var(--paper) 70%, transparent);
   flex-shrink: 0;
 }
+
+/* =========================================================================
+   Testimonials marquee — two strips scrolling opposite directions, with
+   edge fades and pause-on-hover. The track is rendered with the items
+   duplicated so a -50% transform loops seamlessly.
+   ========================================================================= */
+.testimonial-section {
+  background: var(--brand-tint);
+  overflow: hidden;
+}
+.testimonial-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  /* Soft fade on both edges so cards drift into and out of view. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+}
+.testimonial-strip {
+  overflow: hidden;
+  width: 100%;
+}
+.testimonial-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  animation: testimonial-marquee linear infinite;
+  will-change: transform;
+}
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+@keyframes testimonial-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  /* The track holds two copies of the items, so -50% lands exactly on
+     the start of the second copy — gives a perfect, seamless loop. */
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track { animation: none; }
+}
+
+/* Cards reuse the public site card aesthetic but tuned for the strip:
+   fixed width, denser padding, hover lift. */
+.testimonial-card {
+  flex: 0 0 auto;
+  width: 360px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .25s var(--ease, ease-out), box-shadow .25s,
+    border-color .25s;
+}
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--brand) 28%, transparent);
+  box-shadow: 0 18px 40px -22px color-mix(in oklab, var(--brand) 38%, transparent);
+}
+.testimonial-mark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 0.6;
+  color: var(--brand);
+  opacity: 0.45;
+  margin-bottom: 2px;
+}
+.testimonial-quote {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  flex: 1;
+  margin: 0;
+}
+.testimonial-attr {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.testimonial-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+}
+.testimonial-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+  margin-top: 3px;
+}
+
+@media (max-width: 640px) {
+  .testimonial-card {
+    width: 280px;
+    padding: 18px 18px 14px;
+  }
+  .testimonial-mark { font-size: 44px; }
+  .testimonial-quote { font-size: 13.5px; }
+}
