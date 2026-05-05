@@ -1,6 +1,8 @@
 "use client";
 
-import { SubmissionsTable } from "@/components/admin/SubmissionsTable";
+import { DataTable } from "@/components/admin/DataTable";
+import { Pill } from "@/components/admin/ui/Pill";
+import { PageHeader } from "@/components/admin/ui/PageHeader";
 import type { ApplySubmission } from "@/lib/admin/api";
 
 const BRANCHES = [
@@ -14,39 +16,26 @@ const BRANCHES = [
 
 export default function ApplyListPage() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-      <header
-        style={{
-          display: "flex",
-          alignItems: "end",
-          justifyContent: "space-between",
-          paddingBottom: 18,
-          borderBottom: "1px solid var(--line)",
-          flexWrap: "wrap",
-          gap: 14,
-        }}
-      >
-        <div>
-          <div className="eyebrow">§ Submissions · Apply</div>
-          <h1 className="admin-h1" style={{ marginTop: 8 }}>
-            Apply form
-          </h1>
-          <p style={{ color: "var(--ink-3)", marginTop: 6 }}>
-            Multi-step admission applications submitted via /apply on bipevns.org.
-          </p>
-        </div>
-      </header>
+    <>
+      <PageHeader
+        eyebrow="Submissions · Apply"
+        title="Apply form"
+        accent="submissions."
+        description="Multi-step admission applications submitted via /apply on bipevns.org."
+      />
 
-      <SubmissionsTable<ApplySubmission>
+      <DataTable<ApplySubmission>
         resource="apply"
-        extraFilters={[{ label: "Branch", field: "branch", options: BRANCHES }]}
+        kindLabel="Apply submission"
+        filters={[{ label: "Branch", field: "branch", options: BRANCHES }]}
         columns={[
           {
             key: "name",
             header: "Applicant",
+            sortable: true,
             cell: (r) => (
               <div>
-                <div style={{ fontWeight: 600 }}>{r.name}</div>
+                <div style={{ fontWeight: 600, color: "var(--ink)" }}>{r.name}</div>
                 <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>
                   {r.email || "—"}
                 </div>
@@ -63,7 +52,8 @@ export default function ApplyListPage() {
           {
             key: "branch",
             header: "Branch",
-            cell: (r) => <span className="admin-pill">{r.branch}</span>,
+            sortable: true,
+            cell: (r) => <Pill>{r.branch}</Pill>,
           },
           {
             key: "details",
@@ -82,13 +72,31 @@ export default function ApplyListPage() {
             header: "Wants visit",
             cell: (r) =>
               r.visit === "yes" ? (
-                <span className="admin-pill admin-pill-accent">{r.visit_date} · {r.visit_time}</span>
+                <Pill tone="accent">
+                  {r.visit_date} · {r.visit_time}
+                </Pill>
               ) : (
-                <span className="admin-pill">{r.visit || "—"}</span>
+                <Pill>{r.visit || "—"}</Pill>
               ),
           },
         ]}
+        detailFields={(r) => [
+          { label: "Phone", value: r.phone, mono: true },
+          { label: "Email", value: r.email },
+          { label: "Branch", value: r.branch },
+          { label: "Parent / guardian", value: r.parent },
+          { label: "Category", value: r.category },
+          { label: "Class 10 board", value: r.board },
+          { label: "Marks (%)", value: r.marks, mono: true },
+          { label: "Heard about us via", value: r.source },
+          { label: "Wants campus visit", value: r.visit },
+          { label: "Preferred visit date", value: r.visit_date },
+          { label: "Preferred slot", value: r.visit_time },
+          { label: "Notes", value: r.notes, wide: true },
+          { label: "Source IP", value: r.source_ip, mono: true },
+          { label: "User agent", value: r.user_agent, mono: true, wide: true },
+        ]}
       />
-    </div>
+    </>
   );
 }

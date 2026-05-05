@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Tokens, api, logout, type Me } from "@/lib/admin/api";
@@ -11,6 +12,7 @@ import {
   CalendarDays,
   Settings,
   LogOut,
+  ExternalLink,
 } from "lucide-react";
 import { cn } from "@/lib/admin/utils";
 
@@ -22,11 +24,7 @@ const NAV = [
   { href: "/admin/dashboard/settings", label: "Settings", Icon: Settings },
 ];
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
   const [me, setMe] = useState<Me | null>(null);
@@ -61,10 +59,11 @@ export default function DashboardLayout({
           color: "var(--ink-3)",
           fontFamily: "var(--font-mono)",
           fontSize: 11,
-          letterSpacing: "0.16em",
+          letterSpacing: "0.18em",
+          background: "var(--paper)",
         }}
       >
-        LOADING…
+        <span className="admin-skel" style={{ width: 80, height: 6 }} />
       </div>
     );
   }
@@ -73,8 +72,9 @@ export default function DashboardLayout({
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "240px 1fr",
+        gridTemplateColumns: "248px 1fr",
         minHeight: "100vh",
+        background: "var(--paper)",
       }}
     >
       {/* Sidebar */}
@@ -82,7 +82,7 @@ export default function DashboardLayout({
         style={{
           background: "var(--white)",
           borderRight: "1px solid var(--line)",
-          padding: "22px 16px",
+          padding: "20px 16px",
           display: "flex",
           flexDirection: "column",
           gap: 4,
@@ -91,50 +91,156 @@ export default function DashboardLayout({
           height: "100vh",
         }}
       >
-        <div style={{ padding: "0 8px 18px" }}>
-          <div
+        {/* Brand block */}
+        <Link
+          href="/admin/dashboard"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            padding: "8px 8px 18px",
+            textDecoration: "none",
+            color: "inherit",
+            borderBottom: "1px dashed var(--line-2)",
+            marginBottom: 12,
+          }}
+        >
+          <Image
+            src="/bipe-logo.svg"
+            alt=""
+            aria-hidden="true"
+            width={2162}
+            height={2497}
             style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 10,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              fontWeight: 700,
-              color: "var(--brand)",
+              height: 40,
+              width: Math.round(40 * (2162 / 2497)),
+              flexShrink: 0,
             }}
-          >
-            § BIPE
+            draggable={false}
+          />
+          <div style={{ minWidth: 0 }}>
+            <div
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                color: "var(--brand)",
+              }}
+            >
+              BIPE · Admin
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontStyle: "italic",
+                fontSize: 14,
+                color: "var(--ink-3)",
+                marginTop: 2,
+              }}
+            >
+              Banaras Institute
+            </div>
           </div>
-          <div className="admin-h3" style={{ marginTop: 4 }}>
-            Admin
-          </div>
+        </Link>
+
+        <div className="admin-meta" style={{ padding: "0 14px 6px", fontSize: 9.5 }}>
+          Submissions
         </div>
 
         <nav style={{ display: "flex", flexDirection: "column" }}>
           {NAV.map(({ href, label, Icon }) => {
-            const active = href === "/admin/dashboard"
-              ? pathname === "/admin/dashboard"
-              : pathname?.startsWith(href);
+            const active =
+              href === "/admin/dashboard"
+                ? pathname === "/admin/dashboard"
+                : pathname?.startsWith(href);
             return (
               <Link
                 key={href}
                 href={href}
                 className={cn("admin-sidebar-link", active && "is-active")}
               >
-                <Icon size={16} />
+                <Icon size={15} />
                 {label}
               </Link>
             );
           })}
         </nav>
 
-        <div style={{ marginTop: "auto", paddingTop: 16, borderTop: "1px solid var(--line)" }}>
+        <a
+          href="https://bipe-blond.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="admin-sidebar-link"
+          style={{ marginTop: 18, color: "var(--ink-3)" }}
+        >
+          <ExternalLink size={15} />
+          Public site
+        </a>
+
+        {/* Footer — user + logout */}
+        <div
+          style={{
+            marginTop: "auto",
+            paddingTop: 14,
+            borderTop: "1px dashed var(--line-2)",
+          }}
+        >
           {me && (
-            <div style={{ padding: "10px 14px", fontSize: 12 }}>
-              <div style={{ fontWeight: 600, color: "var(--ink)" }}>
-                {me.first_name || me.username}
-              </div>
-              <div style={{ color: "var(--ink-3)", fontSize: 11, marginTop: 2 }}>
-                {me.email || "—"}
+            <div
+              style={{
+                padding: "10px 14px",
+                fontSize: 12,
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <span
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: 8,
+                  background: "var(--brand)",
+                  color: "var(--paper)",
+                  fontWeight: 700,
+                  fontSize: 13,
+                  letterSpacing: "0.04em",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                {(me.first_name || me.username || "?").slice(0, 1).toUpperCase()}
+              </span>
+              <div style={{ minWidth: 0 }}>
+                <div
+                  style={{
+                    fontWeight: 600,
+                    color: "var(--ink)",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxWidth: 150,
+                  }}
+                >
+                  {me.first_name || me.username}
+                </div>
+                <div
+                  style={{
+                    color: "var(--ink-3)",
+                    fontSize: 10.5,
+                    marginTop: 1,
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxWidth: 150,
+                  }}
+                >
+                  {me.email || "—"}
+                </div>
               </div>
             </div>
           )}
@@ -151,14 +257,14 @@ export default function DashboardLayout({
               fontFamily: "inherit",
             }}
           >
-            <LogOut size={16} />
+            <LogOut size={15} />
             Sign out
           </button>
         </div>
       </aside>
 
       {/* Main */}
-      <main style={{ padding: "24px 28px 60px", minWidth: 0 }}>{children}</main>
+      <main style={{ padding: "26px 30px 60px", minWidth: 0 }}>{children}</main>
     </div>
   );
 }

@@ -2,16 +2,28 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { api, type Summary } from "@/lib/admin/api";
-import { GraduationCap, Mail, CalendarDays, ArrowRight } from "lucide-react";
+import { ArrowUpRight, GraduationCap, Mail, CalendarDays } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { api, type Summary, type SummaryByForm } from "@/lib/admin/api";
+import { PageHeader } from "@/components/admin/ui/PageHeader";
+import { Pill, type PillTone } from "@/components/admin/ui/Pill";
 
-const STATUS_LABELS: Record<string, string> = {
+const STATUS_LABEL: Record<string, string> = {
   new: "New",
   contacted: "Contacted",
   qualified: "Qualified",
   enrolled: "Enrolled",
   rejected: "Rejected",
   spam: "Spam",
+};
+
+const STATUS_TONE: Record<string, PillTone> = {
+  new: "brand",
+  contacted: "accent",
+  qualified: "warning",
+  enrolled: "success",
+  rejected: "danger",
+  spam: "danger",
 };
 
 export default function OverviewPage() {
@@ -24,32 +36,34 @@ export default function OverviewPage() {
       .catch((e) => setErr(e?.message ?? "Could not load summary."));
   }, []);
 
+  const total = summary
+    ? summary.apply.total + summary.contact.total + summary.visit.total
+    : null;
+  const newCount = summary
+    ? summary.apply.new + summary.contact.new + summary.visit.new
+    : null;
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
-      <header
-        style={{
-          display: "flex",
-          alignItems: "end",
-          justifyContent: "space-between",
-          paddingBottom: 18,
-          borderBottom: "1px solid var(--line)",
-          flexWrap: "wrap",
-          gap: 14,
-        }}
-      >
-        <div>
-          <div className="eyebrow">§ Overview</div>
-          <h1 className="admin-h1" style={{ marginTop: 8 }}>
-            Submissions at a glance
-          </h1>
-          <p style={{ color: "var(--ink-3)", marginTop: 6 }}>
-            Live counts across the three website forms.
-          </p>
-        </div>
-      </header>
+    <>
+      <PageHeader
+        eyebrow="Overview"
+        title="Submissions"
+        accent="at a glance."
+        description="Live counts across the three forms on bipevns.org. Click a card to drill in."
+        right={
+          <>
+            <Pill tone="brand" noDot>
+              {newCount ?? "—"} new
+            </Pill>
+            <Pill tone="ghost" noDot>
+              {total ?? "—"} total
+            </Pill>
+          </>
+        }
+      />
 
       {err && (
-        <div className="card" style={{ padding: 16, color: "var(--danger)", fontSize: 13 }}>
+        <div className="admin-card" style={{ padding: 16, color: "var(--danger)", fontSize: 13, marginBottom: 18 }}>
           {err}
         </div>
       )}
@@ -58,47 +72,63 @@ export default function OverviewPage() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 14,
+          gap: 16,
         }}
       >
         <SummaryCard
           href="/admin/dashboard/apply"
           Icon={GraduationCap}
-          label="Apply submissions"
+          eyebrow="Apply form"
+          subtitle="JEECUP candidates · 4-step form"
           summary={summary?.apply}
         />
         <SummaryCard
           href="/admin/dashboard/contact"
           Icon={Mail}
-          label="Contact submissions"
+          eyebrow="Contact form"
+          subtitle="General enquiries · /contact"
           summary={summary?.contact}
         />
         <SummaryCard
           href="/admin/dashboard/visit"
           Icon={CalendarDays}
-          label="Visit bookings"
+          eyebrow="Visit bookings"
+          subtitle="Campus visits · /visit"
           summary={summary?.visit}
         />
       </div>
-    </div>
+
+      <div className="admin-card" style={{ marginTop: 22, padding: 22 }}>
+        <div className="admin-eyebrow" style={{ color: "var(--ink-3)" }}>
+          § Tips
+        </div>
+        <div className="admin-h3" style={{ marginTop: 6 }}>
+          Working with submissions
+        </div>
+        <ul style={{ margin: "12px 0 0", paddingLeft: 18, fontSize: 13.5, color: "var(--ink-2)", lineHeight: 1.7 }}>
+          <li>Click any row to open a detail drawer with full context (parent, board, marks, IP, UA).</li>
+          <li>Use the row checkbox + bulk strip to update multiple submissions at once.</li>
+          <li>The kebab menu carries quick actions — call, WhatsApp, copy, mark spam, delete.</li>
+          <li>Status changes save immediately; the table refreshes after each action.</li>
+        </ul>
+      </div>
+    </>
   );
 }
 
-function SummaryCard({
-  href,
-  Icon,
-  label,
-  summary,
-}: {
+interface SummaryCardProps {
   href: string;
-  Icon: React.ComponentType<{ size?: number }>;
-  label: string;
-  summary: Summary["apply"] | undefined;
-}) {
+  Icon: LucideIcon;
+  eyebrow: string;
+  subtitle: string;
+  summary: SummaryByForm | undefined;
+}
+
+function SummaryCard({ href, Icon, eyebrow, subtitle, summary }: SummaryCardProps) {
   return (
     <Link
       href={href}
-      className="card"
+      className="admin-card admin-card-glow"
       style={{
         padding: 22,
         display: "flex",
@@ -112,57 +142,67 @@ function SummaryCard({
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div
           style={{
-            width: 36,
-            height: 36,
-            borderRadius: 10,
+            width: 38,
+            height: 38,
+            borderRadius: 11,
             background: "var(--brand-tint)",
             color: "var(--brand)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            border: "1px solid color-mix(in oklab, var(--brand) 20%, transparent)",
           }}
         >
           <Icon size={18} />
         </div>
-        <ArrowRight size={16} color="var(--ink-3)" />
+        <span
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 4,
+            fontFamily: "var(--font-mono)",
+            fontSize: 10,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "var(--ink-3)",
+          }}
+        >
+          OPEN <ArrowUpRight size={12} />
+        </span>
       </div>
 
       <div>
-        <div className="eyebrow">{label}</div>
-        <div
-          style={{
-            marginTop: 6,
-            fontSize: 40,
-            fontWeight: 700,
-            letterSpacing: "-0.02em",
-            lineHeight: 1,
-            color: "var(--ink)",
-          }}
-        >
+        <div className="admin-eyebrow">{eyebrow}</div>
+        <div className="admin-h-display" style={{ marginTop: 2 }}>
           {summary?.total ?? "—"}
         </div>
-        <div style={{ marginTop: 4, color: "var(--ink-3)", fontSize: 12 }}>total</div>
+        <div style={{ marginTop: 4, color: "var(--ink-3)", fontSize: 12 }}>{subtitle}</div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 6,
-          paddingTop: 10,
-          borderTop: "1px solid var(--line)",
-        }}
-      >
-        {summary
-          ? Object.entries(summary)
-              .filter(([k, v]) => k !== "total" && (v ?? 0) > 0)
-              .map(([k, v]) => (
-                <span key={k} className={`admin-pill admin-pill-${k === "new" ? "brand" : k === "enrolled" ? "success" : k === "spam" || k === "rejected" ? "danger" : k === "contacted" ? "accent" : "warning"}`}>
-                  {STATUS_LABELS[k] ?? k} · {v}
-                </span>
-              ))
-          : null}
-      </div>
+      {summary && (
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 6,
+            paddingTop: 14,
+            borderTop: "1px dashed var(--line-2)",
+          }}
+        >
+          {Object.entries(summary)
+            .filter(([k, v]) => k !== "total" && (v ?? 0) > 0)
+            .map(([k, v]) => (
+              <Pill key={k} tone={STATUS_TONE[k] ?? "default"}>
+                {STATUS_LABEL[k] ?? k} · {v}
+              </Pill>
+            ))}
+          {summary.total === 0 && (
+            <Pill tone="ghost" noDot>
+              No submissions yet
+            </Pill>
+          )}
+        </div>
+      )}
     </Link>
   );
 }

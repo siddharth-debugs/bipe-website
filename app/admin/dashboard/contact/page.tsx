@@ -1,6 +1,8 @@
 "use client";
 
-import { SubmissionsTable } from "@/components/admin/SubmissionsTable";
+import { DataTable } from "@/components/admin/DataTable";
+import { Pill } from "@/components/admin/ui/Pill";
+import { PageHeader } from "@/components/admin/ui/PageHeader";
 import type { ContactSubmission } from "@/lib/admin/api";
 
 const BRANCHES = [
@@ -14,39 +16,26 @@ const BRANCHES = [
 
 export default function ContactListPage() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-      <header
-        style={{
-          display: "flex",
-          alignItems: "end",
-          justifyContent: "space-between",
-          paddingBottom: 18,
-          borderBottom: "1px solid var(--line)",
-          flexWrap: "wrap",
-          gap: 14,
-        }}
-      >
-        <div>
-          <div className="eyebrow">§ Submissions · Contact</div>
-          <h1 className="admin-h1" style={{ marginTop: 8 }}>
-            Contact form
-          </h1>
-          <p style={{ color: "var(--ink-3)", marginTop: 6 }}>
-            Single-page enquiries submitted via /contact on bipevns.org.
-          </p>
-        </div>
-      </header>
+    <>
+      <PageHeader
+        eyebrow="Submissions · Contact"
+        title="Contact form"
+        accent="enquiries."
+        description="Single-page enquiries submitted via /contact on bipevns.org."
+      />
 
-      <SubmissionsTable<ContactSubmission>
+      <DataTable<ContactSubmission>
         resource="contact"
-        extraFilters={[{ label: "Branch", field: "branch", options: BRANCHES }]}
+        kindLabel="Contact enquiry"
+        filters={[{ label: "Branch", field: "branch", options: BRANCHES }]}
         columns={[
           {
             key: "name",
             header: "From",
+            sortable: true,
             cell: (r) => (
               <div>
-                <div style={{ fontWeight: 600 }}>{r.name}</div>
+                <div style={{ fontWeight: 600, color: "var(--ink)" }}>{r.name}</div>
                 <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>
                   {r.email || "—"}
                 </div>
@@ -63,7 +52,8 @@ export default function ContactListPage() {
           {
             key: "branch",
             header: "Branch",
-            cell: (r) => <span className="admin-pill">{r.branch}</span>,
+            sortable: true,
+            cell: (r) => <Pill>{r.branch}</Pill>,
           },
           {
             key: "message",
@@ -79,13 +69,23 @@ export default function ContactListPage() {
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
                 }}
+                title={r.message}
               >
                 {r.message || "—"}
               </div>
             ),
           },
         ]}
+        detailFields={(r) => [
+          { label: "Phone", value: r.phone, mono: true },
+          { label: "Email", value: r.email },
+          { label: "Branch", value: r.branch },
+          { label: "Heard about us via", value: r.source },
+          { label: "Message", value: r.message, wide: true },
+          { label: "Source IP", value: r.source_ip, mono: true },
+          { label: "User agent", value: r.user_agent, mono: true, wide: true },
+        ]}
       />
-    </div>
+    </>
   );
 }
