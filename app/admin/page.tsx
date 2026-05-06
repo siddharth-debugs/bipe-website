@@ -14,20 +14,12 @@ export default function LoginPage() {
   const [hint, setHint] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const [resendIn, setResendIn] = useState(0);
   const otpInputRef = useRef<HTMLInputElement | null>(null);
 
   // If already signed in, jump straight to dashboard.
   useEffect(() => {
     if (Tokens.access()) router.replace("/admin/dashboard");
   }, [router]);
-
-  // Resend countdown — drives the "Resend OTP in 28s" line.
-  useEffect(() => {
-    if (resendIn <= 0) return;
-    const t = setTimeout(() => setResendIn((s) => s - 1), 1000);
-    return () => clearTimeout(t);
-  }, [resendIn]);
 
   // Auto-focus the OTP field on step transition.
   useEffect(() => {
@@ -55,7 +47,6 @@ export default function LoginPage() {
     try {
       const r = await requestOtp(phone.trim());
       setHint(r.debug ?? null);
-      setResendIn(30);
       setStep("otp");
     } catch (ex) {
       setErr(readError(ex));
@@ -79,13 +70,12 @@ export default function LoginPage() {
   }
 
   async function resend() {
-    if (resendIn > 0 || busy) return;
+    if (busy) return;
     setErr(null);
     setBusy(true);
     try {
       const r = await requestOtp(phone.trim());
       setHint(r.debug ?? null);
-      setResendIn(30);
       setOtp("");
       otpInputRef.current?.focus();
     } catch (ex) {
@@ -245,17 +235,17 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={resend}
-                  disabled={resendIn > 0 || busy}
+                  disabled={busy}
                   style={{
                     background: "transparent",
                     border: "none",
                     padding: 0,
-                    color: resendIn > 0 ? "var(--ink-4)" : "var(--brand)",
-                    cursor: resendIn > 0 ? "not-allowed" : "pointer",
+                    color: busy ? "var(--ink-4)" : "var(--brand)",
+                    cursor: busy ? "not-allowed" : "pointer",
                     fontWeight: 600,
                   }}
                 >
-                  {resendIn > 0 ? `Resend in ${resendIn}s` : "Resend OTP"}
+                  Resend OTP
                 </button>
               </div>
             </form>
