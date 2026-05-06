@@ -1709,6 +1709,59 @@ body.no-motion .skeleton { animation: none; }
 }
 
 /* =========================================================================
+   Lab gallery (campus page) — uniform 4-up grid of authentic BIPE photos.
+   ========================================================================= */
+.bipe-labs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.bipe-lab-tile {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .25s var(--ease, ease-out), box-shadow .25s, border-color .25s;
+}
+.bipe-lab-tile:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in oklab, var(--brand) 28%, transparent);
+  box-shadow: 0 16px 36px -22px color-mix(in oklab, var(--brand) 36%, transparent);
+}
+.bipe-lab-cap {
+  padding: 12px 14px 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--white);
+}
+.bipe-lab-cap-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.bipe-lab-cap-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+@media (max-width: 980px) {
+  .bipe-labs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .bipe-labs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .bipe-lab-cap { padding: 10px 12px 12px; }
+  .bipe-lab-cap-title { font-size: 13px; }
+}
+
+/* =========================================================================
    Testimonials marquee — two strips scrolling opposite directions, with
    edge fades and pause-on-hover. The track is rendered with the items
    duplicated so a -50% transform loops seamlessly.
