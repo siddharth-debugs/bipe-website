@@ -340,12 +340,17 @@ export default function Page() {
           <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
             {PILLARS.map((p) => (
               <article key={p.roman} className="card" style={{ padding: 32 }}>
-                <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 24, alignItems: "start" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 28, alignItems: "start" }}>
                   <div className="serif" style={{
                     fontStyle: "italic", fontWeight: 400,
                     fontSize: 56, lineHeight: 0.85,
                     color: "var(--brand)",
-                    width: 56, textAlign: "right",
+                    // Auto-fit so the italic numeral never clips into the
+                    // title column. min-width keeps all four cards visually
+                    // aligned even though "(i)" is much narrower than "(iv)".
+                    minWidth: 84,
+                    textAlign: "left",
+                    whiteSpace: "nowrap",
                   }}>
                     ({p.roman})
                   </div>
