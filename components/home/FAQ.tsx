@@ -105,7 +105,13 @@ export const FAQ = () => {
                     borderTop: "1px solid var(--line)",
                     borderBottom: i === filtered.length - 1 ? "1px solid var(--line)" : "none",
                     background: isOpen ? "color-mix(in oklab, var(--brand-tint) 50%, transparent)" : "transparent",
-                    transition: "background .25s var(--ease)",
+                    // Use longhand transition props instead of the shorthand
+                    // to avoid React's "removing transitionDelay while
+                    // transition is set" warning when filter switches.
+                    transitionProperty: "background",
+                    transitionDuration: "0.25s",
+                    transitionTimingFunction: "var(--ease)",
+                    transitionDelay: "0s",
                     padding: "0 16px",
                     margin: "0 -16px",
                     borderRadius: isOpen ? 12 : 0,
