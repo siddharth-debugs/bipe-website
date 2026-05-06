@@ -60,8 +60,9 @@ export const VISIT_TIME_OPTIONS = [
   "5:00 PM",
 ] as const;
 
-// Indian mobile — accepts +91 prefix optionally, must start 6-9, ten digits.
-const phoneRegex = /^(?:\+?91[\s-]?)?[6-9]\d{9}$/;
+// Indian mobile — strictly 10 digits, must start with 6-9. No country-code
+// prefix and no formatting characters; we strip non-digits client-side.
+const phoneRegex = /^[6-9]\d{9}$/;
 
 // 0–100 with optional decimals.
 const marksRegex = /^(?:100(?:\.0+)?|\d{1,2}(?:\.\d{1,2})?)$/;
@@ -77,7 +78,7 @@ const nameField = z
 const phoneField = z
   .string()
   .trim()
-  .regex(phoneRegex, "Enter a valid 10-digit Indian mobile number");
+  .regex(phoneRegex, "Enter a 10-digit mobile number starting with 6-9");
 
 const optionalEmail = z
   .string()

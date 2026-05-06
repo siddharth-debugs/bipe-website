@@ -85,8 +85,23 @@ export const InlineApply = () => {
                 <input required value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} placeholder="Your name" style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }} />
               </div>
               <div className="field">
-                <input required type="tel" pattern="[0-9 +()-]{8,}" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} placeholder="Phone number"
-                  style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }} />
+                <input
+                  required
+                  type="tel"
+                  inputMode="numeric"
+                  maxLength={10}
+                  pattern="[6-9][0-9]{9}"
+                  title="Enter a 10-digit mobile number starting with 6-9"
+                  value={form.phone}
+                  onChange={e =>
+                    setForm({
+                      ...form,
+                      phone: e.target.value.replace(/\D/g, "").slice(0, 10),
+                    })
+                  }
+                  placeholder="98XXXXXXXX"
+                  style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}
+                />
               </div>
               <div className="field">
                 <select value={form.branch} onChange={e => setForm({ ...form, branch: e.target.value })}

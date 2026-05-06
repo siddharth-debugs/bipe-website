@@ -161,10 +161,15 @@ export function ContactForm() {
           <input
             id="cf-mobile"
             type="tel"
-            inputMode="tel"
+            inputMode="numeric"
             autoComplete="tel"
-            placeholder="+91 9XXXX-XXXXX"
-            {...register("phone")}
+            maxLength={10}
+            placeholder="98XXXXXXXX"
+            {...register("phone", {
+              onChange: (e) => {
+                e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+              },
+            })}
           />
           {fieldError("phone") && <span className="error-msg">{fieldError("phone")}</span>}
         </div>

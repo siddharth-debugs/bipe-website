@@ -157,11 +157,16 @@ export function VisitForm() {
           <input
             id="vf-phone"
             type="tel"
-            inputMode="tel"
+            inputMode="numeric"
             autoComplete="tel"
+            maxLength={10}
             placeholder="98XXXXXXXX"
             aria-invalid={hasError("phone")}
-            {...register("phone")}
+            {...register("phone", {
+              onChange: (e) => {
+                e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+              },
+            })}
           />
           {fieldError("phone") && (
             <span className="field-msg">{fieldError("phone")}</span>
