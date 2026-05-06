@@ -12,14 +12,23 @@ export const HeroFull = () => (
     {/* Flat dark overlay — replaces the multi-stop vignette so text
         contrast is uniform across the whole hero. A soft bottom fade
         keeps the section seam clean. */}
+    {/* Lighter dark wash than before — the new campus photo has the BIPE
+        building signage in it; we want that readable, not muddy. The
+        bottom gradient and side gradient give the hero text its
+        contrast without flattening the image. */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "rgba(0, 0, 0, 0.55)",
+      background: "rgba(0, 0, 0, 0.42)",
       pointerEvents: "none"
     }} />
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.75) 100%)",
+      background: "linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%)",
+      pointerEvents: "none"
+    }} />
+    <div aria-hidden="true" style={{
+      position: "absolute", inset: 0,
+      background: "linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.7) 100%)",
       pointerEvents: "none"
     }} />
 
