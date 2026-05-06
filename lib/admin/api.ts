@@ -147,12 +147,37 @@ export async function api<T = unknown>(
 }
 
 // ─── Auth helpers ──────────────────────────────────────────────────────────
-export async function login(username: string, password: string): Promise<{ access: string; refresh: string }> {
-  const data = await api<{ access: string; refresh: string }>("/auth/login/", {
+//
+// The dashboard uses phone-OTP login. The legacy username/password flow
+// has been removed — `requestOtp` issues an OTP for an allowlisted admin
+// phone, `verifyOtp` exchanges a correct OTP for a SimpleJWT pair.
+//
+// Dummy admin numbers (e.g. 9000000001) accept the OTP "123456" in any
+// environment — see services_otp.py on the backend.
+
+export interface OtpRequestResult {
+  success: boolean;
+  expiresIn: number;
+  /** Backend hint shown when SMS is bypassed (DEBUG / dummy phone). */
+  debug?: string;
+}
+
+export async function requestOtp(phone: string): Promise<OtpRequestResult> {
+  return api<OtpRequestResult>("/auth/request-otp/", {
     method: "POST",
-    body: { username, password },
+    body: { phone },
     authed: false,
   });
+}
+
+export async function verifyOtp(
+  phone: string,
+  otp: string,
+): Promise<{ access: string; refresh: string }> {
+  const data = await api<{ access: string; refresh: string }>(
+    "/auth/verify-otp/",
+    { method: "POST", body: { phone, otp }, authed: false },
+  );
   Tokens.set(data.access, data.refresh);
   return data;
 }
@@ -243,10 +268,11 @@ export interface Summary {
 
 export interface Me {
   id: number;
-  username: string;
+  /** Mobile number used to sign in (the OTP-allowlisted admin phone). */
+  phone: string;
+  /** Friendly display name from the AdminPhone record. */
+  name: string;
   email: string;
-  first_name: string;
-  last_name: string;
   is_staff: boolean;
   is_superuser: boolean;
   last_login: string | null;

@@ -1,44 +1,95 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { login, Tokens, ApiError } from "@/lib/admin/api";
+import { requestOtp, verifyOtp, Tokens, ApiError } from "@/lib/admin/api";
+
+type Step = "phone" | "otp";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [u, setU] = useState("");
-  const [p, setP] = useState("");
+  const [step, setStep] = useState<Step>("phone");
+  const [phone, setPhone] = useState("");
+  const [otp, setOtp] = useState("");
+  const [hint, setHint] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [resendIn, setResendIn] = useState(0);
+  const otpInputRef = useRef<HTMLInputElement | null>(null);
 
   // If already signed in, jump straight to dashboard.
   useEffect(() => {
     if (Tokens.access()) router.replace("/admin/dashboard");
   }, [router]);
 
-  async function onSubmit(e: React.FormEvent) {
+  // Resend countdown — drives the "Resend OTP in 28s" line.
+  useEffect(() => {
+    if (resendIn <= 0) return;
+    const t = setTimeout(() => setResendIn((s) => s - 1), 1000);
+    return () => clearTimeout(t);
+  }, [resendIn]);
+
+  // Auto-focus the OTP field on step transition.
+  useEffect(() => {
+    if (step === "otp") setTimeout(() => otpInputRef.current?.focus(), 60);
+  }, [step]);
+
+  function readError(ex: unknown): string {
+    if (ex instanceof ApiError) {
+      const d = (ex.data as { detail?: string })?.detail;
+      return d ?? ex.message;
+    }
+    if (
+      ex instanceof TypeError &&
+      /failed to fetch|networkerror|load failed/i.test(ex.message)
+    ) {
+      return "Could not reach the admin backend. Please retry in a moment.";
+    }
+    return ex instanceof Error ? ex.message : "Something went wrong.";
+  }
+
+  async function onPhoneSubmit(e: React.FormEvent) {
     e.preventDefault();
     setErr(null);
     setBusy(true);
     try {
-      await login(u.trim(), p);
+      const r = await requestOtp(phone.trim());
+      setHint(r.debug ?? null);
+      setResendIn(30);
+      setStep("otp");
+    } catch (ex) {
+      setErr(readError(ex));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function onOtpSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setErr(null);
+    setBusy(true);
+    try {
+      await verifyOtp(phone.trim(), otp.trim());
       router.replace("/admin/dashboard");
     } catch (ex) {
-      let msg: string;
-      if (ex instanceof ApiError) {
-        msg = (ex.data as { detail?: string })?.detail ?? ex.message;
-      } else if (
-        ex instanceof TypeError &&
-        /failed to fetch|networkerror|load failed/i.test(ex.message)
-      ) {
-        // Browser-thrown network error — likely the backend isn't reachable
-        // from this origin. Tell the user something useful.
-        msg =
-          "Could not reach the admin backend. The API server is unreachable — verify that NEXT_PUBLIC_API_BASE_URL is set on this deployment and the backend is running.";
-      } else {
-        msg = ex instanceof Error ? ex.message : "Could not sign in.";
-      }
-      setErr(msg);
+      setErr(readError(ex));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function resend() {
+    if (resendIn > 0 || busy) return;
+    setErr(null);
+    setBusy(true);
+    try {
+      const r = await requestOtp(phone.trim());
+      setHint(r.debug ?? null);
+      setResendIn(30);
+      setOtp("");
+      otpInputRef.current?.focus();
+    } catch (ex) {
+      setErr(readError(ex));
     } finally {
       setBusy(false);
     }
@@ -74,63 +125,141 @@ export default function LoginPage() {
             BIPE · Admin
           </div>
           <h1 className="admin-h1" style={{ marginTop: 18, color: "var(--ink)" }}>
-            Welcome back.
+            {step === "phone" ? "Welcome back." : "Verify your number."}
           </h1>
           <p style={{ color: "var(--ink-3)", fontSize: 14, marginTop: 8 }}>
-            Sign in to manage form submissions and admissions data.
+            {step === "phone"
+              ? "Sign in with the admin mobile number you registered."
+              : `We sent a 6-digit OTP to ${phone}.`}
           </p>
         </div>
 
         <div className="card" style={{ padding: 28 }}>
-          <form onSubmit={onSubmit}>
-            <label className="admin-label" htmlFor="u">Username</label>
-            <input
-              id="u"
-              className="admin-input"
-              autoComplete="username"
-              value={u}
-              onChange={(e) => setU(e.target.value)}
-              required
-            />
+          {step === "phone" ? (
+            <form onSubmit={onPhoneSubmit}>
+              <label className="admin-label" htmlFor="phone">Mobile number</label>
+              <input
+                id="phone"
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel"
+                maxLength={10}
+                placeholder="98XXXXXXXX"
+                className="admin-input"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
+                required
+                pattern="[6-9][0-9]{9}"
+                title="10-digit mobile number starting with 6-9"
+              />
 
-            <div style={{ height: 14 }} />
-            <label className="admin-label" htmlFor="p">Password</label>
-            <input
-              id="p"
-              type="password"
-              className="admin-input"
-              autoComplete="current-password"
-              value={p}
-              onChange={(e) => setP(e.target.value)}
-              required
-            />
+              {err && <ErrorBox>{err}</ErrorBox>}
 
-            {err && (
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={busy || phone.length !== 10}
+                style={{ marginTop: 22, width: "100%" }}
+              >
+                {busy ? "Sending OTP…" : "Send OTP"}
+              </button>
+            </form>
+          ) : (
+            <form onSubmit={onOtpSubmit}>
+              <label className="admin-label" htmlFor="otp">6-digit OTP</label>
+              <input
+                ref={otpInputRef}
+                id="otp"
+                type="text"
+                inputMode="numeric"
+                autoComplete="one-time-code"
+                maxLength={6}
+                placeholder="123456"
+                className="admin-input"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))}
+                required
+                pattern="[0-9]{6}"
+                style={{
+                  letterSpacing: "0.4em",
+                  textAlign: "center",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 18,
+                }}
+              />
+
+              {hint && (
+                <div
+                  style={{
+                    marginTop: 12,
+                    padding: 10,
+                    borderRadius: 8,
+                    background: "color-mix(in oklab, var(--brand) 8%, var(--white))",
+                    color: "var(--brand)",
+                    fontSize: 12,
+                    border: "1px dashed color-mix(in oklab, var(--brand) 30%, transparent)",
+                  }}
+                >
+                  {hint}
+                </div>
+              )}
+
+              {err && <ErrorBox>{err}</ErrorBox>}
+
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={busy || otp.length !== 6}
+                style={{ marginTop: 18, width: "100%" }}
+              >
+                {busy ? "Verifying…" : "Verify & sign in"}
+              </button>
+
               <div
-                role="alert"
                 style={{
                   marginTop: 14,
-                  padding: 10,
-                  borderRadius: 8,
-                  background: "color-mix(in oklab, var(--danger) 10%, var(--white))",
-                  color: "var(--danger)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
                   fontSize: 13,
-                  border: "1px solid color-mix(in oklab, var(--danger) 30%, transparent)",
                 }}
               >
-                {err}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setStep("phone");
+                    setOtp("");
+                    setErr(null);
+                    setHint(null);
+                  }}
+                  style={{
+                    background: "transparent",
+                    border: "none",
+                    padding: 0,
+                    color: "var(--ink-3)",
+                    cursor: "pointer",
+                  }}
+                >
+                  ← Change number
+                </button>
+                <button
+                  type="button"
+                  onClick={resend}
+                  disabled={resendIn > 0 || busy}
+                  style={{
+                    background: "transparent",
+                    border: "none",
+                    padding: 0,
+                    color: resendIn > 0 ? "var(--ink-4)" : "var(--brand)",
+                    cursor: resendIn > 0 ? "not-allowed" : "pointer",
+                    fontWeight: 600,
+                  }}
+                >
+                  {resendIn > 0 ? `Resend in ${resendIn}s` : "Resend OTP"}
+                </button>
               </div>
-            )}
-
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={busy}
-              style={{ marginTop: 22, width: "100%" }}
-            >
-              {busy ? "Signing in…" : "Sign in"}
-            </button>
-          </form>
+            </form>
+          )}
         </div>
 
         <p
@@ -147,6 +276,25 @@ export default function LoginPage() {
           bipevns.org · admin
         </p>
       </div>
+    </div>
+  );
+}
+
+function ErrorBox({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      role="alert"
+      style={{
+        marginTop: 14,
+        padding: 10,
+        borderRadius: 8,
+        background: "color-mix(in oklab, var(--danger) 10%, var(--white))",
+        color: "var(--danger)",
+        fontSize: 13,
+        border: "1px solid color-mix(in oklab, var(--danger) 30%, transparent)",
+      }}
+    >
+      {children}
     </div>
   );
 }

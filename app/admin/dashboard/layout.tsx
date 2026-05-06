@@ -213,7 +213,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   flexShrink: 0,
                 }}
               >
-                {(me.first_name || me.username || "?").slice(0, 1).toUpperCase()}
+                {(me.name || me.phone || "?").slice(0, 1).toUpperCase()}
               </span>
               <div style={{ minWidth: 0 }}>
                 <div
@@ -226,7 +226,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     maxWidth: 150,
                   }}
                 >
-                  {me.first_name || me.username}
+                  {me.name || me.phone}
                 </div>
                 <div
                   style={{
@@ -237,9 +237,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     maxWidth: 150,
+                    fontFamily: "var(--font-mono)",
                   }}
                 >
-                  {me.email || "—"}
+                  {me.phone || me.email || "—"}
                 </div>
               </div>
             </div>

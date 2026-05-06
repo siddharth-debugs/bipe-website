@@ -41,7 +41,7 @@ export default function SettingsPage() {
             § Signed-in user
           </div>
           <h2 className="admin-h2" style={{ marginTop: 6 }}>
-            {me?.first_name || me?.username || "—"}
+            {me?.name || me?.phone || "—"}
           </h2>
           <dl
             style={{
@@ -55,7 +55,7 @@ export default function SettingsPage() {
           >
             {me ? (
               <>
-                <Row label="Username" value={me.username} mono />
+                <Row label="Mobile" value={me.phone} mono />
                 <Row label="Email" value={me.email || "—"} />
                 <Row
                   label="Roles"
