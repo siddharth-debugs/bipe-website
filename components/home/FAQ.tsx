@@ -95,11 +95,15 @@ export const FAQ = () => {
             ) : filtered.map((f, i) => {
               const isOpen = open === f._i;
               return (
-                <div key={f._i} className="reveal"
+                // No .reveal here on purpose: the IntersectionObserver
+                // only observes elements that exist on mount, so items
+                // that get added when the user changes category would
+                // otherwise stay at opacity 0 and the right column
+                // would look empty.
+                <div key={f._i}
                   style={{
                     borderTop: "1px solid var(--line)",
                     borderBottom: i === filtered.length - 1 ? "1px solid var(--line)" : "none",
-                    transitionDelay: `${i * 30}ms`,
                     background: isOpen ? "color-mix(in oklab, var(--brand-tint) 50%, transparent)" : "transparent",
                     transition: "background .25s var(--ease)",
                     padding: "0 16px",
