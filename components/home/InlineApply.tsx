@@ -5,15 +5,55 @@ import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 
+type SendState = "idle" | "submitting" | "error";
+
 export const InlineApply = () => {
   const [form, setForm] = useState({ name: "", phone: "", branch: "Computer Science & Engineering", mode: "visit" });
   const [sent, setSent] = useState(false);
-  const submit = (e: React.FormEvent) => { e.preventDefault(); setSent(true); };
+  const [send, setSend] = useState<SendState>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSend("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "contact",
+          name: form.name.trim(),
+          phone: form.phone.trim(),
+          branch: form.branch,
+          source: "Other",
+          message:
+            form.mode === "visit"
+              ? "Quick enquiry · wants to book a campus visit"
+              : "Quick enquiry · wants to start the application",
+          consent: true,
+        }),
+      });
+      const json = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok || !json.ok) {
+        setSend("error");
+        setErrorMsg(json.error ?? "Could not send. Please try again or WhatsApp us.");
+        return;
+      }
+      setSent(true);
+      setSend("idle");
+    } catch {
+      setSend("error");
+      setErrorMsg("Network error. Try again or WhatsApp us.");
+    }
+  };
   return (
     <section className="section">
       <div className="container">
         <div className="bipe-split bipe-pad-box" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center", background: "var(--ink)", color: "var(--paper)", borderRadius: 24, padding: 48, position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", right: -100, top: -100, width: 340, height: 340, borderRadius: "50%", background: "color-mix(in oklab, var(--accent) 50%, transparent)", filter: "blur(80px)", opacity: 0.4 }} />
+          {/* Decorative glow — must not capture clicks; it stacks above
+              the form's tab strip otherwise (positioned > static). */}
+          <div aria-hidden="true" style={{ position: "absolute", right: -100, top: -100, width: 340, height: 340, borderRadius: "50%", background: "color-mix(in oklab, var(--accent) 50%, transparent)", filter: "blur(80px)", opacity: 0.4, pointerEvents: "none" }} />
           <div style={{ position: "relative" }}>
             <div className="pill" style={{ background: "color-mix(in oklab, var(--paper) 12%, transparent)", color: "var(--paper)" }}>Quick Enquiry · 30 seconds</div>
             <h2 className="bipe-h2" style={{ color: "var(--paper)", marginTop: 18 }}>Two paths to BIPE.</h2>
@@ -51,13 +91,22 @@ export const InlineApply = () => {
               <div className="field">
                 <select value={form.branch} onChange={e => setForm({ ...form, branch: e.target.value })}
                   style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
-                  {DATA.branches.map(b => <option key={b.code} style={{ color: "var(--ink)" }}>{b.name}</option>)}
-                  <option style={{ color: "var(--ink)" }}>Other / Not sure yet</option>
+                  {DATA.branches.map(b => <option key={b.code} value={b.name} style={{ color: "var(--ink)" }}>{b.name}</option>)}
+                  <option value="Not sure yet — guide me" style={{ color: "var(--ink)" }}>Not sure yet — guide me</option>
                 </select>
               </div>
-              <button type="submit" className="btn btn-primary btn-lg" style={{ justifyContent: "center" }}>
-                {form.mode === "visit" ? "Book my visit" : "Start application"} <ArrowIcon />
+              <button type="submit" disabled={send === "submitting"} className="btn btn-primary btn-lg" style={{ justifyContent: "center" }}>
+                {send === "submitting"
+                  ? "Sending…"
+                  : form.mode === "visit"
+                    ? "Book my visit"
+                    : "Start application"} <ArrowIcon />
               </button>
+              {send === "error" && (
+                <div role="alert" style={{ fontSize: 12, color: "color-mix(in oklab, var(--accent) 80%, #fff)", textAlign: "center" }}>
+                  {errorMsg}
+                </div>
+              )}
               <div style={{ fontSize: 11, opacity: 0.6, textAlign: "center", fontFamily: "var(--font-mono)", letterSpacing: "0.06em", textTransform: "uppercase" }}>No spam · We call within 24 hours</div>
             </form>
           )}
