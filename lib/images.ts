@@ -93,4 +93,73 @@ export const BIPE_IMG = {
     "343": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
     default: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80&auto=format&fit=crop",
   } as Record<string, string>,
+
+  /**
+   * Three branch-relevant photos per branch — used by the
+   * <Branches /> slider on the homepage so each programme shows its
+   * own imagery instead of the same generic loop. Tuples are ordered
+   * "establishing → people → detail" so the rhythm feels intentional
+   * as the slide cycles.
+   */
+  triplesByCode: {
+    "355": [
+      // CSE: lab → classroom → lecture
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80&auto=format&fit=crop",
+    ],
+    "327": [
+      // Dairy: pasture → processing → product
+      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
+    ],
+    "322": [
+      // Civil: structure → site → drafting
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=900&q=80&auto=format&fit=crop",
+    ],
+    "328": [
+      // Electrical: substation/grid → solar → wiring
+      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=900&q=80&auto=format&fit=crop",
+    ],
+    "343": [
+      // Mechanical / Production: workshop → CNC → welding hands
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80&auto=format&fit=crop",
+    ],
+  } as Record<string, [string, string, string]>,
+
+  /** Short alt-text for each slot in triplesByCode — same shape. */
+  triplesAltByCode: {
+    "355": [
+      "BIPE 120-computer lab",
+      "Programming on a developer workstation",
+      "Code on screen — software engineering coursework",
+    ],
+    "327": [
+      "Dairy cattle in pasture",
+      "Milk being poured during processing",
+      "Finished dairy products",
+    ],
+    "322": [
+      "Civil engineering structure",
+      "Surveying instrument on site",
+      "Engineering drafting drawings",
+    ],
+    "328": [
+      "Electrical engineering panel work",
+      "Solar PV array",
+      "High-voltage transmission line",
+    ],
+    "343": [
+      "Mechanical workshop floor",
+      "CNC machining in progress",
+      "Welding hands at the foundry",
+    ],
+  } as Record<string, [string, string, string]>,
 };

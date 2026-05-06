@@ -94,20 +94,34 @@ export const Branches = () => {
                 {b.tag && <span className="pill pill-accent">{b.tag}</span>}
               </div>
 
-              {/* Slider sits OUTSIDE the keyed branch-text block so it
-                  doesn't remount on branch switch — autoplay keeps running. */}
+              {/* Three branch-specific photos per programme. The `key`
+                  on the slider remounts it when the user picks a different
+                  branch so it always starts from slide 1 with that
+                  branch's imagery — never stale frames from the previous
+                  programme. */}
               <div style={{ position: "relative", marginTop: 20 }}>
-                <CrossfadeSlider
-                  images={[
-                    { src: BIPE_IMG.workshop, alt: "Workshop / machining bay" },
-                    { src: BIPE_IMG.computerLab, alt: "120-computer lab" },
-                    { src: BIPE_IMG.dairy, alt: "Dairy pilot plant" },
-                  ]}
-                  aspectRatio="16/9"
-                  radius={16}
-                  interval={4000}
-                  fadeMs={900}
-                />
+                {(() => {
+                  const srcs = BIPE_IMG.triplesByCode[b.code] ?? [
+                    BIPE_IMG.workshop,
+                    BIPE_IMG.computerLab,
+                    BIPE_IMG.civil,
+                  ];
+                  const alts = BIPE_IMG.triplesAltByCode[b.code] ?? [
+                    "Workshop",
+                    "Computer lab",
+                    "Civil engineering",
+                  ];
+                  return (
+                    <CrossfadeSlider
+                      key={b.code}
+                      images={srcs.map((src, i) => ({ src, alt: alts[i] ?? b.name }))}
+                      aspectRatio="16/9"
+                      radius={16}
+                      interval={4000}
+                      fadeMs={900}
+                    />
+                  );
+                })()}
               </div>
 
               <div key={b.code} className="page-enter">
