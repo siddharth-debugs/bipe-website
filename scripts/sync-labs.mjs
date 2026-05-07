@@ -2,10 +2,12 @@
  * Sync the campus lab photos from Google Drive → Cloudinary →
  * lib/labs-manifest.json (committed to the repo).
  *
- * Reads the Drive file inventory below (snapshot from the
- * `parentId = '1MawOcJ9fP8hCQF7wBEw55VEJKypHjxyK'` listing), pulls
- * each file via Drive's direct download URL, and uploads it to
- * Cloudinary under `bipe/labs/<category>/<slug>` with a category tag.
+ * Auto-discovery: instead of a manual file inventory, this script
+ * scrapes Drive's public `embeddedfolderview` page for each category
+ * folder. ANY image dropped into the right Drive sub-folder is picked
+ * up next time you run the script — no code edits needed.
+ *
+ * Each folder must be shared "Anyone with the link · Viewer".
  *
  * Env (or fall back to the constants below):
  *   CLOUDINARY_CLOUD_NAME
@@ -15,12 +17,9 @@
  * Usage:
  *   node scripts/sync-labs.mjs
  *
- * Idempotent: re-running with the same `publicId` overwrites the
- * Cloudinary asset rather than creating a duplicate.
- *
- * To add new images later: drop them into the matching Drive sub-
- * folder, copy the file ID + title into the inventory below, and
- * run this script again.
+ * Idempotent: re-running the same `publicId` (derived from the file
+ * title) overwrites the Cloudinary asset rather than creating a
+ * duplicate — Cloudinary returns the existing version on overwrite.
  */
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
@@ -30,41 +29,17 @@ const CLOUD = process.env.CLOUDINARY_CLOUD_NAME || "dg8sty5ej";
 const KEY   = process.env.CLOUDINARY_API_KEY   || "652117684298495";
 const SECRET = process.env.CLOUDINARY_API_SECRET || "mHMr_v3COY8ypgyS8CAiWQ5dV1A";
 
-if (!CLOUD || !KEY || !SECRET) {
-  console.error("Missing Cloudinary creds (CLOUDINARY_CLOUD_NAME / API_KEY / API_SECRET).");
-  process.exit(1);
-}
+// ─── Folder map ────────────────────────────────────────────────────────
+// Drive folder ID → category slug. Every image inside the folder is
+// uploaded to Cloudinary with this category tag. Add new categories by
+// dropping a new Drive folder into the parent shared folder, sharing
+// it "Anyone with the link", and listing it here.
 
-// ─── Inventory ─────────────────────────────────────────────────────────
-// Snapshot of the Drive folder listing. To extend: paste new entries from
-// Drive's mcp search and re-run this script.
-
-const INVENTORY = [
-  // CSE-LAB & Workshops
-  { driveId: "1g9sBXhQbv7qMOIV47CSER8r0JMZ--wUa", category: "cse",        title: "Networking Lab" },
-
-  // EE — empty in Drive at the moment. Add entries here as they're uploaded.
-
-  // MECHANICAL
-  { driveId: "1RxEUgbT2U3mEXr0G0zvAnnuzKjfiRkdh", category: "mechanical", title: "Smithy & Forging" },
-  { driveId: "1P2HW1AlceYsyIPYJVnyIZi5BILQHbKqG", category: "mechanical", title: "PT Lathe Shop" },
-  { driveId: "1LAFy7YhBCOL76T-it_H9qneFOccf7oo7", category: "mechanical", title: "Auto Mobile Project Work" },
-  { driveId: "1QbWJ64rQVPDIF1LFs5mVSIo0ZnQ8p3do", category: "mechanical", title: "CNC Controller" },
-  { driveId: "1Wh9P90bMgrlfxILkaZSZYFW0iRJLgCxc", category: "mechanical", title: "Auto Mobile Lab — Engine Strip" },
-  { driveId: "1qc-3qnEH9RY1w8dJz_miAK5myG-vWBtk", category: "mechanical", title: "Machine Shop" },
-  { driveId: "1VFbyABmn2XSAJVGTjK5nNNnlLhg3QFfL", category: "mechanical", title: "Welding Shop" },
-  { driveId: "1q4lBx_KQ-ktkM92Umy2GALwIzuyQZbO_", category: "mechanical", title: "Auto Mobile Lab — Workbench" },
-  { driveId: "1WRDRIbcKUv3fRXQeKWB-7MHs3lKWnIbC", category: "mechanical", title: "Machine Shop — Lathes" },
-  { driveId: "1X8e4HLwNwqFQXXTl443Lboi70G074H4N", category: "mechanical", title: "Machine Shop — Milling Bay" },
-  { driveId: "1lhaWQJWT_9a9-Sz2u-jZ0UmJHKD9Ahl-", category: "mechanical", title: "Auto Mobile Lab" },
-  { driveId: "1oLTEb_qO6sT79o-e1ILkbkTpr344Wxrc", category: "mechanical", title: "Thermal Engineering Prototypes" },
-  { driveId: "15YGFD3OmPVdvDts_vVR28rWcS_ndbYZO", category: "mechanical", title: "Auto Mobile Lab — Wide" },
-  { driveId: "1rC6KQ5-OvII9i9R-4cN3Nnec8sap_yov", category: "mechanical", title: "Machine Shop — Wide" },
-  { driveId: "1GgPC5dFoUqdCbv7HfMt_I1EbRkJzCWZK", category: "mechanical", title: "PT Shop — Wide 1" },
-  { driveId: "1KDkk4Ih-a7TUha3c6Y_rceksYBTOhL-C", category: "mechanical", title: "PT Shop — Wide 2" },
-
-  // CIVIL
-  { driveId: "11WauucU_Em-ieASr6ZEpVuCJAytag-Vh", category: "civil",      title: "Engineering Drawing Class" },
+const FOLDERS = [
+  { id: "1UNeAJW5xjtoS41eVm3E7BbCeXKX2E-E3", category: "cse" },        // CSE-LAB & Workshops
+  { id: "1v9ngGVLyBOrvQnSvEwP-GsfioKm2NhuN", category: "ee" },         // EE
+  { id: "1PJsjN0m1EIpqVfeAECtc62Ye4EkdumgH", category: "mechanical" }, // MECHANICAL
+  { id: "1FWj1svm2hazJZsrvR6nZDd4lBkzXfY4h", category: "civil" },      // CIVIL
 ];
 
 // ─── Helpers ───────────────────────────────────────────────────────────
@@ -72,9 +47,69 @@ const INVENTORY = [
 function slugify(s) {
   return s
     .toLowerCase()
+    .replace(/\.[a-z0-9]+$/i, "")          // drop file extension
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
+}
+
+function titleize(filename) {
+  // Preserve the casing the user gave us in Drive — it's almost always
+  // already a sensible label ("Networking & IoT Lab", "Programming Lab",
+  // "Project Expo 3rd year"). We just drop the extension and clean up
+  // separators / repeated whitespace.
+  return filename
+    .replace(/\.[a-z0-9]+$/i, "") // drop extension
+    .replace(/[_]+/g, " ")        // underscores → spaces (keep dashes intact)
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function decodeHtmlEntities(s) {
+  return s
+    .replaceAll("&amp;", "&")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#39;", "'")
+    .replaceAll("&apos;", "'");
+}
+
+/**
+ * Scrape Drive's public folder embed view for the file list. Returns
+ * an array of { id, title } for image entries in the folder.
+ *
+ * The embed view is plain HTML with each entry of the form:
+ *   <div class="flip-entry" id="entry-{ID}" ...>
+ *     ...<img src="...://drive-thirdparty.googleusercontent.com/16/type/{mime}" .../>
+ *     <div class="flip-entry-title">{title}</div>
+ */
+async function listFolder(folderId) {
+  const url = `https://drive.google.com/embeddedfolderview?id=${folderId}#list`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Folder embed fetch failed: ${folderId} (${res.status})`);
+  const html = await res.text();
+
+  // Split on the start-marker of each entry. The closing tags are
+  // deeply nested (5+ divs) so a non-greedy block regex is fragile —
+  // instead we slice between consecutive `flip-entry` start markers
+  // and parse each slice for its id, mime type, and title.
+  const entries = [];
+  const marker = '<div class="flip-entry" id="entry-';
+  const slices = html.split(marker).slice(1); // first chunk is pre-list HTML
+  for (const slice of slices) {
+    const idMatch = slice.match(/^([^"]+)/);
+    const mimeMatch = slice.match(/drive-thirdparty\.googleusercontent\.com\/16\/type\/([^"\/]+\/[^"\/]+)/);
+    const titleMatch = slice.match(/<div class="flip-entry-title">([\s\S]*?)<\/div>/);
+    if (!idMatch || !titleMatch) continue;
+    const mime = mimeMatch ? decodeURIComponent(mimeMatch[1]) : "";
+    if (!mime.startsWith("image/")) continue;
+    entries.push({
+      id: idMatch[1],
+      title: decodeHtmlEntities(titleMatch[1].trim()),
+    });
+  }
+  return entries;
 }
 
 async function downloadFromDrive(driveId) {
@@ -82,21 +117,18 @@ async function downloadFromDrive(driveId) {
   const res = await fetch(url, { redirect: "follow" });
   if (!res.ok) throw new Error(`Drive download failed: ${driveId} (${res.status})`);
   const buf = Buffer.from(await res.arrayBuffer());
-  // Drive returns an HTML virus-scan page for files >100 MB. The
-  // small files here don't trip it but check the magic bytes anyway.
   const magic = buf.slice(0, 4).toString("hex");
   if (!/^(ffd8ff|89504e47|47494638|52494646)/.test(magic)) {
     throw new Error(
       `Drive returned non-image for ${driveId} (magic=${magic}). ` +
-      "Make sure the folder is shared 'Anyone with the link'.",
+      "The file may be too large for the auto-confirm download path " +
+      "(>100 MB) or the folder isn't shared 'Anyone with the link'.",
     );
   }
   return buf;
 }
 
 function sign(params, secret) {
-  // Cloudinary signature: sort params alphabetically, join as `k=v&k=v`,
-  // append API secret, SHA1 the result.
   const toSign = Object.keys(params)
     .sort()
     .map((k) => `${k}=${params[k]}`)
@@ -120,13 +152,7 @@ async function uploadToCloudinary(buf, { publicId, folder, tags }) {
   const fd = new FormData();
   fd.set("api_key", KEY);
   fd.set("file", new Blob([buf], { type: "image/jpeg" }), `${publicId}.jpg`);
-  fd.set("folder", signedParams.folder);
-  fd.set("overwrite", signedParams.overwrite);
-  fd.set("public_id", signedParams.public_id);
-  fd.set("tags", signedParams.tags);
-  fd.set("timestamp", signedParams.timestamp);
-  fd.set("unique_filename", signedParams.unique_filename);
-  fd.set("use_filename", signedParams.use_filename);
+  for (const [k, v] of Object.entries(signedParams)) fd.set(k, v);
   fd.set("signature", signature);
 
   const res = await fetch(
@@ -142,38 +168,77 @@ async function uploadToCloudinary(buf, { publicId, folder, tags }) {
 
 // ─── Run ───────────────────────────────────────────────────────────────
 
+if (!CLOUD || !KEY || !SECRET) {
+  console.error("Missing Cloudinary creds (CLOUDINARY_CLOUD_NAME / API_KEY / API_SECRET).");
+  process.exit(1);
+}
+
 const root = path.resolve(process.cwd());
 const manifestOut = path.join(root, "lib", "labs-manifest.json");
 
 const manifest = [];
-let n = 0;
-for (const item of INVENTORY) {
-  n += 1;
-  const slug = slugify(item.title);
-  const folder = `bipe/labs/${item.category}`;
-  const publicId = slug;
-  process.stdout.write(`[${n}/${INVENTORY.length}] ${item.category}/${slug} … `);
+let totalSeen = 0;
+let totalOk = 0;
+let totalFailed = 0;
+
+for (const f of FOLDERS) {
+  process.stdout.write(`\n=== ${f.category.padEnd(11)} (folder ${f.id}) ===\n`);
+  let entries;
   try {
-    const buf = await downloadFromDrive(item.driveId);
-    const sized = buf.length;
-    const r = await uploadToCloudinary(buf, {
-      publicId,
-      folder,
-      tags: `lab,${item.category}`,
-    });
-    manifest.push({
-      publicId: r.public_id,                     // e.g. bipe/labs/cse/networking-lab
-      category: item.category,
-      title: item.title,
-      width: r.width,
-      height: r.height,
-      version: r.version,
-    });
-    console.log(`ok (${(sized / 1024).toFixed(0)} KB → ${r.width}×${r.height})`);
+    entries = await listFolder(f.id);
   } catch (e) {
-    console.log(`FAILED: ${e.message}`);
+    console.warn(`  list failed: ${e.message}`);
+    continue;
+  }
+  console.log(`  ${entries.length} image(s) found`);
+  totalSeen += entries.length;
+
+  // Track slugs we've already used in this category so two files with
+  // the same name (e.g. MACHIN SHOP.jpg + MACHIN SHOP.jpeg) don't
+  // collide on Cloudinary.
+  const usedSlugs = new Set();
+  for (const e of entries) {
+    const title = titleize(e.title);
+    const baseSlug = slugify(e.title);
+    let slug = baseSlug;
+    let n = 2;
+    while (usedSlugs.has(slug)) slug = `${baseSlug}-${n++}`;
+    usedSlugs.add(slug);
+    const folder = `bipe/labs/${f.category}`;
+    const publicId = slug;
+    process.stdout.write(`  → ${f.category}/${slug.padEnd(40, " ")} `);
+    try {
+      const buf = await downloadFromDrive(e.id);
+      const r = await uploadToCloudinary(buf, {
+        publicId,
+        folder,
+        tags: `lab,${f.category}`,
+      });
+      manifest.push({
+        publicId: r.public_id,
+        category: f.category,
+        title,
+        width: r.width,
+        height: r.height,
+        version: r.version,
+      });
+      console.log(`ok (${(buf.length / 1024).toFixed(0)} KB → ${r.width}×${r.height})`);
+      totalOk += 1;
+    } catch (err) {
+      console.log(`FAILED: ${err.message.slice(0, 200)}`);
+      totalFailed += 1;
+    }
   }
 }
 
+manifest.sort((a, b) => {
+  if (a.category !== b.category) return a.category.localeCompare(b.category);
+  return a.title.localeCompare(b.title);
+});
+
 await fs.writeFile(manifestOut, JSON.stringify(manifest, null, 2) + "\n");
-console.log(`\nWrote manifest: ${path.relative(root, manifestOut)} (${manifest.length} entries)`);
+
+console.log(
+  `\nDone. seen=${totalSeen} uploaded=${totalOk} failed=${totalFailed}`,
+);
+console.log(`Manifest: ${path.relative(root, manifestOut)} (${manifest.length} entries)`);

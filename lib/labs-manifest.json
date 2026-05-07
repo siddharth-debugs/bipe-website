@@ -1,146 +1,594 @@
 [
   {
+    "publicId": "bipe/labs/civil/auto-level-jpg",
+    "category": "civil",
+    "title": "AUTO LEVEL.jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1778151162
+  },
+  {
+    "publicId": "bipe/labs/civil/c-b-r-apparatus-jpg",
+    "category": "civil",
+    "title": "C.B.R APPARATUS .jpg",
+    "width": 2304,
+    "height": 4096,
+    "version": 1778151165
+  },
+  {
+    "publicId": "bipe/labs/civil/compaction-factor-test-jpg",
+    "category": "civil",
+    "title": "COMPACTION FACTOR TEST.jpg",
+    "width": 2304,
+    "height": 4096,
+    "version": 1778151168
+  },
+  {
+    "publicId": "bipe/labs/civil/construction-site-visit",
+    "category": "civil",
+    "title": "CONSTRUCTION SITE VISIT",
+    "width": 1280,
+    "height": 960,
+    "version": 1778151174
+  },
+  {
+    "publicId": "bipe/labs/civil/construction-site-visit-2",
+    "category": "civil",
+    "title": "CONSTRUCTION SITE VISIT 2",
+    "width": 1280,
+    "height": 960,
+    "version": 1778151171
+  },
+  {
+    "publicId": "bipe/labs/civil/hammer-jpg",
+    "category": "civil",
+    "title": "HAMMER.jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1778151177
+  },
+  {
+    "publicId": "bipe/labs/civil/r-c-c-structure-jpg",
+    "category": "civil",
+    "title": "R.C.C STRUCTURE .jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1778151180
+  },
+  {
+    "publicId": "bipe/labs/civil/r-c-c-drawing",
+    "category": "civil",
+    "title": "R.C.C. DRAWING",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778151184
+  },
+  {
+    "publicId": "bipe/labs/civil/s-t-p-visit",
+    "category": "civil",
+    "title": "S.T.P VISIT",
+    "width": 4080,
+    "height": 1830,
+    "version": 1778151187
+  },
+  {
+    "publicId": "bipe/labs/civil/survey-camp",
+    "category": "civil",
+    "title": "SURVEY CAMP",
+    "width": 4080,
+    "height": 3060,
+    "version": 1778151196
+  },
+  {
+    "publicId": "bipe/labs/civil/survey-camp-1",
+    "category": "civil",
+    "title": "SURVEY CAMP 1",
+    "width": 1280,
+    "height": 576,
+    "version": 1778151190
+  },
+  {
+    "publicId": "bipe/labs/civil/survey-camp-2",
+    "category": "civil",
+    "title": "SURVEY CAMP 2",
+    "width": 960,
+    "height": 1280,
+    "version": 1778151193
+  },
+  {
+    "publicId": "bipe/labs/civil/transit-theodolite-jpg",
+    "category": "civil",
+    "title": "TRANSIT THEODOLITE.jpg",
+    "width": 2304,
+    "height": 4096,
+    "version": 1778151199
+  },
+  {
+    "publicId": "bipe/labs/civil/vicat-apparatus-jpg",
+    "category": "civil",
+    "title": "VICAT APPARATUS .jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1778151202
+  },
+  {
+    "publicId": "bipe/labs/civil/water-harvesting-system-jpg",
+    "category": "civil",
+    "title": "WATER HARVESTING SYSTEM .jpg",
+    "width": 2304,
+    "height": 4096,
+    "version": 1778151206
+  },
+  {
+    "publicId": "bipe/labs/cse/networking-iot-lab2",
+    "category": "cse",
+    "title": "Networking & IoT Lab2",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778150939
+  },
+  {
     "publicId": "bipe/labs/cse/networking-lab",
     "category": "cse",
     "title": "Networking Lab",
     "width": 3072,
     "height": 4096,
-    "version": 1778149824
+    "version": 1778150969
   },
   {
-    "publicId": "bipe/labs/mechanical/smithy-forging",
-    "category": "mechanical",
-    "title": "Smithy & Forging",
-    "width": 720,
-    "height": 1280,
-    "version": 1778149828
+    "publicId": "bipe/labs/cse/networking-lab-2",
+    "category": "cse",
+    "title": "Networking Lab (2)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150944
   },
   {
-    "publicId": "bipe/labs/mechanical/pt-lathe-shop",
-    "category": "mechanical",
-    "title": "PT Lathe Shop",
+    "publicId": "bipe/labs/cse/networking-lab-3",
+    "category": "cse",
+    "title": "Networking Lab (3)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150949
+  },
+  {
+    "publicId": "bipe/labs/cse/networking-lab-4",
+    "category": "cse",
+    "title": "Networking Lab (4)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150954
+  },
+  {
+    "publicId": "bipe/labs/cse/networking-lab-5",
+    "category": "cse",
+    "title": "Networking Lab (5)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150959
+  },
+  {
+    "publicId": "bipe/labs/cse/networking-lab-6",
+    "category": "cse",
+    "title": "Networking Lab (6)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150964
+  },
+  {
+    "publicId": "bipe/labs/cse/programming-lab",
+    "category": "cse",
+    "title": "Programming Lab",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150991
+  },
+  {
+    "publicId": "bipe/labs/cse/programming-lab-2",
+    "category": "cse",
+    "title": "Programming Lab (2)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150973
+  },
+  {
+    "publicId": "bipe/labs/cse/programming-lab-3",
+    "category": "cse",
+    "title": "Programming Lab (3)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778150976
+  },
+  {
+    "publicId": "bipe/labs/cse/programming-lab-4",
+    "category": "cse",
+    "title": "Programming Lab (4)",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778150980
+  },
+  {
+    "publicId": "bipe/labs/cse/programming-lab-5",
+    "category": "cse",
+    "title": "Programming Lab (5)",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778150984
+  },
+  {
+    "publicId": "bipe/labs/cse/programming-lab-6",
+    "category": "cse",
+    "title": "Programming Lab (6)",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778150988
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-2nd-year",
+    "category": "cse",
+    "title": "Project Expo 2nd year",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778150995
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-3rd-year",
+    "category": "cse",
+    "title": "Project Expo 3rd year",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778150999
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-3rd-year1",
+    "category": "cse",
+    "title": "Project Expo 3rd year1",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778151003
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-3rd-year2",
+    "category": "cse",
+    "title": "Project Expo 3rd year2",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778151007
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-3rd-year3",
+    "category": "cse",
+    "title": "Project Expo 3rd year3",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778151010
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-3rd-year4",
+    "category": "cse",
+    "title": "Project Expo 3rd year4",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778151014
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-3rd-year5",
+    "category": "cse",
+    "title": "Project Expo 3rd year5",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778151017
+  },
+  {
+    "publicId": "bipe/labs/cse/project-expo-3rd-year6",
+    "category": "cse",
+    "title": "Project Expo 3rd year6",
+    "width": 4096,
+    "height": 3072,
+    "version": 1778151022
+  },
+  {
+    "publicId": "bipe/labs/cse/workshop-at-programming",
+    "category": "cse",
+    "title": "Workshop at Programming",
+    "width": 2448,
+    "height": 3264,
+    "version": 1778151034
+  },
+  {
+    "publicId": "bipe/labs/cse/workshop-at-programming-2",
+    "category": "cse",
+    "title": "Workshop at Programming (2)",
+    "width": 2448,
+    "height": 3264,
+    "version": 1778151026
+  },
+  {
+    "publicId": "bipe/labs/cse/workshop-at-programming-3",
+    "category": "cse",
+    "title": "Workshop at Programming (3)",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778151030
+  },
+  {
+    "publicId": "bipe/labs/ee/ap-chemistry",
+    "category": "ee",
+    "title": "AP CHEMISTRY",
     "width": 960,
     "height": 1280,
-    "version": 1778149830
+    "version": 1778151037
   },
   {
-    "publicId": "bipe/labs/mechanical/auto-mobile-project-work",
-    "category": "mechanical",
-    "title": "Auto Mobile Project Work",
-    "width": 1080,
-    "height": 960,
-    "version": 1778149833
-  },
-  {
-    "publicId": "bipe/labs/mechanical/cnc-controller",
-    "category": "mechanical",
-    "title": "CNC Controller",
+    "publicId": "bipe/labs/ee/chemastry",
+    "category": "ee",
+    "title": "CHEMASTRY",
     "width": 960,
     "height": 1280,
-    "version": 1778149835
+    "version": 1778151040
   },
   {
-    "publicId": "bipe/labs/mechanical/auto-mobile-lab-engine-strip",
-    "category": "mechanical",
-    "title": "Auto Mobile Lab — Engine Strip",
-    "width": 913,
-    "height": 1280,
-    "version": 1778149838
+    "publicId": "bipe/labs/ee/ee-electronic-measurement",
+    "category": "ee",
+    "title": "EE & ELECTRONIC MEASUREMENT",
+    "width": 2250,
+    "height": 4000,
+    "version": 1778151044
   },
   {
-    "publicId": "bipe/labs/mechanical/machine-shop",
-    "category": "mechanical",
-    "title": "Machine Shop",
-    "width": 1600,
-    "height": 1200,
-    "version": 1778149840
+    "publicId": "bipe/labs/ee/ee-machin",
+    "category": "ee",
+    "title": "EE MACHIN",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778151049
   },
   {
-    "publicId": "bipe/labs/mechanical/welding-shop",
-    "category": "mechanical",
-    "title": "Welding Shop",
-    "width": 1014,
-    "height": 1280,
-    "version": 1778149843
+    "publicId": "bipe/labs/ee/eim-lab",
+    "category": "ee",
+    "title": "EIM LAB",
+    "width": 899,
+    "height": 1599,
+    "version": 1778151051
   },
   {
-    "publicId": "bipe/labs/mechanical/auto-mobile-lab-workbench",
-    "category": "mechanical",
-    "title": "Auto Mobile Lab — Workbench",
-    "width": 920,
-    "height": 1280,
-    "version": 1778149846
+    "publicId": "bipe/labs/ee/electrical-machin-lab",
+    "category": "ee",
+    "title": "ELECTRICAL MACHIN LAB",
+    "width": 899,
+    "height": 1599,
+    "version": 1778151054
   },
   {
-    "publicId": "bipe/labs/mechanical/machine-shop-lathes",
-    "category": "mechanical",
-    "title": "Machine Shop — Lathes",
+    "publicId": "bipe/labs/ee/feee",
+    "category": "ee",
+    "title": "FEEE",
+    "width": 2250,
+    "height": 4000,
+    "version": 1778151063
+  },
+  {
+    "publicId": "bipe/labs/ee/feee-lab",
+    "category": "ee",
+    "title": "FEEE LAB",
+    "width": 3472,
+    "height": 4624,
+    "version": 1778151058
+  },
+  {
+    "publicId": "bipe/labs/ee/i-e-c-lab",
+    "category": "ee",
+    "title": "I E C LAB",
+    "width": 899,
+    "height": 1599,
+    "version": 1778151066
+  },
+  {
+    "publicId": "bipe/labs/ee/img-20231215-121558",
+    "category": "ee",
+    "title": "IMG 20231215 121558",
+    "width": 3472,
+    "height": 4624,
+    "version": 1778151071
+  },
+  {
+    "publicId": "bipe/labs/ee/industrial-visit-220-kb",
+    "category": "ee",
+    "title": "INDUSTRIAL VISIT 220 KB",
     "width": 1280,
     "height": 960,
-    "version": 1778149848
+    "version": 1778151083
   },
   {
-    "publicId": "bipe/labs/mechanical/machine-shop-milling-bay",
-    "category": "mechanical",
-    "title": "Machine Shop — Milling Bay",
+    "publicId": "bipe/labs/ee/industrial-visit-220-kb-1",
+    "category": "ee",
+    "title": "INDUSTRIAL VISIT 220 KB 1",
     "width": 1280,
     "height": 960,
-    "version": 1778149851
+    "version": 1778151075
+  },
+  {
+    "publicId": "bipe/labs/ee/industrial-visit-220-kb-2",
+    "category": "ee",
+    "title": "INDUSTRIAL VISIT 220 KB 2",
+    "width": 960,
+    "height": 1280,
+    "version": 1778151078
+  },
+  {
+    "publicId": "bipe/labs/ee/industrial-visit-220-kb-3",
+    "category": "ee",
+    "title": "INDUSTRIAL VISIT 220 KB 3",
+    "width": 1280,
+    "height": 591,
+    "version": 1778151081
+  },
+  {
+    "publicId": "bipe/labs/ee/machin-secend-lab",
+    "category": "ee",
+    "title": "MACHIN SECEND LAB",
+    "width": 899,
+    "height": 1599,
+    "version": 1778151086
+  },
+  {
+    "publicId": "bipe/labs/ee/mocro-conteroller",
+    "category": "ee",
+    "title": "MOCRO CONTEROLLER",
+    "width": 3472,
+    "height": 4624,
+    "version": 1778151091
+  },
+  {
+    "publicId": "bipe/labs/ee/plc-scada",
+    "category": "ee",
+    "title": "PLC & SCADA",
+    "width": 2250,
+    "height": 4000,
+    "version": 1778151102
+  },
+  {
+    "publicId": "bipe/labs/ee/plc-scada-1",
+    "category": "ee",
+    "title": "PLC & SCADA 1",
+    "width": 3472,
+    "height": 4624,
+    "version": 1778151098
+  },
+  {
+    "publicId": "bipe/labs/ee/plc-lab",
+    "category": "ee",
+    "title": "PLC LAB",
+    "width": 899,
+    "height": 1599,
+    "version": 1778151104
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile",
+    "category": "mechanical",
+    "title": "AUTO MOBILE",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778151121
   },
   {
     "publicId": "bipe/labs/mechanical/auto-mobile-lab",
     "category": "mechanical",
-    "title": "Auto Mobile Lab",
+    "title": "AUTO MOBILE LAB",
     "width": 1280,
     "height": 960,
     "version": 1778149853
   },
   {
-    "publicId": "bipe/labs/mechanical/thermal-engineering-prototypes",
+    "publicId": "bipe/labs/mechanical/auto-mobile-lab-1",
     "category": "mechanical",
-    "title": "Thermal Engineering Prototypes",
+    "title": "AUTO MOBILE LAB 1",
+    "width": 913,
+    "height": 1280,
+    "version": 1778151108
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile-lab-2",
+    "category": "mechanical",
+    "title": "AUTO MOBILE LAB 2",
+    "width": 920,
+    "height": 1280,
+    "version": 1778151110
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile-project-work",
+    "category": "mechanical",
+    "title": "AUTO MOBILE PROJECT WORK",
+    "width": 1080,
+    "height": 960,
+    "version": 1778149833
+  },
+  {
+    "publicId": "bipe/labs/mechanical/cnc",
+    "category": "mechanical",
+    "title": "CNC",
+    "width": 960,
+    "height": 1280,
+    "version": 1778151124
+  },
+  {
+    "publicId": "bipe/labs/mechanical/machin-shop",
+    "category": "mechanical",
+    "title": "MACHIN SHOP",
+    "width": 1600,
+    "height": 1200,
+    "version": 1778151557
+  },
+  {
+    "publicId": "bipe/labs/mechanical/machin-shop-3",
+    "category": "mechanical",
+    "title": "MACHIN SHOP",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778151561
+  },
+  {
+    "publicId": "bipe/labs/mechanical/machin-shop-1",
+    "category": "mechanical",
+    "title": "MACHIN SHOP 1",
     "width": 1280,
     "height": 960,
-    "version": 1778149856
+    "version": 1778151127
   },
   {
-    "publicId": "bipe/labs/mechanical/auto-mobile-lab-wide",
+    "publicId": "bipe/labs/mechanical/machin-shop-2",
     "category": "mechanical",
-    "title": "Auto Mobile Lab — Wide",
-    "width": 4000,
-    "height": 2250,
-    "version": 1778149860
+    "title": "MACHIN SHOP 2",
+    "width": 1280,
+    "height": 960,
+    "version": 1778151130
   },
   {
-    "publicId": "bipe/labs/mechanical/machine-shop-wide",
+    "publicId": "bipe/labs/mechanical/pt-shop",
     "category": "mechanical",
-    "title": "Machine Shop — Wide",
-    "width": 4000,
-    "height": 2250,
-    "version": 1778149865
+    "title": "PT SHOP",
+    "width": 960,
+    "height": 1280,
+    "version": 1778151151
   },
   {
-    "publicId": "bipe/labs/mechanical/pt-shop-wide-1",
+    "publicId": "bipe/labs/mechanical/pt-shop-1",
     "category": "mechanical",
-    "title": "PT Shop — Wide 1",
+    "title": "PT SHOP 1",
     "width": 4000,
     "height": 2250,
-    "version": 1778149870
+    "version": 1778151143
   },
   {
-    "publicId": "bipe/labs/mechanical/pt-shop-wide-2",
+    "publicId": "bipe/labs/mechanical/pt-shop-2",
     "category": "mechanical",
-    "title": "PT Shop — Wide 2",
+    "title": "PT SHOP 2",
     "width": 4000,
     "height": 2250,
-    "version": 1778149874
+    "version": 1778151148
   },
   {
-    "publicId": "bipe/labs/civil/engineering-drawing-class",
-    "category": "civil",
-    "title": "Engineering Drawing Class",
-    "width": 4000,
-    "height": 2250,
-    "version": 1778149878
+    "publicId": "bipe/labs/mechanical/smithy-forging",
+    "category": "mechanical",
+    "title": "SMITHY & FORGING",
+    "width": 720,
+    "height": 1280,
+    "version": 1778149828
+  },
+  {
+    "publicId": "bipe/labs/mechanical/thermal-engg",
+    "category": "mechanical",
+    "title": "THERMAL ENGG.",
+    "width": 1280,
+    "height": 960,
+    "version": 1778151156
+  },
+  {
+    "publicId": "bipe/labs/mechanical/welding-shop",
+    "category": "mechanical",
+    "title": "WELDING SHOP",
+    "width": 1014,
+    "height": 1280,
+    "version": 1778149843
   }
 ]
