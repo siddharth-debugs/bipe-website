@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import manifest from "@/lib/labs-manifest.json";
 
 /**
@@ -111,12 +110,26 @@ export function LabsGallery() {
                   aria-label={`Open ${p.title} full-size`}
                   style={{ display: "block", aspectRatio: "4 / 5", position: "relative", background: "var(--paper-2)" }}
                 >
-                  <Image
+                  {/*
+                   * Plain <img> on purpose: Cloudinary already returns
+                   * WebP/AVIF via f_auto + size-correct via w_/h_, so
+                   * routing through Next's image optimiser was making
+                   * Vercel's optimizer 400 on these already-optimised
+                   * URLs. Direct fetch ships fewer bytes anyway.
+                   */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={thumbUrl(p)}
                     alt={p.title}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 980px) 33vw, 25vw"
-                    style={{ objectFit: "cover" }}
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
                   />
                 </a>
                 <figcaption className="bipe-lab-cap">
