@@ -84,7 +84,7 @@ export function CoursesView() {
         >
           <div>
             <div className="eyebrow" style={{ color: "var(--accent)" }}>
-              § The catalogue
+              / The catalogue
             </div>
             <h2
               className="bipe-h1"
@@ -105,7 +105,7 @@ export function CoursesView() {
                 maxWidth: "52ch",
               }}
             >
-              Every BTEUP-licensed diploma BIPE offers — five 3-year branches, three years to a career. Browse the index, watch the panel update.
+              Every BTEUP-affiliated diploma BIPE offers — five 3-year branches, three years to a career. Browse the index, watch the panel update.
             </p>
           </div>
           <div

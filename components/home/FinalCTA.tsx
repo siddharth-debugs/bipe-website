@@ -56,19 +56,23 @@ export const FinalCTA = () => (
               </p>
             </div>
 
+            {/* The headline stats (16 years / 1,000+ / 5 branches) already
+                live in the StatsBar right under the hero — repeating
+                them here was filler. Show what happens AFTER the user
+                presses Apply instead, so the CTA earns its space. */}
             <div className="row" style={{ marginTop: 48, gap: 24, flexWrap: "wrap", alignItems: "center" }}>
               {[
-                { num: "16", l: "years" },
-                { num: "1,000+", l: "alumni" },
-                { num: "5", l: "branches" },
-                { num: "JEECUP", l: "code 4455" },
-              ].map((s, i) => (
+                { num: "24 hr",  l: "callback promise" },
+                { num: "₹0",     l: "to apply" },
+                { num: "1 : 20", l: "mentor ratio" },
+                { num: "5 days", l: "to a decision" },
+              ].map((s, i, arr) => (
                 <React.Fragment key={s.l}>
                   <div>
                     <div style={{ fontFamily: "var(--font-display, var(--font-serif))", fontStyle: "italic", fontSize: 30, lineHeight: 1, color: "var(--paper)" }}>{s.num}</div>
                     <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 55%, transparent)", marginTop: 4 }}>{s.l}</div>
                   </div>
-                  {i < 3 && <span style={{ width: 1, height: 36, background: "color-mix(in oklab, var(--paper) 14%, transparent)" }} />}
+                  {i < arr.length - 1 && <span style={{ width: 1, height: 36, background: "color-mix(in oklab, var(--paper) 14%, transparent)" }} />}
                 </React.Fragment>
               ))}
             </div>

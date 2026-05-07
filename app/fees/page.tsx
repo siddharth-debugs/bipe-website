@@ -54,7 +54,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">§ Fees · 2026-27</div>
+              <div className="eyebrow">/ Fees · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 Tuition is{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -146,7 +146,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ The break-up</div>
+              <div className="eyebrow">/ The break-up</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Every component,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -204,7 +204,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ Payment schedule</div>
+              <div className="eyebrow">/ Payment schedule</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Three years.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -289,7 +289,7 @@ export default function Page() {
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <div className="eyebrow">§ Payment methods</div>
+            <div className="eyebrow">/ Payment methods</div>
             <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch", marginInline: "auto" }}>
               Pay how it{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -329,7 +329,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Refund policy</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Refund policy</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "14ch" }}>
                 AICTE-aligned{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -393,7 +393,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>§ Most students pay much less</div>
+                <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>/ Most students pay much less</div>
                 <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch" }}>
                   UP Government post-matric covers tuition for{" "}
                   <span className="serif" style={{ color: "var(--accent-deep)", fontStyle: "italic", fontWeight: 400 }}>
@@ -433,7 +433,7 @@ export default function Page() {
               filter: "blur(160px)", pointerEvents: "none",
             }} />
             <div style={{ position: "relative" }}>
-              <div className="eyebrow">§ Transparency commitment</div>
+              <div className="eyebrow">/ Transparency commitment</div>
               <p className="serif" style={{
                 marginTop: 22,
                 fontStyle: "italic", fontWeight: 400,

@@ -38,7 +38,7 @@ export default function SettingsPage() {
       >
         <section className="admin-card" style={{ padding: 22 }}>
           <div className="admin-eyebrow" style={{ color: "var(--ink-3)" }}>
-            § Signed-in user
+            / Signed-in user
           </div>
           <h2 className="admin-h2" style={{ marginTop: 6 }}>
             {me?.name || me?.phone || "—"}
@@ -76,7 +76,7 @@ export default function SettingsPage() {
 
         <section className="admin-card" style={{ padding: 22 }}>
           <div className="admin-eyebrow" style={{ color: "var(--ink-3)" }}>
-            § Backend
+            / Backend
           </div>
           <h2 className="admin-h2" style={{ marginTop: 6 }}>
             API base

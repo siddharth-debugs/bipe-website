@@ -95,7 +95,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">§ Annual events · February</div>
+              <div className="eyebrow">/ Annual events · February</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 Three flagship events.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -222,7 +222,7 @@ export default function Page() {
             flexWrap: "wrap",
           }}>
             <div>
-              <div className="eyebrow">§ Photo gallery</div>
+              <div className="eyebrow">/ Photo gallery</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "22ch" }}>
                 {EVENT_PHOTOS.length} moments,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -271,7 +271,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Open all week</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Open all week</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch", color: "var(--paper)" }}>
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
                   Bring your family.
@@ -345,7 +345,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ News &amp; announcements</div>
+              <div className="eyebrow">/ News &amp; announcements</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "20ch" }}>
                 What&rsquo;s on{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -388,7 +388,7 @@ export default function Page() {
             display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 32, alignItems: "center",
           }}>
             <div>
-              <div className="eyebrow">§ Visit us</div>
+              <div className="eyebrow">/ Visit us</div>
               <h3 className="bipe-h3" style={{ marginTop: 8, fontSize: 22 }}>
                 Walk the campus before the next event.
               </h3>

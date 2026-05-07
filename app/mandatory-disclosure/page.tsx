@@ -90,7 +90,7 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p>
-          BIPE offers <strong>5 BTEUP-licensed diploma branches</strong> at JEECUP college code 4455, all 3-year programmes admitted via JEECUP Group A.
+          BIPE offers <strong>5 BTEUP-affiliated diploma branches</strong> at JEECUP college code 4455, all 3-year programmes admitted via JEECUP Group A.
         </p>
         <p>
           Total sanctioned intake (2026-27): <strong>480 seats</strong> — Civil 120, Electrical 120, Mechanical Engineering (Production) 120, Computer Science &amp; Engineering 60, Dairy Engineering 60. Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical across branches.
@@ -128,7 +128,7 @@ const SECTIONS: Section[] = [
     title: "Admission procedure and last 3 years' admissions",
     body: (
       <>
-        <p>Admissions to all BIPE diplomas are exclusively through <strong>JEECUP</strong> counselling — institute code <strong>4455</strong>. Six counselling steps, with eligibility, documents and timelines on the <Link href="/admission">Admission</Link> and <Link href="/jeecup">JEECUP guidance</Link> pages.</p>
+        <p>Admissions to all BIPE diploma courses are exclusively through <strong>JEECUP</strong> counselling — institute code <strong>4455</strong>. Six counselling steps, with eligibility, documents and timelines on the <Link href="/admission">Admission</Link> and <Link href="/jeecup">JEECUP guidance</Link> pages.</p>
         <p>{`// TODO: publish branch-wise admitted-student counts for the last three cycles (2023-24, 2024-25, 2025-26) per AICTE Annexure-18 §10 once the Examination cell releases the consolidated figures.`}</p>
       </>
     ),
@@ -236,7 +236,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">§ MANDATORY DISCLOSURE · 2026-27</div>
+          <div className="eyebrow">/ MANDATORY DISCLOSURE · 2026-27</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
             Public disclosure,{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -260,7 +260,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", paddingTop: 40, paddingBottom: 40 }}>
         <div className="container">
-          <div className="eyebrow">§ Index</div>
+          <div className="eyebrow">/ Index</div>
           <div className="bipe-grid-4" style={{
             marginTop: 18,
             display: "grid",
@@ -322,7 +322,7 @@ export default function Page() {
             display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14,
           }}>
             <div>
-              <div className="eyebrow">§ Last revised</div>
+              <div className="eyebrow">/ Last revised</div>
               <div style={{ marginTop: 6, fontWeight: 600 }}>2026-27 · revised {DATA.contact.aicteEoaDate}. Next review: 2027-28.</div>
             </div>
             <Link href="/approvals" className="btn btn-ghost">

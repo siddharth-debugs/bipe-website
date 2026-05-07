@@ -66,7 +66,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">§ Visit · Mon–Sat</div>
+              <div className="eyebrow">/ Visit · Mon–Sat</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 See BIPE{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -170,7 +170,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ The shape of the visit</div>
+              <div className="eyebrow">/ The shape of the visit</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Five moves,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -222,7 +222,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--brand)" }}>§ Book your visit</div>
+              <div className="eyebrow" style={{ color: "var(--brand)" }}>/ Book your visit</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Pick a date.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -266,7 +266,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 36 }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--brand)" }}>§ Or use another channel</div>
+              <div className="eyebrow" style={{ color: "var(--brand)" }}>/ Or use another channel</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch" }}>
                 Don&rsquo;t want a form?{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -356,7 +356,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start", marginBottom: 40 }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>§ How to reach</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ How to reach</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "16ch" }}>
                 Phoolpur, Varanasi —{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -408,7 +408,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 32, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ Find the gate</div>
+              <div className="eyebrow">/ Find the gate</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
                 Six acres,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -435,7 +435,7 @@ export default function Page() {
 
             <div className="card" style={{ padding: 36, background: "var(--paper-2)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
-                <div className="eyebrow">§ Campus address</div>
+                <div className="eyebrow">/ Campus address</div>
                 <div className="serif" style={{ marginTop: 14, fontStyle: "italic", fontWeight: 400, fontSize: 28, lineHeight: 1.2, color: "var(--ink)" }}>
                   {C.address}
                 </div>
@@ -470,7 +470,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ Pack the small things</div>
+              <div className="eyebrow">/ Pack the small things</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
                 What to{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -525,7 +525,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative", textAlign: "center" }}>
-          <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Why visit at all</div>
+          <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Why visit at all</div>
           <p className="serif" style={{
             marginTop: 22,
             fontStyle: "italic", fontWeight: 400,
@@ -564,7 +564,7 @@ export default function Page() {
               filter: "blur(160px)", pointerEvents: "none",
             }} />
             <div style={{ position: "relative" }}>
-              <div className="eyebrow">§ Book your visit</div>
+              <div className="eyebrow">/ Book your visit</div>
               <p className="serif" style={{
                 marginTop: 22,
                 fontStyle: "italic", fontWeight: 400,

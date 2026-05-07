@@ -135,7 +135,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">§ Placements · Sixteen years</div>
+              <div className="eyebrow">/ Placements · Sixteen years</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   One thousand
@@ -219,7 +219,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
-              <div className="eyebrow">§ Branch-wise · verified through 2024</div>
+              <div className="eyebrow">/ Branch-wise · verified through 2024</div>
               <h2 className="bipe-h2" style={{ marginTop: 14 }}>
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   Where they came from.
@@ -329,7 +329,7 @@ export default function Page() {
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 36 }}>
             <div>
               <div className="eyebrow" style={{ color: "color-mix(in oklab, var(--paper) 65%, transparent)" }}>
-                § 44 verified recruiters
+                / 44 verified recruiters
               </div>
               <h2 className="bipe-h2" style={{ marginTop: 14, color: "var(--paper)" }}>
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -455,7 +455,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
-              <div className="eyebrow">§ Notable alumni</div>
+              <div className="eyebrow">/ Notable alumni</div>
               <h2 className="bipe-h2" style={{ marginTop: 14 }}>
                 Lives that{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -536,7 +536,7 @@ export default function Page() {
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
               <div className="eyebrow" style={{ color: "color-mix(in oklab, var(--paper) 65%, transparent)" }}>
-                § Pre-placement programmes
+                / Pre-placement programmes
               </div>
               <h2 className="bipe-h2" style={{ marginTop: 14, color: "var(--paper)" }}>
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -739,7 +739,7 @@ export default function Page() {
         <div className="container">
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
-              <div className="eyebrow">§ On-campus drives · Gallery</div>
+              <div className="eyebrow">/ On-campus drives · Gallery</div>
               <h2 className="bipe-h2" style={{ marginTop: 14 }}>
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   Placement drives,
@@ -763,7 +763,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
             <div>
-              <div className="eyebrow">§ Voices</div>
+              <div className="eyebrow">/ Voices</div>
               <h2 className="bipe-h2" style={{ marginTop: 14 }}>
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   Their words.
@@ -822,7 +822,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 64, alignItems: "start" }}>
             <div style={{ position: "sticky", top: 100 }}>
-              <div className="eyebrow">§ The placement cell</div>
+              <div className="eyebrow">/ The placement cell</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   Placement cell.
@@ -841,7 +841,7 @@ export default function Page() {
                 background: "var(--white)",
                 display: "flex", flexDirection: "column", gap: 10,
               }}>
-                <div className="eyebrow" style={{ color: "var(--brand)" }}>§ Reach the cell</div>
+                <div className="eyebrow" style={{ color: "var(--brand)" }}>/ Reach the cell</div>
                 <a href={`mailto:${DATA.contact.email}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
                   <span style={{
                     width: 28, height: 28, borderRadius: 8,

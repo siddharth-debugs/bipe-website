@@ -45,7 +45,7 @@ export default function Page() {
       {/* Four committees */}
       <section className="section">
         <div className="container" style={{ maxWidth: 980 }}>
-          <div className="eyebrow">§ Statutory committees</div>
+          <div className="eyebrow">/ Statutory committees</div>
           <h2 className="bipe-h2" style={{ marginTop: 14, marginBottom: 24 }}>Where to write.</h2>
           <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             {COMMITTEES.map((c) => (
@@ -65,7 +65,7 @@ export default function Page() {
       {/* Process */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container" style={{ maxWidth: 880 }}>
-          <div className="eyebrow">§ How to file a grievance</div>
+          <div className="eyebrow">/ How to file a grievance</div>
           <h2 className="bipe-h2" style={{ marginTop: 14 }}>The process.</h2>
           <ol style={{ marginTop: 18, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.8, paddingLeft: 20 }}>
             <li>Email <a href="mailto:grievance@bipevns.org" style={{ color: "var(--brand)" }}>grievance@bipevns.org</a> or submit a written complaint to the Principal&apos;s office.</li>

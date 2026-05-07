@@ -174,7 +174,7 @@ export default function Page() {
       <section className="section" style={{ position: "relative", overflow: "hidden" }}>
         <div className="container">
           <div style={{ maxWidth: "65ch", margin: "0 auto" }}>
-            <div className="eyebrow" style={{ textAlign: "center" }}>§ A NOTE FROM THE PRINCIPAL'S DESK</div>
+            <div className="eyebrow" style={{ textAlign: "center" }}>/ A NOTE FROM THE PRINCIPAL'S DESK</div>
             <h2 className="bipe-h2" style={{ marginTop: 14, textAlign: "center", maxWidth: "20ch", marginInline: "auto" }}>
               To the families of{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -227,7 +227,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ The four promises</div>
+              <div className="eyebrow">/ The four promises</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 What you can{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -295,7 +295,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "var(--accent)" }}>§ MEET THE PRINCIPAL</div>
+                <div className="eyebrow" style={{ color: "var(--accent)" }}>/ MEET THE PRINCIPAL</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)" }}>
                   Walk in. Ask anything.{" "}
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>

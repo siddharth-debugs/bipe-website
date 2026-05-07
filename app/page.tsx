@@ -11,7 +11,6 @@ import { CampusLife } from "@/components/home/CampusLife";
 import { Testimonials } from "@/components/home/Testimonials";
 import { InlineApply } from "@/components/home/InlineApply";
 import { News } from "@/components/home/News";
-import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
 export const metadata: Metadata = metaFor("home");
@@ -30,7 +29,6 @@ export default function HomePage() {
       <Testimonials />
       <InlineApply />
       <News />
-      <FAQ />
       <FinalCTA />
     </div>
   );

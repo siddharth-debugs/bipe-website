@@ -71,7 +71,7 @@ export function RowDetailDrawer<
           {/* Header */}
           <div className="admin-drawer-head">
             <div style={{ minWidth: 0, flex: 1 }}>
-              <div className="admin-eyebrow">§ {kind}</div>
+              <div className="admin-eyebrow">/ {kind}</div>
               <Dialog.Title className="admin-h2" style={{ marginTop: 6 }}>
                 {title}
               </Dialog.Title>

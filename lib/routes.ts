@@ -21,7 +21,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   courses: {
     path: "/courses",
-    title: "Academics · 5 BTEUP-licensed diploma branches | BIPE",
+    title: "Academics · 5 BTEUP-affiliated diploma branches | BIPE",
     description: "CS&E, Civil, Electrical, Mechanical Engineering (Production), Dairy. AICTE-approved · AFRC fees ₹30,150/year · JEECUP 4455.",
   },
   admission: {

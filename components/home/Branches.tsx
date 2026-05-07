@@ -37,7 +37,7 @@ export const Branches = () => {
               Pick a branch. <span className="serif" style={{ color: "var(--accent)" }}>Build a life.</span>
             </h2>
             <p className="lead" style={{ color: "color-mix(in oklab, var(--paper) 70%, transparent)", marginTop: 14, maxWidth: "50ch" }}>
-              Five BTEUP-licensed diplomas. One mentor for every twenty students. Hover or tap to explore.
+              Five BTEUP-affiliated diploma courses. One mentor for every twenty students. Hover or tap to explore.
             </p>
           </div>
           <Link href="/courses" className="btn"

@@ -132,7 +132,7 @@ export function ApplyView() {
           }}>
             ✓
           </div>
-          <div className="eyebrow" style={{ marginTop: 28, color: "var(--brand)" }}>§ Application received</div>
+          <div className="eyebrow" style={{ marginTop: 28, color: "var(--brand)" }}>/ Application received</div>
           <h2 className="bipe-h1" style={{ marginTop: 14 }}>
             Got it,{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -198,7 +198,7 @@ export function ApplyView() {
                   filter: "blur(100px)", pointerEvents: "none",
                 }} />
                 <div style={{ position: "relative" }}>
-                  <div className="eyebrow" style={{ color: "var(--accent)" }}>§ Application form</div>
+                  <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Application form</div>
                   <div className="serif" style={{
                     fontStyle: "italic", fontWeight: 400,
                     fontSize: 36, lineHeight: 1, color: "var(--paper)",

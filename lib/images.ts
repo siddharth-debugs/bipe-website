@@ -134,6 +134,34 @@ export const BIPE_IMG = {
     ],
   } as Record<string, [string, string, string]>,
 
+  /**
+   * Public-CDN logos for the recruiter marquee. Keyed by recruiter name
+   * (must match DATA.recruiters strings). Wikipedia thumbnail URLs work
+   * well as silhouettes — we recolour them to ink-3 grey via CSS filter,
+   * so they read as quiet greyscale wordmarks rather than full-colour
+   * logos that would clash with the editorial palette. Missing keys
+   * fall back to the placeholder rendered inline by Recruiters.tsx.
+   */
+  recruiterLogos: {
+    "Mahindra":        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Mahindra_Rise_logo.svg/200px-Mahindra_Rise_logo.svg.png",
+    "Tata Steel":      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Tata_Steel_Logo.svg/200px-Tata_Steel_Logo.svg.png",
+    "Tata Motors":     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tata_logo.svg/200px-Tata_logo.svg.png",
+    "Tata Power":      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tata_logo.svg/200px-Tata_logo.svg.png",
+    "BEL":             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Bharat_Electronics_Logo.svg/200px-Bharat_Electronics_Logo.svg.png",
+    "Indian Railways": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Indian_Railways.svg/200px-Indian_Railways.svg.png",
+    "JCB":             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/JCB_Logo.svg/200px-JCB_Logo.svg.png",
+    "Asian Paints":    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Asian_Paints_Logo.svg/200px-Asian_Paints_Logo.svg.png",
+    "BHEL":            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Bharat_Heavy_Electricals_Limited_logo.svg/200px-Bharat_Heavy_Electricals_Limited_logo.svg.png",
+    "UPPCL":           "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Uppcl_logo.png/200px-Uppcl_logo.png",
+    "Adani Solar":     "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Adani_logo_2012.svg/200px-Adani_logo_2012.svg.png",
+    "Amul":            "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Amul_logo_2025.svg/200px-Amul_logo_2025.svg.png",
+    "Mother Dairy":    "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Mother_Dairy.svg/200px-Mother_Dairy.svg.png",
+    "Nestlé":          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Nestl%C3%A9.svg/200px-Nestl%C3%A9.svg.png",
+    "Bajaj":           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Bajaj_logo.svg/200px-Bajaj_logo.svg.png",
+    "Hero MotoCorp":   "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Hero_MotoCorp_Logo.svg/200px-Hero_MotoCorp_Logo.svg.png",
+    "Ola Electric":    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ola_Electric_logo.svg/200px-Ola_Electric_logo.svg.png",
+  } as Record<string, string>,
+
   /** Short alt-text for each slot in triplesByCode — same shape. */
   triplesAltByCode: {
     "355": [

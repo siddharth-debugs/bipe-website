@@ -118,7 +118,7 @@ export const DATA: DataShape = {
   stats: [
     { num: "16", label: "Years serving Eastern UP", sub: "since 2010" },
     { num: "1,000+", label: "Successful alumni", sub: "Mahindra · Tata · BEL" },
-    { num: "5", label: "BTEUP-licensed branches", sub: "incl. rare Dairy" },
+    { num: "5", label: "BTEUP-affiliated branches", sub: "incl. rare Dairy" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
   ],
@@ -135,7 +135,7 @@ export const DATA: DataShape = {
   whyBipe: [
     { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },
     { num: "02", metric: "3-layer", metricLabel: "assessment", title: "Outcome-based pedagogy.", body: "Semester exam + continuous assessment + project work, calibrated against published Program Outcomes. We measure progress, not attendance.", icon: "M3 17l6-6 4 4 8-8" },
-    { num: "03", metric: "<1.1%", metricLabel: "of UP polytechnics", title: "Rare Dairy Engineering diploma.", body: "BTEUP-licensed Dairy Engineering (Code 327). Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
+    { num: "03", metric: "<1.1%", metricLabel: "of UP polytechnics", title: "Rare Dairy Engineering diploma.", body: "BTEUP-affiliated Dairy Engineering (Code 327). Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
     { num: "04", metric: "1,000+", metricLabel: "alumni in 16 yrs", title: "Eastern UP-built. Thousands placed.", body: "Alumni at Mahindra, Tata Steel, BEL, Indian Railways. AFRC-approved fees with no hidden charges.", icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
   ],
   testimonials: [

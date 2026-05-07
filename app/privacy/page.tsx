@@ -26,7 +26,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">§ Privacy Policy · DPDP-aligned</div>
+          <div className="eyebrow">/ Privacy Policy · DPDP-aligned</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
             How we handle{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>

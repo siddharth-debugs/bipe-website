@@ -15,7 +15,7 @@ export const WhyBipe = () => {
       <div className="container">
         <div className="reveal bipe-split" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 56, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
           <div>
-            <div className="eyebrow">§ Why BIPE</div>
+            <div className="eyebrow">/ Why BIPE</div>
             <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "14ch" }}>
               We measure what students <span className="serif" style={{ color: "var(--brand)" }}>become</span>.
             </h2>

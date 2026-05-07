@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
+      // Recruiter wordmarks for the home-page marquee — Wikipedia
+      // commons / en thumbnails. We recolour them to grey via filter
+      // so they don't pop the brand palette.
+      { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

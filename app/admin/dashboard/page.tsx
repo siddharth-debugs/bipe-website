@@ -100,7 +100,7 @@ export default function OverviewPage() {
 
       <div className="admin-card" style={{ marginTop: 22, padding: 22 }}>
         <div className="admin-eyebrow" style={{ color: "var(--ink-3)" }}>
-          § Tips
+          / Tips
         </div>
         <div className="admin-h3" style={{ marginTop: 6 }}>
           Working with submissions

@@ -201,7 +201,7 @@ export default function Page() {
       <section className="section" style={{ position: "relative", overflow: "hidden" }}>
         <div className="container">
           <div style={{ maxWidth: "65ch", margin: "0 auto" }}>
-            <div className="eyebrow" style={{ textAlign: "center" }}>§ A NOTE FROM THE CHAIRMAN&rsquo;S DESK</div>
+            <div className="eyebrow" style={{ textAlign: "center" }}>/ A NOTE FROM THE CHAIRMAN&rsquo;S DESK</div>
             <h2 className="bipe-h2" style={{ marginTop: 14, textAlign: "center", maxWidth: "22ch", marginInline: "auto" }}>
               To every parent who has ever asked,{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -268,7 +268,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ Five chapters of one life</div>
+              <div className="eyebrow">/ Five chapters of one life</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
                 A career devoted to{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -324,7 +324,7 @@ export default function Page() {
         <div className="container">
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">§ Four pillars</div>
+              <div className="eyebrow">/ Four pillars</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 What the trust stands{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -391,7 +391,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "var(--accent)" }}>§ NEXT STEP</div>
+                <div className="eyebrow" style={{ color: "var(--accent)" }}>/ NEXT STEP</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)" }}>
                   Come and see for yourself.{" "}
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>

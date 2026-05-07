@@ -21,7 +21,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">§ Terms of Use</div>
+          <div className="eyebrow">/ Terms of Use</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
             Terms governing{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -85,7 +85,7 @@ export default function Page() {
           ))}
 
           <article style={{ marginTop: 32, padding: 28, borderRadius: 18, background: "var(--paper-2)", border: "1px solid var(--line)" }}>
-            <div className="eyebrow">§ Grievance Officer · IT Rules 2021</div>
+            <div className="eyebrow">/ Grievance Officer · IT Rules 2021</div>
             <p style={{ marginTop: 10, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7 }}>
               <strong>Office of the Principal · BIPE</strong><br />
               Email: <a href={`mailto:${DATA.contact.emailGrievance}`} style={{ color: "var(--brand)" }}>{DATA.contact.emailGrievance}</a><br />

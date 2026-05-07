@@ -128,6 +128,18 @@ body.no-motion .marquee-track { animation: none; }
   to   { transform: translateX(-50%); }
 }
 
+/* Recruiter logo wordmarks — recoloured to match the muted ink-3 used
+   for the company name beside them, so colour logos don't clash with
+   the editorial palette. grayscale + slight opacity gives a uniform
+   silhouette across the whole strip. */
+.bipe-recruiter-logo {
+  filter: grayscale(1) opacity(0.65) brightness(0.85);
+  transition: filter .25s var(--ease, ease);
+}
+.bipe-recruiter:hover .bipe-recruiter-logo {
+  filter: grayscale(0) opacity(1) brightness(1);
+}
+
 .card {
   background: var(--white);
   border: 1px solid var(--line);

@@ -6,7 +6,7 @@ import { z } from "zod";
  * added here flow through to both client-side validation and the
  * server-side trust boundary, plus the email body sent to admissions.
  *
- * Branch options stay in lockstep with lib/data.ts (5 BTEUP-licensed
+ * Branch options stay in lockstep with lib/data.ts (5 BTEUP-affiliated
  * branches). Updating one without the other is a footgun.
  */
 

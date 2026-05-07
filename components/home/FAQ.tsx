@@ -25,7 +25,7 @@ export const FAQ = () => {
       <div className="container">
         <div className="reveal bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 48, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
           <div>
-            <div className="eyebrow">§ FAQ</div>
+            <div className="eyebrow">/ FAQ</div>
             <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
               Asked & <span className="serif" style={{ color: "var(--brand)" }}>answered.</span>
             </h2>
