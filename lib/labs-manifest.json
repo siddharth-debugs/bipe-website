@@ -1,0 +1,146 @@
+[
+  {
+    "publicId": "bipe/labs/cse/networking-lab",
+    "category": "cse",
+    "title": "Networking Lab",
+    "width": 3072,
+    "height": 4096,
+    "version": 1778149824
+  },
+  {
+    "publicId": "bipe/labs/mechanical/smithy-forging",
+    "category": "mechanical",
+    "title": "Smithy & Forging",
+    "width": 720,
+    "height": 1280,
+    "version": 1778149828
+  },
+  {
+    "publicId": "bipe/labs/mechanical/pt-lathe-shop",
+    "category": "mechanical",
+    "title": "PT Lathe Shop",
+    "width": 960,
+    "height": 1280,
+    "version": 1778149830
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile-project-work",
+    "category": "mechanical",
+    "title": "Auto Mobile Project Work",
+    "width": 1080,
+    "height": 960,
+    "version": 1778149833
+  },
+  {
+    "publicId": "bipe/labs/mechanical/cnc-controller",
+    "category": "mechanical",
+    "title": "CNC Controller",
+    "width": 960,
+    "height": 1280,
+    "version": 1778149835
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile-lab-engine-strip",
+    "category": "mechanical",
+    "title": "Auto Mobile Lab — Engine Strip",
+    "width": 913,
+    "height": 1280,
+    "version": 1778149838
+  },
+  {
+    "publicId": "bipe/labs/mechanical/machine-shop",
+    "category": "mechanical",
+    "title": "Machine Shop",
+    "width": 1600,
+    "height": 1200,
+    "version": 1778149840
+  },
+  {
+    "publicId": "bipe/labs/mechanical/welding-shop",
+    "category": "mechanical",
+    "title": "Welding Shop",
+    "width": 1014,
+    "height": 1280,
+    "version": 1778149843
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile-lab-workbench",
+    "category": "mechanical",
+    "title": "Auto Mobile Lab — Workbench",
+    "width": 920,
+    "height": 1280,
+    "version": 1778149846
+  },
+  {
+    "publicId": "bipe/labs/mechanical/machine-shop-lathes",
+    "category": "mechanical",
+    "title": "Machine Shop — Lathes",
+    "width": 1280,
+    "height": 960,
+    "version": 1778149848
+  },
+  {
+    "publicId": "bipe/labs/mechanical/machine-shop-milling-bay",
+    "category": "mechanical",
+    "title": "Machine Shop — Milling Bay",
+    "width": 1280,
+    "height": 960,
+    "version": 1778149851
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile-lab",
+    "category": "mechanical",
+    "title": "Auto Mobile Lab",
+    "width": 1280,
+    "height": 960,
+    "version": 1778149853
+  },
+  {
+    "publicId": "bipe/labs/mechanical/thermal-engineering-prototypes",
+    "category": "mechanical",
+    "title": "Thermal Engineering Prototypes",
+    "width": 1280,
+    "height": 960,
+    "version": 1778149856
+  },
+  {
+    "publicId": "bipe/labs/mechanical/auto-mobile-lab-wide",
+    "category": "mechanical",
+    "title": "Auto Mobile Lab — Wide",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778149860
+  },
+  {
+    "publicId": "bipe/labs/mechanical/machine-shop-wide",
+    "category": "mechanical",
+    "title": "Machine Shop — Wide",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778149865
+  },
+  {
+    "publicId": "bipe/labs/mechanical/pt-shop-wide-1",
+    "category": "mechanical",
+    "title": "PT Shop — Wide 1",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778149870
+  },
+  {
+    "publicId": "bipe/labs/mechanical/pt-shop-wide-2",
+    "category": "mechanical",
+    "title": "PT Shop — Wide 2",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778149874
+  },
+  {
+    "publicId": "bipe/labs/civil/engineering-drawing-class",
+    "category": "civil",
+    "title": "Engineering Drawing Class",
+    "width": 4000,
+    "height": 2250,
+    "version": 1778149878
+  }
+]

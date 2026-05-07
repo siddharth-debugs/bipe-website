@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       // commons / en thumbnails. We recolour them to grey via filter
       // so they don't pop the brand palette.
       { protocol: "https", hostname: "upload.wikimedia.org" },
+      // Cloudinary CDN for the campus lab photo gallery (synced from
+      // Drive via scripts/sync-labs.mjs).
+      { protocol: "https", hostname: "res.cloudinary.com" },
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

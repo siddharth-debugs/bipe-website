@@ -7,6 +7,7 @@ import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { LabsGallery } from "@/components/campus/LabsGallery";
 
 export const metadata: Metadata = metaFor("campus");
 
@@ -317,6 +318,31 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
+      {/* 5b. INSIDE THE LABS — Cloudinary-backed, tab-filtered photo gallery     */}
+      {/*                       sourced from the BIPE Drive folder.              */}
+      {/* ====================================================================== */}
+      <section className="section">
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 32, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
+            <div>
+              <div className="eyebrow">Inside the labs</div>
+              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "20ch" }}>
+                From textbook to{" "}
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  toolbox.
+                </span>
+              </h2>
+            </div>
+            <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
+              Real photos, sorted by department. Tap a pill to filter — every shot is from our own workshops, not stock.
+            </p>
+          </div>
+
+          <LabsGallery />
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
       {/* 6. SPORTS — DARK FULL BLEED                                             */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--ink)", color: "var(--paper)", position: "relative", overflow: "hidden" }}>
@@ -432,60 +458,6 @@ export default function Page() {
               <span><strong style={{ color: "var(--ink)" }}>24×7 security</strong></span>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
-      {/* 7b. INSIDE THE LABS — real BIPE photos (not stock)                     */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--paper-2)" }}>
-        <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 36, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
-            <div>
-              <div className="eyebrow">Inside the labs</div>
-              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "20ch" }}>
-                From textbook to{" "}
-                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  toolbox.
-                </span>
-              </h2>
-            </div>
-            <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              These are real photos from our workshops — students mid-experiment in the BIPE polo. No stock photography on this page.
-            </p>
-          </div>
-
-          <div className="bipe-labs-grid">
-            {[
-              { src: "/labs/workshop.jpg",                title: "Machine shop",            branch: "Mechanical · Production" },
-              { src: "/labs/lathe.jpg",                   title: "PT lathe shop",           branch: "Mechanical · Production" },
-              { src: "/labs/milling.jpg",                 title: "Universal milling bay",   branch: "Mechanical · Production" },
-              { src: "/labs/cnc.jpg",                     title: "CNC controller",          branch: "Mechanical · Production" },
-              { src: "/labs/welding.jpg",                 title: "Welding shop",            branch: "Mechanical · Production" },
-              { src: "/labs/smithy.jpg",                  title: "Smithy & forging",        branch: "Mechanical · Production" },
-              { src: "/labs/automobile.jpg",              title: "Automobile lab",          branch: "Mechanical · Production" },
-              { src: "/labs/engine-hoist.jpg",            title: "Engine project work",     branch: "Mechanical · Production" },
-              { src: "/labs/prototypes.jpg",              title: "Thermal engineering",     branch: "Mechanical · Production" },
-              { src: "/labs/electrical-measurement.jpg",  title: "Electrical measurement",  branch: "Electrical Engg" },
-              { src: "/labs/electrical-machines.jpg",     title: "Electrical machines lab", branch: "Electrical Engg" },
-              { src: "/labs/instrumentation.jpg",         title: "Instrumentation & control", branch: "Electrical Engg" },
-              { src: "/labs/plc-scada.jpg",               title: "PLC & SCADA",             branch: "Electrical Engg" },
-              { src: "/labs/civil-drafting.jpg",          title: "Engineering drawing",     branch: "Civil Engg" },
-              { src: "/labs/chemistry.jpg",               title: "Applied chemistry",       branch: "First-year fundamentals" },
-            ].map((p) => (
-              <figure key={p.src} className="bipe-lab-tile">
-                <Img src={p.src} style={{ aspectRatio: "4 / 5", borderRadius: 0 }} />
-                <figcaption className="bipe-lab-cap">
-                  <span className="bipe-lab-cap-title">{p.title}</span>
-                  <span className="bipe-lab-cap-meta">{p.branch}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-
-          <p style={{ marginTop: 28, fontSize: 13, color: "var(--ink-3)", fontFamily: "var(--font-mono)", letterSpacing: "0.06em", textTransform: "uppercase", textAlign: "center" }}>
-            Photos · BIPE Varanasi · Dec 2023 / May 2026
-          </p>
         </div>
       </section>
 
