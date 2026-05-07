@@ -1841,6 +1841,58 @@ body.no-motion .skeleton { animation: none; }
   background: var(--paper-2);
 }
 
+/* Tile is a button (opens the lightbox) — strip native chrome and
+   reuse the figure's positioned aspect-ratio box. */
+.bipe-lab-tile-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: var(--paper-2);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+.bipe-lab-tile-trigger:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+/* Subtle "click me" affordance — a soft white glaze on hover. */
+.bipe-lab-tile-glass {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(0,0,0,0.18) 100%);
+  opacity: 0;
+  transition: opacity .25s var(--ease, ease);
+  pointer-events: none;
+}
+.bipe-lab-tile:hover .bipe-lab-tile-glass {
+  opacity: 1;
+}
+
+/* "Show more" footer button. */
+.bipe-labs-more {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+.bipe-labs-more .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.bipe-labs-more-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink-3);
+}
+
 /* =========================================================================
    Testimonials marquee — two strips scrolling opposite directions, with
    edge fades and pause-on-hover. The track is rendered with the items
