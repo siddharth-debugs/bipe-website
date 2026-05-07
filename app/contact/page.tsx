@@ -58,7 +58,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ Contact</div>
+              <div className="eyebrow">Contact</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 Talk to us.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -134,7 +134,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Three primary channels</div>
+              <div className="eyebrow">Three primary channels</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Pick what&apos;s{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -267,7 +267,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start", marginBottom: 40 }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ By department</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>By department</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "16ch" }}>
                 Reach the right{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -326,7 +326,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 32, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Address & directions</div>
+              <div className="eyebrow">Address & directions</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
                 Where to{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -341,7 +341,7 @@ export default function Page() {
 
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 22 }}>
             <article className="card" style={{ padding: 36, background: "var(--paper-2)" }}>
-              <div className="eyebrow">/ Postal address</div>
+              <div className="eyebrow">Postal address</div>
               <div className="serif" style={{ marginTop: 14, fontStyle: "italic", fontWeight: 400, fontSize: 30, lineHeight: 1.2, color: "var(--ink)" }}>
                 {C.address}
               </div>
@@ -366,7 +366,7 @@ export default function Page() {
             </article>
 
             <article className="card" style={{ padding: 36, background: "var(--white)" }}>
-              <div className="eyebrow">/ How to reach</div>
+              <div className="eyebrow">How to reach</div>
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
                 Quick note for first-time visitors. The full transport breakdown — air, rail, road, free shuttle — sits on the visit page.
               </p>
@@ -409,7 +409,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: 56, alignItems: "start" }}>
             <div style={{ position: "sticky", top: 100 }}>
-              <div className="eyebrow" style={{ color: "var(--brand)" }}>/ Quick question</div>
+              <div className="eyebrow" style={{ color: "var(--brand)" }}>Quick question</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "14ch" }}>
                 Send one,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -465,7 +465,7 @@ export default function Page() {
               background: "color-mix(in oklab, var(--paper) 6%, transparent)",
               border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
             }}>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Office hours</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>Office hours</div>
               <div className="serif" style={{ marginTop: 14, fontStyle: "italic", fontWeight: 400, fontSize: 44, lineHeight: 1.05, color: "var(--paper)" }}>
                 Mon–Sat<br /><span style={{ color: "var(--accent)" }}>9 — 5</span>
               </div>
@@ -487,7 +487,7 @@ export default function Page() {
             </div>
 
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ On the socials</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>On the socials</div>
               <h3 className="bipe-h2" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}>
                 Or follow along where you{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -547,7 +547,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr auto", gap: 40, alignItems: "center" }}>
               <div>
-                <div className="eyebrow">/ Two next steps</div>
+                <div className="eyebrow">Two next steps</div>
                 <p className="serif" style={{
                   marginTop: 16,
                   fontStyle: "italic", fontWeight: 400,

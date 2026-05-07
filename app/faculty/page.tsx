@@ -351,7 +351,7 @@ export default function Page() {
         />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">/ Faculty · {DATA.contact.aicte}</div>
+          <div className="eyebrow">Faculty · {DATA.contact.aicte}</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
             The teachers,{" "}
             <span
@@ -487,7 +487,7 @@ export default function Page() {
                 }}
               >
                 <div>
-                  <div className="eyebrow">/ Office of the Principal</div>
+                  <div className="eyebrow">Office of the Principal</div>
                   <h2
                     className="bipe-h2"
                     style={{ marginTop: 12, maxWidth: "16ch", letterSpacing: "-0.02em" }}
@@ -639,7 +639,7 @@ export default function Page() {
               }}
             >
               <div>
-                <div className="eyebrow">/ Student services</div>
+                <div className="eyebrow">Student services</div>
                 <h2 className="bipe-h2" style={{ marginTop: 12, maxWidth: "20ch" }}>
                   Two offices,{" "}
                   <span
@@ -951,7 +951,7 @@ export default function Page() {
               borderBottom: "1px solid var(--line)",
             }}
           >
-            <div className="eyebrow">/ Office staff</div>
+            <div className="eyebrow">Office staff</div>
             <h2 className="bipe-h3" style={{ marginTop: 12, maxWidth: "30ch" }}>
               Records, fees, library, day-to-day operations.
             </h2>
@@ -1036,7 +1036,7 @@ export default function Page() {
               }}
             />
             <div style={{ position: "relative" }}>
-              <div className="eyebrow">/ Talk to a teacher</div>
+              <div className="eyebrow">Talk to a teacher</div>
               <h3 className="bipe-h3" style={{ marginTop: 12, maxWidth: "22ch" }}>
                 Pick a branch you&rsquo;re considering &mdash; we&rsquo;ll connect you with the lecturer who runs that lab.
               </h3>

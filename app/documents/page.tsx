@@ -77,7 +77,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ Documents</div>
+              <div className="eyebrow">Documents</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "18ch" }}>
                 What to bring on{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -124,7 +124,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Mandatory · Nine documents</div>
+              <div className="eyebrow">Mandatory · Nine documents</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
                 These nine{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -182,7 +182,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Conditional & optional</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>Conditional & optional</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "18ch" }}>
                 Some only{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -231,7 +231,7 @@ export default function Page() {
       <section className="section">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div className="eyebrow">/ Three things parents always thank us for</div>
+            <div className="eyebrow">Three things parents always thank us for</div>
             <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch", marginInline: "auto" }}>
               Quick-prep{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -288,7 +288,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow">/ Missing a document?</div>
+                <div className="eyebrow">Missing a document?</div>
                 <p className="serif" style={{
                   fontStyle: "italic", fontWeight: 400,
                   fontSize: "clamp(28px, 3.4vw, 44px)",

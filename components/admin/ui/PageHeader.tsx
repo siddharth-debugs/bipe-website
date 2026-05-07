@@ -29,7 +29,7 @@ export function PageHeader({ eyebrow, title, accent, description, right }: PageH
       }}
     >
       <div>
-        <div className="admin-eyebrow">/ {eyebrow}</div>
+        <div className="admin-eyebrow">{eyebrow}</div>
         <h1 className="admin-h1" style={{ marginTop: 8 }}>
           {title}
           {accent && (

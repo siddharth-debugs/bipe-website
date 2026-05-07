@@ -236,7 +236,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">/ MANDATORY DISCLOSURE · 2026-27</div>
+          <div className="eyebrow">MANDATORY DISCLOSURE · 2026-27</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
             Public disclosure,{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -260,7 +260,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", paddingTop: 40, paddingBottom: 40 }}>
         <div className="container">
-          <div className="eyebrow">/ Index</div>
+          <div className="eyebrow">Index</div>
           <div className="bipe-grid-4" style={{
             marginTop: 18,
             display: "grid",
@@ -322,7 +322,7 @@ export default function Page() {
             display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 14,
           }}>
             <div>
-              <div className="eyebrow">/ Last revised</div>
+              <div className="eyebrow">Last revised</div>
               <div style={{ marginTop: 6, fontWeight: 600 }}>2026-27 · revised {DATA.contact.aicteEoaDate}. Next review: 2027-28.</div>
             </div>
             <Link href="/approvals" className="btn btn-ghost">

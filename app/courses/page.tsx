@@ -119,7 +119,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ Academics · 2026-27</div>
+              <div className="eyebrow">Academics · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 <span
                   className="serif"
@@ -268,7 +268,7 @@ export default function Page() {
                   paddingBottom: 14,
                   borderBottom: "1px dashed color-mix(in oklab, var(--paper) 22%, transparent)",
                 }}>
-                  <span style={{ color: "var(--accent)", fontWeight: 600 }}>/ BIPE Catalogue</span>
+                  <span style={{ color: "var(--accent)", fontWeight: 600 }}>BIPE Catalogue</span>
                   <span style={{ color: "color-mix(in oklab, var(--paper) 50%, transparent)" }}>
                     Vol. 16 · 2026-27
                   </span>
@@ -430,7 +430,7 @@ export default function Page() {
             }}
           >
             <div>
-              <div className="eyebrow">/ Eligibility</div>
+              <div className="eyebrow">Eligibility</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 One path.{" "}
                 <span
@@ -792,7 +792,7 @@ export default function Page() {
             }}
           >
             <div>
-              <div className="eyebrow">/ How to choose</div>
+              <div className="eyebrow">How to choose</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Pick the branch{" "}
                 <span

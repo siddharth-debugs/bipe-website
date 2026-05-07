@@ -58,7 +58,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ Apply · 2026-27</div>
+              <div className="eyebrow">Apply · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
                 Begin your application.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -84,7 +84,7 @@ export default function Page() {
                 filter: "blur(80px)", pointerEvents: "none",
               }} />
               <div style={{ position: "relative" }}>
-                <div className="eyebrow" style={{ color: "var(--brand)" }}>/ What you get</div>
+                <div className="eyebrow" style={{ color: "var(--brand)" }}>What you get</div>
                 <div style={{ marginTop: 18, display: "grid", gap: 14 }}>
                   {[
                     ["24h", "Response · phone or WhatsApp"],
@@ -117,7 +117,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 32, paddingBottom: 22, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ After you submit</div>
+              <div className="eyebrow">After you submit</div>
               <h2 className="bipe-h2" style={{ marginTop: 12, maxWidth: "16ch" }}>
                 Three things{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -177,7 +177,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ On the call</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>On the call</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "16ch" }}>
                 Four things we will{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -225,7 +225,7 @@ export default function Page() {
       <section className="section">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <div className="eyebrow">/ Or — three other ways</div>
+            <div className="eyebrow">Or — three other ways</div>
             <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch", marginInline: "auto" }}>
               The form is just{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>

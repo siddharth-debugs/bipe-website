@@ -85,7 +85,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">/ AI Policy · 2026</div>
+          <div className="eyebrow">AI Policy · 2026</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
             AI augments learning.{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -107,7 +107,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
         <div className="container">
-          <div className="eyebrow">/ Five principles</div>
+          <div className="eyebrow">Five principles</div>
           <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch", marginBottom: 32 }}>
             Our published{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -158,7 +158,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 32, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Concrete use-cases</div>
+              <div className="eyebrow">Concrete use-cases</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch" }}>
                 What we{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -219,7 +219,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container" style={{ maxWidth: 980 }}>
-          <div className="eyebrow">/ Parent &amp; student FAQ</div>
+          <div className="eyebrow">Parent &amp; student FAQ</div>
           <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch", marginBottom: 28 }}>
             Questions{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -281,7 +281,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Concerns or feedback</div>
+                <div className="eyebrow" style={{ color: "var(--accent)" }}>Concerns or feedback</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}>
                   Talk to us about{" "}
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>

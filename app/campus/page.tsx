@@ -101,7 +101,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ Campus · Phoolpur</div>
+              <div className="eyebrow">Campus · Phoolpur</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
                 Six acres.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -185,7 +185,7 @@ export default function Page() {
               </div>
             </div>
             <div>
-              <div className="eyebrow">/ Library</div>
+              <div className="eyebrow">Library</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 A library that{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -234,7 +234,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Computer centre · ERP</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>Computer centre · ERP</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch", color: "var(--paper)" }}>
                 One floor.{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -282,7 +282,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Five labs</div>
+              <div className="eyebrow">Five labs</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Labs that{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -338,7 +338,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Recreation</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>Recreation</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch", color: "var(--paper)" }}>
                 Cricket. Football. Kabaddi.{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -391,7 +391,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Sustainability · Access</div>
+              <div className="eyebrow">Sustainability · Access</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "18ch" }}>
                 Built to be{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -442,7 +442,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 36, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Inside the labs</div>
+              <div className="eyebrow">Inside the labs</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "20ch" }}>
                 From textbook to{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -512,7 +512,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
               <div>
-                <div className="eyebrow">/ Visit</div>
+                <div className="eyebrow">Visit</div>
                 <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                   Walk it before{" "}
                   <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>

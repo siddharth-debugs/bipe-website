@@ -26,7 +26,7 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">/ Anti-Ragging</div>
+          <div className="eyebrow">Anti-Ragging</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
             BIPE is a{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -42,7 +42,7 @@ export default function Page() {
 
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container" style={{ maxWidth: 980 }}>
-          <div className="eyebrow">/ How to report</div>
+          <div className="eyebrow">How to report</div>
           <h2 className="bipe-h2" style={{ marginTop: 14, marginBottom: 28 }}>If you see it. If you experience it.</h2>
 
           <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
@@ -81,14 +81,14 @@ export default function Page() {
 
       <section className="section">
         <div className="container" style={{ maxWidth: 880 }}>
-          <div className="eyebrow">/ The undertaking</div>
+          <div className="eyebrow">The undertaking</div>
           <h2 className="bipe-h2" style={{ marginTop: 14 }}>What every BIPE student signs.</h2>
           <p style={{ marginTop: 18, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.8 }}>
             Per UGC Regulations 2009 and the directions of the Supreme Court of India dated 8 May 2009, every student admitted to BIPE — and their parent / guardian — must sign the Anti-Ragging Affidavit at the time of admission. The undertaking confirms understanding of what constitutes ragging, the punishments under law, and a commitment to refrain from any such conduct.
           </p>
 
           <div className="card" style={{ marginTop: 26, padding: 28, background: "var(--paper-2)" }}>
-            <div className="eyebrow">/ Penalties</div>
+            <div className="eyebrow">Penalties</div>
             <ul style={{ marginTop: 14, paddingLeft: 22, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.85 }}>
               <li>Suspension from attending classes and academic privileges</li>
               <li>Withholding scholarships and other benefits</li>

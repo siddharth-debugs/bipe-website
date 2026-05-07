@@ -83,7 +83,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ Scholarships</div>
+              <div className="eyebrow">Scholarships</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 Many BIPE students{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -118,7 +118,7 @@ export default function Page() {
                 filter: "blur(100px)", pointerEvents: "none",
               }} />
               <div style={{ position: "relative" }}>
-                <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>/ For eligible categories</div>
+                <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>For eligible categories</div>
                 <div className="serif" style={{
                   fontStyle: "italic", fontWeight: 400,
                   fontSize: "clamp(120px, 14vw, 200px)",
@@ -153,7 +153,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Government schemes</div>
+              <div className="eyebrow">Government schemes</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Four{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -215,7 +215,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ BIPE merit awards</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>BIPE merit awards</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "16ch" }}>
                 For students who earned{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -276,7 +276,7 @@ export default function Page() {
       <section className="section">
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div className="eyebrow">/ The promise</div>
+            <div className="eyebrow">The promise</div>
             <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "22ch", marginInline: "auto" }}>
               Twenty-four hours from your message{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -333,7 +333,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Common questions</div>
+              <div className="eyebrow">Common questions</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Four questions{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -392,7 +392,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Ask the scholarships team</div>
+                <div className="eyebrow" style={{ color: "var(--accent)" }}>Ask the scholarships team</div>
                 <p className="serif" style={{
                   fontStyle: "italic", fontWeight: 400,
                   fontSize: "clamp(28px, 3.4vw, 48px)",

@@ -158,7 +158,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 64, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ APPROVALS · 2026-27</div>
+              <div className="eyebrow">APPROVALS · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
                 All approvals &mdash;{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -263,7 +263,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ The four approvals</div>
+              <div className="eyebrow">The four approvals</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Each one,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -352,7 +352,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40 }}>
             <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>/ By the numbers</div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>By the numbers</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch", color: "var(--paper)" }}>
                 The 2026-27{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -404,7 +404,7 @@ export default function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 24 }}>
             <div>
-              <div className="eyebrow">/ Seat matrix</div>
+              <div className="eyebrow">Seat matrix</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch" }}>
                 Branch-wise{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -468,7 +468,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 32, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Downloads</div>
+              <div className="eyebrow">Downloads</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch" }}>
                 Documents,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -528,7 +528,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)", paddingTop: 40, paddingBottom: 40, position: "relative", overflow: "hidden" }}>
         <div className="container">
-          <div className="eyebrow">/ Regulator portals · directory</div>
+          <div className="eyebrow">Regulator portals · directory</div>
           <h2 className="bipe-h3" style={{ marginTop: 12, fontSize: 22, marginBottom: 22 }}>
             Every government and regulatory portal that lists or governs BIPE.
           </h2>
@@ -580,7 +580,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Verify independently</div>
+                <div className="eyebrow" style={{ color: "var(--accent)" }}>Verify independently</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}>
                   Don't take our word for it.{" "}
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>

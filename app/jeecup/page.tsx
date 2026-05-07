@@ -94,7 +94,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">/ JEECUP guidance</div>
+              <div className="eyebrow">JEECUP guidance</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
                 Your{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -178,7 +178,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ The pathway</div>
+              <div className="eyebrow">The pathway</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Six checkpoints from{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -239,7 +239,7 @@ export default function Page() {
 
         <div className="container" style={{ position: "relative" }}>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div className="eyebrow" style={{ color: "var(--accent)" }}>/ JEECUP · Group A</div>
+            <div className="eyebrow" style={{ color: "var(--accent)" }}>JEECUP · Group A</div>
             <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch", marginInline: "auto" }}>
               One group.{" "}
               <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
@@ -288,7 +288,7 @@ export default function Page() {
         <div className="container">
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
             <div>
-              <div className="eyebrow">/ Before counselling</div>
+              <div className="eyebrow">Before counselling</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "14ch" }}>
                 A six-item{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -338,7 +338,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">/ Four common pitfalls</div>
+              <div className="eyebrow">Four common pitfalls</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Every year, four{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -399,7 +399,7 @@ export default function Page() {
             }} />
             <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "var(--accent)" }}>/ Stuck somewhere?</div>
+                <div className="eyebrow" style={{ color: "var(--accent)" }}>Stuck somewhere?</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)", maxWidth: "16ch" }}>
                   We have shepherded a thousand families through{" "}
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
