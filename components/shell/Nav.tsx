@@ -137,7 +137,7 @@ export function Nav() {
               <span style={{ textTransform: "uppercase", color: "var(--accent)", fontWeight: 600 }}>Admissions Open · 2026-27</span>
             </span>
             <span className="nav-utility-divider" />
-            <span style={{ textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 70%, transparent)" }}>JEECUP {C.jeecup}</span>
+            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>JEECUP {C.jeecup}</span>
           </div>
           <div className="nav-utility-right">
             <a href={`tel:${C.phone}`} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>

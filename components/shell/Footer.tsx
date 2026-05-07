@@ -47,7 +47,7 @@ export const Footer = () => {
             <span style={{ color: "var(--accent)", fontWeight: 600 }}>Admissions Open · 2026-27</span>
           </div>
           <div style={{ color: "color-mix(in oklab, var(--paper) 50%, transparent)" }}>
-            JEECUP {C.jeecup} · AICTE {C.aicte}
+            JEECUP {C.jeecup}
           </div>
         </div>
 
