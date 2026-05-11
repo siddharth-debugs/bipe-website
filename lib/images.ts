@@ -125,9 +125,10 @@ export const BIPE_IMG = {
       "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
     ],
     "322": [
-      // Civil: survey camp → auto level → R.C.C. drawing
+      // Civil: survey camp (students with theodolites) → construction site visit
+      // (students at site) → R.C.C. drawing (drafting board)
       "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151162/bipe/labs/civil/auto-level-jpg",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151174/bipe/labs/civil/construction-site-visit",
       "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151184/bipe/labs/civil/r-c-c-drawing",
     ],
     "328": [
@@ -167,7 +168,7 @@ export const BIPE_IMG = {
     ],
     "322": [
       "BIPE survey camp — students with field theodolites",
-      "Auto-level instrument on tripod — civil surveying field practice",
+      "BIPE civil students on a construction site visit",
       "Hand-drafted R.C.C. drawings on the civil drawing board",
     ],
     "328": [

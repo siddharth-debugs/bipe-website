@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import Image from "next/image";
 
 export interface CrossfadeSliderProps {
   images: { src: string; alt: string }[];
@@ -78,13 +77,23 @@ export const CrossfadeSlider = ({
             willChange: "opacity, transform",
           }}
         >
-          <Image
+          {/* Plain <img>, not next/image. Cloudinary already does
+              f_auto/q_auto/w_*; going through Next's image optimiser
+              breaks these URLs (same fix as LabsGallery on /campus). */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={img.src}
             alt={img.alt}
-            fill
-            sizes="(max-width: 720px) 100vw, 600px"
-            style={{ objectFit: "cover" }}
-            priority={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
           />
         </div>
       ))}
