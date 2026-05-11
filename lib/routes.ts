@@ -1,6 +1,6 @@
 export type RouteKey =
   | "home" | "about" | "courses" | "admission" | "apply" | "visit"
-  | "contact" | "placements" | "campus" | "fees" | "scholarships"
+  | "contact" | "placements" | "alumni" | "campus" | "fees" | "scholarships"
   | "documents" | "jeecup" | "hostel" | "faculty" | "events"
   | "chairman" | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
   | "mandatoryDisclosure" | "aiPolicy"
@@ -48,6 +48,11 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     path: "/placements",
     title: "Placements · 1,000+ alumni placed | BIPE",
     description: "Alumni at Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and more.",
+  },
+  alumni: {
+    path: "/alumni",
+    title: "Alumni · 870+ BIPE engineers across India | BIPE",
+    description: "Browse 870+ BIPE diploma alumni placed through 16 campus drives between 2016 and 2021. Filter by branch, year or recruiter.",
   },
   campus: {
     path: "/campus",
