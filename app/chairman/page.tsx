@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("chairman");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("chairman"); }
 
 const PILLARS: { roman: string; title: string; sub: string; body: string }[] = [
   {

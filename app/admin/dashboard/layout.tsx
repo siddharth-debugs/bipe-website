@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Mail,
   CalendarDays,
+  Search,
   Settings,
   LogOut,
   ExternalLink,
@@ -21,6 +22,7 @@ const NAV = [
   { href: "/admin/dashboard/apply", label: "Apply", Icon: GraduationCap },
   { href: "/admin/dashboard/contact", label: "Contact", Icon: Mail },
   { href: "/admin/dashboard/visit", label: "Visit", Icon: CalendarDays },
+  { href: "/admin/dashboard/seo", label: "SEO", Icon: Search },
   { href: "/admin/dashboard/settings", label: "Settings", Icon: Settings },
 ];
 

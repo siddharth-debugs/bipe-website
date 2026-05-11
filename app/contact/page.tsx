@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { ContactForm } from "./ContactForm";
 import { FAQ } from "@/components/home/FAQ";
 
-export const metadata: Metadata = metaFor("contact");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("contact"); }
 
 type DeptEmail = { num: string; dept: string; email: string; best: string; href: string; tone?: "danger" };
 type Social = { name: string; handle: string; href: string };

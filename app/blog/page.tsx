@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/PageHeader";
 
-export const metadata: Metadata = metaFor("blog");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("blog"); }
 
 type Post = {
   title: string;

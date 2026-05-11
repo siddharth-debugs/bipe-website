@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -9,7 +9,7 @@ import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { EventsGallery } from "@/components/events/EventsGallery";
 import { EVENT_PHOTOS, EVENT_YEARS } from "@/lib/events-gallery";
 
-export const metadata: Metadata = metaFor("events");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("events"); }
 
 type Flagship = {
   hi: string;

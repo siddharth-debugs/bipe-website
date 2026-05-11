@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { PhoneIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("grievance");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("grievance"); }
 
 const COMMITTEES: { name: string; email: string; basis: string; chair: string }[] = [
   {

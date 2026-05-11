@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("fees");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("fees"); }
 
 // TODO: confirm exact admission / examination / library / caution / ID-card fees
 // with Accounts Office once 2026-27 AFRC notification is published.

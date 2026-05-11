@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("mandatoryDisclosure");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("mandatoryDisclosure"); }
 
 // AICTE Approval Process Handbook 2024-27, Annexure-18: every approved
 // technical institution must publish a structured Mandatory Disclosure on

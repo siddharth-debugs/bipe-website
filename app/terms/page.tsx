@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 
-export const metadata: Metadata = metaFor("terms");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("terms"); }
 
 export default function Page() {
   return (

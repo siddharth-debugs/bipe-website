@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 
-export const metadata: Metadata = metaFor("privacy");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("privacy"); }
 
 // Compliance audit (§3.3) — DPDP Act 2023 will require institutions to
 // publish a Privacy Policy, Notice to Data Principals, consent flow, and a

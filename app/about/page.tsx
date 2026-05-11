@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("about");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("about"); }
 
 type Stat = { num: string; label: string; suffix?: string };
 const STATS: Stat[] = [

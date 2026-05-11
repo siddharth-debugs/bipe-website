@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { ArrowIcon } from "@/components/shell/Icons";
 import { DATA } from "@/lib/data";
 
-export const metadata: Metadata = metaFor("approvals");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("approvals"); }
 
 type Approval = {
   key: string;

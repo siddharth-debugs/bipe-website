@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -9,7 +9,7 @@ import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { LabsGallery } from "@/components/campus/LabsGallery";
 
-export const metadata: Metadata = metaFor("campus");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("campus"); }
 
 const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "6", label: "Acres", sub: "Phoolpur · single boundary" },

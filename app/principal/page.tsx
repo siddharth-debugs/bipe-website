@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("principal");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("principal"); }
 
 const PROMISES: { roman: string; title: string; sub: string; body: string }[] = [
   {

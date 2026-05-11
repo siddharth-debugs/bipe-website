@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("teaching");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("teaching"); }
 
 const PILLARS: { num: string; eyebrow: string; title: string; body: string }[] = [
   {

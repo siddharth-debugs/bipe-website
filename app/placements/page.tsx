@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -9,7 +9,7 @@ import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { PlacementsGallery } from "@/components/placements/PlacementsGallery";
 
-export const metadata: Metadata = metaFor("placements");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("placements"); }
 
 // ---------------------------------------------------------------------------
 // Data — reuse DATA.recruiters + audit-only names; dedupe.

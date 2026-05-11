@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { VisitForm } from "./VisitForm";
 
-export const metadata: Metadata = metaFor("visit");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("visit"); }
 
 type Step = { num: string; title: string; body: string };
 type Channel = { num: string; eyebrow: string; title: string; body: string; cta: React.ReactNode; tone: "wa" | "brand" | "neutral" };

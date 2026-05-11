@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { CoursesView } from "./CoursesView";
 
-export const metadata: Metadata = metaFor("courses");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("courses"); }
 
 const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
   {

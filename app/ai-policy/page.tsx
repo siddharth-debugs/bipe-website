@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("aiPolicy");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("aiPolicy"); }
 
 const PRINCIPLES: { n: string; t: string; b: string }[] = [
   {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { Counter } from "@/components/ui/Counter";
 import { Avatar } from "@/components/ui/Avatar";
@@ -16,7 +16,7 @@ import {
 import { DATA } from "@/lib/data";
 import Image from "next/image";
 
-export const metadata: Metadata = metaFor("faculty");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("faculty"); }
 
 const DEPT_ORDER: Department[] = [
   "Electrical",

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("documents");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("documents"); }
 
 const MANDATORY: { n: string; title: string; sub: string }[] = [
   { n: "01", title: "JEECUP Rank Card / Allotment Letter", sub: "Downloaded from the JEECUP portal · printed × 3" },

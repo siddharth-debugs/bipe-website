@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { HeroFull } from "@/components/home/HeroFull";
 import { StatsBar } from "@/components/home/StatsBar";
 import { Recruiters } from "@/components/home/Recruiters";
@@ -13,7 +13,7 @@ import { InlineApply } from "@/components/home/InlineApply";
 import { News } from "@/components/home/News";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
-export const metadata: Metadata = metaFor("home");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("home"); }
 
 export default function HomePage() {
   return (

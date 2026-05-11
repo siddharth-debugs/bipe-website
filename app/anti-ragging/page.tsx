@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { metaFor } from "@/lib/routes";
+import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 
-export const metadata: Metadata = metaFor("antiRagging");
+export async function generateMetadata(): Promise<Metadata> { return metadataFor("antiRagging"); }
 
 // Compliance audit (§3 / §A): UGC Anti-Ragging Regulations 2009 + Supreme
 // Court 2009 ruling require institutions to publish Anti-Ragging Committee
