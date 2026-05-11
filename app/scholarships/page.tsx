@@ -13,7 +13,7 @@ const GOV: { roman: string; cat: string; benefit: string; portal: string; href: 
   {
     roman: "i",
     cat: "SC / ST",
-    benefit: "Full tuition reimbursement plus maintenance",
+    benefit: "Full tuition reimbursement",
     portal: "scholarship.up.gov.in",
     href: "https://scholarship.up.gov.in",
     note: "Annual; submitted at the UP State portal each year. Income threshold applies.",
@@ -21,7 +21,7 @@ const GOV: { roman: string; cat: string; benefit: string; portal: string; href: 
   {
     roman: "ii",
     cat: "OBC",
-    benefit: "Tuition reimbursement, subject to income",
+    benefit: "Partial tuition fee reimbursement, subject to income",
     portal: "scholarship.up.gov.in",
     href: "https://scholarship.up.gov.in",
     note: "Family income ceiling per UP norms; renewable each year on satisfactory progress.",
@@ -29,7 +29,7 @@ const GOV: { roman: string; cat: string; benefit: string; portal: string; href: 
   {
     roman: "iii",
     cat: "EWS",
-    benefit: "Reimbursement per UP Government norms",
+    benefit: "Partial tuition fee reimbursement per UP Government norms",
     portal: "scholarship.up.gov.in",
     href: "https://scholarship.up.gov.in",
     note: "Requires valid EWS certificate from competent authority.",
@@ -59,7 +59,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Does the waiver cover hostel?",
-    a: "Government post-matric covers tuition; hostel and mess are separate (₹36,000 mess + room, paid semester-wise). BIPE merit waivers are also tuition-only. Some welfare schemes from the central tribal / minority ministries do top-up hostel costs — we will check eligibility for you.",
+    a: "Government post-matric covers tuition; hostel and mess are separate. Mess is ₹48,000 per year (₹24,000 per semester); room charges are billed separately. BIPE merit waivers are also tuition-only.",
   },
 ];
 
@@ -81,61 +81,23 @@ export default function Page() {
           filter: "blur(120px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative" }}>
-          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
-            <div>
-              <div className="eyebrow">Scholarships</div>
-              <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
-                Many BIPE students{" "}
-                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  pay much less
-                </span>{" "}
-                than the published fee.
-              </h1>
-              <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Full UP Government post-matric scholarships cover tuition for SC, ST, OBC, EWS and Minority categories. BIPE merit scholarships — for top JEECUP and 10th-class rankers — stack on top.
-              </p>
-              <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
-                <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
-                  <WhatsAppIcon /> Ask about scholarships
-                </a>
-              </div>
-            </div>
-
-            {/* "Zero" tile */}
-            <div style={{
-              position: "relative", overflow: "hidden",
-              borderRadius: 24,
-              border: "1px solid var(--line)",
-              background: "color-mix(in oklab, var(--accent) 18%, var(--white))",
-              padding: "48px 36px",
-              minHeight: 360,
-              display: "flex", flexDirection: "column", justifyContent: "space-between",
-            }}>
-              <div aria-hidden="true" style={{
-                position: "absolute", right: -100, top: -120, width: 360, height: 360, borderRadius: "50%",
-                background: "color-mix(in oklab, var(--accent) 30%, transparent)",
-                filter: "blur(100px)", pointerEvents: "none",
-              }} />
-              <div style={{ position: "relative" }}>
-                <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>For eligible categories</div>
-                <div className="serif" style={{
-                  fontStyle: "italic", fontWeight: 400,
-                  fontSize: "clamp(120px, 14vw, 200px)",
-                  lineHeight: 0.85,
-                  color: "var(--accent-deep)",
-                  letterSpacing: "-0.04em",
-                  marginTop: 16,
-                }}>
-                  ₹0
-                </div>
-                <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)" }}>
-                  Net tuition · with full reimbursement
-                </div>
-              </div>
-              <p className="muted" style={{ position: "relative", marginTop: 24, fontSize: 12, fontStyle: "italic", lineHeight: 1.5 }}>
-                * Subject to scholarship approval at the UP / NSP portal. Annual application required. We assist every step.
-              </p>
+          <div style={{ maxWidth: 820 }}>
+            <div className="eyebrow">Scholarships</div>
+            <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
+              Many BIPE students{" "}
+              <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                pay much less
+              </span>{" "}
+              than the published fee.
+            </h1>
+            <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
+              Full UP Government post-matric scholarships cover tuition for SC, ST, OBC, EWS, Minority and General categories. BIPE merit scholarships — for top JEECUP and 10th-class rankers — stack on top.
+            </p>
+            <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
+              <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
+              <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
+                <WhatsAppIcon /> Ask about scholarships
+              </a>
             </div>
           </div>
         </div>
@@ -238,13 +200,13 @@ export default function Page() {
                 lineHeight: 0.85, color: "var(--accent)",
                 letterSpacing: "-0.02em",
               }}>
-                25–50%
+                10–20%
               </div>
               <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                Tuition waiver · rank-slab
+                Tuition waiver · upto 5000 JEECUP rank
               </div>
               <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "40ch" }}>
-                The slab is published by Trust resolution after JEECUP results each year. High-rank candidates can expect significant reductions on the published ₹30,150 tuition.
+                The slab is published by Trust resolution after JEECUP results each year. Candidates within the top 5,000 JEECUP rank can expect a 10–20% reduction on the published ₹30,150 tuition.
               </p>
             </div>
 
@@ -257,16 +219,27 @@ export default function Page() {
                 lineHeight: 0.85, color: "var(--accent)",
                 letterSpacing: "-0.02em",
               }}>
-                10–25%
+                10%
               </div>
               <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
                 90%+ in Class 10 · marksheet proof
               </div>
               <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "40ch" }}>
-                For students with 90%+ aggregate in Class 10. Stacks with the JEECUP slab where applicable. Show the 10th marksheet at the time of fee deposit; the reduction is applied immediately.
+                For students with 90%+ aggregate in Class 10. Show the 10th marksheet at the time of fee deposit; the 10% tuition reduction is applied immediately.
               </p>
             </div>
           </div>
+
+          <p style={{
+            marginTop: 24,
+            fontFamily: "var(--font-mono)",
+            fontSize: 12,
+            letterSpacing: "0.06em",
+            color: "color-mix(in oklab, var(--paper) 70%, transparent)",
+            textAlign: "center",
+          }}>
+            Note: only one Trust scholarship at a time per student — the JEECUP and Class 10 awards are not stackable with each other.
+          </p>
         </div>
       </section>
 
@@ -399,8 +372,8 @@ export default function Page() {
                   lineHeight: 1.1, color: "var(--paper)",
                   marginTop: 18, maxWidth: "20ch",
                 }}>
-                  Many BIPE students pay much less than the published fee.{" "}
-                  <span style={{ color: "var(--accent)" }}>We help every eligible family claim what they qualify for.</span>
+                  We help every eligible family{" "}
+                  <span style={{ color: "var(--accent)" }}>claim what they qualify for.</span>
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

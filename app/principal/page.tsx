@@ -20,9 +20,9 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
   {
     roman: "ii",
     title: "Verifiable approvals",
-    sub: "AICTE · BTEUP · ISO · AISHE",
+    sub: "AICTE · BTEUP · AISHE",
     body:
-      "AICTE Permanent ID 1-488233171, EoA F.No. Northern/1-46216893240/2026/EOA dated 16 March 2026. BTEUP/JEECUP code 4455. ISO 9001:2015 certified. AISHE registered. Documents are public; copies on request.",
+      "AICTE Permanent ID 1-488233171, EoA F.No. Northern/1-46216893240/2026/EOA dated 16 March 2026. BTEUP/JEECUP code 4455. AISHE registered. Documents are public; copies on request.",
   },
   {
     roman: "iii",
@@ -148,13 +148,13 @@ export default function Page() {
           </div>
           <p className="serif" style={{
             fontStyle: "italic", fontWeight: 400,
-            fontSize: "clamp(36px, 5.4vw, 80px)",
-            lineHeight: 1.05, letterSpacing: "-0.02em",
+            fontSize: "clamp(34px, 4.8vw, 72px)",
+            lineHeight: 1.1, letterSpacing: "-0.02em",
             color: "var(--paper)",
-            maxWidth: "20ch", margin: "0 auto",
+            maxWidth: "22ch", margin: "0 auto",
           }}>
-            AI is not a buzzword &mdash;<br />
-            it is the <span style={{ color: "var(--accent)" }}>future</span> of every industry.
+            We do not prepare students for examinations alone &mdash;{" "}
+            <span style={{ color: "var(--accent)" }}>we prepare them for work that matters.</span>
           </p>
           <div style={{
             marginTop: 44, display: "inline-flex", alignItems: "center", gap: 14,
@@ -174,13 +174,29 @@ export default function Page() {
       <section className="section" style={{ position: "relative", overflow: "hidden" }}>
         <div className="container">
           <div style={{ maxWidth: "65ch", margin: "0 auto" }}>
-            <div className="eyebrow" style={{ textAlign: "center" }}>A NOTE FROM THE PRINCIPAL'S DESK</div>
+            {/* Shloka header */}
+            <div style={{ textAlign: "center" }}>
+              <div className="serif" style={{
+                fontStyle: "italic", fontWeight: 400,
+                fontSize: "clamp(22px, 2.4vw, 30px)",
+                lineHeight: 1.3, color: "var(--brand)",
+                letterSpacing: "-0.005em",
+              }}>
+                ॥&nbsp;न हि ज्ञानेन सदृशं पवित्रमिह विद्यते&nbsp;॥
+              </div>
+              <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-3)" }}>
+                Bhagavad Gita · 4.38
+              </div>
+            </div>
+
+            <div className="eyebrow" style={{ textAlign: "center", marginTop: 28 }}>A note from the principal&apos;s desk</div>
             <h2 className="bipe-h2" style={{ marginTop: 14, textAlign: "center", maxWidth: "20ch", marginInline: "auto" }}>
-              To the families of{" "}
+              Welcome to the{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                Eastern UP.
+                BIPE family.
               </span>
             </h2>
+
             <div style={{ marginTop: 44, fontSize: 17, lineHeight: 1.75, color: "var(--ink-2)" }}>
               <p style={{ position: "relative", paddingTop: 4 }}>
                 <span className="serif" style={{
@@ -191,24 +207,18 @@ export default function Page() {
                   marginRight: 12, marginTop: 4,
                   letterSpacing: "-0.02em",
                 }}>
-                  S
+                  W
                 </span>
-                ixteen years ago, Purwanchal Educational Trust set up BIPE in Phoolpur with one stated intent &mdash; to build a polytechnic the families of Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur and Varanasi could trust without reservation. We are now in our seventeenth admission cycle. More than a thousand students who once sat in our lecture halls now hold engineering jobs across India.
+                elcome to BIPE &mdash; an institution where knowledge meets the demands of industry. We believe that skill is the purest form of knowledge, and every programme we offer is built on that belief: <strong style={{ color: "var(--ink)" }}>50% theory to understand the why, and 50% practice to master the how.</strong>
               </p>
               <p style={{ marginTop: 22 }}>
-                When a family in our catchment sends their child to BIPE, they are placing trust in us. We honour that trust with four commitments &mdash; <strong style={{ color: "var(--ink)" }}>fee transparency, verifiable approvals, a working grievance mechanism, and outcome accountability.</strong> Each is enumerated on this site, in writing, and audited annually.
+                Our workshops, laboratories and industry partnerships ensure that every BIPE graduate steps into the job market with <strong style={{ color: "var(--ink)" }}>confidence, competence and professional character</strong>. To our students: honour your craft, respect your tools, and take pride in work done right.
               </p>
               <p style={{ marginTop: 22 }}>
-                Our pedagogy is <strong style={{ color: "var(--ink)" }}>Outcome-Based Education</strong>. Every course module is mapped to a Program Outcome; assessment is calibrated against measurable outcomes rather than against attendance alone. We sit our students through BTEUP examinations &mdash; externally evaluated &mdash; and we add continuous formative assessment and panel-reviewed projects on top.
+                Sixteen years of training students from across Eastern UP into skilled diploma technicians &mdash; professionals who can <em>hold a tool, read a drawing and build an independent livelihood</em>.
               </p>
               <p style={{ marginTop: 22 }}>
-                On <strong style={{ color: "var(--ink)" }}>AI</strong> &mdash; we use it sparingly, under faculty supervision, and we teach our students what it is good for and where it fails. Diploma engineers entering today's workforce will work alongside AI tools in every domain &mdash; from CNC programming to PLC commissioning to dairy plant SCADA. Pretending otherwise is unkind to our students.
-              </p>
-              <p style={{ marginTop: 22 }}>
-                Our students sit in lecture halls, but they also stand at lathes, surveying tripods, dairy pasteurisers and PLC panels. They graduate with a diploma <em>and</em> with hands. Our alumni today work at <strong style={{ color: "var(--ink)" }}>Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Asian Paints, JCB, Amul, Mother Dairy, Parag and the NDDB</strong>. Several have cleared SSC JE and RRB JE on the first attempt.
-              </p>
-              <p style={{ marginTop: 22 }}>
-                If your family is considering a polytechnic diploma &mdash; whether for industry, for a B.Tech onward, or for SSC JE / RRB JE pathways &mdash; I welcome you to <strong style={{ color: "var(--brand)" }}>visit, talk to current students, and decide for yourself.</strong> The campus is open Monday through Saturday. We will arrange a free shuttle from Varanasi Cantt if you write to us.
+                To every parent, student and well-wisher &mdash; <strong style={{ color: "var(--brand)" }}>welcome to the BIPE family.</strong>
               </p>
             </div>
           </div>

@@ -34,10 +34,10 @@ export const Branches = () => {
           <div>
             <div className="eyebrow" style={{ color: "var(--accent)" }}>Programmes · 2026-27</div>
             <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "22ch" }}>
-              Pick a branch. <span className="serif" style={{ color: "var(--accent)" }}>Build a life.</span>
+              One path to engineering, <span className="serif" style={{ color: "var(--accent)" }}>after high school.</span>
             </h2>
-            <p className="lead" style={{ color: "color-mix(in oklab, var(--paper) 70%, transparent)", marginTop: 14, maxWidth: "50ch" }}>
-              Five BTEUP-affiliated diploma courses. One mentor for every twenty students. Hover or tap to explore.
+            <p className="lead" style={{ color: "color-mix(in oklab, var(--paper) 70%, transparent)", marginTop: 14, maxWidth: "54ch" }}>
+              A diploma is not a lesser qualification — it&apos;s a fast-track to engineering and technical careers. In just three years after high school you gain practical skills, industry exposure and a recognised credential that opens multiple doors. Five BTEUP-affiliated branches; one mentor for every twenty students.
             </p>
           </div>
           <Link href="/courses" className="btn"
@@ -153,7 +153,7 @@ export const Branches = () => {
               <div className="between">
                 <div>
                   <div className="eyebrow" style={{ color: "var(--accent)" }}>480 sanctioned seats · 2026-27</div>
-                  <div style={{ fontSize: 14, marginTop: 4, color: "color-mix(in oklab, var(--paper) 80%, transparent)" }}>AICTE-approved · BTEUP-affiliated · JEECUP code 4455</div>
+                  <div style={{ fontSize: 14, marginTop: 4, color: "color-mix(in oklab, var(--paper) 80%, transparent)" }}>AICTE-approved · BTEUP-affiliated</div>
                 </div>
                 <ArrowIcon />
               </div>

@@ -16,7 +16,7 @@ const STATS: Stat[] = [
   { num: "6", label: "Acres" },
   { num: "5", label: "Branches" },
   { num: "550", label: "Students", suffix: "+" },
-  { num: "33", label: "Faculty" },
+  { num: "40", label: "Faculty" },
   { num: "1:20", label: "Mentor ratio" },
 ];
 
@@ -28,8 +28,8 @@ const FEATURES: { n: string; title: string; body: string }[] = [
   },
   {
     n: "02",
-    title: "Book Bank from ₹600 / sem",
-    body: "Full-semester sets of textbooks and reference materials borrowable for the semester from ₹600. No student goes without books because of family budget.",
+    title: "Book Bank · ₹1000 / sem",
+    body: "Full-semester sets of textbooks and reference materials borrowable for ₹1000 per semester. No student goes without books because of family budget.",
   },
   {
     n: "03",
@@ -40,6 +40,45 @@ const FEATURES: { n: string; title: string; body: string }[] = [
     n: "04",
     title: "PMKVY · Make in India · Swachh Bharat",
     body: "Curriculum, skilling pathways and student projects align with national missions. Our diploma equips students for the India that is being built today.",
+  },
+];
+
+const CORE_VALUES: { en: string; hi: string; gloss: string; body: string }[] = [
+  {
+    en: "Kaushal",
+    hi: "कौशल",
+    gloss: "Skill",
+    body: "Skill is our highest offering. We measure success not by marks alone but by what a student can make, fix, operate, and deliver with their hands and mind together.",
+  },
+  {
+    en: "Satya",
+    hi: "सत्य",
+    gloss: "Integrity",
+    body: "An engineer who cuts corners endangers lives. We build the habit of doing things right — in every weld, every circuit, every measurement — whether or not anyone is watching.",
+  },
+  {
+    en: "Karmatā",
+    hi: "कर्मता",
+    gloss: "Work ethic",
+    body: "The Gita's greatest lesson is action without excuse. We cultivate punctuality, perseverance and pride in one's craft — the hallmarks of every great technician.",
+  },
+  {
+    en: "Samānatā",
+    hi: "समानता",
+    gloss: "Inclusivity",
+    body: "A file, a lathe, a multimeter — tools have no caste or gender. Every student, regardless of background, has an equal right to skill, opportunity and dignity at BIPE.",
+  },
+  {
+    en: "Seva",
+    hi: "सेवा",
+    gloss: "Service",
+    body: "Skills are most powerful when used in service. Our graduates fix what is broken, build what is needed and serve communities — in small workshops and in large industries alike.",
+  },
+  {
+    en: "Uttamatvam",
+    hi: "उत्तमत्वम्",
+    gloss: "Excellence",
+    body: "Excellence in a polytechnic is a perfectly finished surface, a correctly wired panel, a precisely calibrated instrument. We hold ourselves to the standard the job demands.",
   },
 ];
 
@@ -138,60 +177,92 @@ export default function Page() {
         }} />
 
         <div className="container" style={{ position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 56, paddingBottom: 28, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
-            <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>Why we exist</div>
-              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch", color: "var(--paper)" }}>
-                Vision. Mission.{" "}
-                <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>Values.</span>
-              </h2>
+          {/* Shloka header */}
+          <div style={{ textAlign: "center", marginBottom: 56, paddingBottom: 28, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+            <div className="eyebrow" style={{ color: "var(--accent)" }}>Vision. Mission. Values.</div>
+            <div className="serif" style={{
+              marginTop: 22,
+              fontStyle: "italic", fontWeight: 400,
+              fontSize: "clamp(28px, 3.2vw, 44px)",
+              lineHeight: 1.25, color: "var(--paper)",
+              letterSpacing: "-0.005em",
+            }}>
+              ॥&nbsp;न हि ज्ञानेन सदृशं पवित्रमिह विद्यते&nbsp;॥
             </div>
-            <p style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              The three sentences a board can read in a minute and parents can hold us accountable to for a decade.
+            <div style={{ marginTop: 14, color: "color-mix(in oklab, var(--paper) 72%, transparent)", maxWidth: "52ch", marginInline: "auto", fontSize: 15.5, lineHeight: 1.65 }}>
+              &ldquo;There is nothing as purifying as knowledge in this world.&rdquo;
+              <span style={{ display: "block", marginTop: 6, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>
+                Bhagavad Gita · 4.38
+              </span>
+            </div>
+          </div>
+
+          {/* Vision · Mission */}
+          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden", marginBottom: 28 }}>
+            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>VISION</div>
+              <div className="serif" style={{ marginTop: 16, fontSize: 30, lineHeight: 1.15, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
+                Where skill is the highest form of knowledge.
+              </div>
+              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
+                To be the most trusted polytechnic institution of Kashi — one that transforms students into industry-ready, skilled technicians and diploma engineers who learn by doing, grow by creating, and serve by building.
+              </p>
+            </div>
+
+            <div style={{ padding: "44px 36px", background: "color-mix(in oklab, var(--brand) 12%, var(--ink))" }}>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>MISSION</div>
+              <div className="serif" style={{ marginTop: 16, fontSize: 30, lineHeight: 1.15, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
+                Five pillars of purposeful, practice-first education.
+              </div>
+              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
+                To deliver rigorous, skill-first diploma education — grounded in equal parts theory and practice — that makes every BIPE student immediately employable, ethically grounded, and ready to contribute to the growth of industry and nation.
+              </p>
+            </div>
+          </div>
+
+          {/* Core values · 6 principles */}
+          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", margin: "32px 0 28px", paddingBottom: 20, borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+            <div>
+              <div className="eyebrow" style={{ color: "var(--accent)" }}>Core values</div>
+              <h3 className="bipe-h2" style={{ marginTop: 12, maxWidth: "26ch", color: "var(--paper)" }}>
+                Six principles lived in the{" "}
+                <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>workshop and the classroom.</span>
+              </h3>
+            </div>
+            <p style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", maxWidth: "44ch", justifySelf: "end", textAlign: "right", fontSize: 15 }}>
+              Names in Devanāgarī. Practice in the lab. These six aren&apos;t a poster — they&apos;re the standard a faculty mentor calls a student back on.
             </p>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
-            {/* Vision */}
-            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>VISION</div>
-              <div className="serif" style={{ marginTop: 16, fontSize: 40, lineHeight: 1.05, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
-                Recognised.
-              </div>
-              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
-                Eastern UP recognised &mdash; nationally &mdash; for accountable, hands-on technical education. A region whose diploma engineers are sought after, not apologised for.
-              </p>
-            </div>
-
-            {/* Mission */}
-            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>MISSION</div>
-              <div className="serif" style={{ marginTop: 16, fontSize: 40, lineHeight: 1.05, color: "var(--paper)", fontStyle: "italic", fontWeight: 400 }}>
-                Work-ready.
-              </div>
-              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
-                AICTE-approved diploma courses, industry- and government-aligned. Practical training plus mentorship that prepares students for engineering roles in private industry, central PSUs and state government recruitment.
-              </p>
-            </div>
-
-            {/* Values */}
-            <div style={{ padding: "44px 36px", background: "color-mix(in oklab, var(--brand) 12%, var(--ink))", position: "relative", overflow: "hidden" }}>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>VALUES</div>
-              <div className="serif" style={{
-                marginTop: 16,
-                fontSize: "clamp(28px, 3vw, 44px)",
-                lineHeight: 1.1, color: "var(--paper)",
-                fontStyle: "italic", fontWeight: 400,
-              }}>
-                सत्यं शिवं<br />सुन्दरम्
-              </div>
-              <div style={{ marginTop: 12, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--accent)" }}>
-                truth · goodness · beauty
-              </div>
-              <p style={{ marginTop: 18, fontSize: 15, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
-                Transparent fees. Hands-on training. Respect for the family. The student, the institution and the parent &mdash; bonded.
-              </p>
-            </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
+            {CORE_VALUES.map((v, i) => {
+              const col = i % 3;
+              const row = Math.floor(i / 3);
+              return (
+                <div key={v.en} style={{
+                  padding: "36px 30px",
+                  borderRight: col < 2 ? "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" : "none",
+                  borderTop: row > 0 ? "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" : "none",
+                  background: (i + row) % 2 === 0 ? "transparent" : "color-mix(in oklab, var(--brand) 10%, var(--ink))",
+                }}>
+                  <div className="serif" style={{
+                    fontStyle: "italic", fontWeight: 400,
+                    fontSize: 26, lineHeight: 1.05, color: "var(--accent)",
+                  }}>
+                    {v.hi}
+                  </div>
+                  <div style={{ marginTop: 8, display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap" }}>
+                    <span style={{ fontWeight: 700, fontSize: 18, color: "var(--paper)" }}>{v.en}</span>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--accent)" }}>
+                      {v.gloss}
+                    </span>
+                  </div>
+                  <p style={{ marginTop: 14, fontSize: 14, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 72%, transparent)" }}>
+                    {v.body}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

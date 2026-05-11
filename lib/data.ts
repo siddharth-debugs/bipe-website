@@ -76,7 +76,7 @@ export const DATA: DataShape = {
   contact: {
     phone: "+91-9198646464",
     phone2: "+91-9198767676",
-    email: "admissions@bipevns.org",
+    email: "bipevns@gmail.com",
     emailGrievance: "grievance@bipevns.org",
     emailPrincipal: "principal@bipevns.org",
     emailAntiRagging: "antiragging@bipevns.org",
@@ -101,7 +101,7 @@ export const DATA: DataShape = {
     { name: "Instagram", handle: "bipevns", url: "https://www.instagram.com/bipevns/" },
     { name: "X",         handle: "bipevns", url: "https://x.com/bipevns" },
     { name: "YouTube",   handle: "bipevns", url: "https://www.youtube.com/@bipevns" },
-    { name: "LinkedIn",  handle: "bipevns", url: "https://www.linkedin.com/school/bipevns/" },
+    { name: "LinkedIn",  handle: "bipe-varanasi", url: "https://www.linkedin.com/in/bipe-varanasi-60a3802b5/" },
   ],
   regulators: [
     { name: "AICTE", full: "All India Council for Technical Education", url: "https://www.aicte-india.org/" },
@@ -124,7 +124,7 @@ export const DATA: DataShape = {
   ],
   branches: [
     { code: "355", slug: "computer-science-engineering", name: "Computer Science & Engineering", hi: "कंप्यूटर साइंस एंड इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Programming, data structures, networks, AI/ML — taught with our 120-computer lab. Strong B.Tech CSE pathway.", tag: "Popular", color: 1 },
-    { code: "327", slug: "dairy-engineering", name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Rare diploma — fewer than 1.1% of UP polytechnics offer this. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.", tag: "Rare", color: 2 },
+    { code: "327", slug: "dairy-engineering", name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Rare diploma — offered by only 4 institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.", tag: "Rare", color: 2 },
     { code: "322", slug: "civil-engineering", name: "Civil Engineering", hi: "सिविल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Smart Cities, Bharatmala, Kashi Vishwanath corridor — India's infra boom needs civil diploma holders. SSC JE / RRB JE eligible.", tag: null, color: 3 },
     { code: "328", slug: "electrical-engineering", name: "Electrical Engineering", hi: "इलेक्ट्रिकल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. UPPCL, Tata Power, Adani Solar recruit our graduates.", tag: null, color: 4 },
     { code: "343", slug: "mechanical-engineering-production", name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)", seats: 120, fee: "30,150", desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, Tata Motors, BHEL apprentice pathways.", tag: null, color: 5 },
@@ -135,7 +135,7 @@ export const DATA: DataShape = {
   whyBipe: [
     { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },
     { num: "02", metric: "3-layer", metricLabel: "assessment", title: "Outcome-based pedagogy.", body: "Semester exam + continuous assessment + project work, calibrated against published Program Outcomes. We measure progress, not attendance.", icon: "M3 17l6-6 4 4 8-8" },
-    { num: "03", metric: "<1.1%", metricLabel: "of UP polytechnics", title: "Rare Dairy Engineering diploma.", body: "BTEUP-affiliated Dairy Engineering (Code 327). Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
+    { num: "03", metric: "4 only", metricLabel: "institutes in UP offer this", title: "Rare Dairy Engineering diploma.", body: "BTEUP-affiliated Dairy Engineering (Code 327) — offered by only four institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
     { num: "04", metric: "1,000+", metricLabel: "alumni in 16 yrs", title: "Eastern UP-built. Thousands placed.", body: "Alumni at Mahindra, Tata Steel, BEL, Indian Railways. AFRC-approved fees with no hidden charges.", icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
   ],
   testimonials: [
@@ -169,11 +169,12 @@ export const DATA: DataShape = {
     { cat: "Approvals & Trust", q: "How do I file a grievance?", a: "Email grievance@bipevns.org or write to the Principal's office. Complaints are treated as confidential and acknowledged within 7 working days. Four statutory committees handle different categories — Anti-Ragging, Internal (POSH), SC/ST and PWD Cell." },
   ],
   events: [
+    { date: "May 18, 2026", tag: "Placement", title: "Knorr-Bremse AG, Munich — pool campus drive", body: "Pool campus placement drive with Knorr-Bremse AG (Munich, Germany). Open to eligible final-year branches." },
     { date: "May 18, 2026", tag: "Admission", title: "JEECUP 2026 results declared", body: "Counselling rounds open from May 24. Book your campus visit now to lock in your branch preferences." },
-    { date: "May 04, 2026", tag: "Campus", title: "Annual Tech Fest 'Kashi Tech 2026'", body: "Robotics, hackathon, dairy-tech showcase. Registration open for visitors and school students." },
+    { date: "Apr 24, 2026", tag: "Campus", title: "Industrial visit — Mechanical Engineering students", body: "Industrial visit organised for Mechanical Engineering (Production) students. Plant tour and hands-on shop-floor exposure." },
     { date: "Apr 22, 2026", tag: "Placement", title: "Tata Motors campus drive — 14 selected", body: "Mechanical Engineering (Production) branch. Joining package ₹3.6 LPA + benefits." },
+    { date: "Apr 17, 2026", tag: "Faculty", title: "Workshop: Spring Boot (Java Framework)", body: "One-day hands-on workshop on Spring Boot for Computer Science & Engineering students and faculty." },
     { date: "Apr 11, 2026", tag: "Admission", title: "Open House for Class 10 students", body: "Lab tours, mentor meetings, and JEECUP guidance. Saturday, 10am–3pm. Free transport from Varanasi Cantt." },
-    { date: "Mar 28, 2026", tag: "Faculty", title: "Workshop: AI in diploma curriculum", body: "Faculty development on integrating AI/ML into Computer Science & Engineering coursework." },
   ],
   jeecupSteps: [
     { step: "01", title: "Apply on JEECUP portal", body: "Register at jeecup.admissions.nic.in. Application opens January, closes April. Fee ₹300 (₹200 for SC/ST)." },

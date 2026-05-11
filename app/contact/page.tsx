@@ -9,21 +9,12 @@ import { FAQ } from "@/components/home/FAQ";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("contact"); }
 
-type DeptEmail = { num: string; dept: string; email: string; best: string; href: string; tone?: "danger" };
 type Social = { name: string; handle: string; href: string };
 
 const DIRECTIONS = "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi";
 
 export default function Page() {
   const C = DATA.contact;
-
-  // TODO: confirm placements@ alias with admin office; currently routes via admissions
-  const DEPTS: DeptEmail[] = [
-    { num: "01", dept: "Admissions", email: "admissions@bipevns.org", best: "Applications, eligibility, JEECUP counselling, fees", href: "mailto:admissions@bipevns.org" },
-    { num: "02", dept: "General office", email: "info@bipevns.org", best: "Anything that doesn't fit a department — we'll route it", href: "mailto:info@bipevns.org" },
-    { num: "03", dept: "Grievance cell", email: "grievance@bipevns.org", best: "Confidential complaints — Anti-Ragging, POSH, SC/ST, PWD", href: "mailto:grievance@bipevns.org", tone: "danger" },
-    { num: "04", dept: "Placements", email: "placements@bipevns.org", best: "Industry partners, alumni, recruiter visits", href: "mailto:placements@bipevns.org" },
-  ];
 
   // TODO: confirm actual social handles & URLs with marketing
   const SOCIALS: Social[] = [
@@ -245,81 +236,6 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 3. DEPARTMENTAL EMAILS (DARK)                                           */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--ink)", color: "var(--paper)", position: "relative", overflow: "hidden" }}>
-        <div aria-hidden="true" style={{
-          position: "absolute", inset: 0, opacity: 0.06,
-          backgroundImage: "linear-gradient(var(--paper) 1px, transparent 1px), linear-gradient(90deg, var(--paper) 1px, transparent 1px)",
-          backgroundSize: "72px 72px", pointerEvents: "none",
-        }} />
-        <div aria-hidden="true" style={{
-          position: "absolute", right: -180, top: -180, width: 480, height: 480, borderRadius: "50%",
-          background: "color-mix(in oklab, var(--brand) 50%, transparent)",
-          filter: "blur(140px)", pointerEvents: "none",
-        }} />
-        <div aria-hidden="true" style={{
-          position: "absolute", left: -160, bottom: -160, width: 420, height: 420, borderRadius: "50%",
-          background: "color-mix(in oklab, var(--accent) 36%, transparent)",
-          filter: "blur(130px)", pointerEvents: "none",
-        }} />
-
-        <div className="container" style={{ position: "relative" }}>
-          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start", marginBottom: 40 }}>
-            <div>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>By department</div>
-              <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "16ch" }}>
-                Reach the right{" "}
-                <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
-                  desk directly.
-                </span>
-              </h2>
-            </div>
-            <p style={{ color: "color-mix(in oklab, var(--paper) 78%, transparent)", marginTop: 8, fontSize: 16, lineHeight: 1.7, maxWidth: "52ch" }}>
-              For specialised queries, write to the team that owns the answer. Each address is monitored on working days; for urgent confidential complaints, the grievance cell replies within seven working days.
-            </p>
-          </div>
-
-          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-            {DEPTS.map((d) => (
-              <div key={d.email} style={{
-                padding: 28,
-                borderRadius: 18,
-                background: "color-mix(in oklab, var(--paper) 5%, transparent)",
-                border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
-                position: "relative", overflow: "hidden",
-                color: "var(--paper)",
-                transition: "border-color .25s, background .25s",
-              }}>
-                <div style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 18, alignItems: "start" }}>
-                  <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 44, color: d.tone === "danger" ? "var(--danger)" : "var(--accent)", lineHeight: 0.85 }}>
-                    {d.num}
-                  </span>
-                  <div>
-                    <div className="eyebrow" style={{ color: d.tone === "danger" ? "var(--danger)" : "var(--accent)" }}>{d.dept}</div>
-                    <a href={d.href} style={{ marginTop: 6, fontFamily: "var(--font-mono)", fontWeight: 700, fontSize: 17, color: "var(--paper)", wordBreak: "break-all", display: "inline-block", textDecoration: "none" }}>
-                      {d.email}
-                    </a>
-                    <p style={{ marginTop: 10, color: "color-mix(in oklab, var(--paper) 78%, transparent)", fontSize: 13.5, lineHeight: 1.55 }}>
-                      {d.best}
-                    </p>
-                    {d.tone === "danger" && (
-                      <Link href="/grievance" style={{ marginTop: 12, display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12.5, color: "var(--accent)", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                        Grievance redressal cell <ArrowIcon size={12} />
-                      </Link>
-                    )}
-                  </div>
-                  <a href={d.href} aria-label={`Email ${d.dept}`} style={{ color: "var(--paper)", display: "inline-flex", alignItems: "center" }}>
-                    <ArrowIcon size={16} />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
       {/* 4. ADDRESS & DIRECTIONS (LIGHT)                                         */}
       {/* ====================================================================== */}
       <section className="section">
@@ -328,9 +244,9 @@ export default function Page() {
             <div>
               <div className="eyebrow">Address & directions</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
-                Where to{" "}
+                How to{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  find us.
+                  reach.
                 </span>
               </h2>
             </div>
@@ -366,7 +282,7 @@ export default function Page() {
             </article>
 
             <article className="card" style={{ padding: 36, background: "var(--white)" }}>
-              <div className="eyebrow">How to reach</div>
+              <div className="eyebrow">Transport</div>
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
                 Quick note for first-time visitors. The full transport breakdown — air, rail, road, free shuttle — sits on the visit page.
               </p>
@@ -387,6 +303,27 @@ export default function Page() {
                 Full transport details <ArrowIcon size={14} />
               </Link>
             </article>
+          </div>
+
+          {/* Embedded Google Map */}
+          <div
+            className="card"
+            style={{
+              marginTop: 22,
+              padding: 0,
+              overflow: "hidden",
+              border: "1px solid var(--line)",
+              borderRadius: 18,
+              aspectRatio: "21 / 9",
+            }}
+          >
+            <iframe
+              title="BIPE Phoolpur, Varanasi — Google Map"
+              src="https://maps.google.com/maps?q=BIPE+Phoolpur+Varanasi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              style={{ width: "100%", height: "100%", border: 0, display: "block" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
@@ -417,10 +354,10 @@ export default function Page() {
                 </span>
               </h2>
               <p style={{ marginTop: 18, color: "var(--ink-2)", fontSize: 15.5, lineHeight: 1.7, maxWidth: "44ch" }}>
-                Drop us a note — we&apos;ll call your mobile within 24 hours, in the language you&apos;re comfortable with. No spam, no marketing forwards. One call from a real human.
+                Drop us a note — we&apos;ll call your mobile within 24 hours, in the language you&apos;re comfortable with. One call from a real human.
               </p>
               <ul style={{ marginTop: 22, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
-                {["No payment, no commitment", "EN / हिंदी on call", "We answer within 24 hours, Mon–Sat"].map((p) => (
+                {["EN / हिंदी on call", "We answer within 24 hours, Mon–Sat"].map((p) => (
                   <li key={p} style={{ display: "flex", gap: 10, alignItems: "baseline", fontSize: 14, color: "var(--ink-2)" }}>
                     <span style={{ width: 6, height: 6, borderRadius: 999, background: "var(--brand)", flexShrink: 0, marginTop: 7 }} />
                     {p}
@@ -470,19 +407,11 @@ export default function Page() {
                 Mon–Sat<br /><span style={{ color: "var(--accent)" }}>9 — 5</span>
               </div>
               <p style={{ marginTop: 18, color: "color-mix(in oklab, var(--paper) 78%, transparent)", fontSize: 14.5, lineHeight: 1.7 }}>
-                Closed on Sundays and gazetted holidays. WhatsApp messages received outside hours are answered first thing the next working morning.
+                WhatsApp messages received outside hours are answered first thing the next working morning.
               </p>
-              <div style={{ marginTop: 22, paddingTop: 18, borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexDirection: "column", gap: 10 }}>
-                {[
-                  ["MON–FRI", "9:00 AM – 5:00 PM"],
-                  ["SATURDAY", "9:00 AM – 5:00 PM"],
-                  ["SUNDAY", "Closed"],
-                ].map(([k, v]) => (
-                  <div key={k} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>{k}</span>
-                    <span style={{ fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--paper)", fontSize: 13 }}>{v}</span>
-                  </div>
-                ))}
+              <div style={{ marginTop: 22, paddingTop: 18, borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>MON–SAT</span>
+                <span style={{ fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--paper)", fontSize: 13 }}>9:00 AM – 5:00 PM</span>
               </div>
             </div>
 

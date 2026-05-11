@@ -48,40 +48,18 @@ const APPROVALS: Approval[] = [
     status: "Affiliated",
     body: (
       <>
-        State-board affiliation under JEECUP. All ten BIPE branches are listed under college code 4455 in the JEECUP counselling portal.
+        State-board affiliation under JEECUP. All five BIPE branches are listed under college code 4455 in the JEECUP counselling portal.
       </>
     ),
     meta: [
       { label: "JEECUP Code", value: "4455" },
-      { label: "Branches", value: "10" },
+      { label: "Branches", value: "5" },
       { label: "Sanctioned seats", value: "480" },
     ],
     verify: { label: "Verify on JEECUP portal", href: "https://jeecup.admissions.nic.in" },
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M4 4h16v16H4zM4 8h16M8 4v16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    key: "iso",
-    name: "ISO 9001:2015",
-    full: "International Organization for Standardization",
-    status: "Certified",
-    body: (
-      <>
-        Quality management certification covering admissions, classroom operations, examinations, hostel management and student services.
-      </>
-    ),
-    meta: [
-      { label: "Standard", value: "ISO 9001:2015" },
-      { label: "Coverage", value: "Admissions · Ops · Exams · Hostel" },
-      { label: "Certificate", value: "Available on request" },
-    ],
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -118,11 +96,11 @@ const SEAT_MATRIX: { name: string; code: string; intake: string }[] = [
 
 const DISCLOSURE: { num: string; label: string }[] = [
   { num: "480", label: "Total seats 2026-27" },
-  { num: "33", label: "Faculty" },
+  { num: "40", label: "Faculty" },
   { num: "6", label: "Acres campus" },
   { num: "8,428", label: "Books · volumes" },
   { num: "1,220", label: "Library titles" },
-  { num: "120+", label: "PCs in lab" },
+  { num: "120", label: "PCs in lab" },
   { num: "50 Mbps", label: "Leased internet" },
   { num: "100%", label: "Wi-Fi coverage" },
 ];
@@ -131,10 +109,7 @@ const DOWNLOADS: { title: string; size: string; href: string }[] = [
   // TODO: replace placeholder hrefs once PDFs are uploaded to /public/downloads/
   { title: "AICTE EoA Letter 2026-27", size: "PDF · ~480 KB", href: "/downloads/aicte-eoa-2026-27.pdf" },
   { title: "Mandatory Disclosure (Annexure-18)", size: "PDF · ~2.1 MB", href: "/downloads/mandatory-disclosure-2026-27.pdf" },
-  { title: "ISO 9001:2015 Certificate", size: "PDF · on request", href: "/downloads/iso-9001-2015.pdf" },
   { title: "BTEUP Affiliation Letter", size: "PDF · on request", href: "/downloads/bteup-affiliation.pdf" },
-  { title: "AISHE Reporting Summary 2025-26", size: "PDF · ~620 KB", href: "/downloads/aishe-2025-26.pdf" },
-  { title: "Anti-Ragging Undertaking", size: "PDF · 60 KB", href: "/downloads/anti-ragging-undertaking.pdf" },
 ];
 
 export default function Page() {
@@ -166,12 +141,11 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                BIPE holds AICTE permanent recognition, BTEUP affiliation under JEECUP code 4455, ISO 9001:2015 quality certification and active AISHE registration. Documents are public; copies are available on request from the Principal's office.
+                BIPE holds AICTE permanent recognition, BTEUP affiliation under JEECUP code 4455 and active AISHE registration. Documents are public; copies are available on request from the Principal's office.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap", alignItems: "center" }}>
                 <span className="pill pill-accent">EoA · 16 MAR 2026</span>
                 <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>JEECUP 4455</span>
-                <span className="pill">ISO 9001:2015</span>
                 <span className="pill">AISHE ACTIVE</span>
               </div>
               <div className="row" style={{ marginTop: 18, gap: 12, flexWrap: "wrap" }}>
@@ -228,7 +202,7 @@ export default function Page() {
                 <div className="eyebrow" style={{ marginTop: 8, color: "var(--brand)" }}>VARANASI · 2010</div>
                 <div style={{ marginTop: 10, height: 1, width: 80, background: "var(--accent)" }} />
                 <div style={{ marginTop: 12, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.16em", color: "var(--ink-2)", textTransform: "uppercase" }}>
-                  AICTE · BTEUP · ISO · AISHE
+                  AICTE · BTEUP · AISHE
                 </div>
               </div>
 
@@ -263,7 +237,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">The four approvals</div>
+              <div className="eyebrow">The three approvals</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Each one,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -588,7 +562,7 @@ export default function Page() {
                   </span>
                 </h2>
                 <p style={{ marginTop: 18, color: "color-mix(in oklab, var(--paper) 72%, transparent)", fontSize: 15, maxWidth: "52ch", lineHeight: 1.6 }}>
-                  Both AICTE and JEECUP maintain public dashboards where institutions, codes and EoA letters can be looked up directly. ISO and BTEUP affiliation certificates are available on written request.
+                  Both AICTE and JEECUP maintain public dashboards where institutions, codes and EoA letters can be looked up directly. BTEUP affiliation certificates are available on written request.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -618,7 +592,7 @@ export default function Page() {
                   display: "flex", justifyContent: "space-between", alignItems: "center",
                   fontWeight: 600,
                 }}>
-                  Request ISO / BTEUP cert <ArrowIcon size={14} />
+                  Request BTEUP cert <ArrowIcon size={14} />
                 </Link>
               </div>
             </div>
