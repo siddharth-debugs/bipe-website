@@ -2,14 +2,17 @@ export const BIPE_IMG = {
   heroGroup: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
   heroWide: "/hero-campus.png",
 
-  workshop: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80&auto=format&fit=crop",
-  cncLab: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=900&q=80&auto=format&fit=crop",
-  computerLab: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&q=80&auto=format&fit=crop",
-  electrical: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=900&q=80&auto=format&fit=crop",
-  civil: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop",
-  dairy: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
-  automobile: "https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?w=900&q=80&auto=format&fit=crop",
-  mechanical: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
+  // Branch-relevant photos — sourced from BIPE's Cloudinary lab manifest
+  // (lib/labs-manifest.json). Dairy stays on Unsplash because we have no
+  // dairy-lab photography yet.
+  workshop:    "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151557/bipe/labs/mechanical/machin-shop",
+  cncLab:      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151124/bipe/labs/mechanical/cnc",
+  computerLab: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150991/bipe/labs/cse/programming-lab",
+  electrical:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151054/bipe/labs/ee/electrical-machin-lab",
+  civil:       "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
+  dairy:       "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
+  automobile:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149853/bipe/labs/mechanical/auto-mobile-lab",
+  mechanical:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151151/bipe/labs/mechanical/pt-shop",
 
   campusWide: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80&auto=format&fit=crop",
   library: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=900&q=80&auto=format&fit=crop",
@@ -28,9 +31,9 @@ export const BIPE_IMG = {
 
   // editorial extras
   classroom: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80&auto=format&fit=crop",
-  surveying: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=900&q=80&auto=format&fit=crop",
-  weldingHands: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80&auto=format&fit=crop",
-  drafting: "https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=900&q=80&auto=format&fit=crop",
+  surveying:    "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151162/bipe/labs/civil/auto-level-jpg",
+  weldingHands: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149843/bipe/labs/mechanical/welding-shop",
+  drafting:     "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151184/bipe/labs/civil/r-c-c-drawing",
   lectureHall: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=900&q=80&auto=format&fit=crop",
   graduation: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80&auto=format&fit=crop",
   studentReading: "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&q=80&auto=format&fit=crop",
@@ -86,12 +89,13 @@ export const BIPE_IMG = {
   factoryFloor: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=80&auto=format&fit=crop",
 
   byCode: {
-    "355": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&q=80&auto=format&fit=crop",
+    "355": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150991/bipe/labs/cse/programming-lab",
+    // 327 (Dairy) — no in-house dairy lab photos yet; placeholder retained
     "327": "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
-    "322": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop",
-    "328": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=900&q=80&auto=format&fit=crop",
-    "343": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
-    default: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80&auto=format&fit=crop",
+    "322": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
+    "328": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151054/bipe/labs/ee/electrical-machin-lab",
+    "343": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151557/bipe/labs/mechanical/machin-shop",
+    default: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151557/bipe/labs/mechanical/machin-shop",
   } as Record<string, string>,
 
   /**
@@ -103,34 +107,35 @@ export const BIPE_IMG = {
    */
   triplesByCode: {
     "355": [
-      // CSE: lab → classroom → lecture
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80&auto=format&fit=crop",
+      // CSE: programming lab → networking & IoT → project expo
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150991/bipe/labs/cse/programming-lab",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150939/bipe/labs/cse/networking-iot-lab2",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150999/bipe/labs/cse/project-expo-3rd-year",
     ],
     "327": [
-      // Dairy: pasture → processing → product
+      // Dairy: pasture → processing → product — Unsplash placeholders retained
+      // (no in-house dairy photos yet; swap once we have them).
       "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=900&q=80&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
     ],
     "322": [
-      // Civil: structure → site → drafting
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=900&q=80&auto=format&fit=crop",
+      // Civil: survey camp → theodolite → R.C.C. drawing
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151199/bipe/labs/civil/transit-theodolite-jpg",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151184/bipe/labs/civil/r-c-c-drawing",
     ],
     "328": [
-      // Electrical: substation/grid → solar → wiring
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=900&q=80&auto=format&fit=crop",
+      // Electrical: electrical machine lab → PLC & SCADA → EE measurement
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151054/bipe/labs/ee/electrical-machin-lab",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151102/bipe/labs/ee/plc-scada",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151044/bipe/labs/ee/ee-electronic-measurement",
     ],
     "343": [
-      // Mechanical / Production: workshop → CNC → welding hands
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80&auto=format&fit=crop",
+      // Mechanical / Production: machine shop → CNC → welding shop
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151557/bipe/labs/mechanical/machin-shop",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151124/bipe/labs/mechanical/cnc",
+      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149843/bipe/labs/mechanical/welding-shop",
     ],
   } as Record<string, [string, string, string]>,
 
@@ -146,9 +151,9 @@ export const BIPE_IMG = {
   /** Short alt-text for each slot in triplesByCode — same shape. */
   triplesAltByCode: {
     "355": [
-      "BIPE 120-computer lab",
-      "Programming on a developer workstation",
-      "Code on screen — software engineering coursework",
+      "BIPE programming lab — rows of computer-science workstations",
+      "BIPE networking & IoT lab — switches, routers and rack equipment",
+      "Third-year project expo — student-built CSE projects on display",
     ],
     "327": [
       "Dairy cattle in pasture",
@@ -156,19 +161,19 @@ export const BIPE_IMG = {
       "Finished dairy products",
     ],
     "322": [
-      "Civil engineering structure",
-      "Surveying instrument on site",
-      "Engineering drafting drawings",
+      "BIPE survey camp — students with field theodolites",
+      "Transit theodolite up close — civil instrumentation lab",
+      "Hand-drafted R.C.C. drawings on the civil drawing board",
     ],
     "328": [
-      "Electrical engineering panel work",
-      "Solar PV array",
-      "High-voltage transmission line",
+      "BIPE electrical machine lab — motors, panels and rotating equipment",
+      "PLC & SCADA training rig — industrial automation lab",
+      "Electrical & electronic measurement bench — multimeters and oscilloscopes",
     ],
     "343": [
-      "Mechanical workshop floor",
-      "CNC machining in progress",
-      "Welding hands at the foundry",
+      "BIPE machine shop — lathes and conventional turning equipment",
+      "CNC machining centre on the BIPE mech production floor",
+      "Welding shop in session — gas and arc welding bays",
     ],
   } as Record<string, [string, string, string]>,
 };
