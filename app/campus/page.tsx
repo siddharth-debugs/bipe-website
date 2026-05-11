@@ -29,26 +29,31 @@ const LIB_PILLS: string[] = [
   "4 newspapers",
 ];
 
+// Direct Cloudinary photos from BIPE's own workshop/lab library
+// (lib/labs-manifest.json). Hand-picked to favour shots with students
+// actually working — not equipment-only frames. Dairy stays on
+// placeholder because we have no in-house dairy lab photography yet.
+const CL = "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900";
 const LABS: { eyebrow: string; title: string; body: string; img: string; tags: string[] }[] = [
   {
     eyebrow: "CIVIL · SURVEY YARD",
     title: "Civil Engineering",
     body: "Concrete testing, soil mechanics, surveying yard with total station and theodolite, plus a CAD studio. Field practice during the 4th-semester survey camp.",
-    img: BIPE_IMG.civil,
+    img: `${CL}/v1778151196/bipe/labs/civil/survey-camp`,
     tags: ["Total station", "Theodolite", "Concrete lab", "CAD"],
   },
   {
     eyebrow: "ELECTRICAL · POWER",
     title: "Electrical & Power",
     body: "Machines, power systems, PLC automation and renewable-energy testing benches. Renewable and battery-test setups support the Electrical and Mechanical Engineering (Production) cohorts.",
-    img: BIPE_IMG.electrical,
+    img: `${CL}/v1778151083/bipe/labs/ee/industrial-visit-220-kb`,
     tags: ["Machines", "PLC", "Renewables", "EV"],
   },
   {
     eyebrow: "MECHANICAL · 8 SECTIONS",
     title: "Mechanical Workshops",
     body: "Welding, foundry, forging, machining (lathes, milling), CNC and an engine test bench. Every diploma student logs hands-on workshop hours each semester.",
-    img: BIPE_IMG.workshop,
+    img: `${CL}/v1778151561/bipe/labs/mechanical/machin-shop-3`,
     tags: ["Welding", "Foundry", "CNC", "Lathe"],
   },
   {
@@ -62,7 +67,7 @@ const LABS: { eyebrow: string; title: string; body: string; img: string; tags: s
     eyebrow: "COMPUTER CENTRE",
     title: "Computing & ERP",
     body: "120 networked PCs running licensed operating systems, the in-house ERP, programming labs and a UPS-backed server room. Open 8 AM – 10 PM.",
-    img: BIPE_IMG.cncLab,
+    img: `${CL}/v1778150980/bipe/labs/cse/programming-lab-4`,
     tags: ["Networked", "Licensed OS", "ERP"],
   },
 ];
@@ -131,12 +136,12 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Image collage */}
+            {/* Image collage — four real BIPE workshop / lab shots. */}
             <div className="bipe-img-strip" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-              <Img src={BIPE_IMG.workshop} label="MECH · WORKSHOP" style={{ height: 220, borderRadius: 18 }} />
-              <Img src={BIPE_IMG.dairy} label="DAIRY · PILOT PLANT" style={{ height: 220, borderRadius: 18, marginTop: 28 }} />
-              <Img src={BIPE_IMG.library} label="LIBRARY" style={{ height: 220, borderRadius: 18, marginTop: -28 }} />
-              <Img src={BIPE_IMG.electrical} label="ELECTRICAL" style={{ height: 220, borderRadius: 18 }} />
+              <Img src={`${CL}/v1778151561/bipe/labs/mechanical/machin-shop-3`} label="MECH · WORKSHOP" style={{ height: 220, borderRadius: 18 }} />
+              <Img src={`${CL}/v1778150999/bipe/labs/cse/project-expo-3rd-year`} label="CSE · PROJECT EXPO" style={{ height: 220, borderRadius: 18, marginTop: 28 }} />
+              <Img src={`${CL}/v1778151196/bipe/labs/civil/survey-camp`} label="CIVIL · SURVEY CAMP" style={{ height: 220, borderRadius: 18, marginTop: -28 }} />
+              <Img src={`${CL}/v1778151083/bipe/labs/ee/industrial-visit-220-kb`} label="ELECTRICAL · INDUSTRIAL VISIT" style={{ height: 220, borderRadius: 18 }} />
             </div>
           </div>
         </div>

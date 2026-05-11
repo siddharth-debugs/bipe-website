@@ -44,6 +44,10 @@ export function Img({
     aspectRatio,
     ...style,
   };
+  // Cloudinary already returns WebP/AVIF via f_auto and the right size
+  // via w_/h_. Routing those URLs through Next's image optimiser breaks
+  // them (same fix as components/campus/LabsGallery + CrossfadeSlider).
+  const isCloudinary = typeof src === "string" && src.includes("res.cloudinary.com");
   return (
     <div className={className} style={wrapStyle}>
       {!errored && (
@@ -54,6 +58,7 @@ export function Img({
           sizes={sizes}
           priority={priority}
           fetchPriority={priority ? "high" : "auto"}
+          unoptimized={isCloudinary}
           onLoad={() => setLoaded(true)}
           onError={() => setErrored(true)}
           style={{
