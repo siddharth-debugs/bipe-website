@@ -51,8 +51,8 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   alumni: {
     path: "/alumni",
-    title: "Alumni · 870+ BIPE engineers across India | BIPE",
-    description: "Browse 870+ BIPE diploma alumni placed through 16 campus drives between 2016 and 2021. Filter by branch, year or recruiter.",
+    title: "Alumni · 915 placements · 871 joined | BIPE",
+    description: "Browse 915 BIPE placements across 16 recruiter drives (2016–2021): 871 joined, 44 offered but moved on. Filter by branch, year, recruiter or status.",
   },
   campus: {
     path: "/campus",

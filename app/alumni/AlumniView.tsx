@@ -64,6 +64,7 @@ export function AlumniView() {
   const [q, setQ] = useState("");
   const [branch, setBranch] = useState<string>("All");
   const [year, setYear] = useState<string>("All");
+  const [status, setStatus] = useState<"all" | "joined" | "offered">("all");
   const [visible, setVisible] = useState<number>(PAGE_SIZE);
   const [openDrives, setOpenDrives] = useState<Record<string, boolean>>({});
 
@@ -72,13 +73,14 @@ export function AlumniView() {
     return all.filter((a) => {
       if (branch !== "All" && a.branch !== branch) return false;
       if (year !== "All" && a.year !== year) return false;
+      if (status !== "all" && a.status !== status) return false;
       if (!needle) return true;
       return (
         a.name.toLowerCase().includes(needle) ||
         (a.company ?? "").toLowerCase().includes(needle)
       );
     });
-  }, [all, q, branch, year]);
+  }, [all, q, branch, year, status]);
 
   // Top recruiters tally for the stats strip
   const topRecruiter = useMemo(() => {
@@ -99,6 +101,7 @@ export function AlumniView() {
     setQ("");
     setBranch("All");
     setYear("All");
+    setStatus("all");
     setVisible(PAGE_SIZE);
   }
 
@@ -156,16 +159,16 @@ export function AlumniView() {
           <div style={{ maxWidth: 820 }}>
             <div className="eyebrow">Alumni</div>
             <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
-              {manifest.totalAlumni.toLocaleString("en-IN")} engineers,{" "}
+              {manifest.totalAlumni.toLocaleString("en-IN")} placements,{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                 shipping work across India.
               </span>
             </h1>
             <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-              Every name below was placed off the BIPE campus through one of {manifest.totalDrives}{" "}
-              recruiter drives between 2016 and 2021 &mdash; from Bhagawti Products and Talbross Group to
-              Minda Corporation and R.R. Parkon. Filter by branch, year or recruiter; tap a drive at the
-              bottom to see who joined which company.
+              {manifest.totalJoined.toLocaleString("en-IN")} BIPE students joined a company off campus
+              through {manifest.totalDrives} recruiter drives between 2016 and 2021. A further{" "}
+              {manifest.totalOffered.toLocaleString("en-IN")} were offered a role and chose another path
+              &mdash; shown below tagged as <em>Offered</em>. Filter by branch, year, recruiter or status.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
               <Link href="/placements" className="btn btn-primary">
@@ -197,13 +200,10 @@ export function AlumniView() {
             }}
           >
             {[
-              { num: manifest.totalAlumni.toString(), l: "Alumni placed" },
+              { num: manifest.totalAlumni.toString(), l: "Total placements" },
+              { num: manifest.totalJoined.toString(), l: "Joined the company" },
+              { num: manifest.totalOffered.toString(), l: "Offered · moved on" },
               { num: manifest.totalDrives.toString(), l: "Recruiter drives" },
-              {
-                num: `${manifest.years[0]}–${manifest.years[manifest.years.length - 1]}`,
-                l: "Years covered",
-              },
-              { num: manifest.branches.length.toString(), l: "Branches feeding industry" },
               {
                 num: topRecruiter.count.toString(),
                 l: `Top recruiter · ${topRecruiter.name.slice(0, 24)}${topRecruiter.name.length > 24 ? "…" : ""}`,
@@ -317,6 +317,19 @@ export function AlumniView() {
             </div>
           </div>
 
+          {/* Status pills */}
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 14 }}>
+            <Pill active={status === "all"} onClick={() => { setStatus("all"); setVisible(PAGE_SIZE); }}>
+              All · {manifest.totalAlumni}
+            </Pill>
+            <Pill active={status === "joined"} onClick={() => { setStatus("joined"); setVisible(PAGE_SIZE); }}>
+              Joined · {manifest.totalJoined}
+            </Pill>
+            <Pill active={status === "offered"} onClick={() => { setStatus("offered"); setVisible(PAGE_SIZE); }}>
+              Offered · {manifest.totalOffered}
+            </Pill>
+          </div>
+
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 16, marginBottom: 22 }}>
             <input
               type="search"
@@ -403,8 +416,30 @@ export function AlumniView() {
                     alignItems: "center",
                     background: "var(--white)",
                     position: "relative",
+                    opacity: a.status === "offered" ? 0.82 : 1,
                   }}
                 >
+                  {a.status === "offered" && (
+                    <span
+                      style={{
+                        position: "absolute",
+                        top: 10,
+                        right: 10,
+                        padding: "2px 8px",
+                        borderRadius: 999,
+                        background: "color-mix(in oklab, var(--accent) 18%, var(--white))",
+                        color: "var(--accent-deep, var(--accent))",
+                        border: "1px solid color-mix(in oklab, var(--accent) 36%, transparent)",
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 9,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        fontWeight: 700,
+                      }}
+                    >
+                      Offered
+                    </span>
+                  )}
                   <Avatar name={a.name} />
                   <div style={{ minWidth: 0 }}>
                     <div
@@ -416,6 +451,7 @@ export function AlumniView() {
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
+                        paddingRight: a.status === "offered" ? 56 : 0,
                       }}
                       title={a.name}
                     >
@@ -567,8 +603,23 @@ export function AlumniView() {
                         {d.date} {d.year && d.date !== d.year ? `· ${d.year}` : ""}
                       </div>
                     </div>
-                    <div className="pill pill-accent" style={{ whiteSpace: "nowrap" }}>
-                      {d.count} placed
+                    <div style={{ display: "flex", gap: 6, whiteSpace: "nowrap" }}>
+                      <span className="pill pill-accent" style={{ fontSize: 10 }}>
+                        {d.joined} joined
+                      </span>
+                      {d.offered > 0 && (
+                        <span
+                          className="pill"
+                          style={{
+                            fontSize: 10,
+                            background: "color-mix(in oklab, var(--accent) 14%, var(--white))",
+                            color: "var(--accent-deep, var(--accent))",
+                            border: "1px solid color-mix(in oklab, var(--accent) 30%, transparent)",
+                          }}
+                        >
+                          {d.offered} offered
+                        </span>
+                      )}
                     </div>
                     <div
                       style={{
@@ -611,8 +662,31 @@ export function AlumniView() {
                               gridTemplateColumns: "auto 1fr",
                               gap: 10,
                               alignItems: "center",
+                              opacity: a.status === "offered" ? 0.82 : 1,
+                              position: "relative",
                             }}
                           >
+                            {a.status === "offered" && (
+                              <span
+                                style={{
+                                  position: "absolute",
+                                  top: 6,
+                                  right: 6,
+                                  padding: "1px 6px",
+                                  borderRadius: 999,
+                                  background: "color-mix(in oklab, var(--accent) 18%, var(--white))",
+                                  color: "var(--accent-deep, var(--accent))",
+                                  border: "1px solid color-mix(in oklab, var(--accent) 32%, transparent)",
+                                  fontFamily: "var(--font-mono)",
+                                  fontSize: 8,
+                                  letterSpacing: "0.12em",
+                                  textTransform: "uppercase",
+                                  fontWeight: 700,
+                                }}
+                              >
+                                Offered
+                              </span>
+                            )}
                             <Avatar name={a.name} size={32} />
                             <div style={{ minWidth: 0 }}>
                               <div
@@ -623,6 +697,7 @@ export function AlumniView() {
                                   whiteSpace: "nowrap",
                                   overflow: "hidden",
                                   textOverflow: "ellipsis",
+                                  paddingRight: a.status === "offered" ? 50 : 0,
                                 }}
                                 title={a.name}
                               >
