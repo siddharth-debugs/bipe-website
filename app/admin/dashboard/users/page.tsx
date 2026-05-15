@@ -1,20 +1,36 @@
 "use client";
 
+import { ColumnDef } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
+
 import { PageHeader } from "@/components/admin/ui/PageHeader";
+import { Banner } from "@/components/admin/common/Toolkit";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { DataTable } from "@/components/ui/data-table";
 import {
-  Banner,
-  DangerBtn,
-  Empty,
-  Field,
-  FieldGrid,
-  GhostBtn,
-  Loading,
-  Modal,
-  PrimaryBtn,
-  Section,
-  Tag,
-} from "@/components/admin/common/Toolkit";
+  Dialog,
+  DialogBody,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
+
 import {
   AdminUser,
   AdminUserCompact,
@@ -30,22 +46,21 @@ import {
 } from "@/lib/admin/rbac";
 
 export default function UsersPage() {
-  const [users, setUsers] = useState<AdminUserCompact[] | null>(null);
+  const [users, setUsers] = useState<AdminUserCompact[]>([]);
+  const [loading, setLoading] = useState(true);
   const [roles, setRoles] = useState<Role[]>([]);
   const [err, setErr] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
-  const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState<"all" | "active" | "disabled">("all");
   const [editorOpen, setEditorOpen] = useState(false);
   const [editorUser, setEditorUser] = useState<AdminUser | null>(null);
 
   async function refresh() {
-    setUsers(null);
+    setLoading(true);
     setErr(null);
     try {
       const [u, r] = await Promise.all([
         listUsers({
-          search,
           active: activeFilter === "all" ? undefined : activeFilter === "active",
         }),
         listRoles(),
@@ -54,14 +69,15 @@ export default function UsersPage() {
       setRoles(r);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Failed to load");
-      setUsers([]);
+    } finally {
+      setLoading(false);
     }
   }
 
   useEffect(() => {
     refresh();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [search, activeFilter]);
+  }, [activeFilter]);
 
   function openNew() {
     setEditorUser(null);
@@ -96,6 +112,86 @@ export default function UsersPage() {
     }
   }
 
+  const columns: ColumnDef<AdminUserCompact>[] = [
+    {
+      id: "name",
+      header: "Name / phone",
+      accessorFn: (u) => u.display_name || u.username,
+      cell: ({ row }) => {
+        const u = row.original;
+        return (
+          <div className="min-w-0">
+            <div className="font-semibold text-[var(--ink)]">{u.display_name || u.username}</div>
+            <div className="text-[11.5px] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+              {u.username}{u.email ? ` · ${u.email}` : ""}
+            </div>
+          </div>
+        );
+      },
+    },
+    {
+      id: "primary_role",
+      header: "Primary role",
+      accessorFn: (u) => u.primary_role || "",
+      cell: ({ row }) => row.original.primary_role
+        ? <Badge variant="brand">{row.original.primary_role}</Badge>
+        : <span className="text-[var(--ink-4)]">—</span>,
+    },
+    {
+      id: "roles",
+      header: "All roles",
+      accessorFn: (u) => u.roles.join(", "),
+      cell: ({ row }) => row.original.roles.length === 0
+        ? <span className="text-[var(--ink-4)]">—</span>
+        : <div className="flex flex-wrap gap-1.5">{row.original.roles.map((r) => <Badge key={r}>{r}</Badge>)}</div>,
+    },
+    {
+      id: "status",
+      header: "Status",
+      accessorFn: (u) => (u.is_active ? "active" : "disabled"),
+      cell: ({ row }) => row.original.is_active
+        ? <Badge variant="success">active</Badge>
+        : <Badge variant="destructive">disabled</Badge>,
+    },
+    {
+      id: "last_login",
+      header: "Last login",
+      accessorFn: (u) => u.last_login ?? "",
+      cell: ({ row }) => (
+        <span className="text-[11.5px] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+          {row.original.last_login ? new Date(row.original.last_login).toLocaleDateString() : "—"}
+        </span>
+      ),
+    },
+    {
+      id: "actions",
+      header: "",
+      enableSorting: false,
+      cell: ({ row }) => {
+        const u = row.original;
+        return (
+          <div className="flex justify-end gap-1.5 whitespace-nowrap">
+            <Button variant="outline" size="sm" onClick={() => openEdit(u.id)}>
+              Edit
+            </Button>
+            {u.is_active && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-[var(--danger,#c13b2b)]"
+                disabled={u.is_superuser}
+                onClick={() => onDeactivate(u)}
+                title={u.is_superuser ? "Superusers can't be deactivated from here" : ""}
+              >
+                Disable
+              </Button>
+            )}
+          </div>
+        );
+      },
+    },
+  ];
+
   return (
     <>
       <PageHeader
@@ -107,109 +203,36 @@ export default function UsersPage() {
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
 
-      <div
-        className="admin-card"
-        style={{
-          padding: 16,
-          marginBottom: 16,
-          display: "grid",
-          gridTemplateColumns: "1fr auto auto auto",
-          gap: 12,
-          alignItems: "center",
-        }}
-      >
-        <input
-          className="admin-input"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search by name, phone, email…"
-          style={{ width: "100%" }}
-        />
-        <select
-          className="admin-select"
-          value={activeFilter}
-          onChange={(e) => setActiveFilter(e.target.value as "all" | "active" | "disabled")}
-        >
-          <option value="all">All users</option>
-          <option value="active">Active only</option>
-          <option value="disabled">Disabled only</option>
-        </select>
-        <GhostBtn onClick={refresh}>Refresh</GhostBtn>
-        <PrimaryBtn onClick={openNew}>+ Add user</PrimaryBtn>
-      </div>
+      <DataTable
+        data={users}
+        columns={columns}
+        searchKey=""
+        searchPlaceholder="Search by name, phone, email…"
+        toolbar={
+          <>
+            <Select value={activeFilter} onValueChange={(v) => setActiveFilter(v as typeof activeFilter)}>
+              <SelectTrigger className="w-[160px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All users</SelectItem>
+                <SelectItem value="active">Active only</SelectItem>
+                <SelectItem value="disabled">Disabled only</SelectItem>
+              </SelectContent>
+            </Select>
+            <Button variant="outline" onClick={refresh} disabled={loading}>
+              Refresh
+            </Button>
+            <Button onClick={openNew}>+ Add user</Button>
+          </>
+        }
+        emptyState={loading ? "Loading users…" : "No users match these filters."}
+        pageSize={20}
+      />
 
-      {!users ? (
-        <Loading />
-      ) : users.length === 0 ? (
-        <Empty
-          title="No users match these filters."
-          body="Try clearing the search or status filter."
-          action={<PrimaryBtn onClick={openNew}>+ Add user</PrimaryBtn>}
-        />
-      ) : (
-        <div className="admin-card" style={{ padding: 0, overflow: "hidden" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{ background: "var(--paper-2)", textAlign: "left" }}>
-                <Th>Name / phone</Th>
-                <Th>Primary role</Th>
-                <Th>All roles</Th>
-                <Th>Status</Th>
-                <Th>Last login</Th>
-                <Th>{""}</Th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((u) => (
-                <tr key={u.id} style={{ borderTop: "1px solid var(--line)" }}>
-                  <Td>
-                    <div style={{ fontWeight: 600 }}>{u.display_name || u.username}</div>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11.5, color: "var(--ink-3)" }}>
-                      {u.username}
-                      {u.email ? ` · ${u.email}` : ""}
-                    </div>
-                  </Td>
-                  <Td>{u.primary_role ? <Tag tone="brand">{u.primary_role}</Tag> : <span style={{ color: "var(--ink-4)" }}>—</span>}</Td>
-                  <Td>
-                    {u.roles.length === 0 ? <span style={{ color: "var(--ink-4)" }}>—</span> :
-                      <span style={{ display: "inline-flex", flexWrap: "wrap", gap: 6 }}>
-                        {u.roles.map((r) => <Tag key={r}>{r}</Tag>)}
-                      </span>}
-                  </Td>
-                  <Td>{u.is_active ? <Tag tone="success">active</Tag> : <Tag tone="danger">disabled</Tag>}</Td>
-                  <Td style={{ fontFamily: "var(--font-mono)", fontSize: 11.5, color: "var(--ink-3)" }}>
-                    {u.last_login ? new Date(u.last_login).toLocaleDateString() : "—"}
-                  </Td>
-                  <Td style={{ textAlign: "right", whiteSpace: "nowrap" }}>
-                    <button
-                      className="admin-btn-soft"
-                      style={{ padding: "6px 12px", fontSize: 12 }}
-                      onClick={() => openEdit(u.id)}
-                    >
-                      Edit
-                    </button>
-                    {u.is_active && (
-                      <button
-                        className="admin-btn-soft"
-                        style={{ padding: "6px 12px", fontSize: 12, marginLeft: 6, color: "var(--danger, #c13b2b)" }}
-                        onClick={() => onDeactivate(u)}
-                        disabled={u.is_superuser}
-                        title={u.is_superuser ? "Superusers can't be deactivated from the dashboard." : ""}
-                      >
-                        Disable
-                      </button>
-                    )}
-                  </Td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-
-      <UserEditorModal
+      <UserEditorDialog
         open={editorOpen}
-        onClose={() => setEditorOpen(false)}
+        onOpenChange={setEditorOpen}
         user={editorUser}
         roles={roles}
         onSaved={onSaved}
@@ -219,39 +242,18 @@ export default function UsersPage() {
   );
 }
 
-function Th({ children }: { children: React.ReactNode }) {
-  return (
-    <th
-      style={{
-        padding: "10px 14px",
-        fontSize: 11,
-        fontFamily: "var(--font-mono)",
-        textTransform: "uppercase",
-        letterSpacing: "0.06em",
-        color: "var(--ink-3)",
-        fontWeight: 500,
-      }}
-    >
-      {children}
-    </th>
-  );
-}
-function Td({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return <td style={{ padding: "12px 14px", fontSize: 13.5, color: "var(--ink-2)", ...style }}>{children}</td>;
-}
+// ─── Editor Dialog ────────────────────────────────────────────────────
 
-// ─── Editor modal ─────────────────────────────────────────────────────
-
-function UserEditorModal({
+function UserEditorDialog({
   open,
-  onClose,
+  onOpenChange,
   user,
   roles,
   onSaved,
   onError,
 }: {
   open: boolean;
-  onClose: () => void;
+  onOpenChange: (b: boolean) => void;
   user: AdminUser | null;
   roles: Role[];
   onSaved: () => void;
@@ -260,7 +262,6 @@ function UserEditorModal({
   const [form, setForm] = useState<AdminUserWrite>({});
   const [saving, setSaving] = useState(false);
 
-  // Reset form when modal opens or user changes
   useEffect(() => {
     if (!open) return;
     if (user) {
@@ -287,7 +288,6 @@ function UserEditorModal({
   function set<K extends keyof AdminUserWrite>(k: K, v: AdminUserWrite[K]) {
     setForm((f) => ({ ...f, [k]: v }));
   }
-
   function toggleRole(id: number) {
     const cur = new Set(form.role_ids ?? []);
     if (cur.has(id)) cur.delete(id);
@@ -298,11 +298,8 @@ function UserEditorModal({
   async function onSave() {
     setSaving(true);
     try {
-      if (user) {
-        await updateUser(user.id, form);
-      } else {
-        await createUser(form);
-      }
+      if (user) await updateUser(user.id, form);
+      else await createUser(form);
       onSaved();
     } catch (e) {
       onError(e instanceof Error ? e.message : "Save failed");
@@ -317,7 +314,11 @@ function UserEditorModal({
     setSaving(true);
     try {
       const u = await resetUserRoles(user.id);
-      setForm((f) => ({ ...f, role_ids: u.role_summary.map((r) => r.id), primary_role_id: u.profile?.primary_role ?? null }));
+      setForm((f) => ({
+        ...f,
+        role_ids: u.role_summary.map((r) => r.id),
+        primary_role_id: u.profile?.primary_role ?? null,
+      }));
     } catch (e) {
       onError(e instanceof Error ? e.message : "Failed");
     } finally {
@@ -326,110 +327,142 @@ function UserEditorModal({
   }
 
   return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      title={user ? `Edit user · ${user.profile?.display_name || user.username}` : "Add admin user"}
-      width={640}
-      footer={
-        <>
-          {user && <DangerBtn disabled={saving} onClick={onResetRoles}>Reset roles</DangerBtn>}
-          <GhostBtn disabled={saving} onClick={onClose}>Cancel</GhostBtn>
-          <PrimaryBtn disabled={saving} onClick={onSave}>
-            {saving ? "Saving…" : user ? "Save changes" : "Create user"}
-          </PrimaryBtn>
-        </>
-      }
-    >
-      <Section title="Identity">
-        <FieldGrid>
-          <Field label="Phone (10 digits) · also the login username" hint="e.g. 9198646464">
-            <input
-              className="admin-input"
-              value={form.phone ?? ""}
-              onChange={(e) => set("phone", e.target.value.replace(/\D/g, "").slice(0, 10))}
-              style={{ width: "100%" }}
-              disabled={!!user && user.is_superuser}
-            />
-          </Field>
-          <Field label="Display name">
-            <input
-              className="admin-input"
-              value={form.display_name ?? ""}
-              onChange={(e) => set("display_name", e.target.value)}
-              style={{ width: "100%" }}
-            />
-          </Field>
-          <Field label="Email (optional)">
-            <input
-              className="admin-input"
-              type="email"
-              value={form.email ?? ""}
-              onChange={(e) => set("email", e.target.value)}
-              style={{ width: "100%" }}
-            />
-          </Field>
-          <Field label="Status">
-            <label style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-              <input
-                type="checkbox"
-                checked={form.is_active ?? true}
-                onChange={(e) => set("is_active", e.target.checked)}
-                disabled={!!user && user.is_superuser}
-              />
-              <span>Active (can log in)</span>
-            </label>
-          </Field>
-        </FieldGrid>
-      </Section>
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent size="lg" className="p-0">
+        <DialogHeader>
+          <DialogTitle>
+            {user ? `Edit user · ${user.profile?.display_name || user.username}` : "Add admin user"}
+          </DialogTitle>
+          <DialogDescription>
+            Phone is the user's login username. Roles bundle permissions.
+          </DialogDescription>
+        </DialogHeader>
 
-      <Section title="Roles" description="One user can hold multiple roles; their permissions are the union of all.">
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
-          {roles.length === 0 && <p style={{ color: "var(--ink-3)", fontSize: 13 }}>No roles defined yet — go to Roles tab.</p>}
-          {roles.map((r) => {
-            const checked = (form.role_ids ?? []).includes(r.id);
-            return (
-              <label
-                key={r.id}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "auto 1fr",
-                  gap: 10,
-                  padding: 10,
-                  border: "1px solid var(--line)",
-                  borderRadius: 10,
-                  background: checked ? "var(--brand-soft)" : "var(--white)",
-                  cursor: "pointer",
-                }}
-              >
-                <input type="checkbox" checked={checked} onChange={() => toggleRole(r.id)} />
-                <div style={{ minWidth: 0 }}>
-                  <div style={{ fontWeight: 600, fontSize: 13.5 }}>{r.name}</div>
-                  <div style={{ fontSize: 11.5, color: "var(--ink-3)" }}>
-                    {r.permission_codes.length} permission{r.permission_codes.length === 1 ? "" : "s"}
-                  </div>
+        <DialogBody className="space-y-6">
+          {/* Identity */}
+          <section className="space-y-3">
+            <div className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+              <span>§</span> Identity
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-1.5">
+                <Label htmlFor="phone">Phone · also the login username</Label>
+                <Input
+                  id="phone"
+                  value={form.phone ?? ""}
+                  onChange={(e) => set("phone", e.target.value.replace(/\D/g, "").slice(0, 10))}
+                  placeholder="9198646464"
+                  disabled={!!user && user.is_superuser}
+                />
+                <p className="text-[11px] text-[var(--ink-3)]">10 digits, no country code or spaces.</p>
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="display_name">Display name</Label>
+                <Input
+                  id="display_name"
+                  value={form.display_name ?? ""}
+                  onChange={(e) => set("display_name", e.target.value)}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="email">Email (optional)</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={form.email ?? ""}
+                  onChange={(e) => set("email", e.target.value)}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label>Status</Label>
+                <div className="flex items-center gap-2 h-9">
+                  <Switch
+                    checked={form.is_active ?? true}
+                    onCheckedChange={(b) => set("is_active", b)}
+                    disabled={!!user && user.is_superuser}
+                  />
+                  <span className="text-sm text-[var(--ink-2)]">{form.is_active ?? true ? "Active (can log in)" : "Disabled"}</span>
                 </div>
-              </label>
-            );
-          })}
-        </div>
-        <div style={{ marginTop: 14 }}>
-          <Field label="Primary role (badge shown in the dashboard)">
-            <select
-              className="admin-select"
-              value={form.primary_role_id ?? ""}
-              onChange={(e) => set("primary_role_id", e.target.value ? Number(e.target.value) : null)}
-            >
-              <option value="">— None —</option>
-              {roles
-                .filter((r) => (form.role_ids ?? []).includes(r.id))
-                .map((r) => (
-                  <option key={r.id} value={r.id}>{r.name}</option>
-                ))}
-            </select>
-          </Field>
-        </div>
-      </Section>
-    </Modal>
+              </div>
+            </div>
+          </section>
+
+          <Separator />
+
+          {/* Roles */}
+          <section className="space-y-3">
+            <div className="flex items-baseline justify-between">
+              <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+                § Roles
+              </div>
+              <p className="text-xs text-[var(--ink-3)]">A user can hold multiple roles — their permissions are the union of all.</p>
+            </div>
+
+            {roles.length === 0 ? (
+              <p className="text-sm text-[var(--ink-3)]">No roles defined yet — go to the Roles tab.</p>
+            ) : (
+              <div className="grid gap-2 sm:grid-cols-2">
+                {roles.map((r) => {
+                  const checked = (form.role_ids ?? []).includes(r.id);
+                  return (
+                    <label
+                      key={r.id}
+                      className={
+                        "flex items-start gap-3 rounded-lg border border-[var(--line)] p-3 cursor-pointer transition-colors " +
+                        (checked ? "bg-[var(--brand-soft)]" : "bg-[var(--white)] hover:bg-[var(--paper-2)]")
+                      }
+                    >
+                      <Checkbox
+                        checked={checked}
+                        onCheckedChange={() => toggleRole(r.id)}
+                        className="mt-0.5"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <div className="font-semibold text-[13.5px]">{r.name}</div>
+                        <div className="text-[11.5px] text-[var(--ink-3)]">
+                          {r.permission_codes.length} permission{r.permission_codes.length === 1 ? "" : "s"} · {r.user_count} user{r.user_count === 1 ? "" : "s"}
+                        </div>
+                      </div>
+                    </label>
+                  );
+                })}
+              </div>
+            )}
+
+            <div className="space-y-1.5 max-w-md">
+              <Label htmlFor="primary_role">Primary role · badge shown in the dashboard</Label>
+              <Select
+                value={form.primary_role_id != null ? String(form.primary_role_id) : "_"}
+                onValueChange={(v) => set("primary_role_id", v === "_" ? null : Number(v))}
+              >
+                <SelectTrigger id="primary_role">
+                  <SelectValue placeholder="— None —" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="_">— None —</SelectItem>
+                  {roles
+                    .filter((r) => (form.role_ids ?? []).includes(r.id))
+                    .map((r) => (
+                      <SelectItem key={r.id} value={String(r.id)}>{r.name}</SelectItem>
+                    ))}
+                </SelectContent>
+              </Select>
+            </div>
+          </section>
+        </DialogBody>
+
+        <DialogFooter>
+          {user && (
+            <Button variant="outline" disabled={saving} onClick={onResetRoles} className="mr-auto text-[var(--danger,#c13b2b)]">
+              Reset roles
+            </Button>
+          )}
+          <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
+          <Button disabled={saving} onClick={onSave}>
+            {saving ? "Saving…" : user ? "Save changes" : "Create user"}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

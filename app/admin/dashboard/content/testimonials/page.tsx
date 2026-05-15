@@ -1,34 +1,40 @@
 "use client";
 
+import { ColumnDef } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
+
 import { PageHeader } from "@/components/admin/ui/PageHeader";
+import { Banner } from "@/components/admin/common/Toolkit";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { DataTable } from "@/components/ui/data-table";
 import {
-  Banner,
-  Field,
-  FieldGrid,
-  GhostBtn,
-  Loading,
-  Modal,
-  PrimaryBtn,
-  Section,
-} from "@/components/admin/common/Toolkit";
-import { ContentTable } from "@/components/admin/content/ContentTable";
+  Dialog, DialogBody, DialogContent, DialogDescription,
+  DialogFooter, DialogHeader, DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
-  Testimonials,
-  TestimonialRow,
-  TestimonialWrite,
-} from "@/lib/admin/content";
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
+
+import { Testimonials, TestimonialRow, TestimonialWrite } from "@/lib/admin/content";
 
 export default function TestimonialsAdmin() {
-  const [rows, setRows] = useState<TestimonialRow[] | null>(null);
+  const [rows, setRows] = useState<TestimonialRow[]>([]);
+  const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [editor, setEditor] = useState<{ open: boolean; row: TestimonialRow | null }>({ open: false, row: null });
 
   async function refresh() {
-    setRows(null); setErr(null);
+    setLoading(true); setErr(null);
     try { setRows(await Testimonials.list()); }
-    catch (e) { setErr(e instanceof Error ? e.message : "Failed"); setRows([]); }
+    catch (e) { setErr(e instanceof Error ? e.message : "Failed"); }
+    finally { setLoading(false); }
   }
   useEffect(() => { refresh(); }, []);
 
@@ -42,38 +48,54 @@ export default function TestimonialsAdmin() {
     catch (e) { setErr(e instanceof Error ? e.message : "Failed"); }
   }
 
+  const columns: ColumnDef<TestimonialRow>[] = [
+    { id: "name", header: "Name", accessorFn: (r) => r.name,
+      cell: ({ row }) => <span className="font-semibold text-[var(--ink)]">{row.original.name}</span> },
+    { id: "role", header: "Role", accessorFn: (r) => r.role,
+      cell: ({ row }) => <span>{row.original.role}</span> },
+    { id: "quote", header: "Quote", accessorFn: (r) => r.quote,
+      cell: ({ row }) => (
+        <span className="text-[var(--ink-3)] line-clamp-1 max-w-md inline-block">
+          {row.original.quote.slice(0, 60)}{row.original.quote.length > 60 ? "…" : ""}
+        </span>
+      ) },
+    { id: "lang", header: "Lang", accessorFn: (r) => r.language,
+      cell: ({ row }) => <Badge>{row.original.language}</Badge> },
+    { id: "status", header: "Status", accessorFn: (r) => (r.is_published ? "live" : "draft"),
+      cell: ({ row }) => row.original.is_published
+        ? <Badge variant="success">live</Badge> : <Badge>draft</Badge> },
+    { id: "actions", header: "", enableSorting: false,
+      cell: ({ row }) => (
+        <div className="flex justify-end gap-1.5 whitespace-nowrap">
+          <Button variant="outline" size="sm" onClick={() => setEditor({ open: true, row: row.original })}>Edit</Button>
+          <Button variant="outline" size="sm" onClick={() => togglePub(row.original)}>
+            {row.original.is_published ? "Unpublish" : "Publish"}
+          </Button>
+          <Button variant="outline" size="sm" className="text-[var(--danger,#c13b2b)]" onClick={() => onDelete(row.original)}>
+            Delete
+          </Button>
+        </div>
+      ) },
+  ];
+
   return (
     <>
-      <PageHeader
-        eyebrow="Content · Testimonials"
-        title="Alumni &"
-        accent="parent voices."
-        description="Quotes shown on the home Testimonials carousel and the placements page. Mix Hindi / English / Hinglish freely — set the language so we can render the right font."
-      />
+      <PageHeader eyebrow="Content · Testimonials" title="Alumni &" accent="parent voices."
+        description="Quotes shown on the home Testimonials carousel and the placements page." />
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
-        <PrimaryBtn onClick={() => setEditor({ open: true, row: null })}>+ New testimonial</PrimaryBtn>
-      </div>
-      {!rows ? <Loading /> : (
-        <ContentTable
-          rows={rows}
-          columns={[
-            { key: "name", header: "Name", render: (r) => <span style={{ fontWeight: 600 }}>{r.name}</span> },
-            { key: "role", header: "Role", render: (r) => r.role },
-            { key: "quote", header: "Quote (excerpt)", render: (r) => <span style={{ color: "var(--ink-3)" }}>{r.quote.slice(0, 60)}{r.quote.length > 60 ? "…" : ""}</span> },
-            { key: "lang", header: "Lang", render: (r) => <span className="admin-pill">{r.language}</span> },
-          ]}
-          onEdit={(r) => setEditor({ open: true, row: r })}
-          onTogglePublished={togglePub}
-          onDelete={onDelete}
-        />
-      )}
+
+      <DataTable
+        data={rows} columns={columns}
+        searchKey="" searchPlaceholder="Search by name, role or quote…"
+        toolbar={<Button onClick={() => setEditor({ open: true, row: null })}>+ New testimonial</Button>}
+        emptyState={loading ? "Loading…" : "No testimonials yet."}
+      />
 
       <Editor
         open={editor.open}
         row={editor.row}
-        onClose={() => setEditor({ open: false, row: null })}
+        onOpenChange={(b) => setEditor((s) => ({ ...s, open: b }))}
         onSaved={() => { setEditor({ open: false, row: null }); setMsg("Saved."); refresh(); }}
         onError={setErr}
       />
@@ -81,12 +103,18 @@ export default function TestimonialsAdmin() {
   );
 }
 
-function Editor({ open, row, onClose, onSaved, onError }: {
-  open: boolean; row: TestimonialRow | null;
-  onClose: () => void; onSaved: () => void; onError: (s: string) => void;
+function Editor({
+  open, row, onOpenChange, onSaved, onError,
+}: {
+  open: boolean;
+  row: TestimonialRow | null;
+  onOpenChange: (b: boolean) => void;
+  onSaved: () => void;
+  onError: (s: string) => void;
 }) {
   const [form, setForm] = useState<TestimonialWrite>({});
   const [saving, setSaving] = useState(false);
+
   useEffect(() => {
     if (!open) return;
     setForm(row ? { ...row } : {
@@ -108,47 +136,70 @@ function Editor({ open, row, onClose, onSaved, onError }: {
   }
 
   return (
-    <Modal open={open} onClose={onClose} title={row ? "Edit testimonial" : "New testimonial"} width={620}
-      footer={<>
-        <GhostBtn disabled={saving} onClick={onClose}>Cancel</GhostBtn>
-        <PrimaryBtn disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</PrimaryBtn>
-      </>}
-    >
-      <Section title="Testimonial">
-        <FieldGrid>
-          <Field label="Name">
-            <input className="admin-input" value={form.name || ""} onChange={(e) => set("name", e.target.value)} style={{ width: "100%" }} />
-          </Field>
-          <Field label="Year passed">
-            <input className="admin-input" type="number" value={form.year_passed ?? ""} onChange={(e) => set("year_passed", e.target.value ? Number(e.target.value) : null)} placeholder="2020" style={{ width: "100%" }} />
-          </Field>
-          <Field label="Role / context" full>
-            <input className="admin-input" value={form.role || ""} onChange={(e) => set("role", e.target.value)} placeholder="Mech (2020) → Tata Motors campus hire" style={{ width: "100%" }} />
-          </Field>
-          <Field label="Quote" full>
-            <textarea className="admin-textarea" rows={4} value={form.quote || ""} onChange={(e) => set("quote", e.target.value)} style={{ width: "100%" }} />
-          </Field>
-          <Field label="Language">
-            <select className="admin-select" value={form.language || "en"} onChange={(e) => set("language", e.target.value as TestimonialWrite["language"])}>
-              <option value="en">English</option>
-              <option value="hi">Hindi</option>
-              <option value="mix">Hinglish</option>
-            </select>
-          </Field>
-          <Field label="Photo URL (optional)">
-            <input className="admin-input" value={form.photo_url || ""} onChange={(e) => set("photo_url", e.target.value)} placeholder="https://…" style={{ width: "100%" }} />
-          </Field>
-          <Field label="Sort order">
-            <input className="admin-input" type="number" value={String(form.sort_order ?? 0)} onChange={(e) => set("sort_order", Number(e.target.value))} style={{ width: "100%" }} />
-          </Field>
-          <Field label="Status">
-            <label style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-              <input type="checkbox" checked={form.is_published ?? true} onChange={(e) => set("is_published", e.target.checked)} />
-              <span>Published</span>
-            </label>
-          </Field>
-        </FieldGrid>
-      </Section>
-    </Modal>
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent size="md" className="p-0">
+        <DialogHeader>
+          <DialogTitle>{row ? "Edit testimonial" : "New testimonial"}</DialogTitle>
+          <DialogDescription>
+            Mix Hindi / English / Hinglish freely — set the language so we can render the right font.
+          </DialogDescription>
+        </DialogHeader>
+
+        <DialogBody className="space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" value={form.name || ""} onChange={(e) => set("name", e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="year">Year passed</Label>
+              <Input id="year" type="number" value={form.year_passed ?? ""}
+                onChange={(e) => set("year_passed", e.target.value ? Number(e.target.value) : null)}
+                placeholder="2020" />
+            </div>
+            <div className="sm:col-span-2 space-y-1.5">
+              <Label htmlFor="role">Role / context</Label>
+              <Input id="role" value={form.role || ""} onChange={(e) => set("role", e.target.value)}
+                placeholder="Mech (2020) → Tata Motors campus hire" />
+            </div>
+            <div className="sm:col-span-2 space-y-1.5">
+              <Label htmlFor="quote">Quote</Label>
+              <Textarea id="quote" rows={4} value={form.quote || ""} onChange={(e) => set("quote", e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="lang">Language</Label>
+              <Select value={form.language || "en"} onValueChange={(v) => set("language", v as TestimonialWrite["language"])}>
+                <SelectTrigger id="lang"><SelectValue /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="en">English</SelectItem>
+                  <SelectItem value="hi">Hindi</SelectItem>
+                  <SelectItem value="mix">Hinglish</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="photo">Photo URL (optional)</Label>
+              <Input id="photo" value={form.photo_url || ""} onChange={(e) => set("photo_url", e.target.value)} placeholder="https://…" />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="order">Sort order</Label>
+              <Input id="order" type="number" value={String(form.sort_order ?? 0)} onChange={(e) => set("sort_order", Number(e.target.value))} />
+            </div>
+            <div className="space-y-1.5">
+              <Label>Published</Label>
+              <div className="flex items-center gap-2 h-9">
+                <Switch checked={form.is_published ?? true} onCheckedChange={(b) => set("is_published", b)} />
+                <span className="text-sm text-[var(--ink-2)]">{form.is_published ?? true ? "Live" : "Draft"}</span>
+              </div>
+            </div>
+          </div>
+        </DialogBody>
+
+        <DialogFooter>
+          <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
+          <Button disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

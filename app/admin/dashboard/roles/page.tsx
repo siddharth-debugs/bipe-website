@@ -1,20 +1,28 @@
 "use client";
 
+import { ColumnDef } from "@tanstack/react-table";
 import { useEffect, useMemo, useState } from "react";
+
 import { PageHeader } from "@/components/admin/ui/PageHeader";
+import { Banner } from "@/components/admin/common/Toolkit";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { DataTable } from "@/components/ui/data-table";
 import {
-  Banner,
-  DangerBtn,
-  Empty,
-  Field,
-  FieldGrid,
-  GhostBtn,
-  Loading,
-  Modal,
-  PrimaryBtn,
-  Section,
-  Tag,
-} from "@/components/admin/common/Toolkit";
+  Dialog,
+  DialogBody,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+
 import {
   PermissionCatalogue,
   PermissionRow,
@@ -36,7 +44,8 @@ const SYSTEM_ROLES = new Set([
 ]);
 
 export default function RolesPage() {
-  const [roles, setRoles] = useState<Role[] | null>(null);
+  const [roles, setRoles] = useState<Role[]>([]);
+  const [loading, setLoading] = useState(true);
   const [catalogue, setCatalogue] = useState<PermissionCatalogue | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
@@ -44,7 +53,7 @@ export default function RolesPage() {
   const [editorRole, setEditorRole] = useState<Role | null>(null);
 
   async function refresh() {
-    setRoles(null);
+    setLoading(true);
     setErr(null);
     try {
       const [rs, cat] = await Promise.all([listRoles(), getPermissionCatalogue()]);
@@ -52,7 +61,8 @@ export default function RolesPage() {
       setCatalogue(cat);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Failed to load");
-      setRoles([]);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -80,9 +90,7 @@ export default function RolesPage() {
     }
     if (r.user_count > 0) {
       if (!confirm(`${r.name} is assigned to ${r.user_count} user${r.user_count === 1 ? "" : "s"}. Delete anyway?`)) return;
-    } else {
-      if (!confirm(`Delete role "${r.name}"?`)) return;
-    }
+    } else if (!confirm(`Delete role "${r.name}"?`)) return;
     try {
       await deleteRole(r.id);
       setMsg("Role deleted.");
@@ -92,87 +100,75 @@ export default function RolesPage() {
     }
   }
 
+  const columns: ColumnDef<Role>[] = [
+    {
+      id: "name",
+      header: "Role",
+      accessorFn: (r) => r.name,
+      cell: ({ row }) => (
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="font-semibold text-[var(--ink)]">{row.original.name}</div>
+          {SYSTEM_ROLES.has(row.original.name) && <Badge variant="accent">System</Badge>}
+        </div>
+      ),
+    },
+    {
+      id: "perms",
+      header: "Permissions",
+      accessorFn: (r) => r.permission_codes.length,
+      cell: ({ row }) => `${row.original.permission_codes.length} permissions`,
+    },
+    {
+      id: "users",
+      header: "Users",
+      accessorFn: (r) => r.user_count,
+      cell: ({ row }) => row.original.user_count,
+    },
+    {
+      id: "actions",
+      header: "",
+      enableSorting: false,
+      cell: ({ row }) => (
+        <div className="flex justify-end gap-1.5 whitespace-nowrap">
+          <Button variant="outline" size="sm" onClick={() => openEdit(row.original.id)}>Edit</Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="text-[var(--danger,#c13b2b)]"
+            disabled={SYSTEM_ROLES.has(row.original.name)}
+            onClick={() => onDelete(row.original)}
+            title={SYSTEM_ROLES.has(row.original.name) ? "System roles can't be deleted." : ""}
+          >
+            Delete
+          </Button>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <>
       <PageHeader
         eyebrow="Admin · Roles"
         title="Roles &"
         accent="permissions."
-        description="A role bundles permissions. Assigning a role to a user gives them every permission in that role. Five system roles are seeded automatically; you can clone or add more."
+        description="A role bundles permissions. Five system roles are seeded automatically; you can clone or add more."
       />
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
 
-      <div
-        className="admin-card"
-        style={{
-          padding: 16,
-          marginBottom: 16,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <p style={{ margin: 0, color: "var(--ink-3)", fontSize: 13 }}>
-          {roles?.length ?? "—"} role{(roles?.length ?? 0) === 1 ? "" : "s"} defined.
-        </p>
-        <PrimaryBtn onClick={openNew}>+ New role</PrimaryBtn>
-      </div>
+      <DataTable
+        data={roles}
+        columns={columns}
+        searchKey=""
+        searchPlaceholder="Search roles…"
+        toolbar={<Button onClick={openNew}>+ New role</Button>}
+        emptyState={loading ? "Loading roles…" : "No roles yet."}
+      />
 
-      {!roles ? (
-        <Loading />
-      ) : roles.length === 0 ? (
-        <Empty title="No roles yet." action={<PrimaryBtn onClick={openNew}>+ New role</PrimaryBtn>} />
-      ) : (
-        <div className="admin-card" style={{ padding: 0, overflow: "hidden" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{ background: "var(--paper-2)", textAlign: "left" }}>
-                <Th>Role</Th>
-                <Th>Permissions</Th>
-                <Th>Users</Th>
-                <Th>{""}</Th>
-              </tr>
-            </thead>
-            <tbody>
-              {roles.map((r) => (
-                <tr key={r.id} style={{ borderTop: "1px solid var(--line)" }}>
-                  <Td>
-                    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                      <div style={{ fontWeight: 700 }}>{r.name}</div>
-                      {SYSTEM_ROLES.has(r.name) && <Tag tone="accent">System</Tag>}
-                    </div>
-                  </Td>
-                  <Td>{r.permission_codes.length} permissions</Td>
-                  <Td>{r.user_count}</Td>
-                  <Td style={{ textAlign: "right", whiteSpace: "nowrap" }}>
-                    <button
-                      className="admin-btn-soft"
-                      style={{ padding: "6px 12px", fontSize: 12 }}
-                      onClick={() => openEdit(r.id)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="admin-btn-soft"
-                      style={{ padding: "6px 12px", fontSize: 12, marginLeft: 6, color: "var(--danger, #c13b2b)" }}
-                      onClick={() => onDelete(r)}
-                      disabled={SYSTEM_ROLES.has(r.name)}
-                      title={SYSTEM_ROLES.has(r.name) ? "System roles can't be deleted." : ""}
-                    >
-                      Delete
-                    </button>
-                  </Td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-
-      <RoleEditorModal
+      <RoleEditorDialog
         open={editorOpen}
-        onClose={() => setEditorOpen(false)}
+        onOpenChange={setEditorOpen}
         role={editorRole}
         catalogue={catalogue}
         onSaved={() => {
@@ -187,27 +183,18 @@ export default function RolesPage() {
   );
 }
 
-function Th({ children }: { children: React.ReactNode }) {
-  return (
-    <th style={{ padding: "10px 14px", fontSize: 11, fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink-3)", fontWeight: 500 }}>{children}</th>
-  );
-}
-function Td({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return <td style={{ padding: "12px 14px", fontSize: 13.5, color: "var(--ink-2)", ...style }}>{children}</td>;
-}
+// ─── Editor Dialog ─────────────────────────────────────────────────────
 
-// ─── Editor modal ─────────────────────────────────────────────────────
-
-function RoleEditorModal({
+function RoleEditorDialog({
   open,
-  onClose,
+  onOpenChange,
   role,
   catalogue,
   onSaved,
   onError,
 }: {
   open: boolean;
-  onClose: () => void;
+  onOpenChange: (b: boolean) => void;
   role: Role | null;
   catalogue: PermissionCatalogue | null;
   onSaved: () => void;
@@ -239,7 +226,9 @@ function RoleEditorModal({
     return Object.keys(byApp)
       .filter((app) =>
         app.toLowerCase().includes(q) ||
-        byApp[app].some((p) => p.codename.toLowerCase().includes(q) || p.name.toLowerCase().includes(q)),
+        byApp[app].some((p) =>
+          p.codename.toLowerCase().includes(q) || p.name.toLowerCase().includes(q),
+        ),
       )
       .sort();
   }, [byApp, search]);
@@ -265,19 +254,15 @@ function RoleEditorModal({
   }
 
   async function onSave() {
+    if (!name.trim()) {
+      onError("Role name is required.");
+      return;
+    }
     setSaving(true);
     try {
       const payload = { name: name.trim(), permissions: Array.from(selected) };
-      if (!payload.name) {
-        onError("Role name is required.");
-        setSaving(false);
-        return;
-      }
-      if (role) {
-        await updateRole(role.id, payload);
-      } else {
-        await createRole(payload);
-      }
+      if (role) await updateRole(role.id, payload);
+      else await createRole(payload);
       onSaved();
     } catch (e) {
       onError(e instanceof Error ? e.message : "Save failed");
@@ -289,163 +274,147 @@ function RoleEditorModal({
   const isSystem = role && SYSTEM_ROLES.has(role.name);
 
   return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      title={role ? `Edit role · ${role.name}` : "Create role"}
-      width={820}
-      footer={
-        <>
-          <GhostBtn disabled={saving} onClick={onClose}>Cancel</GhostBtn>
-          <PrimaryBtn disabled={saving} onClick={onSave}>
-            {saving ? "Saving…" : role ? "Save changes" : "Create role"}
-          </PrimaryBtn>
-        </>
-      }
-    >
-      <Section title="Identity">
-        <FieldGrid>
-          <Field label="Role name" full>
-            <input
-              className="admin-input"
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent size="xl" className="p-0">
+        <DialogHeader>
+          <DialogTitle>{role ? `Edit role · ${role.name}` : "Create role"}</DialogTitle>
+          <DialogDescription>
+            Toggle the high-level scope perms or pick fine-grained per-model rights below. Selected · <strong className="text-[var(--ink)]">{selected.size}</strong> permission{selected.size === 1 ? "" : "s"}.
+          </DialogDescription>
+        </DialogHeader>
+
+        <DialogBody className="space-y-6">
+          {/* Identity */}
+          <div className="space-y-1.5 max-w-md">
+            <Label htmlFor="role_name">Role name</Label>
+            <Input
+              id="role_name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               disabled={!!isSystem}
-              style={{ width: "100%" }}
             />
             {isSystem && (
-              <div style={{ marginTop: 6, fontSize: 11.5, color: "var(--ink-3)" }}>
-                System role — name is locked.
-              </div>
+              <p className="text-[11px] text-[var(--ink-3)]">System role — name is locked.</p>
             )}
-          </Field>
-        </FieldGrid>
-      </Section>
+          </div>
 
-      <Section
-        title="Scope permissions"
-        description="These five high-level scopes gate entire dashboard tabs."
-      >
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 10 }}>
-          {scopePerms.map((p) => {
-            const on = selected.has(p.codename);
-            return (
-              <label
-                key={p.codename}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "auto 1fr",
-                  gap: 10,
-                  padding: 10,
-                  border: "1px solid var(--line)",
-                  borderRadius: 10,
-                  background: on ? "var(--brand-soft)" : "var(--white)",
-                  cursor: "pointer",
-                }}
-              >
-                <input type="checkbox" checked={on} onChange={() => toggle(p.codename)} />
-                <div style={{ minWidth: 0 }}>
-                  <div style={{ fontWeight: 600, fontSize: 13 }}>{p.label}</div>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>
-                    {p.codename}
-                  </div>
-                </div>
-              </label>
-            );
-          })}
-        </div>
-      </Section>
+          <Separator />
 
-      <Section
-        title="Per-model permissions"
-        description="Fine-grained add/change/delete/view rights per Django model. Use if you need read-only access to a single resource."
-      >
-        <input
-          className="admin-input"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Filter permissions…"
-          style={{ width: "100%", marginBottom: 12 }}
-        />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 12 }}>
-          {filteredApps.map((app) => {
-            const perms: PermissionRow[] = byApp[app];
-            const allOn = perms.every((p) => selected.has(p.codename_full));
-            return (
-              <div
-                key={app}
-                style={{
-                  border: "1px solid var(--line)",
-                  borderRadius: 10,
-                  padding: 10,
-                  background: "var(--white)",
-                }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--brand)" }}>
-                    {app}
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setAllInApp(app, !allOn)}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      color: "var(--ink-3)",
-                      fontSize: 11.5,
-                      cursor: "pointer",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    {allOn ? "Clear" : "Select all"}
-                  </button>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                  {perms
-                    .filter((p) => {
-                      const q = search.trim().toLowerCase();
-                      return !q ||
-                        app.toLowerCase().includes(q) ||
-                        p.codename.toLowerCase().includes(q) ||
-                        p.name.toLowerCase().includes(q);
-                    })
-                    .map((p) => {
-                      const on = selected.has(p.codename_full);
-                      return (
-                        <label
-                          key={p.codename_full}
-                          style={{
-                            display: "grid",
-                            gridTemplateColumns: "auto 1fr",
-                            gap: 8,
-                            padding: "4px 6px",
-                            fontSize: 12.5,
-                            color: "var(--ink-2)",
-                            background: on ? "color-mix(in oklab, var(--brand) 6%, transparent)" : "transparent",
-                            borderRadius: 6,
-                            cursor: "pointer",
-                          }}
-                        >
-                          <input type="checkbox" checked={on} onChange={() => toggle(p.codename_full)} />
-                          <div style={{ minWidth: 0 }}>
-                            <span>{p.name}</span>
-                            <span style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, color: "var(--ink-4)", marginLeft: 6 }}>
-                              {p.codename}
-                            </span>
-                          </div>
-                        </label>
-                      );
-                    })}
-                </div>
+          {/* Scope perms */}
+          <section className="space-y-3">
+            <div>
+              <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+                § Scope permissions
               </div>
-            );
-          })}
-        </div>
-      </Section>
+              <p className="text-sm text-[var(--ink-3)] mt-1">
+                Five high-level scopes that gate entire dashboard tabs.
+              </p>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {scopePerms.map((p) => {
+                const on = selected.has(p.codename);
+                return (
+                  <label
+                    key={p.codename}
+                    className={
+                      "flex items-start gap-3 rounded-lg border border-[var(--line)] p-3 cursor-pointer transition-colors " +
+                      (on ? "bg-[var(--brand-soft)]" : "bg-[var(--white)] hover:bg-[var(--paper-2)]")
+                    }
+                  >
+                    <Checkbox checked={on} onCheckedChange={() => toggle(p.codename)} className="mt-0.5" />
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold text-[13px]">{p.label}</div>
+                      <div className="text-[11px] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+                        {p.codename}
+                      </div>
+                    </div>
+                  </label>
+                );
+              })}
+            </div>
+          </section>
 
-      <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 8 }}>
-        Selected · <strong style={{ color: "var(--ink)" }}>{selected.size}</strong> permission{selected.size === 1 ? "" : "s"}
-      </div>
-    </Modal>
+          <Separator />
+
+          {/* Per-model perms */}
+          <section className="space-y-3">
+            <div>
+              <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+                § Per-model permissions
+              </div>
+              <p className="text-sm text-[var(--ink-3)] mt-1">
+                Fine-grained add/change/delete/view rights per Django model.
+              </p>
+            </div>
+            <Input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Filter permissions…"
+              className="max-w-md"
+            />
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredApps.map((app) => {
+                const perms = byApp[app];
+                const allOn = perms.every((p) => selected.has(p.codename_full));
+                return (
+                  <div key={app} className="rounded-lg border border-[var(--line)] bg-[var(--white)] p-3">
+                    <div className="flex items-baseline justify-between mb-2">
+                      <div className="text-[10.5px] uppercase tracking-[0.12em] font-bold text-[var(--brand)]" style={{ fontFamily: "var(--font-mono)" }}>
+                        {app}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setAllInApp(app, !allOn)}
+                        className="text-[11px] text-[var(--ink-3)] underline hover:text-[var(--ink)]"
+                      >
+                        {allOn ? "Clear" : "Select all"}
+                      </button>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      {perms
+                        .filter((p) => {
+                          const q = search.trim().toLowerCase();
+                          return !q ||
+                            app.toLowerCase().includes(q) ||
+                            p.codename.toLowerCase().includes(q) ||
+                            p.name.toLowerCase().includes(q);
+                        })
+                        .map((p) => {
+                          const on = selected.has(p.codename_full);
+                          return (
+                            <label
+                              key={p.codename_full}
+                              className={
+                                "flex items-start gap-2 rounded-md px-2 py-1.5 text-[12.5px] cursor-pointer transition-colors " +
+                                (on ? "bg-[color-mix(in_oklab,var(--brand)_6%,transparent)]" : "hover:bg-[var(--paper-2)]")
+                              }
+                            >
+                              <Checkbox checked={on} onCheckedChange={() => toggle(p.codename_full)} className="mt-0.5" />
+                              <div className="min-w-0 flex-1">
+                                <span className="text-[var(--ink-2)]">{p.name}</span>
+                                <span className="text-[10.5px] text-[var(--ink-4)] ml-2" style={{ fontFamily: "var(--font-mono)" }}>
+                                  {p.codename}
+                                </span>
+                              </div>
+                            </label>
+                          );
+                        })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        </DialogBody>
+
+        <DialogFooter>
+          <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
+          <Button disabled={saving} onClick={onSave}>
+            {saving ? "Saving…" : role ? "Save changes" : "Create role"}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

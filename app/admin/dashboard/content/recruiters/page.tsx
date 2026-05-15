@@ -1,25 +1,41 @@
 "use client";
 
+import { ColumnDef } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
+
 import { PageHeader } from "@/components/admin/ui/PageHeader";
+import { Banner } from "@/components/admin/common/Toolkit";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { DataTable } from "@/components/ui/data-table";
 import {
-  Banner, Field, FieldGrid, GhostBtn, Loading, Modal, PrimaryBtn, Section,
-} from "@/components/admin/common/Toolkit";
-import { ContentTable } from "@/components/admin/content/ContentTable";
+  Dialog, DialogBody, DialogContent, DialogDescription,
+  DialogFooter, DialogHeader, DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+
 import { Recruiters, RecruiterRow, RecruiterWrite } from "@/lib/admin/content";
 
-const TIERS = ["flagship", "regular", "alumni"];
+const TIERS = ["flagship", "regular", "alumni"] as const;
 
 export default function RecruitersAdmin() {
-  const [rows, setRows] = useState<RecruiterRow[] | null>(null);
+  const [rows, setRows] = useState<RecruiterRow[]>([]);
+  const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [editor, setEditor] = useState<{ open: boolean; row: RecruiterRow | null }>({ open: false, row: null });
 
   async function refresh() {
-    setRows(null); setErr(null);
+    setLoading(true); setErr(null);
     try { setRows(await Recruiters.list()); }
-    catch (e) { setErr(e instanceof Error ? e.message : "Failed"); setRows([]); }
+    catch (e) { setErr(e instanceof Error ? e.message : "Failed"); }
+    finally { setLoading(false); }
   }
   useEffect(() => { refresh(); }, []);
 
@@ -33,43 +49,73 @@ export default function RecruitersAdmin() {
     catch (e) { setErr(e instanceof Error ? e.message : "Failed"); }
   }
 
+  const columns: ColumnDef<RecruiterRow>[] = [
+    { id: "name", header: "Name", accessorFn: (r) => r.name,
+      cell: ({ row }) => <span className="font-semibold text-[var(--ink)]">{row.original.name}</span> },
+    { id: "tier", header: "Tier", accessorFn: (r) => r.tier,
+      cell: ({ row }) => (
+        <Badge variant={row.original.tier === "flagship" ? "brand" : row.original.tier === "alumni" ? "accent" : "outline"}>
+          {row.original.tier}
+        </Badge>
+      ) },
+    { id: "count", header: "Alumni placed", accessorFn: (r) => r.alumni_count,
+      cell: ({ row }) => row.original.alumni_count },
+    { id: "blurb", header: "Blurb", accessorFn: (r) => r.blurb,
+      cell: ({ row }) => <span className="text-[var(--ink-3)] text-xs">{row.original.blurb}</span> },
+    { id: "status", header: "Status", accessorFn: (r) => (r.is_published ? "live" : "draft"),
+      cell: ({ row }) => row.original.is_published
+        ? <Badge variant="success">live</Badge> : <Badge>draft</Badge> },
+    { id: "actions", header: "", enableSorting: false,
+      cell: ({ row }) => (
+        <div className="flex justify-end gap-1.5 whitespace-nowrap">
+          <Button variant="outline" size="sm" onClick={() => setEditor({ open: true, row: row.original })}>Edit</Button>
+          <Button variant="outline" size="sm" onClick={() => togglePub(row.original)}>
+            {row.original.is_published ? "Unpublish" : "Publish"}
+          </Button>
+          <Button variant="outline" size="sm" className="text-[var(--danger,#c13b2b)]" onClick={() => onDelete(row.original)}>
+            Delete
+          </Button>
+        </div>
+      ) },
+  ];
+
   return (
     <>
       <PageHeader eyebrow="Content · Recruiters" title="Recruiter" accent="directory."
-        description="Companies that have hired BIPE alumni — shown on the home Recruiters strip and the /placements page." />
+        description="Companies that have hired BIPE alumni." />
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
-        <PrimaryBtn onClick={() => setEditor({ open: true, row: null })}>+ New recruiter</PrimaryBtn>
-      </div>
-      {!rows ? <Loading /> : (
-        <ContentTable
-          rows={rows}
-          columns={[
-            { key: "name", header: "Name", render: (r) => <span style={{ fontWeight: 600 }}>{r.name}</span> },
-            { key: "tier", header: "Tier", render: (r) => <span className="admin-pill">{r.tier}</span> },
-            { key: "cnt",  header: "Alumni placed", render: (r) => r.alumni_count },
-            { key: "blurb", header: "Blurb", render: (r) => <span style={{ color: "var(--ink-3)", fontSize: 12 }}>{r.blurb}</span> },
-          ]}
-          onEdit={(r) => setEditor({ open: true, row: r })}
-          onTogglePublished={togglePub}
-          onDelete={onDelete}
-        />
-      )}
-      <Editor open={editor.open} row={editor.row}
-        onClose={() => setEditor({ open: false, row: null })}
+
+      <DataTable
+        data={rows} columns={columns}
+        searchKey="" searchPlaceholder="Search recruiters…"
+        toolbar={<Button onClick={() => setEditor({ open: true, row: null })}>+ New recruiter</Button>}
+        emptyState={loading ? "Loading…" : "No recruiters yet."}
+      />
+
+      <Editor
+        open={editor.open}
+        row={editor.row}
+        onOpenChange={(b) => setEditor((s) => ({ ...s, open: b }))}
         onSaved={() => { setEditor({ open: false, row: null }); setMsg("Saved."); refresh(); }}
-        onError={setErr} />
+        onError={setErr}
+      />
     </>
   );
 }
 
-function Editor({ open, row, onClose, onSaved, onError }: {
-  open: boolean; row: RecruiterRow | null;
-  onClose: () => void; onSaved: () => void; onError: (s: string) => void;
+function Editor({
+  open, row, onOpenChange, onSaved, onError,
+}: {
+  open: boolean;
+  row: RecruiterRow | null;
+  onOpenChange: (b: boolean) => void;
+  onSaved: () => void;
+  onError: (s: string) => void;
 }) {
   const [form, setForm] = useState<RecruiterWrite>({});
   const [saving, setSaving] = useState(false);
+
   useEffect(() => {
     if (!open) return;
     setForm(row ? { ...row } : {
@@ -84,38 +130,66 @@ function Editor({ open, row, onClose, onSaved, onError }: {
     try {
       if (row) await Recruiters.update(row.id, form); else await Recruiters.create(form);
       onSaved();
-    } catch (e) { onError(e instanceof Error ? e.message : "Failed"); }
+    } catch (e) { onError(e instanceof Error ? e.message : "Save failed"); }
     finally { setSaving(false); }
   }
 
   return (
-    <Modal open={open} onClose={onClose} title={row ? "Edit recruiter" : "New recruiter"} width={620}
-      footer={<>
-        <GhostBtn disabled={saving} onClick={onClose}>Cancel</GhostBtn>
-        <PrimaryBtn disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</PrimaryBtn>
-      </>}
-    >
-      <Section title="Recruiter">
-        <FieldGrid>
-          <Field label="Name"><input className="admin-input" value={form.name || ""} onChange={(e) => set("name", e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label="Tier">
-            <select className="admin-select" value={form.tier || "regular"} onChange={(e) => set("tier", e.target.value as RecruiterWrite["tier"])}>
-              {TIERS.map((t) => <option key={t} value={t}>{t}</option>)}
-            </select>
-          </Field>
-          <Field label="Logo URL" full><input className="admin-input" value={form.logo_url || ""} onChange={(e) => set("logo_url", e.target.value)} placeholder="https://…" style={{ width: "100%" }} /></Field>
-          <Field label="Website URL" full><input className="admin-input" value={form.website_url || ""} onChange={(e) => set("website_url", e.target.value)} placeholder="https://…" style={{ width: "100%" }} /></Field>
-          <Field label="Alumni placed"><input className="admin-input" type="number" value={form.alumni_count ?? 0} onChange={(e) => set("alumni_count", Number(e.target.value))} style={{ width: "100%" }} /></Field>
-          <Field label="Sort order"><input className="admin-input" type="number" value={String(form.sort_order ?? 0)} onChange={(e) => set("sort_order", Number(e.target.value))} style={{ width: "100%" }} /></Field>
-          <Field label="Short blurb (optional)" full><input className="admin-input" value={form.blurb || ""} onChange={(e) => set("blurb", e.target.value)} placeholder="e.g. 'Munich · pool drive May 2026'" style={{ width: "100%" }} /></Field>
-          <Field label="Status">
-            <label style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-              <input type="checkbox" checked={form.is_published ?? true} onChange={(e) => set("is_published", e.target.checked)} />
-              <span>Published</span>
-            </label>
-          </Field>
-        </FieldGrid>
-      </Section>
-    </Modal>
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent size="md" className="p-0">
+        <DialogHeader>
+          <DialogTitle>{row ? "Edit recruiter" : "New recruiter"}</DialogTitle>
+          <DialogDescription>Company that hires BIPE alumni — shown on home + /placements.</DialogDescription>
+        </DialogHeader>
+
+        <DialogBody className="space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-1.5">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" value={form.name || ""} onChange={(e) => set("name", e.target.value)} />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="tier">Tier</Label>
+              <Select value={form.tier || "regular"} onValueChange={(v) => set("tier", v as RecruiterWrite["tier"])}>
+                <SelectTrigger id="tier"><SelectValue /></SelectTrigger>
+                <SelectContent>{TIERS.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}</SelectContent>
+              </Select>
+            </div>
+            <div className="sm:col-span-2 space-y-1.5">
+              <Label htmlFor="logo">Logo URL</Label>
+              <Input id="logo" value={form.logo_url || ""} onChange={(e) => set("logo_url", e.target.value)} placeholder="https://…" />
+            </div>
+            <div className="sm:col-span-2 space-y-1.5">
+              <Label htmlFor="website">Website URL</Label>
+              <Input id="website" value={form.website_url || ""} onChange={(e) => set("website_url", e.target.value)} placeholder="https://…" />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="cnt">Alumni placed</Label>
+              <Input id="cnt" type="number" value={form.alumni_count ?? 0} onChange={(e) => set("alumni_count", Number(e.target.value))} />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="order">Sort order</Label>
+              <Input id="order" type="number" value={String(form.sort_order ?? 0)} onChange={(e) => set("sort_order", Number(e.target.value))} />
+            </div>
+            <div className="sm:col-span-2 space-y-1.5">
+              <Label htmlFor="blurb">Short blurb (optional)</Label>
+              <Input id="blurb" value={form.blurb || ""} onChange={(e) => set("blurb", e.target.value)} placeholder="e.g. 'Munich · pool drive May 2026'" />
+            </div>
+            <div className="space-y-1.5">
+              <Label>Published</Label>
+              <div className="flex items-center gap-2 h-9">
+                <Switch checked={form.is_published ?? true} onCheckedChange={(b) => set("is_published", b)} />
+                <span className="text-sm text-[var(--ink-2)]">{form.is_published ?? true ? "Live" : "Draft"}</span>
+              </div>
+            </div>
+          </div>
+        </DialogBody>
+
+        <DialogFooter>
+          <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
+          <Button disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

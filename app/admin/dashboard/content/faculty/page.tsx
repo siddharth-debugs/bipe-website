@@ -1,23 +1,38 @@
 "use client";
 
+import { ColumnDef } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
+
 import { PageHeader } from "@/components/admin/ui/PageHeader";
+import { Banner } from "@/components/admin/common/Toolkit";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { DataTable } from "@/components/ui/data-table";
 import {
-  Banner, Field, FieldGrid, GhostBtn, Loading, Modal, PrimaryBtn, Section,
-} from "@/components/admin/common/Toolkit";
-import { ContentTable } from "@/components/admin/content/ContentTable";
+  Dialog, DialogBody, DialogContent, DialogDescription,
+  DialogFooter, DialogHeader, DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
+
 import { Faculty, FacultyRow, FacultyWrite } from "@/lib/admin/content";
 
 export default function FacultyAdmin() {
-  const [rows, setRows] = useState<FacultyRow[] | null>(null);
+  const [rows, setRows] = useState<FacultyRow[]>([]);
+  const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [editor, setEditor] = useState<{ open: boolean; row: FacultyRow | null }>({ open: false, row: null });
 
   async function refresh() {
-    setRows(null); setErr(null);
+    setLoading(true); setErr(null);
     try { setRows(await Faculty.list()); }
-    catch (e) { setErr(e instanceof Error ? e.message : "Failed"); setRows([]); }
+    catch (e) { setErr(e instanceof Error ? e.message : "Failed"); }
+    finally { setLoading(false); }
   }
   useEffect(() => { refresh(); }, []);
 
@@ -31,43 +46,75 @@ export default function FacultyAdmin() {
     catch (e) { setErr(e instanceof Error ? e.message : "Failed"); }
   }
 
+  const columns: ColumnDef<FacultyRow>[] = [
+    { id: "name", header: "Name", accessorFn: (r) => r.name,
+      cell: ({ row }) => <span className="font-semibold text-[var(--ink)]">{row.original.name}</span> },
+    { id: "designation", header: "Designation", accessorFn: (r) => r.designation,
+      cell: ({ row }) => row.original.designation },
+    { id: "dept", header: "Department", accessorFn: (r) => r.department,
+      cell: ({ row }) => <span className="text-[var(--ink-3)]">{row.original.department}</span> },
+    { id: "flags", header: "Flags", enableSorting: false,
+      cell: ({ row }) => {
+        const f = [
+          row.original.is_principal && <Badge key="p" variant="brand">Principal</Badge>,
+          row.original.is_hod && <Badge key="h" variant="accent">HOD</Badge>,
+        ].filter(Boolean);
+        return f.length ? <div className="flex gap-1.5">{f}</div> : <span className="text-[var(--ink-4)]">—</span>;
+      } },
+    { id: "status", header: "Status", accessorFn: (r) => (r.is_published ? "live" : "draft"),
+      cell: ({ row }) => row.original.is_published
+        ? <Badge variant="success">live</Badge> : <Badge>draft</Badge> },
+    { id: "actions", header: "", enableSorting: false,
+      cell: ({ row }) => (
+        <div className="flex justify-end gap-1.5 whitespace-nowrap">
+          <Button variant="outline" size="sm" onClick={() => setEditor({ open: true, row: row.original })}>Edit</Button>
+          <Button variant="outline" size="sm" onClick={() => togglePub(row.original)}>
+            {row.original.is_published ? "Unpublish" : "Publish"}
+          </Button>
+          <Button variant="outline" size="sm" className="text-[var(--danger,#c13b2b)]" onClick={() => onDelete(row.original)}>
+            Delete
+          </Button>
+        </div>
+      ) },
+  ];
+
   return (
     <>
       <PageHeader eyebrow="Content · Faculty" title="Faculty" accent="profiles."
         description="Profiles shown on the /faculty page. Mark one row as Principal and one per department as HOD." />
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
-        <PrimaryBtn onClick={() => setEditor({ open: true, row: null })}>+ New faculty</PrimaryBtn>
-      </div>
-      {!rows ? <Loading /> : (
-        <ContentTable
-          rows={rows}
-          columns={[
-            { key: "name", header: "Name", render: (r) => <span style={{ fontWeight: 600 }}>{r.name}</span> },
-            { key: "des",  header: "Designation", render: (r) => r.designation },
-            { key: "dept", header: "Department", render: (r) => <span style={{ color: "var(--ink-3)" }}>{r.department}</span> },
-            { key: "flag", header: "Flags", render: (r) => [r.is_principal && "Principal", r.is_hod && "HOD"].filter(Boolean).join(" · ") || "—" },
-          ]}
-          onEdit={(r) => setEditor({ open: true, row: r })}
-          onTogglePublished={togglePub}
-          onDelete={onDelete}
-        />
-      )}
-      <Editor open={editor.open} row={editor.row}
-        onClose={() => setEditor({ open: false, row: null })}
+
+      <DataTable
+        data={rows} columns={columns}
+        searchKey="" searchPlaceholder="Search faculty…"
+        toolbar={<Button onClick={() => setEditor({ open: true, row: null })}>+ New faculty</Button>}
+        emptyState={loading ? "Loading…" : "No faculty added yet."}
+      />
+
+      <Editor
+        open={editor.open}
+        row={editor.row}
+        onOpenChange={(b) => setEditor((s) => ({ ...s, open: b }))}
         onSaved={() => { setEditor({ open: false, row: null }); setMsg("Saved."); refresh(); }}
-        onError={setErr} />
+        onError={setErr}
+      />
     </>
   );
 }
 
-function Editor({ open, row, onClose, onSaved, onError }: {
-  open: boolean; row: FacultyRow | null;
-  onClose: () => void; onSaved: () => void; onError: (s: string) => void;
+function Editor({
+  open, row, onOpenChange, onSaved, onError,
+}: {
+  open: boolean;
+  row: FacultyRow | null;
+  onOpenChange: (b: boolean) => void;
+  onSaved: () => void;
+  onError: (s: string) => void;
 }) {
   const [form, setForm] = useState<FacultyWrite>({});
   const [saving, setSaving] = useState(false);
+
   useEffect(() => {
     if (!open) return;
     setForm(row ? { ...row } : {
@@ -83,55 +130,104 @@ function Editor({ open, row, onClose, onSaved, onError }: {
     try {
       if (row) await Faculty.update(row.id, form); else await Faculty.create(form);
       onSaved();
-    } catch (e) { onError(e instanceof Error ? e.message : "Failed"); }
+    } catch (e) { onError(e instanceof Error ? e.message : "Save failed"); }
     finally { setSaving(false); }
   }
 
   return (
-    <Modal open={open} onClose={onClose} title={row ? "Edit faculty" : "New faculty"} width={720}
-      footer={<>
-        <GhostBtn disabled={saving} onClick={onClose}>Cancel</GhostBtn>
-        <PrimaryBtn disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</PrimaryBtn>
-      </>}
-    >
-      <Section title="Identity">
-        <FieldGrid>
-          <Field label="Name"><input className="admin-input" value={form.name || ""} onChange={(e) => set("name", e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label="Designation"><input className="admin-input" value={form.designation || ""} onChange={(e) => set("designation", e.target.value)} placeholder="HOD, Mechanical Engineering" style={{ width: "100%" }} /></Field>
-          <Field label="Department" full><input className="admin-input" value={form.department || ""} onChange={(e) => set("department", e.target.value)} placeholder="Mechanical Engineering (Production)" style={{ width: "100%" }} /></Field>
-          <Field label="Qualifications" full><input className="admin-input" value={form.qualifications || ""} onChange={(e) => set("qualifications", e.target.value)} placeholder="M.Tech (Production) · NIT Patna" style={{ width: "100%" }} /></Field>
-          <Field label="Experience (years)"><input className="admin-input" type="number" value={form.experience_years ?? ""} onChange={(e) => set("experience_years", e.target.value ? Number(e.target.value) : null)} style={{ width: "100%" }} /></Field>
-          <Field label="Email"><input className="admin-input" type="email" value={form.email || ""} onChange={(e) => set("email", e.target.value)} style={{ width: "100%" }} /></Field>
-          <Field label="Photo URL" full><input className="admin-input" value={form.photo_url || ""} onChange={(e) => set("photo_url", e.target.value)} placeholder="https://…" style={{ width: "100%" }} /></Field>
-          <Field label="LinkedIn" full><input className="admin-input" value={form.linkedin_url || ""} onChange={(e) => set("linkedin_url", e.target.value)} placeholder="https://linkedin.com/in/…" style={{ width: "100%" }} /></Field>
-          <Field label="Bio" full><textarea className="admin-textarea" rows={4} value={form.bio || ""} onChange={(e) => set("bio", e.target.value)} style={{ width: "100%" }} /></Field>
-        </FieldGrid>
-      </Section>
-      <Section title="Flags & ordering">
-        <FieldGrid>
-          <Field label="Is Principal">
-            <label style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-              <input type="checkbox" checked={!!form.is_principal} onChange={(e) => set("is_principal", e.target.checked)} />
-              <span>Mark as the Principal</span>
-            </label>
-          </Field>
-          <Field label="Is HOD">
-            <label style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-              <input type="checkbox" checked={!!form.is_hod} onChange={(e) => set("is_hod", e.target.checked)} />
-              <span>Mark as Head of Department</span>
-            </label>
-          </Field>
-          <Field label="Sort order">
-            <input className="admin-input" type="number" value={String(form.sort_order ?? 0)} onChange={(e) => set("sort_order", Number(e.target.value))} style={{ width: "100%" }} />
-          </Field>
-          <Field label="Status">
-            <label style={{ display: "inline-flex", gap: 8, alignItems: "center" }}>
-              <input type="checkbox" checked={form.is_published ?? true} onChange={(e) => set("is_published", e.target.checked)} />
-              <span>Published</span>
-            </label>
-          </Field>
-        </FieldGrid>
-      </Section>
-    </Modal>
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent size="lg" className="p-0">
+        <DialogHeader>
+          <DialogTitle>{row ? "Edit faculty" : "New faculty"}</DialogTitle>
+          <DialogDescription>Faculty profile shown across /faculty + home cards.</DialogDescription>
+        </DialogHeader>
+
+        <DialogBody className="space-y-6">
+          <section className="space-y-3">
+            <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>§ Identity</div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-1.5">
+                <Label htmlFor="name">Name</Label>
+                <Input id="name" value={form.name || ""} onChange={(e) => set("name", e.target.value)} />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="designation">Designation</Label>
+                <Input id="designation" value={form.designation || ""} onChange={(e) => set("designation", e.target.value)}
+                  placeholder="HOD, Mechanical Engineering" />
+              </div>
+              <div className="sm:col-span-2 space-y-1.5">
+                <Label htmlFor="dept">Department</Label>
+                <Input id="dept" value={form.department || ""} onChange={(e) => set("department", e.target.value)}
+                  placeholder="Mechanical Engineering (Production)" />
+              </div>
+              <div className="sm:col-span-2 space-y-1.5">
+                <Label htmlFor="quals">Qualifications</Label>
+                <Input id="quals" value={form.qualifications || ""} onChange={(e) => set("qualifications", e.target.value)}
+                  placeholder="M.Tech (Production) · NIT Patna" />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="exp">Experience (years)</Label>
+                <Input id="exp" type="number" value={form.experience_years ?? ""}
+                  onChange={(e) => set("experience_years", e.target.value ? Number(e.target.value) : null)} />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" value={form.email || ""} onChange={(e) => set("email", e.target.value)} />
+              </div>
+              <div className="sm:col-span-2 space-y-1.5">
+                <Label htmlFor="photo">Photo URL</Label>
+                <Input id="photo" value={form.photo_url || ""} onChange={(e) => set("photo_url", e.target.value)} placeholder="https://…" />
+              </div>
+              <div className="sm:col-span-2 space-y-1.5">
+                <Label htmlFor="linkedin">LinkedIn</Label>
+                <Input id="linkedin" value={form.linkedin_url || ""} onChange={(e) => set("linkedin_url", e.target.value)} placeholder="https://linkedin.com/in/…" />
+              </div>
+              <div className="sm:col-span-2 space-y-1.5">
+                <Label htmlFor="bio">Bio</Label>
+                <Textarea id="bio" rows={4} value={form.bio || ""} onChange={(e) => set("bio", e.target.value)} />
+              </div>
+            </div>
+          </section>
+
+          <Separator />
+
+          <section className="space-y-3">
+            <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>§ Flags & ordering</div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-1.5">
+                <Label>Is Principal</Label>
+                <div className="flex items-center gap-2 h-9">
+                  <Switch checked={!!form.is_principal} onCheckedChange={(b) => set("is_principal", b)} />
+                  <span className="text-sm text-[var(--ink-2)]">Mark as the Principal</span>
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <Label>Is HOD</Label>
+                <div className="flex items-center gap-2 h-9">
+                  <Switch checked={!!form.is_hod} onCheckedChange={(b) => set("is_hod", b)} />
+                  <span className="text-sm text-[var(--ink-2)]">Head of Department</span>
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="order">Sort order</Label>
+                <Input id="order" type="number" value={String(form.sort_order ?? 0)} onChange={(e) => set("sort_order", Number(e.target.value))} />
+              </div>
+              <div className="space-y-1.5">
+                <Label>Published</Label>
+                <div className="flex items-center gap-2 h-9">
+                  <Switch checked={form.is_published ?? true} onCheckedChange={(b) => set("is_published", b)} />
+                  <span className="text-sm text-[var(--ink-2)]">{form.is_published ?? true ? "Live" : "Draft"}</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </DialogBody>
+
+        <DialogFooter>
+          <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
+          <Button disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }
