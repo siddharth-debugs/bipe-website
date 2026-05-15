@@ -11,14 +11,14 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { DataTable } from "@/components/ui/data-table";
 import {
-  Dialog,
-  DialogBody,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+  Sheet,
+  SheetBody,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
@@ -166,7 +166,7 @@ export default function RolesPage() {
         emptyState={loading ? "Loading roles…" : "No roles yet."}
       />
 
-      <RoleEditorDialog
+      <RoleEditorSheet
         open={editorOpen}
         onOpenChange={setEditorOpen}
         role={editorRole}
@@ -183,9 +183,9 @@ export default function RolesPage() {
   );
 }
 
-// ─── Editor Dialog ─────────────────────────────────────────────────────
+// ─── Editor Sheet ─────────────────────────────────────────────────────
 
-function RoleEditorDialog({
+function RoleEditorSheet({
   open,
   onOpenChange,
   role,
@@ -274,16 +274,16 @@ function RoleEditorDialog({
   const isSystem = role && SYSTEM_ROLES.has(role.name);
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent size="xl" className="p-0">
-        <DialogHeader>
-          <DialogTitle>{role ? `Edit role · ${role.name}` : "Create role"}</DialogTitle>
-          <DialogDescription>
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent size="xl" className="p-0">
+        <SheetHeader>
+          <SheetTitle>{role ? `Edit role · ${role.name}` : "Create role"}</SheetTitle>
+          <SheetDescription>
             Toggle the high-level scope perms or pick fine-grained per-model rights below. Selected · <strong className="text-[var(--ink)]">{selected.size}</strong> permission{selected.size === 1 ? "" : "s"}.
-          </DialogDescription>
-        </DialogHeader>
+          </SheetDescription>
+        </SheetHeader>
 
-        <DialogBody className="space-y-6">
+        <SheetBody className="space-y-6">
           {/* Identity */}
           <div className="space-y-1.5 max-w-md">
             <Label htmlFor="role_name">Role name</Label>
@@ -406,15 +406,15 @@ function RoleEditorDialog({
               })}
             </div>
           </section>
-        </DialogBody>
+        </SheetBody>
 
-        <DialogFooter>
+        <SheetFooter>
           <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
           <Button disabled={saving} onClick={onSave}>
             {saving ? "Saving…" : role ? "Save changes" : "Create role"}
           </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
   );
 }

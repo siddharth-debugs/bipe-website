@@ -11,14 +11,14 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { DataTable } from "@/components/ui/data-table";
 import {
-  Dialog,
-  DialogBody,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+  Sheet,
+  SheetBody,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -230,7 +230,7 @@ export default function UsersPage() {
         pageSize={20}
       />
 
-      <UserEditorDialog
+      <UserEditorSheet
         open={editorOpen}
         onOpenChange={setEditorOpen}
         user={editorUser}
@@ -242,9 +242,9 @@ export default function UsersPage() {
   );
 }
 
-// ─── Editor Dialog ────────────────────────────────────────────────────
+// ─── Editor Sheet ────────────────────────────────────────────────────
 
-function UserEditorDialog({
+function UserEditorSheet({
   open,
   onOpenChange,
   user,
@@ -327,18 +327,18 @@ function UserEditorDialog({
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent size="lg" className="p-0">
-        <DialogHeader>
-          <DialogTitle>
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent size="lg" className="p-0">
+        <SheetHeader>
+          <SheetTitle>
             {user ? `Edit user · ${user.profile?.display_name || user.username}` : "Add admin user"}
-          </DialogTitle>
-          <DialogDescription>
+          </SheetTitle>
+          <SheetDescription>
             Phone is the user's login username. Roles bundle permissions.
-          </DialogDescription>
-        </DialogHeader>
+          </SheetDescription>
+        </SheetHeader>
 
-        <DialogBody className="space-y-6">
+        <SheetBody className="space-y-6">
           {/* Identity */}
           <section className="space-y-3">
             <div className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
@@ -449,9 +449,9 @@ function UserEditorDialog({
               </Select>
             </div>
           </section>
-        </DialogBody>
+        </SheetBody>
 
-        <DialogFooter>
+        <SheetFooter>
           {user && (
             <Button variant="outline" disabled={saving} onClick={onResetRoles} className="mr-auto text-[var(--danger,#c13b2b)]">
               Reset roles
@@ -461,8 +461,8 @@ function UserEditorDialog({
           <Button disabled={saving} onClick={onSave}>
             {saving ? "Saving…" : user ? "Save changes" : "Create user"}
           </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
   );
 }

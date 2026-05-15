@@ -63,15 +63,17 @@ const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
 >(({ side = "right", size = "md", hideClose, className, children, ...props }, ref) => {
+  // Side-drawer widths — generous enough to host 2-col forms without
+  // feeling like a hallway.
   const widthCls =
     side === "left" || side === "right"
       ? size === "sm"
-        ? "sm:max-w-sm"
+        ? "sm:max-w-md"           //  480px-ish
         : size === "md"
-          ? "sm:max-w-md"
+          ? "sm:max-w-xl"         //  ~600px
           : size === "lg"
-            ? "sm:max-w-xl"
-            : "sm:max-w-3xl"
+            ? "sm:max-w-3xl"      //  ~800px
+            : "sm:max-w-5xl"      //  ~1024px
       : "";
   return (
     <SheetPortal>

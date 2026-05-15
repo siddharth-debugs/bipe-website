@@ -10,9 +10,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DataTable } from "@/components/ui/data-table";
 import {
-  Dialog, DialogBody, DialogContent, DialogDescription,
-  DialogFooter, DialogHeader, DialogTitle,
-} from "@/components/ui/dialog";
+  Sheet, SheetBody, SheetContent, SheetDescription,
+  SheetFooter, SheetHeader, SheetTitle,
+} from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -88,7 +88,7 @@ export default function EventsAdmin() {
         emptyState={loading ? "Loading events…" : "No events yet."}
       />
 
-      <EventDialog
+      <EventSheet
         open={editor.open}
         row={editor.row}
         onOpenChange={(b) => setEditor((s) => ({ ...s, open: b }))}
@@ -99,7 +99,7 @@ export default function EventsAdmin() {
   );
 }
 
-function EventDialog({
+function EventSheet({
   open, row, onOpenChange, onSaved, onError,
 }: {
   open: boolean;
@@ -131,14 +131,14 @@ function EventDialog({
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent size="md" className="p-0">
-        <DialogHeader>
-          <DialogTitle>{row ? "Edit event" : "New event"}</DialogTitle>
-          <DialogDescription>Shown on the home News strip and /events.</DialogDescription>
-        </DialogHeader>
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent size="md" className="p-0">
+        <SheetHeader>
+          <SheetTitle>{row ? "Edit event" : "New event"}</SheetTitle>
+          <SheetDescription>Shown on the home News strip and /events.</SheetDescription>
+        </SheetHeader>
 
-        <DialogBody className="space-y-4">
+        <SheetBody className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="date">Date</Label>
@@ -179,13 +179,13 @@ function EventDialog({
               </div>
             </div>
           </div>
-        </DialogBody>
+        </SheetBody>
 
-        <DialogFooter>
+        <SheetFooter>
           <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
           <Button disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
   );
 }

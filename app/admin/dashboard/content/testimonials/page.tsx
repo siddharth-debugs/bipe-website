@@ -10,9 +10,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DataTable } from "@/components/ui/data-table";
 import {
-  Dialog, DialogBody, DialogContent, DialogDescription,
-  DialogFooter, DialogHeader, DialogTitle,
-} from "@/components/ui/dialog";
+  Sheet, SheetBody, SheetContent, SheetDescription,
+  SheetFooter, SheetHeader, SheetTitle,
+} from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -136,16 +136,16 @@ function Editor({
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent size="md" className="p-0">
-        <DialogHeader>
-          <DialogTitle>{row ? "Edit testimonial" : "New testimonial"}</DialogTitle>
-          <DialogDescription>
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent size="md" className="p-0">
+        <SheetHeader>
+          <SheetTitle>{row ? "Edit testimonial" : "New testimonial"}</SheetTitle>
+          <SheetDescription>
             Mix Hindi / English / Hinglish freely — set the language so we can render the right font.
-          </DialogDescription>
-        </DialogHeader>
+          </SheetDescription>
+        </SheetHeader>
 
-        <DialogBody className="space-y-4">
+        <SheetBody className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="name">Name</Label>
@@ -193,13 +193,13 @@ function Editor({
               </div>
             </div>
           </div>
-        </DialogBody>
+        </SheetBody>
 
-        <DialogFooter>
+        <SheetFooter>
           <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
           <Button disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
   );
 }

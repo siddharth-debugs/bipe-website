@@ -10,9 +10,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DataTable } from "@/components/ui/data-table";
 import {
-  Dialog, DialogBody, DialogContent, DialogDescription,
-  DialogFooter, DialogHeader, DialogTitle,
-} from "@/components/ui/dialog";
+  Sheet, SheetBody, SheetContent, SheetDescription,
+  SheetFooter, SheetHeader, SheetTitle,
+} from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
@@ -135,14 +135,14 @@ function Editor({
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent size="lg" className="p-0">
-        <DialogHeader>
-          <DialogTitle>{row ? "Edit faculty" : "New faculty"}</DialogTitle>
-          <DialogDescription>Faculty profile shown across /faculty + home cards.</DialogDescription>
-        </DialogHeader>
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent size="lg" className="p-0">
+        <SheetHeader>
+          <SheetTitle>{row ? "Edit faculty" : "New faculty"}</SheetTitle>
+          <SheetDescription>Faculty profile shown across /faculty + home cards.</SheetDescription>
+        </SheetHeader>
 
-        <DialogBody className="space-y-6">
+        <SheetBody className="space-y-6">
           <section className="space-y-3">
             <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>§ Identity</div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -221,13 +221,13 @@ function Editor({
               </div>
             </div>
           </section>
-        </DialogBody>
+        </SheetBody>
 
-        <DialogFooter>
+        <SheetFooter>
           <Button variant="outline" disabled={saving} onClick={() => onOpenChange(false)}>Cancel</Button>
           <Button disabled={saving} onClick={onSave}>{saving ? "Saving…" : "Save"}</Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
   );
 }
