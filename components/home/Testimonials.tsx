@@ -1,5 +1,5 @@
 import React from "react";
-import { DATA } from "@/lib/data";
+import { getTestimonials } from "@/lib/content";
 
 interface Quote {
   name: string;
@@ -57,10 +57,13 @@ function Strip({
   );
 }
 
-export const Testimonials = () => {
+export const Testimonials = async () => {
   // Split into two staggered strips so the opposing flows don't show
-  // identical content side-by-side at any given moment.
-  const all = DATA.testimonials;
+  // identical content side-by-side at any given moment. Pulled from the
+  // backend with graceful fallback to lib/data.ts.
+  const all = (await getTestimonials()).map((t) => ({
+    name: t.name, role: t.role, quote: t.quote,
+  }));
   const half = Math.ceil(all.length / 2);
   const stripA = [...all.slice(0, half), ...all.slice(half)];
   const stripB = [...all.slice(half), ...all.slice(0, half)];

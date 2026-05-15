@@ -266,14 +266,43 @@ export interface Summary {
   visit: SummaryByForm;
 }
 
+export interface MeRole {
+  id: number;
+  name: string;
+}
+
 export interface Me {
   id: number;
   /** Mobile number used to sign in (the OTP-allowlisted admin phone). */
   phone: string;
-  /** Friendly display name from the AdminPhone record. */
+  /** Friendly display name from the UserProfile / AdminPhone record. */
   name: string;
   email: string;
+  avatar_url?: string;
+  /** Display label for the user's primary role badge. */
+  primary_role?: string;
   is_staff: boolean;
   is_superuser: boolean;
   last_login: string | null;
+  /** Groups (= roles) the user belongs to. */
+  roles?: MeRole[];
+  /**
+   * Flat list of permission codes the user has, in
+   * ``app_label.codename`` form. Superuser short-circuits to ``["*"]``
+   * so the frontend can grant everything without loading the full
+   * permission catalogue.
+   */
+  permissions?: string[];
+}
+
+/**
+ * True if the current user has (any of) the given permission codes.
+ * Superusers always return true.
+ */
+export function hasPerm(me: Me | null, ...codes: string[]): boolean {
+  if (!me) return false;
+  if (me.is_superuser) return true;
+  if (me.permissions?.includes("*")) return true;
+  if (!codes.length) return true;
+  return codes.some((c) => me.permissions?.includes(c));
 }

@@ -1,44 +1,64 @@
 import React from "react";
 import Link from "next/link";
-import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
+import { getEvents } from "@/lib/content";
 
-export const News = () => (
-  <section className="section">
-    <div className="container">
-      <div className="between" style={{ marginBottom: 36, alignItems: "end", flexWrap: "wrap", gap: 24 }}>
-        <div className="reveal">
-          <div className="eyebrow">News & Events</div>
-          <h2 className="bipe-h1" style={{ marginTop: 14 }}>What&apos;s <span className="serif">happening</span> on campus.</h2>
+// Server component — fetches events at render time, falls back to the
+// static DATA.events list if the backend is unreachable.
+export const News = async () => {
+  const events = await getEvents();
+  const top = events.slice(0, 3);
+  const rest = events.slice(3, 7);
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="between" style={{ marginBottom: 36, alignItems: "end", flexWrap: "wrap", gap: 24 }}>
+          <div className="reveal">
+            <div className="eyebrow">News & Events</div>
+            <h2 className="bipe-h1" style={{ marginTop: 14 }}>What&apos;s <span className="serif">happening</span> on campus.</h2>
+          </div>
+          <Link href="/events" className="btn btn-ghost">All events <ArrowIcon /></Link>
         </div>
-        <Link href="/events" className="btn btn-ghost">All events <ArrowIcon /></Link>
-      </div>
-      <div className="grid bipe-grid-3" style={{ gridTemplateColumns: "1.2fr 1fr 1fr" }}>
-        {DATA.events.slice(0, 3).map((e, i) => (
-          <div key={i} className="card reveal" style={{ padding: i === 0 ? 28 : 22, gridRow: i === 0 ? "span 1" : "auto", transitionDelay: `${i * 50}ms` }}>
-            <div className="row" style={{ gap: 10, marginBottom: 14 }}>
-              <span className="pill">{e.tag}</span>
-              <span className="muted" style={{ fontFamily: "var(--font-mono)", fontSize: 11 }}>{e.date}</span>
-            </div>
-            <h3 className={i === 0 ? "bipe-h2" : "bipe-h3"}>{e.title}</h3>
-            <p style={{ color: "var(--ink-2)", fontSize: 14, marginTop: 12, lineHeight: 1.55 }}>{e.body}</p>
-          </div>
-        ))}
-      </div>
-      <div className="bipe-img-strip" style={{ marginTop: 18, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-        {DATA.events.slice(3).map((e, i) => (
-          <div key={i} className="card reveal" style={{ padding: 18, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14 }}>
-            <div>
-              <div className="row" style={{ gap: 10, marginBottom: 6 }}>
-                <span className="pill" style={{ fontSize: 10 }}>{e.tag}</span>
-                <span className="muted" style={{ fontFamily: "var(--font-mono)", fontSize: 10 }}>{e.date}</span>
+        <div className="grid bipe-grid-3" style={{ gridTemplateColumns: "1.2fr 1fr 1fr" }}>
+          {top.map((e, i) => (
+            <div key={e.id} className="card reveal" style={{ padding: i === 0 ? 28 : 22, gridRow: i === 0 ? "span 1" : "auto", transitionDelay: `${i * 50}ms` }}>
+              <div className="row" style={{ gap: 10, marginBottom: 14 }}>
+                <span className="pill">{e.tag}</span>
+                <span className="muted" style={{ fontFamily: "var(--font-mono)", fontSize: 11 }}>{formatDate(e.date)}</span>
               </div>
-              <div style={{ fontWeight: 600, fontSize: 15 }}>{e.title}</div>
+              <h3 className={i === 0 ? "bipe-h2" : "bipe-h3"}>{e.title}</h3>
+              <p style={{ color: "var(--ink-2)", fontSize: 14, marginTop: 12, lineHeight: 1.55 }}>{e.body}</p>
             </div>
-            <ArrowIcon />
+          ))}
+        </div>
+        {rest.length > 0 && (
+          <div className="bipe-img-strip" style={{ marginTop: 18, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+            {rest.map((e) => (
+              <div key={e.id} className="card reveal" style={{ padding: 18, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14 }}>
+                <div>
+                  <div className="row" style={{ gap: 10, marginBottom: 6 }}>
+                    <span className="pill" style={{ fontSize: 10 }}>{e.tag}</span>
+                    <span className="muted" style={{ fontFamily: "var(--font-mono)", fontSize: 10 }}>{formatDate(e.date)}</span>
+                  </div>
+                  <div style={{ fontWeight: 600, fontSize: 15 }}>{e.title}</div>
+                </div>
+                <ArrowIcon />
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
+
+function formatDate(d: string): string {
+  // Accept ISO YYYY-MM-DD or original "Apr 11, 2026" — render uniformly.
+  if (/^\d{4}-\d{2}-\d{2}$/.test(d)) {
+    const dt = new Date(d);
+    if (!isNaN(dt.valueOf())) {
+      return dt.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+    }
+  }
+  return d;
+}

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Tokens, api, logout, type Me } from "@/lib/admin/api";
+import { Tokens, api, logout, hasPerm, type Me } from "@/lib/admin/api";
 import {
   LayoutDashboard,
   GraduationCap,
@@ -14,15 +14,29 @@ import {
   Settings,
   LogOut,
   ExternalLink,
+  FileText,
+  Users as UsersIcon,
+  ShieldCheck,
 } from "lucide-react";
 import { cn } from "@/lib/admin/utils";
 
-const NAV = [
-  { href: "/admin/dashboard", label: "Overview", Icon: LayoutDashboard },
-  { href: "/admin/dashboard/apply", label: "Apply", Icon: GraduationCap },
-  { href: "/admin/dashboard/contact", label: "Contact", Icon: Mail },
-  { href: "/admin/dashboard/visit", label: "Visit", Icon: CalendarDays },
-  { href: "/admin/dashboard/seo", label: "SEO", Icon: Search },
+type NavItem = {
+  href: string;
+  label: string;
+  Icon: typeof LayoutDashboard;
+  /** Permission codes that gate visibility. Empty = always visible. */
+  perms?: string[];
+};
+
+const NAV: NavItem[] = [
+  { href: "/admin/dashboard",          label: "Overview", Icon: LayoutDashboard },
+  { href: "/admin/dashboard/apply",    label: "Apply",    Icon: GraduationCap, perms: ["accounts.manage_submissions"] },
+  { href: "/admin/dashboard/contact",  label: "Contact",  Icon: Mail,          perms: ["accounts.manage_submissions"] },
+  { href: "/admin/dashboard/visit",    label: "Visit",    Icon: CalendarDays,  perms: ["accounts.manage_submissions"] },
+  { href: "/admin/dashboard/content",  label: "Content",  Icon: FileText,      perms: ["accounts.manage_content"] },
+  { href: "/admin/dashboard/seo",      label: "SEO",      Icon: Search,        perms: ["accounts.manage_seo"] },
+  { href: "/admin/dashboard/users",    label: "Users",    Icon: UsersIcon,     perms: ["accounts.manage_users"] },
+  { href: "/admin/dashboard/roles",    label: "Roles",    Icon: ShieldCheck,   perms: ["accounts.manage_roles"] },
   { href: "/admin/dashboard/settings", label: "Settings", Icon: Settings },
 ];
 
@@ -152,22 +166,24 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
 
         <nav style={{ display: "flex", flexDirection: "column" }}>
-          {NAV.map(({ href, label, Icon }) => {
-            const active =
-              href === "/admin/dashboard"
-                ? pathname === "/admin/dashboard"
-                : pathname?.startsWith(href);
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={cn("admin-sidebar-link", active && "is-active")}
-              >
-                <Icon size={15} />
-                {label}
-              </Link>
-            );
-          })}
+          {NAV
+            .filter(({ perms }) => !perms?.length || hasPerm(me, ...perms))
+            .map(({ href, label, Icon }) => {
+              const active =
+                href === "/admin/dashboard"
+                  ? pathname === "/admin/dashboard"
+                  : pathname?.startsWith(href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={cn("admin-sidebar-link", active && "is-active")}
+                >
+                  <Icon size={15} />
+                  {label}
+                </Link>
+              );
+            })}
         </nav>
 
         <a

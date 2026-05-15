@@ -1,7 +1,10 @@
 import React from "react";
-import { DATA } from "@/lib/data";
+import { getRecruiters } from "@/lib/content";
 
-export const Recruiters = () => (
+export const Recruiters = async () => {
+  // Dynamic-first; falls back to lib/data.ts recruiters if backend is down.
+  const recruiters = (await getRecruiters()).map((r) => r.name);
+  return (
   <section className="section-tight">
     <div className="container" style={{ marginBottom: 18 }}>
       <div className="eyebrow" style={{ textAlign: "center" }}>
@@ -11,7 +14,7 @@ export const Recruiters = () => (
     <div className="marquee">
       <div className="marquee-track" style={{ animationDuration: "55s" }}>
         {[0, 1].flatMap((cycle) =>
-          DATA.recruiters.map((r, j) => (
+          recruiters.map((r, j) => (
             <span
               key={`${cycle}-${j}`}
               className="bipe-recruiter"
@@ -44,4 +47,5 @@ export const Recruiters = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
