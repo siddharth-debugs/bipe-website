@@ -198,7 +198,7 @@ export default function UsersPage() {
         eyebrow="Admin · Users"
         title="Manage"
         accent="admin users."
-        description="Add staff, assign their role, deactivate accounts. Users sign in with their phone via OTP — the phone you enter here becomes their username."
+        description="Add staff, give them a role, disable accounts. Users log in with their phone via OTP — the number you enter here is their login."
       />
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
@@ -334,7 +334,7 @@ function UserEditorSheet({
             {user ? `Edit user · ${user.profile?.display_name || user.username}` : "Add admin user"}
           </SheetTitle>
           <SheetDescription>
-            Phone is the user's login username. Roles bundle permissions.
+            Phone is what they log in with. A role decides what they can see and change.
           </SheetDescription>
         </SheetHeader>
 
@@ -346,7 +346,7 @@ function UserEditorSheet({
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <Label htmlFor="phone">Phone · also the login username</Label>
+                <Label htmlFor="phone">Phone number</Label>
                 <Input
                   id="phone"
                   value={form.phone ?? ""}
@@ -354,7 +354,7 @@ function UserEditorSheet({
                   placeholder="9198646464"
                   disabled={!!user && user.is_superuser}
                 />
-                <p className="text-[11px] text-[var(--ink-3)]">10 digits, no country code or spaces.</p>
+                <p className="text-[11px] text-[var(--ink-3)]">10 digits, no country code. They log in with this number.</p>
               </div>
               <div className="space-y-1.5">
                 <Label htmlFor="display_name">Display name</Label>
@@ -395,7 +395,7 @@ function UserEditorSheet({
               <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
                 § Roles
               </div>
-              <p className="text-xs text-[var(--ink-3)]">A user can hold multiple roles — their permissions are the union of all.</p>
+              <p className="text-xs text-[var(--ink-3)]">Tick every role this user should have. Their access is the combined access of all selected roles.</p>
             </div>
 
             {roles.length === 0 ? (
@@ -420,7 +420,7 @@ function UserEditorSheet({
                       <div className="min-w-0 flex-1">
                         <div className="font-semibold text-[13.5px]">{r.name}</div>
                         <div className="text-[11.5px] text-[var(--ink-3)]">
-                          {r.permission_codes.length} permission{r.permission_codes.length === 1 ? "" : "s"} · {r.user_count} user{r.user_count === 1 ? "" : "s"}
+                          {r.user_count} user{r.user_count === 1 ? "" : "s"} with this role
                         </div>
                       </div>
                     </label>
@@ -430,7 +430,7 @@ function UserEditorSheet({
             )}
 
             <div className="space-y-1.5 max-w-md">
-              <Label htmlFor="primary_role">Primary role · badge shown in the dashboard</Label>
+              <Label htmlFor="primary_role">Primary role — the badge shown next to their name</Label>
               <Select
                 value={form.primary_role_id != null ? String(form.primary_role_id) : "_"}
                 onValueChange={(v) => set("primary_role_id", v === "_" ? null : Number(v))}

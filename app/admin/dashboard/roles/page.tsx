@@ -1,14 +1,13 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { Banner } from "@/components/admin/common/Toolkit";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { DataTable } from "@/components/ui/data-table";
 import {
   Sheet,
@@ -24,16 +23,23 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 
 import {
-  PermissionCatalogue,
-  PermissionRow,
   Role,
   createRole,
   deleteRole,
-  getPermissionCatalogue,
   getRole,
   listRoles,
   updateRole,
 } from "@/lib/admin/rbac";
+import {
+  Access,
+  MODULE_GROUPS,
+  ModuleDef,
+  ModuleKey,
+  accessToRolePerms,
+  emptyAccess,
+  modulesByGroup,
+  rolePermsToAccess,
+} from "@/lib/admin/modules";
 
 const SYSTEM_ROLES = new Set([
   "Superadmin",
@@ -43,10 +49,18 @@ const SYSTEM_ROLES = new Set([
   "Viewer",
 ]);
 
+function accessSummary(access: Record<ModuleKey, Access>): { writes: number; reads: number } {
+  let writes = 0, reads = 0;
+  for (const m of Object.values(access)) {
+    if (m === "write") writes++;
+    else if (m === "read") reads++;
+  }
+  return { writes, reads };
+}
+
 export default function RolesPage() {
   const [roles, setRoles] = useState<Role[]>([]);
   const [loading, setLoading] = useState(true);
-  const [catalogue, setCatalogue] = useState<PermissionCatalogue | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [editorOpen, setEditorOpen] = useState(false);
@@ -56,9 +70,8 @@ export default function RolesPage() {
     setLoading(true);
     setErr(null);
     try {
-      const [rs, cat] = await Promise.all([listRoles(), getPermissionCatalogue()]);
+      const rs = await listRoles();
       setRoles(rs);
-      setCatalogue(cat);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Failed to load");
     } finally {
@@ -85,11 +98,11 @@ export default function RolesPage() {
 
   async function onDelete(r: Role) {
     if (SYSTEM_ROLES.has(r.name)) {
-      alert("System roles cannot be deleted.");
+      alert("Built-in roles cannot be deleted.");
       return;
     }
     if (r.user_count > 0) {
-      if (!confirm(`${r.name} is assigned to ${r.user_count} user${r.user_count === 1 ? "" : "s"}. Delete anyway?`)) return;
+      if (!confirm(`${r.name} is used by ${r.user_count} user${r.user_count === 1 ? "" : "s"}. Delete anyway?`)) return;
     } else if (!confirm(`Delete role "${r.name}"?`)) return;
     try {
       await deleteRole(r.id);
@@ -108,15 +121,27 @@ export default function RolesPage() {
       cell: ({ row }) => (
         <div className="flex items-center gap-2 min-w-0">
           <div className="font-semibold text-[var(--ink)]">{row.original.name}</div>
-          {SYSTEM_ROLES.has(row.original.name) && <Badge variant="accent">System</Badge>}
+          {SYSTEM_ROLES.has(row.original.name) && <Badge variant="accent">Built-in</Badge>}
         </div>
       ),
     },
     {
-      id: "perms",
-      header: "Permissions",
+      id: "access",
+      header: "Access",
       accessorFn: (r) => r.permission_codes.length,
-      cell: ({ row }) => `${row.original.permission_codes.length} permissions`,
+      cell: ({ row }) => {
+        const access = rolePermsToAccess(row.original.permission_codes);
+        const { writes, reads } = accessSummary(access);
+        const isSuper = row.original.name === "Superadmin";
+        if (isSuper) return <Badge variant="brand">Full access</Badge>;
+        if (writes === 0 && reads === 0) return <span className="text-[var(--ink-4)]">No access</span>;
+        return (
+          <div className="flex flex-wrap gap-1.5">
+            {writes > 0 && <Badge variant="brand">{writes} write</Badge>}
+            {reads > 0 && <Badge>{reads} read</Badge>}
+          </div>
+        );
+      },
     },
     {
       id: "users",
@@ -137,7 +162,7 @@ export default function RolesPage() {
             className="text-[var(--danger,#c13b2b)]"
             disabled={SYSTEM_ROLES.has(row.original.name)}
             onClick={() => onDelete(row.original)}
-            title={SYSTEM_ROLES.has(row.original.name) ? "System roles can't be deleted." : ""}
+            title={SYSTEM_ROLES.has(row.original.name) ? "Built-in roles can't be deleted." : ""}
           >
             Delete
           </Button>
@@ -152,7 +177,7 @@ export default function RolesPage() {
         eyebrow="Admin · Roles"
         title="Roles &"
         accent="permissions."
-        description="A role bundles permissions. Five system roles are seeded automatically; you can clone or add more."
+        description="A role bundles what someone can see and change in the admin panel. Five built-in roles are seeded; clone them or add your own."
       />
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
@@ -170,7 +195,6 @@ export default function RolesPage() {
         open={editorOpen}
         onOpenChange={setEditorOpen}
         role={editorRole}
-        catalogue={catalogue}
         onSaved={() => {
           setEditorOpen(false);
           setEditorRole(null);
@@ -189,66 +213,41 @@ function RoleEditorSheet({
   open,
   onOpenChange,
   role,
-  catalogue,
   onSaved,
   onError,
 }: {
   open: boolean;
   onOpenChange: (b: boolean) => void;
   role: Role | null;
-  catalogue: PermissionCatalogue | null;
   onSaved: () => void;
   onError: (s: string) => void;
 }) {
   const [name, setName] = useState("");
-  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [access, setAccess] = useState<Record<ModuleKey, Access>>(emptyAccess());
   const [saving, setSaving] = useState(false);
-  const [search, setSearch] = useState("");
+
+  const isSuperadmin = role?.name === "Superadmin";
+  const isSystem = role && SYSTEM_ROLES.has(role.name);
 
   useEffect(() => {
     if (!open) return;
     if (role) {
       setName(role.name);
-      setSelected(new Set(role.permission_codes));
+      setAccess(rolePermsToAccess(role.permission_codes));
     } else {
       setName("");
-      setSelected(new Set());
+      setAccess(emptyAccess());
     }
-    setSearch("");
   }, [open, role]);
 
-  const scopePerms = catalogue?.scope_perms ?? [];
-  const byApp = catalogue?.by_app ?? {};
-
-  const filteredApps = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    if (!q) return Object.keys(byApp).sort();
-    return Object.keys(byApp)
-      .filter((app) =>
-        app.toLowerCase().includes(q) ||
-        byApp[app].some((p) =>
-          p.codename.toLowerCase().includes(q) || p.name.toLowerCase().includes(q),
-        ),
-      )
-      .sort();
-  }, [byApp, search]);
-
-  function toggle(code: string) {
-    setSelected((s) => {
-      const next = new Set(s);
-      if (next.has(code)) next.delete(code);
-      else next.add(code);
-      return next;
-    });
+  function setModuleAccess(key: ModuleKey, value: Access) {
+    setAccess((a) => ({ ...a, [key]: value }));
   }
 
-  function setAllInApp(app: string, on: boolean) {
-    setSelected((s) => {
-      const next = new Set(s);
-      for (const p of byApp[app]) {
-        if (on) next.add(p.codename_full);
-        else next.delete(p.codename_full);
-      }
+  function setAll(value: Access) {
+    setAccess((a) => {
+      const next = { ...a };
+      for (const k of Object.keys(a) as ModuleKey[]) next[k] = value;
       return next;
     });
   }
@@ -260,7 +259,7 @@ function RoleEditorSheet({
     }
     setSaving(true);
     try {
-      const payload = { name: name.trim(), permissions: Array.from(selected) };
+      const payload = { name: name.trim(), permissions: accessToRolePerms(access) };
       if (role) await updateRole(role.id, payload);
       else await createRole(payload);
       onSaved();
@@ -271,15 +270,17 @@ function RoleEditorSheet({
     }
   }
 
-  const isSystem = role && SYSTEM_ROLES.has(role.name);
+  const grouped = modulesByGroup();
+  const { writes, reads } = accessSummary(access);
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent size="xl" className="p-0">
+      <SheetContent size="lg" className="p-0">
         <SheetHeader>
           <SheetTitle>{role ? `Edit role · ${role.name}` : "Create role"}</SheetTitle>
           <SheetDescription>
-            Toggle the high-level scope perms or pick fine-grained per-model rights below. Selected · <strong className="text-[var(--ink)]">{selected.size}</strong> permission{selected.size === 1 ? "" : "s"}.
+            For each module, choose <strong className="text-[var(--ink)]">Read</strong> (view only) or
+            {" "}<strong className="text-[var(--ink)]">Write</strong> (view, add, edit, delete).
           </SheetDescription>
         </SheetHeader>
 
@@ -294,118 +295,56 @@ function RoleEditorSheet({
               disabled={!!isSystem}
             />
             {isSystem && (
-              <p className="text-[11px] text-[var(--ink-3)]">System role — name is locked.</p>
+              <p className="text-[11px] text-[var(--ink-3)]">Built-in role — name is locked.</p>
             )}
           </div>
 
-          <Separator />
-
-          {/* Scope perms */}
-          <section className="space-y-3">
-            <div>
-              <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
-                § Scope permissions
+          {isSuperadmin ? (
+            <div className="rounded-lg border border-[var(--line)] bg-[var(--brand-soft)] p-4 text-sm text-[var(--ink-2)]">
+              <strong className="text-[var(--ink)]">Superadmin has every permission.</strong>{" "}
+              You can&apos;t restrict this role from here. To limit someone&apos;s access, assign them a different role.
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="text-sm text-[var(--ink-3)]">
+                  Selected · <strong className="text-[var(--ink)]">{writes}</strong> write
+                  {", "}<strong className="text-[var(--ink)]">{reads}</strong> read
+                </div>
+                <div className="flex gap-1.5">
+                  <Button variant="outline" size="sm" onClick={() => setAll("read")}>All read</Button>
+                  <Button variant="outline" size="sm" onClick={() => setAll("write")}>All write</Button>
+                  <Button variant="outline" size="sm" onClick={() => setAll("none")}>Clear</Button>
+                </div>
               </div>
-              <p className="text-sm text-[var(--ink-3)] mt-1">
-                Five high-level scopes that gate entire dashboard tabs.
-              </p>
-            </div>
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-              {scopePerms.map((p) => {
-                const on = selected.has(p.codename);
-                return (
-                  <label
-                    key={p.codename}
-                    className={
-                      "flex items-start gap-3 rounded-lg border border-[var(--line)] p-3 cursor-pointer transition-colors " +
-                      (on ? "bg-[var(--brand-soft)]" : "bg-[var(--white)] hover:bg-[var(--paper-2)]")
-                    }
-                  >
-                    <Checkbox checked={on} onCheckedChange={() => toggle(p.codename)} className="mt-0.5" />
-                    <div className="min-w-0 flex-1">
-                      <div className="font-semibold text-[13px]">{p.label}</div>
-                      <div className="text-[11px] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
-                        {p.codename}
+
+              <Separator />
+
+              <div className="space-y-6">
+                {MODULE_GROUPS.map((group) => {
+                  const mods = grouped[group];
+                  if (mods.length === 0) return null;
+                  return (
+                    <section key={group} className="space-y-2.5">
+                      <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
+                        § {group}
                       </div>
-                    </div>
-                  </label>
-                );
-              })}
-            </div>
-          </section>
-
-          <Separator />
-
-          {/* Per-model perms */}
-          <section className="space-y-3">
-            <div>
-              <div className="text-[10.5px] uppercase tracking-[0.14em] text-[var(--ink-3)]" style={{ fontFamily: "var(--font-mono)" }}>
-                § Per-model permissions
+                      <div className="rounded-lg border border-[var(--line)] divide-y divide-[var(--line)] bg-[var(--white)]">
+                        {mods.map((m) => (
+                          <ModuleRow
+                            key={m.key}
+                            module={m}
+                            value={access[m.key]}
+                            onChange={(v) => setModuleAccess(m.key, v)}
+                          />
+                        ))}
+                      </div>
+                    </section>
+                  );
+                })}
               </div>
-              <p className="text-sm text-[var(--ink-3)] mt-1">
-                Fine-grained add/change/delete/view rights per Django model.
-              </p>
-            </div>
-            <Input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Filter permissions…"
-              className="max-w-md"
-            />
-
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredApps.map((app) => {
-                const perms = byApp[app];
-                const allOn = perms.every((p) => selected.has(p.codename_full));
-                return (
-                  <div key={app} className="rounded-lg border border-[var(--line)] bg-[var(--white)] p-3">
-                    <div className="flex items-baseline justify-between mb-2">
-                      <div className="text-[10.5px] uppercase tracking-[0.12em] font-bold text-[var(--brand)]" style={{ fontFamily: "var(--font-mono)" }}>
-                        {app}
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => setAllInApp(app, !allOn)}
-                        className="text-[11px] text-[var(--ink-3)] underline hover:text-[var(--ink)]"
-                      >
-                        {allOn ? "Clear" : "Select all"}
-                      </button>
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      {perms
-                        .filter((p) => {
-                          const q = search.trim().toLowerCase();
-                          return !q ||
-                            app.toLowerCase().includes(q) ||
-                            p.codename.toLowerCase().includes(q) ||
-                            p.name.toLowerCase().includes(q);
-                        })
-                        .map((p) => {
-                          const on = selected.has(p.codename_full);
-                          return (
-                            <label
-                              key={p.codename_full}
-                              className={
-                                "flex items-start gap-2 rounded-md px-2 py-1.5 text-[12.5px] cursor-pointer transition-colors " +
-                                (on ? "bg-[color-mix(in_oklab,var(--brand)_6%,transparent)]" : "hover:bg-[var(--paper-2)]")
-                              }
-                            >
-                              <Checkbox checked={on} onCheckedChange={() => toggle(p.codename_full)} className="mt-0.5" />
-                              <div className="min-w-0 flex-1">
-                                <span className="text-[var(--ink-2)]">{p.name}</span>
-                                <span className="text-[10.5px] text-[var(--ink-4)] ml-2" style={{ fontFamily: "var(--font-mono)" }}>
-                                  {p.codename}
-                                </span>
-                              </div>
-                            </label>
-                          );
-                        })}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
+            </>
+          )}
         </SheetBody>
 
         <SheetFooter>
@@ -416,5 +355,52 @@ function RoleEditorSheet({
         </SheetFooter>
       </SheetContent>
     </Sheet>
+  );
+}
+
+function ModuleRow({
+  module,
+  value,
+  onChange,
+}: {
+  module: ModuleDef;
+  value: Access;
+  onChange: (v: Access) => void;
+}) {
+  return (
+    <div className="flex items-start justify-between gap-4 p-3.5">
+      <div className="min-w-0 flex-1">
+        <div className="font-semibold text-[13.5px] text-[var(--ink)]">{module.label}</div>
+        <div className="text-[12px] text-[var(--ink-3)] mt-0.5 leading-snug">{module.description}</div>
+      </div>
+      <div className="flex shrink-0 rounded-md border border-[var(--line)] overflow-hidden text-[12px]">
+        <SegmentButton active={value === "none"}  onClick={() => onChange("none")}>None</SegmentButton>
+        <SegmentButton active={value === "read"}  onClick={() => onChange("read")}>Read</SegmentButton>
+        <SegmentButton active={value === "write"} onClick={() => onChange("write")} accent>Write</SegmentButton>
+      </div>
+    </div>
+  );
+}
+
+function SegmentButton({
+  active,
+  accent,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  accent?: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  const base = "px-3 py-1.5 cursor-pointer transition-colors border-r border-[var(--line)] last:border-r-0 font-medium";
+  const inactive = "bg-[var(--white)] text-[var(--ink-3)] hover:bg-[var(--paper-2)]";
+  const activeRead = "bg-[var(--paper-2)] text-[var(--ink)]";
+  const activeWrite = "bg-[var(--brand)] text-white";
+  const cls = active ? (accent ? activeWrite : activeRead) : inactive;
+  return (
+    <button type="button" onClick={onClick} className={`${base} ${cls}`}>
+      {children}
+    </button>
   );
 }
