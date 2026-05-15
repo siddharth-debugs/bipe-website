@@ -76,21 +76,21 @@ export default function OverviewPage() {
         }}
       >
         <SummaryCard
-          href="/admin/dashboard/apply"
+          href="/admin/dashboard/inbox?kind=apply"
           Icon={GraduationCap}
           eyebrow="Apply form"
           subtitle="JEECUP candidates · 4-step form"
           summary={summary?.apply}
         />
         <SummaryCard
-          href="/admin/dashboard/contact"
+          href="/admin/dashboard/inbox?kind=contact"
           Icon={Mail}
           eyebrow="Contact form"
           subtitle="General enquiries · /contact"
           summary={summary?.contact}
         />
         <SummaryCard
-          href="/admin/dashboard/visit"
+          href="/admin/dashboard/inbox?kind=visit"
           Icon={CalendarDays}
           eyebrow="Visit bookings"
           subtitle="Campus visits · /visit"

@@ -7,9 +7,7 @@ import Link from "next/link";
 import { Tokens, api, logout, hasPerm, type Me } from "@/lib/admin/api";
 import {
   LayoutDashboard,
-  GraduationCap,
-  Mail,
-  CalendarDays,
+  Inbox,
   Search,
   Settings,
   LogOut,
@@ -30,9 +28,7 @@ type NavItem = {
 
 const NAV: NavItem[] = [
   { href: "/admin/dashboard",          label: "Overview", Icon: LayoutDashboard },
-  { href: "/admin/dashboard/apply",    label: "Apply",    Icon: GraduationCap, perms: ["accounts.manage_submissions"] },
-  { href: "/admin/dashboard/contact",  label: "Contact",  Icon: Mail,          perms: ["accounts.manage_submissions"] },
-  { href: "/admin/dashboard/visit",    label: "Visit",    Icon: CalendarDays,  perms: ["accounts.manage_submissions"] },
+  { href: "/admin/dashboard/inbox",    label: "Inbox",    Icon: Inbox,         perms: ["accounts.manage_submissions", "submissions.view_applysubmission", "submissions.view_contactsubmission", "submissions.view_visitsubmission"] },
   { href: "/admin/dashboard/content",  label: "Content",  Icon: FileText,      perms: ["accounts.manage_content"] },
   { href: "/admin/dashboard/seo",      label: "SEO",      Icon: Search,        perms: ["accounts.manage_seo"] },
   { href: "/admin/dashboard/users",    label: "Users",    Icon: UsersIcon,     perms: ["accounts.manage_users"] },
@@ -160,10 +156,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </div>
           </div>
         </Link>
-
-        <div className="admin-meta" style={{ padding: "0 14px 6px", fontSize: 9.5 }}>
-          Submissions
-        </div>
 
         <nav style={{ display: "flex", flexDirection: "column" }}>
           {NAV
