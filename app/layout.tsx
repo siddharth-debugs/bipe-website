@@ -141,6 +141,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <head>
+        {/* JSON-LD: Organization + extra schemas (from backend), else fallback.
+            Rendered as plain <script> tags directly in the SSR <head> so
+            non-JS crawlers (Perplexity, ChatGPT-Bot, Anthropic ClaudeBot,
+            Googlebot first-pass) see the structured data immediately. Using
+            <Script strategy="afterInteractive"> would inject these only AFTER
+            client hydration — invisible to JS-less bots. */}
+        {orgSchemas.map((schema, i) => (
+          <script
+            key={`bipe-jsonld-${i}`}
+            type="application/ld+json"
+            // dangerouslySetInnerHTML is intentional — the schema object is
+            // built server-side from typed sources, no user input.
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
+
         {/* GTM (head) */}
         {gtm && (
           <Script id="bipe-gtm" strategy="afterInteractive">
@@ -195,18 +211,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             />
           </noscript>
         )}
-
-        {/* JSON-LD: Organization + extra schemas (from backend), else fallback. */}
-        {orgSchemas.map((schema, i) => (
-          <Script
-            key={`bipe-jsonld-${i}`}
-            id={`bipe-jsonld-${i}`}
-            type="application/ld+json"
-            strategy="afterInteractive"
-          >
-            {JSON.stringify(schema)}
-          </Script>
-        ))}
 
         <LangProvider>
           <ConditionalChrome>{children}</ConditionalChrome>

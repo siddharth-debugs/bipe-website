@@ -16,7 +16,7 @@ const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "8428", label: "Books", sub: "1,220 unique titles" },
   { num: "120", suffix: "+", label: "Networked PCs", sub: "Computer centre" },
   { num: "50", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
-  { num: "33", label: "Faculty", sub: "1:20 mentor ratio" },
+  { num: "40", label: "Faculty", sub: "1:20 mentor ratio" },
   { num: "5", label: "BTEUP branches", sub: "Including Dairy" },
 ];
 
@@ -115,7 +115,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Our 6-acre Phoolpur campus houses five BTEUP branches, 33 faculty and 550+ students. Library, 120-computer lab, dairy pilot plant, mechanical workshops, hostels and a sports ground — all within one boundary.
+                Our 6-acre Phoolpur campus houses five BTEUP branches, 40 faculty and 550+ students. Library, 120-computer lab, dairy pilot plant, mechanical workshops, hostels and a sports ground — all within one boundary.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a campus visit <ArrowIcon size={16} /></Link>

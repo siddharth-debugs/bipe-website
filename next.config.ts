@@ -1,5 +1,32 @@
 import type { NextConfig } from "next";
 
+/**
+ * Security headers applied to every response.
+ *
+ * HSTS already comes from Vercel by default. We add the four headers
+ * Vercel does NOT set automatically:
+ *
+ *   X-Content-Type-Options    nosniff
+ *   X-Frame-Options           SAMEORIGIN (and frame-ancestors via CSP later)
+ *   Referrer-Policy           strict-origin-when-cross-origin
+ *   Permissions-Policy        minimal — block camera/mic/geolocation/payment
+ *
+ * Content-Security-Policy is deliberately omitted for now: a strict CSP
+ * needs to allow GTM / GA4 / Hotjar / Clarity dynamically based on what
+ * the admin has enabled, plus inline JSON-LD scripts. We'll add it in a
+ * second pass with a `style-src` + `script-src` allow-list driven by the
+ * SiteSEO analytics fields.
+ */
+const SECURITY_HEADERS = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()",
+  },
+];
+
 const nextConfig: NextConfig = {
   // DRF endpoints end in `/`. Don't auto-redirect them.
   skipTrailingSlashRedirect: true,
@@ -17,6 +44,15 @@ const nextConfig: NextConfig = {
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: SECURITY_HEADERS,
+      },
+    ];
   },
 
   // Note: the /api/admin/* proxy lives in app/api/admin/[...path]/route.ts

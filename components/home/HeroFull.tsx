@@ -8,13 +8,13 @@ import { BIPE_IMG } from "@/lib/images";
  * Trust strip shown at the foot of the hero. The numeric stats live in
  * the StatsBar section right below this — surfacing them here too is
  * just visual noise. Regulator/credential signals fill the slot
- * instead: AICTE / BTEUP / JEECUP / ISO are unique to this strip.
+ * instead: AICTE / BTEUP / JEECUP / AISHE are unique to this strip.
  */
 const HERO_TRUST: { label: string; sub: string }[] = [
   { label: "AICTE-approved",       sub: "ID 1-488233171" },
   { label: "BTEUP-affiliated",     sub: "5 branches · code 4455" },
   { label: "JEECUP code 4455",     sub: "single counselling route" },
-  { label: "ISO 9001:2015",        sub: "quality-certified" },
+  { label: "AISHE registered",     sub: "Dept. of Higher Education · MoE" },
 ];
 
 export const HeroFull = () => (
@@ -52,7 +52,7 @@ export const HeroFull = () => (
           marginBottom: 24,
           textShadow: "0 2px 30px rgba(0,0,0,0.4)"
         }}>
-          Engineers
+          Engineers{" "}
           <br />
           <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, color: "var(--accent)", letterSpacing: "-0.02em" }}>begin</span>
           <span style={{ fontStyle: "italic", fontFamily: "var(--font-serif)", fontWeight: 300, color: "color-mix(in oklab, #fff 85%, transparent)" }}> here.</span>

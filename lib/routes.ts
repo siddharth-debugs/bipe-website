@@ -4,9 +4,10 @@ export type RouteKey =
   | "documents" | "jeecup" | "hostel" | "faculty" | "events"
   | "chairman" | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
   | "mandatoryDisclosure" | "aiPolicy"
-  | "privacy" | "terms" | "antiRagging";
+  | "privacy" | "terms" | "antiRagging"
+  | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar";
 
-export const SITE_URL = "https://bipevns.org";
+export const SITE_URL = "https://www.bipevns.org";
 
 export const ROUTES: Record<RouteKey, { path: string; title: string; description: string }> = {
   home: {
@@ -17,7 +18,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   about: {
     path: "/about",
     title: "About BIPE — Sixteen years of polytechnic education in Eastern UP",
-    description: "Established 2010. Six-acre campus in Phoolpur, Varanasi. AICTE, BTEUP, ISO 9001:2015. 1,000+ alumni placed at Mahindra, Tata, BEL, Indian Railways.",
+    description: "Established 2010. Six-acre campus in Phoolpur, Varanasi. AICTE-approved, BTEUP-affiliated, AISHE-registered. 1,000+ alumni placed at Mahindra, Tata, BEL, Indian Railways.",
   },
   courses: {
     path: "/courses",
@@ -86,8 +87,8 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   faculty: {
     path: "/faculty",
-    title: "Faculty · 33 BTEUP-recognised mentors · 1:20 ratio | BIPE",
-    description: "33 BTEUP-recognised faculty across 7 departments. 1:20 mentor ratio with periodic home visits. AICTE FDP-trained, OBE-aligned pedagogy.",
+    title: "Faculty · 40 BTEUP-recognised mentors · 1:20 ratio | BIPE",
+    description: "40 BTEUP-recognised faculty across 7 departments. 1:20 mentor ratio with periodic home visits. AICTE FDP-trained, OBE-aligned pedagogy.",
   },
   events: {
     path: "/events",
@@ -111,8 +112,8 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   approvals: {
     path: "/approvals",
-    title: "Approvals · AICTE, BTEUP, ISO 9001:2015, AISHE | BIPE",
-    description: "AICTE permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026. BTEUP-affiliated under JEECUP 4455. ISO 9001:2015 certified. AISHE registered.",
+    title: "Approvals · AICTE, BTEUP, AISHE | BIPE",
+    description: "AICTE permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026. BTEUP-affiliated under JEECUP 4455. AISHE-registered with the Department of Higher Education, MoE.",
   },
   faq: {
     path: "/faq",
@@ -153,6 +154,21 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     path: "/anti-ragging",
     title: "Anti-Ragging Pledge & Committee | BIPE",
     description: "Zero-tolerance anti-ragging at BIPE. Committee composition, complaint flow, UGC anti-ragging portal link and Supreme-Court-mandated undertaking.",
+  },
+  jeecupFromBihar: {
+    path: "/jeecup-from-bihar",
+    title: "JEECUP from Bihar · Apply to BIPE Varanasi (code 4455)",
+    description: "Bihar students can apply to BIPE Varanasi via JEECUP under the all-India category. Step-by-step for Patna, Gaya, Bhojpur, Buxar, Kaimur applicants.",
+  },
+  jeecupVsBcece: {
+    path: "/jeecup-vs-bcece",
+    title: "JEECUP vs BCECE · Bihar polytechnic options compared | BIPE",
+    description: "JEECUP (UP) vs BCECE (Bihar) — eligibility, syllabus, counselling timeline, fee and seat availability compared. Plus how Bihar students get a BIPE seat via JEECUP 4455.",
+  },
+  admissionFromBihar: {
+    path: "/admission-from-bihar",
+    title: "Admission from Bihar · Documents, equivalency, hostel | BIPE",
+    description: "Bihar students applying to BIPE Varanasi — Bihar Board / CBSE equivalency, residence and caste certificates, hostel for out-of-state students, travel from Patna/Ara/Buxar.",
   },
 };
 

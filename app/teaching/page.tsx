@@ -229,7 +229,7 @@ export default function Page() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: 6, paddingLeft: 32, borderLeft: "1px solid color-mix(in oklab, var(--paper) 18%, transparent)" }}>
                 {[
-                  { k: "Faculty", v: "33+" },
+                  { k: "Faculty", v: "40" },
                   { k: "Visits / sem", v: "2" },
                   { k: "Avg cohort", v: "60" },
                 ].map((s) => (

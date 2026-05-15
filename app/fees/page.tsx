@@ -445,7 +445,7 @@ export default function Page() {
                 <span style={{ color: "var(--brand)" }}>on the record.</span>
               </p>
               <div style={{ marginTop: 24, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-3)" }}>
-                AFRC · AICTE · BTEUP · ISO 9001
+                AFRC · AICTE · BTEUP · AISHE
               </div>
               <div className="row" style={{ justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>

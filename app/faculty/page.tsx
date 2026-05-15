@@ -364,7 +364,7 @@ export default function Page() {
           <p className="lead" style={{ marginTop: 22, maxWidth: "62ch" }}>
             A diploma is the product of who teaches it. Below — every academic
             faculty member at BIPE, with their qualifications, experience and
-            published work. No anonymous &ldquo;33 faculty&rdquo; counts; we name them.
+            published work. No anonymous &ldquo;40 faculty&rdquo; counts; we name them.
           </p>
           <div
             className="bipe-stats"
@@ -738,7 +738,7 @@ export default function Page() {
                 className="bipe-h2"
                 style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}
               >
-                Four HODs.{" "}
+                Five HODs.{" "}
                 <span
                   className="serif"
                   style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}

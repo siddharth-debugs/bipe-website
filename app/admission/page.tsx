@@ -131,7 +131,7 @@ export default function Page() {
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink-3)" }}>
                   Trust marks &rarr;
                 </span>
-                {["AICTE", "BTEUP 4455", "AFRC", "ISO 9001"].map((t, i) => (
+                {["AICTE", "BTEUP 4455", "AFRC", "AISHE"].map((t, i) => (
                   <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 17, color: "var(--ink-2)" }}>
                     {t}
                     {i < 3 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}

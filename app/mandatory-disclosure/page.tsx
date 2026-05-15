@@ -67,7 +67,7 @@ const SECTIONS: Section[] = [
         <p>
           Latest Extension of Approval (EoA): F.No. <strong>{DATA.contact.aicteEoaRef}</strong>, dated {DATA.contact.aicteEoaDate}.
         </p>
-        <p>Quality management certified to <strong>ISO 9001:2015</strong>. Active <strong>AISHE</strong> registration with the Department of Higher Education, Government of India.</p>
+        <p>Active <strong>AISHE</strong> registration with the Department of Higher Education, Government of India.</p>
         <p>Independent verification: see the <Link href="/approvals">Approvals page</Link> or the AICTE / JEECUP / URISE portals linked in our footer.</p>
       </>
     ),
@@ -105,7 +105,7 @@ const SECTIONS: Section[] = [
     title: "Faculty — count, qualifications, ratio",
     body: (
       <>
-        <p><strong>33 BTEUP-recognised faculty</strong> across seven departments (CSE, Civil, Electrical, Mechanical, Dairy Engineering, Applied Sciences &amp; Humanities, Workshop &amp; Practical Training).</p>
+        <p><strong>40 BTEUP-recognised faculty</strong> across seven departments (CSE, Civil, Electrical, Mechanical, Dairy Engineering, Applied Sciences &amp; Humanities, Workshop &amp; Practical Training).</p>
         <p>Mentor-to-student ratio: <strong>1:20</strong> across the diploma. Faculty are AICTE-FDP trained and OBE-aligned. See the <Link href="/faculty">Faculty page</Link> for departmental composition.</p>
         <p>{`// TODO: publish department-wise faculty roster (name, designation, qualification, tenure, experience) per AICTE Annexure-18 §7 once HR consolidates the 2026-27 list.`}</p>
       </>
@@ -250,7 +250,7 @@ export default function Page() {
             <span className="pill pill-accent">EoA · {DATA.contact.aicteEoaDate}</span>
             <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>JEECUP {DATA.contact.jeecup}</span>
             <span className="pill">AICTE {DATA.contact.aicte}</span>
-            <span className="pill">{DATA.contact.iso}</span>
+            <span className="pill">{DATA.contact.aishe}</span>
           </div>
         </div>
       </section>

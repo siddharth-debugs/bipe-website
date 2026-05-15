@@ -126,7 +126,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                A six-acre AICTE-approved diploma institute in Phoolpur, Varanasi. Five BTEUP-affiliated branches, 550+ students drawn from six districts, 33 faculty &mdash; built to make rural Eastern UP a credible address for technical education.
+                A six-acre AICTE-approved diploma institute in Phoolpur, Varanasi. Five BTEUP-affiliated branches, 550+ students drawn from six districts, 40 faculty &mdash; built to make rural Eastern UP a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
@@ -137,7 +137,7 @@ export default function Page() {
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink-3)" }}>
                   Trust marks &rarr;
                 </span>
-                {["AICTE", "BTEUP", "ISO 9001", "AISHE"].map((t, i) => (
+                {["AICTE", "BTEUP", "AISHE"].map((t, i) => (
                   <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 17, color: "var(--ink-2)" }}>
                     {t}
                     {i < 3 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}

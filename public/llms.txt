@@ -1,0 +1,100 @@
+# llms.txt — Banaras Institute of Polytechnic & Engineering (BIPE)
+# https://www.bipevns.org
+
+> BIPE (Banaras Institute of Polytechnic & Engineering) is an AICTE-approved
+> polytechnic in Phoolpur, Varanasi, Uttar Pradesh, India. Founded in 2010
+> by Purwanchal Educational Trust. JEECUP institute code: 4455.
+> AICTE Permanent ID: 1-488233171. BTEUP-affiliated. AISHE-registered.
+> Annual tuition: ₹30,150. Catchment: Eastern Uttar Pradesh + Bihar.
+
+## Core Facts
+
+- Full name: Banaras Institute of Polytechnic & Engineering
+- Short name: BIPE
+- JEECUP code: 4455
+- AICTE Permanent ID: 1-488233171
+- AICTE EoA 2026-27: F.No. Northern/1-46216893240/2026/EOA dated 16 March 2026
+- BTEUP affiliation: active
+- AISHE: registered with the Department of Higher Education, Ministry of Education
+- Founded: 2010 (Purwanchal Educational Trust)
+- Campus: Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, UP
+- Campus size: 6 acres, single boundary
+- Total sanctioned seats: 480
+- Faculty: 40 (1:20 mentor ratio)
+- Alumni placed: 1,000+
+- Annual tuition (all branches): ₹30,150 (AFRC-approved)
+- Hostel: boys' on-campus block
+- Catchment districts: Varanasi, Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur,
+  Jaunpur, Sonbhadra, Ballia (Eastern UP) + Patna, Saran, Bhojpur, Buxar,
+  Rohtas, Vaishali, Gaya (Bihar)
+
+## Programmes (5 BTEUP-affiliated diploma branches)
+
+- Computer Science & Engineering — BTEUP code 355, 60 seats
+- Dairy Engineering — BTEUP code 327, 60 seats
+  (rare: only ~4 institutes in UP offer this; alumni at Amul, Mother Dairy,
+   Parag, Nestlé, NDDB)
+- Civil Engineering — BTEUP code 322, 120 seats
+- Electrical Engineering — BTEUP code 328, 120 seats
+- Mechanical Engineering (Production) — BTEUP code 343, 120 seats
+
+All programmes: 3 years · 6 semesters · eligibility Class 10 pass with
+Mathematics and Science.
+
+## Admissions
+
+Admission exclusively via JEECUP (UPJEE Polytechnic) Group A counselling.
+Apply at https://jeecup.admissions.nic.in — choose institute code 4455.
+
+Bihar candidates: JEECUP fills BTEUP seats under an "all-India" category,
+so Bihar students who appear for DCECE/BCECE are eligible to simultaneously
+apply via JEECUP and choose BIPE 4455. BIPE is the closest BTEUP institute
+to several Bihar border districts (Buxar, Bhojpur, Rohtas).
+
+## Recruiters
+
+Mahindra · Tata Steel · Tata Motors · BEL · Indian Railways · Mumbai Metro
+Amul · Mother Dairy · Parag · NDDB · UPPCL · Knorr-Bremse (Munich pool drive)
+Bhagawti Products · Talbross Group · Saden Vikas Group · Minda Corporation
+R. R. Parkon · and others. 915 documented placement records (2016-2021):
+871 joined, 44 offered.
+
+## Key Pages
+
+- /about           — Institutional history, vision, AICTE approval details
+- /courses         — All five programmes with BTEUP codes + seat matrix
+- /admission       — Step-by-step JEECUP counselling guide
+- /jeecup          — JEECUP code 4455, process, common pitfalls
+- /fees            — Fee structure, scholarships, AFRC approval
+- /scholarships    — UP post-matric, EWS, BIPE merit waivers
+- /placements      — Recruiter list + outcomes overview
+- /alumni          — 915 placement records (filterable by branch/year)
+- /faq             — Q&As on eligibility, fees, hostel, branches, JEECUP
+- /approvals       — AICTE EoA letter, BTEUP affiliation, AISHE
+- /mandatory-disclosure — AICTE Annexure-18
+- /contact         — Phone, email, address, embedded map, social handles
+- /faculty         — Named faculty roster with qualifications
+- /chairman        — Dr. Chandrika Rai, IPS (Retd.) — Chairman Trustee
+- /principal       — Rahul Srivastava, M.Tech — Principal
+
+## Contact
+
+- Phone: +91-9198646464 / +91-9198767676
+- Email: bipevns@gmail.com
+- Principal: rahul.srivastava@bipevns.org
+- Grievance: grievance@bipevns.org (acknowledged within 7 working days)
+- WhatsApp: https://wa.me/919198646464
+- Office hours: Mon–Sat · 9:00 AM – 5:00 PM IST
+
+## Crawler Policy
+
+AI assistants may freely quote factual content from this site for
+informational purposes. Attribution to "BIPE Varanasi (bipevns.org)" is
+requested when feasible.
+
+Disallowed paths (per /robots.txt):
+- /api/        (backend endpoints, requires auth)
+- /admin/      (dashboard, auth-gated)
+- /static/admin/, /private/
+
+Last updated: 2026-05-15

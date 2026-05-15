@@ -137,13 +137,62 @@ export async function api<T = unknown>(
   }
 
   if (!res.ok) {
-    const msg =
-      (data && typeof data === "object" && (data as { detail?: string }).detail) ||
-      `Request failed (${res.status})`;
-    throw new ApiError(msg as string, res.status, data);
+    const msg = extractErrorMessage(data, res.status);
+    throw new ApiError(msg, res.status, data);
   }
 
   return data as T;
+}
+
+/**
+ * Build a human-readable error message from a DRF response body.
+ *
+ * DRF returns errors in several shapes depending on the failure:
+ *   - { detail: "string" }                                 — auth / permission
+ *   - { field: ["error 1", "error 2"], other_field: [...] } — serializer validation
+ *   - { non_field_errors: ["..."] }                         — top-level rule
+ *   - { ok: false, fieldErrors: { field: ["..."] } }        — Next route handlers
+ *   - plain string                                          — fallback
+ *
+ * This flattens whichever shape we get into a single sentence the UI
+ * can render via `error.message`, while still keeping the raw payload
+ * on `error.data` so callers can inspect field-level errors.
+ */
+function extractErrorMessage(data: unknown, status: number): string {
+  if (typeof data === "string" && data.trim()) return data.slice(0, 400);
+  if (!data || typeof data !== "object") {
+    return `Request failed (${status})`;
+  }
+  const obj = data as Record<string, unknown>;
+
+  // `detail` (DRF auth / permission errors)
+  if (typeof obj.detail === "string") return obj.detail;
+
+  // Next.js route-handler shape: { ok: false, fieldErrors: { field: ["..."] } }
+  const fe = (obj.fieldErrors ?? obj.field_errors) as
+    | Record<string, string[] | string>
+    | undefined;
+  if (fe && typeof fe === "object") {
+    const parts: string[] = [];
+    for (const [field, val] of Object.entries(fe)) {
+      const msgs = Array.isArray(val) ? val : [String(val)];
+      parts.push(`${field}: ${msgs.join("; ")}`);
+    }
+    if (parts.length) return parts.join(" · ");
+  }
+
+  // DRF serializer shape: { field: ["..."], non_field_errors: ["..."] }
+  // Heuristic: every value is an array of strings.
+  const drfParts: string[] = [];
+  for (const [field, val] of Object.entries(obj)) {
+    if (Array.isArray(val) && val.every((x) => typeof x === "string")) {
+      const label = field === "non_field_errors" ? "" : `${field}: `;
+      drfParts.push(`${label}${(val as string[]).join("; ")}`);
+    }
+  }
+  if (drfParts.length) return drfParts.join(" · ");
+
+  return `Request failed (${status})`;
 }
 
 // ─── Auth helpers ──────────────────────────────────────────────────────────
