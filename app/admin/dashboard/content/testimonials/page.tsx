@@ -21,6 +21,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 
+import { ImageInput } from "@/components/admin/ImageInput";
 import { Testimonials, TestimonialRow, TestimonialWrite } from "@/lib/admin/content";
 
 export default function TestimonialsAdmin() {
@@ -178,8 +179,8 @@ function Editor({
               </Select>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="photo">Photo URL (optional)</Label>
-              <Input id="photo" value={form.photo_url || ""} onChange={(e) => set("photo_url", e.target.value)} placeholder="https://…" />
+              <Label htmlFor="photo">Photo (optional)</Label>
+              <ImageInput id="photo" value={form.photo_url || ""} onChange={(v) => set("photo_url", v)} />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="order">Sort order</Label>

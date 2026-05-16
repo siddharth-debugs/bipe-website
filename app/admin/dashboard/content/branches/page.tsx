@@ -18,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 
+import { ImageInput } from "@/components/admin/ImageInput";
 import { Branches, BranchRow, BranchWrite } from "@/lib/admin/content";
 
 export default function BranchesAdmin() {
@@ -210,8 +211,8 @@ function Editor({
             </div>
 
             <div className="sm:col-span-2 space-y-1.5">
-              <Label htmlFor="thumb_url">Thumbnail URL</Label>
-              <Input id="thumb_url" value={form.thumbnail_url || ""} onChange={(e) => set("thumbnail_url", e.target.value)} placeholder="https://res.cloudinary.com/..." />
+              <Label htmlFor="thumb_url">Thumbnail</Label>
+              <ImageInput id="thumb_url" value={form.thumbnail_url || ""} onChange={(v) => set("thumbnail_url", v)} />
             </div>
             <div className="sm:col-span-2 space-y-1.5">
               <Label htmlFor="thumb_alt">Thumbnail alt text</Label>
@@ -222,13 +223,13 @@ function Editor({
               const urlKey = `slide${n}_url` as const;
               const altKey = `slide${n}_alt` as const;
               return (
-                <div key={n} className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-md bg-[var(--paper)]/40 border border-[var(--line)]">
-                  <div className="sm:col-span-2 text-xs uppercase tracking-wide text-[var(--ink-3)]">
+                <div key={n} className="sm:col-span-2 space-y-2 p-3 rounded-md bg-[var(--paper)]/40 border border-[var(--line)]">
+                  <div className="text-xs uppercase tracking-wide text-[var(--ink-3)]">
                     Slide {n}
                   </div>
                   <div className="space-y-1.5">
-                    <Label htmlFor={`s${n}_url`}>URL</Label>
-                    <Input id={`s${n}_url`} value={form[urlKey] || ""} onChange={(e) => set(urlKey, e.target.value)} placeholder="https://…" />
+                    <Label htmlFor={`s${n}_url`}>Image</Label>
+                    <ImageInput id={`s${n}_url`} value={form[urlKey] || ""} onChange={(v) => set(urlKey, v)} />
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor={`s${n}_alt`}>Alt text</Label>

@@ -19,6 +19,7 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 
+import { ImageInput } from "@/components/admin/ImageInput";
 import { Faculty, FacultyRow, FacultyWrite } from "@/lib/admin/content";
 
 export default function FacultyAdmin() {
@@ -175,8 +176,8 @@ function Editor({
                 <Input id="email" type="email" value={form.email || ""} onChange={(e) => set("email", e.target.value)} />
               </div>
               <div className="sm:col-span-2 space-y-1.5">
-                <Label htmlFor="photo">Photo URL</Label>
-                <Input id="photo" value={form.photo_url || ""} onChange={(e) => set("photo_url", e.target.value)} placeholder="https://…" />
+                <Label htmlFor="photo">Photo</Label>
+                <ImageInput id="photo" value={form.photo_url || ""} onChange={(v) => set("photo_url", v)} />
               </div>
               <div className="sm:col-span-2 space-y-1.5">
                 <Label htmlFor="linkedin">LinkedIn</Label>

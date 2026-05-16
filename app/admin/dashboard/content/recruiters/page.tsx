@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 
+import { ImageInput } from "@/components/admin/ImageInput";
 import { Recruiters, RecruiterRow, RecruiterWrite } from "@/lib/admin/content";
 
 const TIERS = ["flagship", "regular", "alumni"] as const;
@@ -156,8 +157,8 @@ function Editor({
               </Select>
             </div>
             <div className="sm:col-span-2 space-y-1.5">
-              <Label htmlFor="logo">Logo URL</Label>
-              <Input id="logo" value={form.logo_url || ""} onChange={(e) => set("logo_url", e.target.value)} placeholder="https://…" />
+              <Label htmlFor="logo">Logo</Label>
+              <ImageInput id="logo" value={form.logo_url || ""} onChange={(v) => set("logo_url", v)} />
             </div>
             <div className="sm:col-span-2 space-y-1.5">
               <Label htmlFor="website">Website URL</Label>

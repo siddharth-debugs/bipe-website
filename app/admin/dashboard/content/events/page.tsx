@@ -21,6 +21,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 
+import { ImageInput } from "@/components/admin/ImageInput";
 import { Events, EventRow, EventWrite } from "@/lib/admin/content";
 
 const TAGS = ["Admission", "Placement", "Campus", "Faculty", "Sports", "Workshop", "Announcement"];
@@ -164,8 +165,8 @@ function EventSheet({
               <Input id="link" value={form.link_url || ""} onChange={(e) => set("link_url", e.target.value)} placeholder="https://…" />
             </div>
             <div className="sm:col-span-2 space-y-1.5">
-              <Label htmlFor="image">Image URL (optional)</Label>
-              <Input id="image" value={form.image_url || ""} onChange={(e) => set("image_url", e.target.value)} placeholder="https://…" />
+              <Label htmlFor="image">Image (optional)</Label>
+              <ImageInput id="image" value={form.image_url || ""} onChange={(v) => set("image_url", v)} />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="order">Sort order</Label>
