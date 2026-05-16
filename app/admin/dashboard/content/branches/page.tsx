@@ -122,6 +122,10 @@ function Editor({
     setForm(row ? { ...row } : {
       code: "", slug: "", name: "", name_hi: "", seats: 60, fee_year: "30,150",
       short_description: "", tag: "", color_index: 1,
+      thumbnail_url: "", thumbnail_alt: "",
+      slide1_url: "", slide1_alt: "",
+      slide2_url: "", slide2_alt: "",
+      slide3_url: "", slide3_alt: "",
       is_published: true, sort_order: 0,
     });
   }, [open, row]);
@@ -193,6 +197,46 @@ function Editor({
                 <span className="text-sm text-[var(--ink-2)]">{form.is_published ?? true ? "Live" : "Draft"}</span>
               </div>
             </div>
+
+            {/* Imagery — one thumbnail + three slider slots. Leave any
+                URL blank to hide that slot. All images should be
+                landscape (≥ 1.3 aspect) to crop cleanly to 16:9. */}
+            <div className="sm:col-span-2 pt-2 border-t border-[var(--line)]">
+              <div className="text-xs uppercase tracking-wide text-[var(--ink-3)] mb-1">Imagery</div>
+              <p className="text-xs text-[var(--ink-3)]">
+                One thumbnail + up to three slider images. Use landscape (16:9) photos.
+                Cloudinary auto-format URLs work well. Leave a URL blank to hide that slot.
+              </p>
+            </div>
+
+            <div className="sm:col-span-2 space-y-1.5">
+              <Label htmlFor="thumb_url">Thumbnail URL</Label>
+              <Input id="thumb_url" value={form.thumbnail_url || ""} onChange={(e) => set("thumbnail_url", e.target.value)} placeholder="https://res.cloudinary.com/..." />
+            </div>
+            <div className="sm:col-span-2 space-y-1.5">
+              <Label htmlFor="thumb_alt">Thumbnail alt text</Label>
+              <Input id="thumb_alt" value={form.thumbnail_alt || ""} onChange={(e) => set("thumbnail_alt", e.target.value)} placeholder="Short description for screen readers / SEO" />
+            </div>
+
+            {([1, 2, 3] as const).map((n) => {
+              const urlKey = `slide${n}_url` as const;
+              const altKey = `slide${n}_alt` as const;
+              return (
+                <div key={n} className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-md bg-[var(--paper)]/40 border border-[var(--line)]">
+                  <div className="sm:col-span-2 text-xs uppercase tracking-wide text-[var(--ink-3)]">
+                    Slide {n}
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor={`s${n}_url`}>URL</Label>
+                    <Input id={`s${n}_url`} value={form[urlKey] || ""} onChange={(e) => set(urlKey, e.target.value)} placeholder="https://…" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor={`s${n}_alt`}>Alt text</Label>
+                    <Input id={`s${n}_alt`} value={form[altKey] || ""} onChange={(e) => set(altKey, e.target.value)} placeholder="Caption / description" />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </SheetBody>
 

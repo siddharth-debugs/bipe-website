@@ -80,6 +80,16 @@ export interface BranchRow extends BaseRow {
   short_description: string;
   tag: string;
   color_index: number;
+  // Card / list thumbnail.
+  thumbnail_url: string;
+  thumbnail_alt: string;
+  // Three fixed slider slots — leave a URL blank to hide that slot.
+  slide1_url: string;
+  slide1_alt: string;
+  slide2_url: string;
+  slide2_alt: string;
+  slide3_url: string;
+  slide3_alt: string;
 }
 export type BranchWrite = Partial<Omit<BranchRow, "id" | "created_at" | "updated_at">>;
 

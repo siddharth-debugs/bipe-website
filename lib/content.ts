@@ -73,6 +73,14 @@ export interface PublicBranch {
   short_description: string;
   tag: string;
   color_index: number;
+  thumbnail_url: string;
+  thumbnail_alt: string;
+  slide1_url: string;
+  slide1_alt: string;
+  slide2_url: string;
+  slide2_alt: string;
+  slide3_url: string;
+  slide3_alt: string;
 }
 export interface PublicContact {
   phone: string;
@@ -203,6 +211,14 @@ export async function getBranches(): Promise<PublicBranch[]> {
     short_description: br.desc,
     tag: br.tag ?? "",
     color_index: br.color,
+    thumbnail_url: br.thumbnail.src,
+    thumbnail_alt: br.thumbnail.alt,
+    slide1_url: br.slides[0]?.src ?? "",
+    slide1_alt: br.slides[0]?.alt ?? "",
+    slide2_url: br.slides[1]?.src ?? "",
+    slide2_alt: br.slides[1]?.alt ?? "",
+    slide3_url: br.slides[2]?.src ?? "",
+    slide3_alt: br.slides[2]?.alt ?? "",
   }));
 }
 
