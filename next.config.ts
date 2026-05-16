@@ -42,7 +42,13 @@ const nextConfig: NextConfig = {
       // Drive via scripts/sync-labs.mjs).
       { protocol: "https", hostname: "res.cloudinary.com" },
     ],
-    formats: ["image/avif", "image/webp"],
+    // NOTE: leave images.formats at the Next.js default (WebP only).
+    // Adding AVIF doubles the per-image transformation count and blew
+    // through the Vercel Image Optimization monthly quota, returning
+    // HTTP 402 from /_next/image and breaking the hero. Re-enable
+    // AVIF only after upgrading the Vercel plan, or move heavy images
+    // (hero, gallery) onto Cloudinary where transformations are free
+    // under our current usage.
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
