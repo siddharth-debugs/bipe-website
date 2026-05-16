@@ -22,8 +22,11 @@ import { Button } from "@/components/ui/button";
  * component degrades to a plain URL input — nothing breaks.
  */
 
-const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "dg8sty5ej";
-const UPLOAD_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "";
+// Trim defensively — env vars set via stdin pipes can pick up a trailing
+// newline, which Cloudinary then treats as a different (non-existent)
+// cloud / preset name and rejects with "Upload preset not found".
+const CLOUD_NAME = (process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "dg8sty5ej").trim();
+const UPLOAD_PRESET = (process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "").trim();
 
 /** Inject `f_auto,q_auto,w_<width>` into any Cloudinary delivery URL
  *  that doesn't already carry transformations. No-op for non-Cloudinary
