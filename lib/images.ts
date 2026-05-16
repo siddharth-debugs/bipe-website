@@ -17,7 +17,28 @@ export const BIPE_IMG = {
   mechanical:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151143/bipe/labs/mechanical/pt-shop-1",
 
   campusWide: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80&auto=format&fit=crop",
-  library: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=900&q=80&auto=format&fit=crop",
+  // Single library still kept as a fallback; the curated set lives in
+  // `libraryPhotos` below and is rendered as a slider on /campus.
+  library: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955753/bipe/library/library-01.jpg",
+  /**
+   * BIPE library — own photos shot 2026-05-16. Eleven landscape frames
+   * covering reading room, stacks, study tables, magazine corner.
+   * Rendered as a CrossfadeSlider on /campus. Tuples land in
+   * "establishing → reading → detail" order so the cycle feels intentional.
+   */
+  libraryPhotos: [
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955753/bipe/library/library-01.jpg", alt: "BIPE library — main reading hall" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955756/bipe/library/library-02.jpg", alt: "BIPE library — bookshelves and study area" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955760/bipe/library/library-03.jpg", alt: "BIPE library — students at study tables" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955763/bipe/library/library-04.jpg", alt: "BIPE library — stacks and reference section" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955766/bipe/library/library-05.jpg", alt: "BIPE library — long reading room view" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955769/bipe/library/library-06.jpg", alt: "BIPE library — periodicals and journals" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955771/bipe/library/library-07.jpg", alt: "BIPE library — quiet study corner" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955774/bipe/library/library-08.jpg", alt: "BIPE library — additional stacks" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955777/bipe/library/library-09.jpg", alt: "BIPE library — circulation and DELNET desk" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955780/bipe/library/library-10.jpg", alt: "BIPE library — reference texts and shelves" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955782/bipe/library/library-11.jpg", alt: "BIPE library — overview" },
+  ] as { src: string; alt: string }[],
   hostel: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
   hostelGirls: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
   hostelBoys: "https://images.unsplash.com/photo-1564540583246-934409427776?w=900&q=80&auto=format&fit=crop",

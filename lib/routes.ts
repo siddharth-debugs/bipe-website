@@ -52,8 +52,8 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   alumni: {
     path: "/alumni",
-    title: "Alumni · 915 placements · 871 joined | BIPE",
-    description: "Browse 915 BIPE placements across 16 recruiter drives (2016–2021): 871 joined, 44 offered but moved on. Filter by branch, year, recruiter or status.",
+    title: "Alumni · 997 placements · 123 with photos | BIPE",
+    description: "Browse 997 BIPE alumni across 16 recruiter drives (2013–2022). 123 verified placements with photos. Filter by branch, year, recruiter or status.",
   },
   campus: {
     path: "/campus",

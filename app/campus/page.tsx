@@ -5,6 +5,7 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
+import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { LabsGallery } from "@/components/campus/LabsGallery";
@@ -176,7 +177,34 @@ export default function Page() {
         <div className="container">
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 56, alignItems: "center" }}>
             <div style={{ position: "relative" }}>
-              <Img src={BIPE_IMG.library} label="LIBRARY · STUDY HALL" style={{ height: 480, borderRadius: 22 }} />
+              <div style={{ height: 480, borderRadius: 22, overflow: "hidden", position: "relative" }}>
+                <CrossfadeSlider
+                  images={BIPE_IMG.libraryPhotos}
+                  aspectRatio="4/3"
+                  radius={22}
+                  interval={4500}
+                  fadeMs={900}
+                />
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: 14,
+                    top: 14,
+                    padding: "6px 12px",
+                    borderRadius: 999,
+                    background: "color-mix(in oklab, var(--ink) 78%, transparent)",
+                    color: "var(--paper)",
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    zIndex: 2,
+                  }}
+                >
+                  Library · Study hall
+                </div>
+              </div>
               <div style={{
                 position: "absolute", right: -24, bottom: -24,
                 background: "var(--white)", border: "1px solid var(--line)", borderRadius: 18,

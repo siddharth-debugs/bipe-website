@@ -1,20 +1,25 @@
 {
-  "totalAlumni": 915,
-  "totalJoined": 871,
+  "totalAlumni": 997,
+  "totalJoined": 953,
   "totalOffered": 44,
   "totalDrives": 16,
   "years": [
+    "2013",
+    "2014",
+    "2015",
     "2016",
     "2017",
     "2018",
     "2019",
     "2020",
-    "2021"
+    "2021",
+    "2022"
   ],
   "branches": [
     "Civil Engineering",
     "Electrical Engineering",
     "Electronics Engineering",
+    "Mechanical Engineering",
     "Mechanical Engineering (Automobile)",
     "Mechanical Engineering (Production)"
   ],
@@ -163,9 +168,11 @@
       "name": "Naveen Pandey",
       "branch": "Electrical Engineering",
       "year": "2016",
-      "company": "Bhagawti Products",
+      "company": "CEO & Owner of Indian Electro Power Control",
       "driveDate": "09-08-2016",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955815/bipe/alumni/2016/eipijkxxgmkj6br6exxi.jpg",
+      "role": "Vice President Business"
     },
     {
       "id": 3,
@@ -235,9 +242,11 @@
       "name": "Roshan Singh",
       "branch": "Electronics Engineering",
       "year": "2016",
-      "company": "Bhagawti Products",
+      "company": "LBS Airport Babatpur",
       "driveDate": "09-08-2016",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955827/bipe/alumni/2017/b8ki82wkgnob3pksclrh.jpg",
+      "role": "DG Operator"
     },
     {
       "id": 11,
@@ -262,9 +271,11 @@
       "name": "Satyam Upadhyay",
       "branch": "Electrical Engineering",
       "year": "2017",
-      "company": "Bhagawti Products",
+      "company": "Motherson India Pvt Ltd",
       "driveDate": "20-02-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955829/bipe/alumni/2017/qwk8cvxgjodyirzksh4u.jpg",
+      "role": "QC"
     },
     {
       "id": 14,
@@ -289,9 +300,11 @@
       "name": "Vishal Kushwaha",
       "branch": "Electrical Engineering",
       "year": "2017",
-      "company": "Bhagawti Products",
+      "company": "Motherson India Pvt Ltd",
       "driveDate": "20-02-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955844/bipe/alumni/2017/c2enb3chuadq3aqdeqjg.jpg",
+      "role": "DET"
     },
     {
       "id": 17,
@@ -381,16 +394,20 @@
       "year": "2017",
       "company": "Talbross Group Faridabad",
       "driveDate": "02-03-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955818/bipe/alumni/2018/b0qjhgikuh2rj8azjphb.jpg",
+      "role": ""
     },
     {
       "id": 27,
       "name": "Vinay KR. Yadav",
       "branch": "Mechanical Engineering (Automobile)",
       "year": "2017",
-      "company": "Talbross Group Faridabad",
+      "company": "Talbross-to-JAYEM AUTOMOTIVE",
       "driveDate": "02-03-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955844/bipe/alumni/2018/n3eyg71dpd5y03n3ejzu.jpg",
+      "role": ""
     },
     {
       "id": 28,
@@ -426,7 +443,9 @@
       "year": "2017",
       "company": "Talbross Group Faridabad",
       "driveDate": "02-03-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955787/bipe/alumni/2018/ds09qptqnixpzkqooqjn.jpg",
+      "role": "DET"
     },
     {
       "id": 32,
@@ -568,9 +587,11 @@
       "name": "Saurabh KR. Patel",
       "branch": "Mechanical Engineering (Production)",
       "year": "2017",
-      "company": "Talbross Group Faridabad",
+      "company": "Dhoot Transmission Pvt Ltd",
       "driveDate": "02-03-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955830/bipe/alumni/2022/pzfian1i69segogwla91.jpg",
+      "role": "DET"
     },
     {
       "id": 48,
@@ -597,7 +618,9 @@
       "year": "2017",
       "company": "Talbross Group Faridabad",
       "driveDate": "02-03-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955831/bipe/alumni/2022/qbzekqbmentyuwy9yl8o.jpg",
+      "role": "DET"
     },
     {
       "id": 51,
@@ -615,7 +638,9 @@
       "year": "2017",
       "company": "Saden Vikas Group Faridabad",
       "driveDate": "28-04-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955784/bipe/alumni/2017/oz31joigeo9kpqibdrkz.jpg",
+      "role": "CNC Operator"
     },
     {
       "id": 53,
@@ -849,7 +874,9 @@
       "year": "2017",
       "company": "Saden Vikas Group Faridabad",
       "driveDate": "28-04-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955812/bipe/alumni/2017/l8eelgw96hoa68jficem.jpg",
+      "role": "DET"
     },
     {
       "id": 79,
@@ -876,7 +903,9 @@
       "year": "2017",
       "company": "Saden Vikas Group Faridabad",
       "driveDate": "28-04-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955813/bipe/alumni/2016/aoao28ms2vtqwzr2item.jpg",
+      "role": "Production Incharge"
     },
     {
       "id": 82,
@@ -957,7 +986,9 @@
       "year": "2017",
       "company": "Saden Vikas Group Faridabad",
       "driveDate": "28-04-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955817/bipe/alumni/2022/mmhy25bexmp9thql9olo.jpg",
+      "role": "DET"
     },
     {
       "id": 91,
@@ -1252,9 +1283,11 @@
       "name": "Surendra Kumar Prajapati",
       "branch": "Mechanical Engineering (Production)",
       "year": "2017",
-      "company": "Saden Vikas Group Faridabad",
+      "company": "Tokai Imperial Rubber India Pvt Ltd",
       "driveDate": "28-04-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955838/bipe/alumni/2017/zmbpswanizqm1vgg22bm.jpg",
+      "role": "Fuel Hose"
     },
     {
       "id": 124,
@@ -1378,9 +1411,11 @@
       "name": "Anand Kumar Pal",
       "branch": "Electrical Engineering",
       "year": "2017",
-      "company": "Force Fox",
+      "company": "Narmada Engg. & Calibration",
       "driveDate": "13-06-2017",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955788/bipe/alumni/2017/v9czdpkpqnpwakkrgnde.jpg",
+      "role": ""
     },
     {
       "id": 138,
@@ -1578,7 +1613,9 @@
       "year": "2018",
       "company": "New Allenberry 03.02.2018",
       "driveDate": "03-02-2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955790/bipe/alumni/2018/h0c9e7hh1tsrkviob3xm.jpg",
+      "role": "JE"
     },
     {
       "id": 160,
@@ -1596,7 +1633,9 @@
       "year": "2018",
       "company": "New Allenberry 03.02.2018",
       "driveDate": "03-02-2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955791/bipe/alumni/2016/bihilfglpecjcmqxmhif.jpg",
+      "role": "Quality Inspector"
     },
     {
       "id": 162,
@@ -1630,9 +1669,11 @@
       "name": "Chandrabhan Nishad",
       "branch": "Mechanical Engineering (Production)",
       "year": "2018",
-      "company": "New Allenberry 03.02.2018",
+      "company": "India Nippon Electrical Pvt Ltd",
       "driveDate": "03-02-2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955801/bipe/alumni/2018/q3jxslddufkcqmxatene.jpg",
+      "role": "Trainee"
     },
     {
       "id": 166,
@@ -1711,9 +1752,11 @@
       "name": "Mohammad Ali",
       "branch": "Mechanical Engineering (Production)",
       "year": "2018",
-      "company": "New Allenberry 03.02.2018",
+      "company": "india Nippon Electrical Ltd",
       "driveDate": "03-02-2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955814/bipe/alumni/2018/r4t0ababfndfiq3ocbxk.jpg",
+      "role": "Production Trainee"
     },
     {
       "id": 175,
@@ -2343,7 +2386,9 @@
       "year": "2018",
       "company": "Dhoot Transmission 05-04-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955838/bipe/alumni/2018/br7lwr6jyxzknwewgxng.jpg",
+      "role": "Site Engg"
     },
     {
       "id": 245,
@@ -2352,7 +2397,9 @@
       "year": "2018",
       "company": "Dhoot Transmission 05-04-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955835/bipe/alumni/2018/ddlfypbgg2ny6ubcxu4t.jpg",
+      "role": ""
     },
     {
       "id": 246,
@@ -2368,9 +2415,11 @@
       "name": "Ashish Kumar Patel",
       "branch": "Civil Engineering",
       "year": "2018",
-      "company": "Dhoot Transmission 05-04-2018",
+      "company": "New Cuff Farada Construction Pvt Ltd",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955794/bipe/alumni/2018/g1iuouobiyui4wi93skh.jpg",
+      "role": "JE"
     },
     {
       "id": 248,
@@ -2388,7 +2437,9 @@
       "year": "2018",
       "company": "Vikash Group, Faridabad 17-05-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955829/bipe/alumni/2018/lkgekw5wkaw2q0am1kix.jpg",
+      "role": "DET"
     },
     {
       "id": 250,
@@ -2478,7 +2529,9 @@
       "year": "2018",
       "company": "Vikash Group, Faridabad 17-05-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955845/bipe/alumni/2018/kmkxf7ifb3pclgvg3ila.jpg",
+      "role": "Trainee"
     },
     {
       "id": 260,
@@ -2604,7 +2657,9 @@
       "year": "2018",
       "company": "Vikash Group, Faridabad 17-05-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955788/bipe/alumni/2018/fx5mikoejiheqwcj2uf6.jpg",
+      "role": "DET"
     },
     {
       "id": 274,
@@ -2829,7 +2884,9 @@
       "year": "2018",
       "company": "Vikash Group, Faridabad 17-05-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955831/bipe/alumni/2022/jvsw4dewcozasa1ek9xa.jpg",
+      "role": "DET"
     },
     {
       "id": 299,
@@ -2937,7 +2994,9 @@
       "year": "2018",
       "company": "Vikash Group, Faridabad 17-05-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955824/bipe/alumni/2018/o3ya4dgbk3grc6g3xdkm.jpg",
+      "role": "DET"
     },
     {
       "id": 311,
@@ -2973,7 +3032,9 @@
       "year": "2018",
       "company": "I Can Nano, New Delhi 26-09-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955797/bipe/alumni/2018/vrzgtrf57yx6bnb5v6hy.jpg",
+      "role": "JBM Group"
     },
     {
       "id": 315,
@@ -3009,7 +3070,9 @@
       "year": "2018",
       "company": "I Can Nano, New Delhi 26-09-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955793/bipe/alumni/2017/o7mnwqlrte5auskrhsmp.jpg",
+      "role": "Ministry Of Defence"
     },
     {
       "id": 319,
@@ -3117,7 +3180,9 @@
       "year": "2018",
       "company": "I Can Nano, New Delhi 26-09-2018",
       "driveDate": "2018",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955813/bipe/alumni/2018/txocgsfzbeh1ijpv7nej.jpg",
+      "role": "DET"
     },
     {
       "id": 331,
@@ -3189,7 +3254,9 @@
       "year": "2019",
       "company": "Vikas Group ,faraidabad Hariyana",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955789/bipe/alumni/2014/hcwg0rhsh13e8v2jtv3g.jpg",
+      "role": "JE"
     },
     {
       "id": 339,
@@ -3315,7 +3382,9 @@
       "year": "2019",
       "company": "Vikas Group ,faraidabad Hariyana",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955812/bipe/alumni/2022/ubd2vs89uczp7l4xwbtw.png",
+      "role": "DET"
     },
     {
       "id": 353,
@@ -3702,7 +3771,9 @@
       "year": "2019",
       "company": "Vikas Group ,faraidabad Hariyana",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955819/bipe/alumni/2018/d3qgz12ajqq2krfmpkyv.jpg",
+      "role": "DET"
     },
     {
       "id": 396,
@@ -3729,7 +3800,9 @@
       "year": "2019",
       "company": "Vikas Group ,faraidabad Hariyana",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955843/bipe/alumni/2022/si7lkwon7qnpihmnl40d.jpg",
+      "role": ""
     },
     {
       "id": 399,
@@ -4024,9 +4097,11 @@
       "name": "Ashutosh Sharma",
       "branch": "Electrical Engineering",
       "year": "2019",
-      "company": "Vikas Group ,faraidabad Hariyana",
+      "company": "Service Engineer Galaxy Power Services Lucknow",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955795/bipe/alumni/2019/folh3obcil4x9hcyr4zc.jpg",
+      "role": ""
     },
     {
       "id": 432,
@@ -4296,7 +4371,9 @@
       "year": "2019",
       "company": "Vikas Group ,faraidabad Hariyana",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955795/bipe/alumni/2018/goh1ncc7nm1quohw97qr.jpg",
+      "role": "DET"
     },
     {
       "id": 462,
@@ -4719,7 +4796,9 @@
       "year": "2019",
       "company": "Vikas Group ,faraidabad Hariyana",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955785/bipe/alumni/2015/np0b7ld0jfk9hsmfywsp.jpg",
+      "role": "Engineer"
     },
     {
       "id": 509,
@@ -5061,7 +5140,9 @@
       "year": "2018",
       "company": "Vikas Group ,faraidabad Hariyana",
       "driveDate": "13-09-2019",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955834/bipe/alumni/2018/zdupbdfgn7owde6eoyy7.jpg",
+      "role": "Site Engg"
     },
     {
       "id": 547,
@@ -5905,9 +5986,11 @@
       "name": "Avanish Kumar Patel",
       "branch": "Electrical Engineering",
       "year": "2020",
-      "company": "MKC GUJRAT 24/09/2020",
+      "company": "Dhoot Transmission Pvt Ltd",
       "driveDate": "2020",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955797/bipe/alumni/2022/jdgvk1qrxma1tzouaizn.jpg",
+      "role": "DET"
     },
     {
       "id": 641,
@@ -7473,7 +7556,9 @@
       "year": "2021",
       "company": "MKC GUJRAT 24/09/2020",
       "driveDate": "2020",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955824/bipe/alumni/2018/gbi9mzpz0dxwu88fqdlg.jpg",
+      "role": "DET"
     },
     {
       "id": 815,
@@ -7536,7 +7621,9 @@
       "year": "2020",
       "company": "MKC GUJRAT 24/09/2020",
       "driveDate": "2020",
-      "status": "joined"
+      "status": "joined",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955815/bipe/alumni/2018/nrxzgdrxdoc5upvyyjim.jpg",
+      "role": "DET"
     },
     {
       "id": 822,
@@ -8383,6 +8470,908 @@
       "company": "MKC GUJRAT 24/09/2020",
       "driveDate": "2020",
       "status": "joined"
+    },
+    {
+      "id": 916,
+      "name": "AVANISH Upadhyay",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955784/bipe/alumni/2022/xllwwgab0oekn93jmw4t.jpg"
+    },
+    {
+      "id": 917,
+      "name": "Abhishek Chaudhari",
+      "branch": "Civil Engineering",
+      "year": "2018",
+      "company": "Sushee Infra & Mining Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955784/bipe/alumni/2018/lioeqybfqbftxxtmn8gl.jpg"
+    },
+    {
+      "id": 918,
+      "name": "Akash Pathak",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt. Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955786/bipe/alumni/2022/rsajrmtcuexcgsoz0nef.jpg"
+    },
+    {
+      "id": 919,
+      "name": "Akash kumar Patel -",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt. Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955784/bipe/alumni/2022/ht80p9ym3tl7xqyh5e8i.jpg"
+    },
+    {
+      "id": 920,
+      "name": "Amit Kumar Tripathi",
+      "branch": "Electrical Engineering",
+      "year": "2013",
+      "company": "Rail Vikas Nigam Limited",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Engineer",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955788/bipe/alumni/2013/ofjqr4xkszo1iymglgep.jpg"
+    },
+    {
+      "id": 921,
+      "name": "Aniket Prajapati",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Talbros Automotive components Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955787/bipe/alumni/2022/oiwsd38lwgmu1kz13u24.jpg"
+    },
+    {
+      "id": 922,
+      "name": "Aniket Rai",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2016",
+      "company": "Krishna Maruti Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Production Incharge",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955789/bipe/alumni/2016/ycbiyvrghq8hgdszjqcb.jpg"
+    },
+    {
+      "id": 923,
+      "name": "Anilkumar Verma",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New allenberry Works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955791/bipe/alumni/2022/ruofvwotpehutaqkqu9u.jpg"
+    },
+    {
+      "id": 924,
+      "name": "Ankit Kumar Dubey",
+      "branch": "Civil Engineering",
+      "year": "2018",
+      "company": "Monte Carlo Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "QC Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955791/bipe/alumni/2018/isrrtokc9xrfmfoewjdv.jpg"
+    },
+    {
+      "id": 925,
+      "name": "Anmol Upadhyay",
+      "branch": "Civil Engineering",
+      "year": "2014",
+      "company": "MKC Infr Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955791/bipe/alumni/2014/vbeivtvdq6g1tz4ulcbe.jpg"
+    },
+    {
+      "id": 926,
+      "name": "Anup Gupta",
+      "branch": "Mechanical Engineering",
+      "year": "2018",
+      "company": "Vikas Group",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955791/bipe/alumni/2018/utjukdvjbnictcs9vpsy.jpg"
+    },
+    {
+      "id": 927,
+      "name": "Anurag Verma",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New allenberrry works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955794/bipe/alumni/2022/gqtddoc2slzofwazr6on.jpg"
+    },
+    {
+      "id": 928,
+      "name": "Aporva Kumar",
+      "branch": "Mechanical Engineering",
+      "year": "2017",
+      "company": "Vikas Group",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955793/bipe/alumni/2017/pyyzxedgbqbgymtwlwqv.jpg"
+    },
+    {
+      "id": 929,
+      "name": "Arjun Vishwakarma",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Sanden Vikas Group Faridabad",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955793/bipe/alumni/2022/ooddnxcjd55vdcjnesxq.jpg"
+    },
+    {
+      "id": 930,
+      "name": "Ashutosh Kr Prajapati",
+      "branch": "Electronics Engineering",
+      "year": "2014",
+      "company": "Navitasis India Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Quality Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955794/bipe/alumni/2014/gbou6hsk7qf0dfkitkoe.jpg"
+    },
+    {
+      "id": 931,
+      "name": "Ashwani Kr Singh",
+      "branch": "Civil Engineering",
+      "year": "2014",
+      "company": "The Indian Hume Pipe Co. Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955796/bipe/alumni/2014/vusdcqjqugcdaoxg4nse.jpg"
+    },
+    {
+      "id": 932,
+      "name": "Avanish Verma",
+      "branch": "Mechanical Engineering (Automobile)",
+      "year": "2022",
+      "company": "New allenberry Works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955797/bipe/alumni/2022/nsqomtcjv3w40y1x3bu1.jpg"
+    },
+    {
+      "id": 933,
+      "name": "Brijesh Kumar Yadav",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Talbros Automotive components Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955797/bipe/alumni/2022/fii4evqmqazslbx6yk9m.jpg"
+    },
+    {
+      "id": 934,
+      "name": "Bhuvneshwar Pandey",
+      "branch": "Civil Engineering",
+      "year": "2014",
+      "company": "Sa Infra. Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "QC Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955798/bipe/alumni/2014/ui4t67loyihcajxfowwl.jpg"
+    },
+    {
+      "id": 935,
+      "name": "Chandan Singh",
+      "branch": "Electrical Engineering",
+      "year": "2013",
+      "company": "Indian Railway",
+      "driveDate": "",
+      "status": "joined",
+      "role": "ALP",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955798/bipe/alumni/2013/keozcuy8ixuqzv9km4g0.jpg"
+    },
+    {
+      "id": 936,
+      "name": "Chandan Yadav",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2016",
+      "company": "Krisna Maruti Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Quality Inspector",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955800/bipe/alumni/2016/joiphqi88a2myoilfejr.jpg"
+    },
+    {
+      "id": 937,
+      "name": "Chandrakant Mishra",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New allenberrry works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955801/bipe/alumni/2022/quupay9ygmfwrjw5wfwc.jpg"
+    },
+    {
+      "id": 938,
+      "name": "Chandrama Prasad Singh",
+      "branch": "Civil Engineering",
+      "year": "2018",
+      "company": "Killer Ground Engg Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955800/bipe/alumni/2018/ada6rri5petnpjitz8fo.jpg"
+    },
+    {
+      "id": 939,
+      "name": "Chirag Rai",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Talbros Automotive Component Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955801/bipe/alumni/2022/xfpytykp3b6xl4r4vbwn.jpg"
+    },
+    {
+      "id": 940,
+      "name": "Dharmedra Kr Maurya",
+      "branch": "Electrical Engineering",
+      "year": "2017",
+      "company": "Bajaj Electricals",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955801/bipe/alumni/2017/iqg4xirsv7jii4t0ritq.jpg"
+    },
+    {
+      "id": 941,
+      "name": "Dheeraj yadav",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Sanden Vikas Group",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955805/bipe/alumni/2022/s1oytcvia4ssjxhfvemb.jpg"
+    },
+    {
+      "id": 942,
+      "name": "Dilshad Hashmee",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New Allenberry works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955804/bipe/alumni/2022/kykubjtfimy6b3qlrwlx.jpg"
+    },
+    {
+      "id": 943,
+      "name": "Dinesh Kr Yadav",
+      "branch": "Civil Engineering",
+      "year": "2014",
+      "company": "Raghuveer Buildcon Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Structure Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955804/bipe/alumni/2014/xvxsnnjjvsc8zhuw8rsi.jpg"
+    },
+    {
+      "id": 944,
+      "name": "Gaurav Kumar Gond",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt. Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955808/bipe/alumni/2022/nro6roxtmo7p0yjmdqez.jpg"
+    },
+    {
+      "id": 945,
+      "name": "Govind Yadav",
+      "branch": "Electronics Engineering",
+      "year": "2014",
+      "company": "Sigmatech Industrial Electronics",
+      "driveDate": "",
+      "status": "joined",
+      "role": "JE",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955806/bipe/alumni/2014/ehguztnm4lxy68lukotm.jpg"
+    },
+    {
+      "id": 946,
+      "name": "Govind kumar Verma",
+      "branch": "Mechanical Engineering",
+      "year": "2018",
+      "company": "Vikash Group",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955805/bipe/alumni/2018/gota9lcbvskepfxtq0b6.jpg"
+    },
+    {
+      "id": 947,
+      "name": "Hariom Rai",
+      "branch": "Civil Engineering",
+      "year": "2015",
+      "company": "UGC4MMRC",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Civil Engg Tunnel",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955807/bipe/alumni/2015/amwqb6bvhjup2vbf9fvj.jpg"
+    },
+    {
+      "id": 948,
+      "name": "Hemant Srivastav",
+      "branch": "Electronics Engineering",
+      "year": "2017",
+      "company": "Trolex Gurugram",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955806/bipe/alumni/2017/bugmwvpew2rbrtuuvsiw.jpg"
+    },
+    {
+      "id": 949,
+      "name": "Himanshu Kumar",
+      "branch": "Civil Engineering",
+      "year": "2018",
+      "company": "Bhutani Infra",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Egg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955808/bipe/alumni/2018/bqpef5ttynb2zrsetpcb.jpg"
+    },
+    {
+      "id": 950,
+      "name": "Jaya Ray",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot transmission private limited",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955807/bipe/alumni/2022/khhfpzywvptxkknhfcga.jpg"
+    },
+    {
+      "id": 951,
+      "name": "Kartikey Singh",
+      "branch": "Mechanical Engineering",
+      "year": "2018",
+      "company": "E-Cargo Logistic Services Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955809/bipe/alumni/2018/usuroa4lbvwogpztkkwo.jpg"
+    },
+    {
+      "id": 952,
+      "name": "Kishan Gupta",
+      "branch": "Mechanical Engineering (Automobile)",
+      "year": "2022",
+      "company": "Talbros Automotive Component Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955811/bipe/alumni/2022/weh0rayw3xgnlkyxnnoy.jpg"
+    },
+    {
+      "id": 953,
+      "name": "Kurban Ali",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New allenberry works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955814/bipe/alumni/2022/wmuktf5lqkfwk3jyzyrg.jpg"
+    },
+    {
+      "id": 954,
+      "name": "Mangala Prasad",
+      "branch": "Electrical Engineering",
+      "year": "2021",
+      "company": "Varroc Engineering Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "JE",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955810/bipe/alumni/2021/y0abcdfd81jj2tuyxtbd.jpg"
+    },
+    {
+      "id": 955,
+      "name": "Mahindra & Mahindra",
+      "branch": "Mechanical Engineering",
+      "year": "2018",
+      "company": "ME 2018",
+      "driveDate": "",
+      "status": "joined",
+      "role": "",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955812/bipe/alumni/2018/tiqggn5swbspkrgh1tqz.jpg"
+    },
+    {
+      "id": 956,
+      "name": "Nandkishor Ram",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New allenberry Works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955814/bipe/alumni/2022/muohtzqrislemrevphaw.jpg"
+    },
+    {
+      "id": 957,
+      "name": "Nikhil Kumar",
+      "branch": "Electrical Engineering",
+      "year": "2018",
+      "company": "Indian Nippon Electrical Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Trainee",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955815/bipe/alumni/2018/qiyccjj7uygvs0vh2sf4.jpg"
+    },
+    {
+      "id": 958,
+      "name": "Niraj Singh",
+      "branch": "Mechanical Engineering",
+      "year": "2018",
+      "company": "SATA vikas Group Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955817/bipe/alumni/2018/luadyxb7hx7pafwilaxe.jpg"
+    },
+    {
+      "id": 959,
+      "name": "Nitya Prakash Singh",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955817/bipe/alumni/2022/ijq2ro471mwtqch40ihh.jpg"
+    },
+    {
+      "id": 960,
+      "name": "Praveen Bharati",
+      "branch": "Mechanical Engineering (Automobile)",
+      "year": "2022",
+      "company": "Talbros Automotive Component Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955818/bipe/alumni/2022/lpkfmfwjaujyf7lukabf.jpg"
+    },
+    {
+      "id": 961,
+      "name": "Preetam Kumar Verma",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt. Ldt",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955818/bipe/alumni/2022/bpzckolv2yll2kdanzlu.jpg"
+    },
+    {
+      "id": 962,
+      "name": "Rishkesh Yadav",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Tosha international",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955819/bipe/alumni/2022/pykg5ogrlxe175y8c0rc.jpg"
+    },
+    {
+      "id": 963,
+      "name": "Raj Kumar Patel",
+      "branch": "Electrical Engineering",
+      "year": "2015",
+      "company": "Ashok Layland",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Je",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955821/bipe/alumni/2015/zk81elunc31kssht0i5y.jpg"
+    },
+    {
+      "id": 964,
+      "name": "Rajat singh",
+      "branch": "Electronics Engineering",
+      "year": "2014",
+      "company": "BIPE Varanasi",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Network Engineer",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955820/bipe/alumni/2014/yer01wzzy8snkdgus6hx.jpg"
+    },
+    {
+      "id": 965,
+      "name": "Rajeev Vishwakarma",
+      "branch": "Electronics Engineering",
+      "year": "2017",
+      "company": "RR Polytechnic",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Asst. Lect",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955820/bipe/alumni/2017/bhfeqhg93siizjkwzrel.jpg"
+    },
+    {
+      "id": 966,
+      "name": "Rajendra Prasad",
+      "branch": "Electrical Engineering",
+      "year": "2018",
+      "company": "Motherson Automotive & Technology",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Trainee",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955826/bipe/alumni/2018/jdkkhieqlyarrkdmktnf.jpg"
+    },
+    {
+      "id": 967,
+      "name": "Raju",
+      "branch": "Mechanical Engineering (Automobile)",
+      "year": "2022",
+      "company": "Talbros Automotive Components Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955835/bipe/alumni/2022/wwmlbeihmoghtwl84loi.jpg"
+    },
+    {
+      "id": 968,
+      "name": "Rakesh Kumar Yadav",
+      "branch": "Electrical Engineering",
+      "year": "2015",
+      "company": "Olive bar & Kitchen pvt. ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "JE",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955822/bipe/alumni/2015/vunu9zj3sgokvam3gwl5.jpg"
+    },
+    {
+      "id": 969,
+      "name": "Ramesh Kumar",
+      "branch": "Electrical Engineering",
+      "year": "2017",
+      "company": "Mirzapur",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Own Business of Fabrication",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955822/bipe/alumni/2017/golwasjnsucs5fnviqx9.jpg"
+    },
+    {
+      "id": 970,
+      "name": "Rashid Khan",
+      "branch": "Electronics Engineering",
+      "year": "2017",
+      "company": "JE in Oppo Ind",
+      "driveDate": "",
+      "status": "joined",
+      "role": "",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955823/bipe/alumni/2017/bptzi0tf6nhpbnxqfp2d.jpg"
+    },
+    {
+      "id": 971,
+      "name": "Ravi Vishwakarma",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New allenberry Works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955825/bipe/alumni/2022/vrsml3zf5bk2olrwjskv.jpg"
+    },
+    {
+      "id": 972,
+      "name": "Rishabh Thakur",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "New allenberry Works",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955827/bipe/alumni/2022/btk8yfojr9j8x7dq07ld.jpg"
+    },
+    {
+      "id": 973,
+      "name": "Rohit Kumar Pal",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Talbros Automotive Component Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955827/bipe/alumni/2022/maakjs3bqvyf86lbf9kg.jpg"
+    },
+    {
+      "id": 974,
+      "name": "Savan Saroj",
+      "branch": "Mechanical Engineering (Automobile)",
+      "year": "2022",
+      "company": "Talbros Automotive Components Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955828/bipe/alumni/2022/gfp7scbpqipkvpfqmdpl.jpg"
+    },
+    {
+      "id": 975,
+      "name": "Sachin Kumar Modanwal",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955828/bipe/alumni/2022/sxcu6tzbhauuroo62kr1.jpg"
+    },
+    {
+      "id": 976,
+      "name": "Sandeep Singh Kushwaha",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955829/bipe/alumni/2022/ow5ax0obwjtdb17yvsvq.jpg"
+    },
+    {
+      "id": 977,
+      "name": "Saurabh Vishwakarma",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Talbros Automotive Components Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955831/bipe/alumni/2022/ryubodadvjufbzkrz9ty.jpg"
+    },
+    {
+      "id": 978,
+      "name": "Saurabh Yadav",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt. Ldt",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955831/bipe/alumni/2022/agcblamewmnfq2yurwp3.jpg"
+    },
+    {
+      "id": 979,
+      "name": "Saurabh rajbhar",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Talbros Automotive Component Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955832/bipe/alumni/2022/zsg5eluuojfrjwc3vsxr.jpg"
+    },
+    {
+      "id": 980,
+      "name": "Shashank Shekhar singh",
+      "branch": "Mechanical Engineering",
+      "year": "2018",
+      "company": "Sata Vikas India Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955833/bipe/alumni/2018/wv2riqemi8uc8w6dp0js.jpg"
+    },
+    {
+      "id": 981,
+      "name": "Shilesh Kr Patel",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2017",
+      "company": "Pranav Vikas Group",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Quality Inspector Trainee",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955833/bipe/alumni/2017/tvgmoicmn4s98oeiw6tr.jpg"
+    },
+    {
+      "id": 982,
+      "name": "Shiv Kumar Patel",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955834/bipe/alumni/2022/ev5wwh6fnjmazdb2nc00.jpg"
+    },
+    {
+      "id": 983,
+      "name": "Shubham Kr Gupta",
+      "branch": "Electrical Engineering",
+      "year": "2015",
+      "company": "Indian Railways",
+      "driveDate": "",
+      "status": "joined",
+      "role": "ALP",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955834/bipe/alumni/2015/h0pnsfbmwow6atfxahzh.jpg"
+    },
+    {
+      "id": 984,
+      "name": "Shubham Shrivastav",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Sanden Vikas Group",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955835/bipe/alumni/2022/erxebh6ckianwbbsmwx9.jpg"
+    },
+    {
+      "id": 985,
+      "name": "Shyamu Modanwal",
+      "branch": "Electronics Engineering",
+      "year": "2015",
+      "company": "Asti Electronic India Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "JE",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955836/bipe/alumni/2015/i45cavftee01dhw6bqnf.jpg"
+    },
+    {
+      "id": 986,
+      "name": "Sudhakar Prajapati",
+      "branch": "Mechanical Engineering",
+      "year": "2016",
+      "company": "Vikas Group",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955836/bipe/alumni/2016/wa1hhysqwarwokpdchfe.jpg"
+    },
+    {
+      "id": 987,
+      "name": "Sujeet patel",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt. Ldt",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955839/bipe/alumni/2022/e2qozale4rrrpj19utuf.jpg"
+    },
+    {
+      "id": 988,
+      "name": "Suman Pal",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt. Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955837/bipe/alumni/2022/gcraqonrrnxducdex0oz.jpg"
+    },
+    {
+      "id": 989,
+      "name": "Suraj Rai",
+      "branch": "Civil Engineering",
+      "year": "2017",
+      "company": "BGH Projects Rajsthan",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955838/bipe/alumni/2017/n09lawr4bcubmrmhpqbg.jpg"
+    },
+    {
+      "id": 990,
+      "name": "Suraj singh",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2022",
+      "company": "Talbros automotive components Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955841/bipe/alumni/2022/z9pvhld37cdanlmiacvo.jpg"
+    },
+    {
+      "id": 991,
+      "name": "Ujjwal Dubey",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955840/bipe/alumni/2022/mbskhrbxrugttutslmcv.jpg"
+    },
+    {
+      "id": 992,
+      "name": "Vinay Singh",
+      "branch": "Electrical Engineering",
+      "year": "2020",
+      "company": "LNC",
+      "driveDate": "",
+      "status": "joined",
+      "role": "S E",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955841/bipe/alumni/2020/dytbaeqbvr5iancjhhxv.jpg"
+    },
+    {
+      "id": 993,
+      "name": "Vinit Upadhyay",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955843/bipe/alumni/2022/cg3niu9qc00czkgaraiv.jpg"
+    },
+    {
+      "id": 994,
+      "name": "Vipin Tripathi",
+      "branch": "Electronics Engineering",
+      "year": "2015",
+      "company": "Indusland Bank",
+      "driveDate": "",
+      "status": "joined",
+      "role": "CRO",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955842/bipe/alumni/2015/lwgkptkmempezwobme3k.jpg"
+    },
+    {
+      "id": 995,
+      "name": "Virendra Mishra",
+      "branch": "Mechanical Engineering (Production)",
+      "year": "2016",
+      "company": "Parle Agro Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Jr Prod. Office",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955843/bipe/alumni/2016/bjm2skw9poxojw44iy0l.jpg"
+    },
+    {
+      "id": 996,
+      "name": "Vishnu Pratap Singh",
+      "branch": "Civil Engineering",
+      "year": "2014",
+      "company": "MKC Infr Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "Site Engg",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955844/bipe/alumni/2014/kbhvscswbmzo9cpvkzwm.jpg"
+    },
+    {
+      "id": 997,
+      "name": "Yashavant Jaiswar",
+      "branch": "Electrical Engineering",
+      "year": "2022",
+      "company": "Dhoot Transmission Pvt Ltd",
+      "driveDate": "",
+      "status": "joined",
+      "role": "DET",
+      "photo": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955846/bipe/alumni/2022/yeygqfyhhgbpkwzqoe4a.jpg"
     }
   ]
 }

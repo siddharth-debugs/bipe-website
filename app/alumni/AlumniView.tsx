@@ -28,8 +28,32 @@ function hashHue(s: string): number {
   return Math.abs(h) % 360;
 }
 
-function Avatar({ name, size = 56 }: { name: string; size?: number }) {
+function Avatar({ name, photo, size = 56 }: { name: string; photo?: string; size?: number }) {
   const hue = hashHue(name);
+  // Real photo (Cloudinary delivers AVIF/WebP via f_auto,q_auto already
+  // baked into the URL). Falls back to the gradient initials tile if the
+  // photo fails to load — guards against any 404s.
+  if (photo) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={photo}
+        alt={name}
+        width={size}
+        height={size}
+        loading="lazy"
+        style={{
+          width: size,
+          height: size,
+          borderRadius: "50%",
+          objectFit: "cover",
+          flexShrink: 0,
+          boxShadow: "0 4px 12px -3px rgba(10,26,63,0.18)",
+          background: `linear-gradient(135deg, hsl(${hue} 60% 56%) 0%, hsl(${(hue + 38) % 360} 64% 42%) 100%)`,
+        }}
+      />
+    );
+  }
   return (
     <div
       style={{
@@ -440,7 +464,7 @@ export function AlumniView() {
                       Offered
                     </span>
                   )}
-                  <Avatar name={a.name} />
+                  <Avatar name={a.name} photo={(a as Alumnus & { photo?: string }).photo} />
                   <div style={{ minWidth: 0 }}>
                     <div
                       style={{
@@ -687,7 +711,7 @@ export function AlumniView() {
                                 Offered
                               </span>
                             )}
-                            <Avatar name={a.name} size={32} />
+                            <Avatar name={a.name} photo={(a as Alumnus & { photo?: string }).photo} size={32} />
                             <div style={{ minWidth: 0 }}>
                               <div
                                 style={{
