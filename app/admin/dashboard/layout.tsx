@@ -8,7 +8,6 @@ import { Tokens, api, logout, hasPerm, type Me } from "@/lib/admin/api";
 import {
   LayoutDashboard,
   Inbox,
-  Search,
   Settings,
   LogOut,
   ExternalLink,
@@ -30,7 +29,6 @@ const NAV: NavItem[] = [
   { href: "/admin/dashboard",          label: "Overview", Icon: LayoutDashboard },
   { href: "/admin/dashboard/inbox",    label: "Inbox",    Icon: Inbox,         perms: ["accounts.manage_submissions", "submissions.view_applysubmission", "submissions.view_contactsubmission", "submissions.view_visitsubmission"] },
   { href: "/admin/dashboard/content",  label: "Content",  Icon: FileText,      perms: ["accounts.manage_content"] },
-  { href: "/admin/dashboard/seo",      label: "SEO",      Icon: Search,        perms: ["accounts.manage_seo"] },
   { href: "/admin/dashboard/users",    label: "Users",    Icon: UsersIcon,     perms: ["accounts.manage_users"] },
   { href: "/admin/dashboard/roles",    label: "Roles",    Icon: ShieldCheck,   perms: ["accounts.manage_roles"] },
   { href: "/admin/dashboard/settings", label: "Settings", Icon: Settings },

@@ -13,11 +13,10 @@
 export type ModuleKey =
   | "submissions"
   | "content"
-  | "seo"
   | "users"
   | "roles";
 
-export type ModuleGroup = "Leads" | "Content" | "Marketing" | "System";
+export type ModuleGroup = "Leads" | "Content" | "System";
 
 export interface ModuleDef {
   key: ModuleKey;
@@ -34,7 +33,6 @@ const SCOPE = {
   panel: "accounts.manage_admin_panel",
   users: "accounts.manage_users",
   roles: "accounts.manage_roles",
-  seo: "accounts.manage_seo",
   content: "accounts.manage_content",
   subs: "accounts.manage_submissions",
 } as const;
@@ -72,14 +70,6 @@ export const MODULES: ModuleDef[] = [
     ],
   },
   {
-    key: "seo",
-    label: "SEO",
-    description: "Site-wide defaults, per-page SEO, analytics, verification and schemas.",
-    group: "Marketing",
-    writePerms: [SCOPE.seo],
-    readPerms: ["seo.view_siteseo", "seo.view_pageseo"],
-  },
-  {
     key: "users",
     label: "Users",
     description: "Add admin staff, assign roles, disable accounts.",
@@ -97,7 +87,7 @@ export const MODULES: ModuleDef[] = [
   },
 ];
 
-export const MODULE_GROUPS: ModuleGroup[] = ["Leads", "Content", "Marketing", "System"];
+export const MODULE_GROUPS: ModuleGroup[] = ["Leads", "Content", "System"];
 
 export type Access = "none" | "read" | "write";
 
@@ -146,7 +136,7 @@ export function emptyAccess(): Record<ModuleKey, Access> {
 /** Group modules for the editor UI. */
 export function modulesByGroup(): Record<ModuleGroup, ModuleDef[]> {
   const out: Record<ModuleGroup, ModuleDef[]> = {
-    Leads: [], Content: [], Marketing: [], System: [],
+    Leads: [], Content: [], System: [],
   };
   for (const m of MODULES) out[m.group].push(m);
   return out;
