@@ -215,25 +215,7 @@ export function Nav() {
             </div>
           </NavMenuWrap>
 
-          <NavMenuWrap
-            trigger={
-              <Link href="/placements" className={"nav-link " + (["placements", "alumni"].includes(route) ? "active" : "")}>
-                {lang === "hi" ? "प्लेसमेंट" : "Placements"}<span className="nav-caret" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
-              </Link>
-            }
-          >
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 12, paddingLeft: 14 }}>
-              Industry · 2016–2021
-            </div>
-            <div className="nav-mega-grid">
-              <MegaItem to="/placements" title="Placements" desc="Why recruiters return year after year" icon="M3 12l9-9 9 9M5 10v10h14V10" />
-              <MegaItem to="/alumni" title="Alumni directory" desc="870+ engineers · 16 drives · filter by branch" icon="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" />
-            </div>
-            <div className="nav-mega-footer">
-              <span>Recruiters: Mahindra · Tata · BEL · Indian Railways</span>
-              <Link href="/alumni" style={{ color: "var(--brand)", textDecoration: "none", fontWeight: 600 }}>Browse alumni →</Link>
-            </div>
-          </NavMenuWrap>
+          <NavLink to="/placements" label="Placements" hi="प्लेसमेंट" currentRoute={route} />
 
           <NavMenuWrap
             trigger={
@@ -258,27 +240,7 @@ export function Nav() {
 
           <NavLink to="/events" label="Events" hi="इवेंट्स" currentRoute={route} />
 
-          <NavMenuWrap
-            trigger={
-              <Link href="/approvals" className={"nav-link " + (["approvals", "mandatory-disclosure", "anti-ragging", "grievance"].includes(route) ? "active" : "")}>
-                {lang === "hi" ? "अनुपालन" : "Compliances"}<span className="nav-caret" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
-              </Link>
-            }
-          >
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 12, paddingLeft: 14 }}>
-              Statutory · Public disclosures
-            </div>
-            <div className="nav-mega-grid">
-              <MegaItem to="/approvals" title="Approvals" desc="AICTE, BTEUP, ISO, AISHE" icon="M9 12l2 2 4-4M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z" />
-              <MegaItem to="/mandatory-disclosure" title="Mandatory Disclosure" desc="AICTE Annexure-18 · 2026-27" icon="M6 2h9l5 5v15H6zM15 2v5h5" />
-              <MegaItem to="/grievance" title="Grievance & Committees" desc="Anti-Ragging · POSH · SC/ST · PWD" icon="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" />
-              <MegaItem to="/anti-ragging" title="Anti-Ragging" desc="Zero-tolerance · UGC helpline" icon="M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z" />
-            </div>
-            <div className="nav-mega-footer">
-              <span>Audited annually</span>
-              <Link href="/approvals" style={{ color: "var(--brand)", textDecoration: "none", fontWeight: 600 }}>All approvals →</Link>
-            </div>
-          </NavMenuWrap>
+          <NavLink to="/alumni" label="Alumni" hi="पूर्व छात्र" currentRoute={route} />
 
           <NavLink to="/contact" label="Contact" hi="संपर्क" currentRoute={route} />
         </div>
@@ -417,13 +379,6 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
       { to: "/contact", label: "Contact", hi: "संपर्क" },
     ],
   },
-  {
-    title: "Compliances",
-    items: [
-      { to: "/approvals", label: "Approvals" },
-      { to: "/mandatory-disclosure", label: "Mandatory Disclosure" },
-      { to: "/grievance", label: "Grievance & Committees" },
-      { to: "/anti-ragging", label: "Anti-Ragging" },
-    ],
-  },
+  // Compliance pages (Approvals, Mandatory Disclosure, Grievance,
+  // Anti-Ragging) are reachable from the footer's "Compliances" column.
 ];
