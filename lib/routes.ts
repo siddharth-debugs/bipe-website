@@ -18,7 +18,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   about: {
     path: "/about",
     title: "About BIPE — Sixteen years of polytechnic education in Eastern UP",
-    description: "Established 2010. Six-acre campus in Phoolpur, Varanasi. AICTE-approved, BTEUP-affiliated, AISHE-registered. 1,000+ alumni placed at Mahindra, Tata, BEL, Indian Railways.",
+    description: "Established 2010 · 6-acre Phoolpur campus · AICTE-approved · BTEUP-affiliated · AISHE-registered · 1,000+ alumni at Mahindra, Tata, BEL, Indian Railways.",
   },
   courses: {
     path: "/courses",
@@ -98,7 +98,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   chairman: {
     path: "/chairman",
     title: "Chairman's Message — Dr. Chandrika Rai, IPS (Retd.) | BIPE",
-    description: "A vision rooted in service. From Pantnagar Agriculture University to the Indian Police Service to founding Purwanchal Educational Trust — a personal note from BIPE's Chairman to every family considering us.",
+    description: "From Pantnagar Agriculture University to the IPS to founding Purwanchal Educational Trust — Dr. Chandrika Rai's note to every BIPE family.",
   },
   principal: {
     path: "/principal",
@@ -122,7 +122,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   blog: {
     path: "/blog",
-    title: "Blog | BIPE Varanasi",
+    title: "BIPE Blog — Admissions, Campus & Career Updates | Varanasi",
     description: "Stories, advice, and updates from BIPE — for diploma students and parents in Eastern UP.",
   },
   grievance: {
@@ -147,7 +147,7 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   terms: {
     path: "/terms",
-    title: "Terms of Use | BIPE",
+    title: "Terms of Use — bipevns.org | BIPE Varanasi",
     description: "Terms governing the use of bipevns.org and BIPE digital services. Includes IT Rules 2021 grievance officer details.",
   },
   antiRagging: {
@@ -163,12 +163,12 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   jeecupVsBcece: {
     path: "/jeecup-vs-bcece",
     title: "JEECUP vs BCECE · Bihar polytechnic options compared | BIPE",
-    description: "JEECUP (UP) vs BCECE (Bihar) — eligibility, syllabus, counselling timeline, fee and seat availability compared. Plus how Bihar students get a BIPE seat via JEECUP 4455.",
+    description: "JEECUP (UP) vs BCECE (Bihar) — eligibility, syllabus, counselling, fees, seats. How Bihar students secure a BIPE seat via JEECUP 4455.",
   },
   admissionFromBihar: {
     path: "/admission-from-bihar",
     title: "Admission from Bihar · Documents, equivalency, hostel | BIPE",
-    description: "Bihar students applying to BIPE Varanasi — Bihar Board / CBSE equivalency, residence and caste certificates, hostel for out-of-state students, travel from Patna/Ara/Buxar.",
+    description: "Bihar students applying to BIPE — Bihar Board/CBSE equivalency, residence & caste certificates, hostel, travel from Patna, Ara, Buxar.",
   },
 };
 

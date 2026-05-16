@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -59,8 +59,9 @@ const ORG_JSON_LD: Record<string, unknown> = {
       "@id": `${SITE_URL}#website`,
       url: SITE_URL,
       name: "BIPE",
-      inLanguage: ["en-IN", "hi-IN"],
+      inLanguage: ["en-IN"],
       publisher: { "@id": `${SITE_URL}#org` },
+      dateModified: new Date().toISOString().slice(0, 10),
     },
     ...DATA.branches.map((b) => ({
       "@type": "Course",
@@ -70,9 +71,16 @@ const ORG_JSON_LD: Record<string, unknown> = {
       courseCode: b.code,
       provider: { "@id": `${SITE_URL}#org` },
       educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
-      inLanguage: ["en-IN", "hi-IN"],
+      inLanguage: ["en-IN"],
     })),
   ],
+};
+
+const OG_IMAGE = {
+  url: `${SITE_URL}/og-default.png`,
+  width: 1200,
+  height: 630,
+  alt: ROUTES.home.title,
 };
 
 export const metadata: Metadata = {
@@ -84,11 +92,9 @@ export const metadata: Metadata = {
   description: ROUTES.home.description,
   alternates: {
     canonical: "/",
-    languages: {
-      "en-IN": "/",
-      "hi-IN": "/?lang=hi",
-    },
+    languages: { "en-IN": "/" },
   },
+  robots: { index: true, follow: true },
   openGraph: {
     title: ROUTES.home.title,
     description: ROUTES.home.description,
@@ -96,15 +102,23 @@ export const metadata: Metadata = {
     siteName: "BIPE",
     type: "website",
     locale: "en_IN",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
+    title: ROUTES.home.title,
+    description: ROUTES.home.description,
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: [{ url: "/bipe-logo.svg", type: "image/svg+xml" }],
     shortcut: "/bipe-logo.svg",
     apple: "/bipe-logo.svg",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#283e7a",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
