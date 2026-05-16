@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
-import { BIPE_IMG } from "@/lib/images";
 import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { ArrowIcon } from "@/components/shell/Icons";
 
@@ -309,51 +308,36 @@ export function CoursesView() {
                 </div>
 
                 <div style={{ position: "relative", marginTop: 20 }}>
-                  {(() => {
-                    // Each branch gets its own 3-photo triple from
-                    // BIPE_IMG.triplesByCode (sourced from labs-manifest).
-                    // `key={b.code}` remounts the slider on branch change so
-                    // it always starts from slide 1 with that branch's images
-                    // — no stale frames from the previously active branch.
-                    const srcs = BIPE_IMG.triplesByCode[b.code] ?? [
-                      BIPE_IMG.workshop,
-                      BIPE_IMG.computerLab,
-                      BIPE_IMG.civil,
-                    ];
-                    const alts = BIPE_IMG.triplesAltByCode[b.code] ?? [
-                      "Workshop / machining bay",
-                      "120-computer lab",
-                      "Civil engineering",
-                    ];
-                    return (
-                      <CrossfadeSlider
-                        key={b.code}
-                        images={srcs.map((src, i) => ({ src, alt: alts[i] ?? b.name }))}
-                        aspectRatio="16/9"
-                        radius={16}
-                        interval={4000}
-                        fadeMs={900}
-                        overlay={
-                          <div style={{
-                            position: "absolute", left: 14, top: 14, width: 48, height: 48,
-                            borderRadius: 12, background: "var(--brand)", color: "#fff",
-                            display: "flex", alignItems: "center", justifyContent: "center",
-                            boxShadow: "0 6px 18px -4px rgba(10,26,63,0.3)", zIndex: 2,
-                          }}>
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                              <path
-                                d={BRANCH_ICONS[b.code] || "M3 12h18"}
-                                stroke="currentColor"
-                                strokeWidth="1.6"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </div>
-                        }
-                      />
-                    );
-                  })()}
+                  {/* Slides live on the branch record (DATA.branches[i].slides).
+                      `key={b.code}` remounts the slider on branch change so it
+                      always starts from slide 1 — never stale frames from the
+                      previously active branch. */}
+                  <CrossfadeSlider
+                    key={b.code}
+                    images={b.slides}
+                    aspectRatio="16/9"
+                    radius={16}
+                    interval={4000}
+                    fadeMs={900}
+                    overlay={
+                      <div style={{
+                        position: "absolute", left: 14, top: 14, width: 48, height: 48,
+                        borderRadius: 12, background: "var(--brand)", color: "#fff",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        boxShadow: "0 6px 18px -4px rgba(10,26,63,0.3)", zIndex: 2,
+                      }}>
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d={BRANCH_ICONS[b.code] || "M3 12h18"}
+                            stroke="currentColor"
+                            strokeWidth="1.6"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    }
+                  />
                 </div>
 
                 <h3 className="bipe-h2" style={{ marginTop: 20, position: "relative" }}>

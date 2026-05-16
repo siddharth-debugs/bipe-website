@@ -90,60 +90,9 @@ export const BIPE_IMG = {
   trainCab: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1200&q=80&auto=format&fit=crop",
   factoryFloor: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=80&auto=format&fit=crop",
 
-  byCode: {
-    "355": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150980/bipe/labs/cse/programming-lab-4",
-    // 327 (Dairy) — no in-house dairy lab photos yet; placeholder retained
-    "327": "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
-    "322": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
-    "328": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151049/bipe/labs/ee/ee-machin",
-    "343": "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",
-    default: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",
-  } as Record<string, string>,
-
-  /**
-   * Three branch-relevant photos per branch — used by the
-   * <Branches /> slider on the homepage so each programme shows its
-   * own imagery instead of the same generic loop. Tuples are ordered
-   * "establishing → people → detail" so the rhythm feels intentional
-   * as the slide cycles.
-   */
-  // IMPORTANT: every entry below must be a LANDSCAPE-oriented photo
-  // (ratio ≥ 1.3) because <CrossfadeSlider> crops to aspectRatio="16/9".
-  // Portrait shots show a centre-strip crop that looks broken.
-  triplesByCode: {
-    "355": [
-      // CSE: programming lab → networking & IoT → project expo
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150980/bipe/labs/cse/programming-lab-4",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150939/bipe/labs/cse/networking-iot-lab2",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150999/bipe/labs/cse/project-expo-3rd-year",
-    ],
-    "327": [
-      // Dairy: pasture → processing → product — Unsplash placeholders retained
-      // (no in-house dairy photos yet; swap once we have them).
-      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=900&q=80&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
-    ],
-    "322": [
-      // Civil: survey camp (students with theodolites) → construction site visit
-      // (students at site) → R.C.C. drawing (drafting board)
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151174/bipe/labs/civil/construction-site-visit",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151184/bipe/labs/civil/r-c-c-drawing",
-    ],
-    "328": [
-      // Electrical: EE machine bay → industrial visit (substation) → industrial visit 2
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151049/bipe/labs/ee/ee-machin",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151083/bipe/labs/ee/industrial-visit-220-kb",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151075/bipe/labs/ee/industrial-visit-220-kb-1",
-    ],
-    "343": [
-      // Mechanical / Production: machine shop → automobile lab → production-tech shop
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151121/bipe/labs/mechanical/auto-mobile",
-      "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151143/bipe/labs/mechanical/pt-shop-1",
-    ],
-  } as Record<string, [string, string, string]>,
+  // Per-branch thumbnail + slider imagery now lives on DATA.branches
+  // (lib/data.ts) as `thumbnail` and `slides`. Consumers should read
+  // those fields directly instead of looking up by BTEUP code here.
 
   /**
    * Reserved for future hand-uploaded recruiter wordmarks (drop them in
@@ -153,33 +102,4 @@ export const BIPE_IMG = {
    * recruiter via Recruiters.tsx. Empty map by design.
    */
   recruiterLogos: {} as Record<string, string>,
-
-  /** Short alt-text for each slot in triplesByCode — same shape. */
-  triplesAltByCode: {
-    "355": [
-      "BIPE programming lab — rows of computer-science workstations",
-      "BIPE networking & IoT lab — switches, routers and rack equipment",
-      "Third-year project expo — student-built CSE projects on display",
-    ],
-    "327": [
-      "Dairy cattle in pasture",
-      "Milk being poured during processing",
-      "Finished dairy products",
-    ],
-    "322": [
-      "BIPE survey camp — students with field theodolites",
-      "BIPE civil students on a construction site visit",
-      "Hand-drafted R.C.C. drawings on the civil drawing board",
-    ],
-    "328": [
-      "BIPE EE machine bay — rotating-machine and motor test setups",
-      "Industrial visit to a 220 kV substation — power-systems site exposure",
-      "Industrial visit (220 kV substation) — students at the switchyard",
-    ],
-    "343": [
-      "BIPE machine shop — full production floor view",
-      "Automobile lab on the mech production floor — engine teardown station",
-      "Production-technology (PT) shop — fitting and assembly bays",
-    ],
-  } as Record<string, [string, string, string]>,
 };

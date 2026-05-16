@@ -1,3 +1,5 @@
+export type BranchImage = { src: string; alt: string };
+
 export type Branch = {
   code: string;
   slug: string;
@@ -8,6 +10,13 @@ export type Branch = {
   desc: string;
   tag: string | null;
   color: number;
+  // Card / list thumbnail — single landscape (16:9) image.
+  thumbnail: BranchImage;
+  // Slider images shown on the branch detail card. Ordered
+  // "establishing → people → detail" so the cycle feels intentional.
+  // All entries MUST be landscape (ratio ≥ 1.3); the crossfade slider
+  // crops to 16:9 and portrait shots show an awful centre-strip.
+  slides: BranchImage[];
 };
 
 export type Stat = { num: string; label: string; sub: string };
@@ -125,11 +134,88 @@ export const DATA: DataShape = {
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
   ],
   branches: [
-    { code: "355", slug: "computer-science-engineering", name: "Computer Science & Engineering", hi: "कंप्यूटर साइंस एंड इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Programming, data structures, networks, AI/ML — taught with our 120-computer lab. Strong B.Tech CSE pathway.", tag: "Popular", color: 1 },
-    { code: "327", slug: "dairy-engineering", name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग", seats: 60, fee: "30,150", desc: "Rare diploma — offered by only 4 institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.", tag: "Rare", color: 2 },
-    { code: "322", slug: "civil-engineering", name: "Civil Engineering", hi: "सिविल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Smart Cities, Bharatmala, Kashi Vishwanath corridor — India's infra boom needs civil diploma holders. SSC JE / RRB JE eligible.", tag: null, color: 3 },
-    { code: "328", slug: "electrical-engineering", name: "Electrical Engineering", hi: "इलेक्ट्रिकल इंजीनियरिंग", seats: 120, fee: "30,150", desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. UPPCL, Tata Power, Adani Solar recruit our graduates.", tag: null, color: 4 },
-    { code: "343", slug: "mechanical-engineering-production", name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)", seats: 120, fee: "30,150", desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, Tata Motors, BHEL apprentice pathways.", tag: null, color: 5 },
+    {
+      code: "355", slug: "computer-science-engineering",
+      name: "Computer Science & Engineering", hi: "कंप्यूटर साइंस एंड इंजीनियरिंग",
+      seats: 60, fee: "30,150",
+      desc: "Programming, data structures, networks, AI/ML — taught with our 120-computer lab. Strong B.Tech CSE pathway.",
+      tag: "Popular", color: 1,
+      thumbnail: {
+        src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150980/bipe/labs/cse/programming-lab-4",
+        alt: "BIPE programming lab — rows of computer-science workstations",
+      },
+      slides: [
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150980/bipe/labs/cse/programming-lab-4", alt: "BIPE programming lab — rows of computer-science workstations" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150939/bipe/labs/cse/networking-iot-lab2", alt: "BIPE networking & IoT lab — switches, routers and rack equipment" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150999/bipe/labs/cse/project-expo-3rd-year", alt: "Third-year project expo — student-built CSE projects on display" },
+      ],
+    },
+    {
+      code: "327", slug: "dairy-engineering",
+      name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग",
+      seats: 60, fee: "30,150",
+      desc: "Rare diploma — offered by only 4 institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.",
+      tag: "Rare", color: 2,
+      // No in-house dairy-lab photography yet — Unsplash placeholders.
+      // Swap to BIPE-shot images once available.
+      thumbnail: {
+        src: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
+        alt: "Finished dairy products",
+      },
+      slides: [
+        { src: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80&auto=format&fit=crop", alt: "Dairy cattle in pasture" },
+        { src: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=900&q=80&auto=format&fit=crop", alt: "Milk being poured during processing" },
+        { src: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop", alt: "Finished dairy products" },
+      ],
+    },
+    {
+      code: "322", slug: "civil-engineering",
+      name: "Civil Engineering", hi: "सिविल इंजीनियरिंग",
+      seats: 120, fee: "30,150",
+      desc: "Smart Cities, Bharatmala, Kashi Vishwanath corridor — India's infra boom needs civil diploma holders. SSC JE / RRB JE eligible.",
+      tag: null, color: 3,
+      thumbnail: {
+        src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
+        alt: "BIPE survey camp — students with field theodolites",
+      },
+      slides: [
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp", alt: "BIPE survey camp — students with field theodolites" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151174/bipe/labs/civil/construction-site-visit", alt: "BIPE civil students on a construction site visit" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151184/bipe/labs/civil/r-c-c-drawing", alt: "Hand-drafted R.C.C. drawings on the civil drawing board" },
+      ],
+    },
+    {
+      code: "328", slug: "electrical-engineering",
+      name: "Electrical Engineering", hi: "इलेक्ट्रिकल इंजीनियरिंग",
+      seats: 120, fee: "30,150",
+      desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. UPPCL, Tata Power, Adani Solar recruit our graduates.",
+      tag: null, color: 4,
+      thumbnail: {
+        src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151049/bipe/labs/ee/ee-machin",
+        alt: "BIPE EE machine bay — rotating-machine and motor test setups",
+      },
+      slides: [
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151049/bipe/labs/ee/ee-machin", alt: "BIPE EE machine bay — rotating-machine and motor test setups" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151083/bipe/labs/ee/industrial-visit-220-kb", alt: "Industrial visit to a 220 kV substation — power-systems site exposure" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151075/bipe/labs/ee/industrial-visit-220-kb-1", alt: "Industrial visit (220 kV substation) — students at the switchyard" },
+      ],
+    },
+    {
+      code: "343", slug: "mechanical-engineering-production",
+      name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)",
+      seats: 120, fee: "30,150",
+      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, Tata Motors, BHEL apprentice pathways.",
+      tag: null, color: 5,
+      thumbnail: {
+        src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",
+        alt: "BIPE machine shop — full production floor view",
+      },
+      slides: [
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3", alt: "BIPE machine shop — full production floor view" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151121/bipe/labs/mechanical/auto-mobile", alt: "Automobile lab on the mech production floor — engine teardown station" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151143/bipe/labs/mechanical/pt-shop-1", alt: "Production-technology (PT) shop — fitting and assembly bays" },
+      ],
+    },
   ],
   recruiters: [
     "Mahindra", "Tata Steel", "BEL", "Indian Railways", "Krishna Maruti", "JCB", "Asian Paints", "Tata Motors", "BHEL", "UPPCL", "Tata Power", "Adani Solar", "Amul", "Mother Dairy", "Parag", "Nestlé", "NDDB", "Bajaj", "Ola Electric", "Ather", "Hero MotoCorp",

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
-import { BIPE_IMG } from "@/lib/images";
 import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { ArrowIcon } from "@/components/shell/Icons";
 
@@ -94,34 +93,20 @@ export const Branches = () => {
                 {b.tag && <span className="pill pill-accent">{b.tag}</span>}
               </div>
 
-              {/* Three branch-specific photos per programme. The `key`
-                  on the slider remounts it when the user picks a different
-                  branch so it always starts from slide 1 with that
-                  branch's imagery — never stale frames from the previous
-                  programme. */}
+              {/* Branch-specific photos come straight from the branch
+                  record (DATA.branches[i].slides). The `key` on the
+                  slider remounts it when the user picks a different
+                  branch so it always starts from slide 1 — never stale
+                  frames from the previous programme. */}
               <div style={{ position: "relative", marginTop: 20 }}>
-                {(() => {
-                  const srcs = BIPE_IMG.triplesByCode[b.code] ?? [
-                    BIPE_IMG.workshop,
-                    BIPE_IMG.computerLab,
-                    BIPE_IMG.civil,
-                  ];
-                  const alts = BIPE_IMG.triplesAltByCode[b.code] ?? [
-                    "Workshop",
-                    "Computer lab",
-                    "Civil engineering",
-                  ];
-                  return (
-                    <CrossfadeSlider
-                      key={b.code}
-                      images={srcs.map((src, i) => ({ src, alt: alts[i] ?? b.name }))}
-                      aspectRatio="16/9"
-                      radius={16}
-                      interval={4000}
-                      fadeMs={900}
-                    />
-                  );
-                })()}
+                <CrossfadeSlider
+                  key={b.code}
+                  images={b.slides}
+                  aspectRatio="16/9"
+                  radius={16}
+                  interval={4000}
+                  fadeMs={900}
+                />
               </div>
 
               <div key={b.code} className="page-enter">
