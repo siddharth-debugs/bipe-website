@@ -9,6 +9,8 @@ const TABS = [
   { href: "/admin/dashboard/content/faculty",      label: "Faculty" },
   { href: "/admin/dashboard/content/recruiters",   label: "Recruiters" },
   { href: "/admin/dashboard/content/branches",     label: "Branches" },
+  { href: "/admin/dashboard/content/library",      label: "Library photos" },
+  { href: "/admin/dashboard/content/alumni",       label: "Alumni" },
   { href: "/admin/dashboard/content/contact",      label: "Contact info" },
 ];
 

@@ -66,6 +66,8 @@ export const MODULES: ModuleDef[] = [
       "content.view_facultymember",
       "content.view_recruiter",
       "content.view_branch",
+      "content.view_libraryphoto",
+      "content.view_alumnus",
       "content.view_contactinfo",
     ],
   },

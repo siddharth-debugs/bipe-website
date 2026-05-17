@@ -81,8 +81,15 @@ function Avatar({ name, photo, size = 56 }: { name: string; photo?: string; size
 
 // ─── Component ─────────────────────────────────────────────────────────────
 
-export function AlumniView() {
-  const all: Alumnus[] = manifest.alumni;
+/**
+ * Optional `alumni` prop: when the server page passes a list (sourced
+ * from /api/v1/content/alumni/) it overrides the bundled manifest so
+ * admin edits show without a rebuild. The drives, year/branch facet
+ * lists and headline stats still come from the manifest — those are
+ * not currently first-class entities in the backend.
+ */
+export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
+  const all: Alumnus[] = alumni && alumni.length > 0 ? alumni : manifest.alumni;
   const drives: Drive[] = manifest.drives;
 
   const [q, setQ] = useState("");

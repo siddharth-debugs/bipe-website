@@ -10,6 +10,8 @@ import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { LabsGallery } from "@/components/campus/LabsGallery";
 
+import { getLibraryPhotos } from "@/lib/content";
+
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("campus"); }
 
 const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
@@ -82,7 +84,15 @@ const SUSTAIN: { eyebrow: string; title: string; body: string; img: string }[] =
   { eyebrow: "ACCESS", title: "Barrier-free design", body: "Ramps and accessible toilets to AICTE norms. Ground-floor classrooms allocated for students with mobility needs.", img: BIPE_IMG.rampAccess },
 ];
 
-export default function Page() {
+export default async function Page() {
+  // Library photos come from the backend when present, otherwise fall
+  // back to the static manifest in lib/images.ts so the page never
+  // breaks on a CMS hiccup.
+  const libraryFromApi = await getLibraryPhotos();
+  const librarySlides = libraryFromApi.length
+    ? libraryFromApi.map((p) => ({ src: p.image_url, alt: p.alt }))
+    : BIPE_IMG.libraryPhotos;
+
   return (
     <div className="page-enter">
       {/* ====================================================================== */}
@@ -179,7 +189,7 @@ export default function Page() {
             <div style={{ position: "relative" }}>
               <div style={{ height: 480, borderRadius: 22, overflow: "hidden", position: "relative" }}>
                 <CrossfadeSlider
-                  images={BIPE_IMG.libraryPhotos}
+                  images={librarySlides}
                   aspectRatio="4/3"
                   radius={22}
                   interval={4500}

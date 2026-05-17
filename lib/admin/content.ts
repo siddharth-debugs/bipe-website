@@ -70,6 +70,31 @@ export type RecruiterWrite = Partial<Omit<RecruiterRow, "id" | "created_at" | "u
 
 // ─── Branches ─────────────────────────────────────────────────────────────
 
+// ─── Library photos ───────────────────────────────────────────────────────
+
+export interface LibraryPhotoRow extends BaseRow {
+  image_url: string;
+  alt: string;
+  caption: string;
+}
+export type LibraryPhotoWrite = Partial<Omit<LibraryPhotoRow, "id" | "created_at" | "updated_at">>;
+
+// ─── Alumni ───────────────────────────────────────────────────────────────
+
+export interface AlumnusRow extends BaseRow {
+  name: string;
+  branch: string;
+  year: string;
+  company: string;
+  role: string;
+  drive_date: string;
+  status: "joined" | "offered";
+  photo_url: string;
+}
+export type AlumnusWrite = Partial<Omit<AlumnusRow, "id" | "created_at" | "updated_at">>;
+
+// ─── Branches ─────────────────────────────────────────────────────────────
+
 export interface BranchRow extends BaseRow {
   code: string;
   slug: string;
@@ -146,6 +171,8 @@ export const Testimonials = makeCrud<TestimonialRow, TestimonialWrite>("testimon
 export const Faculty = makeCrud<FacultyRow, FacultyWrite>("faculty");
 export const Recruiters = makeCrud<RecruiterRow, RecruiterWrite>("recruiters");
 export const Branches = makeCrud<BranchRow, BranchWrite>("branches");
+export const Library = makeCrud<LibraryPhotoRow, LibraryPhotoWrite>("library");
+export const Alumni = makeCrud<AlumnusRow, AlumnusWrite>("alumni");
 
 // Contact: singleton, no list/create/delete.
 export const Contact = {
@@ -162,6 +189,8 @@ export interface PublicBundle {
   faculty: FacultyRow[];
   recruiters: RecruiterRow[];
   branches: BranchRow[];
+  library_photos: LibraryPhotoRow[];
+  alumni: AlumnusRow[];
   contact: ContactInfoRow;
 }
 export function publicBundle(): Promise<PublicBundle> {

@@ -82,6 +82,27 @@ export interface PublicBranch {
   slide3_url: string;
   slide3_alt: string;
 }
+export interface PublicLibraryPhoto {
+  id: number;
+  image_url: string;
+  alt: string;
+  caption: string;
+  sort_order: number;
+  is_published: boolean;
+}
+export interface PublicAlumnus {
+  id: number;
+  name: string;
+  branch: string;
+  year: string;
+  company: string;
+  role: string;
+  drive_date: string;
+  status: "joined" | "offered";
+  photo_url: string;
+  sort_order: number;
+  is_published: boolean;
+}
 export interface PublicContact {
   phone: string;
   phone2: string;
@@ -109,6 +130,8 @@ export interface ContentBundle {
   faculty: PublicFaculty[];
   recruiters: PublicRecruiter[];
   branches: PublicBranch[];
+  library_photos: PublicLibraryPhoto[];
+  alumni: PublicAlumnus[];
   contact: PublicContact;
 }
 
@@ -219,6 +242,47 @@ export async function getBranches(): Promise<PublicBranch[]> {
     slide2_alt: br.slides[1]?.alt ?? "",
     slide3_url: br.slides[2]?.src ?? "",
     slide3_alt: br.slides[2]?.alt ?? "",
+  }));
+}
+
+export async function getLibraryPhotos(): Promise<PublicLibraryPhoto[]> {
+  const b = await getContent();
+  if (b && b.library_photos && b.library_photos.length > 0) return b.library_photos;
+  // Static fallback — mirror lib/images.ts > BIPE_IMG.libraryPhotos.
+  const { BIPE_IMG } = await import("@/lib/images");
+  return BIPE_IMG.libraryPhotos.map((p, i) => ({
+    id: 1000 + i,
+    image_url: p.src,
+    alt: p.alt,
+    caption: "",
+    sort_order: i,
+    is_published: true,
+  }));
+}
+
+export async function getAlumni(): Promise<PublicAlumnus[]> {
+  const b = await getContent();
+  if (b && b.alumni && b.alumni.length > 0) return b.alumni;
+  // Static fallback from the JSON manifest.
+  const manifest = (await import("@/lib/alumni-manifest.json")).default as {
+    alumni: Array<{
+      id: number; name: string; branch: string; year: string;
+      company?: string; role?: string; driveDate?: string;
+      status?: string; photo?: string;
+    }>;
+  };
+  return manifest.alumni.map((a) => ({
+    id: a.id,
+    name: a.name,
+    branch: a.branch,
+    year: a.year,
+    company: a.company ?? "",
+    role: a.role ?? "",
+    drive_date: a.driveDate ?? "",
+    status: (a.status === "offered" ? "offered" : "joined") as "joined" | "offered",
+    photo_url: a.photo ?? "",
+    sort_order: 0,
+    is_published: true,
   }));
 }
 
