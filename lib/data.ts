@@ -85,7 +85,7 @@ export const DATA: DataShape = {
   contact: {
     phone: "+91-9198646464",
     phone2: "+91-9198767676",
-    email: "bipevns@gmail.com",
+    email: "admissions@bipevns.org",
     emailGrievance: "grievance@bipevns.org",
     emailPrincipal: "principal@bipevns.org",
     emailAntiRagging: "antiragging@bipevns.org",
@@ -112,7 +112,7 @@ export const DATA: DataShape = {
     { name: "Instagram", handle: "bipevns", url: "https://www.instagram.com/bipevns/" },
     { name: "X",         handle: "bipevns", url: "https://x.com/bipevns" },
     { name: "YouTube",   handle: "bipevns", url: "https://www.youtube.com/@bipevns" },
-    { name: "LinkedIn",  handle: "bipe-varanasi", url: "https://www.linkedin.com/in/bipe-varanasi-60a3802b5/" },
+    { name: "LinkedIn",  handle: "bipe-varanasi", url: "https://www.linkedin.com/school/bipe-varanasi/" },
   ],
   regulators: [
     { name: "AICTE", full: "All India Council for Technical Education", url: "https://www.aicte-india.org/" },

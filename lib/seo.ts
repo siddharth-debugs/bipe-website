@@ -22,7 +22,10 @@ export async function metadataFor(slug: RouteKey): Promise<Metadata> {
     description: r.description,
     alternates: {
       canonical: r.path,
-      languages: { "en-IN": r.path },
+      languages: {
+        "en-IN": r.path,
+        "hi-IN": `${r.path}${r.path.includes("?") ? "&" : "?"}lang=hi`,
+      },
     },
     robots: { index: true, follow: true },
     openGraph: {

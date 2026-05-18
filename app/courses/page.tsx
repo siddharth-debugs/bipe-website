@@ -127,7 +127,7 @@ export default function Page() {
                 >
                   Five
                 </span>{" "}
-                BTEUP branches. Three years to a career.
+                BTEUP polytechnic branches in Varanasi. Three years to a career.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
                 AICTE-approved diploma courses, AFRC-published tuition of ₹30,150 a year, {totalSeats} seats across 2026-27 — including Dairy Engineering, offered by under 1.1% of UP polytechnics. Every branch listed here is BTEUP-affiliated, taught on the same Phoolpur campus, under the same mentor structure.
