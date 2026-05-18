@@ -478,55 +478,25 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Stylised map */}
+            {/* Real OSM map of the Eastern UP catchment, centred on BIPE
+                Phoolpur (≈ 25.46°N, 83.06°E). The bbox is wide enough to
+                show all six catchment districts — Mau / Ghazipur / Azamgarh
+                / Varanasi / Chandauli / Mirzapur — with roads and city
+                labels for real geographic context (replaces the previous
+                world-map placeholder). */}
             <div style={{
               position: "relative", aspectRatio: "1.15 / 1",
               borderRadius: 24, overflow: "hidden",
               border: "1px solid var(--line)",
               background: "var(--paper-2)",
             }}>
-              <div style={{ position: "absolute", inset: 0, opacity: 0.18 }}>
-                <Img src={BIPE_IMG.map} label="" style={{ position: "absolute", inset: 0, borderRadius: 0, height: "100%" }} />
-              </div>
-              <div aria-hidden="true" style={{
-                position: "absolute", inset: 0, opacity: 0.08,
-                backgroundImage: "linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px)",
-                backgroundSize: "32px 32px", pointerEvents: "none",
-              }} />
-              <div aria-hidden="true" style={{
-                position: "absolute", inset: 0,
-                background: "radial-gradient(ellipse at 38% 58%, color-mix(in oklab, var(--brand) 22%, transparent), transparent 60%)",
-                pointerEvents: "none",
-              }} />
-
-              {/* District pins */}
-              {DISTRICTS.map((d) => (
-                <div key={d.name} style={{
-                  position: "absolute", top: d.top, left: d.left,
-                  transform: "translate(-50%, -50%)",
-                }}>
-                  <div style={{
-                    width: 14, height: 14, borderRadius: "50%",
-                    background: d.tag === "HOME" ? "var(--accent)" : "var(--brand)",
-                    border: "3px solid var(--white)",
-                    boxShadow: "0 4px 12px rgba(10,26,63,0.25)",
-                  }} />
-                  <div style={{
-                    position: "absolute", left: 22, top: -4,
-                    background: "var(--white)", borderRadius: 8,
-                    padding: "5px 10px",
-                    border: "1px solid var(--line)",
-                    fontSize: 12, fontWeight: 600,
-                    whiteSpace: "nowrap",
-                    boxShadow: "0 2px 8px rgba(10,26,63,0.08)",
-                  }}>
-                    {d.name}
-                    {d.tag === "HOME" && (
-                      <span style={{ marginLeft: 8, fontFamily: "var(--font-mono)", fontSize: 9, letterSpacing: "0.14em", color: "var(--accent-deep)" }}>BIPE</span>
-                    )}
-                  </div>
-                </div>
-              ))}
+              <iframe
+                title="BIPE catchment area — Eastern UP"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=82.3,24.95,84.05,26.4&layer=mapnik&marker=25.46,83.06"
+                style={{ border: 0, width: "100%", height: "100%", display: "block" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
 
               <div style={{
                 position: "absolute", left: 18, bottom: 18,
@@ -534,9 +504,25 @@ export default function Page() {
                 textTransform: "uppercase", color: "var(--ink-3)",
                 background: "var(--white)", borderRadius: 8,
                 padding: "6px 10px", border: "1px solid var(--line)",
+                pointerEvents: "none",
               }}>
                 Eastern UP · Catchment 2026
               </div>
+              <a
+                href="https://www.openstreetmap.org/?mlat=25.46&mlon=83.06#map=10/25.46/83.06"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  position: "absolute", right: 14, top: 14,
+                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em",
+                  textTransform: "uppercase", color: "var(--ink)",
+                  background: "var(--white)", borderRadius: 8,
+                  padding: "6px 10px", border: "1px solid var(--line)",
+                  textDecoration: "none", boxShadow: "0 2px 8px rgba(10,26,63,0.08)",
+                }}
+              >
+                Open in OSM →
+              </a>
             </div>
           </div>
         </div>
