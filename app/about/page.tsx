@@ -7,6 +7,7 @@ import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import CatchmentMap from "@/components/about/CatchmentMap";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("about"); }
 
@@ -478,26 +479,17 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Real OSM map of the Eastern UP catchment, centred on BIPE
-                Phoolpur (≈ 25.46°N, 83.06°E). The bbox is wide enough to
-                show all six catchment districts — Mau / Ghazipur / Azamgarh
-                / Varanasi / Chandauli / Mirzapur — with roads and city
-                labels for real geographic context (replaces the previous
-                world-map placeholder). */}
+            {/* Real OSM map of the Eastern UP catchment with a marker per
+                district. Leaflet is loaded lazily inside the client
+                component so the page can still SSR. */}
             <div style={{
               position: "relative", aspectRatio: "1.15 / 1",
               borderRadius: 24, overflow: "hidden",
               border: "1px solid var(--line)",
               background: "var(--paper-2)",
+              isolation: "isolate",
             }}>
-              <iframe
-                title="BIPE catchment area — Eastern UP"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=82.3,24.95,84.05,26.4&layer=mapnik&marker=25.46,83.06"
-                style={{ border: 0, width: "100%", height: "100%", display: "block" }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-
+              <CatchmentMap />
               <div style={{
                 position: "absolute", left: 18, bottom: 18,
                 fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.16em",
@@ -505,24 +497,10 @@ export default function Page() {
                 background: "var(--white)", borderRadius: 8,
                 padding: "6px 10px", border: "1px solid var(--line)",
                 pointerEvents: "none",
+                zIndex: 400,
               }}>
                 Eastern UP · Catchment 2026
               </div>
-              <a
-                href="https://www.openstreetmap.org/?mlat=25.46&mlon=83.06#map=10/25.46/83.06"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  position: "absolute", right: 14, top: 14,
-                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em",
-                  textTransform: "uppercase", color: "var(--ink)",
-                  background: "var(--white)", borderRadius: 8,
-                  padding: "6px 10px", border: "1px solid var(--line)",
-                  textDecoration: "none", boxShadow: "0 2px 8px rgba(10,26,63,0.08)",
-                }}
-              >
-                Open in OSM →
-              </a>
             </div>
           </div>
         </div>
