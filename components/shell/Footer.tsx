@@ -291,7 +291,7 @@ export const Footer = () => {
               <ArrowIcon size={12} />
             </Link>
           </div>
-          <Col heading="Academics" items={[["All branches", "/courses"], ["Computer Science & Engineering", "/courses"], ["Dairy Engineering", "/courses"], ["Civil Engineering", "/courses"], ["Electrical Engineering", "/courses"], ["Mechanical Engineering (Production)", "/courses"]]} />
+          <Col heading="Academics" items={[["All branches", "/courses"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Dairy Engineering", "/courses/dairy-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
           <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["Apply now", "/apply"]]} />
           <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
           <Col heading="Compliances" items={[["Approvals", "/approvals"], ["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["Privacy", "/privacy"], ["Terms", "/terms"]]} />
