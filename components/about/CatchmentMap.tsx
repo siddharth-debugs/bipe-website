@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
 
 /**
- * Interactive OSM map of BIPE's six-district catchment.
+ * Interactive OSM map of BIPE's twelve-district Eastern-UP catchment.
  *
  * Leaflet is loaded lazily inside useEffect so it never executes during
  * SSR (Leaflet calls `window` at import time). Pins are drawn with
@@ -22,13 +22,22 @@ type Pin = {
 };
 
 const PINS: Pin[] = [
+  // Home — BIPE campus inside Varanasi district.
   { name: "BIPE Phoolpur", hi: "BIPE फूलपुर",  lat: 25.46, lon: 83.06, kind: "home" },
+  // Major — closest belts.
   { name: "Varanasi",      hi: "वाराणसी",       lat: 25.32, lon: 82.97, kind: "major" },
   { name: "Mau",           hi: "मऊ",            lat: 25.94, lon: 83.56, kind: "major" },
   { name: "Ghazipur",      hi: "गाज़ीपुर",       lat: 25.58, lon: 83.58, kind: "major" },
+  { name: "Jaunpur",       hi: "जौनपुर",         lat: 25.75, lon: 82.69, kind: "major" },
+  { name: "Bhadohi",       hi: "भदोही",          lat: 25.40, lon: 82.57, kind: "major" },
+  // Active — wider Eastern-UP draw.
   { name: "Azamgarh",      hi: "आज़मगढ़",       lat: 26.07, lon: 83.18, kind: "active" },
   { name: "Chandauli",     hi: "चंदौली",         lat: 25.27, lon: 83.27, kind: "active" },
   { name: "Mirzapur",      hi: "मिर्ज़ापुर",       lat: 25.15, lon: 82.57, kind: "active" },
+  { name: "Sonebhadra",    hi: "सोनभद्र",         lat: 24.69, lon: 83.07, kind: "active" },
+  { name: "Ballia",        hi: "बलिया",          lat: 25.76, lon: 84.15, kind: "active" },
+  { name: "Gorakhpur",     hi: "गोरखपुर",        lat: 26.76, lon: 83.37, kind: "active" },
+  { name: "Kushinagar",    hi: "कुशीनगर",        lat: 26.74, lon: 83.89, kind: "active" },
 ];
 
 export default function CatchmentMap() {

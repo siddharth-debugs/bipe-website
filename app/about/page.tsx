@@ -83,14 +83,23 @@ const CORE_VALUES: { en: string; hi: string; gloss: string; body: string }[] = [
   },
 ];
 
-type District = { name: string; hi: string; top: string; left: string; tag: string };
+type District = { name: string; hi: string; tag: string };
 const DISTRICTS: District[] = [
-  { name: "Varanasi",  hi: "वाराणसी",  top: "58%", left: "38%", tag: "HOME" },
-  { name: "Mau",       hi: "मऊ",       top: "30%", left: "62%", tag: "MAJOR" },
-  { name: "Ghazipur",  hi: "गाज़ीपुर",  top: "44%", left: "70%", tag: "MAJOR" },
-  { name: "Azamgarh",  hi: "आज़मगढ़",  top: "20%", left: "44%", tag: "ACTIVE" },
-  { name: "Chandauli", hi: "चंदौली",   top: "72%", left: "55%", tag: "ACTIVE" },
-  { name: "Mirzapur",  hi: "मिर्ज़ापुर", top: "78%", left: "26%", tag: "ACTIVE" },
+  // HOME — BIPE Phoolpur sits in Varanasi district.
+  { name: "Varanasi",    hi: "वाराणसी",       tag: "HOME" },
+  // MAJOR — daily-transport rural belt (≤ 90 min from campus).
+  { name: "Mau",         hi: "मऊ",            tag: "MAJOR" },
+  { name: "Ghazipur",    hi: "गाज़ीपुर",      tag: "MAJOR" },
+  { name: "Jaunpur",     hi: "जौनपुर",        tag: "MAJOR" },
+  { name: "Bhadohi",     hi: "भदोही",         tag: "MAJOR" },
+  // ACTIVE — wider Eastern-UP draw (regular admissions, longer commute).
+  { name: "Azamgarh",    hi: "आज़मगढ़",       tag: "ACTIVE" },
+  { name: "Chandauli",   hi: "चंदौली",        tag: "ACTIVE" },
+  { name: "Mirzapur",    hi: "मिर्ज़ापुर",     tag: "ACTIVE" },
+  { name: "Sonebhadra",  hi: "सोनभद्र",        tag: "ACTIVE" },
+  { name: "Ballia",      hi: "बलिया",         tag: "ACTIVE" },
+  { name: "Gorakhpur",   hi: "गोरखपुर",       tag: "ACTIVE" },
+  { name: "Kushinagar",  hi: "कुशीनगर",       tag: "ACTIVE" },
 ];
 
 export default function Page() {
@@ -127,7 +136,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                A six-acre AICTE-approved diploma institute in Phoolpur, Varanasi. Five BTEUP-affiliated branches, 550+ students drawn from six districts, 40 faculty &mdash; built to make rural Eastern UP a credible address for technical education.
+                A six-acre AICTE-approved diploma institute in Phoolpur, Varanasi. Five BTEUP-affiliated branches, 550+ students drawn from twelve Eastern-UP districts, 40 faculty &mdash; built to make rural Eastern UP a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
@@ -305,7 +314,7 @@ export default function Page() {
                 BIPE was founded in 2010 by the <strong style={{ color: "var(--ink)" }}>Purwanchal Educational Trust</strong>, a registered non-profit, with one stated purpose: to bring accountable, hands-on technical education to families across Eastern Uttar Pradesh who could not afford to send their children to Lucknow, Kanpur or further.
               </p>
               <p style={{ marginTop: 18 }}>
-                Our catchment is six districts &mdash; <strong style={{ color: "var(--ink)" }}>Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur and Varanasi</strong>. The campus sits on six acres in Phoolpur, off the Varanasi&ndash;Ghazipur axis. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
+                Our catchment spans twelve Eastern-UP districts &mdash; <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur and Kushinagar</strong>. The campus sits on six acres in Phoolpur, off the Varanasi&ndash;Ghazipur axis. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
               </p>
               <p style={{ marginTop: 18 }}>
                 We run <em>five</em> BTEUP-affiliated branches &mdash; including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our dairy alumni work at Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
@@ -452,25 +461,34 @@ export default function Page() {
             <div>
               <div className="eyebrow">Catchment</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "18ch" }}>
-                Six districts.{" "}
+                Twelve districts.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>One campus.</span>
               </h2>
               <p style={{ color: "var(--ink-2)", marginTop: 20, fontSize: 16, lineHeight: 1.7, maxWidth: "52ch" }}>
-                BIPE was located in Phoolpur deliberately &mdash; equidistant from the rural belts of Mau, Ghazipur and Azamgarh, and reachable from Varanasi, Mirzapur and Chandauli by daily transport. The intent was that no aspiring student should travel more than 90 minutes to a serious polytechnic.
+                BIPE was located in Phoolpur deliberately &mdash; equidistant from the rural belts of Mau, Ghazipur, Azamgarh and Jaunpur, and reachable from Varanasi, Bhadohi, Mirzapur and Chandauli by daily transport. Students from Sonebhadra, Ballia, Gorakhpur and Kushinagar make up the wider Eastern-UP draw.
               </p>
 
-              <div style={{ marginTop: 28, display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12 }}>
+              <div style={{
+                marginTop: 28,
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+                gap: 10,
+              }}>
                 {DISTRICTS.map((d) => (
                   <div key={d.name} style={{
-                    border: "1px solid var(--line)", borderRadius: 12,
-                    padding: "12px 14px", display: "flex", justifyContent: "space-between", alignItems: "center",
+                    border: "1px solid var(--line)", borderRadius: 10,
+                    padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center",
+                    gap: 8,
                     background: "var(--white)",
                   }}>
-                    <div>
-                      <div style={{ fontWeight: 600, fontSize: 15 }}>{d.name}</div>
-                      <div className="serif" style={{ fontSize: 14, color: "var(--ink-3)", marginTop: 2 }}>{d.hi}</div>
+                    <div style={{ minWidth: 0 }}>
+                      <div style={{ fontWeight: 600, fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{d.name}</div>
+                      <div className="serif" style={{ fontSize: 13, color: "var(--ink-3)", marginTop: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{d.hi}</div>
                     </div>
                     <span className="pill" style={{
+                      fontSize: 9,
+                      padding: "2px 6px",
+                      flexShrink: 0,
                       background: d.tag === "HOME" ? "var(--brand)" : d.tag === "MAJOR" ? "color-mix(in oklab, var(--accent) 22%, var(--paper))" : "var(--brand-soft)",
                       color: d.tag === "HOME" ? "#fff" : d.tag === "MAJOR" ? "var(--accent-deep)" : "var(--brand)",
                     }}>{d.tag}</span>

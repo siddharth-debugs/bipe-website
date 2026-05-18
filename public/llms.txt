@@ -24,9 +24,9 @@
 - Alumni placed: 1,000+
 - Annual tuition (all branches): ₹30,150 (AFRC-approved)
 - Hostel: boys' on-campus block
-- Catchment districts: Varanasi, Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur,
-  Jaunpur, Sonbhadra, Ballia (Eastern UP) + Patna, Saran, Bhojpur, Buxar,
-  Rohtas, Vaishali, Gaya (Bihar)
+- Catchment districts: Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh,
+  Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur, Kushinagar (Eastern UP)
+  + Patna, Saran, Bhojpur, Buxar, Rohtas, Vaishali, Gaya (Bihar)
 
 ## Programmes (5 BTEUP-affiliated diploma branches)
 
