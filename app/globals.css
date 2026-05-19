@@ -1379,6 +1379,32 @@ body.no-motion .skeleton { animation: none; }
     flex: 1 1 100% !important;
     justify-content: center !important;
   }
+
+  /* Pull the Approvals trust strip ABOVE the headline on phones.
+     Approval signals work as a credibility-bar at the very top —
+     "AICTE / BTEUP / JEECUP / AISHE" surfaces before the user even
+     reads the headline. Achieved by making the padded container a
+     flex column and giving the trust block negative order. */
+  .bipe-hero-pad {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .bipe-hero-trust {
+    order: -1 !important;
+    margin-top: 0 !important;
+    margin-bottom: 28px !important;
+    padding-top: 0 !important;
+    padding-bottom: 18px !important;
+    border-top: none !important;
+    border-bottom: 1px solid color-mix(in oklab, #fff 18%, transparent) !important;
+  }
+
+  /* Shift the hero background-photo crop right-of-centre so the
+     "BANARAS INSTITUTE OF POLYTECHNIC & ENGINEERING" signage stays
+     in frame on portrait phone viewports. The source PNG is 16:9
+     and centred — without this, mobile object-position:center
+     showed only palm trees and the building edge. */
+  .bipe-hero-bg img { object-position: 70% center !important; }
   /* "Book a campus visit" — bump background opacity so it reads
      against the campus photo without giving up the glass look. */
   .bipe-hero-pad .btn-lg[style*="rgba(255,255,255,0.08)"] {

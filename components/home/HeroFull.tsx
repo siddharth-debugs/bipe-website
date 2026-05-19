@@ -19,7 +19,7 @@ const HERO_TRUST: { label: string; sub: string }[] = [
 
 export const HeroFull = () => (
   <section style={{ position: "relative", overflow: "hidden", background: "#000" }}>
-    <Img src={BIPE_IMG.heroWide} label="" priority style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
+    <Img src={BIPE_IMG.heroWide} label="" priority className="bipe-hero-bg" style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
 
     {/* Lighter dark wash — the campus photo has the BIPE building
         signage in it; we want that readable, not muddy. The bottom and
