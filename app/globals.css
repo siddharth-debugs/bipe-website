@@ -303,10 +303,21 @@ body.no-motion .live-dot { animation: none; }
 
 .nav {
   position: sticky; top: 0; z-index: 40;
-  background: color-mix(in oklab, var(--paper) 90%, transparent);
-  backdrop-filter: saturate(180%) blur(18px);
-  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  /* Heavy frosted-glass effect — anything that scrolls past should
+     read as a soft wash of colour behind the bar, not legible text.
+     Bumped from 90% / blur(18px) → 75% / blur(24px) + saturate(200%)
+     so the bar feels properly solid on Android Chrome where the
+     default blur was reading as light tint only. */
+  background: color-mix(in oklab, var(--paper) 75%, transparent);
+  backdrop-filter: saturate(200%) blur(24px);
+  -webkit-backdrop-filter: saturate(200%) blur(24px);
   border-bottom: 1px solid var(--line);
+}
+/* Fallback for browsers that don't support backdrop-filter at all
+   (older Firefox, niche WebViews). Make the bar fully opaque so
+   scrolled content never bleeds through. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav { background: var(--paper); }
 }
 .nav-utility {
   background:
