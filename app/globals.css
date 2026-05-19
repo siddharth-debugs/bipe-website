@@ -1347,10 +1347,56 @@ body.no-motion .skeleton { animation: none; }
     gap: 12px !important;
     font-size: 13px !important;
   }
+
+  /* ── Approvals trust strip — mobile rework ──
+     On desktop the "APPROVALS" label and the 4 credential cards share
+     one flex row. On phones that collapses the label into a sliver
+     beside crammed items. Switch to a stacked layout: label on its own
+     line, then a 2-column grid of credentials. */
+  .bipe-hero-trust > .row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+  .bipe-hero-trust-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+  .bipe-hero-trust-list > div {
+    padding-left: 12px !important;
+  }
+  .bipe-hero-trust-list > div > div:first-child {
+    font-size: 13px !important;
+  }
+  .bipe-hero-trust-list > div > div:last-child {
+    font-size: 9.5px !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* CTA buttons stack full-width and side-by-side equally — easier to
+     tap and removes the awkward width mismatch from the screenshot. */
+  .bipe-hero-pad .btn-lg {
+    flex: 1 1 100% !important;
+    justify-content: center !important;
+  }
+  /* "Book a campus visit" — bump background opacity so it reads
+     against the campus photo without giving up the glass look. */
+  .bipe-hero-pad .btn-lg[style*="rgba(255,255,255,0.08)"] {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: color-mix(in oklab, #fff 55%, transparent) !important;
+  }
 }
 @media (max-width: 480px) {
   .bipe-hero-pad { padding: 44px 0 28px !important; }
   .bipe-hero-alumni-list span { font-size: 12.5px !important; }
+
+  /* On the smallest phones (≤ 380 px) two columns of credentials
+     get tight; let the grid auto-collapse to one column with a
+     bit more vertical breathing room. */
+  .bipe-hero-trust-list {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
 }
 
 /* Recruiters marquee — shrink on mobile */
