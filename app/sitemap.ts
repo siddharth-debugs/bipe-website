@@ -33,5 +33,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...routeEntries, ...branchEntries];
+  // Geo-hub: /campus/phoolpur targets "polytechnic in Phoolpur",
+  // "how to reach BIPE", "free shuttle Varanasi Cantt BIPE".
+  const geoEntries = [
+    {
+      url: `${SITE_URL}/campus/phoolpur`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+  ];
+
+  return [...routeEntries, ...branchEntries, ...geoEntries];
 }
