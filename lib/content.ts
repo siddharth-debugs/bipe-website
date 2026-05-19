@@ -103,6 +103,16 @@ export interface PublicAlumnus {
   sort_order: number;
   is_published: boolean;
 }
+export interface PublicPageSection {
+  id: number;
+  page: string;
+  section_key: string;
+  section_type: "hero" | "text-block" | "image-list" | "stats" | "generic";
+  title: string;
+  content: Record<string, unknown>;
+  sort_order: number;
+  is_published: boolean;
+}
 export interface PublicContact {
   phone: string;
   phone2: string;
@@ -132,6 +142,7 @@ export interface ContentBundle {
   branches: PublicBranch[];
   library_photos: PublicLibraryPhoto[];
   alumni: PublicAlumnus[];
+  page_sections: PublicPageSection[];
   contact: PublicContact;
 }
 
@@ -284,6 +295,20 @@ export async function getAlumni(): Promise<PublicAlumnus[]> {
     sort_order: 0,
     is_published: true,
   }));
+}
+
+export async function getPageSections(page: string): Promise<PublicPageSection[]> {
+  const b = await getContent();
+  if (!b || !b.page_sections) return [];
+  return b.page_sections.filter((s) => s.page === page);
+}
+
+/** Return the first section on `page` with the given `section_key`,
+ *  or null if missing. Callers should fall back to their static defaults
+ *  when this returns null so the page never breaks on a CMS outage. */
+export async function getPageSection(page: string, key: string): Promise<PublicPageSection | null> {
+  const list = await getPageSections(page);
+  return list.find((s) => s.section_key === key) ?? null;
 }
 
 export async function getContact(): Promise<PublicContact> {

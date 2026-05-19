@@ -68,7 +68,18 @@ export interface RecruiterRow extends BaseRow {
 }
 export type RecruiterWrite = Partial<Omit<RecruiterRow, "id" | "created_at" | "updated_at">>;
 
-// ─── Branches ─────────────────────────────────────────────────────────────
+// ─── Page sections (per-page CMS blocks) ─────────────────────────────────
+
+export type SectionType = "hero" | "text-block" | "image-list" | "stats" | "generic";
+
+export interface PageSectionRow extends BaseRow {
+  page: string;
+  section_key: string;
+  section_type: SectionType;
+  title: string;
+  content: Record<string, unknown>;
+}
+export type PageSectionWrite = Partial<Omit<PageSectionRow, "id" | "created_at" | "updated_at">>;
 
 // ─── Library photos ───────────────────────────────────────────────────────
 
@@ -173,6 +184,7 @@ export const Recruiters = makeCrud<RecruiterRow, RecruiterWrite>("recruiters");
 export const Branches = makeCrud<BranchRow, BranchWrite>("branches");
 export const Library = makeCrud<LibraryPhotoRow, LibraryPhotoWrite>("library");
 export const Alumni = makeCrud<AlumnusRow, AlumnusWrite>("alumni");
+export const PageSections = makeCrud<PageSectionRow, PageSectionWrite>("sections");
 
 // Contact: singleton, no list/create/delete.
 export const Contact = {
@@ -191,6 +203,7 @@ export interface PublicBundle {
   branches: BranchRow[];
   library_photos: LibraryPhotoRow[];
   alumni: AlumnusRow[];
+  page_sections: PageSectionRow[];
   contact: ContactInfoRow;
 }
 export function publicBundle(): Promise<PublicBundle> {
