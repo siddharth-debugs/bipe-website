@@ -40,9 +40,15 @@ export const BIPE_IMG = {
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955782/bipe/library/library-11.jpg", alt: "BIPE library — overview" },
   ] as { src: string; alt: string }[],
   hostel: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
-  hostelGirls: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
+  // hostelGirls intentionally removed. BIPE does not yet have a girls'
+  // hostel (per /faq), so any image here would be a false trust signal
+  // — the May 2026 audit flagged this. Re-add only when the girls'
+  // hostel actually opens.
   hostelBoys: "https://images.unsplash.com/photo-1564540583246-934409427776?w=900&q=80&auto=format&fit=crop",
-  mess: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&q=80&auto=format&fit=crop",
+  // mess: real BIPE mess close-up (students standing, hands folded in
+  // grace before meal, April 2023). Replaces the Unsplash placeholder
+  // the audit flagged on /hostel.
+  mess: "/campus-photos/mess-1-grace.png",
   map: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80&auto=format&fit=crop",
 
   students2024: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=900&q=80&auto=format&fit=crop",
@@ -87,7 +93,11 @@ export const BIPE_IMG = {
   ledLight: "https://images.unsplash.com/photo-1565636291749-9f9b3d8e3d4d?w=900&q=80&auto=format&fit=crop",
   rampAccess: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=900&q=80&auto=format&fit=crop",
   hostelRoom: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
-  diningHall: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=900&q=80&auto=format&fit=crop",
+  // diningHall: real BIPE mess wide-angle (same April 2023 cohort moment
+  // as `mess` above, but architectural / room-overview composition).
+  // Not currently rendered on any page; defined here for future "what
+  // dining at BIPE looks like" sections without falling back to stock.
+  diningHall: "/campus-photos/mess-2-wide.jpg",
   thaali: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&q=80&auto=format&fit=crop",
   warden: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80&auto=format&fit=crop",
   facultyTeach: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80&auto=format&fit=crop",
