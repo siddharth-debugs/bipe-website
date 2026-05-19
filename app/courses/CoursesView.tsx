@@ -408,9 +408,12 @@ export function CoursesView() {
                   ))}
                 </div>
 
-                <div className="row" style={{ marginTop: 24, gap: 8, position: "relative" }}>
+                <div className="row" style={{ marginTop: 24, gap: 8, position: "relative", flexWrap: "wrap" }}>
                   <Link href="/apply" className="btn btn-primary">
                     Apply for this branch <ArrowIcon />
+                  </Link>
+                  <Link href={`/courses/${b.slug}`} className="btn btn-ghost">
+                    View {b.name} diploma <ArrowIcon />
                   </Link>
                   <a
                     href={`mailto:${DATA.contact.email}?subject=Syllabus%20request%20-%20${encodeURIComponent(

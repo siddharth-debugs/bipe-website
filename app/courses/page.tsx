@@ -677,7 +677,7 @@ export default function Page() {
                     width: "fit-content",
                   }}
                 >
-                  See placements <ArrowIcon size={14} />
+                  See diploma engineering placements <ArrowIcon size={14} />
                 </Link>
               </div>
             </div>

@@ -275,7 +275,7 @@ export default function Page() {
 
           <div style={{ marginTop: 28, display: "flex", justifyContent: "center" }}>
             <Link href="/courses" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)" }}>
-              See all 5 branches <ArrowIcon size={16} />
+              View all 5 BTEUP polytechnic branches <ArrowIcon size={16} />
             </Link>
           </div>
         </div>

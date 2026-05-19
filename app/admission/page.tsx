@@ -428,7 +428,7 @@ export default function Page() {
                   The single route into BIPE. Three years, six semesters, five BTEUP branches open to you — Computer Science &amp; Engineering, Civil, Electrical, Mechanical Engineering (Production), and the rare Dairy Engineering.
                 </p>
                 <Link href="/courses" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--accent)", fontWeight: 600, fontSize: 14 }}>
-                  See all 5 branches <ArrowIcon size={14} />
+                  View all 5 BTEUP polytechnic branches <ArrowIcon size={14} />
                 </Link>
               </div>
               <div style={{ paddingLeft: 36, borderLeft: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexDirection: "column", gap: 22 }}>
