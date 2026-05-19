@@ -528,10 +528,15 @@ body.no-motion .page-enter { animation: none; }
 @media (max-width: 1080px) {
   .nav-link { padding: 8px 9px; font-size: 13px; }
 }
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
+  /* Below the Tailwind `lg` breakpoint, swap the inline desktop nav
+     for the hamburger + drawer experience. The "Apply for 2026-27"
+     label collapses to just "Apply" too — see hide-md / show-md.   */
   .nav-links.primary { display: none; }
   .hide-md { display: none !important; }
   .show-md { display: inline !important; }
+}
+@media (max-width: 860px) {
   :root { --section-py: 48px; }
 }
 @media (max-width: 640px) {
@@ -1452,7 +1457,9 @@ body.no-motion .skeleton { animation: none; }
   border-radius: 2px;
   transition: transform .25s var(--ease), opacity .2s;
 }
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
+  /* Show the hamburger trigger at the same `lg` cutoff that hides
+     the inline desktop nav, so the swap is atomic. */
   .nav-hamburger { display: inline-flex; }
 }
 
