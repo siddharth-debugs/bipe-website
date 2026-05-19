@@ -1,5 +1,16 @@
+// Image registry for the BIPE site.
+//
+// Every key in this file is referenced by at least one consumer. The
+// May 2026 audit flagged that this file had grown ~half full of dead
+// Unsplash URLs (slots declared here but never imported anywhere) —
+// which made the file lie about what real BIPE photography we have
+// and what's still a stock placeholder. A grep-based audit removed
+// 36 unused keys in one commit; what remains below is only live.
+//
+// Rule: do not add a key here without a consumer in the same PR. If
+// a slot disappears because its consumer was removed, delete it here
+// too in the same commit.
 export const BIPE_IMG = {
-  heroGroup: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
   heroWide: "/hero-campus.png",
 
   // Branch-relevant photos — sourced from BIPE's Cloudinary lab manifest
@@ -14,7 +25,6 @@ export const BIPE_IMG = {
   civil:       "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
   dairy:       "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
   automobile:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149853/bipe/labs/mechanical/auto-mobile-lab",
-  mechanical:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151143/bipe/labs/mechanical/pt-shop-1",
 
   campusWide: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80&auto=format&fit=crop",
   // Single library still kept as a fallback; the curated set lives in
@@ -40,91 +50,48 @@ export const BIPE_IMG = {
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955782/bipe/library/library-11.jpg", alt: "BIPE library — overview" },
   ] as { src: string; alt: string }[],
   hostel: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
-  // hostelGirls intentionally removed. BIPE does not yet have a girls'
-  // hostel (per /faq), so any image here would be a false trust signal
-  // — the May 2026 audit flagged this. Re-add only when the girls'
-  // hostel actually opens.
   hostelBoys: "https://images.unsplash.com/photo-1564540583246-934409427776?w=900&q=80&auto=format&fit=crop",
   // mess: real BIPE mess close-up (students standing, hands folded in
   // grace before meal, April 2023). Replaces the Unsplash placeholder
   // the audit flagged on /hostel.
   mess: "/campus-photos/mess-1-grace.png",
-  map: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80&auto=format&fit=crop",
 
   // Real BIPE classroom photo, Dec 2022 — two students in foreground
   // wearing BIPE-branded hoodies + lanyards with full cohort behind.
-  // Replaces the generic Unsplash placeholder that the audit flagged.
   // The slot name kept "2024" only for backwards-compat; consumer in
   // app/about uses an honest "Recent cohort" label.
   students2024: "/students/classroom-cohort.jpg",
-  studentSmiling: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80&auto=format&fit=crop",
 
   principal: "/faculty/rahul-srivastava.png",
-  faculty1: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop",
-  faculty2: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format&fit=crop",
 
   // editorial extras
   classroom: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80&auto=format&fit=crop",
   surveying:    "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151162/bipe/labs/civil/auto-level-jpg",
   weldingHands: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149843/bipe/labs/mechanical/welding-shop",
-  drafting:     "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151184/bipe/labs/civil/r-c-c-drawing",
-  lectureHall: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=900&q=80&auto=format&fit=crop",
-  graduation: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80&auto=format&fit=crop",
-  studentReading: "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&q=80&auto=format&fit=crop",
   documentSeal: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop",
-  aerial: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80&auto=format&fit=crop",
 
   // admission · jeecup · fees · scholarships · documents · apply
-  admissionForm: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=900&q=80&auto=format&fit=crop",
   examHall: "https://images.unsplash.com/photo-1606326608690-4e0281b1e588?w=900&q=80&auto=format&fit=crop",
   counsellingHall: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=900&q=80&auto=format&fit=crop",
   studentsForms: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=900&q=80&auto=format&fit=crop",
-  feeReceipt: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80&auto=format&fit=crop",
-  rupees: "https://images.unsplash.com/photo-1611174743420-3d7df880ce32?w=900&q=80&auto=format&fit=crop",
   scholarship: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
   documentFolder: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop",
   documentStack: "https://images.unsplash.com/photo-1568667256549-094345857637?w=900&q=80&auto=format&fit=crop",
   studentWriting: "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=900&q=80&auto=format&fit=crop",
-  shaking: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80&auto=format&fit=crop",
-  ruralStudent: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=900&q=80&auto=format&fit=crop",
 
   // campus · hostel · faculty · events extras
   sportsGround: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1200&q=80&auto=format&fit=crop",
-  cricketBat: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=900&q=80&auto=format&fit=crop",
-  kabaddi: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=900&q=80&auto=format&fit=crop",
-  chess: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=900&q=80&auto=format&fit=crop",
   solarPanels: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80&auto=format&fit=crop",
   rainHarvest: "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=900&q=80&auto=format&fit=crop",
   ledLight: "https://images.unsplash.com/photo-1565636291749-9f9b3d8e3d4d?w=900&q=80&auto=format&fit=crop",
   rampAccess: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=900&q=80&auto=format&fit=crop",
-  hostelRoom: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
-  // diningHall: real BIPE mess wide-angle (same April 2023 cohort moment
-  // as `mess` above, but architectural / room-overview composition).
-  // Not currently rendered on any page; defined here for future "what
-  // dining at BIPE looks like" sections without falling back to stock.
-  diningHall: "/campus-photos/mess-2-wide.jpg",
-  thaali: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&q=80&auto=format&fit=crop",
-  warden: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80&auto=format&fit=crop",
-  facultyTeach: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80&auto=format&fit=crop",
-  facultyMeet: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80&auto=format&fit=crop",
-  industryVisit: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80&auto=format&fit=crop",
-  engineersDay: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80&auto=format&fit=crop",
-  techFestStage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80&auto=format&fit=crop",
   culturalDance: "https://images.unsplash.com/photo-1545959570-a94084071b5d?w=1200&q=80&auto=format&fit=crop",
-  drama: "https://images.unsplash.com/photo-1503095396549-807759245b35?w=900&q=80&auto=format&fit=crop",
   projectFair: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=1200&q=80&auto=format&fit=crop",
   trackField: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80&auto=format&fit=crop",
-  volleyball: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=900&q=80&auto=format&fit=crop",
-  music: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=900&q=80&auto=format&fit=crop",
 
   // placements
   placementInterview: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80&auto=format&fit=crop",
   placementHandshake: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80&auto=format&fit=crop",
-  placementOffice: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format&fit=crop",
-  placementGroup: "https://images.unsplash.com/photo-1552581234-26160f608093?w=1200&q=80&auto=format&fit=crop",
-  alumniPortrait: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop",
-  trainCab: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1200&q=80&auto=format&fit=crop",
-  factoryFloor: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=80&auto=format&fit=crop",
 
   // Per-branch thumbnail + slider imagery now lives on DATA.branches
   // (lib/data.ts) as `thumbnail` and `slides`. Consumers should read
