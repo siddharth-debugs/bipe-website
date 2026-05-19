@@ -83,7 +83,12 @@ export const BIPE_IMG = {
   sportsGround: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1200&q=80&auto=format&fit=crop",
   solarPanels: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80&auto=format&fit=crop",
   rainHarvest: "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=900&q=80&auto=format&fit=crop",
-  ledLight: "https://images.unsplash.com/photo-1565636291749-9f9b3d8e3d4d?w=900&q=80&auto=format&fit=crop",
+  // Modern interior with ceiling LED strips. The original Unsplash
+  // ID (photo-1565636291749) 404'd upstream — verified May 2026 in
+  // the dev server logs. Swapped to a known-stable corridor shot
+  // that also visually matches the card body's "academic blocks,
+  // workshops, hostels and the corridor" copy.
+  ledLight: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop",
   rampAccess: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=900&q=80&auto=format&fit=crop",
   culturalDance: "https://images.unsplash.com/photo-1545959570-a94084071b5d?w=1200&q=80&auto=format&fit=crop",
   projectFair: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=1200&q=80&auto=format&fit=crop",
