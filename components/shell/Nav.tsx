@@ -128,6 +128,7 @@ export function Nav() {
   }, [drawerOpen]);
 
   return (
+    <>
     <nav className="nav">
       <div className="nav-utility">
         <div className="nav-utility-inner">
@@ -264,8 +265,13 @@ export function Nav() {
           </button>
         </div>
       </div>
+    </nav>
 
-      {/* Mobile drawer */}
+    {/* Mobile drawer — rendered as a sibling of <nav>, not a child.
+        The nav has `backdrop-filter`, which (in WebKit) establishes a
+        containing block that would trap a position:fixed drawer inside
+        the navbar's visual box. Pulling the drawer out to the root
+        fragment makes `top:0; bottom:0` resolve to the actual viewport. */}
       <div
         className={"nav-drawer-backdrop" + (drawerOpen ? " is-open" : "")}
         onClick={() => setDrawerOpen(false)}
@@ -334,7 +340,7 @@ export function Nav() {
           </a>
         </div>
       </aside>
-    </nav>
+    </>
   );
 }
 
