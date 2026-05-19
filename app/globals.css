@@ -1405,14 +1405,16 @@ body.no-motion .skeleton { animation: none; }
      instead of getting cropped off at the edges. */
   .bipe-hero-bg img { object-position: 85% center !important; }
 
-  /* Make the hero fill the full mobile viewport. Section becomes a
-     flex column so the inner pad container can stretch + distribute
-     its children — approvals strip sticks to the top, headline / CTAs
-     sit toward the bottom — instead of all content clumping at the
-     top with dead space underneath. */
+  /* Make the hero near-full-bleed on mobile but leave room for the
+     sticky navbar (≈ 56-72 px). 100dvh would push the bottom of the
+     hero below the fold by exactly the navbar height, forcing a small
+     extra scroll. 90dvh keeps the bottom CTAs comfortably above the
+     fold and looks intentional. The section becomes a flex column so
+     the inner pad container can stretch + distribute its children:
+     approvals strip pins top, headline / CTAs sit near the bottom. */
   .bipe-hero-section {
-    min-height: 100vh;          /* fallback for browsers without dvh */
-    min-height: 100dvh;
+    min-height: 90vh;           /* fallback for browsers without dvh */
+    min-height: 90dvh;
     display: flex;
     flex-direction: column;
   }
