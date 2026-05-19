@@ -1657,7 +1657,12 @@ body.no-motion .skeleton { animation: none; }
   flex-direction: column;
   gap: 8px;
 }
-@media (min-width: 861px) {
+@media (min-width: 1281px) {
+  /* Above the `xl` breakpoint the inline desktop nav is in use, so
+     suppress the drawer + backdrop entirely (the hamburger that would
+     toggle them is already hidden by .nav-hamburger's base display:none).
+     Keep this threshold in lock-step with the .nav-hamburger media query
+     a few rules above. */
   .nav-drawer, .nav-drawer-backdrop { display: none !important; }
 }
 
