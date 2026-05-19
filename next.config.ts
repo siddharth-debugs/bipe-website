@@ -49,6 +49,15 @@ const nextConfig: NextConfig = {
     // AVIF only after upgrading the Vercel plan, or move heavy images
     // (hero, gallery) onto Cloudinary where transformations are free
     // under our current usage.
+    //
+    // Cap deviceSizes at 1920 (drop the default 2048 and 3840 entries).
+    // Reasons: (1) audit §3 flagged srcset offering w=3840 for the
+    // logo preload — at most 1920 is reasonable for our hero, larger
+    // variants only matter on 4K/5K displays which are rare for the
+    // applicant audience. (2) Halves the per-image transformations
+    // Vercel runs at the upper end, which directly helps the same
+    // quota we already burned through once.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
