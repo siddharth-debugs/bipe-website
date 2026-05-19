@@ -36,10 +36,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     alternates: {
       canonical: PATH,
-      languages: {
-        "en-IN": PATH,
-        "hi-IN": `${PATH}?lang=hi`,
-      },
+      // en-IN only — see comment in lib/seo.ts. The site has no SSR
+      // Hindi variant; declaring hi-IN here would be hreflang-lying.
+      languages: { "en-IN": PATH },
     },
     openGraph: {
       title,

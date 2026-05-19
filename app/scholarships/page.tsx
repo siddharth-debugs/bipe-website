@@ -59,7 +59,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Does the waiver cover hostel?",
-    a: "Government post-matric covers tuition; hostel and mess are separate. Mess is ₹48,000 per year (₹24,000 per semester); room charges are billed separately. BIPE merit waivers are also tuition-only.",
+    a: "Government post-matric covers tuition; hostel and mess are separate. Mess is ₹36,000 per year (₹18,000 per semester); on-campus boys' hostel rooms are ₹38,000/year (triple-sharing) or ₹48,000/year (double-sharing), billed separately. BIPE merit waivers are tuition-only.",
   },
 ];
 

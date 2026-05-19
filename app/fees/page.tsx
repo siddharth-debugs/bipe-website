@@ -95,7 +95,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What is the total cost of the full 3-year diploma?",
-    a: "Tuition alone is ₹30,150 × 3 = ₹90,450 over the diploma. Recurring components (exam fee, library, ID, etc.) are AICTE/BTEUP norms and add a small recurring amount each semester — published once finalised for each cycle. Hostel + mess is ₹36,000/year for on-campus boys' residents, paid semester-wise. Scholarships and merit waivers usually bring the net cash outflow well below the headline.",
+    a: "Tuition alone is ₹30,150 × 3 = ₹90,450 over the diploma. Recurring components (exam fee, library, ID, etc.) are AICTE/BTEUP norms and add a small recurring amount each semester — published once finalised for each cycle. For on-campus boys' residents, hostel rooms are ₹38,000/year (triple-sharing) or ₹48,000/year (double-sharing), and mess is ₹36,000/year — both separate from tuition and paid semester-wise. Scholarships and merit waivers usually bring the net cash outflow well below the headline.",
   },
   {
     q: "Are there any hidden charges or capitation fees?",
@@ -361,7 +361,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: 22, padding: "16px 22px", border: "1px dashed var(--line-2)", borderRadius: 14, fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.06em", color: "var(--ink-3)", textAlign: "center" }}>
-            Hostel · ₹36,000 mess + room — paid semester-wise, separate from tuition.
+            On-campus hostel · room ₹38,000–48,000/year + mess ₹36,000/year — paid semester-wise, separate from tuition.
           </div>
         </div>
       </section>

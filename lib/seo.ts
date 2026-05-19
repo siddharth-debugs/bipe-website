@@ -22,10 +22,13 @@ export async function metadataFor(slug: RouteKey): Promise<Metadata> {
     description: r.description,
     alternates: {
       canonical: r.path,
-      languages: {
-        "en-IN": r.path,
-        "hi-IN": `${r.path}${r.path.includes("?") ? "&" : "?"}lang=hi`,
-      },
+      // Only en-IN is declared. The site has a client-side EN/हिंदी
+      // toggle (lib/lang.tsx) that swaps a handful of nav strings via
+      // localStorage, but the SSR HTML — which is what Google crawls —
+      // is always English. Declaring hi-IN would be hreflang-lying:
+      // the audit's E-E-A-T section flagged it as a real penalty risk.
+      // Re-add hi-IN only when a genuine /hi/* SSR path exists.
+      languages: { "en-IN": r.path },
     },
     robots: { index: true, follow: true },
     openGraph: {
