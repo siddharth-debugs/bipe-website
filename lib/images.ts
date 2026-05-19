@@ -111,7 +111,15 @@ export const BIPE_IMG = {
   // Matches the card body's "live demonstrations — civil scale-models"
   // copy. Same Utkarsh-week event captured the same day.
   projectFair: "/cultural-events/technofest-2020-model.jpg",
-  trackField: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80&auto=format&fit=crop",
+  // Real BIPE Spardha volleyball action — players mid-game with the
+  // ball above the net, outdoor grass court at the Phoolpur campus,
+  // green vs blue jerseys, "VOLLEYBALL TOURNAMENT" banner in the
+  // adjacent frame. Replaces the generic Unsplash track-and-field
+  // shot on /events FLAGSHIPS · Spardha. Slot renamed from
+  // `trackField` to `sportsMeet` because the photo is volleyball,
+  // not track & field, and the SPARDHA card label already reads
+  // "SPORTS MEET" not "TRACK & FIELD".
+  sportsMeet: "/events/volleyball-final-showdown/5.jpg",
 
   // placements
   placementInterview: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80&auto=format&fit=crop",

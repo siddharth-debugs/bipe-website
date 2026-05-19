@@ -60,7 +60,7 @@ const FLAGSHIPS: Flagship[] = [
     body: <>Five days of inter-branch, inter-batch and inter-institute competition &mdash; track &amp; field, volleyball, basketball, kabaddi, table tennis. Closing ceremony with the principal&rsquo;s address.</>,
     date: "15–19 February",
     pillTone: "brand",
-    img: BIPE_IMG.trackField,
+    img: BIPE_IMG.sportsMeet,
     imgLabel: "SPARDHA · SPORTS MEET",
     side: "left",
     tags: ["Track & field", "Volleyball", "Basketball", "Kabaddi", "Table tennis"],
@@ -127,7 +127,7 @@ export default function Page() {
             <div className="bipe-img-strip" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
               <Img src={BIPE_IMG.culturalDance} label="UTKARSH" style={{ height: 280, borderRadius: 18, gridRow: "span 2" }} />
               <Img src={BIPE_IMG.projectFair} label="TECHNOFEST" style={{ height: 130, borderRadius: 18 }} />
-              <Img src={BIPE_IMG.trackField} label="SPARDHA" style={{ height: 138, borderRadius: 18 }} />
+              <Img src={BIPE_IMG.sportsMeet} label="SPARDHA" style={{ height: 138, borderRadius: 18 }} />
             </div>
           </div>
         </div>
