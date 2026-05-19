@@ -82,8 +82,18 @@ export const BIPE_IMG = {
 
   // admission · jeecup · fees · scholarships · documents · apply
   examHall: "https://images.unsplash.com/photo-1606326608690-4e0281b1e588?w=900&q=80&auto=format&fit=crop",
-  counsellingHall: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=900&q=80&auto=format&fit=crop",
-  studentsForms: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=900&q=80&auto=format&fit=crop",
+  // Real BIPE counselling moment — counsellor (pink shirt) interviewing
+  // two prospective students at his desk, "Success Stories #bipeans"
+  // alumni wall in the background, glass desk with computer/keyboard.
+  // Replaces the generic Unsplash hall-of-chairs that the audit flagged
+  // on /admission's "Counselling round" tile.
+  counsellingHall: "/admission-activity/counselling-interview.jpg",
+  // Real BIPE admission desk wide-angle — counsellors at the central
+  // desk helping a row of seated prospective students, "ADMISSION OPEN
+  // SESSION 2018-19" banner visible on the right, BIPE letterhead sign
+  // on the left, Utkarsh event-photo wall behind. Same room as the
+  // counselling photo above.
+  studentsForms: "/admission-activity/admission-desk-wide.jpg",
   scholarship: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
   documentFolder: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop",
   documentStack: "https://images.unsplash.com/photo-1568667256549-094345857637?w=900&q=80&auto=format&fit=crop",
