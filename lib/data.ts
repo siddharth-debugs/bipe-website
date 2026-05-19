@@ -106,12 +106,21 @@ export const DATA: DataShape = {
     aishe: "Registered · Dept. of Higher Education, MoE",
   },
   social: [
-    // Public handles. YouTube + LinkedIn URLs are placeholders —
-    // swap when the user supplies the real handles.
+    // Canonical public handles for the institute. This array is the
+    // single source of truth: app/layout.tsx emits it as schema.org
+    // `sameAs`, components/shell/Footer.tsx renders the "Follow BIPE"
+    // strip from it, and app/contact/page.tsx (as of May 2026) reads
+    // from it too. Don't fork — add new platforms here, not in
+    // consumers.
+    //
+    // YouTube was removed in May 2026: both candidate channels
+    // (youtube.com/@bipevns and youtube.com/@bipevaranasi) returned
+    // 404 when probed. Re-add this row when an actual channel exists.
+    // X / LinkedIn URLs probed inconclusively (403 / 999 — bot
+    // blocked, can be live behind that); leaving them in.
     { name: "Facebook",  handle: "bipevns", url: "https://www.facebook.com/bipevns/" },
     { name: "Instagram", handle: "bipevns", url: "https://www.instagram.com/bipevns/" },
     { name: "X",         handle: "bipevns", url: "https://x.com/bipevns" },
-    { name: "YouTube",   handle: "bipevns", url: "https://www.youtube.com/@bipevns" },
     { name: "LinkedIn",  handle: "bipe-varanasi", url: "https://www.linkedin.com/school/bipe-varanasi/" },
   ],
   regulators: [

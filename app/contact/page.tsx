@@ -9,20 +9,17 @@ import { FAQ } from "@/components/home/FAQ";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("contact"); }
 
-type Social = { name: string; handle: string; href: string };
-
 const DIRECTIONS = "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi";
 
 export default function Page() {
   const C = DATA.contact;
 
-  // TODO: confirm actual social handles & URLs with marketing
-  const SOCIALS: Social[] = [
-    { name: "Facebook", handle: "@bipevaranasi", href: "https://www.facebook.com/bipevaranasi" },
-    { name: "Instagram", handle: "@bipe.varanasi", href: "https://www.instagram.com/bipe.varanasi" },
-    { name: "YouTube", handle: "BIPE Varanasi", href: "https://www.youtube.com/@bipevaranasi" },
-    { name: "LinkedIn", handle: "BIPE Varanasi", href: "https://www.linkedin.com/school/bipe-varanasi" },
-  ];
+  // Single source of truth lives in lib/data.ts > DATA.social. The
+  // page previously hardcoded a different handle set ("@bipevaranasi"
+  // / "@bipe.varanasi") that diverged from the schema.org `sameAs`
+  // emitted by app/layout.tsx — Google saw conflicting entity
+  // signals. May 2026 audit fix.
+  const SOCIALS = DATA.social;
 
   return (
     <div className="page-enter">
@@ -429,7 +426,7 @@ export default function Page() {
 
               <div className="bipe-form-row" style={{ marginTop: 24, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                 {SOCIALS.map((s, i) => (
-                  <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" style={{
+                  <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" style={{
                     padding: "20px 24px",
                     borderRadius: 14,
                     background: "color-mix(in oklab, var(--paper) 5%, transparent)",
@@ -443,7 +440,7 @@ export default function Page() {
                     </span>
                     <div>
                       <div style={{ fontWeight: 700, fontSize: 15, color: "var(--paper)" }}>{s.name}</div>
-                      <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, var(--paper) 65%, transparent)", marginTop: 2 }}>{s.handle}</div>
+                      <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, var(--paper) 65%, transparent)", marginTop: 2 }}>@{s.handle}</div>
                     </div>
                     <ArrowIcon size={14} />
                   </a>
