@@ -954,6 +954,62 @@ body.no-motion .skeleton { animation: none; }
   .bipe-collage > * { grid-row: auto !important; grid-column: auto !important; height: auto !important; min-height: 220px; }
 }
 
+/* =================================================================
+   Inline grid override — catches the "naked" grid layouts.
+
+   Many React components ship inline style={{ display: 'grid',
+   gridTemplateColumns: 'auto 1fr' }} (etc.) directly on a div without
+   a class. Those bypass every responsive rule above, and at mobile
+   widths produce ~120-150px secondary columns where paragraph text
+   wraps character-by-character (audit 2026-05-19, /courses §6
+   "How to choose"). This block catches the common inline patterns
+   via attribute selectors and forces a single column at <=860px.
+
+   IMPORTANT: React serializes inline style with NO SPACE after the
+   colon (e.g. style="grid-template-columns:auto 1fr"). CSS
+   [style*="..."] is exact-substring, so the selectors MUST omit the
+   space after the colon to match. With a space, the rule silently
+   never fires.
+
+   :not() exclusions are deliberate: elements that DO carry a
+   class (bipe-split, bipe-grid-*, nav-*, etc.) already have their
+   own responsive treatment above and shouldn't be doubled up.
+   ================================================================= */
+@media (max-width: 860px) {
+  [style*="grid-template-columns:auto 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]),
+  [style*="grid-template-columns:1fr auto"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]),
+  [style*="grid-template-columns:1.05fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1.1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1.2fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1.3fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1.35fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1.4fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1.5fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1.6fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1fr 1.3fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns:1fr 1.5fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns:2fr 1fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns:1fr 2fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns:repeat(4"]:not([class*="bipe-grid"]),
+  [style*="grid-template-columns:repeat(3"]:not([class*="bipe-grid"]),
+  [style*="grid-template-columns:repeat(2"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1fr 1fr 1fr"]:not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+    align-items: start !important;
+  }
+  /* When a stacked layout's second child still carries justifySelf:end +
+     textAlign:right (from the desktop two-column heading/paragraph pattern),
+     reset on mobile so the now-stacked paragraph reads naturally. */
+  [style*="justify-self:end"] {
+    justify-self: start !important;
+  }
+  [style*="text-align:right"] {
+    text-align: left !important;
+  }
+}
+
 /* Section vertical padding — shrink heavy hero/section padding on phone.
    Pages set inline paddingTop/paddingBottom: 72 etc.; this class overrides. */
 @media (max-width: 860px) {
