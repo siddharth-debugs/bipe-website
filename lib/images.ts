@@ -36,17 +36,27 @@ export const BIPE_IMG = {
    * Rendered as a CrossfadeSlider on /campus. Tuples land in
    * "establishing → reading → detail" order so the cycle feels intentional.
    */
+  // Per-frame note: photos 02/03/04/05/09/10 were captured on a phone
+  // in portrait mode but uploaded to Cloudinary without an EXIF
+  // Orientation tag (Cloudinary strips EXIF on upload by default). On
+  // /campus they previously rendered 90° rotated — the reading-room
+  // shots appeared to be lying on their side. Fix: prepend `a_90` to
+  // the Cloudinary transform on those six URLs so they rotate at
+  // delivery time. Photos 01/06/07/08/11 were already landscape and
+  // do NOT need the rotate transform — keep them as-is. Verified May
+  // 2026 by downloading each frame in `a_none / a_90 / a_270` and
+  // comparing in a viewer.
   libraryPhotos: [
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955753/bipe/library/library-01.jpg", alt: "BIPE library — main reading hall" },
-    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955756/bipe/library/library-02.jpg", alt: "BIPE library — bookshelves and study area" },
-    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955760/bipe/library/library-03.jpg", alt: "BIPE library — students at study tables" },
-    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955763/bipe/library/library-04.jpg", alt: "BIPE library — stacks and reference section" },
-    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955766/bipe/library/library-05.jpg", alt: "BIPE library — long reading room view" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/a_90,f_auto,q_auto,w_1200/v1778955756/bipe/library/library-02.jpg", alt: "BIPE library — bookshelves and study area" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/a_90,f_auto,q_auto,w_1200/v1778955760/bipe/library/library-03.jpg", alt: "BIPE library — students at study tables" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/a_90,f_auto,q_auto,w_1200/v1778955763/bipe/library/library-04.jpg", alt: "BIPE library — stacks and reference section" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/a_90,f_auto,q_auto,w_1200/v1778955766/bipe/library/library-05.jpg", alt: "BIPE library — long reading room view" },
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955769/bipe/library/library-06.jpg", alt: "BIPE library — periodicals and journals" },
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955771/bipe/library/library-07.jpg", alt: "BIPE library — quiet study corner" },
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955774/bipe/library/library-08.jpg", alt: "BIPE library — additional stacks" },
-    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955777/bipe/library/library-09.jpg", alt: "BIPE library — circulation and DELNET desk" },
-    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955780/bipe/library/library-10.jpg", alt: "BIPE library — reference texts and shelves" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/a_90,f_auto,q_auto,w_1200/v1778955777/bipe/library/library-09.jpg", alt: "BIPE library — circulation and DELNET desk" },
+    { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/a_90,f_auto,q_auto,w_1200/v1778955780/bipe/library/library-10.jpg", alt: "BIPE library — reference texts and shelves" },
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955782/bipe/library/library-11.jpg", alt: "BIPE library — overview" },
   ] as { src: string; alt: string }[],
   hostel: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",

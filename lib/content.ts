@@ -256,14 +256,43 @@ export async function getBranches(): Promise<PublicBranch[]> {
   }));
 }
 
+/**
+ * One-shot legacy fix for the 2026-05 library photo upload.
+ *
+ * Six of the eleven library frames (library-02/03/04/05/09/10) were
+ * captured on a phone in portrait mode but uploaded to Cloudinary
+ * without an EXIF Orientation tag. They render 90° rotated unless we
+ * tell Cloudinary to apply the rotation at delivery time. The backend
+ * library_photos rows store the unrotated URLs, so we have to inject
+ * `a_90,` here on the way out — both for backend-served and static
+ * fallback URLs.
+ *
+ * Drop this helper once every backend row is updated to embed `a_90`
+ * directly, or once the photos are re-uploaded with EXIF preserved.
+ */
+function applyLibraryRotationFix(imageUrl: string): string {
+  if (!imageUrl) return imageUrl;
+  if (!/\/library-(02|03|04|05|09|10)\.jpg/.test(imageUrl)) return imageUrl;
+  if (imageUrl.includes("a_90")) return imageUrl;
+  return imageUrl.replace("/image/upload/", "/image/upload/a_90,");
+}
+
 export async function getLibraryPhotos(): Promise<PublicLibraryPhoto[]> {
   const b = await getContent();
-  if (b && b.library_photos && b.library_photos.length > 0) return b.library_photos;
+  if (b && b.library_photos && b.library_photos.length > 0) {
+    return b.library_photos.map((p) => ({
+      ...p,
+      image_url: applyLibraryRotationFix(p.image_url),
+    }));
+  }
   // Static fallback — mirror lib/images.ts > BIPE_IMG.libraryPhotos.
+  // (Those fallback URLs already include `a_90` where needed, but we
+  // pass them through the same fix so the helper stays the single
+  // source of truth.)
   const { BIPE_IMG } = await import("@/lib/images");
   return BIPE_IMG.libraryPhotos.map((p, i) => ({
     id: 1000 + i,
-    image_url: p.src,
+    image_url: applyLibraryRotationFix(p.src),
     alt: p.alt,
     caption: "",
     sort_order: i,
