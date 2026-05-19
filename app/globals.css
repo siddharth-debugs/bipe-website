@@ -1638,12 +1638,17 @@ body.no-motion .skeleton { animation: none; }
   padding: 3px;
 }
 .nav-drawer-lang button {
-  padding: 5px 14px;
+  /* Audit §3 mobile tap targets — each button is a real touch
+     target on phones, so the hit area must clear 48×48 (Google
+     mobile-friendly) while the visual pill stays compact. */
+  min-height: 48px;
+  min-width: 60px;
+  padding: 10px 20px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   background: transparent;
   color: var(--ink-3);
