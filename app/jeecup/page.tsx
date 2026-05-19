@@ -74,9 +74,57 @@ const PREP: { num: string; doc: string; sub: string }[] = [
   { num: "06", doc: "Anti-ragging undertaking", sub: "Signed by student & parent" },
 ];
 
+/**
+ * JEECUP FAQs grounded in (a) the publicly-documented JEECUP
+ * process at jeecup.admissions.nic.in, and (b) BIPE-verified
+ * facts on /admission, /apply, /courses. Don't add specific
+ * year dates without confirming them against the current
+ * cycle notification.
+ */
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: "Who is eligible for JEECUP and BIPE 4455?",
+    a: "JEECUP Group A (Polytechnic Engineering) is open to anyone who has passed Class 10 with Mathematics and Science. There is no upper age limit for most Group A polytechnic seats. Domicile is not restricted to UP — students from Bihar, Jharkhand, MP and elsewhere can apply via the all-India category. BIPE specifically admits via JEECUP institute code 4455 across all five BTEUP branches.",
+  },
+  {
+    q: "What is BIPE's JEECUP institute code?",
+    a: "4455. You enter this code during the JEECUP counselling choice-filling round to add BIPE to your preference list — once for each branch you want to consider. Many applicants add 4455 against all five branches in case their rank doesn't reach their first choice.",
+  },
+  {
+    q: "When does the JEECUP application typically open?",
+    a: "JEECUP runs an annual cycle. Application registration typically opens around January or February, the entrance exam follows in March or April, and counselling rounds run May through July. The exact dates change each year — check jeecup.admissions.nic.in for the current notification. If you tell admissions which JEECUP cycle you're targeting, BIPE can share the latest published dates on WhatsApp.",
+  },
+  {
+    q: "What does the JEECUP Group A exam actually cover?",
+    a: "Group A — the polytechnic engineering paper — is a Class-10-syllabus test in Mathematics, Physics and Chemistry. It's a 3-hour computer-based test (CBT), multiple choice, with negative marking. The syllabus is the standard NCERT Class 9–10 maths and science curriculum — no advanced topics. There are other JEECUP groups (B–K) for specialised tracks like agriculture and pharmacy, but Group A is the route into the five BTEUP branches at BIPE.",
+  },
+  {
+    q: "Do I have to travel to Lucknow for counselling?",
+    a: "No. JEECUP counselling is online — choice-filling, seat allotment and provisional admission all happen through the portal. The only physical step is reporting at the allotted institute. Once BIPE 4455 is allotted, you report to the Phoolpur campus with documents and fees. The campus is 14 km from Varanasi Cantt; BIPE arranges a free shuttle from Cantt on request.",
+  },
+  {
+    q: "What if my JEECUP rank doesn't reach BIPE this round?",
+    a: "JEECUP runs multiple counselling rounds (typically 3–5 main rounds plus a special/spot round). Many students secure a BIPE seat in later rounds even if the first round doesn't go their way. Keep BIPE 4455 in your choice list across all rounds, and stay in touch with admissions — they track the cutoff movement and advise on the highest-probability branch for your rank.",
+  },
+];
+
+const JEECUP_FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function Page() {
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JEECUP_FAQ_JSON_LD) }}
+      />
       {/* ====================================================================== */}
       {/* 1. HERO — giant 4455                                                    */}
       {/* ====================================================================== */}
@@ -371,6 +419,32 @@ export default function Page() {
                   </div>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* 5b. FAQ — JEECUP-specific Q&A                                           */}
+      {/* ====================================================================== */}
+      <section className="section">
+        <div className="container">
+          <div className="eyebrow">FAQ · JEECUP &amp; BIPE 4455</div>
+          <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "20ch" }}>
+            Asked{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+              & answered.
+            </span>
+          </h2>
+          <div style={{ marginTop: 32, maxWidth: 820 }}>
+            {FAQS.map((f) => (
+              <details key={f.q} style={{ borderTop: "1px solid var(--line)", padding: "20px 0" }}>
+                <summary style={{ cursor: "pointer", fontWeight: 600, fontSize: 16, listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  {f.q}
+                  <span style={{ marginLeft: 12, fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--brand)" }}>+</span>
+                </summary>
+                <p style={{ marginTop: 12, color: "var(--ink-2)", lineHeight: 1.7 }}>{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

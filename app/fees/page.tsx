@@ -34,9 +34,92 @@ const METHODS: { name: string; sub: string }[] = [
   { name: "Cash", sub: "At the Accounts Office" },
 ];
 
+/**
+ * Net-fee scenarios drawn from BIPE's published scholarship policy
+ * (see /faq and /scholarships): UP Government post-matric covers full
+ * tuition for SC/ST and partial for OBC/EWS/Minority under income
+ * thresholds set annually; BIPE merit waivers stack at 25–50% for
+ * high JEECUP ranks and 10–25% for Class 10 toppers. Figures below
+ * are illustrative — the exact net depends on the year's UP Govt
+ * notification and the merit slab the student qualifies for.
+ */
+const SCENARIOS: { tag: string; title: string; calc: string; net: string; note: string }[] = [
+  {
+    tag: "01 · No aid",
+    title: "General category, no merit slab",
+    calc: "₹30,150 tuition",
+    net: "₹30,150 / year",
+    note: "Sticker price. AFRC-set, the same for every branch at BIPE. Hostel + mess separate.",
+  },
+  {
+    tag: "02 · Merit",
+    title: "Strong JEECUP rank, 50% BIPE merit",
+    calc: "₹30,150 − 50% merit waiver",
+    net: "≈ ₹15,075 / year",
+    note: "BIPE merit waivers of 25–50% apply to students with high JEECUP ranks. Verified before reporting.",
+  },
+  {
+    tag: "03 · OBC + merit",
+    title: "OBC under income limit + 25% merit",
+    calc: "₹30,150 − UP Govt partial post-matric − 25% merit",
+    net: "Net often ≈ ₹10–15k",
+    note: "Partial UP Govt reimbursement stacks with BIPE merit. Exact net depends on the year's notification on scholarship.up.gov.in.",
+  },
+  {
+    tag: "04 · SC / ST",
+    title: "SC / ST under income limit",
+    calc: "₹30,150 reimbursed under UP Govt post-matric",
+    net: "Effectively reimbursed",
+    note: "Family pays at reporting, then receives reimbursement from scholarship.up.gov.in. Most BIPE SC/ST students see full tuition recovered.",
+  },
+];
+
+/**
+ * Fees-specific FAQs. The first three are aligned with the
+ * site-wide /faq entries (lib/data.ts) so we don't contradict
+ * ourselves; the last two are new and address what visitors
+ * search for that the existing /faq doesn't cover.
+ */
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: "What is the annual tuition at BIPE?",
+    a: "Annual tuition is ₹30,150 — AFRC-approved and the same for all 5 BTEUP branches. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the page above and follow AICTE/BTEUP norms. Hostel and mess are charged separately.",
+  },
+  {
+    q: "What scholarships are available?",
+    a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority students under the year's income notification (scholarship.up.gov.in). BIPE also offers merit waivers of 25–50% for high JEECUP ranks and 10–25% for Class 10 toppers. The two stack — many BIPE students pay materially less than the published ₹30,150.",
+  },
+  {
+    q: "What is the refund policy if I cancel after paying?",
+    a: "Refunds follow AICTE norms: 100% (less ₹1,000 administrative) if you withdraw 15+ days before classes start, 90% if within 15 days, 80% within the first 15 days of classes (provided the seat is filled), 50% after that, and no refund after 30 days of classes. Caution money is refundable on completion of the diploma. Refunds are processed within 30 working days.",
+  },
+  {
+    q: "What is the total cost of the full 3-year diploma?",
+    a: "Tuition alone is ₹30,150 × 3 = ₹90,450 over the diploma. Recurring components (exam fee, library, ID, etc.) are AICTE/BTEUP norms and add a small recurring amount each semester — published once finalised for each cycle. Hostel + mess is ₹36,000/year for on-campus boys' residents, paid semester-wise. Scholarships and merit waivers usually bring the net cash outflow well below the headline.",
+  },
+  {
+    q: "Are there any hidden charges or capitation fees?",
+    a: "No. BIPE is AFRC-approved and AICTE-monitored — every component is published on this page or on /mandatory-disclosure. There is no capitation fee, no \"donation\", no off-the-record cash payment ever. Every payment is receipted, and the receipts are documents you should keep for scholarship reimbursement and future verification.",
+  },
+];
+
+const FEE_FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function Page() {
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FEE_FAQ_JSON_LD) }}
+      />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
@@ -411,6 +494,86 @@ export default function Page() {
               </div>
             </div>
           </Link>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* 6b. SCHOLARSHIP MATH — what students actually pay                       */}
+      {/* ====================================================================== */}
+      <section className="section">
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 36, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
+            <div>
+              <div className="eyebrow">Scholarship math</div>
+              <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
+                What students{" "}
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  actually pay.
+                </span>
+              </h2>
+            </div>
+            <p style={{ color: "var(--ink-2)", maxWidth: "46ch", justifySelf: "end", textAlign: "right", lineHeight: 1.7 }}>
+              The headline tuition is ₹30,150, but most BIPE students pay materially less. Four representative scenarios below. Exact eligibility is verified at admission — talk to accounts before reporting.
+            </p>
+          </div>
+
+          <div className="grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+            {SCENARIOS.map((s) => (
+              <article key={s.tag} className="card" style={{ padding: 26 }}>
+                <div className="eyebrow" style={{ color: "var(--brand)" }}>{s.tag}</div>
+                <div style={{ marginTop: 12, fontWeight: 600, fontSize: 16, lineHeight: 1.45 }}>{s.title}</div>
+                <div style={{ marginTop: 14, fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.04em", color: "var(--ink-3)" }}>
+                  {s.calc}
+                </div>
+                <div
+                  className="serif"
+                  style={{
+                    marginTop: 8,
+                    fontStyle: "italic",
+                    fontWeight: 400,
+                    fontSize: 30,
+                    lineHeight: 1.05,
+                    color: "var(--brand)",
+                  }}
+                >
+                  {s.net}
+                </div>
+                <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 13.5, lineHeight: 1.6 }}>
+                  {s.note}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 22, padding: "16px 22px", border: "1px dashed var(--line-2)", borderRadius: 14, fontSize: 13, lineHeight: 1.6, color: "var(--ink-3)", maxWidth: "82ch" }}>
+            Figures above are illustrative. The exact net depends on the UP Govt scholarship notification in your year and the merit slab you qualify for at counselling. For a personalised estimate, share your JEECUP rank, Class 10 percentage and category with admissions on WhatsApp.
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
+      {/* 6c. FAQ — fees, scholarships, total cost                                */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--paper-2)" }}>
+        <div className="container">
+          <div className="eyebrow">FAQ · Fees</div>
+          <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "20ch" }}>
+            Asked{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+              & answered.
+            </span>
+          </h2>
+          <div style={{ marginTop: 32, maxWidth: 800 }}>
+            {FAQS.map((f) => (
+              <details key={f.q} style={{ borderTop: "1px solid var(--line)", padding: "20px 0" }}>
+                <summary style={{ cursor: "pointer", fontWeight: 600, fontSize: 16, listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  {f.q}
+                  <span style={{ marginLeft: 12, fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--brand)" }}>+</span>
+                </summary>
+                <p style={{ marginTop: 12, color: "var(--ink-2)", lineHeight: 1.7 }}>{f.a}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
