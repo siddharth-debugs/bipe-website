@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
+import { BLOG_POSTS } from "@/lib/blogPosts";
 
 const HIGH_PRIORITY = new Set([
   "/",
@@ -44,5 +45,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...routeEntries, ...branchEntries, ...geoEntries];
+  // Mid-funnel blog posts — each is a separate keyword cluster
+  // (audit §4.2). Lower changefreq + priority since they're
+  // long-form pieces, not transactional pages.
+  const blogEntries = BLOG_POSTS.map((p) => ({
+    url: `${SITE_URL}/blog/${p.slug}`,
+    lastModified: new Date(p.publishedISO),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...routeEntries, ...branchEntries, ...geoEntries, ...blogEntries];
 }
