@@ -96,6 +96,14 @@ export const metadata: Metadata = {
     languages: { "en-IN": "/" },
   },
   robots: { index: true, follow: true },
+  // Backup ownership verification for the GSC URL-prefix property
+  // (https://www.bipevns.org/). The Domain property bipevns.org is
+  // verified via DNS TXT on Wix; this <meta> gives a second,
+  // code-side verification path so we don't lose GSC access if the
+  // DNS record gets edited by mistake.
+  verification: {
+    google: "OZV4dGpmUItyv5MzDzQ7WxFZDyhNja62R_rP1joizYY",
+  },
   openGraph: {
     title: ROUTES.home.title,
     description: ROUTES.home.description,
