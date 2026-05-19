@@ -20,6 +20,12 @@ export async function metadataFor(slug: RouteKey): Promise<Metadata> {
   return {
     title: r.title,
     description: r.description,
+    // Emits <meta name="keywords">. Google ignores this for ranking,
+    // but Yandex / Baidu / some long-tail engines still parse it. We
+    // populate it on /home, /admission, /jeecup (and only those) to
+    // surface Hindi-script equivalents of high-volume English queries
+    // without cluttering the visible SERP description.
+    ...(r.keywords && r.keywords.length ? { keywords: r.keywords } : {}),
     alternates: {
       canonical: r.path,
       // Only en-IN is declared. The site has a client-side EN/हिंदी

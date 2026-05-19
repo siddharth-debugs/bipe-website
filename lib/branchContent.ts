@@ -61,7 +61,7 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   },
   "dairy-engineering": {
     intro:
-      "Dairy Engineering at BIPE is one of only four BTEUP-affiliated diploma programmes of its kind across all of Uttar Pradesh — code 327, 3 years, 6 semesters, AICTE-approved. The curriculum covers milk processing, dairy machinery, refrigeration, microbiology and quality assurance, with hands-on time in the campus pilot plant. Recruiter pipelines run into Amul, Mother Dairy, Parag, Nestlé, NDDB and the State Dairy Boards — career options that simply don't exist for graduates of other branches.",
+      "Dairy Engineering at BIPE (also called Dairy Technology at degree level — the diploma board uses 'Engineering') is one of only four BTEUP-affiliated diploma programmes of its kind across all of Uttar Pradesh — code 327, 3 years, 6 semesters, AICTE-approved. The curriculum covers milk processing, dairy machinery, refrigeration, microbiology and quality assurance, with hands-on time in the campus pilot plant. Recruiter pipelines run into Amul, Mother Dairy, Parag, Nestlé, NDDB and the State Dairy Boards — career options that simply don't exist for graduates of other branches.",
     semesterThemes: [
       "Sem 1 — Applied Mathematics, Engineering Physics & Chemistry, Dairy Industry Overview",
       "Sem 2 — Dairy Microbiology, Heat Transfer, Mechanics of Dairy Plant",

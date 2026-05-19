@@ -9,7 +9,21 @@ export type RouteKey =
 
 export const SITE_URL = "https://www.bipevns.org";
 
-export const ROUTES: Record<RouteKey, { path: string; title: string; description: string }> = {
+export const ROUTES: Record<RouteKey, {
+  path: string;
+  title: string;
+  description: string;
+  /**
+   * Optional Hindi + English keyword array. Emitted as
+   * `<meta name="keywords">` via lib/seo.ts > metadataFor(). Google
+   * ignores the keywords tag for ranking, but Yandex, Baidu and
+   * some long-tail engines still parse it — and it's free signal for
+   * the few routes where mixing Devanagari into the description would
+   * clutter the SERP snippet. Reserved for /home, /admission, /jeecup
+   * as of May 2026; other routes can stay undefined.
+   */
+  keywords?: string[];
+}> = {
   home: {
     path: "/",
     title: "BIPE Varanasi — AICTE Polytechnic · JEECUP Code 4455",
@@ -18,6 +32,17 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     // SEO audit. Title already has the words in different order, but
     // SERP snippet generation prefers verbatim phrase matches.
     description: "AICTE-approved polytechnic in Varanasi — diploma engineering across 5 BTEUP branches including rare Dairy Engineering. JEECUP code 4455. Apply for 2026-27.",
+    keywords: [
+      "BIPE Varanasi",
+      "polytechnic in Varanasi",
+      "AICTE polytechnic Varanasi",
+      "diploma engineering UP",
+      "JEECUP code 4455",
+      "BTEUP polytechnic",
+      "बीआईपीई वाराणसी",
+      "वाराणसी पॉलिटेक्निक",
+      "JEECUP 2026",
+    ],
   },
   about: {
     path: "/about",
@@ -33,6 +58,16 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     path: "/admission",
     title: "Admission 2026-27 · JEECUP code 4455 | BIPE",
     description: "Apply via JEECUP (UPJEE Polytechnic) — institute code 4455. Counselling May–July, classes begin August 2026.",
+    keywords: [
+      "JEECUP 2026 admission",
+      "polytechnic admission Varanasi",
+      "BIPE admission 2026",
+      "UPJEE Polytechnic 4455",
+      "JEECUP काउंसलिंग 2026",
+      "बीआईपीई एडमिशन 2026",
+      "JEECUP फॉर्म कैसे भरें",
+      "वाराणसी पॉलिटेक्निक एडमिशन",
+    ],
   },
   apply: {
     path: "/apply",
@@ -42,7 +77,10 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   visit: {
     path: "/visit",
     title: "Visit the Phoolpur campus · Free shuttle | BIPE",
-    description: "Book a free campus visit. Shuttle from Varanasi Cantt. Meet faculty, see the 120-computer lab, dairy pilot plant, hostels.",
+    // Added "14 km from Varanasi Cantt station" — May 2026 keyword
+    // audit P2 #12. Captures the "polytechnic near Varanasi station"
+    // discovery query without adding length to the snippet.
+    description: "Book a free BIPE campus visit — polytechnic 14 km from Varanasi Cantt station, free shuttle. Meet faculty, see the 120-computer lab, dairy pilot plant, hostels.",
   },
   contact: {
     path: "/contact",
@@ -92,6 +130,17 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
     // but missed the highest-volume query of the year ("JEECUP 2026").
     title: "JEECUP 2026 guidance · 6-step counselling | BIPE",
     description: "From application to first day of class for JEECUP 2026 — application, entrance, rank, counselling, seat allotment, reporting at BIPE 4455.",
+    keywords: [
+      "JEECUP 2026",
+      "JEECUP application 2026",
+      "JEECUP counselling 2026",
+      "JEECUP institute code 4455",
+      "JEECUP eligibility",
+      "JEECUP rank",
+      "JEECUP काउंसलिंग गाइड",
+      "JEECUP फॉर्म कैसे भरें",
+      "BIPE 4455 JEECUP",
+    ],
   },
   hostel: {
     path: "/hostel",
