@@ -617,7 +617,7 @@ export default function Page() {
           <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14 }}>
             <Img src={BIPE_IMG.studentsForms} label="Application desk" style={{ height: 200, borderRadius: 18 }} />
             <Img src={BIPE_IMG.counsellingHall} label="Counselling round" style={{ height: 200, borderRadius: 18 }} />
-            <Img src={BIPE_IMG.classroom} label="Day one · August" style={{ height: 200, borderRadius: 18 }} />
+            <Img src={BIPE_IMG.classroom} label="Classroom · year one" style={{ height: 200, borderRadius: 18 }} />
           </div>
         </div>
       </section>

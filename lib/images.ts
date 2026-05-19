@@ -75,7 +75,11 @@ export const BIPE_IMG = {
   principal: "/faculty/rahul-srivastava.png",
 
   // editorial extras
-  classroom: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80&auto=format&fit=crop",
+  // Same real BIPE classroom shot used for `students2024` on /about
+  // (two students in BIPE-branded hoodies + lanyards, full cohort
+  // behind). Re-used here so the "Classroom · year one" tile at the
+  // bottom of /admission is an authentic BIPE space, not stock.
+  classroom: "/students/classroom-cohort.jpg",
   surveying:    "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151162/bipe/labs/civil/auto-level-jpg",
   weldingHands: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149843/bipe/labs/mechanical/welding-shop",
   documentSeal: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop",
