@@ -159,7 +159,7 @@ export default function Page() {
             {/* Image collage */}
             <div className="bipe-collage" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gridTemplateRows: "1fr 1fr", gap: 14, height: 540 }}>
               <Img src={BIPE_IMG.campusWide} label="6-acre campus" style={{ gridRow: "1 / 3", borderRadius: 18, height: "100%" }} />
-              <Img src={BIPE_IMG.students2024} label="2024 cohort" style={{ borderRadius: 18, height: "100%" }} />
+              <Img src={BIPE_IMG.students2024} label="Recent cohort" style={{ borderRadius: 18, height: "100%" }} />
               <Img src={BIPE_IMG.workshop} label="Mech workshop" style={{ borderRadius: 18, height: "100%" }} />
             </div>
           </div>

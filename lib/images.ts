@@ -51,7 +51,12 @@ export const BIPE_IMG = {
   mess: "/campus-photos/mess-1-grace.png",
   map: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80&auto=format&fit=crop",
 
-  students2024: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=900&q=80&auto=format&fit=crop",
+  // Real BIPE classroom photo, Dec 2022 — two students in foreground
+  // wearing BIPE-branded hoodies + lanyards with full cohort behind.
+  // Replaces the generic Unsplash placeholder that the audit flagged.
+  // The slot name kept "2024" only for backwards-compat; consumer in
+  // app/about uses an honest "Recent cohort" label.
+  students2024: "/students/classroom-cohort.jpg",
   studentSmiling: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80&auto=format&fit=crop",
 
   principal: "/faculty/rahul-srivastava.png",
