@@ -51,8 +51,11 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   placements: {
     path: "/placements",
-    title: "Placements · 1,000+ alumni placed | BIPE",
-    description: "Alumni at Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and more.",
+    // "polytechnic placements UP" head term added — May 2026 keyword
+    // audit P1 #4. Body of the page lists recruiters; meta now opens
+    // with the search-intent phrase prospects actually type.
+    title: "Polytechnic placements in UP · 1,000+ alumni placed | BIPE",
+    description: "Polytechnic placements in UP — 1,000+ BIPE Varanasi alumni at Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and more.",
   },
   alumni: {
     path: "/alumni",
@@ -66,8 +69,11 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   fees: {
     path: "/fees",
-    title: "Fees · ₹30,150/year AFRC-approved | BIPE",
-    description: "Transparent, AFRC-approved fees. No capitation, no hidden charges. Receipts for every payment. Hostel & mess separate.",
+    // Year modifier "2026-27" added to capture the seasonal query —
+    // May 2026 keyword audit P1 #8. Fees are per academic year, so
+    // "2026-27" matches the cycle better than bare "2026".
+    title: "Polytechnic fees 2026-27 · ₹30,150/year AFRC-approved | BIPE",
+    description: "BIPE Varanasi polytechnic fees for 2026-27 — ₹30,150/year, AFRC-approved. No capitation, no hidden charges. Receipts for every payment. Hostel & mess separate.",
   },
   scholarships: {
     path: "/scholarships",
@@ -89,8 +95,12 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   hostel: {
     path: "/hostel",
-    title: "Hostel · Boys' on-campus block | BIPE",
-    description: "Boys' hostel on the Phoolpur campus — furnished rooms, on-campus mess, Wi-Fi, study halls, resident warden, 24×7 security.",
+    // "polytechnic with hostel UP" head term added — May 2026 keyword
+    // audit P1 #5. Prospects from outside Varanasi search for
+    // hostel-providing polytechnics specifically; the existing meta
+    // was BIPE-specific and missed the discovery query.
+    title: "Polytechnic with hostel in UP · Boys' on-campus block | BIPE",
+    description: "Polytechnic with on-campus hostel in UP — BIPE Phoolpur's boys' hostel has furnished rooms, on-campus mess, Wi-Fi, study halls, resident warden, 24×7 security.",
   },
   faculty: {
     path: "/faculty",
@@ -119,7 +129,10 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   approvals: {
     path: "/approvals",
-    title: "Approvals · AICTE, BTEUP, AISHE | BIPE",
+    // Year modifier "2026-27" added — May 2026 keyword audit P1 #8.
+    // Compliance docs are annual, the year matters for verification
+    // queries.
+    title: "Approvals 2026-27 · AICTE, BTEUP, AISHE | BIPE",
     description: "AICTE permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026. BTEUP-affiliated under JEECUP 4455. AISHE-registered with the Department of Higher Education, MoE.",
   },
   faq: {
