@@ -13,7 +13,11 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   home: {
     path: "/",
     title: "BIPE Varanasi — AICTE Polytechnic · JEECUP Code 4455",
-    description: "AICTE-approved diploma engineering in Phoolpur, Varanasi. 5 BTEUP branches including rare Dairy Engineering. JEECUP code 4455. Apply for 2026-27.",
+    // Exact phrase "polytechnic in Varanasi" included verbatim so the
+    // homepage captures the head-term query — see the May 2026 keyword
+    // SEO audit. Title already has the words in different order, but
+    // SERP snippet generation prefers verbatim phrase matches.
+    description: "AICTE-approved polytechnic in Varanasi — diploma engineering across 5 BTEUP branches including rare Dairy Engineering. JEECUP code 4455. Apply for 2026-27.",
   },
   about: {
     path: "/about",
@@ -77,8 +81,11 @@ export const ROUTES: Record<RouteKey, { path: string; title: string; description
   },
   jeecup: {
     path: "/jeecup",
-    title: "JEECUP guidance · 6-step counselling | BIPE",
-    description: "From application to first day of class — JEECUP application, entrance, rank, counselling, seat allotment, reporting at BIPE 4455.",
+    // Year modifier "2026" in title + description — the May 2026
+    // keyword audit caught that the page targeted "JEECUP guidance"
+    // but missed the highest-volume query of the year ("JEECUP 2026").
+    title: "JEECUP 2026 guidance · 6-step counselling | BIPE",
+    description: "From application to first day of class for JEECUP 2026 — application, entrance, rank, counselling, seat allotment, reporting at BIPE 4455.",
   },
   hostel: {
     path: "/hostel",

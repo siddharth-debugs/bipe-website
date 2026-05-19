@@ -47,8 +47,15 @@ async function loadHero(): Promise<HeroData> {
     headline_pre: "Engineers",
     headline_accent: "begin",
     headline_post: "here.",
+    // Description fallback now includes the exact head-term phrase
+    // "polytechnic in Varanasi" — May 2026 keyword audit P0 fix. Note:
+    // production renders the backend-stored hero copy (page_section
+    // "home/hero") when available; this fallback only ships when the
+    // backend is unreachable or that section is unpublished. The
+    // backend record should be updated via the admin panel to match,
+    // otherwise this fix is dormant in production.
     description:
-      "AICTE-approved diploma courses across 5 branches.\nMentor 1:20 · 1,000+ placed · Eastern UP since 2010.",
+      "AICTE-approved polytechnic in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,000+ placed · Eastern UP since 2010.",
     cta_primary: { label: "Apply for 2026-27", href: "/apply" },
     cta_secondary: { label: "Book a campus visit", href: "/visit" },
     bg_image_url: BIPE_IMG.heroWide,
