@@ -8,6 +8,7 @@ import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import CatchmentMap from "@/components/about/CatchmentMap";
+import PressMentions from "@/components/about/PressMentions";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("about"); }
 
@@ -579,7 +580,12 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 7. FINAL CTA                                                            */}
+      {/* 7. IN THE PRESS                                                         */}
+      {/* ====================================================================== */}
+      <PressMentions />
+
+      {/* ====================================================================== */}
+      {/* 8. FINAL CTA                                                            */}
       {/* ====================================================================== */}
       <section className="section" style={{ paddingTop: 56 }}>
         <div className="container">
