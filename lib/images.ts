@@ -90,8 +90,17 @@ export const BIPE_IMG = {
   // workshops, hostels and the corridor" copy.
   ledLight: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop",
   rampAccess: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=900&q=80&auto=format&fit=crop",
-  culturalDance: "https://images.unsplash.com/photo-1545959570-a94084071b5d?w=1200&q=80&auto=format&fit=crop",
-  projectFair: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=1200&q=80&auto=format&fit=crop",
+  // Real BIPE Utkarsh 2020 stage performance — line of student
+  // dancers in yellow kurta + red harem, "UTKARSH 2020" stage
+  // backdrop with BIPE Banaras Institute of Polytechnic & Engineering
+  // branding clearly visible. Marigold-bordered red stage. Replaces
+  // the generic Unsplash classical-dance placeholder on /events.
+  culturalDance: "/cultural-events/utkarsh-2020-dance.jpg",
+  // Real BIPE Technofest 2020 — faculty + visiting officials
+  // inspecting a student-built scale model at the project exhibit.
+  // Matches the card body's "live demonstrations — civil scale-models"
+  // copy. Same Utkarsh-week event captured the same day.
+  projectFair: "/cultural-events/technofest-2020-model.jpg",
   trackField: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80&auto=format&fit=crop",
 
   // placements
