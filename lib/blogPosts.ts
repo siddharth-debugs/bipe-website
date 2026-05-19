@@ -18,7 +18,8 @@ export type BlogSection =
   | { type: "p"; html: string }
   | { type: "ul" | "ol"; items: string[] }
   | { type: "callout"; title?: string; html: string }
-  | { type: "table"; headers: string[]; rows: string[][]; caption?: string };
+  | { type: "table"; headers: string[]; rows: string[][]; caption?: string }
+  | { type: "image"; src: string; alt: string; caption?: string };
 
 export type BlogPost = {
   slug: string;
@@ -34,6 +35,266 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-to-fill-jeecup-2026-application-form-step-by-step",
+    title: "How to fill the JEECUP 2026 application form — step-by-step with screenshots",
+    category: "Admission · JEECUP",
+    date: "19 May 2026",
+    publishedISO: "2026-05-19",
+    readTime: "11 min read",
+    excerpt:
+      "A screenshot walkthrough of the JEECUP 2026 application — sign-in, instructions, DPDP consent, personal details, qualification, document uploads, preview and fee payment. Bilingual EN/Hindi portal, written for first-generation engineering families in Eastern UP.",
+    metaTitle:
+      "JEECUP 2026 application form — step-by-step guide with screenshots | BIPE",
+    metaDescription:
+      "Fill the JEECUP 2026 application form correctly the first time. Screenshot-by-screenshot walkthrough of the official portal — sign-in, DPDP consent, registration, qualification, photo upload, preview, fee payment.",
+    sections: [
+      {
+        type: "p",
+        html: "The JEECUP 2026 application form (the UPJEE Polytechnic exam, conducted by the Joint Entrance Examination Council (Polytechnic), Uttar Pradesh) is the single gateway into BIPE — and into every BTEUP-affiliated polytechnic across UP. The portal is bilingual (English / Hindi), reasonably structured, and free to use — but the volume of consent forms, eligibility checks, document specs and verification steps catches families off guard every year. This post walks through the application from sign-in to fee payment with screenshots from the 2026 cycle, so you know exactly what each screen expects before you start.",
+      },
+      {
+        type: "callout",
+        title: "Scope of this guide",
+        html: "This covers the <strong>application form</strong> stage of JEECUP 2026 — sign-in through fee payment. It does NOT cover choice-filling (where you add BIPE's institute code <strong>4455</strong>), seat allotment, or reporting at the institute — those happen in a separate counselling cycle <em>after</em> the JEECUP exam results are declared. For that flow, see <a href=\"/jeecup\">/jeecup</a>. Screenshots below are from the live JEECUP 2026 portal; the exact button labels and field order may change year to year — always cross-check against <a href=\"https://jeecup.admissions.nic.in\" target=\"_blank\" rel=\"noopener\">jeecup.admissions.nic.in</a> for the current cycle.",
+      },
+      { type: "h2", text: "What you need before you start" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Active mobile number and email</strong> — both will be OTP-verified, so the candidate or a parent must have them open during application.",
+          "<strong>Aadhaar card</strong> — number ready (you'll have an option to consent to its use or decline; declining adds a manual identity-verification step).",
+          "<strong>Class 10 marksheet</strong> — passing status, year, board, roll number, maximum and obtained marks, percentage.",
+          "<strong>Identity document</strong> — Aadhaar / PAN / Voter ID / Ration Card (one of).",
+          "<strong>Recent passport photograph and signature</strong> — JPG format, 15–200 KB each, plus a fresh live photograph (10–500 KB) taken at the time of application.",
+          "<strong>Examination fee</strong> — Rs. 300 for General/OBC, Rs. 200 for SC/ST (per form), plus bank charges. Online payment only.",
+          "<strong>Category certificate</strong> — only if applying under SC/ST/OBC/EWS. Original at the tehsildar / SDM office.",
+        ],
+      },
+      { type: "h2", text: "Step 1 — Open the portal and choose Fresh Candidate Registration" },
+      {
+        type: "p",
+        html: "The portal at <a href=\"https://jeecup.admissions.nic.in\" target=\"_blank\" rel=\"noopener\">jeecup.admissions.nic.in</a> opens to a sign-in page for already-registered candidates. First-time applicants scroll to the bottom and click the orange <strong>Fresh Candidate Registration</strong> button.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/01-sign-in.png",
+        alt: "JEECUP 2026 sign-in page with the Fresh Candidate Registration option at the bottom",
+        caption: "The right rail lists important security instructions — password confidentiality, OTP rules, session timeouts. Read them before you start.",
+      },
+      { type: "h2", text: "Step 2 — Read the Instructions and the fee schedule" },
+      {
+        type: "p",
+        html: "The first page after clicking <em>Fresh Candidate Registration</em> is the <strong>Instructions and Procedure</strong> page. It's bilingual (EN/Hindi), and worth reading line by line — it confirms the minimum age (14 on or before 01/07/2026), the rule about applying to maximum three groups (one in Group-A, one in E1/E2, one in others), and the examination fees:",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/02-instructions-and-fees.png",
+        alt: "JEECUP 2026 Instructions and Procedure page showing eligibility rules and examination fees",
+        caption: "Rs. 300 per form for General/OBC, Rs. 200 for SC/ST. Bank charges are extra.",
+      },
+      { type: "h2", text: "Step 3 — Consent to data collection (DPDP)" },
+      {
+        type: "p",
+        html: "Per the Digital Personal Data Protection Act 2023, every Indian government portal now collects explicit consent before recording personal data. JEECUP's consent form lists each field (Candidate Name, Father, Mother, DOB, Gender, Identity Number, etc.) with the specific purpose it's collected for. You must tick <strong>\"I read &amp; confirm\"</strong> on each row, or use the <em>Check All</em> shortcut at the top.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/03-consent-form.png",
+        alt: "JEECUP 2026 Consent Form For Examination Purpose — DPDP-compliant data-collection consent",
+        caption: "Every row maps to a specific data field and the regulatory purpose it's collected for. Don't skip this — incomplete consent blocks the rest of the form.",
+      },
+      { type: "h2", text: "Step 4 — Fill the Registration Form" },
+      {
+        type: "p",
+        html: "The Registration Form captures basic identity: Name, Father's Name, Mother's Name, Date of Birth (three dropdowns), Gender. Below that is the <strong>Aadhaar consent</strong> block — three radio options:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Voluntarily share Aadhaar</strong> — used for identity matching against UIDAI records (recommended for fastest verification)",
+          "<strong>Aadhaar info doesn't match the form</strong> — for cases where your Aadhaar name/details differ from your school records",
+          "<strong>Not willing to share Aadhaar</strong> — adds a manual identity verification step later",
+        ],
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/04-registration-form.png",
+        alt: "JEECUP 2026 Registration Form — personal details and Aadhaar consent",
+        caption: "Choose the Aadhaar option carefully. Voluntarily sharing is fastest; declining adds manual verification.",
+      },
+      { type: "h2", text: "Step 5 — Review and confirm the Registration entries" },
+      {
+        type: "p",
+        html: "After filling the registration form, JEECUP shows a <strong>Review Page</strong> with every field you entered. If anything is wrong — name spelling, date of birth, gender, school ID — click <em>EDIT</em> and fix it before clicking <em>Submit &amp; Next</em>. Errors here cascade through the rest of the form and are painful to correct later.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/05-registration-review.png",
+        alt: "JEECUP 2026 Registration Form review page — verify all personal details before submitting",
+        caption: "This is your last chance to fix typos in names and DOB before they propagate into the application.",
+      },
+      { type: "h2", text: "Step 6 — Sign in as a Registered Candidate" },
+      {
+        type: "p",
+        html: "After registration, the portal issues you an Application Number and you set a Password and Security PIN. Return to the home sign-in page (Step 1) and enter your <strong>Application Number</strong>, password, and the displayed Security Pin (the wobbly captcha). The portal also reads the pin aloud for accessibility.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/06-sign-in-credentials.png",
+        alt: "JEECUP 2026 sign-in screen with credentials entered",
+        caption: "Application Number is what you'll use for every JEECUP communication this cycle. Save it somewhere safe.",
+      },
+      { type: "h2", text: "Step 7 — Verify via OTP" },
+      {
+        type: "p",
+        html: "Successful sign-in triggers a One-Time Password sent to your registered mobile. Enter the 6-digit OTP and click <em>Login</em>. The OTP is time-limited (typically 30 seconds shown in the resend timer); if it expires, click <em>Resend OTP</em>.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/07-otp-verification.png",
+        alt: "JEECUP 2026 OTP verification screen during sign-in",
+        caption: "Never share this OTP with anyone — the security panel on the right warns about phishing for a reason.",
+      },
+      { type: "h2", text: "Step 8 — Reconfirm consent inside the application" },
+      {
+        type: "p",
+        html: "On first sign-in to the application proper, the portal shows the consent form again — this time with your data filled in. Confirm each row (the checkmarks now show as black ticks) and proceed.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/08-consent-confirmed.png",
+        alt: "JEECUP 2026 consent form with all rows confirmed and ticked",
+        caption: "Same consent form, now showing your actual data. Verify it looks right, then proceed.",
+      },
+      { type: "h2", text: "Step 9 — Complete the Application Form (Personal Details)" },
+      {
+        type: "p",
+        html: "The main <strong>Application Form</strong> extends Personal Details with State of Eligibility, Religion and Category. The left sidebar lists every section you'll need to complete:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Application Form</strong> — extended personal, parents, nationality, state of eligibility, religion, category",
+          "<strong>Apply for Section</strong> — which JEECUP group(s) you're applying to (Group A = the polytechnic engineering paper for diploma branches at BIPE)",
+          "<strong>Qualification Details</strong> — Class 10 board marks (covered next)",
+          "<strong>Contact Detail</strong> — address, mobile, email",
+          "<strong>Exam Center Details</strong> — preferred exam city",
+          "<strong>Upload Documents/Images</strong> — photo, signature, live photo",
+          "<strong>Preview &amp; Final Submit</strong> — review everything",
+          "<strong>Pay Registration Fee</strong> — final step",
+        ],
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/09-application-form.png",
+        alt: "JEECUP 2026 main Application Form with Personal Details section open",
+        caption: "Sub Category Details (PWD, military quota, freedom fighter, etc.) and Other Information sit below this section.",
+      },
+      { type: "h2", text: "Step 10 — Qualification Details (Class 10 board marks)" },
+      {
+        type: "p",
+        html: "The Qualification Details section captures your <strong>Class 10 or Equivalent</strong> board record: Passing Status (Passed / Appearing), Passing Year, Roll/Registration Number, Board, Stream/Course (typically \"10th\"), Result Mode (Percentage / CGPA), Maximum Marks and Obtained Marks. The portal computes Percentage automatically.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/10-qualification-details.png",
+        alt: "JEECUP 2026 Qualification Details — Class 10 or equivalent fields",
+        caption: "Have your Class 10 marksheet open in another tab. Roll number and exact marks are the most common typo points.",
+      },
+      { type: "h2", text: "Step 11 — Contact details and exam centre preference" },
+      {
+        type: "p",
+        html: "After Qualification, the form moves to <strong>Contact Detail</strong> (address, mobile, email — already partly filled from registration) and <strong>Exam Center Details</strong> (a list of preferred exam cities; pick the one nearest to where you'll be in March-April of the cycle).",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/11-contact-and-exam-centre.png",
+        alt: "JEECUP 2026 portal screen at the contact details and exam centre step",
+        caption: "Exam centre allotment is rank-of-form based, not first-preference based — but the system tries to honour preferences when capacity allows.",
+      },
+      { type: "h2", text: "Step 12 — Upload photograph, signature and live photograph" },
+      {
+        type: "p",
+        html: "Three uploads are mandatory:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Photograph</strong> — JPG, 15–200 KB. Recent, formal, light background. Same photo for all 8 hard copies you'll carry later.",
+          "<strong>Signature</strong> — JPG, 15–200 KB. Written on plain white paper with a black pen, then scanned/photographed.",
+          "<strong>Live Photograph</strong> — JPG, 10–500 KB. Taken <em>at the time of application</em> via the device camera. The portal opens the camera; can't be a stored file.",
+        ],
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/12-upload-documents.png",
+        alt: "JEECUP 2026 Upload Documents/Images screen with three slots — photograph, signature, live photograph",
+        caption: "The Live Photograph is the new anti-impersonation step. Photo + signature can be retried if rejected; live photograph must be done in-session.",
+      },
+      { type: "h2", text: "Step 13 — Final Preview before fee payment" },
+      {
+        type: "p",
+        html: "Preview &amp; Final Submit shows your <em>entire</em> application — application number, name, father, mother, photo + signature thumbnails in the upper-right, sub-category details, other information, qualification details, applied sections. Scroll all the way to the bottom and read everything. Once you submit, only specific fields can be corrected later via the portal's edit window (typically a 3–5 day window after the application close).",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/13-final-preview.png",
+        alt: "JEECUP 2026 Preview & Final Submit page showing the full application summary",
+        caption: "The thumbnails of your uploaded photo and signature appear in the top-right — verify they're the right ones.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/14-preview-other-info.png",
+        alt: "Lower half of the JEECUP 2026 Preview page — Other Information and Qualification Details",
+        caption: "Scroll down for category, residence, and full qualification record. Everything should match your marksheet.",
+      },
+      { type: "h2", text: "Step 14 — Pay the Registration Fee" },
+      {
+        type: "p",
+        html: "The final step is fee payment. The portal shows the amount (Rs. 300 for General/OBC, Rs. 200 for SC/ST) and presents the <strong>Online Payment</strong> option. Click the radio, then <em>Pay Fee</em>, and you're routed to the payment gateway (NetBanking / UPI / Card). After successful payment, download and save the application confirmation slip — you'll need it through the entire cycle.",
+      },
+      {
+        type: "image",
+        src: "/jeecup-2026/15-fee-payment.png",
+        alt: "JEECUP 2026 Fee Payment screen — Rs. 300 Registration Fee with online payment option",
+        caption: "Application Number and Name are blurred here for privacy; on your screen they'll show your own.",
+      },
+      { type: "h2", text: "What happens after payment" },
+      {
+        type: "ol",
+        items: [
+          "<strong>Confirmation slip</strong> — download immediately after payment. Carries your Application Number, transaction ID, and the option to print.",
+          "<strong>Admit card</strong> — released 7–10 days before the exam date. Download separately when announced.",
+          "<strong>Exam</strong> — held at the exam centre you preferred (subject to capacity). 3-hour CBT, Class-10 syllabus in maths/physics/chemistry.",
+          "<strong>Results</strong> — declared roughly 2–3 weeks after the exam. Your rank determines counselling order.",
+          "<strong>Counselling</strong> — separate cycle, starts roughly a month after results. This is where you fill institute choices including <strong>BIPE 4455</strong>. See <a href=\"/jeecup\">/jeecup</a> for the full counselling walkthrough.",
+        ],
+      },
+      { type: "h2", text: "Common mistakes that cause rejections" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Photo/signature too small or too large</strong> — the portal enforces 15–200 KB ranges strictly. Compress or recompress in any image editor before uploading.",
+          "<strong>Mismatched name across documents</strong> — Aadhaar name and Class 10 marksheet name must match (or you must choose the \"info doesn't match\" Aadhaar option). Marriage-name changes or transliteration variants trip a lot of applicants.",
+          "<strong>Wrong category selection</strong> — General candidates accidentally selecting OBC/SC/ST get blocked at document verification. Pick the category your certificate actually shows.",
+          "<strong>Live Photograph not taken at time of application</strong> — uploading an old photo here gets rejected by image-similarity checks. Just open the camera and take a fresh photo.",
+          "<strong>Forgetting to pay</strong> — the form is not submitted until the fee is paid. Many applicants reach Preview, close the tab, and never come back.",
+        ],
+      },
+      { type: "h2", text: "Where to get help if you're stuck" },
+      {
+        type: "p",
+        html: "JEECUP's own helpdesk is at <a href=\"mailto:jeecuphelp@gmail.com\" rel=\"nofollow\">jeecuphelp@gmail.com</a> / 0522-2630106 (Lucknow). For families in Eastern UP specifically, <a href=\"/admission\">BIPE's admissions team</a> takes JEECUP application questions on WhatsApp in EN / हिंदी every day — no fee for the conversation, no obligation to apply to BIPE. We walk dozens of families through the form each cycle.",
+      },
+      {
+        type: "p",
+        html: "Once your application is in and you have an admit card, the next thing to plan for is the exam itself, then counselling. The <a href=\"/jeecup\">JEECUP guidance page</a> covers the six-step path from form to BIPE 4455 allotment; the <a href=\"/blog/diploma-vs-iti-vs-btech-after-class-10\">Diploma vs ITI vs B.Tech</a> piece on this blog is worth reading if you're still weighing pathways at this stage.",
+      },
+    ],
+  },
+
   // ─────────────────────────────────────────────────────────────────
   {
     slug: "why-dairy-engineering-bipe-rare-bteup-327",

@@ -119,6 +119,41 @@ function renderSection(s: BlogSection, i: number) {
           />
         </aside>
       );
+    case "image":
+      return (
+        <figure
+          key={i}
+          style={{ margin: "28px 0" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={s.src}
+            alt={s.alt}
+            loading="lazy"
+            style={{
+              width: "100%",
+              height: "auto",
+              borderRadius: 14,
+              border: "1px solid var(--line)",
+              display: "block",
+            }}
+          />
+          {s.caption && (
+            <figcaption
+              style={{
+                marginTop: 10,
+                fontSize: 13.5,
+                color: "var(--ink-3)",
+                textAlign: "center",
+                lineHeight: 1.5,
+                fontStyle: "italic",
+              }}
+            >
+              {s.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
     case "table":
       return (
         <div
