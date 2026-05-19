@@ -36,6 +36,159 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
+    slug: "diploma-to-btech-lateral-entry-up-aktu",
+    title: "Diploma to B.Tech lateral entry in UP — the AKTU pathway after polytechnic",
+    category: "Career · Lateral Entry",
+    date: "19 May 2026",
+    publishedISO: "2026-05-19",
+    readTime: "8 min read",
+    excerpt:
+      "A 3-year BTEUP diploma gives you direct entry to the second year of B.Tech at AKTU colleges. The UPCET Lateral Entry exam, the AICTE 20% reservation, branch mapping, timing, costs — and when lateral entry is the right call versus a straight diploma career.",
+    metaTitle:
+      "Diploma to B.Tech lateral entry in UP — AKTU pathway guide for diploma holders | BIPE",
+    metaDescription:
+      "How a 3-year polytechnic diploma gets you directly into the second year of B.Tech via UPCET Lateral Entry at AKTU colleges. Eligibility, exam pattern, branch mapping, timing and the 20% AICTE-reserved seats.",
+    sections: [
+      {
+        type: "p",
+        html: "Most diploma students in Uttar Pradesh hear about <strong>lateral entry</strong> sometime in their second year — usually as a vague rumour about \"getting B.Tech after diploma without doing Class 12\". The rumour is correct, but the mechanism is more specific than students usually realise, and the timing of the decision matters. This guide walks through the AKTU lateral entry pathway in detail — what it is, how the UPCET exam works, what branches your diploma maps to, and the actual time/cost trade-off versus a straight diploma career.",
+      },
+      {
+        type: "callout",
+        title: "TL;DR",
+        html: "A 3-year BTEUP diploma admits you to the <strong>second year of a B.Tech</strong> at any AKTU-affiliated engineering college, via the <strong>UPCET Lateral Entry</strong> exam. <a href=\"https://www.aicte-india.org\" rel=\"nofollow noopener\" target=\"_blank\">AICTE mandates roughly 20%</a> of B.Tech seats be reserved for lateral entry students. You complete B.Tech in 3 years (instead of the usual 4) — and during your diploma years you're already eligible for Junior Engineer roles, so you can work in engineering <em>before</em> you decide to go for B.Tech.",
+      },
+      { type: "h2", text: "What lateral entry actually is" },
+      {
+        type: "p",
+        html: "AICTE — the All India Council for Technical Education — regulates engineering education in India. Under AICTE norms, every approved engineering college must reserve approximately <strong>20% of its B.Tech intake</strong> for students entering directly into the second year (third semester) of the 4-year degree. These seats are filled exclusively by candidates with a recognised 3-year engineering diploma or a B.Sc with PCM.",
+      },
+      {
+        type: "p",
+        html: "In Uttar Pradesh, almost every engineering college is affiliated to <strong>AKTU</strong> (Dr. A.P.J. Abdul Kalam Technical University, formerly UPTU). Admission to these lateral-entry seats is controlled by a single state-level entrance test — <strong>UPCET Lateral Entry</strong>, also called UP CET-L or, in some years, UPSEE-L. The mechanism is similar across most major Indian states; Bihar runs BCECE-LE, Madhya Pradesh runs LEET, Tamil Nadu runs TNEA-LEE, and so on.",
+      },
+      { type: "h2", text: "The UPCET Lateral Entry exam" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Conducted by</strong>: National Testing Agency (NTA) on behalf of AKTU. Online CBT, typically in May/June.",
+          "<strong>Eligibility</strong>: A 3-year diploma in engineering recognised by a state board (BTEUP qualifies) or AICTE, with a minimum of 45% aggregate marks (40% for SC/ST/OBC/PwD as per UP norms — verify current notification).",
+          "<strong>Exam pattern</strong>: One paper covering Engineering Mathematics, Engineering Aptitude, and your diploma branch's core subjects. Multiple-choice, two-hour duration. Negative marking applies in most years.",
+          "<strong>Application window</strong>: Usually February–April of your final diploma year. The exam follows in May, results in June, counselling in July, classes start in August.",
+          "<strong>Where to look for the current notification</strong>: <a href=\"https://upcet.nta.nic.in\" rel=\"nofollow noopener\" target=\"_blank\">upcet.nta.nic.in</a> and the AKTU notifications page.",
+        ],
+      },
+      { type: "h2", text: "The 5-step pathway from diploma to B.Tech" },
+      {
+        type: "ol",
+        items: [
+          "<strong>Year 1–3 of diploma</strong>: maintain a strong academic record. Lateral entry counselling is rank-based, and rank is heavily weighted by both diploma percentage and UPCET-L score.",
+          "<strong>February–April of final year</strong>: apply for UPCET Lateral Entry on the NTA portal. Fee, photo, signature, diploma certificate uploads — same shape as JEECUP.",
+          "<strong>May–June</strong>: appear for the UPCET-L exam. Most coaching for this happens in parallel with final-semester project work; serious candidates start preparation in semester 5.",
+          "<strong>July</strong>: AKTU counselling. Choose colleges and branches from the rank-based shortlist. AICTE's 20% reservation means there are seats — but the top colleges fill on opening-round cutoffs.",
+          "<strong>August onwards</strong>: report at the allotted college and start the B.Tech second year directly. You complete semesters 3–8 of B.Tech in three years.",
+        ],
+      },
+      { type: "h2", text: "Branch mapping — what diploma maps to what B.Tech" },
+      {
+        type: "p",
+        html: "Lateral entry isn't free choice — your B.Tech branch options are determined by your diploma branch, since AKTU requires the second-year curriculum to build on what you've already covered. Typical mappings:",
+      },
+      {
+        type: "table",
+        headers: ["Diploma (BTEUP)", "Common B.Tech entries via lateral"],
+        rows: [
+          ["Mechanical Engineering (Production)", "Mechanical · Industrial · Production · Automobile · Manufacturing"],
+          ["Electrical Engineering", "Electrical · Electrical &amp; Electronics · Power · Instrumentation"],
+          ["Civil Engineering", "Civil · Structural · Transportation · Environmental"],
+          ["Computer Science &amp; Engineering", "CSE · IT · Information Science · Software · AI &amp; ML"],
+          ["Dairy Engineering", "Food Technology · Chemical Engineering · Dairy Technology (at NDRI/GBPUAT — separate process)"],
+        ],
+      },
+      {
+        type: "p",
+        html: "Dairy Engineering is the outlier — AKTU colleges don't typically offer a B.Tech in Dairy Engineering, so the strongest B.Tech pathways for a BIPE Dairy diploma are <strong>Food Technology</strong> or <strong>Chemical Engineering</strong> at AKTU, or a B.Tech in Dairy Technology at NDRI Karnal / GBPUAT Pantnagar / SHIATS Allahabad through their respective entrance tests.",
+      },
+      { type: "h2", text: "Time and cost — the trade-off versus a straight degree" },
+      {
+        type: "p",
+        html: "From the same starting point (Class 10 pass), the diploma + lateral entry route takes the same total time as Class 12 plus a full B.Tech — six years either way. But the structure of those six years is fundamentally different.",
+      },
+      {
+        type: "table",
+        headers: ["", "Class 12 → B.Tech", "Diploma → B.Tech lateral"],
+        rows: [
+          ["Years 1–2 after Class 10", "Class 11 + Class 12 (PCM)", "Diploma semesters 1–4"],
+          ["Year 3", "B.Tech 1st year", "Diploma semesters 5–6 (graduate as Junior Engineer-eligible)"],
+          ["Years 4–6", "B.Tech 2nd–4th year", "B.Tech 2nd–4th year (via lateral)"],
+          ["Engineering employability before B.Tech?", "No", "<strong>Yes</strong> — diploma is JE-eligible from year 3"],
+          ["Earliest paid engineering role", "After year 6", "<strong>After year 3</strong> — JE roles via SSC JE, RRB JE, UPPCL"],
+          ["B.Tech completion year", "Year 6", "Year 6"],
+        ],
+      },
+      {
+        type: "callout",
+        title: "The killer insight",
+        html: "Both paths produce a B.Tech in year 6. But the lateral-entry path also produces a <strong>JE-employable engineer in year 3</strong>. That means a diploma student can work as a Junior Engineer in years 3–6 while studying B.Tech part-time or via correspondence — or take a break to earn before going back. The Class 12 → B.Tech path doesn't offer that option.",
+      },
+      { type: "h2", text: "When lateral entry is the right call" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Your target employer requires a B.Tech</strong>: PSUs at the senior engineer level, defence research, many R&amp;D and software roles still gate on B.Tech credential.",
+          "<strong>You want to do postgraduate study</strong>: M.Tech, MS abroad, or an MBA — most quality programmes treat B.Tech as the standard prerequisite.",
+          "<strong>Family or social context favours the degree</strong>: in many parts of Eastern UP, the perception of \"engineer\" still maps to B.Tech. If that matters for marriage prospects, family standing, or village context, lateral entry is the lowest-cost route to that credential.",
+          "<strong>You're in CSE</strong>: software industry hiring is degree-weighted more than other engineering disciplines. CSE diploma + lateral B.Tech CSE is a strong combo if you want a software-engineer (not just JE-IT) role.",
+        ],
+      },
+      { type: "h2", text: "When it isn't" },
+      {
+        type: "ul",
+        items: [
+          "<strong>You're happy with JE / supervisor roles</strong>: SSC JE, RRB JE, UPPCL JE and similar government cadres don't require B.Tech. If that's where you want to be, the diploma alone is sufficient and the additional three years of B.Tech are pure delay.",
+          "<strong>You've got a strong direct placement</strong>: BIPE's <a href=\"/placements\">recruiter pipeline</a> places mechanical, electrical and dairy diploma graduates directly into Mahindra, Tata Motors, UPPCL, Amul and similar. Walking away from a confirmed offer to chase a B.Tech that takes three more years is usually not the right call.",
+          "<strong>Cost is prohibitive</strong>: AKTU government colleges via UPCET are affordable, but private-college tuition can be ₹80,000–₹1,50,000 per year. If that's not in the family budget, the diploma career path is the financially smarter route.",
+          "<strong>You're considering Class 12 + JEE for IIT/NIT</strong>: lateral entry to IIT/NIT B.Tech exists but is ultra-competitive (single-digit seats per branch in most years). If IIT/NIT is the goal, Class 12 → JEE Advanced is the more realistic path.",
+        ],
+      },
+      { type: "h2", text: "Other state-level lateral entry pathways" },
+      {
+        type: "p",
+        html: "If AKTU isn't the right fit — or if you're a BIPE student from outside UP — most major Indian states run an equivalent lateral entry process for B.Tech second-year admission. The eligibility (3-year recognised engineering diploma) is similar everywhere; the exam name and counselling body change.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Bihar</strong>: BCECE Lateral Entry (BCECE-LE) — multiple Bihar Engineering College affiliates.",
+          "<strong>Madhya Pradesh</strong>: MP LEET, conducted by MPPEB. Covers RGPV and government engineering colleges.",
+          "<strong>Maharashtra</strong>: Direct admission to second year (DSE) via the state CET cell.",
+          "<strong>Tamil Nadu</strong>: TNEA-LE (Tamil Nadu Engineering Admissions, Lateral Entry).",
+          "<strong>Karnataka</strong>: PGCET Diploma stream for lateral entry to VTU and Karnataka government colleges.",
+        ],
+      },
+      { type: "h2", text: "How to prepare during your diploma years" },
+      {
+        type: "p",
+        html: "The single biggest predictor of lateral entry success is your <strong>diploma percentage</strong>. UPCET-L counselling weights diploma marks alongside the exam score, and the entrance test itself draws from the BTEUP syllabus you covered in semesters 1–6. The students who succeed usually score 65%+ in the diploma. So the most important preparation is just doing the diploma well — not separate coaching.",
+      },
+      {
+        type: "p",
+        html: "On top of that: spend semester 5 working through the previous-year UPCET-L papers, refresh first-year B.Tech engineering mathematics (since you skip year 1 entirely and the second year assumes you know it), and practise the engineering aptitude / general-knowledge sections that aren't part of the diploma curriculum.",
+      },
+      { type: "h2", text: "How this fits at BIPE" },
+      {
+        type: "p",
+        html: "BIPE's <a href=\"/teaching\">outcome-based pedagogy</a> and 1:20 mentor ratio are structured around the assumption that some students will go straight to JE / corporate placement, and others will pursue lateral entry — both are first-class outcomes. The placement cell tracks both pipelines, and faculty mentors discuss the trade-off with each cohort in the final year. <a href=\"/courses\">All five BTEUP branches at BIPE</a> map cleanly onto AKTU B.Tech entries via the table above, so whichever branch you pick at BIPE, the lateral entry door stays open.",
+      },
+      {
+        type: "p",
+        html: "If you're considering this path, talk to admissions on WhatsApp or <a href=\"/visit\">book a campus visit</a>. The free shuttle from Varanasi Cantt makes the decision easier — see the labs, talk to current third-year students, and walk out with a realistic picture of which BIPE branch + lateral entry combination fits your goals.",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
     slug: "diploma-vs-iti-vs-btech-after-class-10",
     title: "Diploma vs ITI vs B.Tech after Class 10 — which to pick",
     category: "Admission · Pathways",
