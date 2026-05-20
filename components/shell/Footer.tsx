@@ -355,7 +355,11 @@ export const Footer = () => {
               </span>
               <Image
                 src="/credit-logo.png"
-                alt="SortString"
+                // Was just "SortString" — that gave Google a bare agency
+                // name on every BIPE page footer with no context. Made
+                // it self-describing so the alt text matches what
+                // sighted users see ("Designed & developed by …").
+                alt="SortString — design and development partner for BIPE"
                 width={1700}
                 height={750}
                 priority={false}
