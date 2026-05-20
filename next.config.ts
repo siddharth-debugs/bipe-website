@@ -31,6 +31,35 @@ const nextConfig: NextConfig = {
   // DRF endpoints end in `/`. Don't auto-redirect them.
   skipTrailingSlashRedirect: true,
 
+  // Tree-shaking hints. Phase 1.5 audit P2 (May 2026) caught a 73 KB
+  // unused-JS chunk (Lighthouse's "Reduce unused JavaScript") that
+  // contained Zod + react-hook-form + Radix Select / Checkbox — form
+  // libraries loaded on every page even though only /apply, /contact
+  // and /visit have forms.
+  //
+  // `optimizePackageImports` tells Next/Turbopack to treat these as
+  // route-specific deps for tree-shaking. Combined with dynamic()
+  // imports of the form components in their pages, this should keep
+  // these libs out of the global shared chunk.
+  //
+  // `lucide-react` is in the same list as a defensive hint — its
+  // per-icon imports are tree-shake-friendly already but the
+  // optimizer ensures Webpack chunks them per-route too.
+  experimental: {
+    optimizePackageImports: [
+      "zod",
+      "react-hook-form",
+      "@hookform/resolvers",
+      "@radix-ui/react-select",
+      "@radix-ui/react-checkbox",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-popover",
+      "@radix-ui/react-dropdown-menu",
+      "@radix-ui/react-toast",
+      "lucide-react",
+    ],
+  },
+
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },

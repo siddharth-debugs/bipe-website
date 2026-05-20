@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+import dynamic from "next/dynamic";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/shell/Icons";
-import { VisitForm } from "./VisitForm";
+
+// Dynamic import keeps zod + react-hook-form out of the global
+// shared chunk. See companion comment on /contact and /apply pages.
+const VisitForm = dynamic(
+  () => import("./VisitForm").then((m) => m.VisitForm)
+);
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("visit"); }
 

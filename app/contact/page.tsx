@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+import dynamic from "next/dynamic";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/shell/Icons";
-import { ContactForm } from "./ContactForm";
 import { FAQ } from "@/components/home/FAQ";
+
+// Dynamic import keeps zod + react-hook-form (~73 KB combined) in a
+// chunk that is only fetched when this route is actually visited,
+// rather than the shared bundle that every page paid for. Phase 1.5
+// audit P2 fix. SSR stays on (Next 16 server components don't allow
+// ssr:false anyway) — the form still server-renders its shell; only
+// the validation library load is deferred.
+const ContactForm = dynamic(
+  () => import("./ContactForm").then((m) => m.ContactForm)
+);
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("contact"); }
 
