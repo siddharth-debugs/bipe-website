@@ -6,7 +6,22 @@ import {
   quickWins,
   type KeywordPosition,
 } from "@/lib/keyword-positions";
-import { SEO_SNAPSHOT, indexedZombiePages } from "@/lib/seo-snapshot";
+
+// Force SSR — the page calls Semrush at render time. If we leave it
+// static, Next.js would try to pre-render at build (where there's no
+// SEMRUSH_API_KEY in env) and bake the fallback snapshot in. The
+// fetch() inside fetchSemrushSnapshot still caches via revalidateTag,
+// so admin visits within a 24h window are served from cache — but
+// the FIRST request after deploy actually calls Semrush with the
+// live env key.
+export const dynamic = "force-dynamic";
+import {
+  SEO_SNAPSHOT,
+  indexedZombiePages,
+  type SeoSnapshot,
+} from "@/lib/seo-snapshot";
+import { fetchSemrushSnapshot } from "@/lib/fetch-semrush";
+import { SeoRefreshButton } from "@/components/admin/SeoRefreshButton";
 
 /**
  * /admin/dashboard/seo — read-only SEO position tracker.
@@ -53,7 +68,31 @@ function rankCell(rank: number | null): { label: string; color: string } {
   return { label: `#${rank}`, color: "var(--ink-2)" };
 }
 
-export default function SeoPositionsPage() {
+/**
+ * Try live Semrush first; fall back to the static snapshot on any
+ * failure (missing API key, Semrush 5xx, network blip). The fallback
+ * is real data — just the last manually-pulled snapshot — so the page
+ * stays useful in either case. Caller gets a `source` discriminator
+ * so the UI can label the freshness honestly.
+ */
+async function getLiveSnapshot(): Promise<{
+  data: SeoSnapshot;
+  source: "live" | "fallback";
+  error?: string;
+}> {
+  try {
+    const data = await fetchSemrushSnapshot();
+    return { data, source: "live" };
+  } catch (e) {
+    return {
+      data: SEO_SNAPSHOT,
+      source: "fallback",
+      error: e instanceof Error ? e.message : "Semrush fetch failed",
+    };
+  }
+}
+
+export default async function SeoPositionsPage() {
   const snapshot = latestSnapshot();
   const wins = quickWins(snapshot);
   const totalVolume = totalAddressableVolume(snapshot);
@@ -62,7 +101,9 @@ export default function SeoPositionsPage() {
   const notRanking = snapshot.ranks.filter((r) => r.currentRank === null);
 
   // Live Semrush data — what Google actually associates with us.
-  const zombies = indexedZombiePages();
+  const live = await getLiveSnapshot();
+  const liveSeo = live.data;
+  const zombies = indexedZombiePages(liveSeo);
 
   return (
     <div>
@@ -95,25 +136,35 @@ export default function SeoPositionsPage() {
         <div
           style={{
             display: "flex",
-            alignItems: "baseline",
+            alignItems: "center",
             justifyContent: "space-between",
             marginBottom: 14,
+            gap: 16,
+            flexWrap: "wrap",
           }}
         >
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--ink-1)" }}>
-            Domain overview — what Google sees
-          </h2>
-          <span
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 10,
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "var(--ink-3)",
-            }}
-          >
-            Semrush · {SEO_SNAPSHOT.database} · {SEO_SNAPSHOT.date}
-          </span>
+          <div>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--ink-1)" }}>
+              Domain overview — what Google sees
+            </h2>
+            <div
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: live.source === "live" ? "#16a34a" : "#d97706",
+                marginTop: 4,
+              }}
+            >
+              {live.source === "live" ? (
+                <>● Live · Semrush · {liveSeo.database} · {liveSeo.date} (24h cache)</>
+              ) : (
+                <>◐ Fallback · static snapshot · {liveSeo.date} · {live.error?.slice(0, 80)}</>
+              )}
+            </div>
+          </div>
+          <SeoRefreshButton />
         </div>
         <div
           style={{
@@ -125,22 +176,22 @@ export default function SeoPositionsPage() {
           {[
             {
               label: "Authority rank",
-              value: SEO_SNAPSHOT.overview.rank.toLocaleString(),
+              value: liveSeo.overview.rank.toLocaleString(),
               sub: "Semrush global rank (lower = better)",
             },
             {
               label: "Organic keywords",
-              value: SEO_SNAPSHOT.overview.organicKeywords,
+              value: liveSeo.overview.organicKeywords,
               sub: "ranking in top 100 of Google India",
             },
             {
               label: "Organic traffic / mo",
-              value: SEO_SNAPSHOT.overview.organicTraffic.toLocaleString(),
+              value: liveSeo.overview.organicTraffic.toLocaleString(),
               sub: "estimated visits from organic search",
             },
             {
               label: "Competitors tracked",
-              value: SEO_SNAPSHOT.competitors.length,
+              value: liveSeo.competitors.length,
               sub: "domains sharing our keyword profile",
             },
           ].map((s) => (
@@ -398,7 +449,7 @@ export default function SeoPositionsPage() {
           Top organic pages — where the traffic lands
         </h2>
         <p style={{ color: "var(--ink-2)", fontSize: 13, marginBottom: 14, lineHeight: 1.55 }}>
-          Heavy concentration on the homepage — {SEO_SNAPSHOT.topPages[0].trafficPct.toFixed(0)}% of
+          Heavy concentration on the homepage — {liveSeo.topPages[0]?.trafficPct.toFixed(0) ?? 0}% of
           organic traffic lands there. Long tail is thin, which is where the keyword-research roadmap
           aims to fill.
         </p>
@@ -413,7 +464,7 @@ export default function SeoPositionsPage() {
               </tr>
             </thead>
             <tbody>
-              {SEO_SNAPSHOT.topPages.map((p) => (
+              {liveSeo.topPages.map((p) => (
                 <tr key={p.url} style={{ borderTop: "1px solid var(--line)" }}>
                   <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>{p.url}</td>
                   <td style={td}>{p.keywords}</td>
@@ -458,7 +509,7 @@ export default function SeoPositionsPage() {
               </tr>
             </thead>
             <tbody>
-              {SEO_SNAPSHOT.competitors.map((c) => (
+              {liveSeo.competitors.map((c) => (
                 <tr key={c.domain} style={{ borderTop: "1px solid var(--line)" }}>
                   <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>
                     {c.domain}
@@ -582,7 +633,7 @@ export default function SeoPositionsPage() {
         Two data sources, complementary. The &ldquo;Domain overview&rdquo;, &ldquo;Top organic
         pages&rdquo;, and &ldquo;Top competitors&rdquo; sections read from{" "}
         <code>lib/seo-snapshot.ts</code> (live Semrush data, pulled{" "}
-        {SEO_SNAPSHOT.date}). The &ldquo;Tracked targets&rdquo; stats, &ldquo;Quick wins&rdquo;,
+        {liveSeo.date}). The &ldquo;Tracked targets&rdquo; stats, &ldquo;Quick wins&rdquo;,
         and full position table read from <code>lib/keyword-positions.ts</code> (the 64 strategic
         keywords we&rsquo;re trying to win).
         <br />
