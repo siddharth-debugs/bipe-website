@@ -9,6 +9,8 @@
  * and passes through method/headers/body unchanged.
  */
 import type { NextRequest } from "next/server";
+import { revalidateTag } from "next/cache";
+import { CONTENT_CACHE_TAG } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -16,6 +18,11 @@ export const runtime = "nodejs";
 const BACKEND_BASE =
   process.env.BIPE_BACKEND_URL?.trim().replace(/\/+$/, "") ||
   "http://127.0.0.1:8000/api/v1";
+
+/** HTTP methods that change server state — these are the ones that
+ *  should bust the public-bundle cache after a successful upstream
+ *  response. */
+const MUTATING_METHODS = new Set(["POST", "PUT", "PATCH", "DELETE"]);
 
 // Headers we drop on the way out (Next adds these; Django doesn't need them
 // and some confuse the upstream).
@@ -79,6 +86,25 @@ async function proxy(req: NextRequest, ctx: { params: Promise<{ path: string[] }
   }
 
   const upstream = await fetch(url, init);
+
+  // If the admin just changed a content row, bust the public-bundle
+  // cache so the next SSR render of any public page picks up the edit
+  // immediately. Scoped to /content/* paths so PUT/DELETE on unrelated
+  // endpoints (e.g. /accounts/users/) doesn't trigger unnecessary
+  // revalidation. Status-gated so failed mutations don't invalidate.
+  if (
+    MUTATING_METHODS.has(req.method)
+    && upstream.status >= 200
+    && upstream.status < 300
+    && tail.startsWith("content/")
+  ) {
+    try {
+      revalidateTag(CONTENT_CACHE_TAG);
+    } catch {
+      // revalidateTag throws in some Next versions when called outside
+      // a server-action context — swallow to avoid breaking the proxy.
+    }
+  }
 
   // Strip headers we shouldn't echo back to the client.
   const respHeaders = new Headers();

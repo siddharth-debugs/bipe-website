@@ -148,32 +148,43 @@ export interface ContentBundle {
 
 // ─── Fetcher ───────────────────────────────────────────────────────────
 
-let _cached: { value: ContentBundle | null; at: number } | null = null;
-const TTL_MS = 5 * 60 * 1000;
+/**
+ * The Next.js fetch cache tag that every public-bundle request is
+ * pinned to. The admin proxy route handler calls revalidateTag(this)
+ * after any successful content mutation so admin edits surface on the
+ * next render — no waiting for the lazy revalidate window.
+ */
+export const CONTENT_CACHE_TAG = "content:public";
 
 /**
- * Server-side fetch with a 5-minute in-memory cache and ``next: { revalidate }``
- * tag so the framework can de-dupe across the same render.
+ * Server-side fetch of the merged public content bundle.
  *
- * Never throws. Returns ``null`` if the backend is unreachable, which
+ * Caching strategy:
+ *   - Next.js fetch cache is the only cache layer. It's tagged with
+ *     CONTENT_CACHE_TAG so revalidateTag() (called from the admin
+ *     proxy after a POST/PATCH/DELETE on /content/*) busts it instantly.
+ *   - A 5-min lazy `revalidate` window covers the case where someone
+ *     edits the DB directly (not through the admin) — eventual
+ *     consistency, not stale-forever.
+ *
+ * The previous in-memory module-level cache was removed: it was per-
+ * function-instance, not shared, and couldn't be invalidated from the
+ * proxy on a different function instance — so admin edits would
+ * silently take up to 5 minutes to appear even after the Next.js fetch
+ * cache had been busted.
+ *
+ * Never throws. Returns null if the backend is unreachable, which
  * callers should interpret as "use the static fallback".
  */
 export async function getContent(): Promise<ContentBundle | null> {
-  if (_cached && Date.now() - _cached.at < TTL_MS) return _cached.value;
   try {
     const url = `${BACKEND_BASE}/content/public/`;
     const res = await fetch(url, {
-      next: { revalidate: 300, tags: ["content:public"] },
+      next: { revalidate: 300, tags: [CONTENT_CACHE_TAG] },
     });
-    if (!res.ok) {
-      _cached = { value: null, at: Date.now() };
-      return null;
-    }
-    const data = (await res.json()) as ContentBundle;
-    _cached = { value: data, at: Date.now() };
-    return data;
+    if (!res.ok) return null;
+    return (await res.json()) as ContentBundle;
   } catch {
-    _cached = { value: null, at: Date.now() };
     return null;
   }
 }
