@@ -575,6 +575,53 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "p",
         html: "BIPE's <a href=\"/teaching\">outcome-based pedagogy</a> and 1:20 mentor ratio are structured around the assumption that some students will go straight to JE / corporate placement, and others will pursue lateral entry — both are first-class outcomes. The placement cell tracks both pipelines, and faculty mentors discuss the trade-off with each cohort in the final year. <a href=\"/courses\">All five BTEUP branches at BIPE</a> map cleanly onto AKTU B.Tech entries via the table above, so whichever branch you pick at BIPE, the lateral entry door stays open.",
       },
+      { type: "h2", text: "Real BIPE alumni on the AKTU pathway" },
+      {
+        type: "p",
+        html: "This isn't a hypothetical pipeline. Here are sixteen BIPE alumni from the 2019–2025 batches who actually moved into a B.Tech programme after finishing their diploma — almost all of them via AKTU lateral entry, a handful via state universities in UP and Gujarat. Names + parent names + universities are as they appear on the institute's filed higher-studies register.",
+      },
+      {
+        type: "table",
+        caption:
+          "BIPE diploma alumni who moved to a B.Tech after polytechnic. Source: institute's higher-studies register, 2019–2025 cohorts. \"Appearing\" = currently enrolled; \"Completed\" = degree finished.",
+        headers: [
+          "Name",
+          "Diploma branch (BIPE)",
+          "Year of polytechnic passing",
+          "B.Tech college / university",
+          "Status",
+        ],
+        rows: [
+          ["Ankit Tiwari", "Civil", "2025", "AKTU", "Appearing"],
+          ["Pawan Kumar", "Civil", "2025", "AKTU", "Appearing"],
+          ["Jay Kishan Kumar", "Electrical", "2025", "Madan Mohan Malaviya University of Technology, Gorakhpur", "Appearing"],
+          ["Manish Singh", "Civil", "2024", "AKTU", "Appearing"],
+          ["Aftab Ali", "Mechanical", "2024", "Rajju Bhaiya University", "Appearing"],
+          ["Ajay Kumar Yadav", "Mechanical", "2024", "AKTU", "Appearing"],
+          ["Abhishek Yadav", "Civil", "2023", "AKTU", "Completed"],
+          ["Om Ji Srivastva", "Electrical", "2023", "AKTU", "Completed"],
+          ["Aditya Kumar Yadav", "Civil", "2023", "AKTU", "Completed"],
+          ["Pravesh Maurya", "Electrical", "2023", "AKTU", "Completed"],
+          ["Anil Kumar Tiwari", "Civil", "2022", "Gujarat University", "Completed"],
+          ["Bhanu Pratap Singh", "Civil", "2022", "AKTU", "Completed"],
+          ["Parvez Alam", "Civil", "2022", "AKTU", "Completed"],
+          ["Ganesh Singh Chouhan", "Civil", "2020", "AKTU", "Completed"],
+          ["Tusar Singh", "Civil", "2020", "AKTU", "Completed"],
+          ["Shani Kumar Maury", "Civil", "2019", "AKTU", "Completed"],
+        ],
+      },
+      {
+        type: "callout",
+        title: "What the pattern shows",
+        html:
+          "<ul style=\"margin: 0; padding-left: 22px;\">" +
+          "<li><strong>Sixteen alumni across seven cohorts</strong> (2019–2025) have used lateral entry. The pipeline is steady, not a one-off.</li>" +
+          "<li><strong>Civil dominates</strong> (10 of 16). This tracks the national picture — Civil diploma → Civil B.Tech is the most direct mapping under AKTU.</li>" +
+          "<li><strong>AKTU is the default</strong> (13 of 16) but not the only door. Madan Mohan Malaviya University of Technology Gorakhpur and Rajju Bhaiya University (Allahabad / Prayagraj) appear too — both are state universities with their own lateral entry counselling.</li>" +
+          "<li><strong>One outlier — Gujarat University</strong> (Anil Kumar Tiwari, 2022) — shows that a BIPE diploma is recognised outside UP for lateral entry, though the route involves more paperwork than the in-state path.</li>" +
+          "<li><strong>Ten have already finished</strong> the B.Tech and six are currently enrolled. That's a six-year continuous pipeline from BIPE's diploma into UP's degree engineering ecosystem.</li>" +
+          "</ul>",
+      },
       {
         type: "p",
         html: "If you're considering this path, talk to admissions on WhatsApp or <a href=\"/visit\">book a campus visit</a>. The free shuttle from Varanasi Cantt makes the decision easier — see the labs, talk to current third-year students, and walk out with a realistic picture of which BIPE branch + lateral entry combination fits your goals.",
@@ -765,6 +812,204 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html: "If you're a current diploma student or a Class 10 family weighing whether to choose this path, the <a href=\"/courses\">five branches at BIPE</a> map directly onto the JE recruitment branches above. Talk to the admissions team on WhatsApp (EN / हिंदी) or <a href=\"/visit\">book a free shuttle visit</a> from Varanasi Cantt to see the campus.",
+      },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "jeecup-rank-vs-bipe-4455-cutoffs-2024-2025",
+    title: "What JEECUP rank do you need for BIPE 4455? Real closing ranks for 2024-25 and 2025-26",
+    category: "Admission · JEECUP",
+    date: "20 May 2026",
+    publishedISO: "2026-05-20",
+    readTime: "9 min read",
+    excerpt:
+      "Two years of actual BIPE admission data — 342 rows from the JEECUP rank lists for 2024-25 and 2025-26, broken down by branch. Closing ranks for Group A (regular post-10th) sit comfortably in the 100,000–170,000 band; Group K (lateral entry) tightens to 1,000–7,500. What that means for your choice filling.",
+    metaTitle:
+      "JEECUP rank for BIPE 4455 — real closing ranks 2024-25 and 2025-26 | BIPE",
+    metaDescription:
+      "Real BIPE Varanasi closing ranks under JEECUP institute code 4455 for 2024-25 and 2025-26, per branch. Group A regular admissions and Group K lateral entry data. Honest counsel for choice filling.",
+    sections: [
+      {
+        type: "callout",
+        title: "TL;DR · Where your JEECUP rank lands you",
+        html:
+          "<ul style=\"margin: 0; padding-left: 22px;\">" +
+          "<li><strong>Group A (regular, post-Class 10)</strong> closing ranks at BIPE 4455 in 2025-26 ranged from <strong>147,826</strong> (Dairy Engineering) to <strong>168,929</strong> (Computer Science).</li>" +
+          "<li><strong>Group K (lateral entry, post-Class 12 PCM or B.Sc / ITI)</strong> closing ranks were much tighter — <strong>1,757</strong> for Civil, <strong>5,492</strong> for Mech Production, <strong>7,506</strong> for Electrical.</li>" +
+          "<li>If your Group A rank is under 130,000, you have a comfortable margin on every branch we offer. Under 50,000 means you have your pick of branches.</li>" +
+          "<li>If your Group K rank is under 5,000, BIPE lateral-entry seats are realistic across all four branches.</li>" +
+          "</ul>" +
+          "<p style=\"margin: 12px 0 0;\">All numbers below are from BIPE's <em>Student Admission Rank Lists</em> as filed with JEECUP — actual admitted students for 2024-25 and 2025-26 cycles. No projections, no marketing math.</p>",
+      },
+      {
+        type: "h2",
+        text: "How JEECUP counselling actually works",
+      },
+      {
+        type: "p",
+        html:
+          "JEECUP (the UP Joint Entrance Examination for Polytechnic, conducted by the Joint Entrance Examination Council (Polytechnic), Uttar Pradesh) runs <strong>five counselling rounds</strong> after the entrance exam — Rounds 1 through 4 in the main cycle, plus a spot-round for unfilled seats. In each round you fill choices (which institute + branch combinations you're willing to accept), and the system allocates seats to you in priority order based on your rank.",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Closing rank</strong> = the last (highest) rank that successfully secured a seat in that branch at that institute in that year. If your rank is at or better than the closing rank, you would have got the seat under the same competition. If your rank is worse, the seat would have gone to someone with a better rank ahead of you.",
+      },
+      {
+        type: "p",
+        html:
+          "BIPE's JEECUP institute code is <strong>4455</strong> — this is the four-digit handle you'll select when filling choices. The institute name on the portal reads \"Banaras Institute of Polytechnic & Engineering, Phoolpur, Varanasi\".",
+      },
+      {
+        type: "h2",
+        text: "Group A · Regular admissions (post-Class 10)",
+      },
+      {
+        type: "p",
+        html:
+          "Group A is the main JEECUP track — you take the entrance after Class 10 (or 12), get a rank in Group A, and use that rank during counselling to apply to diploma engineering programmes. This is how most BIPE students arrive.",
+      },
+      {
+        type: "table",
+        caption:
+          "BIPE 4455 closing ranks (Group A · regular). Source: BIPE's filed Student Admission Rank Lists for 2024-25 and 2025-26.",
+        headers: [
+          "Branch (BTEUP code)",
+          "2024-25 closing rank",
+          "2025-26 closing rank",
+          "2024-25 admissions",
+          "2025-26 admissions",
+        ],
+        rows: [
+          ["Civil Engineering (102)", "1,57,313", "1,66,030", "25", "25"],
+          ["Computer Science & Engg (118)", "1,48,127", "1,68,929", "27", "26"],
+          ["Dairy Engineering (123)", "—", "1,47,826", "0", "5"],
+          ["Electrical Engineering (105)", "1,57,754", "1,66,491", "48", "56"],
+          ["Mechanical (Production) (113)", "1,58,221", "1,68,298", "30", "33"],
+          ["Mechanical (Automobile) (112)", "1,48,572", "—", "11", "0"],
+        ],
+      },
+      {
+        type: "callout",
+        title: "Reading the table",
+        html:
+          "<p style=\"margin: 0;\"><strong>The closing-rank ceiling has been generous.</strong> In 2025-26, even the most competitive of our branches (Computer Science) closed at rank 168,929. Roughly speaking: if your Group A rank is anywhere under 130,000, you have a real chance at every branch we offer. Under 100,000, you have margin even in late counselling rounds. Under 50,000, you have your pick of branches and can choose by interest rather than by rank constraint.</p>" +
+          "<p style=\"margin: 12px 0 0;\">Why the numbers grew between 2024-25 and 2025-26: JEECUP rank inflation tracks the number of test-takers. UP's polytechnic exam pool has grown year over year; absolute ranks have moved with it.</p>" +
+          "<p style=\"margin: 12px 0 0;\"><strong>Dairy Engineering (BTEUP 123)</strong> appears in 2025-26 with 5 admissions at a closing rank of 147,826. This is the first cohort at BIPE — and one of only four BTEUP-affiliated dairy diploma programmes across all of Uttar Pradesh. <a href=\"/courses/dairy-engineering\">More on the branch →</a></p>" +
+          "<p style=\"margin: 12px 0 0;\"><strong>Mechanical Automobile (BTEUP 112)</strong> appears in 2024-25 with 11 admissions and is empty in 2025-26 — the slot was phased out in favour of an expanded Mechanical (Production) cohort, which grew from 30 to 33 in the same period.</p>",
+      },
+      {
+        type: "h2",
+        text: "Group K · Lateral entry (post-Class 12 / ITI / B.Sc PCM)",
+      },
+      {
+        type: "p",
+        html:
+          "Group K is the lateral-entry track. If you've already finished Class 12 with PCM, or have an ITI / B.Sc background, you can enter the diploma programme directly in the second year — skipping the first year — by ranking in Group K. The seats are fewer (Group K admissions to diploma are capped at a small fraction of total seats per branch), so the rank competition is much tighter than Group A.",
+      },
+      {
+        type: "table",
+        caption:
+          "BIPE 4455 closing ranks (Group K · lateral entry). Group K sub-groups: K1 (CSE/Civil) · K2 (Electrical) · K3 (Civil) · K4 (Mech Production) · K6 / K7 vary year to year. Source: same Student Admission Rank Lists.",
+        headers: [
+          "Branch (BTEUP lateral code)",
+          "2024-25 closing rank",
+          "2025-26 closing rank",
+          "2024-25 admissions",
+          "2025-26 admissions",
+        ],
+        rows: [
+          ["Civil Engineering LE (302)", "2,852", "1,757", "4", "2"],
+          ["Computer Science LE (318)", "1,998", "—", "1", "0"],
+          ["Electrical Engineering LE (305)", "7,128", "7,506", "14", "13"],
+          ["Mech (Automobile) LE (312)", "3,031", "5,235", "1", "2"],
+          ["Mech (Production) LE (313)", "4,232", "5,492", "8", "11"],
+        ],
+      },
+      {
+        type: "callout",
+        title: "Why the lateral-entry numbers look so different",
+        html:
+          "Lateral entry is a competitive shortcut — you skip a full year of the diploma and join in Year 2. Across UP, only a small percentage of diploma seats are reserved for lateral entry, which means the rank cut-off compresses. If your Group K rank is under 5,000 you're in real contention at BIPE across most branches; under 2,000 and you have flexibility.",
+      },
+      {
+        type: "h2",
+        text: "What if your rank is above the closing rank?",
+      },
+      {
+        type: "p",
+        html:
+          "Closing ranks are <em>last-round, last-seat</em> snapshots. A few realistic options if your rank is just above the closing for a particular branch:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Choose a branch that closed earlier</strong>. Branches at BIPE 4455 close in roughly this order: CSE first, then Mech Production, then Electrical, Civil, Dairy. If your rank doesn't make CSE, try Electrical or Civil first.",
+          "<strong>Use later counselling rounds</strong>. Rank-holders who confirmed in Round 1 sometimes upgrade or drop in Round 2/3; seats reopen. The spot round picks up the rest.",
+          "<strong>Treat lateral entry as a Plan B</strong>. If you complete Class 12 with PCM and the rank gap is wide, lateral entry into Year 2 the following year is a real route — used by many BIPE alumni.",
+          "<strong>Talk to admissions directly</strong>. Counselling rules occasionally allow institute-level choices outside the central allotment. The team at +91-9198646464 or admissions@bipevns.org can walk you through what's possible given your specific rank and branch preferences.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What if your rank is way below the closing rank?",
+      },
+      {
+        type: "p",
+        html:
+          "Lower rank = better outcomes (in JEECUP, rank 1 is the top). If your Group A rank is under 50,000 you can choose by interest — and that interest matters more than people admit. The branch you actually like will determine whether you finish the diploma and use it well, more than its perceived prestige. Three honest considerations:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Eastern UP recruitment</strong>. Recruiters who hire at BIPE (Mahindra, Tata Steel, BEL, Indian Railways, UPPCL, JBM, Motherson, Amul) hire across branches. Your branch matters less than your performance and your willingness to relocate.",
+          "<strong>Rural campus, low fee</strong>. BIPE is AFRC-approved at ₹30,150/year. That's substantially lower than urban polytechnics with similar approvals — and the campus is six acres in Phoolpur with on-campus hostel for boys.",
+          "<strong>Dairy is genuinely rare</strong>. If you're considering Dairy Engineering and have a good rank, this is a strategic choice — only four institutes in UP offer it, and recruiter pipelines (Amul, Mother Dairy, Parag, Nestlé, NDDB) are real and largely uncrowded.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "How to fill choices to maximise your BIPE 4455 chances",
+      },
+      {
+        type: "p",
+        html:
+          "Choice filling in JEECUP isn't a guess — there's a small, learnable strategy. The choice list you submit is processed top-to-bottom: the system gives you the highest-ranked choice you qualify for. So the order matters.",
+      },
+      {
+        type: "ol",
+        items: [
+          "<strong>Put your preferred branch at BIPE 4455 first</strong>. If you most want Mechanical Production at BIPE, BIPE-Production should be choice #1 — even if other institutes for Production might \"have higher placements on paper.\"",
+          "<strong>Then your second-preference branch at BIPE</strong> as choice #2 — same institute, different branch as a fallback. Most candidates skip this and end up at a different institute when they would have happily taken a different BIPE branch.",
+          "<strong>Then BIPE for every branch you'd accept</strong> in descending order of preference. This locks BIPE as your institute as long as ANY seat in ANY of your acceptable branches is open.",
+          "<strong>Only after exhausting BIPE</strong> should you list other institutes. Don't interleave — every other-institute choice you put before another BIPE choice is a vote against staying at BIPE.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Honest counsel from admissions",
+        html:
+          "We've watched families fill choices brilliantly and badly for sixteen years. The single most common mistake: interleaving institutes by perceived \"prestige\" rather than committing to one institute and listing all its branches first. If you genuinely want BIPE, list every BIPE branch (in your preference order) before listing any other institute. If you don't, you'll occasionally end up at a more distant or more expensive institute when BIPE had a seat open in a branch you'd have been happy with.",
+      },
+      {
+        type: "h2",
+        text: "What's next",
+      },
+      {
+        type: "ul",
+        items: [
+          "Read the <a href=\"/jeecup\">JEECUP guidance page</a> — six-step counselling timeline from application to reporting.",
+          "Read the <a href=\"/blog/how-to-fill-jeecup-2026-application-form-step-by-step\">JEECUP 2026 form walkthrough</a> — screenshot-by-screenshot of the application portal.",
+          "Browse the <a href=\"/courses\">five branches</a> at BIPE 4455 with full lab + curriculum detail.",
+          "Talk to admissions: <a href=\"tel:+919198646464\">+91-9198646464</a> · <a href=\"mailto:admissions@bipevns.org\">admissions@bipevns.org</a> · <a href=\"https://wa.me/919198646464\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
+          "Apply: <a href=\"/apply\">/apply</a> — start the BIPE-side form, get a personal call within 24 hours.",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<em>Numbers in this post are exact admitted-student counts and ranks from BIPE's filed Student Admission Rank Lists for 2024-25 and 2025-26 cycles. Updated 20 May 2026; will be refreshed each year when fresh rank lists are filed with JEECUP.</em>",
       },
     ],
   },
