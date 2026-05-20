@@ -162,7 +162,22 @@ export async function HeroFull() {
         pointerEvents: "none"
       }} />
 
-      <div className="container bipe-hero-pad" style={{ position: "relative", padding: "72px 0 48px", color: "var(--paper)", zIndex: 2 }}>
+      <div
+        className="container bipe-hero-pad"
+        style={{
+          position: "relative",
+          // Per-axis padding instead of shorthand so the `.container`
+          // class's own horizontal padding (24px desktop / 18px tablet /
+          // 16px phone — see app/globals.css) survives. Earlier shorthand
+          // `padding: "72px 0 48px"` was zeroing left+right and the
+          // hero buttons + headline landed flush against the viewport
+          // edge on mobile. Reported 2026-05-20.
+          paddingTop: 72,
+          paddingBottom: 48,
+          color: "var(--paper)",
+          zIndex: 2,
+        }}
+      >
         <div>
           {/*
             Hero eyebrow added May 2026. Semrush keyword research shows
