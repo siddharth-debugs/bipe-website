@@ -157,11 +157,15 @@ export default function Page() {
               </div>
             </div>
 
-            {/* Image collage */}
+            {/* Image collage. First (large left) tile is the LCP candidate
+                — flagged `priority` so the browser fetches it eagerly with
+                fetchPriority="high" rather than waiting for the rest of
+                the page to parse. The other two tiles stay default
+                (lazy) — they're below the H1 fold on most viewports. */}
             <div className="bipe-collage" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gridTemplateRows: "1fr 1fr", gap: 14, height: 540 }}>
-              <Img src={BIPE_IMG.campusWide} label="6-acre campus" style={{ gridRow: "1 / 3", borderRadius: 18, height: "100%" }} />
-              <Img src={BIPE_IMG.students2024} label="Recent cohort" style={{ borderRadius: 18, height: "100%" }} />
-              <Img src={BIPE_IMG.workshop} label="Mech workshop" style={{ borderRadius: 18, height: "100%" }} />
+              <Img src={BIPE_IMG.campusWide} label="6-acre campus" priority sizes="(max-width: 860px) 100vw, 50vw" style={{ gridRow: "1 / 3", borderRadius: 18, height: "100%" }} />
+              <Img src={BIPE_IMG.students2024} label="Recent cohort" sizes="(max-width: 860px) 100vw, 25vw" style={{ borderRadius: 18, height: "100%" }} />
+              <Img src={BIPE_IMG.workshop} label="Mech workshop" sizes="(max-width: 860px) 100vw, 25vw" style={{ borderRadius: 18, height: "100%" }} />
             </div>
           </div>
         </div>

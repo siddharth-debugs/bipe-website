@@ -11,7 +11,13 @@
 // a slot disappears because its consumer was removed, delete it here
 // too in the same commit.
 export const BIPE_IMG = {
-  heroWide: "/hero-campus.png",
+  // Hero campus photo. The PNG version was 2.45 MB and the LCP
+  // bottleneck on /, pulling Lighthouse mobile Performance from
+  // ~95 down to 79 (per Phase 1.5 audit η). Re-encoded as a 313 KB
+  // progressive JPEG at quality 82 — visually indistinguishable
+  // from the PNG but 88% smaller. Next/Image still serves further
+  // responsive variants on top of this source.
+  heroWide: "/hero-campus.jpg",
 
   // Branch-relevant photos — sourced from BIPE's Cloudinary lab manifest
   // (lib/labs-manifest.json). Only landscape-orientation photos are used

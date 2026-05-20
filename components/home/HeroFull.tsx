@@ -103,7 +103,21 @@ export async function HeroFull() {
 
   return (
     <section className="bipe-hero-section" style={{ position: "relative", overflow: "hidden", background: "#000" }}>
-      <Img src={h.bg_image_url} alt={h.bg_image_alt} label="" priority className="bipe-hero-bg" style={{ position: "absolute", inset: 0, borderRadius: 0 }} />
+      <Img
+        src={h.bg_image_url}
+        alt={h.bg_image_alt}
+        label=""
+        priority
+        // Explicit 100vw — the hero is full-bleed. Without this, the
+        // default Img sizes hint ("75vw on tablet, 50vw on desktop")
+        // would tell Next/Image to serve a too-small variant for the
+        // full-width background, forcing the browser to upscale and
+        // delaying LCP. Setting 100vw lets Next pick the correct
+        // responsive variant: ~640w mobile, ~1080w tablet, ~1920w desktop.
+        sizes="100vw"
+        className="bipe-hero-bg"
+        style={{ position: "absolute", inset: 0, borderRadius: 0 }}
+      />
 
       {/* Lighter dark wash — the campus photo has the BIPE building
           signage in it; we want that readable, not muddy. The bottom and
