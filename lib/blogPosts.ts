@@ -1013,6 +1013,245 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "polytechnic-kya-hai-aur-kaise-kare",
+    title: "Polytechnic Kya Hai aur Kaise Kare — पूरी हिन्दी गाइड",
+    category: "Guide · Hindi",
+    date: "20 May 2026",
+    publishedISO: "2026-05-20",
+    readTime: "12 min read",
+    excerpt:
+      "पॉलिटेक्निक क्या है, कौन कर सकता है, कितने साल का होता है, कैसे आवेदन करें, फीस कितनी है, और 10वीं के बाद इंजीनियर बनने का सबसे सीधा रास्ता क्या है — एक हिन्दी गाइड Eastern UP और बिहार के परिवारों के लिए।",
+    metaTitle:
+      "Polytechnic Kya Hai aur Kaise Kare — JEECUP 2026 हिन्दी गाइड | BIPE",
+    metaDescription:
+      "पॉलिटेक्निक क्या है हिन्दी में — पात्रता, JEECUP 2026 आवेदन प्रक्रिया, ब्रांच विकल्प, फीस, कैरियर। बीआईपीई वाराणसी (कोड 4455) — AICTE-approved डिप्लोमा इंजीनियरिंग के लिए संपूर्ण मार्गदर्शिका।",
+    sections: [
+      {
+        type: "callout",
+        title: "इस गाइड में क्या है",
+        html:
+          "<p style=\"margin: 0;\">यह एक हिन्दी गाइड है उन परिवारों के लिए जो पहली बार 10वीं या 12वीं के बाद इंजीनियरिंग के विकल्प तलाश रहे हैं। पॉलिटेक्निक क्या है, B.Tech से क्या अंतर है, कौन-कौन सी ब्रांच होती हैं, JEECUP 2026 के लिए कैसे आवेदन करें, और बीआईपीई वाराणसी (कोड 4455) में पढ़ने का अनुभव कैसा है — सब एक जगह, सीधी भाषा में।</p>",
+      },
+      { type: "h2", text: "पॉलिटेक्निक क्या है?" },
+      {
+        type: "p",
+        html:
+          "<strong>पॉलिटेक्निक</strong> एक प्रकार का तकनीकी शिक्षा संस्थान है जहाँ <strong>3 साल का डिप्लोमा कोर्स</strong> कराया जाता है। यह कोर्स इंजीनियरिंग की व्यावहारिक (practical) पढ़ाई पर ज़ोर देता है — कक्षा से ज़्यादा workshop, lab और machine-shop में समय बीतता है। दूसरे शब्दों में, पॉलिटेक्निक का मतलब है — <em>10वीं या 12वीं के बाद इंजीनियर बनने का सबसे छोटा और सीधा रास्ता</em>।",
+      },
+      {
+        type: "p",
+        html:
+          "हिन्दी में लोग इसे \"पॉलिटेक्निक\" या \"डिप्लोमा इंजीनियरिंग\" दोनों नामों से जानते हैं। उत्तर प्रदेश में सभी पॉलिटेक्निक संस्थान <strong>BTEUP</strong> (Board of Technical Education, Uttar Pradesh) से affiliated होते हैं और <strong>AICTE</strong> (All India Council for Technical Education) से approved होते हैं। प्रवेश <strong>JEECUP</strong> (Joint Entrance Examination Council, Polytechnic) के माध्यम से होता है।",
+      },
+      {
+        type: "h2",
+        text: "Polytechnic Course की अवधि और संरचना",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>अवधि (Duration):</strong> 3 साल · 6 सेमेस्टर (semester यानी छमाही)। प्रत्येक सेमेस्टर में लगभग 6 विषय।",
+          "<strong>शिक्षा का माध्यम:</strong> अधिकांश यूपी पॉलिटेक्निक में हिन्दी और अंग्रेज़ी दोनों में पढ़ाई होती है। BTEUP की किताबें भी दोनों भाषाओं में मिलती हैं।",
+          "<strong>परीक्षा:</strong> प्रत्येक सेमेस्टर के अंत में लिखित परीक्षा + practical परीक्षा।",
+          "<strong>अंतिम वर्ष:</strong> सेमेस्टर 6 में अनिवार्य industrial training (आमतौर पर एक कारखाने या साइट पर 4-6 हफ़्ते का इंटर्नशिप)।",
+          "<strong>उपाधि:</strong> पास करने पर <em>\"Diploma in &lt;Branch&gt; Engineering\"</em> की डिग्री मिलती है (जैसे — Diploma in Civil Engineering, Diploma in Mechanical Engineering)।",
+        ],
+      },
+      {
+        type: "h2",
+        text: "पात्रता (Eligibility) — कौन कर सकता है?",
+      },
+      {
+        type: "p",
+        html:
+          "पॉलिटेक्निक में दो तरह से प्रवेश होता है — <strong>regular</strong> (पहले साल से) और <strong>lateral entry</strong> (सीधे दूसरे साल में)।",
+      },
+      { type: "h3", text: "Regular Entry (Group A)" },
+      {
+        type: "ul",
+        items: [
+          "<strong>योग्यता:</strong> 10वीं पास (Class 10 board exam, 35% कुल अंक न्यूनतम)।",
+          "<strong>आयु सीमा:</strong> कोई नहीं — किसी भी उम्र में आवेदन कर सकते हैं।",
+          "<strong>प्रवेश परीक्षा:</strong> JEECUP (Group A) — गणित, विज्ञान, अंग्रेज़ी आधारित।",
+          "<strong>कोर्स अवधि:</strong> पूरे 3 साल (6 सेमेस्टर)।",
+        ],
+      },
+      { type: "h3", text: "Lateral Entry (Group K)" },
+      {
+        type: "ul",
+        items: [
+          "<strong>योग्यता:</strong> 12वीं PCM (Physics, Chemistry, Maths) पास, या ITI सर्टिफिकेट, या B.Sc पहले वर्ष पास।",
+          "<strong>प्रवेश परीक्षा:</strong> JEECUP (Group K1/K2/K3/K4 — ब्रांच के हिसाब से)।",
+          "<strong>कोर्स अवधि:</strong> सीधे दूसरे साल में प्रवेश — कुल 2 साल बचेंगे (4 सेमेस्टर)।",
+          "<strong>लाभ:</strong> एक साल बचता है। तेज़ रास्ता उन छात्रों के लिए जो पहले से 12वीं कर चुके हैं।",
+        ],
+      },
+      {
+        type: "h2",
+        text: "ब्रांच विकल्प (Branches) — कौन सी पढ़ाई करें?",
+      },
+      {
+        type: "p",
+        html:
+          "BTEUP के तहत 20+ शाखाएँ (branches) उपलब्ध हैं, लेकिन सबसे लोकप्रिय और प्लेसमेंट के नज़रिए से मजबूत 5 ये हैं — और ये पाँचों <a href=\"/courses\">बीआईपीई वाराणसी</a> में उपलब्ध हैं:",
+      },
+      {
+        type: "table",
+        caption:
+          "बीआईपीई की पाँच शाखाएँ — BTEUP कोड, सीटें, और कैरियर का संकेत।",
+        headers: [
+          "ब्रांच (हिन्दी)",
+          "ब्रांच (अंग्रेज़ी)",
+          "BTEUP कोड",
+          "सीटें",
+          "मुख्य कैरियर",
+        ],
+        rows: [
+          [
+            "सिविल इंजीनियरिंग",
+            "Civil Engineering",
+            "322",
+            "120",
+            "Building construction, Smart Cities, SSC JE, RRB JE",
+          ],
+          [
+            "इलेक्ट्रिकल इंजीनियरिंग",
+            "Electrical Engineering",
+            "328",
+            "120",
+            "UPPCL, Indian Railways, Tata Power, solar industry",
+          ],
+          [
+            "मैकेनिकल इंजीनियरिंग (Production)",
+            "Mechanical Engineering (Production)",
+            "343",
+            "120",
+            "Mahindra, Tata Motors, BHEL, JBM Group",
+          ],
+          [
+            "कंप्यूटर साइंस एंड इंजीनियरिंग",
+            "Computer Science & Engineering",
+            "355",
+            "60",
+            "Wipro Infrastructure, IT cadres, programming roles",
+          ],
+          [
+            "डेयरी इंजीनियरिंग",
+            "Dairy Engineering",
+            "327",
+            "60",
+            "Amul, Mother Dairy, Parag, Nestlé — UP में सिर्फ़ 4 पॉलिटेक्निक में",
+          ],
+        ],
+      },
+      {
+        type: "callout",
+        title: "ब्रांच कैसे चुनें",
+        html:
+          "<p style=\"margin: 0;\">ब्रांच चुनना केवल \"कौन सी सबसे प्रसिद्ध है\" के आधार पर नहीं करना चाहिए। तीन सवाल खुद से पूछें — (1) मुझे hands-on काम पसंद है या programming? (2) मेरे जिले में कौन से उद्योग हैं? (3) मेरे रिश्तेदारों में कौन से कैरियर पहले से हैं? सिविल और इलेक्ट्रिकल सबसे \"safe\" विकल्प हैं (सरकारी नौकरी की सबसे ज़्यादा संभावना); डेयरी सबसे रणनीतिक है (UP में दुर्लभ, recruiters कम भीड़); CSE सबसे आधुनिक है।</p>",
+      },
+      {
+        type: "h2",
+        text: "Polytechnic Kaise Kare — आवेदन प्रक्रिया (Step-by-Step)",
+      },
+      {
+        type: "ol",
+        items: [
+          "<strong>JEECUP की वेबसाइट पर जाएँ:</strong> <a href=\"https://jeecup.admissions.nic.in\" target=\"_blank\" rel=\"noopener\">jeecup.admissions.nic.in</a> — हर साल फरवरी-मार्च में application portal खुलता है।",
+          "<strong>Registration करें:</strong> मोबाइल नंबर और ईमेल से नया खाता बनाएँ। OTP verify होने पर username और password मिल जाएगा।",
+          "<strong>Application form भरें:</strong> व्यक्तिगत जानकारी, माता-पिता का विवरण, 10वीं (या 12वीं) के अंक, श्रेणी (General/OBC/SC/ST), पता।",
+          "<strong>Documents upload करें:</strong> 10वीं की मार्कशीट, आधार कार्ड, फोटो, हस्ताक्षर। Files की size सीमा का ध्यान रखें।",
+          "<strong>Application fee जमा करें:</strong> सामान्यतः ₹200–500 (श्रेणी के अनुसार)। Net banking, UPI, debit/credit कार्ड स्वीकार होते हैं।",
+          "<strong>Admit card download करें:</strong> परीक्षा से लगभग 10 दिन पहले admit card जारी होता है।",
+          "<strong>परीक्षा दें:</strong> April-May में online JEECUP exam होती है — गणित, विज्ञान, अंग्रेज़ी पर आधारित।",
+          "<strong>Counselling में हिस्सा लें:</strong> Result के बाद counselling के 5 राउंड चलते हैं। यहाँ <strong>संस्थान कोड 4455 (BIPE)</strong> भरें यदि बीआईपीई आपका विकल्प है।",
+          "<strong>Seat allotment के बाद दस्तावेज़ verify करवाएँ:</strong> Allotted institute पर जाकर सभी original documents जमा करें।",
+          "<strong>Fee जमा करें और कक्षा में रिपोर्ट करें:</strong> August-September में कक्षा शुरू।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "हर step के लिए screenshot के साथ विस्तृत मार्गदर्शिका के लिए देखें: <a href=\"/blog/how-to-fill-jeecup-2026-application-form-step-by-step\">JEECUP 2026 application form — step-by-step guide with screenshots</a>।",
+      },
+      {
+        type: "h2",
+        text: "फीस कितनी होती है?",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>सरकारी पॉलिटेक्निक:</strong> ₹6,000–15,000/साल। कम फीस लेकिन सीमित सीटें और अक्सर ज़्यादा competition।",
+          "<strong>निजी पॉलिटेक्निक (AFRC-approved):</strong> ₹25,000–60,000/साल। बीआईपीई <strong>₹30,150/साल</strong> है (AFRC-अनुमोदित, छुपी हुई फीस नहीं)।",
+          "<strong>हॉस्टल + मेस:</strong> अलग शुल्क, आमतौर पर ₹36,000–60,000/साल।",
+          "<strong>छात्रवृत्ति (Scholarship):</strong> SC/ST/OBC/Minority/EWS छात्रों के लिए UP सरकार की <a href=\"/scholarships\">Post-Matric Scholarship</a> लागू होती है — पूरी फीस वापस मिल सकती है।",
+        ],
+      },
+      {
+        type: "h2",
+        text: "पॉलिटेक्निक के बाद क्या?",
+      },
+      {
+        type: "p",
+        html:
+          "3 साल का डिप्लोमा पूरा करने के बाद चार मुख्य रास्ते खुलते हैं:",
+      },
+      {
+        type: "ol",
+        items: [
+          "<strong>सीधी नौकरी (Direct Job):</strong> Mahindra, Tata Steel, BEL, Indian Railways, UPPCL — campus placements के माध्यम से। बीआईपीई के 1,000+ alumni पहले से इन कंपनियों में हैं।",
+          "<strong>Government Job (SSC JE / RRB JE / UPSSSC):</strong> Junior Engineer की भर्तियाँ डिप्लोमा धारकों के लिए सीधे खुली हैं — विस्तार से <a href=\"/blog/junior-engineer-eligibility-after-diploma\">यहाँ पढ़ें</a>।",
+          "<strong>B.Tech (Lateral Entry):</strong> 3 साल का डिप्लोमा करने के बाद AKTU या UPCET-L के माध्यम से सीधे B.Tech के दूसरे साल में प्रवेश। <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">पूरा रास्ता समझें</a>।",
+          "<strong>स्वरोज़गार (Self-Employment):</strong> अपनी workshop, संस्थान, या contracting firm खोलना। डिप्लोमा का व्यावहारिक प्रशिक्षण इस रास्ते के लिए मज़बूत आधार है।",
+        ],
+      },
+      {
+        type: "h2",
+        text: "बीआईपीई वाराणसी क्यों चुनें?",
+      },
+      {
+        type: "p",
+        html:
+          "बीआईपीई (Banaras Institute of Polytechnic & Engineering) — JEECUP संस्थान कोड <strong>4455</strong> — वाराणसी के फूलपुर तहसील में 6 एकड़ के campus पर स्थित है। 16 साल का track record, 1,000+ alumni placements, और 5 BTEUP-affiliated branches। प्रमुख विशेषताएँ:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>AICTE-approved permanent ID 1-488233171</strong> — आप <a href=\"https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php\" target=\"_blank\" rel=\"noopener\">AICTE की वेबसाइट</a> पर खुद verify कर सकते हैं।",
+          "<strong>BTEUP-affiliated कॉलेज कोड 4455</strong> — सभी 5 शाखाएँ Board of Technical Education से मान्यता प्राप्त।",
+          "<strong>AFRC-approved tuition fee ₹30,150/साल</strong> — कोई capitation fee नहीं, कोई छुपी फीस नहीं।",
+          "<strong>Boys' hostel on-campus</strong> — furnished कमरे, mess, 24×7 security, resident warden।",
+          "<strong>1:20 mentor ratio</strong> — हर faculty member 20 छात्रों की एक cohort का mentor है।",
+          "<strong>Eastern UP catchment</strong> — वाराणसी, मऊ, ग़ाज़ीपुर, आज़मगढ़, मिर्ज़ापुर, और बिहार से 100+ छात्र हर साल।",
+          "<strong>Dairy Engineering branch</strong> — पूरे UP में केवल 4 पॉलिटेक्निक में उपलब्ध — Amul / Mother Dairy / NDDB के लिए सीधी पाइपलाइन।",
+        ],
+      },
+      {
+        type: "h2",
+        text: "आगे क्या करें",
+      },
+      {
+        type: "ul",
+        items: [
+          "<a href=\"/courses\">बीआईपीई की 5 शाखाएँ</a> — विस्तृत curriculum + recruiter list",
+          "<a href=\"/jeecup\">JEECUP 2026 — 6-step counselling guide</a> — आवेदन से कक्षा तक",
+          "<a href=\"/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025\">JEECUP rank vs BIPE 4455 cutoffs</a> — पिछले 2 साल का असली रैंक data",
+          "<a href=\"/fees\">पूरी फीस संरचना</a> — AFRC-approved, transparent",
+          "<a href=\"/scholarships\">UP सरकार की scholarship</a> — पात्रता + portal link",
+          "<a href=\"/visit\">Campus visit बुक करें</a> — फूलपुर campus, मुफ़्त shuttle Varanasi Cantt से",
+          "WhatsApp पर बात करें: <a href=\"https://wa.me/919198646464\" target=\"_blank\" rel=\"noopener\">+91-9198646464</a> — Hindi में जवाब मिलेगा",
+          "Application शुरू करें: <a href=\"/apply\">/apply</a> — 5 मिनट का form, 24 घंटे में personal call",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<em>यह गाइड 20 May 2026 को अपडेट की गई। JEECUP 2026 application portal की तारीख़ें और fees JEECUP की official वेबसाइट पर हमेशा cross-check करें — साल-दर-साल थोड़े बदलाव होते हैं।</em>",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
