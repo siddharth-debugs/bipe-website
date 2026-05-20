@@ -81,6 +81,19 @@ async function loadHero(): Promise<HeroData> {
         .filter((a) => a.label)
     : null;
 
+  // Migrate the legacy hero-campus PNG reference. The 2.45 MB PNG
+  // was replaced by a 313 KB JPEG in commit a5afd32 (Phase 1.5
+  // image optimization). The backend CMS page_section "home/hero"
+  // still holds the old URL until someone re-saves it via /admin,
+  // which caused 400-status console errors in Lighthouse (the
+  // browser tried to load a deleted file). This swap keeps the
+  // homepage clean until the backend record is updated, and is a
+  // no-op once it IS updated (since the .jpg suffix will already
+  // be in the URL).
+  const rawBgUrl = readString(bg?.url, fallback.bg_image_url);
+  const bg_image_url =
+    rawBgUrl === "/hero-campus.png" ? "/hero-campus.jpg" : rawBgUrl;
+
   return {
     headline_pre:   readString(c.headline_pre,   fallback.headline_pre),
     headline_accent: readString(c.headline_accent, fallback.headline_accent),
@@ -88,7 +101,7 @@ async function loadHero(): Promise<HeroData> {
     description:    readString(c.description,    fallback.description),
     cta_primary:    { label: readString(cta1?.label, fallback.cta_primary.label), href: readString(cta1?.href, fallback.cta_primary.href) },
     cta_secondary:  { label: readString(cta2?.label, fallback.cta_secondary.label), href: readString(cta2?.href, fallback.cta_secondary.href) },
-    bg_image_url:   readString(bg?.url, fallback.bg_image_url),
+    bg_image_url,
     bg_image_alt:   readString(bg?.alt, fallback.bg_image_alt),
     approvals:      approvals && approvals.length ? approvals : fallback.approvals,
   };
