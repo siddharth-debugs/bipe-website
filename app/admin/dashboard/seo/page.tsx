@@ -69,6 +69,19 @@ function rankCell(rank: number | null): { label: string; color: string } {
 }
 
 /**
+ * Render a position-delta cell. Semrush reports positionDelta as
+ * (current - previous), so a POSITIVE number means the ranking FELL
+ * (higher position number = further from #1) and a NEGATIVE number
+ * means it ROSE. We invert the visual cue so green = good, red = bad
+ * regardless of mathematical sign.
+ */
+function deltaCell(delta: number): { label: string; color: string } {
+  if (delta === 0) return { label: "·", color: "var(--ink-3)" };
+  if (delta < 0) return { label: `↑ ${Math.abs(delta)}`, color: "#16a34a" };
+  return { label: `↓ ${delta}`, color: "#dc2626" };
+}
+
+/**
  * Try live Semrush first; fall back to the static snapshot on any
  * failure (missing API key, Semrush 5xx, network blip). The fallback
  * is real data — just the last manually-pulled snapshot — so the page
@@ -104,6 +117,15 @@ export default async function SeoPositionsPage() {
   const live = await getLiveSnapshot();
   const liveSeo = live.data;
   const zombies = indexedZombiePages(liveSeo);
+
+  // Derive a Set of tracked keywords (lowercased) so we can tell which
+  // of Semrush's observed positions correspond to keywords we have
+  // explicit strategy notes for, vs which we accidentally rank for.
+  // The "discovered" subset is interesting — opportunities to either
+  // promote (if relevant) or document (if confusing entity signals).
+  const trackedKeywordSet = new Set<string>(
+    snapshot.ranks.map((r) => r.keyword.toLowerCase()),
+  );
 
   return (
     <div>
@@ -435,6 +457,100 @@ export default async function SeoPositionsPage() {
           </div>
         </section>
       )}
+
+      {/* ── Live Semrush positions ────────────────────────────── */}
+      <section style={{ marginBottom: 36 }}>
+        <h2
+          style={{
+            fontSize: 18,
+            fontWeight: 600,
+            marginBottom: 14,
+            color: "var(--ink-1)",
+          }}
+        >
+          Live Semrush positions — what Google actually ranks us for
+        </h2>
+        <p style={{ color: "var(--ink-2)", fontSize: 13, marginBottom: 14, lineHeight: 1.55 }}>
+          The {liveSeo.topPositions.length} keyword/URL combinations Semrush observed for{" "}
+          <code>{liveSeo.overview.domain}</code> in the Google India index. &ldquo;Discovered&rdquo;
+          rows are positions Semrush sees but aren&rsquo;t in our tracked-target list — worth
+          reviewing for opportunity (genuine win we should document) or confusion (entity-mismatch
+          signal worth disambiguating). Δ shows monthly position change: ↑ green = rose, ↓ red =
+          fell, · = no change.
+        </p>
+        <div style={{ border: "1px solid var(--line)", borderRadius: 14, overflow: "hidden" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead style={{ background: "var(--paper-2)" }}>
+              <tr>
+                <th style={th}>Pos</th>
+                <th style={th}>Δ</th>
+                <th style={th}>Keyword</th>
+                <th style={th}>Vol / mo</th>
+                <th style={th}>Traffic %</th>
+                <th style={th}>Ranking URL</th>
+                <th style={th}>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              {liveSeo.topPositions.map((p, i) => {
+                const isTracked = trackedKeywordSet.has(p.keyword.toLowerCase());
+                const rank = rankCell(p.position);
+                const delta = deltaCell(p.positionDelta);
+                return (
+                  <tr
+                    key={`${p.keyword}-${p.url}-${i}`}
+                    style={{ borderTop: "1px solid var(--line)" }}
+                  >
+                    <td style={{ ...td, fontWeight: 700, color: rank.color }}>{rank.label}</td>
+                    <td
+                      style={{
+                        ...td,
+                        fontFamily: "var(--font-mono)",
+                        fontWeight: 700,
+                        color: delta.color,
+                      }}
+                    >
+                      {delta.label}
+                    </td>
+                    <td style={td}>{p.keyword}</td>
+                    <td style={{ ...td, fontWeight: 600 }}>{p.searchVolume.toLocaleString()}</td>
+                    <td style={td}>{p.trafficPct.toFixed(2)}%</td>
+                    <td
+                      style={{
+                        ...td,
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 11,
+                        maxWidth: 280,
+                        wordBreak: "break-all",
+                      }}
+                    >
+                      {p.url}
+                    </td>
+                    <td style={td}>
+                      <span
+                        style={{
+                          display: "inline-block",
+                          fontFamily: "var(--font-mono)",
+                          fontSize: 9,
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                          fontWeight: 700,
+                          padding: "2px 6px",
+                          borderRadius: 4,
+                          background: isTracked ? "var(--paper-2)" : "#fef3c7",
+                          color: isTracked ? "var(--ink-2)" : "#92400e",
+                        }}
+                      >
+                        {isTracked ? "tracked" : "discovered"}
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       {/* ── Top organic pages (Semrush) ───────────────────────── */}
       <section style={{ marginBottom: 36 }}>
