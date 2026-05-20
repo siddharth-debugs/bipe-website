@@ -22,15 +22,39 @@ const ORG_JSON_LD: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "CollegeOrUniversity",
+      // Multi-typed: CollegeOrUniversity (entity class) + LocalBusiness
+      // (for local-pack / Maps eligibility) + EducationalOrganization
+      // (for academic-property eligibility). May 2026 keyword research
+      // showed Google sometimes confused BIPE with "government
+      // polytechnic Varanasi" — adding LocalBusiness + explicit
+      // "private" framing in description should resolve the mix-up.
+      "@type": ["CollegeOrUniversity", "LocalBusiness", "EducationalOrganization"],
       "@id": `${SITE_URL}#org`,
       name: "Banaras Institute of Polytechnic & Engineering",
       alternateName: ["BIPE", "BIPE Varanasi", "Banaras Institute of Polytechnic and Engineering"],
+      description:
+        "Private, AICTE-approved polytechnic college in Varanasi (Uttar Pradesh, India). " +
+        "BTEUP-affiliated diploma engineering across five branches — Civil, Computer Science & Engineering, " +
+        "Dairy, Electrical, and Mechanical (Production). JEECUP institute code 4455. " +
+        "Founded 2010 by the Purwanchal Educational Trust; AFRC-approved tuition ₹30,150 / academic year. " +
+        "Not a government institution — privately funded, publicly accountable through AICTE / BTEUP / AISHE.",
       url: SITE_URL,
       logo: `${SITE_URL}/bipe-logo.svg`,
       image: `${SITE_URL}/bipe-logo.svg`,
       foundingDate: "2010",
+      founder: {
+        "@type": "Organization",
+        name: "Purwanchal Educational Trust",
+      },
       slogan: "Engineering education that changes lives in Eastern UP — since 2010.",
+      keywords: [
+        "polytechnic college in Varanasi",
+        "AICTE-approved polytechnic",
+        "diploma engineering Varanasi",
+        "BTEUP affiliated polytechnic",
+        "private polytechnic Phoolpur",
+        "JEECUP 4455",
+      ].join(", "),
       areaServed: { "@type": "AdministrativeArea", name: "Eastern Uttar Pradesh" },
       address: {
         "@type": "PostalAddress",
@@ -40,8 +64,30 @@ const ORG_JSON_LD: Record<string, unknown> = {
         addressRegion: "Uttar Pradesh",
         addressCountry: "IN",
       },
+      // Geo coordinates from a GPS-tagged BIPE admission-desk photo
+      // shot on the Phoolpur campus, May 2026.
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 25.53203,
+        longitude: 82.84361,
+      },
+      hasMap: "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi",
       telephone: DATA.contact.phone,
       email: DATA.contact.email,
+      // LocalBusiness fields — office hours for admissions / front desk.
+      // Mon-Sat 9am-5pm is the institute's regular office cadence.
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "09:00",
+          closes: "17:00",
+        },
+      ],
+      // Tuition fee as the LocalBusiness priceRange anchor (academic
+      // fee, not a transactional purchase). Helps the local pack
+      // surface "polytechnic fees" SERP context.
+      priceRange: "INR 30,150 / academic year (AFRC-approved tuition)",
       identifier: [
         { "@type": "PropertyValue", propertyID: "AICTE Permanent ID", value: DATA.contact.aicte },
         { "@type": "PropertyValue", propertyID: "JEECUP Code", value: DATA.contact.jeecup },
