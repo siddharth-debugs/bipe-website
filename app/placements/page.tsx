@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metadataFor } from "@/lib/seo";
+import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { getPageSection, getRecruiters, getTestimonials } from "@/lib/content";
 import { PageIntro } from "@/components/shared/PageIntro";
@@ -138,6 +138,17 @@ export default async function Page() {
   ].filter((t): t is NonNullable<ReturnType<typeof pickVoice>> => Boolean(t));
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Placements", path: "/placements" },
+            ]),
+          ),
+        }}
+      />
       <PageIntro section={intro} />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}

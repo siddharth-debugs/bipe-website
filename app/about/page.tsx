@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metadataFor } from "@/lib/seo";
+import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { getBranchesMapped, getPageSection } from "@/lib/content";
 import { BIPE_IMG } from "@/lib/images";
@@ -115,6 +115,17 @@ export default async function Page() {
   const intro = await getPageSection("about", "intro");
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "About BIPE", path: "/about" },
+            ]),
+          ),
+        }}
+      />
       <PageIntro section={intro} />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}

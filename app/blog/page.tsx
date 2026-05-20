@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { metadataFor } from "@/lib/seo";
+import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
+import { SITE_URL } from "@/lib/routes";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { BLOG_POSTS } from "@/lib/blogPosts";
 import { ArrowIcon } from "@/components/shell/Icons";
@@ -8,8 +9,53 @@ import { ArrowIcon } from "@/components/shell/Icons";
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("blog"); }
 
 export default function Page() {
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+  ]);
+
+  // Blog schema enriches the index with a CollectionPage that lists
+  // every post as a BlogPosting. Each post links back to its
+  // /blog/[slug] page which already carries Article JSON-LD — Google
+  // ties them together for blog rich results. Eligible for the
+  // "blog posts" carousel in branded SERPs.
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${SITE_URL}/blog#blog`,
+    name: "BIPE Blog",
+    description:
+      "Notes from BIPE — practical writing for diploma students and parents in Eastern UP. Admission pathways, career options, and life on campus.",
+    url: `${SITE_URL}/blog`,
+    inLanguage: ["en-IN", "hi-IN"],
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}#org`,
+      name: "Banaras Institute of Polytechnic & Engineering",
+    },
+    blogPost: BLOG_POSTS.map((p) => ({
+      "@type": "BlogPosting",
+      "@id": `${SITE_URL}/blog/${p.slug}#article`,
+      headline: p.title,
+      description: p.excerpt,
+      datePublished: p.publishedISO,
+      url: `${SITE_URL}/blog/${p.slug}`,
+      articleSection: p.category,
+      inLanguage:
+        p.slug.includes("kya-hai") || p.slug.includes("kaise-kare") ? "hi-IN" : "en-IN",
+    })),
+  };
+
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       <PageHeader
         eyebrow="Blog"
         title="Notes from BIPE."

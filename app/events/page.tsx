@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metadataFor } from "@/lib/seo";
+import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { getEvents } from "@/lib/content";
 import { BIPE_IMG } from "@/lib/images";
@@ -188,6 +188,17 @@ export default async function Page() {
 
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Events", path: "/events" },
+            ]),
+          ),
+        }}
+      />
       {flagshipEventsJsonLd.map((j, i) => (
         <script
           key={`event-${i}`}
