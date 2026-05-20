@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metadataFor } from "@/lib/seo";
+import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -62,6 +62,18 @@ const TIPS: { n: string; title: string; body: string }[] = [
 export default function Page() {
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Admission", path: "/admission" },
+              { name: "Documents", path: "/documents" },
+            ]),
+          ),
+        }}
+      />
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}

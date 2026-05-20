@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metadataFor } from "@/lib/seo";
+import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -50,6 +50,18 @@ function BellIcon() { return <svg width="20" height="20" viewBox="0 0 24 24" fil
 export default function Page() {
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Campus", path: "/campus" },
+              { name: "Hostel", path: "/hostel" },
+            ]),
+          ),
+        }}
+      />
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}

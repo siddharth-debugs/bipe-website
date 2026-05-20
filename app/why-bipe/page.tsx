@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { metadataFor } from "@/lib/seo";
+import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -101,6 +101,17 @@ const QUESTIONS_TO_ASK: string[] = [
 export default function Page() {
   return (
     <div className="page-enter">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Why BIPE", path: "/why-bipe" },
+            ]),
+          ),
+        }}
+      />
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}
