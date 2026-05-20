@@ -7,7 +7,9 @@ import { ConditionalChrome } from "@/components/shell/ConditionalChrome";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
 import { Analytics } from "@vercel/analytics/next";
-import { getContact } from "@/lib/content";
+import { getContact, getBranchesMapped } from "@/lib/content";
+import type { Branch } from "@/lib/data";
+import type { PublicContact } from "@/lib/content";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans-next", display: "swap" });
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif-next", display: "swap" });
@@ -19,7 +21,27 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"
  * (Perplexity, ChatGPT-Bot, Anthropic ClaudeBot, Googlebot's first pass)
  * see the structured data without needing client hydration.
  */
-const ORG_JSON_LD: Record<string, unknown> = {
+/**
+ * Build the site-wide JSON-LD payload from live data.
+ *
+ * Was a module-init constant pinned to DATA.branches and DATA.contact —
+ * meaning admin edits to either silently never reached the schema.org
+ * payload search engines consume. Lifted into a function called from
+ * the async RootLayout so the same getContact() / getBranchesMapped()
+ * helpers that power the rest of the site keep the JSON-LD honest.
+ *
+ * Falls back to DATA.* via the helpers' own resilience contracts.
+ */
+function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<string, unknown> {
+  const social = [
+    contact.facebook_url, contact.instagram_url, contact.youtube_url,
+    contact.x_url, contact.linkedin_url,
+  ].filter(Boolean);
+  // Fall back to DATA.social if no live social URLs come down at all
+  // (e.g. backend bundle empty).
+  const sameAs = social.length > 0 ? social : DATA.social.map((s) => s.url);
+
+  return {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -73,8 +95,8 @@ const ORG_JSON_LD: Record<string, unknown> = {
         longitude: 82.84361,
       },
       hasMap: "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi",
-      telephone: DATA.contact.phone,
-      email: DATA.contact.email,
+      telephone: contact.phone || DATA.contact.phone,
+      email: contact.email || DATA.contact.email,
       // LocalBusiness fields — office hours for admissions / front desk.
       // Mon-Sat 9am-5pm is the institute's regular office cadence.
       openingHoursSpecification: [
@@ -90,8 +112,8 @@ const ORG_JSON_LD: Record<string, unknown> = {
       // surface "polytechnic fees" SERP context.
       priceRange: "INR 30,150 / academic year (AFRC-approved tuition)",
       identifier: [
-        { "@type": "PropertyValue", propertyID: "AICTE Permanent ID", value: DATA.contact.aicte },
-        { "@type": "PropertyValue", propertyID: "JEECUP Code", value: DATA.contact.jeecup },
+        { "@type": "PropertyValue", propertyID: "AICTE Permanent ID", value: contact.aicte_id || DATA.contact.aicte },
+        { "@type": "PropertyValue", propertyID: "JEECUP Code", value: contact.jeecup_code || DATA.contact.jeecup },
         { "@type": "PropertyValue", propertyID: "BTEUP", value: "Affiliated · 4455" },
         { "@type": "PropertyValue", propertyID: "AISHE", value: "Registered" },
       ],
@@ -114,12 +136,12 @@ const ORG_JSON_LD: Record<string, unknown> = {
           url: "https://www.aicte-india.org/",
         },
       ],
-      department: DATA.branches.map((b) => ({
+      department: branches.map((b) => ({
         "@type": "EducationalOrganization",
         name: `Department of ${b.name}`,
         identifier: b.code,
       })),
-      sameAs: DATA.social.map((s) => s.url),
+      sameAs,
     },
     {
       "@type": "WebSite",
@@ -130,7 +152,7 @@ const ORG_JSON_LD: Record<string, unknown> = {
       publisher: { "@id": `${SITE_URL}#org` },
       dateModified: new Date().toISOString().slice(0, 10),
     },
-    ...DATA.branches.map((b) => ({
+    ...branches.map((b) => ({
       "@type": "Course",
       "@id": `${SITE_URL}/courses#${b.slug}`,
       name: `Diploma in ${b.name}`,
@@ -141,7 +163,8 @@ const ORG_JSON_LD: Record<string, unknown> = {
       inLanguage: ["en-IN"],
     })),
   ],
-};
+  };
+}
 
 const OG_IMAGE = {
   url: `${SITE_URL}/og-default.png`,
@@ -197,10 +220,14 @@ export const viewport: Viewport = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // Server-fetch the live contact info once per request and thread it
-  // through ConditionalChrome → Footer. Falls back to DATA.contact
-  // when the backend bundle is empty (handled inside Footer).
-  const liveContact = await getContact();
+  // Server-fetch live contact + branches once per request. Both feed
+  // the JSON-LD payload (kept honest with admin edits) and the live
+  // contact info is also threaded through ConditionalChrome → Footer.
+  // Falls back to DATA.* are inside each helper.
+  const [liveContact, liveBranches] = await Promise.all([
+    getContact(),
+    getBranchesMapped(),
+  ]);
   const footerContact = {
     phone: liveContact.phone,
     phone2: liveContact.phone2,
@@ -210,13 +237,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     jeecup: liveContact.jeecup_code,
     aicte: liveContact.aicte_id,
   };
+  const orgJsonLd = buildOrgJsonLd(liveBranches, liveContact);
   return (
     <html lang="en">
       <head>
         <script
           type="application/ld+json"
           // dangerouslySetInnerHTML is intentional — schema built from typed sources, no user input.
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
       <body className={`${geist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>

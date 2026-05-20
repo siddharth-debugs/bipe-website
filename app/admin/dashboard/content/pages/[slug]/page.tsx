@@ -15,6 +15,7 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 
 import { ImageInput } from "@/components/admin/ImageInput";
+import { ListItemsEditor } from "@/components/admin/ListItemsEditor";
 import { PageSections, PageSectionRow, PageSectionWrite, SectionType } from "@/lib/admin/content";
 import { PAGES, pageBySlug, SectionDef } from "@/lib/admin/pages-registry";
 
@@ -219,7 +220,7 @@ function SectionEditor({
         <div style={{ color: "var(--ink-3)", fontSize: 13 }}>Loading…</div>
       ) : (
         <SectionEditorBody
-          type={sectionDef.type}
+          sectionDef={sectionDef}
           content={content}
           onChange={setContent}
         />
@@ -233,16 +234,95 @@ function SectionEditor({
 }
 
 function SectionEditorBody({
-  type, content, onChange,
+  sectionDef, content, onChange,
 }: {
-  type: SectionType;
+  sectionDef: SectionDef;
   content: Record<string, unknown>;
   onChange: (next: Record<string, unknown>) => void;
 }) {
+  // Sections with an item-schema in the registry (Stats / Why-BIPE /
+  // FAQ / Facilities / JEECUP steps) get a typed list editor — much
+  // friendlier than raw JSON.
+  if (sectionDef.itemFields && sectionDef.itemFields.length > 0) {
+    return (
+      <ItemsListSectionEditor
+        sectionDef={sectionDef}
+        content={content}
+        onChange={onChange}
+      />
+    );
+  }
+  const type: SectionType = sectionDef.type;
   if (type === "hero") return <HeroEditor content={content as HeroContent} onChange={onChange as (c: HeroContent) => void} />;
   if (type === "text-block") return <TextBlockEditor content={content as TextBlockContent} onChange={onChange as (c: TextBlockContent) => void} />;
   // generic / unsupported types — JSON textarea as an escape hatch
   return <GenericEditor content={content} onChange={onChange} />;
+}
+
+// ─── Items-list section editor (dispatched by registry itemFields) ────
+
+function ItemsListSectionEditor({
+  sectionDef, content, onChange,
+}: {
+  sectionDef: SectionDef;
+  content: Record<string, unknown>;
+  onChange: (next: Record<string, unknown>) => void;
+}) {
+  const rawItems = (content.items as unknown) ?? [];
+  const items: Record<string, unknown>[] = Array.isArray(rawItems)
+    ? (rawItems as Record<string, unknown>[])
+    : [];
+
+  function setItems(next: Record<string, unknown>[]) {
+    onChange({ ...content, items: next });
+  }
+  function patchTop<K extends string>(k: K, v: string) {
+    onChange({ ...content, [k]: v });
+  }
+
+  // Some sections (Why-BIPE) carry top-level eyebrow / heading fields
+  // alongside the items array. Render those as a small header form
+  // above the items list — only when the existing content has them
+  // (we don't want to invent fields the public consumer doesn't read).
+  const hasEyebrow = "eyebrow" in content;
+  const hasHeading = "heading" in content;
+
+  return (
+    <div className="space-y-5">
+      {(hasEyebrow || hasHeading) && (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {hasEyebrow && (
+            <div className="space-y-1.5">
+              <Label htmlFor="hdr_eye">Eyebrow</Label>
+              <Input id="hdr_eye" value={String(content.eyebrow ?? "")}
+                     onChange={(e) => patchTop("eyebrow", e.target.value)} />
+            </div>
+          )}
+          {hasHeading && (
+            <div className="space-y-1.5">
+              <Label htmlFor="hdr_head">Heading</Label>
+              <Input id="hdr_head" value={String(content.heading ?? "")}
+                     onChange={(e) => patchTop("heading", e.target.value)} />
+            </div>
+          )}
+        </div>
+      )}
+
+      <div>
+        <div className="text-xs uppercase tracking-wide text-[var(--ink-3)] mb-2">
+          {sectionDef.rowLabel ?? "Row"}s — {items.length}
+        </div>
+        <ListItemsEditor
+          items={items}
+          setItems={setItems}
+          fields={sectionDef.itemFields ?? []}
+          newItemTemplate={sectionDef.itemTemplate}
+          addLabel={sectionDef.addLabel ?? "+ Add row"}
+          rowLabel={sectionDef.rowLabel ?? "Row"}
+        />
+      </div>
+    </div>
+  );
 }
 
 // ─── Hero editor ────────────────────────────────────────────────────────

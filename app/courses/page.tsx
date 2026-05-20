@@ -63,11 +63,15 @@ const CAREER_TILES: { tag: string; title: string; body: string; chips: string[] 
   },
 ];
 
-import { getBranchesMapped } from "@/lib/content";
+import { getBranchesMapped, getRecruiters } from "@/lib/content";
 
 export default async function Page() {
-  const branches = await getBranchesMapped();
+  const [branches, liveRecruiters] = await Promise.all([
+    getBranchesMapped(),
+    getRecruiters(),
+  ]);
   const totalSeats = branches.reduce((s, b) => s + b.seats, 0);
+  const recruiterCount = liveRecruiters.length || DATA.recruiters.length;
 
   return (
     <div className="page-enter">
@@ -669,7 +673,7 @@ export default async function Page() {
                     color: "color-mix(in oklab, var(--paper) 60%, transparent)",
                   }}
                 >
-                  {DATA.recruiters.length}+ verified recruiters
+                  {recruiterCount}+ verified recruiters
                 </div>
                 <Link
                   href="/placements"

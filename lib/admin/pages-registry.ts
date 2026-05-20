@@ -15,6 +15,15 @@
 
 import type { SectionType } from "@/lib/admin/content";
 
+/** Schema for a single field on a list-row in a list-items section. */
+export interface ItemFieldDef {
+  key: string;
+  label: string;
+  placeholder?: string;
+  widget?: "input" | "textarea";
+  help?: string;
+}
+
 export interface SectionDef {
   key: string;
   label: string;
@@ -22,6 +31,19 @@ export interface SectionDef {
   type: SectionType;
   /** Description shown under the section card. */
   description?: string;
+  /**
+   * If set, the admin renders a typed list editor for the section's
+   * `content.items` array. Each row has these named fields. The
+   * dispatcher in SectionEditorBody picks this up before falling back
+   * to a typed-by-type editor or the generic JSON textarea.
+   */
+  itemFields?: ItemFieldDef[];
+  /** Default object used when the admin clicks "+ Add row". */
+  itemTemplate?: Record<string, unknown>;
+  /** Label for the add button (defaults to "+ Add row"). */
+  addLabel?: string;
+  /** Singular noun shown in the row header (defaults to "Row"). */
+  rowLabel?: string;
 }
 
 export interface PageDef {
@@ -41,12 +63,69 @@ export const PAGES: PageDef[] = [
     publicPath: "/",
     description: "Landing page — hero, branches, stats, recruiters, why-BIPE, testimonials, events.",
     sections: [
-      { key: "hero",         label: "Hero",         type: "hero",    description: "Headline, description, CTAs, background photo, approvals strip." },
-      { key: "stats",        label: "Stats bar",    type: "generic", description: "5 tiles under the hero — number / label / sub-label. Edit `content.items`." },
-      { key: "why-bipe",     label: "Why BIPE",     type: "generic", description: "4-item differentiator list with mentor ratio, OBE pedagogy, rare dairy, alumni count." },
-      { key: "faq",          label: "FAQ",          type: "generic", description: "Frequently asked questions. Also rendered on /faq. Edit `content.items` (cat / q / a)." },
-      { key: "facilities",   label: "Facilities",   type: "generic", description: "4 campus-life tiles shown after the branches slider." },
-      { key: "jeecup-steps", label: "JEECUP steps", type: "generic", description: "6-card 'application → first day of class' grid." },
+      {
+        key: "hero", label: "Hero", type: "hero",
+        description: "Headline, description, CTAs, background photo, approvals strip.",
+      },
+      {
+        key: "stats", label: "Stats bar", type: "generic",
+        description: "5 tiles under the hero.",
+        rowLabel: "Tile", addLabel: "+ Add tile",
+        itemTemplate: { num: "", label: "", sub: "" },
+        itemFields: [
+          { key: "num",   label: "Number",     placeholder: "16 / 1,000+ / 1:20" },
+          { key: "label", label: "Label",      placeholder: "Years serving Eastern UP" },
+          { key: "sub",   label: "Sub-label",  placeholder: "since 2010" },
+        ],
+      },
+      {
+        key: "why-bipe", label: "Why BIPE", type: "generic",
+        description: "4-item differentiator block. The first item is featured larger; the rest become tabs underneath.",
+        rowLabel: "Differentiator", addLabel: "+ Add differentiator",
+        itemTemplate: { num: "", metric: "", metricLabel: "", title: "", body: "", icon: "" },
+        itemFields: [
+          { key: "num",         label: "Index",        placeholder: "01" },
+          { key: "metric",      label: "Metric",       placeholder: "1:20 / 4 only / 1,000+" },
+          { key: "metricLabel", label: "Metric label", placeholder: "mentor ratio / alumni in 16 yrs" },
+          { key: "title",       label: "Title",        placeholder: "One mentor. Twenty students." },
+          { key: "body",        label: "Body",         widget: "textarea" },
+          { key: "icon",        label: "Icon SVG path d=", placeholder: "M12 12a4 4 0 …",
+            help: "Raw `d=` attribute for the inline <svg>; copy/paste from a Lucide / Heroicons asset." },
+        ],
+      },
+      {
+        key: "faq", label: "FAQ", type: "generic",
+        description: "Frequently asked questions. Also rendered on /faq. Add as many rows as you like; category groups them into pills.",
+        rowLabel: "Q&A", addLabel: "+ Add question",
+        itemTemplate: { cat: "Admission", q: "", a: "" },
+        itemFields: [
+          { key: "cat", label: "Category", placeholder: "Admission / Fees / Career / Campus" },
+          { key: "q",   label: "Question", placeholder: "How do I apply to BIPE?" },
+          { key: "a",   label: "Answer",   widget: "textarea" },
+        ],
+      },
+      {
+        key: "facilities", label: "Facilities", type: "generic",
+        description: "Campus-life tiles shown after the branches slider on the home page.",
+        rowLabel: "Tile", addLabel: "+ Add tile",
+        itemTemplate: { name: "", count: "", body: "" },
+        itemFields: [
+          { key: "name",  label: "Name",        placeholder: "120-computer lab" },
+          { key: "count", label: "Highlight",   placeholder: "120 PCs / 8,428 / rare" },
+          { key: "body",  label: "Body",        widget: "textarea" },
+        ],
+      },
+      {
+        key: "jeecup-steps", label: "JEECUP steps", type: "generic",
+        description: "6-card 'application → first day of class' grid.",
+        rowLabel: "Step", addLabel: "+ Add step",
+        itemTemplate: { step: "", title: "", body: "" },
+        itemFields: [
+          { key: "step",  label: "Step #",     placeholder: "01" },
+          { key: "title", label: "Step title", placeholder: "Sit the entrance" },
+          { key: "body",  label: "Body",       widget: "textarea" },
+        ],
+      },
     ],
   },
   {

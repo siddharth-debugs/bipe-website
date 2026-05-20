@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
-import { getPageSection } from "@/lib/content";
+import { getPageSection, getRecruiters, getTestimonials } from "@/lib/content";
 import { PageIntro } from "@/components/shared/PageIntro";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -27,9 +27,9 @@ const AUDIT_EXTRA_RECRUITERS: string[] = [
   "RR Kabel",
 ];
 
-const ALL_RECRUITERS: string[] = Array.from(
-  new Set<string>([...DATA.recruiters, ...AUDIT_EXTRA_RECRUITERS]),
-);
+// ALL_RECRUITERS is now computed inside Page() so live admin-managed
+// Recruiter rows can join the audit-only extras. Falls back to
+// DATA.recruiters when the backend returns no rows.
 
 type Branch = { code: string; name: string; count: number; note: string };
 const BRANCH_COUNTS: Branch[] = [
@@ -102,17 +102,38 @@ const CELL_POINTS: { num: string; title: string; body: string }[] = [
   { num: "04", title: "Track the alumni", body: "Quarterly outreach to keep the network warm and the recruiter pipeline fresh — alumni open most of the new doors." },
 ];
 
-// Pick three placement-relevant testimonials from DATA.testimonials.
-const PLACEMENT_VOICES = [
-  DATA.testimonials.find((t) => t.role.includes("Indian Railways")),
-  DATA.testimonials.find((t) => t.role.includes("BBDU")),
-  DATA.testimonials.find((t) => t.role.includes("Tata EV")),
-].filter((t): t is (typeof DATA.testimonials)[number] => Boolean(t));
+// PLACEMENT_VOICES is now computed inside Page() so the three role-
+// filtered testimonials prefer live admin-managed rows when present.
 
 // ---------------------------------------------------------------------------
 
 export default async function Page() {
-  const intro = await getPageSection("placements", "intro");
+  // Fetch every CMS surface in parallel — same 5-min bundle cache.
+  const [intro, liveRecruiters, liveTestimonials] = await Promise.all([
+    getPageSection("placements", "intro"),
+    getRecruiters(),
+    getTestimonials(),
+  ]);
+
+  // Recruiter marquee — admin-managed names UNION the audit overlay.
+  // Empty live result falls back to DATA.recruiters (handled by
+  // getRecruiters itself).
+  const recruiterNames = liveRecruiters.map((r) => r.name);
+  const ALL_RECRUITERS: string[] = Array.from(
+    new Set<string>([...recruiterNames, ...AUDIT_EXTRA_RECRUITERS]),
+  );
+
+  // Three placement-relevant testimonials picked by role keywords —
+  // prefer live testimonials over DATA, fall back per-slot.
+  function pickVoice(needle: string) {
+    return liveTestimonials.find((t) => t.role.includes(needle))
+        ?? DATA.testimonials.find((t) => t.role.includes(needle));
+  }
+  const PLACEMENT_VOICES = [
+    pickVoice("Indian Railways"),
+    pickVoice("BBDU"),
+    pickVoice("Tata EV"),
+  ].filter((t): t is NonNullable<ReturnType<typeof pickVoice>> => Boolean(t));
   return (
     <div className="page-enter">
       <PageIntro section={intro} />
