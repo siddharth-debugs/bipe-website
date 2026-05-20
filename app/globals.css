@@ -947,6 +947,23 @@ body.no-motion .skeleton { animation: none; }
     align-items: start !important;
   }
   .bipe-split > * { grid-column: auto !important; grid-row: auto !important; }
+
+  /* Disable position:sticky on bipe-split children at phone width.
+     Several pages (notably /courses) use an inline `position: sticky;
+     top: 100` on the LEFT column for the desktop two-column layout —
+     it keeps a sticky panel beside scrolling tiles in the right
+     column. When the grid collapses to one column on mobile, the
+     sticky behaviour creates a Z-axis overlap: the left panel stays
+     pinned at the top while the right column's tiles scroll up
+     behind it. The user-reported "INDUSTRY label colliding with the
+     placements button" on /courses (2026-05-20) was exactly this
+     bug. Reset to static so mobile gets normal vertical stacking. */
+  .bipe-split > [style*="sticky"],
+  .bipe-split [style*="position: sticky"],
+  .bipe-split [style*="position:sticky"] {
+    position: static !important;
+    top: auto !important;
+  }
 }
 
 /* Form rows: 2-col / 3-col → 1-col at phone width */
