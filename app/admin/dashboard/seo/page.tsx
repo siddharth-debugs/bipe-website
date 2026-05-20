@@ -6,17 +6,32 @@ import {
   quickWins,
   type KeywordPosition,
 } from "@/lib/keyword-positions";
+import { SEO_SNAPSHOT, indexedZombiePages } from "@/lib/seo-snapshot";
 
 /**
  * /admin/dashboard/seo — read-only SEO position tracker.
  *
- * Renders the latest snapshot from lib/keyword-positions.ts as a
- * filterable table, plus a few headline stats. Server component —
- * data is statically imported; no client state, no auth check (the
- * parent /admin/dashboard layout handles auth).
+ * Now reads from TWO sources, complementary:
  *
- * To add a fresh snapshot, edit lib/keyword-positions.ts directly;
- * the array is sorted newest-first and this page reads index [0].
+ *   1. lib/keyword-positions.ts  — our tracked keyword universe
+ *      (64 strategic keywords we want to rank for; populated from
+ *      Phase 1 Semrush export + ongoing manual review).
+ *
+ *   2. lib/seo-snapshot.ts       — what Semrush actually observes
+ *      us ranking for, plus domain-wide signals (top pages,
+ *      competitors, traffic). Pulled fresh 2026-05-20.
+ *
+ * The two answer different questions:
+ *   - "How are we doing against our targets?"   → keyword-positions
+ *   - "How does Google actually see us?"        → seo-snapshot
+ *
+ * Server component — data is statically imported; no client state,
+ * no auth check (the parent /admin/dashboard layout handles auth).
+ *
+ * To refresh: see header comments in both lib files. Once
+ * SEMRUSH_API_KEY is in Vercel env, a cron will overwrite the
+ * seo-snapshot module on a daily cadence and this page will pick
+ * up the change on next deploy without any code edit here.
  */
 
 const tierLabel: Record<KeywordPosition["tier"], { color: string; label: string }> = {
@@ -46,6 +61,9 @@ export default function SeoPositionsPage() {
   const ranking = snapshot.ranks.filter((r) => r.currentRank !== null);
   const notRanking = snapshot.ranks.filter((r) => r.currentRank === null);
 
+  // Live Semrush data — what Google actually associates with us.
+  const zombies = indexedZombiePages();
+
   return (
     <div>
       <PageHeader
@@ -72,13 +90,184 @@ export default function SeoPositionsPage() {
         }
       />
 
-      {/* ── Headline stats strip ───────────────────────────────── */}
+      {/* ── Semrush domain overview ────────────────────────────── */}
+      <section style={{ marginTop: 28, marginBottom: 36 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            justifyContent: "space-between",
+            marginBottom: 14,
+          }}
+        >
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: "var(--ink-1)" }}>
+            Domain overview — what Google sees
+          </h2>
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 10,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "var(--ink-3)",
+            }}
+          >
+            Semrush · {SEO_SNAPSHOT.database} · {SEO_SNAPSHOT.date}
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 16,
+          }}
+        >
+          {[
+            {
+              label: "Authority rank",
+              value: SEO_SNAPSHOT.overview.rank.toLocaleString(),
+              sub: "Semrush global rank (lower = better)",
+            },
+            {
+              label: "Organic keywords",
+              value: SEO_SNAPSHOT.overview.organicKeywords,
+              sub: "ranking in top 100 of Google India",
+            },
+            {
+              label: "Organic traffic / mo",
+              value: SEO_SNAPSHOT.overview.organicTraffic.toLocaleString(),
+              sub: "estimated visits from organic search",
+            },
+            {
+              label: "Competitors tracked",
+              value: SEO_SNAPSHOT.competitors.length,
+              sub: "domains sharing our keyword profile",
+            },
+          ].map((s) => (
+            <div
+              key={s.label}
+              style={{
+                padding: 18,
+                border: "1px solid var(--line)",
+                borderRadius: 14,
+                background: "var(--paper)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--ink-3)",
+                }}
+              >
+                {s.label}
+              </div>
+              <div
+                className="serif"
+                style={{
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  fontSize: 32,
+                  color: "var(--brand)",
+                  marginTop: 6,
+                  lineHeight: 1,
+                }}
+              >
+                {s.value}
+              </div>
+              <div
+                style={{
+                  marginTop: 6,
+                  color: "var(--ink-2)",
+                  fontSize: 12,
+                  fontFamily: "var(--font-mono)",
+                }}
+              >
+                {s.sub}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Indexed-zombie alert ──────────────────────────────── */}
+      {zombies.length > 0 && (
+        <section
+          style={{
+            marginBottom: 36,
+            padding: 18,
+            border: "1px solid #f59e0b",
+            background: "#fef3c7",
+            borderRadius: 14,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 10,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "#92400e",
+              marginBottom: 8,
+            }}
+          >
+            ⚠  Indexed pages worth investigating
+          </div>
+          <div style={{ color: "#78350f", fontSize: 13, lineHeight: 1.6 }}>
+            Semrush observed these URLs ranking, but they shouldn&rsquo;t be:
+            either they&rsquo;re from a previous version of the site (e.g.
+            /bipe-media, /polytechnic-courses) or they leak admin/form
+            artefacts into search (e.g. /thank-u). Consider adding
+            <code> noindex </code> headers or 301-redirecting to live URLs.
+          </div>
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              fontSize: 13,
+              marginTop: 12,
+            }}
+          >
+            <thead>
+              <tr>
+                <th style={th}>URL</th>
+                <th style={th}>Keywords</th>
+                <th style={th}>Traffic / mo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {zombies.map((z) => (
+                <tr key={z.url} style={{ borderTop: "1px solid #fde68a" }}>
+                  <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>
+                    {z.url}
+                  </td>
+                  <td style={td}>{z.keywords}</td>
+                  <td style={td}>{z.traffic}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
+
+      {/* ── Tracked-target stats strip ────────────────────────── */}
+      <h2
+        style={{
+          fontSize: 18,
+          fontWeight: 600,
+          marginBottom: 14,
+          color: "var(--ink-1)",
+        }}
+      >
+        Tracked targets — what we&rsquo;re trying to win
+      </h2>
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
           gap: 16,
-          marginTop: 28,
           marginBottom: 36,
         }}
       >
@@ -196,6 +385,97 @@ export default function SeoPositionsPage() {
         </section>
       )}
 
+      {/* ── Top organic pages (Semrush) ───────────────────────── */}
+      <section style={{ marginBottom: 36 }}>
+        <h2
+          style={{
+            fontSize: 18,
+            fontWeight: 600,
+            marginBottom: 14,
+            color: "var(--ink-1)",
+          }}
+        >
+          Top organic pages — where the traffic lands
+        </h2>
+        <p style={{ color: "var(--ink-2)", fontSize: 13, marginBottom: 14, lineHeight: 1.55 }}>
+          Heavy concentration on the homepage — {SEO_SNAPSHOT.topPages[0].trafficPct.toFixed(0)}% of
+          organic traffic lands there. Long tail is thin, which is where the keyword-research roadmap
+          aims to fill.
+        </p>
+        <div style={{ border: "1px solid var(--line)", borderRadius: 14, overflow: "hidden" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead style={{ background: "var(--paper-2)" }}>
+              <tr>
+                <th style={th}>URL</th>
+                <th style={th}>Keywords</th>
+                <th style={th}>Traffic / mo</th>
+                <th style={th}>% of total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {SEO_SNAPSHOT.topPages.map((p) => (
+                <tr key={p.url} style={{ borderTop: "1px solid var(--line)" }}>
+                  <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>{p.url}</td>
+                  <td style={td}>{p.keywords}</td>
+                  <td style={{ ...td, fontWeight: 600 }}>{p.traffic.toLocaleString()}</td>
+                  <td style={{ ...td, color: "var(--ink-2)" }}>{p.trafficPct.toFixed(2)}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* ── Top competitors (Semrush) ─────────────────────────── */}
+      <section style={{ marginBottom: 36 }}>
+        <h2
+          style={{
+            fontSize: 18,
+            fontWeight: 600,
+            marginBottom: 14,
+            color: "var(--ink-1)",
+          }}
+        >
+          Top organic competitors — who Google groups us with
+        </h2>
+        <p style={{ color: "var(--ink-2)", fontSize: 13, marginBottom: 14, lineHeight: 1.55 }}>
+          Domains that rank for the same keywords as bipevns.org. Relevance ≈ keyword-profile
+          similarity (0–1). The big polytechnic competitors locally are{" "}
+          <code>kashiit.ac.in</code>, <code>sheatcollege.com</code>, and{" "}
+          <code>vnitm.co</code> — already covered on /why-bipe.{" "}
+          <code>ggpvaranasi.in</code> (Government Girls Polytechnic) is the source of our
+          ranking confusion for &ldquo;government girls polytechnic varanasi&rdquo;.
+        </p>
+        <div style={{ border: "1px solid var(--line)", borderRadius: 14, overflow: "hidden" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead style={{ background: "var(--paper-2)" }}>
+              <tr>
+                <th style={th}>Domain</th>
+                <th style={th}>Relevance</th>
+                <th style={th}>Common kw</th>
+                <th style={th}>Their kw</th>
+                <th style={th}>Their traffic</th>
+              </tr>
+            </thead>
+            <tbody>
+              {SEO_SNAPSHOT.competitors.map((c) => (
+                <tr key={c.domain} style={{ borderTop: "1px solid var(--line)" }}>
+                  <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>
+                    {c.domain}
+                  </td>
+                  <td style={td}>{c.relevance.toFixed(2)}</td>
+                  <td style={td}>{c.commonKeywords}</td>
+                  <td style={td}>{c.theirOrganicKeywords.toLocaleString()}</td>
+                  <td style={{ ...td, fontWeight: 600 }}>
+                    {c.theirOrganicTraffic.toLocaleString()}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* ── Full table ─────────────────────────────────────────── */}
       <section>
         <h2
@@ -298,13 +578,20 @@ export default function SeoPositionsPage() {
           lineHeight: 1.6,
         }}
       >
-        <strong style={{ color: "var(--ink-1)" }}>How to refresh this page:</strong>{" "}
-        edit <code>lib/keyword-positions.ts</code> — prepend a new entry to{" "}
-        <code>POSITION_SNAPSHOTS</code> with today&rsquo;s date and the fresh ranks. The header
-        comment in that file walks through the workflow. Once a Semrush / Ahrefs API key is
-        provisioned, this static array can be swapped for a server-action that pulls ranks
-        automatically — the <code>KeywordPosition</code> shape is intentionally compatible with
-        Semrush&rsquo;s <code>domain_ranks</code> endpoint.
+        <strong style={{ color: "var(--ink-1)" }}>How this page works:</strong>{" "}
+        Two data sources, complementary. The &ldquo;Domain overview&rdquo;, &ldquo;Top organic
+        pages&rdquo;, and &ldquo;Top competitors&rdquo; sections read from{" "}
+        <code>lib/seo-snapshot.ts</code> (live Semrush data, pulled{" "}
+        {SEO_SNAPSHOT.date}). The &ldquo;Tracked targets&rdquo; stats, &ldquo;Quick wins&rdquo;,
+        and full position table read from <code>lib/keyword-positions.ts</code> (the 64 strategic
+        keywords we&rsquo;re trying to win).
+        <br />
+        <br />
+        <strong style={{ color: "var(--ink-1)" }}>How to refresh:</strong> today both files are
+        updated manually (or via a Claude Code session running Semrush MCP queries). Phase B will
+        wire <code>SEMRUSH_API_KEY</code> into Vercel env + a daily cron that overwrites{" "}
+        <code>lib/seo-snapshot.ts</code> automatically, while the tracked-targets file stays
+        editor-driven (it&rsquo;s strategy, not just observation).
       </div>
     </div>
   );
