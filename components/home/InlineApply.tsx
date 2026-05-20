@@ -104,8 +104,18 @@ export const InlineApply = () => {
                 />
               </div>
               <div className="field">
-                <select value={form.branch} onChange={e => setForm({ ...form, branch: e.target.value })}
-                  style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+                {/* aria-label on the select — Phase 1.5 a11y audit
+                    (May 2026) caught this as an unlabelled form
+                    control. The visible "Branch you're considering"
+                    label is in the parent wrapper text but the select
+                    itself has no associated <label>; aria-label is
+                    the minimum-disruption fix that satisfies WCAG. */}
+                <select
+                  aria-label="Branch you're considering"
+                  value={form.branch}
+                  onChange={e => setForm({ ...form, branch: e.target.value })}
+                  style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}
+                >
                   {DATA.branches.map(b => <option key={b.code} value={b.name} style={{ color: "var(--ink)" }}>{b.name}</option>)}
                   <option value="Not sure yet — guide me" style={{ color: "var(--ink)" }}>Not sure yet — guide me</option>
                 </select>
