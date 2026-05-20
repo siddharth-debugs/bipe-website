@@ -179,10 +179,24 @@ export const BIPE_IMG = {
   scholarship: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
   documentFolder: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop",
   documentStack: "https://images.unsplash.com/photo-1568667256549-094345857637?w=900&q=80&auto=format&fit=crop",
-  studentWriting: "https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=900&q=80&auto=format&fit=crop",
+  // studentWriting swapped off Unsplash 2026-05-20 — used on
+  // /scholarships for the "Filing the portal form" tile. The real
+  // BIPE classroom-cohort photo shows students with notebooks open at
+  // desks (BIPE-branded hoodies, lanyards), which matches the
+  // form-filling intent of the slot. Same photo also drives students2024
+  // and classroom — re-using one verified-real frame across three
+  // honest contexts beats keeping a stock placeholder.
+  studentWriting: "/students/classroom-cohort.jpg",
 
   // campus · hostel · faculty · events extras
-  sportsGround: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1200&q=80&auto=format&fit=crop",
+  //
+  // sportsGround swapped off Unsplash 2026-05-20 — used on /campus
+  // for a sports-field tile. Real BIPE sports photography exists in
+  // /public/events/volleyball-final-showdown/ (8 frames from a
+  // Spardha volleyball match). Using frame 4 here so it differs from
+  // the sportsMeet slot which uses frame 5 — gives visual variation
+  // between the two campus-life tiles without resorting to stock.
+  sportsGround: "/events/volleyball-final-showdown/4.jpg",
   solarPanels: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80&auto=format&fit=crop",
   rainHarvest: "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=900&q=80&auto=format&fit=crop",
   // Modern interior with ceiling LED strips. The original Unsplash
