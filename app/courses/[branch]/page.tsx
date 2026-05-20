@@ -21,8 +21,13 @@ export async function generateMetadata(
   const b = DATA.branches.find((x) => x.slug === branch);
   if (!b) return {};
   const path = `/courses/${b.slug}`;
-  const title = `${b.name} Diploma in Varanasi · BTEUP ${b.code} | BIPE`;
-  const description = `${b.name} polytechnic diploma at BIPE Varanasi — BTEUP code ${b.code}, JEECUP institute code 4455, AFRC tuition ₹${b.fee}/year, ${b.seats} seats. ${b.desc.slice(0, 80)}`;
+  // May 2026 keyword research: "diploma in civil engineering" 9,900/mo,
+  // "diploma in computer science" 9,900/mo, "diploma in mechanical
+  // engineering" 3,600/mo, "diploma in electrical engineering" 2,400/mo.
+  // Title pattern rewritten to lead with the exact phrase searchers
+  // type — "Diploma in <Branch>" — instead of "<Branch> Diploma".
+  const title = `Diploma in ${b.name} · Varanasi · BTEUP ${b.code} | BIPE`;
+  const description = `Diploma in ${b.name} at BIPE Varanasi — BTEUP code ${b.code}, JEECUP institute code 4455, AFRC tuition ₹${b.fee}/year, ${b.seats} seats. ${b.desc.slice(0, 80)}`;
   return {
     title,
     description,

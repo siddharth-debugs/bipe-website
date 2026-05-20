@@ -30,7 +30,7 @@ export type BranchDetail = {
 export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   "computer-science-engineering": {
     intro:
-      "Computer Science & Engineering at BIPE is a 3-year, 6-semester BTEUP diploma (code 355) — programming-first, AICTE-approved, JEECUP-admitted under institute code 4455. Three of the six semesters are spent in our 120-computer programming lab, so students leave the diploma already comfortable with Python, Java, web stacks and a working knowledge of data structures, networks and an introduction to AI/ML.",
+      "The Diploma in Computer Science & Engineering at BIPE is a 3-year, 6-semester BTEUP programme (code 355) — programming-first, AICTE-approved, JEECUP-admitted under institute code 4455. Three of the six semesters are spent in our 120-computer programming lab, so students leave the diploma already comfortable with Python, Java, web stacks and a working knowledge of data structures, networks and an introduction to AI/ML.",
     semesterThemes: [
       "Sem 1 — Applied Mathematics, English, Engineering Physics & Chemistry, Computer Fundamentals",
       "Sem 2 — C Programming, Digital Electronics, Operating System Concepts",
@@ -61,7 +61,7 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   },
   "dairy-engineering": {
     intro:
-      "Dairy Engineering at BIPE (also called Dairy Technology at degree level — the diploma board uses 'Engineering') is one of only four BTEUP-affiliated diploma programmes of its kind across all of Uttar Pradesh — code 327, 3 years, 6 semesters, AICTE-approved. The curriculum covers milk processing, dairy machinery, refrigeration, microbiology and quality assurance, with hands-on time in the campus pilot plant. Recruiter pipelines run into Amul, Mother Dairy, Parag, Nestlé, NDDB and the State Dairy Boards — career options that simply don't exist for graduates of other branches.",
+      "The Diploma in Dairy Engineering at BIPE (also called Dairy Technology at degree level — the diploma board uses 'Engineering') is one of only four BTEUP-affiliated diploma programmes of its kind across all of Uttar Pradesh — code 327, 3 years, 6 semesters, AICTE-approved. The curriculum covers milk processing, dairy machinery, refrigeration, microbiology and quality assurance, with hands-on time in the campus pilot plant. Recruiter pipelines run into Amul, Mother Dairy, Parag, Nestlé, NDDB and the State Dairy Boards — career options that simply don't exist for graduates of other branches.",
     semesterThemes: [
       "Sem 1 — Applied Mathematics, Engineering Physics & Chemistry, Dairy Industry Overview",
       "Sem 2 — Dairy Microbiology, Heat Transfer, Mechanics of Dairy Plant",
@@ -92,7 +92,7 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   },
   "civil-engineering": {
     intro:
-      "Civil Engineering at BIPE is a 3-year, 6-semester BTEUP diploma (code 322), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The curriculum covers building construction, surveying, transportation, hydraulics and structural design, with field practice at the campus survey yard and live construction sites in and around Phoolpur. India's Smart Cities, Bharatmala and Kashi Vishwanath corridor work need civil diploma holders by the thousand — SSC JE and RRB JE are direct pathways.",
+      "The Diploma in Civil Engineering at BIPE is a 3-year, 6-semester BTEUP programme (code 322), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The curriculum covers building construction, surveying, transportation, hydraulics and structural design, with field practice at the campus survey yard and live construction sites in and around Phoolpur. India's Smart Cities, Bharatmala and Kashi Vishwanath corridor work need civil diploma holders by the thousand — SSC JE and RRB JE are direct pathways.",
     semesterThemes: [
       "Sem 1 — Applied Mathematics, Engineering Physics & Chemistry, Engineering Drawing",
       "Sem 2 — Building Materials, Surveying I (chain & compass), Construction Practice",
@@ -123,7 +123,7 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   },
   "electrical-engineering": {
     intro:
-      "Electrical Engineering at BIPE is a 3-year, 6-semester BTEUP diploma (code 328), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The curriculum spans circuits, machines, power systems, distribution, control and the new renewable-energy modules. UPPCL, Tata Power, Adani Solar and the Indian Railways electrical cadres all recruit BIPE diploma graduates each year.",
+      "The Diploma in Electrical Engineering at BIPE is a 3-year, 6-semester BTEUP programme (code 328), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The curriculum spans circuits, machines, power systems, distribution, control and the new renewable-energy modules. UPPCL, Tata Power, Adani Solar and the Indian Railways electrical cadres all recruit BIPE diploma graduates each year.",
     semesterThemes: [
       "Sem 1 — Applied Mathematics, Engineering Physics & Chemistry, Basic Electrical Engineering",
       "Sem 2 — DC & AC Circuits, Electrical Measuring Instruments, Workshop Practice",
@@ -154,7 +154,7 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   },
   "mechanical-engineering-production": {
     intro:
-      "Mechanical Engineering (Production) at BIPE is a 3-year, 6-semester BTEUP diploma (code 343), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The branch is workshop-first: welding, fitting, foundry, machining and CNC are all taught on the production floor, not from a textbook. Mahindra, Tata Motors, BHEL and JBM Group run apprentice-and-place pipelines with BIPE alumni each year.",
+      "The Diploma in Mechanical Engineering (Production) at BIPE is a 3-year, 6-semester BTEUP programme (code 343), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The branch is workshop-first: welding, fitting, foundry, machining and CNC are all taught on the production floor, not from a textbook. Mahindra, Tata Motors, BHEL and JBM Group run apprentice-and-place pipelines with BIPE alumni each year.",
     semesterThemes: [
       "Sem 1 — Applied Mathematics, Engineering Physics & Chemistry, Workshop Practice I (carpentry, fitting)",
       "Sem 2 — Engineering Mechanics, Workshop Practice II (welding, foundry, sheet metal)",
