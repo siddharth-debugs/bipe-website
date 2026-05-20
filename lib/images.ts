@@ -66,7 +66,26 @@ export const BIPE_IMG = {
   dairy:       "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263644/bipe/labs/dairy/dairy-engineering",
   automobile:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149853/bipe/labs/mechanical/auto-mobile-lab",
 
-  campusWide: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80&auto=format&fit=crop",
+  // Campus exterior tile on /about (the "6-ACRE CAMPUS" card). User
+  // flagged 2026-05-20 that the previous Unsplash photo was a
+  // graduates-throwing-caps shot at Marina Bay Sands (Singapore) —
+  // visibly NOT a 6-acre BIPE campus and breaking the authenticity
+  // commitment. Swapped to the same Cloudinary URL the homepage hero
+  // uses (BIPE main building, 1672×941, verifiably real BIPE
+  // photography). The URL form is loader-ready (no baked-in w_), so
+  // Img.tsx's cloudinaryLoader picks the right responsive variant per
+  // viewport — the about tile gets a smaller crop than the hero on
+  // the same URL.
+  //
+  // Re-using one URL across two slots is intentional: until someone
+  // drops real campus exterior shots into Drive's
+  // Photos > Campus & Accomodation > Campus folder (currently empty,
+  // probed 2026-05-20), this is the only verified BIPE campus image
+  // we have. When that folder gets populated and synced via
+  // scripts/sync-labs.mjs, point campusWide at a distinctive frame
+  // and let the slots diverge.
+  campusWide:
+    "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779261976/bipe/hero/hero-campus",
   // Single library still kept as a fallback; the curated set lives in
   // `libraryPhotos` below and is rendered as a slider on /campus.
   library: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955753/bipe/library/library-01.jpg",
