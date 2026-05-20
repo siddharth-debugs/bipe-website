@@ -1374,6 +1374,166 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "polytechnic-vs-iti",
+    title: "Polytechnic vs ITI after Class 10 — the honest comparison for UP / Bihar families",
+    category: "Career · Comparison",
+    date: "20 May 2026",
+    publishedISO: "2026-05-20",
+    readTime: "8 min read",
+    excerpt:
+      "Polytechnic diploma (3 years) vs ITI certificate (1-2 years) — which is right after Class 10? Eligibility, fees, duration, pay-scale-after-passing, government-job pipelines, lateral-entry options. Honest comparison for UP / Bihar families.",
+    metaTitle:
+      "Polytechnic vs ITI after Class 10 — eligibility, fees, jobs | BIPE",
+    metaDescription:
+      "Polytechnic diploma vs ITI certificate — duration, eligibility, fees, starting pay, SSC JE / RRB JE / UPPCL eligibility for each. Honest UP / Bihar family guide. BIPE Varanasi (JEECUP 4455).",
+    sections: [
+      {
+        type: "callout",
+        title: "TL;DR · 30-second answer",
+        html:
+          "<ul style=\"margin: 0; padding-left: 22px;\">" +
+          "<li><strong>ITI</strong> = 1-2 year trade certificate. Cheaper, faster, narrower. Best for hands-on trades — welding, fitter, electrician, mechanic. Government and private industry both hire ITI-passes at the technician / craftsman grade.</li>" +
+          "<li><strong>Polytechnic</strong> = 3-year diploma. Longer, costs more, broader. Engineering-grade with theory + practice. Government jobs that take ITI also take polytechnic — usually at higher pay scale. Polytechnic also opens AKTU lateral entry to B.Tech.</li>" +
+          "<li><strong>The right choice depends</strong> on what you optimise for. ITI for the fastest possible salary in a specific trade. Polytechnic for a wider career ceiling (engineer roles, supervisory positions, B.Tech option) at the cost of one extra year and ~₹50,000 in extra tuition.</li>" +
+          "</ul>",
+      },
+      {
+        type: "h2",
+        text: "The side-by-side table",
+      },
+      {
+        type: "table",
+        caption:
+          "Polytechnic diploma vs ITI certificate — UP context. Pay scales are starting in-hand for government JE / craftsman roles, before DA + allowances.",
+        headers: ["Dimension", "Polytechnic Diploma", "ITI Certificate"],
+        rows: [
+          ["Duration after Class 10", "3 years · 6 semesters", "1 year (most trades) or 2 years (some trades)"],
+          ["Awarding body in UP", "BTE UP (Board of Technical Education, UP)", "NCVT / SCVT under DGT, Ministry of Skill Development"],
+          ["Approval / entrance", "AICTE + JEECUP entrance", "DGT-approved curriculum, separate ITI counselling"],
+          ["Annual tuition (govt)", "₹6,000-15,000 / year", "₹3,000-10,000 / year (much lower)"],
+          ["Annual tuition (private AFRC)", "₹25,000-60,000 / year (BIPE ₹30,150)", "₹15,000-40,000 / year"],
+          ["Qualification awarded", "Diploma in [Branch] Engineering", "Trade Certificate (NTC) in [Trade]"],
+          ["Curriculum scope", "Engineering theory + workshop / lab + final-year industrial training", "Trade-specific hands-on training; minimal theory"],
+          ["Branches / Trades", "Civil / Mech / Electrical / CSE / Dairy / others (BIPE has 5)", "Fitter / Welder / Electrician / Mechanic / Stenographer / 60+ trades"],
+          ["Starting govt-job role", "Junior Engineer (JE)", "Craftsman / Technician"],
+          ["Starting pay (govt)", "₹35,000-44,000 + DA + allowances", "₹19,900-29,200 + DA + allowances"],
+          ["Lateral entry to B.Tech", "YES — AKTU / UPCET-L into B.Tech Year 2", "NO direct route (would need diploma first)"],
+          ["Lateral entry to polytechnic", "n/a (already a polytechnic)", "YES — ITI graduates can join polytechnic Year 2 via JEECUP Group K"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Government jobs each one opens",
+      },
+      {
+        type: "p",
+        html:
+          "Both qualifications are recognised across government and private hiring. The key difference is the <strong>grade level</strong> — ITI passes typically enter at Craftsman / Technician roles; polytechnic diploma holders enter as Junior Engineer (one grade above).",
+      },
+      { type: "h3", text: "For polytechnic diploma" },
+      {
+        type: "ul",
+        items: [
+          "<strong>SSC Junior Engineer (JE)</strong> — Civil / Electrical / Mechanical. CPWD, MES, Border Roads. Pay ₹35,000+ DA.",
+          "<strong>RRB JE</strong> — Indian Railways Junior Engineer. Pay ₹35,000+ DA + housing.",
+          "<strong>UPSSSC / UPPCL JE</strong> — UP state PSUs.",
+          "<strong>State PWD / Irrigation JE</strong> — district-level engineering postings.",
+          "<strong>DRDO / MES / Defence engineering</strong> — JE-grade roles.",
+          "<strong>Plus all ITI-eligible roles</strong> — diploma holders can apply to anything ITI passes can.",
+        ],
+      },
+      { type: "h3", text: "For ITI certificate" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Indian Railways · Apprentice & Technician</strong> — trade-specific recruitment, regular.",
+          "<strong>BHEL / NTPC / SAIL · Trade Apprentices</strong> — paid training that often converts to permanent.",
+          "<strong>Indian Army Technical · CSD / EME</strong> — trade-based defence recruitment.",
+          "<strong>UPSSSC technician / craftsman roles</strong> — UP state government.",
+          "<strong>Private industry skilled-worker positions</strong> — large auto / manufacturing firms.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Three honest scenarios — which to pick",
+      },
+      {
+        type: "h3",
+        text: "Pick ITI if:",
+      },
+      {
+        type: "ul",
+        items: [
+          "You / your child specifically wants a hands-on trade (welder, electrician, fitter, mechanic, surveyor) and doesn't want to study theory.",
+          "Family income makes the polytechnic fee out of reach AND the extra year of no-earning is a problem.",
+          "There's an immediate plan to take a government Craftsman / Technician exam.",
+          "Apprenticeship pipelines at a known nearby industrial unit (BHEL Varanasi, Indian Railways workshop, etc.) actively hire ITI passes.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Pick Polytechnic if:",
+      },
+      {
+        type: "ul",
+        items: [
+          "You / your child want a Junior Engineer-grade career rather than a Technician-grade one.",
+          "You see B.Tech as a possible later goal — polytechnic keeps that door open via AKTU lateral entry.",
+          "You want a broader engineering curriculum, not a single-trade one.",
+          "The slightly higher fee and one extra year are acceptable tradeoffs for the higher career ceiling.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Do both (ITI → Polytechnic) if:",
+      },
+      {
+        type: "ul",
+        items: [
+          "You did ITI first (after Class 10 or 12) and now want the engineer-grade qualification. JEECUP Group K (lateral entry) lets ITI passes join polytechnic directly in Year 2.",
+          "You've already started a trade career via ITI and want to upgrade for promotion eligibility.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "What the data actually says",
+        html:
+          "<p style=\"margin: 0;\">A 1-year-ITI graduate enters the workforce at ~age 17, earning ₹15,000-22,000 in private industry or qualifying for technician-grade government roles at ₹19,900+. A 3-year-polytechnic graduate enters at ~age 19, earning ₹18,000-30,000 in private industry or qualifying for JE-grade government roles at ₹35,000+.</p>" +
+          "<p style=\"margin: 12px 0 0;\">Over a 30-year career, the polytechnic graduate's higher starting pay-scale typically translates to 1.5-2× lifetime earnings — but that assumes both stay in salaried employment. ITI graduates who start their own workshop or trade business often out-earn salaried polytechnic graduates within 5-10 years, especially in tier-2 / tier-3 city catchments.</p>" +
+          "<p style=\"margin: 12px 0 0;\">There's no universally right answer. <strong>It's a question of fit, not prestige.</strong></p>",
+      },
+      {
+        type: "h2",
+        text: "How BIPE fits this picture",
+      },
+      {
+        type: "p",
+        html:
+          "BIPE is a polytechnic — JEECUP institute code 4455 — so the recommendations here that point to polytechnic are biased in that direction. We've been honest about when ITI fits better. If polytechnic is your route, BIPE&rsquo;s five branches (Civil, CSE, Dairy, Electrical, Mechanical Production) all admit via JEECUP Group A (regular, post-10th) and Group K (lateral entry, post-ITI or post-12 PCM). The same 16 BIPE alumni who moved to B.Tech via AKTU lateral entry — <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">documented here</a> — used the polytechnic-then-B.Tech path that ITI doesn&rsquo;t open as easily.",
+      },
+      {
+        type: "h2",
+        text: "Next steps",
+      },
+      {
+        type: "ul",
+        items: [
+          "Read the <a href=\"/blog/polytechnic-kya-hai-aur-kaise-kare\">Hindi guide to polytechnic admission</a> — पूरी प्रक्रिया हिन्दी में",
+          "See <a href=\"/blog/career-options-after-12th-polytechnic-up\">all 12 career paths after polytechnic</a> with named recruiters and pay scales",
+          "Read the <a href=\"/blog/junior-engineer-eligibility-after-diploma\">Junior Engineer pathway guide</a> for diploma holders",
+          "Compare BIPE against other Varanasi polytechnics: <a href=\"/why-bipe\">/why-bipe</a>",
+          "Talk to BIPE admissions: <a href=\"tel:+919198646464\">+91-9198646464</a> · <a href=\"https://wa.me/919198646464\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<em>This post focuses on polytechnic vs ITI specifically. For a wider comparison including B.Tech, see <a href=\"/blog/diploma-vs-iti-vs-btech-after-class-10\">Diploma vs ITI vs B.Tech after Class 10</a> — the three-way version. Updated 20 May 2026.</em>",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
