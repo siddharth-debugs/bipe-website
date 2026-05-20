@@ -4,6 +4,7 @@ import {
   latestSnapshot,
   totalAddressableVolume,
   quickWins,
+  opportunityTargets,
   type KeywordPosition,
 } from "@/lib/keyword-positions";
 
@@ -108,7 +109,9 @@ async function getLiveSnapshot(): Promise<{
 export default async function SeoPositionsPage() {
   const snapshot = latestSnapshot();
   const wins = quickWins(snapshot);
+  const opportunities = opportunityTargets(snapshot);
   const totalVolume = totalAddressableVolume(snapshot);
+  const opportunityVolume = opportunities.reduce((sum, r) => sum + r.monthlySearches, 0);
 
   const ranking = snapshot.ranks.filter((r) => r.currentRank !== null);
   const notRanking = snapshot.ranks.filter((r) => r.currentRank === null);
@@ -447,6 +450,86 @@ export default async function SeoPositionsPage() {
                         {r.targetPage}
                       </td>
                       <td style={{ ...td, color: "var(--ink-2)", fontSize: 13 }}>
+                        {r.notes ?? ""}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
+      {/* ── Opportunity targets ───────────────────────────────── */}
+      {opportunities.length > 0 && (
+        <section style={{ marginBottom: 36 }}>
+          <h2
+            style={{
+              fontSize: 18,
+              fontWeight: 600,
+              marginBottom: 14,
+              color: "var(--ink-1)",
+            }}
+          >
+            Opportunity targets — biggest prizes we don&rsquo;t yet rank for
+          </h2>
+          <p style={{ color: "var(--ink-2)", fontSize: 13, marginBottom: 14, lineHeight: 1.55 }}>
+            {opportunities.length} tracked keywords with ≥ 500 monthly searches that are not yet
+            in the top 100. Combined addressable demand:{" "}
+            <strong>{opportunityVolume.toLocaleString()} searches / month</strong>. Sorted by
+            volume — biggest unclaimed prize at the top. Pair this with the notes column
+            for the strategic gloss on each row (some are flagged &ldquo;don&rsquo;t target
+            head-on&rdquo; — read before acting).
+          </p>
+          <div
+            style={{
+              border: "1px solid var(--line)",
+              borderRadius: 14,
+              overflow: "hidden",
+            }}
+          >
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
+              <thead style={{ background: "var(--paper-2)" }}>
+                <tr>
+                  <th style={th}>Volume / mo</th>
+                  <th style={th}>Keyword</th>
+                  <th style={th}>Intent</th>
+                  <th style={th}>Target page</th>
+                  <th style={th}>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {opportunities.map((r) => {
+                  const t = tierLabel[r.tier];
+                  return (
+                    <tr key={r.keyword} style={{ borderTop: "1px solid var(--line)" }}>
+                      <td
+                        style={{
+                          ...td,
+                          fontWeight: 700,
+                          color: t.color,
+                        }}
+                      >
+                        {r.monthlySearches.toLocaleString()}
+                      </td>
+                      <td style={td}>{r.keyword}</td>
+                      <td
+                        style={{
+                          ...td,
+                          fontFamily: "var(--font-mono)",
+                          fontSize: 11,
+                          color: "var(--ink-3)",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.08em",
+                        }}
+                      >
+                        {r.intent}
+                      </td>
+                      <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>
+                        {r.targetPage}
+                      </td>
+                      <td style={{ ...td, color: "var(--ink-2)", fontSize: 13, maxWidth: 320 }}>
                         {r.notes ?? ""}
                       </td>
                     </tr>

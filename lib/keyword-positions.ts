@@ -156,3 +156,47 @@ export function quickWins(snapshot: PositionSnapshot = latestSnapshot()): Keywor
     .filter((r) => r.currentRank !== null && r.currentRank <= 30)
     .sort((a, b) => (a.currentRank ?? 999) - (b.currentRank ?? 999));
 }
+
+/**
+ * Helper: keywords we want but don't yet have. The growth-opportunity map.
+ *
+ * Filter:
+ *   - currentRank === null (not in top 100)
+ *   - monthlySearches >= minVolume (default 500 — low signal-to-noise below)
+ *   - targetPage is NOT a parenthetical "BIPE doesn't offer / different
+ *     entity / out of catchment / is private / is diploma" note
+ *
+ * Keeps "(no dedicated page)" and similar in-scope-but-missing rows —
+ * those are content-debt opportunities, not out-of-scope rejections.
+ *
+ * Sorted by monthly volume descending: the biggest unclaimed prize at
+ * the top. Each row gets the existing `notes` field, which often
+ * carries the strategic gloss (e.g. "Audit advice: do NOT target head-on").
+ */
+export function opportunityTargets(
+  snapshot: PositionSnapshot = latestSnapshot(),
+  minVolume = 500,
+): KeywordPosition[] {
+  return snapshot.ranks
+    .filter((r) => r.currentRank === null)
+    .filter((r) => r.monthlySearches >= minVolume)
+    .filter((r) => {
+      if (!r.targetPage.startsWith("(")) return true;
+      const tp = r.targetPage.toLowerCase();
+      // Drop genuinely out-of-scope rows. The "(no dedicated page ...)"
+      // and "(could be a blog stub)" rows stay because those ARE
+      // opportunities, just not yet acted on.
+      if (
+        tp.includes("doesn't offer") ||
+        tp.includes("different entity") ||
+        tp.includes("out of catchment") ||
+        tp.includes("is private") ||
+        tp.includes("is diploma, not") ||
+        tp.includes("co-ed")
+      ) {
+        return false;
+      }
+      return true;
+    })
+    .sort((a, b) => b.monthlySearches - a.monthlySearches);
+}
