@@ -17,6 +17,60 @@ export type ImgProps = {
 };
 
 /**
+ * Cloudinary delivery loader for next/image.
+ *
+ * Takes a Cloudinary URL with NO `w_` transform (the "responsive-ready"
+ * pattern, e.g. heroWide in lib/images.ts), and rewrites it per srcSet
+ * entry by injecting `f_auto,q_auto,w_{width}` into the transform list.
+ * next/image calls this once per deviceSize, so the browser gets a
+ * proper srcSet pointing at right-sized Cloudinary URLs — no Vercel
+ * transformation quota is touched at all.
+ *
+ * URL forms handled:
+ *
+ *   .../image/upload/f_auto,q_auto/v123/path/asset       (existing transforms)
+ *   .../image/upload/v123/path/asset                     (no transforms)
+ *   .../image/upload/path/asset                          (no transforms, no version)
+ *
+ * URLs already containing `w_NNN` (the older lab/library pattern) keep
+ * their hardcoded width and skip this loader — see isCloudinarySized
+ * below. That preserves the existing behavior for the 17+ entries in
+ * lib/images.ts that bake a width into their URLs.
+ */
+function cloudinaryLoader({
+  src,
+  width,
+  quality,
+}: {
+  src: string;
+  width: number;
+  quality?: number;
+}): string {
+  const marker = "/image/upload/";
+  const idx = src.indexOf(marker);
+  if (idx === -1) return src;
+  const head = src.slice(0, idx + marker.length);
+  const rest = src.slice(idx + marker.length);
+  const firstSlash = rest.indexOf("/");
+  if (firstSlash === -1) return src;
+  const firstSegment = rest.slice(0, firstSlash);
+  // First segment is either a transform list ("f_auto,q_auto") or a
+  // version stamp ("v1234567890"). If it's a version, transforms are
+  // empty and we keep the version in `remainder`.
+  const isVersion = /^v\d+$/.test(firstSegment);
+  const oldTransforms = isVersion ? "" : firstSegment;
+  const remainder = isVersion ? rest : rest.slice(firstSlash);
+  const keep = oldTransforms
+    ? oldTransforms.split(",").filter((t) => !/^(w_|q_|f_)/.test(t))
+    : [];
+  const newTransforms = [...keep, "f_auto", `q_${quality ?? "auto"}`, `w_${width}`]
+    .filter(Boolean)
+    .join(",");
+  const prefix = isVersion ? "/" : "";
+  return `${head}${newTransforms}${prefix}${remainder}`;
+}
+
+/**
  * App-wide image wrapper.
  *
  * Renders a `next/image` with `fill` inside a positioned container, so the
@@ -44,10 +98,25 @@ export function Img({
     aspectRatio,
     ...style,
   };
-  // Cloudinary already returns WebP/AVIF via f_auto and the right size
-  // via w_/h_. Routing those URLs through Next's image optimiser breaks
-  // them (same fix as components/campus/LabsGallery + CrossfadeSlider).
+  // Cloudinary handling has two modes depending on the URL shape:
+  //
+  //   1. URLs WITH a `w_NNN` transform (e.g. the labs/library/workshop
+  //      keys in lib/images.ts that bake `w_900` or `w_1200` into the
+  //      path) — the URL already encodes its delivered size. Pass them
+  //      through unoptimized so Next/Image doesn't try to re-process.
+  //
+  //   2. URLs WITHOUT a `w_NNN` transform (the responsive-ready
+  //      pattern used by the homepage hero) — let next/image generate
+  //      a proper srcSet via the cloudinaryLoader. The browser then
+  //      picks a right-sized variant per viewport: ~50 KB on mobile,
+  //      ~130 KB on tablet, ~290 KB on 1920px desktop. None of these
+  //      hit Vercel's image optimizer.
+  //
+  // Either way, zero Vercel transformation quota is consumed for any
+  // Cloudinary-hosted asset.
   const isCloudinary = typeof src === "string" && src.includes("res.cloudinary.com");
+  const hasFixedWidth = isCloudinary && /\/upload\/[^/]*w_\d+/.test(src);
+  const useLoader = isCloudinary && !hasFixedWidth;
   return (
     <div className={className} style={wrapStyle}>
       {!errored && (
@@ -58,7 +127,8 @@ export function Img({
           sizes={sizes}
           priority={priority}
           fetchPriority={priority ? "high" : "auto"}
-          unoptimized={isCloudinary}
+          loader={useLoader ? cloudinaryLoader : undefined}
+          unoptimized={isCloudinary && !useLoader}
           onLoad={() => setLoaded(true)}
           onError={() => setErrored(true)}
           style={{

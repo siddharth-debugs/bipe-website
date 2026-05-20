@@ -11,13 +11,34 @@
 // a slot disappears because its consumer was removed, delete it here
 // too in the same commit.
 export const BIPE_IMG = {
-  // Hero campus photo. The PNG version was 2.45 MB and the LCP
-  // bottleneck on /, pulling Lighthouse mobile Performance from
-  // ~95 down to 79 (per Phase 1.5 audit η). Re-encoded as a 313 KB
-  // progressive JPEG at quality 82 — visually indistinguishable
-  // from the PNG but 88% smaller. Next/Image still serves further
-  // responsive variants on top of this source.
-  heroWide: "/hero-campus.jpg",
+  // Hero campus photo. Lineage:
+  //   - Original PNG: 2.45 MB, LCP bottleneck (Lighthouse 79).
+  //   - Re-encoded JPEG: 313 KB, shipped to /public (audit η).
+  //   - Cloudinary delivery (this URL): same source, served via
+  //     scripts/upload-hero.mjs at v1779261976.
+  //
+  // The URL deliberately has NO `w_` transform. Img.tsx detects that
+  // and routes through cloudinaryLoader, which generates a proper
+  // responsive srcSet hitting Cloudinary directly: ~50 KB AVIF/JPEG
+  // on mobile (640w) through ~290 KB at 1920w. Zero Vercel
+  // transformation quota consumed — that quota was exhausted once
+  // already (see next.config.ts images.formats note).
+  //
+  // Format upgrade path: Cloudinary's account-level "Auto AVIF" is
+  // OFF by default on this account, so `f_auto` currently picks JPEG
+  // even on Chrome/Safari that accept AVIF. Toggling that switch in
+  // Cloudinary Settings → Optimization yields an immediate ~30%
+  // payload drop on every viewport with zero code change. Until
+  // someone flips it, we deliver q_auto JPEG, which is already at
+  // parity with Next/Image's WebP variants (verified May 2026:
+  // w_750 = 69 KB Cloudinary vs ~70 KB Next/Image WebP).
+  //
+  // The legacy /hero-campus.jpg file is intentionally left in
+  // /public as a defensive fallback for the backend page_section
+  // "home/hero" record; HeroFull.tsx normalizes both .jpg and .png
+  // legacy paths to this URL so admin-stored references keep working.
+  heroWide:
+    "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779261976/bipe/hero/hero-campus",
 
   // Branch-relevant photos — sourced from BIPE's Cloudinary lab manifest
   // (lib/labs-manifest.json). Only landscape-orientation photos are used

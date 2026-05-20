@@ -81,18 +81,23 @@ async function loadHero(): Promise<HeroData> {
         .filter((a) => a.label)
     : null;
 
-  // Migrate the legacy hero-campus PNG reference. The 2.45 MB PNG
-  // was replaced by a 313 KB JPEG in commit a5afd32 (Phase 1.5
-  // image optimization). The backend CMS page_section "home/hero"
-  // still holds the old URL until someone re-saves it via /admin,
-  // which caused 400-status console errors in Lighthouse (the
-  // browser tried to load a deleted file). This swap keeps the
-  // homepage clean until the backend record is updated, and is a
-  // no-op once it IS updated (since the .jpg suffix will already
-  // be in the URL).
+  // Migrate legacy hero-campus references to the Cloudinary delivery
+  // URL (now the canonical source — see BIPE_IMG.heroWide for the
+  // lineage and why Cloudinary). The backend CMS page_section
+  // "home/hero" record can hold any of three historical values:
+  //
+  //   /hero-campus.png   — original 2.45 MB asset (deleted from /public)
+  //   /hero-campus.jpg   — 313 KB JPEG (still in /public as fallback)
+  //   <cloudinary URL>   — current canonical, set via /admin after
+  //                        this commit
+  //
+  // We normalize the first two to Cloudinary so a stale backend
+  // record can't cost us LCP. The fix is a no-op once the backend
+  // record is updated via /admin to use the Cloudinary URL directly.
   const rawBgUrl = readString(bg?.url, fallback.bg_image_url);
-  const bg_image_url =
-    rawBgUrl === "/hero-campus.png" ? "/hero-campus.jpg" : rawBgUrl;
+  const isLegacyHeroPath =
+    rawBgUrl === "/hero-campus.png" || rawBgUrl === "/hero-campus.jpg";
+  const bg_image_url = isLegacyHeroPath ? BIPE_IMG.heroWide : rawBgUrl;
 
   return {
     headline_pre:   readString(c.headline_pre,   fallback.headline_pre),
