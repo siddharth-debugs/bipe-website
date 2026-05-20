@@ -70,6 +70,21 @@ export default async function BranchPage(
   const path = `/courses/${b.slug}`;
   const canonical = `${SITE_URL}${path}`;
 
+  // Course schema — enriched May 2026 with the fields Google made
+  // *required* for Course rich snippets (late 2024 guidance update):
+  //
+  //   hasCourseInstance   — at minimum one CourseInstance with mode
+  //                         + location + duration. Without it, Google
+  //                         validates the schema but won't trigger
+  //                         rich results in SERPs.
+  //
+  //   coursePrerequisites — text describing entry requirements. Helps
+  //                         eligibility-clarity rich-result variants.
+  //
+  // educationalLevel set to "Diploma" so Google's Knowledge Graph
+  // can disambiguate from undergraduate / postgraduate course entries.
+  // The offers block now also includes availability + url so the
+  // SERP-level pricing label is unambiguous.
   const courseJsonLd = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -78,7 +93,13 @@ export default async function BranchPage(
     description: detail.intro,
     courseCode: b.code,
     inLanguage: ["en-IN"],
+    educationalLevel: "Diploma",
     educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
+    coursePrerequisites:
+      "Class 10 pass with Mathematics and Science (minimum 35% aggregate). " +
+      "Admission via JEECUP Group A — choose BIPE institute code 4455 and BTEUP " +
+      `branch code ${b.code} during counselling.`,
+    occupationalCredentialAwarded: detail.careers[0],
     provider: {
       "@type": "CollegeOrUniversity",
       "@id": `${SITE_URL}#org`,
@@ -90,8 +111,45 @@ export default async function BranchPage(
       category: "Tuition",
       price: b.fee.replace(/,/g, ""),
       priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      url: `${canonical}#apply`,
     },
-    occupationalCredentialAwarded: detail.careers[0],
+    // hasCourseInstance is the rich-result trigger. One instance per
+    // branch — BIPE runs a single full-time on-campus cohort starting
+    // each July/August. Duration P3Y = ISO 8601 for 3 years. We
+    // deliberately don't put a hard startDate/endDate because the
+    // page is evergreen — the cohort is "the current academic year"
+    // perpetually. courseSchedule + repeatFrequency convey the
+    // recurring pattern instead.
+    hasCourseInstance: [
+      {
+        "@type": "CourseInstance",
+        courseMode: "Onsite",
+        location: {
+          "@type": "Place",
+          name: "BIPE Phoolpur Campus, Varanasi",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Village Gajokhar, Post Parsara",
+            addressLocality: "Phoolpur",
+            addressRegion: "Uttar Pradesh",
+            postalCode: "221206",
+            addressCountry: "IN",
+          },
+        },
+        courseSchedule: {
+          "@type": "Schedule",
+          duration: "P3Y",
+          repeatFrequency: "Yearly",
+          repeatCount: 3,
+        },
+        instructor: {
+          "@type": "Organization",
+          name: "BIPE Faculty",
+          url: `${SITE_URL}/faculty`,
+        },
+      },
+    ],
   };
 
   const breadcrumbJsonLd = {
