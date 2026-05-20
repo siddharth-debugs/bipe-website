@@ -26,12 +26,17 @@ export const ROUTES: Record<RouteKey, {
 }> = {
   home: {
     path: "/",
-    title: "BIPE Varanasi — AICTE Polytechnic · JEECUP Code 4455",
-    // Exact phrase "polytechnic in Varanasi" included verbatim so the
-    // homepage captures the head-term query — see the May 2026 keyword
-    // SEO audit. Title already has the words in different order, but
-    // SERP snippet generation prefers verbatim phrase matches.
-    description: "AICTE-approved polytechnic in Varanasi — diploma engineering across 5 BTEUP branches including rare Dairy Engineering. JEECUP code 4455. Apply for 2026-27.",
+    // Title rewritten May 2026 from "BIPE Varanasi — AICTE Polytechnic
+    // · JEECUP Code 4455" to lead with the verbatim search-intent
+    // phrase. We rank #12 for the keyword today; the title is the
+    // single highest-weight ranking factor for the head query.
+    title: "Polytechnic College in Varanasi · BIPE · AICTE-approved · JEECUP 4455",
+    // Exact phrases "polytechnic college in Varanasi" + "polytechnic
+    // in Varanasi" both included — Semrush data shows BIPE ranks #12
+    // for "polytechnic college in varanasi" (590/mo), so adding the
+    // verbatim phrase to title + description should push to page 1.
+    // Compact form keeps the description under 160 chars for the SERP.
+    description: "AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 BTEUP branches including rare Dairy Engineering. JEECUP 4455. Apply for 2026-27.",
     keywords: [
       "BIPE Varanasi",
       "polytechnic in Varanasi",

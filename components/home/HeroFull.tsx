@@ -55,7 +55,7 @@ async function loadHero(): Promise<HeroData> {
     // backend record should be updated via the admin panel to match,
     // otherwise this fix is dormant in production.
     description:
-      "AICTE-approved polytechnic in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,000+ placed · Eastern UP since 2010.",
+      "AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,000+ placed · Eastern UP since 2010.",
     cta_primary: { label: "Apply for 2026-27", href: "/apply" },
     cta_secondary: { label: "Book a campus visit", href: "/visit" },
     bg_image_url: BIPE_IMG.heroWide,
@@ -126,6 +126,36 @@ export async function HeroFull() {
 
       <div className="container bipe-hero-pad" style={{ position: "relative", padding: "72px 0 48px", color: "var(--paper)", zIndex: 2 }}>
         <div>
+          {/*
+            Hero eyebrow added May 2026. Semrush keyword research shows
+            BIPE ranks #12 (page 2) for "polytechnic college in
+            varanasi" — 590 monthly searches, low competition. Adding
+            the verbatim phrase above the H1 gives the strongest
+            possible on-page signal without disrupting the editorial
+            "Engineers begin here." brand line below.
+          */}
+          <div
+            className="eyebrow"
+            style={{
+              color: "color-mix(in oklab, #fff 70%, transparent)",
+              borderColor: "color-mix(in oklab, #fff 25%, transparent)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              marginBottom: 18,
+              fontFamily: "var(--font-mono)",
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              padding: "6px 14px",
+              border: "1px solid color-mix(in oklab, #fff 25%, transparent)",
+              borderRadius: 999,
+              backdropFilter: "blur(8px)",
+              background: "rgba(255,255,255,0.06)",
+            }}
+          >
+            AICTE-Approved Polytechnic College in Varanasi
+          </div>
           <h1 className="bipe-hero-h1" style={{
             fontFamily: "var(--font-display, var(--font-sans))",
             fontSize: "clamp(48px, 8vw, 132px)",
