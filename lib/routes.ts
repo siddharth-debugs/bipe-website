@@ -5,7 +5,8 @@ export type RouteKey =
   | "chairman" | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
   | "mandatoryDisclosure" | "aiPolicy"
   | "privacy" | "terms" | "antiRagging"
-  | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar";
+  | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar"
+  | "jeecupCounselling";
 
 export const SITE_URL = "https://www.bipevns.org";
 
@@ -243,6 +244,25 @@ export const ROUTES: Record<RouteKey, {
     path: "/admission-from-bihar",
     title: "Admission from Bihar · Documents, equivalency, hostel | BIPE",
     description: "Bihar students applying to BIPE — Bihar Board/CBSE equivalency, residence & caste certificates, hostel, travel from Patna, Ara, Buxar.",
+  },
+  jeecupCounselling: {
+    path: "/jeecup-counselling",
+    // Highest-volume keyword in BIPE's universe per Semrush —
+    // 18,100 monthly searches, competition 0.01, CPC ₹0.43. Not
+    // ranking at all today. Dedicated page added May 2026 to
+    // capture the head term while /jeecup remains the broader
+    // 6-step guidance hub.
+    title: "JEECUP Counselling 2026 · 5 rounds · choice filling | BIPE 4455",
+    description: "JEECUP counselling 2026 — 5 rounds, choice filling strategy, documents required, seat allotment, reporting, common mistakes. How BIPE Varanasi (code 4455) fits.",
+    keywords: [
+      "JEECUP counselling 2026",
+      "JEECUP counselling rounds",
+      "JEECUP choice filling",
+      "JEECUP seat allotment",
+      "JEECUP 4455 BIPE",
+      "JEECUP काउंसलिंग 2026",
+      "JEECUP काउंसलिंग गाइड",
+    ],
   },
 };
 
