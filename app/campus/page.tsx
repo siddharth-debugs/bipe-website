@@ -10,7 +10,8 @@ import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { LabsGallery } from "@/components/campus/LabsGallery";
 
-import { getLibraryPhotos } from "@/lib/content";
+import { getLibraryPhotos, getPageSection } from "@/lib/content";
+import { PageIntro } from "@/components/shared/PageIntro";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("campus"); }
 
@@ -88,13 +89,17 @@ export default async function Page() {
   // Library photos come from the backend when present, otherwise fall
   // back to the static manifest in lib/images.ts so the page never
   // breaks on a CMS hiccup.
-  const libraryFromApi = await getLibraryPhotos();
+  const [libraryFromApi, intro] = await Promise.all([
+    getLibraryPhotos(),
+    getPageSection("campus", "intro"),
+  ]);
   const librarySlides = libraryFromApi.length
     ? libraryFromApi.map((p) => ({ src: p.image_url, alt: p.alt }))
     : BIPE_IMG.libraryPhotos;
 
   return (
     <div className="page-enter">
+      <PageIntro section={intro} />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}

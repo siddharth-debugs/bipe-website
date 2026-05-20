@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DATA } from "@/lib/data";
+import { getBranchesMapped } from "@/lib/content";
 import { BRANCH_DETAIL } from "@/lib/branchContent";
 import { SITE_URL } from "@/lib/routes";
 import { Img } from "@/components/ui/Img";
@@ -18,7 +19,8 @@ export async function generateMetadata(
   { params }: { params: Promise<Params> },
 ): Promise<Metadata> {
   const { branch } = await params;
-  const b = DATA.branches.find((x) => x.slug === branch);
+  const branches = await getBranchesMapped();
+  const b = branches.find((x) => x.slug === branch);
   if (!b) return {};
   const path = `/courses/${b.slug}`;
   // May 2026 keyword research: "diploma in civil engineering" 9,900/mo,
@@ -59,7 +61,8 @@ export default async function BranchPage(
   { params }: { params: Promise<Params> },
 ) {
   const { branch } = await params;
-  const b = DATA.branches.find((x) => x.slug === branch);
+  const branches = await getBranchesMapped();
+  const b = branches.find((x) => x.slug === branch);
   if (!b) notFound();
   const detail = BRANCH_DETAIL[branch];
   if (!detail) notFound();

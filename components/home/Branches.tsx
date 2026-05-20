@@ -14,8 +14,14 @@ const BRANCH_ICONS: Record<string, string> = {
   "343": "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3M9 12a3 3 0 106 0 3 3 0 00-6 0z",
 };
 
-export const Branches = () => {
-  const list = DATA.branches;
+/**
+ * `branches` is optional: the home server page passes the live list
+ * from getBranchesMapped() so admin edits flow through. If the prop
+ * is omitted (e.g. mounted from somewhere else, or during dev when
+ * the backend is down) the static lib/data.ts list is the fallback.
+ */
+export const Branches = ({ branches }: { branches?: typeof DATA.branches } = {}) => {
+  const list = branches && branches.length > 0 ? branches : DATA.branches;
   const [active, setActive] = useState(0);
   const b = list[active];
 

@@ -326,6 +326,37 @@ export async function getAlumni(): Promise<PublicAlumnus[]> {
   }));
 }
 
+/**
+ * Returns branches in the SAME shape the rest of the codebase already
+ * uses (lib/data.ts > Branch — camelCase, with `hi`, `desc`, `fee`,
+ * `color`, `thumbnail: {src,alt}`, `slides: {src,alt}[]`). This lets
+ * existing consumers swap `DATA.branches` for `await getBranchesMapped()`
+ * without touching every field reference.
+ *
+ * Falls back to DATA.branches when the backend bundle is empty.
+ */
+export async function getBranchesMapped(): Promise<typeof DATA.branches> {
+  const live = await getBranches();
+  if (!live || live.length === 0) return DATA.branches;
+  return live.map((b) => ({
+    code: b.code,
+    slug: b.slug,
+    name: b.name,
+    hi: b.name_hi,
+    seats: b.seats,
+    fee: b.fee_year,
+    desc: b.short_description,
+    tag: b.tag || null,
+    color: b.color_index,
+    thumbnail: { src: b.thumbnail_url, alt: b.thumbnail_alt },
+    slides: [
+      ...(b.slide1_url ? [{ src: b.slide1_url, alt: b.slide1_alt }] : []),
+      ...(b.slide2_url ? [{ src: b.slide2_url, alt: b.slide2_alt }] : []),
+      ...(b.slide3_url ? [{ src: b.slide3_url, alt: b.slide3_alt }] : []),
+    ],
+  }));
+}
+
 export async function getPageSections(page: string): Promise<PublicPageSection[]> {
   const b = await getContent();
   if (!b || !b.page_sections) return [];

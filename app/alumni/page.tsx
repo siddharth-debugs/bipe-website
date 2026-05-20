@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { metadataFor } from "@/lib/seo";
-import { getAlumni } from "@/lib/content";
+import { getAlumni, getPageSection } from "@/lib/content";
+import { PageIntro } from "@/components/shared/PageIntro";
 import { AlumniView } from "./AlumniView";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -8,7 +9,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const live = await getAlumni();
+  const [live, intro] = await Promise.all([
+    getAlumni(),
+    getPageSection("alumni", "intro"),
+  ]);
   // Map snake_case API rows → the camelCase shape <AlumniView /> expects.
   // When the API returns nothing the helper falls back to the static
   // manifest, but for clarity we still hand the empty result through —
@@ -24,5 +28,10 @@ export default async function Page() {
     role: a.role,
     photo: a.photo_url,
   }));
-  return <AlumniView alumni={alumni} />;
+  return (
+    <>
+      <PageIntro section={intro} />
+      <AlumniView alumni={alumni} />
+    </>
+  );
 }

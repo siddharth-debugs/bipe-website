@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
+import { getPageSection } from "@/lib/content";
+import { PageIntro } from "@/components/shared/PageIntro";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
@@ -84,9 +86,11 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
   },
 ];
 
-export default function Page() {
+export default async function Page() {
+  const intro = await getPageSection("admission", "intro");
   return (
     <div className="page-enter">
+      <PageIntro section={intro} />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}

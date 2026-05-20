@@ -63,8 +63,11 @@ const CAREER_TILES: { tag: string; title: string; body: string; chips: string[] 
   },
 ];
 
-export default function Page() {
-  const totalSeats = DATA.branches.reduce((s, b) => s + b.seats, 0);
+import { getBranchesMapped } from "@/lib/content";
+
+export default async function Page() {
+  const branches = await getBranchesMapped();
+  const totalSeats = branches.reduce((s, b) => s + b.seats, 0);
 
   return (
     <div className="page-enter">
@@ -572,7 +575,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 3. INTERACTIVE BRANCH INDEX (CLIENT)                                    */}
       {/* ====================================================================== */}
-      <CoursesView />
+      <CoursesView branches={branches} />
 
       {/* ====================================================================== */}
       {/* 5. CAREER PATHWAYS (DARK)                                               */}

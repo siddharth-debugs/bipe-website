@@ -14,10 +14,13 @@ const BRANCH_ICONS: Record<string, string> = {
   "343": "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3M9 12a3 3 0 106 0 3 3 0 00-6 0z",
 };
 
-export function CoursesView() {
-  const [active, setActive] = useState<string>(DATA.branches[0].code);
-
-  const list = DATA.branches;
+export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
+  // Live branches arrive as a prop from app/courses/page.tsx (server)
+  // when the backend has rows; otherwise we fall back to the static
+  // lib/data.ts list. The same shape (camelCase Branch) is used in
+  // both cases so the rest of this file doesn't have to change.
+  const list = props?.branches && props.branches.length > 0 ? props.branches : DATA.branches;
+  const [active, setActive] = useState<string>(list[0].code);
 
   // Ensure active is in the visible list; if not, fall back to first.
   const visibleActive = list.find((b) => b.code === active) ?? list[0];

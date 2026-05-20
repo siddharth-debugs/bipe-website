@@ -3,12 +3,14 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
+import { getBranchesMapped, getPageSection } from "@/lib/content";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import CatchmentMap from "@/components/about/CatchmentMap";
 import PressMentions from "@/components/about/PressMentions";
+import { PageIntro } from "@/components/shared/PageIntro";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("about"); }
 
@@ -103,9 +105,17 @@ const DISTRICTS: District[] = [
   { name: "Kushinagar",  hi: "कुशीनगर",       tag: "ACTIVE" },
 ];
 
-export default function Page() {
+export default async function Page() {
+  // Branch data flows from the backend when populated, falls back to
+  // the static branches otherwise. Used by the branch-wise seat
+  // allotment table below.
+  const branches = await getBranchesMapped();
+  // Optional admin-managed intro block shown above the existing
+  // editorial copy. Renders only when a published row exists.
+  const intro = await getPageSection("about", "intro");
   return (
     <div className="page-enter">
+      <PageIntro section={intro} />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
@@ -389,7 +399,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              The 2026-27 sanctioned intake under JEECUP college code 4455 &mdash; five 3-year BTEUP-affiliated diploma courses, total {DATA.branches.reduce((s, b) => s + b.seats, 0)} seats.
+              The 2026-27 sanctioned intake under JEECUP college code 4455 &mdash; five 3-year BTEUP-affiliated diploma courses, total {branches.reduce((s, b) => s + b.seats, 0)} seats.
             </p>
           </div>
 
@@ -406,12 +416,12 @@ export default function Page() {
               <div style={{ textAlign: "right" }}>Seats</div>
             </div>
 
-            {DATA.branches.map((b, i) => (
+            {branches.map((b, i) => (
               <div key={b.code} style={{
                 display: "grid", gridTemplateColumns: "auto minmax(0, 3fr) 1fr",
                 padding: "20px 24px",
                 background: i % 2 === 0 ? "var(--white)" : "var(--paper)",
-                borderBottom: i < DATA.branches.length - 1 ? "1px solid var(--line)" : "none",
+                borderBottom: i < branches.length - 1 ? "1px solid var(--line)" : "none",
                 alignItems: "center",
               }}>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 700, color: "var(--brand)", minWidth: 80 }}>{b.code}</div>
@@ -444,7 +454,7 @@ export default function Page() {
                 color: "var(--brand)", letterSpacing: "-0.02em",
                 textAlign: "right",
               }}>
-                {DATA.branches.reduce((s, b) => s + b.seats, 0)}
+                {branches.reduce((s, b) => s + b.seats, 0)}
               </div>
             </div>
           </div>

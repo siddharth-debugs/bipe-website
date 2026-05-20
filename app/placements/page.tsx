@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
+import { getPageSection } from "@/lib/content";
+import { PageIntro } from "@/components/shared/PageIntro";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
@@ -109,9 +111,11 @@ const PLACEMENT_VOICES = [
 
 // ---------------------------------------------------------------------------
 
-export default function Page() {
+export default async function Page() {
+  const intro = await getPageSection("placements", "intro");
   return (
     <div className="page-enter">
+      <PageIntro section={intro} />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
