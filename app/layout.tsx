@@ -94,6 +94,25 @@ const ORG_JSON_LD: Record<string, unknown> = {
         { "@type": "PropertyValue", propertyID: "BTEUP", value: "Affiliated · 4455" },
         { "@type": "PropertyValue", propertyID: "AISHE", value: "Registered" },
       ],
+      // accreditedBy — Phase 1.5 strategy (May 2026). BTE UP and AICTE
+      // are the institute's two formal accrediting bodies; surfacing
+      // them as explicit `accreditedBy` references (separate from the
+      // identifier PropertyValue rows above) gives Google a cleaner
+      // entity link to the boards' own knowledge-graph entries and
+      // strengthens E-E-A-T trust signals for the YMYL education
+      // vertical.
+      accreditedBy: [
+        {
+          "@type": "EducationalOrganization",
+          name: "Board of Technical Education, Uttar Pradesh (BTE UP)",
+          url: "https://bteup.ac.in/",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "All India Council for Technical Education (AICTE)",
+          url: "https://www.aicte-india.org/",
+        },
+      ],
       department: DATA.branches.map((b) => ({
         "@type": "EducationalOrganization",
         name: `Department of ${b.name}`,

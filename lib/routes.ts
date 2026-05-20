@@ -31,7 +31,11 @@ export const ROUTES: Record<RouteKey, {
     // · JEECUP Code 4455" to lead with the verbatim search-intent
     // phrase. We rank #12 for the keyword today; the title is the
     // single highest-weight ranking factor for the head query.
-    title: "Polytechnic College in Varanasi · BIPE · AICTE-approved · JEECUP 4455",
+    // Phase 1.5 (also May 2026): added "BTE UP" alongside AICTE per
+    // the trust-signal strategy — BTE UP keywords themselves are
+    // 823k/mo but owned by bteup.org.in, so the affiliation is used
+    // as a CTR / conversion lever, not a traffic chase.
+    title: "Polytechnic College in Varanasi · BTE UP & AICTE Approved · BIPE 4455",
     // Exact phrases "polytechnic college in Varanasi" + "polytechnic
     // in Varanasi" both included — Semrush data shows BIPE ranks #12
     // for "polytechnic college in varanasi" (590/mo), so adding the
@@ -185,9 +189,12 @@ export const ROUTES: Record<RouteKey, {
   approvals: {
     path: "/approvals",
     // Year modifier "2026-27" added — May 2026 keyword audit P1 #8.
-    // Compliance docs are annual, the year matters for verification
-    // queries.
-    title: "Approvals 2026-27 · AICTE, BTEUP, AISHE | BIPE",
+    // Phase 1.5 (May 2026): title now leads with "BTE UP Affiliated"
+    // to capture the validation-intent query cluster (`bte up
+    // affiliated polytechnic varanasi`, `bteup affiliated polytechnic`,
+    // `polytechnic colleges affiliated to bteup`) — small monthly
+    // volumes but every searcher is a hot lead checking affiliation.
+    title: "BTE UP Affiliated Polytechnic · Approvals 2026-27 · AICTE · AISHE | BIPE",
     description: "AICTE permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026. BTEUP-affiliated under JEECUP 4455. AISHE-registered with the Department of Higher Education, MoE.",
   },
   faq: {

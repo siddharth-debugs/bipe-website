@@ -328,6 +328,29 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/*
+          Trust-signal line — Phase 1.5 keyword strategy (May 2026).
+          BTE UP keywords aggregate to 823k+/mo but the SERP is owned
+          by bteup.org.in. The affiliation is best used as a constant
+          trust signal across every page — so we render it in the
+          footer, visible site-wide.
+        */}
+        <div style={{ padding: "16px 0 14px", borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+          <p style={{
+            margin: 0,
+            fontFamily: "var(--font-mono)",
+            fontSize: 11,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "color-mix(in oklab, var(--paper) 60%, transparent)",
+            lineHeight: 1.5,
+          }}>
+            <Link href="/approvals" style={{ color: "color-mix(in oklab, var(--paper) 85%, transparent)", textDecoration: "none" }}>
+              Affiliated to BTE UP · Approved by AICTE · Code 4455
+            </Link>
+          </p>
+        </div>
+
         <div style={{ padding: "20px 0 28px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14, fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", alignItems: "center", borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
           <div>© 2026 Banaras Institute of Polytechnic &amp; Engineering.</div>
 
