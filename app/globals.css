@@ -14,6 +14,13 @@
   --accent-c: 0.18;
   --accent: oklch(72% var(--accent-c) var(--accent-h));
   --accent-deep: oklch(58% var(--accent-c) var(--accent-h));
+  /* WCAG-AA-safe deeper amber. Phase 1.5 a11y audit (May 2026) caught
+     .pill-accent at 3.61 contrast (--accent-deep on the peach
+     background); needed ≥ 4.5 for normal text. Dropping L from 58%
+     to 42% yields ~5.5 contrast against the same background while
+     preserving the amber identity. Use for any small text on the
+     light-peach pill background. */
+  --accent-deeper: oklch(42% var(--accent-c) var(--accent-h));
 
   --ink: #0A1A3F;
   --ink-2: #2B3656;
@@ -236,7 +243,7 @@ html {
   color: var(--brand);
 }
 .pill-dark { background: var(--ink); color: var(--paper); }
-.pill-accent { background: color-mix(in oklab, var(--accent) 18%, var(--paper)); color: var(--accent-deep); }
+.pill-accent { background: color-mix(in oklab, var(--accent) 18%, var(--paper)); color: var(--accent-deeper); }
 
 .live-dot {
   width: 7px; height: 7px; border-radius: 999px;
