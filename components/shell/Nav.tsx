@@ -297,7 +297,7 @@ export function Nav() {
         </div>
 
         <div className="nav-drawer-cta">
-          <Link href="/apply" className="btn btn-primary" style={{ justifyContent: "center" }}>
+          <Link href="/apply" className="btn btn-primary" style={{ justifyContent: "center" }} onClick={() => setDrawerOpen(false)}>
             Apply for 2026-27 <ArrowIcon size={14} />
           </Link>
           <div className="nav-drawer-lang">
@@ -319,6 +319,16 @@ export function Nav() {
                     <Link
                       key={item.to}
                       href={item.to}
+                      // Close the drawer on tap. Without this, tapping a
+                      // link to the CURRENT page (e.g. "Academics" while
+                      // already on /courses) does nothing user-visible:
+                      // the route is unchanged, the drawer stays open,
+                      // and it looks like the button is broken. User
+                      // reported exactly this on /courses 2026-05-20.
+                      // The handler also improves UX for cross-page
+                      // taps — the drawer closes immediately rather
+                      // than waiting for navigation to complete.
+                      onClick={() => setDrawerOpen(false)}
                       className={"nav-drawer-link" + (active ? " is-active" : "")}
                     >
                       <span>{label}</span>
@@ -332,10 +342,10 @@ export function Nav() {
         </div>
 
         <div className="nav-drawer-footer">
-          <a href={`tel:${C.phone}`} className="btn btn-ghost" style={{ justifyContent: "center" }}>
+          <a href={`tel:${C.phone}`} className="btn btn-ghost" style={{ justifyContent: "center" }} onClick={() => setDrawerOpen(false)}>
             Call {C.phone}
           </a>
-          <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ justifyContent: "center" }}>
+          <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ justifyContent: "center" }} onClick={() => setDrawerOpen(false)}>
             <WhatsAppIcon /> WhatsApp admissions
           </a>
         </div>

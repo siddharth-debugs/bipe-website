@@ -184,20 +184,57 @@ export const SEO_SNAPSHOT: SeoSnapshot = {
 };
 
 /**
+ * URLs that have been remediated on our side (typically via 301
+ * redirect in next.config.ts) but still show up in Semrush snapshots
+ * because Google hasn't re-crawled and re-indexed yet. Typical lag
+ * 2-4 weeks after the redirect ships.
+ *
+ * Surfacing the remediation state in the dashboard alert lets an
+ * admin tell at a glance which zombies are open problems vs which
+ * are "shipped, waiting for SERP refresh." Without this list, every
+ * snapshot-refresh would re-raise the same alarm for issues we've
+ * already handled.
+ *
+ * Format: zombie path → { redirectsTo, sinceISO }
+ */
+export const REMEDIATED_ZOMBIE_PATHS: Record<string, { redirectsTo: string; sinceISO: string }> = {
+  "/thank-u":             { redirectsTo: "/",        sinceISO: "2026-05-20" },
+  "/bipe-media":          { redirectsTo: "/events",  sinceISO: "2026-05-20" },
+  "/polytechnic-courses": { redirectsTo: "/courses", sinceISO: "2026-05-20" },
+  "/faculties":           { redirectsTo: "/faculty", sinceISO: "2026-05-20" },
+};
+
+/**
  * Quick helper: pages on bipevns.org that probably shouldn't be
  * ranking at all (404'd, deleted, or thank-you-style pages that
  * leaked into the index). Surface in the dashboard as a flag.
+ *
+ * Returns the same SeoTopPage rows the snapshot has, plus an extra
+ * `remediation` field if we've already shipped a fix (301 redirect)
+ * that just hasn't propagated to Semrush yet.
  */
-export function indexedZombiePages(snapshot: SeoSnapshot = SEO_SNAPSHOT): SeoTopPage[] {
+export type ZombiePage = SeoTopPage & {
+  remediation?: { redirectsTo: string; sinceISO: string };
+};
+
+export function indexedZombiePages(snapshot: SeoSnapshot = SEO_SNAPSHOT): ZombiePage[] {
   const zombiePatterns = [
-    "/thank-u",        // form thank-you — should be noindex
-    "/bipe-media",     // legacy URL — current site uses /events
+    "/thank-u",              // form thank-you — should be noindex (now 301 → /)
+    "/bipe-media",           // legacy URL — current site uses /events
     "/polytechnic-courses",  // legacy URL — current site uses /courses
-    "/faculties",      // legacy URL — current site uses /faculty
+    "/faculties",            // legacy URL — current site uses /faculty
   ];
-  return snapshot.topPages.filter((p) =>
-    zombiePatterns.some((pat) => p.url.includes(pat))
-  );
+  return snapshot.topPages
+    .filter((p) => zombiePatterns.some((pat) => p.url.includes(pat)))
+    .map((p) => {
+      // Identify which of the patterns this URL matched so we can look
+      // up its remediation entry.
+      const matchedPattern = zombiePatterns.find((pat) => p.url.includes(pat));
+      const remediation = matchedPattern
+        ? REMEDIATED_ZOMBIE_PATHS[matchedPattern]
+        : undefined;
+      return { ...p, remediation };
+    });
 }
 
 /**

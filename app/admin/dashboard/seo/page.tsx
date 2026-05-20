@@ -269,64 +269,130 @@ export default async function SeoPositionsPage() {
       </section>
 
       {/* ── Indexed-zombie alert ──────────────────────────────── */}
-      {zombies.length > 0 && (
-        <section
-          style={{
-            marginBottom: 36,
-            padding: 18,
-            border: "1px solid #f59e0b",
-            background: "#fef3c7",
-            borderRadius: 14,
-          }}
-        >
-          <div
+      {zombies.length > 0 && (() => {
+        const openZombies = zombies.filter((z) => !z.remediation);
+        const remediatedZombies = zombies.filter((z) => z.remediation);
+        // Pick the surrounding alert tone based on whether there's
+        // anything OPEN. If every row is already remediated, the
+        // alert is just an audit-trail and should look reassuring
+        // (green/teal), not alarming (amber).
+        const allRemediated = openZombies.length === 0;
+        const tones = allRemediated
+          ? { border: "#16a34a", bg: "#dcfce7", eyebrow: "#166534", body: "#14532d", row: "#bbf7d0" }
+          : { border: "#f59e0b", bg: "#fef3c7", eyebrow: "#92400e", body: "#78350f", row: "#fde68a" };
+        return (
+          <section
             style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 10,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#92400e",
-              marginBottom: 8,
+              marginBottom: 36,
+              padding: 18,
+              border: `1px solid ${tones.border}`,
+              background: tones.bg,
+              borderRadius: 14,
             }}
           >
-            ⚠  Indexed pages worth investigating
-          </div>
-          <div style={{ color: "#78350f", fontSize: 13, lineHeight: 1.6 }}>
-            Semrush observed these URLs ranking, but they shouldn&rsquo;t be:
-            either they&rsquo;re from a previous version of the site (e.g.
-            /bipe-media, /polytechnic-courses) or they leak admin/form
-            artefacts into search (e.g. /thank-u). Consider adding
-            <code> noindex </code> headers or 301-redirecting to live URLs.
-          </div>
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              fontSize: 13,
-              marginTop: 12,
-            }}
-          >
-            <thead>
-              <tr>
-                <th style={th}>URL</th>
-                <th style={th}>Keywords</th>
-                <th style={th}>Traffic / mo</th>
-              </tr>
-            </thead>
-            <tbody>
-              {zombies.map((z) => (
-                <tr key={z.url} style={{ borderTop: "1px solid #fde68a" }}>
-                  <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>
-                    {z.url}
-                  </td>
-                  <td style={td}>{z.keywords}</td>
-                  <td style={td}>{z.traffic}</td>
+            <div
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: tones.eyebrow,
+                marginBottom: 8,
+              }}
+            >
+              {allRemediated ? "✓  Indexed pages — all remediated, awaiting SERP refresh" : "⚠  Indexed pages worth investigating"}
+            </div>
+            <div style={{ color: tones.body, fontSize: 13, lineHeight: 1.6 }}>
+              Semrush observed these URLs ranking, but they shouldn&rsquo;t be:
+              either they&rsquo;re from a previous version of the site (e.g.
+              /bipe-media, /polytechnic-courses) or they leak admin/form
+              artefacts into search (e.g. /thank-u).
+              {allRemediated ? (
+                <>
+                  {" "}
+                  <strong>All four are now 301-redirected</strong> in
+                  <code> next.config.ts</code> — they&rsquo;ll drop from this
+                  list once Semrush re-crawls (typically 2-4 weeks after
+                  Google sees the redirects).
+                </>
+              ) : (
+                <>
+                  {" "}
+                  Consider adding<code> noindex </code>headers or 301-redirecting
+                  to live URLs.
+                </>
+              )}
+            </div>
+            <table
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                fontSize: 13,
+                marginTop: 12,
+              }}
+            >
+              <thead>
+                <tr>
+                  <th style={th}>URL</th>
+                  <th style={th}>Keywords</th>
+                  <th style={th}>Traffic / mo</th>
+                  <th style={th}>Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      )}
+              </thead>
+              <tbody>
+                {zombies.map((z) => (
+                  <tr key={z.url} style={{ borderTop: `1px solid ${tones.row}` }}>
+                    <td style={{ ...td, fontFamily: "var(--font-mono)", fontSize: 12 }}>
+                      {z.url}
+                    </td>
+                    <td style={td}>{z.keywords}</td>
+                    <td style={td}>{z.traffic}</td>
+                    <td style={td}>
+                      {z.remediation ? (
+                        <span
+                          title={`Since ${z.remediation.sinceISO}`}
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: 4,
+                            fontFamily: "var(--font-mono)",
+                            fontSize: 10,
+                            letterSpacing: "0.1em",
+                            fontWeight: 700,
+                            color: "#166534",
+                            background: "#bbf7d0",
+                            padding: "3px 8px",
+                            borderRadius: 4,
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          ✓ 301 → {z.remediation.redirectsTo}
+                        </span>
+                      ) : (
+                        <span
+                          style={{
+                            fontFamily: "var(--font-mono)",
+                            fontSize: 10,
+                            letterSpacing: "0.1em",
+                            fontWeight: 700,
+                            color: "#92400e",
+                            background: "#fde68a",
+                            padding: "3px 8px",
+                            borderRadius: 4,
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          ⚠ Open
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        );
+      })()}
 
       {/* ── Tracked-target stats strip ────────────────────────── */}
       <h2
