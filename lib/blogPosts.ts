@@ -1534,6 +1534,289 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────
+  // Polytechnic Syllabus 2026 — targets 3,600/mo "polytechnic
+  // syllabus" head term + variants ("polytechnic syllabus 2026",
+  // "BTE UP polytechnic syllabus", per-branch syllabus queries).
+  // Capitalises on the structured semesterSubjects data shipped in
+  // commit 3223135 (lib/branchContent.ts) — every claim in this
+  // post links to the canonical /courses/[branch] page where the
+  // full per-semester subject list is rendered.
+  //
+  // Honest framing: subject names are drawn from standard BTE UP
+  // polytechnic curriculum; the canonical source is the BTE UP
+  // gazette (bteup.org.in). The post says so explicitly and links
+  // out for verification — same disclosure pattern the branch
+  // pages use.
+  {
+    slug: "polytechnic-syllabus-2026",
+    title: "Polytechnic syllabus 2026 — subject-by-subject guide for all 5 BTE UP branches",
+    category: "Curriculum · BTE UP",
+    date: "20 May 2026",
+    publishedISO: "2026-05-20",
+    readTime: "13 min read",
+    excerpt:
+      "What you'll actually study in a 3-year BTE UP polytechnic diploma — semester-by-semester subject lists for Mechanical, Civil, Electrical, Computer Science and Dairy Engineering. Marks distribution, theory vs practical, where to find the official gazette. Written for parents and Class 10 students choosing a branch.",
+    metaTitle:
+      "Polytechnic syllabus 2026 — full subject list, all branches | BIPE",
+    metaDescription:
+      "BTE UP polytechnic syllabus 2026 — full semester-by-semester subject lists for Mechanical (343), Civil (322), Electrical (328), Computer Science (355), Dairy (327). Theory + practical, internal + external marks, official gazette links.",
+    sections: [
+      {
+        type: "callout",
+        title: "TL;DR · 30-second answer",
+        html:
+          "<ul style=\"margin: 0; padding-left: 22px;\">" +
+          "<li><strong>3 years, 6 semesters.</strong> Each semester runs about 5 months of teaching + 1 month of exams. ~6 subjects per semester (theory + practical + project).</li>" +
+          "<li><strong>Semesters 1 and 2 are common</strong> across all branches — Mathematics, Physics, Chemistry, English, Engineering Drawing, Workshop Practice, Basic Electrical / Electronics.</li>" +
+          "<li><strong>Semesters 3 to 5 are branch-specific</strong> — this is where the real differences show. Mechanical does thermodynamics and machining; Civil does surveying and structural design; Electrical does machines and power systems; CSE does data structures and web; Dairy does milk processing and plant operations.</li>" +
+          "<li><strong>Semester 6 is mostly industrial training</strong> — a mandatory 6-month (~600 hour) placement at a real plant or site, plus a capstone project assessed by an external examiner.</li>" +
+          "<li><strong>The official source is the BTE UP gazette</strong> at <a href=\"https://www.bteup.org.in/\" target=\"_blank\" rel=\"noopener\">bteup.org.in</a>. Subject names below are stable across gazette revisions; codes and marks distribution shift every 3-5 years — always cross-check the gazette PDF for your admission year before printing.</li>" +
+          "</ul>",
+      },
+
+      { type: "h2", text: "How the BTE UP polytechnic syllabus is structured" },
+      {
+        type: "p",
+        html:
+          "A polytechnic diploma in Uttar Pradesh is set by the <strong>Board of Technical Education, Uttar Pradesh (BTE UP)</strong> — a state-level body that publishes the syllabus, sets the examinations, and issues the diploma certificate. The curriculum framework is approved by the All India Council for Technical Education (AICTE) at the national level. The result is a 3-year, 6-semester programme that's identical in <em>shape</em> across every BTE UP-affiliated polytechnic in the state, including BIPE.",
+      },
+      {
+        type: "p",
+        html:
+          "Each semester has about <strong>6 subjects</strong> — a mix of theory, practical (lab) and workshop. Theory subjects have an end-semester written exam (worth ~80 marks) plus internal sessional assessment (~20 marks). Practical and workshop subjects have a viva-voce + practical exam at the end of semester (~50 marks) plus sessional (~50 marks). Pass marks are typically 33% in theory and 50% in practical / sessional components.",
+      },
+      {
+        type: "callout",
+        title: "What 'sessional' marks really mean",
+        html:
+          "Sessional assessment isn't just a single mid-term — it's a continuous score built across the semester from class attendance, three internal tests, a tutorial submission record, lab journal entries and faculty viva. For students who attend regularly and submit on time, sessionals are the easiest 20-50 marks per subject to bank. This is one reason BIPE keeps daily attendance and grades practical-journal completion weekly: the sessional score is the difference between a 60% diploma and a 75% one for most students.",
+      },
+
+      { type: "h2", text: "The shared foundation — Semesters 1 and 2" },
+      {
+        type: "p",
+        html:
+          "Whichever branch you pick, the first year of a BTE UP polytechnic is largely the same. The point is to give every diploma student the same engineering vocabulary — vectors, free body diagrams, Ohm's law, drawing conventions, a working idea of what a workshop looks like — before the branches diverge in Sem 3. Both semesters include a Workshop Practice course where students rotate through carpentry, fitting, welding and sheet metal regardless of their eventual branch.",
+      },
+      {
+        type: "table",
+        caption:
+          "Common Semester 1-2 subjects across all 5 BIPE branches. Indicative — subject codes and exact marks split vary by gazette revision.",
+        headers: ["Semester 1 subjects", "Semester 2 subjects"],
+        rows: [
+          ["Communication Skills in English – I", "Communication Skills in English – II"],
+          ["Engineering Mathematics – I", "Engineering Mathematics – II"],
+          ["Engineering Physics", "Applied Mechanics / Engineering Physics – II"],
+          ["Engineering Chemistry", "Basic Electrical / Basic Electronics"],
+          ["Engineering Drawing", "Branch-specific intro course"],
+          ["Computer Fundamentals / Workshop Practice – I", "Workshop Practice – II"],
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "By the end of Semester 2 a polytechnic student has logged 50+ hours of workshop time, drafted at least one technical drawing to ISO conventions, and sat exams in maths, physics and chemistry pitched at first-year undergraduate level. That's the foundation the branch-specific subjects in Sem 3 onwards assume you have.",
+      },
+
+      { type: "h2", text: "Branch-by-branch syllabus from Semester 3" },
+      {
+        type: "p",
+        html:
+          "From Semester 3 the syllabus splits. Below is a sketch of each BIPE branch's most distinctive subjects across the remaining four semesters — full per-semester subject lists are on each branch page (linked at the end of each section). All five branches end with Semester 6 industrial training and a capstone project — that part is universal.",
+      },
+
+      { type: "h3", text: "Mechanical Engineering (Production) — BTE UP code 343" },
+      {
+        type: "p",
+        html:
+          "The mechanical syllabus is workshop-first: students log substantial hours on lathes, milling machines, drilling and grinding stations across Sem 3-4, before moving to design and planning in Sem 5-6. Industrial training in Sem 6 typically lands at Mahindra, Tata Motors, BHEL, JBM Group or Bajaj — the same pipelines that recruit BIPE graduates each year.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Sem 3:</strong> Strength of Materials · Theory of Machines · Thermodynamics · Manufacturing Processes I (Turning, Milling, Drilling) · Industrial Statistics · Machine Shop Lab",
+          "<strong>Sem 4:</strong> Thermal Engineering &amp; IC Engines · Fluid Mechanics &amp; Hydraulic Machines · Manufacturing Processes II (CNC, Grinding, EDM) · Machine Design – I · Industrial Management · Refrigeration &amp; Air Conditioning · Hydraulics Lab",
+          "<strong>Sem 5:</strong> Industrial Engineering &amp; Operations · Quality Control &amp; Inspection · CAD / CAM · Machine Design – II · Automobile Engineering · Mini Project (Component Design) · Industrial Visit &amp; Report",
+          "<strong>Sem 6:</strong> Tool &amp; Die Design · Production Planning &amp; Control · Power Plant Engineering · Final-year Project (capstone) · Industrial Training (6 months — Mahindra / Tata Motors / BHEL / JBM / Bajaj) · Project Viva Voce",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Full per-semester subject list on the <a href=\"/courses/mechanical-engineering-production\">Mechanical Engineering (Production) branch page</a>.",
+      },
+
+      { type: "h3", text: "Civil Engineering — BTE UP code 322" },
+      {
+        type: "p",
+        html:
+          "Civil is field-and-drawing heavy in Sem 3, design-led in Sem 4-5, and project-heavy in Sem 6. Sem 3 includes a residential survey camp where students run levels, traverses and contour maps across the campus and adjoining village fields — same equipment (theodolites, dumpy levels, auto levels) the SSC JE Civil exam tests on.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Sem 3:</strong> Surveying – II (theodolite, levelling, contouring) · Mechanics of Materials · Concrete Technology · Building Construction &amp; Drawing · Hydraulics · Computer-Aided Drafting (AutoCAD) · Survey Camp",
+          "<strong>Sem 4:</strong> Design of RCC Structures · Design of Steel Structures · Transportation Engineering (Highways, Railways) · Public Health Engineering · Soil Mechanics &amp; Foundation Engineering · Construction Materials Testing Lab",
+          "<strong>Sem 5:</strong> Estimating, Costing &amp; Valuation · Quantity Surveying · Construction Management · Environmental Engineering · Earthquake-Resistant Construction · Mini Project (Building Plan) · Site Visit &amp; Report",
+          "<strong>Sem 6:</strong> Advanced Construction Techniques · Disaster Management · Final-year Project (design + working drawings) · Industrial Training (6 months — JE / contractor / Smart City site) · Project Viva Voce",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Full per-semester subject list on the <a href=\"/courses/civil-engineering\">Civil Engineering branch page</a>.",
+      },
+
+      { type: "h3", text: "Electrical Engineering — BTE UP code 328" },
+      {
+        type: "p",
+        html:
+          "Electrical follows circuits → machines → power systems → control. Sem 3-4 covers DC / AC machines and transformer testing on the electrical machines bay; Sem 5 adds power electronics, control systems and the renewable-energy module (solar PV, EV, wind basics). Many BIPE alumni from this branch sit SSC JE Electrical / RRB JE Electrical / UPPCL JE — all three exams are scoped to the BTE UP electrical syllabus.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Sem 3:</strong> Electrical Machines – I (DC Machines &amp; Transformers) · Electronic Devices &amp; Circuits · Electrical Wiring &amp; Estimation · Digital Electronics · Industrial Drafting (AutoCAD Electrical) · Machines Lab",
+          "<strong>Sem 4:</strong> Electrical Machines – II (Induction &amp; Synchronous Motors) · Power Systems – I (Generation) · Programmable Logic Controllers (PLC) · Electrical Installation &amp; Maintenance · Microprocessor &amp; Microcontroller · Industrial Drives Lab",
+          "<strong>Sem 5:</strong> Power Systems – II (Transmission &amp; Distribution) · Power Electronics · Control Systems · Renewable Energy Sources (Solar PV, Wind, EV) · Mini Project (Circuit / Control) · Substation Visit &amp; Report",
+          "<strong>Sem 6:</strong> Switchgear &amp; Protection · Industrial Drives &amp; Speed Control · Electrical Estimation &amp; Costing · Final-year Project (capstone) · Industrial Training (6 months — UPPCL / Tata Power / Adani Solar / Indian Railways) · Project Viva Voce",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Full per-semester subject list on the <a href=\"/courses/electrical-engineering\">Electrical Engineering branch page</a>.",
+      },
+
+      { type: "h3", text: "Computer Science &amp; Engineering — BTE UP code 355" },
+      {
+        type: "p",
+        html:
+          "CSE moves from language (C in Sem 2, C++ / Java in Sem 3) to systems (OS, networks, hardware in Sem 4) to specialisation (Python, AI/ML, mobile, cloud in Sem 5-6). Three of the six semesters are spent in the 120-computer programming lab; most batches log 12-15 contact hours a week in it.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Sem 3:</strong> Data Structures using C · Object-Oriented Programming with C++ / Java · Database Management Systems · Computer Architecture &amp; Organisation · Operating System Concepts · Internet &amp; Web Programming (CSS, JavaScript)",
+          "<strong>Sem 4:</strong> Computer Networks · Web Technologies (PHP / Node.js) · Software Engineering · Microprocessor &amp; Assembly Language · Computer Hardware &amp; Peripherals · Java Programming · Database Lab",
+          "<strong>Sem 5:</strong> Python Programming · Introduction to AI / Machine Learning · Mobile Application Development · Computer Graphics · Industrial Visit &amp; Report · Mini Project (group of 3) · Web Development Lab",
+          "<strong>Sem 6:</strong> Cyber Security &amp; Ethical Hacking · Cloud Computing &amp; DevOps Fundamentals · Internet of Things (IoT) · Final-year Project (capstone) · Industrial Training (6 months / 600 hours) · Project Expo &amp; Viva Voce",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Full per-semester subject list on the <a href=\"/courses/computer-science-engineering\">Computer Science &amp; Engineering branch page</a>.",
+      },
+
+      { type: "h3", text: "Dairy Engineering — BTE UP code 327" },
+      {
+        type: "p",
+        html:
+          "Dairy is one of only four BTE UP-affiliated diploma programmes of its kind in all of Uttar Pradesh. Curriculum follows the chain: chemistry / microbiology of milk → processing technology → plant operations → products. Industrial training in Sem 6 typically lands at Amul, Mother Dairy, NDDB, Parag or Nestlé — career options that simply don't exist for graduates of the other branches.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Sem 3:</strong> Market Milk Processing · Dairy Engineering Drawing · Fluid Mechanics · Dairy Chemistry · Computer Applications in Dairy · Refrigeration in Dairy Plant · Milk Reception Lab",
+          "<strong>Sem 4:</strong> Dairy Plant Operations · Refrigeration &amp; Air Conditioning · Dairy Plant Layout &amp; Design · Industrial Statistics &amp; Quality Control · Dairy Machinery &amp; Maintenance · Packaging Technology · Processing Lab (Pasteurisation, Homogenisation)",
+          "<strong>Sem 5:</strong> Indigenous Dairy Products (Curd, Paneer, Ghee) · Condensed &amp; Dried Milk Products · Ice-Cream &amp; Frozen Desserts · Fat-Rich Dairy Products · Dairy Plant Sanitation &amp; Hygiene · Mini Project (Product Development) · Industrial Visit (NDDB / Amul plant)",
+          "<strong>Sem 6:</strong> Quality Control &amp; Food Safety (FSSAI norms) · Dairy Business Management &amp; Marketing · Dairy Plant Maintenance &amp; Utilities · Final-year Project (capstone) · Industrial Training (6 months — Amul / Mother Dairy / NDDB / Parag) · Project Expo &amp; Viva Voce",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Full per-semester subject list on the <a href=\"/courses/dairy-engineering\">Dairy Engineering branch page</a>.",
+      },
+
+      { type: "h2", text: "How marks are split — theory vs practical vs sessional" },
+      {
+        type: "p",
+        html:
+          "A typical BTE UP polytechnic subject is graded out of 100 marks across three components. The split varies by subject type but the standard pattern is:",
+      },
+      {
+        type: "table",
+        caption:
+          "Marks distribution in a typical BTE UP polytechnic subject. Theory subjects (e.g. Engineering Mathematics) and practical / lab subjects (e.g. Machine Shop Lab) follow different splits — both add up to 100 marks per subject.",
+        headers: ["Component", "Theory subject", "Practical / Lab subject"],
+        rows: [
+          ["End-semester written exam", "80 marks (external)", "—"],
+          ["End-semester practical / viva", "—", "50 marks (external)"],
+          ["Internal sessional (tests + tutorials + attendance)", "20 marks (internal)", "—"],
+          ["Internal sessional (journal + viva + attendance)", "—", "50 marks (internal)"],
+          ["Total", "100 marks", "100 marks"],
+          ["Pass criterion", "33% in external + 40% aggregate", "50% in external + 50% aggregate"],
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Workshop and final-year project marks follow the practical / lab pattern. Industrial training (Sem 6) is graded on attendance certificate, training-day diary, supervisor's report and viva — together worth roughly 200-300 marks across the semester depending on the branch.",
+      },
+
+      { type: "h2", text: "Where to download the official BTE UP syllabus PDFs" },
+      {
+        type: "p",
+        html:
+          "Subject names and the overall structure of the polytechnic syllabus stay reasonably stable across years, but BTE UP revises specific subject codes, marks distribution and elective lists periodically (typically every 3-5 years). For the version applicable to your admission year, always cross-check the official gazette:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>BTE UP official portal</strong> — <a href=\"https://www.bteup.org.in/\" target=\"_blank\" rel=\"noopener\">bteup.org.in</a>. Look under <em>Academic → Syllabus</em>; each branch has a downloadable PDF per academic year.",
+          "<strong>AICTE Polytechnic curriculum</strong> — for the AICTE-approved national framework that the BTE UP syllabus implements. Useful for understanding why certain subjects exist.",
+          "<strong>Per-branch detail on BIPE</strong> — every BIPE branch page includes the full subject list per semester with a one-click link to bteup.org.in. See <a href=\"/courses\">/courses</a> to start.",
+        ],
+      },
+
+      { type: "h2", text: "Frequently asked questions" },
+      { type: "h3", text: "Is the polytechnic syllabus the same as B.Tech?" },
+      {
+        type: "p",
+        html:
+          "No. B.Tech is a 4-year programme after Class 12 with deeper theoretical depth (more advanced maths, dedicated analytical / numerical methods courses, broader elective range). Polytechnic is a 3-year programme after Class 10 with the same hands-on subjects but compressed theory and a different end-goal — graduates are JE-eligible immediately, where B.Tech graduates apply for Engineer (E1) roles. The polytechnic syllabus covers about 60% of the equivalent B.Tech curriculum.",
+      },
+      { type: "h3", text: "Can I see the BTE UP exam paper pattern in the syllabus?" },
+      {
+        type: "p",
+        html:
+          "The syllabus PDFs include a paper-blueprint section for each subject — number of questions, distribution between short / long answers, internal-choice rules, and marks allocation per topic. BIPE's library has a full archive of BTE UP previous-year papers cross-referenced by syllabus topic.",
+      },
+      { type: "h3", text: "What if I want to study a topic that isn't in the syllabus?" },
+      {
+        type: "p",
+        html:
+          "Mini projects (Sem 5) and final-year projects (Sem 6) are deliberately open-ended — students propose topics, the department reviews them for branch fit, and approved topics get a faculty supervisor. Most BIPE projects each year do exactly this: pick a problem from outside the prescribed syllabus (drone-control, IoT-monitored dairy refrigeration, low-cost solar installation), and use it as the capstone.",
+      },
+      { type: "h3", text: "How many subjects do I have to pass each semester?" },
+      {
+        type: "p",
+        html:
+          "All of them. If you fail a subject, you carry it forward as a back paper and re-sit it in the next examination cycle. BTE UP allows up to 4 backs at any point during the 3-year programme; more than 4 disqualifies the candidate until the existing back log is cleared. The final diploma is awarded only after every subject across all six semesters is passed.",
+      },
+      { type: "h3", text: "Will the syllabus prepare me for SSC JE / RRB JE?" },
+      {
+        type: "p",
+        html:
+          "Yes — the BTE UP polytechnic syllabus is scoped against the same paper pattern those JE examinations test on. Civil / Mechanical / Electrical alumni from BIPE clear these exams every year. BIPE additionally runs a 6-day Industry-Ready workshop (annual, February) that walks through SSC JE / RRB JE paper-solving alongside the BTE UP curriculum.",
+      },
+
+      {
+        type: "p",
+        html:
+          "<em>Last updated 20 May 2026 against the current BTE UP gazette. If you spot a subject we've missed or one that was renamed in the latest revision, write to <a href=\"mailto:admissions@bipevns.org\">admissions@bipevns.org</a> — we update branch pages on a rolling basis.</em>",
+      },
+      {
+        type: "callout",
+        title: "Ready to enrol?",
+        html:
+          "If you've read this far, you're either choosing a branch or finishing one. Either way, see <a href=\"/courses\">/courses</a> for all five BIPE branches with full per-semester subject detail. Already decided? Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or call admissions at <a href=\"tel:+919198646464\">+91-9198646464</a>.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
