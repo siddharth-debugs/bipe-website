@@ -132,22 +132,28 @@ export async function HeroFull() {
         style={{ position: "absolute", inset: 0, borderRadius: 0 }}
       />
 
-      {/* Lighter dark wash — the campus photo has the BIPE building
-          signage in it; we want that readable, not muddy. The bottom and
-          side gradients give the headline its contrast. */}
+      {/* Hero overlay — three layers composited in one paint pass.
+          Used to be three separate <div> wrappers (uniform 42% wash,
+          left→right edge fade for headline contrast, bottom fade for
+          the trust strip). Merging them into a single element with
+          stacked background-image gradients drops two DOM nodes and
+          collapses three potential compositor layers into one. CSS
+          multi-background paints first-listed on TOP, so the bottom
+          fade is first and the flat wash is last — matches the
+          original DOM order pixel-for-pixel.
+
+          Why this matters: every absolutely-positioned full-bleed
+          overlay is a paint-layer candidate. Three of them above the
+          LCP image meant the browser was potentially repainting four
+          times to draw the hero. One overlay = one repaint, full stop.
+          The campus signage stays readable, the headline contrast is
+          unchanged. */}
       <div aria-hidden="true" style={{
         position: "absolute", inset: 0,
-        background: "rgba(0, 0, 0, 0.42)",
-        pointerEvents: "none"
-      }} />
-      <div aria-hidden="true" style={{
-        position: "absolute", inset: 0,
-        background: "linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%)",
-        pointerEvents: "none"
-      }} />
-      <div aria-hidden="true" style={{
-        position: "absolute", inset: 0,
-        background: "linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.7) 100%)",
+        background:
+          "linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.7) 100%)," +
+          "linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%)," +
+          "rgba(0, 0, 0, 0.42)",
         pointerEvents: "none"
       }} />
 
