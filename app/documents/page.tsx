@@ -5,6 +5,8 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
+import { IconTile } from "@/components/ui/IconTile";
+import { FolderOpen, Files, Stamp } from "lucide-react";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("documents"); }
@@ -107,7 +109,7 @@ export default function Page() {
               </div>
             </div>
 
-            <Img src={BIPE_IMG.documentFolder} label="Reporting-day folder" aspectRatio="4/5" style={{ borderRadius: 18 }} />
+            <IconTile icon={FolderOpen} label="Reporting-day folder" tone="brand" aspectRatio="4/5" iconSize={88} style={{ borderRadius: 18 }} />
           </div>
         </div>
       </section>
@@ -320,8 +322,8 @@ export default function Page() {
           </div>
 
           <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-            <Img src={BIPE_IMG.documentStack} label="Verification desk · day one" style={{ height: 220, borderRadius: 18 }} />
-            <Img src={BIPE_IMG.documentSeal} label="Seal & signature" style={{ height: 220, borderRadius: 18 }} />
+            <IconTile icon={Files} label="Verification desk · day one" tone="brand" style={{ height: 220, borderRadius: 18 }} />
+            <IconTile icon={Stamp} label="Seal & signature" tone="accent" style={{ height: 220, borderRadius: 18 }} />
           </div>
         </div>
       </section>

@@ -7,9 +7,11 @@ import { getPageSection, getRecruiters, getTestimonials } from "@/lib/content";
 import { PageIntro } from "@/components/shared/PageIntro";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
+import { IconTile } from "@/components/ui/IconTile";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { PlacementsGallery } from "@/components/placements/PlacementsGallery";
+import { BriefcaseBusiness, Handshake } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("placements"); }
 
@@ -1002,17 +1004,19 @@ export default async function Page() {
                 gridTemplateColumns: "1.3fr 1fr",
                 gap: 14,
               }}>
-                <Img
-                  src={BIPE_IMG.placementInterview}
-                  alt="Mock interview session"
+                <IconTile
+                  icon={BriefcaseBusiness}
                   label="MOCK INTERVIEW · QUARTERLY"
+                  tone="brand"
                   aspectRatio="16/10"
+                  iconSize={72}
                 />
-                <Img
-                  src={BIPE_IMG.placementHandshake}
-                  alt="Recruiter visit"
+                <IconTile
+                  icon={Handshake}
                   label="RECRUITER VISIT · 2024"
+                  tone="accent"
                   aspectRatio="4/5"
+                  iconSize={72}
                 />
               </div>
             </div>

@@ -5,6 +5,8 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
+import { IconTile } from "@/components/ui/IconTile";
+import { BookOpenCheck } from "lucide-react";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("jeecup"); }
@@ -500,7 +502,7 @@ export default function Page() {
           </div>
 
           <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-            <Img src={BIPE_IMG.examHall} label="Exam shift · CBT" style={{ height: 220, borderRadius: 18 }} />
+            <IconTile icon={BookOpenCheck} label="Exam shift · CBT" tone="brand" style={{ height: 220, borderRadius: 18 }} />
             <Img src={BIPE_IMG.counsellingHall} label="Counselling round · Lucknow" style={{ height: 220, borderRadius: 18 }} />
           </div>
         </div>

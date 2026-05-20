@@ -5,10 +5,18 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
+import { IconTile } from "@/components/ui/IconTile";
 import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { LabsGallery } from "@/components/campus/LabsGallery";
+import {
+  Droplets,
+  Sun,
+  Lightbulb,
+  Accessibility,
+  type LucideIcon,
+} from "lucide-react";
 
 import { getLibraryPhotos, getPageSection } from "@/lib/content";
 import { PageIntro } from "@/components/shared/PageIntro";
@@ -78,11 +86,18 @@ const LABS: { eyebrow: string; title: string; body: string; img: string; tags: s
 
 const SPORTS: string[] = ["Cricket", "Football", "Badminton", "Table tennis", "Kabaddi", "Indoor games"];
 
-const SUSTAIN: { eyebrow: string; title: string; body: string; img: string }[] = [
-  { eyebrow: "WATER", title: "Rainwater harvesting", body: "Six-bore rainwater system feeds the campus reserve. 24×7 running water across hostels and academic blocks.", img: BIPE_IMG.rainHarvest },
-  { eyebrow: "ENERGY", title: "Rooftop solar", body: "Rooftop photovoltaic generation supplements grid power. Backup gensets across academic and residential blocks.", img: BIPE_IMG.solarPanels },
-  { eyebrow: "LIGHTING", title: "LED everywhere", body: "Campus-wide LED retrofit — academic blocks, workshops, hostels and the corridor. Lower load, longer life.", img: BIPE_IMG.ledLight },
-  { eyebrow: "ACCESS", title: "Barrier-free design", body: "Ramps and accessible toilets to AICTE norms. Ground-floor classrooms allocated for students with mobility needs.", img: BIPE_IMG.rampAccess },
+// Sustainability tiles are illustrated with IconTile (May 2026
+// authenticity sweep): no real BIPE photos of solar panels / ramps /
+// rainwater systems / LED retrofits on file yet, so the previous
+// stock Unsplash placeholders were swapped for honest icon tiles
+// (lucide-react glyphs over brand-tinted backgrounds). When campus
+// photos become available, swap the IconTile usage in the SUSTAIN
+// renderer for <Img src={...}> with a real /public/* path.
+const SUSTAIN: { eyebrow: string; title: string; body: string; icon: LucideIcon; tone: "brand" | "accent" }[] = [
+  { eyebrow: "WATER",    title: "Rainwater harvesting", body: "Six-bore rainwater system feeds the campus reserve. 24×7 running water across hostels and academic blocks.",                 icon: Droplets,     tone: "brand"  },
+  { eyebrow: "ENERGY",   title: "Rooftop solar",        body: "Rooftop photovoltaic generation supplements grid power. Backup gensets across academic and residential blocks.",              icon: Sun,          tone: "accent" },
+  { eyebrow: "LIGHTING", title: "LED everywhere",       body: "Campus-wide LED retrofit — academic blocks, workshops, hostels and the corridor. Lower load, longer life.",                   icon: Lightbulb,    tone: "accent" },
+  { eyebrow: "ACCESS",   title: "Barrier-free design",  body: "Ramps and accessible toilets to AICTE norms. Ground-floor classrooms allocated for students with mobility needs.",            icon: Accessibility, tone: "brand"  },
 ];
 
 export default async function Page() {
@@ -481,7 +496,7 @@ export default async function Page() {
           <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
             {SUSTAIN.map((s) => (
               <article key={s.title} className="card" style={{ padding: 0, overflow: "hidden" }}>
-                <Img src={s.img} label={s.eyebrow} style={{ height: 160, borderRadius: 0 }} />
+                <IconTile icon={s.icon} label={s.eyebrow} tone={s.tone} style={{ height: 160, borderRadius: 0 }} />
                 <div style={{ padding: 22 }}>
                   <div className="eyebrow" style={{ color: "var(--brand)" }}>{s.eyebrow}</div>
                   <h3 className="bipe-h3" style={{ marginTop: 6, fontSize: 18 }}>{s.title}</h3>

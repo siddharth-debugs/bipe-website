@@ -5,6 +5,8 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
+import { IconTile } from "@/components/ui/IconTile";
+import { Award } from "lucide-react";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("scholarships"); }
@@ -392,7 +394,7 @@ export default function Page() {
           </div>
 
           <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-            <Img src={BIPE_IMG.scholarship} label="Award day · 2024 cohort" style={{ height: 220, borderRadius: 18 }} />
+            <IconTile icon={Award} label="Award day · 2024 cohort" tone="accent" style={{ height: 220, borderRadius: 18 }} />
             <Img src={BIPE_IMG.studentWriting} label="Filing the portal form" style={{ height: 220, borderRadius: 18 }} />
           </div>
         </div>

@@ -160,10 +160,18 @@ export const BIPE_IMG = {
   classroom: "/students/classroom-cohort.jpg",
   surveying:    "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151162/bipe/labs/civil/auto-level-jpg",
   weldingHands: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149843/bipe/labs/mechanical/welding-shop",
-  documentSeal: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop",
 
   // admission · jeecup · fees · scholarships · documents · apply
-  examHall: "https://images.unsplash.com/photo-1606326608690-4e0281b1e588?w=900&q=80&auto=format&fit=crop",
+  //
+  // Slots removed 2026-05-20 (replaced with components/ui/IconTile at
+  // every consumer): examHall (→ /jeecup), scholarship (→ /scholarships),
+  // documentFolder / documentStack / documentSeal (→ /documents).
+  // Each was an Unsplash placeholder; IconTile renders a designed
+  // illustration tile (Lucide icon + brand-tinted background +
+  // diagonal pattern) that's clearly not pretending to be a BIPE
+  // photo. When real campus photos are available, swap IconTile
+  // back to <Img> at the consumer call site.
+
   // Real BIPE counselling moment — counsellor (pink shirt) interviewing
   // two prospective students at his desk, "Success Stories #bipeans"
   // alumni wall in the background, glass desk with computer/keyboard.
@@ -176,9 +184,6 @@ export const BIPE_IMG = {
   // on the left, Utkarsh event-photo wall behind. Same room as the
   // counselling photo above.
   studentsForms: "/admission-activity/admission-desk-wide.jpg",
-  scholarship: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80&auto=format&fit=crop",
-  documentFolder: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop",
-  documentStack: "https://images.unsplash.com/photo-1568667256549-094345857637?w=900&q=80&auto=format&fit=crop",
   // studentWriting swapped off Unsplash 2026-05-20 — used on
   // /scholarships for the "Filing the portal form" tile. The real
   // BIPE classroom-cohort photo shows students with notebooks open at
@@ -197,15 +202,12 @@ export const BIPE_IMG = {
   // the sportsMeet slot which uses frame 5 — gives visual variation
   // between the two campus-life tiles without resorting to stock.
   sportsGround: "/events/volleyball-final-showdown/4.jpg",
-  solarPanels: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80&auto=format&fit=crop",
-  rainHarvest: "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=900&q=80&auto=format&fit=crop",
-  // Modern interior with ceiling LED strips. The original Unsplash
-  // ID (photo-1565636291749) 404'd upstream — verified May 2026 in
-  // the dev server logs. Swapped to a known-stable corridor shot
-  // that also visually matches the card body's "academic blocks,
-  // workshops, hostels and the corridor" copy.
-  ledLight: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop",
-  rampAccess: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=900&q=80&auto=format&fit=crop",
+  // solarPanels / rainHarvest / ledLight / rampAccess removed
+  // 2026-05-20: the four /campus sustainability tiles now render via
+  // components/ui/IconTile (Sun / Droplets / Lightbulb / Accessibility
+  // glyphs over brand-tinted backgrounds). No real BIPE photos of
+  // solar arrays, rainwater bores, LED retrofits or ramps exist yet;
+  // honest icon tiles beat stock placeholders.
   // Real BIPE Utkarsh 2020 stage performance — line of student
   // dancers in yellow kurta + red harem, "UTKARSH 2020" stage
   // backdrop with BIPE Banaras Institute of Polytechnic & Engineering
@@ -227,9 +229,11 @@ export const BIPE_IMG = {
   // "SPORTS MEET" not "TRACK & FIELD".
   sportsMeet: "/events/volleyball-final-showdown/5.jpg",
 
-  // placements
-  placementInterview: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80&auto=format&fit=crop",
-  placementHandshake: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=900&q=80&auto=format&fit=crop",
+  // placements — placementInterview / placementHandshake removed
+  // 2026-05-20: /placements now uses components/ui/IconTile
+  // (BriefcaseBusiness for the mock-interview tile, Handshake for the
+  // recruiter-visit tile). When real campus placement-day photos
+  // come in, swap IconTile back to <Img> at the call site.
 
   // Per-branch thumbnail + slider imagery now lives on DATA.branches
   // (lib/data.ts) as `thumbnail` and `slides`. Consumers should read
