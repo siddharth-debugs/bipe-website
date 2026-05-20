@@ -320,9 +320,15 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               <ArrowIcon size={12} />
             </Link>
           </div>
-          <Col heading="Academics" items={[["All branches", "/courses"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Dairy Engineering", "/courses/dairy-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
+          <Col heading="Academics" items={[["All branches", "/courses"], ["Placements", "/placements"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Dairy Engineering", "/courses/dairy-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
           <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["Apply now", "/apply"]]} />
-          <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
+          {/* Placements 2026-05-20: added at position 2 of the Academics
+              column (between "All branches" and the per-branch list) —
+              prospective students checking academic options invariably
+              want to see placement outcomes too. The column had been
+              shipping with branches only; Placements is now linked from
+              every page footer. */}
+          <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Alumni", "/alumni"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
           <Col heading="Compliances" items={[["Approvals", "/approvals"], ["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["Privacy", "/privacy"], ["Terms", "/terms"]]} />
         </div>
 

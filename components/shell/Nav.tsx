@@ -370,9 +370,18 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
     title: "Academics",
     items: [
       { to: "/courses", label: "Academics", hi: "शैक्षणिक" },
+      // Placements bumped up 2026-05-20 — user spotted that on the
+      // mobile side menu it was 4th in the section, sitting below the
+      // visible fold (after Teaching & Learning). Moving it to
+      // position 2 puts it right after the academics overview, which
+      // is the natural reader flow ("what do you study" →
+      // "where does that take you") and the strongest argument we
+      // have for the branch lineup. Alumni / Faculty / Teaching
+      // matter but they're supporting content; Placements is the
+      // conversion-critical page.
+      { to: "/placements", label: "Placements", hi: "प्लेसमेंट" },
       { to: "/faculty", label: "Faculty", hi: "संकाय" },
       { to: "/teaching", label: "Teaching & Learning" },
-      { to: "/placements", label: "Placements", hi: "प्लेसमेंट" },
       { to: "/alumni", label: "Alumni", hi: "पूर्व छात्र" },
     ],
   },
