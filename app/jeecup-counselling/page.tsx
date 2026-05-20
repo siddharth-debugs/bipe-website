@@ -194,7 +194,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="btn btn-ghost btn-lg"
             >
-              WhatsApp admissions <WhatsAppIcon size={16} />
+              WhatsApp admissions <WhatsAppIcon />
             </a>
           </div>
         </div>
@@ -656,7 +656,7 @@ export default function Page() {
                   className="btn btn-primary btn-lg"
                   style={{ justifyContent: "space-between" }}
                 >
-                  Call +91-9198646464 <PhoneIcon size={16} />
+                  Call +91-9198646464 <PhoneIcon />
                 </a>
                 <a
                   href="https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
@@ -669,7 +669,7 @@ export default function Page() {
                     justifyContent: "space-between",
                   }}
                 >
-                  WhatsApp now <WhatsAppIcon size={16} />
+                  WhatsApp now <WhatsAppIcon />
                 </a>
                 <Link
                   href="/apply"
