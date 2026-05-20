@@ -287,6 +287,63 @@ export default function Page() {
               </span>
             </Link>
           </div>
+
+          {/*
+            Internal-linking row — May 2026 SEO audit identified /apply
+            as a thin link surface (linked only to /visit). Adding a
+            quick-jump strip to the four pages applicants ask about
+            most: branches, fees, scholarships, counselling. Each is
+            a small underlined link, no styling weight.
+          */}
+          <div
+            style={{
+              marginTop: 36,
+              padding: "24px 28px",
+              border: "1px solid var(--line)",
+              borderRadius: 16,
+              background: "var(--paper-2)",
+              display: "grid",
+              gridTemplateColumns: "auto 1fr",
+              gap: 24,
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "var(--ink-3)",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Before you fill the form
+            </div>
+            <div
+              className="row"
+              style={{
+                display: "flex",
+                gap: 22,
+                flexWrap: "wrap",
+                fontSize: 14,
+                fontWeight: 600,
+              }}
+            >
+              <Link href="/courses" style={{ color: "var(--brand)" }}>
+                Browse all 5 branches →
+              </Link>
+              <Link href="/fees" style={{ color: "var(--brand)" }}>
+                Fees 2026-27 →
+              </Link>
+              <Link href="/scholarships" style={{ color: "var(--brand)" }}>
+                UP scholarship eligibility →
+              </Link>
+              <Link href="/jeecup-counselling" style={{ color: "var(--brand)" }}>
+                JEECUP counselling guide →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

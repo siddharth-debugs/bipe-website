@@ -481,7 +481,7 @@ export default function Page() {
                   </span>
                 </h2>
                 <p style={{ marginTop: 14, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "44ch" }}>
-                  Forms confusing? Choice-filling intimidating? Call us. There is no fee for the conversation — we will walk you through your options branch-by-branch.
+                  Forms confusing? Choice-filling intimidating? Read the <Link href="/jeecup-counselling" style={{ color: "var(--accent)", textDecoration: "underline" }}>JEECUP counselling 2026 guide</Link> for the 5 rounds, choice-filling order, documents and common mistakes — or call us. There is no fee for the conversation; we will walk you through your options branch-by-branch.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
