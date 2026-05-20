@@ -7,6 +7,7 @@ import { ConditionalChrome } from "@/components/shell/ConditionalChrome";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
 import { Analytics } from "@vercel/analytics/next";
+import { getContact } from "@/lib/content";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans-next", display: "swap" });
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif-next", display: "swap" });
@@ -195,7 +196,20 @@ export const viewport: Viewport = {
   themeColor: "#283e7a",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Server-fetch the live contact info once per request and thread it
+  // through ConditionalChrome → Footer. Falls back to DATA.contact
+  // when the backend bundle is empty (handled inside Footer).
+  const liveContact = await getContact();
+  const footerContact = {
+    phone: liveContact.phone,
+    phone2: liveContact.phone2,
+    email: liveContact.email,
+    whatsapp: liveContact.whatsapp_url,
+    address: liveContact.address,
+    jeecup: liveContact.jeecup_code,
+    aicte: liveContact.aicte_id,
+  };
   return (
     <html lang="en">
       <head>
@@ -207,7 +221,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${geist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
         <LangProvider>
-          <ConditionalChrome>{children}</ConditionalChrome>
+          <ConditionalChrome contact={footerContact}>{children}</ConditionalChrome>
         </LangProvider>
         <Analytics />
       </body>

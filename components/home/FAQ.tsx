@@ -1,11 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { DATA } from "@/lib/data";
+import { DATA, type FAQItem } from "@/lib/data";
 import { WhatsAppIcon } from "@/components/shell/Icons";
 
-export const FAQ = () => {
-  const all = DATA.faq;
+/**
+ * `items` optional — home + /faq pages pass live FAQ rows from the
+ * home/faq PageSection. Falls back to DATA.faq.
+ */
+export const FAQ = ({ items }: { items?: FAQItem[] } = {}) => {
+  const all: FAQItem[] = items && items.length > 0 ? items : DATA.faq;
   const cats = ["All", ...Array.from(new Set(all.map(f => f.cat)))];
   const [filter, setFilter] = useState("All");
   const [open, setOpen] = useState(0);

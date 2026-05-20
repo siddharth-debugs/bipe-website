@@ -1,11 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import { DATA } from "@/lib/data";
+import { DATA, type Facility } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon } from "@/components/shell/Icons";
 
-export const CampusLife = () => (
+/**
+ * `items` optional — server page passes live facilities from the
+ * home/facilities PageSection. Falls back to DATA.facilities.
+ */
+export const CampusLife = ({ items }: { items?: Facility[] } = {}) => (
   <section className="section">
     <div className="container">
       <div className="between" style={{ marginBottom: 36, alignItems: "end", flexWrap: "wrap", gap: 24 }}>
@@ -23,7 +27,7 @@ export const CampusLife = () => (
         <Img src={BIPE_IMG.library} alt="BIPE library and reading room" label="LIBRARY" style={{ height: "100%" }} />
       </div>
       <div className="grid bipe-grid-4" style={{ gridTemplateColumns: "repeat(4, 1fr)", marginTop: 24 }}>
-        {DATA.facilities.slice(0, 4).map((f, i) => (
+        {(items && items.length > 0 ? items : DATA.facilities).slice(0, 4).map((f, i) => (
           <div key={i} className="reveal" style={{ transitionDelay: `${i * 40}ms` }}>
             <div className="eyebrow" style={{ color: "var(--brand)" }}>{f.count}</div>
             <div style={{ fontWeight: 600, fontSize: 16, marginTop: 6 }}>{f.name}</div>

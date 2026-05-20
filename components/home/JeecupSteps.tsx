@@ -1,9 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { DATA } from "@/lib/data";
+import { DATA, type JeecupStep } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 
-export const JeecupSteps = () => (
+/**
+ * `items` optional — server page passes live steps from the
+ * home/jeecup-steps PageSection. Falls back to DATA.jeecupSteps.
+ */
+export const JeecupSteps = ({ items }: { items?: JeecupStep[] } = {}) => (
   <section className="section">
     <div className="container">
       <div className="between" style={{ marginBottom: 36, alignItems: "end", flexWrap: "wrap", gap: 24 }}>
@@ -14,7 +18,7 @@ export const JeecupSteps = () => (
         <Link href="/jeecup" className="btn btn-ghost">Full guide <ArrowIcon /></Link>
       </div>
       <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 18, overflow: "hidden", background: "var(--white)" }}>
-        {DATA.jeecupSteps.map((s, i) => (
+        {(items && items.length > 0 ? items : DATA.jeecupSteps).map((s, i) => (
           <div key={i} className="reveal"
             style={{ padding: 28, borderRight: (i + 1) % 3 ? "1px solid var(--line)" : "none", borderBottom: i < 3 ? "1px solid var(--line)" : "none", transitionDelay: `${i * 50}ms` }}>
             <div className="serif" style={{ fontSize: 64, lineHeight: 1, color: "var(--brand)", opacity: 0.5 }}>{s.step}</div>

@@ -4,13 +4,22 @@ import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "./Icons";
 import { BackToTop } from "./BackToTop";
 
-// NOTE: Footer is mounted inside <ConditionalChrome> which is a client
-// component (it uses usePathname). That means Footer itself can't be
-// an async server component — it would break the client-tree
-// rendering boundary. Wiring DATA.contact → backend ContactInfo here
-// requires lifting the fetch into a server boundary first (probably
-// adding a ServerChrome wrapper above ConditionalChrome). Left static
-// until that refactor.
+/**
+ * Subset of the live ContactInfo singleton the Footer actually renders.
+ * app/layout.tsx fetches getContact() server-side and threads this
+ * object through <ConditionalChrome> so the Footer can read live edits
+ * from the admin's Contact info tab without crossing the client/server
+ * async boundary.
+ */
+export interface FooterContact {
+  phone: string;
+  phone2: string;
+  email: string;
+  whatsapp: string;
+  address: string;
+  jeecup: string;
+  aicte: string;
+}
 
 const Col = ({ heading, items }: { heading: string; items: [string, string][] }) => (
   <div>
@@ -23,8 +32,20 @@ const Col = ({ heading, items }: { heading: string; items: [string, string][] })
   </div>
 );
 
-export const Footer = () => {
-  const C = DATA.contact;
+export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
+  // Prefer the server-fetched live contact (threaded via app/layout.tsx
+  // → ConditionalChrome). Fall back to DATA.contact for anything the
+  // live object doesn't supply or when the prop is omitted entirely
+  // (e.g. local dev with the backend down).
+  const C = {
+    phone: contact?.phone || DATA.contact.phone,
+    phone2: contact?.phone2 || DATA.contact.phone2,
+    email: contact?.email || DATA.contact.email,
+    whatsapp: contact?.whatsapp || DATA.contact.whatsapp,
+    address: contact?.address || DATA.contact.address,
+    jeecup: contact?.jeecup || DATA.contact.jeecup,
+    aicte: contact?.aicte || DATA.contact.aicte,
+  };
   return (
     <footer className="footer" style={{ position: "relative", overflow: "hidden" }}>
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, opacity: 0.04, backgroundImage: "linear-gradient(var(--paper) 1px, transparent 1px), linear-gradient(90deg, var(--paper) 1px, transparent 1px)", backgroundSize: "96px 96px", pointerEvents: "none" }} />

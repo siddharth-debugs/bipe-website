@@ -2,12 +2,16 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { DATA } from "@/lib/data";
+import { DATA, type WhyItem } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 
-export const WhyBipe = () => {
+/**
+ * `items` optional — home server page passes live items from the
+ * home/why-bipe PageSection. Falls back to DATA.whyBipe.
+ */
+export const WhyBipe = ({ items: liveItems }: { items?: WhyItem[] } = {}) => {
   const [active, setActive] = useState(0);
-  const items = DATA.whyBipe;
+  const items: WhyItem[] = liveItems && liveItems.length > 0 ? liveItems : DATA.whyBipe;
   const featured = items[0];
   const rest = items.slice(1);
   return (

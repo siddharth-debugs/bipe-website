@@ -41,7 +41,12 @@ export const PAGES: PageDef[] = [
     publicPath: "/",
     description: "Landing page — hero, branches, stats, recruiters, why-BIPE, testimonials, events.",
     sections: [
-      { key: "hero",    label: "Hero",    type: "hero",    description: "Headline, description, CTAs, background photo, approvals strip." },
+      { key: "hero",         label: "Hero",         type: "hero",    description: "Headline, description, CTAs, background photo, approvals strip." },
+      { key: "stats",        label: "Stats bar",    type: "generic", description: "5 tiles under the hero — number / label / sub-label. Edit `content.items`." },
+      { key: "why-bipe",     label: "Why BIPE",     type: "generic", description: "4-item differentiator list with mentor ratio, OBE pedagogy, rare dairy, alumni count." },
+      { key: "faq",          label: "FAQ",          type: "generic", description: "Frequently asked questions. Also rendered on /faq. Edit `content.items` (cat / q / a)." },
+      { key: "facilities",   label: "Facilities",   type: "generic", description: "4 campus-life tiles shown after the branches slider." },
+      { key: "jeecup-steps", label: "JEECUP steps", type: "generic", description: "6-card 'application → first day of class' grid." },
     ],
   },
   {

@@ -1,14 +1,22 @@
 "use client";
 
 import React from "react";
-import { DATA } from "@/lib/data";
+import { DATA, type Stat } from "@/lib/data";
 import { Counter } from "@/components/ui/Counter";
 
-export const StatsBar = () => (
+/**
+ * `items` is optional: the home server page passes the live array from
+ * the home/stats PageSection so admin edits flow through. If the prop
+ * is omitted (e.g. mounted from elsewhere) the static DATA.stats list
+ * is the fallback.
+ */
+export const StatsBar = ({ items }: { items?: Stat[] } = {}) => {
+  const list: Stat[] = items && items.length > 0 ? items : DATA.stats;
+  return (
   <section className="section-tight">
     <div className="container">
       <div className="reveal bipe-stats" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", border: "1px solid var(--line)", borderRadius: 18, overflow: "hidden", background: "var(--white)" }}>
-        {DATA.stats.map((s, i) => {
+        {list.map((s, i) => {
           // Only run the count-up animation on plain integer/comma values
           // (`1,000`, `120`). Anything with a colon, hyphen, slash etc.
           // (e.g. `1:20`) is rendered as-is so the original glyphs are
@@ -34,4 +42,5 @@ export const StatsBar = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
