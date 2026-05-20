@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
+import { getEvents } from "@/lib/content";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
@@ -67,8 +68,12 @@ const FLAGSHIPS: Flagship[] = [
   },
 ];
 
-export default function Page() {
-  const upcoming = DATA.events.slice(0, 4);
+export default async function Page() {
+  // Live events from the backend (admin → Events / News). Falls back
+  // to DATA.events if the bundle is empty — see getEvents() in
+  // lib/content.ts.
+  const events = await getEvents();
+  const upcoming = events.slice(0, 4);
 
   return (
     <div className="page-enter">

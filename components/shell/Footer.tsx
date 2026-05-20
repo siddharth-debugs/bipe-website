@@ -4,6 +4,14 @@ import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "./Icons";
 import { BackToTop } from "./BackToTop";
 
+// NOTE: Footer is mounted inside <ConditionalChrome> which is a client
+// component (it uses usePathname). That means Footer itself can't be
+// an async server component — it would break the client-tree
+// rendering boundary. Wiring DATA.contact → backend ContactInfo here
+// requires lifting the fetch into a server boundary first (probably
+// adding a ServerChrome wrapper above ConditionalChrome). Left static
+// until that refactor.
+
 const Col = ({ heading, items }: { heading: string; items: [string, string][] }) => (
   <div>
     <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 50%, transparent)", marginBottom: 18, paddingBottom: 10, borderBottom: "1px solid color-mix(in oklab, var(--paper) 12%, transparent)" }}>{heading}</div>
