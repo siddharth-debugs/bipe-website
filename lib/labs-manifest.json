@@ -24,6 +24,14 @@
     "version": 1778151168
   },
   {
+    "publicId": "bipe/labs/civil/concrete-technology-lab-jpg",
+    "category": "civil",
+    "title": "CONCRETE TECHNOLOGY LAB.jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1779263412
+  },
+  {
     "publicId": "bipe/labs/civil/construction-site-visit",
     "category": "civil",
     "title": "CONSTRUCTION SITE VISIT",
@@ -46,6 +54,22 @@
     "width": 4096,
     "height": 2304,
     "version": 1778151177
+  },
+  {
+    "publicId": "bipe/labs/civil/img-20260507-162804-jpg",
+    "category": "civil",
+    "title": "IMG 20260507 162804.jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1779263442
+  },
+  {
+    "publicId": "bipe/labs/civil/img-20260507-162816-jpg",
+    "category": "civil",
+    "title": "IMG 20260507 162816.jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1779263458
   },
   {
     "publicId": "bipe/labs/civil/r-c-c-structure-jpg",
@@ -72,6 +96,22 @@
     "version": 1778151187
   },
   {
+    "publicId": "bipe/labs/civil/soil-mechanics-and-foundation-engineering-lab-jpg",
+    "category": "civil",
+    "title": "SOIL MECHANICS AND FOUNDATION ENGINEERING LAB.jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1779263512
+  },
+  {
+    "publicId": "bipe/labs/civil/soil-mechanics-and-foundation-engineering-lab-jpg-2",
+    "category": "civil",
+    "title": "SOIL MECHANICS AND FOUNDATION ENGINEERING LAB.jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1779263523
+  },
+  {
     "publicId": "bipe/labs/civil/survey-camp",
     "category": "civil",
     "title": "SURVEY CAMP",
@@ -94,6 +134,14 @@
     "width": 960,
     "height": 1280,
     "version": 1778151193
+  },
+  {
+    "publicId": "bipe/labs/civil/survey-engineering-lab-jpg",
+    "category": "civil",
+    "title": "SURVEY ENGINEERING LAB .jpg",
+    "width": 4096,
+    "height": 2304,
+    "version": 1779263536
   },
   {
     "publicId": "bipe/labs/civil/transit-theodolite-jpg",
@@ -120,196 +168,68 @@
     "version": 1778151206
   },
   {
-    "publicId": "bipe/labs/cse/networking-iot-lab2",
-    "category": "cse",
-    "title": "Networking & IoT Lab2",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778150939
+    "publicId": "bipe/labs/dairy/18",
+    "category": "dairy",
+    "title": "18",
+    "width": 4160,
+    "height": 3120,
+    "version": 1779263602
   },
   {
-    "publicId": "bipe/labs/cse/networking-lab",
-    "category": "cse",
-    "title": "Networking Lab",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150969
+    "publicId": "bipe/labs/dairy/24",
+    "category": "dairy",
+    "title": "24",
+    "width": 4160,
+    "height": 3120,
+    "version": 1779263622
   },
   {
-    "publicId": "bipe/labs/cse/networking-lab-2",
-    "category": "cse",
-    "title": "Networking Lab (2)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150944
+    "publicId": "bipe/labs/dairy/33",
+    "category": "dairy",
+    "title": "33",
+    "width": 4160,
+    "height": 3120,
+    "version": 1779263640
   },
   {
-    "publicId": "bipe/labs/cse/networking-lab-3",
-    "category": "cse",
-    "title": "Networking Lab (3)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150949
+    "publicId": "bipe/labs/dairy/dairy-engineering",
+    "category": "dairy",
+    "title": "Dairy Engineering",
+    "width": 800,
+    "height": 600,
+    "version": 1779263644
   },
   {
-    "publicId": "bipe/labs/cse/networking-lab-4",
-    "category": "cse",
-    "title": "Networking Lab (4)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150954
+    "publicId": "bipe/labs/dairy/engg-mechanics-lab",
+    "category": "dairy",
+    "title": "Engg Mechanics Lab",
+    "width": 1449,
+    "height": 1086,
+    "version": 1779263665
   },
   {
-    "publicId": "bipe/labs/cse/networking-lab-5",
-    "category": "cse",
-    "title": "Networking Lab (5)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150959
+    "publicId": "bipe/labs/dairy/file-0000000053547207ac9dead509411b1a",
+    "category": "dairy",
+    "title": "file 0000000053547207ac9dead509411b1a",
+    "width": 1448,
+    "height": 1086,
+    "version": 1779263699
   },
   {
-    "publicId": "bipe/labs/cse/networking-lab-6",
-    "category": "cse",
-    "title": "Networking Lab (6)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150964
+    "publicId": "bipe/labs/dairy/hydraulics-lab",
+    "category": "dairy",
+    "title": "Hydraulics Lab",
+    "width": 1448,
+    "height": 1086,
+    "version": 1779263721
   },
   {
-    "publicId": "bipe/labs/cse/programming-lab",
-    "category": "cse",
-    "title": "Programming Lab",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150991
-  },
-  {
-    "publicId": "bipe/labs/cse/programming-lab-2",
-    "category": "cse",
-    "title": "Programming Lab (2)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150973
-  },
-  {
-    "publicId": "bipe/labs/cse/programming-lab-3",
-    "category": "cse",
-    "title": "Programming Lab (3)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778150976
-  },
-  {
-    "publicId": "bipe/labs/cse/programming-lab-4",
-    "category": "cse",
-    "title": "Programming Lab (4)",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778150980
-  },
-  {
-    "publicId": "bipe/labs/cse/programming-lab-5",
-    "category": "cse",
-    "title": "Programming Lab (5)",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778150984
-  },
-  {
-    "publicId": "bipe/labs/cse/programming-lab-6",
-    "category": "cse",
-    "title": "Programming Lab (6)",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778150988
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-2nd-year",
-    "category": "cse",
-    "title": "Project Expo 2nd year",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778150995
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-3rd-year",
-    "category": "cse",
-    "title": "Project Expo 3rd year",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778150999
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-3rd-year1",
-    "category": "cse",
-    "title": "Project Expo 3rd year1",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778151003
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-3rd-year2",
-    "category": "cse",
-    "title": "Project Expo 3rd year2",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778151007
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-3rd-year3",
-    "category": "cse",
-    "title": "Project Expo 3rd year3",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778151010
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-3rd-year4",
-    "category": "cse",
-    "title": "Project Expo 3rd year4",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778151014
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-3rd-year5",
-    "category": "cse",
-    "title": "Project Expo 3rd year5",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778151017
-  },
-  {
-    "publicId": "bipe/labs/cse/project-expo-3rd-year6",
-    "category": "cse",
-    "title": "Project Expo 3rd year6",
-    "width": 4096,
-    "height": 3072,
-    "version": 1778151022
-  },
-  {
-    "publicId": "bipe/labs/cse/workshop-at-programming",
-    "category": "cse",
-    "title": "Workshop at Programming",
-    "width": 2448,
-    "height": 3264,
-    "version": 1778151034
-  },
-  {
-    "publicId": "bipe/labs/cse/workshop-at-programming-2",
-    "category": "cse",
-    "title": "Workshop at Programming (2)",
-    "width": 2448,
-    "height": 3264,
-    "version": 1778151026
-  },
-  {
-    "publicId": "bipe/labs/cse/workshop-at-programming-3",
-    "category": "cse",
-    "title": "Workshop at Programming (3)",
-    "width": 3072,
-    "height": 4096,
-    "version": 1778151030
+    "publicId": "bipe/labs/dairy/thermal-heat-engg-lab",
+    "category": "dairy",
+    "title": "Thermal & Heat Engg Lab",
+    "width": 1448,
+    "height": 1086,
+    "version": 1779263735
   },
   {
     "publicId": "bipe/labs/ee/ap-chemistry",
@@ -462,6 +382,78 @@
     "width": 899,
     "height": 1599,
     "version": 1778151104
+  },
+  {
+    "publicId": "bipe/hostel/1779184067484",
+    "category": "hostel",
+    "title": "1779184067484",
+    "width": 688,
+    "height": 1417,
+    "version": 1779263745
+  },
+  {
+    "publicId": "bipe/hostel/1779184432779",
+    "category": "hostel",
+    "title": "1779184432779",
+    "width": 688,
+    "height": 1248,
+    "version": 1779263757
+  },
+  {
+    "publicId": "bipe/hostel/1779186676308",
+    "category": "hostel",
+    "title": "1779186676308",
+    "width": 1327,
+    "height": 721,
+    "version": 1779263766
+  },
+  {
+    "publicId": "bipe/hostel/1779187400799",
+    "category": "hostel",
+    "title": "1779187400799",
+    "width": 1195,
+    "height": 773,
+    "version": 1779263785
+  },
+  {
+    "publicId": "bipe/hostel/file-0000000010a47207a744a3eb03601f65",
+    "category": "hostel",
+    "title": "file 0000000010a47207a744a3eb03601f65",
+    "width": 1023,
+    "height": 1537,
+    "version": 1779263817
+  },
+  {
+    "publicId": "bipe/hostel/img-20230408-203849",
+    "category": "hostel",
+    "title": "IMG 20230408 203849",
+    "width": 4080,
+    "height": 3060,
+    "version": 1779263838
+  },
+  {
+    "publicId": "bipe/hostel/mess",
+    "category": "hostel",
+    "title": "Mess",
+    "width": 1920,
+    "height": 1080,
+    "version": 1779263848
+  },
+  {
+    "publicId": "bipe/hostel/whatsapp-image-2026-05-19-at-16-05-41",
+    "category": "hostel",
+    "title": "WhatsApp Image 2026-05-19 at 16.05.41",
+    "width": 960,
+    "height": 1152,
+    "version": 1779263859
+  },
+  {
+    "publicId": "bipe/hostel/whatsapp-image-2026-05-19-at-16-05-41-1",
+    "category": "hostel",
+    "title": "WhatsApp Image 2026-05-19 at 16.05.41 (1)",
+    "width": 876,
+    "height": 1132,
+    "version": 1779263854
   },
   {
     "publicId": "bipe/labs/mechanical/auto-mobile",

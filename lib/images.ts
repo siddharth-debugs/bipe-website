@@ -50,7 +50,20 @@ export const BIPE_IMG = {
   computerLab: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778150980/bipe/labs/cse/programming-lab-4",
   electrical:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151049/bipe/labs/ee/ee-machin",
   civil:       "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151196/bipe/labs/civil/survey-camp",
-  dairy:       "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
+  // Dairy: synced 2026-05-20 from Drive's Photos > Lab Photos > Dairy
+  // Engineering folder via scripts/sync-labs.mjs. Only one frame is
+  // unambiguously a dairy photo ("Dairy Engineering.jpg" → slug
+  // "dairy-engineering", 800×600). The other 7 frames in that folder
+  // were mis-filed mechanical lab photos (Hydraulics / Thermal /
+  // Engg Mechanics) — they synced fine but should NOT be used here.
+  //
+  // Alternatives Drive uploaded but unverified (could be dairy-relevant,
+  // names are opaque "18.jpeg", "24.jpeg", "33.jpeg" — swap freely if any
+  // are better visual matches):
+  //   .../v1779263602/bipe/labs/dairy/18
+  //   .../v1779263622/bipe/labs/dairy/24
+  //   .../v1779263640/bipe/labs/dairy/33
+  dairy:       "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263644/bipe/labs/dairy/dairy-engineering",
   automobile:  "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778149853/bipe/labs/mechanical/auto-mobile-lab",
 
   campusWide: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80&auto=format&fit=crop",
@@ -86,8 +99,27 @@ export const BIPE_IMG = {
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/a_90,f_auto,q_auto,w_1200/v1778955780/bipe/library/library-10.jpg", alt: "BIPE library — reference texts and shelves" },
     { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_1200/v1778955782/bipe/library/library-11.jpg", alt: "BIPE library — overview" },
   ] as { src: string; alt: string }[],
-  hostel: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=900&q=80&auto=format&fit=crop",
-  hostelBoys: "https://images.unsplash.com/photo-1564540583246-934409427776?w=900&q=80&auto=format&fit=crop",
+  // Hostel: synced 2026-05-20 from Drive's Photos > Campus &
+  // Accomodation > Hostel n Mess folder via sync-labs.mjs. The folder
+  // contained 9 frames — mostly WhatsApp-timestamp filenames (opaque
+  // semantically) plus one clearly labeled "Mess.png" and one large
+  // 2023 capture. Slots picked by orientation match:
+  //
+  //   hostel      → 1327×721 landscape  (HOSTEL · INTERIOR slot —
+  //                   /hostel · /visit · homepage CampusLife)
+  //   hostelBoys  → 4080×3060 large     (HOSTEL · EXTERIOR slot —
+  //                   /hostel only)
+  //
+  // Other hostel frames available if visual swap needed:
+  //   .../v1779263745/bipe/hostel/1779184067484             (portrait)
+  //   .../v1779263757/bipe/hostel/1779184432779             (portrait)
+  //   .../v1779263785/bipe/hostel/1779187400799             (~16:9)
+  //   .../v1779263848/bipe/hostel/mess                      (1920×1080 — labeled Mess)
+  //   .../v1779263817/bipe/hostel/file-0000000010a47207...  (portrait)
+  //   .../v1779263859/bipe/hostel/whatsapp-image-2026-05-19-at-16-05-41
+  //   .../v1779263854/bipe/hostel/whatsapp-image-2026-05-19-at-16-05-41-1
+  hostel: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263766/bipe/hostel/1779186676308",
+  hostelBoys: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263838/bipe/hostel/img-20230408-203849",
   // mess: real BIPE mess close-up (students standing, hands folded in
   // grace before meal, April 2023). Replaces the Unsplash placeholder
   // the audit flagged on /hostel.

@@ -34,12 +34,40 @@ const SECRET = process.env.CLOUDINARY_API_SECRET || "mHMr_v3COY8ypgyS8CAiWQ5dV1A
 // uploaded to Cloudinary with this category tag. Add new categories by
 // dropping a new Drive folder into the parent shared folder, sharing
 // it "Anyone with the link", and listing it here.
+//
+// Optional per-entry overrides:
+//   cloudinaryFolder  — full Cloudinary path (default: bipe/labs/${category})
+//   cloudinaryTags    — comma-separated tags (default: lab,${category})
+//
+// May 2026 note: the original 4 lab folder IDs below (cse/ee/mechanical/
+// civil) now point at containers that hold sub-folders rather than
+// direct image files — the Drive was reorganized into a cleaner
+// `Photos > Lab Photos > [Branch]` tree. Re-running the script logs
+// "0 images found" for those four entries (the existing Cloudinary
+// URLs continue serving from older syncs). When someone refreshes the
+// lab photos, update those IDs to the new tree:
+//
+//   Photos > Lab Photos > Computer Science & Engineering  1jZvTYXuvFoYfYpumYOPtY8xG-sCrQVmg
+//   Photos > Lab Photos > Electrical Engineering          1IiLfh1kvYQPVCViQjzch7JsSuU1ZFhtP
+//   Photos > Lab Photos > Mechanical Engineering          1QREQI8T1HssFmgJEe07WXbdfVv-ak88g
+//   Photos > Lab Photos > Civil Engineering               1N5ahaYJCRzj1BSYCZ-XZI66gUaZoFVMa
 
 const FOLDERS = [
   { id: "1UNeAJW5xjtoS41eVm3E7BbCeXKX2E-E3", category: "cse" },        // CSE-LAB & Workshops
   { id: "1v9ngGVLyBOrvQnSvEwP-GsfioKm2NhuN", category: "ee" },         // EE
   { id: "1PJsjN0m1EIpqVfeAECtc62Ye4EkdumgH", category: "mechanical" }, // MECHANICAL
   { id: "1FWj1svm2hazJZsrvR6nZDd4lBkzXfY4h", category: "civil" },      // CIVIL
+  // Added 2026-05-20 — users reported missing dairy + hostel photos on
+  // /courses/dairy-engineering and /hostel. These come from the new
+  // Photos > Lab Photos > Dairy Engineering and
+  // Photos > Campus & Accomodation > Hostel n Mess folders.
+  { id: "1KVDbAaRC5vEAONdTlHTpisoQzkJEm6bc", category: "dairy" },      // Dairy Engineering
+  {
+    id: "1_IVM9TGG55UD-Fz6keLTbmakLP-ZvNX7",
+    category: "hostel",
+    cloudinaryFolder: "bipe/hostel",
+    cloudinaryTags: "hostel,campus",
+  }, // Hostel n Mess
 ];
 
 // ─── Helpers ───────────────────────────────────────────────────────────
@@ -204,7 +232,8 @@ for (const f of FOLDERS) {
     let n = 2;
     while (usedSlugs.has(slug)) slug = `${baseSlug}-${n++}`;
     usedSlugs.add(slug);
-    const folder = `bipe/labs/${f.category}`;
+    const folder = f.cloudinaryFolder || `bipe/labs/${f.category}`;
+    const tags = f.cloudinaryTags || `lab,${f.category}`;
     const publicId = slug;
     process.stdout.write(`  → ${f.category}/${slug.padEnd(40, " ")} `);
     try {
@@ -212,7 +241,7 @@ for (const f of FOLDERS) {
       const r = await uploadToCloudinary(buf, {
         publicId,
         folder,
-        tags: `lab,${f.category}`,
+        tags,
       });
       manifest.push({
         publicId: r.public_id,
