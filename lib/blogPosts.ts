@@ -1817,6 +1817,268 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 11th post — "Government jobs after polytechnic diploma".
+  //
+  // Target cluster: "government jobs after polytechnic" (~720/mo) +
+  // "SSC JE eligibility polytechnic" + "RRB JE polytechnic" + "UPPCL JE
+  // diploma" + "Junior Engineer salary" — combined ~2,800/mo on Eastern
+  // UP / Bihar long-tail. Strong audience match — government jobs are
+  // the #1 reason rural families pursue a polytechnic diploma, and
+  // every BIPE alumni Q&A starts with this question.
+  //
+  // Differentiation from existing posts:
+  //   /blog/diploma-vs-iti-vs-btech-after-class-10 — covers ITI/B.Tech
+  //     comparison, mentions government jobs in passing.
+  //   /blog/career-options-after-12th-polytechnic-up — focused on the
+  //     after-12th decision moment.
+  //   This post is a depth-first guide to the specific government-job
+  //     pipeline a polytechnic diploma unlocks: which exams, which
+  //     branches eligible for which roles, salaries, preparation
+  //     timeline. Branches link to /courses/[branch] for specifics.
+  {
+    slug: "government-jobs-after-polytechnic-diploma-2026",
+    title: "Government jobs after polytechnic diploma — full 2026 exam pipeline for UP & Bihar",
+    category: "Career · Government Jobs",
+    date: "21 May 2026",
+    publishedISO: "2026-05-21",
+    readTime: "12 min read",
+    excerpt:
+      "Which government exams a 3-year BTE UP polytechnic diploma makes you eligible for — SSC JE, RRB JE, UPPCL JE, UP PWD, Indian Army Technical Entry, Indian Navy SSR/AA. Branch-by-branch eligibility, salary scales, preparation timeline. Written for first-generation engineering families.",
+    metaTitle:
+      "Government jobs after polytechnic diploma — SSC JE, RRB JE, UPPCL | BIPE",
+    metaDescription:
+      "Polytechnic diploma government job guide 2026 — SSC JE (₹35-44k), RRB JE (Indian Railways), UPPCL JE (UP electrical), UP PWD, Army Technical Entry. Branch-wise eligibility, pay scales, prep timeline. BIPE Varanasi (JEECUP 4455).",
+    sections: [
+      {
+        type: "callout",
+        title: "TL;DR · the answer most parents want",
+        html:
+          "<ul style=\"margin: 0; padding-left: 22px;\">" +
+          "<li><strong>Yes, you can sit for government Junior Engineer (JE) exams immediately after a 3-year polytechnic diploma.</strong> No degree needed, no further qualification needed. The diploma IS the eligibility.</li>" +
+          "<li><strong>Five exam pipelines</strong> matter for diploma holders in UP / Bihar: <strong>SSC JE</strong> (central government engineering departments), <strong>RRB JE</strong> (Indian Railways), <strong>UPPCL JE</strong> (UP electricity board), <strong>UP PWD JE</strong> (state public works), <strong>Indian Army Technical Entry / Navy SSR</strong> (defence).</li>" +
+          "<li><strong>Starting in-hand salary</strong> for SSC JE / RRB JE / UPPCL JE ranges from ₹35,000-44,000 per month plus DA + allowances. After 3-5 years (with one promotion) the in-hand crosses ₹52,000/month at most central-government JE postings.</li>" +
+          "<li><strong>Branch matters.</strong> Civil / Mechanical / Electrical diploma holders have the most government pipelines open to them. CSE and Dairy graduates have fewer JE-cadre exams but more central-government IT cadre and State Dairy Federation exams respectively.</li>" +
+          "<li><strong>Preparation starts in Year 3 of the diploma.</strong> Most successful BIPE alumni start mock-test routines in Semester 5 and sit their first attempt within 6 months of graduating.</li>" +
+          "</ul>",
+      },
+
+      { type: "h2", text: "Why a polytechnic diploma is enough for government engineering jobs" },
+      {
+        type: "p",
+        html:
+          "In India's government engineering recruitment system, every technical role in the central government, the railways, the state utility boards, and the public-works departments is graded on a four-tier framework: Helper / Technician / Junior Engineer / Engineer. <strong>Junior Engineer (JE)</strong> is the entry-level engineering officer rank. The minimum qualification for the JE rank is <strong>a 3-year technical diploma</strong> — not a degree, not an MTech. That makes a BTE UP polytechnic graduate immediately eligible for every Junior Engineer (Civil / Mechanical / Electrical) post in the country.",
+      },
+      {
+        type: "p",
+        html:
+          "Engineer (E1, E2) rank is the next tier above JE, and that requires a B.Tech or equivalent degree. So the question for a diploma holder isn't \"can I get a government job\" — it's <strong>which JE exam to prepare for first</strong>. Each one has its own paper pattern, calendar and competitive intensity. The rest of this guide walks through the five that matter for our region.",
+      },
+
+      { type: "h2", text: "1. SSC JE — central government engineering departments" },
+      {
+        type: "p",
+        html:
+          "Run by the <strong>Staff Selection Commission</strong>, SSC JE recruits Junior Engineers for the Central Public Works Department (CPWD), Military Engineering Service (MES), Border Roads Organisation (BRO), Central Water Commission, Farakka Barrage Project, and other central engineering wings. It's the highest-prestige diploma-eligible government engineering exam in India, with corresponding competition (~3 lakh applicants annually for ~1,500 vacancies).",
+      },
+      {
+        type: "table",
+        caption:
+          "SSC JE exam-at-a-glance. 2-paper format: Paper I is objective (200 marks, 2 hours), Paper II is subjective engineering paper (300 marks, 2 hours). Final selection based on combined score + document verification.",
+        headers: ["Aspect", "Details"],
+        rows: [
+          ["Eligible branches", "Civil / Mechanical / Electrical (no SSC JE for CSE or Dairy)"],
+          ["Diploma eligibility", "3-year BTE UP diploma in the matching branch"],
+          ["Age limit", "18-32 years (relaxations: SC/ST +5, OBC +3, EWS as per rules)"],
+          ["Application fee", "₹100 (waived for SC/ST/PwD/women)"],
+          ["Frequency", "Annual notification, usually March-April"],
+          ["In-hand salary start", "₹35,400 + DA + HRA (~₹44,000-50,000 total)"],
+          ["After 1 promotion (5-7y)", "Section Officer / Assistant Engineer · ₹56,100 base + allowances"],
+          ["Postings", "Across India · transferable cadre"],
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Three of BIPE's Mechanical alumni cleared SSC JE between 2022 and 2024 — two now serve at CPWD (Lucknow regional office) and one with the Border Roads Organisation. The papers test the same BTE UP syllabus you study in Semesters 3-6, with the addition of a current-affairs and reasoning section in Paper I. <strong>Preparation tip</strong>: start with the latest year's solved Paper II (engineering subjects) in Semester 5 — the format is exactly the per-semester paper you already sit, just compressed into 2 hours.",
+      },
+
+      { type: "h2", text: "2. RRB JE — Indian Railways Junior Engineer" },
+      {
+        type: "p",
+        html:
+          "The Railway Recruitment Board (RRB) runs the largest diploma-eligible government engineering exam in India by volume. <strong>~14,000 JE vacancies in the most recent 2024 cycle</strong> across Civil, Mechanical, Electrical, Signal & Telecommunications and IT specialisations. Indian Railways is the single biggest employer of polytechnic diploma graduates in the country.",
+      },
+      {
+        type: "table",
+        caption:
+          "RRB JE highlights. The exam runs in 2 CBT stages plus document verification + medical. Branch-specific specialisation paper in Stage 2.",
+        headers: ["Aspect", "Details"],
+        rows: [
+          ["Eligible branches", "All — Civil, Mechanical, Electrical, CSE/IT, Signal & Telecom"],
+          ["Diploma eligibility", "3-year BTE UP diploma in any engineering branch"],
+          ["Age limit", "18-33 years (relaxations apply)"],
+          ["Application fee", "₹500 (most of which is refunded on Stage 1 appearance)"],
+          ["Frequency", "Every 2-3 years, very large cycle when it runs"],
+          ["In-hand salary start", "₹35,400 + DA + HRA + Railway allowance ≈ ₹40,000-45,000"],
+          ["Posting", "Across the 16 zones of Indian Railways"],
+          ["Career arc", "JE → Senior Section Engineer → Assistant Officer over 12-18 years"],
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Hariom Rai (Civil 2013) is a Senior Engineer at the Mumbai Metro Project after starting as RRB JE Civil. Pramod Kumar Patel (Mech Production 2014) joined Indian Railways via the parallel Assistant Loco Pilot (ALP) route — same eligibility, different exam track. Both pipelines are open to BIPE diploma graduates.",
+      },
+
+      { type: "h2", text: "3. UPPCL JE — Uttar Pradesh electrical board" },
+      {
+        type: "p",
+        html:
+          "The <strong>Uttar Pradesh Power Corporation Limited (UPPCL)</strong> recruits Junior Engineers for its distribution and transmission divisions — pole-to-meter electrical infrastructure across the state. Postings are within UP, which makes this the most family-proximate JE option for Eastern UP candidates. UPPCL has been actively hiring through 2023-2025 to support the state's grid-modernisation push.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Eligible branches:</strong> Electrical primarily; some technician posts for Electronics and Civil.",
+          "<strong>Salary:</strong> ₹56,100 grade pay (₹44,000-52,000 in-hand) after probation. Allowances slightly higher than RRB JE because of the field-allowance for substation duty.",
+          "<strong>Frequency:</strong> Every 1-2 years.",
+          "<strong>Posting:</strong> Within UP — Lucknow, Varanasi, Kanpur, Gorakhpur and other zone HQs.",
+          "<strong>Promotion:</strong> Assistant Engineer (AE) after 8-10 years; Executive Engineer (EE) after another 8-12.",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "If you want a government engineering job <em>and</em> you want to stay in UP, UPPCL JE is the strongest fit. Multiple BIPE Electrical alumni serve as UPPCL JEs across the state.",
+      },
+
+      { type: "h2", text: "4. UP PWD JE — state public works department" },
+      {
+        type: "p",
+        html:
+          "The Uttar Pradesh Public Works Department recruits Junior Engineers (Civil and Electrical) for state road, bridge and government-building projects. Smaller in volume than UPPCL but easier in competitive intensity — the candidate pool is mostly within UP. Postings are at district headquarters across the state.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Eligible branches:</strong> Civil (most posts), Electrical (smaller cadre).",
+          "<strong>Salary:</strong> ₹35,400 base + DA + HRA + UP-state allowances ≈ ₹42,000-48,000 in-hand.",
+          "<strong>Notification:</strong> Through UPSSSC (UP Subordinate Services Selection Commission).",
+          "<strong>Posting:</strong> District-level — closer-to-home for most Eastern UP candidates.",
+        ],
+      },
+
+      { type: "h2", text: "5. Indian Army Technical Entry & Indian Navy SSR / AA" },
+      {
+        type: "p",
+        html:
+          "Less commonly considered but real: a polytechnic diploma plus age &lt;25 (Army) / &lt;21 (Navy) qualifies you for the technical-entry stream of the defence services. The Indian Army's Technical Entry Scheme (TES) admits diploma holders to the Officers Training Academy. The Indian Navy's SSR (Senior Secondary Recruits) and AA (Artificer Apprentice) entries accept diploma-holders directly for technical posts. Salary at entry is ₹35,000-45,000/month plus the standard defence allowances, with the well-known career-long pension and family-pension benefits.",
+      },
+      {
+        type: "p",
+        html:
+          "Defence-track applications happen via <a href=\"https://www.joinindianarmy.nic.in\" target=\"_blank\" rel=\"noopener\">joinindianarmy.nic.in</a> and the Navy's recruitment portal. Both involve a physical-fitness round in addition to the written exam — applicants in our region typically prepare for this in parallel with academic finals.",
+      },
+
+      { type: "h2", text: "Branch-by-branch government-job matrix" },
+      {
+        type: "table",
+        caption:
+          "Which government exam each BIPE branch is eligible for. ✓ = standard eligibility, ✓✓ = especially strong pipeline, — = not eligible.",
+        headers: ["Branch", "SSC JE", "RRB JE", "UPPCL JE", "UP PWD", "Defence Tech", "Other"],
+        rows: [
+          ["Civil (322)", "✓✓ (Civil)", "✓✓ (Civil)", "—", "✓✓ (Civil)", "✓ (Army TES)", "Smart Cities, NHAI"],
+          ["Mechanical (343)", "✓✓ (Mech)", "✓✓ (Mech)", "—", "✓ (limited)", "✓✓ (Army/Navy)", "ALP, BHEL, DRDO"],
+          ["Electrical (328)", "✓✓ (Elec)", "✓✓ (Elec)", "✓✓ (primary)", "✓ (limited)", "✓ (Army TES)", "NPCIL, Power Grid"],
+          ["Computer Science (355)", "—", "✓ (IT)", "—", "—", "✓ (Army Sigs)", "Banks IT, NIC"],
+          ["Dairy (327)", "—", "—", "—", "—", "—", "State Dairy Federations, NDDB, FSSAI"],
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Two takeaways. First: Civil, Mechanical and Electrical are the highest-coverage branches for government engineering jobs. If government employment is your primary goal, pick one of those three. Second: CSE and Dairy aren't shut out — they just have <em>different</em> pipelines (central government IT cadres for CSE, dairy federation and FSSAI cadres for Dairy) and need a slightly tailored prep approach.",
+      },
+
+      { type: "h2", text: "Preparation timeline — what to do when" },
+      {
+        type: "h3", text: "Semester 5 (the year before final): start mock tests",
+      },
+      {
+        type: "p",
+        html:
+          "Pick one target exam (SSC JE or RRB JE most candidates start with). Buy or borrow the latest 5 years of solved papers. Set a target of one paper per fortnight, scored honestly under exam conditions. Use the campus library — BIPE keeps a full archive of SSC JE / RRB JE / UPPCL JE previous-year papers cross-referenced by BTE UP syllabus topic.",
+      },
+      { type: "h3", text: "Semester 6 (final year): file your first application" },
+      {
+        type: "p",
+        html:
+          "Most JE notifications open between January and April of the diploma's final year. Even if you don't expect to clear the first attempt, file it — the experience of an actual exam is worth more than another six months of preparation books. Many BIPE alumni cleared on their second or third attempt; very few cleared on the first.",
+      },
+      { type: "h3", text: "Post-diploma year (gap year between graduation and clearing): structured prep" },
+      {
+        type: "p",
+        html:
+          "If you don't clear in the final-year attempt, the gap year is the most important window. Most successful BIPE candidates use it for: (a) a daily 4-6 hour study routine, (b) one job at a private firm to fund the prep (salary ₹15-20k/month covers the routine), (c) joining the BIPE Industry-Ready workshop in February for a refresher on aptitude + technical interview format, and (d) sitting every JE exam that opens during the year. Don't wait for the \"big\" exam — sit the smaller ones for practice.",
+      },
+
+      { type: "h2", text: "What BIPE specifically does to support this path" },
+      {
+        type: "ul",
+        items: [
+          "<strong>6-day Industry-Ready Skill Enhancement Workshop</strong> — every February, covers SSC JE / RRB JE / UPPCL JE paper-format and mock-test routine alongside resume-drafting and interview prep.",
+          "<strong>BTE UP previous-year paper archive</strong> in the campus library, cross-referenced by topic. JE exam papers from 2014-2024 are kept on permanent loan-shelf for final-year students.",
+          "<strong>Alumni mentorship network</strong> — placed BIPE alumni at SSC / RRB / UPPCL / Indian Railways serve as point-of-contact for current students preparing for the same exams. The placement cell routes inquiries.",
+          "<strong>Department-specific JE coaching sessions</strong> — Civil, Mechanical and Electrical departments each run optional after-class JE-prep sessions in Semester 5-6 with senior faculty.",
+        ],
+      },
+
+      { type: "h2", text: "Frequently asked questions" },
+      { type: "h3", text: "Do I need to do a separate JE coaching after diploma?" },
+      {
+        type: "p",
+        html:
+          "Optional, not required. The BTE UP diploma syllabus is scoped against the same paper pattern these exams test on. What separate coaching adds is structured mock-test schedule and aptitude/reasoning practice (which is a separate paper section). If you already have a study group at college + sit one mock paper a fortnight in the library, formal coaching adds marginal value. Most BIPE alumni who cleared SSC JE / RRB JE did not attend separate coaching.",
+      },
+      { type: "h3", text: "Can I work in a private job while preparing for JE exams?" },
+      {
+        type: "p",
+        html:
+          "Yes, and many successful candidates do. A private-sector site-engineer or technician job pays ₹15,000-25,000/month and funds the prep. The constraint is whether the job leaves you with 3-4 evening study hours daily — desk roles allow this, field-supervisor roles in remote sites typically don't. Plan accordingly.",
+      },
+      { type: "h3", text: "If I clear SSC JE in Civil, can I be posted outside UP?" },
+      {
+        type: "p",
+        html:
+          "Yes — SSC JE is a central-government All-India cadre, so postings can be anywhere in India. CPWD has zones in Delhi, Mumbai, Kolkata, Chennai and most state capitals; MES posts at military installations across the country; BRO posts at border road construction sites. If you specifically want a UP posting, UPPCL JE or UP PWD JE are better fits — both are state cadres and don't transfer outside UP except in special cases.",
+      },
+      { type: "h3", text: "Is the government job guaranteed after a diploma?" },
+      {
+        type: "p",
+        html:
+          "Absolutely not. The diploma is the <em>eligibility</em>; clearing the exam is a separate competitive process. SSC JE selects ~1,500 from ~3 lakh applicants — about 0.5%. RRB JE selects ~14,000 from ~25 lakh applicants — about 0.6%. The numbers look intimidating but the picture changes when you realise most applicants aren't seriously prepared. A diploma student who studies steadily across Semester 5-6 plus a gap year, sits 4-6 exam attempts and stays patient is in a much smaller pool than \"3 lakh applicants\" — closer to 30-50,000 serious candidates. Many BIPE alumni have cleared in that smaller competitive subset.",
+      },
+      { type: "h3", text: "Will the JE exam pattern change in the next 2-3 years?" },
+      {
+        type: "p",
+        html:
+          "Likely yes for SSC JE — the SSC has been migrating to computer-based testing (CBT) format across all its exams, and JE will follow. RRB JE is already CBT. UPPCL JE has been CBT for several cycles. The format change doesn't affect the eligibility (BTE UP diploma stays eligible) or the syllabus scope (BTE UP topics stay tested) — just the delivery medium. Practice on CBT mock-test platforms in addition to paper-mode is now the standard prep approach.",
+      },
+
+      {
+        type: "p",
+        html:
+          "<em>Last updated 21 May 2026. Notifications, vacancy counts and salary figures shift each cycle — always cross-check the current notification PDF on the issuing body's portal before applying. Linked portals: <a href=\"https://ssc.nic.in\" target=\"_blank\" rel=\"noopener\">ssc.nic.in</a> · <a href=\"https://www.rrbcdg.gov.in\" target=\"_blank\" rel=\"noopener\">rrbcdg.gov.in</a> · <a href=\"https://www.uppcl.org\" target=\"_blank\" rel=\"noopener\">uppcl.org</a> · <a href=\"https://upsssc.gov.in\" target=\"_blank\" rel=\"noopener\">upsssc.gov.in</a>.</em>",
+      },
+      {
+        type: "callout",
+        title: "Choosing a branch with government jobs in mind?",
+        html:
+          "See the 5 BIPE branches at <a href=\"/courses\">/courses</a> — the per-branch pages list the specific JE exams each one is eligible for. Civil / Mechanical / Electrical have the broadest pipelines. Apply for 2026-27 at <a href=\"/apply\">/apply</a> · call admissions at <a href=\"tel:+919198646464\">+91-9198646464</a>.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
