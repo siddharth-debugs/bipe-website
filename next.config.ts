@@ -100,6 +100,52 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // ─── Zombie URL redirects ─────────────────────────────────────────
+  //
+  // Semrush domain_organic_unique (May 2026 snapshot) showed four
+  // URLs from a previous version of the site still ranking in Google's
+  // top 100 despite all returning HTTP 404 on production. They were
+  // bleeding brand-search traffic (people clicking the result, hitting
+  // a 404, bouncing) and holding accumulated authority on dead
+  // endpoints instead of passing it to the live equivalents.
+  //
+  // Each entry is a permanent 301 → tells Google to drop the old URL
+  // from its index and re-attribute the authority to the destination.
+  // Typical SERP refresh window: 2-4 weeks.
+  //
+  //   /thank-u             — old form thank-you page. Was ranking #56
+  //                          for the brand query. No semantic
+  //                          equivalent on the new site → redirect to
+  //                          the homepage to keep the residual traffic.
+  //
+  //   /bipe-media          — old media/press section. Ranking #22 for
+  //                          the brand query. Current site has /events
+  //                          which is the closest semantic match (also
+  //                          surfaces press coverage via the PressMentions
+  //                          component on /about).
+  //
+  //   /polytechnic-courses — old courses-landing URL. Ranking #37 for
+  //                          "banaras institute of technology". The
+  //                          current /courses page is the direct
+  //                          replacement.
+  //
+  //   /faculties           — old faculty-list URL. Was ranking #40 for
+  //                          a faculty member's name ("arpit kumar
+  //                          kashyap"), which the current /faculty
+  //                          page covers.
+  //
+  // No wildcards used — only the four URLs we have evidence are
+  // indexed. Speculative redirects (e.g. /placement → /placements)
+  // would be guess-work without Semrush corroboration.
+  async redirects() {
+    return [
+      { source: "/thank-u",             destination: "/",        permanent: true },
+      { source: "/bipe-media",          destination: "/events",  permanent: true },
+      { source: "/polytechnic-courses", destination: "/courses", permanent: true },
+      { source: "/faculties",           destination: "/faculty", permanent: true },
+    ];
+  },
+
   // Note: the /api/admin/* proxy lives in app/api/admin/[...path]/route.ts
   // (route handler) instead of a `rewrites()` entry. Wildcard rewrites
   // were stripping trailing slashes off the path before forwarding,
