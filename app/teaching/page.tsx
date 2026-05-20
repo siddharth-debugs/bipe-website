@@ -286,7 +286,7 @@ export default function Page() {
             {/* Tiles 2, 3, 4, 5 */}
             {[LAB_TILES[0], LAB_TILES[1], LAB_TILES[3], LAB_TILES[4]].map((t) => (
               <div key={t.label} style={{ position: "relative", borderRadius: 14, overflow: "hidden" }}>
-                <Img src={t.src} label="" style={{ position: "absolute", inset: 0, height: "100%", borderRadius: 14 }} />
+                <Img src={t.src} label="" alt={t.label} style={{ position: "absolute", inset: 0, height: "100%", borderRadius: 14 }} />
                 <div style={{
                   position: "absolute", left: 0, right: 0, bottom: 0,
                   padding: "12px 14px",

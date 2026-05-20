@@ -409,6 +409,13 @@ export default async function Page() {
       {/* 6. SPORTS — DARK FULL BLEED                                             */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--ink)", color: "var(--paper)", position: "relative", overflow: "hidden" }}>
+        {/* Decorative background image — aria-hidden parent removes
+            the entire subtree from the accessibility tree, so the
+            empty label="" on the inner <Img> is intentional. Adding
+            alt text here would be wrong: screen readers would
+            announce a decorative photo as if it were a content
+            image, double-narrating the sports section that already
+            has its own heading + body copy. */}
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0, opacity: 0.18, pointerEvents: "none",
         }}>
