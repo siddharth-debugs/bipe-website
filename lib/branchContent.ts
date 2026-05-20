@@ -12,11 +12,49 @@
  * "<branch> diploma Varanasi", "<branch> polytechnic Phoolpur",
  * "BTEUP <code>", and the rare "dairy engineering UP" cluster.
  */
+/**
+ * Per-semester syllabus row.
+ *
+ * Subjects are listed as plain strings without BTE UP codes or
+ * marks-distribution. Why: codes and marks change across BTE UP
+ * gazette revisions (typically every 3–5 years). Showing them on
+ * the public site only to drift out of date erodes credibility.
+ * Subject names are stable across revisions; that's what we surface.
+ *
+ * For verifiable detail, the branch page UI links to bteup.org.in
+ * with the BTEUP code already filled in — students can check the
+ * current gazette in one click.
+ *
+ * Where a subject is primarily lab/practical work, the name itself
+ * makes that clear ("Workshop Practice", "Mini Project", "Industrial
+ * Training") — no separate type flag needed.
+ */
+export interface SemesterPlan {
+  /** 1–6. */
+  semester: number;
+  /** Short header for the semester — what this term is about. */
+  theme: string;
+  /** Subject names per BTE UP polytechnic curriculum for this branch + semester. */
+  subjects: string[];
+}
+
 export type BranchDetail = {
   /** Hero metadata. */
   intro: string;
-  /** Bullet list of 6 semester themes. */
+  /**
+   * Bullet list of 6 semester themes — short headers used in cards.
+   * Deprecated: prefer `semesters[].theme` going forward. Left in
+   * place for any consumer that still reads the flat array (none
+   * known as of 2026-05-20, but kept for transition safety).
+   */
   semesterThemes: string[];
+  /**
+   * Full structured syllabus — 6 semesters with subject lists per
+   * BTE UP polytechnic curriculum. Indicative — the official source
+   * of truth is the BTE UP gazette (bteup.org.in). The branch page
+   * surfaces a "verify against gazette" note + deep link.
+   */
+  semesters: SemesterPlan[];
   /** Branch-specific lab facilities, 3–5 items. */
   labs: { name: string; body: string }[];
   /** Career paths the diploma qualifies for. */
@@ -26,6 +64,16 @@ export type BranchDetail = {
   /** 4–5 branch-specific FAQ Q&As — also fed into FAQPage JSON-LD. */
   faqs: { q: string; a: string }[];
 };
+
+/**
+ * Common foundation subjects shared across all five branches in
+ * Semesters 1 and 2 of the BTE UP polytechnic curriculum. Branches
+ * differ on one or two slots (e.g. CSE swaps "Basic Electronics"
+ * for an extra programming slot; Civil includes "Civil Engineering
+ * Materials"). Each branch's `semesters` array overrides the slots
+ * that differ rather than DRYing this out at module level —
+ * readability of each branch entry wins over deduplication.
+ */
 
 export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   "computer-science-engineering": {
@@ -38,6 +86,85 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
       "Sem 4 — Computer Networks, Web Development (HTML/CSS/JavaScript), Software Engineering",
       "Sem 5 — Python Programming, Introduction to AI/ML, Mobile Application Development, Mini Project",
       "Sem 6 — Cyber Security, Cloud & DevOps fundamentals, Industrial Training, Final-year Project & Expo",
+    ],
+    semesters: [
+      {
+        semester: 1,
+        theme: "Foundation",
+        subjects: [
+          "Communication Skills in English",
+          "Engineering Mathematics – I",
+          "Engineering Physics",
+          "Engineering Chemistry",
+          "Engineering Drawing",
+          "Computer Fundamentals",
+          "Workshop Practice",
+        ],
+      },
+      {
+        semester: 2,
+        theme: "Foundation computing",
+        subjects: [
+          "Communication Skills in English – II",
+          "Engineering Mathematics – II",
+          "Programming in C",
+          "Digital Electronics",
+          "Computer Office Automation",
+          "Internet & Web Page Designing (HTML)",
+          "Engineering Workshop",
+        ],
+      },
+      {
+        semester: 3,
+        theme: "Core programming",
+        subjects: [
+          "Data Structures using C",
+          "Object-Oriented Programming with C++ / Java",
+          "Database Management Systems",
+          "Computer Architecture & Organisation",
+          "Operating System Concepts",
+          "Internet & Web Programming (CSS, JavaScript)",
+          "Software Lab — Data Structures",
+        ],
+      },
+      {
+        semester: 4,
+        theme: "Systems & networks",
+        subjects: [
+          "Computer Networks",
+          "Web Technologies (PHP / Node.js)",
+          "Software Engineering",
+          "Microprocessor & Assembly Language",
+          "Computer Hardware & Peripherals",
+          "Java Programming",
+          "Database Lab — SQL",
+        ],
+      },
+      {
+        semester: 5,
+        theme: "Specialisation",
+        subjects: [
+          "Python Programming",
+          "Introduction to AI / Machine Learning",
+          "Mobile Application Development",
+          "Computer Graphics",
+          "Industrial Visit & Report",
+          "Mini Project — Group of 3",
+          "Web Development Lab",
+        ],
+      },
+      {
+        semester: 6,
+        theme: "Industry & capstone",
+        subjects: [
+          "Cyber Security & Ethical Hacking",
+          "Cloud Computing & DevOps Fundamentals",
+          "Internet of Things (IoT)",
+          "Final-year Project — capstone",
+          "Industrial Training (6 months / 600 hours)",
+          "Project Expo & Viva Voce",
+        ],
+      },
     ],
     labs: [
       { name: "120-computer programming lab", body: "BIPE's flagship lab — 120 networked workstations running a Linux/Windows dual-boot image with all the toolchains pre-installed. Most batches spend 12–15 contact hours a week here." },
@@ -70,6 +197,85 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
       "Sem 5 — Dairy Products Technology (curd, paneer, ghee, ice-cream), Dairy Plant Sanitation, Mini Project",
       "Sem 6 — Quality Control & Food Safety (FSSAI), Industrial Training (Amul/NDDB/Parag), Final Project",
     ],
+    semesters: [
+      {
+        semester: 1,
+        theme: "Foundation",
+        subjects: [
+          "Communication Skills in English",
+          "Engineering Mathematics – I",
+          "Engineering Physics",
+          "Engineering Chemistry",
+          "Engineering Drawing",
+          "Dairy Industry Overview",
+          "Workshop Practice",
+        ],
+      },
+      {
+        semester: 2,
+        theme: "Microbiology & mechanics",
+        subjects: [
+          "Communication Skills in English – II",
+          "Engineering Mathematics – II",
+          "Applied Mechanics",
+          "Dairy Microbiology",
+          "Heat Transfer in Dairy",
+          "Basic Electrical Engineering",
+          "Dairy Workshop",
+        ],
+      },
+      {
+        semester: 3,
+        theme: "Processing & drawing",
+        subjects: [
+          "Market Milk Processing",
+          "Dairy Engineering Drawing",
+          "Fluid Mechanics",
+          "Dairy Chemistry",
+          "Computer Applications in Dairy",
+          "Refrigeration in Dairy Plant",
+          "Milk Reception Lab",
+        ],
+      },
+      {
+        semester: 4,
+        theme: "Plant operations",
+        subjects: [
+          "Dairy Plant Operations",
+          "Refrigeration & Air Conditioning",
+          "Dairy Plant Layout & Design",
+          "Industrial Statistics & Quality Control",
+          "Dairy Machinery & Maintenance",
+          "Packaging Technology",
+          "Processing Lab — Pasteurisation & Homogenisation",
+        ],
+      },
+      {
+        semester: 5,
+        theme: "Products technology",
+        subjects: [
+          "Indigenous Dairy Products (Curd, Paneer, Ghee)",
+          "Condensed & Dried Milk Products",
+          "Ice-Cream & Frozen Desserts",
+          "Fat-Rich Dairy Products",
+          "Dairy Plant Sanitation & Hygiene",
+          "Mini Project — Product Development",
+          "Industrial Visit (NDDB / Amul plant)",
+        ],
+      },
+      {
+        semester: 6,
+        theme: "Quality, industry & capstone",
+        subjects: [
+          "Quality Control & Food Safety (FSSAI norms)",
+          "Dairy Business Management & Marketing",
+          "Dairy Plant Maintenance & Utilities",
+          "Final-year Project — capstone",
+          "Industrial Training (6 months at Amul / Mother Dairy / NDDB / Parag)",
+          "Project Expo & Viva Voce",
+        ],
+      },
+    ],
     labs: [
       { name: "Dairy pilot plant", body: "BIPE's campus pilot plant — pasteuriser, separator, homogeniser, packaging line — gives students real machine time on every unit operation the BTEUP syllabus covers." },
       { name: "Dairy microbiology & chemistry lab", body: "Standard plate counts, antibiotic residue tests, lactometer and fat-percentage analysis — the FSSAI-aligned analytical curriculum is taught here." },
@@ -100,6 +306,83 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
       "Sem 4 — Structural Design (RCC, steel), Transportation Engineering (highways, railways), Hydraulics",
       "Sem 5 — Estimating & Costing, Quantity Surveying, Construction Management, Mini Project",
       "Sem 6 — Earthquake Engineering basics, Site Internship, Final Project (design + drawings)",
+    ],
+    semesters: [
+      {
+        semester: 1,
+        theme: "Foundation",
+        subjects: [
+          "Communication Skills in English",
+          "Engineering Mathematics – I",
+          "Engineering Physics",
+          "Engineering Chemistry",
+          "Engineering Drawing",
+          "Basic Civil Engineering",
+          "Workshop Practice",
+        ],
+      },
+      {
+        semester: 2,
+        theme: "Building & survey basics",
+        subjects: [
+          "Communication Skills in English – II",
+          "Engineering Mathematics – II",
+          "Applied Mechanics",
+          "Building Materials & Construction",
+          "Surveying – I (chain & compass)",
+          "Civil Engineering Drawing",
+          "Construction Practice Lab",
+        ],
+      },
+      {
+        semester: 3,
+        theme: "Surveying & materials",
+        subjects: [
+          "Surveying – II (theodolite, levelling, contouring)",
+          "Mechanics of Materials (Strength of Materials)",
+          "Concrete Technology",
+          "Building Construction & Drawing",
+          "Hydraulics",
+          "Computer-Aided Drafting (AutoCAD)",
+          "Survey Camp",
+        ],
+      },
+      {
+        semester: 4,
+        theme: "Structures & transportation",
+        subjects: [
+          "Design of RCC Structures",
+          "Design of Steel Structures",
+          "Transportation Engineering (Highways, Railways)",
+          "Public Health Engineering (Water Supply & Sanitation)",
+          "Soil Mechanics & Foundation Engineering",
+          "Construction Materials Testing Lab",
+        ],
+      },
+      {
+        semester: 5,
+        theme: "Estimation & management",
+        subjects: [
+          "Estimating, Costing & Valuation",
+          "Quantity Surveying",
+          "Construction Management",
+          "Environmental Engineering",
+          "Earthquake-Resistant Construction",
+          "Mini Project — Building Plan",
+          "Site Visit & Report",
+        ],
+      },
+      {
+        semester: 6,
+        theme: "Industry & capstone",
+        subjects: [
+          "Advanced Construction Techniques",
+          "Disaster Management",
+          "Final-year Project (design + working drawings)",
+          "Industrial Training (6 months — JE / contractor / Smart City site)",
+          "Project Viva Voce",
+        ],
+      },
     ],
     labs: [
       { name: "Survey yard & instrument lab", body: "Chains, compasses, theodolites, dumpy and auto levels — students run a full Sem-3 survey camp on the 6-acre campus and adjoining village fields." },
@@ -132,6 +415,82 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
       "Sem 5 — Power Systems II (transmission & distribution), Renewable Energy, Mini Project",
       "Sem 6 — Switchgear & Protection, Industrial Drives & Control, Industrial Training, Final Project",
     ],
+    semesters: [
+      {
+        semester: 1,
+        theme: "Foundation",
+        subjects: [
+          "Communication Skills in English",
+          "Engineering Mathematics – I",
+          "Engineering Physics",
+          "Engineering Chemistry",
+          "Engineering Drawing",
+          "Basic Electrical Engineering",
+          "Electrical Workshop",
+        ],
+      },
+      {
+        semester: 2,
+        theme: "Circuits & instruments",
+        subjects: [
+          "Communication Skills in English – II",
+          "Engineering Mathematics – II",
+          "DC & AC Circuits",
+          "Electrical Measuring Instruments",
+          "Electrical Engineering Materials",
+          "Basic Electronics",
+          "Workshop Practice",
+        ],
+      },
+      {
+        semester: 3,
+        theme: "Machines & electronics",
+        subjects: [
+          "Electrical Machines – I (DC Machines & Transformers)",
+          "Electronic Devices & Circuits",
+          "Electrical Wiring & Estimation",
+          "Digital Electronics",
+          "Industrial Drafting (AutoCAD Electrical)",
+          "Machines Lab",
+        ],
+      },
+      {
+        semester: 4,
+        theme: "Power & control",
+        subjects: [
+          "Electrical Machines – II (Induction & Synchronous Motors)",
+          "Power Systems – I (Generation)",
+          "Programmable Logic Controllers (PLC)",
+          "Electrical Installation & Maintenance",
+          "Microprocessor & Microcontroller",
+          "Industrial Drives Lab",
+        ],
+      },
+      {
+        semester: 5,
+        theme: "Distribution & renewables",
+        subjects: [
+          "Power Systems – II (Transmission & Distribution)",
+          "Power Electronics",
+          "Control Systems",
+          "Renewable Energy Sources (Solar PV, Wind, EV)",
+          "Mini Project — Circuit / Control",
+          "Substation Visit & Report",
+        ],
+      },
+      {
+        semester: 6,
+        theme: "Industry & capstone",
+        subjects: [
+          "Switchgear & Protection",
+          "Industrial Drives & Speed Control",
+          "Electrical Estimation & Costing",
+          "Final-year Project — capstone",
+          "Industrial Training (6 months — UPPCL / Tata Power / Adani Solar / Indian Railways)",
+          "Project Viva Voce",
+        ],
+      },
+    ],
     labs: [
       { name: "Electrical machines bay", body: "Working DC machines, single-phase and three-phase transformers, induction and synchronous motors with full load testing — students wire, run and measure performance on every machine in the BTEUP syllabus." },
       { name: "Power systems & switchgear lab", body: "Distribution boards, MCB/MCCB demonstrators, relays and protection setups, plus an annual industrial visit to a 220 kV substation for live exposure." },
@@ -162,6 +521,85 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
       "Sem 4 — Thermal Engineering, Fluid Mechanics, Manufacturing Processes II (CNC, grinding)",
       "Sem 5 — Industrial Engineering, Quality Control, CAD/CAM, Mini Project",
       "Sem 6 — Tool & Die Design, Production Planning & Control, Industrial Training, Final Project",
+    ],
+    semesters: [
+      {
+        semester: 1,
+        theme: "Foundation",
+        subjects: [
+          "Communication Skills in English",
+          "Engineering Mathematics – I",
+          "Engineering Physics",
+          "Engineering Chemistry",
+          "Engineering Drawing",
+          "Basic Electrical Engineering",
+          "Workshop Practice – I (Carpentry, Fitting)",
+        ],
+      },
+      {
+        semester: 2,
+        theme: "Mechanics & workshop",
+        subjects: [
+          "Communication Skills in English – II",
+          "Engineering Mathematics – II",
+          "Engineering Mechanics",
+          "Material Science",
+          "Mechanical Engineering Drawing",
+          "Basic Electronics",
+          "Workshop Practice – II (Welding, Foundry, Sheet Metal)",
+        ],
+      },
+      {
+        semester: 3,
+        theme: "Materials & machines",
+        subjects: [
+          "Strength of Materials",
+          "Theory of Machines",
+          "Thermodynamics",
+          "Manufacturing Processes – I (Turning, Milling, Drilling)",
+          "Industrial Statistics",
+          "Computer-Aided Drafting (AutoCAD Mechanical)",
+          "Machine Shop Lab",
+        ],
+      },
+      {
+        semester: 4,
+        theme: "Thermal & advanced manufacturing",
+        subjects: [
+          "Thermal Engineering & IC Engines",
+          "Fluid Mechanics & Hydraulic Machines",
+          "Manufacturing Processes – II (CNC, Grinding, EDM)",
+          "Machine Design – I",
+          "Industrial Management",
+          "Refrigeration & Air Conditioning",
+          "Hydraulics Lab",
+        ],
+      },
+      {
+        semester: 5,
+        theme: "Industrial engineering & design",
+        subjects: [
+          "Industrial Engineering & Operations",
+          "Quality Control & Inspection",
+          "CAD / CAM",
+          "Machine Design – II",
+          "Automobile Engineering",
+          "Mini Project — Component Design",
+          "Industrial Visit & Report",
+        ],
+      },
+      {
+        semester: 6,
+        theme: "Tool design, planning & capstone",
+        subjects: [
+          "Tool & Die Design",
+          "Production Planning & Control",
+          "Power Plant Engineering",
+          "Final-year Project — capstone",
+          "Industrial Training (6 months — Mahindra / Tata Motors / BHEL / JBM / Bajaj)",
+          "Project Viva Voce",
+        ],
+      },
     ],
     labs: [
       { name: "Machine shop", body: "Lathes, milling machines, drilling and grinding setups — the campus production floor where Sem-3 and Sem-4 manufacturing modules are taught hands-on." },

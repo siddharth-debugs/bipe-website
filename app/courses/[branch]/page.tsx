@@ -236,18 +236,160 @@ export default async function BranchPage(
       {/* ─── Curriculum ───────────────────────────────────────────── */}
       <section className="section">
         <div className="container">
-          <div className="eyebrow">Curriculum</div>
+          <div className="eyebrow">Curriculum · BTE UP {b.code}</div>
           <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "20ch" }}>
             What you&apos;ll learn. <span className="serif">Six semesters.</span>
           </h2>
-          <p className="lead" style={{ marginTop: 18, maxWidth: "60ch" }}>
-            BTEUP curriculum for code {b.code} — taught in the six-semester sequence below. Sem 6 includes mandatory industrial training and a final project assessed by external examiners.
+          <p className="lead" style={{ marginTop: 18, maxWidth: "62ch" }}>
+            BTE UP polytechnic curriculum for code {b.code} — the six-semester sequence
+            below covers theory, lab work and mandatory training. Semester 6 includes a
+            6-month industrial training and a final project assessed by external examiners.
           </p>
-          <div className="grid" style={{ marginTop: 32, gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
-            {detail.semesterThemes.map((t, i) => (
-              <div key={i} className="card" style={{ padding: 22 }}>
-                <div className="eyebrow" style={{ color: "var(--brand)" }}>{`0${i + 1}`}</div>
-                <div style={{ marginTop: 10, fontSize: 15, lineHeight: 1.6 }}>{t}</div>
+
+          {/* Disclaimer + deep link to BTE UP for verifiable current syllabus */}
+          <div
+            style={{
+              marginTop: 22,
+              padding: "14px 18px",
+              background: "color-mix(in oklab, var(--brand) 5%, var(--white))",
+              border: "1px solid color-mix(in oklab, var(--brand) 18%, var(--line))",
+              borderRadius: 12,
+              display: "flex",
+              gap: 14,
+              alignItems: "flex-start",
+              flexWrap: "wrap",
+            }}
+          >
+            <div style={{ flex: 1, minWidth: 240 }}>
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: "var(--brand)",
+                  fontWeight: 700,
+                  marginBottom: 4,
+                }}
+              >
+                Indicative · verify against gazette
+              </div>
+              <p style={{ color: "var(--ink-2)", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}>
+                Subject names below follow the standard BTE UP polytechnic curriculum.
+                For the exact subject list, codes and marks distribution applicable to
+                your admission year, refer to the official BTE UP gazette.
+              </p>
+            </div>
+            <a
+              href={`https://www.bteup.org.in/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-ghost"
+              style={{ flexShrink: 0 }}
+            >
+              Open bteup.org.in <ArrowIcon size={12} />
+            </a>
+          </div>
+
+          {/* Semester cards — 3-col desktop, 2-col tablet, 1-col mobile */}
+          <div
+            style={{
+              marginTop: 28,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 18,
+            }}
+          >
+            {detail.semesters.map((s) => (
+              <div
+                key={s.semester}
+                className="card"
+                style={{
+                  padding: 22,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 16,
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
+                  <div>
+                    <div
+                      className="serif"
+                      style={{
+                        fontStyle: "italic",
+                        fontWeight: 400,
+                        fontSize: 28,
+                        color: "var(--brand)",
+                        lineHeight: 1,
+                      }}
+                    >
+                      Semester {s.semester}
+                    </div>
+                    <div
+                      style={{
+                        marginTop: 4,
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 10,
+                        letterSpacing: "0.16em",
+                        textTransform: "uppercase",
+                        color: "var(--ink-3)",
+                      }}
+                    >
+                      {s.theme}
+                    </div>
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 11,
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      color: "var(--accent-deep)",
+                      background: "color-mix(in oklab, var(--accent) 14%, transparent)",
+                      padding: "3px 8px",
+                      borderRadius: 4,
+                    }}
+                  >
+                    {s.subjects.length} subjects
+                  </span>
+                </div>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}
+                >
+                  {s.subjects.map((subj, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        fontSize: 14,
+                        lineHeight: 1.5,
+                        color: "var(--ink-1)",
+                        paddingLeft: 16,
+                        position: "relative",
+                      }}
+                    >
+                      <span
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute",
+                          left: 0,
+                          top: 8,
+                          width: 5,
+                          height: 5,
+                          borderRadius: 999,
+                          background: "var(--accent)",
+                        }}
+                      />
+                      {subj}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
