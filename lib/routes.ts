@@ -154,12 +154,15 @@ export const ROUTES: Record<RouteKey, {
   },
   hostel: {
     path: "/hostel",
-    // "polytechnic with hostel UP" head term added — May 2026 keyword
-    // audit P1 #5. Prospects from outside Varanasi search for
-    // hostel-providing polytechnics specifically; the existing meta
-    // was BIPE-specific and missed the discovery query.
-    title: "Polytechnic with hostel in UP · Boys' on-campus block | BIPE",
-    description: "Polytechnic with on-campus hostel in UP — BIPE Phoolpur's boys' hostel has furnished rooms, on-campus mess, Wi-Fi, study halls, resident warden, 24×7 security.",
+    // Phase 1.5 (May 2026): added "Hostels in Varanasi" head term —
+    // 3,600/mo, currently SHEAT and other competitors rank weakly
+    // and BIPE has a real on-campus hostel that's unclaimed by this
+    // generic query. Title now captures three nested intents:
+    //   - "hostels in Varanasi" (3,600/mo discovery)
+    //   - "polytechnic with hostel in UP" (P1 audit, regional intent)
+    //   - "BIPE hostel" (validation queries)
+    title: "Hostels in Varanasi · Polytechnic Boys' Hostel · BIPE Phoolpur",
+    description: "Looking for hostels in Varanasi? BIPE Phoolpur is an AICTE-approved polytechnic college with an on-campus boys' hostel — furnished rooms, mess, Wi-Fi, study halls, resident warden, 24×7 security.",
   },
   faculty: {
     path: "/faculty",

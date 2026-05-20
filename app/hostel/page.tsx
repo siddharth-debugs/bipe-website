@@ -73,7 +73,7 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">Hostel · Mess</div>
+              <div className="eyebrow">Hostels in Varanasi · BIPE Phoolpur</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "18ch" }}>
                 Safe, on-campus,{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -81,7 +81,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                BIPE is a UP polytechnic with on-campus hostel — boys&rsquo; block at the Phoolpur campus, 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
+                If you&rsquo;re searching for hostels in Varanasi during a polytechnic admission — BIPE is a UP polytechnic with on-campus hostel — boys&rsquo; block at the Phoolpur campus, 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a hostel viewing <ArrowIcon size={16} /></Link>
