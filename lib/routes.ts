@@ -6,7 +6,7 @@ export type RouteKey =
   | "mandatoryDisclosure" | "aiPolicy"
   | "privacy" | "terms" | "antiRagging"
   | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar"
-  | "jeecupCounselling" | "whyBipe";
+  | "jeecupCounselling" | "whyBipe" | "aboutAffiliations";
 
 export const SITE_URL = "https://www.bipevns.org";
 
@@ -254,6 +254,31 @@ export const ROUTES: Record<RouteKey, {
     path: "/admission-from-bihar",
     title: "Admission from Bihar · Documents, equivalency, hostel | BIPE",
     description: "Bihar students applying to BIPE — Bihar Board/CBSE equivalency, residence & caste certificates, hostel, travel from Patna, Ara, Buxar.",
+  },
+  aboutAffiliations: {
+    path: "/about/affiliations",
+    // Phase 1.5 (May 2026): consolidated single source for the
+    // validation-intent query cluster around institute affiliation:
+    //   bte up affiliated polytechnic varanasi          ~20 / mo
+    //   bteup affiliated polytechnic                    ~20 / mo
+    //   polytechnic colleges affiliated to bteup        ~10 / mo
+    //   aicte approved polytechnic varanasi             ~10 / mo
+    // Tiny volumes, but every searcher is a high-conversion lead
+    // checking affiliation before applying. /approvals exists too,
+    // but is structured around verify-on-portal CTAs; this page
+    // is a flatter "here's everything we're affiliated with, with
+    // names, codes, and portal links" reference.
+    title: "Affiliations & Approvals · BTE UP · AICTE · JEECUP 4455 · AISHE | BIPE",
+    description: "Full list of BIPE's affiliations and approvals — Board of Technical Education UP (BTE UP), AICTE Permanent ID 1-488233171, JEECUP institute code 4455, AISHE registered, AFRC-approved tuition. Every claim verifiable on the relevant government portal.",
+    keywords: [
+      "BTE UP affiliated polytechnic Varanasi",
+      "BTEUP affiliated polytechnic",
+      "polytechnic colleges affiliated to BTEUP",
+      "AICTE approved polytechnic Varanasi",
+      "BIPE affiliations",
+      "JEECUP 4455 institute",
+      "बीआईपीई affiliations",
+    ],
   },
   whyBipe: {
     path: "/why-bipe",
