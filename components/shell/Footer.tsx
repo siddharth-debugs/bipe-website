@@ -321,15 +321,19 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
             </Link>
           </div>
           <Col heading="Academics" items={[["All branches", "/courses"], ["Placements", "/placements"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Dairy Engineering", "/courses/dairy-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
-          <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["Apply now", "/apply"]]} />
-          {/* Placements 2026-05-20: added at position 2 of the Academics
-              column (between "All branches" and the per-branch list) —
-              prospective students checking academic options invariably
-              want to see placement outcomes too. The column had been
-              shipping with branches only; Placements is now linked from
-              every page footer. */}
-          <Col heading="About & Campus" items={[["About", "/about"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Alumni", "/alumni"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
-          <Col heading="Compliances" items={[["Approvals", "/approvals"], ["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["Privacy", "/privacy"], ["Terms", "/terms"]]} />
+          {/* Admission column — 2026-05-20: added JEECUP Counselling
+              (high-value 18,100/mo head term page that had no footer
+              link previously) and JEECUP from Bihar (geo landing). */}
+          <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["JEECUP Counselling", "/jeecup-counselling"], ["JEECUP from Bihar", "/jeecup-from-bihar"], ["Apply now", "/apply"]]} />
+          {/* About & Campus — 2026-05-20: added Affiliations &
+              Approvals (consolidated 7-affiliation page) and Why BIPE
+              (comparison vs Kashi / VNITM / SHEAT). Both were route-
+              live but unlinked. */}
+          <Col heading="About & Campus" items={[["About", "/about"], ["Affiliations & Approvals", "/about/affiliations"], ["Why BIPE", "/why-bipe"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Alumni", "/alumni"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
+          {/* Compliances — 2026-05-20: added AI Policy (route exists,
+              required reading for AI-content disclosure but had no nav
+              entry). */}
+          <Col heading="Compliances" items={[["Approvals", "/approvals"], ["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["AI Policy", "/ai-policy"], ["Privacy", "/privacy"], ["Terms", "/terms"]]} />
         </div>
 
         {/* Social handles strip — Phase-2 audit: surface real handles */}
