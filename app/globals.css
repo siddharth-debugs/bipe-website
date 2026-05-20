@@ -157,6 +157,15 @@ body.no-motion .marquee-track { animation: none; }
 }
 .card:hover { border-color: var(--ink); transform: translateY(-2px); }
 
+/* Category cards on /events — matches .card hover idiom but keeps
+   the brand-coloured border so the "click me" affordance is clearer
+   on the photo-led cards than on text-led ones. */
+.bipe-cat-card:hover {
+  border-color: var(--brand);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px color-mix(in oklab, var(--brand) 10%, transparent);
+}
+
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
 body.no-motion .reveal { opacity: 1; transform: none; transition: none; }

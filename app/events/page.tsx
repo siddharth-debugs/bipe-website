@@ -8,7 +8,14 @@ import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { EventsGallery } from "@/components/events/EventsGallery";
-import { EVENT_PHOTOS, EVENT_YEARS } from "@/lib/events-gallery";
+import {
+  EVENT_PHOTOS,
+  EVENT_YEARS,
+  EVENT_CATEGORY_LABELS,
+  EVENT_CATEGORY_ORDER,
+  type EventCategory,
+} from "@/lib/events-gallery";
+import { SITE_URL } from "@/lib/routes";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("events"); }
 
@@ -24,6 +31,46 @@ type Flagship = {
   imgLabel: string;
   side: "left" | "right";
   tags: string[];
+};
+
+/**
+ * One-liner description per category surfaced in the "Browse by
+ * category" overview section. Mirrors EVENT_CATEGORY_LABELS keys so
+ * adding a new category to lib/events-gallery.ts is the only place
+ * you need to also add a description here.
+ */
+const CATEGORY_BLURBS: Record<EventCategory, string> = {
+  Cultural: "Utkarsh annual function, classical dance, drama and music.",
+  Sports: "Spardha sports meet, volleyball, kabaddi, badminton, chess.",
+  Lab: "Hands-on labs and workshops — the day-to-day rhythm of polytechnic learning.",
+  IndustrialVisit: "Off-campus learning visits to factories, plants and engineering sites.",
+  Placement: "Recruiter visits, on-campus interviews, joining-letter ceremonies.",
+  CareerProgram: "Aptitude training, mock interviews, AMCAT, and the 6-day Industry-Ready workshop.",
+  Convocation: "Annual award ceremonies, distinctions and senior-batch farewells.",
+  Other: "Smaller campus moments that don't fit a fixed bucket.",
+};
+
+/**
+ * First photo per category, used as the cover for each category card
+ * in the overview section. Photos are pre-sorted in EVENT_PHOTOS by
+ * year + folder name, so the first match per category is consistent
+ * across builds.
+ */
+function coverPhotoFor(category: EventCategory) {
+  return EVENT_PHOTOS.find((p) => p.category === category) ?? null;
+}
+
+/**
+ * Estimated next-occurrence date for the three flagship events.
+ * Used in the Event JSON-LD so Google's events rich snippet has a
+ * future startDate to display. Mid-February is the historical window;
+ * the exact day shifts year-to-year, so the 15th is a reasonable
+ * middle value that we'll update via the admin when finalised.
+ */
+const FLAGSHIP_NEXT_DATE: Record<string, string> = {
+  Utkarsh: "2027-02-15",
+  Technofest: "2027-02-21",
+  Spardha: "2027-02-15",
 };
 
 const FLAGSHIPS: Flagship[] = [
@@ -75,8 +122,79 @@ export default async function Page() {
   const events = await getEvents();
   const upcoming = events.slice(0, 4);
 
+  // Derive category card list — only categories that have at least
+  // one photo on file get a card. Maintains the strategic ordering
+  // from EVENT_CATEGORY_ORDER (Cultural first since it's the biggest
+  // pull, then Sports, then Lab, etc.).
+  const categoryCards = EVENT_CATEGORY_ORDER.map((c) => ({
+    category: c,
+    label: EVENT_CATEGORY_LABELS[c],
+    blurb: CATEGORY_BLURBS[c],
+    cover: coverPhotoFor(c),
+    count: EVENT_PHOTOS.filter((p) => p.category === c).length,
+  })).filter((c) => c.cover && c.count > 0);
+
+  // Event JSON-LD for the 3 flagship events. Each is an annually
+  // recurring on-campus event — Google's Event rich snippet displays
+  // them in SERPs when search intent matches "events in varanasi
+  // colleges" / "polytechnic events" / brand searches. startDate is
+  // the next estimated occurrence; eventSchedule with byMonth=2 +
+  // repeatFrequency yearly signals the recurrence.
+  const flagshipEventsJsonLd = FLAGSHIPS.map((f) => ({
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "@id": `${SITE_URL}/events#${f.en.toLowerCase()}`,
+    name: `${f.en} — BIPE Varanasi`,
+    description:
+      typeof f.body === "string"
+        ? f.body
+        : `${f.en} (${f.hi}) — BIPE's annual ${f.eyebrow.split(" · ")[0].toLowerCase()} event at the Phoolpur campus.`,
+    startDate: FLAGSHIP_NEXT_DATE[f.en] ?? "2027-02-15",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "Place",
+      name: "BIPE Phoolpur Campus, Varanasi",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Village Gajokhar, Post Parsara",
+        addressLocality: "Phoolpur",
+        addressRegion: "Uttar Pradesh",
+        postalCode: "221206",
+        addressCountry: "IN",
+      },
+    },
+    organizer: {
+      "@type": "CollegeOrUniversity",
+      "@id": `${SITE_URL}#org`,
+      name: "Banaras Institute of Polytechnic & Engineering",
+      url: SITE_URL,
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/visit`,
+      validFrom: "2026-01-01",
+    },
+    image: `${SITE_URL}${f.img.startsWith("/") ? f.img : ""}`,
+    eventSchedule: {
+      "@type": "Schedule",
+      repeatFrequency: "P1Y",
+      byMonth: 2,
+    },
+  }));
+
   return (
     <div className="page-enter">
+      {flagshipEventsJsonLd.map((j, i) => (
+        <script
+          key={`event-${i}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(j) }}
+        />
+      ))}
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
       {/* ====================================================================== */}
@@ -207,9 +325,124 @@ export default async function Page() {
       })}
 
       {/* ====================================================================== */}
+      {/* 4. BROWSE BY CATEGORY                                                   */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--white)", position: "relative", overflow: "hidden" }}>
+        <div className="container">
+          <div style={{ marginBottom: 32, paddingBottom: 22, borderBottom: "1px solid var(--line)" }}>
+            <div className="eyebrow">Browse by category</div>
+            <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "26ch" }}>
+              Pick the kind of campus moment{" "}
+              <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                you want to see.
+              </span>
+            </h2>
+            <p style={{ marginTop: 18, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7, maxWidth: "60ch" }}>
+              {EVENT_PHOTOS.length} photos across {categoryCards.length} categories — academic labs and workshops, sports finals, cultural festivals, placement drives. Click any card to jump to its filter in the gallery below.
+            </p>
+          </div>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: 18,
+          }}>
+            {categoryCards.map(({ category, label, blurb, cover, count }) => (
+              <a
+                key={category}
+                href="#photo-gallery"
+                aria-label={`${label} — ${count} photos`}
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  display: "flex",
+                  flexDirection: "column",
+                  borderRadius: 18,
+                  overflow: "hidden",
+                  background: "var(--white)",
+                  border: "1px solid var(--line)",
+                  transition: "transform 0.15s, box-shadow 0.2s, border-color 0.2s",
+                }}
+                className="bipe-cat-card"
+              >
+                {cover && (
+                  <div style={{
+                    position: "relative",
+                    aspectRatio: "4/3",
+                    overflow: "hidden",
+                    background: "var(--ink-soft, #eef1f6)",
+                  }}>
+                    <Img
+                      src={cover.src}
+                      alt={cover.title}
+                      label=""
+                      sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 25vw"
+                      style={{ borderRadius: 0, height: "100%" }}
+                    />
+                    <div style={{
+                      position: "absolute",
+                      top: 12,
+                      left: 12,
+                      padding: "4px 10px",
+                      background: "rgba(10,26,63,0.85)",
+                      backdropFilter: "blur(8px)",
+                      borderRadius: 6,
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 9,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "#fff",
+                      fontWeight: 700,
+                    }}>
+                      {count} {count === 1 ? "photo" : "photos"}
+                    </div>
+                  </div>
+                )}
+                <div style={{ padding: "18px 20px 20px", flex: 1, display: "flex", flexDirection: "column" }}>
+                  <h3 style={{
+                    fontSize: 17,
+                    fontWeight: 600,
+                    color: "var(--ink-1)",
+                    margin: 0,
+                    marginBottom: 8,
+                    letterSpacing: "-0.01em",
+                  }}>
+                    {label}
+                  </h3>
+                  <p style={{
+                    color: "var(--ink-2)",
+                    fontSize: 13.5,
+                    lineHeight: 1.6,
+                    margin: 0,
+                    marginBottom: 14,
+                    flex: 1,
+                  }}>
+                    {blurb}
+                  </p>
+                  <span style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "var(--brand)",
+                    fontWeight: 700,
+                  }}>
+                    View {count} {count === 1 ? "photo" : "photos"} <ArrowIcon size={12} />
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
       {/* 4.5 PHOTO GALLERY — Pinterest masonry + lightbox                        */}
       {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--paper)", position: "relative", overflow: "hidden" }}>
+      <section id="photo-gallery" className="section" style={{ background: "var(--paper)", position: "relative", overflow: "hidden", scrollMarginTop: 80 }}>
         <div aria-hidden="true" style={{
           position: "absolute", left: -180, top: -120, width: 460, height: 460, borderRadius: "50%",
           background: "color-mix(in oklab, var(--brand) 14%, transparent)",
