@@ -148,9 +148,25 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       "@id": `${SITE_URL}#website`,
       url: SITE_URL,
       name: "BIPE",
+      alternateName: "Banaras Institute of Polytechnic & Engineering",
       inLanguage: ["en-IN"],
       publisher: { "@id": `${SITE_URL}#org` },
       dateModified: new Date().toISOString().slice(0, 10),
+      // SearchAction enables Google's "sitelinks searchbox" rich
+      // result under branded SERP entries — the search field that
+      // appears below a site's main listing for "site:domain.com"
+      // and major brand queries. Backed by the real /search route
+      // (app/search/page.tsx + SearchClient.tsx) — without that,
+      // declaring SearchAction would be hreflang-lying.
+      // Added 2026-05-20 alongside the /search page.
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
     ...branches.map((b) => ({
       "@type": "Course",
