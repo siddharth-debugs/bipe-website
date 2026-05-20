@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Minimalist illustration: Dairy processing.
+  Concept: milk droplet + heat/pasteurisation arcs.
+  Used as a CrossfadeSlider slide on /courses/dairy-engineering
+  because BIPE has only one real dairy-lab photo on file; the
+  other two slider slides are honest icon-style illustrations
+  rather than stock photos that misrepresent the campus.
+
+  Brand palette:
+    deep navy   #283e7a
+    gold        #c8a951
+    paper       #fafafa
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Dairy processing — milk droplet with pasteurisation arcs">
+  <rect width="800" height="600" fill="#fafafa"/>
+
+  <!-- subtle grid hint -->
+  <g opacity="0.04">
+    <line x1="0" y1="150" x2="800" y2="150" stroke="#283e7a" stroke-width="1"/>
+    <line x1="0" y1="300" x2="800" y2="300" stroke="#283e7a" stroke-width="1"/>
+    <line x1="0" y1="450" x2="800" y2="450" stroke="#283e7a" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="600" stroke="#283e7a" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="600" stroke="#283e7a" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="600" stroke="#283e7a" stroke-width="1"/>
+  </g>
+
+  <!-- milk drop -->
+  <path d="M400 130 C500 250, 540 350, 400 460 C260 350, 300 250, 400 130 Z"
+        fill="#ffffff" stroke="#283e7a" stroke-width="6"/>
+  <!-- highlight on drop -->
+  <ellipse cx="378" cy="240" rx="20" ry="50" fill="#283e7a" opacity="0.16"/>
+
+  <!-- heat / process arcs below the drop -->
+  <path d="M180 380 Q400 320, 620 380" fill="none" stroke="#c8a951" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/>
+  <path d="M150 430 Q400 370, 650 430" fill="none" stroke="#c8a951" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- mono label -->
+  <text x="400" y="540" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" text-anchor="middle" fill="#283e7a" letter-spacing="6">PROCESSING · पाश्चरीकरण</text>
+</svg>

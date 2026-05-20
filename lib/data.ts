@@ -165,16 +165,22 @@ export const DATA: DataShape = {
       seats: 60, fee: "30,150",
       desc: "Rare diploma — offered by only 4 institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.",
       tag: "Rare", color: 2,
-      // No in-house dairy-lab photography yet — Unsplash placeholders.
-      // Swap to BIPE-shot images once available.
+      // Dairy photography update 2026-05-20: the May Drive sync added
+      // one verified-dairy frame to Cloudinary
+      // (bipe/labs/dairy/dairy-engineering). We don't yet have multiple
+      // distinct campus photos of the dairy programme, so the slider
+      // mixes the one real photo with two minimalist SVG illustrations
+      // (/public/illustrations/dairy-*.svg) — honest about the photo
+      // gap, no stock pasture cows pretending to be on the BIPE pilot
+      // floor.
       thumbnail: {
-        src: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop",
-        alt: "Finished dairy products",
+        src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263644/bipe/labs/dairy/dairy-engineering",
+        alt: "BIPE Dairy Engineering — pilot plant equipment",
       },
       slides: [
-        { src: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80&auto=format&fit=crop", alt: "Dairy cattle in pasture" },
-        { src: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=900&q=80&auto=format&fit=crop", alt: "Milk being poured during processing" },
-        { src: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=900&q=80&auto=format&fit=crop", alt: "Finished dairy products" },
+        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263644/bipe/labs/dairy/dairy-engineering", alt: "BIPE Dairy Engineering — pilot plant equipment" },
+        { src: "/illustrations/dairy-processing.svg", alt: "Dairy processing illustration — milk droplet and pasteurisation arcs" },
+        { src: "/illustrations/dairy-plant.svg", alt: "Dairy pilot plant illustration — storage tank with inflow and outflow pipes" },
       ],
     },
     {
