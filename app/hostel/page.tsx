@@ -81,7 +81,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Boys&rsquo; hostel on campus &mdash; 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
+                BIPE is a UP polytechnic with on-campus hostel — boys&rsquo; block at the Phoolpur campus, 24×7 water, backup power, on-campus mess and a parent hotline that rings straight into the warden&rsquo;s desk.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a hostel viewing <ArrowIcon size={16} /></Link>

@@ -146,7 +146,7 @@ export default function Page() {
                 a year. Every other rupee accounted for.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                AFRC-approved, identical across all 5 branches. No capitation, no donation, no surprise charge at any semester. Receipts for every transaction — itemised and stamped.
+                Polytechnic fees in UP — BIPE&rsquo;s tuition is AFRC-approved, identical across all 5 branches. No capitation, no donation, no surprise charge at any semester. Receipts for every transaction — itemised and stamped.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>

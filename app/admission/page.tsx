@@ -119,7 +119,7 @@ export default function Page() {
                 JEECUP code 4455.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                BIPE is an AICTE-approved, BTEUP-affiliated diploma institute. Admissions are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 5 branches.
+                BIPE is an AICTE-approved polytechnic in Varanasi, BTEUP-affiliated. Polytechnic admissions in Varanasi are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 5 branches.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Begin application <ArrowIcon size={16} /></Link>

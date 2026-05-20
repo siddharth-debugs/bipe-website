@@ -151,7 +151,7 @@ export default function Page() {
                 through JEECUP.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                JEECUP — the UP Joint Entrance Examination for Polytechnic — is the single state-wide counselling route to BIPE. Six steps from your kitchen table to a confirmed seat in Phoolpur.
+                JEECUP 2026 — the UP Joint Entrance Examination for Polytechnic — is the single state-wide counselling route to BIPE. Six steps from your kitchen table to a confirmed seat in Phoolpur.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">

@@ -143,7 +143,7 @@ export default function Page() {
                 careers. Counting.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                993+ verified placements through 2024 across 44 recruiters · sixteen years on record · alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, JCB and beyond.
+                Polytechnic placements out of BIPE Varanasi — 993+ verified through 2024 across 44 recruiters · sixteen years on record · alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, JCB and beyond.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
