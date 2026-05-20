@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS, getPostBySlug, type BlogSection } from "@/lib/blogPosts";
+import { BLOG_POSTS, getPostBySlug, postWordCount, postCoverImage, type BlogSection } from "@/lib/blogPosts";
 import { SITE_URL } from "@/lib/routes";
 import { ArrowIcon } from "@/components/shell/Icons";
 
@@ -239,15 +239,35 @@ export default async function BlogPostPage(
 
   const canonical = `${SITE_URL}/blog/${post.slug}`;
 
+  // Article schema enrichment 2026-05-20. Adds four fields beyond
+  // the v1 baseline:
+  //
+  //   wordCount   — measured from the post body via postWordCount().
+  //                 Substantive-content signal for Google.
+  //   inLanguage  — was "en-IN" for every post regardless of content
+  //                 language. Hindi posts (kya-hai / kaise-kare slug
+  //                 patterns) now correctly emit hi-IN. Lying about
+  //                 page language is one of the things Google's
+  //                 E-E-A-T audit explicitly penalises.
+  //   image       — first inline image section in the body if
+  //                 present, falls back to og-default.png otherwise.
+  //                 Body-image is more topically accurate than the
+  //                 site-wide social-share default.
+  //   keywords    — category + slug-derived terms, comma-separated.
+  //                 Optional in spec but useful as a topical-cluster
+  //                 signal.
+  const cover = postCoverImage(post);
+  const isHindiPost = /(kya-hai|kaise-kare|hindi-|^hi-)/.test(post.slug);
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${canonical}#article`,
     headline: post.title,
     description: post.metaDescription,
-    inLanguage: "en-IN",
+    inLanguage: isHindiPost ? "hi-IN" : "en-IN",
     datePublished: post.publishedISO,
     dateModified: post.publishedISO,
+    wordCount: postWordCount(post),
     mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
     author: {
       "@type": "Organization",
@@ -261,8 +281,18 @@ export default async function BlogPostPage(
       name: "Banaras Institute of Polytechnic & Engineering",
       logo: { "@type": "ImageObject", url: `${SITE_URL}/bipe-logo.svg` },
     },
-    image: `${SITE_URL}/og-default.png`,
+    image: cover
+      ? {
+          "@type": "ImageObject",
+          url: cover.src.startsWith("http") ? cover.src : `${SITE_URL}${cover.src}`,
+          caption: cover.alt,
+        }
+      : `${SITE_URL}/og-default.png`,
     articleSection: post.category,
+    keywords: [
+      post.category,
+      ...post.slug.split("-").filter((w) => w.length > 3),
+    ].join(", "),
   };
 
   const breadcrumbJsonLd = {

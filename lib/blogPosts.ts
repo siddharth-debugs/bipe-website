@@ -1539,3 +1539,64 @@ export const BLOG_POSTS: BlogPost[] = [
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
+
+/**
+ * Count words across every text-bearing section of a post.
+ *
+ * Used to populate the Article schema's `wordCount` field — Google
+ * uses this signal (alongside content quality) when scoring article
+ * pages. For blog posts, a wordCount in the 800–2500 range
+ * suggests substantive long-form content; below 500 risks being
+ * categorised as thin.
+ *
+ * Implementation notes:
+ *
+ *   - HTML markup inside p / callout / list items is stripped
+ *     before counting, so <strong>fortis</strong> counts as 1 word
+ *     not 3 tokens.
+ *   - Table headers and cells contribute their word counts.
+ *   - Image-section captions are NOT counted (they're alt-style
+ *     metadata, not body content).
+ *   - Whitespace splitting uses /\s+/; punctuation does not split.
+ *     A sentence "BIPE's diploma, year-one." counts as 3 words.
+ */
+export function postWordCount(post: BlogPost): number {
+  const stripTags = (s: string) => s.replace(/<[^>]*>/g, " ");
+  const wordsIn = (s: string) =>
+    stripTags(s)
+      .split(/\s+/)
+      .filter(Boolean).length;
+  let count = 0;
+  for (const s of post.sections) {
+    if (s.type === "h2" || s.type === "h3") count += wordsIn(s.text);
+    else if (s.type === "p") count += wordsIn(s.html);
+    else if (s.type === "callout") {
+      if (s.title) count += wordsIn(s.title);
+      count += wordsIn(s.html);
+    } else if (s.type === "ul" || s.type === "ol") {
+      for (const item of s.items) count += wordsIn(item);
+    } else if (s.type === "table") {
+      for (const h of s.headers) count += wordsIn(h);
+      for (const row of s.rows) {
+        for (const cell of row) count += wordsIn(cell);
+      }
+      if (s.caption) count += wordsIn(s.caption);
+    }
+  }
+  return count;
+}
+
+/**
+ * The first inline image section in a post, or null if the post has
+ * none. Used as the Article schema's `image` value when present,
+ * giving Google a more relevant cover than the generic og-default
+ * for posts that lead with visual content.
+ */
+export function postCoverImage(
+  post: BlogPost,
+): { src: string; alt: string } | null {
+  for (const s of post.sections) {
+    if (s.type === "image") return { src: s.src, alt: s.alt };
+  }
+  return null;
+}
