@@ -8,6 +8,7 @@ import { Img } from "@/components/ui/Img";
 import { IconTile } from "@/components/ui/IconTile";
 import { Award } from "lucide-react";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { SITE_URL } from "@/lib/routes";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("scholarships"); }
 
@@ -65,6 +66,184 @@ const FAQS: { q: string; a: string }[] = [
   },
 ];
 
+/**
+ * Schema.org JSON-LD for /scholarships — two blocks:
+ *
+ *   1. FAQPage — the 4 Q&As (eligibility, timing, income proof, hostel
+ *      coverage). Matches the pattern already used on /fees, /faq, and
+ *      /jeecup. Eligible for the FAQ rich-result accordion in SERP.
+ *
+ *   2. CollectionPage + ItemList<MonetaryGrant> — the 6 scholarship
+ *      schemes (4 government + 2 BIPE Trust merit). MonetaryGrant is
+ *      the semantically-correct Schema.org type for scholarships;
+ *      EducationalOccupationalProgram would refer to the diploma itself,
+ *      not the grants funding it.
+ *
+ * Why funder is split into two Organization types:
+ *
+ *   - Government schemes: GovernmentOrganization (UP State Govt or
+ *     Government of India) — accurate, and helps Google associate the
+ *     page with the official portals in scholarship.up.gov.in and NSP.
+ *
+ *   - Trust merit awards: EducationalOrganization with BIPE as the
+ *     funder. Trust is the legal entity, but for graph purposes BIPE
+ *     is the surface students interact with — and the trust signal
+ *     reinforces "BIPE actively rewards merit", not just "the trust
+ *     somewhere behind BIPE does".
+ *
+ * The MonetaryGrant nodes intentionally don't list a fixed `amount`
+ * field — UP government reimbursements are income-tied and BIPE merit
+ * is slab-based, so a single number would mislead. The `description`
+ * carries the human-readable benefit instead.
+ */
+const SCHOLARSHIPS_FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Can I combine government and merit scholarships?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — UP Government post-matric scholarships and BIPE merit waivers are stackable. The merit waiver is applied to the tuition component the family actually pays after government reimbursement. Talk to admissions before counselling so we can model the net figure for you.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "When do I apply on the UP scholarship portal?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "After admission. The UP scholarship.up.gov.in portal opens for fresh applications between July and October each year. We help every eligible BIPE student fill the form correctly the first time — most rejections are clerical.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What income proof is needed for scholarships?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "An income certificate from the tehsildar / SDM (₹2.5 lakh family income for OBC, ₹2 lakh for SC/ST per current UP norms) plus a category certificate. Apply for both at the tehsil the day after JEECUP results — they take 7 to 10 working days.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does the scholarship waiver cover hostel charges?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Government post-matric covers tuition; hostel and mess are separate. Mess is ₹36,000 per year; on-campus boys' hostel rooms are ₹38,000/year (triple-sharing) or ₹48,000/year (double-sharing). BIPE merit waivers are tuition-only.",
+      },
+    },
+  ],
+};
+
+// Funder references — keep terse, anchored by URL where possible so
+// Google deduplicates them across pages.
+const FUNDER_UP_GOVT = {
+  "@type": "GovernmentOrganization",
+  name: "Government of Uttar Pradesh · Department of Social Welfare",
+  url: "https://scholarship.up.gov.in",
+} as const;
+
+const FUNDER_INDIA_GOVT = {
+  "@type": "GovernmentOrganization",
+  name: "Government of India · National Scholarship Portal",
+  url: "https://scholarships.gov.in",
+} as const;
+
+const FUNDER_BIPE = {
+  "@type": "EducationalOrganization",
+  name: "Banaras Institute of Polytechnic & Engineering",
+  url: SITE_URL,
+} as const;
+
+type GrantInput = {
+  id: string;
+  name: string;
+  description: string;
+  funder: typeof FUNDER_UP_GOVT | typeof FUNDER_INDIA_GOVT | typeof FUNDER_BIPE;
+  url?: string;
+};
+
+const GRANT_SCHEMES: GrantInput[] = [
+  {
+    id: "sc-st-post-matric",
+    name: "SC / ST Post-Matric Scholarship (Uttar Pradesh)",
+    description:
+      "Full tuition reimbursement for SC and ST students at BIPE, subject to the UP State Government's annual income ceiling.",
+    funder: FUNDER_UP_GOVT,
+    url: "https://scholarship.up.gov.in",
+  },
+  {
+    id: "obc-post-matric",
+    name: "OBC Post-Matric Scholarship (Uttar Pradesh)",
+    description:
+      "Partial tuition reimbursement for OBC students at BIPE, subject to the UP State Government's family income ceiling (currently ₹2.5 lakh).",
+    funder: FUNDER_UP_GOVT,
+    url: "https://scholarship.up.gov.in",
+  },
+  {
+    id: "ews-reimbursement",
+    name: "EWS Tuition Reimbursement (Uttar Pradesh)",
+    description:
+      "Partial tuition reimbursement for students with a valid EWS certificate, per current UP State Government norms.",
+    funder: FUNDER_UP_GOVT,
+    url: "https://scholarship.up.gov.in",
+  },
+  {
+    id: "minority-nsp",
+    name: "Minority Scholarships via National Scholarship Portal",
+    description:
+      "Central Government pre-matric, post-matric and merit-cum-means scholarships for minority community students, applied through the NSP portal.",
+    funder: FUNDER_INDIA_GOVT,
+    url: "https://scholarships.gov.in",
+  },
+  {
+    id: "bipe-jeecup-merit",
+    name: "BIPE JEECUP Top-Rank Merit Award",
+    description:
+      "10–20% tuition waiver on the published ₹30,150 annual tuition for students within the top 5,000 JEECUP rank. Slab published by Trust resolution after JEECUP results each year. Stackable on top of government reimbursements.",
+    funder: FUNDER_BIPE,
+  },
+  {
+    id: "bipe-class10-topper",
+    name: "BIPE Class 10 Topper Merit Award",
+    description:
+      "10% tuition waiver for students with 90%+ aggregate in Class 10. Applied at the time of fee deposit on production of the 10th marksheet. Stackable on top of government reimbursements (not stackable with the BIPE JEECUP award).",
+    funder: FUNDER_BIPE,
+  },
+];
+
+const SCHOLARSHIPS_GRANTS_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}/scholarships`,
+  url: `${SITE_URL}/scholarships`,
+  name: "Scholarships · BIPE Varanasi",
+  description:
+    "Government post-matric and BIPE Trust merit scholarships for diploma students at Banaras Institute of Polytechnic & Engineering — SC/ST, OBC, EWS, Minority, JEECUP top-rank and Class 10 toppers.",
+  about: {
+    "@type": "CollegeOrUniversity",
+    name: "Banaras Institute of Polytechnic & Engineering",
+    url: SITE_URL,
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Scholarships available to BIPE students",
+    numberOfItems: GRANT_SCHEMES.length,
+    itemListElement: GRANT_SCHEMES.map((g, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "MonetaryGrant",
+        "@id": `${SITE_URL}/scholarships#${g.id}`,
+        name: g.name,
+        description: g.description,
+        funder: g.funder,
+        ...(g.url ? { url: g.url } : {}),
+      },
+    })),
+  },
+};
+
 export default function Page() {
   return (
     <div className="page-enter">
@@ -79,6 +258,17 @@ export default function Page() {
             ]),
           ),
         }}
+      />
+      {/* FAQPage — eligible for the FAQ rich-result accordion. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHOLARSHIPS_FAQ_JSON_LD) }}
+      />
+      {/* CollectionPage + ItemList<MonetaryGrant> — see schema rationale
+          above for why MonetaryGrant (not EducationalOccupationalProgram). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHOLARSHIPS_GRANTS_JSON_LD) }}
       />
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
