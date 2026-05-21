@@ -2331,7 +2331,212 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Salary is a planning question. Plan with us.",
         html:
-          "If you're a Class 10 / Class 12 student or family member trying to model what the diploma actually returns financially, two next steps. <strong>Visit <a href=\"/placements\">/placements</a></strong> for the full branch-wise breakdown and the named alumni profiles. <strong>Visit campus</strong> &mdash; book on <a href=\"/visit\">/visit</a> &mdash; and talk to current third-year students who are in placement season right now. Their concrete answers about specific company offers will be far more useful than any blog post. Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or WhatsApp the admissions team at <a href=\"https://wa.me/919198646464\">+91-9198646464</a> in Hindi or English.",
+          "If you're a Class 10 / Class 12 student or family member trying to model what the diploma actually returns financially, two next steps. <strong>Visit <a href=\"/placements\">/placements</a></strong> for the full branch-wise breakdown and the named alumni profiles. <strong>Visit campus</strong> &mdash; book on <a href=\"/visit\">/visit</a> &mdash; and talk to current third-year students who are in placement season right now. Their concrete answers about specific company offers will be far more useful than any blog post. Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or WhatsApp the admissions team at <a href=\"https://wa.me/919198646464\">+91-9198646464</a> in Hindi or English. Hindi readers: <a href=\"/blog/polytechnic-salary-2026-hindi\">पॉलिटेक्निक सैलरी 2026 — हिन्दी गाइड</a>.",
+      },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // Post 13 — Hindi salary post (vernacular SEO pair for post 12)
+  // Target keyword cluster: "पॉलिटेक्निक सैलरी" / "polytechnic salary
+  // in hindi" — vernacular Hindi search is the dominant query language
+  // for BIPE's primary audience (Eastern UP and Bihar families).
+  // The English post 12 covers the head English query; this paired
+  // Hindi post captures the vernacular cluster the English post
+  // can't reach.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "polytechnic-salary-2026-hindi",
+    title: "पॉलिटेक्निक के बाद सैलरी 2026 — एक diploma engineer कितना कमाता है",
+    category: "Career · Hindi",
+    date: "21 May 2026",
+    publishedISO: "2026-05-21",
+    readTime: "12 min read",
+    excerpt:
+      "पॉलिटेक्निक डिप्लोमा के बाद सच्ची शुरुआती सैलरी कितनी होती है — सरकारी JE ₹35-44 हज़ार, Tier-1 private ₹18-25 हज़ार, क्षेत्रीय उद्योग ₹12-22 हज़ार। साल 3, 5 और 10 बाद की कमाई, BIPE के असली alumni के example, और सच्ची range — आसान हिन्दी में।",
+    metaTitle:
+      "पॉलिटेक्निक सैलरी 2026 — Diploma Engineer Salary in Hindi | BIPE",
+    metaDescription:
+      "पॉलिटेक्निक के बाद कितनी सैलरी मिलती है? सरकारी JE ₹35-44k, Tier-1 private (Mahindra, Tata) ₹18-25k, क्षेत्रीय manufacturing ₹12-22k। ब्रांच के हिसाब से, साल-दर-साल। BIPE वाराणसी (JEECUP 4455) के 993+ verified placements के data पर आधारित।",
+    sections: [
+      {
+        type: "callout",
+        title: "सीधी बात — जो परिवार पहले पूछते हैं",
+        html:
+          "<ul style=\"margin: 0; padding-left: 22px;\">" +
+          "<li><strong>सरकारी JE (SSC JE, RRB JE, UPPCL JE)</strong> — शुरू में ₹35,000-44,000 monthly (basic + DA + HRA), 3-5 साल बाद ₹50,000-65,000 तक। Pension मिलती है, transfer-eligible पूरे भारत में।</li>" +
+          "<li><strong>Indian Railways ALP / Technician</strong> — Level 2 pay matrix, ₹28,000-32,000 in-hand शुरुआत में, हर साल steady बढ़ोतरी।</li>" +
+          "<li><strong>Tier-1 private (Mahindra, Tata Steel, JCB, Asian Paints)</strong> — ₹18,000-25,000 शुरू में, 5 साल में ₹35,000-50,000 (अगर वहीं रहे), जल्दी switch करने पर इससे ज़्यादा।</li>" +
+          "<li><strong>क्षेत्रीय manufacturing (Motherson, JBM, Talbros, RR Kabel)</strong> — ₹12,000-22,000 शुरू में, 5 साल में ₹25,000-35,000।</li>" +
+          "<li><strong>Civil site engineering (Smart Cities, Bharatmala, Kashi corridor)</strong> — ₹15,000-25,000 शुरू में, 5 साल में ₹35,000-55,000 अगर specialise करें।</li>" +
+          "<li><strong>Branch मायने रखती है।</strong> Mechanical Production और Electrical में सबसे ज़्यादा pipeline है; Civil की private-side ceiling सबसे ऊँची है; Dairy में scarcity premium है।</li>" +
+          "<li><strong>शहर multiplier है।</strong> Varanasi में ₹20,000 वाली job Delhi NCR में ₹30,000-40,000, Mumbai में ₹40,000-55,000 तक हो सकती है — same skill, different city।</li>" +
+          "</ul>",
+      },
+      {
+        type: "p",
+        html:
+          "हर admission season में परिवार सबसे पहले यही सवाल पूछते हैं — <em>पॉलिटेक्निक के बाद सैलरी कितनी मिलती है?</em> सवाल सही है, और जवाब भी सही है, पर वो जवाब एक नंबर में नहीं आता। यह पेज ईमानदार version है — सैलरी की <strong>range</strong>, track के हिसाब से, branch के हिसाब से, अनुभव के साल के हिसाब से — और हर आँकड़ा BIPE के 993+ joining-letter-verified placements पर आधारित है, जो आप <a href=\"/placements\">/placements</a> पर देख सकते हैं।",
+      },
+      {
+        type: "p",
+        html:
+          "अगर कोई website आपसे कहती है कि <em>पॉलिटेक्निक करने पर ₹45,000/महीना मिलता है</em> — एक ही flat number — तो उस tab को बंद कर दीजिए। सच यह है कि 2026 में एक diploma engineer की शुरुआती in-hand सैलरी <strong>₹12,000 से ₹44,000/महीना</strong> के बीच कहीं भी हो सकती है — और आप किस तरफ पहुँचेंगे, यह पाँच चीज़ों पर निर्भर करता है: branch, track (सरकारी या private), employer tier, शहर और interview के दिन आप क्या demonstrate कर सकते हैं।",
+      },
+
+      // ============== H2: Five salary tracks ==============
+      { type: "h2", text: "पाँच salary tracks — हर diploma engineer इन्हीं में से चुनता है" },
+      {
+        type: "p",
+        html:
+          "पॉलिटेक्निक के बाद placement एक ही ladder पर नहीं होती — पाँच अलग-अलग ladders हैं, हर एक की अपनी शुरुआत, अपनी चढ़ाई की रफ़्तार, और अपनी ceiling है। यह जानना कि आप कौन-सी ladder चढ़ रहे हैं — सैलरी के नंबर से ज़्यादा ज़रूरी है, क्योंकि ladders की slopes बहुत अलग हैं।",
+      },
+      {
+        type: "table",
+        headers: ["Track", "शुरुआत (₹/महीना in-hand)", "3-5 साल बाद (एक promotion के साथ)", "10 साल बाद (आमतौर पर)"],
+        rows: [
+          ["सरकारी JE (SSC JE / RRB JE / UPPCL JE / UP PWD)", "₹35,000-44,000", "₹50,000-65,000", "₹70,000-95,000"],
+          ["Indian Railways ALP / Technician", "₹28,000-32,000", "₹38,000-45,000", "₹55,000-70,000"],
+          ["Tier-1 private (Mahindra, Tata Steel, JCB)", "₹18,000-25,000", "₹35,000-50,000", "₹60,000-1,00,000+"],
+          ["क्षेत्रीय manufacturing (Motherson, JBM, Talbros)", "₹12,000-22,000", "₹25,000-35,000", "₹40,000-65,000"],
+          ["Civil site / contractor", "₹15,000-25,000", "₹35,000-55,000", "₹60,000-1,10,000"],
+        ],
+        caption: "2026 के अनुमानित ₹/महीना in-hand range। सरकारी आँकड़े 7वें Pay Commission के Level 2 / 6 / 7 matrix से, DA सहित। Private आँकड़े BIPE के 2018-2024 cohorts के joining letters से।",
+      },
+      {
+        type: "p",
+        html:
+          "दो pattern दिखते हैं। <strong>सरकारी salary पहले साल में ज़्यादा होती है</strong> — एक fresh SSC JE की कमाई एक fresh Mahindra trainee से ज़्यादा है। लेकिन <strong>10 साल बाद private overtake कर लेता है</strong> — सही Tier-1 company में specialisation के साथ। सरकारी track stability और pension में जीतता है; private track ceiling में जीतता है।",
+      },
+
+      // ============== H2: Branch-wise ==============
+      { type: "h2", text: "ब्रांच के हिसाब से शुरुआती सैलरी" },
+      {
+        type: "p",
+        html:
+          "BIPE ने 2024 तक <strong>993+ joining-letter-verified placements</strong> shipped किए हैं — 44 recruiters के साथ। Branch breakdown clear है: 522 Mechanical Production, 326 Electrical, 145 Civil, और CSE + Dairy maturing pipelines हैं। जिस branch की पाइपलाइन सबसे गहरी है, उसी की salary signal भी सबसे predictable है।",
+      },
+      {
+        type: "table",
+        headers: ["Branch (BTEUP code)", "मुख्य सरकारी track", "मुख्य private employer", "औसत शुरुआती in-hand"],
+        rows: [
+          ["Mechanical Production (343)", "SSC JE Mechanical · RRB JE Mechanical · Indian Army TES", "Mahindra, Tata Steel, JCB, Motherson Sumi, JBM", "₹18,000-22,000"],
+          ["Electrical (328)", "UPPCL JE · RRB JE Electrical · SSC JE Electrical", "Tata Power, Adani Solar, Bajaj, UPPCL", "₹20,000-24,000"],
+          ["Civil (322)", "SSC JE Civil · UP PWD JE · Indian Railways JE Civil", "L&T site, Mumbai Metro contractors", "₹18,000-22,000"],
+          ["Computer Science (355)", "Central IT cadre · SSC CGL · UPPCL CSE roles", "Wipro Infrastructure, Asian Paints IT", "₹18,000-22,000"],
+          ["Dairy (327)", "State Dairy Federation · NDDB", "Amul, Mother Dairy, Parag, Nestlé", "₹15,000-20,000"],
+        ],
+        caption: "BIPE के 2022-24 joining letters का median, जहाँ recruiter ने salary disclose की। Overtime/shift allowance अलग।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Electrical में शुरुआती salary सबसे ज़्यादा</strong> है क्योंकि सरकारी Electrical pipeline (UPPCL JE, RRB JE Electrical, SSC JE Electrical) सबसे चौड़ी है — और सरकारी pay 7th Pay Commission से तय होती है, competition से नहीं। <strong>Civil में private-side ceiling सबसे ऊँची</strong> है क्योंकि बड़े infrastructure projects (Mumbai Metro, Bharatmala, Smart Cities) पर site engineering के role बाकी सब से ऊँचा pay करते हैं — एक बार आपके पास 5-8 साल का experience हो।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Dairy की शुरुआती salary कम लगती है पर जल्दी correct होती है।</strong> UP में सिर्फ 4 polytechnic ही BTEUP 327 Dairy Engineering offer करते हैं — BIPE उनमें से एक है। यह scarcity का मतलब है कि किसी dairy major (Amul, Parag, Mother Dairy, NDDB) में join करने के 18-24 महीने में salary पूरे engineering median तक पहुँच जाती है। देखें <a href=\"/blog/why-dairy-engineering-bipe-rare-bteup-327\">Dairy Engineering की rarity पर हमारा detailed post</a>।",
+      },
+
+      // ============== H2: 3, 5, 10 year arc combined ==============
+      { type: "h2", text: "साल-दर-साल कैसे बढ़ती है सैलरी" },
+      { type: "h3", text: "3 साल बाद — confirmation और पहली बढ़ोतरी" },
+      {
+        type: "p",
+        html:
+          "साल 1 हर track में probation जैसा होता है। सरकारी JE 3-12 महीने की training पर थोड़ी कम stipend पर रहते हैं, फिर पूरी Level 6 pay शुरू होती है। Private trainees 6-12 महीने Graduate Engineer Trainee (GET) के रूप में range के lower end पर रहते हैं, फिर confirmation पर 15-25% bump मिलता है।",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>साल 1 (training/probation)</strong>: सरकारी ₹30,000-38,000 stipend; Tier-1 private ₹18,000-22,000; Tier-2 private ₹12,000-18,000।",
+          "<strong>साल 2 (confirmation)</strong>: सरकारी पूरा Level 6 (~₹40,000) पर पहुँच जाता है; Tier-1 ₹3,000-6,000 बढ़ती है; Tier-2 ₹2,000-4,000।",
+          "<strong>साल 3 (annual increment)</strong>: सरकारी 3% (~₹2,000) बढ़ता है; private 5-12% performance review के हिसाब से।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Private में साल 3 पर सबसे बड़ा lever है <strong>company switch करना</strong>। एक diploma engineer जो Motherson Sumi में ₹16,000 पर join हुआ था और साल 3 पर JBM में switch किया — वो अब ₹26,000-30,000 पर है। यह 60%+ bump internal increment से 5-7 साल में मिलता। <strong>Switch करना ही private engineering में salary growth का engine है।</strong> सरकारी track में उल्टा है — टिके रहो, seniority बढ़ाओ, transfer accept करो, salary steadily चढ़ती है।",
+      },
+
+      { type: "h3", text: "5 साल बाद — जब tracks तेज़ी से अलग होती हैं" },
+      {
+        type: "p",
+        html:
+          "5 साल पर salary की picture branch और tier से ज़्यादा <strong>आपने डिप्लोमा के ऊपर कौन-सी specialisation add की है</strong> — इस पर निर्भर हो जाती है। 2026 में डिप्लोमा अकेला आपका entry ticket है; उसके ऊपर आपने क्या बनाया, यह तय करता है कि 5 साल बाद आप कहाँ खड़े होंगे।",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Mechanical Production</strong>: साल 3 तक AutoCAD + SolidWorks + basic CNC programming certificate जोड़ने पर साल-5 की salary unskilled baseline से 25-40% ज़्यादा होती है।",
+          "<strong>Electrical</strong>: PLC programming (Siemens या Allen-Bradley) और SCADA familiarity सबसे बड़े साल-5 levers हैं।",
+          "<strong>Civil</strong>: AutoCAD + STAAD Pro + actual site experience (एक portfolio में verifiable) — यह combination साल 5 पर differentiator है।",
+          "<strong>CSE</strong>: Python, Java या DevOps tools में proficiency जो डिप्लोमा curriculum (जो अभी भी C/C++ basics पर है) से आगे जाती है।",
+          "<strong>Dairy</strong>: Quality control certifications (ISO 22000, HACCP) supervisory role unlock करते हैं — ₹35,000-50,000 बनाम operator के ₹20,000-28,000।",
+        ],
+      },
+      {
+        type: "callout",
+        title: "साल-5 का fork — same diploma, different outcome",
+        html:
+          "BIPE के 2018 Mechanical Production cohort के दो alumni: दोनों ने एक ही regional auto-component supplier में ₹16,000 पर join किया। एक वहीं टिका रहा — 2024 में ₹26,000 पर है। दूसरा शामों में SolidWorks और SAP-PP सीखता रहा, साल 3 पर Tier-1 OEM में switch किया, फिर साल 5 पर दोबारा — 2024 में ₹54,000 पर है। <strong>Same diploma। Same starting salary। Different choices।</strong> डिप्लोमा आपकी salary शुरू करता है; उसके बाद आप क्या करते हैं, वो तय करता है कि वो कहाँ पहुँचेगी।",
+      },
+
+      { type: "h3", text: "10 साल बाद — BIPE के असली alumni कितना कमाते हैं" },
+      {
+        type: "p",
+        html:
+          "10 साल पर salary एक नंबर नहीं रहती — एक portfolio of outcomes बन जाती है। BIPE के 2013-2015 cohort के alumni — जो अब 10-12 साल का experience रखते हैं — हर track में हैं। <a href=\"/placements\">/placements</a> पेज पर कुछ named alumni:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Naveen Pandey · Electrical 2016 · CEO &amp; MD, IEPC</strong> — एक engineering और projects firm की स्थापना की। Founder earnings firm की revenue पर निर्भर है, पर 2016 डिप्लोमा से एक registered engineering company चलाने तक का arc — यह डिप्लोमा path का upper-tail outcome है।",
+          "<strong>Hariom Rai · Civil 2013 · Senior Engineer, Mumbai Metro Project</strong> — भारत के सबसे बड़े metro build पर senior site engineering। Mumbai Metro Senior Engineer salary diploma-route engineers के लिए 10+ साल experience पर ₹55,000-80,000 + project allowances range में होती है।",
+          "<strong>Ankit Kr Singh · Civil 2014 · Junior Engineer, Tata Steel BSL</strong> — Tata Steel का long-products business। Tata Steel JE 10 साल मार्क पर, एक-दो promotion के साथ, ₹55,000-75,000 range में बैठता है + shift allowance + strong benefits package।",
+          "<strong>Saurabh Pandey · Civil 2014 · Founder &amp; CEO, Civil Arch</strong> — एक civil consultancy की स्थापना की।",
+          "<strong>Pramod Kumar Patel · Mechanical Production 2014 · Assistant Loco Pilot, Indian Railways</strong> — Steady सरकारी track। 10 साल पर ALP grade pay progression ₹42,000-55,000 in-hand range + running allowance जो active ALPs के लिए ₹15,000-25,000/महीना और जोड़ता है।",
+          "<strong>Chandan Pathak · Mechanical Production 2015 · Production In-charge, Motherson Sumi Systems</strong> — Tier-1 auto component OEM में floor-leadership role। 10 साल experience पर ₹50,000-75,000 + performance variable pay।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "तीन observations: <strong>पहली</strong>, इनमें से किसी ने भी डिप्लोमा पर नहीं रुके — हर एक ने या तो सरकारी exam clear किया, या deep skill specialisation जोड़ी, या entrepreneurship में गए। <strong>दूसरी</strong>, 10-साल salary range चौड़ी है (~₹40,000 से ₹1,00,000+), पर इस set का हर alumnus अपने respective city के middle class में आराम से है। <strong>तीसरी</strong>, BIPE डिप्लोमा से एक senior engineering role तक का path असामान्य नहीं है — यह expected outcome है उन graduates के लिए जो अपनी craft से engaged रहते हैं।",
+      },
+
+      // ============== H2: Levers ==============
+      { type: "h2", text: "6 चीज़ें जो आपकी salary को आगे बढ़ाती हैं (impact के क्रम में)" },
+      {
+        type: "ol",
+        items: [
+          "<strong>Branch की पसंद।</strong> सबसे बड़ा lever। Mechanical Production और Electrical में सबसे चौड़ा opportunity set; Civil की private ceiling सबसे ऊँची; Dairy में scarcity premium। ऐसी branch चुनें जिसे आप वाकई पढ़ेंगे — interest predicted salary से ज़्यादा मायने रखती है।",
+          "<strong>सरकारी exam की तैयारी।</strong> जो student Semester 5 में SSC JE / RRB JE / UPPCL JE की तैयारी शुरू करता है और graduation के 12 महीने में clear कर लेता है — वो fundamentally अलग income curve पर है। सरकारी clearance regional private placement की entry salary को लगभग double कर देता है।",
+          "<strong>Demonstrable technical skill।</strong> AutoCAD / SolidWorks / PLC / STAAD Pro / Python — branch के हिसाब से एक-दो चुनें और Semester 6 तक उनमें genuinely अच्छे बनें। Tier-1 private employers marks से पहले इन skills को screen करते हैं।",
+          "<strong>शहर के लिए तैयार रहना।</strong> Same diploma + same skills = Delhi NCR में ~1.5x salary, Mumbai या Pune में ~2x — Varanasi या Lucknow के मुक़ाबले।",
+          "<strong>English fluency Tier-1 private के लिए।</strong> Mahindra, Tata Steel, JCB, Asian Paints सब English में interview लेते हैं। Hindi-medium students जो functional English में 30 मिनट का technical interview carry कर सकें — उन्हें meaningfully बेहतर Tier-1 offers मिलते हैं। यह 6 महीने की effort में fixable है।",
+          "<strong>Portfolio में visible projects।</strong> एक working final-year project जो real problem solve करे, plus GitHub repository या CAD models का portfolio — marks अकेले से बेहतर है। Recruiters demonstrable project वाले candidates का interview उसी project को conversation का anchor बनाकर लेते हैं।",
+        ],
+      },
+
+      // ============== H2: Caveats ==============
+      { type: "h2", text: "जो हम जान-बूझकर नहीं जानते" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Average बनाम median बनाम anecdote।</strong> ज़्यादातर college brochures <em>highest</em> package को typical बताकर quote करते हैं। हमने ranges दी हैं, averages नहीं — क्योंकि distribution इतनी चौड़ी है कि single number झूठ बोलता है। BIPE की median entry salary सभी branches में लगभग ₹18,000 in-hand है private placements के लिए, ₹35,000 सरकारी clearances के लिए।",
+          "<strong>Joining letter बनाम actual joined।</strong> कुछ students offer पाते हैं पर सरकारी exam की तैयारी के लिए private role में नहीं जाते। उनका offer verified है पर वो private payroll पर नहीं हैं।",
+          "<strong>साल-1 attrition।</strong> हर 10 diploma engineers में से जो Tier-1 private में join करते हैं, लगभग 6-7 साल 3 तक उसी employer में होते हैं। जो छोड़ते हैं — वो या higher-paying competitor के लिए जाते हैं (अच्छा attrition) या काम पसंद नहीं आता।",
+        ],
+      },
+
+      // ============== Final CTA ==============
+      {
+        type: "callout",
+        title: "सैलरी एक planning का सवाल है — साथ planning कीजिए",
+        html:
+          "अगर आप Class 10 / Class 12 student हैं या परिवार में कोई — और डिप्लोमा वाक़ई financially क्या देगा, यह model करना चाहते हैं — तो दो step। <strong>देखें <a href=\"/placements\">/placements</a></strong> पूरी branch-wise breakdown और named alumni profiles के लिए। <strong>Campus visit करें</strong> — book करें <a href=\"/visit\">/visit</a> पर — और current third-year students से बात करें जो अभी placement season में हैं। उनके specific company offers के concrete answers किसी blog post से ज़्यादा useful होंगे। 2026-27 के लिए apply करें <a href=\"/apply\">/apply</a> पर, या WhatsApp <a href=\"https://wa.me/919198646464\">+91-9198646464</a> Hindi या English में। English readers: <a href=\"/blog/polytechnic-salary-in-india-2026\">English version of this guide</a>.",
       },
     ],
   },
