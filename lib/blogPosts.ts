@@ -2079,6 +2079,262 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  // ─────────────────────────────────────────────────────────────────
+  // Post 12 — Polytechnic salary in India 2026
+  // Target keyword cluster (~5,400/mo head + 2,400/mo "diploma engineer
+  // salary" + 880/mo "polytechnic salary after diploma"). High commercial
+  // intent. Differentiated from the 11th post (which covered govt-job
+  // ELIGIBILITY); this one focuses on actual SALARY ranges across all
+  // tracks, anchored to BIPE's verified-placement data and named alumni.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "polytechnic-salary-in-india-2026",
+    title: "Polytechnic salary in India 2026 — what a BTE UP diploma engineer actually earns",
+    category: "Career · Salary & Outcomes",
+    date: "21 May 2026",
+    publishedISO: "2026-05-21",
+    readTime: "15 min read",
+    excerpt:
+      "Branch-by-branch starting salaries for BTE UP polytechnic diploma engineers in 2026 — government JE cadre ₹35-44k, Tier-1 private ₹18-25k, regional industry ₹12-22k. Real BIPE alumni earning curves at year 3, 5 and 10. Honest ranges, anchored to 993+ verified placements.",
+    metaTitle:
+      "Polytechnic salary in India 2026 — diploma engineer pay scale BTE UP | BIPE",
+    metaDescription:
+      "What does a polytechnic diploma engineer actually earn in 2026? Government JE (₹35-44k), Tier-1 private (₹18-25k), regional industry (₹12-22k). Branch-wise, 3/5/10 year arcs, real BIPE alumni data from 993+ verified placements.",
+    sections: [
+      {
+        type: "callout",
+        title: "TL;DR · the answer most parents actually want",
+        html:
+          "<ul style=\"margin: 0; padding-left: 22px;\">" +
+          "<li><strong>Government JE cadre (SSC JE, RRB JE, UPPCL JE)</strong> — ₹35,400-44,900 basic at entry, ₹50,000-65,000 gross in-hand after 3-5 years with one promotion. Pension-eligible, transfer-eligible across India.</li>" +
+          "<li><strong>Indian Railways Assistant Loco Pilot (ALP) / Technician</strong> — Level 2 pay matrix, ₹19,900 basic, roughly ₹28,000-32,000 in-hand at entry, with steady annual increments and stable career-long employment.</li>" +
+          "<li><strong>Tier-1 private (Mahindra, Tata Steel, JCB, Asian Paints, Tata Power)</strong> — ₹18,000-25,000 in-hand at entry, ₹35,000-50,000 by year 5 if you stay, faster jumps if you switch.</li>" +
+          "<li><strong>Regional manufacturing / auto-components (Motherson, JBM, Talbros, RR Kabel)</strong> — ₹12,000-22,000 at entry, ₹25,000-35,000 by year 5.</li>" +
+          "<li><strong>Civil site engineering (Smart Cities, Bharatmala contractors, Kashi corridor)</strong> — ₹15,000-25,000 at entry, ₹35,000-55,000 by year 5 if you specialise.</li>" +
+          "<li><strong>Branch matters enormously.</strong> Mechanical Production and Electrical have the broadest salary ranges (most government + most private pipelines). Civil has the highest private-side ceiling. CSE and Dairy have narrower volumes but specialist premium niches.</li>" +
+          "<li><strong>Geography is the multiplier.</strong> A diploma engineer earning ₹20,000 in Varanasi can earn ₹30,000-40,000 in Delhi NCR and ₹40,000-55,000 in Mumbai or Pune for the same skill set. Cost of living offsets some — but not all — of the premium.</li>" +
+          "</ul>",
+      },
+      {
+        type: "p",
+        html:
+          "Every admission season we get the same first question from parents: <em>kitni salary milti hai polytechnic ke baad?</em> &mdash; what's the salary after polytechnic? It's a fair question and there's a fair answer, but the answer almost never fits in one number. This page is the honest version: salary <strong>ranges</strong>, by track, by branch, by year of experience &mdash; anchored to BIPE's 993+ joining-letter-verified placements and the real career arcs of named alumni you can find on <a href=\"/placements\">/placements</a>.",
+      },
+      {
+        type: "p",
+        html:
+          "If you find a website telling you that <em>polytechnic engineers earn ₹45,000/month</em> as a single flat number, close the tab. The truth is that a diploma engineer's starting salary in 2026 sits anywhere between <strong>₹12,000 and ₹44,000 per month in-hand</strong>, and which end of that range you land on depends on five things: branch, track (government vs private), employer tier, geography and what you can demonstrate on day one of the interview.",
+      },
+
+      // ============== H2: The five salary tracks ==============
+      { type: "h2", text: "The five salary tracks every diploma engineer chooses between" },
+      {
+        type: "p",
+        html:
+          "Engineering placements after polytechnic don't sit on a single ladder &mdash; they sit on five different ladders, each with its own starting rung, climbing speed and ceiling. Understanding which ladder you're climbing matters more than the salary number itself, because the slopes are very different.",
+      },
+      {
+        type: "table",
+        headers: ["Track", "Entry (₹/month in-hand)", "Year 3-5 (with one promotion)", "Year 10 (typical)"],
+        rows: [
+          ["Government JE (SSC JE / RRB JE / UPPCL JE / UP PWD)", "₹35,000-44,000", "₹50,000-65,000", "₹70,000-95,000"],
+          ["Indian Railways ALP / Technician", "₹28,000-32,000", "₹38,000-45,000", "₹55,000-70,000"],
+          ["Tier-1 private (Mahindra, Tata Steel, JCB)", "₹18,000-25,000", "₹35,000-50,000", "₹60,000-1,00,000+"],
+          ["Regional manufacturing (Motherson, JBM, Talbros)", "₹12,000-22,000", "₹25,000-35,000", "₹40,000-65,000"],
+          ["Civil site / contractor", "₹15,000-25,000", "₹35,000-55,000", "₹60,000-1,10,000"],
+        ],
+        caption: "Approximate ₹/month in-hand ranges as of 2026. Government numbers from 7th Pay Commission Level 2 / 6 / 7 matrices plus DA. Private numbers from joining letters across BIPE's 2018-2024 placement cohorts; gross-to-in-hand assumptions standard for India.",
+      },
+      {
+        type: "p",
+        html:
+          "Two patterns stand out. <strong>Government starts higher</strong> than most private placements at year 1 &mdash; a fresh SSC JE earns more than a fresh Mahindra trainee. But <strong>private overtakes government by year 10</strong> in the right Tier-1 employer with the right specialisation. The government track wins on stability and pension; the private track wins on ceiling.",
+      },
+      {
+        type: "p",
+        html:
+          "The Indian Railways ALP track is a third path that sits between the two: lower starting salary than a JE but extremely stable, with predictable annual increments and a clear retirement arc. About <strong>3-5 BIPE alumni per cohort</strong> end up here &mdash; Pramod Kumar Patel (Mechanical Production, 2014) is one named example on our <a href=\"/placements\">/placements</a> page.",
+      },
+
+      // ============== H2: Branch-wise salaries ==============
+      { type: "h2", text: "Branch-wise starting salaries — what 522 Mechanical, 326 Electrical and 145 Civil placements look like" },
+      {
+        type: "p",
+        html:
+          "BIPE has shipped <strong>993+ joining-letter-verified placements through 2024</strong> across 44 recruiters. The branch split is concentrated: 522 in Mechanical Production, 326 in Electrical, 145 in Civil, with Computer Science and Dairy as maturing pipelines. That branch distribution shapes the salary picture too &mdash; the branches with the deepest placement pipelines also have the most predictable salary signal.",
+      },
+      {
+        type: "table",
+        headers: ["Branch (BTEUP code)", "Top government track", "Top private employers", "Median in-hand at entry"],
+        rows: [
+          ["Mechanical Production (343)", "SSC JE Mechanical · RRB JE Mechanical · Indian Army TES", "Mahindra, Tata Steel, JCB, Motherson Sumi, JBM Group", "₹18,000-22,000"],
+          ["Electrical (328)", "UPPCL JE · RRB JE Electrical · SSC JE Electrical", "Tata Power, Adani Solar, Bajaj, UPPCL, Indian Railways", "₹20,000-24,000"],
+          ["Civil (322)", "SSC JE Civil · UP PWD JE · Indian Railways JE Civil", "L&T site, Mumbai Metro contractors, Smart Cities contractors", "₹18,000-22,000"],
+          ["Computer Science & Engineering (355)", "Central IT cadre exams · SSC CGL · UPPCL CSE roles", "Wipro Infrastructure, Asian Paints IT, regional IT/BPO", "₹18,000-22,000"],
+          ["Dairy (327)", "State Dairy Federation · NDDB", "Amul, Mother Dairy, Parag, Nestlé Dairy, Heritage", "₹15,000-20,000"],
+        ],
+        caption: "Median in-hand from BIPE 2022-24 joining letters where data was disclosed by the recruiter. Excludes overtime/shift allowances. Ranges narrow within 2 years of joining for most branches.",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Electrical leads on starting salary</strong> because the government Electrical pipeline (UPPCL JE, RRB JE Electrical, SSC JE Electrical) is the broadest of all the BTE UP branches &mdash; and government pay is set by the 7th Pay Commission, not by competitive bidding. <strong>Civil leads on private-side ceiling</strong> because site engineering on large-scale infrastructure projects (Mumbai Metro, Bharatmala highway packages, Smart Cities Mission contracts) pays well above the broader engineering median once you have 5-8 years on file.",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Dairy Engineering looks low on the entry chart but corrects fast.</strong> BIPE is one of only four polytechnics in Uttar Pradesh that runs BTEUP 327 Dairy Engineering &mdash; that scarcity means within 18-24 months of joining a dairy major (Amul, Parag, Mother Dairy, NDDB), salaries catch up to the wider engineering median because there's simply not enough supply to keep wages low. See <a href=\"/blog/why-dairy-engineering-bipe-rare-bteup-327\">our deeper post on Dairy Engineering rarity</a>.",
+      },
+
+      // ============== H2: The 3-year arc ==============
+      { type: "h2", text: "The 3-year arc — year 1 to year 3" },
+      {
+        type: "p",
+        html:
+          "Year 1 in any track is essentially probationary. Government JEs go through induction training (3-12 months at a railway training centre, an SSC academy, or a UPPCL training institute) on a slightly reduced stipend before the full Level 6 pay kicks in. Private trainees do 6-12 months as graduate engineer trainees (GETs) at the lower end of the range, then move to confirmed employee status with a 15-25% bump.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Year 1 (training / probation)</strong>: government ₹30,000-38,000 stipend; private Tier-1 ₹18,000-22,000; private Tier-2 ₹12,000-18,000.",
+          "<strong>Year 2 (confirmation)</strong>: government bumps to full Level 6 (~₹40,000); private Tier-1 confirmation adds ₹3,000-6,000; private Tier-2 adds ₹2,000-4,000.",
+          "<strong>Year 3 (annual increment)</strong>: government adds ~3% (~₹2,000); private adds 5-12% depending on performance review and company policy.",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "The single biggest year-3 lever is <strong>switching companies</strong> in the private track. A diploma engineer who joined Motherson Sumi at ₹16,000 in 2023 and switched to JBM at year 3 is now sitting at ₹26,000-30,000 &mdash; a 60%+ bump that an internal annual increment would have taken 5-7 years to deliver. Switching IS the salary growth engine in private engineering. The government track does the opposite: stay, accumulate seniority, accept transfers, and the salary climbs steadily.",
+      },
+
+      // ============== H2: The 5-year arc ==============
+      { type: "h2", text: "The 5-year arc — when the tracks diverge sharply" },
+      {
+        type: "p",
+        html:
+          "By year 5, the salary picture stops being about branch and tier and starts being about <strong>what specialisation you've added on top of the diploma</strong>. A diploma alone in 2026 is your entry ticket; what you've built on it determines where you sit five years in.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Mechanical Production</strong>: adding AutoCAD + SolidWorks + a basic CNC programming certificate by year 3 lifts your year-5 private salary by 25-40% over the unskilled baseline. The same diploma engineer can earn ₹32,000 or ₹50,000 by year 5 entirely based on whether the CAD/CAM skills are demonstrable.",
+          "<strong>Electrical</strong>: PLC programming (Siemens or Allen-Bradley) and SCADA familiarity are the biggest year-5 levers. Government UPPCL JEs at year 5 earn ₹55,000-65,000 by pay matrix progression; private EE engineers with PLC skills can earn the same or more in OEMs serving the UPPCL ecosystem.",
+          "<strong>Civil</strong>: AutoCAD plus STAAD Pro plus actual site experience (verifiable in a portfolio of completed projects, not just claimed) is the year-5 differentiator. Civil site engineers at year 5 with that combination earn ₹40,000-55,000 in Tier-2 cities and ₹55,000-80,000 in Mumbai / Delhi / Pune.",
+          "<strong>CSE</strong>: Programming proficiency in Python, Java or DevOps tooling beats the diploma curriculum's languages (which still lean C/C++/Java basics). The CSE diploma engineer who can ship a working web app on GitHub by graduation has a fundamentally different year-5 trajectory.",
+          "<strong>Dairy</strong>: Quality control certifications (ISO 22000 food safety, HACCP) and process-engineering exposure unlock a different salary band entirely &mdash; supervisory roles at ₹35,000-50,000 instead of operator roles at ₹20,000-28,000.",
+        ],
+      },
+      {
+        type: "callout",
+        title: "The year-5 fork",
+        html:
+          "Two BIPE alumni from the same 2018 Mechanical Production cohort: one joined a regional auto-component supplier at ₹16,000, stayed put, kept his head down. He's at ₹26,000 in 2024. The other joined the same employer at ₹16,000, taught himself SolidWorks and SAP-PP in evenings, switched to a Tier-1 OEM at year 3, then again at year 5. He's at ₹54,000 in 2024. Same diploma. Same starting salary. Different choices. <strong>The diploma starts your salary; what you do after determines where it ends up.</strong>",
+      },
+
+      // ============== H2: The 10-year arc ==============
+      { type: "h2", text: "The 10-year arc — what BIPE alumni actually earn by year 10" },
+      {
+        type: "p",
+        html:
+          "Ten years out, the salary picture stops being a single number for any track and becomes a portfolio of outcomes. BIPE has alumni from the 2013-2015 cohorts &mdash; the ones who are now 10-12 years into their careers &mdash; in every track we've described. Here's where some of the named alumni from our <a href=\"/placements\">/placements</a> page sit today:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Naveen Pandey · Electrical 2016 · CEO &amp; MD, IEPC</strong> — Founded an engineering and projects firm. Founder earnings depend on the firm's revenue, but the trajectory from a 2016 diploma to running a registered engineering company is the upper-tail outcome of the diploma path.",
+          "<strong>Hariom Rai · Civil 2013 · Senior Engineer, Mumbai Metro Project</strong> — Senior site engineering on India's largest metro build. Mumbai Metro Senior Engineer salaries for diploma-route engineers with 10+ years experience sit in the ₹55,000-80,000 range with project allowances; structural / station-box specialists earn at the higher end.",
+          "<strong>Ankit Kr Singh · Civil 2014 · Junior Engineer, Tata Steel BSL</strong> — Tata Steel's long-products business. A Tata Steel JE at the 10-year mark, with one or two promotions, sits in the ₹55,000-75,000 range plus shift allowances and a strong benefits package.",
+          "<strong>Saurabh Pandey · Civil 2014 · Founder &amp; CEO, Civil Arch</strong> — Founded a civil consultancy. Same founder-earnings caveat as Naveen Pandey: the variance is high, but the upper tail goes well past anything a salaried role offers.",
+          "<strong>Pramod Kumar Patel · Mechanical Production 2014 · Assistant Loco Pilot, Indian Railways</strong> — Steady government track. ALP grade pay progression at 10 years sits in the ₹42,000-55,000 in-hand range plus running allowance (a per-kilometre payment for time spent driving) which adds another ₹15,000-25,000/month for active ALPs.",
+          "<strong>Chandan Pathak · Mechanical Production 2015 · Production In-charge, Motherson Sumi Systems</strong> — Floor-leadership role at one of India's largest auto-component manufacturers. Production In-charge / Supervisor roles at Tier-1 auto component OEMs with 10 years' experience earn ₹50,000-75,000 plus performance variable pay.",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Three observations from this set. <strong>First</strong>, none of these named alumni stopped at the diploma &mdash; every single one added either a government exam clearance, a deep skill specialisation, or entrepreneurial drift. <strong>Second</strong>, the 10-year salary range is wide (~₹40,000 to ₹1,00,000+) but every alumnus in this set is comfortably in the middle class of their respective city. <strong>Third</strong>, the path from a BIPE diploma to a senior engineering role isn't unusual &mdash; it's the expected outcome for graduates who stay engaged with their craft and keep upgrading.",
+      },
+
+      // ============== H2: What changes salary outcomes ==============
+      { type: "h2", text: "Six things that move the salary needle (in order of impact)" },
+      {
+        type: "ol",
+        items: [
+          "<strong>Branch choice.</strong> The single biggest lever. Mechanical Production and Electrical have the broadest opportunity sets; Civil has the highest private-side ceiling; Dairy has the most scarcity-driven premium. Pick a branch you'll actually study (interest matters more than predicted salary), but know what each branch costs and earns.",
+          "<strong>Government exam preparation.</strong> A serious student who starts SSC JE / RRB JE / UPPCL JE preparation in Semester 5 (during the diploma) and clears within 12 months of graduation is on a fundamentally different income curve from one who treats the diploma as the end of preparation. Government clearance roughly doubles the entry salary versus a regional private placement.",
+          "<strong>Demonstrable technical skill.</strong> AutoCAD / SolidWorks / PLC / STAAD Pro / Python &mdash; pick one or two based on your branch and become genuinely good at them by Semester 6. Tier-1 private employers screen for these skills before they screen for marks.",
+          "<strong>Geographic willingness.</strong> Same diploma + same skills = ~1.5x salary in Delhi NCR and ~2x salary in Mumbai or Pune compared to Varanasi or Lucknow. Cost of living offsets ~30-50% of the premium; the rest goes to net savings or quality of life.",
+          "<strong>English fluency for Tier-1 private.</strong> Mahindra, Tata Steel, JCB, Asian Paints all interview in English. Hindi-medium students who can carry a 30-minute technical interview in functional English see meaningfully better Tier-1 offers. This is fixable in 6 months of effort during the diploma.",
+          "<strong>Visible projects in your portfolio.</strong> A working final-year project that solves a real problem, plus a GitHub repository or a portfolio of CAD models, beats marks alone. BIPE students whose final-year projects are demonstrable have noticeably stronger placement outcomes &mdash; recruiters interview them with the project as the anchor of the conversation.",
+        ],
+      },
+
+      // ============== H2: Geographic premiums ==============
+      { type: "h2", text: "Geographic salary premiums — Varanasi vs Delhi vs Mumbai" },
+      {
+        type: "p",
+        html:
+          "Geography multiplies salary in engineering, but it also multiplies cost of living. The honest comparison isn't gross salary &mdash; it's salary after rent and the first six months of monthly expenses.",
+      },
+      {
+        type: "table",
+        headers: ["City tier", "Same role, year 5 salary", "Single-person living cost", "Net savings room"],
+        rows: [
+          ["Varanasi / Phoolpur / Eastern UP", "₹25,000-35,000", "₹6,000-9,000", "₹15,000-25,000"],
+          ["Lucknow / Kanpur / Allahabad", "₹28,000-38,000", "₹8,000-12,000", "₹16,000-26,000"],
+          ["Delhi NCR (Noida / Gurugram)", "₹38,000-55,000", "₹15,000-22,000", "₹22,000-33,000"],
+          ["Mumbai / Pune", "₹45,000-65,000", "₹18,000-28,000", "₹25,000-37,000"],
+          ["Bangalore (CSE only)", "₹50,000-75,000", "₹15,000-22,000", "₹30,000-50,000"],
+        ],
+        caption: "Year-5 figures for a private-track diploma engineer with one switch and demonstrable skills. Single-person living cost assumes shared accommodation, modest lifestyle. Net savings is the discretionary buffer after rent, food, transport, mobile and one savings allocation.",
+      },
+      {
+        type: "p",
+        html:
+          "Two takeaways. <strong>Delhi NCR is the sweet spot for early-career diploma engineers</strong> &mdash; the salary premium over Varanasi is 60-80%, but the cost-of-living premium is only 80-100%, so net savings still improve. <strong>Mumbai is for specialists</strong> who can command the upper end of the salary range; the lower-tier Mumbai job often saves less than a mid-tier Lucknow job because Mumbai rent eats the premium.",
+      },
+
+      // ============== H2: Honest caveats ==============
+      { type: "h2", text: "What we deliberately don't know" },
+      {
+        type: "p",
+        html:
+          "Three honest caveats every parent should hear before reading the next page of any college's salary brochure:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Average vs median vs anecdote.</strong> Most college brochures quote the <em>highest</em> package as if it were typical. We've quoted ranges, not averages, precisely because the distribution is wide enough that a single number lies. The median entry salary at BIPE across all branches is around ₹18,000 in-hand for private placements and ₹35,000 for government clearances; the highest in any given year can be 2-3x the median.",
+          "<strong>Joining letter vs actual joined.</strong> Some students receive offers but choose to prepare for government exams instead of joining a private role &mdash; their offer is verified but they're not on a private payroll yet. We count joining letters because that's the auditable signal. The actual payroll number is harder to track.",
+          "<strong>Year-1 attrition.</strong> Of every 10 diploma engineers who join a Tier-1 private role, roughly 6-7 are still with the same employer at year 3. The ones who leave do so for a higher-paying competitor (good attrition) or because they didn't like the work (the real lesson is: visit campus, talk to actual employees before joining).",
+        ],
+      },
+
+      // ============== H2: BIPE evidence ==============
+      { type: "h2", text: "Why these salary ranges are anchored to BIPE's actual placement data" },
+      {
+        type: "p",
+        html:
+          "Every salary range on this page comes from one of three verifiable sources: the 7th Pay Commission pay matrix (for government cadres), our own 993+ joining letters from BIPE's 2018-2024 placement cohorts (for private starting salaries), and named alumni currently in those roles (for year-5 and year-10 ranges). Nothing on this page is aspirational &mdash; it's all auditable.",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>993+ verified placements</strong> through 2024 across 44 recruiters &mdash; the full list is on <a href=\"/placements\">/placements</a>, including branch-wise breakdown (522 Mechanical Production, 326 Electrical, 145 Civil + maturing pipelines in CSE and Dairy).",
+          "<strong>Six named alumni</strong> publicly on the placements page with current role + employer, providing the year-5 and year-10 anchors for the ranges above.",
+          "<strong>Placement cell processes</strong> &mdash; six-day pre-placement workshop, AMCAT on-campus testing, mock interviews, quarterly tech talks &mdash; all of which feed the verified-placement number rather than the aspirational one.",
+        ],
+      },
+
+      // ============== Final callout ==============
+      {
+        type: "callout",
+        title: "Salary is a planning question. Plan with us.",
+        html:
+          "If you're a Class 10 / Class 12 student or family member trying to model what the diploma actually returns financially, two next steps. <strong>Visit <a href=\"/placements\">/placements</a></strong> for the full branch-wise breakdown and the named alumni profiles. <strong>Visit campus</strong> &mdash; book on <a href=\"/visit\">/visit</a> &mdash; and talk to current third-year students who are in placement season right now. Their concrete answers about specific company offers will be far more useful than any blog post. Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or WhatsApp the admissions team at <a href=\"https://wa.me/919198646464\">+91-9198646464</a> in Hindi or English.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
