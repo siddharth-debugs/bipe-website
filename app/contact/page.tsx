@@ -6,6 +6,7 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FAQ } from "@/components/home/FAQ";
+import { SITE_URL } from "@/lib/routes";
 
 // Dynamic import keeps zod + react-hook-form (~73 KB combined) in a
 // chunk that is only fetched when this route is actually visited,
@@ -21,6 +22,109 @@ export async function generateMetadata(): Promise<Metadata> { return metadataFor
 
 const DIRECTIONS = "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi";
 
+/**
+ * Schema.org Organization + ContactPoint[] for /contact.
+ *
+ * BIPE has 7 specialized contact channels (admissions, principal,
+ * grievance, anti-ragging, IC, SC/ST cell, PwD cell) — each with
+ * its own email per AICTE compliance. Without ContactPoint schema,
+ * Google had no way to know which inbox handles which kind of
+ * query, so all email surfacing in SERPs defaulted to admissions@.
+ *
+ * Why this matters for SEO:
+ *
+ *   1. Knowledge Graph contact-card. With ContactPoint[], Google can
+ *      surface specific channels in its institution panel
+ *      ("Contact" → "Grievance redressal" → grievance@…) instead of
+ *      a single generic email line.
+ *
+ *   2. AICTE compliance is machine-readable. The mandatory disclosure
+ *      already publishes the same emails; ContactPoint[] makes them
+ *      crawlable in a structured way, reinforcing BIPE as a regulated
+ *      institution that publishes the required redressal channels.
+ *
+ *   3. SiteLinks contact box. For branded-name searches ("BIPE
+ *      contact"), Google can surface a contact-channel sub-block
+ *      directly under the main SERP result.
+ *
+ * The `@id` on the Organization node matches the one declared in
+ * app/layout.tsx (`${SITE_URL}#org`), so Google dedupes this
+ * Organization against the canonical LocalBusiness node and merges
+ * the ContactPoint[] array onto it rather than treating them as two
+ * separate institutions.
+ */
+const CONTACT_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}#org`,
+  name: "Banaras Institute of Polytechnic & Engineering",
+  url: SITE_URL,
+  // The canonical NAP details live in layout.tsx's LocalBusiness node;
+  // included here only so the ContactPoint[] reads as a coherent unit
+  // for any crawler that parses /contact in isolation.
+  telephone: DATA.contact.phone,
+  email: DATA.contact.email,
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "admissions",
+      telephone: DATA.contact.phone,
+      email: DATA.contact.email,
+      areaServed: ["IN-UP", "IN-BR", "IN-JH"],
+      availableLanguage: ["en", "hi"],
+      hoursAvailable: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "09:00",
+        closes: "17:00",
+      },
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "principal's office",
+      email: DATA.contact.emailPrincipal,
+      areaServed: "IN",
+      availableLanguage: ["en", "hi"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "grievance redressal",
+      email: DATA.contact.emailGrievance,
+      areaServed: "IN",
+      availableLanguage: ["en", "hi"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "anti-ragging cell",
+      email: DATA.contact.emailAntiRagging,
+      telephone: DATA.contact.phone,
+      areaServed: "IN",
+      availableLanguage: ["en", "hi"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "internal complaints committee",
+      email: DATA.contact.emailIC,
+      areaServed: "IN",
+      availableLanguage: ["en", "hi"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "SC/ST cell",
+      email: DATA.contact.emailScSt,
+      areaServed: "IN",
+      availableLanguage: ["en", "hi"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "disability support",
+      email: DATA.contact.emailPwd,
+      areaServed: "IN",
+      availableLanguage: ["en", "hi"],
+    },
+  ],
+};
+
 export default function Page() {
   const C = DATA.contact;
 
@@ -33,6 +137,15 @@ export default function Page() {
 
   return (
     <div className="page-enter">
+      {/* Organization + ContactPoint[] JSON-LD — see CONTACT_JSON_LD
+          for the 7 specialised channels (admissions, principal,
+          grievance, anti-ragging, IC, SC/ST, PwD). Anchored at
+          ${SITE_URL}#org so Google dedupes against layout.tsx. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(CONTACT_JSON_LD) }}
+      />
+
       {/* ====================================================================== */}
       {/* 1. EDITORIAL HERO                                                       */}
       {/* ====================================================================== */}
