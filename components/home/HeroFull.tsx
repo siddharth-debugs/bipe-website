@@ -240,6 +240,48 @@ export async function HeroFull() {
             ))}
           </p>
 
+          {/*
+            Hindi affirmation line (May 2026). BIPE's primary audience
+            is Hindi-medium families from rural Eastern UP and Bihar.
+            A small Devanagari reassurance immediately above the CTAs
+            signals "this site is for you" at the exact moment of
+            decision. Kept short (one short clause), low-emphasis
+            styling so it doesn't compete with the English brand line
+            or the CTAs themselves — but high enough contrast to be
+            read at a glance.
+          */}
+          <p
+            lang="hi"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              marginBottom: 18,
+              padding: "8px 14px",
+              fontFamily: "var(--font-serif)",
+              fontSize: 14,
+              fontStyle: "italic",
+              fontWeight: 400,
+              lineHeight: 1.4,
+              color: "color-mix(in oklab, #fff 88%, transparent)",
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid color-mix(in oklab, #fff 18%, transparent)",
+              borderRadius: 999,
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            <span
+              aria-hidden="true"
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: 999,
+                background: "var(--accent)",
+              }}
+            />
+            हिन्दी में बात करें · Eastern UP families since 2010 · WhatsApp पर तुरंत जवाब
+          </p>
+
           <div className="row" style={{ gap: 12, alignItems: "center", flexWrap: "wrap" }}>
             <Link href={h.cta_primary.href} className="btn btn-lg"
               style={{ background: "var(--accent)", color: "var(--ink)", border: "none", fontWeight: 600 }}>

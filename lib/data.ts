@@ -92,8 +92,16 @@ export const DATA: DataShape = {
     emailIC: "ic@bipevns.org",
     emailScSt: "scst@bipevns.org",
     emailPwd: "pwd@bipevns.org",
-    whatsapp:
-      "https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20would%20like%20to%20know%20about%20admissions%20for%202026-27.",
+    // WhatsApp pre-populated message — switched to Hindi (May 2026).
+    // BIPE's primary audience is Hindi-medium families from Eastern UP
+    // and Bihar; opening WhatsApp in English implicitly told them this
+    // wasn't a site for them. encodeURIComponent() handles the
+    // Devanagari + em-dash + ASCII mix without hand-encoded escapes —
+    // produces an identical URL string to the previous hand-encoded
+    // English version at module-load time.
+    whatsapp: `https://wa.me/919198646464?text=${encodeURIComponent(
+      "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए",
+    )}`,
     address:
       "Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, Uttar Pradesh",
     jeecup: "4455",
