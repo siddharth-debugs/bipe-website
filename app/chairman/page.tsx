@@ -5,8 +5,95 @@ import Image from "next/image";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { SITE_URL } from "@/lib/routes";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("chairman"); }
+
+/**
+ * Schema.org ProfilePage + Person for the Chairman.
+ *
+ * Mirrors the /principal page schema (commit 58ab9d4) so Google sees
+ * consistent ProfilePage shape across BIPE's two biographical surfaces.
+ *
+ * Why hardcoded here, not sourced from lib/faculty.ts:
+ *
+ *   The Chairman is not academic faculty — he's the founder and trust
+ *   chairman, a separate role from any FACULTY designation. Adding a
+ *   "Chairman" or "Trust" department to lib/faculty.ts would muddy the
+ *   academic-roster invariant (every entry there has a teaching role
+ *   and qualifications). Keeping the chairman's schema inline on his
+ *   own page is cleaner.
+ *
+ * Knowledge-graph triangle:
+ *
+ *   Person (Dr. Chandrika Rai)
+ *     ── worksFor ─→ Purwanchal Educational Trust (Organization)
+ *     ── alumniOf ─→ G. B. Pant University of Agriculture & Technology
+ *                    (Pantnagar) — EducationalOrganization
+ *
+ *   The Trust → BIPE relationship is already established in
+ *   app/layout.tsx via Organization.founder. So a search for
+ *   "Chairman BIPE" → ProfilePage → Person → worksFor Trust →
+ *   founder of → BIPE. Strong identity chain.
+ */
+const CHAIRMAN_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${SITE_URL}/chairman`,
+  url: `${SITE_URL}/chairman`,
+  name: "Chairman's Message · Dr. Chandrika Rai, IPS (Retd.) · BIPE",
+  description:
+    "Dr. Chandrika Rai, IPS (Retd.) — Chairman of Purwanchal Educational Trust and founder of Banaras Institute of Polytechnic & Engineering. From Pantnagar Agriculture University to the Indian Police Service to founding a polytechnic for Eastern UP.",
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${SITE_URL}/chairman#chandrika-rai`,
+    name: "Dr. Chandrika Rai",
+    honorificPrefix: "Dr.",
+    jobTitle: "Chairman, Purwanchal Educational Trust",
+    description:
+      "Founder of Purwanchal Educational Trust and Banaras Institute of Polytechnic & Engineering (BIPE). Career arc: Assistant Professor of Soil Chemistry at Pantnagar Agriculture University (1970s); Indian Police Service (1980s–2000s); founded Purwanchal Educational Trust to bring engineering education to Eastern UP families; established BIPE in 2010 on a six-acre Phoolpur campus.",
+    image: `${SITE_URL}/faculty/chairman-dr-chandrika-rai.png`,
+    worksFor: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}#purwanchal-trust`,
+      name: "Purwanchal Educational Trust",
+      description:
+        "Registered charitable trust based in Varanasi, founded by Dr. Chandrika Rai. Sponsoring institution of Banaras Institute of Polytechnic & Engineering (BIPE).",
+    },
+    alumniOf: {
+      "@type": "EducationalOrganization",
+      // The institution is now formally "G. B. Pant University of
+      // Agriculture & Technology, Pantnagar"; "Pantnagar Agriculture
+      // University" is the colloquial name used on the page body.
+      // Including both via name + alternateName helps Google match
+      // either form.
+      name: "G. B. Pant University of Agriculture & Technology, Pantnagar",
+      alternateName: "Pantnagar Agriculture University",
+    },
+    hasOccupation: [
+      {
+        "@type": "Occupation",
+        name: "Chairman, Purwanchal Educational Trust",
+        occupationLocation: {
+          "@type": "Place",
+          name: "Varanasi, Uttar Pradesh, India",
+        },
+      },
+      {
+        "@type": "Occupation",
+        name: "Indian Police Service (Retd.)",
+      },
+      {
+        "@type": "Occupation",
+        name: "Assistant Professor, Soil Chemistry",
+        occupationLocation: {
+          "@type": "Place",
+          name: "Pantnagar, Uttarakhand, India",
+        },
+      },
+    ],
+  },
+};
 
 const PILLARS: { roman: string; title: string; sub: string; body: string }[] = [
   {
@@ -50,6 +137,12 @@ const JOURNEY = [
 export default function Page() {
   return (
     <div className="page-enter">
+      {/* ProfilePage + Person JSON-LD — see CHAIRMAN_JSON_LD above. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(CHAIRMAN_JSON_LD) }}
+      />
+
       {/* ====================================================================== */}
       {/* 1. HERO PORTRAIT                                                        */}
       {/* ====================================================================== */}
