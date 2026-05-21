@@ -180,11 +180,18 @@ export default function Page() {
                 WhatsApp, phone, email — any channel that suits you. We answer within 24 hours, Monday to Saturday, in either language. No call-tree, no IVR, no robo-replies.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
+                {/* Bilingual hero CTAs. */}
                 <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
                   <WhatsAppIcon /> WhatsApp now
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
+                    अभी WhatsApp करें
+                  </span>
                 </a>
                 <a href={`tel:${C.phone}`} className="btn btn-ghost btn-lg">
                   <PhoneIcon /> {C.phone}
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.85, marginTop: 2 }}>
+                    फ़ोन पर बात करें
+                  </span>
                 </a>
               </div>
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
@@ -613,14 +620,24 @@ export default function Page() {
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {/* Bilingual final CTAs — Hindi sub-label under each. */}
                 <Link href="/visit" className="btn btn-primary btn-lg" style={{ justifyContent: "center" }}>
                   Book a visit <ArrowIcon size={14} />
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
+                    कैंपस विज़िट बुक करें
+                  </span>
                 </Link>
                 <Link href="/apply" className="btn btn-accent btn-lg" style={{ justifyContent: "center" }}>
                   Start application <ArrowIcon size={14} />
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.85, marginTop: 2 }}>
+                    आवेदन शुरू करें
+                  </span>
                 </Link>
                 <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ justifyContent: "center" }}>
                   <WhatsAppIcon /> WhatsApp now
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
+                    अभी WhatsApp करें
+                  </span>
                 </a>
               </div>
             </div>

@@ -256,6 +256,9 @@ export default function Page() {
                 color: "#25D366", fontWeight: 600, fontSize: 13,
               }}>
                 <WhatsAppIcon /> Open WhatsApp <ArrowIcon size={12} />
+                <span lang="hi" style={{ fontSize: 11, fontWeight: 400, opacity: 0.85, marginLeft: 4 }}>
+                  · WhatsApp खोलें
+                </span>
               </span>
             </a>
 
@@ -290,6 +293,9 @@ export default function Page() {
                 color: "var(--brand)", fontWeight: 600, fontSize: 13,
               }}>
                 Book a campus visit <ArrowIcon size={12} />
+                <span lang="hi" style={{ fontSize: 11, fontWeight: 400, opacity: 0.85, marginLeft: 4 }}>
+                  · कैंपस विज़िट
+                </span>
               </span>
             </Link>
           </div>

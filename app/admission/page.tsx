@@ -137,9 +137,27 @@ export default async function Page() {
                 BIPE is an AICTE-approved polytechnic in Varanasi, BTEUP-affiliated. Polytechnic admissions in Varanasi are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 5 branches.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary btn-lg">Begin application <ArrowIcon size={16} /></Link>
-                <Link href="/visit" className="btn btn-ghost btn-lg">Book a campus visit</Link>
-                <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa"><WhatsAppIcon /> WhatsApp</a>
+                {/* Bilingual CTAs — Hindi sub-label under English action.
+                    Hindi-medium families see "this site is for me" at
+                    the exact moment they're about to act. */}
+                <Link href="/apply" className="btn btn-primary btn-lg">
+                  Begin application <ArrowIcon size={16} />
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
+                    आवेदन शुरू करें
+                  </span>
+                </Link>
+                <Link href="/visit" className="btn btn-ghost btn-lg">
+                  Book a campus visit
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.85, marginTop: 2 }}>
+                    कैंपस विज़िट बुक करें
+                  </span>
+                </Link>
+                <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
+                  <WhatsAppIcon /> WhatsApp
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
+                    व्हाट्सऐप पर बात करें
+                  </span>
+                </a>
               </div>
 
               <div style={{ marginTop: 36, paddingTop: 20, borderTop: "1px solid var(--line)", display: "flex", gap: 28, flexWrap: "wrap", alignItems: "center" }}>

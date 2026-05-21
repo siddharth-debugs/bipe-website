@@ -95,11 +95,18 @@ export default function Page() {
                 Sixty to ninety minutes on campus, in Hindi or English, Monday to Saturday, 9am to 5pm. Walk-ins welcome. The campus tells you things a brochure can&apos;t.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
+                {/* Bilingual CTA pair — Hindi sub-label under each. */}
                 <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
                   <WhatsAppIcon /> Book on WhatsApp
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
+                    WhatsApp पर बुक करें
+                  </span>
                 </a>
                 <a href={`tel:${C.phone}`} className="btn btn-ghost btn-lg">
                   <PhoneIcon /> {C.phone}
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.85, marginTop: 2 }}>
+                    फ़ोन पर बात करें
+                  </span>
                 </a>
               </div>
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
