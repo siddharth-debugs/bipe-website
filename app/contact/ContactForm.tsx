@@ -167,6 +167,7 @@ export function ContactForm() {
         <div className={errClass("name")}>
           <label htmlFor="cf-name">
             Full name <span style={{ color: "var(--danger)" }}>*</span>
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· पूरा नाम</span>
           </label>
           <input
             {...fieldProps("name")}
@@ -180,6 +181,7 @@ export function ContactForm() {
         <div className={errClass("phone")}>
           <label htmlFor="cf-phone">
             Mobile <span style={{ color: "var(--danger)" }}>*</span>
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· मोबाइल नंबर</span>
           </label>
           <input
             {...fieldProps("phone")}
@@ -202,6 +204,7 @@ export function ContactForm() {
         <div className={errClass("email")}>
           <label htmlFor="cf-email">
             Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· ईमेल</span>
           </label>
           <input
             {...fieldProps("email")}
@@ -215,6 +218,7 @@ export function ContactForm() {
         <div className={errClass("branch")}>
           <label htmlFor="cf-branch">
             Branch interest <span style={{ color: "var(--danger)" }}>*</span>
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· ब्रांच में रुचि</span>
           </label>
           <Controller
             control={control}
@@ -238,7 +242,10 @@ export function ContactForm() {
       </div>
 
       <div className="field" style={{ marginTop: 14 }}>
-        <label htmlFor="cf-source">How did you hear about BIPE? <span className="muted" style={{ fontSize: 11 }}>(optional)</span></label>
+        <label htmlFor="cf-source">
+          How did you hear about BIPE? <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+          <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· BIPE के बारे में कैसे जाना?</span>
+        </label>
         <Controller
           control={control}
           name="source"
@@ -258,6 +265,7 @@ export function ContactForm() {
       <div className={errClass("message")} style={{ marginTop: 14 }}>
         <label htmlFor="cf-message">
           Your message <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+          <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· आपका संदेश</span>
         </label>
         <textarea
           {...fieldProps("message")}

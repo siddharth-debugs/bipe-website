@@ -163,7 +163,10 @@ export function VisitForm() {
       {/* Row 1 — name + phone */}
       <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
         <div className={errClass("name")}>
-          <label htmlFor="vf-name">Your full name</label>
+          <label htmlFor="vf-name">
+            Your full name
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· पूरा नाम</span>
+          </label>
           <input
             {...fieldProps("name")}
             type="text"
@@ -176,7 +179,10 @@ export function VisitForm() {
           )}
         </div>
         <div className={errClass("phone")}>
-          <label htmlFor="vf-phone">Mobile number</label>
+          <label htmlFor="vf-phone">
+            Mobile number
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· मोबाइल नंबर</span>
+          </label>
           <input
             {...fieldProps("phone")}
             type="tel"
@@ -201,6 +207,7 @@ export function VisitForm() {
         <div className={errClass("email")}>
           <label htmlFor="vf-email">
             Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· ईमेल</span>
           </label>
           <input
             {...fieldProps("email")}
@@ -214,7 +221,10 @@ export function VisitForm() {
           )}
         </div>
         <div className={errClass("branch")}>
-          <label htmlFor="vf-branch">Branch you want to see</label>
+          <label htmlFor="vf-branch">
+            Branch you want to see
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· ब्रांच देखनी है</span>
+          </label>
           <Controller
             control={control}
             name="branch"
@@ -241,7 +251,10 @@ export function VisitForm() {
       {/* Row 3 — date + time + party */}
       <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginTop: 12 }}>
         <div className={errClass("visitDate")}>
-          <label htmlFor="vf-date">Preferred date</label>
+          <label htmlFor="vf-date">
+            Preferred date
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· पसंदीदा तारीख</span>
+          </label>
           <Controller
             control={control}
             name="visitDate"
@@ -264,7 +277,10 @@ export function VisitForm() {
           )}
         </div>
         <div className={errClass("visitTime")}>
-          <label htmlFor="vf-time">Preferred slot</label>
+          <label htmlFor="vf-time">
+            Preferred slot
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· समय चुनें</span>
+          </label>
           <Controller
             control={control}
             name="visitTime"
@@ -287,7 +303,10 @@ export function VisitForm() {
           )}
         </div>
         <div className={errClass("party")}>
-          <label htmlFor="vf-party">Who&apos;s coming</label>
+          <label htmlFor="vf-party">
+            Who&apos;s coming
+            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· कौन आ रहा है</span>
+          </label>
           <Controller
             control={control}
             name="party"
@@ -315,6 +334,7 @@ export function VisitForm() {
       <div className={errClass("notes")} style={{ marginTop: 12 }}>
         <label htmlFor="vf-notes">
           Anything we should know? <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
+          <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· कुछ बताना है?</span>
         </label>
         <textarea
           {...fieldProps("notes")}

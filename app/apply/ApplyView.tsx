@@ -295,7 +295,10 @@ export function ApplyView() {
                     <div className="grid" style={{ gap: 18 }}>
                       <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                         <div className={"field " + (fieldError("name") ? "field-error" : "")}>
-                          <label htmlFor="name">Your full name</label>
+                          <label htmlFor="name">
+                            Your full name
+                            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· पूरा नाम</span>
+                          </label>
                           <input
                             {...fieldProps("name")}
                             placeholder="e.g. Aarav Yadav"
@@ -305,7 +308,10 @@ export function ApplyView() {
                           {fieldError("name") && <span id="name-err" role="alert" className="error-msg">{fieldError("name")}</span>}
                         </div>
                         <div className={"field " + (fieldError("phone") ? "field-error" : "")}>
-                          <label htmlFor="phone">Phone (we&apos;ll call you)</label>
+                          <label htmlFor="phone">
+                            Phone (we&apos;ll call you)
+                            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· मोबाइल नंबर</span>
+                          </label>
                           <input
                             {...fieldProps("phone")}
                             type="tel"
@@ -324,7 +330,10 @@ export function ApplyView() {
                       </div>
                       <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                         <div className={"field " + (fieldError("email") ? "field-error" : "")}>
-                          <label htmlFor="email">Email <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
+                          <label htmlFor="email">
+                            Email <span style={{ color: "var(--ink-3)" }}>(optional)</span>
+                            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· ईमेल</span>
+                          </label>
                           <input
                             {...fieldProps("email")}
                             type="email"
@@ -335,7 +344,10 @@ export function ApplyView() {
                           {fieldError("email") && <span id="email-err" role="alert" className="error-msg">{fieldError("email")}</span>}
                         </div>
                         <div className={"field " + (fieldError("parent") ? "field-error" : "")}>
-                          <label htmlFor="parent">Parent / guardian name <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
+                          <label htmlFor="parent">
+                            Parent / guardian name <span style={{ color: "var(--ink-3)" }}>(optional)</span>
+                            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· माता-पिता का नाम</span>
+                          </label>
                           <input
                             {...fieldProps("parent")}
                             placeholder="e.g. Mr. Yadav"
@@ -351,7 +363,10 @@ export function ApplyView() {
                   {step === 1 && (
                     <div className="grid" style={{ gap: 18 }}>
                       <div className={"field " + (fieldError("branch") ? "field-error" : "")}>
-                        <label htmlFor="branch">Preferred branch</label>
+                        <label htmlFor="branch">
+                          Preferred branch
+                          <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· ब्रांच चुनें</span>
+                        </label>
                         <Controller
                           control={control}
                           name="branch"
@@ -373,7 +388,10 @@ export function ApplyView() {
                       </div>
                       <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
                         <div className="field">
-                          <label htmlFor="category">Category</label>
+                          <label htmlFor="category">
+                            Category
+                            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· कैटेगरी</span>
+                          </label>
                           <Controller
                             control={control}
                             name="category"
@@ -391,7 +409,10 @@ export function ApplyView() {
                           />
                         </div>
                         <div className="field">
-                          <label htmlFor="board">10th board</label>
+                          <label htmlFor="board">
+                            10th board
+                            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· 10वीं बोर्ड</span>
+                          </label>
                           <Controller
                             control={control}
                             name="board"
@@ -408,7 +429,10 @@ export function ApplyView() {
                           />
                         </div>
                         <div className={"field " + (fieldError("marks") ? "field-error" : "")}>
-                          <label htmlFor="marks">10th marks (%)</label>
+                          <label htmlFor="marks">
+                            10th marks (%)
+                            <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· 10वीं के मार्क्स</span>
+                          </label>
                           <input
                             {...fieldProps("marks")}
                             inputMode="decimal"
@@ -425,7 +449,10 @@ export function ApplyView() {
                   {step === 2 && (
                     <div className="grid" style={{ gap: 18 }}>
                       <div className="field">
-                        <label htmlFor="source">How did you hear about BIPE? <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
+                        <label htmlFor="source">
+                          How did you hear about BIPE? <span style={{ color: "var(--ink-3)" }}>(optional)</span>
+                          <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· BIPE के बारे में कैसे जाना?</span>
+                        </label>
                         <Controller
                           control={control}
                           name="source"
@@ -474,7 +501,10 @@ export function ApplyView() {
                       {visit === "yes" && (
                         <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                           <div className={"field " + (fieldError("visitDate") ? "field-error" : "")}>
-                            <label htmlFor="visitDate">Visit date</label>
+                            <label htmlFor="visitDate">
+                              Visit date
+                              <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· विज़िट की तारीख</span>
+                            </label>
                             <Controller
                               control={control}
                               name="visitDate"
@@ -494,7 +524,10 @@ export function ApplyView() {
                             {fieldError("visitDate") && <span id="visitDate-err" role="alert" className="error-msg">{fieldError("visitDate")}</span>}
                           </div>
                           <div className="field">
-                            <label htmlFor="visitTime">Slot</label>
+                            <label htmlFor="visitTime">
+                              Slot
+                              <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· समय</span>
+                            </label>
                             <Controller
                               control={control}
                               name="visitTime"
@@ -513,7 +546,10 @@ export function ApplyView() {
                         </div>
                       )}
                       <div className={"field " + (fieldError("notes") ? "field-error" : "")}>
-                        <label htmlFor="notes">Anything you&apos;d like us to know? <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
+                        <label htmlFor="notes">
+                          Anything you&apos;d like us to know? <span style={{ color: "var(--ink-3)" }}>(optional)</span>
+                          <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· अतिरिक्त जानकारी</span>
+                        </label>
                         <textarea
                           {...fieldProps("notes")}
                           rows={3}
