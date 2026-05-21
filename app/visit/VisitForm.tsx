@@ -225,6 +225,8 @@ export function VisitForm() {
                 onValueChange={field.onChange}
                 onBlur={field.onBlur}
                 invalid={hasError("branch")}
+                required
+                describedBy={hasError("branch") ? "vf-branch-err" : undefined}
                 placeholder="Choose a branch…"
                 options={BRANCH_OPTIONS.map((b) => ({ value: b, label: b }))}
               />
@@ -250,6 +252,8 @@ export function VisitForm() {
                 onChange={field.onChange}
                 onBlur={field.onBlur}
                 invalid={hasError("visitDate")}
+                required
+                describedBy={hasError("visitDate") ? "vf-visitDate-err" : undefined}
                 min={todayIso()}
                 placeholder="Pick a date"
               />
@@ -271,6 +275,8 @@ export function VisitForm() {
                 onValueChange={field.onChange}
                 onBlur={field.onBlur}
                 invalid={hasError("visitTime")}
+                required
+                describedBy={hasError("visitTime") ? "vf-visitTime-err" : undefined}
                 placeholder="Pick a slot"
                 options={VISIT_TIME_OPTIONS.map((t) => ({ value: t, label: t }))}
               />
@@ -292,6 +298,8 @@ export function VisitForm() {
                 onValueChange={field.onChange}
                 onBlur={field.onBlur}
                 invalid={hasError("party")}
+                required
+                describedBy={hasError("party") ? "vf-party-err" : undefined}
                 placeholder="Choose"
                 options={VISIT_PARTY_OPTIONS.map((p) => ({ value: p, label: p }))}
               />

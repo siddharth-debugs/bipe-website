@@ -32,6 +32,20 @@ export interface FormSelectProps {
   className?: string;
   /** Pretty grouping — when set, options are searched here for the trigger label. */
   label?: string;
+  /**
+   * Mirrors the parent form's REQUIRED-field set. When true, the underlying
+   * Radix trigger gets `aria-required="true"`, so screen readers announce
+   * "required" alongside the label. Omit (or pass false) for optional fields —
+   * we intentionally don't emit `aria-required="false"`, which some readers
+   * misread.
+   */
+  required?: boolean;
+  /**
+   * Element id of the paired error message span. When set, the trigger
+   * carries `aria-describedby` pointing at it so the message is read after
+   * the label. Convention: `${id}-err`.
+   */
+  describedBy?: string;
 }
 
 /**
@@ -52,7 +66,7 @@ export interface FormSelectProps {
  */
 export const FormSelect = forwardRef<HTMLButtonElement, FormSelectProps>(
   function FormSelect(
-    { value, onValueChange, options, placeholder, id, name, invalid, disabled, onBlur, className },
+    { value, onValueChange, options, placeholder, id, name, invalid, disabled, onBlur, className, required, describedBy },
     ref,
   ) {
     return (
@@ -67,6 +81,8 @@ export const FormSelect = forwardRef<HTMLButtonElement, FormSelectProps>(
           id={id}
           onBlur={onBlur}
           aria-invalid={invalid || undefined}
+          aria-required={required || undefined}
+          aria-describedby={describedBy}
           className={"bipe-select-trigger" + (invalid ? " is-invalid" : "") + (className ? " " + className : "")}
         >
           <Select.Value placeholder={placeholder ?? "Select…"} />

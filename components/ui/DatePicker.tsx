@@ -62,6 +62,17 @@ export interface DatePickerProps {
   placeholder?: string;
   onBlur?: () => void;
   className?: string;
+  /**
+   * Mirrors the parent form's REQUIRED-field set. When true, the Popover
+   * trigger gets `aria-required="true"` so screen readers announce
+   * "required" alongside the label. Omit for optional fields.
+   */
+  required?: boolean;
+  /**
+   * Element id of the paired error message span. When set, the trigger
+   * carries `aria-describedby` pointing at it. Convention: `${id}-err`.
+   */
+  describedBy?: string;
 }
 
 /**
@@ -73,7 +84,7 @@ export interface DatePickerProps {
  */
 export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
   function DatePicker(
-    { value, onChange, min, max, id, invalid, disabled, placeholder, onBlur, className },
+    { value, onChange, min, max, id, invalid, disabled, placeholder, onBlur, className, required, describedBy },
     ref,
   ) {
     const today = useMemo(() => startOfDay(new Date()), []);
@@ -135,6 +146,8 @@ export const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
           disabled={disabled}
           onBlur={onBlur}
           aria-invalid={invalid || undefined}
+          aria-required={required || undefined}
+          aria-describedby={describedBy}
           className={
             "bipe-date-trigger" +
             (invalid ? " is-invalid" : "") +

@@ -226,6 +226,8 @@ export function ContactForm() {
                 onValueChange={field.onChange}
                 onBlur={field.onBlur}
                 invalid={!!fieldError("branch")}
+                required
+                describedBy={fieldError("branch") ? "cf-branch-err" : undefined}
                 placeholder="Choose a branch…"
                 options={BRANCH_OPTIONS.map((b) => ({ value: b, label: b }))}
               />

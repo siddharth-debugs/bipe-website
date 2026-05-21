@@ -362,6 +362,8 @@ export function ApplyView() {
                               onValueChange={field.onChange}
                               onBlur={field.onBlur}
                               invalid={!!fieldError("branch")}
+                              required
+                              describedBy={fieldError("branch") ? "branch-err" : undefined}
                               placeholder="Choose a branch…"
                               options={BRANCH_OPTIONS.map((b) => ({ value: b, label: b }))}
                             />
@@ -381,6 +383,7 @@ export function ApplyView() {
                                 value={field.value || ""}
                                 onValueChange={field.onChange}
                                 onBlur={field.onBlur}
+                                required
                                 placeholder="Select category"
                                 options={CATEGORY_OPTIONS.map((c) => ({ value: c, label: c }))}
                               />
@@ -482,6 +485,7 @@ export function ApplyView() {
                                   onChange={field.onChange}
                                   onBlur={field.onBlur}
                                   invalid={!!fieldError("visitDate")}
+                                  describedBy={fieldError("visitDate") ? "visitDate-err" : undefined}
                                   min={new Date().toISOString().slice(0, 10)}
                                   placeholder="Pick a date"
                                 />
