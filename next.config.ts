@@ -3,21 +3,102 @@ import type { NextConfig } from "next";
 /**
  * Security headers applied to every response.
  *
- * HSTS already comes from Vercel by default. We add the four headers
- * Vercel does NOT set automatically:
+ * Phase 2 SEO audit (May 2026) flagged BIPE as having weaker security
+ * headers than BITE — specifically missing CSP, missing HSTS preload,
+ * missing includeSubDomains. This commit closes those gaps.
  *
- *   X-Content-Type-Options    nosniff
- *   X-Frame-Options           SAMEORIGIN (and frame-ancestors via CSP later)
- *   Referrer-Policy           strict-origin-when-cross-origin
- *   Permissions-Policy        minimal — block camera/mic/geolocation/payment
+ *   Strict-Transport-Security    Override Vercel's default to add
+ *                                 includeSubDomains + preload directives.
+ *                                 Eligible for hstspreload.org submission
+ *                                 after deploy.
  *
- * Content-Security-Policy is deliberately omitted for now: a strict CSP
- * needs to allow GTM / GA4 / Hotjar / Clarity dynamically based on what
- * the admin has enabled, plus inline JSON-LD scripts. We'll add it in a
- * second pass with a `style-src` + `script-src` allow-list driven by the
- * SiteSEO analytics fields.
+ *   X-Content-Type-Options       nosniff
+ *   X-Frame-Options              SAMEORIGIN
+ *   Referrer-Policy              strict-origin-when-cross-origin
+ *   Permissions-Policy           Block camera/mic/geolocation/payment/cohort
+ *   Content-Security-Policy      Moderate allow-list — see CSP below for
+ *                                 rationale + 'unsafe-inline' compromise.
  */
+
+// Build a single-line CSP from a multi-line directive map. Keeps the
+// source readable; output remains a strict-format header value.
+const CSP_DIRECTIVES: Record<string, string[]> = {
+  // Default: only same-origin. Specific resource types override below.
+  "default-src": ["'self'"],
+
+  // script-src: 'unsafe-inline' is the load-bearing compromise.
+  // Next.js's SSR pipeline inlines JSON-LD <script type="application/
+  // ld+json"> blocks (every schema commit in this session produces
+  // one). Removing 'unsafe-inline' would break all rich-result
+  // eligibility. The right long-term fix is per-render nonces, but
+  // Next.js's static export pipeline (which we use heavily) doesn't
+  // play well with nonces yet. Revisit when Next 17 lands the nonce
+  // helpers on Metadata API.
+  //
+  // 'unsafe-eval' is required by Vercel's analytics + speed-insights
+  // bundles. Already in BITE's CSP.
+  "script-src": [
+    "'self'",
+    "'unsafe-inline'",
+    "'unsafe-eval'",
+    "https://va.vercel-scripts.com",
+    "https://*.vercel-insights.com",
+  ],
+
+  // style-src: 'unsafe-inline' required for Next.js's inline-critical
+  // CSS pattern (the chunks Next.js auto-inlines in <head> at SSR).
+  "style-src": ["'self'", "'unsafe-inline'"],
+
+  // img-src: list every image origin in use across the site.
+  // Mirrored from next.config.ts's images.remotePatterns + the
+  // self-hosted /public/ assets. data: + blob: needed for SVG inline
+  // and image preview generation.
+  "img-src": [
+    "'self'",
+    "data:",
+    "blob:",
+    "https://res.cloudinary.com",
+    "https://images.unsplash.com",
+    "https://upload.wikimedia.org",
+  ],
+
+  // font-src: data: needed because some icon fonts inline as data URIs.
+  "font-src": ["'self'", "data:"],
+
+  // connect-src: outgoing fetch/XHR destinations. Vercel analytics
+  // beacons + Cloudinary (for the admin uploader).
+  "connect-src": [
+    "'self'",
+    "https://va.vercel-scripts.com",
+    "https://*.vercel-insights.com",
+    "https://api.cloudinary.com",
+    "https://res.cloudinary.com",
+  ],
+
+  // frame-ancestors: forbid being iframed by anyone but self.
+  // Equivalent to X-Frame-Options: SAMEORIGIN but in CSP form,
+  // which modern browsers prefer.
+  "frame-ancestors": ["'self'"],
+
+  // base-uri / form-action: prevent base-tag and form-target injection.
+  "base-uri": ["'self'"],
+  "form-action": ["'self'"],
+};
+
+const CSP_HEADER = Object.entries(CSP_DIRECTIVES)
+  .map(([directive, sources]) => `${directive} ${sources.join(" ")}`)
+  .join("; ");
+
 const SECURITY_HEADERS = [
+  // HSTS — override Vercel default to include preload + subdomain
+  // coverage. After deploy: submit to https://hstspreload.org/ to be
+  // added to the browser-built-in preload list (gives users HTTPS
+  // enforcement on the very first connection, before any HTTP
+  // round-trip).
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -25,6 +106,7 @@ const SECURITY_HEADERS = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()",
   },
+  { key: "Content-Security-Policy", value: CSP_HEADER },
 ];
 
 const nextConfig: NextConfig = {

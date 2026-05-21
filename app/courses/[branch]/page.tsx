@@ -29,15 +29,25 @@ export async function generateMetadata(
   // Title pattern rewritten to lead with the exact phrase searchers
   // type — "Diploma in <Branch>" — instead of "<Branch> Diploma".
   const title = `Diploma in ${b.name} · Varanasi · BTEUP ${b.code} | BIPE`;
-  const description = `Diploma in ${b.name} at BIPE Varanasi — BTEUP code ${b.code}, JEECUP institute code 4455, AFRC tuition ₹${b.fee}/year, ${b.seats} seats. ${b.desc.slice(0, 80)}`;
+  // Phase 2 SEO audit (May 2026): branch meta descriptions were ~210
+  // chars and getting truncated at Google's ~155-160 char cap. Rewrote
+  // to stay under 145 chars across all 5 branches, keeping the high-
+  // value tokens (branch, BTEUP code, JEECUP 4455, AFRC fee, seats,
+  // AICTE approval) and dropping the b.desc tail that was being cut.
+  const description = `Diploma in ${b.name} (BTEUP ${b.code}) · BIPE Varanasi · JEECUP 4455 · AFRC ₹${b.fee}/yr · ${b.seats} seats · AICTE-approved.`;
   return {
     title,
     description,
     alternates: {
       canonical: path,
-      // en-IN only — see comment in lib/seo.ts. The site has no SSR
-      // Hindi variant; declaring hi-IN here would be hreflang-lying.
-      languages: { "en-IN": path },
+      // en-IN + x-default — see lib/seo.ts for full rationale. The
+      // site has no SSR Hindi variant; declaring hi-IN here would be
+      // hreflang-lying. x-default tells Google "this English page is
+      // also the fallback for any unmapped language".
+      languages: {
+        "en-IN": path,
+        "x-default": path,
+      },
     },
     openGraph: {
       title,

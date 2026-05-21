@@ -257,6 +257,28 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <head>
+        {/*
+          Preconnect hints (Phase 2 SEO audit May 2026 — BIPE had 0
+          preconnects vs BITE's 4). Tells the browser to begin DNS
+          resolution + TCP/TLS handshake to these third-party origins
+          early, so when the actual requests fire later (Cloudinary
+          images, Vercel analytics beacons), the handshake is already
+          done.
+
+          Cloudinary is the highest-value preconnect — every above-the-
+          fold image on Home, /about, /campus, /placements comes from
+          res.cloudinary.com, and shaving the handshake off the
+          critical path materially helps LCP.
+
+          crossOrigin="anonymous" is correct for Cloudinary (it serves
+          assets without credentials and CORS-enabled). Vercel's
+          beacons set their own CORS so we don't need crossOrigin there.
+        */}
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://va.vercel-scripts.com" />
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
+
         <script
           type="application/ld+json"
           // dangerouslySetInnerHTML is intentional — schema built from typed sources, no user input.

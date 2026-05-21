@@ -66,13 +66,21 @@ export async function metadataFor(slug: RouteKey): Promise<Metadata> {
     ...(r.keywords && r.keywords.length ? { keywords: r.keywords } : {}),
     alternates: {
       canonical: r.path,
-      // Only en-IN is declared. The site has a client-side EN/हिंदी
-      // toggle (lib/lang.tsx) that swaps a handful of nav strings via
+      // en-IN + x-default. The site has a client-side EN/हिंदी toggle
+      // (lib/lang.tsx) that swaps a handful of nav strings via
       // localStorage, but the SSR HTML — which is what Google crawls —
-      // is always English. Declaring hi-IN would be hreflang-lying:
+      // is always English. Declaring hi-IN here would be hreflang-lying:
       // the audit's E-E-A-T section flagged it as a real penalty risk.
       // Re-add hi-IN only when a genuine /hi/* SSR path exists.
-      languages: { "en-IN": r.path },
+      //
+      // x-default added May 2026 (Phase 2 audit response). Tells Google
+      // "this English page is also the fallback for any unmapped
+      // language" — completes the hreflang set without claiming we
+      // have alternate-language URLs.
+      languages: {
+        "en-IN": r.path,
+        "x-default": r.path,
+      },
     },
     robots: { index: true, follow: true },
     openGraph: {
