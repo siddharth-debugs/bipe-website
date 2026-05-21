@@ -101,6 +101,23 @@ const FAQS: { q: string; a: string }[] = [
     q: "Are there any hidden charges or capitation fees?",
     a: "No. BIPE is AFRC-approved and AICTE-monitored — every component is published on this page or on /mandatory-disclosure. There is no capitation fee, no \"donation\", no off-the-record cash payment ever. Every payment is receipted, and the receipts are documents you should keep for scholarship reimbursement and future verification.",
   },
+  // ─── Hindi vernacular Q&As (May 2026 — for Hindi-medium families ───
+  // searching "BIPE की fees कितनी है" / "polytechnic fees in hindi"
+  // / "पॉलिटेक्निक फीस वाराणसी" — questions in the audience's first
+  // language, answers in the colloquial code-switched register the
+  // existing Hindi blog posts use.
+  {
+    q: "BIPE की annual fees कितनी है?",
+    a: "AFRC-approved tuition fee ₹30,150 per year है — सभी 5 branches के लिए same। Plus exam fee, library, caution money आदि छोटे components — पूरा breakdown इसी page पर ऊपर है। Hostel और mess अलग billed होते हैं (₹38-48k room + ₹36k mess per year)।",
+  },
+  {
+    q: "फीस कब और कैसे जमा करनी होती है?",
+    a: "Admission के समय 1st installment, फिर हर साल July तक उस साल की tuition। UP government post-matric scholarship वाले students को reimbursement के बाद residual amount देना होता है। Cash, cheque, online — तीनों accepted हैं। हर payment की receipt मिलती है जो scholarship claim के लिए ज़रूरी है।",
+  },
+  {
+    q: "क्या fees में कोई hidden charges या donation है?",
+    a: "बिल्कुल नहीं। BIPE AFRC-approved और AICTE-monitored है — पूरी fee structure इस page पर public है। कोई capitation fee, कोई \"donation\", कोई off-the-record cash payment नहीं। हर rupee receipted है। Admission के समय एक written breakdown मिलता है जो हर साल same रहता है।",
+  },
 ];
 
 const FEE_FAQ_JSON_LD = {

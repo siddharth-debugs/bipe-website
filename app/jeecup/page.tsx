@@ -108,6 +108,19 @@ const FAQS: { q: string; a: string }[] = [
     q: "What if my JEECUP rank doesn't reach BIPE this round?",
     a: "JEECUP runs multiple counselling rounds (typically 3–5 main rounds plus a special/spot round). Many students secure a BIPE seat in later rounds even if the first round doesn't go their way. Keep BIPE 4455 in your choice list across all rounds, and stay in touch with admissions — they track the cutoff movement and advise on the highest-probability branch for your rank.",
   },
+  // ─── Hindi vernacular Q&As — same audience cluster as /fees page ───
+  {
+    q: "JEECUP 2026 के लिए कौन apply कर सकता है?",
+    a: "JEECUP Group A (Polytechnic Engineering) के लिए Class 10 pass with Math + Science चाहिए। कोई upper age limit नहीं। UP domicile आवश्यक नहीं — Bihar, Jharkhand, MP और बाकी राज्यों से भी apply कर सकते हैं all-India category में। BIPE की admission JEECUP institute code 4455 से होती है, पाँचों BTEUP branches के लिए।",
+  },
+  {
+    q: "BIPE का JEECUP code क्या है और कैसे इस्तेमाल करें?",
+    a: "BIPE का JEECUP institute code 4455 है। Counselling के choice-filling round में इसी code से BIPE को add करना होता है। पाँचों branches के लिए 4455 ही code है — branch अलग से select होती है। ज़्यादातर applicants सभी 5 branches के सामने 4455 add कर देते हैं, ताकि rank कम होने पर भी कोई एक branch मिल जाए।",
+  },
+  {
+    q: "BIPE में admission कैसे होता है — सिर्फ JEECUP से?",
+    a: "हाँ। BIPE में admission सिर्फ JEECUP counselling से होता है। अलग कोई direct entry, management quota या donation route नहीं है। BTEUP affiliated polytechnic है तो UP के बाकी polytechnic colleges की तरह यह भी JEECUP route से ही चलता है। Online counselling, फिर campus reporting documents के साथ।",
+  },
 ];
 
 const JEECUP_FAQ_JSON_LD = {

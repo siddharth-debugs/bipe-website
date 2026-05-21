@@ -64,6 +64,20 @@ const FAQS: { q: string; a: string }[] = [
     q: "Does the waiver cover hostel?",
     a: "Government post-matric covers tuition; hostel and mess are separate. Mess is ₹36,000 per year (₹18,000 per semester); on-campus boys' hostel rooms are ₹38,000/year (triple-sharing) or ₹48,000/year (double-sharing), billed separately. BIPE merit waivers are tuition-only.",
   },
+  // ─── Hindi vernacular Q&As — for families searching "scholarship in
+  // hindi" / "UP government scholarship कितनी" / "BIPE scholarship"
+  {
+    q: "SC/ST students के लिए BIPE में क्या scholarship है?",
+    a: "UP Government का post-matric scholarship — SC/ST students को full tuition reimbursement मिलती है (income ceiling के अंदर — currently ₹2 lakh family income). Apply scholarship.up.gov.in portal पर admission के बाद होता है। BIPE की scholarships team पूरी process में मदद करती है — हर साल हम सैकड़ों applications भरवाते हैं।",
+  },
+  {
+    q: "BIPE merit scholarship क्या है — कितनी मिलती है?",
+    a: "JEECUP में top 5,000 rank वालों को 10-20% tuition waiver मिलता है। Class 10 में 90%+ वालों को 10% waiver। दोनों BIPE Trust की तरफ से, fee deposit के समय directly applied — कोई अलग application form नहीं भरना। ₹30,150 की tuition पर सीधे discount।",
+  },
+  {
+    q: "Government scholarship + BIPE merit — दोनों एक साथ मिल सकती हैं?",
+    a: "हाँ — दोनों stackable हैं। UP Government का post-matric tuition cover करता है; BIPE merit उस residual portion पर applied होता है जो परिवार actually pay करता है। Net figure admission के समय admissions team हाथ से model करके बता देती है — आप WhatsApp पर पूछ सकते हैं।",
+  },
 ];
 
 /**
@@ -96,43 +110,18 @@ const FAQS: { q: string; a: string }[] = [
  * is slab-based, so a single number would mislead. The `description`
  * carries the human-readable benefit instead.
  */
+// Derive the FAQPage schema from the FAQS array (single source of
+// truth). Matches the /fees and /jeecup pattern — adding a new Q&A
+// to FAQS auto-flows through to the schema. Previously hardcoded
+// inline, refactored May 2026 when Hindi Q&As were added.
 const SCHOLARSHIPS_FAQ_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can I combine government and merit scholarships?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes — UP Government post-matric scholarships and BIPE merit waivers are stackable. The merit waiver is applied to the tuition component the family actually pays after government reimbursement. Talk to admissions before counselling so we can model the net figure for you.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When do I apply on the UP scholarship portal?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "After admission. The UP scholarship.up.gov.in portal opens for fresh applications between July and October each year. We help every eligible BIPE student fill the form correctly the first time — most rejections are clerical.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What income proof is needed for scholarships?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An income certificate from the tehsildar / SDM (₹2.5 lakh family income for OBC, ₹2 lakh for SC/ST per current UP norms) plus a category certificate. Apply for both at the tehsil the day after JEECUP results — they take 7 to 10 working days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does the scholarship waiver cover hostel charges?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Government post-matric covers tuition; hostel and mess are separate. Mess is ₹36,000 per year; on-campus boys' hostel rooms are ₹38,000/year (triple-sharing) or ₹48,000/year (double-sharing). BIPE merit waivers are tuition-only.",
-      },
-    },
-  ],
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 // Funder references — keep terse, anchored by URL where possible so
