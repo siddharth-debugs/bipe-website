@@ -138,6 +138,29 @@ export function ContactForm() {
 
   const errClass = (k: keyof ContactFormData) => (fieldError(k) ? "field field-error" : "field");
 
+  // Per-schema required-field set. Stays in sync with contactFormSchema
+  // (in lib/validation.ts). aria-required announces "required" to
+  // screen readers at the same fields zod validates as required.
+  const REQUIRED: ReadonlySet<keyof ContactFormData> = new Set([
+    "name", "phone", "branch", "consent",
+  ] as const);
+
+  /**
+   * Produce the a11y attribute bundle for one form field.
+   * Pair with `<span id={`cf-${k}-err`} role="alert">` when fieldError
+   * is truthy — the aria-describedby points there.
+   */
+  const fieldProps = (k: keyof ContactFormData) => {
+    const id = `cf-${String(k)}`;
+    const err = !!fieldError(k);
+    return {
+      id,
+      "aria-required": REQUIRED.has(k) || undefined,
+      "aria-invalid": err || undefined,
+      "aria-describedby": err ? `${id}-err` : undefined,
+    } as const;
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -146,20 +169,20 @@ export function ContactForm() {
             Full name <span style={{ color: "var(--danger)" }}>*</span>
           </label>
           <input
-            id="cf-name"
+            {...fieldProps("name")}
             type="text"
             autoComplete="name"
             placeholder="Your name (or guardian's)"
             {...register("name")}
           />
-          {fieldError("name") && <span className="error-msg">{fieldError("name")}</span>}
+          {fieldError("name") && <span id="cf-name-err" role="alert" className="error-msg">{fieldError("name")}</span>}
         </div>
         <div className={errClass("phone")}>
-          <label htmlFor="cf-mobile">
+          <label htmlFor="cf-phone">
             Mobile <span style={{ color: "var(--danger)" }}>*</span>
           </label>
           <input
-            id="cf-mobile"
+            {...fieldProps("phone")}
             type="tel"
             inputMode="numeric"
             autoComplete="tel"
@@ -171,7 +194,7 @@ export function ContactForm() {
               },
             })}
           />
-          {fieldError("phone") && <span className="error-msg">{fieldError("phone")}</span>}
+          {fieldError("phone") && <span id="cf-phone-err" role="alert" className="error-msg">{fieldError("phone")}</span>}
         </div>
       </div>
 
@@ -181,13 +204,13 @@ export function ContactForm() {
             Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
           </label>
           <input
-            id="cf-email"
+            {...fieldProps("email")}
             type="email"
             autoComplete="email"
             placeholder="you@example.com"
             {...register("email")}
           />
-          {fieldError("email") && <span className="error-msg">{fieldError("email")}</span>}
+          {fieldError("email") && <span id="cf-email-err" role="alert" className="error-msg">{fieldError("email")}</span>}
         </div>
         <div className={errClass("branch")}>
           <label htmlFor="cf-branch">
@@ -208,7 +231,7 @@ export function ContactForm() {
               />
             )}
           />
-          {fieldError("branch") && <span className="error-msg">{fieldError("branch")}</span>}
+          {fieldError("branch") && <span id="cf-branch-err" role="alert" className="error-msg">{fieldError("branch")}</span>}
         </div>
       </div>
 
@@ -235,12 +258,12 @@ export function ContactForm() {
           Your message <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
         </label>
         <textarea
-          id="cf-message"
+          {...fieldProps("message")}
           rows={4}
           placeholder="Anything specific you'd like answered before we call back?"
           {...register("message")}
         />
-        {fieldError("message") && <span className="error-msg">{fieldError("message")}</span>}
+        {fieldError("message") && <span id="cf-message-err" role="alert" className="error-msg">{fieldError("message")}</span>}
       </div>
 
       <label
@@ -258,7 +281,7 @@ export function ContactForm() {
         }}
       >
         <input
-          id="cf-consent"
+          {...fieldProps("consent")}
           type="checkbox"
           {...register("consent")}
           style={{ marginTop: 4, accentColor: "var(--brand)" }}
@@ -268,7 +291,7 @@ export function ContactForm() {
         </span>
       </label>
       {fieldError("consent") && (
-        <div className="error-msg" style={{ marginTop: 6 }}>
+        <div id="cf-consent-err" role="alert" className="error-msg" style={{ marginTop: 6 }}>
           {fieldError("consent")}
         </div>
       )}

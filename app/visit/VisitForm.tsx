@@ -134,6 +134,30 @@ export function VisitForm() {
 
   const hasError = (k: keyof VisitFormData) => !!fieldError(k);
 
+  // Per-schema required-field set. Stays in sync with visitFormSchema
+  // (in lib/validation.ts) — every field that does NOT have .optional()
+  // is listed here, so aria-required announces "required" to screen
+  // readers at the same fields the zod validator rejects empty.
+  const REQUIRED: ReadonlySet<keyof VisitFormData> = new Set([
+    "name", "phone", "branch", "visitDate", "visitTime", "party", "consent",
+  ] as const);
+
+  /**
+   * Produce the a11y attribute bundle for one form field.
+   * Pair with an <span id={`vf-${k}-err`} role="alert"> when fieldError
+   * is truthy — the aria-describedby points there.
+   */
+  const fieldProps = (k: keyof VisitFormData) => {
+    const id = `vf-${String(k)}`;
+    const err = !!fieldError(k);
+    return {
+      id,
+      "aria-required": REQUIRED.has(k) || undefined,
+      "aria-invalid": err || undefined,
+      "aria-describedby": err ? `${id}-err` : undefined,
+    } as const;
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       {/* Row 1 — name + phone */}
@@ -141,27 +165,25 @@ export function VisitForm() {
         <div className={errClass("name")}>
           <label htmlFor="vf-name">Your full name</label>
           <input
-            id="vf-name"
+            {...fieldProps("name")}
             type="text"
             autoComplete="name"
             placeholder="As you'd like to be greeted"
-            aria-invalid={hasError("name")}
             {...register("name")}
           />
           {fieldError("name") && (
-            <span className="field-msg">{fieldError("name")}</span>
+            <span id="vf-name-err" role="alert" className="field-msg">{fieldError("name")}</span>
           )}
         </div>
         <div className={errClass("phone")}>
           <label htmlFor="vf-phone">Mobile number</label>
           <input
-            id="vf-phone"
+            {...fieldProps("phone")}
             type="tel"
             inputMode="numeric"
             autoComplete="tel"
             maxLength={10}
             placeholder="98XXXXXXXX"
-            aria-invalid={hasError("phone")}
             {...register("phone", {
               onChange: (e) => {
                 e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
@@ -169,7 +191,7 @@ export function VisitForm() {
             })}
           />
           {fieldError("phone") && (
-            <span className="field-msg">{fieldError("phone")}</span>
+            <span id="vf-phone-err" role="alert" className="field-msg">{fieldError("phone")}</span>
           )}
         </div>
       </div>
@@ -181,15 +203,14 @@ export function VisitForm() {
             Email <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
           </label>
           <input
-            id="vf-email"
+            {...fieldProps("email")}
             type="email"
             autoComplete="email"
             placeholder="you@example.com"
-            aria-invalid={hasError("email")}
             {...register("email")}
           />
           {fieldError("email") && (
-            <span className="field-msg">{fieldError("email")}</span>
+            <span id="vf-email-err" role="alert" className="field-msg">{fieldError("email")}</span>
           )}
         </div>
         <div className={errClass("branch")}>
@@ -210,7 +231,7 @@ export function VisitForm() {
             )}
           />
           {fieldError("branch") && (
-            <span className="field-msg">{fieldError("branch")}</span>
+            <span id="vf-branch-err" role="alert" className="field-msg">{fieldError("branch")}</span>
           )}
         </div>
       </div>
@@ -235,7 +256,7 @@ export function VisitForm() {
             )}
           />
           {fieldError("visitDate") && (
-            <span className="field-msg">{fieldError("visitDate")}</span>
+            <span id="vf-visitDate-err" role="alert" className="field-msg">{fieldError("visitDate")}</span>
           )}
         </div>
         <div className={errClass("visitTime")}>
@@ -256,7 +277,7 @@ export function VisitForm() {
             )}
           />
           {fieldError("visitTime") && (
-            <span className="field-msg">{fieldError("visitTime")}</span>
+            <span id="vf-visitTime-err" role="alert" className="field-msg">{fieldError("visitTime")}</span>
           )}
         </div>
         <div className={errClass("party")}>
@@ -277,7 +298,7 @@ export function VisitForm() {
             )}
           />
           {fieldError("party") && (
-            <span className="field-msg">{fieldError("party")}</span>
+            <span id="vf-party-err" role="alert" className="field-msg">{fieldError("party")}</span>
           )}
         </div>
       </div>
@@ -288,13 +309,13 @@ export function VisitForm() {
           Anything we should know? <span className="muted" style={{ fontSize: 11 }}>(optional)</span>
         </label>
         <textarea
-          id="vf-notes"
+          {...fieldProps("notes")}
           rows={3}
           placeholder="e.g. travelling from Mau, would like to meet a CS faculty mentor"
           {...register("notes")}
         />
         {fieldError("notes") && (
-          <span className="field-msg">{fieldError("notes")}</span>
+          <span id="vf-notes-err" role="alert" className="field-msg">{fieldError("notes")}</span>
         )}
       </div>
 
@@ -331,8 +352,8 @@ export function VisitForm() {
           >
             <input
               type="checkbox"
+              {...fieldProps("consent")}
               {...register("consent")}
-              aria-invalid={hasError("consent")}
               style={{ marginTop: 3, accentColor: "var(--brand)" }}
             />
             <span>
@@ -341,7 +362,7 @@ export function VisitForm() {
             </span>
           </label>
           {fieldError("consent") && (
-            <span className="field-msg">{fieldError("consent")}</span>
+            <span id="vf-consent-err" role="alert" className="field-msg">{fieldError("consent")}</span>
           )}
         </div>
       </div>

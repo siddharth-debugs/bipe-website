@@ -107,6 +107,26 @@ export function ApplyView() {
     return e?.message ? String(e.message) : undefined;
   };
 
+  // Per-schema required-field set. Stays in sync with applyFormSchema
+  // (lib/validation.ts). aria-required announces "required" to screen
+  // readers at the same fields zod validates as required. visit is on
+  // a radio group; consent is the final checkbox.
+  const REQUIRED: ReadonlySet<keyof ApplyFormData> = new Set([
+    "name", "phone", "branch", "category", "visit", "consent",
+  ] as const);
+
+  /** A11y props for one form field. Pair with `<span id={`${k}-err`} role="alert">`. */
+  const fieldProps = (k: keyof ApplyFormData) => {
+    const id = String(k);
+    const err = !!fieldError(k);
+    return {
+      id,
+      "aria-required": REQUIRED.has(k) || undefined,
+      "aria-invalid": err || undefined,
+      "aria-describedby": err ? `${id}-err` : undefined,
+    } as const;
+  };
+
   // ============ SUCCESS STATE ============
   if (step === 4 && submitStatus.state === "success") {
     return (
@@ -277,17 +297,17 @@ export function ApplyView() {
                         <div className={"field " + (fieldError("name") ? "field-error" : "")}>
                           <label htmlFor="name">Your full name</label>
                           <input
-                            id="name"
+                            {...fieldProps("name")}
                             placeholder="e.g. Aarav Yadav"
                             autoComplete="name"
                             {...register("name")}
                           />
-                          {fieldError("name") && <span className="error-msg">{fieldError("name")}</span>}
+                          {fieldError("name") && <span id="name-err" role="alert" className="error-msg">{fieldError("name")}</span>}
                         </div>
                         <div className={"field " + (fieldError("phone") ? "field-error" : "")}>
                           <label htmlFor="phone">Phone (we&apos;ll call you)</label>
                           <input
-                            id="phone"
+                            {...fieldProps("phone")}
                             type="tel"
                             inputMode="numeric"
                             autoComplete="tel"
@@ -299,29 +319,29 @@ export function ApplyView() {
                               },
                             })}
                           />
-                          {fieldError("phone") && <span className="error-msg">{fieldError("phone")}</span>}
+                          {fieldError("phone") && <span id="phone-err" role="alert" className="error-msg">{fieldError("phone")}</span>}
                         </div>
                       </div>
                       <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr" }}>
                         <div className={"field " + (fieldError("email") ? "field-error" : "")}>
                           <label htmlFor="email">Email <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
                           <input
-                            id="email"
+                            {...fieldProps("email")}
                             type="email"
                             autoComplete="email"
                             placeholder="you@email.com"
                             {...register("email")}
                           />
-                          {fieldError("email") && <span className="error-msg">{fieldError("email")}</span>}
+                          {fieldError("email") && <span id="email-err" role="alert" className="error-msg">{fieldError("email")}</span>}
                         </div>
                         <div className={"field " + (fieldError("parent") ? "field-error" : "")}>
                           <label htmlFor="parent">Parent / guardian name <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
                           <input
-                            id="parent"
+                            {...fieldProps("parent")}
                             placeholder="e.g. Mr. Yadav"
                             {...register("parent")}
                           />
-                          {fieldError("parent") && <span className="error-msg">{fieldError("parent")}</span>}
+                          {fieldError("parent") && <span id="parent-err" role="alert" className="error-msg">{fieldError("parent")}</span>}
                         </div>
                       </div>
                     </div>
@@ -347,7 +367,7 @@ export function ApplyView() {
                             />
                           )}
                         />
-                        {fieldError("branch") && <span className="error-msg">{fieldError("branch")}</span>}
+                        {fieldError("branch") && <span id="branch-err" role="alert" className="error-msg">{fieldError("branch")}</span>}
                       </div>
                       <div className="grid bipe-form-row" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
                         <div className="field">
@@ -387,12 +407,12 @@ export function ApplyView() {
                         <div className={"field " + (fieldError("marks") ? "field-error" : "")}>
                           <label htmlFor="marks">10th marks (%)</label>
                           <input
-                            id="marks"
+                            {...fieldProps("marks")}
                             inputMode="decimal"
                             placeholder="e.g. 72"
                             {...register("marks")}
                           />
-                          {fieldError("marks") && <span className="error-msg">{fieldError("marks")}</span>}
+                          {fieldError("marks") && <span id="marks-err" role="alert" className="error-msg">{fieldError("marks")}</span>}
                         </div>
                       </div>
                     </div>
@@ -467,7 +487,7 @@ export function ApplyView() {
                                 />
                               )}
                             />
-                            {fieldError("visitDate") && <span className="error-msg">{fieldError("visitDate")}</span>}
+                            {fieldError("visitDate") && <span id="visitDate-err" role="alert" className="error-msg">{fieldError("visitDate")}</span>}
                           </div>
                           <div className="field">
                             <label htmlFor="visitTime">Slot</label>
@@ -491,12 +511,12 @@ export function ApplyView() {
                       <div className={"field " + (fieldError("notes") ? "field-error" : "")}>
                         <label htmlFor="notes">Anything you&apos;d like us to know? <span style={{ color: "var(--ink-3)" }}>(optional)</span></label>
                         <textarea
-                          id="notes"
+                          {...fieldProps("notes")}
                           rows={3}
                           placeholder="Special requests, accessibility needs, transport preference…"
                           {...register("notes")}
                         />
-                        {fieldError("notes") && <span className="error-msg">{fieldError("notes")}</span>}
+                        {fieldError("notes") && <span id="notes-err" role="alert" className="error-msg">{fieldError("notes")}</span>}
                       </div>
                     </div>
                   )}
@@ -626,6 +646,9 @@ function ReviewBlock({
           <input
             id="consent"
             type="checkbox"
+            aria-required
+            aria-invalid={fieldError("consent") ? true : undefined}
+            aria-describedby={fieldError("consent") ? "consent-err" : undefined}
             {...register("consent")}
             style={{ marginTop: 4, accentColor: "var(--brand)" }}
           />
@@ -633,7 +656,7 @@ function ReviewBlock({
             I agree to be contacted by the BIPE admissions office about the 2026-27 session. My details will not be shared with third parties.
           </span>
         </label>
-        {fieldError("consent") && <span className="error-msg">{fieldError("consent")}</span>}
+        {fieldError("consent") && <span id="consent-err" role="alert" className="error-msg">{fieldError("consent")}</span>}
       </div>
     </div>
   );
