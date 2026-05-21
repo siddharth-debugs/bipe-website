@@ -12,6 +12,7 @@ import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { PlacementsGallery } from "@/components/placements/PlacementsGallery";
 import { BriefcaseBusiness, Handshake } from "lucide-react";
+import { SITE_URL } from "@/lib/routes";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("placements"); }
 
@@ -88,6 +89,87 @@ const ALUMNI: Alumnus[] = [
   },
 ];
 
+/**
+ * Schema.org CollectionPage + ItemList<Person> for the 6 notable alumni.
+ *
+ * Why this matters for SEO:
+ *
+ *   1. Each alumnus is a Person with worksFor → Organization (their
+ *      current employer) AND alumniOf → BIPE CollegeOrUniversity.
+ *      That triangle is exactly the Knowledge-Graph shape Google uses
+ *      to validate "BIPE produces engineers who work at Mahindra /
+ *      Tata Steel / Mumbai Metro / Indian Railways" — the trust claim
+ *      this page exists to make.
+ *
+ *   2. Names like "Naveen Pandey CEO IEPC" are low-volume but high-
+ *      intent — a recruiter or curious parent searching a specific
+ *      alumnus name lands directly on /placements with a rich SERP
+ *      card instead of a generic title+snippet.
+ *
+ *   3. The Person nodes here don't share @id with /faculty Persons —
+ *      these are graduates, not employees. Google de-duplicates by
+ *      @id (URL-anchored), so emitting alumni and faculty Persons
+ *      under different @ids is correct and intentional.
+ *
+ * What we deliberately don't emit:
+ *
+ *   - Recruiter Organization[]: the 28 names list is plain text on
+ *     the page already. Without URLs / addresses / other distinguishing
+ *     info, emitting 28 bare-name Organization nodes is schema bloat
+ *     with no rich-result upside.
+ *
+ *   - alumniOf with date: Person.alumniOf accepts only Organization,
+ *     not a {date, organization} pair. The branch+year tag (e.g.
+ *     "EL · 2016") stays in the rendered page where humans read it;
+ *     graph signals don't lose anything by omission.
+ */
+const ALUMNI_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}/placements`,
+  url: `${SITE_URL}/placements`,
+  name: "Placements · BIPE Varanasi",
+  description:
+    "Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — 993+ placements through 2024 across 44 recruiters, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.",
+  about: {
+    "@type": "CollegeOrUniversity",
+    name: "Banaras Institute of Polytechnic & Engineering",
+    url: SITE_URL,
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "BIPE notable alumni",
+    numberOfItems: 6,
+    itemListElement: [
+      { name: "Naveen Pandey",      role: "CEO & MD",              company: "IEPC",                       desc: "From a 2016 Electrical diploma to running an engineering and projects firm — proof that the diploma is a starting line, not a ceiling." },
+      { name: "Ankit Kr Singh",     role: "Junior Engineer",       company: "Tata Steel BSL",             desc: "Junior Engineer roles inside Tata Steel's long-products business sit at the heart of structural-steel for India's infrastructure pipeline." },
+      { name: "Hariom Rai",         role: "Senior Engineer",       company: "Mumbai Metro Project",       desc: "Senior site engineering on India's largest metro build — alignment, structural, and station-box work that runs decades into the future." },
+      { name: "Pramod Kumar Patel", role: "Assistant Loco Pilot",  company: "Indian Railways",            desc: "An ALP on the Indian Railways network keeps freight and passenger trains moving across one of the largest rail systems in the world." },
+      { name: "Saurabh Pandey",     role: "Founder & CEO",         company: "Civil Arch",                 desc: "From classroom drafting tables to founding a civil consultancy — a path BIPE keeps open to every Civil cohort." },
+      { name: "Chandan Pathak",     role: "Production In-charge",  company: "Motherson Sumi Systems",     desc: "Production-floor leadership at one of India's largest auto-component manufacturers — the kind of role the Mech-Production track exists for." },
+    ].map((a, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Person",
+        "@id": `${SITE_URL}/placements#${a.name.toLowerCase().replace(/\s+/g, "-")}`,
+        name: a.name,
+        jobTitle: a.role,
+        description: a.desc,
+        worksFor: {
+          "@type": "Organization",
+          name: a.company,
+        },
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: "Banaras Institute of Polytechnic & Engineering",
+          url: SITE_URL,
+        },
+      },
+    })),
+  },
+};
+
 type Program = { num: string; title: string; cadence: string; body: string };
 const PROGRAMS: Program[] = [
   { num: "01", title: "6-Day Industry-Ready Skill Enhancement Workshop", cadence: "Annual · February", body: "Resume drafting, communication, technical refresher and mock GD-PI in the run-up to placement season. Every final-year student attends." },
@@ -148,6 +230,12 @@ export default async function Page() {
             ]),
           ),
         }}
+      />
+      {/* CollectionPage + ItemList<Person> for the 6 notable alumni —
+          see ALUMNI_JSON_LD above for the design rationale. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ALUMNI_JSON_LD) }}
       />
       <PageIntro section={intro} />
       {/* ====================================================================== */}
