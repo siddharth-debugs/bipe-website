@@ -13,10 +13,49 @@ import {
   type Faculty,
   type Department,
 } from "@/lib/faculty";
+import { personSchema } from "@/lib/faculty-schema";
+import { SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
 import Image from "next/image";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("faculty"); }
+
+/**
+ * Schema.org CollectionPage with an ItemList of every academic faculty
+ * member as a Person node. Office staff are excluded — they're support
+ * roles, not teachers, and Google penalises Person schemas that don't
+ * have a real jobTitle + employer relationship.
+ *
+ * The ItemList is ordered: Principal first, then Leadership officers,
+ * then HODs, then everyone else by department. Mirrors the visual order
+ * of the page so the structured-data list and the rendered cards stay
+ * in lockstep.
+ */
+const facultyOrdered: Faculty[] = [
+  ...FACULTY.filter((f) => f.designation === "Principal"),
+  ...FACULTY.filter((f) => f.isLeadership && f.designation !== "Principal"),
+  ...FACULTY.filter((f) => f.isHOD),
+  ...FACULTY.filter((f) => !f.isLeadership && !f.isHOD),
+];
+
+const FACULTY_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}/faculty`,
+  url: `${SITE_URL}/faculty`,
+  name: "Faculty · BIPE Varanasi",
+  description:
+    "Every academic faculty member at Banaras Institute of Polytechnic & Engineering, named with qualifications, experience and publication record.",
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: facultyOrdered.length,
+    itemListElement: facultyOrdered.map((f, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: personSchema(f),
+    })),
+  },
+};
 
 const DEPT_ORDER: Department[] = [
   "Electrical",
@@ -302,6 +341,15 @@ function PortraitCard({
 export default function Page() {
   return (
     <div className="page-enter">
+      {/* CollectionPage + ItemList<Person> JSON-LD — see FACULTY_JSON_LD
+          above. Inlined as a <script> so Google's structured-data
+          parser indexes every faculty member as a connected Person node
+          worksFor → CollegeOrUniversity (BIPE). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FACULTY_JSON_LD) }}
+      />
+
       {/* ============================================================ */}
       {/* 1. EDITORIAL HERO                                            */}
       {/* ============================================================ */}

@@ -6,8 +6,45 @@ import { DATA } from "@/lib/data";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { FACULTY } from "@/lib/faculty";
+import { personSchema } from "@/lib/faculty-schema";
+import { SITE_URL } from "@/lib/routes";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("principal"); }
+
+/**
+ * Schema.org ProfilePage + Person JSON-LD for the Principal.
+ *
+ * Why ProfilePage (not just CollectionPage as on /faculty):
+ *
+ *   This page is the canonical bio for one named person — the Principal.
+ *   ProfilePage is Google's purpose-built type for that surface and earns
+ *   a richer SERP card (name + jobTitle + image, distinct from the plain
+ *   title/snippet pair).
+ *
+ *   The mainEntity Person reuses the same personSchema() helper as
+ *   /faculty so the alumniOf and hasCredential nodes stay consistent
+ *   across both surfaces. Google de-duplicates Person by @id, so emitting
+ *   the same person on two pages is correct and intentional.
+ *
+ * If the Principal record is ever missing (defensive: nothing depends on
+ * a hardcoded "rahul-srivastava" id in the schema layer), we silently
+ * skip the schema rather than emit a broken Person node.
+ */
+const PRINCIPAL_RECORD = FACULTY.find((f) => f.designation === "Principal");
+
+const PRINCIPAL_JSON_LD = PRINCIPAL_RECORD
+  ? {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/principal`,
+      url: `${SITE_URL}/principal`,
+      name: `${PRINCIPAL_RECORD.name} · Principal · BIPE Varanasi`,
+      description:
+        `Principal's office at Banaras Institute of Polytechnic & Engineering — ${PRINCIPAL_RECORD.name}'s qualifications, experience and message to incoming students.`,
+      mainEntity: personSchema(PRINCIPAL_RECORD),
+    }
+  : null;
 
 const PROMISES: { roman: string; title: string; sub: string; body: string }[] = [
   {
@@ -43,6 +80,17 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
 export default function Page() {
   return (
     <div className="page-enter">
+      {/* ProfilePage + Person JSON-LD — see PRINCIPAL_JSON_LD above for
+          why ProfilePage (not CollectionPage) is the right type here.
+          Skipped silently if the Principal record is missing from the
+          faculty roster — defensive, never broken-shape. */}
+      {PRINCIPAL_JSON_LD && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(PRINCIPAL_JSON_LD) }}
+        />
+      )}
+
       {/* ====================================================================== */}
       {/* 1. HERO PORTRAIT                                                        */}
       {/* ====================================================================== */}
