@@ -1,5 +1,72 @@
 import Image from "next/image";
 import { PRESS_MENTIONS } from "@/lib/press-mentions";
+import { SITE_URL } from "@/lib/routes";
+
+/**
+ * Schema.org NewsArticle @graph for the 6 curated press clippings.
+ *
+ * Why NewsArticle (not generic Article):
+ *
+ *   These are real news articles from named publications (Hindustan,
+ *   Amar Ujala, etc.) covering BIPE events. NewsArticle is the
+ *   purpose-built Schema.org type for this — it lets Google
+ *   recognize them as third-party coverage rather than mistaking
+ *   them for BIPE's own content.
+ *
+ * Why no `url` field on each NewsArticle:
+ *
+ *   These are physical print clippings scanned from print editions —
+ *   they have no canonical online URL. Schema.org allows NewsArticle
+ *   without a url; Google's parser accepts it. The article is
+ *   identified by headline + publisher + datePublished, which is
+ *   sufficient for entity-graph deduplication.
+ *
+ * Why each carries `about: BIPE`:
+ *
+ *   That's the load-bearing edge. Each NewsArticle is third-party
+ *   coverage ABOUT BIPE, so a search engine following the graph from
+ *   Hindustan / Amar Ujala / Aaj → about → BIPE has 6 independent
+ *   "this is a real institution covered in real Hindi press" votes.
+ *   Particularly valuable for the BIPE-vs-BITE disambiguation
+ *   problem flagged in the May 2026 SEO audit.
+ *
+ * inLanguage: "hi" — all 6 clippings are Hindi-language. The
+ * `headlineEn` field in our data is our English translation for
+ * accessibility (alt text, screen readers); the Hindi headline is
+ * the authoritative one and goes into `headline`. Google's parser
+ * pairs inLanguage="hi" with the Hindi headline correctly.
+ */
+const BIPE_REF = {
+  "@type": "CollegeOrUniversity",
+  name: "Banaras Institute of Polytechnic & Engineering",
+  url: SITE_URL,
+} as const;
+
+const PRESS_JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": PRESS_MENTIONS.map((m) => ({
+    "@type": "NewsArticle",
+    "@id": `${SITE_URL}/about#${m.id}`,
+    headline: m.headlineHi,
+    alternativeHeadline: m.headlineEn,
+    inLanguage: "hi",
+    datePublished: m.dateISO,
+    publisher: {
+      "@type": "NewsMediaOrganization",
+      name: m.publication,
+    },
+    about: BIPE_REF,
+    image: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}${m.src}`,
+      caption: m.headlineEn,
+    },
+    // The 6 clippings are all in our /public/ folder; absent a
+    // canonical online article URL, this anchors the @id to the
+    // /about page where the rendered card lives.
+    mainEntityOfPage: `${SITE_URL}/about#press`,
+  })),
+};
 
 /**
  * "In the press" section on /about. Renders the curated set in
@@ -18,7 +85,14 @@ import { PRESS_MENTIONS } from "@/lib/press-mentions";
  */
 export default function PressMentions() {
   return (
-    <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
+    <section id="press" className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
+      {/* NewsArticle JSON-LD @graph — see PRESS_JSON_LD above for the
+          design rationale. Six third-party Hindi-press attestations
+          binding to BIPE's entity graph via `about`. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PRESS_JSON_LD) }}
+      />
       <div aria-hidden="true" style={{
         position: "absolute", right: -160, top: -120, width: 420, height: 420, borderRadius: "50%",
         background: "color-mix(in oklab, var(--accent) 16%, transparent)",
