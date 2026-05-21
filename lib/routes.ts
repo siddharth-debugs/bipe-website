@@ -181,8 +181,13 @@ export const ROUTES: Record<RouteKey, {
   },
   principal: {
     path: "/principal",
-    title: "Principal's Message — Dr. R. K. Sharma | BIPE",
-    description: "A note from BIPE's principal on what families can expect from three years at the institution.",
+    // Principal name MUST stay in sync with lib/faculty.ts (where the
+    // Principal record's name field is the canonical source). The May
+    // 2026 SERP audit caught Google surfacing a stale "Dr. R. K. Sharma"
+    // from a previous incarnation of this title — drift between this
+    // string and faculty.ts is what created the AI-Overview confusion.
+    title: "Principal's Message — Rahul Srivastava | BIPE",
+    description: "A note from Rahul Srivastava, BIPE's Principal — M.Tech, 13 years teaching, GATE-qualified — on what every family can expect from three years at the institute.",
   },
   teaching: {
     path: "/teaching",

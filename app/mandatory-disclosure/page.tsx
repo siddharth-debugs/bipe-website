@@ -3,9 +3,18 @@ import Link from "next/link";
 import type React from "react";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
+import { FACULTY } from "@/lib/faculty";
 import { ArrowIcon } from "@/components/shell/Icons";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("mandatoryDisclosure"); }
+
+// Principal record resolved at build time from lib/faculty.ts (single
+// source of truth). Hardcoded names here used to drift: the page
+// carried "Dr. R. K. Sharma" long after the principal had changed,
+// and Google surfaced the stale name in SERP titles + AI Overview.
+// This lookup makes the disclosure auto-track faculty roster updates.
+const PRINCIPAL_RECORD = FACULTY.find((f) => f.designation === "Principal");
+const PRINCIPAL_NAME = PRINCIPAL_RECORD?.name ?? "Principal · BIPE";
 
 // AICTE Approval Process Handbook 2024-27, Annexure-18: every approved
 // technical institution must publish a structured Mandatory Disclosure on
@@ -48,7 +57,7 @@ const SECTIONS: Section[] = [
     title: "Principal",
     body: (
       <>
-        <p><strong>Dr. R. K. Sharma</strong> · Principal, BIPE</p>
+        <p><strong>{PRINCIPAL_NAME}</strong> · Principal, BIPE</p>
         <p>
           Email: <a href={`mailto:${DATA.contact.emailPrincipal}`}>{DATA.contact.emailPrincipal}</a> · Phone: <a href={`tel:${DATA.contact.phone}`}>{DATA.contact.phone}</a>
         </p>
