@@ -7,8 +7,97 @@ import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { SITE_URL } from "@/lib/routes";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("hostel"); }
+
+/**
+ * Schema.org Accommodation node for the BIPE boys' hostel.
+ *
+ * Type choice — Accommodation, NOT LodgingBusiness:
+ *
+ *   LodgingBusiness implies a commercial hospitality offering open to
+ *   the public (hotels, motels, B&Bs). The BIPE hostel is a student
+ *   residence hall reserved for enrolled BIPE diploma students. Using
+ *   LodgingBusiness would be a semantic lie that misleads Google AND
+ *   would surface us in "hotels in Varanasi" SERPs where we don't
+ *   belong. Accommodation (sub-property of Place) is the right type
+ *   for student dorms / boarding houses.
+ *
+ * Why this schema matters:
+ *
+ *   1. "hostels in varanasi" (~720/mo, commit β earlier this sprint
+ *      added the head-term targeting). Without Accommodation schema,
+ *      Google has no machine-readable signal that THIS page is about
+ *      an actual hostel as opposed to e.g. a content page that
+ *      mentions hostels. The schema fixes that.
+ *
+ *   2. containedInPlace → BIPE CollegeOrUniversity binds the hostel
+ *      to BIPE's Entity graph, so a "hostel near BIPE" / "polytechnic
+ *      hostel Phoolpur" search returns this page rather than a
+ *      generic hostel-aggregator result.
+ *
+ *   3. The 8 amenityFeature entries map 1:1 to the AMENITIES array
+ *      rendered on the page — Google can correlate the structured
+ *      data with the visible content, raising trust.
+ *
+ *   4. potentialAction → ReserveAction points at /visit, so Google
+ *      can surface "Book a viewing" as a CTA in the SERP card.
+ *
+ * What we deliberately don't emit:
+ *
+ *   - Room-rate Offers. Including pricing would suggest commercial
+ *     availability; BIPE doesn't sell rooms to the public. The fees
+ *     on the page are an internal cost disclosure for admitted
+ *     students, not a public offering.
+ *
+ *   - GeoCoordinates. We don't have exact lat/long for the Phoolpur
+ *     campus in lib/data.ts. Better to omit than emit approximated
+ *     coordinates that Google might use to mark an inaccurate map pin.
+ *
+ *   - numberOfBeds. We don't have a current bed-count figure in code,
+ *     and emitting a guess would be a fabrication risk.
+ */
+const HOSTEL_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Accommodation",
+  "@id": `${SITE_URL}/hostel`,
+  url: `${SITE_URL}/hostel`,
+  name: "BIPE Boys' Hostel",
+  description:
+    "On-campus boys' hostel at Banaras Institute of Polytechnic & Engineering — triple- and double-sharing rooms, three meals daily, 24×7 water and security, resident warden, anti-ragging committee. Phoolpur campus, Varanasi.",
+  accommodationCategory: "Student residence hall · Boys' hostel",
+  permittedUsage: "BIPE diploma students only",
+  petsAllowed: false,
+  containedInPlace: {
+    "@type": "CollegeOrUniversity",
+    name: "Banaras Institute of Polytechnic & Engineering",
+    url: SITE_URL,
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Village Gajokhar, Post Parsara, Phoolpur",
+    addressLocality: "Varanasi",
+    postalCode: "221206",
+    addressRegion: "Uttar Pradesh",
+    addressCountry: "IN",
+  },
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Furnished room (bed, mattress, study desk, chair)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Three meals daily (vegetarian & non-vegetarian)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "24/7 water supply (6-bore rainwater + tank reserve)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Backup power (generator + UPS)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Wi-Fi in commons (50 Mbps, firewalled)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Medical room with on-call doctor", value: true },
+    { "@type": "LocationFeatureSpecification", name: "24×7 security with staffed gate and visitor register", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Parent hotline to warden's desk", value: true },
+  ],
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: `${SITE_URL}/visit`,
+    name: "Book a hostel viewing",
+  },
+};
 
 const FEES: { k: string; v: string; note: string }[] = [
   { k: "Triple-sharing room", v: "₹38,000", note: "per academic year" },
@@ -61,6 +150,13 @@ export default function Page() {
             ]),
           ),
         }}
+      />
+      {/* Accommodation JSON-LD — see HOSTEL_JSON_LD above for why
+          Accommodation (not LodgingBusiness) is the semantically-
+          correct type for a student dorm. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOSTEL_JSON_LD) }}
       />
       {/* ====================================================================== */}
       {/* 1. HERO                                                                 */}
