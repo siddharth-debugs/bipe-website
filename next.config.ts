@@ -221,10 +221,72 @@ const nextConfig: NextConfig = {
   // would be guess-work without Semrush corroboration.
   async redirects() {
     return [
+      // ─── Semrush May 2026 snapshot (4 URLs) ─────────────────────
       { source: "/thank-u",             destination: "/",        permanent: true },
       { source: "/bipe-media",          destination: "/events",  permanent: true },
       { source: "/polytechnic-courses", destination: "/courses", permanent: true },
       { source: "/faculties",           destination: "/faculty", permanent: true },
+
+      // ─── GSC "Not found (404)" report 2026-05-22 (9 new URLs) ───
+      //
+      // Same playbook as the Semrush batch — every URL below has a
+      // confirmed live destination on the current site. Each entry
+      // tells Google to drop the dead URL from its index and re-
+      // attribute the accumulated authority to the live equivalent.
+      // Typical SERP refresh window: 2-4 weeks.
+      //
+      //   /facilities               — old "facilities/labs" landing.
+      //                               /campus/phoolpur is the direct
+      //                               replacement (lab gallery + photos).
+      //
+      //   /year                     — opaque legacy URL. No semantic
+      //                               equivalent. Send to / to recover
+      //                               residual traffic to the brand
+      //                               homepage rather than 404.
+      //
+      //   /static/img/Prospectus-BIPE.pdf
+      //                             — old PDF asset. The documents hub
+      //                               at /documents is the current
+      //                               source-of-truth for downloadable
+      //                               docs (prospectus, mandatory
+      //                               disclosure, etc.).
+      //
+      //   /affiliation-accrediation — typo "accrediation" is the
+      //                               giveaway this is from the old
+      //                               site. Direct rename to
+      //                               /about/affiliations.
+      //
+      //   /alumnis                  — pluralization typo. /alumni is
+      //                               the live canonical.
+      //
+      //   /bipe-history             — old standalone history page.
+      //                               History content is now under
+      //                               /about (founding, journey, trust).
+      //
+      //   /bipe-events              — old "bipe-events" URL. /events
+      //                               is the live equivalent (now
+      //                               grouped by category — Academic,
+      //                               Sports, Cultural, Placement).
+      //
+      //   /save-index               — cryptic legacy CMS path. Most
+      //                               likely a leftover from the old
+      //                               site's index/menu structure.
+      //                               Send to / to recover any residual
+      //                               brand traffic.
+      //
+      //   /save-career              — old career-landing page. The
+      //                               career narrative now lives at
+      //                               /placements (placement record +
+      //                               named alumni + recruiter list).
+      { source: "/facilities",                    destination: "/campus/phoolpur",    permanent: true },
+      { source: "/year",                          destination: "/",                   permanent: true },
+      { source: "/static/img/Prospectus-BIPE.pdf", destination: "/documents",          permanent: true },
+      { source: "/affiliation-accrediation",      destination: "/about/affiliations", permanent: true },
+      { source: "/alumnis",                       destination: "/alumni",             permanent: true },
+      { source: "/bipe-history",                  destination: "/about",              permanent: true },
+      { source: "/bipe-events",                   destination: "/events",             permanent: true },
+      { source: "/save-index",                    destination: "/",                   permanent: true },
+      { source: "/save-career",                   destination: "/placements",         permanent: true },
     ];
   },
 
