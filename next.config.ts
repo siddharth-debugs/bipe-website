@@ -287,6 +287,26 @@ const nextConfig: NextConfig = {
       { source: "/bipe-events",                   destination: "/events",             permanent: true },
       { source: "/save-index",                    destination: "/",                   permanent: true },
       { source: "/save-career",                   destination: "/placements",         permanent: true },
+
+      // ─── GSC "Crawled - currently not indexed" + "Blocked" follow-up 2026-05-22 ─
+      //
+      //   /save-admission                       — third "save-*" legacy URL
+      //                                           in the same pattern as
+      //                                           /save-index, /save-career.
+      //                                           Old CMS admission-landing
+      //                                           page. /admission is the
+      //                                           live equivalent.
+      //
+      //   /static/img/Mandatory-DIsclosure_AICTE.pdf
+      //                                         — was disallowed in robots.txt
+      //                                           (now removed in app/robots.ts).
+      //                                           The HTML equivalent at
+      //                                           /mandatory-disclosure is the
+      //                                           live AICTE Annexure-18 page.
+      //                                           Redirect catches anyone
+      //                                           hitting the old PDF URL.
+      { source: "/save-admission",                                destination: "/admission",            permanent: true },
+      { source: "/static/img/Mandatory-DIsclosure_AICTE.pdf",     destination: "/mandatory-disclosure", permanent: true },
     ];
   },
 

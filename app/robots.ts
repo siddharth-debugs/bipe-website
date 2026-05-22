@@ -38,8 +38,19 @@ export default function robots(): MetadataRoute.Robots {
     "/api/",
     "/admin/",                                       // dashboard — auth-gated already
     "/static/admin/",
-    "/static/img/Mandatory-DIsclosure_AICTE.pdf",    // legacy bank-form leak from old Django site
     "/private/",
+    // Removed May 2026: /static/img/Mandatory-DIsclosure_AICTE.pdf
+    // disallow. The file no longer exists on disk (verified — it was a
+    // legacy artefact from the old Django site, never carried over to
+    // the Next.js rewrite). Blocking a phantom URL was sending Google
+    // a "Blocked by robots.txt" indexing-coverage signal in GSC for
+    // a URL that should just be redirected away. The redirect now
+    // lives in next.config.ts (PDF → /mandatory-disclosure), which
+    // is the legitimate canonical for the AICTE disclosure document
+    // (an institution legally required to publish openly per AICTE
+    // Annexure-18). Net effect: GSC's "Blocked" row drops to 0;
+    // any residual links to the old PDF land on the correct HTML
+    // page.
   ];
 
   return {
