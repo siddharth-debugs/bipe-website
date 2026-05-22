@@ -130,6 +130,15 @@ export const DATA: DataShape = {
     { name: "Instagram", handle: "bipevns", url: "https://www.instagram.com/bipevns/" },
     { name: "X",         handle: "bipevns", url: "https://x.com/bipevns" },
     { name: "LinkedIn",  handle: "bipe-varanasi", url: "https://www.linkedin.com/school/bipe-varanasi/" },
+    // Wikidata entity (created May 2026 — Q139892164). Listing the
+    // canonical Wikidata URL in schema.org `sameAs` is THE explicit
+    // signal to Google/Bing/AI assistants that "this domain IS the
+    // entity at this Q-number." Knowledge Panels, AI Overviews,
+    // ChatGPT/Perplexity entity binding all hinge on this connection.
+    // The Footer's "Follow BIPE" strip filters out non-social URLs
+    // (see components/shell/Footer.tsx) so this entry feeds schema
+    // without cluttering the UI.
+    { name: "Wikidata",  handle: "Q139892164", url: "https://www.wikidata.org/wiki/Q139892164" },
   ],
   regulators: [
     { name: "AICTE", full: "All India Council for Technical Education", url: "https://www.aicte-india.org/" },

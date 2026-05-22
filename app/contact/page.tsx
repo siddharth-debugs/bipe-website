@@ -133,7 +133,10 @@ export default function Page() {
   // / "@bipe.varanasi") that diverged from the schema.org `sameAs`
   // emitted by app/layout.tsx — Google saw conflicting entity
   // signals. May 2026 audit fix.
-  const SOCIALS = DATA.social;
+  //
+  // Wikidata is filtered out of the user-facing social grid (added
+  // for sameAs schema purposes only — not a follow-able channel).
+  const SOCIALS = DATA.social.filter((s) => !s.url.includes("wikidata.org"));
 
   return (
     <div className="page-enter">

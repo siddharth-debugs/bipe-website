@@ -116,6 +116,17 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         { "@type": "PropertyValue", propertyID: "JEECUP Code", value: contact.jeecup_code || DATA.contact.jeecup },
         { "@type": "PropertyValue", propertyID: "BTEUP", value: "Affiliated · 4455" },
         { "@type": "PropertyValue", propertyID: "AISHE", value: "Registered" },
+        // Wikidata Q-number — explicit propertyID "Wikidata" is the
+        // strongest entity-link signal for Google's Knowledge Graph,
+        // AI assistants, and entity-link resolvers. The Wikidata URL
+        // is also in `sameAs` via DATA.social, but this PropertyValue
+        // is preferred for entity binding. Added May 2026.
+        {
+          "@type": "PropertyValue",
+          propertyID: "Wikidata",
+          value: "Q139892164",
+          url: "https://www.wikidata.org/wiki/Q139892164",
+        },
       ],
       // accreditedBy — Phase 1.5 strategy (May 2026). BTE UP and AICTE
       // are the institute's two formal accrediting bodies; surfacing

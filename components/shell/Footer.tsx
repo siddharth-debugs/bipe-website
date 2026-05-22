@@ -346,7 +346,16 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
             <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>
               Follow BIPE
             </span>
-            {DATA.social.map((s) => (
+            {DATA.social
+              // DATA.social is the canonical sameAs source for schema.org
+              // (consumed by app/layout.tsx). It includes a Wikidata entry
+              // for entity-graph binding, but Wikidata isn't a follow-able
+              // social channel — filter it out of the visible footer
+              // strip. Any non-social identifier (Wikidata, ROR, ORCID
+              // when added) can use the same wikidata.org / non-social-
+              // domain check.
+              .filter((s) => !s.url.includes("wikidata.org"))
+              .map((s) => (
               <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 padding: "8px 14px", borderRadius: 999,
