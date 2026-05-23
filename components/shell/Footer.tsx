@@ -424,23 +424,41 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               }}>
                 Designed &amp; developed by
               </span>
-              <Image
-                src="/credit-logo.png"
-                // Was just "SortString" — that gave Google a bare agency
-                // name on every BIPE page footer with no context. Made
-                // it self-describing so the alt text matches what
-                // sighted users see ("Designed & developed by …").
-                alt="SortString — design and development partner for BIPE"
-                width={1700}
-                height={750}
-                priority={false}
+              <a
+                href="https://sortstring.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SortString — design and development partner for BIPE (opens in a new tab)"
                 style={{
-                  height: 44,
-                  width: "auto",
-                  display: "block",
-                  opacity: 0.92,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  // Lift opacity slightly on hover so the link is
+                  // discoverable without disturbing the muted footer
+                  // composition at rest.
+                  transition: "opacity .15s",
                 }}
-              />
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = ""; }}
+              >
+                <Image
+                  src="/credit-logo.png"
+                  // Was just "SortString" — that gave Google a bare agency
+                  // name on every BIPE page footer with no context. Made
+                  // it self-describing so the alt text matches what
+                  // sighted users see ("Designed & developed by …").
+                  alt="SortString — design and development partner for BIPE"
+                  width={1700}
+                  height={750}
+                  priority={false}
+                  style={{
+                    height: 44,
+                    width: "auto",
+                    display: "block",
+                    opacity: 0.92,
+                  }}
+                />
+              </a>
             </div>
           </div>
         </div>
