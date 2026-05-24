@@ -6,7 +6,12 @@ import { LangProvider } from "@/lib/lang";
 import { ConditionalChrome } from "@/components/shell/ConditionalChrome";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
-import { Analytics } from "@vercel/analytics/next";
+// AnalyticsBeacon is a client component that defers Vercel Analytics
+// via dynamic({ ssr: false }) — Next.js forbids that flag inside Server
+// Components (which RootLayout is), so the wrapper exists to sidestep
+// the restriction. See components/shell/AnalyticsBeacon.tsx for the
+// INP-driven rationale (May 2026 CWV report).
+import AnalyticsBeacon from "@/components/shell/AnalyticsBeacon";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import type { Branch } from "@/lib/data";
 import type { PublicContact } from "@/lib/content";
@@ -300,7 +305,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <LangProvider>
           <ConditionalChrome contact={footerContact}>{children}</ConditionalChrome>
         </LangProvider>
-        <Analytics />
+        <AnalyticsBeacon />
       </body>
     </html>
   );

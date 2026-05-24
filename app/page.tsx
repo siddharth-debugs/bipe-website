@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { metadataFor } from "@/lib/seo";
 import { getBranchesMapped, getPageSection } from "@/lib/content";
 import type { Stat, WhyItem, Facility, JeecupStep } from "@/lib/data";
@@ -6,15 +7,50 @@ import { HeroFull } from "@/components/home/HeroFull";
 import { BIPE_IMG } from "@/lib/images";
 import { StatsBar } from "@/components/home/StatsBar";
 import { Recruiters } from "@/components/home/Recruiters";
-import { Countdown } from "@/components/home/Countdown";
 import { WhyBipe } from "@/components/home/WhyBipe";
-import { Branches } from "@/components/home/Branches";
 import { JeecupSteps } from "@/components/home/JeecupSteps";
 import { CampusLife } from "@/components/home/CampusLife";
 import { Testimonials } from "@/components/home/Testimonials";
-import { InlineApply } from "@/components/home/InlineApply";
 import { News } from "@/components/home/News";
 import { FinalCTA } from "@/components/home/FinalCTA";
+
+/**
+ * Below-the-fold client components deferred via next/dynamic.
+ *
+ * Why: GSC's INP report (May 2026) flagged 303ms on mobile. Each
+ * 'use client' component on the page contributes to hydration cost
+ * on first interaction. Below-the-fold heavy ones (form state,
+ * setInterval timers, carousel state) cost most.
+ *
+ * ssr: true means the HTML still renders server-side (preserves SEO
+ * content + LCP), but the JS chunk loads in a separate request that
+ * Next.js's chunk-priority logic can defer until after the visible
+ * portion has hydrated.
+ *
+ *   InlineApply   — form with useState x4 + fetch handler.
+ *                   Biggest hydration cost on the homepage.
+ *   Countdown     — has setInterval timer in useEffect; chunk runs
+ *                   continuously after mount.
+ *   Branches      — carousel state with CrossfadeSlider; multiple
+ *                   useState calls per branch card.
+ *
+ * Other client components on the homepage (StatsBar, Counter, WhyBipe,
+ * JeecupSteps, CampusLife, Testimonials, News, FinalCTA) are either
+ * (a) above the fold OR (b) small enough that chunk-split overhead
+ * outweighs the deferral benefit. Left as direct imports.
+ */
+const Countdown = dynamic(
+  () => import("@/components/home/Countdown").then((m) => m.Countdown),
+  { ssr: true },
+);
+const Branches = dynamic(
+  () => import("@/components/home/Branches").then((m) => m.Branches),
+  { ssr: true },
+);
+const InlineApply = dynamic(
+  () => import("@/components/home/InlineApply").then((m) => m.InlineApply),
+  { ssr: true },
+);
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("home"); }
 
