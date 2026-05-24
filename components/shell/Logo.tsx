@@ -31,7 +31,13 @@ export const Logo = ({ size = 48, className, style, alt = "BIPE" }: LogoProps) =
       className={className}
       style={{ height: size, width, display: "block", ...style }}
       draggable={false}
-      priority
+      // priority removed (May 24, 2026) — GSC CrUX flagged 4.3s LCP on
+      // mobile. Root cause: Next.js auto-preloads any <Image priority>
+      // at fetchPriority="high", and this nav-bar logo was generating
+      // a preload tag that competed with the actual LCP element
+      // (the hero campus image in HeroFull.tsx). The logo is an SVG —
+      // it loads in milliseconds anyway. Letting Next.js's normal
+      // lazy-load handle it frees up LCP priority for the hero.
     />
   );
 };

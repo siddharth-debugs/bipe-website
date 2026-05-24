@@ -42,52 +42,34 @@ export default async function HomePage() {
     getPageSection("home", "jeecup-steps"),
   ]);
 
-  // Build the hero preload srcSet mirroring what Img.tsx's
-  // cloudinaryLoader produces per Next/Image deviceSize. Without
-  // this preload, the browser doesn't start fetching the hero image
-  // until it parses the rendered <img>/srcset that React paints —
-  // costs ~500 ms on the LCP. Putting a <link rel="preload"> in the
-  // returned JSX lets React 19 / Next 16 hoist it to <head> so the
-  // request fires the moment the HTML response arrives.
-  //
-  // Source URL is BIPE_IMG.heroWide (Cloudinary, no fixed w_); we
-  // generate the same 5 width-variant URLs the cloudinaryLoader
-  // would, with f_auto and q_auto to match. If heroWide changes,
-  // both code paths use the new base URL — only this preload
-  // template needs the width set kept in sync (matches Next 16
-  // defaults: 640, 750, 828, 1080, 1200, 1920).
-  const heroBaseUrl = BIPE_IMG.heroWide; // .../f_auto,q_auto/v.../bipe/hero/hero-campus
-  const cloudinaryWidthUrl = (w: number) =>
-    heroBaseUrl.replace(
-      /\/image\/upload\/([^/]+)\//,
-      (_, transforms) => {
-        const cleaned = transforms
-          .split(",")
-          .filter((t: string) => !/^(w_|q_|f_)/.test(t));
-        return `/image/upload/${[...cleaned, "f_auto", "q_auto", `w_${w}`].join(",")}/`;
-      },
-    );
-  const heroPreloadWidths = [640, 750, 828, 1080, 1200, 1920];
-  const heroSrcSet = heroPreloadWidths
-    .map((w) => `${cloudinaryWidthUrl(w)} ${w}w`)
-    .join(", ");
-  const heroPreloadHref = cloudinaryWidthUrl(1080); // mid-range fallback for crawlers / no-srcset
+  // Hero preload variables (heroBaseUrl, cloudinaryWidthUrl,
+  // heroPreloadWidths, heroSrcSet, heroPreloadHref) were removed
+  // alongside the custom <link rel="preload"> below. See the JSX
+  // comment for the LCP-regression context.
 
   return (
     <div className="page-enter">
-      {/* React 19 / Next 16 hoists <link> elements to <head> when
-          rendered inside any server component. Preloading the hero
-          image here trims ~500 ms off mobile LCP (verified via
-          Lighthouse audit). fetchPriority high outranks every other
-          preloaded asset — only the hero gets it. */}
-      <link
-        rel="preload"
-        as="image"
-        href={heroPreloadHref}
-        imageSrcSet={heroSrcSet}
-        imageSizes="100vw"
-        fetchPriority="high"
-      />
+      {/*
+        Custom <link rel="preload"> for the hero was REMOVED (May 24, 2026).
+        GSC CrUX flagged 4.3s LCP on mobile; one of the causes was that
+        the hero was being preloaded TWICE — once by this explicit <link>
+        and once by Next.js's auto-preload that's generated whenever an
+        <Image priority> renders. The duplicate preload didn't perfectly
+        match URLs (one had w_1080 in href, the other had a different
+        fallback), so the browser was fetching the hero twice instead of
+        deduplicating.
+
+        Next.js's auto-preload — emitted from the <Image priority> in
+        components/home/HeroFull.tsx — is now the single source of truth.
+        It generates the same srcset that the rendered <img> uses, so the
+        preload URL is GUARANTEED to match the image the browser actually
+        loads. No risk of a "wrong variant preloaded" bug.
+
+        If LCP doesn't improve from this fix, the next lever is enabling
+        Cloudinary's account-level Auto-AVIF toggle (user action) — the
+        hero is currently served as JPEG because f_auto falls back to
+        JPEG when AVIF is disabled at the account.
+      */}
       <HeroFull />
       <StatsBar items={itemsFromSection<Stat>(sStats)} />
       <Recruiters />
