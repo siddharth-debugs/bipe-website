@@ -66,11 +66,30 @@ function coverPhotoFor(category: EventCategory) {
  * future startDate to display. Mid-February is the historical window;
  * the exact day shifts year-to-year, so the 15th is a reasonable
  * middle value that we'll update via the admin when finalised.
+ *
+ * endDate added May 2026 — GSC's Events enhancement report flagged
+ * "Missing field endDate" on all 3 events. endDate is required by
+ * Schema.org for Event rich-result eligibility; without it, the
+ * event card in SERP loses date-range information and can't show
+ * "ongoing" / "ends in X days" badges.
+ *
+ *   Utkarsh — single-day cultural function (date = "February")
+ *             endDate = startDate
+ *   Technofest — 2-day project fair (date = "21–22 February")
+ *                endDate = startDate + 1 day
+ *   Spardha — 5-day sports meet (date = "15–19 February")
+ *             endDate = startDate + 4 days
  */
 const FLAGSHIP_NEXT_DATE: Record<string, string> = {
   Utkarsh: "2027-02-15",
   Technofest: "2027-02-21",
   Spardha: "2027-02-15",
+};
+
+const FLAGSHIP_END_DATE: Record<string, string> = {
+  Utkarsh: "2027-02-15",     // single-day
+  Technofest: "2027-02-22",  // 21–22 = 2 days
+  Spardha: "2027-02-19",     // 15–19 = 5 days
 };
 
 const FLAGSHIPS: Flagship[] = [
@@ -150,8 +169,18 @@ export default async function Page() {
         ? f.body
         : `${f.en} (${f.hi}) — BIPE's annual ${f.eyebrow.split(" · ")[0].toLowerCase()} event at the Phoolpur campus.`,
     startDate: FLAGSHIP_NEXT_DATE[f.en] ?? "2027-02-15",
+    endDate: FLAGSHIP_END_DATE[f.en] ?? FLAGSHIP_NEXT_DATE[f.en] ?? "2027-02-15",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
+    // performer added May 2026 — GSC's Events enhancement report
+    // flagged "Missing field performer" on all 3 events. For
+    // institute-led events where students are the performers
+    // (cultural function, technical demos, sports), PerformingGroup
+    // is the semantically-correct Schema.org type.
+    performer: {
+      "@type": "PerformingGroup",
+      name: "BIPE Students",
+    },
     location: {
       "@type": "Place",
       name: "BIPE Phoolpur Campus, Varanasi",
