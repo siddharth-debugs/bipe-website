@@ -307,6 +307,16 @@ const nextConfig: NextConfig = {
       //                                           hitting the old PDF URL.
       { source: "/save-admission",                                destination: "/admission",            permanent: true },
       { source: "/static/img/Mandatory-DIsclosure_AICTE.pdf",     destination: "/mandatory-disclosure", permanent: true },
+
+      // ─── GSC Performance report 2026-05-24 (zombie URL with CTR) ─
+      //
+      //   /contact-us  — surfaced in GSC at 257 impressions, 0.78% CTR
+      //                  over the 28-day window. URL is NOT in the current
+      //                  sitemap (the live equivalent is /contact). Sending
+      //                  a 301 collapses the duplicate listing and re-
+      //                  attributes the residual brand traffic to the
+      //                  canonical /contact page.
+      { source: "/contact-us",                                    destination: "/contact",              permanent: true },
     ];
   },
 

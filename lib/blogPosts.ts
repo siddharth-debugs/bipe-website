@@ -439,10 +439,14 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "8 min read",
     excerpt:
       "A 3-year BTEUP diploma gives you direct entry to the second year of B.Tech at AKTU colleges. The UPCET Lateral Entry exam, the AICTE 20% reservation, branch mapping, timing, costs — and when lateral entry is the right call versus a straight diploma career.",
+    // CTR-rewritten May 2026: was 531 imp / 0.75% CTR. "Pathway guide
+    // for diploma holders" was vague; new title leads with the
+    // concrete benefit ("Direct 2nd Year Admission") + year freshness
+    // signal.
     metaTitle:
-      "Diploma to B.Tech lateral entry in UP — AKTU pathway guide for diploma holders | BIPE",
+      "B.Tech Lateral Entry after Diploma 2026 — AKTU Direct 2nd Year Admission | BIPE",
     metaDescription:
-      "How a 3-year polytechnic diploma gets you directly into the second year of B.Tech via UPCET Lateral Entry at AKTU colleges. Eligibility, exam pattern, branch mapping, timing and the 20% AICTE-reserved seats.",
+      "Skip 1st year of B.Tech: BTEUP diploma holders get direct AKTU 2nd year admission via UPCET Lateral Entry. 20% AICTE-reserved seats, branch mapping, exam pattern, fees — and when it's worth doing vs starting a diploma career directly.",
     sections: [
       {
         type: "p",
@@ -1023,10 +1027,17 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "12 min read",
     excerpt:
       "पॉलिटेक्निक क्या है, कौन कर सकता है, कितने साल का होता है, कैसे आवेदन करें, फीस कितनी है, और 10वीं के बाद इंजीनियर बनने का सबसे सीधा रास्ता क्या है — एक हिन्दी गाइड Eastern UP और बिहार के परिवारों के लिए।",
+    // CTR-rewritten May 2026: was 5,910 impressions / 0.25% CTR over
+    // 28 days. The "गाइड" framing wasn't drawing clicks — searchers
+    // for "polytechnic kya hota hai" want a direct answer in the SERP
+    // snippet, not a "guide" promise. New title leads with the
+    // question + direct answer; description states the answer
+    // immediately ("10वीं के बाद 3 साल का diploma") instead of
+    // describing what the article covers.
     metaTitle:
-      "Polytechnic Kya Hai aur Kaise Kare — JEECUP 2026 हिन्दी गाइड | BIPE",
+      "Polytechnic Kya Hota Hai? 10वीं के बाद 3 साल का Diploma · पूरी जानकारी | BIPE",
     metaDescription:
-      "पॉलिटेक्निक क्या है हिन्दी में — पात्रता, JEECUP 2026 आवेदन प्रक्रिया, ब्रांच विकल्प, फीस, कैरियर। बीआईपीई वाराणसी (कोड 4455) — AICTE-approved डिप्लोमा इंजीनियरिंग के लिए संपूर्ण मार्गदर्शिका।",
+      "पॉलिटेक्निक 10वीं के बाद का 3 साल का AICTE-approved diploma course है — Mechanical, Electrical, Civil, CSE, Dairy की 5 branches। JEECUP entrance, ₹30,150/year fees, सरकारी नौकरी, B.Tech lateral entry — पूरी जानकारी हिन्दी में।",
     sections: [
       {
         type: "callout",
@@ -1385,9 +1396,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Polytechnic diploma (3 years) vs ITI certificate (1-2 years) — which is right after Class 10? Eligibility, fees, duration, pay-scale-after-passing, government-job pipelines, lateral-entry options. Honest comparison for UP / Bihar families.",
     metaTitle:
-      "Polytechnic vs ITI after Class 10 — eligibility, fees, jobs | BIPE",
+      "Polytechnic vs ITI after Class 10 — Which Pays More? 2026 Honest Comparison | BIPE",
     metaDescription:
-      "Polytechnic diploma vs ITI certificate — duration, eligibility, fees, starting pay, SSC JE / RRB JE / UPPCL eligibility for each. Honest UP / Bihar family guide. BIPE Varanasi (JEECUP 4455).",
+      "Polytechnic (3-year diploma) vs ITI (1-2 year certificate) after 10th — duration, fees, starting pay, government job eligibility, lateral entry to B.Tech. Honest UP/Bihar family guide with real BIPE alumni earnings.",
     sections: [
       {
         type: "callout",
@@ -1846,9 +1857,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Which government exams a 3-year BTE UP polytechnic diploma makes you eligible for — SSC JE, RRB JE, UPPCL JE, UP PWD, Indian Army Technical Entry, Indian Navy SSR/AA. Branch-by-branch eligibility, salary scales, preparation timeline. Written for first-generation engineering families.",
     metaTitle:
-      "Government jobs after polytechnic diploma — SSC JE, RRB JE, UPPCL | BIPE",
+      "Sarkari Naukri after Polytechnic Diploma 2026 · SSC JE, RRB JE, UPPCL ₹35-44k | BIPE",
     metaDescription:
-      "Polytechnic diploma government job guide 2026 — SSC JE (₹35-44k), RRB JE (Indian Railways), UPPCL JE (UP electrical), UP PWD, Army Technical Entry. Branch-wise eligibility, pay scales, prep timeline. BIPE Varanasi (JEECUP 4455).",
+      "After 3-year polytechnic diploma: SSC JE ₹35,400 basic, RRB JE Indian Railways, UPPCL JE (UP electrical), UP PWD, Army Technical Entry. Branch-wise exams + Year-3 preparation timeline. Real BIPE alumni examples.",
     sections: [
       {
         type: "callout",
