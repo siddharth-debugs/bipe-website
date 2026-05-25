@@ -816,7 +816,10 @@ body.no-motion .skeleton { animation: none; }
     0 22px 44px -16px rgba(10, 26, 63, 0.22),
     0 0 0 1px rgba(228, 226, 218, 0.5);
   overflow: hidden;
-  z-index: 1000;
+  /* 1101 so the dropdown menu floats above the admin drawer (1001) and
+     its overlay (1000). Radix portals to body, so a lower value would
+     paint the menu underneath the drawer. */
+  z-index: 1101;
   animation: bipe-select-in .14s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 @keyframes bipe-select-in {
