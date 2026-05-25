@@ -369,6 +369,15 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
       // from a private-competitor comparison surface). Decision-stage
       // page, belongs right next to "About BIPE" in the Main section.
       { to: "/why-bipe", label: "Why BIPE", hi: "BIPE क्यों" },
+      // /private-vs-government-polytechnic — the real comparison
+      // surface (Phase 2, 25 May 2026). Addresses the actual decision:
+      // government polytechnic seat at ~half the fee vs BIPE. Decision-
+      // stage page; sits next to "Why BIPE" in the Main section.
+      {
+        to: "/private-vs-government-polytechnic",
+        label: "Private vs Government",
+        hi: "प्राइवेट vs सरकारी",
+      },
       { to: "/chairman", label: "Chairman's Message", hi: "अध्यक्ष का संदेश" },
       { to: "/principal", label: "Principal's Message", hi: "प्रिंसिपल का संदेश" },
     ],

@@ -6,7 +6,8 @@ export type RouteKey =
   | "mandatoryDisclosure" | "aiPolicy"
   | "privacy" | "terms" | "antiRagging"
   | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar"
-  | "jeecupCounselling" | "whyBipe" | "aboutAffiliations";
+  | "jeecupCounselling" | "whyBipe" | "aboutAffiliations"
+  | "privateVsGovernment";
 
 /**
  * Canonical site URL.
@@ -329,6 +330,31 @@ export const ROUTES: Record<RouteKey, {
       "AICTE approved polytechnic Varanasi",
       "JEECUP 4455 polytechnic",
       "वाराणसी का सबसे अच्छा पॉलिटेक्निक",
+    ],
+  },
+  privateVsGovernment: {
+    path: "/private-vs-government-polytechnic",
+    // Phase 2 of the 25 May 2026 repositioning. /why-bipe became a
+    // category-leader brand page; this is the comparison surface that
+    // addresses the REAL competitive set for BIPE — government and
+    // aided polytechnics, not other private institutes. Keyword cluster
+    // here is materially larger: "government vs private polytechnic",
+    // "is private polytechnic worth the fees", "government polytechnic
+    // Varanasi admission" (intercept the comparison searchers), plus
+    // Hindi variants. FAQPage schema baked in for rich-result eligibility.
+    title: "Private vs Government Polytechnic Varanasi · The Honest Math 2026 | BIPE",
+    description: "Government Polytechnic Varanasi (~₹6,000-18,000/year) vs BIPE (AFRC ₹30,150/year) — what's identical (BTEUP diploma, JE eligibility, lateral entry) and where the fee delta goes (hostel, placement infrastructure, Dairy moat). Honest framework for 2026 admissions.",
+    keywords: [
+      "private vs government polytechnic",
+      "government vs private polytechnic",
+      "is private polytechnic worth it",
+      "private polytechnic worth the fees",
+      "government polytechnic Varanasi admission",
+      "BIPE vs government polytechnic",
+      "BTEUP government college vs private",
+      "polytechnic fees government vs private",
+      "सरकारी पॉलिटेक्निक vs प्राइवेट",
+      "प्राइवेट पॉलिटेक्निक worth the fees",
     ],
   },
   jeecupCounselling: {

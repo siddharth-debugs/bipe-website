@@ -329,7 +329,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               Approvals (consolidated 7-affiliation page) and Why BIPE
               (category-leader brand page). Both were route-live but
               unlinked. */}
-          <Col heading="About & Campus" items={[["About", "/about"], ["Affiliations & Approvals", "/about/affiliations"], ["Why BIPE", "/why-bipe"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Alumni", "/alumni"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
+          <Col heading="About & Campus" items={[["About", "/about"], ["Affiliations & Approvals", "/about/affiliations"], ["Why BIPE", "/why-bipe"], ["Private vs Government", "/private-vs-government-polytechnic"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Alumni", "/alumni"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
           {/* Compliances — 2026-05-20: added AI Policy (route exists,
               required reading for AI-content disclosure but had no nav
               entry). */}
