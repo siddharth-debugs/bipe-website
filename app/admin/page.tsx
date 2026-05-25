@@ -263,7 +263,7 @@ export default function LoginPage() {
             color: "var(--ink-4)",
           }}
         >
-          bipe.ac.in · admin
+          bipevns.org · admin
         </p>
       </div>
     </div>

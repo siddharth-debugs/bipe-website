@@ -9,24 +9,7 @@ export type RouteKey =
   | "jeecupCounselling" | "whyBipe" | "aboutAffiliations"
   | "privateVsGovernment";
 
-/**
- * Canonical site URL.
- *
- * Switched from https://www.bipevns.org → https://bipe.ac.in on
- * 2026-05-25. Vercel now 301-redirects every bipevns.org / www.bipevns.org
- * variant to bipe.ac.in, and this constant is what every canonical /
- * hreflang / og:url / sitemap / robots / JSON-LD ID is built from —
- * one swap cascades everywhere.
- *
- * The .ac.in TLD is restricted to recognised Indian educational
- * institutions and carries an E-E-A-T signal Google India weights
- * for queries like "polytechnic in Varanasi" or "diploma engineering
- * colleges UP". Worth a brief ranking dip during reattribution.
- *
- * Note: email addresses on the site stay at @bipevns.org — those
- * are independent mailboxes, not tied to the website TLD.
- */
-export const SITE_URL = "https://bipe.ac.in";
+export const SITE_URL = "https://www.bipevns.org";
 
 export const ROUTES: Record<RouteKey, {
   path: string;
@@ -255,7 +238,7 @@ export const ROUTES: Record<RouteKey, {
   },
   terms: {
     path: "/terms",
-    title: "Terms of Use — bipe.ac.in | BIPE Varanasi",
+    title: "Terms of Use — bipevns.org | BIPE Varanasi",
     description: "Terms governing the use of bipevns.org and BIPE digital services. Includes IT Rules 2021 grievance officer details.",
   },
   antiRagging: {
