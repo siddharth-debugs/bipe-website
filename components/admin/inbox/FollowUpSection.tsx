@@ -319,7 +319,10 @@ function FollowUpForm({
   onSaved: (fu: FollowUp) => void;
   onError: (msg: string | null) => void;
 }) {
-  const [medium, setMedium] = useState<FollowUpMedium>("call");
+  // Channel defaults to "call" — every BIPE follow-up so far has been a
+  // phone call, so we don't surface a picker. The model still accepts
+  // other mediums via the API for future use.
+  const medium: FollowUpMedium = "call";
   const [outcome, setOutcome] = useState<FollowUpOutcome>("");
   const [interest, setInterest] = useState("");
   const [remarks, setRemarks] = useState("");
@@ -385,26 +388,6 @@ function FollowUpForm({
         >
           <X size={15} />
         </button>
-      </div>
-
-      <div className="fup-field">
-        <label>Channel</label>
-        <div className="fup-medium-row">
-          {(Object.keys(MEDIUM_META) as FollowUpMedium[]).map((m) => {
-            const meta = MEDIUM_META[m];
-            return (
-              <button
-                key={m}
-                type="button"
-                onClick={() => setMedium(m)}
-                className={`fup-medium-btn${medium === m ? " is-active" : ""}`}
-              >
-                {meta.icon}
-                {meta.label}
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       <div className="fup-field">
