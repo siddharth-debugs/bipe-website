@@ -6,6 +6,14 @@
  * Required env (server-side, NOT prefixed with NEXT_PUBLIC_):
  *   BIPE_BACKEND_URL          base URL, e.g. https://api.bipevns.org/api/v1
  *   BIPE_INGEST_TOKEN         shared secret matching SUBMIT_INGEST_TOKEN on the backend
+ *
+ * NOTE on the api.bipevns.org reference (do not "clean up" during the
+ * website canonical migration to bipe.ac.in): the backend lives at
+ * api.bipevns.org behind Cloudflare SSL → EC2 origin (gunicorn).
+ * The subdomain stays on .org independent of the website canonical;
+ * it does NOT migrate with the website. Touching the env value
+ * without coordinating with the Django/EC2 deployment will break
+ * every form on the site.
  */
 
 type IngestKind = "apply" | "contact" | "enquiry" | "visit";
