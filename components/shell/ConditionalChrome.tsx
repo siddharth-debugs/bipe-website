@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { Nav } from "./Nav";
 import { Footer, type FooterContact } from "./Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
+import { WhatsAppFAB } from "./WhatsAppFAB";
 
 /**
  * The public site's Nav + Footer + scroll-reveal observer should NOT
@@ -35,6 +36,7 @@ export function ConditionalChrome({
       <Nav />
       <main>{children}</main>
       <Footer contact={contact} />
+      <WhatsAppFAB />
       <RevealObserver />
     </>
   );
