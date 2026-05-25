@@ -11,7 +11,7 @@
  * admin styles in admin.css carry the visual language).
  */
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   CalendarClock,
   Check,
@@ -107,13 +107,19 @@ export function FollowUpSection({ leadKey, submitterName, onUpdated }: Props) {
   const [err, setErr] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<number | null>(null);
 
-  const notify = useCallback(
-    (next: FollowUp[]) => {
-      setItems(next);
-      onUpdated?.(next);
-    },
-    [onUpdated],
-  );
+  // Keep the latest `onUpdated` in a ref so the load effect doesn't
+  // retrigger every time the parent re-renders (which would cause an
+  // infinite fetch loop — load() calls onUpdated → parent setState →
+  // new prop identity → effect runs again).
+  const onUpdatedRef = useRef(onUpdated);
+  useEffect(() => {
+    onUpdatedRef.current = onUpdated;
+  }, [onUpdated]);
+
+  const notify = useCallback((next: FollowUp[]) => {
+    setItems(next);
+    onUpdatedRef.current?.(next);
+  }, []);
 
   const load = useCallback(async () => {
     if (!leadKey) return;
