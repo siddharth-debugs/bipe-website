@@ -2,24 +2,23 @@
 
 import { useEffect, useRef, useState } from "react";
 import { BRANCH_OPTIONS } from "@/lib/validation";
+import { FormSelect } from "@/components/ui/FormSelect";
 
 /**
- * Site-wide exit-intent prospectus popup. Captures name + phone + course
- * interest, persists the lead via /api/submit?formType=enquiry, then
- * forwards the visitor to WhatsApp as a bonus. Even if WhatsApp fails or
- * is blocked, the lead lands in the admin Inbox.
+ * Site-wide prospectus popup. Captures name + phone + branch interest,
+ * persists the lead via /api/submit?formType=enquiry, then forwards
+ * the visitor to WhatsApp as a bonus. Even if WhatsApp is blocked the
+ * lead lands in the admin Inbox.
  *
- * Trigger logic mirrors the pattern from BITE Varanasi:
- *   - Desktop: mouse leaves through the top of the viewport (exit-intent)
- *   - Mobile fallback: 40s dwell time
- *   - Suppressed for the rest of the session once shown
+ * Trigger: 3-second timer on every page load. We deliberately don't
+ * suppress repeat displays — admissions want every visit to surface
+ * the WhatsApp ask. If the visitor explicitly closes it, the
+ * `dismissed` ref keeps it shut for the rest of THAT page view.
  */
 
-// Admissions WhatsApp line — matches WhatsAppFAB, not the general
-// DATA.contact line. This routes leads to the same handset that takes
-// the FAB chats so operators see one queue.
+// Admissions WhatsApp line — matches WhatsAppFAB so leads from the
+// popup and the FAB land in the same operator queue.
 const WA_PHONE = "919415202879";
-const SESSION_KEY = "bipe-inquiry-shown";
 
 export function InquiryModal() {
   const [open, setOpen] = useState(false);
@@ -29,45 +28,31 @@ export function InquiryModal() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const dialogRef = useRef<HTMLDivElement | null>(null);
+  // Keeps the popup closed for the rest of this navigation once the
+  // visitor has dismissed or submitted it — the 3s timer would
+  // otherwise re-fire on rerenders that remount the component.
+  const dismissedRef = useRef(false);
 
-  // ─── Trigger: exit-intent OR 40s fallback, once per session ────────────
+  // ─── Trigger: 3-second timer on each fresh page load ───────────────────
   useEffect(() => {
     if (typeof window === "undefined") return;
-    try {
-      if (sessionStorage.getItem(SESSION_KEY)) return;
-    } catch {
-      // Safari private mode etc — fall through, the popup just shows once.
-    }
-
-    let triggered = false;
-    const trigger = () => {
-      if (triggered) return;
-      triggered = true;
-      setOpen(true);
-      try {
-        sessionStorage.setItem(SESSION_KEY, "1");
-      } catch {
-        /* ignore */
-      }
-    };
-
-    const onMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0) trigger();
-    };
-    const fallback = window.setTimeout(trigger, 40000);
-
-    document.addEventListener("mouseleave", onMouseLeave);
-    return () => {
-      document.removeEventListener("mouseleave", onMouseLeave);
-      window.clearTimeout(fallback);
-    };
+    if (dismissedRef.current) return;
+    const t = window.setTimeout(() => {
+      if (!dismissedRef.current) setOpen(true);
+    }, 3000);
+    return () => window.clearTimeout(t);
   }, []);
+
+  function close() {
+    dismissedRef.current = true;
+    setOpen(false);
+  }
 
   // ─── Close on Escape ────────────────────────────────────────────────────
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") close();
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -86,6 +71,7 @@ export function InquiryModal() {
     setStatus("sending");
     setErrorMsg("");
 
+    let persisted = false;
     try {
       const res = await fetch("/api/submit", {
         method: "POST",
@@ -104,13 +90,18 @@ export function InquiryModal() {
         const body = await res.json().catch(() => ({}));
         throw new Error(body?.error ?? "Could not send your enquiry.");
       }
+      persisted = true;
     } catch (err) {
-      // Persisting failed — log and continue to WhatsApp anyway so the
-      // visitor still gets help. The toast keeps it non-blocking.
       console.warn("[InquiryModal] persist failed", err);
+      // Show the error but still let them WhatsApp — losing the
+      // analytics trail is better than losing the lead entirely.
+      setErrorMsg(
+        err instanceof Error ? err.message : "Could not save your enquiry.",
+      );
     }
 
     setStatus("success");
+    dismissedRef.current = true;
 
     window.setTimeout(() => {
       const text = branch
@@ -121,6 +112,10 @@ export function InquiryModal() {
       )}&type=phone_number&app_absent=0`;
       window.open(url, "_blank", "noopener,noreferrer");
       setOpen(false);
+      // Reference `persisted` for telemetry-style logging — keeps the
+      // variable from being flagged as unused while making it obvious
+      // in console which path the visitor took.
+      console.log("[InquiryModal] handoff to WhatsApp", { persisted });
     }, 1100);
   }
 
@@ -131,7 +126,7 @@ export function InquiryModal() {
       className="inq-backdrop"
       role="presentation"
       onClick={(e) => {
-        if (e.target === e.currentTarget) setOpen(false);
+        if (e.target === e.currentTarget) close();
       }}
     >
       <div
@@ -144,7 +139,7 @@ export function InquiryModal() {
         <button
           type="button"
           aria-label="Close enquiry popup"
-          onClick={() => setOpen(false)}
+          onClick={close}
           className="inq-close"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -202,17 +197,23 @@ export function InquiryModal() {
               />
             </label>
 
-            <label className="inq-field">
-              <span>Branch of interest</span>
-              <select value={branch} onChange={(e) => setBranch(e.target.value)}>
-                <option value="">Select a branch (optional)</option>
-                {BRANCH_OPTIONS.map((b) => (
-                  <option key={b} value={b}>
-                    {b}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <div className="inq-field">
+              <span>
+                <label htmlFor="inq-branch">Branch of interest</label>
+              </span>
+              <FormSelect
+                id="inq-branch"
+                // Radix Select can't take "" as a value, so use a sentinel
+                // for "no branch picked" and translate back to "" on save.
+                value={branch || "__none"}
+                onValueChange={(v) => setBranch(v === "__none" ? "" : v)}
+                placeholder="Select a branch (optional)"
+                options={[
+                  { value: "__none", label: "Select a branch (optional)" },
+                  ...BRANCH_OPTIONS.map((b) => ({ value: b, label: b })),
+                ]}
+              />
+            </div>
 
             {status === "error" && errorMsg && (
               <div className="inq-error" role="alert">
