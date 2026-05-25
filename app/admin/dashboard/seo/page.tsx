@@ -756,9 +756,10 @@ export default async function SeoPositionsPage() {
         </h2>
         <p style={{ color: "var(--ink-2)", fontSize: 13, marginBottom: 14, lineHeight: 1.55 }}>
           Domains that rank for the same keywords as bipevns.org. Relevance ≈ keyword-profile
-          similarity (0–1). The big polytechnic competitors locally are{" "}
-          <code>kashiit.ac.in</code>, <code>sheatcollege.com</code>, and{" "}
-          <code>vnitm.co</code> — already covered on /why-bipe.{" "}
+          similarity (0–1). Internal SEO-intel only — these competitor names are intentionally{" "}
+          <strong>not</strong> mentioned on any public-facing page (we don&rsquo;t hand smaller
+          private polytechnics free brand exposure inside our funnel). The real competitive set
+          is government &amp; aided polytechnics — addressed on /private-vs-government-polytechnic.{" "}
           <code>ggpvaranasi.in</code> (Government Girls Polytechnic) is the source of our
           ranking confusion for &ldquo;government girls polytechnic varanasi&rdquo;.
         </p>

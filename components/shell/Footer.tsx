@@ -327,8 +327,8 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
           <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["JEECUP Counselling", "/jeecup-counselling"], ["JEECUP from Bihar", "/jeecup-from-bihar"], ["Apply now", "/apply"]]} />
           {/* About & Campus — 2026-05-20: added Affiliations &
               Approvals (consolidated 7-affiliation page) and Why BIPE
-              (comparison vs Kashi / VNITM / SHEAT). Both were route-
-              live but unlinked. */}
+              (category-leader brand page). Both were route-live but
+              unlinked. */}
           <Col heading="About & Campus" items={[["About", "/about"], ["Affiliations & Approvals", "/about/affiliations"], ["Why BIPE", "/why-bipe"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Alumni", "/alumni"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
           {/* Compliances — 2026-05-20: added AI Policy (route exists,
               required reading for AI-content disclosure but had no nav

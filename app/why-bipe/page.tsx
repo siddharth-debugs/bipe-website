@@ -9,82 +9,98 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * /why-bipe — comparison-intent capture page.
+ * /why-bipe — category-leader brand page.
  *
- * Phase 1.5 keyword analysis (May 2026) identified the "best /
- * top / private polytechnic college in Varanasi" cluster as
- * comparison-intent — high conversion, low competition, no Varanasi
- * polytechnic currently owns a dedicated comparison surface. This
- * page targets that gap.
+ * REPOSITIONED 25 May 2026.
  *
- * Tone: honest, specific, no astroturfing. Each row of the
- * comparison block names competitors directly (Kashi Institute,
- * SHEAT, VNITM, Government Girls Polytechnic) and acknowledges
- * what they do well alongside what BIPE does differently.
+ * The first version of this page (launched 20 May 2026) named several
+ * private Varanasi polytechnics directly and framed BIPE as one option
+ * among peers. That framing was strategically wrong for two reasons:
+ *
+ *   (1) BIPE has led private polytechnic admissions in Varanasi for
+ *       6+ consecutive years. Category leaders don't legitimise
+ *       smaller players by naming them — they define the standard
+ *       and let others compare themselves.
+ *
+ *   (2) The actual competitive set for an applicant family is NOT
+ *       other private polytechnics — it's government and aided
+ *       polytechnics (huge fee gap, "sarkari" prestige myth). That
+ *       comparison lives on its own page (/private-vs-government-
+ *       polytechnic) where the framing is honest and the keyword
+ *       cluster is materially larger.
+ *
+ * This page therefore answers: "Why has BIPE been the chosen private
+ * polytechnic in Eastern UP for 16 years?" — purely through evidence,
+ * not comparison. Every pillar links to a source-of-truth page on
+ * this site (or a public registry) so every claim is auditable.
+ *
+ * Tone: confident, plain-spoken, evidence-first. We do not dunk on
+ * anyone — we simply stop mentioning them.
  */
 
-interface ComparisonAnchor {
+interface Pillar {
   topic: string;
-  bipe: string;
-  competitorContext: string;
+  position: string;
+  verifyLabel: string;
+  verifyPath: string;
 }
 
-const ANCHORS: ComparisonAnchor[] = [
+const PILLARS: Pillar[] = [
   {
     topic: "Affiliation & approval",
-    bipe:
-      "BTE UP Affiliated · AICTE Permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026 · AISHE registered. Verifiable on the AICTE dashboard.",
-    competitorContext:
-      "All five private polytechnics in Varanasi are AICTE-approved and BTE UP affiliated. This is the baseline; verify on each institute's /approvals page.",
+    position:
+      "BTE UP Affiliated · AICTE Permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026 · AISHE registered. The documentary trail is published — nothing on this page is unverifiable.",
+    verifyLabel: "See affiliations & approvals",
+    verifyPath: "/about/affiliations",
   },
   {
     topic: "Tuition fee transparency",
-    bipe:
-      "AFRC-approved ₹30,150 / academic year. Published on /fees, no capitation, no hidden charges. Hostel and mess are billed separately and disclosed.",
-    competitorContext:
-      "Many private polytechnics quote a base fee but add capitation, donation, or 'development fund' charges at admission. Always ask for the AFRC-approved fee structure before paying.",
+    position:
+      "AFRC-approved ₹30,150 per academic year. No capitation, no donation, no 'development fund'. Hostel and mess are billed separately and disclosed line by line, in writing, before you pay.",
+    verifyLabel: "See fee structure",
+    verifyPath: "/fees",
   },
   {
-    topic: "Five branches offered",
-    bipe:
-      "Civil, Computer Science & Engineering, Electrical, Mechanical (Production), and the rare Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh.",
-    competitorContext:
-      "Kashi Institute of Technology overlaps on Civil / CSE / Mech / Electrical and also runs D.Pharm. SHEAT and VNITM cover the same four engineering branches. Dairy Engineering is BIPE's structural differentiator.",
+    topic: "Five branches — including the Dairy moat",
+    position:
+      "Civil, Computer Science & Engineering, Electrical, Mechanical (Production), and the rare Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh. A working-dairy lab and the Amul / Mother Dairy / NDDB recruiter pipeline that comes with it.",
+    verifyLabel: "Explore the five branches",
+    verifyPath: "/courses",
   },
   {
-    topic: "On-campus hostel",
-    bipe:
-      "Boys' hostel on the Phoolpur campus — furnished rooms, on-campus mess, 24×7 security, resident warden. Parent hotline rings the warden's desk directly.",
-    competitorContext:
-      "SHEAT and Kashi Institute also offer hostel options. Government Girls Polytechnic Varanasi has girls' hostel (BIPE does not). For out-of-Varanasi families, ask each institute to confirm room availability before counselling.",
+    topic: "On-campus hostel for Eastern UP & Bihar families",
+    position:
+      "Boys' hostel on the Phoolpur campus — furnished rooms, on-campus mess, 24×7 security, resident warden. The parent hotline rings the warden's desk directly. For families more than two hours from Varanasi, this is the difference between a doable diploma and an impossible one.",
+    verifyLabel: "See hostel & facilities",
+    verifyPath: "/hostel",
   },
   {
-    topic: "Placement record",
-    bipe:
-      "1,000+ verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and others. Year-wise alumni list with names and recruiters is on /alumni.",
-    competitorContext:
-      "Verify any institute's placement claims by asking for: (1) named alumni list, (2) recruiter logos with year attribution, (3) on-campus drive history. /placements links to BIPE's full record.",
+    topic: "Placement record on the public record",
+    position:
+      "1,000+ verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty others. Year-wise named alumni list with named recruiters — not logos, not testimonials, the actual list.",
+    verifyLabel: "See the named alumni list",
+    verifyPath: "/alumni",
   },
   {
     topic: "Lateral entry to B.Tech",
-    bipe:
-      "16 BIPE alumni from 2019-2025 batches have moved to B.Tech via AKTU and other UP state universities — full table on /blog/diploma-to-btech-lateral-entry-up-aktu.",
-    competitorContext:
-      "Lateral entry to B.Tech is open to graduates of every BTE UP-affiliated polytechnic. The pathway is determined by AKTU/state CET, not by your diploma institute.",
+    position:
+      "16 BIPE alumni from 2019-2025 batches have moved to B.Tech via AKTU and other UP state universities — full named table, current colleges, current branches. The diploma is a launchpad, not a ceiling.",
+    verifyLabel: "Read the lateral-entry guide",
+    verifyPath: "/blog/diploma-to-btech-lateral-entry-up-aktu",
   },
   {
-    topic: "Campus & catchment",
-    bipe:
-      "Six acres at Phoolpur, ~14 km from Varanasi Cantt station. Free shuttle for visits. 550+ students from twelve Eastern UP districts plus Bihar.",
-    competitorContext:
-      "Kashi Institute is on Lahartara road, VNITM is at Pandeypur, SHEAT is on Sarnath bypass. Each has its own catchment. Phoolpur is more rural — quieter campus, longer commute from city.",
+    topic: "Six-acre Phoolpur campus",
+    position:
+      "Six acres at Phoolpur, ~14 km from Varanasi Cantt station. Free shuttle for visits during admission season. 550+ students from twelve Eastern UP districts plus Bihar — a real residential community, not a day-scholar building on a busy road.",
+    verifyLabel: "Plan a campus visit",
+    verifyPath: "/visit",
   },
   {
-    topic: "Founding & ownership",
-    bipe:
-      "Founded 2010 by the Purwanchal Educational Trust. 16 years on record, AISHE submitted annually, mandatory disclosure published per AICTE Annexure-18.",
-    competitorContext:
-      "Founding year, ownership and disclosure are public for every approved institute. Insist on seeing the AICTE EoA letter (current year) and the mandatory disclosure before payment.",
+    topic: "16 years on record · Purwanchal Educational Trust",
+    position:
+      "Founded 2010 by Purwanchal Educational Trust. AISHE submitted annually. AICTE Annexure-18 mandatory disclosure published every academic year. 1,000+ alumni network. The founding documents and current-year disclosure are public — every claim above is auditable, today, by you.",
+    verifyLabel: "Read the mandatory disclosure",
+    verifyPath: "/mandatory-disclosure",
   },
 ];
 
@@ -161,22 +177,22 @@ export default function Page() {
         />
 
         <div className="container" style={{ position: "relative" }}>
-          <div className="eyebrow">Comparison · honest positioning · 2026</div>
-          <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
-            Why BIPE — and where{" "}
+          <div className="eyebrow">BIPE · the positioning · 2026</div>
+          <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "24ch" }}>
+            16 years.{" "}
             <span
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              other Varanasi polytechnics
+              1,000+ placements.
             </span>{" "}
-            might fit you better.
+            The private polytechnic Eastern UP keeps choosing.
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-            Varanasi has at least five private polytechnic colleges plus the government girls&rsquo;
-            institute. This page lays out — honestly — what BIPE does differently across eight
-            decision dimensions, names the competitors you should compare against, and finishes
-            with the seven questions every family should ask each institute before paying a fee.
+            Banaras Institute of Polytechnic &amp; Engineering has been the chosen private
+            polytechnic for families across Eastern UP and Bihar since 2010. Eight pillars
+            below — every claim verifiable on the public record, every link going to the
+            source document on this site or the relevant registry.
           </p>
           <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
             <Link href="/visit" className="btn btn-primary btn-lg">
@@ -190,148 +206,29 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 2. WHO YOU'RE COMPARING AGAINST                                          */}
-      {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--paper-2)" }}>
-        <div className="container">
-          <div className="eyebrow">The local landscape</div>
-          <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "24ch" }}>
-            Who you&rsquo;re actually choosing{" "}
-            <span
-              className="serif"
-              style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
-            >
-              between.
-            </span>
-          </h2>
-          <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "62ch" }}>
-            We&rsquo;ll name names because pretending the others don&rsquo;t exist insults your
-            intelligence. Five private polytechnics in or near Varanasi serve overlapping
-            catchments. Each does some things well; each has trade-offs. Below — the substantive
-            differences.
-          </p>
-          <div
-            className="bipe-grid-3"
-            style={{
-              marginTop: 32,
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: 18,
-            }}
-          >
-            {[
-              {
-                name: "Kashi Institute of Technology",
-                domain: "kashiit.ac.in",
-                location: "Lahartara, Varanasi",
-                note:
-                  "Largest private polytechnic in Varanasi by brand-recall. Offers Civil, CSE, Mech, Electrical, and D.Pharm. Strong urban location, premium fee.",
-              },
-              {
-                name: "VNITM (Varanasi Narayan Institute)",
-                domain: "vnitm.co",
-                location: "Pandeypur, Varanasi",
-                note:
-                  "Private polytechnic with full branch overlap. Smaller cohort, urban campus.",
-              },
-              {
-                name: "SHEAT College of Polytechnic",
-                domain: "sheatcollege.com",
-                location: "Sarnath bypass, Varanasi",
-                note:
-                  "Multi-programme campus with polytechnic + other streams. Strong career-guidance content marketing.",
-              },
-              {
-                name: "Government Girls Polytechnic Varanasi",
-                domain: "ggpvaranasi.in",
-                location: "Varanasi",
-                note:
-                  "State-funded, girls-only. Lower fees, government recruiter pipeline, but no admission for boys.",
-              },
-              {
-                name: "Microtek Group of Institutions",
-                domain: "microtek.ac.in",
-                location: "Varanasi",
-                note:
-                  "Multi-programme private group covering management, IT, and polytechnic streams.",
-              },
-              {
-                name: "BIPE — Banaras Institute of Polytechnic & Engineering",
-                domain: "bipevns.org",
-                location: "Phoolpur, Varanasi",
-                note:
-                  "Six-acre rural campus, AFRC tuition ₹30,150 / year, on-campus boys' hostel, Dairy Engineering moat, 1,000+ verified placements. This page is BIPE&rsquo;s pitch.",
-              },
-            ].map((c) => (
-              <article
-                key={c.domain}
-                className="card"
-                style={{ padding: 22 }}
-              >
-                <div
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 10,
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "var(--brand)",
-                  }}
-                >
-                  {c.domain}
-                </div>
-                <h3 className="bipe-h3" style={{ fontSize: 18, marginTop: 8, lineHeight: 1.3 }}>
-                  {c.name}
-                </h3>
-                <div
-                  style={{
-                    marginTop: 6,
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 11,
-                    letterSpacing: "0.1em",
-                    color: "var(--ink-3)",
-                  }}
-                >
-                  {c.location}
-                </div>
-                <p
-                  style={{
-                    marginTop: 12,
-                    color: "var(--ink-2)",
-                    fontSize: 14,
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {c.note}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================== */}
-      {/* 3. EIGHT DECISION DIMENSIONS                                            */}
+      {/* 2. EIGHT PILLARS                                                        */}
       {/* ====================================================================== */}
       <section className="section">
         <div className="container">
-          <div className="eyebrow">Eight things that matter</div>
+          <div className="eyebrow">Eight pillars · all auditable</div>
           <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "26ch" }}>
-            The dimensions{" "}
+            What we&rsquo;ve built —{" "}
             <span
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              we&rsquo;d compare on.
+              and how to verify it.
             </span>
           </h2>
           <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "62ch" }}>
-            For each dimension below — BIPE&rsquo;s specific position, and the honest local context
-            (what other Varanasi polytechnics offer, where to verify, what to watch out for).
+            Polytechnic admissions are too important for vague language. Each pillar below
+            states BIPE&rsquo;s specific position and links to the source document. If you
+            can&rsquo;t verify it, we shouldn&rsquo;t be claiming it.
           </p>
           <div style={{ marginTop: 36, display: "grid", gap: 22 }}>
-            {ANCHORS.map((a, i) => (
+            {PILLARS.map((p, i) => (
               <article
-                key={a.topic}
+                key={p.topic}
                 className="card"
                 style={{
                   padding: 28,
@@ -356,7 +253,7 @@ export default function Page() {
                 </div>
                 <div>
                   <h3 className="bipe-h3" style={{ fontSize: 22, lineHeight: 1.25 }}>
-                    {a.topic}
+                    {p.topic}
                   </h3>
                   <div
                     style={{
@@ -387,39 +284,17 @@ export default function Page() {
                         margin: 0,
                       }}
                     >
-                      {a.bipe}
+                      {p.position}
                     </p>
                   </div>
-                  <div
-                    style={{
-                      marginTop: 14,
-                      padding: "14px 18px",
-                      background: "var(--paper-2)",
-                      borderRadius: 8,
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 10,
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "var(--ink-3)",
-                        marginBottom: 6,
-                      }}
+                  <div style={{ marginTop: 14 }}>
+                    <Link
+                      href={p.verifyPath}
+                      className="btn btn-ghost"
+                      style={{ fontSize: 14 }}
                     >
-                      The local context
-                    </div>
-                    <p
-                      style={{
-                        color: "var(--ink-2)",
-                        fontSize: 14,
-                        lineHeight: 1.65,
-                        margin: 0,
-                      }}
-                    >
-                      {a.competitorContext}
-                    </p>
+                      {p.verifyLabel} <ArrowIcon size={14} />
+                    </Link>
                   </div>
                 </div>
               </article>
@@ -429,24 +304,24 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 4. QUESTIONS TO ASK EVERY INSTITUTE                                      */}
+      {/* 3. QUESTIONS EVERY FAMILY SHOULD ASK                                     */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container">
-          <div className="eyebrow">Before you pay any fee</div>
+          <div className="eyebrow">Smart-buyer guide</div>
           <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "30ch" }}>
             Seven questions to ask{" "}
             <span
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              every institute you visit.
+              before paying any polytechnic admission fee.
             </span>
           </h2>
           <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "62ch" }}>
-            Including BIPE. We are not afraid of these. If an institute hedges on any of the
-            seven, treat that as data — not because the institute is necessarily bad, but
-            because clarity at the asking stage matters more than charm.
+            Including BIPE. If you ask us these and we hedge, treat that as data. Clarity at
+            the asking stage matters more than charm — every answer we owe you is in writing
+            somewhere on this site, and these seven questions are the index to find it.
           </p>
           <ol
             style={{
@@ -494,7 +369,7 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 5. CTA                                                                  */}
+      {/* 4. CTA                                                                  */}
       {/* ====================================================================== */}
       <section className="section" style={{ paddingTop: 56 }}>
         <div className="container">
@@ -547,7 +422,7 @@ export default function Page() {
               }}
             >
               <div>
-                <div className="eyebrow">Ready to compare in person?</div>
+                <div className="eyebrow">Ready to see it in person?</div>
                 <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "22ch" }}>
                   Walk the labs.{" "}
                   <span
@@ -566,8 +441,8 @@ export default function Page() {
                     maxWidth: "46ch",
                   }}
                 >
-                  We run a free shuttle from Varanasi Cantt every Saturday during admission
-                  season. Walk through the workshops, sit in on a class, eat at the mess. No
+                  Free shuttle from Varanasi Cantt every Saturday during admission season.
+                  Walk through the workshops, sit in on a class, eat at the mess. No
                   enrolment pressure — we want your decision to be informed.
                 </p>
               </div>
@@ -580,7 +455,7 @@ export default function Page() {
                   Book a campus visit <ArrowIcon size={16} />
                 </Link>
                 <a
-                  href="https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20am%20comparing%20Varanasi%20polytechnic%20options."
+                  href="https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20want%20to%20know%20more%20about%20the%20Phoolpur%20campus%20and%202026%20admissions."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-lg"

@@ -365,9 +365,9 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
       // page (AICTE / BTEUP / AISHE / JEECUP / Purwanchal Educational
       // Trust / etc.) shipped earlier this session, had no nav link.
       { to: "/about/affiliations", label: "Affiliations & Approvals", hi: "मान्यता" },
-      // /why-bipe added 2026-05-20 — head-on comparison vs Kashi /
-      // VNITM / SHEAT polytechnics. Decision-stage page, belongs
-      // right next to "About BIPE" in the Main section.
+      // /why-bipe — category-leader brand page (repositioned 2026-05-25
+      // from a private-competitor comparison surface). Decision-stage
+      // page, belongs right next to "About BIPE" in the Main section.
       { to: "/why-bipe", label: "Why BIPE", hi: "BIPE क्यों" },
       { to: "/chairman", label: "Chairman's Message", hi: "अध्यक्ष का संदेश" },
       { to: "/principal", label: "Principal's Message", hi: "प्रिंसिपल का संदेश" },

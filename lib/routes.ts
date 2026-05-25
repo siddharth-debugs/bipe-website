@@ -304,22 +304,30 @@ export const ROUTES: Record<RouteKey, {
   },
   whyBipe: {
     path: "/why-bipe",
-    // Phase 1.5 (May 2026) comparison-intent capture page.
-    // Targets the "best polytechnic college in varanasi" cluster
-    // (50/mo + 30/mo "top polytechnic" + 30/mo "private polytechnic"
-    // ≈ 110/mo total) — small volume per query but extremely high
-    // conversion (these are last-step-before-deciding searchers).
-    // Honest positioning vs. local competitors (Kashi / VNITM /
-    // SHEAT) — no astroturfing, no fake superlatives.
-    title: "Why BIPE · vs Other Polytechnic Colleges in Varanasi · 2026",
-    description: "Honest comparison of BIPE Varanasi against other private polytechnic colleges in the city — BTE UP affiliation, AFRC tuition, on-campus hostel, JEECUP 4455, recruiter pipeline, Dairy Engineering moat.",
+    // Repositioned 25 May 2026 from "BIPE vs local private polytechnics"
+    // (which gave smaller competitors free brand exposure inside BIPE's
+    // own funnel) to a category-leader brand page. BIPE has led private
+    // polytechnic admissions in Varanasi for 6+ consecutive years; the
+    // page now asserts that position via evidence rather than comparing
+    // down. The actual competitive set — government & aided polytechnics
+    // — lives on /private-vs-government-polytechnic.
+    //
+    // Keyword cluster targeted here: the "best / top / private polytechnic
+    // in Varanasi" head queries (≈110/mo combined per Semrush) plus the
+    // long-tail BIPE-brand queries that surface in GSC. Dropped all
+    // "BIPE vs [named competitor]" keywords — those compete for a tiny
+    // volume cluster and leak SERP exposure to competitors.
+    title: "Why BIPE · 16 Years · 1,000+ Placements · AFRC ₹30,150 | Varanasi",
+    description: "Why families across Eastern UP have chosen BIPE since 2010 — BTE UP affiliated, AICTE Permanent ID 1-488233171, AFRC tuition ₹30,150/year, on-campus hostel, 1,000+ verified placements at Mahindra, Tata Steel, Indian Railways. Eight auditable pillars.",
     keywords: [
       "best polytechnic college in Varanasi",
       "top polytechnic college in Varanasi",
       "private polytechnic college in Varanasi",
-      "BIPE vs Kashi Institute of Technology",
-      "BIPE vs SHEAT polytechnic",
-      "BIPE vs VNITM",
+      "BIPE Varanasi admission 2026",
+      "BIPE Phoolpur polytechnic",
+      "polytechnic with hostel in Varanasi",
+      "AICTE approved polytechnic Varanasi",
+      "JEECUP 4455 polytechnic",
       "वाराणसी का सबसे अच्छा पॉलिटेक्निक",
     ],
   },

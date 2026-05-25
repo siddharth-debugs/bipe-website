@@ -164,11 +164,15 @@ export const SEO_SNAPSHOT: SeoSnapshot = {
 
   // Top 10 by competitor relevance score. kashiit.ac.in is the most
   // significant — they have 560 organic keywords and 20,340 estimated
-  // monthly traffic, 3 of which overlap with us. They're already
-  // covered in /why-bipe. ggpvaranasi.in is interesting: Government
-  // Girls Polytechnic Varanasi, which is why we rank #36 for
-  // "government girls polytechnic varanasi" — entity confusion that
-  // /about/affiliations should help disambiguate.
+  // monthly traffic, 3 of which overlap with us. INTERNAL SEO-INTEL
+  // ONLY — we do NOT name private competitors on any public page
+  // (repositioned 25 May 2026: category leaders define the standard,
+  // they don't legitimise smaller players by mentioning them). The
+  // real competitive set is government & aided polytechnics — see
+  // /private-vs-government-polytechnic. ggpvaranasi.in is interesting:
+  // Government Girls Polytechnic Varanasi, which is why we rank #36
+  // for "government girls polytechnic varanasi" — entity confusion
+  // that /about/affiliations should help disambiguate.
   competitors: [
     { domain: "ambitionit.in",   relevance: 0.25, commonKeywords: 3, theirOrganicKeywords: 38,   theirOrganicTraffic: 1822  },
     { domain: "ggpvaranasi.in",  relevance: 0.23, commonKeywords: 3, theirOrganicKeywords: 41,   theirOrganicTraffic: 638   },
