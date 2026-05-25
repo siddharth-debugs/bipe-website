@@ -458,11 +458,13 @@ function FollowUpForm({
         </label>
         <FormSelect
           id="fup-interest"
-          value={interest}
-          onValueChange={setInterest}
+          // Radix Select rejects "" as an item value, so we send a sentinel
+          // and map it back to "" inside onValueChange.
+          value={interest || "__none"}
+          onValueChange={(v) => setInterest(v === "__none" ? "" : v)}
           placeholder="Pick a branch…"
           options={[
-            { value: "", label: "— no change —" },
+            { value: "__none", label: "— no change —" },
             ...BRANCH_OPTIONS.map((b) => ({ value: b, label: b })),
           ]}
         />
