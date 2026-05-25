@@ -5,6 +5,7 @@ import { Nav } from "./Nav";
 import { Footer, type FooterContact } from "./Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { WhatsAppFAB } from "./WhatsAppFAB";
+import { InquiryModal } from "./InquiryModal";
 
 /**
  * The public site's Nav + Footer + scroll-reveal observer should NOT
@@ -37,6 +38,7 @@ export function ConditionalChrome({
       <main>{children}</main>
       <Footer contact={contact} />
       <WhatsAppFAB />
+      <InquiryModal />
       <RevealObserver />
     </>
   );

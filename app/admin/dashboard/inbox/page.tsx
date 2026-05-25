@@ -9,6 +9,7 @@ import {
   GraduationCap,
   Mail,
   CalendarDays,
+  MessageCircle,
   Inbox as InboxIcon,
 } from "lucide-react";
 
@@ -16,6 +17,7 @@ import {
   api,
   type ApplySubmission,
   type ContactSubmission,
+  type EnquirySubmission,
   type VisitSubmission,
   type Paginated,
   type SubmissionStatus,
@@ -39,19 +41,21 @@ import {
 
 // ─── Types ────────────────────────────────────────────────────────────────
 
-type Kind = "apply" | "contact" | "visit";
+type Kind = "apply" | "contact" | "enquiry" | "visit";
 
 type AnyRow =
   | (ApplySubmission & { kind: "apply" })
   | (ContactSubmission & { kind: "contact" })
+  | (EnquirySubmission & { kind: "enquiry" })
   | (VisitSubmission & { kind: "visit" });
 
 const KIND_META: Record<
   Kind,
-  { label: string; Icon: typeof GraduationCap; tone: "brand" | "accent" | "warning" }
+  { label: string; Icon: typeof GraduationCap; tone: "brand" | "accent" | "warning" | "success" }
 > = {
   apply: { label: "Apply", Icon: GraduationCap, tone: "brand" },
   contact: { label: "Contact", Icon: Mail, tone: "accent" },
+  enquiry: { label: "Enquiry", Icon: MessageCircle, tone: "success" },
   visit: { label: "Visit", Icon: CalendarDays, tone: "warning" },
 };
 
@@ -123,6 +127,20 @@ function detailFor(row: AnyRow): DetailField[] {
       { section: "Technical", label: "User agent", value: row.user_agent, kind: "tech" },
     ];
   }
+  if (row.kind === "enquiry") {
+    return [
+      { section: "Contact", label: "Phone", value: row.phone, mono: true },
+      { section: "Contact", label: "Email", value: row.email },
+
+      { section: "Enquiry", label: "Branch interest", value: row.branch || "Not specified" },
+      { section: "Enquiry", label: "Source", value: row.source || "inquiry-modal" },
+
+      { section: "Message", label: "Message", value: row.message, kind: "note" },
+
+      { section: "Technical", label: "Source IP", value: row.source_ip, kind: "tech" },
+      { section: "Technical", label: "User agent", value: row.user_agent, kind: "tech" },
+    ];
+  }
   // visit
   return [
     { section: "Contact", label: "Phone", value: row.phone, mono: true },
@@ -164,7 +182,7 @@ function detailSnippet(row: AnyRow): React.ReactNode {
       </div>
     );
   }
-  if (row.kind === "contact") {
+  if (row.kind === "contact" || row.kind === "enquiry") {
     return (
       <div
         style={{
@@ -203,7 +221,7 @@ export default function InboxPage() {
   const searchParams = useSearchParams();
   const initialKind = (() => {
     const k = searchParams.get("kind");
-    if (k === "apply" || k === "contact" || k === "visit") return k;
+    if (k === "apply" || k === "contact" || k === "enquiry" || k === "visit") return k;
     return "all" as const;
   })();
 
@@ -222,13 +240,16 @@ export default function InboxPage() {
     setLoading(true);
     setErr(null);
     try {
-      // Always pull all three so we can flip kind/status/branch instantly
+      // Always pull all four kinds so we can flip filters instantly
       // without refetching. Submissions volume is small (a polytechnic).
-      const [a, c, v] = await Promise.all([
+      const [a, c, e, v] = await Promise.all([
         api<Paginated<ApplySubmission>>("/submissions/apply/", {
           searchParams: { page_size: PER_KIND_FETCH, ordering: "-created_at" },
         }),
         api<Paginated<ContactSubmission>>("/submissions/contact/", {
+          searchParams: { page_size: PER_KIND_FETCH, ordering: "-created_at" },
+        }),
+        api<Paginated<EnquirySubmission>>("/submissions/enquiry/", {
           searchParams: { page_size: PER_KIND_FETCH, ordering: "-created_at" },
         }),
         api<Paginated<VisitSubmission>>("/submissions/visit/", {
@@ -238,6 +259,7 @@ export default function InboxPage() {
       const merged: AnyRow[] = [
         ...a.results.map((r) => ({ ...r, kind: "apply" as const })),
         ...c.results.map((r) => ({ ...r, kind: "contact" as const })),
+        ...e.results.map((r) => ({ ...r, kind: "enquiry" as const })),
         ...v.results.map((r) => ({ ...r, kind: "visit" as const })),
       ];
       merged.sort((x, y) => (y.created_at || "").localeCompare(x.created_at || ""));
@@ -256,7 +278,7 @@ export default function InboxPage() {
 
   // ─── Derived: per-kind counts (unfiltered, for chip badges) ─────────────
   const kindCounts = useMemo(() => {
-    const out: Record<Kind, number> = { apply: 0, contact: 0, visit: 0 };
+    const out: Record<Kind, number> = { apply: 0, contact: 0, enquiry: 0, visit: 0 };
     for (const r of rows) out[r.kind]++;
     return out;
   }, [rows]);
@@ -274,7 +296,7 @@ export default function InboxPage() {
           r.phone,
           r.email,
           r.branch,
-          (r as ContactSubmission).message ?? "",
+          (r as ContactSubmission | EnquirySubmission).message ?? "",
           (r as ApplySubmission).parent ?? "",
           r.notes,
         ]

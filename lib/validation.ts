@@ -184,6 +184,27 @@ export const contactFormSchema = z.object({
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 // ===================================================================
+// ENQUIRY FORM — site-wide prospectus popup (lightweight lead capture)
+// ===================================================================
+// Used by components/shell/InquiryModal.tsx. Much shorter than the
+// contact form: name + phone are required, everything else optional.
+export const enquiryFormSchema = z.object({
+  formType: z.literal("enquiry"),
+  name: nameField,
+  phone: phoneField,
+  email: optionalEmail,
+  branch: z
+    .enum(BRANCH_OPTIONS)
+    .optional()
+    .or(z.literal("" as unknown as (typeof BRANCH_OPTIONS)[number])),
+  source: z.string().trim().max(80).optional().or(z.literal("")),
+  message: z.string().trim().max(1000).optional().or(z.literal("")),
+  consent: z.boolean().optional(),
+});
+
+export type EnquiryFormData = z.infer<typeof enquiryFormSchema>;
+
+// ===================================================================
 // VISIT FORM — book a campus visit
 // ===================================================================
 export const VISIT_PARTY_OPTIONS = [

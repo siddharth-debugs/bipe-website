@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import {
   applyFormSchema,
   contactFormSchema,
+  enquiryFormSchema,
   visitFormSchema,
 } from "@/lib/validation";
 import { forwardToBackend } from "@/lib/backend";
@@ -58,6 +59,33 @@ export async function POST(req: Request) {
       visitDate: d.visit === "yes" ? d.visitDate : "",
       visitTime: d.visit === "yes" ? d.visitTime : "",
       notes: d.notes,
+    });
+    return r.ok
+      ? NextResponse.json({ ok: true, id: r.id })
+      : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
+  }
+
+  if (formType === "enquiry") {
+    const result = enquiryFormSchema.safeParse(body);
+    if (!result.success) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error: "Validation failed",
+          fieldErrors: result.error.flatten().fieldErrors,
+        },
+        { status: 400 },
+      );
+    }
+    const d = result.data;
+    const r = await forwardToBackend("enquiry", {
+      name: d.name,
+      phone: d.phone,
+      email: d.email ?? "",
+      branch: d.branch ?? "",
+      source: d.source || "inquiry-modal",
+      message: d.message ?? "",
+      consent: d.consent ?? false,
     });
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })

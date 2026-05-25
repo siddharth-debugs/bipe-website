@@ -286,6 +286,11 @@ export interface ContactSubmission extends BaseSubmission {
   message: string;
 }
 
+export interface EnquirySubmission extends BaseSubmission {
+  source: string;
+  message: string;
+}
+
 export interface VisitSubmission extends BaseSubmission {
   visit_date: string;
   visit_time: string;
@@ -312,6 +317,7 @@ export interface SummaryByForm {
 export interface Summary {
   apply: SummaryByForm;
   contact: SummaryByForm;
+  enquiry: SummaryByForm;
   visit: SummaryByForm;
 }
 

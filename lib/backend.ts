@@ -8,7 +8,7 @@
  *   BIPE_INGEST_TOKEN         shared secret matching SUBMIT_INGEST_TOKEN on the backend
  */
 
-type IngestKind = "apply" | "contact" | "visit";
+type IngestKind = "apply" | "contact" | "enquiry" | "visit";
 
 const HEADER = "X-Bipe-Submit-Token";
 
