@@ -205,6 +205,7 @@ export function LeadDrawer({
               <FollowUpSection
                 leadKey={group.leadKey}
                 submitterName={group.name}
+                defaultInterest={derivedInterest || group.branches[0] || ""}
                 onUpdated={handleFollowUpsUpdated}
               />
             </section>

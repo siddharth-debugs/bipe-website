@@ -38,10 +38,15 @@ import {
   type LeadStatus,
 } from "@/lib/admin/api";
 import { BRANCH_OPTIONS } from "@/lib/validation";
+import { FormSelect } from "@/components/ui/FormSelect";
 
 interface Props {
   leadKey: string;
   submitterName: string;
+  /** Pre-selected branch — usually whatever the prospect picked on
+   *  their latest submission, so the operator only changes it when the
+   *  conversation drifts to a different course. */
+  defaultInterest?: string;
   onUpdated?: (followUps: FollowUp[]) => void;
 }
 
@@ -100,7 +105,12 @@ const STATUS_META: Record<
   spam: { label: "Spam" },
 };
 
-export function FollowUpSection({ leadKey, submitterName, onUpdated }: Props) {
+export function FollowUpSection({
+  leadKey,
+  submitterName,
+  defaultInterest,
+  onUpdated,
+}: Props) {
   const [items, setItems] = useState<FollowUp[]>([]);
   const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
@@ -195,6 +205,7 @@ export function FollowUpSection({ leadKey, submitterName, onUpdated }: Props) {
         <FollowUpForm
           leadKey={leadKey}
           submitterName={submitterName}
+          defaultInterest={defaultInterest}
           onCancel={() => setOpen(false)}
           onSaved={handleCreated}
           onError={setErr}
@@ -309,12 +320,14 @@ export function FollowUpSection({ leadKey, submitterName, onUpdated }: Props) {
 function FollowUpForm({
   leadKey,
   submitterName,
+  defaultInterest,
   onCancel,
   onSaved,
   onError,
 }: {
   leadKey: string;
   submitterName: string;
+  defaultInterest?: string;
   onCancel: () => void;
   onSaved: (fu: FollowUp) => void;
   onError: (msg: string | null) => void;
@@ -324,7 +337,10 @@ function FollowUpForm({
   // other mediums via the API for future use.
   const medium: FollowUpMedium = "call";
   const [outcome, setOutcome] = useState<FollowUpOutcome>("");
-  const [interest, setInterest] = useState("");
+  // Pre-fill with whatever the prospect last picked, so most operators
+  // can leave this alone and only change it if the conversation drifts
+  // to a different branch.
+  const [interest, setInterest] = useState<string>(defaultInterest ?? "");
   const [remarks, setRemarks] = useState("");
   const [nextAt, setNextAt] = useState<string>(""); // datetime-local string
   const [saving, setSaving] = useState(false);
@@ -435,20 +451,21 @@ function FollowUpForm({
 
       <div className="fup-field">
         <label htmlFor="fup-interest">
-          Set branch interest <span className="fup-opt">(optional)</span>
+          Branch interest{" "}
+          <span className="fup-opt">
+            {defaultInterest ? "(prefilled from submission)" : "(optional)"}
+          </span>
         </label>
-        <select
+        <FormSelect
           id="fup-interest"
           value={interest}
-          onChange={(e) => setInterest(e.target.value)}
-        >
-          <option value="">— no change —</option>
-          {BRANCH_OPTIONS.map((b) => (
-            <option key={b} value={b}>
-              {b}
-            </option>
-          ))}
-        </select>
+          onValueChange={setInterest}
+          placeholder="Pick a branch…"
+          options={[
+            { value: "", label: "— no change —" },
+            ...BRANCH_OPTIONS.map((b) => ({ value: b, label: b })),
+          ]}
+        />
       </div>
 
       <div className="fup-field">
