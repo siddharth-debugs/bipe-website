@@ -35,7 +35,7 @@ const SECTIONS: Section[] = [
         <p>
           Telephone: <a href={`tel:${DATA.contact.phone}`}>{DATA.contact.phone}</a> · Alt <a href={`tel:${DATA.contact.phone2}`}>{DATA.contact.phone2}</a><br />
           Email: <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a><br />
-          Web: <a href="https://bipevns.org">https://bipevns.org</a>
+          Web: <a href="https://bipe.ac.in">https://bipe.ac.in</a>
         </p>
       </>
     ),
