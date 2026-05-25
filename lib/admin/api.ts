@@ -321,6 +321,71 @@ export interface Summary {
   visit: SummaryByForm;
 }
 
+// ─── FollowUp (admin-logged contact attempts) ──────────────────────────────
+//
+// Lives alongside submissions. One FollowUp belongs to a phone-deduped
+// "lead group" via `leadKey` (normalised 10-digit phone). The backend
+// auto-derives `status` from `outcome` via OUTCOME_TO_STATUS — operators
+// pick an outcome, the status follows.
+export type FollowUpMedium =
+  | "call"
+  | "whatsapp"
+  | "sms"
+  | "email"
+  | "in_person"
+  | "other";
+
+export type FollowUpOutcome =
+  | ""
+  | "left_message"
+  | "followup_needed"
+  | "no_answer"
+  | "busy"
+  | "switched_off"
+  | "not_reachable"
+  | "wrong_number"
+  | "interested"
+  | "converted"
+  | "not_interested"
+  | "spam"
+  | "other";
+
+export type LeadStatus =
+  | ""
+  | "new"
+  | "in_progress"
+  | "closed_win"
+  | "closed_loss"
+  | "spam";
+
+export interface FollowUp {
+  id: number;
+  leadKey: string;
+  medium: FollowUpMedium;
+  outcome: FollowUpOutcome;
+  status: Exclude<LeadStatus, "new">;
+  interestCourse: string;
+  remarks: string;
+  nextActionAt: string | null;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const OUTCOME_TO_STATUS: Record<Exclude<FollowUpOutcome, "">, Exclude<LeadStatus, "" | "new">> = {
+  left_message: "in_progress",
+  followup_needed: "in_progress",
+  no_answer: "in_progress",
+  busy: "in_progress",
+  switched_off: "in_progress",
+  not_reachable: "in_progress",
+  interested: "in_progress",
+  other: "in_progress",
+  converted: "closed_win",
+  not_interested: "closed_loss",
+  wrong_number: "spam",
+  spam: "spam",
+};
+
 export interface MeRole {
   id: number;
   name: string;
