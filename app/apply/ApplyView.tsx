@@ -151,7 +151,7 @@ export function ApplyView() {
 
   // ============ FORM ============
   return (
-    <section className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 32 }}>
+    <section id="apply-form" className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 32, scrollMarginTop: 80 }}>
       <div className="container" style={{ maxWidth: 820 }}>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div style={{

@@ -12,6 +12,8 @@ const ApplyView = dynamic(
   () => import("./ApplyView").then((m) => m.ApplyView)
 );
 
+import { ScrollToForm } from "./ScrollToForm";
+
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("apply"); }
 
 const AFTER: { n: string; title: string; body: string }[] = [
@@ -117,7 +119,13 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 2. THREE-CARD STRIP — "what happens after submit"                       */}
+      {/* 2. THE FORM (client) — wrapped in editorial frame inside ApplyView      */}
+      {/* ====================================================================== */}
+      <ScrollToForm />
+      <ApplyView />
+
+      {/* ====================================================================== */}
+      {/* 3. THREE-CARD STRIP — "what happens after submit"                       */}
       {/* ====================================================================== */}
       <section className="section-tight" style={{ background: "var(--paper-2)" }}>
         <div className="container">
@@ -160,11 +168,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-      {/* ====================================================================== */}
-      {/* 3. THE FORM (client) — wrapped in editorial frame inside ApplyView      */}
-      {/* ====================================================================== */}
-      <ApplyView />
 
       {/* ====================================================================== */}
       {/* 4. WHAT WE WILL DISCUSS ON THE CALL                                     */}
