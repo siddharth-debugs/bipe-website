@@ -85,7 +85,22 @@ export const DATA: DataShape = {
   contact: {
     phone: "+91-9198646464",
     phone2: "+91-9198767676",
-    email: "admissions@bipevns.org",
+    // PRIMARY OFFICIAL EMAIL — migrated 25 May 2026 from
+    // admissions@bipevns.org → info@bipe.ac.in. The .ac.in TLD is
+    // restricted to recognised Indian educational institutions; using
+    // info@bipe.ac.in as the front-door contact reinforces the
+    // institutional credibility on every page that surfaces a mailto.
+    //
+    // DATA.contact.email cascades to: /contact, /placements (3x),
+    // /hostel, /mandatory-disclosure, /courses, /alumni, footer, and
+    // the Schema.org Organization contactPoint. Single source of truth.
+    //
+    // FUNCTIONAL ALIASES below remain on @bipevns.org for now — those
+    // are statutory committee / role-specific mailboxes (grievance,
+    // POSH IC, anti-ragging, SC/ST, PWD, principal, accounts) that
+    // operationally route to specific staff. Migrate per-committee
+    // when the corresponding mailbox is set up on the new domain.
+    email: "info@bipe.ac.in",
     emailGrievance: "grievance@bipevns.org",
     emailPrincipal: "principal@bipevns.org",
     emailAntiRagging: "antiragging@bipevns.org",

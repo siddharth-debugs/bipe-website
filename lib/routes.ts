@@ -96,7 +96,7 @@ export const ROUTES: Record<RouteKey, {
   contact: {
     path: "/contact",
     title: "Contact BIPE Varanasi · Phone, Email, Address",
-    description: "Call +91-9198646464 · admissions@bipevns.org · Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206.",
+    description: "Call +91-9198646464 · info@bipe.ac.in · Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206.",
   },
   placements: {
     path: "/placements",

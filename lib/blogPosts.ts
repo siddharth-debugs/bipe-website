@@ -952,7 +952,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Choose a branch that closed earlier</strong>. Branches at BIPE 4455 close in roughly this order: CSE first, then Mech Production, then Electrical, Civil, Dairy. If your rank doesn't make CSE, try Electrical or Civil first.",
           "<strong>Use later counselling rounds</strong>. Rank-holders who confirmed in Round 1 sometimes upgrade or drop in Round 2/3; seats reopen. The spot round picks up the rest.",
           "<strong>Treat lateral entry as a Plan B</strong>. If you complete Class 12 with PCM and the rank gap is wide, lateral entry into Year 2 the following year is a real route — used by many BIPE alumni.",
-          "<strong>Talk to admissions directly</strong>. Counselling rules occasionally allow institute-level choices outside the central allotment. The team at +91-9198646464 or admissions@bipevns.org can walk you through what's possible given your specific rank and branch preferences.",
+          "<strong>Talk to admissions directly</strong>. Counselling rules occasionally allow institute-level choices outside the central allotment. The team at +91-9198646464 or info@bipe.ac.in can walk you through what's possible given your specific rank and branch preferences.",
         ],
       },
       {
@@ -1818,7 +1818,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "<em>Last updated 20 May 2026 against the current BTE UP gazette. If you spot a subject we've missed or one that was renamed in the latest revision, write to <a href=\"mailto:admissions@bipevns.org\">admissions@bipevns.org</a> — we update branch pages on a rolling basis.</em>",
+          "<em>Last updated 20 May 2026 against the current BTE UP gazette. If you spot a subject we've missed or one that was renamed in the latest revision, write to <a href=\"mailto:info@bipe.ac.in\">info@bipe.ac.in</a> — we update branch pages on a rolling basis.</em>",
       },
       {
         type: "callout",
