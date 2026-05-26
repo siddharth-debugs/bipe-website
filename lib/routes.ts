@@ -11,6 +11,8 @@ export type RouteKey =
   | "polytechnicInMirzapur" | "polytechnicInJaunpur" | "polytechnicInGhazipur"
   | "polytechnicInAzamgarh" | "polytechnicInMau" | "polytechnicInBhadohi"
   | "polytechnicInChandauli" | "polytechnicInBallia"
+  | "polytechnicInSonbhadra" | "polytechnicInSultanpur"
+  | "polytechnicInPratapgarh" | "polytechnicInGorakhpur"
   | "governmentPolytechnicEasternUp" | "aidedPolytechnicUp" | "jeecupCutoff2026";
 
 export const SITE_URL = "https://www.bipevns.org";
@@ -438,6 +440,67 @@ export const ROUTES: Record<RouteKey, {
       "RRB JE Ballia polytechnic",
       "hostel polytechnic for Ballia students",
       "बलिया पॉलिटेक्निक",
+    ],
+  },
+
+  // ─── Phase 4b · 4 more catchments (26 May 2026) ────────────────
+  // Extends programmatic-SEO coverage to the wider Eastern UP + Awadh
+  // belt: Sonbhadra (Vindhya industrial), Sultanpur + Pratapgarh
+  // (Awadh region, hostel-dependent), Gorakhpur (far east, large city).
+  polytechnicInSonbhadra: {
+    path: "/polytechnic-in-sonbhadra",
+    title: "Polytechnic in Sonbhadra · BIPE Varanasi · 115 km, JEECUP 4455",
+    description: "Polytechnic for Sonbhadra students — BIPE Phoolpur is 115 km via NH-39. 5 branches incl. Electrical for NTPC / UPPCL pipeline (Sonbhadra's industrial belt). On-campus boys' hostel. AFRC ₹30,150/year. JEECUP 4455.",
+    keywords: [
+      "polytechnic in Sonbhadra",
+      "diploma college Sonbhadra",
+      "BIPE Sonbhadra",
+      "polytechnic near Renukoot Robertsganj",
+      "NTPC Sonbhadra polytechnic",
+      "UPPCL diploma engineering",
+      "सोनभद्र पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInSultanpur: {
+    path: "/polytechnic-in-sultanpur",
+    title: "Polytechnic in Sultanpur · BIPE Varanasi · 165 km, JEECUP 4455",
+    description: "Polytechnic for Sultanpur students (Awadh region) — BIPE Phoolpur is 165 km via NH-128. 5 BTE UP branches incl. rare Dairy Engineering for agricultural-overlap households. On-campus hostel. AFRC ₹30,150/year.",
+    keywords: [
+      "polytechnic in Sultanpur",
+      "diploma college Sultanpur",
+      "BIPE Sultanpur",
+      "polytechnic near Sultanpur Awadh",
+      "Awadh region diploma engineering",
+      "Sultanpur Jaunpur polytechnic line",
+      "सुल्तानपुर पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInPratapgarh: {
+    path: "/polytechnic-in-pratapgarh",
+    title: "Polytechnic in Pratapgarh · BIPE Varanasi · 170 km, JEECUP 4455",
+    description: "Polytechnic for Pratapgarh students (mango / sugarcane belt) — BIPE Phoolpur is 170 km via NH-128. 5 branches incl. Dairy Engineering for agricultural-overlap households + Mechanical for Army TES / RRB JE. AFRC ₹30,150/year.",
+    keywords: [
+      "polytechnic in Pratapgarh",
+      "diploma college Pratapgarh",
+      "BIPE Pratapgarh",
+      "polytechnic near Pratapgarh",
+      "Pratapgarh mango belt diploma",
+      "Awadh region polytechnic",
+      "प्रतापगढ़ पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInGorakhpur: {
+    path: "/polytechnic-in-gorakhpur",
+    title: "Polytechnic in Gorakhpur · BIPE Varanasi · 205 km, JEECUP 4455",
+    description: "Polytechnic for Gorakhpur students — BIPE Phoolpur is 205 km via NH-29. 5 BTE UP branches incl. rare Dairy Engineering. On-campus boys' hostel essential at this distance. AFRC ₹30,150/year. JEECUP 4455.",
+    keywords: [
+      "polytechnic in Gorakhpur",
+      "diploma college Gorakhpur",
+      "BIPE Gorakhpur",
+      "polytechnic near Gorakhpur Junction",
+      "Purvanchal polytechnic diploma",
+      "RRB JE Gorakhpur polytechnic",
+      "गोरखपुर पॉलिटेक्निक",
     ],
   },
 

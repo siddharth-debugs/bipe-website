@@ -634,6 +634,278 @@ export const CATCHMENTS: Catchment[] = [
         "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you specifically want Dairy Engineering; (d) you want the documented 1,000+ alumni placement record across 44 recruiters. /private-vs-government-polytechnic has the wider framework.",
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "sonbhadra",
+    town: "Sonbhadra",
+    townHindi: "सोनभद्र",
+    state: "Uttar Pradesh",
+    distanceKm: 115,
+    roadTime: "~3 hours via NH-39 / NH-7 through Mirzapur",
+    railTime: "~3 hours to Varanasi via Renukoot-Shaktinagar line",
+    nearestStation: "Robertsganj (RBJ) — district HQ",
+    highways: "NH-39 (Renukoot–Mirzapur) joining NH-19 to Varanasi and Phoolpur",
+    econProfile:
+      "Industrial belt district in the Vindhya hills — home to NTPC Singrauli's largest thermal power complex, Hindalco aluminium smelter, Renusagar Power, and significant coal mining. The most heavily industrialised district in Eastern UP. Career aspirations skew strongly toward technical-engineering roles in power, mining, and heavy industry.",
+    whyBipeReasons: [
+      {
+        headline: "Branch portfolio matches Sonbhadra's industrial gravity",
+        body: "Sonbhadra's economy is dominated by power generation (NTPC, Renusagar), aluminium (Hindalco), and coal mining. BIPE's Mechanical (Production), Electrical, and Civil branches feed directly into the JE-cadre roles these industries hire from. Sonbhadra students who plan to return home and work at NTPC/Hindalco/Renusagar are exactly the diploma pipeline these companies recruit.",
+      },
+      {
+        headline: "Hostel access is essential at 115 km",
+        body: "Sonbhadra is 115 km from Phoolpur — about 3 hours one-way. Daily commute is impossible. The on-campus boys' hostel makes the diploma practical: furnished rooms, mess, 24×7 security, resident warden. Weekend home-visits via the Renukoot-Mirzapur route are workable.",
+      },
+      {
+        headline: "Dairy + Civil for the tribal-belt rural blocks",
+        body: "Sonbhadra has significant tribal population (Gond, Kharwar communities) and an agricultural base outside the industrial corridor. BIPE's Dairy Engineering programme — one of only 4 BTE UP-affiliated Dairy diplomas in the state — and Civil branch serve students from these rural blocks who target agriculture-overlap or state-PWD careers.",
+      },
+      {
+        headline: "UP Post-Matric Scholarship coverage is meaningful here",
+        body: "Sonbhadra has a high proportion of SC, ST, and EWS households. The UP Post-Matric Scholarship covers BIPE's AFRC-approved tuition in full for eligible candidates. BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Sonbhadra students typically falls to ₹4,000-10,000/year — comparable to or below government polytechnic figures.",
+      },
+    ],
+    branchAngle:
+      "Electrical Engineering for the NTPC / Renusagar / UPPCL substation pipeline (Sonbhadra's prime career anchor); Mechanical (Production) for Hindalco aluminium plant + Northern Coalfields recruitment; Civil for state PWD and the broader infrastructure work in the Vindhya region; CSE for central-government IT cadre routes; Dairy for the agricultural-overlap rural blocks.",
+    localContext:
+      "Sonbhadra has Government Polytechnic Sonbhadra (Robertsganj) and a few smaller private options serving the district. Government polytechnic seats are rank-competitive given the strong industrial demand for technical diploma holders. BIPE serves Sonbhadra families who can't secure their preferred branch locally, who specifically want Dairy Engineering, or who want a denser placement-cell pipeline that includes private-industry recruiters alongside the regional government pathway.",
+    transitNarrative:
+      "From Sonbhadra, the Renukoot-Mirzapur road via NH-39 is the primary route — ~3 hours by bus or private vehicle. Trains via Robertsganj station to Varanasi (3 hours) are an alternative; check the Renukoot-Mirzapur line for direct services. From Varanasi Cantt to Phoolpur, standard 14-km final leg by shared auto or BIPE shuttle. Plan an overnight for the first visit — door-to-door is 4-4.5 hours.",
+    faqs: [
+      {
+        q: "Does BIPE prepare students for jobs at NTPC, Hindalco, and other Sonbhadra industries?",
+        a: "BIPE's career-counselling cell runs structured prep for the JE-cadre exams (SSC JE, RRB JE, UPPCL JE) that feed into NTPC's technical workforce + the broader power/mining sector. While BIPE isn't formally tied to any single Sonbhadra industry, the diploma + JE-prep + named-recruiter placement pipeline directly applies. Several BIPE alumni from the Vindhya region work at NTPC, Northern Coalfields, and UPPCL substations.",
+      },
+      {
+        q: "How long is the journey from Sonbhadra to BIPE?",
+        a: "Door-to-door is ~4-4.5 hours: 3 hours road or rail to Varanasi Cantt + 35-45 min Cantt-to-Phoolpur leg. Hostel residence is essential; daily commute is not viable. For the first campus visit, plan an overnight stay — we can help arrange a hostel-trial during the visit.",
+      },
+      {
+        q: "How does BIPE compare with Government Polytechnic Sonbhadra?",
+        a: "Both BTE UP-affiliated, identical diploma certificate. Government Polytechnic Sonbhadra (Robertsganj) has lower fees and is a strong choice if your rank confidently secures the branch you want. BIPE's edge for Sonbhadra students: 5 branches including Dairy Engineering (not commonly available locally), documented 1,200+ placement record, on-campus boys' hostel essential at this distance, named faculty mentors. See /private-vs-government-polytechnic for the framework.",
+      },
+      {
+        q: "Will the UP Post-Matric Scholarship apply for Sonbhadra students at BIPE?",
+        a: "Yes — the scholarship is portable across UP for eligible SC / ST / OBC / Minority / EWS candidates regardless of home district. Sonbhadra has a high proportion of SC + ST + EWS households, so scholarship eligibility is particularly relevant. BIPE's office walks every applicant through the Samaj Kalyan portal application during admission.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across Sonbhadra district (Robertsganj, Duddhi, Obra, Renukoot blocks) have placed at NTPC, UPPCL, Indian Railways, Mahindra and Asian Paints across recent cohorts. Named year-wise list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Sonbhadra (Robertsganj)",
+      description:
+        "Sonbhadra has its own BTE UP-affiliated government polytechnic at Robertsganj. Standard UP government polytechnic fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Given the strong industrial demand in the district, JEECUP cutoffs at this institute can run sharp for popular branches.",
+      whenGovernment:
+        "Government Polytechnic Sonbhadra is the natural choice if your JEECUP rank confidently secures the branch you want in the industry alignment you target (Electrical for NTPC/UPPCL, Mechanical for Hindalco). Day-scholar from Robertsganj is feasible for students living in the district HQ.",
+      whenBipe:
+        "BIPE wins for Sonbhadra students when: (a) your rank doesn't safely secure the branch you want at GP Sonbhadra; (b) you want Dairy Engineering for the agricultural-overlap rural blocks; (c) you're from outer Sonbhadra (Duddhi, Naugarh) and need hostel anyway; (d) you want the documented 1,200+ alumni placement record that includes private-industry recruiters alongside government employers.",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "sultanpur",
+    town: "Sultanpur",
+    townHindi: "सुल्तानपुर",
+    state: "Uttar Pradesh",
+    distanceKm: 165,
+    roadTime: "~4 hours via NH-128 / NH-31 through Pratapgarh",
+    railTime: "~3 hours 30 minutes to Varanasi Cantt via Sultanpur-Jaunpur line",
+    nearestStation: "Sultanpur Junction (SLN)",
+    highways: "NH-128 (Sultanpur–Pratapgarh–Allahabad) and NH-31 connecting to NH-19 corridor",
+    econProfile:
+      "Awadh-region district anchored by Sultanpur city — administrative + agricultural. The Gomti riverside district has significant agricultural production, growing handloom-textile activity, and a culture of government-job aspiration similar to neighbouring Pratapgarh and Faizabad. Many families target central-government technical cadres via the diploma route.",
+    whyBipeReasons: [
+      {
+        headline: "The Awadh-region diploma pipeline most families overlook",
+        body: "Sultanpur is in the Awadh region, geographically closer to Lucknow (160 km north) than to Varanasi. But Lucknow's top government polytechnics (GP Lucknow, GP Kanpur) require 280-300+ JEECUP marks for popular branches — rank-competitive beyond what most Sultanpur applicants achieve. BIPE Phoolpur is a structurally better fit for the wider rank band, with the trade-off of a 165 km distance (hostel-essential, which Sultanpur families typically need anyway given the Lucknow-distance economics).",
+      },
+      {
+        headline: "Hostel is non-negotiable at this distance",
+        body: "Sultanpur is 165 km from Phoolpur — about 4 hours one-way. Daily commute is structurally impossible. BIPE's on-campus boys' hostel is the practical answer for any Sultanpur student attending any polytechnic in the Varanasi catchment.",
+      },
+      {
+        headline: "5 branches including the Dairy moat",
+        body: "Sultanpur is a strong agricultural district with significant dairy and sugarcane activity. BIPE's Dairy Engineering programme — one of 4 BTE UP-affiliated Dairy diplomas in the entire state — channels these households into Amul / Mother Dairy / Parag / NDDB recruiters. Most Sultanpur-accessible polytechnics don't offer this branch.",
+      },
+      {
+        headline: "AFRC ₹30,150 + scholarship eligibility = real affordability",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship covers tuition in full for eligible SC / ST / OBC / Minority / EWS candidates. For most Sultanpur families with mid-income agriculture-based households, net out-of-pocket falls to ₹4,000-10,000/year — comparable to government polytechnic figures.",
+      },
+    ],
+    branchAngle:
+      "Civil for state PWD and the Bharatmala corridor through the Awadh region; Mechanical (Production) for Indian Railways RRB JE (the Sultanpur-Faizabad-Lucknow line is a major recruitment corridor); Electrical for UPPCL JE; CSE for central-government IT cadre exams; Dairy for the agricultural-overlap rural households.",
+    localContext:
+      "Sultanpur has Government Polytechnic Sultanpur and a small private polytechnic ecosystem. The government polytechnic is the natural first choice for cost-binding families with strong-enough JEECUP rank. Many Sultanpur students who don't secure their preferred branch locally either go to the larger Allahabad / Lucknow government polytechnics (more rank-competitive) or to private polytechnics with hostel residence — BIPE Phoolpur is the structural fit for the latter.",
+    transitNarrative:
+      "Sultanpur Junction has frequent express trains to Varanasi Cantt — 3.5 hours typical. State-roadways buses via Pratapgarh and Jaunpur take ~4 hours. From Cantt to Phoolpur is the standard 14-km final leg by shared auto or BIPE shuttle. Door-to-door Sultanpur to BIPE is about 4.5-5 hours. Plan an overnight stay for the first visit; the BIPE office can help with hostel-trial arrangements.",
+    faqs: [
+      {
+        q: "Sultanpur is closer to Lucknow than Varanasi — why BIPE instead of GP Lucknow?",
+        a: "Government Polytechnic Lucknow is one of UP's top-tier polytechnics — JEECUP cutoffs for CSE and Mechanical require 280-300+ marks, putting it out of reach for most Sultanpur applicants without a top-rank score. BIPE's wider rank band makes it accessible. The distance to BIPE (165 km) is comparable to Lucknow (160 km), so the geography isn't a deciding factor — the rank-band fit is.",
+      },
+      {
+        q: "How long is the journey from Sultanpur to BIPE Phoolpur?",
+        a: "Door-to-door is ~4.5-5 hours: 3.5 hours train (Sultanpur Junction → Varanasi Cantt) + 35-45 min Cantt-to-Phoolpur leg. Hostel residence is essential. Weekend home-visits during semesters are workable on the Sultanpur-Varanasi rail line.",
+      },
+      {
+        q: "Will UP Post-Matric Scholarship apply across-district for Sultanpur students?",
+        a: "Yes — the scholarship is portable across UP for eligible SC / ST / OBC / Minority / EWS candidates regardless of home district. BIPE's office assists every applicant with the Samaj Kalyan portal application at admission. Net tuition after scholarship clear typically falls to ₹4,000-10,000/year for eligible candidates.",
+      },
+      {
+        q: "How does BIPE compare with Government Polytechnic Sultanpur?",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Sultanpur has lower fees and is a strong choice if you have a confident rank, want a standard engineering branch, and live in or near Sultanpur city. BIPE's edge: 5 branches (incl. rare Dairy Engineering), on-campus hostel for outer-district students, documented 1,200+ placement record. See /private-vs-government-polytechnic.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across the Sultanpur belt have placed at Mahindra, Indian Railways, UPPCL, Asian Paints and Amul across multiple cohorts. Year-wise named list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Sultanpur",
+      description:
+        "Sultanpur has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
+      whenGovernment:
+        "Government Polytechnic Sultanpur is the natural choice if your rank secures the branch you want and you live in Sultanpur city or nearby blocks. The lower fee structure + day-scholar option is the cost-binding family's optimal path.",
+      whenBipe:
+        "BIPE wins for Sultanpur students when: (a) your rank doesn't safely secure the branch you want at the local government polytechnic; (b) you specifically want Dairy Engineering for the agricultural-overlap; (c) you're going to need hostel anywhere outside Sultanpur city anyway — BIPE has it on-campus; (d) you want the documented 1,200+ alumni placement record across diverse recruiters.",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "pratapgarh",
+    town: "Pratapgarh",
+    townHindi: "प्रतापगढ़",
+    state: "Uttar Pradesh",
+    distanceKm: 170,
+    roadTime: "~4 hours via NH-128 / NH-31 corridor",
+    railTime: "~3 hours 30 minutes to Varanasi Cantt via Pratapgarh-Allahabad line",
+    nearestStation: "Pratapgarh Junction (PBH)",
+    highways: "NH-128 and NH-31 connecting Pratapgarh through Sultanpur or Allahabad to Varanasi",
+    econProfile:
+      "Awadh-region agricultural district anchored by mango cultivation (Pratapgarh is one of UP's largest mango-producing districts) and a strong sugarcane belt. The district has produced significant numbers of central-government and defence recruits, with diploma-engineering increasingly seen as the technical-cadre entry route alongside competitive exams.",
+    whyBipeReasons: [
+      {
+        headline: "Diploma path into the Awadh-region government-job tradition",
+        body: "Pratapgarh's career narrative is heavily weighted toward central-government employment — Indian Railways (RRB JE), SSC JE, UPPCL JE, Indian Army Technical Entry. BIPE's career-counselling cell runs structured prep from Semester 5 onward for the exam cluster Pratapgarh families actually target. Mechanical and Electrical branches are the natural fit; Civil for state PWD work in the wider region.",
+      },
+      {
+        headline: "Hostel is essential at 170 km — and BIPE has one",
+        body: "Pratapgarh is 170 km from Phoolpur (4+ hours one-way). Daily commute is structurally impossible. The on-campus boys' hostel makes the diploma viable: furnished rooms, mess, 24×7 security, resident warden, and a parent hotline ringing the warden's desk directly. Out-of-Varanasi candidates are accommodated first.",
+      },
+      {
+        headline: "5 branches with the rare Dairy moat for mango / sugarcane households",
+        body: "Pratapgarh's mango and sugarcane belt has significant agro-processing potential, including dairy adjacent to the farms. BIPE's Dairy Engineering — one of just 4 BTE UP-affiliated Dairy diplomas in UP — channels agriculture-overlap households into Amul / Mother Dairy / Parag / NDDB. The branch is structurally rare; most Pratapgarh-accessible polytechnics don't offer it.",
+      },
+      {
+        headline: "AFRC fees + scholarship for the typical Pratapgarh income band",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship covers tuition in full for eligible SC / ST / OBC / Minority / EWS candidates. For most Pratapgarh agricultural households, net out-of-pocket falls to ₹4,000-10,000/year — comparable to government polytechnic figures even before factoring in BIPE's wider rank band and 5-branch portfolio.",
+      },
+    ],
+    branchAngle:
+      "Mechanical (Production) for Army Technical Entry + RRB JE (Pratapgarh's defence-recruit tradition); Electrical for UPPCL JE; Civil for state PWD and infrastructure work across the Awadh-Allahabad corridor; CSE for central-government IT cadres; Dairy for the agricultural-overlap mango / sugarcane households.",
+    localContext:
+      "Pratapgarh has Government Polytechnic Pratapgarh and a small private polytechnic ecosystem. For cost-binding families with confident JEECUP rank and Pratapgarh city residency, the government route is the obvious choice. Many Pratapgarh students who can't secure their preferred branch locally — or who specifically want Dairy Engineering — turn to BIPE Phoolpur with hostel residence.",
+    transitNarrative:
+      "Pratapgarh Junction has frequent express trains to Varanasi Cantt — 3.5 hours typical via Allahabad / Phaphamau routing. State-roadways buses via NH-128 through Sultanpur take ~4 hours. From Cantt to Phoolpur is the standard 14-km final leg. Door-to-door Pratapgarh to BIPE is about 4.5-5 hours. Plan an overnight stay for the first visit.",
+    faqs: [
+      {
+        q: "Pratapgarh is 170 km from BIPE — how viable is the hostel-residence model?",
+        a: "Very viable, and structurally necessary at this distance. BIPE's on-campus boys' hostel houses students from 12 Eastern UP districts plus Bihar — Pratapgarh is among the natural catchments. Most Pratapgarh students travel home once a month or once every 6 weeks during semesters; weekend visits via Pratapgarh-Varanasi train are feasible when needed.",
+      },
+      {
+        q: "Does BIPE prepare for Army Technical Entry and Indian Railways recruitment specifically?",
+        a: "Yes. BIPE's career-counselling cell runs structured prep for Army Technical Entry (TES), Indian Navy SSR/AA, RRB JE, SSC JE, and UPPCL JE from Semester 5 onward. Mechanical and Electrical branches are most aligned. Several BIPE alumni from the Awadh region (Pratapgarh, Sultanpur, Faizabad) work at Indian Railways and in defence-technical cadres.",
+      },
+      {
+        q: "Will the UP Post-Matric Scholarship apply for Pratapgarh students at BIPE?",
+        a: "Yes — the scholarship is portable across UP for eligible SC / ST / OBC / Minority / EWS candidates regardless of home district. BIPE's office walks every applicant through the Samaj Kalyan portal application at admission. Net tuition often falls to ₹4,000-10,000/year for eligible students.",
+      },
+      {
+        q: "How does BIPE compare with Government Polytechnic Pratapgarh?",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Pratapgarh has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge: 5 branches (incl. Dairy Engineering), on-campus hostel (essential at 170 km), 1,200+ documented placements. See /private-vs-government-polytechnic for the framework.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across the Pratapgarh belt have placed at Indian Railways, Mahindra, UPPCL, Asian Paints and JBM Group across recent cohorts. Named year-wise list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Pratapgarh",
+      description:
+        "Pratapgarh has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government polytechnic fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
+      whenGovernment:
+        "Government Polytechnic Pratapgarh is the natural choice if your rank secures the branch you want, you live in or near Pratapgarh city, and the fee gap matters. The lower fee + day-scholar option is the cost-binding family's optimal path.",
+      whenBipe:
+        "BIPE wins for Pratapgarh students when: (a) hostel is essential at any out-of-district polytechnic (and BIPE has one on-campus); (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you specifically want Dairy Engineering for the mango / sugarcane / agricultural overlay; (d) you want the documented 1,200+ alumni placement record across diverse recruiters.",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "gorakhpur",
+    town: "Gorakhpur",
+    townHindi: "गोरखपुर",
+    state: "Uttar Pradesh",
+    distanceKm: 205,
+    roadTime: "~5 hours via NH-29 / NH-19 through Azamgarh and Ghazipur",
+    railTime: "~4 hours to Varanasi Cantt via Gorakhpur-Varanasi line",
+    nearestStation: "Gorakhpur Junction (GKP) — one of India's longest railway platforms",
+    highways: "NH-29 (Gorakhpur–Varanasi) connecting through Azamgarh corridor",
+    econProfile:
+      "Major Eastern UP city anchored by Gorakhnath Temple, AIIMS Gorakhpur, BHU's veterinary campus, and a growing industrial corridor. One of UP's largest urban centres outside Lucknow / Kanpur. Strong educational culture (Madan Mohan Malaviya University of Technology, Deen Dayal Upadhyaya Gorakhpur University) with active student aspirations for technical and government careers.",
+    whyBipeReasons: [
+      {
+        headline: "Wider rank-band access than top-tier Gorakhpur options",
+        body: "Gorakhpur has Madan Mohan Malaviya University of Technology (MMMUT) — a state-level institution with sharp cutoffs at the degree level. For diploma engineering, Government Polytechnic Gorakhpur is the city's anchor — popular branches there can run rank-competitive. BIPE's wider rank band at 4455 makes it accessible for Gorakhpur students who don't secure their preferred branch locally.",
+      },
+      {
+        headline: "Dairy Engineering is rare even in Gorakhpur",
+        body: "Despite Gorakhpur's strong agricultural and dairy economy (the region is part of UP's larger Purvanchal dairy belt), Dairy Engineering as a BTE UP-affiliated diploma branch is rare — only 4 such programmes in the entire state, and BIPE is one. For Gorakhpur students from dairy-overlap households who want the Amul / Mother Dairy / NDDB / Parag pipeline, BIPE is the natural choice.",
+      },
+      {
+        headline: "Hostel residence is the only viable model at 205 km",
+        body: "Gorakhpur is 205 km from Phoolpur — about 5 hours one-way by road, 4 hours by train. Daily commute is not possible. The on-campus boys' hostel houses students from 12 Eastern UP districts; Gorakhpur is well represented. Weekend home-visits via Gorakhpur-Varanasi rail are feasible during longer breaks.",
+      },
+      {
+        headline: "AFRC fees + scholarship coverage offset the distance economics",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship covers tuition in full for eligible SC / ST / OBC / Minority / EWS candidates from Gorakhpur — the scholarship is portable across UP. For many Gorakhpur families, the choice between local government polytechnic + BIPE comes down to branch availability and placement-cell strength, not raw fee math after scholarship clears.",
+      },
+    ],
+    branchAngle:
+      "Mechanical (Production) for the Indian Railways RRB JE pipeline (Gorakhpur Junction is one of India's largest railway hubs, with the longest platform — the rail recruitment culture runs deep here); Electrical for UPPCL JE and railway electrification; Civil for state PWD and the Bharatmala corridor; CSE for central-government IT cadre routes; Dairy for the Purvanchal dairy belt's agricultural-overlap households.",
+    localContext:
+      "Gorakhpur has Government Polytechnic Gorakhpur, Madan Mohan Malaviya University of Technology (degree-level) and a substantial private polytechnic ecosystem within the city. For cost-binding Gorakhpur families with strong JEECUP rank, the local government polytechnic is the natural choice. BIPE serves Gorakhpur students who don't secure their preferred branch locally, who specifically want Dairy Engineering, or who want the documented placement-cell pipeline that includes diverse private-industry recruiters alongside the regional government pathway.",
+    transitNarrative:
+      "Gorakhpur Junction has frequent express trains to Varanasi Cantt — 4 hours typical via the Gorakhpur-Mau-Ghazipur-Varanasi line. State-roadways buses via NH-29 through Azamgarh take ~5 hours. From Varanasi Cantt to Phoolpur, standard 14-km final leg by shared auto or BIPE's free Saturday shuttle. Door-to-door Gorakhpur to BIPE is about 5-5.5 hours. Plan an overnight stay for the first visit; we'll help arrange hostel-trial accommodation.",
+    faqs: [
+      {
+        q: "Gorakhpur has its own established government polytechnic — why consider BIPE?",
+        a: "Government Polytechnic Gorakhpur is well-respected and the first choice for cost-binding families with strong rank in the branch they want. BIPE serves Gorakhpur students for whom one or more of these applies: rank not safe for the preferred branch at GP Gorakhpur; specific interest in Dairy Engineering (rare across UP); need for on-campus hostel + a residential community of students from 12 Eastern UP districts; preference for a smaller per-branch cohort with named faculty mentors. See /private-vs-government-polytechnic for the full framework.",
+      },
+      {
+        q: "How does the train journey from Gorakhpur to BIPE work?",
+        a: "Gorakhpur Junction has multiple daily express trains to Varanasi Cantt — typical journey 4 hours. From Cantt, shared auto or BIPE shuttle (free on Saturdays during admission season) covers the final 14 km to Phoolpur in 35-45 minutes. Total door-to-door 5-5.5 hours. Weekend home-visits during semesters are workable on this corridor.",
+      },
+      {
+        q: "Does BIPE prepare students for Indian Railways recruitment given Gorakhpur's railway-hub culture?",
+        a: "Yes. BIPE's career-counselling cell runs structured RRB JE / SSC JE / UPPCL JE prep from Semester 5 onward. Mechanical (Production) and Electrical branches map directly onto Indian Railways technical cadres. Several BIPE alumni from the Gorakhpur catchment work at Indian Railways across multiple zones.",
+      },
+      {
+        q: "Will the UP Post-Matric Scholarship cover BIPE tuition for Gorakhpur students?",
+        a: "Yes — the scholarship is portable across UP for eligible SC / ST / OBC / Minority / EWS candidates regardless of home district. BIPE's office assists with the Samaj Kalyan portal application at admission. Net out-of-pocket for eligible Gorakhpur students typically falls to ₹4,000-10,000/year — comparable to or below government polytechnic figures.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across the Gorakhpur catchment have placed at Indian Railways, Mahindra, Tata Steel, UPPCL, Mother Dairy and Asian Paints across recent cohorts. Year-wise named list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Gorakhpur",
+      description:
+        "Gorakhpur has a long-established BTE UP-affiliated government polytechnic — one of Eastern UP's larger institutes. Standard government fee structure (~₹11,870-35,610/year). Branches typically include the standard 3-5 engineering offerings. JEECUP cutoffs at GP Gorakhpur run rank-competitive for popular branches given the city's larger applicant pool. Dairy Engineering is generally not offered.",
+      whenGovernment:
+        "Government Polytechnic Gorakhpur is the natural choice if your rank confidently secures the branch you want and you live in or near Gorakhpur city. Lower fees + day-scholar feasibility + the city's established educational infrastructure make this the obvious option for cost-binding rank-strong applicants.",
+      whenBipe:
+        "BIPE wins for Gorakhpur students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you specifically want Dairy Engineering for the Purvanchal dairy-belt households; (c) you want a smaller per-branch cohort with named faculty mentors; (d) you want the documented 1,200+ alumni placement record across diverse private-industry + government recruiters. Hostel is essential anywhere outside Gorakhpur city, so the BIPE on-campus hostel option is the natural fit.",
+    },
+  },
 ];
 
 /**
