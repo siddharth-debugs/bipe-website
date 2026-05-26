@@ -341,96 +341,26 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
           <Col heading="Compliances" items={[["Approvals", "/approvals"], ["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["AI Policy", "/ai-policy"], ["Privacy", "/privacy"], ["Terms", "/terms"]]} />
         </div>
 
-        {/* Eastern UP catchment cluster — 2026-05-26. Footer-level
-            internal-linking moat targeting "polytechnic in [town]" geo
-            queries across BIPE's natural catchment. Every page on the
-            site votes for these 6 geo-landing URLs via this footer
-            block — inspired by BITE's "Compare Colleges in Varanasi"
-            footer pattern that anchors their programmatic-SEO reach. */}
-        <div
-          style={{
-            paddingTop: 24,
-            marginTop: 8,
-            borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
-          }}
-        >
-          <Col
-            heading="Polytechnic across Eastern UP"
-            items={[
-              ["Polytechnic in Chandauli", "/polytechnic-in-chandauli"],
-              ["Polytechnic in Bhadohi", "/polytechnic-in-bhadohi"],
-              ["Polytechnic in Jaunpur", "/polytechnic-in-jaunpur"],
-              ["Polytechnic in Mirzapur", "/polytechnic-in-mirzapur"],
-              ["Polytechnic in Ghazipur", "/polytechnic-in-ghazipur"],
-              ["Polytechnic in Mau", "/polytechnic-in-mau"],
-              ["Polytechnic in Sonbhadra", "/polytechnic-in-sonbhadra"],
-              ["Polytechnic in Azamgarh", "/polytechnic-in-azamgarh"],
-              ["Polytechnic in Ballia", "/polytechnic-in-ballia"],
-              ["Polytechnic in Sultanpur", "/polytechnic-in-sultanpur"],
-              ["Polytechnic in Pratapgarh", "/polytechnic-in-pratapgarh"],
-              ["Polytechnic in Gorakhpur", "/polytechnic-in-gorakhpur"],
-              ["Admission from Bihar", "/admission-from-bihar"],
-              ["JEECUP from Bihar", "/jeecup-from-bihar"],
-            ]}
-          />
-          {/* Government / aided / JEECUP-cutoff cluster — Commit 3,
-              2026-05-26. Intercepts the high-volume "government
-              polytechnic [town]" + JEECUP-cutoff search-intent
-              cluster. Visible from every footer = site-wide link
-              equity for the 3 comparison pages. */}
-          <Col
-            heading="Government & Aided Comparison"
-            items={[
-              ["Government polytechnic in Eastern UP", "/government-polytechnic-in-eastern-up"],
-              ["Aided polytechnic in UP", "/aided-polytechnic-uttar-pradesh"],
-              ["JEECUP 2026 cutoff · BIPE vs Government", "/jeecup-cutoff-2026-bipe-vs-government"],
-              ["Private vs Government framework", "/private-vs-government-polytechnic"],
-            ]}
-          />
-        </div>
+        {/* Programmatic SEO clusters previously lived here (Eastern UP
+            catchments × 14, Government & Aided × 4, JEECUP Resources × 6,
+            BTEUP Resources × 6 = 30 link-farm-shaped entries). Removed
+            on Praveen's call 2026-05-26: the wall of repetitive
+            "Polytechnic in X" links read as link-farm chrome, hurting
+            the institutional trust signal the rest of the site builds.
 
-        {/* JEECUP + BTEUP Resources cluster — Phase 4, 2026-05-26.
-            Surfaces the 12 procedural pages from Phases 2 + 3 in
-            two side-by-side columns. Site-wide link equity to the
-            high-volume procedural keyword cluster around JEECUP
-            registration / admit card / result / counselling and
-            BTEUP semester / Family ID / registration / fees / result.
-            Mobile collapses gracefully to a single column via the
-            CSS bipe-grid-2 wrapper. */}
-        <div
-          style={{
-            paddingTop: 24,
-            marginTop: 8,
-            borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 48,
-          }}
-          className="bipe-grid-2"
-        >
-          <Col
-            heading="JEECUP 2026 Resources"
-            items={[
-              ["JEECUP Registration 2026", "/jeecup-registration-2026"],
-              ["JEECUP Admit Card 2026", "/jeecup-admit-card-2026"],
-              ["JEECUP Result 2026", "/jeecup-result-2026"],
-              ["JEECUP Seat Allotment 2026", "/jeecup-seat-allotment-2026"],
-              ["Document Verification Checklist", "/jeecup-document-verification-checklist"],
-              ["JEECUP Helpline Contact", "/jeecup-helpline-contact"],
-            ]}
-          />
-          <Col
-            heading="BTEUP Resources"
-            items={[
-              ["BTEUP Family ID Mandate", "/bteup-family-id-registration"],
-              ["BTEUP Admit Card", "/bteup-admit-card-download"],
-              ["BTEUP Exam Dates 2026", "/bteup-semester-exam-dates-2026"],
-              ["BTEUP Result Check", "/bteup-result-check"],
-              ["BTEUP Exam Fees Payment", "/bteup-exam-fees-payment"],
-              ["BTEUP Student Registration", "/bteup-student-registration"],
-            ]}
-          />
-        </div>
+            Discovery for those 30 pages is preserved by:
+              · sitemap.xml (always)
+              · in-content cross-link grids on /jeecup ('Procedural
+                deep-dives') and /about/affiliations ('BTEUP resources')
+              · each catchment template's 'Other Eastern UP catchments'
+                grid (peer-links across all 12 town pages)
+              · each Resource template's 'Other JEECUP/BTEUP resources'
+                grid (peer-links across all 6 resource pages per hub)
+              · government-comparison pages link to each other in-prose
+
+            Modern Google weights contextual links materially higher
+            than footer/sidebar clusters; sitemap + peer cross-links
+            carry the discovery weight without the link-farm look. */}
 
         {/* Social handles strip — Phase-2 audit: surface real handles */}
         <div style={{
