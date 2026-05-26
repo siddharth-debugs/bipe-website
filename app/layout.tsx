@@ -93,12 +93,14 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         addressRegion: "Uttar Pradesh",
         addressCountry: "IN",
       },
-      // Geo coordinates from a GPS-tagged BIPE admission-desk photo
-      // shot on the Phoolpur campus, May 2026.
+      // Geo coordinates — precise Phoolpur campus pin captured by the
+      // chairman 25 May 2026 (refined from the earlier approximate
+      // 25.53203, 82.84361). Sub-metre precision improves the local-
+      // pack match radius for "polytechnic near me" geo queries.
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 25.53203,
-        longitude: 82.84361,
+        latitude: 25.53216622968947,
+        longitude: 82.84376279985777,
       },
       hasMap: "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi",
       telephone: contact.phone || DATA.contact.phone,
@@ -117,6 +119,65 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       // fee, not a transactional purchase). Helps the local pack
       // surface "polytechnic fees" SERP context.
       priceRange: "INR 30,150 / academic year (AFRC-approved tuition)",
+      // numberOfStudents — surfaces in Google's Knowledge Panel and
+      // AI Overview answer cards for "BIPE Varanasi students" queries.
+      // Two-row form (current enrolment + cumulative alumni) is the
+      // BITE pattern Google parses cleanly. Update on major cohort
+      // changes (annual after JEECUP counselling closes).
+      numberOfStudents: [
+        {
+          "@type": "QuantitativeValue",
+          value: 550,
+          unitText: "students currently enrolled",
+        },
+        {
+          "@type": "QuantitativeValue",
+          value: 1000,
+          unitText: "alumni",
+        },
+      ],
+      // hasCredential — credentials the institution itself holds
+      // (different from `accreditedBy` above, which lists the boards
+      // doing the accrediting). Both are valid schema.org properties
+      // and Google's Knowledge Graph reads them as complementary
+      // signals for the YMYL education vertical. Three credentials
+      // surfaced here map to the three statutory recognitions BIPE
+      // publishes via Annexure-18 mandatory disclosure.
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "AICTE Approval",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "All India Council for Technical Education (AICTE)",
+            url: "https://www.aicte-india.org/",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "BTEUP Affiliation · JEECUP Code 4455",
+          recognizedBy: {
+            "@type": "EducationalOrganization",
+            name: "Board of Technical Education, Uttar Pradesh (BTE UP)",
+            url: "https://bteup.ac.in/",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "AISHE Registration",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "All India Survey on Higher Education · Ministry of Education",
+            url: "https://aishe.gov.in/",
+          },
+        },
+      ],
+      // dateModified at the Organization level (not just WebSite).
+      // Signals freshness of institutional information to Google.
+      // Hard-coded to the latest significant fact-change date rather
+      // than auto-updated, because Google penalises false-fresh
+      // signals (e.g., page-render date when content hasn't changed).
+      dateModified: "2026-05-26",
       identifier: [
         { "@type": "PropertyValue", propertyID: "AICTE Permanent ID", value: contact.aicte_id || DATA.contact.aicte },
         { "@type": "PropertyValue", propertyID: "JEECUP Code", value: contact.jeecup_code || DATA.contact.jeecup },
