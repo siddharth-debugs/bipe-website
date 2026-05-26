@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "source": "manual",
+    "lastUpdated": null,
+    "instructions": "TWO WAYS TO POPULATE THIS FILE:\n\n  (A) MANUAL · fastest activation, no API key needed\n      Open https://business.google.com or search 'BIPE Phoolpur' on Google Maps,\n      copy your rating + total review count, paste 3-7 best 5-star reviews below,\n      commit. Schema + carousel activate on next deploy.\n\n  (B) AUTOMATED · daily refresh via Google Places API\n      Set GOOGLE_PLACES_API_KEY and GOOGLE_PLACES_PLACE_ID as GitHub repo secrets,\n      then either run scripts/fetch-google-reviews.mjs locally or wait for the\n      daily GitHub Action (.github/workflows/refresh-reviews.yml) to overwrite\n      this file automatically.\n\n  Either path works. Pick one; you can switch later."
+  },
+  "rating": 0,
+  "reviewCount": 0,
+  "bestRating": 5,
+  "worstRating": 1,
+  "reviews": []
+}

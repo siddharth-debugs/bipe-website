@@ -1,5 +1,77 @@
 @import "tailwindcss";
 
+/* ===== ReviewsCarousel · Google reviews scroll-snap row ============
+   Renders the curated Google review cards from lib/reviews.json.
+   Mobile: horizontal scroll-snap so cards swipe naturally.
+   Desktop: 2-3 cards visible side-by-side with the rest scrollable.
+   Zero JS — respects the INP defence work in commit 8632da2. */
+.reviews-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  padding: 6px 2px 18px;
+  margin: 0 -2px;
+}
+.reviews-row::-webkit-scrollbar {
+  height: 6px;
+}
+.reviews-row::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--brand, #283e7a) 20%, transparent);
+  border-radius: 3px;
+}
+.reviews-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  padding: 22px 22px 18px;
+  border-radius: 16px;
+  background: var(--paper, #ffffff);
+  border: 1px solid var(--line, #e4e2dc);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+}
+@media (min-width: 768px) {
+  .reviews-card { flex: 0 0 360px; }
+}
+.reviews-text {
+  margin: 0;
+  color: var(--ink-1, #0a1a3f);
+  font-size: 14.5px;
+  line-height: 1.6;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.reviews-author {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  border-top: 1px solid var(--line, #e4e2dc);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+.reviews-author-name {
+  font-weight: 600;
+  color: var(--ink-1, #0a1a3f);
+}
+.reviews-author-time {
+  color: var(--ink-3, #6b6b6b);
+  font-size: 12px;
+}
+.reviews-disclaimer {
+  margin-top: 14px;
+  color: var(--ink-3, #6b6b6b);
+  font-size: 12px;
+  font-style: italic;
+}
+
 /* ===== Trust Badge Strip · site-wide institutional credentials ======
    Renders between Nav and <main> on every public page (not /admin).
    Inspired by BITE's site-wide trust band — BIPE version uses 6

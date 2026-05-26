@@ -14,6 +14,7 @@ import { DATA } from "@/lib/data";
 import AnalyticsBeacon from "@/components/shell/AnalyticsBeacon";
 import GoogleAnalyticsBeacon from "@/components/shell/GoogleAnalyticsBeacon";
 import { getContact, getBranchesMapped } from "@/lib/content";
+import { aggregateRatingSchema } from "@/lib/reviews";
 import type { Branch } from "@/lib/data";
 import type { PublicContact } from "@/lib/content";
 
@@ -186,6 +187,15 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       // than auto-updated, because Google penalises false-fresh
       // signals (e.g., page-render date when content hasn't changed).
       dateModified: "2026-05-26",
+      // AggregateRating — the gold-star rich-result that lifts SERP
+      // CTR by 30-50% on its own (more than any title rewrite). Reads
+      // from lib/reviews.json via lib/reviews.ts. Renders null when
+      // reviewCount = 0, so the schema simply omits AggregateRating
+      // until the file is populated (manually or via the GitHub
+      // Action calling Google Places API).
+      ...(aggregateRatingSchema()
+        ? { aggregateRating: aggregateRatingSchema() }
+        : {}),
       identifier: [
         { "@type": "PropertyValue", propertyID: "AICTE Permanent ID", value: contact.aicte_id || DATA.contact.aicte },
         { "@type": "PropertyValue", propertyID: "JEECUP Code", value: contact.jeecup_code || DATA.contact.jeecup },

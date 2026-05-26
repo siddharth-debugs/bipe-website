@@ -11,6 +11,7 @@ import { WhyBipe } from "@/components/home/WhyBipe";
 import { JeecupSteps } from "@/components/home/JeecupSteps";
 import { CampusLife } from "@/components/home/CampusLife";
 import { Testimonials } from "@/components/home/Testimonials";
+import ReviewsCarousel from "@/components/home/ReviewsCarousel";
 import { News } from "@/components/home/News";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
@@ -115,6 +116,7 @@ export default async function HomePage() {
       <JeecupSteps items={itemsFromSection<JeecupStep>(sSteps)} />
       <CampusLife items={itemsFromSection<Facility>(sFacilities)} />
       <Testimonials />
+      <ReviewsCarousel />
       <InlineApply />
       <News />
       <FinalCTA />
