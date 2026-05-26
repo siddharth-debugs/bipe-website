@@ -116,8 +116,8 @@ export default async function HomePage() {
       <JeecupSteps items={itemsFromSection<JeecupStep>(sSteps)} />
       <CampusLife items={itemsFromSection<Facility>(sFacilities)} />
       <Testimonials />
-      <ReviewsCarousel />
       <InlineApply />
+      <ReviewsCarousel />
       <News />
       <FinalCTA />
     </div>

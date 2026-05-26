@@ -67,7 +67,7 @@ export function ReviewsCarousel({ variant = "full" }: { variant?: "full" | "comp
     >
       <div className="container">
         {!isCompact && (
-          <div className="eyebrow">Verified · Google reviews</div>
+          <div className="eyebrow">Live on Google · refreshed daily</div>
         )}
         <div
           style={{
@@ -81,18 +81,18 @@ export function ReviewsCarousel({ variant = "full" }: { variant?: "full" | "comp
           <h2
             id="reviews-heading"
             className={isCompact ? "bipe-h3" : "bipe-h1"}
-            style={{ margin: 0, maxWidth: "30ch" }}
+            style={{ margin: 0, maxWidth: "32ch" }}
           >
             {isCompact ? (
-              <>What families say about BIPE</>
+              <>Verified Google reviews</>
             ) : (
               <>
-                What families say —{" "}
+                Real reviews from{" "}
                 <span
                   className="serif"
                   style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
                 >
-                  on Google.
+                  {REVIEWS.reviewCount.toLocaleString("en-IN")} families.
                 </span>
               </>
             )}
