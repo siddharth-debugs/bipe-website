@@ -1,5 +1,78 @@
 @import "tailwindcss";
 
+/* ===== Trust Badge Strip · site-wide institutional credentials ======
+   Renders between Nav and <main> on every public page (not /admin).
+   Inspired by BITE's site-wide trust band — BIPE version uses 6
+   credential pills, each linking to its source-of-truth page.
+   Mobile: horizontal scroll with snap points. Desktop: single row. */
+.trust-strip {
+  background: var(--paper-2, #f6f4ef);
+  border-bottom: 1px solid var(--line, #e4e2dc);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.trust-strip::-webkit-scrollbar { display: none; }
+
+.trust-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 10px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+.trust-pill {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink-1, #0a1a3f);
+  text-decoration: none;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transition: background 120ms ease, transform 120ms ease;
+}
+.trust-pill:hover,
+.trust-pill:focus-visible {
+  background: color-mix(in oklab, var(--brand, #283e7a) 8%, transparent);
+  outline: none;
+}
+.trust-pill:focus-visible {
+  outline: 2px solid var(--brand, #283e7a);
+  outline-offset: 2px;
+}
+.trust-pill-label {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--brand, #283e7a);
+  line-height: 1.2;
+}
+.trust-pill-detail {
+  font-size: 11px;
+  color: var(--ink-3, #6b6b6b);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+/* Mobile: tighter spacing, smaller pills */
+@media (max-width: 768px) {
+  .trust-strip-inner {
+    gap: 18px;
+    padding: 8px 16px;
+  }
+  .trust-pill { padding: 5px 10px; }
+  .trust-pill-label { font-size: 10px; }
+  .trust-pill-detail { font-size: 10px; }
+}
+
 /* ===== Skip-to-content (a11y · WCAG 2.1 AA · 2.4.1 Bypass Blocks) =====
    Added 2026-05-26 alongside the public-surface expansion to ~85 routes.
    The link is visually hidden by default (positioned off-canvas above

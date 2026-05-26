@@ -6,6 +6,7 @@ import { Footer, type FooterContact } from "./Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { WhatsAppFAB } from "./WhatsAppFAB";
 import { InquiryModal } from "./InquiryModal";
+import { TrustBadgeStrip } from "./TrustBadgeStrip";
 
 /**
  * The public site's Nav + Footer + scroll-reveal observer should NOT
@@ -35,6 +36,7 @@ export function ConditionalChrome({
   return (
     <>
       <Nav />
+      <TrustBadgeStrip />
       <main id="main-content" tabIndex={-1}>{children}</main>
       <Footer contact={contact} />
       <WhatsAppFAB />

@@ -122,8 +122,11 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       // numberOfStudents — surfaces in Google's Knowledge Panel and
       // AI Overview answer cards for "BIPE Varanasi students" queries.
       // Two-row form (current enrolment + cumulative alumni) is the
-      // BITE pattern Google parses cleanly. Update on major cohort
-      // changes (annual after JEECUP counselling closes).
+      // BITE pattern Google parses cleanly. Bumped 26 May 2026 to
+      // match Siddharth's content-review commit 065693f — alumni
+      // network 2,200+, placed-on-record 1,200+, current enrolment
+      // ~550. Update on major cohort changes (annual after JEECUP
+      // counselling closes).
       numberOfStudents: [
         {
           "@type": "QuantitativeValue",
@@ -132,8 +135,13 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         },
         {
           "@type": "QuantitativeValue",
-          value: 1000,
-          unitText: "alumni",
+          value: 2200,
+          unitText: "alumni network",
+        },
+        {
+          "@type": "QuantitativeValue",
+          value: 1200,
+          unitText: "alumni placed on record",
         },
       ],
       // hasCredential — credentials the institution itself holds
