@@ -4,8 +4,7 @@ import Link from "next/link";
  * Site-wide trust-badge strip · 6 institutional credentials.
  *
  * Rendered between <Nav> and <main> via ConditionalChrome (not on
- * /admin). Inspired by BITE's site-wide top-band trust strip
- * (which carries a Sanskrit shloka + accreditation pills); BIPE's
+ * /admin). Inspired by BITE's site-wide top-band trust strip; BIPE's
  * version surfaces the institutional credentials a polytechnic
  * applicant actually verifies before applying:
  *
@@ -16,16 +15,40 @@ import Link from "next/link";
  *   - Since 2010 · 16 years      linked to /about
  *   - 1,200+ Placements          linked to /placements
  *
- * Visual design — paper-tone background (subtle), brand-navy text,
- * compact pills with two-line content (label + detail). Mobile:
- * horizontal scroll with snap points so the strip doesn't push the
- * hero down. Desktop: single row with comfortable spacing.
+ * Visual design — May 2026 upgrade (Direction A · verified badges):
+ *   - Each credential renders as a bordered card with a verified
+ *     tick mark (accent-gold filled circle with white check)
+ *   - Two-line content: mono uppercase label (12.5px, brand) +
+ *     hairline divider + mono detail (11px, ink-2)
+ *   - Card hover lifts (translateY) with brand-tinted border + shadow
+ *   - Paper-2 → gradient background so the strip announces itself
+ *     as the "credentials zone" without competing with the hero
+ *   - Strip height ~64px (was ~36px)
  *
- * Why each label clicks through to a different page: every claim
- * here is auditable on a source-of-truth surface. Clicking through
- * gives the visitor the underlying evidence — that's the trust
- * model BIPE has been building since the May 2026 SEO sprint.
+ * Each clicks through to the source-of-truth page so the visitor
+ * can audit the underlying evidence. That's the BIPE trust model.
  */
+
+const VerifiedTick = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 14 14"
+    aria-hidden="true"
+    style={{ flexShrink: 0, display: "block" }}
+  >
+    <circle cx="7" cy="7" r="7" fill="var(--accent, #c8a951)" />
+    <path
+      d="M3.8 7L6 9.2L10.2 4.5"
+      stroke="#fff"
+      strokeWidth="1.8"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 interface Badge {
   label: string;
   detail: string;
@@ -51,7 +74,11 @@ export function TrustBadgeStrip() {
       <div className="trust-strip-inner">
         {BADGES.map((b) => (
           <Link key={b.label} href={b.href} className="trust-pill">
-            <span className="trust-pill-label">{b.label}</span>
+            <span className="trust-pill-head">
+              <VerifiedTick />
+              <span className="trust-pill-label">{b.label}</span>
+            </span>
+            <span className="trust-pill-divider" aria-hidden="true" />
             <span className="trust-pill-detail">{b.detail}</span>
           </Link>
         ))}
