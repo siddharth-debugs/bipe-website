@@ -344,6 +344,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     phone: liveContact.phone,
     phone2: liveContact.phone2,
     email: liveContact.email,
+    // Placement inbox isn't editable from the admin Contact singleton
+    // yet — pull from the typed DATA.contact constant. Will move to
+    // the singleton when the backend adds an emailPlacement column.
+    emailPlacement: DATA.contact.emailPlacement,
     whatsapp: liveContact.whatsapp_url,
     address: liveContact.address,
     jeecup: liveContact.jeecup_code,

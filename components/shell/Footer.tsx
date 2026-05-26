@@ -15,6 +15,7 @@ export interface FooterContact {
   phone: string;
   phone2: string;
   email: string;
+  emailPlacement: string;
   whatsapp: string;
   address: string;
   jeecup: string;
@@ -41,6 +42,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
     phone: contact?.phone || DATA.contact.phone,
     phone2: contact?.phone2 || DATA.contact.phone2,
     email: contact?.email || DATA.contact.email,
+    emailPlacement: contact?.emailPlacement || DATA.contact.emailPlacement,
     whatsapp: contact?.whatsapp || DATA.contact.whatsapp,
     address: contact?.address || DATA.contact.address,
     jeecup: contact?.jeecup || DATA.contact.jeecup,
@@ -257,9 +259,12 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
             </div>
           </a>
 
-          {/* Email card */}
+          {/* Email card — surfaces the placement/admissions inbox the
+              team actually monitors (Gmail). The institutional
+              info@bipe.ac.in still lives on /contact, the Schema.org
+              Organization markup, and as the primary in DATA.contact. */}
           <a
-            href={`mailto:${C.email}`}
+            href={`mailto:${C.emailPlacement}`}
             style={{
               padding: "14px 16px",
               borderRadius: 12,
@@ -303,7 +308,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
                 letterSpacing: "-0.005em",
                 marginTop: 2,
               }}>
-                {C.email}
+                {C.emailPlacement}
               </div>
             </div>
           </a>

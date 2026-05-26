@@ -410,9 +410,11 @@ export default function Page() {
             </span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "62ch" }}>
-            A diploma is the product of who teaches it. Below — every academic
-            faculty member at BIPE, with their qualifications, experience and
-            published work. No anonymous &ldquo;40 faculty&rdquo; counts; we name them.
+            A diploma is the product of who teaches it. BIPE has 40 academic
+            faculty across five departments — the ones below are the members
+            whose profiles are publishable today, with their qualifications,
+            experience and published work. More are being added as
+            consent + paperwork comes through.
           </p>
           <div
             className="bipe-stats"
@@ -426,7 +428,7 @@ export default function Page() {
             }}
           >
             {[
-              { num: TOTAL_FACULTY, lbl: "academic faculty", sub: "Named on this page" },
+              { num: "40", lbl: "academic faculty", sub: `${TOTAL_FACULTY} named on this page` },
               { num: 5, lbl: "departments", sub: "BTEUP-affiliated" },
               { num: TOTAL_PUBLICATIONS, lbl: "papers published", sub: "Journals + conferences" },
               { num: HODS.length, lbl: "department heads", sub: "One per branch" },

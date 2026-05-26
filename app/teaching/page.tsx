@@ -402,7 +402,7 @@ export default function Page() {
               {
                 eyebrow: "FIELD WORK",
                 title: "Industry site visits",
-                body: "Periodic visits to manufacturing units, dairies (Amul / Parag), Bharatmala / Smart City sites, and the Kashi Vishwanath corridor. Drawings come alive when students stand on the slab.",
+                body: "Periodic visits to manufacturing units and dairies — RR, BLW, PHD, Sort String among the regular hosts. Drawings come alive when students stand on the slab.",
               },
               {
                 eyebrow: "WRITTEN OUTPUT",

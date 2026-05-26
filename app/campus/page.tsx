@@ -498,7 +498,7 @@ export default async function Page() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 40, paddingBottom: 24, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">Sustainability · Access</div>
+              <div className="eyebrow">Campus · Access</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "18ch" }}>
                 Built to be{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -542,93 +542,9 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* ====================================================================== */}
-      {/* 8. CTA                                                                  */}
-      {/* ====================================================================== */}
-      <section className="section">
-        <div className="container">
-          <div style={{
-            position: "relative", overflow: "hidden",
-            borderRadius: 28, border: "1px solid var(--line)",
-            background: "var(--white)",
-            padding: "56px 56px",
-          }}>
-            <div aria-hidden="true" style={{
-              position: "absolute", left: -160, top: -120, width: 360, height: 360, borderRadius: "50%",
-              background: "color-mix(in oklab, var(--brand) 22%, transparent)",
-              filter: "blur(110px)", pointerEvents: "none",
-            }} />
-            <div aria-hidden="true" style={{
-              position: "absolute", right: -120, bottom: -120, width: 320, height: 320, borderRadius: "50%",
-              background: "color-mix(in oklab, var(--accent) 32%, transparent)",
-              filter: "blur(110px)", pointerEvents: "none",
-            }} />
-            <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 48, alignItems: "center" }}>
-              <div>
-                <div className="eyebrow">Visit</div>
-                <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                  Walk it before{" "}
-                  <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                    you decide.
-                  </span>
-                </h2>
-                <p className="lead" style={{ marginTop: 18, maxWidth: "44ch" }}>
-                  Free shuttle from Varanasi Cantt. Front desk open Monday to Saturday. Bring your parents — that&rsquo;s the visit we expect.
-                </p>
-                <div style={{ marginTop: 22, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
-                  <a href={`tel:${DATA.contact.phone}`} className="btn btn-ghost btn-sm">
-                    <PhoneIcon /> {DATA.contact.phone}
-                  </a>
-                  <a href={`tel:${DATA.contact.phone2}`} className="btn btn-ghost btn-sm">
-                    <PhoneIcon /> {DATA.contact.phone2}
-                  </a>
-                </div>
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <Link href="/visit" style={{
-                  display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
-                  padding: "20px 22px", borderRadius: 14,
-                  background: "var(--brand)", color: "#fff", textDecoration: "none",
-                }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>01</span>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Book a campus visit</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Free shuttle from Varanasi Cantt</div>
-                  </div>
-                  <ArrowIcon size={16} />
-                </Link>
-                <Link href="/apply" style={{
-                  display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
-                  padding: "20px 22px", borderRadius: 14,
-                  background: "var(--ink)", color: "var(--paper)", textDecoration: "none",
-                }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>02</span>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Begin application</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 60%, transparent)", marginTop: 2 }}>JEECUP code 4455</div>
-                  </div>
-                  <ArrowIcon size={16} />
-                </Link>
-                <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" style={{
-                  display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
-                  padding: "20px 22px", borderRadius: 14,
-                  background: "var(--paper-2)", color: "var(--ink)", textDecoration: "none",
-                  border: "1px solid var(--line)",
-                }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>03</span>
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Talk on WhatsApp</div>
-                    <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>Same-day reply · EN / हिं</div>
-                  </div>
-                  <span style={{ width: 28, height: 28, borderRadius: 999, background: "#25D366", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <WhatsAppIcon />
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CTA section removed May 2026 — the "Walk it before you decide"
+          Visit CTA repeats across multiple pages, so per the Overall.docx
+          review it's now scoped to /placements and /why-bipe only. */}
     </div>
   );
 }
