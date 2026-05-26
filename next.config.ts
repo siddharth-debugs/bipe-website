@@ -43,6 +43,9 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     "'unsafe-eval'",
     "https://va.vercel-scripts.com",
     "https://*.vercel-insights.com",
+    // GA4 — gtag.js loader. Required for the GoogleAnalyticsBeacon
+    // component (Consent Mode v2 + GA4 measurement) added 25 May 2026.
+    "https://www.googletagmanager.com",
   ],
 
   // style-src: 'unsafe-inline' required for Next.js's inline-critical
@@ -60,6 +63,9 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     "https://res.cloudinary.com",
     "https://images.unsplash.com",
     "https://upload.wikimedia.org",
+    // GA4 pixel beacons (transparent 1x1 GIFs for events that fall
+    // back from sendBeacon to img request).
+    "https://www.google-analytics.com",
   ],
 
   // font-src: data: needed because some icon fonts inline as data URIs.
@@ -73,6 +79,13 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     "https://*.vercel-insights.com",
     "https://api.cloudinary.com",
     "https://res.cloudinary.com",
+    // GA4 event ingest endpoints. /collect is the primary beacon
+    // endpoint; the analytics.google.com host is used for some
+    // server-side / proxied configurations and consent-mode signals.
+    "https://www.google-analytics.com",
+    "https://analytics.google.com",
+    "https://*.analytics.google.com",
+    "https://*.google-analytics.com",
   ],
 
   // frame-ancestors: forbid being iframed by anyone but self.

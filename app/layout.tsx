@@ -12,6 +12,7 @@ import { DATA } from "@/lib/data";
 // the restriction. See components/shell/AnalyticsBeacon.tsx for the
 // INP-driven rationale (May 2026 CWV report).
 import AnalyticsBeacon from "@/components/shell/AnalyticsBeacon";
+import GoogleAnalyticsBeacon from "@/components/shell/GoogleAnalyticsBeacon";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import type { Branch } from "@/lib/data";
 import type { PublicContact } from "@/lib/content";
@@ -306,6 +307,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <ConditionalChrome contact={footerContact}>{children}</ConditionalChrome>
         </LangProvider>
         <AnalyticsBeacon />
+        <GoogleAnalyticsBeacon />
       </body>
     </html>
   );
