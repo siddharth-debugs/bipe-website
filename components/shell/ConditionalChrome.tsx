@@ -35,7 +35,7 @@ export function ConditionalChrome({
   return (
     <>
       <Nav />
-      <main>{children}</main>
+      <main id="main-content" tabIndex={-1}>{children}</main>
       <Footer contact={contact} />
       <WhatsAppFAB />
       <InquiryModal />

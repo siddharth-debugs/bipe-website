@@ -364,6 +364,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
       </head>
       <body className={`${geist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
+        {/*
+          Skip-to-content a11y link — visually hidden until keyboard-
+          focused, then jumps the user past Nav directly to <main>.
+          WCAG 2.1 AA Success Criterion 2.4.1 (Bypass Blocks). The
+          public catchment/comparison/policy surface is now ~10
+          pages deep; keyboard + screen-reader users need this.
+        */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <LangProvider>
           <ConditionalChrome contact={footerContact}>{children}</ConditionalChrome>
         </LangProvider>
