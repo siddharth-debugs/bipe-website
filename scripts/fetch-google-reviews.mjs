@@ -77,10 +77,23 @@ async function main() {
     typeof data.userRatingCount === "number" ? data.userRatingCount : 0;
   const apiReviews = Array.isArray(data.reviews) ? data.reviews : [];
 
-  // Map Google's review shape to our minimal Review type, filter by
-  // min-rating, then keep the most recent N.
+  // Map Google's review shape to our minimal Review type. Order:
+  //   1. Filter to MIN_RATING or higher (default ≥4 stars)
+  //   2. Sort by publishTime DESC (newest first) — Google's Places API
+  //      returns reviews in "relevance" order by default, which often
+  //      means old highly-rated reviews crowd out recent 5-star ones.
+  //      Client-side sort by publishTime gives the user the freshest
+  //      social-proof signal first.
+  //   3. Slice to KEEP_COUNT
   const reviews = apiReviews
     .filter((r) => typeof r.rating === "number" && r.rating >= MIN_RATING)
+    .sort((a, b) => {
+      // ISO timestamps sort lexicographically in correct order, so a
+      // simple string comparison works. Reverse for DESC.
+      const ta = typeof a.publishTime === "string" ? a.publishTime : "";
+      const tb = typeof b.publishTime === "string" ? b.publishTime : "";
+      return tb.localeCompare(ta);
+    })
     .slice(0, KEEP_COUNT)
     .map((r) => ({
       id: typeof r.name === "string" ? r.name.split("/").pop() : crypto.randomUUID(),
