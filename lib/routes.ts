@@ -13,7 +13,9 @@ export type RouteKey =
   | "polytechnicInChandauli" | "polytechnicInBallia"
   | "polytechnicInSonbhadra" | "polytechnicInSultanpur"
   | "polytechnicInPratapgarh" | "polytechnicInGorakhpur"
-  | "governmentPolytechnicEasternUp" | "aidedPolytechnicUp" | "jeecupCutoff2026";
+  | "governmentPolytechnicEasternUp" | "aidedPolytechnicUp" | "jeecupCutoff2026"
+  | "jeecupRegistration" | "jeecupAdmitCard" | "jeecupResult"
+  | "jeecupSeatAllotment" | "jeecupDocumentVerification" | "jeecupHelpline";
 
 export const SITE_URL = "https://www.bipevns.org";
 
@@ -623,6 +625,99 @@ export const ROUTES: Record<RouteKey, {
       "JEECUP 4455 BIPE",
       "JEECUP काउंसलिंग 2026",
       "JEECUP काउंसलिंग गाइड",
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  // Phase 2 · JEECUP 2026 Resources hub (May 2026)
+  //
+  // Six procedural pages built from a shared template +
+  // lib/jeecup-resources.ts data file. Each targets a distinct
+  // high-volume procedural keyword cluster around JEECUP 2026 that
+  // /jeecup (the 6-step guidance hub) cannot serve at sufficient
+  // depth without becoming an unreadable wall of text.
+  // ─────────────────────────────────────────────────────────────────
+  jeecupRegistration: {
+    path: "/jeecup-registration-2026",
+    title: "JEECUP Registration 2026 · Step-by-step Online Application | BIPE 4455",
+    description: "Complete JEECUP 2026 registration guide — online application at jeecup.admissions.nic.in, fee, documents, deadline, common errors. Apply to BIPE under code 4455.",
+    keywords: [
+      "JEECUP registration",
+      "JEECUP online registration",
+      "JEECUP 2026 application form",
+      "JEECUP form fill kaise kare",
+      "UPJEE Polytechnic registration",
+      "JEECUP रजिस्ट्रेशन 2026",
+      "JEECUP फॉर्म कैसे भरें",
+    ],
+  },
+  jeecupAdmitCard: {
+    path: "/jeecup-admit-card-2026",
+    title: "JEECUP Admit Card 2026 · Download Guide + Troubleshooting | BIPE 4455",
+    description: "Download JEECUP 2026 admit card from jeecup.admissions.nic.in — login, verify details, troubleshoot common errors. Exam window 02–09 June 2026.",
+    keywords: [
+      "JEECUP admit card",
+      "JEECUP admit card 2026",
+      "JEECUP admit card download",
+      "JEECUP hall ticket",
+      "UPJEE admit card",
+      "JEECUP एडमिट कार्ड",
+      "JEECUP admit card kaise download kare",
+    ],
+  },
+  jeecupResult: {
+    path: "/jeecup-result-2026",
+    title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
+    description: "Check JEECUP 2026 result at jeecup.admissions.nic.in — login, download rank card, understand category rank, plan counselling. Results expected mid-June 2026.",
+    keywords: [
+      "JEECUP result",
+      "JEECUP result 2026",
+      "JEECUP rank card download",
+      "JEECUP 2026 marks",
+      "JEECUP merit list",
+      "JEECUP रिजल्ट 2026",
+      "JEECUP result kaise check kare",
+    ],
+  },
+  jeecupSeatAllotment: {
+    path: "/jeecup-seat-allotment-2026",
+    title: "JEECUP Seat Allotment 2026 · 7-Round Cycle + How to Check | BIPE 4455",
+    description: "JEECUP 2026 seat allotment — 7 counselling rounds, how to check allotment, freeze / float / withdraw explained, spot round at BIPE. Institute code 4455.",
+    keywords: [
+      "JEECUP seat allotment",
+      "JEECUP seat allotment result",
+      "JEECUP allotment 2026",
+      "JEECUP online counselling",
+      "JEECUP round 1 allotment",
+      "JEECUP काउंसलिंग सीट अलॉटमेंट",
+      "JEECUP seat allotment kaise check kare",
+    ],
+  },
+  jeecupDocumentVerification: {
+    path: "/jeecup-document-verification-checklist",
+    title: "JEECUP Document Verification Checklist 2026 · Complete List | BIPE 4455",
+    description: "Complete document checklist for JEECUP 2026 reporting at BIPE Phoolpur — originals, photocopies, certificates, what to do if a document is delayed.",
+    keywords: [
+      "JEECUP document",
+      "JEECUP document verification",
+      "JEECUP documents required",
+      "JEECUP reporting documents",
+      "JEECUP काउंसलिंग के लिए डॉक्यूमेंट",
+      "JEECUP seat reporting checklist",
+    ],
+  },
+  jeecupHelpline: {
+    path: "/jeecup-helpline-contact",
+    title: "JEECUP Helpline 2026 · Official Contact, Email, Support | BIPE 4455",
+    description: "JEECUP 2026 helpline — official phone, email, support for registration, admit card, result and counselling issues. Plus BIPE counsellor support.",
+    keywords: [
+      "JEECUP helpline",
+      "JEECUP helpline number",
+      "JEECUP contact",
+      "JEECUP customer care",
+      "JEECUP support",
+      "JEECUP हेल्पलाइन नंबर",
+      "UPJEE Polytechnic helpline",
     ],
   },
 };
