@@ -12,7 +12,7 @@ const cell = (n: number, l: string) => (
 );
 
 export const Countdown = () => {
-  const target = useMemo(() => new Date("2026-08-01T00:00:00").getTime(), []);
+  const target = useMemo(() => new Date("2026-07-15T00:00:00").getTime(), []);
   const [now, setNow] = useState(Date.now());
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
@@ -32,8 +32,8 @@ export const Countdown = () => {
               <span className="live-dot" />
               <span className="eyebrow" style={{ color: "var(--brand)" }}>Counselling Live</span>
             </div>
-            <h2 className="bipe-h2">Classes begin <span className="serif">Aug 1, 2026.</span></h2>
-            <p className="lead" style={{ marginTop: 14 }}>JEECUP counselling rounds open May 24. Seat allotment is rank-based — apply early, and check our visit slots before they fill.</p>
+            <h2 className="bipe-h2">Classes begin <span className="serif">15 July, 2026.</span></h2>
+            <p className="lead" style={{ marginTop: 14 }}>JEECUP exam window 02–09 June 2026. Counselling opens after results (mid-June). Seat allotment is rank-based — apply early, and check our visit slots before they fill.</p>
             <div className="row" style={{ marginTop: 22, flexWrap: "wrap" }}>
               <Link href="/apply" className="btn btn-primary">Apply now <ArrowIcon /></Link>
               <Link href="/jeecup" className="btn btn-ghost">JEECUP guide</Link>

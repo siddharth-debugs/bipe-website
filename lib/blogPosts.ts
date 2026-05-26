@@ -473,7 +473,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Conducted by</strong>: National Testing Agency (NTA) on behalf of AKTU. Online CBT, typically in May/June.",
           "<strong>Eligibility</strong>: A 3-year diploma in engineering recognised by a state board (BTEUP qualifies) or AICTE, with a minimum of 45% aggregate marks (40% for SC/ST/OBC/PwD as per UP norms — verify current notification).",
           "<strong>Exam pattern</strong>: One paper covering Engineering Mathematics, Engineering Aptitude, and your diploma branch's core subjects. Multiple-choice, two-hour duration. Negative marking applies in most years.",
-          "<strong>Application window</strong>: Usually January–April of your final diploma year (the 2026 cycle opened 15 Jan and closed 20 May after an extension). Exam follows in June (02–09 June for 2026), results mid-June, 7-round counselling from late June through August, classes begin 15 June for new and returning students at BIPE.",
+          "<strong>Application window</strong>: Usually January–April of your final diploma year (the 2026 cycle opened 15 Jan and closed 20 May after an extension). Exam follows in June (02–09 June for 2026), results mid-June, 7-round counselling from late June through August, classes begin 15 July for new and returning students at BIPE.",
           "<strong>Where to look for the current notification</strong>: <a href=\"https://upcet.nta.nic.in\" rel=\"nofollow noopener\" target=\"_blank\">upcet.nta.nic.in</a> and the AKTU notifications page.",
         ],
       },

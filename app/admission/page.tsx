@@ -40,7 +40,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   },
   {
     n: "06",
-    title: "Begin classes — August 2026",
+    title: "Begin classes — 15 July 2026",
     body: "Orientation, mentor allocation, hostel allotment. Three years that change your career trajectory and your family's expectations.",
   },
 ];
@@ -193,7 +193,7 @@ export default async function Page() {
                   {[
                     ["01", "Jan 2026", "Application opens", "Registration · closed 20 May"],
                     ["02", "Jun 2026", "Entrance exam", "02–09 June · JEECUP Group A · CBT"],
-                    ["03", "15 Jun", "Classes begin", "Session start · 2026-27"],
+                    ["03", "15 Jul", "Classes begin", "Session start · 2026-27"],
                   ].map(([n, d, t, sub]) => (
                     <div key={n} style={{
                       display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",

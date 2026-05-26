@@ -190,7 +190,7 @@ export default function Page() {
                 {[
                   { num: "7", l: "Counselling rounds" },
                   { num: "Jun", l: "Exam window · 02-09" },
-                  { num: "Jun 15", l: "Classes begin" },
+                  { num: "Jul 15", l: "Classes begin" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, lineHeight: 0.9, color: "var(--brand)" }}>{s.num}</div>

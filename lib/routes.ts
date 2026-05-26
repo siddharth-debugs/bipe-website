@@ -84,7 +84,7 @@ export const ROUTES: Record<RouteKey, {
   admission: {
     path: "/admission",
     title: "Admission 2026-27 · JEECUP code 4455 · Exam 02-09 June | BIPE",
-    description: "Apply via JEECUP (UPJEE Polytechnic) — code 4455. Exam 02-09 June 2026, 7-round counselling late June to August, classes begin August 2026.",
+    description: "Apply via JEECUP (UPJEE Polytechnic) — code 4455. Exam 02-09 June 2026, 7-round counselling late June to August, classes begin 15 July 2026.",
     keywords: [
       "JEECUP 2026 admission",
       "polytechnic admission Varanasi",

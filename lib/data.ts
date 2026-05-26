@@ -331,7 +331,7 @@ export const DATA: DataShape = {
     { step: "03", title: "Get your rank card", body: "Result expected mid-June 2026. Note your Group A rank — it determines counselling slot." },
     { step: "04", title: "Counselling — choose BIPE 4455", body: "Online choice-filling across 7 rounds (expanded from 5 this cycle). Add BIPE Varanasi (institute code 4455) and your branch preferences in priority order." },
     { step: "05", title: "Seat allotment & report", body: "Seat allotted based on rank + choices. Pay the seat-confirmation fee online, then report to BIPE with documents within the deadline." },
-    { step: "06", title: "Classes begin · 15 June 2026", body: "Session 2026-27 begins 15 June. Orientation, mentor allocation, hostel allotment. Three years that change your career." },
+    { step: "06", title: "Classes begin · 15 July 2026", body: "Session 2026-27 begins 15 July. Orientation, mentor allocation, hostel allotment. Three years that change your career." },
   ],
   facilities: [
     { name: "Computer Lab", count: "120 systems", body: "Latest specs, dual monitors. Open 8am–10pm. Programming, simulation, GIS." },
