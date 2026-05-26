@@ -362,6 +362,20 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               ["JEECUP from Bihar", "/jeecup-from-bihar"],
             ]}
           />
+          {/* Government / aided / JEECUP-cutoff cluster — Commit 3,
+              2026-05-26. Intercepts the high-volume "government
+              polytechnic [town]" + JEECUP-cutoff search-intent
+              cluster. Visible from every footer = site-wide link
+              equity for the 3 comparison pages. */}
+          <Col
+            heading="Government & Aided Comparison"
+            items={[
+              ["Government polytechnic in Eastern UP", "/government-polytechnic-in-eastern-up"],
+              ["Aided polytechnic in UP", "/aided-polytechnic-uttar-pradesh"],
+              ["JEECUP 2026 cutoff · BIPE vs Government", "/jeecup-cutoff-2026-bipe-vs-government"],
+              ["Private vs Government framework", "/private-vs-government-polytechnic"],
+            ]}
+          />
         </div>
 
         {/* Social handles strip — Phase-2 audit: surface real handles */}

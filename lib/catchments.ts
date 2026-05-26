@@ -68,6 +68,24 @@ export interface Catchment {
   faqs: { q: string; a: string }[];
   /** Town-relevant alumni note (general, no fabricated names) */
   alumniNote: string;
+  /**
+   * Local government / aided polytechnic option, for the "where does
+   * the government route fit" subsection on each catchment page.
+   * Captures "government polytechnic [town]" search intent honestly —
+   * we name the local government institute where one exists, surface
+   * its real constraints (branch count, seat capacity), and frame the
+   * comparison with BIPE without disparagement.
+   */
+  governmentOption: {
+    /** Primary local government polytechnic name, or "nearest at X" */
+    primary: string;
+    /** 2-3 sentence factual description with public data */
+    description: string;
+    /** When the government route is genuinely the right choice here */
+    whenGovernment: string;
+    /** When BIPE is the better fit despite the fee gap */
+    whenBipe: string;
+  };
 }
 
 /* eslint-disable max-len */
@@ -130,6 +148,15 @@ export const CATCHMENTS: Catchment[] = [
     ],
     alumniNote:
       "BIPE alumni from across the Mirzapur belt have moved into Mahindra, Tata Steel, Indian Railways (RRB JE), UPPCL and dairy-sector recruiters since 2014. The full named year-wise placement record is on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Mirzapur",
+      description:
+        "Mirzapur has its own BTE UP–affiliated government polytechnic, established under the UP technical-education department. Like all UP government polytechnics, admission is JEECUP-merit based; the per-branch capacity is limited and rank cutoffs vary year to year. Fees in the typical government range of ₹11,870-35,610 per year (verify the current BTE UP gazette).",
+      whenGovernment:
+        "If your JEECUP rank confidently secures a Government Polytechnic Mirzapur seat, the fee gap (~₹15,000-25,000/year vs BIPE) is meaningful for any household. Day-scholar commute within Mirzapur city is feasible, removing hostel costs entirely. For cost-binding families, this is the right path.",
+      whenBipe:
+        "BIPE wins when: (a) your JEECUP rank doesn't safely secure a government seat in the branch you want; (b) you specifically want Dairy Engineering (not commonly offered at government polytechnics in this belt); (c) you're from outer Mirzapur tehsils and would need a hostel anyway; (d) you want documented placement infrastructure (1,000+ named alumni). Honest comparison framework on /private-vs-government-polytechnic.",
+    },
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -189,6 +216,15 @@ export const CATCHMENTS: Catchment[] = [
     ],
     alumniNote:
       "Multiple BIPE alumni from across Jaunpur tehsils have placed at Mahindra, Tata Steel, JCB, Indian Railways, UPPCL and Amul over the 2014-2025 cohorts. Named list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Jaunpur (founded 1984)",
+      description:
+        "Government Polytechnic Jaunpur is one of Eastern UP's longer-established BTE UP–affiliated government institutes. Per recent JEECUP cycles, normal-entry rank cutoffs in popular branches close around 16,000 with ~200+ marks needed in the general category. Fees are in the standard UP government polytechnic range (₹11,870-35,610/year).",
+      whenGovernment:
+        "Government Polytechnic Jaunpur has a 40-year track record and a local alumni network. If your JEECUP rank lands you a seat in the branch you want, and your family is in Jaunpur city (no hostel needed), this is a respected, low-fee option.",
+      whenBipe:
+        "BIPE wins when: (a) your rank doesn't safely secure your branch at GP Jaunpur; (b) you want Dairy Engineering (BIPE has it, government polytechnics in this district typically don't); (c) you're from outer Jaunpur tehsils and need hostel; (d) you want denser placement-cell infrastructure. See /private-vs-government-polytechnic for the honest framework.",
+    },
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -248,6 +284,15 @@ export const CATCHMENTS: Catchment[] = [
     ],
     alumniNote:
       "BIPE alumni from Ghazipur have placed at Mahindra, Tata Motors, Indian Railways (multiple cadres), UPPCL, Amul and Mother Dairy across the 2015-2025 cohorts. Named list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Ghazipur",
+      description:
+        "Ghazipur has a BTE UP–affiliated government polytechnic serving the district. Per-branch capacity is rank-limited via JEECUP counselling. Fees follow the standard UP government polytechnic structure (~₹11,870-35,610/year). The institute does not commonly offer Dairy Engineering — a branch Ghazipur's dairy economy specifically benefits from.",
+      whenGovernment:
+        "If your rank secures Government Polytechnic Ghazipur for Civil, Electrical, or Mechanical Engineering and you live in Ghazipur city or nearby blocks (no hostel need), the lower fee makes government the right choice.",
+      whenBipe:
+        "BIPE wins for Ghazipur students when: (a) you want Dairy Engineering — the natural fit for the Ghazipur dairy belt, available at BIPE and not at government polytechnics here; (b) you need a hostel (80 km is too far for day-scholar); (c) your rank doesn't safely secure your preferred branch at the local government polytechnic. See /private-vs-government-polytechnic.",
+    },
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -307,6 +352,15 @@ export const CATCHMENTS: Catchment[] = [
     ],
     alumniNote:
       "BIPE alumni from across Azamgarh have placed at Mahindra, Tata Steel, JBM Group, Indian Railways, UPPCL, Motherson Sumi and Amul. Year-wise list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Azamgarh",
+      description:
+        "Azamgarh has a BTE UP-affiliated government polytechnic serving the district's large population. Admission is rank-competitive through JEECUP — Azamgarh has one of Eastern UP's larger applicant pools, so cutoffs in popular branches can run sharp. Government fee structure (₹11,870-35,610/year).",
+      whenGovernment:
+        "Government Polytechnic Azamgarh is a sensible choice if your rank confidently secures the branch you want, you live in Azamgarh city (day-scholar feasible), and the fee gap matters. With a strong rank and city residency, this is the obvious option.",
+      whenBipe:
+        "BIPE wins for Azamgarh families when: (a) hostel is non-negotiable (most outer-district students need it); (b) your rank is comfortable but not safe for the branch you want at the government polytechnic; (c) you want Dairy Engineering or the full 5-branch portfolio; (d) you value documented placement-cell support across all 5 branches. /private-vs-government-polytechnic has the framework.",
+    },
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -366,6 +420,15 @@ export const CATCHMENTS: Catchment[] = [
     ],
     alumniNote:
       "BIPE alumni from Mau have placed at Mahindra, Indian Railways, UPPCL, Asian Paints and JBM Group across multiple cohorts. Year-wise list on /alumni.",
+    governmentOption: {
+      primary: "Nearest government polytechnic at Azamgarh / Government Polytechnic Mau (if active)",
+      description:
+        "Mau's local government polytechnic capacity is limited compared to larger neighbouring districts. Many Mau-based JEECUP applicants list Government Polytechnic Azamgarh or Ghazipur as a fallback if the local seat doesn't materialise. Verify the current Mau government polytechnic listing on the BTE UP portal each admission cycle.",
+      whenGovernment:
+        "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (up to ₹19,000/year for income <₹2 lakh), which can effectively reduce net cost to near-zero.",
+      whenBipe:
+        "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with 5 branches available; (b) you want Dairy Engineering or the full branch portfolio; (c) you specifically want the 1,000+ alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
+    },
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -425,6 +488,15 @@ export const CATCHMENTS: Catchment[] = [
     ],
     alumniNote:
       "BIPE alumni from Bhadohi have placed at Mahindra, Tata Steel, Indian Railways, UPPCL and Motherson Sumi across recent cohorts. Named list on /alumni.",
+    governmentOption: {
+      primary: "Nearest government polytechnic at Varanasi / Bhadohi-area listing on BTE UP portal",
+      description:
+        "Bhadohi's local government polytechnic landscape is thin. Government Polytechnic Kuru Pindra in Varanasi (60 seats, 2 branches: Electrical + Textile) is the nearest major government polytechnic — but its tiny capacity and limited branch portfolio rule it out for most Bhadohi applicants. Verify current Bhadohi-district BTE UP listings each admission cycle.",
+      whenGovernment:
+        "Government Polytechnic Kuru Pindra in Varanasi might fit Bhadohi students who specifically want Electrical Engineering and have a strong-enough rank for one of its 60 seats. Otherwise, the closest realistic government polytechnic is further from Bhadohi than BIPE.",
+      whenBipe:
+        "BIPE wins for Bhadohi students because: (a) BIPE is 50 km, comparable or closer than realistic government polytechnic options for branches beyond Electrical / Textile; (b) BIPE offers 5 branches vs Kuru Pindra's 2; (c) Mechanical (Production) maps directly onto the carpet-machinery and export-industry skill base of Bhadohi; (d) Dairy Engineering for agriculture-overlap households. /private-vs-government-polytechnic has the wider framework.",
+    },
   },
 ];
 

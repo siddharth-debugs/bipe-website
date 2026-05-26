@@ -9,7 +9,8 @@ export type RouteKey =
   | "jeecupCounselling" | "whyBipe" | "aboutAffiliations"
   | "privateVsGovernment"
   | "polytechnicInMirzapur" | "polytechnicInJaunpur" | "polytechnicInGhazipur"
-  | "polytechnicInAzamgarh" | "polytechnicInMau" | "polytechnicInBhadohi";
+  | "polytechnicInAzamgarh" | "polytechnicInMau" | "polytechnicInBhadohi"
+  | "governmentPolytechnicEasternUp" | "aidedPolytechnicUp" | "jeecupCutoff2026";
 
 export const SITE_URL = "https://www.bipevns.org";
 
@@ -402,6 +403,63 @@ export const ROUTES: Record<RouteKey, {
       "polytechnic near Bhadohi",
       "Mechanical diploma carpet industry",
       "भदोही पॉलिटेक्निक",
+    ],
+  },
+
+  // ─── Government / aided polytechnic comparison cluster (Commit 3) ───
+  //
+  // Three pages targeting the government-polytechnic search-intent
+  // cluster (rural Eastern UP families typically search "government
+  // polytechnic [town]" first). BIPE intercepts these searchers with
+  // honest comparison content, captures impressions on a high-volume
+  // keyword cluster, and routes qualified traffic through the
+  // private-vs-government framework.
+  governmentPolytechnicEasternUp: {
+    path: "/government-polytechnic-in-eastern-up",
+    title: "Government Polytechnic in Eastern UP · Complete List 2026 | BIPE",
+    description: "Every government polytechnic in Eastern UP — Varanasi (Kuru Pindra, Girls), Jaunpur, Mirzapur, Ghazipur, Azamgarh, Prayagraj. Capacity, branches, JEECUP cutoffs, fees. Honest comparison with BIPE.",
+    keywords: [
+      "government polytechnic in Eastern UP",
+      "government polytechnic Varanasi",
+      "government polytechnic Jaunpur",
+      "government polytechnic Mirzapur",
+      "government polytechnic Ghazipur",
+      "government polytechnic Azamgarh",
+      "list of government polytechnic UP",
+      "BTEUP government college list",
+      "Government Polytechnic Kuru Pindra",
+      "सरकारी पॉलिटेक्निक पूर्वी UP",
+    ],
+  },
+  aidedPolytechnicUp: {
+    path: "/aided-polytechnic-uttar-pradesh",
+    title: "Aided Polytechnic in UP · The 19 Institutes Between Government & Private | BIPE",
+    description: "Aided polytechnic in UP — 19 institutes, government-funded but privately managed. Lower fees than private, JEECUP-based admission. How aided compares with government and BIPE. 2026 guide.",
+    keywords: [
+      "aided polytechnic UP",
+      "aided polytechnic colleges in UP",
+      "aided vs government polytechnic",
+      "aided vs private polytechnic",
+      "list of aided polytechnic UP",
+      "BTEUP aided institute",
+      "fee structure aided polytechnic",
+      "अनुदानित पॉलिटेक्निक UP",
+    ],
+  },
+  jeecupCutoff2026: {
+    path: "/jeecup-cutoff-2026-bipe-vs-government",
+    title: "JEECUP 2026 Cutoff · Government vs BIPE · Branch-wise Closing Ranks",
+    description: "JEECUP 2026 cutoff guide — branch-wise closing ranks across Eastern UP government polytechnics (Jaunpur ~16k, Mirzapur ~18-25k, Azamgarh ~15-22k) vs BIPE's wider rank band. With honest framework for what your rank actually qualifies for.",
+    keywords: [
+      "JEECUP cutoff 2026",
+      "JEECUP 2026 closing rank",
+      "UP polytechnic cutoff government",
+      "JEECUP government polytechnic cutoff",
+      "BIPE JEECUP rank",
+      "JEECUP Eastern UP cutoff",
+      "JEECUP Jaunpur cutoff",
+      "JEECUP Mirzapur cutoff",
+      "JEECUP कटऑफ 2026",
     ],
   },
   privateVsGovernment: {

@@ -426,6 +426,159 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
       </section>
 
       {/* ====================================================================== */}
+      {/* 4b. GOVERNMENT POLYTECHNIC OPTION IN THIS TOWN                          */}
+      {/* ====================================================================== */}
+      <section className="section">
+        <div className="container">
+          <div className="eyebrow">
+            Government polytechnic option · {data.town}
+          </div>
+          <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "30ch" }}>
+            What about{" "}
+            <span
+              className="serif"
+              style={{
+                color: "var(--brand)",
+                fontStyle: "italic",
+                fontWeight: 400,
+              }}
+            >
+              government polytechnic in {data.town}?
+            </span>
+          </h2>
+          <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "70ch", lineHeight: 1.7 }}>
+            Most {data.town} families consider the government polytechnic
+            option first — the fee gap is real, and so is the
+            credibility of the government route. Here&rsquo;s the honest
+            picture for {data.town}.
+          </p>
+          <div
+            style={{
+              marginTop: 28,
+              padding: "24px 28px",
+              border: "1px solid var(--line)",
+              borderRadius: 14,
+              background: "var(--paper)",
+              maxWidth: "78ch",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--ink-3)",
+                marginBottom: 6,
+              }}
+            >
+              The local government option
+            </div>
+            <h3
+              className="bipe-h3"
+              style={{ fontSize: 18, lineHeight: 1.3, color: "var(--ink-1)" }}
+            >
+              {data.governmentOption.primary}
+            </h3>
+            <p
+              style={{
+                marginTop: 12,
+                color: "var(--ink-2)",
+                fontSize: 14,
+                lineHeight: 1.7,
+              }}
+            >
+              {data.governmentOption.description}
+            </p>
+          </div>
+
+          <div
+            style={{
+              marginTop: 18,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 16,
+              maxWidth: "78ch",
+            }}
+          >
+            <article
+              className="card"
+              style={{
+                padding: 22,
+                background: "var(--paper-2)",
+                borderTop: "3px solid var(--ink-3)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--ink-3)",
+                  marginBottom: 8,
+                }}
+              >
+                Choose government when
+              </div>
+              <p
+                style={{
+                  margin: 0,
+                  color: "var(--ink-2)",
+                  fontSize: 14,
+                  lineHeight: 1.7,
+                }}
+              >
+                {data.governmentOption.whenGovernment}
+              </p>
+            </article>
+            <article
+              className="card"
+              style={{
+                padding: 22,
+                background: "color-mix(in oklab, var(--brand) 6%, var(--paper))",
+                borderTop: "3px solid var(--brand)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--brand)",
+                  marginBottom: 8,
+                }}
+              >
+                Choose BIPE when
+              </div>
+              <p
+                style={{
+                  margin: 0,
+                  color: "var(--ink-2)",
+                  fontSize: 14,
+                  lineHeight: 1.7,
+                }}
+              >
+                {data.governmentOption.whenBipe}
+              </p>
+            </article>
+          </div>
+
+          <div style={{ marginTop: 20 }}>
+            <Link
+              href="/government-polytechnic-in-eastern-up"
+              className="btn btn-ghost"
+              style={{ fontSize: 14 }}
+            >
+              See every government polytechnic in Eastern UP{" "}
+              <ArrowIcon size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
       {/* 5. FAQ                                                                  */}
       {/* ====================================================================== */}
       <section className="section">
