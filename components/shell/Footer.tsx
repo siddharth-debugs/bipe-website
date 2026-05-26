@@ -389,6 +389,49 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
           />
         </div>
 
+        {/* JEECUP + BTEUP Resources cluster — Phase 4, 2026-05-26.
+            Surfaces the 12 procedural pages from Phases 2 + 3 in
+            two side-by-side columns. Site-wide link equity to the
+            high-volume procedural keyword cluster around JEECUP
+            registration / admit card / result / counselling and
+            BTEUP semester / Family ID / registration / fees / result.
+            Mobile collapses gracefully to a single column via the
+            CSS bipe-grid-2 wrapper. */}
+        <div
+          style={{
+            paddingTop: 24,
+            marginTop: 8,
+            borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 48,
+          }}
+          className="bipe-grid-2"
+        >
+          <Col
+            heading="JEECUP 2026 Resources"
+            items={[
+              ["JEECUP Registration 2026", "/jeecup-registration-2026"],
+              ["JEECUP Admit Card 2026", "/jeecup-admit-card-2026"],
+              ["JEECUP Result 2026", "/jeecup-result-2026"],
+              ["JEECUP Seat Allotment 2026", "/jeecup-seat-allotment-2026"],
+              ["Document Verification Checklist", "/jeecup-document-verification-checklist"],
+              ["JEECUP Helpline Contact", "/jeecup-helpline-contact"],
+            ]}
+          />
+          <Col
+            heading="BTEUP Resources"
+            items={[
+              ["BTEUP Family ID Mandate", "/bteup-family-id-registration"],
+              ["BTEUP Admit Card", "/bteup-admit-card-download"],
+              ["BTEUP Exam Dates 2026", "/bteup-semester-exam-dates-2026"],
+              ["BTEUP Result Check", "/bteup-result-check"],
+              ["BTEUP Exam Fees Payment", "/bteup-exam-fees-payment"],
+              ["BTEUP Student Registration", "/bteup-student-registration"],
+            ]}
+          />
+        </div>
+
         {/* Social handles strip — Phase-2 audit: surface real handles */}
         <div style={{
           padding: "26px 0",

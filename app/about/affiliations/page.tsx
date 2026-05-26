@@ -332,6 +332,93 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ── BTEUP procedural resources cluster ──
+          Phase 4 cross-link (May 2026): readers who land on
+          /about/affiliations care about the BTEUP relationship
+          specifically — surface the procedural guides here so
+          they can dive into the day-to-day mechanics (semester
+          exams, Family-ID linking, fees, registration) without
+          hunting through the footer. */}
+      <section className="section" style={{ background: "var(--paper-2)" }}>
+        <div className="container">
+          <div className="eyebrow">BTEUP procedural resources · current students</div>
+          <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "30ch" }}>
+            The day-to-day{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+              mechanics of being affiliated.
+            </span>
+          </h2>
+          <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "62ch" }}>
+            Affiliation isn&rsquo;t paperwork — it&rsquo;s how every
+            BIPE student actually interacts with BTEUP across their
+            diploma. Procedural guides for each touchpoint:
+          </p>
+          <div
+            style={{
+              marginTop: 32,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 16,
+            }}
+          >
+            {[
+              ["BTEUP Family ID Mandate", "May 2026 · scholarship gateway", "/bteup-family-id-registration"],
+              ["BTEUP Semester Exam Dates", "Odd / even / practical · 2026", "/bteup-semester-exam-dates-2026"],
+              ["BTEUP Admit Card", "Download · verify · troubleshoot", "/bteup-admit-card-download"],
+              ["BTEUP Result Check", "Grades · grace · revaluation", "/bteup-result-check"],
+              ["BTEUP Exam Fees Payment", "Portal · deadlines · failures", "/bteup-exam-fees-payment"],
+              ["BTEUP Student Registration", "Annual · BIPE-coordinated", "/bteup-student-registration"],
+            ].map(([title, sub, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="card"
+                style={{
+                  padding: 22,
+                  background: "var(--paper)",
+                  textDecoration: "none",
+                  display: "block",
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    color: "var(--brand)",
+                  }}
+                >
+                  BTEUP
+                </div>
+                <div
+                  className="serif"
+                  style={{
+                    fontSize: 19,
+                    fontWeight: 500,
+                    color: "var(--ink-1)",
+                    marginTop: 6,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {title}
+                </div>
+                <div
+                  style={{
+                    marginTop: 10,
+                    color: "var(--ink-2)",
+                    fontSize: 13,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {sub} <span style={{ color: "var(--brand)" }}>→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ + CTA ── */}
       <section className="section">
         <div className="container">

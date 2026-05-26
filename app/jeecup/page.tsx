@@ -478,6 +478,107 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
+      {/* 5c. PROCEDURAL DEEP-DIVES — Phase 4 (May 2026)                          */}
+      {/*
+        Cross-links into the 6 JEECUP Resource pages shipped in
+        Phase 2 of the May 2026 content sprint. Each Resource page
+        is ~1,200-1,500 words deep on one specific step of the
+        JEECUP journey — registration / admit card / result /
+        seat allotment / document verification / helpline. Visible
+        from the /jeecup hub (highest-traffic admission page) so
+        the Resources are discovered by crawlers and by readers
+        who landed here first.
+      */}
+      {/* ====================================================================== */}
+      <section className="section" style={{ background: "var(--paper-2)" }}>
+        <div className="container">
+          <div className="eyebrow">JEECUP 2026 · procedural deep-dives</div>
+          <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "26ch" }}>
+            Need detail on{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+              any specific step?
+            </span>
+          </h2>
+          <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "62ch" }}>
+            Each procedural step above has its own dedicated guide —
+            forms, deadlines, screenshots, common errors, official
+            channels. Pick a step to read the full walkthrough.
+          </p>
+          <div
+            style={{
+              marginTop: 32,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 16,
+            }}
+          >
+            {[
+              ["JEECUP Registration 2026", "Form, fee, documents, errors", "/jeecup-registration-2026"],
+              ["JEECUP Admit Card 2026", "Download · verify · troubleshoot", "/jeecup-admit-card-2026"],
+              ["JEECUP Result 2026", "Rank card · what to do next", "/jeecup-result-2026"],
+              ["JEECUP Seat Allotment 2026", "7-round cycle · freeze / float", "/jeecup-seat-allotment-2026"],
+              ["Document Verification Checklist", "Originals · copies · timeline", "/jeecup-document-verification-checklist"],
+              ["JEECUP Helpline Contact", "Official channels · BIPE support", "/jeecup-helpline-contact"],
+            ].map(([title, sub, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="card"
+                style={{
+                  padding: 22,
+                  background: "var(--paper)",
+                  textDecoration: "none",
+                  display: "block",
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    color: "var(--brand)",
+                  }}
+                >
+                  JEECUP 2026
+                </div>
+                <div
+                  className="serif"
+                  style={{
+                    fontSize: 19,
+                    fontWeight: 500,
+                    color: "var(--ink-1)",
+                    marginTop: 6,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {title}
+                </div>
+                <div
+                  style={{
+                    marginTop: 10,
+                    color: "var(--ink-2)",
+                    fontSize: 13,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {sub} <span style={{ color: "var(--brand)" }}>→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <p style={{ marginTop: 24, color: "var(--ink-3)", fontSize: 13, maxWidth: "62ch", lineHeight: 1.6 }}>
+            Already a BIPE student?{" "}
+            <Link href="/bteup-family-id-registration" style={{ color: "var(--brand)" }}>
+              BTEUP resources
+            </Link>{" "}
+            (Family ID, semester exams, results, fees, registration)
+            are also indexed in the footer for ongoing use.
+          </p>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
       {/* 6. RESOURCES & CONTACT CTA                                              */}
       {/* ====================================================================== */}
       <section className="section">
