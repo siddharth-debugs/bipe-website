@@ -82,7 +82,7 @@ export function InquiryModal() {
           phone: cleanPhone,
           branch: branch || "",
           source: "inquiry-modal",
-          message: `Prospectus request via popup. Branch interest: ${branch || "not specified"}.`,
+          message: `Admissions enquiry via popup. Branch interest: ${branch || "not specified"}.`,
           consent: true,
         }),
       });
@@ -105,8 +105,8 @@ export function InquiryModal() {
 
     window.setTimeout(() => {
       const text = branch
-        ? `Hi, I'm ${cleanName}. I'm interested in ${branch} at BIPE Varanasi. Please share prospectus & admission details. (Phone: ${cleanPhone})`
-        : `Hi, I'm ${cleanName}. Please share BIPE Varanasi prospectus & admission details. (Phone: ${cleanPhone})`;
+        ? `Hi, I'm ${cleanName}. I'm interested in ${branch} at BIPE Varanasi. Please share admission details. (Phone: ${cleanPhone})`
+        : `Hi, I'm ${cleanName}. Please share BIPE Varanasi admission details. (Phone: ${cleanPhone})`;
       const url = `https://api.whatsapp.com/send/?phone=${WA_PHONE}&text=${encodeURIComponent(
         text,
       )}&type=phone_number&app_absent=0`;
@@ -151,10 +151,10 @@ export function InquiryModal() {
         <div className="inq-head">
           <div className="inq-eyebrow">Admissions Open · 2026-27</div>
           <h2 id="inq-title" className="inq-title">
-            Get the BIPE prospectus on WhatsApp
+            Talk to BIPE Admissions on WhatsApp
           </h2>
           <p className="inq-sub">
-            Fees, branches, JEECUP cut-offs &amp; campus details — instantly.
+            Fees, branches, JEECUP cut-offs &amp; campus details — straight from the admissions team.
           </p>
         </div>
 
@@ -166,7 +166,7 @@ export function InquiryModal() {
               </svg>
             </div>
             <h3>Thank you, {name.trim().split(" ")[0]}!</h3>
-            <p>Opening WhatsApp now so our team can share the prospectus…</p>
+            <p>Opening WhatsApp now — our admissions team will reply shortly.</p>
           </div>
         ) : (
           <form className="inq-form" onSubmit={handleSubmit}>
@@ -233,7 +233,7 @@ export function InquiryModal() {
                 </>
               ) : (
                 <>
-                  Get prospectus on WhatsApp
+                  Chat with admissions on WhatsApp
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.45 0 .09 5.36.09 11.95c0 2.11.55 4.17 1.6 5.99L0 24l6.22-1.63a11.94 11.94 0 0 0 5.82 1.49h.01c6.59 0 11.95-5.36 11.95-11.95 0-3.19-1.24-6.19-3.48-8.43Zm-8.47 18.38h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.69.97.99-3.6-.24-.37a9.9 9.9 0 0 1-1.52-5.31c0-5.48 4.46-9.94 9.94-9.94 2.66 0 5.15 1.03 7.03 2.91a9.87 9.87 0 0 1 2.92 7.03c0 5.48-4.46 9.94-9.94 9.94Z" />
                   </svg>
