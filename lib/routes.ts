@@ -15,7 +15,9 @@ export type RouteKey =
   | "polytechnicInPratapgarh" | "polytechnicInGorakhpur"
   | "governmentPolytechnicEasternUp" | "aidedPolytechnicUp" | "jeecupCutoff2026"
   | "jeecupRegistration" | "jeecupAdmitCard" | "jeecupResult"
-  | "jeecupSeatAllotment" | "jeecupDocumentVerification" | "jeecupHelpline";
+  | "jeecupSeatAllotment" | "jeecupDocumentVerification" | "jeecupHelpline"
+  | "bteupFamilyId" | "bteupAdmitCard" | "bteupExamDates"
+  | "bteupResult" | "bteupFees" | "bteupRegistration";
 
 export const SITE_URL = "https://www.bipevns.org";
 
@@ -718,6 +720,94 @@ export const ROUTES: Record<RouteKey, {
       "JEECUP support",
       "JEECUP हेल्पलाइन नंबर",
       "UPJEE Polytechnic helpline",
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  // Phase 3 · BTEUP 2026 Resources hub (May 2026)
+  //
+  // Six procedural pages built from a shared template +
+  // lib/bteup-resources.ts data file. The BTEUP cluster targets
+  // post-admission procedural queries (semester exams, results,
+  // fees, annual registration) that current and prospective BIPE
+  // students search for — distinct from the JEECUP cluster
+  // (entrance-exam-side procedures).
+  // ─────────────────────────────────────────────────────────────────
+  bteupFamilyId: {
+    path: "/bteup-family-id-registration",
+    title: "BTEUP Family ID Registration 2026 · Linking Guide | BIPE 4455",
+    description: "UP's new Family ID mandate for BTEUP students — how to register, link to your BTEUP student record, and unlock state scholarships. Step-by-step guide from BIPE.",
+    keywords: [
+      "BTEUP Family ID",
+      "BTEUP Family ID registration",
+      "UP Family ID linking",
+      "BTEUP student portal",
+      "BTEUP फैमिली आईडी",
+      "UP Family ID polytechnic",
+    ],
+  },
+  bteupAdmitCard: {
+    path: "/bteup-admit-card-download",
+    title: "BTEUP Admit Card 2026 · Semester Exam Download Guide | BIPE 4455",
+    description: "Download BTEUP semester exam admit card from bteup.org.in — login, verify, troubleshoot common errors. Released ~2 weeks before each exam cycle.",
+    keywords: [
+      "BTEUP admit card",
+      "BTEUP admit card download",
+      "BTEUP semester exam admit card",
+      "BTEUP hall ticket",
+      "BTEUP एडमिट कार्ड",
+      "polytechnic semester admit card UP",
+    ],
+  },
+  bteupExamDates: {
+    path: "/bteup-semester-exam-dates-2026",
+    title: "BTEUP Semester Exam Dates 2026 · Odd + Even Cycle | BIPE 4455",
+    description: "BTEUP exam calendar 2026 — odd semester (Apr-Jun), even semester (Oct-Dec), practical exam window, supplementary cycle. Verified pattern from bteup.org.in.",
+    keywords: [
+      "BTEUP exam date",
+      "BTEUP semester exam dates",
+      "BTEUP exam dates 2026",
+      "BTEUP exam calendar",
+      "BTEUP एग्जाम डेट",
+      "polytechnic semester exam UP",
+    ],
+  },
+  bteupResult: {
+    path: "/bteup-result-check",
+    title: "BTEUP Result 2026 · Semester Result + Grace / Revaluation | BIPE 4455",
+    description: "Check BTEUP semester result at bteup.org.in — marksheet download, grade explainer, apply for grace marks or revaluation. Result timeline typically ~2 months post-exam.",
+    keywords: [
+      "BTEUP result",
+      "BTEUP result 2026",
+      "BTEUP semester result",
+      "BTEUP marksheet download",
+      "BTEUP रिजल्ट 2026",
+      "polytechnic semester result UP",
+    ],
+  },
+  bteupFees: {
+    path: "/bteup-exam-fees-payment",
+    title: "BTEUP Exam Fees Payment 2026 · Online Portal Guide | BIPE 4455",
+    description: "Pay BTEUP semester exam fees online — portal guide, fee structure, late-fee window, payment-failed troubleshooting. From the BIPE academic office.",
+    keywords: [
+      "BTEUP exam fees",
+      "BTEUP fees payment",
+      "BTEUP exam fee online",
+      "BTEUP semester fee",
+      "BTEUP एग्जाम फीस",
+    ],
+  },
+  bteupRegistration: {
+    path: "/bteup-student-registration",
+    title: "BTEUP Student Registration 2026 · Annual Process + Documents | BIPE 4455",
+    description: "BTEUP annual student registration — what documents you submit, when, and how BIPE coordinates with BTEUP on your behalf. Required for every diploma student every year.",
+    keywords: [
+      "BTEUP student registration",
+      "BTEUP registration 2026",
+      "BTEUP annual registration",
+      "BTEUP enrollment",
+      "BTEUP रजिस्ट्रेशन",
+      "polytechnic student registration UP",
     ],
   },
 };
