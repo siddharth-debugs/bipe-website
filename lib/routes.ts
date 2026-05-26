@@ -10,6 +10,7 @@ export type RouteKey =
   | "privateVsGovernment"
   | "polytechnicInMirzapur" | "polytechnicInJaunpur" | "polytechnicInGhazipur"
   | "polytechnicInAzamgarh" | "polytechnicInMau" | "polytechnicInBhadohi"
+  | "polytechnicInChandauli" | "polytechnicInBallia"
   | "governmentPolytechnicEasternUp" | "aidedPolytechnicUp" | "jeecupCutoff2026";
 
 export const SITE_URL = "https://www.bipevns.org";
@@ -403,6 +404,40 @@ export const ROUTES: Record<RouteKey, {
       "polytechnic near Bhadohi",
       "Mechanical diploma carpet industry",
       "भदोही पॉलिटेक्निक",
+    ],
+  },
+  // ─── Phase 4 catchment expansion · 26 May 2026 ────────────────────
+  // Two more Eastern UP catchments added to extend the programmatic-
+  // SEO surface across the broader BIPE catchment. Chandauli is the
+  // closest neighbour (40 km, DDU-railway-hub culture); Ballia is the
+  // far-east defence-recruit district (150 km, hostel-essential).
+  polytechnicInChandauli: {
+    path: "/polytechnic-in-chandauli",
+    title: "Polytechnic in Chandauli · BIPE Varanasi · 40 km, JEECUP 4455",
+    description: "Polytechnic for Chandauli students — BIPE Phoolpur is just 40 km via NH-7. DDU Junction makes train-commute easy. 5 BTE UP branches including Mechanical for the Indian Railways RRB JE pipeline. AFRC ₹30,150/year.",
+    keywords: [
+      "polytechnic in Chandauli",
+      "diploma college Chandauli",
+      "BIPE Chandauli",
+      "polytechnic near Chandauli",
+      "RRB JE Chandauli polytechnic",
+      "DDU railway polytechnic diploma",
+      "चंदौली पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInBallia: {
+    path: "/polytechnic-in-ballia",
+    title: "Polytechnic in Ballia · BIPE Varanasi · 150 km, JEECUP 4455",
+    description: "Polytechnic for Ballia students — BIPE Phoolpur is 150 km via NH-19 + NH-29. On-campus boys' hostel essential at this distance. 5 BTE UP branches — Mechanical for Army TES and RRB JE (Ballia's career heritage). AFRC ₹30,150/year.",
+    keywords: [
+      "polytechnic in Ballia",
+      "diploma college Ballia",
+      "BIPE Ballia",
+      "polytechnic near Ballia",
+      "Army Technical Entry diploma",
+      "RRB JE Ballia polytechnic",
+      "hostel polytechnic for Ballia students",
+      "बलिया पॉलिटेक्निक",
     ],
   },
 

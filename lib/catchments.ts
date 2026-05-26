@@ -498,6 +498,142 @@ export const CATCHMENTS: Catchment[] = [
         "BIPE wins for Bhadohi students because: (a) BIPE is 50 km, comparable or closer than realistic government polytechnic options for branches beyond Electrical / Textile; (b) BIPE offers 5 branches vs Kuru Pindra's 2; (c) Mechanical (Production) maps directly onto the carpet-machinery and export-industry skill base of Bhadohi; (d) Dairy Engineering for agriculture-overlap households. /private-vs-government-polytechnic has the wider framework.",
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "chandauli",
+    town: "Chandauli",
+    townHindi: "चंदौली",
+    state: "Uttar Pradesh",
+    distanceKm: 40,
+    roadTime: "~1 hour 15 minutes via NH-7",
+    railTime: "~30 minutes to Varanasi Cantt via DDU Junction",
+    nearestStation: "Pandit Deen Dayal Upadhyaya Junction (DDU, formerly Mughalsarai)",
+    highways: "NH-7 (Varanasi-Mughalsarai-Sasaram) and onward NH-19 to Phoolpur",
+    econProfile:
+      "Rice-belt district anchored by Pandit Deen Dayal Upadhyaya Junction — one of India's largest railway hubs, providing thousands of local jobs and an embedded culture of government-job aspiration. Strong agricultural base, growing industrial activity around the railway corridor. Borders Bihar via Buxar.",
+    whyBipeReasons: [
+      {
+        headline: "BIPE's closest Eastern UP neighbour — just 40 km away",
+        body: "Chandauli is adjacent to Varanasi district. BIPE Phoolpur is the nearest 5-branch private polytechnic — closer than the major government polytechnics outside Chandauli. The 40 km commute via NH-7 (or 30 min train ride to Cantt) makes it geographically practical, but hostel remains the smart choice across a 3-year diploma.",
+      },
+      {
+        headline: "Mechanical + Electrical map onto the Indian Railways recruitment pipeline",
+        body: "DDU Junction is one of India's busiest railway hubs and Chandauli families have a long tradition of targeting Indian Railways (RRB JE), Railway Protection Force, and railway-electrification cadres. BIPE's Mechanical (Production) and Electrical branches are the natural diploma paths into these careers. Career-counselling cell coaches RRB JE and SSC JE prep from Semester 5.",
+      },
+      {
+        headline: "Hostel for the outer Chandauli blocks (Naugarh, Sakaldiha, Chakia)",
+        body: "Chandauli city is close, but the district's outer blocks (Naugarh hills, Sakaldiha, Chakia) are 1-2 hours from Phoolpur even by road. BIPE's on-campus boys' hostel makes the diploma feasible for students from these blocks who otherwise can't realistically attend.",
+      },
+      {
+        headline: "AFRC ₹30,150 + UP Post-Matric Scholarship eligibility",
+        body: "AFRC-approved tuition is fixed at ₹30,150/year. The UP Post-Matric Scholarship covers tuition for eligible SC / ST / OBC / Minority / EWS candidates (income < ₹2 lakh) — BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Chandauli students often falls to ₹6,000-12,000/year.",
+      },
+    ],
+    branchAngle:
+      "Mechanical (Production) for RRB JE and Indian Railways technical cadres (the natural fit for Chandauli's DDU-anchored career culture); Civil for state PWD and agricultural infrastructure; Electrical for UPPCL and railway electrification; CSE for central-government IT cadre routes; Dairy for the agriculture-overlap households.",
+    localContext:
+      "Chandauli has Government Polytechnic Chandauli serving the district. The institute is BTE UP-affiliated and follows the standard UP government polytechnic fee structure. For Chandauli students with a strong JEECUP rank who want the standard 3-4 engineering branches and live in the city, the government route is the right choice. BIPE serves the broader Chandauli district — particularly outer-block students who need hostel access, and any student wanting the Dairy Engineering branch (not commonly available at the local government polytechnic).",
+    transitNarrative:
+      "From Chandauli, the DDU railway junction provides frequent passenger trains to Varanasi Cantt in 25-30 minutes. State-roadways buses on NH-7 take 75 minutes. Many Chandauli students at BIPE travel via DDU train + shared auto from Cantt to Phoolpur (45 min). Free BIPE shuttle from Varanasi Cantt on Saturdays during admission season — WhatsApp +91-9198646464 to book.",
+    faqs: [
+      {
+        q: "How far is Chandauli from BIPE Phoolpur — and is daily commute viable?",
+        a: "BIPE Phoolpur is 40 km from Chandauli city (1 hour 15 min by road via NH-7, or ~30 min by train to Varanasi Cantt + shuttle). Daily commute is technically possible across a 3-year diploma but tiring. For students from Chandauli city centre, day-scholar is feasible; for outer-block students (Naugarh, Sakaldiha), hostel is essential.",
+      },
+      {
+        q: "Does BIPE prepare students for Indian Railways recruitment (RRB JE) given Chandauli's DDU connection?",
+        a: "Yes. BIPE's career-counselling cell runs structured RRB JE / SSC JE / UPPCL JE prep from Semester 5 onward. Mechanical and Electrical branches are the most relevant for the railway-cadre exams, but Civil and CSE also have JE pathways. Several BIPE alumni from Chandauli district work at Indian Railways in technical cadres.",
+      },
+      {
+        q: "How does BIPE compare with Government Polytechnic Chandauli?",
+        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹11,870-35,610/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: 5 branches (including the rare Dairy Engineering), on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,000+ alumni placement record. See /private-vs-government-polytechnic for the framework.",
+      },
+      {
+        q: "Can a Bihar-border Chandauli resident apply easily?",
+        a: "Yes. BIPE participates in JEECUP under code 4455 — JEECUP is open to candidates from any state, with Chandauli (UP) residents in the UP-state pool. The Bihar-adjacent geography doesn't affect admission process. We see students from both UP and Bihar at BIPE — the hostel community is genuinely interstate.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across Chandauli district have placed at Indian Railways (multiple cadres), Mahindra, Tata Steel, UPPCL and dairy-sector recruiters. Named year-wise list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Chandauli",
+      description:
+        "Chandauli has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
+      whenGovernment:
+        "If your JEECUP rank confidently secures a Government Polytechnic Chandauli seat in the branch you want and you live in Chandauli city, the government route is the right choice. Day-scholar is feasible and the fee gap (~₹15,000-25,000/year vs BIPE) is meaningful.",
+      whenBipe:
+        "BIPE wins for Chandauli students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you specifically want Dairy Engineering; (c) you're from outer Chandauli blocks (Naugarh, Sakaldiha, Chakia) and need hostel; (d) you want documented placement infrastructure with named alumni at Indian Railways and 43 other recruiters. /private-vs-government-polytechnic has the wider framework.",
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "ballia",
+    town: "Ballia",
+    townHindi: "बलिया",
+    state: "Uttar Pradesh",
+    distanceKm: 150,
+    roadTime: "~3 hours 30 minutes via NH-19 → Ghazipur → NH-29 to Varanasi",
+    railTime: "~3 hours to Varanasi Cantt via Ballia–Varanasi line",
+    nearestStation: "Ballia Junction (BUI)",
+    highways: "NH-19 / NH-31 connecting Ballia to Ghazipur and onward to Varanasi",
+    econProfile:
+      "Riverside district at the confluence of the Ganga and Ghaghara rivers. Strong agricultural base (rice, sugarcane), traditional handloom weaving. Famed for producing one of India's highest per-capita rates of defence and police recruits — Mangal Pandey's birthplace. Career-conscious families overwhelmingly target government employment.",
+    whyBipeReasons: [
+      {
+        headline: "The diploma path into Ballia's career heritage of government employment",
+        body: "Ballia's defining career narrative is government / defence service — Army Technical Entry, RRB JE, SSC JE, UPPCL JE, Indian Navy SSR. A BTE UP diploma is the technical-cadre entry point for all of these. BIPE's career-counselling cell runs structured prep from Semester 5 for the exam cluster Ballia families actually target.",
+      },
+      {
+        headline: "Hostel is non-negotiable at 150 km — and BIPE has one",
+        body: "Ballia is 150 km from Phoolpur (3-3.5 hours one-way). Day-scholar is impossible. Any Ballia student at any polytechnic outside Ballia district needs hostel residence — and BIPE's on-campus boys' hostel (furnished rooms, mess, 24×7 security, resident warden) is the practical answer.",
+      },
+      {
+        headline: "5 branches including Dairy — relevant for Ballia's agricultural overlay",
+        body: "Ballia is a strong agricultural district with significant dairy and sugarcane activity. BIPE's Dairy Engineering programme — one of only four BTE UP-affiliated Dairy diplomas in the entire state — channels these households into Amul / Mother Dairy / Parag / NDDB recruiters. For families with dairy or agro-processing roots, this is structurally the right branch.",
+      },
+      {
+        headline: "AFRC fee + UP Post-Matric Scholarship → real net affordability",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship (SC/ST/OBC/Minority/EWS, family income < ₹2 lakh) covers tuition in full for eligible candidates. BIPE's office walks every Ballia applicant through the Samaj Kalyan portal application at admission. Net out-of-pocket for eligible students typically falls to ₹6,000-12,000/year — comparable to government polytechnic figures.",
+      },
+    ],
+    branchAngle:
+      "Mechanical (Production) for Army Technical Entry and Indian Railways RRB JE (Ballia's prime career pipeline); Civil for state PWD, Bharatmala / Ganga-bridge projects and infrastructure work; Electrical for UPPCL JE and Indian Railways electrification; CSE for central-government IT cadres; Dairy for the agricultural-overlay households across the Ballia rural belt.",
+    localContext:
+      "Ballia has Government Polytechnic Ballia and a small private polytechnic ecosystem. The local government polytechnic is the natural first choice for cost-binding families with strong-enough JEECUP rank. Many Ballia students who can't secure their preferred branch locally — or who specifically want Dairy Engineering, or who want a denser placement-cell pipeline — move to BIPE Phoolpur with hostel residence.",
+    transitNarrative:
+      "Ballia Junction has frequent express trains to Varanasi Cantt — 3 hours typical. State-roadways buses on NH-19 via Ghazipur take 3.5 hours. From Cantt to Phoolpur is the standard 14-km final leg by shared auto or BIPE shuttle (free on Saturdays during admission season). Door-to-door Ballia → BIPE is about 4-4.5 hours. Plan an overnight stay for the first visit; we can help arrange a hostel trial during the visit.",
+    faqs: [
+      {
+        q: "Ballia to BIPE is 3+ hours by train — how often do students travel home?",
+        a: "Ballia students at BIPE typically travel home once a month or once every 6 weeks — most stay through the semester and travel during longer holidays. Frequent express trains on the Ballia-Varanasi line make weekend home-visits feasible when needed. The residential community at BIPE has students from 12 Eastern UP districts plus Bihar, so the social environment doesn't depend on weekend travel home.",
+      },
+      {
+        q: "Does BIPE specifically prepare for Army Technical Entry (TES) and other defence exams?",
+        a: "BIPE's career-counselling cell runs prep for Army Technical Entry, Navy SSR, Indian Coast Guard Yantrik, and the broader defence-technical exam set. Mechanical and Electrical branches are most aligned. Several BIPE alumni from Ballia and the broader Eastern UP defence-recruitment belt have entered Army TES, Indian Railways and UPPCL after the diploma.",
+      },
+      {
+        q: "How does BIPE compare with Government Polytechnic Ballia?",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Ballia has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge for Ballia students: hostel access (essential at 150 km), Dairy Engineering branch, smaller cohort with named faculty mentors, documented placement record of 1,000+ named alumni. See /private-vs-government-polytechnic for the framework.",
+      },
+      {
+        q: "Will my child be safe in the BIPE hostel at 150 km from home?",
+        a: "Yes. The boys' hostel is on the Phoolpur campus, with a resident warden, 24×7 security, on-campus mess, and a parent hotline that rings the warden's desk directly. Visits during the day are open to families. We arrange a hostel walk-through during every campus visit — particularly important for distant catchments where parents want to see the residential environment before committing.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across Ballia district have placed at Indian Railways, Mahindra, Tata Steel, UPPCL, Amul and Asian Paints across recent cohorts. Year-wise list on /alumni.",
+    governmentOption: {
+      primary: "Government Polytechnic Ballia",
+      description:
+        "Ballia has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government polytechnic fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). The institute serves Ballia city and surrounding blocks well; Dairy Engineering is generally not offered.",
+      whenGovernment:
+        "Government Polytechnic Ballia is the right choice if your rank confidently secures the branch you want, you live in Ballia city or nearby blocks (no hostel need), and the fee gap is binding for your family. With a strong rank and city residency, this is the obvious option.",
+      whenBipe:
+        "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you specifically want Dairy Engineering; (d) you want the documented 1,000+ alumni placement record across 44 recruiters. /private-vs-government-polytechnic has the wider framework.",
+    },
+  },
 ];
 
 /**

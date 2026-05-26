@@ -355,9 +355,11 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               ["Polytechnic in Mirzapur", "/polytechnic-in-mirzapur"],
               ["Polytechnic in Jaunpur", "/polytechnic-in-jaunpur"],
               ["Polytechnic in Ghazipur", "/polytechnic-in-ghazipur"],
+              ["Polytechnic in Chandauli", "/polytechnic-in-chandauli"],
+              ["Polytechnic in Bhadohi", "/polytechnic-in-bhadohi"],
               ["Polytechnic in Azamgarh", "/polytechnic-in-azamgarh"],
               ["Polytechnic in Mau", "/polytechnic-in-mau"],
-              ["Polytechnic in Bhadohi", "/polytechnic-in-bhadohi"],
+              ["Polytechnic in Ballia", "/polytechnic-in-ballia"],
               ["Admission from Bihar", "/admission-from-bihar"],
               ["JEECUP from Bihar", "/jeecup-from-bihar"],
             ]}
