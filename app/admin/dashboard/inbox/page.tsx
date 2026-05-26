@@ -15,6 +15,7 @@
  */
 
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   CalendarDays,
   ChevronLeft,
@@ -81,8 +82,28 @@ export default function InboxPage() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
-  const [kindFilter, setKindFilter] = useState<"all" | Kind>("all");
-  const [bucket, setBucket] = useState<StatusBucket>("all");
+  // Initial filters honour ?kind=… and ?bucket=… so the dashboard
+  // overview cards / status pills can deep-link straight into a
+  // pre-filtered view.
+  const searchParams = useSearchParams();
+  const initialKind = (() => {
+    const k = searchParams.get("kind");
+    return k === "apply" || k === "contact" || k === "enquiry" || k === "visit"
+      ? k
+      : "all";
+  })();
+  const initialBucket = (() => {
+    const b = searchParams.get("bucket");
+    return b === "new" ||
+      b === "in_progress" ||
+      b === "closed_win" ||
+      b === "closed_loss" ||
+      b === "spam"
+      ? (b as StatusBucket)
+      : "all";
+  })();
+  const [kindFilter, setKindFilter] = useState<"all" | Kind>(initialKind);
+  const [bucket, setBucket] = useState<StatusBucket>(initialBucket);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [drawerKey, setDrawerKey] = useState<string | null>(null);
