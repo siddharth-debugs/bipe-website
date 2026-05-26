@@ -1,12 +1,59 @@
 {
   "_meta": {
-    "source": "manual",
-    "lastUpdated": null,
-    "instructions": "TWO WAYS TO POPULATE THIS FILE:\n\n  (A) MANUAL · fastest activation, no API key needed\n      Open https://business.google.com or search 'BIPE Phoolpur' on Google Maps,\n      copy your rating + total review count, paste 3-7 best 5-star reviews below,\n      commit. Schema + carousel activate on next deploy.\n\n  (B) AUTOMATED · daily refresh via Google Places API\n      Set GOOGLE_PLACES_API_KEY and GOOGLE_PLACES_PLACE_ID as GitHub repo secrets,\n      then either run scripts/fetch-google-reviews.mjs locally or wait for the\n      daily GitHub Action (.github/workflows/refresh-reviews.yml) to overwrite\n      this file automatically.\n\n  Either path works. Pick one; you can switch later."
+    "source": "google-places-api",
+    "lastUpdated": "2026-05-26T14:45:48.226Z",
+    "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
+    "displayName": "Banaras Institute of Polytechnic & Engineering",
+    "apiRevision": "places/v1"
   },
-  "rating": 0,
-  "reviewCount": 0,
+  "rating": 4.5,
+  "reviewCount": 410,
   "bestRating": 5,
   "worstRating": 1,
-  "reviews": []
+  "reviews": [
+    {
+      "id": "ChdDSUhNMG9nS0VJQ0FnSURRaXJ6WTNRRRAB",
+      "rating": 5,
+      "text": "Nice Polytechnic college in Purvanchal Zone.Known for its excellent education.BIPE is a good college with respect to engineering. All the facilities like hostel, mess, library, computer center, health etc. are very good. The campus is very beautiful. The academic atmosphere is too good. Library, labs, and workshops are all excellent. Lecturer are well qualified and have an extreme knowledge of their respective subjects. Best core and companies comes for recruitment every year.",
+      "publishTime": "2017-06-27T09:42:35.699Z",
+      "relativeTime": "8 years ago",
+      "author": {
+        "name": "George Mathews",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWEV24_vdyg3XIpTnScxWS2uyszIP0pRKFvXjVPqcjlFqwOizIv=s128-c0x00000000-cc-rp-mo-ba2"
+      }
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VJQ0FnSUNna3FDcGRREAE",
+      "rating": 5,
+      "text": "Very good college. Each class was extremely productive . The college atmosphere was perfect for studies. The teachers are always ready to help. If you want to do diploma or polytechnic there is no where better to go.",
+      "publishTime": "2018-05-06T10:29:31.171Z",
+      "relativeTime": "8 years ago",
+      "author": {
+        "name": "Aditya Rai",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKl7bwvNXKFBzX-UQ1MWev8anA5xXh_BDExXnCwWau2f9nF-w=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "ChZDSUhNMG9nS0VJQ0FnSUNnZ0w3Vk5nEAE",
+      "rating": 5,
+      "text": "Banaras Institute Of Polytechnic & Engineering is the best Diploma collage in whole varanasi best service provider as like 100% campus placement.\nModern labs, laboratry  workshop nice hostel facility.\nAnd also rule and regulation.",
+      "publishTime": "2018-04-26T08:31:05.931Z",
+      "relativeTime": "8 years ago",
+      "author": {
+        "name": "Harsh Rai",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV8tQsuGBzozVz3DSo4WKSeaceG3255RK8JJ-ltKJcZHsfiRY8jNg=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT25ScmJFNVBYMTloTkZWcWFUQmFiaTFWWkRFMlltYxAB",
+      "rating": 5,
+      "text": "Excellent for their placements......\nGreat methods of teaching....",
+      "publishTime": "2025-07-25T12:54:28.800635709Z",
+      "relativeTime": "10 months ago",
+      "author": {
+        "name": "Jaideep Chitranshh",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXY6gLDsyi9rs5s81QseIo-plwpL1_KasHU9fW7Zhknbsq-hT6X=s128-c0x00000000-cc-rp-mo"
+      }
+    }
+  ]
 }
