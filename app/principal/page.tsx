@@ -201,7 +201,7 @@ export default function Page() {
             color: "var(--paper)",
             maxWidth: "22ch", margin: "0 auto",
           }}>
-            We do not prepare students for examinations alone &mdash;{" "}
+            We do not prepare students for examinations alone —{" "}
             <span style={{ color: "var(--accent)" }}>we prepare them for work that matters.</span>
           </p>
           <div style={{
@@ -257,16 +257,16 @@ export default function Page() {
                 }}>
                   W
                 </span>
-                elcome to BIPE &mdash; an institution where knowledge meets the demands of industry. We believe that skill is the purest form of knowledge, and every programme we offer is built on that belief: <strong style={{ color: "var(--ink)" }}>50% theory to understand the why, and 50% practice to master the how.</strong>
+                elcome to BIPE — an institution where knowledge meets the demands of industry. We believe that skill is the purest form of knowledge, and every programme we offer is built on that belief: <strong style={{ color: "var(--ink)" }}>50% theory to understand the why, and 50% practice to master the how.</strong>
               </p>
               <p style={{ marginTop: 22 }}>
                 Our workshops, laboratories and industry partnerships ensure that every BIPE graduate steps into the job market with <strong style={{ color: "var(--ink)" }}>confidence, competence and professional character</strong>. To our students: honour your craft, respect your tools, and take pride in work done right.
               </p>
               <p style={{ marginTop: 22 }}>
-                Sixteen years of training students from across Eastern UP into skilled diploma technicians &mdash; professionals who can <em>hold a tool, read a drawing and build an independent livelihood</em>.
+                Sixteen years of training students from across Eastern UP into skilled diploma technicians — professionals who can <em>hold a tool, read a drawing and build an independent livelihood</em>.
               </p>
               <p style={{ marginTop: 22 }}>
-                To every parent, student and well-wisher &mdash; <strong style={{ color: "var(--brand)" }}>welcome to the BIPE family.</strong>
+                To every parent, student and well-wisher — <strong style={{ color: "var(--brand)" }}>welcome to the BIPE family.</strong>
               </p>
             </div>
           </div>
@@ -294,7 +294,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Each promise below is verifiable on a single page of this site &mdash; or by writing to the Principal's office for documents on letterhead.
+              Each promise below is verifiable on a single page of this site — or by writing to the Principal's office for documents on letterhead.
             </p>
           </div>
 

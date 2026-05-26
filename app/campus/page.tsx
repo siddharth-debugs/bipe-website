@@ -27,7 +27,7 @@ const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "6", label: "Acres", sub: "Phoolpur · single boundary" },
   { num: "8428", label: "Books", sub: "1,220 unique titles" },
   { num: "120", suffix: "+", label: "Networked PCs", sub: "Computer centre" },
-  { num: "50", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
+  { num: "100", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
   { num: "40", label: "Faculty", sub: "1:20 mentor ratio" },
   { num: "5", label: "BTEUP branches", sub: "Including Dairy" },
 ];
@@ -318,12 +318,12 @@ export default async function Page() {
                 machines.
               </h2>
               <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 80%, transparent)", maxWidth: "54ch" }}>
-                A networked computer centre with 120+ machines on licensed operating systems. 50 Mbps firewalled internet across the campus, an in-house ERP for attendance and library, and 100% Wi-Fi coverage from the workshop floor to the hostel mess.
+                A networked computer centre with 120+ machines on licensed operating systems. 100 Mbps firewalled internet across the campus, an in-house ERP for attendance and library, and 100% Wi-Fi coverage from the workshop floor to the hostel mess.
               </p>
               <div className="bipe-stats" style={{ marginTop: 32, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
                 {[
                   ["120+", "PCs networked"],
-                  ["50 Mbps", "Internet · firewalled"],
+                  ["100 Mbps", "Internet · firewalled"],
                   ["100%", "Wi-Fi coverage"],
                 ].map(([n, l]) => (
                   <div key={l} style={{
@@ -475,7 +475,7 @@ export default async function Page() {
             }}>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>Annual sports week</div>
               <div className="serif" style={{ marginTop: 10, fontStyle: "italic", fontWeight: 400, fontSize: 36, color: "var(--paper)", lineHeight: 1.05 }}>
-                Spardha &mdash; <span style={{ color: "var(--accent)" }}>15&ndash;19 February</span>
+                Spardha — <span style={{ color: "var(--accent)" }}>15&ndash;19 February</span>
               </div>
               <p style={{ marginTop: 14, fontSize: 14.5, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 76%, transparent)" }}>
                 Five days. Inter-branch, inter-batch and inter-institute meet — track &amp; field, volleyball, basketball, kabaddi and table tennis.

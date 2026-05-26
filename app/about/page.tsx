@@ -158,7 +158,7 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches, 550+ students drawn from twelve Eastern-UP districts, 40 faculty &mdash; built to make rural Eastern UP a credible address for technical education.
+                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches, 550+ students drawn from twelve Eastern-UP districts, 40 faculty — built to make rural Eastern UP a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
@@ -340,10 +340,10 @@ export default async function Page() {
                 BIPE was founded in 2010 by the <strong style={{ color: "var(--ink)" }}>Purwanchal Educational Trust</strong>, a registered non-profit, with one stated purpose: to bring accountable, hands-on technical education to families across Eastern Uttar Pradesh who could not afford to send their children to Lucknow, Kanpur or further.
               </p>
               <p style={{ marginTop: 18 }}>
-                Our catchment spans twelve Eastern-UP districts &mdash; <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur and Kushinagar</strong>. The campus sits on six acres in Phoolpur, off the Varanasi&ndash;Ghazipur axis. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
+                Our catchment spans twelve Eastern-UP districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur and Kushinagar</strong>. The campus sits on six acres in Phoolpur, off the Varanasi&ndash;Ghazipur axis. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
               </p>
               <p style={{ marginTop: 18 }}>
-                We run <em>five</em> BTEUP-affiliated branches &mdash; including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our dairy alumni work at Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
+                We run <em>five</em> BTEUP-affiliated branches — including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our dairy alumni work at Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
               </p>
               <p style={{ marginTop: 18 }}>
                 Sixteen years in, more than a thousand BIPE alumni serve at <strong style={{ color: "var(--ink)" }}>Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro</strong> and dozens of other employers. Most of them came from villages within 80 kilometres of our gate. That is the story we are most proud of.
@@ -410,7 +410,7 @@ export default async function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              The 2026-27 sanctioned intake under JEECUP college code 4455 &mdash; five 3-year BTEUP-affiliated diploma courses, total {branches.reduce((s, b) => s + b.seats, 0)} seats.
+              The 2026-27 sanctioned intake under JEECUP college code 4455 — five 3-year BTEUP-affiliated diploma courses, total {branches.reduce((s, b) => s + b.seats, 0)} seats.
             </p>
           </div>
 
@@ -491,7 +491,7 @@ export default async function Page() {
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>One campus.</span>
               </h2>
               <p style={{ color: "var(--ink-2)", marginTop: 20, fontSize: 16, lineHeight: 1.7, maxWidth: "52ch" }}>
-                BIPE was located in Phoolpur deliberately &mdash; equidistant from the rural belts of Mau, Ghazipur, Azamgarh and Jaunpur, and reachable from Varanasi, Bhadohi, Mirzapur and Chandauli by daily transport. Students from Sonebhadra, Ballia, Gorakhpur and Kushinagar make up the wider Eastern-UP draw.
+                BIPE was located in Phoolpur deliberately — equidistant from the rural belts of Mau, Ghazipur, Azamgarh and Jaunpur, and reachable from Varanasi, Bhadohi, Mirzapur and Chandauli by daily transport. Students from Sonebhadra, Ballia, Gorakhpur and Kushinagar make up the wider Eastern-UP draw.
               </p>
 
               <div style={{
@@ -570,7 +570,7 @@ export default async function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Every claim below is observable on a Saturday tour &mdash; ask the front desk for a current student to walk you through.
+              Every claim below is observable on a Saturday tour — ask the front desk for a current student to walk you through.
             </p>
           </div>
 
@@ -641,7 +641,7 @@ export default async function Page() {
                   </span>
                 </h2>
                 <p className="lead" style={{ marginTop: 18, maxWidth: "44ch" }}>
-                  Whether you want to walk the campus, send the form, or ask one question on WhatsApp first &mdash; we will meet you where you are in the decision.
+                  Whether you want to walk the campus, send the form, or ask one question on WhatsApp first — we will meet you where you are in the decision.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

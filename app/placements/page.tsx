@@ -130,7 +130,7 @@ const ALUMNI_JSON_LD = {
   url: `${SITE_URL}/placements`,
   name: "Placements · BIPE Varanasi",
   description:
-    "Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — 993+ placements through 2024 across 44 recruiters, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.",
+    "Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — 1200+ placements through 2024, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.",
   about: {
     "@type": "CollegeOrUniversity",
     name: "Banaras Institute of Polytechnic & Engineering",
@@ -182,7 +182,7 @@ const PROGRAMS: Program[] = [
 const CELL_POINTS: { num: string; title: string; body: string }[] = [
   { num: "01", title: "Curate the recruiter pipeline", body: "Relationships built over sixteen years across mechanical, electrical, civil, dairy and IT verticals — kept warm with quarterly outreach." },
   { num: "02", title: "Train every cohort", body: "Six pre-placement programmes run on rotation — workshop, lecture series, mock interviews, AMCAT, tech talks." },
-  { num: "03", title: "Verify every placement", body: "Only joining-letter-confirmed offers count toward the public number. The 993+ figure is auditable, not aspirational." },
+  { num: "03", title: "Verify every placement", body: "Only joining-letter-confirmed offers count toward the public number. The 1200+ figure is auditable, not aspirational." },
   { num: "04", title: "Track the alumni", body: "Quarterly outreach to keep the network warm and the recruiter pipeline fresh — alumni open most of the new doors." },
 ];
 
@@ -269,7 +269,7 @@ export default async function Page() {
                 careers. Counting.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                Polytechnic placements out of BIPE Varanasi — 993+ verified through 2024 across 44 recruiters · sixteen years on record · alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, JCB and beyond.
+                Polytechnic placements out of BIPE Varanasi — 1200+ verified through 2024 · sixteen years on record · alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, JCB and beyond.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
@@ -283,7 +283,7 @@ export default async function Page() {
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink-3)" }}>
                   Tracked &rarr;
                 </span>
-                {["Joining-letter verified", "44 recruiters", "1,000+ alumni"].map((t, i) => (
+                {["Joining-letter verified", "44 recruiters", "2200+ alumni"].map((t, i) => (
                   <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 17, color: "var(--ink-2)" }}>
                     {t}
                     {i < 2 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}
@@ -620,7 +620,7 @@ export default async function Page() {
               </h2>
             </div>
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              Six alumni · five companies · three branches. A small slice of a 1,000+ network — the names below are the ones who allowed us to publish theirs.
+              Six alumni · five companies · three branches. A small slice of a 2200+ network — the names below are the ones who allowed us to publish theirs.
             </p>
           </div>
 
@@ -904,7 +904,7 @@ export default async function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right", lineHeight: 1.7 }}>
-              Photos from real placement drives on the BIPE campus &mdash; recruiter visits, student interviews and offer-letter moments. Filter by branch or year; tap any tile for the full image.
+              Photos from real placement drives on the BIPE campus — recruiter visits, student interviews and offer-letter moments. Filter by branch or year; tap any tile for the full image.
             </p>
           </div>
 
@@ -998,16 +998,16 @@ export default async function Page() {
                 display: "flex", flexDirection: "column", gap: 10,
               }}>
                 <div className="eyebrow" style={{ color: "var(--brand)" }}>Reach the cell</div>
-                <a href={`mailto:${DATA.contact.email}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
+                <a href={`mailto:${DATA.contact.emailPlacement}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
                   <span style={{
                     width: 28, height: 28, borderRadius: 8,
                     background: "var(--brand-soft)", color: "var(--brand)",
                     display: "inline-flex", alignItems: "center", justifyContent: "center",
                     fontSize: 14, fontWeight: 700,
                   }}>@</span>
-                  {DATA.contact.email}
+                  {DATA.contact.emailPlacement}
                 </a>
-                <a href={`tel:${DATA.contact.phone}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
+                <a href={`tel:${DATA.contact.phonePlacement}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
                   <span style={{
                     width: 28, height: 28, borderRadius: 8,
                     background: "var(--brand-soft)", color: "var(--brand)",
@@ -1015,7 +1015,7 @@ export default async function Page() {
                   }}>
                     <PhoneIcon />
                   </span>
-                  {DATA.contact.phone}
+                  {DATA.contact.phonePlacement}
                 </a>
               </div>
             </div>
@@ -1205,16 +1205,16 @@ export default async function Page() {
                     color: "color-mix(in oklab, var(--paper) 72%, transparent)",
                     maxWidth: "44ch",
                   }}>
-                    993+ alumni walked this floor before you. The placement cell is a continuation of admissions — start the conversation now.
+                    1200+ alumni walked this floor before you. The placement cell is a continuation of admissions — start the conversation now.
                   </p>
                 </div>
 
                 <div className="row" style={{ marginTop: 48, gap: 24, flexWrap: "wrap", alignItems: "center" }}>
                   {[
-                    { num: "993+", l: "placed" },
+                    { num: "1200+", l: "placed" },
                     { num: "44", l: "recruiters" },
                     { num: "16", l: "years" },
-                    { num: "1,000+", l: "alumni" },
+                    { num: "2200+", l: "alumni" },
                   ].map((s, i) => (
                     <React.Fragment key={s.l}>
                       <div>

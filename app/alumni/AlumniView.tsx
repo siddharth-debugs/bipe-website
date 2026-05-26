@@ -199,7 +199,7 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
               {manifest.totalJoined.toLocaleString("en-IN")} BIPE students joined a company off campus
               through {manifest.totalDrives} recruiter drives between 2016 and 2021. A further{" "}
               {manifest.totalOffered.toLocaleString("en-IN")} were offered a role and chose another path
-              &mdash; shown below tagged as <em>Offered</em>. Filter by branch, year, recruiter or status.
+              — shown below tagged as <em>Offered</em>. Filter by branch, year, recruiter or status.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
               <Link href="/placements" className="btn btn-primary">

@@ -65,7 +65,7 @@ const HOSTEL_JSON_LD = {
   url: `${SITE_URL}/hostel`,
   name: "BIPE Boys' Hostel",
   description:
-    "On-campus boys' hostel at Banaras Institute of Polytechnic & Engineering — triple- and double-sharing rooms, three meals daily, 24×7 water and security, resident warden, anti-ragging committee. Phoolpur campus, Varanasi.",
+    "On-campus boys' hostel at Banaras Institute of Polytechnic & Engineering — sharing rooms, three pure-vegetarian meals daily, 24×7 water and security, resident warden, anti-ragging committee. Phoolpur campus, Varanasi.",
   accommodationCategory: "Student residence hall · Boys' hostel",
   permittedUsage: "BIPE diploma students only",
   petsAllowed: false,
@@ -84,10 +84,10 @@ const HOSTEL_JSON_LD = {
   },
   amenityFeature: [
     { "@type": "LocationFeatureSpecification", name: "Furnished room (bed, mattress, study desk, chair)", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Three meals daily (vegetarian & non-vegetarian)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Three pure-vegetarian meals daily", value: true },
     { "@type": "LocationFeatureSpecification", name: "24/7 water supply (6-bore rainwater + tank reserve)", value: true },
     { "@type": "LocationFeatureSpecification", name: "Backup power (generator + UPS)", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Wi-Fi in commons (50 Mbps, firewalled)", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Wi-Fi in commons (100 Mbps, firewalled)", value: true },
     { "@type": "LocationFeatureSpecification", name: "Medical room with on-call doctor", value: true },
     { "@type": "LocationFeatureSpecification", name: "24×7 security with staffed gate and visitor register", value: true },
     { "@type": "LocationFeatureSpecification", name: "Parent hotline to warden's desk", value: true },
@@ -100,10 +100,8 @@ const HOSTEL_JSON_LD = {
 };
 
 const FEES: { k: string; v: string; note: string }[] = [
-  { k: "Triple-sharing room", v: "₹38,000", note: "per academic year" },
-  { k: "Double-sharing room", v: "₹48,000", note: "per academic year" },
-  { k: "Mess (3 meals daily)", v: "₹36,000", note: "veg & non-veg · monthly rotation" },
-  { k: "Caution deposit", v: "₹5,000", note: "refundable on exit" },
+  { k: "Accommodation", v: "₹12,000", note: "yearly · one-time · non-refundable" },
+  { k: "Mess (3 meals daily)", v: "₹4,000", note: "per month · in advance · pure veg" },
 ];
 
 const AMENITIES: { icon: React.ReactNode; title: string; body: string }[] = [

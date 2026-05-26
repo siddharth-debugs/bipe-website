@@ -314,23 +314,23 @@ export default function Page() {
                 }}>
                   M
                 </span>
-                y career began far from a school &mdash; in the soil chemistry laboratories of Pantnagar Agriculture University, where I taught young researchers as an Assistant Professor. From there, life called me into the Indian Police Service, where I spent decades watching, very closely, what happens to a young person whose family could not afford the right education at the right age. One truth never moved: <strong style={{ color: "var(--ink)" }}>education is the key to a nation&rsquo;s progress &mdash; and to the dignity of every family within it.</strong>
+                y career began far from a school — in the soil chemistry laboratories of Pantnagar Agriculture University, where I taught young researchers as an Assistant Professor. From there, life called me into the Indian Police Service, where I spent decades watching, very closely, what happens to a young person whose family could not afford the right education at the right age. One truth never moved: <strong style={{ color: "var(--ink)" }}>education is the key to a nation&rsquo;s progress — and to the dignity of every family within it.</strong>
               </p>
 
               <p style={{ marginTop: 22 }}>
-                That conviction is why we put down the foundation of this trust over two decades ago. Eastern UP &mdash; Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur, Varanasi &mdash; deserved an institution that did not ask its families to choose between a quality education and a manageable fee. We promised three things to every parent who walked through our gate: <strong style={{ color: "var(--ink)" }}>a safe campus, an accessible programme, and an affordable fee.</strong> Sixteen years later, those three words are still the test we put every decision through.
+                That conviction is why we put down the foundation of this trust over two decades ago. Eastern UP — Mau, Ghazipur, Azamgarh, Chandauli, Mirzapur, Varanasi — deserved an institution that did not ask its families to choose between a quality education and a manageable fee. We promised three things to every parent who walked through our gate: <strong style={{ color: "var(--ink)" }}>a safe campus, an accessible programme, and an affordable fee.</strong> Sixteen years later, those three words are still the test we put every decision through.
               </p>
 
               <p style={{ marginTop: 22 }}>
-                A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood &mdash; and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record &mdash; one thousand alumni now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more &mdash; is the only kind of report card we believe in.
+                A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood — and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record — one thousand alumni now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more — is the only kind of report card we believe in.
               </p>
 
               <p style={{ marginTop: 22 }}>
-                I want to say something specifically to <strong style={{ color: "var(--brand)" }}>the daughters of Eastern UP and to the parents who hesitate to send them.</strong> A girl student at BIPE is treated with the same expectation, the same respect, and the same opportunity as any other student. We have a working Internal Committee under the POSH Act. We have faculty who answer phones at night when a parent worries. Our on-campus hostel is, at present, for boys only &mdash; a girls&rsquo; block is on the trust&rsquo;s roadmap, and until it opens, our admissions team will personally help any out-of-Varanasi family find safe local accommodation for their daughter. Send your daughters to us. We will return them as engineers.
+                I want to say something specifically to <strong style={{ color: "var(--brand)" }}>the daughters of Eastern UP and to the parents who hesitate to send them.</strong> A girl student at BIPE is treated with the same expectation, the same respect, and the same opportunity as any other student. We have a working Internal Committee under the POSH Act. We have faculty who answer phones at night when a parent worries. Our on-campus hostel is, at present, for boys only — a girls&rsquo; block is on the trust&rsquo;s roadmap, and until it opens, our admissions team will personally help any out-of-Varanasi family find safe local accommodation for their daughter. Send your daughters to us. We will return them as engineers.
               </p>
 
               <p style={{ marginTop: 22 }}>
-                I am also keenly aware that the world your children are entering is changing faster than any classroom syllabus can keep up with. Artificial intelligence, automation, electric mobility, dairy automation, smart manufacturing &mdash; these are not abstract concepts; they will be the hands a BIPE diploma engineer will work alongside on day one. So we teach our students to use modern tools well, to question them when they fail, and to never substitute a tool for the discipline of thinking. This is what an honest education looks like in 2026.
+                I am also keenly aware that the world your children are entering is changing faster than any classroom syllabus can keep up with. Artificial intelligence, automation, electric mobility, dairy automation, smart manufacturing — these are not abstract concepts; they will be the hands a BIPE diploma engineer will work alongside on day one. So we teach our students to use modern tools well, to question them when they fail, and to never substitute a tool for the discipline of thinking. This is what an honest education looks like in 2026.
               </p>
 
               <p style={{ marginTop: 22 }}>
@@ -370,7 +370,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              From the soil-chemistry laboratory to the field, to the Indian Police Service, to founding a trust &mdash; one thread runs through it all: a young person&rsquo;s right to be safe, educated and equipped.
+              From the soil-chemistry laboratory to the field, to the Indian Police Service, to founding a trust — one thread runs through it all: a young person&rsquo;s right to be safe, educated and equipped.
             </p>
           </div>
 
@@ -426,7 +426,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Each pillar is a public commitment from the chairman&rsquo;s desk &mdash; and the standard against which our administrative team is measured every academic year.
+              Each pillar is a public commitment from the chairman&rsquo;s desk — and the standard against which our administrative team is measured every academic year.
             </p>
           </div>
 
@@ -492,7 +492,7 @@ export default function Page() {
                   </span>
                 </h2>
                 <p style={{ marginTop: 14, color: "color-mix(in oklab, var(--paper) 70%, transparent)", maxWidth: "48ch", fontSize: 15, lineHeight: 1.6 }}>
-                  Read the Principal&rsquo;s message next, or book a free campus visit and meet our faculty in person. We answer every parent personally on WhatsApp &mdash; in English or Hindi.
+                  Read the Principal&rsquo;s message next, or book a free campus visit and meet our faculty in person. We answer every parent personally on WhatsApp — in English or Hindi.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

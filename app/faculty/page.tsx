@@ -963,7 +963,7 @@ export default function Page() {
               lineHeight: 1.6,
             }}
           >
-            Diploma teaching at BIPE is anchored by faculty who actively publish &mdash; from journal papers on virtual synchronous machines and EV-grid integration to conference work on dye-sensitised solar cells and ZnO nanostructures.
+            Diploma teaching at BIPE is anchored by faculty who actively publish — from journal papers on virtual synchronous machines and EV-grid integration to conference work on dye-sensitised solar cells and ZnO nanostructures.
           </p>
           <div style={{ marginTop: 28, display: "inline-flex", gap: 10, flexWrap: "wrap" }}>
             <Link
@@ -1086,7 +1086,7 @@ export default function Page() {
             <div style={{ position: "relative" }}>
               <div className="eyebrow">Talk to a teacher</div>
               <h3 className="bipe-h3" style={{ marginTop: 12, maxWidth: "22ch" }}>
-                Pick a branch you&rsquo;re considering &mdash; we&rsquo;ll connect you with the lecturer who runs that lab.
+                Pick a branch you&rsquo;re considering — we&rsquo;ll connect you with the lecturer who runs that lab.
               </h3>
               <p
                 style={{

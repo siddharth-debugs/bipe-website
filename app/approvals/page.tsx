@@ -70,7 +70,7 @@ const APPROVALS: Approval[] = [
     status: "Registered",
     body: (
       <>
-        Active registration with the Department of Higher Education, Ministry of Education &mdash; the national database for accredited institutions.
+        Active registration with the Department of Higher Education, Ministry of Education — the national database for accredited institutions.
       </>
     ),
     meta: [
@@ -135,7 +135,7 @@ export default function Page() {
             <div>
               <div className="eyebrow">APPROVALS · 2026-27</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
-                All approvals &mdash;{" "}
+                All approvals —{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   regulatory and quality.
                 </span>

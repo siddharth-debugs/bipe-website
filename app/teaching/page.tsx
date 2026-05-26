@@ -128,7 +128,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Every course module is mapped to a published Program Outcome. Assessment is calibrated against those outcomes &mdash; progress is measured, not merely attended.
+              Every course module is mapped to a published Program Outcome. Assessment is calibrated against those outcomes — progress is measured, not merely attended.
             </p>
           </div>
 
@@ -336,7 +336,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Five principles, reviewed annually, that govern how AI tools enter the classroom &mdash; and how they don't.
+              Five principles, reviewed annually, that govern how AI tools enter the classroom — and how they don't.
             </p>
           </div>
 
@@ -397,7 +397,7 @@ export default function Page() {
               {
                 eyebrow: "AICTE-MANDATED",
                 title: "Internships",
-                body: "Every BIPE student completes the AICTE-mandated internship at a regional employer &mdash; a manufacturing unit, dairy plant, infra contractor or utility &mdash; supervised by a faculty mentor.",
+                body: "Every BIPE student completes the AICTE-mandated internship at a regional employer — a manufacturing unit, dairy plant, infra contractor or utility — supervised by a faculty mentor.",
               },
               {
                 eyebrow: "FIELD WORK",
@@ -407,7 +407,7 @@ export default function Page() {
               {
                 eyebrow: "WRITTEN OUTPUT",
                 title: "Faculty research",
-                body: "Faculty publish in peer-reviewed venues. Senior students are involved in ongoing projects &mdash; an early apprenticeship in technical writing and the engineering literature.",
+                body: "Faculty publish in peer-reviewed venues. Senior students are involved in ongoing projects — an early apprenticeship in technical writing and the engineering literature.",
               },
             ].map((c) => (
               <article key={c.title} className="card" style={{ padding: 28 }}>

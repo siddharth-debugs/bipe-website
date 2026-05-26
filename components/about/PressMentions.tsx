@@ -202,7 +202,7 @@ export default function PressMentions() {
             fontFamily: "var(--font-mono)", letterSpacing: "0.08em",
           }}
         >
-          Scanned from print editions. Full set on file at the institute &mdash; ask at the front desk.
+          Scanned from print editions. Full set on file at the institute — ask at the front desk.
         </p>
       </div>
     </section>

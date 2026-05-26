@@ -4209,12 +4209,15 @@ export const EVENT_CATEGORY_LABELS: Record<EventCategory, string> = {
   Other: "Other",
 };
 
+// Placement removed from the Events gallery order — placement drives
+// live on /placements and shouldn't double-up in the events gallery.
+// Photos tagged "Placement" stay in the catalog (no data loss) but are
+// hidden from category cards + filters here.
 export const EVENT_CATEGORY_ORDER: EventCategory[] = [
   "Cultural",
   "Sports",
   "Lab",
   "IndustrialVisit",
-  "Placement",
   "CareerProgram",
   "Convocation",
   "Other",

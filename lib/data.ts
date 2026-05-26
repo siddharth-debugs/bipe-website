@@ -38,6 +38,8 @@ export type ContactInfo = {
   phone: string;
   phone2: string;
   email: string;
+  emailPlacement: string;
+  phonePlacement: string;
   emailGrievance: string;
   emailPrincipal: string;
   emailAntiRagging: string;
@@ -101,8 +103,13 @@ export const DATA: DataShape = {
     // operationally route to specific staff. Migrate per-committee
     // when the corresponding mailbox is set up on the new domain.
     email: "info@bipe.ac.in",
+    // Placement cell — separate inbox/handset from the front-door
+    // admissions line. Surface on /placements (Reach the cell card)
+    // and the placement-cell CTA blocks.
+    emailPlacement: "bipetpo@gmail.com",
+    phonePlacement: "+91-9415202879",
     emailGrievance: "grievance@bipevns.org",
-    emailPrincipal: "principal@bipevns.org",
+    emailPrincipal: "principal@bipe.ac.in",
     emailAntiRagging: "antiragging@bipevns.org",
     emailIC: "ic@bipevns.org",
     emailScSt: "scst@bipevns.org",
@@ -169,7 +176,7 @@ export const DATA: DataShape = {
   ],
   stats: [
     { num: "16", label: "Years serving Eastern UP", sub: "since 2010" },
-    { num: "1,000+", label: "Successful alumni", sub: "Mahindra · Tata · BEL" },
+    { num: "2200+", label: "Successful alumni", sub: "1200+ placed since 2010" },
     { num: "5", label: "BTEUP-affiliated branches", sub: "incl. rare Dairy" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },

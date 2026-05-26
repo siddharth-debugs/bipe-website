@@ -111,7 +111,7 @@ const FLAGSHIPS: Flagship[] = [
     en: "Technofest",
     eyebrow: "TECHNOFEST · टेक्नोफेस्ट",
     headline: <>A <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>technical project fair.</span></>,
-    body: <>Two days of live demonstrations &mdash; civil scale-models, electrical control panels, mechanical CAD outputs, dairy processing setups. Open to schools, parents and visitors.</>,
+    body: <>Two days of live demonstrations — civil scale-models, electrical control panels, mechanical CAD outputs, dairy processing setups. Open to schools, parents and visitors.</>,
     date: "21–22 February",
     pillTone: "accent",
     img: BIPE_IMG.projectFair,
@@ -124,7 +124,7 @@ const FLAGSHIPS: Flagship[] = [
     en: "Spardha",
     eyebrow: "SPARDHA · स्पर्धा",
     headline: <>A <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>sports meet.</span></>,
-    body: <>Five days of inter-branch, inter-batch and inter-institute competition &mdash; track &amp; field, volleyball, basketball, kabaddi, table tennis. Closing ceremony with the principal&rsquo;s address.</>,
+    body: <>Five days of inter-branch, inter-batch and inter-institute competition — track &amp; field, volleyball, basketball, kabaddi, table tennis. Closing ceremony with the principal&rsquo;s address.</>,
     date: "15–19 February",
     pillTone: "brand",
     img: BIPE_IMG.sportsMeet,
@@ -266,7 +266,7 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Every February, the campus opens up &mdash; culture, technology, sport. Parents, siblings and prospective students are invited. The gates stay open through the week.
+                Every February, the campus opens up — culture, technology, sport. Parents, siblings and prospective students are invited. The gates stay open through the week.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a campus visit <ArrowIcon size={16} /></Link>
@@ -378,7 +378,7 @@ export default async function Page() {
               </span>
             </h2>
             <p style={{ marginTop: 18, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7, maxWidth: "60ch" }}>
-              {EVENT_PHOTOS.length} photos across {categoryCards.length} categories — academic labs and workshops, sports finals, cultural festivals, placement drives. Click any card to jump to its filter in the gallery below.
+              {EVENT_PHOTOS.length} photos across {categoryCards.length} categories — academic labs and workshops, sports finals, cultural festivals, industrial visits, career training and convocation. Click any card to jump to its filter in the gallery below.
             </p>
           </div>
 
@@ -557,7 +557,7 @@ export default async function Page() {
                 Bring your school.
               </h2>
               <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.75, color: "color-mix(in oklab, var(--paper) 80%, transparent)", maxWidth: "54ch" }}>
-                Parents, siblings, prospective students &mdash; everyone is welcome. Gates stay open through the week of February events. School visits are arranged on request; we&rsquo;ll pair your group with a senior student for a guided walk-through.
+                Parents, siblings, prospective students — everyone is welcome. Gates stay open through the week of February events. School visits are arranged on request; we&rsquo;ll pair your group with a senior student for a guided walk-through.
               </p>
               <div className="bipe-stats" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
                 {[
@@ -632,7 +632,7 @@ export default async function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Recent announcements from the campus &mdash; admissions windows, placement drives, faculty workshops, open houses for Class 10 students.
+              Recent announcements from the campus — admissions windows, placement drives, faculty workshops, open houses for Class 10 students.
             </p>
           </div>
           <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
