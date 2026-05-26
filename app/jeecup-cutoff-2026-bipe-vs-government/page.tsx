@@ -62,7 +62,7 @@ const FAQS = [
   },
   {
     q: "When is JEECUP 2026 counselling and how many rounds are there?",
-    a: "JEECUP 2026 follows the standard 5-round counselling cycle that runs from late May / June through July 2026. Round 1 sees the sharpest cutoffs; Rounds 2-5 progressively see upgradations, withdrawals, and final seat openings. The full schedule is published on jeecup.admissions.nic.in — and BIPE's counselling guide on /jeecup-counselling walks through each round's strategy.",
+    a: "JEECUP 2026 follows a 7-round counselling cycle (expanded from 5 rounds in previous years) that runs from late June through August 2026, following the rescheduled exam window of 02-09 June 2026. Round 1 sees the sharpest cutoffs; Rounds 2-6 progressively see upgradations, withdrawals, and final seat openings; Round 7 is the institute-level spot round. The full schedule is published on jeecup.admissions.nic.in — and BIPE's counselling guide on /jeecup-counselling walks through each round's strategy.",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function Page() {
             JEECUP 2025 closing ranks were sharper than most rural families expect.
             Top-tier government polytechnics (Lucknow, Kanpur, Ghaziabad) need 280-300+ marks
             for popular branches. Eastern UP government polytechnics see closing ranks around
-            14,000-22,000 for general category. BIPE participates in all 5 rounds with a wider
+            14,000-22,000 for general category. BIPE participates in all 7 rounds with a wider
             rank band. Below: branch-wise cutoff context for the 2026 cycle, plus an honest
             framework for what each rank tier actually qualifies for.
           </p>
@@ -177,7 +177,7 @@ export default function Page() {
               <h3 className="bipe-h3" style={{ fontSize: 18, lineHeight: 1.3 }}>BIPE becomes the structural fit</h3>
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.65 }}>
                 Government polytechnic seats in popular Eastern UP institutes are largely gone
-                by this rank tier in Round 1. BIPE participates through all 5 rounds with a
+                by this rank tier in Round 1. BIPE participates through all 7 rounds with a
                 wider rank band — 5 branches available, on-campus hostel for distant catchments,
                 AFRC ₹30,150 fees, UP Post-Matric Scholarship for eligible categories.
               </p>

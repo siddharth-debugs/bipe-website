@@ -191,8 +191,8 @@ export default async function Page() {
                 <h3 className="bipe-h3" style={{ marginTop: 8, fontSize: 20 }}>Plan around these.</h3>
                 <div style={{ marginTop: 22, display: "grid", gap: 14 }}>
                   {[
-                    ["01", "Feb 2026", "Application opens", "Register on JEECUP"],
-                    ["02", "May 2026", "Entrance exam", "JEECUP Group A · CBT"],
+                    ["01", "Jan 2026", "Application opens", "Registration · closed 20 May"],
+                    ["02", "Jun 2026", "Entrance exam", "02–09 June · JEECUP Group A · CBT"],
                     ["03", "Aug 2026", "Classes begin", "Orientation week"],
                   ].map(([n, d, t, sub]) => (
                     <div key={n} style={{

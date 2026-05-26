@@ -25,12 +25,12 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "03",
     title: "Sit the entrance exam",
-    body: "Computer-based test in May 2026, multiple shifts. BIPE&rsquo;s 3-year diploma uses Group A — Class-10-pass with Maths and Science. Syllabus is Class-10 Maths and Science.",
+    body: "Computer-based test 02–09 June 2026, multiple shifts (rescheduled from the original 15–22 May window). BIPE&rsquo;s 3-year diploma uses Group A — Class-10-pass with Maths and Science. Syllabus is Class-10 Maths and Science.",
   },
   {
     n: "04",
     title: "Get your rank card",
-    body: "Results are expected on 30 May 2026. Save the rank card — it is the single document that decides everything that follows in counselling.",
+    body: "Results are expected mid-June 2026 (within ~10 days of the last exam shift on 9 June). Save the rank card — it is the single document that decides everything that follows in counselling.",
   },
   {
     n: "05",
@@ -508,7 +508,7 @@ export default function Page() {
                   </span>
                 </h2>
                 <p style={{ marginTop: 14, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "44ch" }}>
-                  Forms confusing? Choice-filling intimidating? Read the <Link href="/jeecup-counselling" style={{ color: "var(--accent)", textDecoration: "underline" }}>JEECUP counselling 2026 guide</Link> for the 5 rounds, choice-filling order, documents and common mistakes — or call us. There is no fee for the conversation; we will walk you through your options branch-by-branch.
+                  Forms confusing? Choice-filling intimidating? Read the <Link href="/jeecup-counselling" style={{ color: "var(--accent)", textDecoration: "underline" }}>JEECUP counselling 2026 guide</Link> for the 7 rounds, choice-filling order, documents and common mistakes — or call us. There is no fee for the conversation; we will walk you through your options branch-by-branch.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

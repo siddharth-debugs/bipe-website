@@ -79,8 +79,8 @@ export const ROUTES: Record<RouteKey, {
   },
   admission: {
     path: "/admission",
-    title: "Admission 2026-27 · JEECUP code 4455 | BIPE",
-    description: "Apply via JEECUP (UPJEE Polytechnic) — institute code 4455. Counselling May–July, classes begin August 2026.",
+    title: "Admission 2026-27 · JEECUP code 4455 · Exam 02-09 June | BIPE",
+    description: "Apply via JEECUP (UPJEE Polytechnic) — code 4455. Exam 02-09 June 2026, 7-round counselling late June to August, classes begin August 2026.",
     keywords: [
       "JEECUP 2026 admission",
       "polytechnic admission Varanasi",
@@ -613,8 +613,8 @@ export const ROUTES: Record<RouteKey, {
     // ranking at all today. Dedicated page added May 2026 to
     // capture the head term while /jeecup remains the broader
     // 6-step guidance hub.
-    title: "JEECUP Counselling 2026 · 5 rounds · choice filling | BIPE 4455",
-    description: "JEECUP counselling 2026 — 5 rounds, choice filling strategy, documents required, seat allotment, reporting, common mistakes. How BIPE Varanasi (code 4455) fits.",
+    title: "JEECUP Counselling 2026 · 7 rounds · choice filling | BIPE 4455",
+    description: "JEECUP counselling 2026 — 7 rounds (expanded from 5), choice filling strategy, documents required, seat allotment, reporting, common mistakes. How BIPE Varanasi (code 4455) fits.",
     keywords: [
       "JEECUP counselling 2026",
       "JEECUP counselling rounds",

@@ -15,9 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
  *
  * The existing /jeecup page is structured around BIPE's 6-step
  * guidance funnel and reads as a hub. This page is laser-focused on
- * the counselling stage specifically — the 5 rounds, choice filling,
- * documents, seat allotment, reporting — so it can rank cleanly for
- * the head term without diluting /jeecup.
+ * the counselling stage specifically — the 7 rounds (updated from 5
+ * for the 2026 cycle), choice filling, documents, seat allotment,
+ * reporting — so it can rank cleanly for the head term without
+ * diluting /jeecup.
  *
  * Cross-links flow:
  *   /jeecup-counselling  → application step? See /jeecup
@@ -30,37 +31,51 @@ const ROUNDS: { n: string; title: string; window: string; body: string }[] = [
   {
     n: "Round 1",
     title: "First-merit allotment",
-    window: "Approximately May–June",
+    window: "Approximately late June",
     body:
-      "Counselling opens about 10 days after JEECUP results. Top-rank holders get seat in their first choice; lower ranks fill cascading. Seat is provisional until you upload documents and pay the seat-acceptance fee within the round window (usually 3–5 days).",
+      "Counselling opens about 10 days after JEECUP results (mid-June). Top-rank holders get seat in their first choice; lower ranks fill cascading. Seat is provisional until you upload documents and pay the seat-acceptance fee within the round window (usually 3–5 days).",
   },
   {
     n: "Round 2",
     title: "Upgrade + fresh allotment",
-    window: "Approximately June",
+    window: "Approximately late June – early July",
     body:
       "Seats that Round-1 candidates declined or didn't confirm reopen. You can either freeze your Round-1 seat or float for an upgrade (a better branch / institute) in Round 2. If you float and don't get upgraded, you keep the Round-1 seat — no loss.",
   },
   {
     n: "Round 3",
     title: "Second upgrade window",
-    window: "Approximately June–July",
+    window: "Approximately early July",
     body:
       "Same logic as Round 2 — float for another upgrade if you still want one. Most BIPE choice holders settle in Round 2 or 3.",
   },
   {
     n: "Round 4",
-    title: "Final main-round allotment",
-    window: "Approximately July",
+    title: "Third upgrade window",
+    window: "Approximately mid-July",
     body:
-      "Last regular round. After this, the only path to a seat is the spot round at the institute level — far less control over which branch you end up in.",
+      "Further upgrade opportunity. Vacancies from candidates who withdrew or didn't report after Rounds 1-3 reopen. Float if a meaningful upgrade is still possible; otherwise freeze and start preparing to report.",
   },
   {
-    n: "Spot Round",
-    title: "Institute-level seat filling",
-    window: "Approximately July–August",
+    n: "Round 5",
+    title: "Fourth main-round allotment",
+    window: "Approximately late July",
     body:
-      "Vacant seats after Round 4 are filled by the institutes themselves under JEECUP supervision. You apply directly to the institute (BIPE), not through the central portal. Rank still matters but the rules are looser.",
+      "JEECUP introduced two additional rounds for the 2026 cycle (5 → 7), so the main-round window now extends deeper into July. Use this round if your rank didn't secure a seat in Rounds 1-4 or if you're still trying for an upgrade in your preferred branch.",
+  },
+  {
+    n: "Round 6",
+    title: "Final main-round allotment",
+    window: "Approximately early August",
+    body:
+      "Last main-round window before institute-level spot filling begins. After this, the only path to a seat is the spot round at the institute (BIPE) — central-portal control over branch ends here. Most candidates settled in Rounds 1-4 by this point.",
+  },
+  {
+    n: "Spot Round (Round 7)",
+    title: "Institute-level seat filling",
+    window: "Approximately August",
+    body:
+      "Vacant seats after Round 6 are filled by the institutes themselves under JEECUP supervision. You apply directly to the institute (BIPE), not through the central portal. Rank still matters but the rules are looser. BIPE's spot round usually has 10-30 vacancies each year — direct application on-campus, often less competitive than central rounds.",
   },
 ];
 
@@ -188,12 +203,12 @@ export default function Page() {
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              All five rounds explained.
+              All seven rounds explained.
             </span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-            JEECUP counselling is the bridge between your rank and your seat. Five rounds, four
-            documents, one institute code (BIPE Varanasi is{" "}
+            JEECUP counselling is the bridge between your rank and your seat. Seven rounds for the
+            2026 cycle (up from 5 in previous years), one institute code (BIPE Varanasi is{" "}
             <strong>4455</strong>) — and a choice-filling order that decides whether you actually
             land at BIPE or somewhere unintended. This page covers all of it, in order.
           </p>
@@ -214,11 +229,11 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 2. THE 5 ROUNDS                                                         */}
+      {/* 2. THE 7 ROUNDS                                                         */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container">
-          <div className="eyebrow">The 5 rounds</div>
+          <div className="eyebrow">The 7 rounds · 2026 cycle</div>
           <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "26ch" }}>
             What happens in{" "}
             <span
