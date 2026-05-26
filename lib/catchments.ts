@@ -1,0 +1,446 @@
+/**
+ * Eastern UP catchment pages — programmatic SEO landing pages.
+ *
+ * Each entry below renders a dedicated /polytechnic-in-[town] route
+ * targeting families in that town searching for "polytechnic in
+ * [town]" / "diploma engineering [town]" / "best polytechnic near
+ * [town]" — a keyword cluster BIPE currently doesn't own.
+ *
+ * Inspired by BITE's /colleges-in-[town] template (which captures
+ * roughly the same intent for their teacher-education cohort).
+ * For BIPE, the angle is sharper because:
+ *
+ *   (1) Polytechnic-bound families search by town-of-origin more
+ *       than by program — they want to know "is there a good
+ *       option near me" before they explore branches.
+ *
+ *   (2) Hostel availability is the binding constraint for any
+ *       student from outside Varanasi. BIPE's on-campus boys'
+ *       hostel is the differentiator that converts these searchers
+ *       (most Tier-2 town families won't send their child to a
+ *       day-scholar institute requiring a daily 2-3 hour commute).
+ *
+ *   (3) The Eastern UP catchment (Mirzapur, Jaunpur, Ghazipur,
+ *       Azamgarh, Mau, Bhadohi, Chandauli) collectively contributes
+ *       70%+ of BIPE's annual intake. These towns have either weak
+ *       local polytechnic ecosystems or only government-polytechnic
+ *       options at scale.
+ *
+ * Each catchment page renders ~1,500-2,000 words via the shared
+ * CatchmentTemplate component reading this data. FAQPage JSON-LD
+ * is auto-emitted for each page's FAQ block.
+ *
+ * Maintenance: distance / transit / station-name data is verified
+ * against public timetables (Indian Railways + UP State RoadTransport)
+ * as of May 2026. Refresh annually before each admission cycle.
+ */
+
+export interface Catchment {
+  /** URL slug — used in /polytechnic-in-[slug] */
+  slug: string;
+  /** Display name of the town */
+  town: string;
+  /** Town name in Devanagari for Hindi-medium hero / eyebrow */
+  townHindi: string;
+  /** Hindi pronunciation hint shown in the hero subline */
+  state: string;
+  /** Straight-line distance from BIPE Phoolpur in kilometres */
+  distanceKm: number;
+  /** Typical road journey time */
+  roadTime: string;
+  /** Typical rail journey time (one-way to Varanasi region) */
+  railTime: string;
+  /** Nearest major railway station */
+  nearestStation: string;
+  /** Highway code(s) connecting the town to Phoolpur */
+  highways: string;
+  /** One-sentence economic profile of the town */
+  econProfile: string;
+  /** 3-4 reasons BIPE specifically suits this town's students */
+  whyBipeReasons: { headline: string; body: string }[];
+  /** Branch-relevance angle (which BTEUP branch maps to local industry) */
+  branchAngle: string;
+  /** Local polytechnic landscape (general — don't name specific institutes) */
+  localContext: string;
+  /** From-town transit narrative — how to actually get there day 1 */
+  transitNarrative: string;
+  /** FAQ specific to this town */
+  faqs: { q: string; a: string }[];
+  /** Town-relevant alumni note (general, no fabricated names) */
+  alumniNote: string;
+}
+
+/* eslint-disable max-len */
+
+export const CATCHMENTS: Catchment[] = [
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "mirzapur",
+    town: "Mirzapur",
+    townHindi: "मिर्ज़ापुर",
+    state: "Uttar Pradesh",
+    distanceKm: 75,
+    roadTime: "~1 hour 45 minutes via NH-19 / NH-7",
+    railTime: "~1 hour to Varanasi Cantt; multiple daily passengers + expresses",
+    nearestStation: "Mirzapur Junction (MZP)",
+    highways: "NH-19 (Varanasi–Mirzapur) and NH-7 connecting to the wider trunk network",
+    econProfile:
+      "Industrial-belt town anchored by carpet weaving, brassware, sandstone mining and dairy farming. Families balance traditional industry with the next-generation pull toward technical / engineering careers.",
+    whyBipeReasons: [
+      {
+        headline: "Dairy Engineering is rare — and Mirzapur is in a dairy belt",
+        body: "Mirzapur and its surrounding blocks have hundreds of small and mid-scale dairy units. BIPE's Dairy Engineering diploma is one of only four BTE UP–affiliated Dairy programmes in the entire state. For a Mirzapur family with even partial dairy income, the placement pipeline (Amul, Mother Dairy, NDDB, regional dairy cooperatives) directly translates the diploma into a livelihood near home.",
+      },
+      {
+        headline: "Mechanical (Production) for the brassware + carpet machinery industry",
+        body: "Mirzapur's carpet and brassware industries run on imported and locally adapted machinery. Mechanical (Production) graduates who understand both factory-floor production lines and CAD/CAM are well placed for jobs in cluster-development projects across the Vindhya region.",
+      },
+      {
+        headline: "Hostel access for a 2-hour commute that nobody should make daily",
+        body: "Mirzapur is 75 km from Phoolpur. Daily commute is technically possible but exhausting and unsafe over six semesters. BIPE's on-campus boys' hostel makes the diploma actually viable — your child sleeps, studies and eats on campus, and travels home on weekends.",
+      },
+      {
+        headline: "AFRC ₹30,150 tuition — published, no capitation",
+        body: "BIPE's tuition is AFRC-approved and capped. No 'development fund', no donation, no capitation. Compare this with the unwritten asks that occasionally surface at less transparent institutes — Mirzapur families have heard the stories.",
+      },
+    ],
+    branchAngle:
+      "Civil Engineering for the Vindhya stone and infrastructure pipeline; Electrical for UPPCL recruitment; Mechanical (Production) for industrial Mirzapur; Computer Science for the IT / state-government cadre route; Dairy for the local dairy belt.",
+    localContext:
+      "Mirzapur has government polytechnic seats and a handful of private options at varying levels of approval. Verify any local institute's current AICTE EoA letter and AFRC fee structure before deciding. The five branches and on-campus hostel at BIPE Phoolpur are the differentiators most local options can't match in one place.",
+    transitNarrative:
+      "From Mirzapur, take a state-roadways bus to Varanasi Cantt (₹120-140, 1.5 hours), then a shared autorickshaw or shuttle to Phoolpur (45 minutes via NH-19). Trains from Mirzapur Junction reach Varanasi Cantt in under an hour — multiple options every day. During admission season, BIPE runs a free shuttle from Varanasi Cantt on Saturdays — book a visit and we'll save you the second leg.",
+    faqs: [
+      {
+        q: "How far is BIPE from Mirzapur, and is daily commute realistic?",
+        a: "BIPE's Phoolpur campus is 75 km from Mirzapur — about an hour and 45 minutes by road, or one hour by train + shuttle. Daily commute is technically possible but not sustainable across a 3-year diploma. Almost every Mirzapur student takes a hostel seat. Verify hostel availability during application — out-of-Varanasi candidates are accommodated first.",
+      },
+      {
+        q: "Are BIPE's diploma certificates the same as government polytechnic in Mirzapur?",
+        a: "Yes. BIPE and Government Polytechnic Mirzapur are both affiliated to BTE UP. The diploma certificate is identical — same paper, same authority, same legal weight for SSC JE / RRB JE / UPPCL eligibility. The difference lies in cohort size, mentor accessibility, placement infrastructure and branch portfolio (BIPE offers Dairy Engineering, which most government polytechnics don't).",
+      },
+      {
+        q: "What about UP Government scholarships for Mirzapur students?",
+        a: "Full UP Post-Matric Scholarship is available to eligible SC / ST / OBC / Minority / EWS candidates regardless of home district. We help with the Samaj Kalyan portal application during admission. For many Mirzapur families, this brings net out-of-pocket close to the government polytechnic figure.",
+      },
+      {
+        q: "Does BIPE have placement support for Mirzapur students specifically?",
+        a: "Placement support is institution-wide — BIPE's placement cell runs branch-wise drives that any final-year student attends. Several BIPE alumni from the Mirzapur belt now work at Mahindra, Tata Steel, Ola Electric and the Indian Railways. The named alumni list is published on /alumni.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across the Mirzapur belt have moved into Mahindra, Tata Steel, Indian Railways (RRB JE), UPPCL and dairy-sector recruiters since 2014. The full named year-wise placement record is on /alumni.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "jaunpur",
+    town: "Jaunpur",
+    townHindi: "जौनपुर",
+    state: "Uttar Pradesh",
+    distanceKm: 55,
+    roadTime: "~1 hour 30 minutes via NH-19",
+    railTime: "~45 minutes to Varanasi Cantt; frequent passengers + expresses",
+    nearestStation: "Jaunpur Junction (JNU)",
+    highways: "NH-19 directly linking Jaunpur to Varanasi and onward to Phoolpur",
+    econProfile:
+      "Historic district anchored by agriculture, tobacco processing, perfume distillation and dairy. The 14th-century Sharqi heritage gives Jaunpur an unusual mix of traditional cottage industry with strong demand for next-generation technical education.",
+    whyBipeReasons: [
+      {
+        headline: "The closest 5-branch private polytechnic to Jaunpur",
+        body: "At 55 km, BIPE Phoolpur is the nearest BTE UP–affiliated private polytechnic with all five engineering branches (Civil, CSE, Electrical, Mechanical, Dairy) under one roof. For a Jaunpur student who wants choice — or who's still deciding between branches — BIPE is the natural option.",
+      },
+      {
+        headline: "Hostel = the difference between doable and impossible",
+        body: "Jaunpur is close enough (55 km) that some families consider day-scholar. We strongly recommend against it across a 3-year diploma — six semesters of 2-hour daily commute crushes academic performance. The on-campus hostel + mess + warden makes the difference between a passing diploma and a strong one.",
+      },
+      {
+        headline: "Dairy + agriculture overlap — Jaunpur farms feed the dairy economy",
+        body: "Many Jaunpur households have small dairy income alongside agriculture. BIPE's Dairy Engineering diploma (one of only four BTE UP Dairy programmes in the state) translates this background into a career — Amul / Mother Dairy / Parag / NDDB recruit at BIPE annually.",
+      },
+      {
+        headline: "JEECUP 4455 — single code, all 5 branches",
+        body: "When you fill the JEECUP choice-filling form, BIPE's institute code is 4455 — list all five branch preferences under this single code. Most Jaunpur students who lose a BIPE seat lose it to single-choice filling, not rank. Fill all 5.",
+      },
+    ],
+    branchAngle:
+      "Civil for Jaunpur PWD and the Smart Cities corridor; Electrical for UPPCL substations across the Purvanchal grid; Mechanical (Production) for industrial work in the broader region; CSE for state IT cadres and private placements; Dairy for the agriculture-overlap households.",
+    localContext:
+      "Jaunpur has Government Polytechnic Jaunpur and a few smaller private options. The local government polytechnic is well respected, and for cost-binding families it remains a strong choice. BIPE's differentiators are placement intensity, on-campus hostel, smaller cohort and the Dairy Engineering moat — see /private-vs-government-polytechnic for the honest comparison.",
+    transitNarrative:
+      "From Jaunpur, the easiest route is the express train to Varanasi Cantt — 45 minutes, multiple departures throughout the day. Shared cabs and state-roadways buses run continuously on NH-19. From Varanasi Cantt to Phoolpur is a 45-minute shared auto or BIPE's free Saturday shuttle. Book a visit and we'll pre-confirm a seat on the shuttle.",
+    faqs: [
+      {
+        q: "How does BIPE compare with Government Polytechnic Jaunpur?",
+        a: "Both are BTE UP-affiliated — the diploma certificate is identical. Government Polytechnic Jaunpur has a lower fee (~₹6,000-18,000/year vs BIPE's AFRC ₹30,150). BIPE's edge: documented 1,000+ placements, on-campus hostel for students from outside Jaunpur city, the Dairy Engineering branch, smaller cohort with named faculty mentors. See /private-vs-government-polytechnic for the honest framework.",
+      },
+      {
+        q: "Can a Jaunpur student get BIPE admission via JEECUP?",
+        a: "Yes — BIPE participates fully in JEECUP counselling under institute code 4455. List BIPE among your top preferences during choice-filling. JEECUP rank cutoffs vary by branch and category; the published 2025-26 cutoffs are on /jeecup-counselling.",
+      },
+      {
+        q: "Is the BIPE hostel safe for a student from outside Varanasi?",
+        a: "Yes. The boys' hostel is on the Phoolpur campus, with a resident warden, 24×7 security, on-campus mess, and a parent hotline that rings the warden's desk directly. Visits during the day are open to families. We arrange a hostel walk-through during every campus visit.",
+      },
+      {
+        q: "What scholarships apply for Jaunpur students at BIPE?",
+        a: "UP Post-Matric Scholarship covers tuition for SC / ST / OBC / Minority / EWS candidates — applied via the Samaj Kalyan portal at admission time. We assist with the application. Several Jaunpur students at BIPE have net out-of-pocket fees in the ₹6,000-12,000/year range after the scholarship clears.",
+      },
+    ],
+    alumniNote:
+      "Multiple BIPE alumni from across Jaunpur tehsils have placed at Mahindra, Tata Steel, JCB, Indian Railways, UPPCL and Amul over the 2014-2025 cohorts. Named list on /alumni.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "ghazipur",
+    town: "Ghazipur",
+    townHindi: "ग़ाज़ीपुर",
+    state: "Uttar Pradesh",
+    distanceKm: 80,
+    roadTime: "~2 hours via NH-29 / NH-19",
+    railTime: "~1 hour 30 minutes to Varanasi Cantt; multiple daily trains",
+    nearestStation: "Ghazipur City (GCT)",
+    highways: "NH-29 (Ghazipur–Varanasi) connecting to NH-19 onward to Phoolpur",
+    econProfile:
+      "Ganga-riverside district with the government opium factory, dairy farming, fisheries and agro-processing. ICAR-affiliated agricultural research presence and one of Eastern UP's largest cattle markets. A natural fit for any technical or dairy-related diploma.",
+    whyBipeReasons: [
+      {
+        headline: "Dairy Engineering = direct industry pipeline from Ghazipur",
+        body: "Ghazipur sits on one of the densest small-and-mid-scale dairy clusters in Eastern UP. BIPE's Dairy Engineering programme — one of just four BTE UP Dairy diplomas in the state — feeds directly into Amul / Mother Dairy / Parag / NDDB / regional dairy cooperatives. The branch pays back the tuition gap multiple times over for a Ghazipur dairy-household student.",
+      },
+      {
+        headline: "Civil + Mechanical for the government engineering pipeline",
+        body: "Ghazipur has a long tradition of central-government job aspirants — Indian Railways (RRB JE), SSC JE, Indian Army Technical Entry. BIPE's Civil and Mechanical (Production) branches map directly onto these JE-cadre exams. The career-counselling cell coaches students from Semester 5 onward for these exams.",
+      },
+      {
+        headline: "Hostel: 2-hour commute is not sustainable",
+        body: "Ghazipur is 80 km from Phoolpur. Daily commute is not realistic — students who try lose 4-5 hours daily to travel. The on-campus boys' hostel with mess and warden is the only sustainable option for a Ghazipur family.",
+      },
+      {
+        headline: "Transparent AFRC tuition — no hidden capitation",
+        body: "BIPE's AFRC-approved tuition of ₹30,150/year is published on /fees with no donation, no development fund, no capitation. Receipts for every payment. Hostel + mess billed separately and disclosed line by line.",
+      },
+    ],
+    branchAngle:
+      "Dairy Engineering for Ghazipur's dairy-belt households; Civil for state PWD + Bharatmala / National Highway projects; Electrical for UPPCL JE; Mechanical (Production) for Indian Railways and SSC JE; CSE for the central-government IT cadre route.",
+    localContext:
+      "Ghazipur has Government Polytechnic Ghazipur and a small private polytechnic ecosystem. For cost-binding families with a Ghazipur-domicile candidate scoring high enough in JEECUP for a government seat, that path remains the right choice. BIPE serves the Ghazipur families who want denser placement infrastructure, smaller cohorts, on-campus hostel, or specifically the Dairy Engineering branch.",
+    transitNarrative:
+      "Trains from Ghazipur City to Varanasi Cantt run frequently and take 90 minutes. State-roadways buses on NH-29 take roughly 2 hours. From Varanasi Cantt to Phoolpur, a shared auto or BIPE's free Saturday shuttle covers the final 14 km in 35-45 minutes. Book a campus visit and we'll arrange the Cantt-to-Phoolpur leg.",
+    faqs: [
+      {
+        q: "How long is the journey from Ghazipur to BIPE?",
+        a: "Train + shuttle: ~2 hours 15 minutes total (90 min train + 35 min Cantt-to-Phoolpur). Direct road: ~2 hours via NH-29 and NH-19. Daily commute is not viable across a 3-year diploma — hostel is essential.",
+      },
+      {
+        q: "Does BIPE offer Dairy Engineering recruitment opportunities specifically for Ghazipur students?",
+        a: "Recruitment is institution-wide, not town-specific. But BIPE's Dairy Engineering placement pipeline (Amul, Mother Dairy, Parag, NDDB, regional cooperatives) is particularly relevant for Ghazipur students because of the dense local dairy economy — many BIPE Dairy alumni return to Ghazipur to anchor or expand family operations.",
+      },
+      {
+        q: "What documents does a Ghazipur applicant need?",
+        a: "10th and 12th marksheets, JEECUP 2026 rank card, Aadhaar, caste/income certificate (for scholarship), passport photos, transfer and character certificates. Domicile: not required for BIPE admission. Detailed checklist on /documents.",
+      },
+      {
+        q: "Can a Ghazipur student get the UP Government scholarship at BIPE?",
+        a: "Yes. UP Post-Matric Scholarship is portable across UP for eligible SC / ST / OBC / Minority / EWS candidates. Applied via Samaj Kalyan portal at admission — BIPE's office assists. Net tuition for eligible students typically falls to ₹6,000-12,000/year.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from Ghazipur have placed at Mahindra, Tata Motors, Indian Railways (multiple cadres), UPPCL, Amul and Mother Dairy across the 2015-2025 cohorts. Named list on /alumni.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "azamgarh",
+    town: "Azamgarh",
+    townHindi: "आज़मगढ़",
+    state: "Uttar Pradesh",
+    distanceKm: 120,
+    roadTime: "~3 hours via NH-233",
+    railTime: "~2 hours 30 minutes to Varanasi via Mau line",
+    nearestStation: "Azamgarh (AMH)",
+    highways: "NH-233 from Azamgarh through Mau, joining NH-19 to Phoolpur",
+    econProfile:
+      "Large district with strong silk-weaving tradition (Mubarakpur), textile clusters, agriculture and a long history of vocational education aspiration. One of the largest Eastern UP catchments for technical diploma admissions.",
+    whyBipeReasons: [
+      {
+        headline: "Azamgarh's distance makes hostel non-negotiable — BIPE has one on-campus",
+        body: "120 km is too far to commute. Azamgarh students who choose BIPE all stay in the on-campus hostel. Furnished rooms, mess, 24×7 security, resident warden — and the parent hotline rings the warden directly. For a 3-year diploma far from home, the residential environment is more important than the institute name.",
+      },
+      {
+        headline: "Five branches with cross-industry placements",
+        body: "Azamgarh students often arrive at the diploma decision still weighing options — Civil for government infrastructure work, Mechanical for production industry, Dairy for agriculture-overlap families, Electrical for UPPCL, CSE for IT cadres. BIPE offers all five under one institute code (JEECUP 4455).",
+      },
+      {
+        headline: "1,000+ placement record — concrete pipeline, not promises",
+        body: "Over 16 years, BIPE has documented 1,000+ verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
+      },
+      {
+        headline: "AFRC ₹30,150 — flexibility for distant catchments",
+        body: "The published tuition is ₹30,150/year. For SC / ST / OBC / Minority / EWS Azamgarh students, the UP Post-Matric Scholarship covers most or all of this — net out-of-pocket is often in the ₹4,000-12,000/year range. Hostel and mess are billed separately and discussed openly during admission.",
+      },
+    ],
+    branchAngle:
+      "Mechanical (Production) for Azamgarh's textile + handloom machinery base; Civil for state-government engineering and infrastructure cadres; Electrical for UPPCL JE; CSE for government IT cadre exams; Dairy for the agricultural-household segment.",
+    localContext:
+      "Azamgarh has Government Polytechnic Azamgarh and a handful of private polytechnic options. Government seats are limited and admission is rank-dependent through JEECUP. Many Azamgarh students who can't secure a government seat or who specifically want the Dairy Engineering branch turn to BIPE Phoolpur. For families with cost as the primary constraint, government remains the right choice — see /private-vs-government-polytechnic for the framework.",
+    transitNarrative:
+      "Trains from Azamgarh to Varanasi via Mau Junction take 2.5 hours. State-roadways buses on NH-233 take 3 hours. The Cantt-to-Phoolpur final leg is 14 km — shared auto, taxi, or BIPE's free Saturday admission-season shuttle. Door-to-door, a Saturday visit from Azamgarh and back is 8-9 hours including the campus tour. Plan for an overnight stay or split the trip across two days.",
+    faqs: [
+      {
+        q: "Azamgarh to BIPE is 3 hours by road — is this manageable for a 3-year diploma?",
+        a: "Only via hostel residence — daily commute is not realistic. Almost all Azamgarh students at BIPE stay in the on-campus hostel during the academic week and travel home on weekends or during holidays. The institute has students from 12 Eastern UP districts plus Bihar — the residential community is meaningful.",
+      },
+      {
+        q: "How does BIPE compare with Government Polytechnic Azamgarh?",
+        a: "Both BTE UP–affiliated, identical diploma certificate. Government Polytechnic Azamgarh has lower fees and is a strong choice for cost-binding families with high enough JEECUP rank. BIPE's differentiators: documented placement record (1,000+), on-campus boys' hostel (critical at 120 km), Dairy Engineering branch (rare), smaller per-branch cohort. Detailed comparison on /private-vs-government-polytechnic.",
+      },
+      {
+        q: "What about the Mubarakpur textile-cluster industry — does BIPE prepare for that?",
+        a: "Mechanical (Production) is the most aligned branch — covers production-floor systems, machine maintenance, basic CAD/CAM. For textile-machinery-specific work, the broader skill set transfers; many BIPE Mechanical graduates work in factory settings across the textile, automotive and consumer-goods belts of UP and beyond.",
+      },
+      {
+        q: "Is there a BIPE shuttle from Azamgarh during admission season?",
+        a: "Our free admission-season shuttle runs from Varanasi Cantt station, not from Azamgarh directly. From Azamgarh, take a train or bus to Varanasi Cantt (2.5-3 hours), and we'll pick you up there. WhatsApp +91-9198646464 to confirm the shuttle schedule before your visit.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from across Azamgarh have placed at Mahindra, Tata Steel, JBM Group, Indian Railways, UPPCL, Motherson Sumi and Amul. Year-wise list on /alumni.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "mau",
+    town: "Mau",
+    townHindi: "मऊ",
+    state: "Uttar Pradesh",
+    distanceKm: 95,
+    roadTime: "~2 hours 30 minutes via NH-29 / NH-19",
+    railTime: "~1 hour 45 minutes to Varanasi Cantt via Mau Junction",
+    nearestStation: "Mau Junction (MAU)",
+    highways: "NH-29 from Mau via Ghazipur, joining NH-19 to Phoolpur",
+    econProfile:
+      "Compact district with strong handloom and powerloom traditions — Mau saris and the broader Banarasi-style weaving cluster. Lower median household income with high demand for vocational and technical education as the upward path.",
+    whyBipeReasons: [
+      {
+        headline: "Branch portfolio that fits Mau's economic pull",
+        body: "Mau students aim for stable income — either government JE jobs or industry placements. BIPE's branch mix (Civil, Electrical, Mechanical, CSE, Dairy) covers every major SSC JE / RRB JE / UPPCL pipeline. The placement cell coaches Semester 5-6 students for these exams alongside on-campus drives.",
+      },
+      {
+        headline: "Scholarship coverage often offsets the tuition gap with government polytechnic",
+        body: "UP Post-Matric Scholarship (SC/ST/OBC/Minority/EWS) covers tuition for eligible candidates. For many Mau households, post-scholarship out-of-pocket fees fall to ₹4,000-10,000/year — close to or below government polytechnic figures. We assist with the Samaj Kalyan portal application at admission.",
+      },
+      {
+        headline: "Hostel access — essential at 95 km",
+        body: "Mau is 95 km from Phoolpur. Day-scholar attempt would consume 4+ hours daily. The on-campus boys' hostel makes the diploma viable — furnished rooms, mess, 24×7 security. Hostel charges are billed separately and disclosed in writing before payment.",
+      },
+      {
+        headline: "Mechanical (Production) maps directly onto Mau's powerloom industry",
+        body: "Mau's powerloom cluster runs on machinery that needs trained technicians for upkeep, calibration and improvement. Mechanical (Production) graduates from BIPE can return to support the local cluster — or apply the same skills to the broader industrial belt across Eastern UP.",
+      },
+    ],
+    branchAngle:
+      "Mechanical (Production) for the powerloom + textile cluster; Electrical for UPPCL JE; Civil for state PWD and infrastructure work; CSE for central-government IT cadre exams; Dairy for the agriculture-overlap segment.",
+    localContext:
+      "Mau has limited local polytechnic infrastructure — most technical-education aspirants travel to nearby districts (Azamgarh, Varanasi, Ballia, Ghazipur). BIPE Phoolpur is among the closest 5-branch private polytechnic options with full hostel residence. Government Polytechnic seats in the broader region are available but rank-competitive.",
+    transitNarrative:
+      "Mau Junction has frequent trains to Varanasi Cantt — 1.5 to 2 hours depending on the service. Road via NH-29 through Ghazipur takes ~2.5 hours. From Varanasi Cantt to Phoolpur is the standard 14-km shared-auto or BIPE shuttle leg. WhatsApp the admission office before a visit to confirm shuttle availability on your travel day.",
+    faqs: [
+      {
+        q: "Mau is a smaller district — does BIPE have students from here?",
+        a: "Yes. BIPE's intake spans 12 Eastern UP districts including Mau. Smaller catchments often produce some of the most determined students because the diploma represents a real economic step. The hostel community has students from across the catchment — it's not a Varanasi-only environment.",
+      },
+      {
+        q: "Will UP Post-Matric Scholarship really cover the tuition?",
+        a: "For eligible SC / ST / OBC / Minority / EWS candidates, the scholarship covers BIPE's AFRC-approved tuition in full. Hostel and mess remain payable separately. Apply via the Samaj Kalyan portal during admission — BIPE's office walks every applicant through the process.",
+      },
+      {
+        q: "Does BIPE recognise the Mau textile-cluster background?",
+        a: "Many Mau students at BIPE come from textile-cluster households. The diploma doesn't formally weight industry background, but the Mechanical (Production) curriculum directly applies to powerloom machinery and factory floors. Several alumni have used their BIPE training to upgrade family operations.",
+      },
+      {
+        q: "Can I visit BIPE from Mau without an overnight stay?",
+        a: "A Saturday day-trip from Mau is feasible — train at 7-8 AM, arrive Varanasi Cantt by 9-10 AM, BIPE shuttle to Phoolpur, 2-3 hours on campus, return train by 4-5 PM. WhatsApp +91-9198646464 to coordinate.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from Mau have placed at Mahindra, Indian Railways, UPPCL, Asian Paints and JBM Group across multiple cohorts. Year-wise list on /alumni.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "bhadohi",
+    town: "Bhadohi",
+    townHindi: "भदोही",
+    state: "Uttar Pradesh",
+    distanceKm: 50,
+    roadTime: "~1 hour 15 minutes via NH-19",
+    railTime: "~50 minutes to Varanasi Cantt; multiple daily trains",
+    nearestStation: "Bhadohi (BOY)",
+    highways: "NH-19 directly to Varanasi, onward to Phoolpur",
+    econProfile:
+      "World-renowned for hand-knotted carpet exports — the Bhadohi carpet belt is one of India's largest. Strong export-economy households with growing demand for technical education that complements rather than replaces the traditional artisan economy.",
+    whyBipeReasons: [
+      {
+        headline: "Closest option — BIPE is 50 km from Bhadohi",
+        body: "Bhadohi is among BIPE's nearest catchment districts. NH-19 connects directly to Phoolpur. Daily commute is still not advised across a 3-year diploma (the morning + evening loop is 2.5 hours total), but it's at the lower end of the catchment range. Hostel residence is the right choice for most.",
+      },
+      {
+        headline: "Mechanical (Production) maps onto carpet-machinery and export-industry needs",
+        body: "Bhadohi's carpet industry is increasingly machinery-augmented even where the final knotting remains hand-done. Production-floor systems, quality-control measurement, machine maintenance — Mechanical (Production) graduates fit into the industry and the broader Eastern UP industrial belt.",
+      },
+      {
+        headline: "Dairy Engineering for the agricultural-overlap segment",
+        body: "Bhadohi has significant rural-block dairy activity outside the carpet-export centre. BIPE's Dairy Engineering programme — one of only four BTE UP-affiliated Dairy diplomas — channels these households into Amul / Mother Dairy / Parag / NDDB and regional cooperatives.",
+      },
+      {
+        headline: "AFRC ₹30,150 with no hidden charges — fits the export-economy budget",
+        body: "Carpet-export households often have variable annual income tied to season cycles and export orders. BIPE's AFRC-approved tuition is fixed, capped, published on /fees, with no donation or capitation. Payment can be discussed honestly during admission counselling.",
+      },
+    ],
+    branchAngle:
+      "Mechanical (Production) for the carpet-machinery and industrial belt; Civil for infrastructure and state PWD; Electrical for UPPCL substations; CSE for central-government IT cadre routes; Dairy for the agriculture-overlap households.",
+    localContext:
+      "Bhadohi has a relatively thin local polytechnic ecosystem — most technical-education aspirants from Bhadohi travel either to BIPE Phoolpur (50 km) or to government polytechnics in nearby districts. The proximity makes BIPE a natural option for Bhadohi families wanting denser placement infrastructure and an on-campus residential environment.",
+    transitNarrative:
+      "Trains from Bhadohi to Varanasi Cantt run frequently — under an hour. State-roadways buses on NH-19 take 1 hour 15 minutes. From Cantt to Phoolpur is the standard 14-km final leg. For weekend home-visits during the academic semester, Bhadohi's proximity is a real advantage over more distant catchments.",
+    faqs: [
+      {
+        q: "Bhadohi is only 50 km away — can a student commute daily instead of staying in hostel?",
+        a: "Technically yes; in practice not advisable. Daily commute is ~2.5 hours total — workable in semester 1, but the cumulative fatigue across six semesters hurts academic performance. Most Bhadohi students at BIPE stay in the on-campus hostel during the academic week and travel home on weekends.",
+      },
+      {
+        q: "Does BIPE work with the Bhadohi carpet-export industry?",
+        a: "BIPE is an academic institution, not an industry partnership. But Mechanical (Production) graduates with the right skill set find work in the broader industrial belt — including, in some cases, the machinery-augmented portions of the carpet-export industry. Several alumni have built careers serving the regional export economy.",
+      },
+      {
+        q: "How does BIPE compare with government polytechnic options accessible from Bhadohi?",
+        a: "The closest government polytechnic options for Bhadohi students are in nearby districts. Both routes lead to BTE UP-affiliated diplomas — identical certificate. BIPE's edge: documented 1,000+ placements, on-campus hostel, smaller cohorts, Dairy Engineering. Government route's edge: lower fee. Honest comparison framework on /private-vs-government-polytechnic.",
+      },
+      {
+        q: "Will the UP Post-Matric Scholarship apply for Bhadohi students at BIPE?",
+        a: "Yes — the scholarship is portable across UP for eligible SC/ST/OBC/Minority/EWS candidates. BIPE's office assists with the Samaj Kalyan portal application during admission. Net out-of-pocket tuition for eligible students typically falls below government polytechnic figures after scholarship clears.",
+      },
+    ],
+    alumniNote:
+      "BIPE alumni from Bhadohi have placed at Mahindra, Tata Steel, Indian Railways, UPPCL and Motherson Sumi across recent cohorts. Named list on /alumni.",
+  },
+];
+
+/**
+ * Lookup helper — returns the Catchment for a given slug, or undefined
+ * if no match. Used by app/polytechnic-in-[town]/page.tsx route handlers.
+ */
+export function catchmentBySlug(slug: string): Catchment | undefined {
+  return CATCHMENTS.find((c) => c.slug === slug);
+}
+
+/**
+ * Returns the other 5 catchments (excluding the current slug) for the
+ * "Nearby catchment cities" internal-linking block at the bottom of
+ * each catchment page.
+ */
+export function otherCatchments(currentSlug: string): Catchment[] {
+  return CATCHMENTS.filter((c) => c.slug !== currentSlug);
+}

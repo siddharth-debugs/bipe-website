@@ -336,6 +336,34 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
           <Col heading="Compliances" items={[["Approvals", "/approvals"], ["Mandatory Disclosure", "/mandatory-disclosure"], ["Anti-Ragging", "/anti-ragging"], ["Grievance", "/grievance"], ["AI Policy", "/ai-policy"], ["Privacy", "/privacy"], ["Terms", "/terms"]]} />
         </div>
 
+        {/* Eastern UP catchment cluster — 2026-05-26. Footer-level
+            internal-linking moat targeting "polytechnic in [town]" geo
+            queries across BIPE's natural catchment. Every page on the
+            site votes for these 6 geo-landing URLs via this footer
+            block — inspired by BITE's "Compare Colleges in Varanasi"
+            footer pattern that anchors their programmatic-SEO reach. */}
+        <div
+          style={{
+            paddingTop: 24,
+            marginTop: 8,
+            borderTop: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)",
+          }}
+        >
+          <Col
+            heading="Polytechnic across Eastern UP"
+            items={[
+              ["Polytechnic in Mirzapur", "/polytechnic-in-mirzapur"],
+              ["Polytechnic in Jaunpur", "/polytechnic-in-jaunpur"],
+              ["Polytechnic in Ghazipur", "/polytechnic-in-ghazipur"],
+              ["Polytechnic in Azamgarh", "/polytechnic-in-azamgarh"],
+              ["Polytechnic in Mau", "/polytechnic-in-mau"],
+              ["Polytechnic in Bhadohi", "/polytechnic-in-bhadohi"],
+              ["Admission from Bihar", "/admission-from-bihar"],
+              ["JEECUP from Bihar", "/jeecup-from-bihar"],
+            ]}
+          />
+        </div>
+
         {/* Social handles strip — Phase-2 audit: surface real handles */}
         <div style={{
           padding: "26px 0",

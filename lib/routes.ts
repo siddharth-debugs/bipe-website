@@ -7,7 +7,9 @@ export type RouteKey =
   | "privacy" | "terms" | "antiRagging"
   | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar"
   | "jeecupCounselling" | "whyBipe" | "aboutAffiliations"
-  | "privateVsGovernment";
+  | "privateVsGovernment"
+  | "polytechnicInMirzapur" | "polytechnicInJaunpur" | "polytechnicInGhazipur"
+  | "polytechnicInAzamgarh" | "polytechnicInMau" | "polytechnicInBhadohi";
 
 export const SITE_URL = "https://www.bipevns.org";
 
@@ -313,6 +315,93 @@ export const ROUTES: Record<RouteKey, {
       "AICTE approved polytechnic Varanasi",
       "JEECUP 4455 polytechnic",
       "वाराणसी का सबसे अच्छा पॉलिटेक्निक",
+    ],
+  },
+  // ─── Eastern UP catchment landing pages (Phase 3 · 26 May 2026) ────
+  //
+  // Six geo-targeted landing pages capturing "polytechnic in [town]"
+  // intent across BIPE's Tier-1/Tier-2 Eastern UP catchment. Inspired
+  // by BITE's /colleges-in-[town] programmatic SEO pattern but
+  // sharpened for polytechnic-admission decision-stage searchers.
+  // Each page renders ~1,500-2,000 words via the shared
+  // CatchmentTemplate component reading from lib/catchments.ts.
+  // FAQPage + BreadcrumbList JSON-LD emitted per page.
+  polytechnicInMirzapur: {
+    path: "/polytechnic-in-mirzapur",
+    title: "Polytechnic in Mirzapur · BIPE Varanasi · 75 km, JEECUP 4455",
+    description: "Polytechnic for Mirzapur students — BIPE Phoolpur is 75 km via NH-19. 5 BTE UP branches including rare Dairy Engineering. On-campus boys' hostel. AFRC ₹30,150/year. JEECUP code 4455.",
+    keywords: [
+      "polytechnic in Mirzapur",
+      "diploma college Mirzapur",
+      "BIPE Mirzapur",
+      "polytechnic near Mirzapur",
+      "best polytechnic for Mirzapur students",
+      "मिर्ज़ापुर पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInJaunpur: {
+    path: "/polytechnic-in-jaunpur",
+    title: "Polytechnic in Jaunpur · BIPE Varanasi · 55 km, JEECUP 4455",
+    description: "Polytechnic for Jaunpur students — BIPE Phoolpur is 55 km via NH-19. 5 branches incl. Dairy Engineering. On-campus hostel. AFRC ₹30,150/year. JEECUP institute code 4455.",
+    keywords: [
+      "polytechnic in Jaunpur",
+      "diploma college Jaunpur",
+      "BIPE Jaunpur",
+      "polytechnic near Jaunpur",
+      "best polytechnic Jaunpur",
+      "जौनपुर पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInGhazipur: {
+    path: "/polytechnic-in-ghazipur",
+    title: "Polytechnic in Ghazipur · BIPE Varanasi · 80 km, JEECUP 4455",
+    description: "Polytechnic for Ghazipur students — BIPE Phoolpur is 80 km via NH-29. 5 BTE UP branches with Dairy Engineering for the local dairy belt. On-campus hostel. AFRC ₹30,150/year.",
+    keywords: [
+      "polytechnic in Ghazipur",
+      "diploma college Ghazipur",
+      "BIPE Ghazipur",
+      "polytechnic near Ghazipur",
+      "Dairy Engineering Ghazipur",
+      "ग़ाज़ीपुर पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInAzamgarh: {
+    path: "/polytechnic-in-azamgarh",
+    title: "Polytechnic in Azamgarh · BIPE Varanasi · 120 km, JEECUP 4455",
+    description: "Polytechnic for Azamgarh students — BIPE Phoolpur is 120 km via NH-233. On-campus boys' hostel essential at this distance. 5 BTE UP branches. AFRC ₹30,150/year. JEECUP 4455.",
+    keywords: [
+      "polytechnic in Azamgarh",
+      "diploma college Azamgarh",
+      "BIPE Azamgarh",
+      "polytechnic near Azamgarh",
+      "hostel polytechnic Eastern UP",
+      "आज़मगढ़ पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInMau: {
+    path: "/polytechnic-in-mau",
+    title: "Polytechnic in Mau · BIPE Varanasi · 95 km, JEECUP 4455",
+    description: "Polytechnic for Mau students — BIPE Phoolpur is 95 km via NH-29 / NH-19. 5 BTE UP branches. UP Post-Matric scholarship-eligible. On-campus hostel. AFRC ₹30,150/year.",
+    keywords: [
+      "polytechnic in Mau",
+      "diploma college Mau",
+      "BIPE Mau",
+      "polytechnic near Mau",
+      "Mau pottery diploma",
+      "मऊ पॉलिटेक्निक",
+    ],
+  },
+  polytechnicInBhadohi: {
+    path: "/polytechnic-in-bhadohi",
+    title: "Polytechnic in Bhadohi · BIPE Varanasi · 50 km, JEECUP 4455",
+    description: "Polytechnic for Bhadohi students — BIPE Phoolpur is 50 km via NH-19. Mechanical & Dairy Engineering for the carpet-belt + agricultural-overlap households. AFRC ₹30,150/year.",
+    keywords: [
+      "polytechnic in Bhadohi",
+      "diploma college Bhadohi",
+      "BIPE Bhadohi",
+      "polytechnic near Bhadohi",
+      "Mechanical diploma carpet industry",
+      "भदोही पॉलिटेक्निक",
     ],
   },
   privateVsGovernment: {
