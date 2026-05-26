@@ -294,49 +294,15 @@ export async function HeroFull() {
           </div>
         </div>
 
-        <div className="bipe-hero-trust" style={{
-          marginTop: 44,
-          paddingTop: 20,
-          borderTop: "1px solid color-mix(in oklab, #fff 18%, transparent)",
-        }}>
-          <div className="row" style={{ alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "color-mix(in oklab, #fff 55%, transparent)", flexShrink: 0 }}>
-              Approvals
-            </span>
-            <div className="bipe-hero-trust-list" style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-              gap: 20,
-              flex: 1,
-            }}>
-              {h.approvals.map((t) => (
-                <div key={t.label} style={{
-                  paddingLeft: 14,
-                  borderLeft: "2px solid var(--accent)",
-                }}>
-                  <div style={{
-                    fontWeight: 600,
-                    fontSize: 14,
-                    color: "color-mix(in oklab, #fff 92%, transparent)",
-                    letterSpacing: "-0.005em",
-                  }}>
-                    {t.label}
-                  </div>
-                  <div style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 10,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    color: "color-mix(in oklab, #fff 55%, transparent)",
-                    marginTop: 3,
-                  }}>
-                    {t.sub}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/*
+          In-hero Approvals strip REMOVED 27 May 2026 — duplicated the
+          site-wide TrustBadgeStrip (commit af39c72) which renders the
+          same institutional credentials right below the Nav on every
+          page. Two stacked credential strips read as redundant content
+          to visitors. The TrustBadgeStrip is the single source of
+          truth now; the backend `home/hero` content section can still
+          carry an `approvals` array but it's not rendered here.
+        */}
       </div>
     </section>
   );
