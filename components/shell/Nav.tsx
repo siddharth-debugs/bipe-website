@@ -7,6 +7,7 @@ import { DATA } from "@/lib/data";
 import { useLang } from "@/lib/lang";
 import { ArrowIcon, WhatsAppIcon } from "./Icons";
 import { BrandMark } from "./BrandMark";
+import { NavSearchButton } from "./CommandK";
 
 const routeForPath = (pathname: string): string => {
   if (pathname === "/" || pathname === "") return "home";
@@ -249,6 +250,7 @@ export function Nav() {
         </div>
 
         <div className="row" style={{ alignItems: "center", gap: 10 }}>
+          <NavSearchButton />
           <Link href="/apply" className="btn btn-primary btn-sm" style={{ paddingLeft: 14, paddingRight: 14, whiteSpace: "nowrap" }}>
             <span className="hide-md">Apply for 2026-27</span>
             <span style={{ display: "none" }} className="show-md">Apply</span>
