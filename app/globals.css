@@ -666,6 +666,22 @@ body.no-motion .marquee-track { animation: none; }
 .reveal.in { opacity: 1; transform: none; }
 body.no-motion .reveal { opacity: 1; transform: none; transition: none; }
 
+/* Homepage Branches preview cards · May 2026 rewrite.
+   Cards are dark-on-dark (var(--ink) section bg) with light borders.
+   Hover lifts + sharpens the border + tints with accent. The !important
+   here overrides inline border / background styles that share the same
+   CSS specificity as class rules. Keyboard focus state mirrors hover. */
+.bipe-branch-card:hover,
+.bipe-branch-card:focus-visible {
+  border-color: color-mix(in oklab, var(--accent, #c8a951) 60%, transparent) !important;
+  background: color-mix(in oklab, var(--accent, #c8a951) 8%, transparent) !important;
+  transform: translateY(-2px);
+}
+.bipe-branch-card:focus-visible {
+  outline: 2px solid var(--accent, #c8a951);
+  outline-offset: 2px;
+}
+
 .ph {
   position: relative;
   background:
