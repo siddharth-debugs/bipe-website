@@ -333,7 +333,7 @@ export default function Page() {
             {[
               {
                 year: "Year 1",
-                window: "At reporting · Aug 2026",
+                window: "At reporting · Jul 2026",
                 items: [
                   "Tuition · ₹30,150",
                   "Admission fee (one-time)",
@@ -344,7 +344,7 @@ export default function Page() {
               },
               {
                 year: "Year 2",
-                window: "Before semester 3 · Aug 2027",
+                window: "Before semester 3 · Jul 2027",
                 items: [
                   "Tuition · ₹30,150",
                   "Recurring components",
@@ -353,7 +353,7 @@ export default function Page() {
               },
               {
                 year: "Year 3",
-                window: "Before semester 5 · Aug 2028",
+                window: "Before semester 5 · Jul 2028",
                 items: [
                   "Tuition · ₹30,150",
                   "Recurring components",

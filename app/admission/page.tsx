@@ -47,12 +47,12 @@ const STEPS: { n: string; title: string; body: string }[] = [
 
 type CalEntry = { month: string; day?: string; year: string; title: string; sub: string };
 const DATES: CalEntry[] = [
-  { month: "FEB", year: "2026",                title: "JEECUP application opens",  sub: "Online portal · jeecup.admissions.nic.in" },
-  { month: "APR", year: "2026",                title: "Application closes",        sub: "Late fee window thereafter" },
-  { month: "MAY", year: "2026",                title: "Entrance exam",             sub: "CBT · multiple shifts across UP" },
-  { month: "MAY", day: "30", year: "2026",     title: "Results declared",          sub: "Rank cards downloadable" },
-  { month: "JUN", year: "2026",                title: "Counselling rounds",        sub: "Online choice-filling · seat allotment" },
-  { month: "AUG", year: "2026",                title: "Session begins",            sub: "Orientation week at BIPE" },
+  { month: "JAN", year: "2026",                title: "JEECUP application opens",  sub: "Online · jeecup.admissions.nic.in" },
+  { month: "MAY", day: "20", year: "2026",     title: "Application closes",        sub: "Extended deadline · no further extension" },
+  { month: "JUN", day: "02-09", year: "2026", title: "Entrance exam",             sub: "CBT · multiple shifts across UP" },
+  { month: "JUN", year: "2026",                title: "Results + counselling",     sub: "Results mid-June · 7-round counselling opens" },
+  { month: "JUL", day: "15", year: "2026",     title: "Session begins",            sub: "Orientation week at BIPE" },
+  { month: "AUG", year: "2026",                title: "Final counselling rounds",  sub: "Late admits via Rounds 5-7 · spot round" },
 ];
 
 const REASONS: { roman: string; title: string; body: string; metric: string; metricLabel: string }[] = [
