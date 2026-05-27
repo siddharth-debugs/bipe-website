@@ -685,6 +685,447 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     ctaTitle: "BIPE admissions counsellor on WhatsApp",
     ctaBody: "For BIPE-specific questions — choice-filling strategy, document checklists, branch-by-branch fit, when to visit — WhatsApp +91-9198646464. Free, no enrolment pressure, EN / हिंदी.",
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // Phase 5 expansion · May 2026 · JEECUP keyword-gap fill
+  // Five additional procedural pages targeting JEECUP search clusters
+  // not covered by Phase 2 batch — highest-volume gaps first.
+  // ─────────────────────────────────────────────────────────────────
+
+  {
+    slug: "jeecup-syllabus-2026",
+    shortTitle: "JEECUP Syllabus 2026",
+    title: "JEECUP Syllabus 2026 · Group-wise Topics + Weightage | BIPE 4455",
+    description: "Complete JEECUP 2026 syllabus — Group A (Class 10 Maths/Physics/Chemistry) and all other groups, topic-by-topic breakdown, weightage, recommended books, NCERT-mapping. From BIPE.",
+    keywords: [
+      "JEECUP syllabus",
+      "JEECUP syllabus 2026",
+      "JEECUP Group A syllabus",
+      "UPJEE Polytechnic syllabus",
+      "JEECUP topics weightage",
+      "JEECUP सिलेबस",
+      "JEECUP सिलेबस 2026",
+    ],
+    eyebrow: "JEECUP 2026 · SYLLABUS BREAKDOWN",
+    headline: "JEECUP 2026 syllabus —",
+    headlineAccent: "topic-by-topic, group-by-group.",
+    lead: "JEECUP 2026 is conducted across 12 groups (A through L) — each with a distinct syllabus. BIPE's 3-year diploma uses Group A — Class 10 Maths, Physics, Chemistry. This page covers Group A in full detail, plus a brief on the other 11 groups so you can pick the right one if you're considering a non-diploma path.",
+    quickStats: [
+      { label: "Total groups", value: "12 (A–L)", sub: "Different syllabi per group" },
+      { label: "Group A · BIPE", value: "Class 10 syllabus", sub: "Maths · Physics · Chemistry" },
+      { label: "Questions", value: "100", sub: "Multiple-choice · CBT format" },
+      { label: "Duration", value: "2.5 hours", sub: "150 minutes · single shift" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Identify your group — Group A for BIPE's 3-year diploma",
+        body: "JEECUP's 12 groups serve different programmes. Group A: 3-year diploma engineering (BIPE's path · open to Class 10 pass students). Group B: Agriculture Engineering. Group C: Fashion Design + Home Science. Group D: Modern Office Management. Group E: Pharmacy. Group F: Bio-tech Diploma. Group G: PG Diploma (Class 12 pass). Group H: Hotel Mgmt + Tourism. Group I: Aircraft Maintenance. Group J: Information Tech (lateral). Group K: Lateral Entry to 2nd-year diploma (for ITI / Class 12 candidates). Group L: Diploma in Pharmacy (D.Pharm).",
+      },
+      {
+        n: "02",
+        title: "Group A · Mathematics syllabus (50 questions, 50% weightage)",
+        body: "Algebra (sets, real numbers, polynomials, linear equations), Quadratic equations + progressions, Trigonometry (ratios, identities, heights and distances), Co-ordinate geometry (straight lines, circles), Mensuration (areas + volumes), Statistics (mean, median, mode, probability basics), Number system + commercial mathematics. All from Class 10 NCERT (or equivalent state board).",
+      },
+      {
+        n: "03",
+        title: "Group A · Physics syllabus (25 questions, 25% weightage)",
+        body: "Motion + Newton's laws, Work-Energy-Power, Gravitation + fluid mechanics, Heat + thermodynamics basics, Light (reflection + refraction), Electricity + magnetism (basic circuits), Current electricity, Sound + waves. Class 10 level — NCERT Class 9 + 10 Science chapters are the canonical source.",
+      },
+      {
+        n: "04",
+        title: "Group A · Chemistry syllabus (25 questions, 25% weightage)",
+        body: "Matter (states, classification, atomic structure), Periodic table + chemical bonding basics, Chemical reactions (types, balancing, stoichiometry), Acids/bases/salts, Metals + non-metals, Carbon compounds (intro to organic chemistry), Environmental chemistry. Same NCERT Class 9 + 10 Science source.",
+      },
+      {
+        n: "05",
+        title: "Recommended books beyond NCERT",
+        body: "For Group A: NCERT Class 9 + 10 (mandatory baseline) + R.D. Sharma Class 10 Mathematics (for problem variety) + Arihant JEECUP Solved Papers (last 5 years) + S. Chand objective Chemistry / Physics (optional, for additional practice). BIPE library carries these — students can borrow before joining.",
+      },
+      {
+        n: "06",
+        title: "How to prepare a 3-month syllabus schedule",
+        body: "Month 1: Concept revision · NCERT thoroughly · 2 chapters per week per subject (3 subjects = 6 chapters/week). Month 2: Topic-wise problem solving · 50+ problems per topic · identify weak areas. Month 3: Mock tests + previous-year papers · 1 full test every 3 days · review wrong answers in detail. Last 2 weeks: Speed-and-strategy · focus only on weak topics + time management drills.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is JEECUP syllabus the same every year?",
+        a: "Structurally yes — Class 10 NCERT-based for Group A — but JEECUP authority publishes the official syllabus PDF each cycle (sometimes with minor topic-emphasis updates). For 2026, the syllabus is broadly identical to 2025 and 2024. Always cross-check the current-cycle official PDF on jeecup.admissions.nic.in before deep prep.",
+      },
+      {
+        q: "Where can I download the official JEECUP syllabus PDF?",
+        a: "Only on jeecup.admissions.nic.in → 'Information Bulletin' or 'Syllabus' tab during the active cycle (Jan-May for 2026). Third-party sites republish it but can lag. For authoritative current cycle, go to the source.",
+      },
+      {
+        q: "How much weightage does each subject carry in Group A?",
+        a: "Mathematics 50 questions (50%), Physics 25 questions (25%), Chemistry 25 questions (25%). Total 100 questions, 100 marks (1 mark per question). Negative marking applies — typically -0.25 to -0.33 per wrong answer depending on the cycle's policy.",
+      },
+      {
+        q: "Do I need to study Class 11-12 Maths/Physics/Chemistry for JEECUP Group A?",
+        a: "No. Group A is strictly Class 10 syllabus. Class 11-12 topics aren't tested for Group A. (Groups G, J, K — the lateral entry / Class 12 pass routes — have Class 11-12 syllabus.)",
+      },
+      {
+        q: "Are NCERT books enough to crack JEECUP Group A?",
+        a: "For most students at 90+ percentile rank — yes. Class 9 + 10 NCERT thoroughly + previous 5 years JEECUP papers gets you to a competitive rank. Beyond that, reference books help with problem-solving stamina but aren't strictly required.",
+      },
+      {
+        q: "Where can I find topic-wise weightage from past JEECUP papers?",
+        a: "Available on /jeecup-previous-year-papers (BIPE's analysis page) — we break down each past year's paper by topic and identify high-yield areas. Concept-level depth analysis isn't on the official syllabus PDF, which only lists topics.",
+      },
+    ],
+    ctaTitle: "Need a study plan for JEECUP Group A?",
+    ctaBody: "BIPE's admissions team has helped 1,000+ students through JEECUP prep. WhatsApp +91-9198646464 with your current preparation level (started · midway · pre-exam) and we'll send a free 30/60/90-day study plan tailored to your timeline.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "jeecup-previous-year-papers",
+    shortTitle: "JEECUP Previous Year Papers",
+    title: "JEECUP Previous Year Papers 2025-2020 · Download + Analysis | BIPE 4455",
+    description: "JEECUP previous year question papers (2020-2025) — where to download, topic-wise weightage analysis, what repeats year-on-year, sample paper approach. From BIPE.",
+    keywords: [
+      "JEECUP previous year papers",
+      "JEECUP question paper download",
+      "JEECUP sample papers",
+      "JEECUP past year question papers",
+      "JEECUP 2025 paper",
+      "JEECUP solved papers",
+      "JEECUP previous year question paper",
+    ],
+    eyebrow: "JEECUP 2026 · PAST PAPERS",
+    headline: "JEECUP previous year papers —",
+    headlineAccent: "what repeats, what shifts.",
+    lead: "Previous-year question papers are the single most reliable JEECUP prep tool. They show you topic weightage, question difficulty patterns, and the specific subtopics JEECUP favours year after year. This page covers where to download official JEECUP past papers (2020-2025), how to use them, and the patterns BIPE's mentors have noticed across cycles.",
+    quickStats: [
+      { label: "Years available", value: "2020-2025", sub: "Last 6 cycles · all groups" },
+      { label: "Question repeat rate", value: "~15-20%", sub: "Concepts repeat · exact ?s rare" },
+      { label: "Best use", value: "Last 3 months", sub: "After NCERT concept revision" },
+      { label: "Free sources", value: "JEECUP portal + BIPE archive", sub: "Official + curated" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Download from the JEECUP portal — the authoritative source",
+        body: "Visit jeecup.admissions.nic.in → 'Question Papers' or 'Information Bulletin' archive (menu label varies). Each year's PDFs include the question paper + the official answer key (released ~1 week after the exam). Past papers are free to download · no login required for archived years.",
+      },
+      {
+        n: "02",
+        title: "Identify the years that matter for your prep",
+        body: "Most recent 3 years (2023, 2024, 2025) reflect the current question style and topic emphasis. Years 2020-2022 show longer-term patterns. Prioritise the most recent 3 — solve all 3 thoroughly. The older 3 are for additional practice if time permits, but don't over-invest there.",
+      },
+      {
+        n: "03",
+        title: "Solve in test conditions — 2.5 hours, no breaks",
+        body: "Set a timer for 150 minutes. Sit in a quiet room. No breaks, no phone, no notes. Treat it as a real exam. After completing, score using the official answer key. This tells you your CURRENT level — not your potential. Don't fool yourself with 'I would have done better with X' — the score is the score.",
+      },
+      {
+        n: "04",
+        title: "Review wrong answers in DETAIL — not just check-and-move",
+        body: "For every wrong answer: (a) identify the topic, (b) re-read the related NCERT chapter, (c) solve 3-5 similar problems from R.D. Sharma or another reference, (d) write a short note on what you missed. This is what separates students who improve cycle-over-cycle from those who plateau. The wrong-answer review is the prep — the solving was just diagnostic.",
+      },
+      {
+        n: "05",
+        title: "Track topic-wise weightage across the 3 most-recent papers",
+        body: "Make a simple spreadsheet: rows = topics from the syllabus, columns = 2023/2024/2025 question counts. Fill it from your solved papers. The pattern that emerges: typically ~30% of the syllabus produces ~70% of the questions year after year. Prioritise that 30% in the final 4 weeks of prep.",
+      },
+      {
+        n: "06",
+        title: "Use BIPE's curated topic-weightage chart for confirmation",
+        body: "BIPE's academic mentors have analysed all JEECUP papers from 2020-2025 and published a topic-weightage chart for Group A. Cross-check your own spreadsheet against ours. Ask via WhatsApp — we share the PDF chart for free with anyone considering BIPE.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do questions repeat exactly in JEECUP year after year?",
+        a: "Rarely. Exact-question repeats are ~5% at most. CONCEPT-level repeats are much more common — typically 60-80% of topics tested in one year reappear (possibly with different question framing) in the next. So past papers train you on concepts, not on memorising specific questions.",
+      },
+      {
+        q: "Where can I find solved JEECUP papers (with explanations)?",
+        a: "Arihant + Disha Publications publish solved papers with detailed explanations (typically ₹150-300 per book covering 5-10 years). For BIPE students, our academic mentors have curated free PDF solutions for the last 3 years — WhatsApp us to request. Free online sources (Careers360, BYJU's blog) have partial solutions but quality varies.",
+      },
+      {
+        q: "How many past papers should I solve before the actual JEECUP exam?",
+        a: "Minimum: last 3 cycles (2023, 2024, 2025). Ideal: last 5 cycles. Beyond that, diminishing returns kick in — older papers reflect older topic emphases that may not apply anymore. Most JEECUP toppers solve 4-5 full past papers + several topic-focused sub-papers in the last 6 weeks.",
+      },
+      {
+        q: "Should I solve past papers in chronological order or shuffled?",
+        a: "Recommended order: start with the MOST RECENT paper first (2025) — shows you current standard. Then work backwards. Reason: you want to gauge your current performance against the most recent benchmark before doing older papers. Reverse-chronological order also keeps motivation up (modern questions feel more 'real').",
+      },
+      {
+        q: "Are JEECUP mock tests as good as previous year papers?",
+        a: "Past papers are gold-standard — they're real JEECUP language and difficulty. Mock tests (published by coaching institutes) are useful for additional practice but vary in quality. If you have time for both: do 4-5 past papers first, then add 2-3 mock tests in the last 2 weeks. Don't substitute mocks for past papers.",
+      },
+      {
+        q: "Can I rely only on past papers without studying NCERT?",
+        a: "No. Past papers TEST what you know — they don't TEACH the concepts. If you can't solve a problem after looking at the answer key, the gap is in NCERT-level conceptual understanding. Always do NCERT first, then past papers. Both are needed.",
+      },
+    ],
+    ctaTitle: "Want BIPE's curated past-paper analysis?",
+    ctaBody: "Our academic mentors have analysed JEECUP papers 2020-2025 and produced a topic-weightage chart + sample answer sheets. WhatsApp +91-9198646464 and we'll share the PDF — free, no enrolment pressure, no email gate.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "jeecup-eligibility-criteria",
+    shortTitle: "JEECUP Eligibility 2026",
+    title: "JEECUP Eligibility Criteria 2026 · Group-wise + Age Limits | BIPE 4455",
+    description: "Complete JEECUP 2026 eligibility — Group-by-Group requirements (Class 10 pass for diploma, Class 12 / ITI for others), age limits, domicile, reserved category. Honest from BIPE.",
+    keywords: [
+      "JEECUP eligibility",
+      "JEECUP eligibility criteria",
+      "JEECUP eligibility 2026",
+      "JEECUP age limit",
+      "JEECUP Group A eligibility",
+      "UPJEE Polytechnic eligibility",
+      "JEECUP एलिजिबिलिटी",
+      "JEECUP कौन apply कर सकता है",
+    ],
+    eyebrow: "JEECUP 2026 · ELIGIBILITY GUIDE",
+    headline: "JEECUP 2026 eligibility —",
+    headlineAccent: "kaun apply kar sakta hai.",
+    lead: "JEECUP 2026 is open to candidates from any state (not just UP), with different eligibility criteria for each of the 12 groups. This page covers Group A (BIPE's 3-year diploma · Class 10 pass) in full detail plus a quick summary of the other 11 groups, age limits, domicile rules, and reserved-category considerations.",
+    quickStats: [
+      { label: "Group A eligibility", value: "Class 10 pass", sub: "Maths + Science compulsory" },
+      { label: "Minimum marks", value: "35% aggregate", sub: "General · lower for reserved" },
+      { label: "Age limit", value: "No upper bound", sub: "Many groups · check per group" },
+      { label: "Open to", value: "All states", sub: "UP + all-India categories" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Identify your target Group — BIPE uses Group A",
+        body: "Group A (3-year diploma engineering) is BIPE's path. Eligibility: passed Class 10 (or equivalent) with Mathematics and Science. Other groups serve different programmes — Group K (lateral entry to 2nd-year diploma) requires Class 12 / ITI; Group G (PG Diploma) requires Class 12; Group L (D.Pharm) requires Class 12 with Physics + Chemistry. Always confirm which group matches your target programme BEFORE applying.",
+      },
+      {
+        n: "02",
+        title: "Verify your Class 10 marksheet meets the minimum threshold",
+        body: "General category: minimum 35% aggregate in Class 10 (UP-norm; check current-cycle JEECUP notification for exact figure). Reserved categories (SC / ST / OBC / EWS / PwD): typically 30% or as per the cycle's specific notification. Some boards (UP Board / CBSE / ICSE / state boards) are accepted equivalently — JEECUP doesn't discriminate by board.",
+      },
+      {
+        n: "03",
+        title: "Confirm subject requirements — Maths + Science non-negotiable",
+        body: "For Group A: you MUST have studied Mathematics AND Science (Physics + Chemistry combined, or General Science) in Class 10. Arts-stream-only Class 10 students aren't eligible. Some state boards bundle Science as a single subject — that's accepted. The marksheet must explicitly list both Maths and Science subjects with passing grades.",
+      },
+      {
+        n: "04",
+        title: "Age limit — there isn't one for most groups",
+        body: "Group A (and most JEECUP groups): NO upper age limit. You can be 17 or 47 — JEECUP doesn't restrict. Lower bound: you must have completed Class 10 (so typically 14-15 minimum). Exception: a few specific groups (Aviation, Hotel Management) may have age limits — check the cycle's notification for those specifically.",
+      },
+      {
+        n: "05",
+        title: "State domicile — UP-quota vs all-India quota",
+        body: "JEECUP has two reservation tracks: UP-domicile (priority for UP residents) and all-India (open to candidates from any state). BIPE participates in both. If you're a UP resident with a domicile certificate, you're eligible for UP-quota seats (more competitive in rank, larger seat pool). If you're from Bihar, MP, Delhi, etc., you compete in all-India category — fewer seats but still real opportunity. See /jeecup-from-bihar for Bihar-specific guidance.",
+      },
+      {
+        n: "06",
+        title: "Reserved category eligibility (SC/ST/OBC/EWS/PwD)",
+        body: "Reserved-category candidates apply with valid certificates issued within 3 years. SC/ST: caste certificate from tehsil. OBC: OBC-NCL (Non-Creamy Layer) certificate. EWS: EWS certificate showing family income < ₹8 lakh/year. PwD: disability certificate. Reservation reduces the minimum-marks threshold AND opens reserved seat pools at counselling. Don't skip certificate gathering even if you 'might not need it' — it costs nothing to have, and saves a year if you do need it.",
+      },
+    ],
+    faqs: [
+      {
+        q: "I'm in Class 10 right now — can I apply for JEECUP 2026?",
+        a: "Yes IF you're appearing for Class 10 board exam in 2026 (results expected May-June 2026). You can apply for JEECUP 2026 (registration Jan-May 2026) with provisional eligibility. Your final eligibility confirms only after you pass Class 10. If you fail Class 10, your JEECUP rank is voided. So make sure your Class 10 prep is solid alongside JEECUP prep.",
+      },
+      {
+        q: "Can I apply for JEECUP from outside Uttar Pradesh?",
+        a: "Absolutely. JEECUP is open to candidates from any Indian state. Bihar, Madhya Pradesh, Delhi, Jharkhand, Haryana — all eligible. You apply under the 'all-India' category. Domicile certificate from your home state isn't strictly required for JEECUP itself (only for reserved-category claims). See /jeecup-from-bihar for Bihar-specific details.",
+      },
+      {
+        q: "What if my Class 10 marksheet hasn't arrived yet?",
+        a: "JEECUP allows provisional application with school-issued provisional marksheet or the result-card downloaded from the board's website. The original Marksheet + Passing Certificate must be produced at counselling time (typically July-August). Don't skip applying because you don't have the original — apply provisionally and complete documentation later.",
+      },
+      {
+        q: "Is there a JEECUP age limit I should know about?",
+        a: "For Group A (BIPE's path) — no upper age limit. JEECUP is open to candidates who completed Class 10, regardless of age. Working adults, late-starters, gap-year students are all eligible. The 'JEECUP age limit' rumour usually confuses JEECUP with JEE Main (a different exam with age constraints) — they're not the same.",
+      },
+      {
+        q: "Can I apply if I have a backlog / failed subject in Class 10?",
+        a: "Class 10 must be PASSED (all subjects). If you have a backlog, you need to clear it first (via supplementary or re-attempt) and then apply for JEECUP. Provisional Class 10 result-card downloads showing 'Passed in all subjects' is acceptable. A pending backlog disqualifies the JEECUP application.",
+      },
+      {
+        q: "What documents do I need to prove eligibility?",
+        a: "For Group A: Class 10 marksheet + Passing Certificate (original + 2 copies for counselling). Domicile certificate (UP residents claiming UP quota). Caste / category certificate (reserved categories). Income certificate (EWS / scholarship claimants). PwD certificate (if applicable). See /jeecup-document-verification-checklist for the complete checklist.",
+      },
+    ],
+    ctaTitle: "Unsure if you're eligible for JEECUP?",
+    ctaBody: "WhatsApp +91-9198646464 with your Class 10 status (cleared / appearing / pending) and your state of residence — BIPE's admissions team will confirm eligibility within 10 minutes. Free, no enrolment pressure, EN / हिंदी.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "jeecup-exam-pattern-2026",
+    shortTitle: "JEECUP Exam Pattern",
+    title: "JEECUP Exam Pattern 2026 · CBT Format + Marking Scheme | BIPE 4455",
+    description: "JEECUP 2026 exam pattern — Computer-Based Test format, 100 questions in 150 minutes, marking scheme, negative marking, section weighting, navigation interface tips.",
+    keywords: [
+      "JEECUP exam pattern",
+      "JEECUP exam pattern 2026",
+      "JEECUP question format",
+      "JEECUP marking scheme",
+      "JEECUP negative marking",
+      "UPJEE Polytechnic exam pattern",
+      "JEECUP CBT format",
+    ],
+    eyebrow: "JEECUP 2026 · EXAM PATTERN",
+    headline: "JEECUP 2026 exam pattern —",
+    headlineAccent: "format, timing, marking.",
+    lead: "JEECUP 2026 is a Computer-Based Test (CBT) — multiple-choice questions across Maths, Physics and Chemistry for Group A. 100 questions, 150 minutes, negative marking. This page covers the exam format, marking scheme, what the CBT interface actually looks like, and tips for navigating it efficiently.",
+    quickStats: [
+      { label: "Format", value: "Computer-Based Test", sub: "All questions on screen · click-to-answer" },
+      { label: "Questions", value: "100", sub: "Multiple-choice · 4 options each" },
+      { label: "Duration", value: "150 min", sub: "2.5 hours · no break" },
+      { label: "Marking", value: "+1 / -0.25", sub: "Per correct / wrong · varies by cycle" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Question count + section breakdown (Group A)",
+        body: "100 total questions. Mathematics: 50 questions. Physics: 25 questions. Chemistry: 25 questions. Each question = 4 multiple-choice options. You pick ONE correct answer per question. Section weighting matches question count — Maths is the heaviest section by far. Plan your time accordingly.",
+      },
+      {
+        n: "02",
+        title: "Marking scheme — positive vs negative",
+        body: "Correct answer: +1 mark (some cycles +4 for harder questions — confirm current cycle). Wrong answer: -0.25 mark (negative marking · standard JEECUP rule). Unattempted: 0 marks. Total possible: 100. Total possible loss from negatives: -25 if you got everything wrong (rare). Practical strategy: skip questions you're <50% sure about — negative marking penalises guessing.",
+      },
+      {
+        n: "03",
+        title: "Time allocation — 150 minutes for 100 questions",
+        body: "Average 1.5 minutes per question. But topic-level strategy: Maths questions take longer (~2 min each for problem solving). Physics + Chemistry questions are often quicker (~1 min each). Realistic split: Maths 90 min · Physics 30 min · Chemistry 30 min. Last 10-15 min reserved for review of marked-for-review questions.",
+      },
+      {
+        n: "04",
+        title: "CBT interface — what you'll actually see on screen",
+        body: "Top bar: timer (countdown from 2:30:00) and section navigator (jump between Maths / Physics / Chemistry). Middle: current question + 4 options as radio buttons. Bottom right: 'Save and Next', 'Save and Mark for Review', 'Clear Response'. Bottom left: question palette (grid of all 100 questions, colour-coded by status — answered / unanswered / marked-for-review / not-visited). Familiarise yourself with this layout before exam day · practice on mock CBT platforms.",
+      },
+      {
+        n: "05",
+        title: "Question palette strategy — use the colour codes",
+        body: "Green: answered. Red: unanswered (visited but skipped). Purple: marked-for-review (you answered AND flagged for re-check). Grey: not-visited. Strategy: first pass · answer easy questions only, mark moderately-hard ones for review, skip impossible ones. Second pass · review the marked ones. Third pass · attempt the impossible ones if time permits. The palette is your time-management dashboard.",
+      },
+      {
+        n: "06",
+        title: "Submission and result generation",
+        body: "Submit happens automatically at 150-minute mark. You can submit early via the 'Final Submit' button (irreversible · only do this if you've thoroughly reviewed). On submission, the system generates a response sheet (downloadable later for review). The official answer key + score are typically released within 2-3 days. Rank card releases ~10 days after the exam window closes.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is JEECUP exam in computer-based test (CBT) mode only?",
+        a: "Yes. Since 2017, JEECUP has been entirely CBT. No pen-and-paper option exists. If you're not comfortable with computers, practice the CBT format using mock tests on simulators (NTA mocks are free) — by exam day, the interface should feel natural.",
+      },
+      {
+        q: "What is the exact negative marking policy?",
+        a: "JEECUP applies -0.25 marks for each wrong answer (this is the standard rule, but always verify with the current-cycle notification). Some questions in harder groups may have different ratios, but Group A consistently follows the -0.25 standard. Unanswered questions are 0 — no negative marking for skipping.",
+      },
+      {
+        q: "Can I use a calculator during the exam?",
+        a: "No. Calculators, scientific or otherwise, are NOT permitted in JEECUP. All calculations must be done mentally or on the rough sheet provided. The questions are designed to be solvable without a calculator — they test conceptual understanding, not raw computational speed.",
+      },
+      {
+        q: "What language is the exam available in?",
+        a: "Both English and Hindi. You can toggle between languages question-by-question via a button at the top of the screen. The Hindi translation is the official version (not auto-translate). If you're more comfortable in Hindi, use it without hesitation — the language choice doesn't affect your rank.",
+      },
+      {
+        q: "How many sections must I attempt to be 'qualified'?",
+        a: "All three sections count toward your total. There's no section-wise minimum cutoff (unlike some other exams). You're qualified based on TOTAL marks, not section-wise. So if you're strong in Maths and weak in Chemistry, score maximum in Maths and don't worry about a low Chemistry section as long as total is competitive.",
+      },
+      {
+        q: "What happens if my computer crashes during the exam?",
+        a: "JEECUP centres have backup systems. Inform the invigilator IMMEDIATELY — they'll move you to a working computer and your answers + time are preserved (the system saves answers continuously). You won't lose progress for a tech glitch. Don't panic; the centre staff are trained for this.",
+      },
+    ],
+    ctaTitle: "Want a CBT practice test?",
+    ctaBody: "BIPE shares 2 mock JEECUP CBT tests (Group A) free via WhatsApp ahead of every cycle. Simulates the real interface · 100 questions · 150 minutes · answer key included. WhatsApp +91-9198646464 to request — no enrolment pressure.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "jeecup-after-results-action-plan",
+    shortTitle: "After JEECUP Results · Action Plan",
+    title: "After JEECUP Result 2026 · What to Do Next | BIPE 4455",
+    description: "Got your JEECUP 2026 result — what now? Step-by-step action plan: interpret rank, prepare documents, draft choice list, time-sensitive next steps. From BIPE.",
+    keywords: [
+      "JEECUP result kya kare",
+      "JEECUP after result action",
+      "JEECUP counselling preparation",
+      "JEECUP rank kya hai",
+      "JEECUP result ke baad",
+      "JEECUP रिजल्ट के बाद",
+      "JEECUP next steps after result",
+    ],
+    eyebrow: "JEECUP 2026 · POST-RESULT ACTION PLAN",
+    headline: "Result aa gaya —",
+    headlineAccent: "ab kya karein?",
+    lead: "JEECUP result declares mid-June 2026. Once you have your rank card, the next 4-6 weeks are time-sensitive — choice filling, document gathering, counselling round 1. This page is the action plan: what to do in the next 7 days, the next 30 days, and how to maximise your odds at BIPE Varanasi (code 4455).",
+    quickStats: [
+      { label: "Window", value: "Mid-June 2026", sub: "Result declared" },
+      { label: "Counselling opens", value: "Late June 2026", sub: "Round 1 of 7" },
+      { label: "Total rounds", value: "7", sub: "Late June to August" },
+      { label: "Critical decision points", value: "3-5", sub: "Choice filling · seat confirm · float vs freeze" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Day 1-3 · Download rank card + understand your number",
+        body: "Visit jeecup.admissions.nic.in within 24 hours of result declaration. Login → download rank card PDF. Print 2 copies. Email to yourself + parent. Now interpret: total marks, percentile, all-India rank, category rank (if applicable). Cross-check against /jeecup-cutoff-2026-bipe-vs-government to understand where your rank sits: top-tier government, Eastern UP government, BIPE band, or below-cutoff (re-attempt next cycle).",
+      },
+      {
+        n: "02",
+        title: "Day 4-7 · Talk to BIPE admissions for honest rank interpretation",
+        body: "WhatsApp +91-9198646464 with your rank, branch preferences, and home district. Our admissions counsellors give an honest 10-minute reality check — whether your rank realistically gets you BIPE 4455 in your preferred branch, or whether you should consider government polytechnic options first. We don't oversell — we tell you what's most likely.",
+      },
+      {
+        n: "03",
+        title: "Week 2 · Gather all counselling documents",
+        body: "Even before counselling opens, gather every document on the /jeecup-document-verification-checklist page: Class 10 marksheet + certificate (originals + 2 copies each), Aadhaar, JEECUP rank card, domicile (UP residents), caste certificate (if applicable), income certificate (EWS / scholarship), passport-size photos (8-10 copies), character + transfer certificate from school. Getting these BEFORE the counselling window opens is critical — late paperwork = missed allotment.",
+      },
+      {
+        n: "04",
+        title: "Week 2-3 · Draft your choice list (15-25 entries, ranked)",
+        body: "JEECUP counselling Round 1 opens late June. You'll fill a ranked choice list — institute + branch pairs in priority order. Draft your list NOW, before the window opens. Top of list: your dream combinations. Middle: realistic for your rank. Bottom: safety options. BIPE 4455 should appear at the realistic-for-your-rank position with your top-3 preferred branches as separate choices. Talk to your family before locking the list.",
+      },
+      {
+        n: "05",
+        title: "Week 3-4 · Counselling Round 1 · choice-filling window opens",
+        body: "JEECUP opens the choice-filling form for ~5-7 days. Log in, paste your pre-drafted ranked list, review carefully (an error here is hard to undo), submit. The system runs allotment based on rank + your choice order. Allotment result publishes ~5-7 days after choice filling closes. If you got allotted: pay seat-acceptance fee within 3-5 days and decide freeze / float / withdraw.",
+      },
+      {
+        n: "06",
+        title: "Week 4 onwards · Allotment decision + report to BIPE",
+        body: "If allotted BIPE 4455: confirm by paying seat-acceptance fee → visit BIPE Phoolpur within JEECUP's reporting window (typically 7-10 days from allotment). Bring all documents + photocopies. BIPE academic office verifies, signs you in. Done — you're a BIPE student. If allotted somewhere else and you prefer BIPE: float into Round 2 (keeps current seat as floor, tries for upgrade in next round). If un-allotted: continue choice-filling in Round 2.",
+      },
+    ],
+    faqs: [
+      {
+        q: "My JEECUP rank is higher than I expected — what should I aim for?",
+        a: "If your rank is below 5,000: top-tier government polytechnics are open. 5,000-20,000: Eastern UP government polytechnics + BIPE for popular branches. 20,000-50,000: BIPE comfortably for most branches. 50,000+: BIPE for rarer branches (Dairy, sometimes Civil); consider direct admission alongside JEECUP. WhatsApp +91-9198646464 for branch-by-branch honest interpretation.",
+      },
+      {
+        q: "My JEECUP rank is lower than I hoped — what are my options?",
+        a: "Three paths. (1) Direct admission to BIPE: we accept direct applications for vacant seats after Round 6 of JEECUP counselling. WhatsApp us about current vacancy. (2) Re-attempt JEECUP 2027: 1-year gap, focused prep. (3) Alternate diploma routes: B.Voc, ITI, polytechnic from other states' entrance exams (Bihar BCECE, MP DET, etc.). Don't make a decision under panic — talk to advisors first.",
+      },
+      {
+        q: "How quickly do I need to decide after allotment?",
+        a: "JEECUP allotment-acceptance window is typically 3-5 days from allotment notification. Document reporting at BIPE is 7-10 days from allotment confirmation. Total: ~10-15 days from allotment to enrolled BIPE student. Plan accordingly — if you're travelling from outside Varanasi, book transport AHEAD of the JEECUP cycle so the reporting deadline isn't a logistics scramble.",
+      },
+      {
+        q: "What if I miss the seat-acceptance deadline?",
+        a: "Allotment lapses. The seat goes back to the JEECUP pool for Round 2. You can apply again in Round 2 with the same rank card, but you might get a worse allotment (or none). Treat the seat-acceptance window as non-negotiable — set 2 phone alarms and a parent-reminder.",
+      },
+      {
+        q: "Can I attend BIPE without going through JEECUP counselling?",
+        a: "Yes, via direct admission for vacant seats. BIPE accepts direct applications after JEECUP Round 6 concludes (typically August). Available seats vary by branch + year. WhatsApp +91-9198646464 in August 2026 to check current-cycle vacancy. Direct admission isn't rank-restricted but is seat-limited.",
+      },
+      {
+        q: "Will my parents need to come to BIPE during reporting?",
+        a: "Strongly recommended but not strictly required. BIPE's verification process is straightforward — you can do it solo if needed. But for first-time students, parent presence helps with: campus orientation, hostel walk-through (if applicable), face-to-face Q&A with academic + placement office. Most BIPE first-years come with at least one parent.",
+      },
+    ],
+    ctaTitle: "Just got your JEECUP result?",
+    ctaBody: "WhatsApp +91-9198646464 with your rank, branch preferences, and home district within 48 hours. BIPE's admissions counsellor gives a free 10-minute honest interpretation — whether BIPE 4455 fits your rank, and how to optimise your counselling choice list to maximise the right outcome.",
+  },
 ];
 
 export function jeecupResourceBySlug(slug: string): JeecupResource | undefined {

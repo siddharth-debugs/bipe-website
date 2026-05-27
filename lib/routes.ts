@@ -16,6 +16,8 @@ export type RouteKey =
   | "governmentPolytechnicEasternUp" | "aidedPolytechnicUp" | "jeecupCutoff2026"
   | "jeecupRegistration" | "jeecupAdmitCard" | "jeecupResult"
   | "jeecupSeatAllotment" | "jeecupDocumentVerification" | "jeecupHelpline"
+  | "jeecupSyllabus" | "jeecupPreviousPapers" | "jeecupEligibility"
+  | "jeecupExamPattern" | "jeecupAfterResults"
   | "bteupFamilyId" | "bteupAdmitCard" | "bteupExamDates"
   | "bteupResult" | "bteupFees" | "bteupRegistration"
   | "bteupSyllabus" | "bteupBackPaper" | "bteupGrading"
@@ -722,6 +724,80 @@ export const ROUTES: Record<RouteKey, {
       "JEECUP support",
       "JEECUP हेल्पलाइन नंबर",
       "UPJEE Polytechnic helpline",
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  // Phase 5 expansion · May 2026 · JEECUP keyword-gap fill
+  // Five additional procedural pages targeting JEECUP search clusters
+  // not covered by Phase 2 batch — highest-volume gaps first.
+  // ─────────────────────────────────────────────────────────────────
+  jeecupSyllabus: {
+    path: "/jeecup-syllabus-2026",
+    title: "JEECUP Syllabus 2026 · Group A + All Groups Topics | BIPE 4455",
+    description: "Complete JEECUP 2026 syllabus — Group A (Class 10 Maths/Physics/Chemistry) plus all 12 groups, topic-by-topic breakdown, weightage, NCERT-mapping. From BIPE.",
+    keywords: [
+      "JEECUP syllabus",
+      "JEECUP syllabus 2026",
+      "JEECUP Group A syllabus",
+      "UPJEE Polytechnic syllabus",
+      "JEECUP topics weightage",
+      "JEECUP सिलेबस",
+      "JEECUP सिलेबस 2026",
+    ],
+  },
+  jeecupPreviousPapers: {
+    path: "/jeecup-previous-year-papers",
+    title: "JEECUP Previous Year Papers 2025-2020 · Download + Analysis | BIPE 4455",
+    description: "JEECUP previous year question papers (2020-2025) — where to download, topic-wise weightage analysis, repeat patterns. Free BIPE-curated analysis included.",
+    keywords: [
+      "JEECUP previous year papers",
+      "JEECUP question paper download",
+      "JEECUP sample papers",
+      "JEECUP past year question papers",
+      "JEECUP 2025 paper",
+      "JEECUP solved papers",
+    ],
+  },
+  jeecupEligibility: {
+    path: "/jeecup-eligibility-criteria",
+    title: "JEECUP Eligibility Criteria 2026 · Group-wise + Age Limits | BIPE 4455",
+    description: "Complete JEECUP 2026 eligibility — Group-by-Group requirements, age limits, domicile, reserved category, minimum marks. Honest guide from BIPE.",
+    keywords: [
+      "JEECUP eligibility",
+      "JEECUP eligibility criteria",
+      "JEECUP eligibility 2026",
+      "JEECUP age limit",
+      "JEECUP Group A eligibility",
+      "UPJEE Polytechnic eligibility",
+      "JEECUP एलिजिबिलिटी",
+    ],
+  },
+  jeecupExamPattern: {
+    path: "/jeecup-exam-pattern-2026",
+    title: "JEECUP Exam Pattern 2026 · CBT Format + Marking Scheme | BIPE 4455",
+    description: "JEECUP 2026 exam pattern — Computer-Based Test, 100 questions in 150 minutes, marking scheme, negative marking, section weighting, CBT navigation tips.",
+    keywords: [
+      "JEECUP exam pattern",
+      "JEECUP exam pattern 2026",
+      "JEECUP question format",
+      "JEECUP marking scheme",
+      "JEECUP negative marking",
+      "UPJEE Polytechnic exam pattern",
+      "JEECUP CBT format",
+    ],
+  },
+  jeecupAfterResults: {
+    path: "/jeecup-after-results-action-plan",
+    title: "After JEECUP Result 2026 · Step-by-step Action Plan | BIPE 4455",
+    description: "JEECUP 2026 result aa gaya — what to do next? Rank interpretation, document gathering, counselling choice list, 7 + 30-day action plan from BIPE.",
+    keywords: [
+      "JEECUP result kya kare",
+      "JEECUP after result action",
+      "JEECUP counselling preparation",
+      "JEECUP rank kya hai",
+      "JEECUP result ke baad",
+      "JEECUP रिजल्ट के बाद",
     ],
   },
 
