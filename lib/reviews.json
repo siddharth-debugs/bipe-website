@@ -1,13 +1,13 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-05-26T14:45:48.226Z",
+    "lastUpdated": "2026-05-27T08:15:42.123Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
   },
   "rating": 4.5,
-  "reviewCount": 410,
+  "reviewCount": 411,
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
