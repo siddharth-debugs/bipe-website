@@ -171,6 +171,213 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // Phase B Post 2 · May 2026 · Natural Hinglish
+  // Target keyword: JEECUP form kaise bharein (~1,300/mo)
+  // Companion to English /jeecup-registration-2026 page — different
+  // perspective: written for Hindi-medium parents helping their
+  // teens fill the form, not the teen filling it solo.
+  {
+    slug: "jeecup-form-kaise-bharein-2026-step-by-step",
+    title: "JEECUP form kaise bharein 2026 — Step-by-step Hinglish guide",
+    category: "Admission · Hinglish",
+    date: "27 May 2026",
+    publishedISO: "2026-05-27",
+    readTime: "9 min read",
+    excerpt:
+      "JEECUP 2026 form bharna confusing lagta hai? Step-by-step Hinglish guide — registration kaise karein, kaun se documents chahiye, fee kaise pay karein, common errors aur unka fix। Parents ke liye bhi readable।",
+    metaTitle:
+      "JEECUP form kaise bharein 2026 · Step-by-step Application Guide | BIPE",
+    metaDescription:
+      "JEECUP 2026 form bharne ka full step-by-step Hinglish guide — registration, documents, fee, photo upload, common errors। Parents bhi padh sakte hain। BIPE Varanasi (4455)।",
+    sections: [
+      { type: "h2", text: "JEECUP 2026 form ka samay aa gaya" },
+      {
+        type: "p",
+        html:
+          "JEECUP 2026 registration 15 January se 20 May तक चली — extended deadline ke baad band। Agar aapne abhi tक form nahi bhara, toh JEECUP 2027 ka wait karna padega। Lekin yeh post un families ke liye hai jo <strong>future cycles</strong> mein form bharne wale hain, ya BIPE mein direct admission via vacant seats consider कर rahe hain।",
+      },
+      {
+        type: "p",
+        html:
+          "Bahut sare students aur unke parents JEECUP form se डर जाते hain — \"online portal hai, English mein hai, hum kar nahi paayenge\"। Reality: form sirf 30-45 minutes ka kaam hai अगर documents pehle se ready hain। Yeh guide aapko exact steps batayega — Hinglish mein, screenshot-style explanation, common errors ke saath।",
+      },
+
+      { type: "h2", text: "Pehle ke kaam · documents ready karein" },
+      {
+        type: "p",
+        html:
+          "Form khulne se पहले yeh sab documents (digital format mein) ready रखें — form fill karte time scan-and-search mein time waste nahi hoga:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Class 10 marksheet</strong> · PDF format, under 2 MB, clear scan। Sabhi pages legible hone chahiye।",
+          "<strong>Aadhaar number</strong> · 12 digits, yaad rakho ya likh ke रखो। Aadhaar PDF abhi nahi chahiye, sirf number।",
+          "<strong>Passport-size photograph</strong> · JPG format, 10-300 KB, white background, last 6 months ka clicked। Selfie nahi chalega — proper studio photo।",
+          "<strong>Signature</strong> · White paper par black ya blue ink se sign karein, scan karein, JPG (10-50 KB)।",
+          "<strong>Caste certificate scan</strong> (अगर SC/ST/OBC reservation claim करना hai)।",
+          "<strong>Income certificate</strong> (अगर EWS ya scholarship claim करना hai)।",
+          "<strong>Active mobile number</strong> · jisme OTP receive ho sakte hain।",
+          "<strong>Email address</strong> · permanent wala, kyunki future notifications yahaan aayenge।",
+          "<strong>UPI ID ya debit / credit card</strong> · fee payment ke liye।",
+        ],
+      },
+      {
+        type: "callout",
+        title: "Sabse common mistake",
+        html:
+          "Form bharne ke beech mein ek document missing milta hai — फिर scramble karke scan karna, photo click karna। Pure session ruk jata hai। Solution: ek folder banao apne phone / laptop mein \"JEECUP 2026 docs\" naam ka, sab ek jagah।",
+      },
+
+      { type: "h2", text: "Step 1 · Registration aur Application Number" },
+      {
+        type: "p",
+        html:
+          "Visit <strong>jeecup.admissions.nic.in</strong>। Homepage par \"New Registration\" link click karein।",
+      },
+      {
+        type: "p",
+        html:
+          "Naye registration form mein aapko bharna hai: name (Class 10 marksheet se EXACT same spelling), date of birth, father's name, mobile number, email, password create karna। Submit karne par system aapko ek <strong>8-digit application number</strong> generate karega। Yeh number pure cycle ke liye aapki पहचान hai — likh ke rakho, screenshot lo, email mein bhi receive होगा। Bina application number ke aap form ka next step nahi kar सकते।",
+      },
+      {
+        type: "callout",
+        title: "Name spelling मत bhulना",
+        html:
+          "अगर aapne form mein name \"<em>RAMESH KUMAR</em>\" likha aur Class 10 marksheet mein \"<em>Ramesh Kumar</em>\" hai — yeh same accept hota hai (case alag se issue nahi)। Lekin अगर marksheet mein \"<em>Ramesh Kumar Yadav</em>\" hai aur aapne sirf \"<em>Ramesh Kumar</em>\" likha — yeh REJECTED hota hai counselling pe। Marksheet ke exact name से match karein।",
+      },
+
+      { type: "h2", text: "Step 2 · Personal Details + Class 10 Information" },
+      {
+        type: "p",
+        html:
+          "Login karke aap personal information section khol रहे hain। Bharna hai: father's name + mother's name, address (with PIN code), category (General / SC / ST / OBC / EWS), nationality, domicile state (UP residents UP pickem, Bihar / other state residents apne state)।",
+      },
+      {
+        type: "p",
+        html:
+          "Phir Class 10 section · school name, board (UP Board / CBSE / ICSE / state board), passing year, total marks, percentage। Yeh sab marksheet se directly copy karein — koi calculation mat karo, marksheet jo bolता hai vahi likhain।",
+      },
+
+      { type: "h2", text: "Step 3 · Group A choose karein (BIPE ke liye)" },
+      {
+        type: "p",
+        html:
+          "JEECUP mein 12 groups hain (A se L तक)। Har group different programmes ke liye hai। BIPE ka 3-year diploma <strong>Group A</strong> mein aata hai — Class-10-pass students ke liye। Agar aapne Class 10 के baad diploma karना hai, aap Group A choose karenge।",
+      },
+      {
+        type: "p",
+        html:
+          "Doosre groups (B, C, D, E, F, G, H, I, K, L) different programmes ke liye hain — Pharmacy, Lateral Entry (post-ITI), PG Diploma, etc.। <strong>Galat group select karne pa, aapko poorा form re-fill karna padega</strong> aur extra fee bhi deni padेगी। Group selection se पहले double-check karein।",
+      },
+
+      { type: "h2", text: "Step 4 · Exam Centre Preference (3 centres)" },
+      {
+        type: "p",
+        html:
+          "JEECUP aapko 3 exam centre preferences pickने देता है। System aapko inhi mein se ek allocate करta hai (pehli preference अधिकतर milती hai)। Realistic choice karें — apne home district ya nearest major district pickein।",
+      },
+      {
+        type: "p",
+        html:
+          "Eastern UP students ke liye common centres: Varanasi, Jaunpur, Mau, Ghazipur, Azamgarh, Mirzapur, Sonbhadra। Bihar applicants Patna, Gaya, Bhagalpur, Muzaffarpur pick kar sakte hain (all-India category)।",
+      },
+      {
+        type: "callout",
+        title: "Tip",
+        html:
+          "Apne home district ka centre <strong>pehli preference</strong> rakhें। Doosri preference apne school ke paas wala major district। Teesri preference ek bigger city (like Lucknow ya Allahabad) as a safety। Sab teen kaheen 200 km ke andar hone chahiye — overnight travel kissi ke liye nahi karna padega।",
+      },
+
+      { type: "h2", text: "Step 5 · Photo + Signature + Marksheet Upload" },
+      {
+        type: "p",
+        html:
+          "Yahi step pe sabse zyada applications fail hoti hain। File size aur format strictly enforce hain। Reject hone ke common reasons:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Photo</strong> file size > 300 KB · ya < 10 KB · ya .png format (sirf .jpg / .jpeg accept hota hai)।",
+          "<strong>Photo</strong> mein white background nahi hai (gali ya car mein liya photo reject)।",
+          "<strong>Photo</strong> mein face clearly visible nahi (cap, sunglasses, side-pose — sab reject)।",
+          "<strong>Signature</strong> file > 50 KB · ya pen color लाल / hara (sirf black / blue accept)।",
+          "<strong>Class 10 marksheet</strong> file > 2 MB · ya kuch pages cut hain (sabhi pages should be visible)।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Upload karne se पहले: photo aur signature ko mobile app (like \"Photo Resizer\") se compress karein 250 KB ke under। Marksheet PDF ko \"Smallpdf\" jaise tools se compress karein 1.5 MB ke under। Aaram se accept hoga।",
+      },
+
+      { type: "h2", text: "Step 6 · Fee Payment" },
+      {
+        type: "p",
+        html:
+          "Application fee · ₹300 (General / OBC) ya ₹200 (SC / ST / Physically Handicapped)। Online payment hota hai — UPI, debit card, credit card, ya net banking se।",
+      },
+      {
+        type: "p",
+        html:
+          "Payment ke baad aapko ek confirmation receipt milti hai। Yeh save karein! Agar 24 hours mein aapka fee status \"Pending\" rahta hai — JEECUP helpline pe ticket raise karein। Doosri baar payment <strong>MAT karein</strong> — system both payments record karega aur refund ka process weeks le sakता hai।",
+      },
+
+      { type: "h2", text: "Step 7 · Final Submit + Download" },
+      {
+        type: "p",
+        html:
+          "Sab steps complete hone ke baad \"Preview Application\" — har detail double-check karें। Naam, DOB, category, group, centres, document uploads। Kuch galat hai? Edit option अभी available hai। Agar सब sahi hai — \"Final Submit\"।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Final Submit ke baad form edit nahi ho sakta</strong> (correction window baad mein khulta hai but sirf limited fields ke liye)। Application PDF download karें, 2 copies print karें — ek family ke liye, ek counselling ke time के liye।",
+      },
+
+      { type: "h2", text: "Common errors · Top 5 reasons applications fail" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Name mismatch</strong> · form mein \"Anil Kumar\", marksheet mein \"Anil Kumar Singh\" — counselling pe reject hota hai। Marksheet ke exact name use karें।",
+          "<strong>Wrong group selected</strong> · BIPE Class 10-pass diploma ke liye <strong>Group A</strong> hai, doosre groups nahi। Galat group = whole form waste।",
+          "<strong>Document upload format / size</strong> · sabse common reason। JPG aur PDF strictly enforce, sizes strictly enforce।",
+          "<strong>Category certificate older than 3 years</strong> · agar SC/ST/OBC claim kar रहे hain aur certificate 3 saal se purana hai — naya banवaayein।",
+          "<strong>Email / mobile number inactive</strong> · OTPs yahaan aate hain। Agar inactive — aapne form fill कर liya lekin login nahi kar sakte।",
+        ],
+      },
+
+      { type: "h2", text: "Form submit hone ke baad · ab kya?" },
+      {
+        type: "p",
+        html:
+          "Form bharne ka pressure khatam — ab admit card ka wait। JEECUP 2026 exam window <strong>02-09 June 2026</strong> hai। Admit card approximately <strong>22-25 May</strong> ko release होगा। Same portal pe (jeecup.admissions.nic.in) login karke download karें।",
+      },
+      {
+        type: "p",
+        html:
+          "Beech ke time mein syllabus revision + previous year papers solve karें। <a href=\"/jeecup-syllabus-2026\">JEECUP syllabus breakdown</a> aur <a href=\"/jeecup-previous-year-papers\">previous year papers analysis</a> dono pages free guide hain BIPE पe।",
+      },
+
+      { type: "h2", text: "BIPE help · aapke saath हain" },
+      {
+        type: "p",
+        html:
+          "Form bharne mein kahin atke? Document issue hai? Group selection mein doubt hai? <strong>WhatsApp +91-9198646464</strong> par baat karें — BIPE ki admissions team free guidance देती hai। Hum BIPE ke specific promotion nahi karenge — pehle aapka form sahi se bharaayenge, फिर BIPE ke baare mein baat hogi अगar aap chahें।",
+      },
+      {
+        type: "p",
+        html:
+          "EN / हिंदी, jaisi aapko comfortable lage। Aapke parents bhi same number par baat kar sakte hain — agar aapko technical issues mein support chahiye, hum dono ke liye available hain।",
+      },
+      {
+        type: "p",
+        html: "All the best · JEECUP 2026 ke liye। 🌱",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
   // Phase B Post 1 · May 2026 · Natural Hinglish (style guide above)
   // Target keyword: पॉलिटेक्निक के बाद क्या करें (~3,600/mo)
   // First Hindi-first SEO post · calibration reference for the
