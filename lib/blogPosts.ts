@@ -171,6 +171,224 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // Phase B Post 4 · May 2026 · Natural Hinglish
+  // Target keyword: मैकेनिकल या कंप्यूटर साइंस (~720/mo)
+  // Genuine branch-comparison helper for confused students. Honest
+  // framework — not "BIPE Mechanical is best" or "BIPE CSE is best",
+  // but "here's how to think about your fit."
+  {
+    slug: "mechanical-ya-computer-science-kaunsi-branch-chunein",
+    title: "Mechanical ya Computer Science — kaunsi branch chunें?",
+    category: "Career Guidance · Hinglish",
+    date: "27 May 2026",
+    publishedISO: "2026-05-27",
+    readTime: "10 min read",
+    excerpt:
+      "Mechanical ya Computer Science engineering diploma — kaunsi branch sahi hai aapke liye? Honest comparison · career outcomes, salary, growth, aptitude fit। BIPE alumni real examples।",
+    metaTitle:
+      "Mechanical ya CSE · Branch Choose Karne Ka Guide 2026 | BIPE Hinglish",
+    metaDescription:
+      "Confused between Mechanical aur Computer Science engineering diploma? Honest comparison · career outcomes, salary, growth, aptitude fit। Real BIPE alumni examples + decision framework।",
+    sections: [
+      { type: "h2", text: "Branch chunें — sabse pehla badaa decision" },
+      {
+        type: "p",
+        html:
+          "JEECUP counselling ka time aane wala hai। BIPE 4455 aapne choice list mein rakh diya hai। Ab sawaal aata hai — <strong>kaunsi branch pickें?</strong> Mechanical, Computer Science, Electrical, Civil, Dairy — सबकी अपनी apki value hai। Lekin specifically Mechanical aur CSE ke beech mein sabse zyada confusion hota hai। Yeh post us confusion ko solve karne ka attempt hai — honest comparison, BIPE alumni examples, decision framework।",
+      },
+      {
+        type: "p",
+        html:
+          "Disclaimer पहले: yeh post BIPE ki taraf se neutral framework hai। Hum aapko nahi kahenge \"Mechanical hi best hai\" ya \"CSE hi sahi hai\"। Reality: dono branch achhi hain, alag students ke liye। Aapke liye sahi kaunsi hai — yeh aap khud decide karें padhne ke baad।",
+      },
+
+      { type: "h2", text: "Mechanical Engineering (Production) · BIPE BTEUP 343" },
+      {
+        type: "p",
+        html:
+          "Mechanical Engineering (Production) BIPE ki sabse badi branch hai — <strong>522 placements verified through 2024</strong> mein से approximately 50% Mechanical wale hain। 3-year diploma covers:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Engineering Drawing · CAD · Workshop technology",
+          "Strength of Materials · Thermodynamics · Fluid Mechanics",
+          "Machine Design · Manufacturing Processes · CNC Programming",
+          "Automobile Engineering basics · Refrigeration & AC",
+          "Quality Control · Industrial Management · Safety",
+          "Final-semester industrial training (6 months at a real factory)",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Career outcomes:</strong> Mahindra, Tata Steel, JCB, Motherson Sumi, JBM, Bajaj — production / shop-floor / manufacturing roles। Indian Railways RRB JE Mechanical। SSC JE Mechanical। Government PSUs (BHEL, GAIL, HAL)। Auto-component manufacturing across India (Pune, Chennai, Haryana, Gujarat)।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Salary range:</strong> Entry ₹15,000-25,000/mo (private fresher), ₹35,000-50,000/mo (government JE)। 5-year experience: ₹40,000-65,000/mo (private supervisor) or ₹50,000-75,000/mo (government JE)। 10-year: ₹60,000-1,20,000/mo (private production manager) or ₹70,000-1,00,000/mo (government section officer)।",
+      },
+      {
+        type: "callout",
+        title: "BIPE Mechanical alumnus",
+        html:
+          "<strong>Chandan Pathak</strong> (BIPE MP 2015) ne diploma ke baad direct Motherson Sumi Systems mein join kiya। Aaj wo Production In-charge hain — supervisor-level role with team responsibility। Phoolpur se Pune तक का safar — 9 saal mein। Mechanical branch ki real-world taakat: jab aap शुरू mein achhe se padhते ho, placement direct milta hai, growth steady hota hai।",
+      },
+
+      { type: "h2", text: "Computer Science & Engineering · BIPE BTEUP 355" },
+      {
+        type: "p",
+        html:
+          "Computer Science & Engineering BIPE ki growing branch hai — \"POPULAR\" tag is on the academics page। 3-year diploma covers:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Programming Fundamentals (C, C++, Python)",
+          "Data Structures & Algorithms · Database Management Systems",
+          "Web Development (HTML, CSS, JavaScript, basic frameworks)",
+          "Computer Networks · Operating Systems · Cyber Security basics",
+          "Cloud Computing basics · IoT introduction · AI/ML fundamentals (newer syllabus)",
+          "Final-semester project + industrial training",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Career outcomes:</strong> Wipro Infrastructure Engineering, Asian Paints (IT teams), government IT cadres (UPCL, BSNL), NIC (National Informatics Centre) entry-level roles, IT-supported manufacturing (TCS clients, Mindtree clients)। Growing trend: IT support / junior developer roles in smaller startups (₹15,000-30,000/mo)। Some students go for B.Tech lateral entry (CSE) which expands the pool significantly।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Salary range:</strong> Entry ₹12,000-25,000/mo (IT support fresher), ₹15,000-25,000/mo (junior developer)। 5-year experience: ₹30,000-50,000/mo (after upskilling — important factor)। 10-year: ₹50,000-1,00,000/mo (depending on specialisation)।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Critical note for CSE diploma:</strong> CSE diploma alone (3-year) prepares you for <em>entry-level IT support</em>। For software developer roles (which pay better), most students do B.Tech lateral entry. CSE diploma is BEST seen as a stepping stone to B.Tech (CSE), not as a final qualification (unlike Mechanical, which has direct manufacturing placements at diploma-level)।",
+      },
+
+      { type: "h2", text: "Honest comparison · side by side" },
+      {
+        type: "table",
+        headers: ["Factor", "Mechanical (Production)", "Computer Science"],
+        rows: [
+          ["BTEUP code", "343", "355"],
+          ["Total BIPE placements (through 2024)", "522 verified", "Maturing pipeline · ~60-80 placed"],
+          ["Direct placement at diploma level", "Strong (Mahindra, Tata, JCB, Motherson)", "Moderate (IT support, junior dev)"],
+          ["Best with B.Tech lateral entry?", "Optional (diploma already strong)", "Highly recommended (diploma alone limited)"],
+          ["Entry salary range", "₹15-25k/mo (private) · ₹35-50k (govt JE)", "₹12-25k/mo (entry IT support)"],
+          ["5-year salary growth", "₹40-65k (steady)", "₹30-50k (upskilling required)"],
+          ["Career stability", "Manufacturing demand always high in India", "IT sector volatile · skills evolve rapidly"],
+          ["Geographic mobility", "Pune, Chennai, Haryana, Gujarat (plant locations)", "Bangalore, Hyderabad, Pune, NCR (IT hubs)"],
+          ["Aptitude fit", "Hands-on, physical, factory-floor oriented", "Computer-bound, abstract problem-solving"],
+          ["Family interest fit", "Manufacturing/industrial families ke liye natural", "IT-aware urban families ke liye natural"],
+        ],
+      },
+
+      { type: "h2", text: "Decision factors · aap kaise decide karें" },
+      {
+        type: "p",
+        html:
+          "Yeh 4 questions ke jawab honestly soch ke aap apna fit identify kar sakte hain:",
+      },
+      {
+        type: "p",
+        html: "<strong>1. Aapka aptitude · hands-on vs computer-time?</strong>",
+      },
+      {
+        type: "p",
+        html:
+          "Workshop mein 2 ghante kaam karna · pasand aata hai ya bore lagta hai? Computer pe coding karna · interesting lagता hai ya frustrating? Honest answer dें। <em>Aptitude over-aspiration</em> — sirf isliye CSE pickna kyunki \"future hai\" galat hai अगर aap workshop mein zyada enjoy karte ho।",
+      },
+      {
+        type: "p",
+        html: "<strong>2. Family / community ka context?</strong>",
+      },
+      {
+        type: "p",
+        html:
+          "Aapke family mein already manufacturing background hai (father/uncle factory mein kaam karte hain) — Mechanical aapko natural mentorship deta hai। Family mein computer-aware log hain (cousin developer hai, etc.) — CSE help-network strong hai। Yeh context ignore karna mistake hai।",
+      },
+      {
+        type: "p",
+        html: "<strong>3. Financial timeline?</strong>",
+      },
+      {
+        type: "p",
+        html:
+          "Diploma ke baad turant earning shuru karनी है? · Mechanical better (direct placement)। 2-3 saal aur padhne ka time hai (B.Tech lateral entry)? · CSE viable option, kyunki CSE diploma + CSE B.Tech ka combination IT mein achhi salary deता है।",
+      },
+      {
+        type: "p",
+        html: "<strong>4. Geographic preference?</strong>",
+      },
+      {
+        type: "p",
+        html:
+          "Manufacturing jobs typically Pune, Chennai, Haryana, Gujarat mein hain — Eastern UP / Bihar se relocate karna padta hai। IT jobs Bangalore, Hyderabad, Pune mein zyada hain — similar relocation। Both branches mein local Varanasi mein kaam mushkil hai for placement-grade roles। Honest assessment: home se 800-1,500 km duur hi kahin job mile गा।",
+      },
+
+      { type: "h2", text: "Common mistakes · jin se students fas jaate hain" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Trend ke piche bhagna</strong> · \"AI / ML future hai isliye CSE\" — sirf aspiration, not aptitude। Reality: CSE diploma mein AI/ML basics hain, real-world roles ke liye B.Tech + specialisation chahiye। Sirf branch tag se future nahi banta।",
+          "<strong>Family pressure pe blindly chalna</strong> · \"Computer mein job hai\" — yeh 20 saal pehle relevant tha। Aaj manufacturing mein bhi rapid automation hai, IT mein bhi competition tough hai। Aptitude-based decision important hai।",
+          "<strong>BIPE-specific reality miss karna</strong> · BIPE Mechanical mein placement track record 9 saal का proven hai (522 placements)। BIPE CSE pipeline still maturing — fewer historical placements, more uncertainty। Don't overlook this if you're choosing BIPE specifically।",
+          "<strong>B.Tech ka plan nahi banाya</strong> CSE diploma alone limited hota hai — agar B.Tech lateral entry plan nahi hai, CSE pick karna risky hai। Mechanical diploma alone ke liye standalone career path hai।",
+        ],
+      },
+
+      { type: "h2", text: "Decision tree · summary" },
+      {
+        type: "p",
+        html: "<strong>Mechanical pick karें agar:</strong>",
+      },
+      {
+        type: "ul",
+        items: [
+          "Aap hands-on / workshop / machine ke saath comfortable hain।",
+          "Family / community mein manufacturing background hai।",
+          "Diploma ke baad immediate earning shuru karni hai।",
+          "Government JE (RRB, SSC) ki path consider kar rahe hain।",
+        ],
+      },
+      {
+        type: "p",
+        html: "<strong>CSE pick karें agar:</strong>",
+      },
+      {
+        type: "ul",
+        items: [
+          "Aap computer / coding ke saath comfortable hain।",
+          "B.Tech lateral entry (CSE) ka plan hai · 3 saal aur padhne ka time hai।",
+          "Urban / IT-aware family network hai jo career mentorship dे sakti hai।",
+          "Continuous upskilling (certifications, side projects) ke liye motivated hain।",
+        ],
+      },
+
+      { type: "h2", text: "Phir bhi confused? · BIPE saath hai" },
+      {
+        type: "p",
+        html:
+          "Branch decide karne ka pressure real hota hai। 16 saal ke umr mein 30-saal-ki-career-trajectory ka decision lena — easy nahi hai। Family expectations + peer pressure + aapka apna confusion — sab mix होता hai।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>BIPE ka academic mentor team free consultation deta hai</strong> — aapki aptitude, aapke family context, aapki financial timeline सुनकr honest fit suggest karेंगे। Hum BIPE-specific pitch nahi karenge; sirf yeh point out karenge ki aapki situation mein कौनsi branch genuinely fit karti hai।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>WhatsApp +91-9198646464</strong> par baat karें — EN / हिंदी, jaisi aapko comfortable। Aapke parents bhi join kar sakte hain conversation mein। Aapka future important hai, sahi branch mein hum saath hain। 🌱",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
   // Phase B Post 3 · May 2026 · Natural Hinglish
   // Target keyword: डिप्लोमा के बाद बीटेक (~880/mo)
   // Hinglish-first complement to English /blog/diploma-to-btech-
