@@ -204,7 +204,7 @@ export function Nav() {
             </div>
             <div className="nav-mega-grid">
               <MegaItem to="/admission" title="Overview" desc="JEECUP Group A · key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
-              <MegaItem to="/apply" title="Apply now" desc="4-step form · 5 minutes" icon="M14 3l7 7-11 11H3v-7L14 3z" />
+              <MegaItem to="/apply" title="Apply now" desc="Single-step form · callback in 24 hrs" icon="M14 3l7 7-11 11H3v-7L14 3z" />
               <MegaItem to="/jeecup" title="JEECUP Guidance" desc="6-step counselling explainer" icon="M12 2v20M5 8l7-6 7 6M5 16l7 6 7-6" />
               <MegaItem to="/fees" title="Fees" desc="₹30,150/year — AFRC-approved" icon="M3 7h18v10H3zM7 12h2M14 12h3" />
               <MegaItem to="/scholarships" title="Scholarships" desc="UP post-matric & EWS support" icon="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" />

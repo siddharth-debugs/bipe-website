@@ -74,7 +74,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Four short steps. One human callback within twenty-four hours. No fee to apply, no commitment, no portal credentials. We meet you where you are in the decision.
+                One short form. One human callback within twenty-four hours. No fee to apply, no commitment, no portal credentials. We meet you where you are in the decision.
               </p>
             </div>
 
