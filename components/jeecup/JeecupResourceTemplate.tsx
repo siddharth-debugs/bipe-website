@@ -54,6 +54,40 @@ export default function JeecupResourceTemplate({
     })),
   };
 
+  /**
+   * HowTo schema · added Phase 5 (May 2026).
+   *
+   * Google's visible HowTo rich-result was largely phased out in
+   * 2023-2024 — but the schema still carries weight for:
+   *   - Voice search · Google Assistant Hindi voice queries extract
+   *     step-by-step answers from HowTo-tagged pages
+   *   - Semantic page-structure signal · helps Google understand
+   *     the page is a procedural guide
+   *   - Bing / Yandex / other search engines (still show rich step
+   *     results in some markets)
+   *   - Future re-introduction of HowTo rich results (Google has
+   *     hinted at bringing them back in regional pilots)
+   *
+   * Generated from data.steps which every JeecupResource has by
+   * the interface contract. Pages that are more reference-shaped
+   * than procedural (eligibility, exam pattern, syllabus) still
+   * carry valid HowTo schema because their "steps" are named
+   * sequential sections — Google's spec accepts this broader
+   * interpretation.
+   */
+  const howToLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: data.shortTitle,
+    description: data.lead,
+    step: data.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.title,
+      text: s.body,
+    })),
+  };
+
   return (
     <div className="page-enter">
       <script
@@ -63,6 +97,10 @@ export default function JeecupResourceTemplate({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
       />
 
       {/* ====================================================================== */}

@@ -51,6 +51,25 @@ export default function BteupResourceTemplate({
     })),
   };
 
+  /**
+   * HowTo schema · added Phase 5 (May 2026).
+   * See JeecupResourceTemplate.tsx for the full rationale — same
+   * pattern, applied to BTEUP resource pages. Generated from
+   * data.steps which every BteupResource carries.
+   */
+  const howToLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: data.shortTitle,
+    description: data.lead,
+    step: data.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.title,
+      text: s.body,
+    })),
+  };
+
   return (
     <div className="page-enter">
       <script
@@ -60,6 +79,10 @@ export default function BteupResourceTemplate({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
       />
 
       {/* ====================================================================== */}
