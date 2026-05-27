@@ -362,12 +362,20 @@ export default function Page() {
             }}
           >
             {[
+              // Phase 3 batch · day-to-day procedural pages
               ["BTEUP Family ID Mandate", "May 2026 · scholarship gateway", "/bteup-family-id-registration"],
               ["BTEUP Semester Exam Dates", "Odd / even / practical · 2026", "/bteup-semester-exam-dates-2026"],
               ["BTEUP Admit Card", "Download · verify · troubleshoot", "/bteup-admit-card-download"],
               ["BTEUP Result Check", "Grades · grace · revaluation", "/bteup-result-check"],
               ["BTEUP Exam Fees Payment", "Portal · deadlines · failures", "/bteup-exam-fees-payment"],
               ["BTEUP Student Registration", "Annual · BIPE-coordinated", "/bteup-student-registration"],
+              // Phase 5 expansion · academic reference + edge cases
+              ["BTEUP Syllabus 2026", "Branch · semester · weightage", "/bteup-syllabus-2026"],
+              ["BTEUP Back Paper · Supplementary", "Backlog clearance · cycle · fees", "/bteup-back-paper-supplementary-process"],
+              ["BTEUP Grading + CGPA", "Marks → grade → percentage", "/bteup-grading-cgpa-calculation"],
+              ["BTEUP Affiliated Colleges UP", "Verify any college's status", "/bteup-affiliated-colleges-up"],
+              ["BTEUP Migration · NOC", "Inter-college transfer process", "/bteup-migration-noc-process"],
+              ["BTEUP Duplicate Marksheet", "Lost / damaged / extras", "/bteup-duplicate-marksheet-application"],
             ].map(([title, sub, href]) => (
               <Link
                 key={href}

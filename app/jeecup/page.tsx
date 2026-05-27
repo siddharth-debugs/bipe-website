@@ -513,12 +513,19 @@ export default function Page() {
             }}
           >
             {[
+              // Phase 2 batch · procedural sequence (Jan → Aug 2026)
               ["JEECUP Registration 2026", "Form, fee, documents, errors", "/jeecup-registration-2026"],
               ["JEECUP Admit Card 2026", "Download · verify · troubleshoot", "/jeecup-admit-card-2026"],
               ["JEECUP Result 2026", "Rank card · what to do next", "/jeecup-result-2026"],
               ["JEECUP Seat Allotment 2026", "7-round cycle · freeze / float", "/jeecup-seat-allotment-2026"],
               ["Document Verification Checklist", "Originals · copies · timeline", "/jeecup-document-verification-checklist"],
               ["JEECUP Helpline Contact", "Official channels · BIPE support", "/jeecup-helpline-contact"],
+              // Phase 5 expansion · reference + preparation pages
+              ["JEECUP Syllabus 2026", "Group A topics · weightage · books", "/jeecup-syllabus-2026"],
+              ["JEECUP Previous Year Papers", "Download · analysis · patterns", "/jeecup-previous-year-papers"],
+              ["JEECUP Eligibility Criteria", "Group-wise · age · domicile", "/jeecup-eligibility-criteria"],
+              ["JEECUP Exam Pattern 2026", "CBT · 100 questions · marking", "/jeecup-exam-pattern-2026"],
+              ["After Results · Action Plan", "Rank interpretation · next steps", "/jeecup-after-results-action-plan"],
             ].map(([title, sub, href]) => (
               <Link
                 key={href}
