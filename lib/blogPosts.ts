@@ -10,6 +10,141 @@
  * Don't add new factual claims here without a verifiable source on the
  * site or the relevant government portal — the audit's E-E-A-T section
  * is unforgiving about contradictions between pages.
+ *
+ *
+ * ═══════════════════════════════════════════════════════════════════
+ * NATURAL HINGLISH · the bilingual style guide for BIPE content
+ * ═══════════════════════════════════════════════════════════════════
+ *
+ * Adopted May 2026 (Praveen's call) for all new Hindi-mixed content.
+ * BIPE's audience is Hindi-medium families in Eastern UP / Bihar who
+ * code-switch every day. Write like a smart older cousin explaining
+ * things at a chai shop — not like a translated brochure.
+ *
+ * The four registers, and when to use each:
+ *
+ * ─── REGISTER A · Pure English (don't translate or romanise) ────────
+ *
+ *   - Brand & code names: BIPE, JEECUP, BTEUP, AICTE, AFRC, AISHE,
+ *     "code 4455", "AICTE Permanent ID 1-488233171"
+ *   - Technical terms: counselling, allotment, registration, admit
+ *     card, rank card, supplementary, lateral entry, internal exams,
+ *     freeze, float, withdraw
+ *   - Branch names (formal): Mechanical Engineering, Civil Engineering,
+ *     Dairy Engineering, Electrical Engineering, Computer Science &
+ *     Engineering
+ *   - Recruiter / institution names: Mahindra, Tata Steel, JCB,
+ *     Motherson, Indian Railways, Amul, NDDB, Mumbai Metro, AKTU
+ *   - Numbers, currency, dates, units: ₹30,150/year, 1:20 ratio,
+ *     1,200+, 15 July 2026, 7 rounds
+ *   - Geographic English forms: Varanasi, Phoolpur, Eastern UP, Bihar,
+ *     Lucknow
+ *
+ * ─── REGISTER B · Romanised Hindi / Hinglish (use freely) ───────────
+ *
+ *   Common Hindi words in Latin script. Don't italicise, don't bracket,
+ *   don't translate inline. Let them flow with English.
+ *
+ *     padhai (study/education when emotional, not academic)
+ *     naukri (job, informal register)
+ *     kaam (work)         paisa (money, casual)
+ *     kamai (income)      bachche / beta (kid / son)
+ *     ghar (home)         mehnga / sasta (expensive / cheap)
+ *     asaan (easy)        sahi (correct, right)
+ *     bhi (also)          ke baad / se pehle (after / before)
+ *     kab tak / kahaan tak (until when / where)
+ *     kaise kare (how to do)
+ *
+ *   Example: "Diploma ke baad B.Tech karna hai? AKTU lateral entry
+ *             sabse seedha rasta hai."
+ *   No translation needed — every reader gets it.
+ *
+ * ─── REGISTER C · Devanagari (use sparingly, with intent) ───────────
+ *
+ *   Devanagari is for moments where you want the reader to feel
+ *   "this is genuinely for me." Don't sprinkle randomly — pick spots
+ *   that carry emotional weight, cultural specificity, or quotable
+ *   authority.
+ *
+ *   Good places:
+ *     - Pull quotes from real alumni (their actual voice)
+ *     - Section openers / headlines (strong visual signal)
+ *     - Phrases with no clean English equivalent:
+ *       "रोज़गार" (livelihood, more than just "job")
+ *       "इज़्ज़त" (respect, with family + social weight)
+ *       "मेहनत" (effort + perseverance combined)
+ *     - Culturally-weighted CTAs:
+ *       "घर के पास, सही फ़ैसला" (close to home, right decision)
+ *
+ *   Don't:
+ *     - Bracket-translate ("admission [प्रवेश]") — patronising
+ *     - Devanagari every other word — robotic
+ *     - Devanagari for technical terms — confusing
+ *     - Devanagari for numbers, dates, codes
+ *
+ * ─── REGISTER D · The mix in a single paragraph ────────────────────
+ *
+ *   Sample body paragraph showing all three registers blended:
+ *
+ *     "JEECUP exam ke baad रिजल्ट कैसे check karein? June ke mid
+ *      mein result aa jata hai, fir 7-round counselling shuru hoti
+ *      hai. Apna rank card download kar lo — yahi sabse important
+ *      document hai. Counselling mein BIPE Varanasi (institute code
+ *      4455) ko apni choice list mein add karna mat bhoolna. हमने
+ *      पिछले 16 साल में 1,200+ students को place kiya hai —
+ *      Mahindra, Tata, JCB, Indian Railways."
+ *
+ *   Approximate ratio across an entire post:
+ *     - English        ~50%   (brands + technical + numbers)
+ *     - Hinglish       ~40%   (verbs, connectors, casual phrases)
+ *     - Devanagari     ~10%   (emphasis + cultural moments + quotes)
+ *
+ *   This is what Indian audiences actually read on WhatsApp / YouTube
+ *   captions / Hindi news every day. NOT "translated English." NOT
+ *   "pure Hindi." Authentic code-switched bilingual content.
+ *
+ *
+ * ─── SEO METADATA FOR HINGLISH POSTS ───────────────────────────────
+ *
+ *   slug:              ASCII Hinglish only (shareable on WhatsApp).
+ *                      e.g., "polytechnic-ke-baad-kya-karein-2026"
+ *                      Google still matches Devanagari queries to ASCII
+ *                      slugs via content matching.
+ *
+ *   title (page H1):   Bilingual.
+ *                      e.g., "पॉलिटेक्निक के बाद क्या करें — Career
+ *                            options after diploma in 2026"
+ *
+ *   metaTitle:         Keep under 60 chars. Mix carefully.
+ *                      e.g., "पॉलिटेक्निक के बाद क्या करें · BIPE 4455"
+ *
+ *   metaDescription:   Match body register (Hinglish, 60-160 chars).
+ *
+ *   inLanguage (JSON-LD):
+ *      "hi-Latn"   for Hinglish-heavy posts (mostly Latin script)
+ *      "hi"        for posts that are >60% Devanagari
+ *      "en"        for posts that are >80% English (default)
+ *
+ *   og:locale:         "hi_IN" for Hinglish/Hindi posts.
+ *
+ *   <html lang> (per-route): "hi-Latn-IN" or "hi-IN" — set on the
+ *                            BlogPost layout, not site-wide.
+ *
+ *
+ * ─── DO NOT ────────────────────────────────────────────────────────
+ *
+ *   - Auto-translate via Google Translate, DeepL, or any ML service.
+ *     Google detects machine translation in 2026 and de-ranks it.
+ *   - Replace English body content with Hindi (substitute, not add).
+ *     That dilutes the English keyword density for existing ranking
+ *     terms. ALWAYS add Hindi alongside, never instead of.
+ *   - Translate brand acronyms (JEECUP, BTEUP, AICTE) into Devanagari.
+ *     Brand consistency matters across both languages.
+ *   - Keyword-stuff Devanagari any more than you'd keyword-stuff
+ *     English. Same Google rules apply to both scripts.
+ *   - Use Hindi on the homepage H1, lead paragraph, or meta
+ *     description — those are protected English-keyword surfaces.
+ *     See the Phase C plan for which page-level surfaces are safe.
  */
 
 export type BlogSection =
