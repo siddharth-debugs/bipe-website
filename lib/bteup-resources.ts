@@ -630,6 +630,589 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     ctaTitle: "Joining BIPE this session?",
     ctaBody: "BIPE's academic office hand-holds every new student through BTEUP registration in the first 2 weeks. We tell you what to bring, when to submit, and confirm your registration is in BTEUP's system. WhatsApp +91-9198646464 ahead of joining and we'll send the registration checklist for your branch.",
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // Phase 5 expansion · May 2026 · keyword-gap fill
+  // Six additional procedural pages targeting BTEUP search clusters
+  // that the original Phase 3 batch didn't cover. Highest-volume
+  // gaps first (syllabus, back-paper, grading, affiliated colleges,
+  // migration, duplicate marksheet).
+  // ─────────────────────────────────────────────────────────────────
+
+  {
+    slug: "bteup-syllabus-2026",
+    shortTitle: "BTEUP Syllabus 2026",
+    title: "BTEUP Syllabus 2026 · Branch-wise + Semester-wise Curriculum | BIPE 4455",
+    description: "Complete BTEUP 2026 syllabus — branch-by-branch (Mechanical, Electrical, Civil, CSE, Dairy) and semester-by-semester. Download official PDFs, theory + practical breakdown, NEP-aligned changes.",
+    keywords: [
+      "BTEUP syllabus",
+      "BTEUP syllabus 2026",
+      "BTEUP polytechnic syllabus",
+      "BTEUP curriculum",
+      "polytechnic syllabus UP",
+      "BTEUP semester syllabus",
+      "BTEUP सिलेबस",
+      "बीटीईयूपी पाठ्यक्रम",
+    ],
+    eyebrow: "BTEUP 2026 · SYLLABUS GUIDE",
+    headline: "BTEUP 2026 syllabus —",
+    headlineAccent: "branch + semester, end-to-end.",
+    lead: "BTEUP publishes a 6-semester syllabus for each of its 40+ affiliated diploma branches. This page covers the structural pattern of the syllabus (theory + practical + internal weightage), where to download official PDFs, and the branch-by-branch contour for BIPE's 5 BTEUP-affiliated branches (Mechanical, Electrical, Civil, CSE, Dairy).",
+    quickStats: [
+      { label: "Total semesters", value: "6", sub: "3 years · 2 semesters per year" },
+      { label: "Per branch", value: "5-7 theory + 4-6 practical", sub: "Per semester · varies by year" },
+      { label: "Marking split", value: "70 external + 30 internal", sub: "Per theory subject · typical" },
+      { label: "Official source", value: "bteup.org.in", sub: "Notice Board · Curriculum tab" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Open the BTEUP official syllabus index",
+        body: "Visit bteup.org.in. From the navigation, choose 'Curriculum' or 'Syllabus' (the menu label changes year to year). The syllabus index lists all 40+ diploma programmes alphabetically. Use Ctrl+F (or browser search) to find your branch quickly.",
+      },
+      {
+        n: "02",
+        title: "Pick your branch + intake year",
+        body: "Syllabus follows the intake-year cohort. If you joined in 2024 batch, your 6-semester syllabus is the 2024 syllabus — not the latest. BTEUP locks the syllabus for your cohort at intake time. Pick the matching year carefully.",
+      },
+      {
+        n: "03",
+        title: "Download the semester-wise PDFs",
+        body: "Each semester is a separate PDF. The first page lists theory subjects (5-7 per semester) and practical subjects (4-6 per semester) with subject codes, periods per week, internal + external marks, and pass percentage. The rest of the PDF is the topic-by-topic breakdown for each subject.",
+      },
+      {
+        n: "04",
+        title: "Map the theory + practical weightage per subject",
+        body: "Standard BTEUP marking split is 70 external + 30 internal for theory subjects. Practical subjects often have 50 external + 50 internal. Internal marks come from class tests, assignments, and attendance. Plan your prep accordingly — practicals are won by lab regularity, theory by exam-week revision.",
+      },
+      {
+        n: "05",
+        title: "Check the 2026 NEP-aligned revisions",
+        body: "BTEUP began aligning select branches to NEP 2020 from the 2024-25 intake onwards. Changes include: a new 'Multi-disciplinary' elective slot in semester 4, AI / IoT topics in CSE syllabus, sustainable-engineering modules in Civil and Mechanical. If you're a 2025 or 2026 intake, your syllabus reflects these updates.",
+      },
+      {
+        n: "06",
+        title: "Cross-reference with BIPE's branch-specific page",
+        body: "BIPE publishes a curated semester-by-semester syllabus summary for each of its 5 branches at /courses/[branch] (e.g., /courses/dairy-engineering). The summary is shorter than the official BTEUP PDF but easier to scan when you're picking branches at JEECUP counselling.",
+      },
+    ],
+    checklist: {
+      eyebrow: "Files to save before each semester",
+      heading: "What every BTEUP student keeps handy",
+      items: [
+        "Current semester syllabus PDF (printed copy at home)",
+        "Subject code reference sheet (so admit cards and result mappings are unambiguous)",
+        "Internal marks tracker (your own spreadsheet — BTEUP doesn't release internals until result day)",
+        "Previous-year question papers for current semester subjects (from BTEUP archive or library)",
+        "BIPE class teacher's annotated syllabus (covers what's actually emphasised in BTEUP's exam vs what's optional)",
+        "List of practical experiments per subject (lab manual reference)",
+      ],
+    },
+    faqs: [
+      {
+        q: "Where is the official BTEUP syllabus published?",
+        a: "Only on bteup.org.in's 'Curriculum' section. Per-branch, per-semester PDFs. BTEUP doesn't publish syllabus on third-party aggregators — sites like Careers360, Shiksha, etc., usually republish the BTEUP PDF, but their version may lag the official cycle by 1-2 years. For the authoritative current cycle, go to the source.",
+      },
+      {
+        q: "How is BTEUP syllabus different from CBSE / NCERT?",
+        a: "BTEUP is application-heavy. Where NCERT focuses on concept depth, BTEUP focuses on workshop / lab / field application. A semester's theory subject typically pairs with a practical subject — for example, 'Strength of Materials' theory in Civil pairs with a 'Materials Testing Lab' practical. The internal 30% reflects practical mastery.",
+      },
+      {
+        q: "What if my branch's syllabus changes mid-diploma?",
+        a: "BTEUP locks the syllabus at intake. You continue under your intake-year syllabus for all 6 semesters, even if BTEUP revises the curriculum later. Junior batches inherit the new syllabus; you don't switch mid-course. The only exception is if BTEUP issues a 'syllabus continuity notification' for a specific cycle — rare, only for emergencies.",
+      },
+      {
+        q: "Are NCERT books enough for BTEUP exams?",
+        a: "For first-year theory (Maths, Physics, Chemistry, English) — NCERT Class 11-12 is largely sufficient. For branch-specific subjects from semester 3 onwards, you need branch-specialised textbooks (the BTEUP syllabus PDF lists recommended texts). BIPE library carries the recommended texts for all 5 branches.",
+      },
+      {
+        q: "How much weightage do BTEUP internal marks carry?",
+        a: "Typically 30% for theory subjects, 50% for practical. Internal marks come from: class tests (~40%), assignments (~30%), attendance (~20%), behaviour / class participation (~10%). At BIPE, attendance < 75% in a subject can disqualify you from the BTEUP external exam — so attendance is the single biggest factor in internals.",
+      },
+      {
+        q: "Does BIPE provide a simplified BTEUP syllabus per branch?",
+        a: "Yes. /courses/[branch] (e.g., /courses/electrical-engineering) summarises the 6-semester syllabus for that branch in a scannable format. We don't replace the official BTEUP PDF — but the BIPE summary is what a Class-10 student / parent can actually read to decide which branch matches the student's interest.",
+      },
+    ],
+    ctaTitle: "Picking the right branch for you?",
+    ctaBody: "BIPE's academic mentors walk every prospective student through the BTEUP syllabus for the branches they're considering. Honest read on workload, math content, lab time, and where the diploma leads. WhatsApp +91-9198646464 with your Class 10 marks and we'll map the syllabus to your fit.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "bteup-back-paper-supplementary-process",
+    shortTitle: "BTEUP Back Paper · Supplementary",
+    title: "BTEUP Back Paper 2026 · Supplementary Exam Process | BIPE 4455",
+    description: "BTEUP back paper / supplementary exam guide — eligibility, registration, fees, timeline. How to clear backlogs without losing a year. From the BIPE academic office.",
+    keywords: [
+      "BTEUP back paper",
+      "BTEUP supplementary exam",
+      "BTEUP backlog process",
+      "BTEUP supply exam 2026",
+      "BTEUP fail subject re-exam",
+      "BTEUP बैक पेपर",
+      "polytechnic supplementary UP",
+    ],
+    eyebrow: "BTEUP 2026 · BACK PAPER + SUPPLEMENTARY",
+    headline: "BTEUP back paper —",
+    headlineAccent: "clear it, don't carry it.",
+    lead: "A backlog (failed subject) in BTEUP is recoverable — but only if you act in the supplementary cycle window. This page walks through the back-paper / supplementary process: when the cycle runs, how to register, what it costs, and how BIPE's academic office helps students clear backlogs without losing a year of graduation.",
+    quickStats: [
+      { label: "Cycles per year", value: "2", sub: "July (for odd-sem backlogs) + January (even-sem)" },
+      { label: "Fee per paper", value: "₹200-500", sub: "Plus admin charges · varies by cycle" },
+      { label: "Window", value: "~2 weeks", sub: "Per cycle · strict deadline" },
+      { label: "Max backlog", value: "All semester subjects", sub: "Yes — even full-semester re-attempt is allowed" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Identify your backlog from the BTEUP result page",
+        body: "Log in to bteup.org.in → Result. Your marksheet flags failed subjects with 'CT' (Carry Trial) or 'F' grade. Note the subject code, subject name, and semester for each backlog. Don't rely on memory — work from the marksheet PDF.",
+      },
+      {
+        n: "02",
+        title: "Wait for BTEUP's supplementary cycle notification",
+        body: "Supplementary cycles run twice yearly — typically July (for odd-semester backlogs from the previous May-June theory cycle) and January (for even-semester backlogs from the November-December theory cycle). BTEUP publishes the cycle notification ~3 weeks before registration opens. Watch bteup.org.in's notice board.",
+      },
+      {
+        n: "03",
+        title: "Register for the supplementary exam through BIPE",
+        body: "Supplementary registration is institute-mediated — you fill the form via BIPE's exam office, not directly online. Visit the BIPE academic block with your roll number, current marksheet, and the list of backlogs you want to clear. The exam coordinator submits the institute-batch to BTEUP.",
+      },
+      {
+        n: "04",
+        title: "Pay the per-paper fee within the window",
+        body: "Supplementary fee is ₹200-500 per paper plus administrative charges (typically ~₹100). Pay via the BTEUP fee portal or through BIPE's accounts office. Get a receipt. The fee is NON-REFUNDABLE — once you register, you must appear, otherwise it counts as another absent attempt.",
+      },
+      {
+        n: "05",
+        title: "Receive supplementary admit card + appear for exam",
+        body: "BTEUP releases supplementary admit cards 7-10 days before the cycle starts. Same portal as your main-cycle admit card. The exam is usually held at YOUR institute (BIPE Phoolpur) under external BTEUP supervision — different from main cycle which is often at mixed centres. Reporting time, ID requirements: same as main cycle.",
+      },
+      {
+        n: "06",
+        title: "Check supplementary result + plan ahead",
+        body: "Results declare ~2 months after the cycle closes. If you cleared the backlog: your main-cycle marksheet now shows the passing grade. If you didn't: another supplementary cycle is available in the next window (6 months later). Up to 2-3 consecutive failed attempts is allowed; beyond that, BTEUP may require a 'special permission' application for further re-attempts.",
+      },
+    ],
+    checklist: {
+      eyebrow: "Before you register for supplementary",
+      heading: "What every student should bring",
+      items: [
+        "Current marksheet PDF (showing the backlog flags)",
+        "Original BTEUP roll number",
+        "Aadhaar (for verification)",
+        "Per-paper fee in cash / UPI / DD (₹200-500 + admin)",
+        "List of subject codes you want to clear (write them down, don't rely on memory)",
+        "Ideally, your previous-cycle answer scripts (BIPE academic office helps retrieve these for revision)",
+        "A written supplementary study plan — BIPE mentors help draft this",
+      ],
+    },
+    faqs: [
+      {
+        q: "Will a back paper show on my final marksheet?",
+        a: "Once you clear the supplementary, your final consolidated marksheet shows ONLY the passing grade — the original 'CT' / fail flag is replaced. Future employers / B.Tech lateral-entry recruiters don't see the failed attempt unless they ask for cycle-by-cycle marksheets (rare). So clearing is genuinely a fresh start.",
+      },
+      {
+        q: "Can I appear for supplementary while still attending current semester?",
+        a: "Yes. Most BIPE students with backlogs attend their CURRENT semester normally and write supplementary for the PREVIOUS semester's failed subjects in parallel. Manage your time carefully — supplementary prep adds 1-2 hours per day per backlog subject to your study load.",
+      },
+      {
+        q: "What's the difference between back paper, supplementary, and re-exam?",
+        a: "In BTEUP terminology: 'back paper' = the subject you failed. 'Supplementary' = the cycle when you re-attempt it. 'Re-exam' is informal — not an official BTEUP term. People also call it 'supply' (slang for supplementary). All refer to the same process.",
+      },
+      {
+        q: "Can I clear a back paper without supplementary by applying for grace marks?",
+        a: "If you missed by 1-3 marks, grace marks application may be enough — no supplementary needed. Grace is applied automatically in some cases, or by application within 3 weeks of result. But if you missed by 5+ marks, grace won't bridge the gap — supplementary is the only path. BIPE academic office helps decide which path fits.",
+      },
+      {
+        q: "Does a supplementary delay my graduation?",
+        a: "Not necessarily. If you clear the back paper in the FIRST supplementary cycle (July or January immediately after the failed semester), graduation timeline isn't affected. If you carry the backlog to multiple supplementary cycles or final-semester subjects fail, then graduation is delayed by ~6 months per failed cycle. The first supplementary is the critical one.",
+      },
+      {
+        q: "What if I have backlogs in more than 2 subjects per semester?",
+        a: "Up to 4 backlogs per semester is administratively manageable through supplementary. Beyond that, BTEUP may flag your enrolment for review — typically a meeting with the BIPE principal + academic dean to assess whether continued enrolment makes sense or whether re-attempting the semester from scratch is better. Rare scenario, but worth knowing.",
+      },
+    ],
+    ctaTitle: "Got a back paper to clear?",
+    ctaBody: "BIPE's academic office helps every back-paper student plan supplementary registration, draft a revision schedule, and access previous-year question papers for the failed subjects. Drop into the academic block during 9am-5pm Mon-Sat or WhatsApp +91-9198646464.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "bteup-grading-cgpa-calculation",
+    shortTitle: "BTEUP Grading + CGPA",
+    title: "BTEUP Grading System 2026 · CGPA Calculation Guide | BIPE 4455",
+    description: "BTEUP grading scale, percentage-to-grade mapping, SGPA + CGPA calculation formula. How to read your marksheet and compute your overall diploma percentage for B.Tech lateral entry.",
+    keywords: [
+      "BTEUP grading",
+      "BTEUP CGPA",
+      "BTEUP CGPA calculation",
+      "BTEUP percentage calculation",
+      "BTEUP marksheet grade",
+      "BTEUP SGPA",
+      "polytechnic CGPA formula",
+      "BTEUP ग्रेड",
+    ],
+    eyebrow: "BTEUP 2026 · GRADING + CGPA",
+    headline: "BTEUP grading system —",
+    headlineAccent: "marks to grade to CGPA.",
+    lead: "BTEUP uses a 10-point grading scale alongside raw marks. Your final diploma marksheet shows subject-wise grades, SGPA (per semester) and CGPA (cumulative across 6 semesters). This page explains the mark-to-grade mapping, the SGPA / CGPA formulas, and how to convert CGPA to percentage for B.Tech lateral-entry forms.",
+    quickStats: [
+      { label: "Grading scale", value: "10-point", sub: "A+ down to F" },
+      { label: "Pass mark", value: "33% theory · 40% practical", sub: "Per subject · typical" },
+      { label: "CGPA range", value: "0 to 10", sub: "Higher is better · 6.0+ for placements" },
+      { label: "Percentage formula", value: "CGPA × 9.5", sub: "AICTE-prescribed conversion" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Find your raw marks on the BTEUP marksheet",
+        body: "Each subject lists: internal marks (out of 30 for theory / 50 for practical), external marks (out of 70 for theory / 50 for practical), total (out of 100), and grade. The marksheet PDF is available on bteup.org.in immediately after result declaration.",
+      },
+      {
+        n: "02",
+        title: "Map raw marks to grade (the 10-point scale)",
+        body: "Standard BTEUP grade band: 90-100 = O (Outstanding, 10 points), 80-89 = A+ (9), 70-79 = A (8), 60-69 = B+ (7), 50-59 = B (6), 40-49 = C (5), 33-39 = P (Pass, 4), Below 33 = F (Fail, 0). The grade points are what enter the SGPA / CGPA formulas — not the raw marks.",
+      },
+      {
+        n: "03",
+        title: "Compute SGPA (Semester Grade Point Average)",
+        body: "SGPA = Σ(Grade Point × Credit Hours) ÷ Σ(Credit Hours). Each subject has assigned credit hours (typically 3-5 for theory, 1-3 for practical). Multiply each subject's grade point by its credits, sum, divide by total credits. Result is between 0 and 10. Most BIPE students fall in the 6.0-8.5 range.",
+      },
+      {
+        n: "04",
+        title: "Compute CGPA (cumulative across all 6 semesters)",
+        body: "CGPA = Σ(SGPA per semester × Total credits per semester) ÷ Σ(Total credits across all 6 semesters). Or equivalently: average of all subject grade points × credits, across the entire diploma. Your final marksheet at graduation shows CGPA prominently — it's the headline metric.",
+      },
+      {
+        n: "05",
+        title: "Convert CGPA to percentage for B.Tech / placement applications",
+        body: "AICTE prescribes: Percentage = CGPA × 9.5 (for the AICTE-affiliated polytechnic diploma context). So a 7.5 CGPA ≈ 71.25%. Some institutions use × 10 or × 9.0 — always check the specific application's conversion rule. Carry both the CGPA and the percentage on your resume to avoid ambiguity.",
+      },
+      {
+        n: "06",
+        title: "Check class division based on CGPA / percentage",
+        body: "Standard BTEUP division: 75%+ (or CGPA 7.9+) = First Division with Distinction, 60-75% (CGPA 6.3-7.9) = First Division, 45-60% (CGPA 4.7-6.3) = Second Division, 33-45% (CGPA 3.5-4.7) = Third Division. Your final marksheet states your division — important for government job applications.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Why doesn't BTEUP just show percentage instead of CGPA?",
+        a: "BTEUP transitioned from pure percentage to CGPA-with-grades in line with AICTE's national standardisation around 2018. Reason: CGPA is portable across institutions (AKTU, IITs, other Indian polytechnics all use CGPA), while pure percentage is institution-specific and harder to compare. Many marksheets still SHOW raw marks alongside the grade — but the official credential is the CGPA.",
+      },
+      {
+        q: "Does BTEUP round CGPA to 2 decimals or more?",
+        a: "Officially 2 decimal places — e.g., 7.46 CGPA. Some marksheets round to 1 decimal in summary fields, full precision in detailed sections. For B.Tech lateral entry forms, always use the 2-decimal CGPA from the official marksheet, not a rounded version.",
+      },
+      {
+        q: "What CGPA do I need for AKTU B.Tech lateral entry?",
+        a: "AKTU's official cutoff is 45% (CGPA ~4.7) for general category, 40% (CGPA ~4.2) for SC/ST/OBC. But the actual cutoff for placement-quality colleges is much higher — typically 6.0+ CGPA gets you a decent NIRF-ranked college, 7.5+ opens top-tier AKTU colleges. See /blog/diploma-to-btech-lateral-entry-up-aktu for branch-by-branch college-CGPA mapping.",
+      },
+      {
+        q: "Does CGPA include practical subjects?",
+        a: "Yes. Practical subjects carry credits and grade points just like theory subjects. They contribute to SGPA and therefore CGPA. Lab marks, drawing, drafting, and project work are all weighted in. Many students wrongly assume only theory matters — that's a costly assumption for placement-relevant CGPA.",
+      },
+      {
+        q: "Can I improve my CGPA by re-attempting passed subjects?",
+        a: "No. BTEUP doesn't allow re-attempts of subjects you've already passed (some other boards do, BTEUP doesn't). Supplementary cycles are only for FAILED subjects (back papers). Your CGPA from passing subjects is locked. Focus on doing well first time round — there's no second-chance CGPA improvement built into the system.",
+      },
+      {
+        q: "Where do I see SGPA vs CGPA on the marksheet?",
+        a: "SGPA appears at the END of each per-semester marksheet — under your subject-wise breakdown. CGPA appears on the FINAL consolidated marksheet that BTEUP issues after Semester 6. The consolidated marksheet is the official credential document for graduation, B.Tech applications, and government jobs.",
+      },
+    ],
+    ctaTitle: "Need a CGPA-to-college mapping?",
+    ctaBody: "BIPE's placement and academic offices help every senior-year student translate their CGPA into realistic next-step options — B.Tech lateral entry colleges, government job eligibility, private placement opportunities. WhatsApp +91-9198646464 with your current CGPA for an honest mapping.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "bteup-affiliated-colleges-up",
+    shortTitle: "BTEUP Affiliated Colleges",
+    title: "BTEUP Affiliated Colleges in UP 2026 · Full List + How to Verify | BIPE 4455",
+    description: "Comprehensive guide to BTEUP-affiliated polytechnic colleges across Uttar Pradesh — government, aided, private. How to verify any college's BTEUP affiliation status and what affiliation actually guarantees.",
+    keywords: [
+      "BTEUP affiliated colleges",
+      "BTEUP college list UP",
+      "polytechnic colleges UP",
+      "BTEUP recognized colleges",
+      "BTEUP polytechnic list",
+      "list of BTEUP colleges",
+      "BTEUP affiliation verification",
+    ],
+    eyebrow: "BTEUP 2026 · AFFILIATED COLLEGES",
+    headline: "BTEUP-affiliated colleges in UP —",
+    headlineAccent: "verify, compare, choose.",
+    lead: "BTEUP affiliates ~1,500+ polytechnic colleges across Uttar Pradesh — government, aided, and private. Not every college claiming polytechnic status is BTEUP-affiliated. This page explains the affiliation system, how to verify any college's status, and the three categories you'll encounter during JEECUP counselling.",
+    quickStats: [
+      { label: "Total colleges", value: "~1,500+", sub: "Across UP · all categories" },
+      { label: "Government", value: "~150", sub: "Polytechnic Education Dept., UP" },
+      { label: "Government-aided", value: "~50", sub: "Hybrid · partial govt funding" },
+      { label: "Private (incl. BIPE)", value: "~1,300+", sub: "AICTE-approved + BTEUP-affiliated" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Understand the three college categories",
+        body: "BTEUP affiliates three types of polytechnics. (1) Government polytechnics — fully state-funded, lowest fees, very low seats. (2) Government-aided — private trusts receiving partial state funding, moderate fees, mid-range placement. (3) Private polytechnics (BIPE falls here) — AICTE + BTEUP approved, AFRC-regulated fees, broadest seat availability and most flexible admission timelines.",
+      },
+      {
+        n: "02",
+        title: "Verify any college's BTEUP affiliation on bteup.org.in",
+        body: "Visit bteup.org.in → 'Affiliated Colleges' or 'Institute Directory' (menu label varies by year). Enter the college name or JEECUP institute code. The result shows: affiliation status (Active / Renewal / Withdrawn), AICTE approval reference, sanctioned branches and seat intake per branch, and the date of last inspection. If a college claims BTEUP affiliation but doesn't show here, it's NOT affiliated.",
+      },
+      {
+        n: "03",
+        title: "Cross-check AICTE approval at facilities.aicte.gov.in",
+        body: "AICTE approval is separate from BTEUP affiliation. A legitimate polytechnic needs both. Search at facilities.aicte.gov.in by institute name or AICTE Permanent ID. The result shows current-year EoA (Extension of Approval) status. BIPE's AICTE Permanent ID is 1-488233171 — you can verify ours there as a reference example.",
+      },
+      {
+        n: "04",
+        title: "Check the JEECUP institute-code list (most authoritative for admission)",
+        body: "JEECUP publishes an official institute-code list every year — every BTEUP-affiliated college accepting JEECUP counselling has a 4-digit code. BIPE's is 4455. If a college isn't on the JEECUP institute-code list, it cannot accept JEECUP counselling admissions — which means even if it's BTEUP-affiliated, the admission path is different (direct, separate exam, etc.).",
+      },
+      {
+        n: "05",
+        title: "Compare 3-4 short-listed colleges side-by-side",
+        body: "Once you've verified 3-4 short-listed colleges, compare on: distance from home, fee (look up AFRC / govt published rates), branches offered (some colleges only offer 2-3 branches), placement record (ask for verified joining letters, not 'package' claims), hostel availability, last inspection date (recent inspection = up-to-date facilities). BIPE's /placements + /fees + /about/affiliations pages show exactly the data points you should be comparing on.",
+      },
+      {
+        n: "06",
+        title: "Avoid colleges with 'BTEUP-affiliation pending' status",
+        body: "Some colleges advertise 'BTEUP-affiliation pending' or 'applied for affiliation' — meaning they're not yet affiliated, but processing. Joining such a college risks: your diploma may not be BTEUP-recognised at graduation, government job eligibility may be affected. Stick to colleges with 'Active' affiliation status on the BTEUP portal.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Where do I find the complete BTEUP-affiliated college list?",
+        a: "bteup.org.in's 'Institute Directory' or 'Affiliated Colleges' section. It's the authoritative source. Third-party sites (Careers360, Shiksha) republish it but often with stale data. For latest verification, go directly to BTEUP.",
+      },
+      {
+        q: "How do I know if a BTEUP-affiliated college is also good?",
+        a: "Affiliation guarantees the diploma is BTEUP-recognised — but doesn't guarantee quality. For quality, look at: NIRF ranking (if any), AFRC fee classification (institutional category), recent JEECUP cutoff trends, placement record (verified joining letters not 'package' claims), AICTE EoA history (an institute with continuous EoA for 10+ years has stable operations). BIPE's /why-bipe and /placements pages walk through these signals.",
+      },
+      {
+        q: "Is a private BTEUP-affiliated college as recognised as a government one?",
+        a: "Yes, at the diploma-credential level. A BTEUP-affiliated private polytechnic (like BIPE) issues the same BTEUP diploma as a government polytechnic — recognised by the same government, eligible for the same B.Tech lateral entry pathways, eligible for the same RRB JE / SSC JE / UPPCL government job exams. The difference is in fees and facilities, not in diploma value. See /private-vs-government-polytechnic for the detailed comparison.",
+      },
+      {
+        q: "Can a BTEUP-affiliated college lose its affiliation?",
+        a: "Yes, if AICTE withdraws EoA, BTEUP finds non-compliance with norms (faculty shortage, infrastructure deficit, etc.), or the college fails inspection. Affiliation withdrawal is rare — typically affects ~1-3 colleges per year out of 1,500+. BTEUP gives advance notice (usually 1 year) so existing students can complete their cycle. Always check current-cycle affiliation status before joining.",
+      },
+      {
+        q: "Why does the list change year to year?",
+        a: "New colleges get affiliated, some lose affiliation, some merge or close. The annual JEECUP institute-code list also updates — colleges may be added or dropped based on counselling participation. For 2026-27 cycle, work from the current-year BTEUP list, not last year's.",
+      },
+      {
+        q: "How does BIPE compare to other BTEUP colleges in Eastern UP?",
+        a: "BIPE is one of ~25 private BTEUP-affiliated polytechnics in the Eastern UP region. /government-polytechnic-in-eastern-up and /private-vs-government-polytechnic show the comparison framework. Honestly: government polytechnics have lower fees and equivalent academic recognition; BIPE differentiates on placement infrastructure, on-campus hostel, and the rare Dairy Engineering branch. The right choice depends on your priorities.",
+      },
+    ],
+    ctaTitle: "Verifying BIPE before applying?",
+    ctaBody: "BIPE's AICTE Permanent ID is 1-488233171 (verify at facilities.aicte.gov.in) · JEECUP code 4455 (verify at jeecup.admissions.nic.in) · BTEUP-affiliated (verify at bteup.org.in). All three are independently checkable. WhatsApp +91-9198646464 if you want help verifying any of them.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "bteup-migration-noc-process",
+    shortTitle: "BTEUP Migration · NOC",
+    title: "BTEUP Migration NOC 2026 · Transfer Process Guide | BIPE 4455",
+    description: "BTEUP migration / NOC (No Objection Certificate) process — how to transfer between BTEUP-affiliated colleges, why students migrate, documents required, timeline, fees. From the BIPE academic office.",
+    keywords: [
+      "BTEUP migration",
+      "BTEUP NOC",
+      "BTEUP transfer certificate",
+      "polytechnic college transfer",
+      "BTEUP college change",
+      "BTEUP migration process",
+      "BTEUP NOC application",
+    ],
+    eyebrow: "BTEUP 2026 · MIGRATION + NOC",
+    headline: "BTEUP migration —",
+    headlineAccent: "transfer without losing a year.",
+    lead: "Family relocation, course mismatch, financial circumstances — students sometimes need to transfer between BTEUP-affiliated colleges mid-diploma. BTEUP allows migration with a No Objection Certificate (NOC) from the current college. This page walks through the process, eligibility, and what to expect at BIPE on both ends (students migrating out, or transferring in).",
+    quickStats: [
+      { label: "Eligibility", value: "After Sem 1 or 2", sub: "Rarely allowed after Sem 3" },
+      { label: "Processing time", value: "4-8 weeks", sub: "From NOC to new-college enrollment" },
+      { label: "NOC fee", value: "~₹500-2,000", sub: "BIPE waives in genuine hardship cases" },
+      { label: "Success rate", value: "~70-80%", sub: "When properly documented" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Confirm migration is the right choice",
+        body: "Migration is disruptive — new institute, new mentors, possibly different syllabus pace (within BTEUP norms but local emphasis varies). Genuine reasons: family relocation to a different city, medical situations, severe institutional issues, family financial change. Less-genuine reasons (just unhappy with one teacher, hoping for easier coursework) usually don't justify the disruption. Talk to BIPE's academic office before deciding.",
+      },
+      {
+        n: "02",
+        title: "Apply for NOC from current college (BIPE, in this case)",
+        body: "Submit a written application to BIPE's academic office stating: your name, roll number, branch, semester, reason for migration, target college name and BTEUP code (if known), supporting documents (family relocation proof, medical certificate, etc.). BIPE reviews the application — most genuine cases approved within 2 weeks.",
+      },
+      {
+        n: "03",
+        title: "Pay NOC processing fee + complete clearance",
+        body: "BIPE charges ~₹500-2,000 NOC processing fee (waived in documented hardship cases). You also need 'no-dues' clearance from: accounts office (tuition + hostel fees up to date), library (no overdue books), labs (no equipment pending). Each department signs the clearance form. Total clearance time: 5-10 working days.",
+      },
+      {
+        n: "04",
+        title: "Receive NOC + transfer documents from BIPE",
+        body: "Once cleared, BIPE issues: the NOC certificate (signed by Principal), your current marksheets (Sem 1 onwards if applicable), conduct certificate, syllabus mapping notes (helpful for the receiving college). Hand-deliver or courier these to the target college.",
+      },
+      {
+        n: "05",
+        title: "Target college accepts + applies to BTEUP for transfer",
+        body: "Target college reviews your NOC, current marksheets, and assesses whether they have a seat in your branch + semester. If yes, they raise a 'student transfer' application to BTEUP. BTEUP processes (4-6 weeks typically) and updates its registry. Your BTEUP roll number CHANGES — new institute, new roll. Old institute records are archived.",
+      },
+      {
+        n: "06",
+        title: "Enroll at target college + verify with BTEUP portal",
+        body: "Once BTEUP processes the transfer, you enroll at the new college as a continuing student. Log in to bteup.org.in with your new credentials (issued by target college) and verify your roll number, branch, semester, and previous-marks history all show correctly. Any discrepancies, flag with the target college's academic office immediately.",
+      },
+    ],
+    checklist: {
+      eyebrow: "Documents for migration application",
+      heading: "What to gather BEFORE you apply",
+      items: [
+        "Written application stating reason for migration (1-2 pages)",
+        "Aadhaar (yours + parent/guardian for verification)",
+        "Current BTEUP marksheet (Semester 1 onwards if applicable)",
+        "Fee receipts (showing no pending tuition / hostel / library dues)",
+        "Supporting documents for the reason (relocation proof / medical certificate / financial hardship affidavit)",
+        "Target college admission letter (if they've conditionally accepted you)",
+        "JEECUP rank card (original allotment letter, for reference)",
+      ],
+    },
+    faqs: [
+      {
+        q: "Can I migrate after Semester 3 or later?",
+        a: "BTEUP technically allows it but it's rare. Most migration approvals are for Semester 1 or 2 students. After Semester 3, the syllabus drift between institutes becomes a real factor — even within BTEUP, different colleges may have emphasised different topics in early semesters. Migration after Sem 3 often requires you to repeat some subjects at the new college. BTEUP and target college decide on a case-by-case basis.",
+      },
+      {
+        q: "What if BIPE denies my NOC request?",
+        a: "Genuine denials are rare. If denied, the reason is usually: pending fee dues, attendance shortage, disciplinary issue, or insufficient migration justification. Address the specific issue and re-apply. If you believe the denial is unjustified, escalate to BIPE's Principal in writing. As a last resort, BTEUP has a grievance mechanism — but going there is a major step.",
+      },
+      {
+        q: "Does migration affect my CGPA / final marksheet?",
+        a: "No. Your previous-semester grades carry forward to the new institute under BTEUP's record. The final consolidated marksheet at graduation shows ALL 6 semesters' results regardless of which institute administered each. Migration is recorded in your file but doesn't appear on the marksheet itself.",
+      },
+      {
+        q: "What if the target college doesn't have my branch?",
+        a: "Then migration isn't possible to that college — you can only migrate within the same branch and same semester. You'd need to either choose a different target college that does have your branch, or stay at BIPE. BTEUP doesn't allow branch-change via migration.",
+      },
+      {
+        q: "How much does the whole migration process cost?",
+        a: "Rough estimate: ₹500-2,000 NOC fee at current college + ₹500-1,500 admission fees at target college + courier costs + your time for documentation. Total cash outlay is usually ₹2,000-5,000 plus any backlog clearance fees if applicable.",
+      },
+      {
+        q: "Can BIPE accept transfer students into ongoing semesters?",
+        a: "Yes, subject to: branch + semester seat availability, valid NOC from the previous BTEUP college, current-cycle BTEUP approval. We've had transfer students join from semesters 2 and 3 in past years. WhatsApp +91-9198646464 with your current college name, branch, semester, and reason — we'll tell you within 48 hours whether we can take you.",
+      },
+    ],
+    ctaTitle: "Considering migration to or from BIPE?",
+    ctaBody: "BIPE's academic office handles ~5-10 migration cases per cycle — both directions. We're honest about whether your reason justifies the disruption and what your post-migration prospects look like. WhatsApp +91-9198646464 to schedule a confidential 15-min consultation.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "bteup-duplicate-marksheet-application",
+    shortTitle: "BTEUP Duplicate Marksheet",
+    title: "BTEUP Duplicate Marksheet 2026 · Application + Reissue Process | BIPE 4455",
+    description: "Lost or damaged your BTEUP marksheet? Step-by-step application process for duplicate / reissued marksheet — fees, affidavit, FIR requirement, timeline. From the BIPE academic office.",
+    keywords: [
+      "BTEUP duplicate marksheet",
+      "BTEUP lost marksheet",
+      "BTEUP marksheet reissue",
+      "duplicate marksheet polytechnic UP",
+      "BTEUP marksheet damaged",
+      "BTEUP डुप्लीकेट मार्कशीट",
+      "BTEUP transcript request",
+    ],
+    eyebrow: "BTEUP 2026 · DUPLICATE MARKSHEET",
+    headline: "BTEUP duplicate marksheet —",
+    headlineAccent: "lost, damaged, or just needed extras.",
+    lead: "Lost the original marksheet ahead of a B.Tech interview? Damaged by water or fire? Need additional certified copies for a placement application? BTEUP issues duplicate marksheets via the institute (BIPE) — this page walks through the application, fees, affidavit / FIR requirements, and the typical 4-6 week timeline.",
+    quickStats: [
+      { label: "Issued by", value: "BTEUP · via BIPE", sub: "Institute-mediated application" },
+      { label: "Fee", value: "₹500-1,000", sub: "Per marksheet · plus admin charges" },
+      { label: "Timeline", value: "4-6 weeks", sub: "From application to delivery" },
+      { label: "If lost", value: "Affidavit + FIR", sub: "Mandatory · police complaint required" },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Identify which marksheet you need duplicated",
+        body: "BTEUP issues two types: (a) Per-semester marksheets (issued at the end of each semester · 6 total over the diploma), (b) Consolidated marksheet (issued ONCE at graduation, summarising all 6 semesters with final CGPA). Application process is identical for either; specify which semester(s) you need.",
+      },
+      {
+        n: "02",
+        title: "Determine the reason — lost, damaged, or extras",
+        body: "BTEUP categorises reissue requests by reason. (a) Lost — requires affidavit + FIR (police complaint), additional verification time. (b) Damaged — requires the damaged original to be submitted with the application, no affidavit needed. (c) Additional copies (you have the original but need more) — simplest case, just application + fee.",
+      },
+      {
+        n: "03",
+        title: "If LOST — file an FIR at the local police station",
+        body: "BTEUP requires an FIR (First Information Report) for lost marksheets — proves you genuinely lost it, not just trying to fraudulently get extras. File at the police station nearest to where you lost the document. Mention: your name, the document name and unique number (if you remember), date and circumstances of loss. The FIR is free — police are obligated to register it. Get a copy stamped by the station officer.",
+      },
+      {
+        n: "04",
+        title: "Prepare the affidavit (lost cases only)",
+        body: "A non-judicial stamp paper affidavit (₹10-100 stamp) stating you've lost the marksheet, the FIR has been filed (attach copy), and you'll return the duplicate if the original is found. Format is standard — local notary or BIPE's office can provide a template. Notarised by a public notary; cost ~₹100-300 including stamp + notary fees.",
+      },
+      {
+        n: "05",
+        title: "Submit the application to BIPE's academic office",
+        body: "Visit BIPE academic block with: completed BTEUP duplicate-marksheet application form (BIPE provides), your Aadhaar (verification), the FIR + affidavit (if lost) OR damaged original (if damaged), per-marksheet fee (₹500-1,000 in cash/UPI). BIPE's exam coordinator forwards your application to BTEUP within 7-10 working days.",
+      },
+      {
+        n: "06",
+        title: "BTEUP processes + BIPE receives the duplicate",
+        body: "BTEUP processing takes 3-5 weeks. The duplicate marksheet is delivered to BIPE (sometimes directly to your address — depends on the cycle). BIPE notifies you to collect. The duplicate is marked 'DUPLICATE' on the face — Government and most employers accept this status; private companies occasionally hesitate but verification via BTEUP's portal clears any doubt.",
+      },
+    ],
+    checklist: {
+      eyebrow: "Documents to gather",
+      heading: "Before you apply",
+      items: [
+        "Filled-out BTEUP duplicate-marksheet application form (from BIPE office)",
+        "Aadhaar card original + photocopy",
+        "Per-marksheet fee in cash / UPI (₹500-1,000)",
+        "Specific to LOST case: FIR copy (stamped by police station)",
+        "Specific to LOST case: Notarised affidavit on ₹10-100 stamp paper",
+        "Specific to DAMAGED case: The damaged original marksheet (don't throw it away)",
+        "Two recent passport-size photographs (for verification records)",
+        "Mobile number + email (BIPE notifies you when the duplicate is ready)",
+      ],
+    },
+    faqs: [
+      {
+        q: "Why does BTEUP require an FIR for lost marksheets?",
+        a: "Anti-fraud measure. Marksheets are valuable credentials and could be misused if duplicate copies fall into the wrong hands. The FIR + affidavit combination creates a legal record that protects both BTEUP and you — if a found marksheet later surfaces being misused, the FIR record helps clarify which copy is the legitimate one.",
+      },
+      {
+        q: "Will the duplicate marksheet be accepted by employers / colleges?",
+        a: "Yes, by virtually all employers, B.Tech lateral-entry colleges, and government recruiters. The DUPLICATE stamp is standard — what matters is the BTEUP issuance and the CGPA / division shown. If a specific employer hesitates, they can verify directly with BTEUP via bteup.org.in's verification portal using your roll number. The duplicate is functionally equivalent to the original.",
+      },
+      {
+        q: "Can I get a duplicate marksheet if I'm not a BIPE alumnus?",
+        a: "Apply through whichever BTEUP-affiliated college you studied at — BIPE handles BIPE alumni only. Any other institute handles their alumni. If your previous college has closed, BTEUP allows direct application to its Lucknow office.",
+      },
+      {
+        q: "How many duplicates can I request?",
+        a: "Reasonable number — typically up to 2-3 copies per request. Beyond that, BTEUP may flag for review (genuine reasons get approved). Each copy carries the per-marksheet fee. Most students request 1-2 copies; rarely more.",
+      },
+      {
+        q: "Does the duplicate marksheet show the original issue date?",
+        a: "Yes. The duplicate carries the ORIGINAL date of result declaration (so it accurately reflects when you graduated) plus a separate 'Duplicate issued on' date stamp. Both dates are present — no confusion possible.",
+      },
+      {
+        q: "What if my marksheet was lost more than 5 years ago?",
+        a: "BTEUP archives extend back 20+ years. Even old marksheets are reissuable. Process is identical but verification time may extend by 2-3 weeks (BTEUP retrieves the older record). Older alumni (1990s-2000s) sometimes find that records are partially digitised — in those edge cases, BIPE's academic office helps liaise with BTEUP for manual record retrieval.",
+      },
+    ],
+    ctaTitle: "Lost or damaged your BIPE marksheet?",
+    ctaBody: "BIPE's academic office handles all duplicate-marksheet applications for BIPE alumni. We provide the application form, walk you through the FIR / affidavit (if needed), and forward to BTEUP within 10 days of complete submission. Visit Mon-Sat 9am-5pm or WhatsApp +91-9198646464.",
+  },
 ];
 
 export function bteupResourceBySlug(slug: string): BteupResource | undefined {

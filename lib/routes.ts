@@ -17,7 +17,9 @@ export type RouteKey =
   | "jeecupRegistration" | "jeecupAdmitCard" | "jeecupResult"
   | "jeecupSeatAllotment" | "jeecupDocumentVerification" | "jeecupHelpline"
   | "bteupFamilyId" | "bteupAdmitCard" | "bteupExamDates"
-  | "bteupResult" | "bteupFees" | "bteupRegistration";
+  | "bteupResult" | "bteupFees" | "bteupRegistration"
+  | "bteupSyllabus" | "bteupBackPaper" | "bteupGrading"
+  | "bteupColleges" | "bteupMigration" | "bteupDuplicateMarksheet";
 
 export const SITE_URL = "https://www.bipevns.org";
 
@@ -808,6 +810,92 @@ export const ROUTES: Record<RouteKey, {
       "BTEUP enrollment",
       "BTEUP रजिस्ट्रेशन",
       "polytechnic student registration UP",
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  // Phase 5 expansion · May 2026 · BTEUP keyword-gap fill
+  // Six additional procedural pages targeting BTEUP search clusters
+  // not covered by Phase 3 batch — highest-volume gaps first.
+  // ─────────────────────────────────────────────────────────────────
+  bteupSyllabus: {
+    path: "/bteup-syllabus-2026",
+    title: "BTEUP Syllabus 2026 · Branch-wise + Semester Curriculum | BIPE 4455",
+    description: "Complete BTEUP 2026 syllabus — branch + semester structure, theory + practical breakdown, NEP-aligned changes, where to download official PDFs. From BIPE.",
+    keywords: [
+      "BTEUP syllabus",
+      "BTEUP syllabus 2026",
+      "BTEUP polytechnic syllabus",
+      "BTEUP curriculum",
+      "polytechnic syllabus UP",
+      "BTEUP सिलेबस",
+      "बीटीईयूपी पाठ्यक्रम",
+    ],
+  },
+  bteupBackPaper: {
+    path: "/bteup-back-paper-supplementary-process",
+    title: "BTEUP Back Paper 2026 · Supplementary Exam Process | BIPE 4455",
+    description: "BTEUP back paper / supplementary guide — eligibility, registration, fees, timeline. Clear backlogs without losing a year. From the BIPE academic office.",
+    keywords: [
+      "BTEUP back paper",
+      "BTEUP supplementary exam",
+      "BTEUP backlog process",
+      "BTEUP supply exam",
+      "BTEUP fail subject re-exam",
+      "BTEUP बैक पेपर",
+    ],
+  },
+  bteupGrading: {
+    path: "/bteup-grading-cgpa-calculation",
+    title: "BTEUP Grading System 2026 · CGPA + Percentage Calculation | BIPE 4455",
+    description: "BTEUP grading scale, mark-to-grade mapping, SGPA + CGPA formula, percentage conversion for B.Tech lateral entry. Complete guide from BIPE.",
+    keywords: [
+      "BTEUP grading",
+      "BTEUP CGPA",
+      "BTEUP CGPA calculation",
+      "BTEUP percentage calculation",
+      "BTEUP SGPA",
+      "BTEUP marksheet grade",
+      "polytechnic CGPA formula",
+    ],
+  },
+  bteupColleges: {
+    path: "/bteup-affiliated-colleges-up",
+    title: "BTEUP Affiliated Colleges in UP 2026 · Verify + Compare | BIPE 4455",
+    description: "BTEUP-affiliated polytechnic colleges across Uttar Pradesh — government, aided, private categories. How to verify any college's BTEUP affiliation. BIPE's place in the system.",
+    keywords: [
+      "BTEUP affiliated colleges",
+      "BTEUP college list UP",
+      "polytechnic colleges UP",
+      "BTEUP recognized colleges",
+      "BTEUP polytechnic list",
+      "BTEUP affiliation verification",
+    ],
+  },
+  bteupMigration: {
+    path: "/bteup-migration-noc-process",
+    title: "BTEUP Migration NOC 2026 · Transfer Between Colleges | BIPE 4455",
+    description: "BTEUP migration + No Objection Certificate process — transfer between affiliated colleges, documents required, timeline, fees. From the BIPE academic office.",
+    keywords: [
+      "BTEUP migration",
+      "BTEUP NOC",
+      "BTEUP transfer certificate",
+      "polytechnic college transfer",
+      "BTEUP college change",
+      "BTEUP migration process",
+    ],
+  },
+  bteupDuplicateMarksheet: {
+    path: "/bteup-duplicate-marksheet-application",
+    title: "BTEUP Duplicate Marksheet 2026 · Application + Reissue | BIPE 4455",
+    description: "Lost or damaged your BTEUP marksheet? Application process, fees, affidavit / FIR requirements, 4-6 week timeline. Step-by-step from BIPE.",
+    keywords: [
+      "BTEUP duplicate marksheet",
+      "BTEUP lost marksheet",
+      "BTEUP marksheet reissue",
+      "duplicate marksheet polytechnic UP",
+      "BTEUP marksheet damaged",
+      "BTEUP डुप्लीकेट मार्कशीट",
     ],
   },
 };
