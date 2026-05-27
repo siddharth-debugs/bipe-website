@@ -171,6 +171,295 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // Phase B Post 1 · May 2026 · Natural Hinglish (style guide above)
+  // Target keyword: पॉलिटेक्निक के बाद क्या करें (~3,600/mo)
+  // First Hindi-first SEO post · calibration reference for the
+  // bilingual register before Posts 2-5 ship.
+  {
+    slug: "polytechnic-ke-baad-kya-karein-career-options-2026",
+    title: "पॉलिटेक्निक के बाद क्या करें — Career options after diploma in 2026",
+    category: "Career Guidance · Hinglish",
+    date: "27 May 2026",
+    publishedISO: "2026-05-27",
+    readTime: "10 min read",
+    excerpt:
+      "Diploma ke baad confusion natural hai. 5 paths hain — government job se private placement, B.Tech lateral entry se business तक। Honest framework + real BIPE alumni examples।",
+    metaTitle:
+      "पॉलिटेक्निक के बाद क्या करें · Career options 2026 | BIPE 4455",
+    metaDescription:
+      "Diploma ke baad 5 career paths — government job, private placement, B.Tech lateral entry, higher diploma, business। Real BIPE alumni examples + honest decision framework।",
+    sections: [
+      { type: "h2", text: "Diploma ke baad — confusion natural hai, lekin paths clear hain" },
+      {
+        type: "p",
+        html:
+          "JEECUP 2026 ka result mid-June mein declare hoga। Aapne diploma karne ka decision liya hai — ya kar rahe hain। Ab sawaal hai: <strong>'iske baad kya?'</strong> Yeh sawaal har polytechnic student ke man mein aata hai। Family bolti hai 'B.Tech karo'। Dost bolते hain 'Mahindra mein placement mil jayegi'। Phupha ji bolते hain 'Railway ki taiyari karo'। Sab apni jagah sahi hain — lekin paths alag hain।",
+      },
+      {
+        type: "p",
+        html:
+          "Iss post mein 5 main paths dikhate hain — har ek ke pros, cons, aur real BIPE alumni examples ke साथ। Padhne ke baad aap apne liye sahi rasta choose kar sakte hain। Hum honest framework denge — kis path ke liye kis tarah ka student fit hai।",
+      },
+
+      { type: "h2", text: "5 paths · ek nazar" },
+      {
+        type: "p",
+        html:
+          "Diploma ke baad mainly 5 paths hain। Har path ke apne pros aur cons hain — koi <em>best</em> path nahi hota, sirf <em>aapke liye sahi</em> path hota hai।",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Government job</strong> · RRB JE, SSC JE, UPPCL TG2 — sarkari naukri, stable income, pension।",
+          "<strong>Private placement</strong> · Mahindra, Tata, JCB, Motherson — quick income, fast career growth।",
+          "<strong>B.Tech lateral entry</strong> · AKTU se direct 2nd-year admission — 3 saal mein full B.Tech tag।",
+          "<strong>Higher diploma / specialisation</strong> · Advanced Diploma in Industrial Safety, PLC, CAD, GIS — niche skills।",
+          "<strong>Business / freelance</strong> · Workshop, electrical contracting, civil contracting, dairy supply — apna kaam, apna profit।",
+        ],
+      },
+
+      { type: "h2", text: "Path 1 · Government job — RRB JE, SSC JE, UPPCL" },
+      {
+        type: "p",
+        html:
+          "Sarkari naukri ki इज़्ज़त hamesha rahegi। Diploma holders ke liye specifically banaye gaye exams hain — competition tough hai lekin clear-path bhi hai।",
+      },
+      { type: "p", html: "<strong>Main exams jo target karne chahiye:</strong>" },
+      {
+        type: "ul",
+        items: [
+          "<strong>RRB JE</strong> (Railway Junior Engineer) · ~12,000-25,000 vacancies per cycle। Mechanical, Electrical, Civil — sabhi branches।",
+          "<strong>SSC JE</strong> (Junior Engineer, SSC) · CPWD, BRO, CWC, MES — Civil + Electrical + Mechanical। ~1,500-2,000 vacancies per year।",
+          "<strong>UPPCL TG2 / JE</strong> · UP State Power Corporation, Electrical-focused।",
+          "<strong>State-level JE roles</strong> · DDA, NHAI, state PWDs — branch-specific।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Salary:</strong> Entry-level ₹35,000-50,000/month + DA + HRA + medical + pension (NPS)। 5-10 saal mein ₹60,000-80,000/month। Job security maximum। Transfer-able role, lekin समय ke saath stability badhti hai।",
+      },
+      {
+        type: "callout",
+        title: "BIPE alumni example",
+        html:
+          "<strong>Pramod Kumar Patel</strong> (BIPE MP 2014) ne diploma ke baad Indian Railways mein Assistant Loco Pilot ke roop mein join kiya। Aaj wo Indian Railways network chala rahe hain। Class 10 se hi government job ki preparation kar raha tha — mehnati, focused, aaj-tak <em>same role mein</em> stable hain।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Government job kab choose karein:</strong> stable life chahiye, family ki immediate financial responsibility hai, transfer-able role acceptable hai, padhai ka thoda aur appetite hai (taki entrance exams clear kar sakein)।",
+      },
+
+      { type: "h2", text: "Path 2 · Private placement — Mahindra, Tata, JCB" },
+      {
+        type: "p",
+        html:
+          "Private sector mein freshers ke liye sabse bada window placement drives ke through khulta hai। BIPE jaisi institutes apne campus placement programs mein recruiters bulati hain — third semester se hi training start hoti hai।",
+      },
+      { type: "p", html: "<strong>Major recruiters jo BIPE pe aate hain:</strong>" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Mahindra</strong> · Production + manufacturing roles (Mechanical heavy)।",
+          "<strong>Tata Steel BSL</strong> · structural + long-products manufacturing।",
+          "<strong>JCB</strong> · construction machinery (Mech + Electrical)।",
+          "<strong>Motherson Sumi Systems</strong> · auto components (Mech + Electrical)।",
+          "<strong>Indian Railways diploma-trainee program</strong> · alternate path to RRB JE।",
+          "<strong>UPPCL, Tata Power, Adani Solar</strong> · Electrical-specific।",
+          "<strong>Amul, Mother Dairy, NDDB</strong> · Dairy Engineering pipeline।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Salary:</strong> Entry-level ₹15,000-25,000/month freshers ke liye। 2-3 saal baad ₹30,000-50,000। Production In-charge level pe ₹60,000+। Growth speed government job se 2-3x तेज़, lekin transfer + plant-location ka factor hai।",
+      },
+      {
+        type: "callout",
+        title: "BIPE alumni example",
+        html:
+          "<strong>Chandan Pathak</strong> (BIPE MP 2015) ne diploma ke baad direct Motherson Sumi Systems mein join kiya। Aaj wo Production In-charge hain — supervisor-level role। Phoolpur se Pune tak ka safar — 9 saal mein। यही private placement ki taakat hai — quick career growth jab aapki performance acchi ho।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Private placement kab choose karein:</strong> quick income chahiye, growth ke liye relocate karne ka comfort hai, government-exam preparation ka time aur patience nahi hai, hands-on technical role pasand hai।",
+      },
+
+      { type: "h2", text: "Path 3 · B.Tech lateral entry — AKTU + UP route" },
+      {
+        type: "p",
+        html:
+          "Diploma ke baad B.Tech karna chahte hain? AKTU (Dr. APJ Abdul Kalam Technical University) ka lateral entry program सबसे popular path hai UP students ke liye। Aap directly 2nd-year mein admission paate hain — पहले 3 साल aapne already diploma se cover kar liye।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Process:</strong> Diploma se minimum 45% (40% for SC/ST/OBC/PwD)। AKTU JEE-Lateral Entry exam (UPSEE-LEE) clear karein। Counselling mein apni choice list bharein — college + branch। B.Tech 3 saal mein complete (Semester 3 se Semester 8 तक)।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Total timeline:</strong> Class 10 + 3-year diploma + 3-year B.Tech = 6 saal post-Class 10। Traditional route (Class 10 + Class 12 + 4-year B.Tech) = 6 saal bhi, lekin without practical exposure। Diploma + B.Tech ka combination — sabse strong technical foundation।",
+      },
+      {
+        type: "callout",
+        title: "BIPE alumni example",
+        html:
+          "<strong>Saurabh Pandey</strong> (BIPE CE 2014) ne diploma ke baad AKTU lateral entry de kar B.Tech (Civil) complete kiya। Aaj wo apni civil consultancy <em>Civil Arch</em> chala rahe hain Varanasi mein। Classroom drafting tables se founder + CEO तक — 10 saal mein।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>B.Tech lateral entry kab choose karein:</strong> academic appetite hai (theory + research mein interest), B.Tech tag chahiye corporate ya foreign opportunities ke liye, 3 saal aur padhne ka time + financial support hai, government job exam mein B.Tech-preference vaale roles (GATE, ESE) target karne hain।",
+      },
+
+      { type: "h2", text: "Path 4 · Higher diploma + specialisation" },
+      {
+        type: "p",
+        html:
+          "Aur padhai ka maan hai, lekin B.Tech ka 3-saal-ka commitment भारी lagता hai? Higher diploma + specialised certifications ka option hai — faster, cheaper, niche-focused।",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Advanced Diploma in Industrial Safety</strong> · 1 year, DGFASLI / state safety boards से।",
+          "<strong>Post-Diploma in Quality Management</strong> · 1 year, manufacturing companies ke liye in-demand।",
+          "<strong>PG Diploma in Tool Design / CAD-CAM</strong> · CIPET, central tool rooms — 1-2 saal।",
+          "<strong>Specialised certifications</strong> · PLC + SCADA (industrial automation), AutoCAD + Revit (civil + architecture), GIS (Civil + Survey), HVAC (Mechanical), Solar PV installation (Electrical)।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "Yeh option B.Tech se sasti aur quicker hai — total 4 saal post-Class 10। Niche skill सीखने mein focus rehta hai, salary jump bhi accha — base salary 20-40% बढ़ जाती hai bina B.Tech tag ke।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Higher diploma kab choose karein:</strong> specific industry / role mein ghusna hai, B.Tech ke 3 saal नहीं nikalne, employer ne aapko sponsorship offer kiya hai, ya freelance / contracting mein niche expertise chahiye।",
+      },
+
+      { type: "h2", text: "Path 5 · Business / freelance · diploma ke baad apna kaam" },
+      {
+        type: "p",
+        html:
+          "Sabse risky, sabse rewarding। Diploma graduates jo apna business shuru करते hain — workshop, electrical contracting, civil contracting, dairy supply chain, agro-processing — ek pratisthit category hai Eastern UP mein।",
+      },
+      { type: "p", html: "<strong>Common business options post-diploma:</strong>" },
+      {
+        type: "ul",
+        items: [
+          "Workshop / fabrication shop (Mech / Production graduates) · initial capital ₹2-5 lakh।",
+          "Electrical contracting (EL graduates) · wiring, panel work, solar installation। Capital ₹50k-2 lakh।",
+          "Civil contracting (CE graduates) · sub-contract for small builds, NREGA work, road repair। Capital varies।",
+          "Computer repair / Wi-Fi installation (CSE graduates) · ₹30k-1 lakh।",
+          "Dairy + agro processing (Dairy Engg) · milk collection, paneer production, cold chain।",
+        ],
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Risk:</strong> 60-70% small businesses fail in first 3 years (national stats)। Reasons typically: insufficient capital, no business mentor, family financial pressure jo cash flow break kar deti hai। Lekin jo successful hote hain — wo 5-10 saal mein 5-10x income create kar lete hain compared to job-track peers।",
+      },
+      {
+        type: "callout",
+        title: "BIPE alumni example",
+        html:
+          "<strong>Naveen Pandey</strong> (BIPE EL 2016) ne diploma ke baad IEPC engineering and projects firm shuru ki। Aaj wo CEO + MD hain — apni firm chala rahe hain। 10 saal mein zero se firm tक। Diploma + entrepreneurial mindset — yeh combination kabhi-kabhi sabse strong hota hai। Lekin yaad rakhein: <em>Naveen jaise outliers हर साल 100 mein 5-10 hi hote hain</em>।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>Business kab choose karein:</strong> family financial cushion hai 1-2 saal ke liye, mentor / industry connect already hai, risk-tolerance high hai (ya kam priority of stable salary), specific market gap identify kiya hai — sirf 'apna kaam' karne ki abstract ichchhya nahi।",
+      },
+
+      { type: "h2", text: "Kaise decide karein? · honest framework" },
+      {
+        type: "p",
+        html:
+          "Yeh 5 paths mein se aapke liye sahi कौन sa hai — depend karta hai 3 baat par:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>Aapki current financial situation</strong> · Job ka pressure hai ya padhai ka time hai?",
+          "<strong>Aapka academic appetite</strong> · Theory ka maza aata hai ya hands-on practical?",
+          "<strong>Aapka risk profile</strong> · Stable salary mein comfort hai ya chunauti chaahiye?",
+        ],
+      },
+      { type: "p", html: "<strong>Decision-tree summary:</strong>" },
+      {
+        type: "ul",
+        items: [
+          "Quick income chahiye + stable life · <strong>Government job</strong> (Path 1)",
+          "Quick income chahiye + growth speed · <strong>Private placement</strong> (Path 2)",
+          "2-3 saal aur padhne ka time + B.Tech tag chahiye · <strong>B.Tech lateral entry</strong> (Path 3)",
+          "Specialised skill chahiye, B.Tech ka commitment nahi · <strong>Higher diploma</strong> (Path 4)",
+          "Apna kuch karna hai, capital + risk-tolerance hai · <strong>Business</strong> (Path 5)",
+        ],
+      },
+
+      { type: "h2", text: "BIPE alumni ka data · ek honest snapshot" },
+      {
+        type: "p",
+        html:
+          "BIPE ke 1,200+ verified placed alumni mein distribution roughly aisa rehta hai:",
+      },
+      {
+        type: "ul",
+        items: [
+          "~40% private placement (Mahindra, Tata, JCB, Motherson, etc.)",
+          "~25% government job (RRB JE, SSC JE, UPPCL, Indian Railways)",
+          "~20% B.Tech lateral entry (AKTU + other state universities)",
+          "~10% higher diploma + specialisation",
+          "~5% business / freelance / own work",
+        ],
+      },
+      { type: "p", html: "Yeh distribution branch-wise differ karti hai:" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Mechanical (Production)</strong> · ~60% private placement (manufacturing demand high)।",
+          "<strong>Electrical</strong> · ~40% UPPCL / Railways / state PSU।",
+          "<strong>Civil</strong> · ~35% government PWD / SSC JE + ~30% private construction।",
+          "<strong>Computer Science</strong> · evenly split, growing trend in IT placement।",
+          "<strong>Dairy Engineering</strong> · ~70% Amul / Mother Dairy / Parag / NDDB pipeline (rare branch, specialised market)।",
+        ],
+      },
+
+      { type: "h2", text: "Common mistakes · jo students karte hain" },
+      {
+        type: "ul",
+        items: [
+          "<strong>Sirf entrance exams pe focus karna</strong> · aur placement opportunity miss karna। Reality: pehle 2-3 saal placement-track + government-exam preparation parallel chalाने chahiye।",
+          "<strong>Government job ka exclusive pursuit</strong> · 4-5 saal nikal jaane par bhi result nahi। Backup plan zaruri hai।",
+          "<strong>B.Tech lateral entry · low-quality college</strong> · BIPE diploma ki value waste। Sirf Tier-1/2 AKTU colleges mein admission lo, ya repeat year karke better college try karo।",
+          "<strong>Business shuru karna · proper capital aur experience बिना</strong> · 60-70% fail rate is REAL। 1-2 saal kisi industry mein kaam karke experience build karo, फिर business।",
+          "<strong>Family pressure pe blindly chalna</strong> · apne interest dekhe bina। Yeh sabse common mistake — beta engineer hai toh 'sarkari naukri lega' ya 'foreign jayega' — actual student ki capability + interest dekhe bina। Honest conversation zaruri hai।",
+        ],
+      },
+
+      { type: "h2", text: "Aage ka rasta · BIPE ke baad" },
+      {
+        type: "p",
+        html:
+          "Diploma sirf shuruwat hai — खुद ka path build करना hai। BIPE ke placement office, academic mentors, alumni network — सब कुछ available hai jab aap decide kar lein। Confused hain? Aapke 5 paths mein se कौन sa fit karta hai — yeh khud पता karna mushkil hai अगर aapne अभी तक job market nahi explore kiya।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>WhatsApp +91-9198646464 par baat karein</strong> — हमारी team free guidance देती hai, no enrolment pressure। EN / हिंदी, jaisi aapko comfortable lage। Hum aapki current situation सुनेंगे, branch + rank dekhenge, aur honest path-fit suggest karenge — sirf BIPE ke favour mein argue nahi karenge। Aapka future important hai, sahi decision mein hum saath hain।",
+      },
+      {
+        type: "p",
+        html: "Best wishes for your next chapter। 🌱",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────────
   {
     slug: "how-to-fill-jeecup-2026-application-form-step-by-step",
     title: "How to fill the JEECUP 2026 application form — step-by-step with screenshots",
