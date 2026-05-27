@@ -132,9 +132,9 @@ export default function Page() {
             Call +91-9198646464 or WhatsApp the same number. Our counsellors are familiar with the Bihar Board, JEECUP all-India quota and the practicalities of moving a child from Patna, Ara, Buxar, Sasaram or Gaya to the BIPE campus.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/apply" className="btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Start application</Link>
-            <Link href="/jeecup-vs-bcece" className="btn-secondary" style={{ borderColor: "#fff", color: "#fff" }}>JEECUP vs BCECE</Link>
-            <Link href="/admission-from-bihar" className="btn-secondary" style={{ borderColor: "#fff", color: "#fff" }}>Documents from Bihar</Link>
+            <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Start application</Link>
+            <Link href="/jeecup-vs-bcece" className="btn btn-ghost" style={{ borderColor: "#fff", color: "#fff" }}>JEECUP vs BCECE</Link>
+            <Link href="/admission-from-bihar" className="btn btn-ghost" style={{ borderColor: "#fff", color: "#fff" }}>Documents from Bihar</Link>
           </div>
         </div>
       </section>

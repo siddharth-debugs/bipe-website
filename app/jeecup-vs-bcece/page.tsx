@@ -95,9 +95,9 @@ export default function Page() {
             We have a dedicated guide for Bihar applicants — documents, equivalency, travel and hostel — that picks up where this comparison ends.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/jeecup-from-bihar" className="btn-primary">JEECUP from Bihar</Link>
-            <Link href="/admission-from-bihar" className="btn-secondary">Documents from Bihar</Link>
-            <Link href="/apply" className="btn-secondary">Start application</Link>
+            <Link href="/jeecup-from-bihar" className="btn btn-primary">JEECUP from Bihar</Link>
+            <Link href="/admission-from-bihar" className="btn btn-ghost">Documents from Bihar</Link>
+            <Link href="/apply" className="btn btn-ghost">Start application</Link>
           </div>
         </div>
       </section>

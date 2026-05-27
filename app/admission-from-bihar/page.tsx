@@ -124,9 +124,9 @@ export default function Page() {
             Call +91-9198646464 or WhatsApp the same number. Our counsellors handle Bihar admissions every season and can talk you through documents, hostel timing, and the JEECUP counselling rounds in Hindi or English.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/apply" className="btn-primary">Start application</Link>
-            <Link href="/jeecup-from-bihar" className="btn-secondary">JEECUP from Bihar</Link>
-            <Link href="/jeecup-vs-bcece" className="btn-secondary">JEECUP vs BCECE</Link>
+            <Link href="/apply" className="btn btn-primary">Start application</Link>
+            <Link href="/jeecup-from-bihar" className="btn btn-ghost">JEECUP from Bihar</Link>
+            <Link href="/jeecup-vs-bcece" className="btn btn-ghost">JEECUP vs BCECE</Link>
           </div>
         </div>
       </section>
