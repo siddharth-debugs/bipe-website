@@ -219,7 +219,7 @@ export default function Page() {
                 <li>Your rank doesn&rsquo;t safely secure an aided seat in your branch</li>
                 <li>You want Dairy Engineering (BIPE is one of 4 BTE UP Dairy programmes in UP)</li>
                 <li>You need hostel access on-campus (BIPE&rsquo;s Phoolpur hostel)</li>
-                <li>You want documented placement infrastructure (1,000+ alumni at 44 recruiters)</li>
+                <li>You want documented placement infrastructure (1,200+ verified placements at 44 recruiters)</li>
                 <li>You&rsquo;re from Eastern UP and BIPE is the geographically practical 5-branch option</li>
               </ul>
             </article>

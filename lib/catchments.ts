@@ -155,7 +155,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "If your JEECUP rank confidently secures a Government Polytechnic Mirzapur seat, the fee gap (~₹15,000-25,000/year vs BIPE) is meaningful for any household. Day-scholar commute within Mirzapur city is feasible, removing hostel costs entirely. For cost-binding families, this is the right path.",
       whenBipe:
-        "BIPE wins when: (a) your JEECUP rank doesn't safely secure a government seat in the branch you want; (b) you specifically want Dairy Engineering (not commonly offered at government polytechnics in this belt); (c) you're from outer Mirzapur tehsils and would need a hostel anyway; (d) you want documented placement infrastructure (1,000+ named alumni). Honest comparison framework on /private-vs-government-polytechnic.",
+        "BIPE wins when: (a) your JEECUP rank doesn't safely secure a government seat in the branch you want; (b) you specifically want Dairy Engineering (not commonly offered at government polytechnics in this belt); (c) you're from outer Mirzapur tehsils and would need a hostel anyway; (d) you want documented placement infrastructure (1,200+ named alumni). Honest comparison framework on /private-vs-government-polytechnic.",
     },
   },
 
@@ -319,7 +319,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "1,200+ placement record — concrete pipeline, not promises",
-        body: "Over 16 years, BIPE has documented 1,000+ verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
+        body: "Over 16 years, BIPE has documented 1,200+ verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
       },
       {
         headline: "AFRC ₹30,150 — flexibility for distant catchments",
@@ -339,7 +339,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Azamgarh?",
-        a: "Both BTE UP–affiliated, identical diploma certificate. Government Polytechnic Azamgarh has lower fees and is a strong choice for cost-binding families with high enough JEECUP rank. BIPE's differentiators: documented placement record (1,000+), on-campus boys' hostel (critical at 120 km), Dairy Engineering branch (rare), smaller per-branch cohort. Detailed comparison on /private-vs-government-polytechnic.",
+        a: "Both BTE UP–affiliated, identical diploma certificate. Government Polytechnic Azamgarh has lower fees and is a strong choice for cost-binding families with high enough JEECUP rank. BIPE's differentiators: documented placement record (1,200+), on-campus boys' hostel (critical at 120 km), Dairy Engineering branch (rare), smaller per-branch cohort. Detailed comparison on /private-vs-government-polytechnic.",
       },
       {
         q: "What about the Mubarakpur textile-cluster industry — does BIPE prepare for that?",
@@ -427,7 +427,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (up to ₹19,000/year for income <₹2 lakh), which can effectively reduce net cost to near-zero.",
       whenBipe:
-        "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with 5 branches available; (b) you want Dairy Engineering or the full branch portfolio; (c) you specifically want the 1,000+ alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
+        "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with 5 branches available; (b) you want Dairy Engineering or the full branch portfolio; (c) you specifically want the 1,200+ alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
     },
   },
 
@@ -547,7 +547,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Chandauli?",
-        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹11,870-35,610/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: 5 branches (including the rare Dairy Engineering), on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,000+ alumni placement record. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹11,870-35,610/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: 5 branches (including the rare Dairy Engineering), on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,200+ alumni placement record. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Can a Bihar-border Chandauli resident apply easily?",
@@ -615,7 +615,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Ballia?",
-        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Ballia has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge for Ballia students: hostel access (essential at 150 km), Dairy Engineering branch, smaller cohort with named faculty mentors, documented placement record of 1,000+ named alumni. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Ballia has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge for Ballia students: hostel access (essential at 150 km), Dairy Engineering branch, smaller cohort with named faculty mentors, documented placement record of 1,200+ named alumni. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Will my child be safe in the BIPE hostel at 150 km from home?",
@@ -631,7 +631,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Ballia is the right choice if your rank confidently secures the branch you want, you live in Ballia city or nearby blocks (no hostel need), and the fee gap is binding for your family. With a strong rank and city residency, this is the obvious option.",
       whenBipe:
-        "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you specifically want Dairy Engineering; (d) you want the documented 1,000+ alumni placement record across 44 recruiters. /private-vs-government-polytechnic has the wider framework.",
+        "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you specifically want Dairy Engineering; (d) you want the documented 1,200+ alumni placement record across 44 recruiters. /private-vs-government-polytechnic has the wider framework.",
     },
   },
 

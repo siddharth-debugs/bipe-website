@@ -116,7 +116,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Placement infrastructure",
     bipe:
-      "1,000+ verified placements over 16 years across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty other recruiters. Year-wise named alumni list with named recruiters is public on the site.",
+      "1,200+ verified placements over 16 years across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty other recruiters. Year-wise named alumni list with named recruiters is public on the site.",
     context:
       "Placement cells at government polytechnics in UP operate effectively for many students — particularly via central-government JE exams — but typically rely on the student-led application route rather than on-campus drive intensity. Detailed published placement records vary by institute.",
     verifyLabel: "See named alumni list",
@@ -818,7 +818,7 @@ export default function Page() {
                   access is non-negotiable.
                 </li>
                 <li>
-                  You want a documented placement record with 1,000+ named alumni at
+                  You want a documented placement record with 1,200+ named alumni at
                   named recruiters, not a self-driven job search.
                 </li>
                 <li>

@@ -77,7 +77,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "Placement record on the public record",
     position:
-      "1,000+ verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty others. Year-wise named alumni list with named recruiters — not logos, not testimonials, the actual list.",
+      "1,200+ verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty others. Year-wise named alumni list with named recruiters — not logos, not testimonials, the actual list.",
     verifyLabel: "See the named alumni list",
     verifyPath: "/alumni",
   },
@@ -98,7 +98,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "16 years on record · Purwanchal Educational Trust",
     position:
-      "Founded 2010 by Purwanchal Educational Trust. AISHE submitted annually. AICTE Annexure-18 mandatory disclosure published every academic year. 1,000+ alumni network. The founding documents and current-year disclosure are public — every claim above is auditable, today, by you.",
+      "Founded 2010 by Purwanchal Educational Trust. AISHE submitted annually. AICTE Annexure-18 mandatory disclosure published every academic year. 2,200+ alumni network · 1,200+ verified placements. The founding documents and current-year disclosure are public — every claim above is auditable, today, by you.",
     verifyLabel: "Read the mandatory disclosure",
     verifyPath: "/mandatory-disclosure",
   },

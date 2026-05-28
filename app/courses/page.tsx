@@ -1093,7 +1093,7 @@ export default async function Page() {
                 >
                   {[
                     { num: "16", l: "years" },
-                    { num: "1,000+", l: "alumni" },
+                    { num: "2,200+", l: "alumni" },
                     { num: "5", l: "branches" },
                     { num: "1:20", l: "mentor ratio" },
                   ].map((s, i) => (

@@ -108,7 +108,7 @@ const FAQS = [
   },
   {
     q: "Are the placement records published by these government polytechnics comparable to BIPE's?",
-    a: "Most UP government polytechnics do not publish year-wise named placement data publicly. Government-recruitment placements happen through national-level exams (SSC JE, RRB JE) which students self-apply to — the institute's role is academic preparation, not on-campus drive intensity. BIPE's documented record of 1,000+ named alumni across 44 recruiters is a private-institute advantage that government polytechnics typically don't replicate. The named placement list is public on /alumni.",
+    a: "Most UP government polytechnics do not publish year-wise named placement data publicly. Government-recruitment placements happen through national-level exams (SSC JE, RRB JE) which students self-apply to — the institute's role is academic preparation, not on-campus drive intensity. BIPE's documented record of 1,200+ named placements across 44 recruiters is a private-institute advantage that government polytechnics typically don't replicate. The named placement list is public on /alumni.",
   },
   {
     q: "What if I want Dairy Engineering specifically — can a government polytechnic in Eastern UP offer it?",
@@ -352,7 +352,7 @@ export default function Page() {
                 <li>Your rank doesn&rsquo;t safely secure your preferred branch at a government polytechnic</li>
                 <li>You want Dairy Engineering (rare — only 4 BTE UP programmes in all of UP, BIPE is one)</li>
                 <li>You&rsquo;re from outside Varanasi city — hostel access is essential</li>
-                <li>You want documented placement infrastructure (1,000+ named alumni at 44 recruiters)</li>
+                <li>You want documented placement infrastructure (1,200+ verified placements at 44 recruiters)</li>
                 <li>Smaller cohort + named faculty mentors matters to your learning</li>
               </ul>
               <Link href="/why-bipe" className="btn btn-ghost" style={{ marginTop: 14, fontSize: 13 }}>

@@ -79,9 +79,9 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
   },
   {
     roman: "iv",
-    title: "1,000+ alumni placed",
+    title: "1,200+ alumni placed",
     body: "Sixteen years in. Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, JCB, Asian Paints — verifiable placement records, not just photographs.",
-    metric: "1,000+",
+    metric: "1,200+",
     metricLabel: "alumni placed",
   },
 ];

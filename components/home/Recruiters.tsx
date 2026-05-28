@@ -8,7 +8,7 @@ export const Recruiters = async () => {
   <section className="section-tight">
     <div className="container" style={{ marginBottom: 18 }}>
       <div className="eyebrow" style={{ textAlign: "center" }}>
-        1,000+ alumni placed at
+        1,200+ alumni placed at
       </div>
     </div>
     <div className="marquee">

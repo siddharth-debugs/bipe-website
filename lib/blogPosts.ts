@@ -1670,7 +1670,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "callout",
-        html: "&ldquo;A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood — and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record — one thousand alumni now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more — is the only kind of report card we believe in.&rdquo;",
+        html: "&ldquo;A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood — and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record — 1,200+ verified alumni placements now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more — is the only kind of report card we believe in.&rdquo;",
       },
       {
         type: "p",
@@ -2487,7 +2487,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ol",
         items: [
-          "<strong>सीधी नौकरी (Direct Job):</strong> Mahindra, Tata Steel, BEL, Indian Railways, UPPCL — campus placements के माध्यम से। बीआईपीई के 1,000+ alumni पहले से इन कंपनियों में हैं।",
+          "<strong>सीधी नौकरी (Direct Job):</strong> Mahindra, Tata Steel, BEL, Indian Railways, UPPCL — campus placements के माध्यम से। बीआईपीई के 1,200+ verified alumni placements इन कंपनियों में हैं।",
           "<strong>Government Job (SSC JE / RRB JE / UPSSSC):</strong> Junior Engineer की भर्तियाँ डिप्लोमा धारकों के लिए सीधे खुली हैं — विस्तार से <a href=\"/blog/junior-engineer-eligibility-after-diploma\">यहाँ पढ़ें</a>।",
           "<strong>B.Tech (Lateral Entry):</strong> 3 साल का डिप्लोमा करने के बाद AKTU या UPCET-L के माध्यम से सीधे B.Tech के दूसरे साल में प्रवेश। <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">पूरा रास्ता समझें</a>।",
           "<strong>स्वरोज़गार (Self-Employment):</strong> अपनी workshop, संस्थान, या contracting firm खोलना। डिप्लोमा का व्यावहारिक प्रशिक्षण इस रास्ते के लिए मज़बूत आधार है।",
@@ -2500,7 +2500,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "बीआईपीई (Banaras Institute of Polytechnic & Engineering) — JEECUP संस्थान कोड <strong>4455</strong> — वाराणसी के फूलपुर तहसील में 6 एकड़ के campus पर स्थित है। 16 साल का track record, 1,000+ alumni placements, और 5 BTEUP-affiliated branches। प्रमुख विशेषताएँ:",
+          "बीआईपीई (Banaras Institute of Polytechnic & Engineering) — JEECUP संस्थान कोड <strong>4455</strong> — वाराणसी के फूलपुर तहसील में 6 एकड़ के campus पर स्थित है। 16 साल का track record, 1,200+ verified alumni placements, और 5 BTEUP-affiliated branches। प्रमुख विशेषताएँ:",
       },
       {
         type: "ul",
@@ -2636,7 +2636,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Banaras Institute of Polytechnic & Engineering (BIPE) — JEECUP institute code <strong>4455</strong>, BTE UP affiliated, AICTE-approved — is one of the polytechnics serving Eastern UP and Bihar for this exact career pipeline. 16 years on record, 1,000+ verified placements at the named recruiters above, five BTEUP branches (Civil, CSE, Dairy, Electrical, Mechanical Production), AFRC tuition ₹30,150/year. <a href=\"/why-bipe\">See how BIPE compares against other Varanasi polytechnics →</a>",
+          "Banaras Institute of Polytechnic & Engineering (BIPE) — JEECUP institute code <strong>4455</strong>, BTE UP affiliated, AICTE-approved — is one of the polytechnics serving Eastern UP and Bihar for this exact career pipeline. 16 years on record, 1,200+ verified placements at the named recruiters above, five BTEUP branches (Civil, CSE, Dairy, Electrical, Mechanical Production), AFRC tuition ₹30,150/year. <a href=\"/why-bipe\">See how BIPE compares against other Varanasi polytechnics →</a>",
       },
       {
         type: "h2",

@@ -71,7 +71,7 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
   {
     roman: "iv",
     title: "Outcome accountability",
-    sub: "1,000+ verified placements · 16-year record",
+    sub: "1,200+ verified placements · 16-year record",
     body:
       "We publish placement records, not just photographs. Alumni now serve at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro and dozens more. Government-job admits — SSC JE, RRB JE, UPPCL — are tracked too.",
   },
