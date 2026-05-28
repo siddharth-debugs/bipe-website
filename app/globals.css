@@ -901,6 +901,7 @@ body.no-motion .live-dot { animation: none; }
      because this element is not sticky. See .nav for context. */
   background: rgba(246, 244, 238, 0.55);
   backdrop-filter: saturate(180%) blur(30px);
+  backdrop-filter: blur(30px);
   -webkit-backdrop-filter: saturate(180%) blur(30px);
 }
 /* Fallback when backdrop-filter is unsupported — opaque cream so
