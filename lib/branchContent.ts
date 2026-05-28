@@ -21,7 +21,7 @@
  * the public site only to drift out of date erodes credibility.
  * Subject names are stable across revisions; that's what we surface.
  *
- * For verifiable detail, the branch page UI links to bteup.org.in
+ * For verifiable detail, the branch page UI links to bteup.ac.in
  * with the BTEUP code already filled in — students can check the
  * current gazette in one click.
  *
@@ -51,7 +51,7 @@ export type BranchDetail = {
   /**
    * Full structured syllabus — 6 semesters with subject lists per
    * BTE UP polytechnic curriculum. Indicative — the official source
-   * of truth is the BTE UP gazette (bteup.org.in). The branch page
+   * of truth is the BTE UP gazette (bteup.ac.in). The branch page
    * surfaces a "verify against gazette" note + deep link.
    */
   semesters: SemesterPlan[];

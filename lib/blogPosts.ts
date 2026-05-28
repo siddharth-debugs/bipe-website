@@ -191,7 +191,7 @@ export const BLOG_POSTS: BlogPost[] = [
     metaTitle:
       "Dairy Engineering Diploma · UP Rare Branch | BIPE BTEUP 327 Hinglish",
     metaDescription:
-      "Dairy Engineering ek rare BTEUP branch hai — UP mein sirf 4 colleges। BIPE ki pilot dairy plant + Amul/NDDB/Mother Dairy pipeline। Course details, career, salary, honest framework।",
+      "Dairy Engineering ek rare BTEUP branch hai — UP mein sirf 4 colleges (BIPE inमें se ek)। Amul / NDDB / Mother Dairy / Parag direct hiring pipeline + 6-month Sem-6 industrial training। Course, career, salary, honest fit framework।",
     sections: [
       { type: "h2", text: "Dairy Engineering · UP ka chhupa hua moka" },
       {
@@ -244,9 +244,9 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "callout",
-        title: "BIPE ki pilot dairy plant · unique selling point",
+        title: "Practical exposure · 3 layers (honest disclosure)",
         html:
-          "<strong>UP mein BTEUP-affiliated polytechnics mein ye facility almost unique hai।</strong> BIPE के campus mein actual pilot dairy plant hai — pasteurization unit, cream separator, packaging line। Students final-year mein yahin pe practical training karते hain — direct hands-on, not just theory। Ye factor BIPE Dairy graduates ko Amul/Mother Dairy interviews mein noticeable edge देता hai।",
+          "<strong>BIPE के campus pe pilot dairy plant nahi hai — yeh honest disclosure hai।</strong> Lekin practical exposure 3 layers mein milta hai · <strong>(1) on-campus labs</strong> · chemistry (milk-quality + fat/plate-count testing), hydraulics (process fluid mechanics, BIPEHYD/201 series rigs), mechanics-of-solids (processing-equipment fundamentals)। <strong>(2) Structured cohort industrial visits</strong> · recent Banas Dairy Plant Varanasi visit mein students ne real pasteurizers, storage silos, capping/packaging lines walk-through kiya। <strong>(3) Mandatory 6-month Sem-6 industrial training</strong> at Amul / Mother Dairy / NDDB / Parag — real machine time yahi par hota hai, host plant ke shift engineers ke under। Combination strong hai, even without an on-campus pilot plant।",
       },
 
       { type: "h2", text: "Career pipeline · kaun-kaun hire karता hai" },
@@ -317,12 +317,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE Dairy Engineering branch सब BTEUP-affiliated polytechnics mein से ek hai jahan <strong>pilot dairy plant on-campus</strong> hai। Yeh facility 2015 mein commissioned ki gayi thi · sponsored by UP state dairy development funds। Has · pasteurization unit, milk reception + storage, cream separator, packaging machine, cold storage, basic ghee + paneer manufacturing setup।",
+          "BIPE Dairy Engineering ki real taakat ek combination hai — <strong>small cohort</strong> (typically 30-40 per year), <strong>specialised curriculum</strong> jo UP ke sirf 4 BTEUP-affiliated colleges offer karते hain, <strong>on-campus labs</strong> jo dairy unit-operation fundamentals teach karते hain (chemistry, hydraulics, mechanics-of-solids), <strong>regular cohort industrial visits</strong> jaise recent Banas Dairy Plant Varanasi visit, aur <strong>mandatory 6-month Sem-6 industrial training</strong> at Amul / Mother Dairy / NDDB / Parag।",
       },
       {
         type: "p",
         html:
-          "Students 5th-6th semester mein <strong>200+ practical hours</strong> yahi pe karte hain · direct hands-on, not just demonstration। Industrial training partners · Amul (Gujarat), Parag (UP), Mother Dairy (NCR), local Banaras dairy cooperatives। Many students placement-track shuru karते hain final-semester training se hi — direct conversion to job offers।",
+          "Industrial training partners · Amul (Gujarat), Parag (UP), Mother Dairy (NCR), Banas Dairy Varanasi (recent industrial visit destination), local Banaras dairy cooperatives। <strong>Sem-6 mein structured 6-month placement</strong> ek partner plant par — <strong>1,000+ supervised practical hours</strong> on real production equipment (pasteurizers, separators, homogenisers, packaging lines), not lab models। Many students placement-track shuru karते hain final-semester training se hi — direct conversion to job offers।",
       },
       {
         type: "p",
@@ -356,7 +356,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Dairy Engineering एक <strong>honest niche</strong> hai। Yeh \"sexy\" branch nahi hai (jaise CSE) ya \"mass-market\" branch nahi hai (jaise Mechanical) — lekin specific student ke liye yeh sabse strong choice ho sakta hai। Less competition, stable industry, BIPE ka pilot plant advantage, real placement pipeline।",
+          "Dairy Engineering एक <strong>honest niche</strong> hai। Yeh \"sexy\" branch nahi hai (jaise CSE) ya \"mass-market\" branch nahi hai (jaise Mechanical) — lekin specific student ke liye yeh sabse strong choice ho sakta hai। Less competition, stable industry, real placement pipeline (Amul / Mother Dairy / NDDB hiring at BIPE), 6-month industrial training jo aksar direct job offers mein convert hoti hai।",
       },
       {
         type: "p",
@@ -1611,7 +1611,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "The BTEUP 327 landscape — why only four institutes" },
       {
         type: "p",
-        html: "Dairy Engineering is a specialised programme. It requires lab infrastructure most polytechnics don't have — a pasteurising line, separators, homogenisers, refrigeration test rigs, a microbiology and chemistry lab equipped for milk-fat estimation, somatic-cell counts, and antibiotic-residue assays. AICTE approval for the branch needs documented faculty in dairy chemistry, microbiology and processing — a thin pool of qualified instructors. And the recurring cost of running a working pilot plant is materially higher than a conventional Mechanical or Civil workshop.",
+        html: "Dairy Engineering is a specialised programme. It requires <em>some kind of</em> route to plant-floor exposure — either an in-house pilot plant or structured industrial-visit arrangements with working dairies — plus a chemistry and microbiology lab equipped for milk-fat estimation, somatic-cell counts, and antibiotic-residue assays. AICTE approval for the branch needs documented faculty in dairy chemistry, microbiology and processing — a thin pool of qualified instructors. And the recurring cost of running a working pilot plant is materially higher than a conventional Mechanical or Civil workshop. Most state polytechnics don't take it on; the four that do split between in-house plants and external-partnership models.",
       },
       {
         type: "p",
@@ -1639,7 +1639,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "The labs that support this curriculum are the most expensive part of running the branch. BIPE's <a href=\"/courses/dairy-engineering\">campus pilot plant</a> gives students hands-on time on pasteuriser, separator, homogeniser and packaging-line operation. The dairy chemistry &amp; microbiology lab handles standard plate counts, antibiotic residue testing, lactometer and fat-percentage analysis — the same FSSAI-aligned battery a quality engineer at Amul or Mother Dairy is expected to know. The refrigeration &amp; utilities lab supports the Sem-4 module on compressor, condenser and evaporator sizing.",
+        html: "BIPE has chosen the external-partnership model rather than running its own pilot plant. The honest disclosure: BIPE does <strong>not</strong> operate a pilot dairy plant on campus. Plant-floor exposure for Dairy Engineering students comes through three channels — (1) on-campus <a href=\"/courses/dairy-engineering\">chemistry, hydraulics and mechanics-of-solids labs</a> that teach the unit-operation fundamentals (milk-quality and FSSAI-aligned testing, process fluid mechanics on the BIPEHYD/201 series rigs, processing-equipment materials science); (2) structured cohort industrial visits to active dairy plants (most recently Banas Dairy Plant Varanasi) where students walk a real floor with pasteurisers, separators, homogenisers, storage silos and packaging lines in live operation; (3) a mandatory six-month industrial training placement in Semester 6 at Amul, Mother Dairy, NDDB or Parag — the real machine time happens there, supervised by the host plant's shift engineers. The combination is genuinely strong; it's just honest about what's BIPE's and what's the partner plant's.",
       },
       { type: "h2", text: "Where graduates actually go" },
       {
@@ -1655,7 +1655,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Nestlé</strong> — Moga plant operations and quality, plus the company's smaller-format Indian dairy sites.",
           "<strong>NDDB</strong> — the National Dairy Development Board's project-engineering and field roles, plus its many subsidiaries (Mother Dairy, Dairy Services).",
           "<strong>State dairy boards</strong> — Junior Engineer cadres at Bihar, UP and MP state dairy federations, recruited via state SSC equivalents.",
-          "<strong>Self-employment</strong> — alumni who have started small-scale paneer / ghee / curd ventures, leveraging the pilot-plant experience.",
+          "<strong>Self-employment</strong> — alumni who have started small-scale paneer / ghee / curd ventures, leveraging the industrial-visit exposure and the six-month industrial training placement.",
         ],
       },
       { type: "h2", text: "Lateral pathways for those who want to go further" },
@@ -1687,7 +1687,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "If that description fits, talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a free shuttle visit</a> from Varanasi Cantt. The pilot plant, the labs and the people who run them are the best argument for the branch. Walk the floor, talk to current Dairy students, and the decision usually settles itself.",
+        html: "If that description fits, talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a free shuttle visit</a> from Varanasi Cantt. The chemistry and hydraulics labs, the faculty who teach the dairy modules, and current third-year Dairy students who are mid-placement-season are the best argument for the branch. Walk the floor, ask about Banas Dairy and the Sem-6 placement plant they got assigned to, and the decision usually settles itself.",
       },
     ],
   },
@@ -2841,7 +2841,7 @@ export const BLOG_POSTS: BlogPost[] = [
   //
   // Honest framing: subject names are drawn from standard BTE UP
   // polytechnic curriculum; the canonical source is the BTE UP
-  // gazette (bteup.org.in). The post says so explicitly and links
+  // gazette (bteup.ac.in). The post says so explicitly and links
   // out for verification — same disclosure pattern the branch
   // pages use.
   {
@@ -2867,7 +2867,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<li><strong>Semesters 1 and 2 are common</strong> across all branches — Mathematics, Physics, Chemistry, English, Engineering Drawing, Workshop Practice, Basic Electrical / Electronics.</li>" +
           "<li><strong>Semesters 3 to 5 are branch-specific</strong> — this is where the real differences show. Mechanical does thermodynamics and machining; Civil does surveying and structural design; Electrical does machines and power systems; CSE does data structures and web; Dairy does milk processing and plant operations.</li>" +
           "<li><strong>Semester 6 is mostly industrial training</strong> — a mandatory 6-month (~600 hour) placement at a real plant or site, plus a capstone project assessed by an external examiner.</li>" +
-          "<li><strong>The official source is the BTE UP gazette</strong> at <a href=\"https://www.bteup.org.in/\" target=\"_blank\" rel=\"noopener\">bteup.org.in</a>. Subject names below are stable across gazette revisions; codes and marks distribution shift every 3-5 years — always cross-check the gazette PDF for your admission year before printing.</li>" +
+          "<li><strong>The official source is the BTE UP gazette</strong> at <a href=\"https://bteup.ac.in/\" target=\"_blank\" rel=\"noopener\">bteup.ac.in</a>. Subject names below are stable across gazette revisions; codes and marks distribution shift every 3-5 years — always cross-check the gazette PDF for your admission year before printing.</li>" +
           "</ul>",
       },
 
@@ -3062,9 +3062,9 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>BTE UP official portal</strong> — <a href=\"https://www.bteup.org.in/\" target=\"_blank\" rel=\"noopener\">bteup.org.in</a>. Look under <em>Academic → Syllabus</em>; each branch has a downloadable PDF per academic year.",
+          "<strong>BTE UP official portal</strong> — <a href=\"https://bteup.ac.in/\" target=\"_blank\" rel=\"noopener\">bteup.ac.in</a>. Look under <em>Academic → Syllabus</em>; each branch has a downloadable PDF per academic year.",
           "<strong>AICTE Polytechnic curriculum</strong> — for the AICTE-approved national framework that the BTE UP syllabus implements. Useful for understanding why certain subjects exist.",
-          "<strong>Per-branch detail on BIPE</strong> — every BIPE branch page includes the full subject list per semester with a one-click link to bteup.org.in. See <a href=\"/courses\">/courses</a> to start.",
+          "<strong>Per-branch detail on BIPE</strong> — every BIPE branch page includes the full subject list per semester with a one-click link to bteup.ac.in. See <a href=\"/courses\">/courses</a> to start.",
         ],
       },
 

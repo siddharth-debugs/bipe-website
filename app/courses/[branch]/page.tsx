@@ -291,13 +291,13 @@ export default async function BranchPage(
               </p>
             </div>
             <a
-              href={`https://www.bteup.org.in/`}
+              href={`https://bteup.ac.in/`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost"
               style={{ flexShrink: 0 }}
             >
-              Open bteup.org.in <ArrowIcon size={12} />
+              Open bteup.ac.in <ArrowIcon size={12} />
             </a>
           </div>
 

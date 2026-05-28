@@ -3,7 +3,7 @@
  *
  * Phase 3 of the JEECUP/BTEUP content sprint. These pages target
  * the procedural keyword cluster around the Board of Technical
- * Education, Uttar Pradesh (BTEUP, bteup.org.in) — the regulatory
+ * Education, Uttar Pradesh (BTEUP, bteup.ac.in) — the regulatory
  * body that affiliates BIPE under code 4455 and conducts all
  * semester exams, result declaration, and student registration
  * for UP-state diploma programs:
@@ -124,7 +124,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     quickStats: [
       { label: "Mandate effective", value: "2026-27 onwards", sub: "All UP diploma students" },
       { label: "Family ID portal", value: "familyid.up.gov.in", sub: "Official UP government" },
-      { label: "BTEUP linkage", value: "Via student portal", sub: "bteup.org.in student login" },
+      { label: "BTEUP linkage", value: "Via student portal", sub: "bteup.ac.in student login" },
       { label: "Unlocks", value: "Scholarships + benefits", sub: "Income-linked + caste-linked" },
     ],
     steps: [
@@ -136,7 +136,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "02",
         title: "Log in to the BTEUP student portal",
-        body: "Visit bteup.org.in. Use the Student Login (separate from the institute / faculty login). Your credentials are issued by BIPE after annual registration — if you don't have login details, ask your branch in-charge. First-year students at BIPE receive credentials within 2 weeks of joining the session.",
+        body: "Visit bteup.ac.in. Use the Student Login (separate from the institute / faculty login). Your credentials are issued by BIPE after annual registration — if you don't have login details, ask your branch in-charge. First-year students at BIPE receive credentials within 2 weeks of joining the session.",
       },
       {
         n: "03",
@@ -207,7 +207,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     slug: "bteup-admit-card-download",
     shortTitle: "BTEUP Admit Card",
     title: "BTEUP Admit Card 2026 · Semester Exam Download Guide | BIPE 4455",
-    description: "Download your BTEUP semester exam admit card from bteup.org.in — login flow, verification steps, troubleshooting common errors. Released approximately 2 weeks before each exam cycle.",
+    description: "Download your BTEUP semester exam admit card from bteup.ac.in — login flow, verification steps, troubleshooting common errors. Released approximately 2 weeks before each exam cycle.",
     keywords: [
       "BTEUP admit card",
       "BTEUP admit card download",
@@ -220,9 +220,9 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     eyebrow: "BTEUP 2026 · ADMIT CARD GUIDE",
     headline: "BTEUP semester admit card —",
     headlineAccent: "download, verify, troubleshoot.",
-    lead: "BTEUP semester exam admit cards are released on bteup.org.in approximately 2 weeks before each exam cycle (typically May for odd-sem theory, November for even-sem theory). This page walks through the download flow, the details to verify against your registration, and what to do if something doesn't match.",
+    lead: "BTEUP semester exam admit cards are released on bteup.ac.in approximately 2 weeks before each exam cycle (typically May for odd-sem theory, November for even-sem theory). This page walks through the download flow, the details to verify against your registration, and what to do if something doesn't match.",
     quickStats: [
-      { label: "Released", value: "~2 weeks pre-exam", sub: "Watch bteup.org.in" },
+      { label: "Released", value: "~2 weeks pre-exam", sub: "Watch bteup.ac.in" },
       { label: "Login", value: "Student portal", sub: "Roll number + password" },
       { label: "Per cycle", value: "Separate card", sub: "Odd / even / practical / supp." },
       { label: "Format", value: "PDF · printable", sub: "Carry hard copy to exam" },
@@ -231,7 +231,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "01",
         title: "Open the official BTEUP portal",
-        body: "Visit bteup.org.in. On the homepage, look for the 'Student Login' or 'Admit Card' link prominent during the release window. Do NOT use third-party sites that claim to host BTEUP admit cards — these are usually outdated or fraudulent.",
+        body: "Visit bteup.ac.in. On the homepage, look for the 'Student Login' or 'Admit Card' link prominent during the release window. Do NOT use third-party sites that claim to host BTEUP admit cards — these are usually outdated or fraudulent.",
       },
       {
         n: "02",
@@ -262,7 +262,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "When will the BTEUP 2026 admit card be released?",
-        a: "Approximately 2 weeks before each exam cycle begins. Odd-semester theory admit cards typically release in May, even-semester theory in November. Practical exam admit cards release ~10 days before practicals start (which can be at the institute itself, not a central centre). Watch the bteup.org.in homepage banner for exact dates.",
+        a: "Approximately 2 weeks before each exam cycle begins. Odd-semester theory admit cards typically release in May, even-semester theory in November. Practical exam admit cards release ~10 days before practicals start (which can be at the institute itself, not a central centre). Watch the bteup.ac.in homepage banner for exact dates.",
       },
       {
         q: "I forgot my BTEUP password — how do I download my admit card?",
@@ -278,7 +278,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "What's the difference between BTEUP and JEECUP admit cards?",
-        a: "JEECUP admit card is for the entrance exam (one-time, before admission). BTEUP admit cards are for the semester exams during your diploma (twice a year, every year of the diploma). Different portals, different login credentials. JEECUP uses jeecup.admissions.nic.in; BTEUP uses bteup.org.in.",
+        a: "JEECUP admit card is for the entrance exam (one-time, before admission). BTEUP admit cards are for the semester exams during your diploma (twice a year, every year of the diploma). Different portals, different login credentials. JEECUP uses jeecup.admissions.nic.in; BTEUP uses bteup.ac.in.",
       },
     ],
     ctaTitle: "Semester exam coming up?",
@@ -290,7 +290,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     slug: "bteup-semester-exam-dates-2026",
     shortTitle: "BTEUP Semester Exam Dates",
     title: "BTEUP Semester Exam Dates 2026 · Odd + Even Cycle Calendar | BIPE 4455",
-    description: "BTEUP semester exam calendar 2026 — odd semester (Apr-Jun) and even semester (Oct-Dec) windows, practical schedule, supplementary cycle. Verified from bteup.org.in.",
+    description: "BTEUP semester exam calendar 2026 — odd semester (Apr-Jun) and even semester (Oct-Dec) windows, practical schedule, supplementary cycle. Verified from bteup.ac.in.",
     keywords: [
       "BTEUP exam date",
       "BTEUP semester exam dates",
@@ -315,7 +315,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "01",
         title: "Check the BTEUP official calendar (the only authoritative source)",
-        body: "Visit bteup.org.in's 'Notice Board' or 'Examination' section. BTEUP publishes the per-cycle calendar approximately 6 weeks before each cycle starts. Specific 2026 dates may shift from year to year. Third-party sites often republish stale or guessed dates — go to the source.",
+        body: "Visit bteup.ac.in's 'Notice Board' or 'Examination' section. BTEUP publishes the per-cycle calendar approximately 6 weeks before each cycle starts. Specific 2026 dates may shift from year to year. Third-party sites often republish stale or guessed dates — go to the source.",
       },
       {
         n: "02",
@@ -346,7 +346,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "Where can I find the BTEUP 2026 exam date sheet?",
-        a: "Only on bteup.org.in's official Notice Board or Examination section. The board uploads the per-cycle date sheet about 6 weeks before each cycle starts. Do NOT rely on dates listed on Careers360, Shiksha, or aggregator sites — those frequently lag or guess.",
+        a: "Only on bteup.ac.in's official Notice Board or Examination section. The board uploads the per-cycle date sheet about 6 weeks before each cycle starts. Do NOT rely on dates listed on Careers360, Shiksha, or aggregator sites — those frequently lag or guess.",
       },
       {
         q: "Are odd and even semester exams in the same month every year?",
@@ -374,7 +374,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     slug: "bteup-result-check",
     shortTitle: "BTEUP Result Check",
     title: "BTEUP Result 2026 · Semester Result Check + Grace / Revaluation | BIPE 4455",
-    description: "Check your BTEUP semester result at bteup.org.in — login, marksheet download, understand grades, apply for grace marks or revaluation. Result timeline typically ~2 months post-exam.",
+    description: "Check your BTEUP semester result at bteup.ac.in — login, marksheet download, understand grades, apply for grace marks or revaluation. Result timeline typically ~2 months post-exam.",
     keywords: [
       "BTEUP result",
       "BTEUP result 2026",
@@ -390,15 +390,15 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     headlineAccent: "from result page to marksheet.",
     lead: "BTEUP semester results typically release 2 months after the exam cycle closes — odd-semester results in August / September, even-semester results in February / March. The result includes subject-wise marks, grades, attendance, and pass / fail status per subject. This page walks through the check flow, marksheet download, and what to do if you spot an error.",
     quickStats: [
-      { label: "Released", value: "~2 months post-exam", sub: "Watch bteup.org.in" },
-      { label: "Where", value: "bteup.org.in", sub: "Result tab · student portal" },
+      { label: "Released", value: "~2 months post-exam", sub: "Watch bteup.ac.in" },
+      { label: "Where", value: "bteup.ac.in", sub: "Result tab · student portal" },
       { label: "Marksheet", value: "Downloadable PDF", sub: "Hard copy from BIPE later" },
       { label: "Pass mark", value: "Per subject · varies", sub: "Typically 33% theory, 40% practical" },
     ],
     steps: [
       {
         n: "01",
-        title: "Go to bteup.org.in on result day",
+        title: "Go to bteup.ac.in on result day",
         body: "Visit the official BTEUP portal. On result-declaration day, look for the prominent 'Result' link on the homepage. The portal is heavily loaded on the first few hours — try off-peak (late evening / very early morning) if you face timeouts.",
       },
       {
@@ -430,7 +430,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "When will BTEUP 2026 semester results be declared?",
-        a: "Approximately 2 months after each cycle closes. Odd-semester results typically declare in August / September 2026; even-semester results in February / March 2027. Exact dates announced on bteup.org.in. Allow extra time for any cycle disrupted by holidays or special circumstances.",
+        a: "Approximately 2 months after each cycle closes. Odd-semester results typically declare in August / September 2026; even-semester results in February / March 2027. Exact dates announced on bteup.ac.in. Allow extra time for any cycle disrupted by holidays or special circumstances.",
       },
       {
         q: "What does 'CT' or 'AB' on my BTEUP result mean?",
@@ -446,7 +446,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "Can I get a duplicate marksheet if I lose mine?",
-        a: "Yes. Apply via the BTEUP duplicate marksheet form (available at bteup.org.in or your institute's academic office). Fee ~₹500. Process takes 4-6 weeks. Carry the duplicate to interviews / verification along with an affidavit if requested. Originals can also be re-issued for ~₹1,000 in case of physical damage / loss.",
+        a: "Yes. Apply via the BTEUP duplicate marksheet form (available at bteup.ac.in or your institute's academic office). Fee ~₹500. Process takes 4-6 weeks. Carry the duplicate to interviews / verification along with an affidavit if requested. Originals can also be re-issued for ~₹1,000 in case of physical damage / loss.",
       },
       {
         q: "What if I have a backlog after the diploma?",
@@ -475,9 +475,9 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     eyebrow: "BTEUP 2026 · EXAM FEES PAYMENT",
     headline: "BTEUP exam fee payment —",
     headlineAccent: "portal, deadlines, troubleshooting.",
-    lead: "BTEUP exam fees are paid online per cycle through the official portal at bteup.org.in. The fee covers theory, practical, and administrative components, with a separate fee for supplementary subjects and revaluation requests. This page walks through the payment flow, the typical fee structure, deadlines (including late-fee window), and what to do if a payment fails.",
+    lead: "BTEUP exam fees are paid online per cycle through the official portal at bteup.ac.in. The fee covers theory, practical, and administrative components, with a separate fee for supplementary subjects and revaluation requests. This page walks through the payment flow, the typical fee structure, deadlines (including late-fee window), and what to do if a payment fails.",
     quickStats: [
-      { label: "Portal", value: "bteup.org.in", sub: "Student fee section" },
+      { label: "Portal", value: "bteup.ac.in", sub: "Student fee section" },
       { label: "Payment methods", value: "UPI · card · netbanking", sub: "Online only" },
       { label: "Per-cycle window", value: "~3 weeks", sub: "Plus a late-fee window" },
       { label: "Receipt", value: "Downloadable PDF", sub: "Keep — print 2 copies" },
@@ -486,7 +486,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "01",
         title: "Log in to your BTEUP student portal",
-        body: "Visit bteup.org.in and log in with your roll number + password. Same credentials as admit card / result download. If you forgot the password, use 'Forgot Password' — the reset link goes to your registered mobile.",
+        body: "Visit bteup.ac.in and log in with your roll number + password. Same credentials as admit card / result download. If you forgot the password, use 'Forgot Password' — the reset link goes to your registered mobile.",
       },
       {
         n: "02",
@@ -517,7 +517,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "What is the BTEUP exam fee for 2026?",
-        a: "Fees vary by semester, branch, and number of practical subjects. As a rough indicator: theory fee ~₹100-200 per subject + practical fee ~₹150-250 per subject + central administrative fee ~₹300-500 per cycle. Total per cycle is typically ₹1,200-2,500 depending on subject count. Supplementary fees are per-paper and additional. Check the current cycle's official fee notification at bteup.org.in for the exact amount.",
+        a: "Fees vary by semester, branch, and number of practical subjects. As a rough indicator: theory fee ~₹100-200 per subject + practical fee ~₹150-250 per subject + central administrative fee ~₹300-500 per cycle. Total per cycle is typically ₹1,200-2,500 depending on subject count. Supplementary fees are per-paper and additional. Check the current cycle's official fee notification at bteup.ac.in for the exact amount.",
       },
       {
         q: "When is the BTEUP fee payment deadline?",
@@ -598,7 +598,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "06",
         title: "Verify your BTEUP record and link Family ID (if applicable)",
-        body: "Log in to bteup.org.in with the credentials BIPE issued. Verify every detail — name spelling, branch, semester. If anything is wrong, raise a correction request immediately through BIPE's academic office; corrections take 4-8 weeks and you DON'T want them lingering. Once verified, link your Family ID (see /bteup-family-id-registration) to unlock state scholarships.",
+        body: "Log in to bteup.ac.in with the credentials BIPE issued. Verify every detail — name spelling, branch, semester. If anything is wrong, raise a correction request immediately through BIPE's academic office; corrections take 4-8 weeks and you DON'T want them lingering. Once verified, link your Family ID (see /bteup-family-id-registration) to unlock state scholarships.",
       },
     ],
     checklist: {
@@ -643,7 +643,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "Where do I check if my BTEUP registration is complete?",
-        a: "Once BIPE issues your roll number + portal credentials, log in to bteup.org.in. Your profile page shows the current registration status. If it says 'Active' or 'Registered', you're good. If it says 'Pending', talk to the BIPE academic office — sometimes individual documents need clarification with BTEUP.",
+        a: "Once BIPE issues your roll number + portal credentials, log in to bteup.ac.in. Your profile page shows the current registration status. If it says 'Active' or 'Registered', you're good. If it says 'Pending', talk to the BIPE academic office — sometimes individual documents need clarification with BTEUP.",
       },
     ],
     ctaTitle: "Joining BIPE this session?",
@@ -681,7 +681,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       { label: "Total semesters", value: "6", sub: "3 years · 2 semesters per year" },
       { label: "Per branch", value: "5-7 theory + 4-6 practical", sub: "Per semester · varies by year" },
       { label: "Marking split", value: "70 external + 30 internal", sub: "Per theory subject · typical" },
-      { label: "Official source", value: "bteup.org.in", sub: "Notice Board · Curriculum tab" },
+      { label: "Official source", value: "bteup.ac.in", sub: "Notice Board · Curriculum tab" },
     ],
     // Branch-specific syllabus content (semester-by-semester subject lists)
     // lives at /courses/[branch]. Surfacing it explicitly here because the
@@ -730,7 +730,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "01",
         title: "Open the BTEUP official syllabus index",
-        body: "Visit bteup.org.in. From the navigation, choose 'Curriculum' or 'Syllabus' (the menu label changes year to year). The syllabus index lists all 40+ diploma programmes alphabetically. Use Ctrl+F (or browser search) to find your branch quickly.",
+        body: "Visit bteup.ac.in. From the navigation, choose 'Curriculum' or 'Syllabus' (the menu label changes year to year). The syllabus index lists all 40+ diploma programmes alphabetically. Use Ctrl+F (or browser search) to find your branch quickly.",
       },
       {
         n: "02",
@@ -773,7 +773,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "Where is the official BTEUP syllabus published?",
-        a: "Only on bteup.org.in's 'Curriculum' section. Per-branch, per-semester PDFs. BTEUP doesn't publish syllabus on third-party aggregators — sites like Careers360, Shiksha, etc., usually republish the BTEUP PDF, but their version may lag the official cycle by 1-2 years. For the authoritative current cycle, go to the source.",
+        a: "Only on bteup.ac.in's 'Curriculum' section. Per-branch, per-semester PDFs. BTEUP doesn't publish syllabus on third-party aggregators — sites like Careers360, Shiksha, etc., usually republish the BTEUP PDF, but their version may lag the official cycle by 1-2 years. For the authoritative current cycle, go to the source.",
       },
       {
         q: "How is BTEUP syllabus different from CBSE / NCERT?",
@@ -829,12 +829,12 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "01",
         title: "Identify your backlog from the BTEUP result page",
-        body: "Log in to bteup.org.in → Result. Your marksheet flags failed subjects with 'CT' (Carry Trial) or 'F' grade. Note the subject code, subject name, and semester for each backlog. Don't rely on memory — work from the marksheet PDF.",
+        body: "Log in to bteup.ac.in → Result. Your marksheet flags failed subjects with 'CT' (Carry Trial) or 'F' grade. Note the subject code, subject name, and semester for each backlog. Don't rely on memory — work from the marksheet PDF.",
       },
       {
         n: "02",
         title: "Wait for BTEUP's supplementary cycle notification",
-        body: "Supplementary cycles run twice yearly — typically July (for odd-semester backlogs from the previous May-June theory cycle) and January (for even-semester backlogs from the November-December theory cycle). BTEUP publishes the cycle notification ~3 weeks before registration opens. Watch bteup.org.in's notice board.",
+        body: "Supplementary cycles run twice yearly — typically July (for odd-semester backlogs from the previous May-June theory cycle) and January (for even-semester backlogs from the November-December theory cycle). BTEUP publishes the cycle notification ~3 weeks before registration opens. Watch bteup.ac.in's notice board.",
       },
       {
         n: "03",
@@ -930,7 +930,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "01",
         title: "Find your raw marks on the BTEUP marksheet",
-        body: "Each subject lists: internal marks (out of 30 for theory / 50 for practical), external marks (out of 70 for theory / 50 for practical), total (out of 100), and grade. The marksheet PDF is available on bteup.org.in immediately after result declaration.",
+        body: "Each subject lists: internal marks (out of 30 for theory / 50 for practical), external marks (out of 70 for theory / 50 for practical), total (out of 100), and grade. The marksheet PDF is available on bteup.ac.in immediately after result declaration.",
       },
       {
         n: "02",
@@ -1021,8 +1021,8 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         n: "02",
-        title: "Verify any college's BTEUP affiliation on bteup.org.in",
-        body: "Visit bteup.org.in → 'Affiliated Colleges' or 'Institute Directory' (menu label varies by year). Enter the college name or JEECUP institute code. The result shows: affiliation status (Active / Renewal / Withdrawn), AICTE approval reference, sanctioned branches and seat intake per branch, and the date of last inspection. If a college claims BTEUP affiliation but doesn't show here, it's NOT affiliated.",
+        title: "Verify any college's BTEUP affiliation on bteup.ac.in",
+        body: "Visit bteup.ac.in → 'Affiliated Colleges' or 'Institute Directory' (menu label varies by year). Enter the college name or JEECUP institute code. The result shows: affiliation status (Active / Renewal / Withdrawn), AICTE approval reference, sanctioned branches and seat intake per branch, and the date of last inspection. If a college claims BTEUP affiliation but doesn't show here, it's NOT affiliated.",
       },
       {
         n: "03",
@@ -1048,7 +1048,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "Where do I find the complete BTEUP-affiliated college list?",
-        a: "bteup.org.in's 'Institute Directory' or 'Affiliated Colleges' section. It's the authoritative source. Third-party sites (Careers360, Shiksha) republish it but often with stale data. For latest verification, go directly to BTEUP.",
+        a: "bteup.ac.in's 'Institute Directory' or 'Affiliated Colleges' section. It's the authoritative source. Third-party sites (Careers360, Shiksha) republish it but often with stale data. For latest verification, go directly to BTEUP.",
       },
       {
         q: "How do I know if a BTEUP-affiliated college is also good?",
@@ -1072,7 +1072,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Verifying BIPE before applying?",
-    ctaBody: "BIPE's AICTE Permanent ID is 1-488233171 (verify at facilities.aicte.gov.in) · JEECUP code 4455 (verify at jeecup.admissions.nic.in) · BTEUP-affiliated (verify at bteup.org.in). All three are independently checkable. WhatsApp +91-9198646464 if you want help verifying any of them.",
+    ctaBody: "BIPE's AICTE Permanent ID is 1-488233171 (verify at facilities.aicte.gov.in) · JEECUP code 4455 (verify at jeecup.admissions.nic.in) · BTEUP-affiliated (verify at bteup.ac.in). All three are independently checkable. WhatsApp +91-9198646464 if you want help verifying any of them.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -1129,7 +1129,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "06",
         title: "Enroll at target college + verify with BTEUP portal",
-        body: "Once BTEUP processes the transfer, you enroll at the new college as a continuing student. Log in to bteup.org.in with your new credentials (issued by target college) and verify your roll number, branch, semester, and previous-marks history all show correctly. Any discrepancies, flag with the target college's academic office immediately.",
+        body: "Once BTEUP processes the transfer, you enroll at the new college as a continuing student. Log in to bteup.ac.in with your new credentials (issued by target college) and verify your roll number, branch, semester, and previous-marks history all show correctly. Any discrepancies, flag with the target college's academic office immediately.",
       },
     ],
     checklist: {
@@ -1253,7 +1253,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "Will the duplicate marksheet be accepted by employers / colleges?",
-        a: "Yes, by virtually all employers, B.Tech lateral-entry colleges, and government recruiters. The DUPLICATE stamp is standard — what matters is the BTEUP issuance and the CGPA / division shown. If a specific employer hesitates, they can verify directly with BTEUP via bteup.org.in's verification portal using your roll number. The duplicate is functionally equivalent to the original.",
+        a: "Yes, by virtually all employers, B.Tech lateral-entry colleges, and government recruiters. The DUPLICATE stamp is standard — what matters is the BTEUP issuance and the CGPA / division shown. If a specific employer hesitates, they can verify directly with BTEUP via bteup.ac.in's verification portal using your roll number. The duplicate is functionally equivalent to the original.",
       },
       {
         q: "Can I get a duplicate marksheet if I'm not a BIPE alumnus?",

@@ -63,7 +63,7 @@ export const ROUTES: Record<RouteKey, {
     // single highest-weight ranking factor for the head query.
     // Phase 1.5 (also May 2026): added "BTE UP" alongside AICTE per
     // the trust-signal strategy — BTE UP keywords themselves are
-    // 823k/mo but owned by bteup.org.in, so the affiliation is used
+    // 823k/mo but owned by bteup.ac.in, so the affiliation is used
     // as a CTR / conversion lever, not a traffic chase.
     title: "Polytechnic College in Varanasi · BTE UP & AICTE Approved · BIPE 4455",
     // Exact phrases "polytechnic college in Varanasi" + "polytechnic
@@ -130,7 +130,7 @@ export const ROUTES: Record<RouteKey, {
     // CTR rewrite 26 May 2026 · concrete distance + free shuttle as the
     // two strongest signals for "polytechnic visit Varanasi" intent.
     title: "Visit BIPE Phoolpur · Free Shuttle from Varanasi Cantt · 14 km",
-    description: "Book a free BIPE campus visit · 14 km from Varanasi Cantt · free Saturday shuttle. Walk the 120-PC lab, dairy plant, hostel, workshops. No pressure.",
+    description: "Book a free BIPE campus visit · 14 km from Varanasi Cantt · free Saturday shuttle. Walk the 120-PC lab, chemistry & hydraulics labs, hostel, workshops. No pressure.",
   },
   contact: {
     path: "/contact",
@@ -160,10 +160,16 @@ export const ROUTES: Record<RouteKey, {
   },
   campus: {
     path: "/campus",
-    // CTR rewrite 26 May 2026 · specific facilities in title (120-PC,
-    // dairy plant, hostel) outperform generic "Six acres".
-    title: "BIPE Campus · 6-Acre Phoolpur · Hostel, 120-PC Lab, Dairy Plant",
-    description: "Six-acre BIPE Phoolpur campus: 120-PC lab, mechanical workshop, dairy pilot plant, electrical lab, 12,000+ book library, hostels, sports ground.",
+    // CTR rewrite 28 May 2026 · v2 dropped the "Dairy Plant" claim
+    // from title + description after a content honesty audit
+    // confirmed BIPE does not operate its own pilot dairy plant.
+    // Replaced with the chemistry / hydraulics labs (which DO exist
+    // on campus and serve Dairy Engineering students via the
+    // milk-quality and process-fluid modules). Other specifics
+    // (120-PC, mechanical workshop, library, hostel) are unchanged
+    // and still outperform a generic "Six acres" framing.
+    title: "BIPE Campus · 6-Acre Phoolpur · 120-PC Lab, Workshops, Hostel",
+    description: "Six-acre BIPE Phoolpur campus: 120-PC programming lab, mechanical workshop, chemistry & hydraulics labs, electrical lab, 12,000+ book library, hostels, sports ground.",
   },
   fees: {
     path: "/fees",
@@ -848,7 +854,7 @@ export const ROUTES: Record<RouteKey, {
   bteupAdmitCard: {
     path: "/bteup-admit-card-download",
     title: "BTEUP Admit Card 2026 · Semester Exam Download Guide | BIPE 4455",
-    description: "Download BTEUP semester exam admit card from bteup.org.in — login, verify, troubleshoot common errors. Released ~2 weeks before each exam cycle.",
+    description: "Download BTEUP semester exam admit card from bteup.ac.in — login, verify, troubleshoot common errors. Released ~2 weeks before each exam cycle.",
     keywords: [
       "BTEUP admit card",
       "BTEUP admit card download",
@@ -861,7 +867,7 @@ export const ROUTES: Record<RouteKey, {
   bteupExamDates: {
     path: "/bteup-semester-exam-dates-2026",
     title: "BTEUP Semester Exam Dates 2026 · Odd + Even Cycle | BIPE 4455",
-    description: "BTEUP exam calendar 2026 — odd semester (Apr-Jun), even semester (Oct-Dec), practical exam window, supplementary cycle. Verified pattern from bteup.org.in.",
+    description: "BTEUP exam calendar 2026 — odd semester (Apr-Jun), even semester (Oct-Dec), practical exam window, supplementary cycle. Verified pattern from bteup.ac.in.",
     keywords: [
       "BTEUP exam date",
       "BTEUP semester exam dates",
@@ -874,7 +880,7 @@ export const ROUTES: Record<RouteKey, {
   bteupResult: {
     path: "/bteup-result-check",
     title: "BTEUP Result 2026 · Semester Result + Grace / Revaluation | BIPE 4455",
-    description: "Check BTEUP semester result at bteup.org.in — marksheet download, grade explainer, grace marks, revaluation. Result timeline ~2 months post-exam.",
+    description: "Check BTEUP semester result at bteup.ac.in — marksheet download, grade explainer, grace marks, revaluation. Result timeline ~2 months post-exam.",
     keywords: [
       "BTEUP result",
       "BTEUP result 2026",

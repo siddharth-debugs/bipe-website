@@ -405,7 +405,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
         {/*
           Trust-signal line — Phase 1.5 keyword strategy (May 2026).
           BTE UP keywords aggregate to 823k+/mo but the SERP is owned
-          by bteup.org.in. The affiliation is best used as a constant
+          by bteup.ac.in. The affiliation is best used as a constant
           trust signal across every page — so we render it in the
           footer, visible site-wide.
         */}
