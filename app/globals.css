@@ -833,12 +833,12 @@ body.no-motion .live-dot { animation: none; }
   position: sticky; top: 0; z-index: 40;
   /* Heavy frosted-glass effect — anything that scrolls past should
      read as a soft wash of colour behind the bar, not legible text.
-     Bumped from 90% / blur(18px) → 75% / blur(24px) + saturate(200%)
-     so the bar feels properly solid on Android Chrome where the
-     default blur was reading as light tint only. */
-  background: color-mix(in oklab, var(--paper) 75%, transparent);
-  backdrop-filter: saturate(200%) blur(24px);
-  -webkit-backdrop-filter: saturate(200%) blur(24px);
+     Opacity bumped to 92% because at 75% dark serif headlines
+     directly under the bar were still reading through on the
+     principal/about pages (reported, Nov 2026). */
+  background: color-mix(in oklab, var(--paper) 92%, transparent);
+  backdrop-filter: saturate(200%) blur(28px);
+  -webkit-backdrop-filter: saturate(200%) blur(28px);
   border-bottom: 1px solid var(--line);
 }
 /* Fallback for browsers that don't support backdrop-filter at all
