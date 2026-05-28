@@ -143,6 +143,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             >
               BIPE · Admin
             </div>
+            {/*
+              Full canonical institution name — not "Banaras Institute" alone.
+              The bare prefix collides with Banaras Institute of Technology
+              (BIT / BITE, a separate institution), and disambiguation matters
+              even inside the admin UI. Italic serif at 14px wraps gracefully
+              to 2 lines in the sidebar.
+            */}
             <div
               style={{
                 fontFamily: "var(--font-serif)",
@@ -150,9 +157,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 fontSize: 14,
                 color: "var(--ink-3)",
                 marginTop: 2,
+                lineHeight: 1.25,
               }}
             >
-              Banaras Institute
+              Banaras Institute of Polytechnic &amp; Engineering
             </div>
           </div>
         </Link>
