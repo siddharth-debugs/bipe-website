@@ -288,36 +288,11 @@ export default async function Page() {
                   </span>
                 ))}
               </div>
-              <div style={{ marginTop: 20 }}>
-                <a
-                  href="/placement-record-2024.pdf"
-                  target="_blank"
-                  rel="noopener"
-                  download
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 12,
-                    padding: "14px 22px",
-                    borderRadius: 12,
-                    background: "var(--brand)",
-                    color: "var(--paper)",
-                    textDecoration: "none",
-                    fontWeight: 600,
-                    fontSize: 14,
-                  }}
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span>
-                    Download BIPE Placement Record &middot; PDF
-                    <span style={{ marginLeft: 10, opacity: 0.7, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                      Through 2024 &middot; 7 pages
-                    </span>
-                  </span>
-                </a>
-              </div>
+              {/* "Download BIPE Placement Record · PDF" button removed
+                  28 May 2026 per user request -- the PDF claimed 993 placements
+                  through 2024 which now conflicts with the canonical 1,200+
+                  verified figure shown elsewhere on the site. The named alumni
+                  list below + recruiter strip already carry the record. */}
             </div>
 
             {/* Vertical stat stack */}
