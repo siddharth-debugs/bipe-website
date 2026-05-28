@@ -30,8 +30,9 @@ import { ROUTES, type RouteKey } from "@/lib/routes";
  *   - Body scroll lock when open; restored on close
  *   - Keyboard: ↑↓ navigate · ↵ select · ESC close
  *   - Click backdrop to close
- *   - Empty query shows curated Quick Links (6 most-trafficked
- *     destinations) so the palette is useful before typing
+ *   - Empty query shows curated Quick Links so the palette is useful
+ *     before typing — these are derived from ROUTES entries that opt in
+ *     via `quickLink: { label, hint, priority }` in lib/routes.ts
  */
 
 type PageResult = {
@@ -56,14 +57,25 @@ type QuickLink = {
   hint: string;
 };
 
-const QUICK_LINKS: QuickLink[] = [
-  { label: "Apply for 2026-27", path: "/apply", hint: "Application form · 5 minutes" },
-  { label: "Fees & scholarships", path: "/fees", hint: "AFRC ₹30,150/year" },
-  { label: "JEECUP counselling 2026", path: "/jeecup-counselling", hint: "7-round guide" },
-  { label: "Placements", path: "/placements", hint: "1,200+ alumni placed" },
-  { label: "Hostel", path: "/hostel", hint: "On-campus boys hostel" },
-  { label: "Contact", path: "/contact", hint: "Phone · WhatsApp · address" },
-];
+/**
+ * Curated empty-state shortcuts, derived from ROUTES (lib/routes.ts).
+ *
+ * Single source of truth: any route can opt in by adding a `quickLink`
+ * block ({ label, hint, priority }). That keeps palette copy, route
+ * paths and SEO metadata co-located — when a route moves or its label
+ * changes, the palette tracks it automatically.
+ *
+ * Ordering is by `priority` ascending; ties resolved by ROUTES key order.
+ */
+const QUICK_LINKS: QuickLink[] = (
+  Object.values(ROUTES) as Array<(typeof ROUTES)[RouteKey]>
+)
+  .filter(
+    (r): r is typeof r & { quickLink: NonNullable<typeof r.quickLink> } =>
+      !!r.quickLink,
+  )
+  .sort((a, b) => a.quickLink.priority - b.quickLink.priority)
+  .map((r) => ({ label: r.quickLink.label, path: r.path, hint: r.quickLink.hint }));
 
 export function CommandK() {
   const router = useRouter();

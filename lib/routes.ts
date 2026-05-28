@@ -39,6 +39,21 @@ export const ROUTES: Record<RouteKey, {
    * as of May 2026; other routes can stay undefined.
    */
   keywords?: string[];
+  /**
+   * Optional Cmd-K palette entry. Routes with `quickLink` show up in
+   * the empty-query state of the global palette (components/shell/CommandK.tsx).
+   *
+   * - `label` and `hint` are independent of SEO title/description — they
+   *   can be punchier and shorter (route titles often run 60+ chars for
+   *   ranking; the palette wants 20-30).
+   * - `priority` controls order, ascending (1 = top). Keep priorities
+   *   contiguous so re-ordering is just renumbering.
+   *
+   * Aim for ≤8 quick links; the palette is a curated shortcut surface,
+   * not a sitemap. If the list grows past that, prune lowest-priority
+   * before adding more.
+   */
+  quickLink?: { label: string; hint: string; priority: number };
 }> = {
   home: {
     path: "/",
@@ -108,6 +123,7 @@ export const ROUTES: Record<RouteKey, {
     // signal kept because primary audience is Hindi-medium.
     title: "Apply to BIPE 2026-27 · Free Application · JEECUP 4455 · हिंदी",
     description: "Apply to BIPE Phoolpur 2026-27 free · 5 minutes · JEECUP 4455. Counsellor call within 24 hrs. हिंदी / English WhatsApp +91-9198646464.",
+    quickLink: { label: "Apply for 2026-27", hint: "Application form · 5 minutes", priority: 1 },
   },
   visit: {
     path: "/visit",
@@ -122,6 +138,7 @@ export const ROUTES: Record<RouteKey, {
     // signal) instead of generic "Phone, Email, Address" label.
     title: "Contact BIPE · +91-9198646464 · info@bipe.ac.in · Phoolpur Varanasi",
     description: "Call BIPE: +91-9198646464 · info@bipe.ac.in · Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206. WhatsApp counsellor in हिंदी / English.",
+    quickLink: { label: "Contact", hint: "Phone · WhatsApp · address", priority: 6 },
   },
   placements: {
     path: "/placements",
@@ -131,6 +148,7 @@ export const ROUTES: Record<RouteKey, {
     // search intent.
     title: "Polytechnic Placements UP · 1,200+ at Mahindra, Tata Steel, BEL | BIPE",
     description: "1,200+ BIPE alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric. 2,200+ alumni network.",
+    quickLink: { label: "Placements", hint: "1,200+ alumni placed", priority: 4 },
   },
   alumni: {
     path: "/alumni",
@@ -154,6 +172,7 @@ export const ROUTES: Record<RouteKey, {
     // "2026-27" matches the cycle better than bare "2026".
     title: "Polytechnic fees 2026-27 · ₹30,150/year AFRC-approved | BIPE",
     description: "BIPE polytechnic fees 2026-27 · ₹30,150/year · AFRC-approved · No capitation, no hidden charges · Receipts for every payment · Hostel & mess separate.",
+    quickLink: { label: "Fees & scholarships", hint: "AFRC ₹30,150/year", priority: 2 },
   },
   scholarships: {
     path: "/scholarships",
@@ -198,6 +217,7 @@ export const ROUTES: Record<RouteKey, {
     //   - "BIPE hostel" (validation queries)
     title: "Hostels in Varanasi · Polytechnic Boys' Hostel · BIPE Phoolpur",
     description: "Looking for hostels in Varanasi? BIPE Phoolpur has an on-campus boys' hostel — furnished rooms, mess, Wi-Fi, study halls, resident warden, 24×7 security.",
+    quickLink: { label: "Hostel", hint: "On-campus boys hostel", priority: 5 },
   },
   faculty: {
     path: "/faculty",
@@ -623,6 +643,7 @@ export const ROUTES: Record<RouteKey, {
     // 6-step guidance hub.
     title: "JEECUP Counselling 2026 · 7 rounds · choice filling | BIPE 4455",
     description: "JEECUP counselling 2026 — 7 rounds (expanded from 5), choice filling, documents, seat allotment, reporting, common mistakes. How BIPE (4455) fits in.",
+    quickLink: { label: "JEECUP counselling 2026", hint: "7-round guide", priority: 3 },
     keywords: [
       "JEECUP counselling 2026",
       "JEECUP counselling rounds",
