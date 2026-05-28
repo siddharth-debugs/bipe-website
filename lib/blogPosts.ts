@@ -3125,10 +3125,16 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "12 min read",
     excerpt:
       "Which government exams a 3-year BTE UP polytechnic diploma makes you eligible for — SSC JE, RRB JE, UPPCL JE, UP PWD, Indian Army Technical Entry, Indian Navy SSR/AA. Branch-by-branch eligibility, salary scales, preparation timeline. Written for first-generation engineering families.",
+    // CTR rewrite · 28 May 2026 — same playbook. 90-day GSC: 1,588
+    // imps / 8 clicks / 0.50% CTR, dominated by "government job after
+    // polytechnic" + "diploma competitive exams" variants. Dropped
+    // "| BIPE", kept "Sarkari Naukri" (matches the transliterated
+    // query), and front-loaded the five exam names + the ₹35-44k
+    // basic anchor that families actually care about.
     metaTitle:
-      "Sarkari Naukri after Polytechnic Diploma 2026 · SSC JE, RRB JE, UPPCL ₹35-44k | BIPE",
+      "Polytechnic ke baad Sarkari Naukri 2026 — SSC JE, RRB JE, UPPCL JE ₹35-44k",
     metaDescription:
-      "After 3-year polytechnic diploma: SSC JE ₹35,400 basic, RRB JE Indian Railways, UPPCL JE (UP electrical), UP PWD, Army Technical Entry. Branch-wise exams + Year-3 preparation timeline. Real BIPE alumni examples.",
+      "3-साल पॉलिटेक्निक diploma के बाद सरकारी नौकरी — SSC JE ₹35,400 basic, RRB JE Railways, UPPCL JE, UP PWD, Army Technical Entry। Branch-wise eligibility और Year-3 preparation timeline।",
     sections: [
       {
         type: "callout",
@@ -3633,10 +3639,18 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "12 min read",
     excerpt:
       "पॉलिटेक्निक डिप्लोमा के बाद सच्ची शुरुआती सैलरी कितनी होती है — सरकारी JE ₹35-44 हज़ार, Tier-1 private ₹18-25 हज़ार, क्षेत्रीय उद्योग ₹12-22 हज़ार। साल 3, 5 और 10 बाद की कमाई, BIPE के असली alumni के example, और सच्ची range — आसान हिन्दी में।",
+    // CTR rewrite · 28 May 2026 — same playbook as the kya-hota-hai
+    // P0 rewrite. 90-day GSC: 4,612 impressions / 37 clicks / 0.80%
+    // CTR, dominated by transliterated "polytechnic ki salary",
+    // "polytechnic salary per month", and Devanagari variants.
+    // Dropped "| BIPE" (college-promo for informational query),
+    // matched the transliterated question form, and front-loaded
+    // the three salary anchors (₹35-44k / ₹18-25k / ₹12-22k) that
+    // are the actual reason a parent clicks this result.
     metaTitle:
-      "पॉलिटेक्निक सैलरी 2026 — Diploma Engineer Salary in Hindi | BIPE",
+      "Polytechnic Salary 2026 — Kitni Milti Hai? सरकारी JE ₹35-44k · Private ₹18-25k",
     metaDescription:
-      "पॉलिटेक्निक के बाद कितनी सैलरी मिलती है? सरकारी JE ₹35-44k, Tier-1 private (Mahindra, Tata) ₹18-25k, क्षेत्रीय manufacturing ₹12-22k। ब्रांच के हिसाब से, साल-दर-साल। BIPE वाराणसी (JEECUP 4455) के 1,200+ verified placements के data पर आधारित।",
+      "पॉलिटेक्निक के बाद कितनी सैलरी मिलती है? सरकारी JE ₹35-44k/महीना, Tier-1 private (Mahindra, Tata) ₹18-25k, regional manufacturing ₹12-22k। ब्रांच और साल के हिसाब से पूरी range — हिन्दी में।",
     sections: [
       {
         type: "callout",
