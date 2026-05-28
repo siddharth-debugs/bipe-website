@@ -898,11 +898,14 @@ body.no-motion .live-dot { animation: none; }
   max-width: 1480px; margin: 0 auto;
   gap: 20px;
   /* The actual frosted-glass surface — backdrop-filter works here
-     because this element is not sticky. See .nav for context. */
-  background: rgba(246, 244, 238, 0.55);
-  backdrop-filter: saturate(180%) blur(30px);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: saturate(180%) blur(30px);
+     because this element is not sticky. See .nav for context.
+     blur(30px) was too weak against sharp portrait photos on
+     /faculty + /principal — features still read through. Bumped
+     to blur(60px) + 0.68 alpha so the bar reads as a proper
+     frosted wash regardless of what's scrolling beneath. */
+  background: rgba(246, 244, 238, 0.68);
+  backdrop-filter: saturate(180%) blur(60px);
+  -webkit-backdrop-filter: saturate(180%) blur(60px);
 }
 /* Fallback when backdrop-filter is unsupported — opaque cream so
    scrolled content never reads through clearly. */
