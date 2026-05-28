@@ -1702,14 +1702,20 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "8 min read",
     excerpt:
       "A 3-year BTEUP diploma gives you direct entry to the second year of B.Tech at AKTU colleges. The UPCET Lateral Entry exam, the AICTE 20% reservation, branch mapping, timing, costs — and when lateral entry is the right call versus a straight diploma career.",
-    // CTR-rewritten May 2026: was 531 imp / 0.75% CTR. "Pathway guide
-    // for diploma holders" was vague; new title leads with the
-    // concrete benefit ("Direct 2nd Year Admission") + year freshness
-    // signal.
+    // CTR rewrite v2 · 28 May 2026 — first rewrite (May) moved CTR
+    // from "Pathway guide" framing to a concrete benefit. v2 is a
+    // lighter refinement based on 90-day GSC data (1,288 imps / 11
+    // clicks / 0.85% CTR) and the per-page query mix dominated by
+    // "aktu lateral entry" and "btech lateral entry means" intents.
+    // Pulled UPCET prominently to the title (it's the exam name
+    // searchers actually type), added the ₹ fee anchor that the
+    // syllabus winner-pattern showed works, and kept "| BIPE"
+    // because this is a transactional query (users want a credible
+    // source, not a Wikipedia-style definition).
     metaTitle:
-      "B.Tech Lateral Entry after Diploma 2026 — AKTU Direct 2nd Year Admission | BIPE",
+      "B.Tech Lateral Entry after Diploma — AKTU UPCET 2026 · Skip 1st Year | BIPE",
     metaDescription:
-      "Skip 1st year of B.Tech: BTEUP diploma holders get direct AKTU 2nd year admission via UPCET Lateral Entry. 20% AICTE-reserved seats, branch mapping, exam pattern, fees — and when it's worth doing vs starting a diploma career directly.",
+      "Skip B.Tech 1st year: BTEUP diploma holders → direct AKTU 2nd year B.Tech via UPCET Lateral Entry. 20% AICTE-reserved seats, branch mapping, exam pattern, ~₹70k/year fees. When it's worth doing vs a straight diploma career.",
     sections: [
       {
         type: "p",
@@ -2664,10 +2670,20 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "8 min read",
     excerpt:
       "Polytechnic diploma (3 years) vs ITI certificate (1-2 years) — which is right after Class 10? Eligibility, fees, duration, pay-scale-after-passing, government-job pipelines, lateral-entry options. Honest comparison for UP / Bihar families.",
+    // CTR rewrite · 28 May 2026 — 90-day GSC: 1,529 imps / 5 clicks
+    // / 0.33% CTR (worst of all blogs). Top queries are pure
+    // comparison/definitional: "is polytechnic and iti same",
+    // "difference between iti and polytechnic", "iti vs polytechnic".
+    // Old title's "Which Pays More?" hook missed the intent — users
+    // are asking "what's the difference?", not "which pays more?".
+    // The structural answer (3 yr engineer-grade vs 1-2 yr trade-grade)
+    // wasn't in the snippet at all. v2 front-loads that answer in
+    // both title and description so the SERP itself resolves the
+    // "same or different?" question.
     metaTitle:
-      "Polytechnic vs ITI after Class 10 — Which Pays More? 2026 Honest Comparison | BIPE",
+      "Polytechnic vs ITI — 3-Year Diploma vs 1-Year Trade Certificate · Class 10 Choice 2026",
     metaDescription:
-      "Polytechnic (3-year diploma) vs ITI (1-2 year certificate) after 10th — duration, fees, starting pay, government job eligibility, lateral entry to B.Tech. Honest UP/Bihar family guide with real BIPE alumni earnings.",
+      "Polytechnic = 3-year engineer-grade diploma (JEECUP, ₹35k JE jobs, B.Tech lateral entry). ITI = 1-2 year trade certificate (₹15-20k craftsman jobs). Branch-wise comparison for UP/Bihar families.",
     sections: [
       {
         type: "callout",
