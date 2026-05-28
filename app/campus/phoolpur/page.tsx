@@ -250,7 +250,7 @@ export default function Page() {
             How to reach BIPE <span className="serif">in Phoolpur.</span>
           </h2>
           <p className="lead" style={{ marginTop: 18, maxWidth: "60ch" }}>
-            Whether you&apos;re coming from inside Varanasi, from elsewhere in Eastern UP, or by air or long-distance train from another state, here&apos;s how to land at the BIPE campus.
+            Whether you&apos;re coming from inside Varanasi, from elsewhere in UP, or by air or long-distance train from another state, here&apos;s how to land at the BIPE campus.
           </p>
           <div className="grid" style={{ marginTop: 32, gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
             {TRANSPORT.map((t) => (

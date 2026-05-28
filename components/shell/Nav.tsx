@@ -179,7 +179,7 @@ export function Nav() {
               The institution
             </div>
             <div className="nav-mega-grid">
-              <MegaItem to="/about" title="BIPE" desc="Sixteen years in Eastern UP" icon="M3 21V10l9-6 9 6v11M9 21V12h6v9" />
+              <MegaItem to="/about" title="BIPE" desc="Sixteen years on record" icon="M3 21V10l9-6 9 6v11M9 21V12h6v9" />
               <MegaItem to="/chairman" title="Chairman's Message" desc="Dr. Chandrika Rai, IPS (Retd.)" icon="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" />
               <MegaItem to="/principal" title="Principal's Message" desc="A note from our leadership" icon="M3 5h18v14H3zM3 5l9 7 9-7" />
               <MegaItem to="/teaching" title="Teaching & Learning" desc="OBE + AI-augmented pedagogy" icon="M2 4h20v12H2zM2 20h20" />

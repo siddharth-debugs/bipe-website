@@ -55,7 +55,7 @@ async function loadHero(): Promise<HeroData> {
     // backend record should be updated via the admin panel to match,
     // otherwise this fix is dormant in production.
     description:
-      "AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,331 placed · Eastern UP since 2010.",
+      "AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,331 placed · since 2010.",
     cta_primary: { label: "Apply for 2026-27", href: "/apply" },
     cta_secondary: { label: "Book a campus visit", href: "/visit" },
     bg_image_url: BIPE_IMG.heroWide,
@@ -100,9 +100,14 @@ async function loadHero(): Promise<HeroData> {
   const bg_image_url = isLegacyHeroPath ? BIPE_IMG.heroWide : rawBgUrl;
 
   return {
-    headline_pre:   readString(c.headline_pre,   fallback.headline_pre),
-    headline_accent: readString(c.headline_accent, fallback.headline_accent),
-    headline_post:  readString(c.headline_post,  fallback.headline_post),
+    // headline_* also pinned to static fallbacks 28 May 2026 — the
+    // backend CMS still serves a singular "Engineer" (grammatically
+    // broken: singular subject + plural verb "begin"). The fallback
+    // is correctly plural ("Engineers"). Restore CMS wiring once the
+    // backend admin record is brought in line.
+    headline_pre:   fallback.headline_pre,
+    headline_accent: fallback.headline_accent,
+    headline_post:  fallback.headline_post,
     // Description is pinned to the static fallback as of 28 May 2026.
     // The backend admin record still carries a stale "1,000+ placed"
     // copy that contradicts the canonical 1,331 TPO-verified figure
@@ -250,7 +255,7 @@ export async function HeroFull() {
 
           {/*
             Hindi affirmation line (May 2026). BIPE's primary audience
-            is Hindi-medium families from rural Eastern UP and Bihar.
+            is Hindi-medium families across UP and Bihar.
             A small Devanagari reassurance immediately above the CTAs
             signals "this site is for you" at the exact moment of
             decision. Kept short (one short clause), low-emphasis
@@ -287,7 +292,7 @@ export async function HeroFull() {
                 background: "var(--accent)",
               }}
             />
-            हिन्दी में बात करें · Eastern UP families since 2010 · WhatsApp पर तुरंत जवाब
+            हिन्दी में बात करें · Hindi-medium families since 2010 · WhatsApp पर तुरंत जवाब
           </p>
 
           <div className="row" style={{ gap: 12, alignItems: "center", flexWrap: "wrap" }}>

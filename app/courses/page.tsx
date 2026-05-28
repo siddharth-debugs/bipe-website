@@ -12,7 +12,7 @@ const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
   {
     num: "01",
     title: "Follow what you build, not what you score.",
-    body: "Dairy and Civil don't pull the highest cut-offs but offer some of the strongest recruiter pipelines in Eastern UP. Pick the workshop you want to live in for three years.",
+    body: "Dairy and Civil don't pull the highest cut-offs but offer some of the strongest recruiter pipelines in UP. Pick the workshop you want to live in for three years.",
   },
   {
     num: "02",

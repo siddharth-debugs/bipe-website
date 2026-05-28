@@ -77,7 +77,7 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         "@type": "Organization",
         name: "Purwanchal Educational Trust",
       },
-      slogan: "Engineering education that changes lives in Eastern UP — since 2010.",
+      slogan: "Engineering education that changes lives — since 2010.",
       keywords: [
         "polytechnic college in Varanasi",
         "AICTE-approved polytechnic",

@@ -74,7 +74,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                The pedagogy we use to take a 10th-pass aspirant from rural Eastern UP and turn them, in three years, into a diploma engineer who can hold a tool, read a drawing, run a small team and walk into an employer's interview without translation.
+                The pedagogy we use to take a 10th-pass aspirant from rural India and turn them, in three years, into a diploma engineer who can hold a tool, read a drawing, run a small team and walk into an employer's interview without translation.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/courses" className="btn btn-primary">Explore courses <ArrowIcon size={14} /></Link>
@@ -219,7 +219,7 @@ export default function Page() {
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>Home visits.</span>
                 </h3>
                 <p style={{ marginTop: 18, color: "color-mix(in oklab, var(--paper) 75%, transparent)", fontSize: 16, lineHeight: 1.65, maxWidth: "58ch" }}>
-                  Each faculty member personally mentors a cohort of 20 students for the entire diploma. Mentors make periodic home visits to parents in Mau, Ghazipur, Azamgarh and beyond. Eastern UP families have asked for this; BIPE delivers it. The institution, the parent and the student function as one unit. No student falls through.
+                  Each faculty member personally mentors a cohort of 20 students for the entire diploma. Mentors make periodic home visits to parents in Mau, Ghazipur, Azamgarh and beyond. Families have asked for this; BIPE delivers it. The institution, the parent and the student function as one unit. No student falls through.
                 </p>
                 <div className="row" style={{ marginTop: 26, gap: 14 }}>
                   <Link href="/faculty" className="btn" style={{ background: "var(--paper)", color: "var(--ink)" }}>Meet our mentors <ArrowIcon size={14} /></Link>

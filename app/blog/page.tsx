@@ -57,7 +57,7 @@ export default function Page() {
     "@id": `${SITE_URL}/blog#blog`,
     name: "BIPE Blog",
     description:
-      "Notes from BIPE — practical writing for diploma students and parents in Eastern UP. Admission pathways, career options, and life on campus.",
+      "Notes from BIPE — practical writing for diploma students and families across UP and Bihar. Admission pathways, career options, and life on campus.",
     url: `${SITE_URL}/blog`,
     inLanguage: ["en-IN", "hi-IN"],
     publisher: {
@@ -93,7 +93,7 @@ export default function Page() {
       <PageHeader
         eyebrow="Blog"
         title="Notes from BIPE."
-        lead="Practical writing for diploma students and parents in Eastern UP — admission pathways, career options, and life on campus."
+        lead="Practical writing for diploma students and families across UP and Bihar — admission pathways, career options, and life on campus."
       />
 
       {/* ─── Hindi posts section ──────────────────────────────────

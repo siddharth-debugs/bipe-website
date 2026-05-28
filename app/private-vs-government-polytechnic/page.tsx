@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * Companion to the repositioned /why-bipe (which is now a category-
  * leader brand page). Where /why-bipe argues "BIPE is the chosen
  * private polytechnic", THIS page addresses the actual decision
- * families in Eastern UP are making at the funnel bottom:
+ * families are making at the funnel bottom:
  *
  *   "Government Polytechnic Varanasi (~₹12,000-22,000/year) or
  *    BIPE (AFRC ₹30,150/year)?"
@@ -105,7 +105,7 @@ const DIFFERENCES: DifferenceRow[] = [
     verifyPath: "/courses",
   },
   {
-    topic: "On-campus hostel · for Eastern UP & Bihar families",
+    topic: "On-campus hostel · for outstation families",
     bipe:
       "Boys' hostel on the Phoolpur campus — furnished rooms, on-campus mess, 24×7 security, resident warden. For families more than two hours from Varanasi, hostel access is the difference between a doable diploma and an impossible one.",
     context:
@@ -279,7 +279,7 @@ export default function Page() {
             </span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "62ch" }}>
-            For most families in Eastern UP and Bihar, this is the real polytechnic
+            For most families and Bihar, this is the real polytechnic
             admission decision — a government seat at roughly half to one-fifth the fee,
             or a BIPE seat with a documented placement infrastructure. Below: what&rsquo;s
             identical between the two, what&rsquo;s different, and when each is the right
@@ -814,7 +814,7 @@ export default function Page() {
                   UP Post-Matric scholarship for eligible categories.
                 </li>
                 <li>
-                  Coming from outside Varanasi (Eastern UP, Bihar) — on-campus hostel
+                  Coming from outside Varanasi — on-campus hostel
                   access is non-negotiable.
                 </li>
                 <li>

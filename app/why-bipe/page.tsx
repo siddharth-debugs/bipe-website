@@ -68,7 +68,7 @@ const PILLARS: Pillar[] = [
     verifyPath: "/courses",
   },
   {
-    topic: "On-campus hostel for Eastern UP & Bihar families",
+    topic: "On-campus hostel for outstation families",
     position:
       "Boys' hostel on the Phoolpur campus — furnished rooms, on-campus mess, 24×7 security, resident warden. The parent hotline rings the warden's desk directly. For families more than two hours from Varanasi, this is the difference between a doable diploma and an impossible one.",
     verifyLabel: "See hostel & facilities",
@@ -91,7 +91,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "Six-acre Phoolpur campus",
     position:
-      "Six acres at Phoolpur, ~14 km from Varanasi Cantt station. Free shuttle for visits during admission season. 550+ students from twelve Eastern UP districts plus Bihar — a real residential community, not a day-scholar building on a busy road.",
+      "Six acres at Phoolpur, ~14 km from Varanasi Cantt station. Free shuttle for visits during admission season. 550+ students from twelve districts plus Bihar — a real residential community, not a day-scholar building on a busy road.",
     verifyLabel: "Plan a campus visit",
     verifyPath: "/visit",
   },
@@ -186,11 +186,11 @@ export default function Page() {
             >
               1,331 placements.
             </span>{" "}
-            The private polytechnic Eastern UP keeps choosing.
+            The private polytechnic families keep choosing.
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
             Banaras Institute of Polytechnic &amp; Engineering has been the chosen private
-            polytechnic for families across Eastern UP and Bihar since 2010. Eight pillars
+            polytechnic for families across UP and Bihar since 2010. Eight pillars
             below — every claim verifiable on the public record, every link going to the
             source document on this site or the relevant registry.
           </p>

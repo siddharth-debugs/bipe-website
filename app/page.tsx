@@ -123,7 +123,13 @@ export default async function HomePage() {
       <StatsBar />
       <Recruiters />
       <Countdown />
-      <WhyBipe items={itemsFromSection<WhyItem>(sWhy)} />
+      {/* WhyBipe items also pinned to DATA.whyBipe (28 May 2026) for the
+          same reason as StatsBar above: the backend CMS still carries the
+          stale "Eastern UP-built. Thousands placed." text contradicting
+          the canonical 1,331 / regional-positioning instructions. Restore
+          items={itemsFromSection<WhyItem>(sWhy)} once the backend admin
+          record is brought in line. */}
+      <WhyBipe />
       <Branches branches={branches} />
       <JeecupSteps items={itemsFromSection<JeecupStep>(sSteps)} />
       <CampusLife items={itemsFromSection<Facility>(sFacilities)} />

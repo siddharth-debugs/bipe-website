@@ -275,7 +275,7 @@ export const ROUTES: Record<RouteKey, {
   blog: {
     path: "/blog",
     title: "BIPE Blog — Admissions, Campus & Career Updates | Varanasi",
-    description: "Stories, advice, and updates from BIPE — for diploma students and parents in Eastern UP.",
+    description: "Stories, advice, and updates from BIPE — for diploma students and families across UP and Bihar.",
   },
   grievance: {
     path: "/grievance",
@@ -363,7 +363,7 @@ export const ROUTES: Record<RouteKey, {
     // "BIPE vs [named competitor]" keywords — those compete for a tiny
     // volume cluster and leak SERP exposure to competitors.
     title: "Why BIPE · 16 Years · 1,331 Placements · AFRC ₹30,150 | Varanasi",
-    description: "Why families across Eastern UP choose BIPE since 2010 — BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, on-campus hostel, 1,331 placements. Eight pillars.",
+    description: "Why families across UP and Bihar choose BIPE since 2010 — BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, on-campus hostel, 1,331 placements. Eight pillars.",
     keywords: [
       "best polytechnic college in Varanasi",
       "top polytechnic college in Varanasi",

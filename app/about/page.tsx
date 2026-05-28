@@ -152,13 +152,13 @@ export default async function Page() {
             <div>
               <div className="eyebrow">EST. 2010 · PHOOLPUR · VARANASI</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
-                Serving Eastern UP since{" "}
+                Sixteen years{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  sixteen years.
+                  since 2010.
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches, 550+ students drawn from twelve Eastern-UP districts, 40 faculty — built to make rural Eastern UP a credible address for technical education.
+                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches, 550+ students drawn from twelve districts, 40 faculty — built to make rural India a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
@@ -323,9 +323,9 @@ export default async function Page() {
                 color: "var(--ink)",
                 letterSpacing: "-0.02em",
               }}>
-                &ldquo;Built by Eastern UP,
+                &ldquo;Built by families,
                 <br />
-                <span style={{ color: "var(--brand)" }}>for Eastern UP.</span>&rdquo;
+                <span style={{ color: "var(--brand)" }}>for families.</span>&rdquo;
               </p>
               <div style={{
                 marginTop: 28, paddingLeft: 16, borderLeft: "2px solid var(--accent)",
@@ -340,7 +340,7 @@ export default async function Page() {
                 BIPE was founded in 2010 by the <strong style={{ color: "var(--ink)" }}>Purwanchal Educational Trust</strong>, a registered non-profit, with one stated purpose: to bring accountable, hands-on technical education to families across Eastern Uttar Pradesh who could not afford to send their children to Lucknow, Kanpur or further.
               </p>
               <p style={{ marginTop: 18 }}>
-                Our catchment spans twelve Eastern-UP districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur and Kushinagar</strong>. The campus sits on six acres in Phoolpur, off the Varanasi&ndash;Ghazipur axis. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
+                Our catchment spans twelve districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur and Kushinagar</strong>. The campus sits on six acres in Phoolpur, off the Varanasi&ndash;Ghazipur axis. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
               </p>
               <p style={{ marginTop: 18 }}>
                 We run <em>five</em> BTEUP-affiliated branches — including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our dairy alumni work at Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
@@ -543,7 +543,7 @@ export default async function Page() {
                 pointerEvents: "none",
                 zIndex: 400,
               }}>
-                Eastern UP · Catchment 2026
+                UP & Bihar · Catchment 2026
               </div>
             </div>
           </div>
