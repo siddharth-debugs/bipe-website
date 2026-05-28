@@ -103,7 +103,15 @@ async function loadHero(): Promise<HeroData> {
     headline_pre:   readString(c.headline_pre,   fallback.headline_pre),
     headline_accent: readString(c.headline_accent, fallback.headline_accent),
     headline_post:  readString(c.headline_post,  fallback.headline_post),
-    description:    readString(c.description,    fallback.description),
+    // Description is pinned to the static fallback as of 28 May 2026.
+    // The backend admin record still carries a stale "1,000+ placed"
+    // copy that contradicts the canonical 1,331 TPO-verified figure
+    // in lib/data.ts and the Organization schema. Until the admin
+    // re-publishes the hero section with the new number, the
+    // fallback wins — see lib/data.ts > stats for the source of
+    // truth. Restore `readString(c.description, fallback.description)`
+    // once the backend has been brought in line.
+    description:    fallback.description,
     cta_primary:    { label: readString(cta1?.label, fallback.cta_primary.label), href: readString(cta1?.href, fallback.cta_primary.href) },
     cta_secondary:  { label: readString(cta2?.label, fallback.cta_secondary.label), href: readString(cta2?.href, fallback.cta_secondary.href) },
     bg_image_url,

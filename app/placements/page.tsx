@@ -628,9 +628,15 @@ export default async function Page() {
             ))}
           </div>
 
-          <div style={{ marginTop: 32, display: "flex", justifyContent: "center" }}>
+          <div style={{ marginTop: 32, display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
+            {/* Submit-your-story CTA. Was a mailto: link which silently
+                failed on devices without a configured email client (most
+                mobile users). Switched 28 May 2026 to WhatsApp + a mailto
+                fallback so at least one path always works. */}
             <a
-              href={`mailto:${DATA.contact.email}?subject=Alumni%20story%20submission`}
+              href={`https://wa.me/919198646464?text=${encodeURIComponent("नमस्ते BIPE — I'd like to submit my alumni story for the placements page.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="pill"
               style={{
                 padding: "12px 22px",
@@ -639,7 +645,20 @@ export default async function Page() {
                 color: "var(--paper)",
               }}
             >
-              Submit your story <ArrowIcon size={12} />
+              Submit your story on WhatsApp <ArrowIcon size={12} />
+            </a>
+            <a
+              href={`mailto:${DATA.contact.emailPlacement}?subject=Alumni%20story%20submission`}
+              className="pill"
+              style={{
+                padding: "12px 22px",
+                fontSize: 12,
+                background: "var(--paper-2)",
+                color: "var(--ink)",
+                border: "1px solid var(--line)",
+              }}
+            >
+              or email TPO
             </a>
           </div>
         </div>

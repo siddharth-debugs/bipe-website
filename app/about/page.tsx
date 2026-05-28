@@ -346,7 +346,7 @@ export default async function Page() {
                 We run <em>five</em> BTEUP-affiliated branches — including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our dairy alumni work at Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
               </p>
               <p style={{ marginTop: 18 }}>
-                Sixteen years in, more than a thousand BIPE alumni serve at <strong style={{ color: "var(--ink)" }}>Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro</strong> and dozens of other employers. Most of them came from villages within 80 kilometres of our gate. That is the story we are most proud of.
+                Sixteen years in, 1,331 TPO-verified BIPE alumni serve at <strong style={{ color: "var(--ink)" }}>Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro</strong> and dozens of other employers — including 28 in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police). Most of them came from villages within 80 kilometres of our gate. That is the story we are most proud of.
               </p>
             </div>
           </div>

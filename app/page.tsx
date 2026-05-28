@@ -108,7 +108,19 @@ export default async function HomePage() {
         JPEG when AVIF is disabled at the account.
       */}
       <HeroFull />
-      <StatsBar items={itemsFromSection<Stat>(sStats)} />
+      {/*
+        StatsBar is no longer wired to the backend PageSection.
+        Reason 28 May 2026: the Django admin had stale stats
+        ("1,000+ Successful alumni · Mahindra · Tata · BEL") that
+        contradicted the canonical 2,200+ alumni network / 1,331
+        TPO-verified placements maintained in lib/data.ts. Until the
+        backend admin UI is brought in line, the homepage reads
+        stats from DATA.stats (default fallback inside StatsBar) so
+        the canonical numbers stay consistent with the rest of the
+        site. Re-wire items={itemsFromSection<Stat>(sStats)} when
+        the backend stats row is verified clean.
+      */}
+      <StatsBar />
       <Recruiters />
       <Countdown />
       <WhyBipe items={itemsFromSection<WhyItem>(sWhy)} />
