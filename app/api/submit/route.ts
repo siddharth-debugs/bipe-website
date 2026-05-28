@@ -6,6 +6,7 @@ import {
   visitFormSchema,
 } from "@/lib/validation";
 import { forwardToBackend } from "@/lib/backend";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,6 +19,31 @@ export const dynamic = "force-dynamic";
  * for submissions — there is no SMTP / email path.
  */
 export async function POST(req: Request) {
+  // Rate-limit by client IP before doing any work. Default: 5 req / hour.
+  // Bot floods get a fast 429 with Retry-After + standard X-RateLimit-*
+  // headers; legitimate admission-cycle submissions never come close to
+  // tripping this (a family submits once, maybe twice if they made a typo).
+  const ip = getClientIp(req);
+  const rl = checkRateLimit(ip);
+  if (!rl.ok) {
+    const retryAfterSec = Math.max(1, Math.ceil((rl.resetAt - Date.now()) / 1000));
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "Too many requests. Please wait before submitting again.",
+      },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(retryAfterSec),
+          "X-RateLimit-Limit": String(rl.limit),
+          "X-RateLimit-Remaining": String(rl.remaining),
+          "X-RateLimit-Reset": String(Math.ceil(rl.resetAt / 1000)),
+        },
+      },
+    );
+  }
+
   let body: unknown;
   try {
     body = await req.json();
