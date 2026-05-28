@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NextImage from "next/image";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
@@ -40,6 +41,28 @@ const AUDIT_EXTRA_RECRUITERS: string[] = [
 // figure shown elsewhere on the site. Showing a partial breakdown
 // next to the headline total invited the comparison. The total
 // remains in the hero / schema; the breakdown is no longer published.
+
+// Government postings — TPO-verified subset of the 1,331 total
+// placements (28 alumni in sarkari naukri across the 12 named
+// departments below). Sourced from the TPO's "PLACED IN GOV.
+// ORGANIZATION" register, May 2026 hand-off. Order is by count
+// descending — ALP Indian Railways is by far the deepest pipeline.
+type GovDept = { dept: string; role: string; count: number };
+const GOV_DEPARTMENTS: GovDept[] = [
+  { dept: "Indian Railways · ALP",                  role: "Assistant Loco Pilot",                              count: 10 },
+  { dept: "UPPCL",                                  role: "Junior Engineer · UP Power Corporation",            count: 3 },
+  { dept: "Indian Railways",                        role: "Other technical cadres",                            count: 2 },
+  { dept: "UP Police",                              role: "General constabulary",                              count: 2 },
+  { dept: "UP Police · Radio Operator",             role: "Police radio-comms cadre",                          count: 2 },
+  { dept: "SSC JE · Military Engineering Services", role: "Junior Engineer · MES (Army)",                      count: 2 },
+  { dept: "Junior Engineer · Irrigation Dept. UP",  role: "State irrigation Junior Engineer",                  count: 2 },
+  { dept: "Junior Engineer · UPSSSC",               role: "UP Subordinate Services Selection Commission JE",   count: 1 },
+  { dept: "UP Metro",                               role: "Operations / engineering",                          count: 1 },
+  { dept: "UPRVNL",                                 role: "UP Rajkiya Vidyut Nigam Ltd.",                      count: 1 },
+  { dept: "Soil Conservation",                      role: "Soil conservation assistant",                       count: 1 },
+  { dept: "MP State Energy",                        role: "Wind & solar plant operations",                     count: 1 },
+];
+const GOV_TOTAL = GOV_DEPARTMENTS.reduce((a, d) => a + d.count, 0);
 
 type Alumnus = { name: string; tag: string; role: string; company: string; line: string };
 const ALUMNI: Alumnus[] = [
@@ -345,6 +368,70 @@ export default async function Page() {
         carry the placement-record argument; the per-branch
         tabulation isn't needed alongside them.
       */}
+
+      {/* ====================================================================== */}
+      {/* 2b. GOVERNMENT POSTINGS — 28 in govt, by department                     */}
+      {/* ====================================================================== */}
+      <section className="section bipe-pad" style={{ background: "var(--paper)", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden="true" style={{
+          position: "absolute", left: -200, bottom: -180, width: 460, height: 460, borderRadius: "50%",
+          background: "color-mix(in oklab, var(--brand) 8%, transparent)",
+          filter: "blur(120px)", pointerEvents: "none",
+        }} />
+        <div className="container" style={{ position: "relative" }}>
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 44 }}>
+            <div>
+              <div className="eyebrow">Sarkari Naukri · TPO-verified</div>
+              <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "14ch" }}>
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  {GOV_TOTAL} alumni
+                </span>{" "}
+                in government posts.
+              </h2>
+            </div>
+            <p className="lead" style={{ maxWidth: "62ch" }}>
+              Government pipelines that BIPE diploma holders actually convert into &mdash; Indian Railways ALP, UPPCL Junior Engineer, SSC JE / Military Engineering Services, UP Police, Junior Engineer Irrigation, UPSSSC and more. Per the TPO&rsquo;s verified list, cumulative through 2025.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 14 }}>
+            {GOV_DEPARTMENTS.map((d) => (
+              <div
+                key={d.dept}
+                className="card"
+                style={{
+                  padding: "20px 22px",
+                  display: "grid",
+                  gridTemplateColumns: "1fr auto",
+                  gap: 14,
+                  alignItems: "center",
+                  background: "var(--paper-2)",
+                }}
+              >
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontWeight: 600, fontSize: 15, color: "var(--ink)" }}>{d.dept}</div>
+                  <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 4, lineHeight: 1.4 }}>{d.role}</div>
+                </div>
+                <div className="serif" style={{
+                  fontSize: 32,
+                  lineHeight: 1,
+                  color: "var(--brand)",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  minWidth: 36,
+                  textAlign: "right",
+                }}>
+                  {d.count}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="muted" style={{ marginTop: 22, fontSize: 13, fontFamily: "var(--font-mono)", letterSpacing: "0.04em" }}>
+            Total in govt posts: {GOV_TOTAL} &middot; Subset of the {Number(1331).toLocaleString("en-IN")} TPO-verified placements through 2025.
+          </p>
+        </div>
+      </section>
 
       {/* ====================================================================== */}
       {/* 3. RECRUITER WALL — DARK                                                */}
@@ -878,24 +965,37 @@ export default async function Page() {
                 Four jobs, run on a sixteen-year cadence — pipeline, training, verification, and alumni tracking. Nothing more, nothing less.
               </p>
 
+              {/* TPO profile — Amit Kumar (Training & Placement Officer).
+                  Photo + name + designation surface BIPE's named TPO so
+                  families know who to ask for. Contact details below
+                  cascade from DATA.contact.{phonePlacement,emailPlacement}. */}
               <div style={{
                 marginTop: 28,
-                padding: "18px 22px",
+                padding: "22px 22px 20px",
                 border: "1px solid var(--line)",
-                borderRadius: 14,
+                borderRadius: 16,
                 background: "var(--white)",
-                display: "flex", flexDirection: "column", gap: 10,
+                display: "flex", flexDirection: "column", gap: 16,
               }}>
-                <div className="eyebrow" style={{ color: "var(--brand)" }}>Reach the cell</div>
-                <a href={`mailto:${DATA.contact.emailPlacement}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
-                  <span style={{
-                    width: 28, height: 28, borderRadius: 8,
-                    background: "var(--brand-soft)", color: "var(--brand)",
-                    display: "inline-flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 14, fontWeight: 700,
-                  }}>@</span>
-                  {DATA.contact.emailPlacement}
-                </a>
+                <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                  <NextImage
+                    src="/faculty/amit-kumar.png"
+                    alt="Amit Kumar — BIPE Training & Placement Officer"
+                    width={72}
+                    height={72}
+                    style={{ borderRadius: 14, objectFit: "cover", flexShrink: 0 }}
+                  />
+                  <div style={{ minWidth: 0 }}>
+                    <div className="eyebrow" style={{ color: "var(--brand)" }}>Training &amp; Placement Officer</div>
+                    <div style={{ fontWeight: 700, fontSize: 18, marginTop: 4 }}>Amit Kumar</div>
+                    <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2, lineHeight: 1.4 }}>
+                      Lecturer · Mechanical Engineering · 10+ years
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ height: 1, background: "var(--line)" }} />
+
                 <a href={`tel:${DATA.contact.phonePlacement}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
                   <span style={{
                     width: 28, height: 28, borderRadius: 8,
@@ -905,6 +1005,15 @@ export default async function Page() {
                     <PhoneIcon />
                   </span>
                   {DATA.contact.phonePlacement}
+                </a>
+                <a href={`mailto:${DATA.contact.emailPlacement}`} style={{ display: "inline-flex", alignItems: "center", gap: 10, fontWeight: 600, color: "var(--ink)" }}>
+                  <span style={{
+                    width: 28, height: 28, borderRadius: 8,
+                    background: "var(--brand-soft)", color: "var(--brand)",
+                    display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 14, fontWeight: 700,
+                  }}>@</span>
+                  {DATA.contact.emailPlacement}
                 </a>
               </div>
             </div>

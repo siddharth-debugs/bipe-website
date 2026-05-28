@@ -17,7 +17,7 @@ const KEY_DIFFS = [
   },
   {
     heading: "Fees per academic year",
-    govt: "₹11,870 – ₹35,610 (government fee structure)",
+    govt: "₹12,000 – ₹22,000 (government fee structure)",
     aided: "Government-set fee, in the same low range. Cannot charge private rates.",
     private: "₹30,000 – ₹1,01,000+ (varies by AFRC approval status and institute reputation)",
   },
@@ -146,7 +146,7 @@ export default function Page() {
             and managed. Three operational consequences:
           </p>
           <ol style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "70ch", lineHeight: 1.8, paddingLeft: 22 }}>
-            <li><strong>Fees are government-set</strong> — aided institutes cannot charge private-school rates. Fees sit in the same ₹11,870-35,610/year band as government polytechnics.</li>
+            <li><strong>Fees are government-set</strong> — aided institutes cannot charge private-school rates. Fees sit in the same ₹12,000-22,000/year band as government polytechnics.</li>
             <li><strong>Admission is JEECUP-based</strong> — same counselling rounds, same merit-rank system. Aided seats are treated similarly to government for the fee-subsidy benefit.</li>
             <li><strong>Faculty are partly government-paid</strong> — where the grant applies, teachers are government-cadre employees. Some institutes mix government-paid and private faculty.</li>
           </ol>

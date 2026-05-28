@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * private polytechnic", THIS page addresses the actual decision
  * families in Eastern UP are making at the funnel bottom:
  *
- *   "Government Polytechnic Varanasi (~₹6,000-18,000/year) or
+ *   "Government Polytechnic Varanasi (~₹12,000-22,000/year) or
  *    BIPE (AFRC ₹30,150/year)?"
  *
  * That's the real competitive set for BIPE — not other private
@@ -158,7 +158,7 @@ const FAQS: FaqItem[] = [
     question:
       "How much cheaper is Government Polytechnic Varanasi compared to BIPE?",
     answer:
-      "Government polytechnics in UP typically charge between ₹6,000 and ₹18,000 per year in total fees, depending on the specific institute, branch and student category. BIPE's AFRC-approved tuition is ₹30,150 per year. Verify the current Government Polytechnic Varanasi fee structure directly on their institute notice or the BTE UP fee notification before deciding.",
+      "Government polytechnics in UP typically charge between ₹12,000 and ₹22,000 per year in total fees, depending on the specific institute, branch and student category. BIPE's AFRC-approved tuition is ₹30,150 per year. Verify the current Government Polytechnic Varanasi fee structure directly on their institute notice or the BTE UP fee notification before deciding.",
   },
   {
     question:
@@ -354,7 +354,7 @@ export default function Page() {
                   lineHeight: 1.15,
                 }}
               >
-                ~₹6,000–18,000<span style={{ fontSize: 16, color: "var(--ink-3)" }}> /year</span>
+                ~₹12,000–22,000<span style={{ fontSize: 16, color: "var(--ink-3)" }}> /year</span>
               </div>
               <p
                 style={{
@@ -461,7 +461,7 @@ export default function Page() {
             </div>
             <p style={{ margin: 0, color: "var(--ink-1)", fontSize: 15, lineHeight: 1.65 }}>
               Over a full 3-year diploma, the fee difference works out to roughly{" "}
-              <strong>₹36,000–₹72,000 in additional tuition</strong> at BIPE versus a
+              <strong>₹24,000–₹55,000 in additional tuition</strong> at BIPE versus a
               government polytechnic — meaningful for any family, defining for some. The
               rest of this page lays out what that delta pays for, and when it&rsquo;s
               worth it (and when it isn&rsquo;t).

@@ -24,7 +24,7 @@ const POLYTECHNICS: GovtPoly[] = [
     location: "Varanasi (Kuru Pindra block)",
     branches: "Electrical Engineering · Textile Engineering",
     seats: "60 total · 30 per branch",
-    fees: "₹35,610 per academic year",
+    fees: "~₹22,000 per academic year (upper end of GP fee range)",
     notes:
       "The only general government polytechnic within Varanasi district. Total intake of just 60 students across 2 branches makes it sharply rank-competitive. Most JEECUP applicants from Varanasi and surrounding districts do not secure a seat here.",
   },
@@ -33,7 +33,7 @@ const POLYTECHNICS: GovtPoly[] = [
     location: "Varanasi",
     branches: "Multiple branches (Civil, Electronics, etc. — verify current offering)",
     seats: "Limited per branch",
-    fees: "Government structure (~₹11,870-35,610/year)",
+    fees: "Government structure (~₹12,000-22,000/year)",
     notes:
       "Girls-only catchment. Strong reputation, BTE UP-affiliated. Boys are not eligible — a real constraint for many family situations.",
   },
@@ -42,7 +42,7 @@ const POLYTECHNICS: GovtPoly[] = [
     location: "Mirzapur city",
     branches: "Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal)",
     seats: "Standard government intake",
-    fees: "Government structure (~₹11,870-35,610/year)",
+    fees: "Government structure (~₹12,000-22,000/year)",
     notes:
       "Serves Mirzapur district. Limited Dairy Engineering presence in the region — the dairy-specific career path goes via the rare BTE UP Dairy-affiliated programmes (BIPE is one of only four in UP).",
   },
@@ -52,7 +52,7 @@ const POLYTECHNICS: GovtPoly[] = [
     founded: "1984",
     branches: "Mechanical, Civil, Electrical, Electronics (verify current syllabus)",
     seats: "Standard government intake",
-    fees: "Government structure (~₹11,870-35,610/year)",
+    fees: "Government structure (~₹12,000-22,000/year)",
     notes:
       "One of Eastern UP's longer-running BTE UP government polytechnics. JEECUP cutoffs in popular branches close around 16,000 rank with ~200+ marks in the general category per recent cycles.",
   },
@@ -61,7 +61,7 @@ const POLYTECHNICS: GovtPoly[] = [
     location: "Ghazipur district",
     branches: "Civil, Electrical, Mechanical (verify current syllabus)",
     seats: "Standard government intake",
-    fees: "Government structure (~₹11,870-35,610/year)",
+    fees: "Government structure (~₹12,000-22,000/year)",
     notes:
       "Serves Ghazipur's agricultural and small-industry belt. Dairy Engineering — the natural fit for Ghazipur's dairy-cluster households — is generally not offered at this government polytechnic.",
   },
@@ -79,7 +79,7 @@ const POLYTECHNICS: GovtPoly[] = [
     location: "Azamgarh district",
     branches: "Civil, Electrical, Mechanical (verify current syllabus)",
     seats: "Standard government intake — rank competitive",
-    fees: "Government structure (~₹11,870-35,610/year)",
+    fees: "Government structure (~₹12,000-22,000/year)",
     notes:
       "Azamgarh has one of Eastern UP's larger JEECUP applicant pools, so cutoffs at the local government polytechnic can run sharper than the regional average.",
   },
@@ -92,7 +92,7 @@ const FAQS = [
   },
   {
     q: "What is the typical fee range at UP government polytechnics?",
-    a: "UP government polytechnic fees range from approximately ₹11,870 to ₹35,610 per academic year, varying by institute, branch, and category. The lower end (~₹11,870) is typical for general government polytechnics; the higher end (~₹35,610) applies at specific institutes like Government Polytechnic Kuru Pindra in Varanasi. Verify the current fee structure on the BTE UP fee gazette or the institute's own notice.",
+    a: "UP government polytechnic fees range from approximately ₹12,000 to ₹22,000 per academic year, varying by institute, branch, and category. The lower end (~₹12,000) is typical for general government polytechnics; the upper end (~₹22,000) applies at specific institutes like Government Polytechnic Kuru Pindra in Varanasi. Verify the current fee structure on the BTE UP fee gazette or the institute's own notice.",
   },
   {
     q: "Is a government polytechnic diploma worth more than a private one from BIPE?",
@@ -204,7 +204,7 @@ export default function Page() {
               { label: "Private", value: "1,200+", sub: "polytechnics in UP" },
               { label: "Government seats", value: "~18-20k", sub: "annual intake" },
               { label: "JEECUP applicants", value: "50k+", sub: "in serious rank pool" },
-              { label: "Fee range govt.", value: "₹11,870-35,610", sub: "per academic year" },
+              { label: "Fee range govt.", value: "₹12,000-22,000", sub: "per academic year" },
               { label: "Fee range private", value: "₹30k-1.01L", sub: "per academic year" },
               { label: "BIPE AFRC", value: "₹30,150", sub: "AFRC-approved · low end of private" },
             ].map((s) => (
@@ -227,9 +227,9 @@ export default function Page() {
             <strong>50,000+ rank-competitive JEECUP applicants</strong> means most students
             do not secure a government seat in their preferred branch. The aided category is
             rare (19 institutes statewide). The private layer absorbs the rest — and BIPE&rsquo;s
-            AFRC-approved ₹30,150/year sits at the low end of the private band, comparable to
-            the higher-fee government institutes like Government Polytechnic Kuru Pindra in
-            Varanasi (₹35,610/year).
+            AFRC-approved ₹30,150/year sits at the low end of the private band, only
+            ~₹8,000/year more than the upper-end government institutes like Government
+            Polytechnic Kuru Pindra in Varanasi (~₹22,000/year).
           </p>
         </div>
       </section>
