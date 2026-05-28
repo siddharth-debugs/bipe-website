@@ -104,8 +104,17 @@ export default function Page() {
           <div style={{ marginTop: 26, display: "flex", gap: 12, flexWrap: "wrap" }}>
             <Link href="/grievance" className="btn btn-primary">Other grievance committees <ArrowIcon size={14} /></Link>
             <a href="https://www.antiragging.in/" target="_blank" rel="noopener noreferrer" className="btn btn-ghost">UGC anti-ragging portal &rarr;</a>
-            {/* TODO: link to actual undertaking PDF once uploaded under /downloads/ */}
-            <a href="/downloads/anti-ragging-undertaking.pdf" download className="btn btn-ghost">Download undertaking (PDF)</a>
+            {/* "Download undertaking (PDF)" replaced 28 May 2026 — the
+                file was never uploaded under /public/downloads/, so the
+                button 404'd. Until the PDF lands, the button is wired
+                to a mailto to the Anti-Ragging Committee asking for the
+                undertaking — at least the action works end-to-end. */}
+            <a
+              href={`mailto:${DATA.contact.emailAntiRagging}?subject=Request%20for%20Anti-Ragging%20Undertaking%20form`}
+              className="btn btn-ghost"
+            >
+              Request undertaking from IC
+            </a>
           </div>
         </div>
       </section>

@@ -221,9 +221,15 @@ export default function Page() {
                 <p style={{ marginTop: 18, color: "color-mix(in oklab, var(--paper) 75%, transparent)", fontSize: 16, lineHeight: 1.65, maxWidth: "58ch" }}>
                   Each faculty member personally mentors a cohort of 20 students for the entire diploma. Mentors make periodic home visits to parents in Mau, Ghazipur, Azamgarh and beyond. Families have asked for this; BIPE delivers it. The institution, the parent and the student function as one unit. No student falls through.
                 </p>
+                {/* "How mentoring works" button removed 28 May 2026 --
+                    it used to link to /about (mismatch — /about is the
+                    institute overview, not a mentoring-methodology
+                    deep-dive). The mentoring methodology is the
+                    paragraph immediately above, so a second button
+                    pointing somewhere else is redundant. "Meet our
+                    mentors" stays — it leads to the faculty list. */}
                 <div className="row" style={{ marginTop: 26, gap: 14 }}>
                   <Link href="/faculty" className="btn" style={{ background: "var(--paper)", color: "var(--ink)" }}>Meet our mentors <ArrowIcon size={14} /></Link>
-                  <Link href="/about" className="btn btn-ghost" style={{ color: "var(--paper)", borderColor: "color-mix(in oklab, var(--paper) 30%, transparent)" }}>How mentoring works</Link>
                 </div>
               </div>
 

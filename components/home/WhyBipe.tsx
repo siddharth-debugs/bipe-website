@@ -54,7 +54,7 @@ export const WhyBipe = ({ items: liveItems }: { items?: WhyItem[] } = {}) => {
               </p>
               <div className="row" style={{ marginTop: 28, gap: 14 }}>
                 <Link href="/faculty" className="btn" style={{ background: "var(--paper)", color: "var(--ink)" }}>Meet our mentors <ArrowIcon size={14} /></Link>
-                <Link href="/about" className="btn btn-ghost" style={{ color: "var(--paper)", borderColor: "color-mix(in oklab, var(--paper) 30%, transparent)" }}>How mentoring works</Link>
+                <Link href="/teaching" className="btn btn-ghost" style={{ color: "var(--paper)", borderColor: "color-mix(in oklab, var(--paper) 30%, transparent)" }}>How mentoring works</Link>
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 8, paddingLeft: 32, borderLeft: "1px solid color-mix(in oklab, var(--paper) 18%, transparent)" }}>
