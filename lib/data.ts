@@ -204,22 +204,29 @@ export const DATA: DataShape = {
       seats: 60, fee: "30,150",
       desc: "Rare diploma — offered by only 4 institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.",
       tag: "Rare", color: 2,
-      // Dairy photography update 2026-05-20: the May Drive sync added
-      // one verified-dairy frame to Cloudinary
-      // (bipe/labs/dairy/dairy-engineering). We don't yet have multiple
-      // distinct campus photos of the dairy programme, so the slider
-      // mixes the one real photo with two minimalist SVG illustrations
-      // (/public/illustrations/dairy-*.svg) — honest about the photo
-      // gap, no stock pasture cows pretending to be on the BIPE pilot
-      // floor.
+      // Dairy photography update 2026-05-28: replaced the Drive-synced
+      // Cloudinary placeholder + two SVG illustration fallbacks with
+      // real BIPE lab photos (hydraulics, chemistry — both used by
+      // Dairy Engineering students for process fluid mechanics and
+      // milk-quality testing) and three industrial-visit frames from
+      // a BIPE student visit to Banas Dairy Plant Varanasi.
+      //
+      // Important: BIPE does NOT operate its own pilot dairy plant.
+      // The earlier "pilot plant equipment" alt text was misleading
+      // and has been removed. Industrial-visit photos are honestly
+      // labelled as such — the convention matches the Electrical
+      // branch (industrial-visit-220-kb-substation).
       thumbnail: {
-        src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263644/bipe/labs/dairy/dairy-engineering",
-        alt: "BIPE Dairy Engineering — pilot plant equipment",
+        src: "/labs/dairy/hydraulics-lab.jpg",
+        alt: "BIPE hydraulics lab — pumps and flow rigs (BIPEHYD/201 asset tags visible) used by Dairy students for process fluid mechanics",
       },
       slides: [
-        { src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto/v1779263644/bipe/labs/dairy/dairy-engineering", alt: "BIPE Dairy Engineering — pilot plant equipment" },
-        { src: "/illustrations/dairy-processing.svg", alt: "Dairy processing illustration — milk droplet and pasteurisation arcs" },
-        { src: "/illustrations/dairy-plant.svg", alt: "Dairy pilot plant illustration — storage tank with inflow and outflow pipes" },
+        { src: "/labs/dairy/hydraulics-lab.jpg", alt: "BIPE hydraulics lab — pumps and flow rigs (BIPEHYD/201 asset tags visible) used by Dairy students for process fluid mechanics" },
+        { src: "/labs/dairy/chemistry-lab.jpg", alt: "BIPE chemistry lab — used by Dairy students for milk-quality and biochemistry testing" },
+        { src: "/labs/dairy/industrial-visit-banas-dairy-processing-floor.jpg", alt: "BIPE Dairy students at Banas Dairy Plant Varanasi — automated FILLPACK processing floor" },
+        { src: "/labs/dairy/industrial-visit-banas-dairy-storage-tanks.jpg", alt: "BIPE Dairy students at Banas Dairy Plant Varanasi — bulk milk storage silos" },
+        { src: "/labs/dairy/industrial-visit-banas-dairy-capping-line.jpg", alt: "BIPE Dairy students at Banas Dairy Plant Varanasi — automated capping and conveyor line" },
+        { src: "/labs/dairy/mechanics-of-solids-lab.jpg", alt: "BIPE Mechanics of Solids lab — UTM and materials testing used by Dairy students for processing-equipment fundamentals" },
       ],
     },
     {
