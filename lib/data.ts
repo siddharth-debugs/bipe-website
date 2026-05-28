@@ -143,15 +143,21 @@ export const DATA: DataShape = {
     // from it too. Don't fork — add new platforms here, not in
     // consumers.
     //
-    // YouTube was removed in May 2026: both candidate channels
-    // (youtube.com/@bipevns and youtube.com/@bipevaranasi) returned
-    // 404 when probed. Re-add this row when an actual channel exists.
-    // X / LinkedIn URLs probed inconclusively (403 / 999 — bot
-    // blocked, can be live behind that); leaving them in.
-    { name: "Facebook",  handle: "bipevns", url: "https://www.facebook.com/bipevns/" },
-    { name: "Instagram", handle: "bipevns", url: "https://www.instagram.com/bipevns/" },
-    { name: "X",         handle: "bipevns", url: "https://x.com/bipevns" },
-    { name: "LinkedIn",  handle: "bipe-varanasi", url: "https://www.linkedin.com/school/bipe-varanasi/" },
+    // Handles confirmed by Praveen 28 May 2026:
+    //   X        → x.com/bipeinstitute (was bipevns; corrected)
+    //   Insta    → instagram.com/bipevns (unchanged; the igsh=… form
+    //              the user shared is just a share-tracking suffix,
+    //              the canonical handle is bipevns)
+    //   YouTube  → youtube.com/channel/UCrMRSVL5ugbXLPXVcqLI4Og
+    //              (the earlier @bipevns / @bipevaranasi probes both
+    //              404'd; this is the actual channel ID. Channel-ID
+    //              URLs are stable even if the custom @handle changes
+    //              later, so prefer this form.)
+    { name: "Facebook",  handle: "bipevns",          url: "https://www.facebook.com/bipevns/" },
+    { name: "Instagram", handle: "bipevns",          url: "https://www.instagram.com/bipevns/" },
+    { name: "X",         handle: "bipeinstitute",    url: "https://x.com/bipeinstitute" },
+    { name: "YouTube",   handle: "BIPE Varanasi",    url: "https://www.youtube.com/channel/UCrMRSVL5ugbXLPXVcqLI4Og" },
+    { name: "LinkedIn",  handle: "bipe-varanasi",    url: "https://www.linkedin.com/school/bipe-varanasi/" },
     // Wikidata entity (created May 2026 — Q139892164). Listing the
     // canonical Wikidata URL in schema.org `sameAs` is THE explicit
     // signal to Google/Bing/AI assistants that "this domain IS the

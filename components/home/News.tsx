@@ -19,22 +19,54 @@ export const News = async () => {
           </div>
           <Link href="/events" className="btn btn-ghost">All events <ArrowIcon /></Link>
         </div>
+        {/* 28 May 2026 — wrapped every news card in a <Link href="/events">.
+            Previously the cards looked clickable (visible arrow on the
+            "rest" cards in the bottom row) but had no link wrap — the
+            UI lied about the affordance. There are no per-event detail
+            pages yet, so the natural destination is the /events listing
+            page, which carries the full announcement copy plus the
+            larger photo gallery. */}
         <div className="grid bipe-grid-3" style={{ gridTemplateColumns: "1.2fr 1fr 1fr" }}>
           {top.map((e, i) => (
-            <div key={e.id} className="card reveal" style={{ padding: i === 0 ? 28 : 22, gridRow: i === 0 ? "span 1" : "auto", transitionDelay: `${i * 50}ms` }}>
+            <Link
+              key={e.id}
+              href="/events"
+              className="card reveal"
+              style={{
+                padding: i === 0 ? 28 : 22,
+                gridRow: i === 0 ? "span 1" : "auto",
+                transitionDelay: `${i * 50}ms`,
+                display: "block",
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
               <div className="row" style={{ gap: 10, marginBottom: 14 }}>
                 <span className="pill">{e.tag}</span>
                 <span className="muted" style={{ fontFamily: "var(--font-mono)", fontSize: 11 }}>{formatDate(e.date)}</span>
               </div>
               <h3 className={i === 0 ? "bipe-h2" : "bipe-h3"}>{e.title}</h3>
               <p style={{ color: "var(--ink-2)", fontSize: 14, marginTop: 12, lineHeight: 1.55 }}>{e.body}</p>
-            </div>
+            </Link>
           ))}
         </div>
         {rest.length > 0 && (
           <div className="bipe-img-strip" style={{ marginTop: 18, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             {rest.map((e) => (
-              <div key={e.id} className="card reveal" style={{ padding: 18, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14 }}>
+              <Link
+                key={e.id}
+                href="/events"
+                className="card reveal"
+                style={{
+                  padding: 18,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: 14,
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
+              >
                 <div>
                   <div className="row" style={{ gap: 10, marginBottom: 6 }}>
                     <span className="pill" style={{ fontSize: 10 }}>{e.tag}</span>
@@ -43,7 +75,7 @@ export const News = async () => {
                   <div style={{ fontWeight: 600, fontSize: 15 }}>{e.title}</div>
                 </div>
                 <ArrowIcon />
-              </div>
+              </Link>
             ))}
           </div>
         )}

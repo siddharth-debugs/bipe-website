@@ -1,9 +1,16 @@
 import React from "react";
-import { getRecruiters } from "@/lib/content";
+import { DATA } from "@/lib/data";
 
-export const Recruiters = async () => {
-  // Dynamic-first; falls back to lib/data.ts recruiters if backend is down.
-  const recruiters = (await getRecruiters()).map((r) => r.name);
+export const Recruiters = () => {
+  // Pinned to DATA.recruiters as of 28 May 2026.
+  //
+  // We used to call getRecruiters() (backend-first, static fallback),
+  // but the backend kept serving the OLD recruiter list that still
+  // included Parag, NDDB, Amul, Mother Dairy etc. The static fallback
+  // was already curated to drop those (see lib/data.ts:281-290 — the
+  // post-Overall.docx curation) but the dynamic fetch kept overriding.
+  // Until the admin record is brought in line, the static list wins.
+  const recruiters = DATA.recruiters;
   return (
   <section className="section-tight">
     <div className="container" style={{ marginBottom: 18 }}>

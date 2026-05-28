@@ -379,7 +379,7 @@ export const BLOG_POSTS: BlogPost[] = [
   // but "here's how to think about your fit."
   {
     slug: "mechanical-ya-computer-science-kaunsi-branch-chunein",
-    title: "Mechanical ya Computer Science — kaunsi branch chunें?",
+    title: "Mechanical ya Computer Science — kaunsi branch chunein?",
     category: "Career Guidance · Hinglish",
     date: "27 May 2026",
     publishedISO: "2026-05-27",
