@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { DatePicker } from "@/components/ui/DatePicker";
+import { Honeypot } from "@/components/shell/Honeypot";
 import {
   visitFormSchema,
   visitDefaults,
@@ -32,6 +33,7 @@ function todayIso(): string {
 
 export function VisitForm() {
   const [status, setStatus] = useState<SubmitStatus>({ state: "idle" });
+  const honeypotRef = useRef<HTMLInputElement | null>(null);
 
   const {
     register,
@@ -52,7 +54,10 @@ export function VisitForm() {
       const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          website: honeypotRef.current?.value ?? "",
+        }),
       });
       const json = (await res.json()) as {
         ok: boolean;
@@ -160,6 +165,7 @@ export function VisitForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <Honeypot ref={honeypotRef} />
       {/* Row 1 — name + phone */}
       <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
         <div className={errClass("name")}>

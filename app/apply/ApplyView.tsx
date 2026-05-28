@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
+import { Honeypot } from "@/components/shell/Honeypot";
 import {
   applyFormSchema,
   applyDefaults,
@@ -23,6 +24,7 @@ type SubmitStatus =
 
 export function ApplyView() {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({ state: "idle" });
+  const honeypotRef = useRef<HTMLInputElement | null>(null);
 
   const {
     register,
@@ -45,7 +47,12 @@ export function ApplyView() {
       const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, visit: "no", consent: true }),
+        body: JSON.stringify({
+          ...data,
+          visit: "no",
+          consent: true,
+          website: honeypotRef.current?.value ?? "",
+        }),
       });
       const json = (await res.json()) as {
         ok: boolean;
@@ -154,6 +161,7 @@ export function ApplyView() {
     <section id="apply-form" className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 32, scrollMarginTop: 80 }}>
       <div className="container" style={{ maxWidth: 820 }}>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <Honeypot ref={honeypotRef} />
           <div style={{
             position: "relative", overflow: "hidden",
             borderRadius: 24,

@@ -54,6 +54,18 @@ export async function POST(req: Request) {
     );
   }
 
+  // Honeypot check — every form renders an invisible "website" input
+  // (components/shell/Honeypot.tsx). Bots that auto-fill all visible
+  // inputs in the DOM end up populating it; humans never see it.
+  //
+  // On a hit we return a fake success — bot thinks it submitted and
+  // moves on. Returning 400/429 instead would teach the bot to skip
+  // the field on retry, which defeats the trap.
+  const honeypot = (body as { website?: unknown } | null)?.website;
+  if (typeof honeypot === "string" && honeypot.trim().length > 0) {
+    return NextResponse.json({ ok: true, id: "ok" });
+  }
+
   const formType =
     (body as { formType?: string } | null)?.formType ?? "contact";
 

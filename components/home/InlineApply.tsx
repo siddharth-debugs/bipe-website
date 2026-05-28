@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
+import { Honeypot } from "@/components/shell/Honeypot";
 
 type SendState = "idle" | "submitting" | "error";
 
@@ -12,6 +13,7 @@ export const InlineApply = () => {
   const [sent, setSent] = useState(false);
   const [send, setSend] = useState<SendState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const honeypotRef = useRef<HTMLInputElement | null>(null);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,6 +34,7 @@ export const InlineApply = () => {
               ? "Quick enquiry · wants to book a campus visit"
               : "Quick enquiry · wants to start the application",
           consent: true,
+          website: honeypotRef.current?.value ?? "",
         }),
       });
       const json = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
@@ -75,6 +78,7 @@ export const InlineApply = () => {
             </div>
           ) : (
             <form onSubmit={submit} style={{ background: "color-mix(in oklab, var(--paper) 6%, transparent)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 18, padding: 24, display: "flex", flexDirection: "column", gap: 14 }}>
+              <Honeypot ref={honeypotRef} />
               <div className="row" style={{ gap: 6 }}>
                 {([["visit", "Book visit"], ["apply", "Apply now"]] as [string, string][]).map(([v, l]) => (
                   <button key={v} type="button" onClick={() => setForm({ ...form, mode: v })}

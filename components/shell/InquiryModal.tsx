@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BRANCH_OPTIONS } from "@/lib/validation";
 import { FormSelect } from "@/components/ui/FormSelect";
+import { Honeypot } from "@/components/shell/Honeypot";
 
 /**
  * Site-wide prospectus popup. Captures name + phone + branch interest,
@@ -28,6 +29,9 @@ export function InquiryModal() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const dialogRef = useRef<HTMLDivElement | null>(null);
+  // Honeypot field — bots fill it, humans never see it. Server-side
+  // check in /api/submit silently 200s any submission with a value here.
+  const honeypotRef = useRef<HTMLInputElement | null>(null);
   // Keeps the popup closed for the rest of this navigation once the
   // visitor has dismissed or submitted it — the 3s timer would
   // otherwise re-fire on rerenders that remount the component.
@@ -84,6 +88,7 @@ export function InquiryModal() {
           source: "inquiry-modal",
           message: `Admissions enquiry via popup. Branch interest: ${branch || "not specified"}.`,
           consent: true,
+          website: honeypotRef.current?.value ?? "",
         }),
       });
       if (!res.ok) {
@@ -170,6 +175,7 @@ export function InquiryModal() {
           </div>
         ) : (
           <form className="inq-form" onSubmit={handleSubmit}>
+            <Honeypot ref={honeypotRef} />
             <label className="inq-field">
               <span>Your name *</span>
               <input

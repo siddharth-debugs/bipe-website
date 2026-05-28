@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
+import { Honeypot } from "@/components/shell/Honeypot";
 import {
   contactFormSchema,
   contactDefaults,
@@ -22,6 +23,7 @@ type SubmitStatus =
 
 export function ContactForm() {
   const [status, setStatus] = useState<SubmitStatus>({ state: "idle" });
+  const honeypotRef = useRef<HTMLInputElement | null>(null);
 
   const {
     register,
@@ -42,7 +44,10 @@ export function ContactForm() {
       const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          website: honeypotRef.current?.value ?? "",
+        }),
       });
       const json = (await res.json()) as {
         ok: boolean;
@@ -163,6 +168,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <Honeypot ref={honeypotRef} />
       <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
         <div className={errClass("name")}>
           <label htmlFor="cf-name">
