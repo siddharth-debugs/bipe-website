@@ -1973,7 +1973,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "How BIPE fits the diploma path" },
       {
         type: "p",
-        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year across all five branches. The placement record on file: <a href=\"/placements\">993+ joining-letter-verified placements through 2024</a> across 44 recruiters, alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, UPPCL, Amul, Mother Dairy and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
+        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year across all five branches. The placement record on file: <a href=\"/placements\">1,200+ joining-letter-verified placements through 2024</a> across 44 recruiters, alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, UPPCL, Amul, Mother Dairy and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
       },
       {
         type: "p",
@@ -2074,7 +2074,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "What this looks like in practice" },
       {
         type: "p",
-        html: "BIPE's <a href=\"/placements\">993+ verified placement record through 2024</a> includes JE-cadre roles across Indian Railways, UPPCL, Mumbai Metro, Tata Steel and several state discoms. The diploma + JE-exam route is one of the highest-leverage paths through Indian technical education — it converts three years of post-Class-10 study into a permanent government engineering job, with a transferable pay scale and a defined career ladder.",
+        html: "BIPE's <a href=\"/placements\">1,200+ verified placement record through 2024</a> includes JE-cadre roles across Indian Railways, UPPCL, Mumbai Metro, Tata Steel and several state discoms. The diploma + JE-exam route is one of the highest-leverage paths through Indian technical education — it converts three years of post-Class-10 study into a permanent government engineering job, with a transferable pay scale and a defined career ladder.",
       },
       {
         type: "p",
@@ -3369,11 +3369,11 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedISO: "2026-05-21",
     readTime: "15 min read",
     excerpt:
-      "Branch-by-branch starting salaries for BTE UP polytechnic diploma engineers in 2026 — government JE cadre ₹35-44k, Tier-1 private ₹18-25k, regional industry ₹12-22k. Real BIPE alumni earning curves at year 3, 5 and 10. Honest ranges, anchored to 993+ verified placements.",
+      "Branch-by-branch starting salaries for BTE UP polytechnic diploma engineers in 2026 — government JE cadre ₹35-44k, Tier-1 private ₹18-25k, regional industry ₹12-22k. Real BIPE alumni earning curves at year 3, 5 and 10. Honest ranges, anchored to 1,200+ verified placements.",
     metaTitle:
       "Polytechnic salary in India 2026 — diploma engineer pay scale BTE UP | BIPE",
     metaDescription:
-      "What does a polytechnic diploma engineer actually earn in 2026? Government JE (₹35-44k), Tier-1 private (₹18-25k), regional industry (₹12-22k). Branch-wise, 3/5/10 year arcs, real BIPE alumni data from 993+ verified placements.",
+      "What does a polytechnic diploma engineer actually earn in 2026? Government JE (₹35-44k), Tier-1 private (₹18-25k), regional industry (₹12-22k). Branch-wise, 3/5/10 year arcs, real BIPE alumni data from 1,200+ verified placements.",
     sections: [
       {
         type: "callout",
@@ -3392,7 +3392,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Every admission season we get the same first question from parents: <em>kitni salary milti hai polytechnic ke baad?</em> &mdash; what's the salary after polytechnic? It's a fair question and there's a fair answer, but the answer almost never fits in one number. This page is the honest version: salary <strong>ranges</strong>, by track, by branch, by year of experience &mdash; anchored to BIPE's 993+ joining-letter-verified placements and the real career arcs of named alumni you can find on <a href=\"/placements\">/placements</a>.",
+          "Every admission season we get the same first question from parents: <em>kitni salary milti hai polytechnic ke baad?</em> &mdash; what's the salary after polytechnic? It's a fair question and there's a fair answer, but the answer almost never fits in one number. This page is the honest version: salary <strong>ranges</strong>, by track, by branch, by year of experience &mdash; anchored to BIPE's 1,200+ joining-letter-verified placements and the real career arcs of named alumni you can find on <a href=\"/placements\">/placements</a>.",
       },
       {
         type: "p",
@@ -3435,7 +3435,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE has shipped <strong>993+ joining-letter-verified placements through 2024</strong> across 44 recruiters. The branch split is concentrated: 522 in Mechanical Production, 326 in Electrical, 145 in Civil, with Computer Science and Dairy as maturing pipelines. That branch distribution shapes the salary picture too &mdash; the branches with the deepest placement pipelines also have the most predictable salary signal.",
+          "BIPE has shipped <strong>1,200+ joining-letter-verified placements through 2024</strong> across 44 recruiters. The branch split is concentrated: 522 in Mechanical Production, 326 in Electrical, 145 in Civil, with Computer Science and Dairy as maturing pipelines. That branch distribution shapes the salary picture too &mdash; the branches with the deepest placement pipelines also have the most predictable salary signal.",
       },
       {
         type: "table",
@@ -3589,12 +3589,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Every salary range on this page comes from one of three verifiable sources: the 7th Pay Commission pay matrix (for government cadres), our own 993+ joining letters from BIPE's 2018-2024 placement cohorts (for private starting salaries), and named alumni currently in those roles (for year-5 and year-10 ranges). Nothing on this page is aspirational &mdash; it's all auditable.",
+          "Every salary range on this page comes from one of three verifiable sources: the 7th Pay Commission pay matrix (for government cadres), our own 1,200+ joining letters from BIPE's 2018-2024 placement cohorts (for private starting salaries), and named alumni currently in those roles (for year-5 and year-10 ranges). Nothing on this page is aspirational &mdash; it's all auditable.",
       },
       {
         type: "ul",
         items: [
-          "<strong>993+ verified placements</strong> through 2024 across 44 recruiters &mdash; the full list is on <a href=\"/placements\">/placements</a>, including branch-wise breakdown (522 Mechanical Production, 326 Electrical, 145 Civil + maturing pipelines in CSE and Dairy).",
+          "<strong>1,200+ verified placements</strong> through 2024 across 44 recruiters &mdash; the full list is on <a href=\"/placements\">/placements</a>, including branch-wise breakdown (522 Mechanical Production, 326 Electrical, 145 Civil + maturing pipelines in CSE and Dairy).",
           "<strong>Six named alumni</strong> publicly on the placements page with current role + employer, providing the year-5 and year-10 anchors for the ranges above.",
           "<strong>Placement cell processes</strong> &mdash; six-day pre-placement workshop, AMCAT on-campus testing, mock interviews, quarterly tech talks &mdash; all of which feed the verified-placement number rather than the aspirational one.",
         ],
@@ -3630,7 +3630,7 @@ export const BLOG_POSTS: BlogPost[] = [
     metaTitle:
       "पॉलिटेक्निक सैलरी 2026 — Diploma Engineer Salary in Hindi | BIPE",
     metaDescription:
-      "पॉलिटेक्निक के बाद कितनी सैलरी मिलती है? सरकारी JE ₹35-44k, Tier-1 private (Mahindra, Tata) ₹18-25k, क्षेत्रीय manufacturing ₹12-22k। ब्रांच के हिसाब से, साल-दर-साल। BIPE वाराणसी (JEECUP 4455) के 993+ verified placements के data पर आधारित।",
+      "पॉलिटेक्निक के बाद कितनी सैलरी मिलती है? सरकारी JE ₹35-44k, Tier-1 private (Mahindra, Tata) ₹18-25k, क्षेत्रीय manufacturing ₹12-22k। ब्रांच के हिसाब से, साल-दर-साल। BIPE वाराणसी (JEECUP 4455) के 1,200+ verified placements के data पर आधारित।",
     sections: [
       {
         type: "callout",
@@ -3649,7 +3649,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "हर admission season में परिवार सबसे पहले यही सवाल पूछते हैं — <em>पॉलिटेक्निक के बाद सैलरी कितनी मिलती है?</em> सवाल सही है, और जवाब भी सही है, पर वो जवाब एक नंबर में नहीं आता। यह पेज ईमानदार version है — सैलरी की <strong>range</strong>, track के हिसाब से, branch के हिसाब से, अनुभव के साल के हिसाब से — और हर आँकड़ा BIPE के 993+ joining-letter-verified placements पर आधारित है, जो आप <a href=\"/placements\">/placements</a> पर देख सकते हैं।",
+          "हर admission season में परिवार सबसे पहले यही सवाल पूछते हैं — <em>पॉलिटेक्निक के बाद सैलरी कितनी मिलती है?</em> सवाल सही है, और जवाब भी सही है, पर वो जवाब एक नंबर में नहीं आता। यह पेज ईमानदार version है — सैलरी की <strong>range</strong>, track के हिसाब से, branch के हिसाब से, अनुभव के साल के हिसाब से — और हर आँकड़ा BIPE के 1,200+ joining-letter-verified placements पर आधारित है, जो आप <a href=\"/placements\">/placements</a> पर देख सकते हैं।",
       },
       {
         type: "p",
@@ -3687,7 +3687,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE ने 2024 तक <strong>993+ joining-letter-verified placements</strong> shipped किए हैं — 44 recruiters के साथ। Branch breakdown clear है: 522 Mechanical Production, 326 Electrical, 145 Civil, और CSE + Dairy maturing pipelines हैं। जिस branch की पाइपलाइन सबसे गहरी है, उसी की salary signal भी सबसे predictable है।",
+          "BIPE ने 2024 तक <strong>1,200+ joining-letter-verified placements</strong> shipped किए हैं — 44 recruiters के साथ। Branch breakdown clear है: 522 Mechanical Production, 326 Electrical, 145 Civil, और CSE + Dairy maturing pipelines हैं। जिस branch की पाइपलाइन सबसे गहरी है, उसी की salary signal भी सबसे predictable है।",
       },
       {
         type: "table",

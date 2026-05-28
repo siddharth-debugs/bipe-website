@@ -176,7 +176,7 @@ const FAQS: FaqItem[] = [
     question:
       "When should I choose BIPE over a government polytechnic?",
     answer:
-      "When the additional ~₹20,000-25,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of 1,000+ placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or the rare Dairy Engineering branch with the Amul / Mother Dairy / NDDB recruiter pipeline.",
+      "When the additional ~₹20,000-25,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of 1,200+ placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or the rare Dairy Engineering branch with the Amul / Mother Dairy / NDDB recruiter pipeline.",
   },
   {
     question:

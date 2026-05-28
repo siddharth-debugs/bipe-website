@@ -184,7 +184,7 @@ export default function Page() {
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              1,000+ placements.
+              1,200+ placements.
             </span>{" "}
             The private polytechnic Eastern UP keeps choosing.
           </h1>

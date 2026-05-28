@@ -199,7 +199,7 @@ export const CATCHMENTS: Catchment[] = [
     faqs: [
       {
         q: "How does BIPE compare with Government Polytechnic Jaunpur?",
-        a: "Both are BTE UP-affiliated — the diploma certificate is identical. Government Polytechnic Jaunpur has a lower fee (~₹6,000-18,000/year vs BIPE's AFRC ₹30,150). BIPE's edge: documented 1,000+ placements, on-campus hostel for students from outside Jaunpur city, the Dairy Engineering branch, smaller cohort with named faculty mentors. See /private-vs-government-polytechnic for the honest framework.",
+        a: "Both are BTE UP-affiliated — the diploma certificate is identical. Government Polytechnic Jaunpur has a lower fee (~₹6,000-18,000/year vs BIPE's AFRC ₹30,150). BIPE's edge: documented 1,200+ placements, on-campus hostel for students from outside Jaunpur city, the Dairy Engineering branch, smaller cohort with named faculty mentors. See /private-vs-government-polytechnic for the honest framework.",
       },
       {
         q: "Can a Jaunpur student get BIPE admission via JEECUP?",
@@ -318,7 +318,7 @@ export const CATCHMENTS: Catchment[] = [
         body: "Azamgarh students often arrive at the diploma decision still weighing options — Civil for government infrastructure work, Mechanical for production industry, Dairy for agriculture-overlap families, Electrical for UPPCL, CSE for IT cadres. BIPE offers all five under one institute code (JEECUP 4455).",
       },
       {
-        headline: "1,000+ placement record — concrete pipeline, not promises",
+        headline: "1,200+ placement record — concrete pipeline, not promises",
         body: "Over 16 years, BIPE has documented 1,000+ verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
       },
       {
@@ -479,7 +479,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with government polytechnic options accessible from Bhadohi?",
-        a: "The closest government polytechnic options for Bhadohi students are in nearby districts. Both routes lead to BTE UP-affiliated diplomas — identical certificate. BIPE's edge: documented 1,000+ placements, on-campus hostel, smaller cohorts, Dairy Engineering. Government route's edge: lower fee. Honest comparison framework on /private-vs-government-polytechnic.",
+        a: "The closest government polytechnic options for Bhadohi students are in nearby districts. Both routes lead to BTE UP-affiliated diplomas — identical certificate. BIPE's edge: documented 1,200+ placements, on-campus hostel, smaller cohorts, Dairy Engineering. Government route's edge: lower fee. Honest comparison framework on /private-vs-government-polytechnic.",
       },
       {
         q: "Will the UP Post-Matric Scholarship apply for Bhadohi students at BIPE?",
