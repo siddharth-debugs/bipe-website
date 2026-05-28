@@ -997,32 +997,10 @@ export const ROUTES: Record<RouteKey, {
   },
 };
 
-import type { Metadata } from "next";
-
-export function metaFor(key: RouteKey): Metadata {
-  const r = ROUTES[key];
-  return {
-    title: r.title,
-    description: r.description,
-    alternates: {
-      canonical: r.path,
-      languages: {
-        "en-IN": r.path,
-        "hi-IN": `${r.path}${r.path.includes("?") ? "&" : "?"}lang=hi`,
-      },
-    },
-    openGraph: {
-      title: r.title,
-      description: r.description,
-      url: `${SITE_URL}${r.path}`,
-      siteName: "BIPE",
-      type: "website",
-      locale: "en_IN",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: r.title,
-      description: r.description,
-    },
-  };
-}
+// Note: a duplicate `metaFor(key)` Metadata builder used to live here
+// alongside ROUTES, but it had no `og:image` and emitted a lying
+// `hi-IN` hreflang (no real SSR Hindi page exists; lib/seo.ts retired
+// that pattern explicitly as an E-E-A-T penalty risk). It was dead
+// code — zero imports — so it was removed. All page metadata flows
+// through `metadataFor(slug)` in lib/seo.ts, which is the single
+// source of truth.
