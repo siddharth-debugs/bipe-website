@@ -47,7 +47,7 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p><strong>Purvanchal Educational Trust</strong> — registered charitable trust based in Varanasi, sponsoring BIPE since 2010.</p>
-        <p>{`// TODO: publish trustees roster, registration number and trust deed reference once the trust office releases the latest constitution.`}</p>
+        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The full trustees roster, trust registration number and constitution-deed reference will be published in the next disclosure cycle once consolidated by the trust office. Available on request — <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
       </>
     ),
   },
@@ -88,7 +88,7 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p>BIPE is governed by a Governing Body comprising trustee representatives, the Principal, senior faculty and external academic / industry experts.</p>
-        <p>{`// TODO: publish names, designations and brief background of every Governing Body member once the trust office releases the 2026-27 composition.`}</p>
+        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The 2026-27 Governing Body composition — names, designations and external academic / industry representatives — will be published once the trust office releases the constituted membership for the cycle. Available on request from the trust office at <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
       </>
     ),
   },
@@ -116,7 +116,7 @@ const SECTIONS: Section[] = [
       <>
         <p><strong>40 BTEUP-recognised faculty</strong> across seven departments (CSE, Civil, Electrical, Mechanical, Dairy Engineering, Applied Sciences &amp; Humanities, Workshop &amp; Practical Training).</p>
         <p>Mentor-to-student ratio: <strong>1:20</strong> across the diploma. Faculty are AICTE-FDP trained and OBE-aligned. See the <Link href="/faculty">Faculty page</Link> for departmental composition.</p>
-        <p>{`// TODO: publish department-wise faculty roster (name, designation, qualification, tenure, experience) per AICTE Annexure-18 §7 once HR consolidates the 2026-27 list.`}</p>
+        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The detailed department-wise faculty roster (name, designation, qualification, tenure, experience) per AICTE Annexure-18 §7 is being consolidated by HR for the 2026-27 academic year. The summary above lists current departmental counts; the full roster is available on request from <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
       </>
     ),
   },
@@ -127,7 +127,7 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p>Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical for all 5 BTEUP branches. Refunds follow AICTE norms: 100% (less ₹1,000 processing) if you withdraw 15+ days before classes start, and a tapered scale thereafter — full schedule on the <Link href="/fees">Fees page</Link>.</p>
-        <p>{`// TODO: upload the AFRC fee notification PDF for 2026-27 once the printed copy is available from the trust office.`}</p>
+        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The AFRC fee-notification PDF for 2026-27 will be uploaded to the public <Link href="/approvals">Approvals page</Link> once the printed copy is released from the trust office. The fee structure summarised above is the AFRC-approved tuition currently in force.</p>
       </>
     ),
   },
@@ -138,7 +138,7 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p>Admissions to all BIPE diploma courses are exclusively through <strong>JEECUP</strong> counselling — institute code <strong>4455</strong>. Six counselling steps, with eligibility, documents and timelines on the <Link href="/admission">Admission</Link> and <Link href="/jeecup">JEECUP guidance</Link> pages.</p>
-        <p>{`// TODO: publish branch-wise admitted-student counts for the last three cycles (2023-24, 2024-25, 2025-26) per AICTE Annexure-18 §10 once the Examination cell releases the consolidated figures.`}</p>
+        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>Branch-wise admitted-student counts for cycles 2023-24, 2024-25 and 2025-26 per AICTE Annexure-18 §10 are being consolidated by the Examination cell and will be added in the next disclosure cycle. The 2026-27 sanctioned intake (480 seats across 5 branches) is published in §6 above.</p>
       </>
     ),
   },
@@ -220,7 +220,7 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p>The latest Extension of Approval (EoA) for 2026-27: <strong>F.No. {DATA.contact.aicteEoaRef}</strong>, issued {DATA.contact.aicteEoaDate}. Verifiable on the <a href="https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php" target="_blank" rel="noopener noreferrer">AICTE public dashboard</a>.</p>
-        <p>{`// TODO: upload year-wise LoA / EoA letters (2010–2026) as PDFs to /downloads/ once scans are consolidated. Current draft uploads listed on the Approvals page.`}</p>
+        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>Year-wise LoA / EoA letters from 2010 to 2026 are being consolidated as PDF scans and will be uploaded to the <Link href="/approvals">Approvals page</Link> in batches. The current 2026-27 EoA reference is verifiable on the AICTE public dashboard linked above; older letters available on request from <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
       </>
     ),
   },
