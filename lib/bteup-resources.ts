@@ -70,6 +70,25 @@ export interface BteupResource {
     intro?: string;
     items: string[];
   };
+  /**
+   * Optional "deep-link to specific content" block. Used on the BTEUP
+   * syllabus page to surface the per-branch syllabus pages that live at
+   * /courses/[branch] — those pages have the actual semester-by-semester
+   * subject lists, but were buried (only mentioned in step 06's prose).
+   * Adding an explicit linked block right after quickStats so visitors
+   * searching "BTEUP syllabus" can jump straight to their branch.
+   */
+  branchLinks?: {
+    eyebrow: string;
+    heading: string;
+    intro?: string;
+    branches: {
+      href: string;
+      code: string;
+      label: string;
+      summary?: string;
+    }[];
+  };
   contacts?: {
     eyebrow: string;
     heading: string;
@@ -664,6 +683,49 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       { label: "Marking split", value: "70 external + 30 internal", sub: "Per theory subject · typical" },
       { label: "Official source", value: "bteup.org.in", sub: "Notice Board · Curriculum tab" },
     ],
+    // Branch-specific syllabus content (semester-by-semester subject lists)
+    // lives at /courses/[branch]. Surfacing it explicitly here because the
+    // earlier version of this page only mentioned it in step 06's prose,
+    // and visitors searching "BTEUP syllabus" complained that the page
+    // didn't actually have the syllabus.
+    branchLinks: {
+      eyebrow: "Skip ahead · branch syllabus",
+      heading: "Per-branch syllabus on BIPE",
+      intro:
+        "If you already know your branch, jump straight to its 6-semester subject list. These pages show theory + practical per semester, with BTEUP subject codes — curated by BIPE's faculty from the official BTEUP gazette.",
+      branches: [
+        {
+          href: "/courses/mechanical-engineering-production",
+          code: "343",
+          label: "Mechanical Engineering (Production)",
+          summary: "Thermodynamics, machining, manufacturing processes, CAD/CAM.",
+        },
+        {
+          href: "/courses/electrical-engineering",
+          code: "328",
+          label: "Electrical Engineering",
+          summary: "Machines, power systems, control, measurement instruments.",
+        },
+        {
+          href: "/courses/civil-engineering",
+          code: "322",
+          label: "Civil Engineering",
+          summary: "Surveying, structural design, materials, hydraulics, transportation.",
+        },
+        {
+          href: "/courses/computer-science-engineering",
+          code: "355",
+          label: "Computer Science & Engineering",
+          summary: "Data structures, OS, networking, web, AI/IoT (NEP additions).",
+        },
+        {
+          href: "/courses/dairy-engineering",
+          code: "327",
+          label: "Dairy Engineering",
+          summary: "Milk processing, plant operations, refrigeration, food safety.",
+        },
+      ],
+    },
     steps: [
       {
         n: "01",

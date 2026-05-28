@@ -4,6 +4,7 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import type { BteupResource } from "@/lib/bteup-resources";
 import { otherBteupResources } from "@/lib/bteup-resources";
+import BteupChecklist from "@/components/bteup/BteupChecklist";
 
 /**
  * Shared template for every /bteup-* procedural-resource route.
@@ -16,14 +17,17 @@ import { otherBteupResources } from "@/lib/bteup-resources";
  * explained in detail), and the WhatsApp CTA is BTEUP-flavoured.
  *
  * Sections:
- *   1. Hero (eyebrow + headline w/ italic serif accent + lead + CTAs)
- *   2. Quick-stats grid (3-4 cards)
- *   3. Process steps (5-8 numbered cards · serif italic numbers)
- *   4. Optional checklist block (bullet list)
- *   5. Optional contacts block (label/value pairs, with hrefs)
- *   6. FAQ section (FAQPage JSON-LD baked in)
- *   7. Other BTEUP resources cross-link grid
- *   8. CTA block (apply / WhatsApp / affiliations)
+ *   1.  Hero (eyebrow + headline w/ italic serif accent + lead + CTAs)
+ *   2.  Quick-stats grid (3-4 cards)
+ *   2.5 Optional branch-links block (cards linking to per-branch content,
+ *       e.g. /courses/[branch] syllabus pages from the BTEUP syllabus hub)
+ *   3.  Process steps (5-8 numbered cards · serif italic numbers)
+ *   4.  Optional checklist block — interactive, localStorage-backed
+ *       (via BteupChecklist client component)
+ *   5.  Optional contacts block (label/value pairs, with hrefs)
+ *   6.  FAQ section (FAQPage JSON-LD baked in)
+ *   7.  Other BTEUP resources cross-link grid
+ *   8.  CTA block (apply / WhatsApp / affiliations)
  */
 export default function BteupResourceTemplate({
   data,
@@ -246,6 +250,109 @@ export default function BteupResourceTemplate({
       </section>
 
       {/* ====================================================================== */}
+      {/* 2.5 BRANCH LINKS (optional) — surfaces per-branch syllabus pages       */}
+      {/* ====================================================================== */}
+      {data.branchLinks ? (
+        <section className="section">
+          <div className="container">
+            <div className="eyebrow">{data.branchLinks.eyebrow}</div>
+            <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "28ch" }}>
+              {data.branchLinks.heading}
+            </h2>
+            {data.branchLinks.intro ? (
+              <p
+                className="lead"
+                style={{
+                  marginTop: 18,
+                  maxWidth: "70ch",
+                  color: "var(--ink-2)",
+                }}
+              >
+                {data.branchLinks.intro}
+              </p>
+            ) : null}
+            <div
+              style={{
+                marginTop: 28,
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: 14,
+              }}
+            >
+              {data.branchLinks.branches.map((b) => (
+                <Link
+                  key={b.href}
+                  href={b.href}
+                  className="card"
+                  style={{
+                    display: "block",
+                    padding: "20px 22px",
+                    textDecoration: "none",
+                    color: "inherit",
+                    border: "1px solid var(--line)",
+                    borderRadius: 14,
+                    background: "var(--paper)",
+                    transition:
+                      "border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--ink-3)",
+                    }}
+                  >
+                    BTEUP {b.code}
+                  </div>
+                  <div
+                    style={{
+                      marginTop: 6,
+                      fontSize: 17,
+                      fontWeight: 600,
+                      color: "var(--ink)",
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {b.label}
+                  </div>
+                  {b.summary ? (
+                    <div
+                      style={{
+                        marginTop: 8,
+                        fontSize: 13.5,
+                        color: "var(--ink-2)",
+                        lineHeight: 1.55,
+                      }}
+                    >
+                      {b.summary}
+                    </div>
+                  ) : null}
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      marginTop: 14,
+                      fontSize: 12.5,
+                      fontWeight: 600,
+                      color: "var(--brand)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                    }}
+                  >
+                    View 6-semester syllabus
+                    <ArrowIcon />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {/* ====================================================================== */}
       {/* 3. PROCESS STEPS                                                        */}
       {/* ====================================================================== */}
       <section className="section">
@@ -350,54 +457,7 @@ export default function BteupResourceTemplate({
                 {data.checklist.intro}
               </p>
             ) : null}
-            <ul
-              style={{
-                marginTop: 28,
-                display: "grid",
-                gap: 12,
-                maxWidth: "78ch",
-                listStyle: "none",
-                padding: 0,
-              }}
-            >
-              {data.checklist.items.map((item) => (
-                <li
-                  key={item}
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "auto 1fr",
-                    gap: 14,
-                    padding: "14px 18px",
-                    background: "var(--paper)",
-                    border: "1px solid var(--line)",
-                    borderRadius: 12,
-                    alignItems: "start",
-                  }}
-                >
-                  <span
-                    aria-hidden="true"
-                    style={{
-                      display: "inline-block",
-                      width: 18,
-                      height: 18,
-                      borderRadius: 4,
-                      border: "1.5px solid var(--brand)",
-                      marginTop: 2,
-                      flexShrink: 0,
-                    }}
-                  />
-                  <span
-                    style={{
-                      color: "var(--ink-2)",
-                      fontSize: 14.5,
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <BteupChecklist slug={data.slug} items={data.checklist.items} />
           </div>
         </section>
       ) : null}
