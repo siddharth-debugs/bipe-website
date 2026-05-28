@@ -355,7 +355,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   };
   const orgJsonLd = buildOrgJsonLd(liveBranches, liveContact);
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         {/*
           Preconnect hints (Phase 2 SEO audit May 2026 — BIPE had 0

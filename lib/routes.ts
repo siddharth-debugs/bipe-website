@@ -75,7 +75,7 @@ export const ROUTES: Record<RouteKey, {
     // institutional queries). Specifics > "sixteen years of education"
     // generic prose. Updated to 1,200+/2,200+ post commit 065693f.
     title: "About BIPE Varanasi · Since 2010 · 1,200+ Placements · BTEUP 4455",
-    description: "BIPE Varanasi — established 2010 · 6-acre Phoolpur campus · AICTE-approved (1-488233171) · BTEUP 4455 · 1,200+ alumni placed at Mahindra, Tata, BEL, Indian Railways.",
+    description: "BIPE Varanasi — est. 2010 · 6-acre Phoolpur campus · AICTE 1-488233171 · BTEUP 4455 · 1,200+ alumni at Mahindra, Tata, BEL, Indian Railways.",
   },
   courses: {
     path: "/courses",
@@ -83,7 +83,7 @@ export const ROUTES: Record<RouteKey, {
     // "Diploma Courses" + "Dairy Engineering" (the rare moat branch)
     // are the click magnets here.
     title: "Diploma Courses · 5 BTEUP Branches incl. Dairy Engineering | BIPE 4455",
-    description: "5 BTEUP diploma branches at BIPE Varanasi: Civil, CSE, Electrical, Mechanical (Production), and rare Dairy Engineering. AICTE-approved · ₹30,150/year · JEECUP 4455.",
+    description: "5 BTEUP diploma branches at BIPE Varanasi: Civil, CSE, Electrical, Mechanical, rare Dairy Engineering. AICTE · ₹30,150/year · JEECUP 4455.",
   },
   admission: {
     path: "/admission",
@@ -107,14 +107,14 @@ export const ROUTES: Record<RouteKey, {
     // power word that lifts CTR on transactional intent. Hindi support
     // signal kept because primary audience is Hindi-medium.
     title: "Apply to BIPE 2026-27 · Free Application · JEECUP 4455 · हिंदी",
-    description: "Apply to BIPE Phoolpur 2026-27 free in 5 minutes. JEECUP code 4455. Personal counsellor call within 24 hours. हिंदी / English on WhatsApp +91-9198646464.",
+    description: "Apply to BIPE Phoolpur 2026-27 free · 5 minutes · JEECUP 4455. Counsellor call within 24 hrs. हिंदी / English WhatsApp +91-9198646464.",
   },
   visit: {
     path: "/visit",
     // CTR rewrite 26 May 2026 · concrete distance + free shuttle as the
     // two strongest signals for "polytechnic visit Varanasi" intent.
     title: "Visit BIPE Phoolpur · Free Shuttle from Varanasi Cantt · 14 km",
-    description: "Book a free BIPE campus visit — 14 km from Varanasi Cantt, free Saturday shuttle. Walk the 120-PC lab, dairy pilot plant, hostel + workshops. No enrolment pressure.",
+    description: "Book a free BIPE campus visit · 14 km from Varanasi Cantt · free Saturday shuttle. Walk the 120-PC lab, dairy plant, hostel, workshops. No pressure.",
   },
   contact: {
     path: "/contact",
@@ -130,7 +130,7 @@ export const ROUTES: Record<RouteKey, {
     // the brand-recognition CTR boosters for "polytechnic placements UP"
     // search intent.
     title: "Polytechnic Placements UP · 1,200+ at Mahindra, Tata Steel, BEL | BIPE",
-    description: "1,200+ BIPE Varanasi alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. 2,200+ alumni network.",
+    description: "1,200+ BIPE alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric. 2,200+ alumni network.",
   },
   alumni: {
     path: "/alumni",
@@ -138,14 +138,14 @@ export const ROUTES: Record<RouteKey, {
     // (commit 065693f). "123 with photos" was internal-data styling
     // unsearched by users — replaced with "44 Recruiters" CTR anchor.
     title: "BIPE Alumni · 2,200+ Network · 1,200+ Placed at 44 Recruiters",
-    description: "Browse 2,200+ BIPE Varanasi alumni · 1,200+ verified placements at 44 recruiters (2013–2025). Mahindra, Tata Steel, BEL, Indian Railways. Filter by branch, year, company.",
+    description: "Browse 2,200+ BIPE alumni · 1,200+ verified placements at 44 recruiters (2013–2025). Mahindra, Tata Steel, BEL, Indian Railways. Filter by branch.",
   },
   campus: {
     path: "/campus",
     // CTR rewrite 26 May 2026 · specific facilities in title (120-PC,
     // dairy plant, hostel) outperform generic "Six acres".
     title: "BIPE Campus · 6-Acre Phoolpur · Hostel, 120-PC Lab, Dairy Plant",
-    description: "Six-acre BIPE Phoolpur campus: 120-computer lab, mechanical workshop, dairy pilot plant, electrical lab, civil survey yard, 12,000+ book library, hostels, sports ground.",
+    description: "Six-acre BIPE Phoolpur campus: 120-PC lab, mechanical workshop, dairy pilot plant, electrical lab, 12,000+ book library, hostels, sports ground.",
   },
   fees: {
     path: "/fees",
@@ -153,20 +153,20 @@ export const ROUTES: Record<RouteKey, {
     // May 2026 keyword audit P1 #8. Fees are per academic year, so
     // "2026-27" matches the cycle better than bare "2026".
     title: "Polytechnic fees 2026-27 · ₹30,150/year AFRC-approved | BIPE",
-    description: "BIPE Varanasi polytechnic fees for 2026-27 — ₹30,150/year, AFRC-approved. No capitation, no hidden charges. Receipts for every payment. Hostel & mess separate.",
+    description: "BIPE polytechnic fees 2026-27 · ₹30,150/year · AFRC-approved · No capitation, no hidden charges · Receipts for every payment · Hostel & mess separate.",
   },
   scholarships: {
     path: "/scholarships",
     // CTR rewrite 26 May 2026 · "up to ₹19,000/year" is the specific
     // savings anchor that lifts CTR on scholarship intent.
     title: "BIPE Scholarships · UP Post-Matric up to ₹19,000/year · SC/ST/OBC/EWS",
-    description: "UP Post-Matric Scholarship covers BIPE tuition fully for SC/ST/OBC/Minority/EWS (family income <₹2L). Net cost can drop to ₹4-10k/year. We assist with the Samaj Kalyan portal.",
+    description: "UP Post-Matric Scholarship covers BIPE tuition for SC/ST/OBC/Minority/EWS (family income <₹2L). Net cost can drop to ₹4-10k/year. Samaj Kalyan portal help.",
   },
   documents: {
     path: "/documents",
     // CTR rewrite 26 May 2026 · "Full Checklist" + year + JEECUP context.
     title: "Documents for BIPE Admission 2026-27 · Full Checklist · JEECUP 4455",
-    description: "BIPE admission checklist 2026-27: 10th & 12th marksheets, JEECUP rank card, Aadhaar, caste/income/EWS certificates, passport photos, transfer + character certificates.",
+    description: "BIPE admission checklist 2026-27: 10th/12th marksheets, JEECUP rank card, Aadhaar, caste/income/EWS certificates, passport photos, transfer + character.",
   },
   jeecup: {
     path: "/jeecup",
@@ -197,7 +197,7 @@ export const ROUTES: Record<RouteKey, {
     //   - "polytechnic with hostel in UP" (P1 audit, regional intent)
     //   - "BIPE hostel" (validation queries)
     title: "Hostels in Varanasi · Polytechnic Boys' Hostel · BIPE Phoolpur",
-    description: "Looking for hostels in Varanasi? BIPE Phoolpur is an AICTE-approved polytechnic college with an on-campus boys' hostel — furnished rooms, mess, Wi-Fi, study halls, resident warden, 24×7 security.",
+    description: "Looking for hostels in Varanasi? BIPE Phoolpur has an on-campus boys' hostel — furnished rooms, mess, Wi-Fi, study halls, resident warden, 24×7 security.",
   },
   faculty: {
     path: "/faculty",
@@ -223,7 +223,7 @@ export const ROUTES: Record<RouteKey, {
     // from a previous incarnation of this title — drift between this
     // string and faculty.ts is what created the AI-Overview confusion.
     title: "Principal's Message — Rahul Srivastava | BIPE",
-    description: "A note from Rahul Srivastava, BIPE's Principal — M.Tech, 13 years teaching, GATE-qualified — on what every family can expect from three years at the institute.",
+    description: "A note from Rahul Srivastava, BIPE's Principal — M.Tech, 13 years teaching, GATE-qualified — what every family can expect from three years here.",
   },
   teaching: {
     path: "/teaching",
@@ -239,7 +239,7 @@ export const ROUTES: Record<RouteKey, {
     // `polytechnic colleges affiliated to bteup`) — small monthly
     // volumes but every searcher is a hot lead checking affiliation.
     title: "BTE UP Affiliated Polytechnic · Approvals 2026-27 · AICTE · AISHE | BIPE",
-    description: "AICTE permanent ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026. BTEUP-affiliated under JEECUP 4455. AISHE-registered with the Department of Higher Education, MoE.",
+    description: "AICTE ID 1-488233171 · EoA 2026-27 dated 16 Mar 2026. BTEUP-affiliated under JEECUP 4455. AISHE-registered with the Department of Higher Education.",
   },
   faq: {
     path: "/faq",
@@ -310,7 +310,7 @@ export const ROUTES: Record<RouteKey, {
     // is a flatter "here's everything we're affiliated with, with
     // names, codes, and portal links" reference.
     title: "Affiliations & Approvals · BTE UP · AICTE · JEECUP 4455 · AISHE | BIPE",
-    description: "Full list of BIPE's affiliations and approvals — Board of Technical Education UP (BTE UP), AICTE Permanent ID 1-488233171, JEECUP institute code 4455, AISHE registered, AFRC-approved tuition. Every claim verifiable on the relevant government portal.",
+    description: "Full list of BIPE's affiliations — BTE UP, AICTE Permanent ID 1-488233171, JEECUP 4455, AISHE registered, AFRC-approved tuition. Every claim verifiable on gov portals.",
     keywords: [
       "BTE UP affiliated polytechnic Varanasi",
       "BTEUP affiliated polytechnic",
@@ -337,7 +337,7 @@ export const ROUTES: Record<RouteKey, {
     // "BIPE vs [named competitor]" keywords — those compete for a tiny
     // volume cluster and leak SERP exposure to competitors.
     title: "Why BIPE · 16 Years · 1,200+ Placements · AFRC ₹30,150 | Varanasi",
-    description: "Why families across Eastern UP have chosen BIPE since 2010 — BTE UP affiliated, AICTE Permanent ID 1-488233171, AFRC tuition ₹30,150/year, on-campus hostel, 1,200+ verified placements at Mahindra, Tata Steel, Indian Railways. Eight auditable pillars.",
+    description: "Why families across Eastern UP choose BIPE since 2010 — BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, on-campus hostel, 1,200+ placements. Eight pillars.",
     keywords: [
       "best polytechnic college in Varanasi",
       "top polytechnic college in Varanasi",
