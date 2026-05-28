@@ -894,8 +894,13 @@ body.no-motion .live-dot { animation: none; }
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 24px;
-  max-width: 1480px; margin: 0 auto;
+  /* Was: max-width: 1480px + margin: 0 auto + padding: 12px 24px.
+     That left raw page bg visible on both sides above the fold on
+     wide viewports (>1480px). The frosted glass needs to span the
+     full width while content stays centered around 1480px — done
+     by dropping max-width and using padding-inline to push content
+     inwards equally on wide screens, capped at 24px on narrow ones. */
+  padding: 12px max(24px, calc((100vw - 1480px) / 2));
   gap: 20px;
   /* The actual frosted-glass surface — backdrop-filter works here
      because this element is not sticky. See .nav for context.
