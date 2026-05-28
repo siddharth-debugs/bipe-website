@@ -310,7 +310,7 @@ export const ROUTES: Record<RouteKey, {
     // is a flatter "here's everything we're affiliated with, with
     // names, codes, and portal links" reference.
     title: "Affiliations & Approvals · BTE UP · AICTE · JEECUP 4455 · AISHE | BIPE",
-    description: "Full list of BIPE's affiliations — BTE UP, AICTE Permanent ID 1-488233171, JEECUP 4455, AISHE registered, AFRC-approved tuition. Every claim verifiable on gov portals.",
+    description: "Full list of BIPE's affiliations — BTE UP, AICTE 1-488233171, JEECUP 4455, AISHE, AFRC tuition. Every claim verifiable on government portals.",
     keywords: [
       "BTE UP affiliated polytechnic Varanasi",
       "BTEUP affiliated polytechnic",
@@ -362,7 +362,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInMirzapur: {
     path: "/polytechnic-in-mirzapur",
     title: "Polytechnic in Mirzapur · BIPE Varanasi · 75 km, JEECUP 4455",
-    description: "Polytechnic for Mirzapur students — BIPE Phoolpur is 75 km via NH-19. 5 BTE UP branches including rare Dairy Engineering. On-campus boys' hostel. AFRC ₹30,150/year. JEECUP code 4455.",
+    description: "Polytechnic for Mirzapur students — BIPE Phoolpur 75 km via NH-19. 5 BTEUP branches incl. rare Dairy. On-campus hostel. AFRC ₹30,150/year. JEECUP 4455.",
     keywords: [
       "polytechnic in Mirzapur",
       "diploma college Mirzapur",
@@ -375,7 +375,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInJaunpur: {
     path: "/polytechnic-in-jaunpur",
     title: "Polytechnic in Jaunpur · BIPE Varanasi · 55 km, JEECUP 4455",
-    description: "Polytechnic for Jaunpur students — BIPE Phoolpur is 55 km via NH-19. 5 branches incl. Dairy Engineering. On-campus hostel. AFRC ₹30,150/year. JEECUP institute code 4455.",
+    description: "Polytechnic for Jaunpur students — BIPE Phoolpur 55 km via NH-19. 5 branches incl. Dairy Engineering. On-campus hostel. AFRC ₹30,150/year. JEECUP 4455.",
     keywords: [
       "polytechnic in Jaunpur",
       "diploma college Jaunpur",
@@ -388,7 +388,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInGhazipur: {
     path: "/polytechnic-in-ghazipur",
     title: "Polytechnic in Ghazipur · BIPE Varanasi · 80 km, JEECUP 4455",
-    description: "Polytechnic for Ghazipur students — BIPE Phoolpur is 80 km via NH-29. 5 BTE UP branches with Dairy Engineering for the local dairy belt. On-campus hostel. AFRC ₹30,150/year.",
+    description: "Polytechnic for Ghazipur students — BIPE Phoolpur 80 km via NH-29. 5 BTEUP branches with Dairy Engineering for the local dairy belt. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Ghazipur",
       "diploma college Ghazipur",
@@ -401,7 +401,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInAzamgarh: {
     path: "/polytechnic-in-azamgarh",
     title: "Polytechnic in Azamgarh · BIPE Varanasi · 120 km, JEECUP 4455",
-    description: "Polytechnic for Azamgarh students — BIPE Phoolpur is 120 km via NH-233. On-campus boys' hostel essential at this distance. 5 BTE UP branches. AFRC ₹30,150/year. JEECUP 4455.",
+    description: "Polytechnic for Azamgarh students — BIPE Phoolpur 120 km via NH-233. On-campus hostel essential at this distance. 5 BTEUP branches. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Azamgarh",
       "diploma college Azamgarh",
@@ -414,7 +414,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInMau: {
     path: "/polytechnic-in-mau",
     title: "Polytechnic in Mau · BIPE Varanasi · 95 km, JEECUP 4455",
-    description: "Polytechnic for Mau students — BIPE Phoolpur is 95 km via NH-29 / NH-19. 5 BTE UP branches. UP Post-Matric scholarship-eligible. On-campus hostel. AFRC ₹30,150/year.",
+    description: "Polytechnic for Mau students — BIPE Phoolpur 95 km via NH-29 / NH-19. 5 BTEUP branches. UP Post-Matric scholarship-eligible. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Mau",
       "diploma college Mau",
@@ -427,7 +427,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInBhadohi: {
     path: "/polytechnic-in-bhadohi",
     title: "Polytechnic in Bhadohi · BIPE Varanasi · 50 km, JEECUP 4455",
-    description: "Polytechnic for Bhadohi students — BIPE Phoolpur is 50 km via NH-19. Mechanical & Dairy Engineering for the carpet-belt + agricultural-overlap households. AFRC ₹30,150/year.",
+    description: "Polytechnic for Bhadohi students — BIPE Phoolpur 50 km via NH-19. Mechanical & Dairy for the carpet-belt + agricultural households. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Bhadohi",
       "diploma college Bhadohi",
@@ -445,7 +445,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInChandauli: {
     path: "/polytechnic-in-chandauli",
     title: "Polytechnic in Chandauli · BIPE Varanasi · 40 km, JEECUP 4455",
-    description: "Polytechnic for Chandauli students — BIPE Phoolpur is just 40 km via NH-7. DDU Junction makes train-commute easy. 5 BTE UP branches including Mechanical for the Indian Railways RRB JE pipeline. AFRC ₹30,150/year.",
+    description: "Polytechnic for Chandauli — BIPE Phoolpur just 40 km via NH-7. DDU Junction train-commute easy. Mechanical for Indian Railways RRB JE. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Chandauli",
       "diploma college Chandauli",
@@ -459,7 +459,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInBallia: {
     path: "/polytechnic-in-ballia",
     title: "Polytechnic in Ballia · BIPE Varanasi · 150 km, JEECUP 4455",
-    description: "Polytechnic for Ballia students — BIPE Phoolpur is 150 km via NH-19 + NH-29. On-campus boys' hostel essential at this distance. 5 BTE UP branches — Mechanical for Army TES and RRB JE (Ballia's career heritage). AFRC ₹30,150/year.",
+    description: "Polytechnic for Ballia — BIPE Phoolpur 150 km via NH-19+NH-29. On-campus hostel essential. Mechanical for Army TES & RRB JE — Ballia career heritage.",
     keywords: [
       "polytechnic in Ballia",
       "diploma college Ballia",
@@ -479,7 +479,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInSonbhadra: {
     path: "/polytechnic-in-sonbhadra",
     title: "Polytechnic in Sonbhadra · BIPE Varanasi · 115 km, JEECUP 4455",
-    description: "Polytechnic for Sonbhadra students — BIPE Phoolpur is 115 km via NH-39. 5 branches incl. Electrical for NTPC / UPPCL pipeline (Sonbhadra's industrial belt). On-campus boys' hostel. AFRC ₹30,150/year. JEECUP 4455.",
+    description: "Polytechnic for Sonbhadra — BIPE Phoolpur 115 km via NH-39. 5 branches incl. Electrical for NTPC / UPPCL pipeline. On-campus hostel. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Sonbhadra",
       "diploma college Sonbhadra",
@@ -493,7 +493,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInSultanpur: {
     path: "/polytechnic-in-sultanpur",
     title: "Polytechnic in Sultanpur · BIPE Varanasi · 165 km, JEECUP 4455",
-    description: "Polytechnic for Sultanpur students (Awadh region) — BIPE Phoolpur is 165 km via NH-128. 5 BTE UP branches incl. rare Dairy Engineering for agricultural-overlap households. On-campus hostel. AFRC ₹30,150/year.",
+    description: "Polytechnic for Sultanpur (Awadh) — BIPE Phoolpur 165 km via NH-128. 5 BTEUP branches incl. rare Dairy for agricultural households. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Sultanpur",
       "diploma college Sultanpur",
@@ -507,7 +507,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInPratapgarh: {
     path: "/polytechnic-in-pratapgarh",
     title: "Polytechnic in Pratapgarh · BIPE Varanasi · 170 km, JEECUP 4455",
-    description: "Polytechnic for Pratapgarh students (mango / sugarcane belt) — BIPE Phoolpur is 170 km via NH-128. 5 branches incl. Dairy Engineering for agricultural-overlap households + Mechanical for Army TES / RRB JE. AFRC ₹30,150/year.",
+    description: "Polytechnic for Pratapgarh — BIPE Phoolpur 170 km via NH-128. Dairy for agricultural + Mechanical for Army TES / RRB JE belt. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Pratapgarh",
       "diploma college Pratapgarh",
@@ -521,7 +521,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInGorakhpur: {
     path: "/polytechnic-in-gorakhpur",
     title: "Polytechnic in Gorakhpur · BIPE Varanasi · 205 km, JEECUP 4455",
-    description: "Polytechnic for Gorakhpur students — BIPE Phoolpur is 205 km via NH-29. 5 BTE UP branches incl. rare Dairy Engineering. On-campus boys' hostel essential at this distance. AFRC ₹30,150/year. JEECUP 4455.",
+    description: "Polytechnic for Gorakhpur — BIPE Phoolpur 205 km via NH-29. 5 BTEUP branches incl. rare Dairy. On-campus hostel at this distance. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Gorakhpur",
       "diploma college Gorakhpur",
@@ -544,7 +544,7 @@ export const ROUTES: Record<RouteKey, {
   governmentPolytechnicEasternUp: {
     path: "/government-polytechnic-in-eastern-up",
     title: "Government Polytechnic in Eastern UP · Complete List 2026 | BIPE",
-    description: "Every government polytechnic in Eastern UP — Varanasi (Kuru Pindra, Girls), Jaunpur, Mirzapur, Ghazipur, Azamgarh, Prayagraj. Capacity, branches, JEECUP cutoffs, fees. Honest comparison with BIPE.",
+    description: "Every government polytechnic in Eastern UP — Varanasi, Jaunpur, Mirzapur, Ghazipur, Azamgarh. Capacity, branches, cutoffs, fees. Compared with BIPE.",
     keywords: [
       "government polytechnic in Eastern UP",
       "government polytechnic Varanasi",
@@ -561,7 +561,7 @@ export const ROUTES: Record<RouteKey, {
   aidedPolytechnicUp: {
     path: "/aided-polytechnic-uttar-pradesh",
     title: "Aided Polytechnic in UP · The 19 Institutes Between Government & Private | BIPE",
-    description: "Aided polytechnic in UP — 19 institutes, government-funded but privately managed. Lower fees than private, JEECUP-based admission. How aided compares with government and BIPE. 2026 guide.",
+    description: "Aided polytechnic in UP — 19 institutes, govt-funded privately managed. Lower fees, JEECUP-based. How aided compares with government + BIPE. 2026 guide.",
     keywords: [
       "aided polytechnic UP",
       "aided polytechnic colleges in UP",
@@ -576,7 +576,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupCutoff2026: {
     path: "/jeecup-cutoff-2026-bipe-vs-government",
     title: "JEECUP 2026 Cutoff · Government vs BIPE · Branch-wise Closing Ranks",
-    description: "JEECUP 2026 cutoff guide — branch-wise closing ranks across Eastern UP government polytechnics (Jaunpur ~16k, Mirzapur ~18-25k, Azamgarh ~15-22k) vs BIPE's wider rank band. With honest framework for what your rank actually qualifies for.",
+    description: "JEECUP 2026 cutoff guide — branch-wise closing ranks across Eastern UP government polytechnics (Jaunpur ~16k, Mirzapur ~18-25k) vs BIPE's wider rank band.",
     keywords: [
       "JEECUP cutoff 2026",
       "JEECUP 2026 closing rank",
@@ -600,7 +600,7 @@ export const ROUTES: Record<RouteKey, {
     // Varanasi admission" (intercept the comparison searchers), plus
     // Hindi variants. FAQPage schema baked in for rich-result eligibility.
     title: "Private vs Government Polytechnic Varanasi · The Honest Math 2026 | BIPE",
-    description: "Government Polytechnic Varanasi (~₹6,000-18,000/year) vs BIPE (AFRC ₹30,150/year) — what's identical (BTEUP diploma, JE eligibility, lateral entry) and where the fee delta goes (hostel, placement infrastructure, Dairy moat). Honest framework for 2026 admissions.",
+    description: "Government Polytechnic Varanasi (₹6k-18k/year) vs BIPE (AFRC ₹30,150/year) — what's identical (BTEUP diploma, JE eligibility) vs where the fee delta goes.",
     keywords: [
       "private vs government polytechnic",
       "government vs private polytechnic",
@@ -622,7 +622,7 @@ export const ROUTES: Record<RouteKey, {
     // capture the head term while /jeecup remains the broader
     // 6-step guidance hub.
     title: "JEECUP Counselling 2026 · 7 rounds · choice filling | BIPE 4455",
-    description: "JEECUP counselling 2026 — 7 rounds (expanded from 5), choice filling strategy, documents required, seat allotment, reporting, common mistakes. How BIPE Varanasi (code 4455) fits.",
+    description: "JEECUP counselling 2026 — 7 rounds (expanded from 5), choice filling, documents, seat allotment, reporting, common mistakes. How BIPE (4455) fits in.",
     keywords: [
       "JEECUP counselling 2026",
       "JEECUP counselling rounds",
@@ -646,7 +646,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupRegistration: {
     path: "/jeecup-registration-2026",
     title: "JEECUP Registration 2026 · Step-by-step Online Application | BIPE 4455",
-    description: "Complete JEECUP 2026 registration guide — online application at jeecup.admissions.nic.in, fee, documents, deadline, common errors. Apply to BIPE under code 4455.",
+    description: "Complete JEECUP 2026 registration guide — online application at jeecup.admissions.nic.in, fee, documents, deadline, common errors. BIPE 4455.",
     keywords: [
       "JEECUP registration",
       "JEECUP online registration",
@@ -814,7 +814,7 @@ export const ROUTES: Record<RouteKey, {
   bteupFamilyId: {
     path: "/bteup-family-id-registration",
     title: "BTEUP Family ID Registration 2026 · Linking Guide | BIPE 4455",
-    description: "UP's new Family ID mandate for BTEUP students — how to register, link to your BTEUP student record, and unlock state scholarships. Step-by-step guide from BIPE.",
+    description: "UP's new Family ID mandate for BTEUP students — how to register, link to your BTEUP record, and unlock state scholarships. Step-by-step from BIPE.",
     keywords: [
       "BTEUP Family ID",
       "BTEUP Family ID registration",
@@ -853,7 +853,7 @@ export const ROUTES: Record<RouteKey, {
   bteupResult: {
     path: "/bteup-result-check",
     title: "BTEUP Result 2026 · Semester Result + Grace / Revaluation | BIPE 4455",
-    description: "Check BTEUP semester result at bteup.org.in — marksheet download, grade explainer, apply for grace marks or revaluation. Result timeline typically ~2 months post-exam.",
+    description: "Check BTEUP semester result at bteup.org.in — marksheet download, grade explainer, grace marks, revaluation. Result timeline ~2 months post-exam.",
     keywords: [
       "BTEUP result",
       "BTEUP result 2026",
@@ -878,7 +878,7 @@ export const ROUTES: Record<RouteKey, {
   bteupRegistration: {
     path: "/bteup-student-registration",
     title: "BTEUP Student Registration 2026 · Annual Process + Documents | BIPE 4455",
-    description: "BTEUP annual student registration — what documents you submit, when, and how BIPE coordinates with BTEUP on your behalf. Required for every diploma student every year.",
+    description: "BTEUP annual student registration — documents you submit, when, and how BIPE coordinates with BTEUP. Required for every diploma student every year.",
     keywords: [
       "BTEUP student registration",
       "BTEUP registration 2026",
@@ -938,7 +938,7 @@ export const ROUTES: Record<RouteKey, {
   bteupColleges: {
     path: "/bteup-affiliated-colleges-up",
     title: "BTEUP Affiliated Colleges in UP 2026 · Verify + Compare | BIPE 4455",
-    description: "BTEUP-affiliated polytechnic colleges across Uttar Pradesh — government, aided, private categories. How to verify any college's BTEUP affiliation. BIPE's place in the system.",
+    description: "BTEUP-affiliated polytechnic colleges across Uttar Pradesh — government, aided, private categories. How to verify any college's affiliation. BIPE's place.",
     keywords: [
       "BTEUP affiliated colleges",
       "BTEUP college list UP",
