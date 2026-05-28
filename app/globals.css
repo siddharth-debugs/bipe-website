@@ -831,14 +831,20 @@ body.no-motion .live-dot { animation: none; }
 
 .nav {
   position: sticky; top: 0; z-index: 40;
-  /* Backdrop-filter is applied on .nav-inner, not here. Reason: with
-     position: sticky on this element AND body { overflow-x: hidden },
-     Chromium silently drops the filter — the backing layer it tries
-     to read becomes empty. The inner row has no sticky positioning,
-     so the filter works there cleanly. We keep this element fully
-     transparent and let the inner do the frosting. */
-  background: transparent;
+  /* Full-bar frosted glass — verified working on the live build with
+     blur(20px) applied directly here. (Earlier we'd moved this to
+     .nav-inner because of a suspected sticky + overflow-x bug; that
+     turned out not to bite in the current Chromium, so the simpler
+     option of putting the filter on the outer element wins — the
+     blur now spans the full viewport width automatically.) */
+  background: rgba(246, 244, 238, 0.68);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--line);
+}
+/* Opaque fallback for browsers that don't support backdrop-filter. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav { background: var(--paper); }
 }
 .nav-utility {
   background:
@@ -894,28 +900,9 @@ body.no-motion .live-dot { animation: none; }
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  /* Was: max-width: 1480px + margin: 0 auto + padding: 12px 24px.
-     That left raw page bg visible on both sides above the fold on
-     wide viewports (>1480px). The frosted glass needs to span the
-     full width while content stays centered around 1480px — done
-     by dropping max-width and using padding-inline to push content
-     inwards equally on wide screens, capped at 24px on narrow ones. */
-  padding: 12px max(24px, calc((100vw - 1480px) / 2));
+  padding: 12px 24px;
+  max-width: 1480px; margin: 0 auto;
   gap: 20px;
-  /* The actual frosted-glass surface — backdrop-filter works here
-     because this element is not sticky. See .nav for context.
-     blur(30px) was too weak against sharp portrait photos on
-     /faculty + /principal — features still read through. Bumped
-     to blur(60px) + 0.68 alpha so the bar reads as a proper
-     frosted wash regardless of what's scrolling beneath. */
-  background: rgba(246, 244, 238, 0.68);
-  backdrop-filter: saturate(180%) blur(60px);
-  -webkit-backdrop-filter: saturate(180%) blur(60px);
-}
-/* Fallback when backdrop-filter is unsupported — opaque cream so
-   scrolled content never reads through clearly. */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .nav-inner { background: var(--paper); }
 }
 .nav-links { display: flex; gap: 2px; align-items: center; }
 .nav-links > * { display: inline-flex; align-items: center; }
