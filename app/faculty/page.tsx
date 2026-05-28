@@ -429,7 +429,10 @@ export default function Page() {
               { num: TOTAL_FACULTY, lbl: "academic faculty", sub: "Named on this page" },
               { num: 5, lbl: "departments", sub: "BTEUP-affiliated" },
               { num: TOTAL_PUBLICATIONS, lbl: "papers published", sub: "Journals + conferences" },
-              { num: HODS.length, lbl: "department heads", sub: "One per branch" },
+              // Hardcoded 5 (one per BTEUP-affiliated branch). HODS.length is
+               // currently 4 because the Dairy HOD record isn't published yet,
+               // but the displayed count should reflect the org reality.
+               { num: 5, lbl: "department heads", sub: "One per branch" },
             ].map((s) => (
               <div key={s.lbl}>
                 <div
