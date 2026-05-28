@@ -831,25 +831,14 @@ body.no-motion .live-dot { animation: none; }
 
 .nav {
   position: sticky; top: 0; z-index: 40;
-  /* Heavy frosted-glass effect — anything that scrolls past should
-     read as a soft wash of colour behind the bar, not legible text.
-     Background uses rgba() directly (not color-mix with `transparent`)
-     because some Chromium versions return fully transparent from
-     `color-mix(... transparent)` even when the percent is high.
-     `isolation: isolate` gives backdrop-filter a clean stacking
-     context — without it the body's `overflow-x: hidden` was leaking
-     the backing-layer content through the sticky bar. */
-  background: rgba(246, 244, 238, 0.94);
-  backdrop-filter: saturate(200%) blur(28px);
-  -webkit-backdrop-filter: saturate(200%) blur(28px);
-  isolation: isolate;
+  /* Backdrop-filter is applied on .nav-inner, not here. Reason: with
+     position: sticky on this element AND body { overflow-x: hidden },
+     Chromium silently drops the filter — the backing layer it tries
+     to read becomes empty. The inner row has no sticky positioning,
+     so the filter works there cleanly. We keep this element fully
+     transparent and let the inner do the frosting. */
+  background: transparent;
   border-bottom: 1px solid var(--line);
-}
-/* Fallback for browsers that don't support backdrop-filter at all
-   (older Firefox, niche WebViews). Make the bar fully opaque so
-   scrolled content never bleeds through. */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .nav { background: var(--paper); }
 }
 .nav-utility {
   background:
@@ -908,6 +897,16 @@ body.no-motion .live-dot { animation: none; }
   padding: 12px 24px;
   max-width: 1480px; margin: 0 auto;
   gap: 20px;
+  /* The actual frosted-glass surface — backdrop-filter works here
+     because this element is not sticky. See .nav for context. */
+  background: rgba(246, 244, 238, 0.55);
+  backdrop-filter: saturate(180%) blur(30px);
+  -webkit-backdrop-filter: saturate(180%) blur(30px);
+}
+/* Fallback when backdrop-filter is unsupported — opaque cream so
+   scrolled content never reads through clearly. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav-inner { background: var(--paper); }
 }
 .nav-links { display: flex; gap: 2px; align-items: center; }
 .nav-links > * { display: inline-flex; align-items: center; }
