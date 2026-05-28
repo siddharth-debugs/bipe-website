@@ -833,12 +833,16 @@ body.no-motion .live-dot { animation: none; }
   position: sticky; top: 0; z-index: 40;
   /* Heavy frosted-glass effect — anything that scrolls past should
      read as a soft wash of colour behind the bar, not legible text.
-     Opacity bumped to 92% because at 75% dark serif headlines
-     directly under the bar were still reading through on the
-     principal/about pages (reported, Nov 2026). */
-  background: color-mix(in oklab, var(--paper) 92%, transparent);
+     Background uses rgba() directly (not color-mix with `transparent`)
+     because some Chromium versions return fully transparent from
+     `color-mix(... transparent)` even when the percent is high.
+     `isolation: isolate` gives backdrop-filter a clean stacking
+     context — without it the body's `overflow-x: hidden` was leaking
+     the backing-layer content through the sticky bar. */
+  background: rgba(246, 244, 238, 0.94);
   backdrop-filter: saturate(200%) blur(28px);
   -webkit-backdrop-filter: saturate(200%) blur(28px);
+  isolation: isolate;
   border-bottom: 1px solid var(--line);
 }
 /* Fallback for browsers that don't support backdrop-filter at all
