@@ -8,6 +8,7 @@ import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { DatePicker } from "@/components/ui/DatePicker";
 import { Honeypot } from "@/components/shell/Honeypot";
+import { track } from "@/lib/analytics";
 import {
   visitFormSchema,
   visitDefaults,
@@ -79,6 +80,7 @@ export function VisitForm() {
         });
         return;
       }
+      track("visit_submit", { branch: data.branch, party: data.party });
       setStatus({
         state: "success",
         firstName: data.name.trim().split(/\s+/)[0] || "there",

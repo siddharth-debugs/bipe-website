@@ -7,6 +7,7 @@ import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { Honeypot } from "@/components/shell/Honeypot";
+import { track } from "@/lib/analytics";
 import {
   contactFormSchema,
   contactDefaults,
@@ -69,6 +70,7 @@ export function ContactForm() {
         });
         return;
       }
+      track("contact_submit", { branch: data.branch });
       setStatus({
         state: "success",
         firstName: data.name.trim().split(/\s+/)[0] || "there",

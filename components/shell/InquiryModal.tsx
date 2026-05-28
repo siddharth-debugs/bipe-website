@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { BRANCH_OPTIONS } from "@/lib/validation";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { Honeypot } from "@/components/shell/Honeypot";
+import { track } from "@/lib/analytics";
 
 /**
  * Site-wide prospectus popup. Captures name + phone + branch interest,
@@ -105,6 +106,11 @@ export function InquiryModal() {
       );
     }
 
+    track("enquiry_submit", {
+      branch: branch || "unspecified",
+      persisted,
+      source: "inquiry-modal",
+    });
     setStatus("success");
     dismissedRef.current = true;
 

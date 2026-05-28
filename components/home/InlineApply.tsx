@@ -5,6 +5,7 @@ import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 import { Honeypot } from "@/components/shell/Honeypot";
+import { track } from "@/lib/analytics";
 
 type SendState = "idle" | "submitting" | "error";
 
@@ -43,6 +44,11 @@ export const InlineApply = () => {
         setErrorMsg(json.error ?? "Could not send. Please try again or WhatsApp us.");
         return;
       }
+      track("enquiry_submit", {
+        branch: form.branch,
+        mode: form.mode,
+        source: "home-inline",
+      });
       setSent(true);
       setSend("idle");
     } catch {

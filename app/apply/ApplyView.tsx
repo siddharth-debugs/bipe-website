@@ -8,6 +8,7 @@ import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { Honeypot } from "@/components/shell/Honeypot";
+import { track } from "@/lib/analytics";
 import {
   applyFormSchema,
   applyDefaults,
@@ -77,6 +78,7 @@ export function ApplyView() {
       const ref = json.id
         ? `BIPE-${String(json.id).padStart(6, "0")}`
         : "BIPE-PENDING";
+      track("apply_submit", { branch: data.branch, ref });
       setSubmitStatus({ state: "success", ref });
     } catch {
       setSubmitStatus({

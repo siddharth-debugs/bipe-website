@@ -23,8 +23,22 @@ import { GoogleAnalytics } from "@next/third-parties/google";
  *   Vercel Analytics  →  CWV + visitor counts (Real User Monitoring).
  *                        Free, light, ~35 KB deferred chunk.
  *   GA4               →  user behaviour, funnels, source/medium,
- *                        event tracking (apply_submit, mailto_click,
- *                        whatsapp_click). The actionable layer.
+ *                        first-party event tracking. The actionable
+ *                        layer.
+ *
+ *   First-party events shipped May 2026 (via lib/analytics.ts +
+ *   components/shell/OutboundTracker.tsx):
+ *
+ *     call_click       — tel: tap (auto, delegated)
+ *     whatsapp_click   — wa.me/ tap (auto, delegated)
+ *     mailto_click     — mailto: tap (auto, delegated)
+ *     apply_submit     — /apply form success
+ *     contact_submit   — /contact form success
+ *     visit_submit     — /visit form success
+ *     enquiry_submit   — inquiry popup + homepage inline form success
+ *
+ *   Mark these as conversion events in GA4 → Admin → Events to
+ *   surface them as key metrics on dashboards.
  *
  *   They coexist intentionally — VA tracks "is the site fast?", GA4
  *   tracks "is the funnel working?". Different questions, both worth
