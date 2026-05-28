@@ -156,7 +156,7 @@ export default function Page() {
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "16", l: "yrs at BIPE" },
-                  { num: "1,000+", l: "placed" },
+                  { num: "1,200+", l: "placed" },
                   { num: "5", l: "branches" },
                 ].map((s) => (
                   <div key={s.l}>
