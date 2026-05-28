@@ -2290,17 +2290,23 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "12 min read",
     excerpt:
       "पॉलिटेक्निक क्या है, कौन कर सकता है, कितने साल का होता है, कैसे आवेदन करें, फीस कितनी है, और 10वीं के बाद इंजीनियर बनने का सबसे सीधा रास्ता क्या है — एक हिन्दी गाइड Eastern UP और बिहार के परिवारों के लिए।",
-    // CTR-rewritten May 2026: was 5,910 impressions / 0.25% CTR over
-    // 28 days. The "गाइड" framing wasn't drawing clicks — searchers
-    // for "polytechnic kya hota hai" want a direct answer in the SERP
-    // snippet, not a "guide" promise. New title leads with the
-    // question + direct answer; description states the answer
-    // immediately ("10वीं के बाद 3 साल का diploma") instead of
-    // describing what the article covers.
+    // CTR rewrite v2 · 28 May 2026 — first rewrite (May 20) moved
+    // CTR from 0.25% to 0.19% over 90 days at 21,406 impressions.
+    // That's WAY below the position-CTR baseline (~3-5% expected at
+    // our avg position 6-8 on this page). Diagnosis from the GSC
+    // analysis: "| BIPE" suffix made the SERP look like a college-
+    // promo for what is fundamentally an informational query. The
+    // "polytechnic kya hota hai" searcher wants a neutral definition
+    // like Wikipedia — not a college ad. v2 drops the brand from
+    // title (URL still shows bipevns.org so brand isn't lost), leads
+    // with the question form matched verbatim to the 3,440/mo query,
+    // and replaces the everything-and-the-kitchen-sink description
+    // with 4 concrete numbers (3 साल · ₹30,150 · 5 branches · JEECUP)
+    // that survive SERP truncation.
     metaTitle:
-      "Polytechnic Kya Hota Hai? 10वीं के बाद 3 साल का Diploma · पूरी जानकारी | BIPE",
+      "Polytechnic Kya Hota Hai? — 3 साल का Diploma · ₹30,150/साल · JEECUP 2026",
     metaDescription:
-      "पॉलिटेक्निक 10वीं के बाद का 3 साल का AICTE-approved diploma course है — Mechanical, Electrical, Civil, CSE, Dairy की 5 branches। JEECUP entrance, ₹30,150/year fees, सरकारी नौकरी, B.Tech lateral entry — पूरी जानकारी हिन्दी में।",
+      "पॉलिटेक्निक 10वीं के बाद का 3 साल का AICTE-approved diploma course है। Mechanical, Electrical, Civil, CSE, Dairy की 5 branches। फीस ₹30,150/साल। JEECUP entrance। B.Tech lateral entry possible।",
     sections: [
       {
         type: "callout",
