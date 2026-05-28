@@ -322,7 +322,7 @@ export default function Page() {
               </p>
 
               <p style={{ marginTop: 22 }}>
-                A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood — and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record — 1,200+ verified alumni placements now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more — is the only kind of report card we believe in.
+                A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood — and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record — 1,331 verified alumni placements now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more — is the only kind of report card we believe in.
               </p>
 
               <p style={{ marginTop: 22 }}>

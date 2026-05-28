@@ -36,7 +36,7 @@ const AUDIT_EXTRA_RECRUITERS: string[] = [
 
 // Branch-wise placement breakdown was removed 28 May 2026 per user
 // request -- the per-branch counts (522 / 326 / 145) summed to 993,
-// which conflicted with the canonical 1,200+ verified-placements
+// which conflicted with the canonical 1,331 verified-placements
 // figure shown elsewhere on the site. Showing a partial breakdown
 // next to the headline total invited the comparison. The total
 // remains in the hero / schema; the breakdown is no longer published.
@@ -128,7 +128,7 @@ const ALUMNI_JSON_LD = {
   url: `${SITE_URL}/placements`,
   name: "Placements · BIPE Varanasi",
   description:
-    "Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — 1,200+ placements through 2024, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.",
+    "Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — 1,331 placements through 2025, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.",
   about: {
     "@type": "CollegeOrUniversity",
     name: "Banaras Institute of Polytechnic & Engineering",
@@ -180,7 +180,7 @@ const PROGRAMS: Program[] = [
 const CELL_POINTS: { num: string; title: string; body: string }[] = [
   { num: "01", title: "Curate the recruiter pipeline", body: "Relationships built over sixteen years across mechanical, electrical, civil, dairy and IT verticals — kept warm with quarterly outreach." },
   { num: "02", title: "Train every cohort", body: "Six pre-placement programmes run on rotation — workshop, lecture series, mock interviews, AMCAT, tech talks." },
-  { num: "03", title: "Verify every placement", body: "Only joining-letter-confirmed offers count toward the public number. The 1,200+ figure is auditable, not aspirational." },
+  { num: "03", title: "Verify every placement", body: "Only joining-letter-confirmed offers count toward the public number. The 1,331 figure is auditable, not aspirational." },
   { num: "04", title: "Track the alumni", body: "Quarterly outreach to keep the network warm and the recruiter pipeline fresh — alumni open most of the new doors." },
 ];
 
@@ -262,12 +262,12 @@ export default async function Page() {
               <div className="eyebrow">Placements · Sixteen years</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  1,200+
+                  1,331
                 </span>{" "}
                 careers. Counting.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                Polytechnic placements out of BIPE Varanasi — 1,200+ verified through 2024 · sixteen years on record · alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, JCB and beyond.
+                Polytechnic placements out of BIPE Varanasi — 1,331 TPO-verified through 2025 · sixteen years on record · 28 in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · alumni at Mahindra, Tata Steel, BEL, Mumbai Metro, JCB and beyond.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
@@ -290,7 +290,7 @@ export default async function Page() {
               </div>
               {/* "Download BIPE Placement Record · PDF" button removed
                   28 May 2026 per user request -- the PDF claimed 993 placements
-                  through 2024 which now conflicts with the canonical 1,200+
+                  through 2024 which now conflicts with the canonical 1,331
                   verified figure shown elsewhere on the site. The named alumni
                   list below + recruiter strip already carry the record. */}
             </div>
@@ -298,7 +298,7 @@ export default async function Page() {
             {/* Vertical stat stack */}
             <div style={{ display: "grid", gap: 14 }}>
               {[
-                { num: "1,200", suffix: "+", lbl: "Placed", sub: "Verified through 2024" },
+                { num: "1,331", suffix: "", lbl: "Placed", sub: "TPO-verified 2016-2025 · 28 in govt posts" },
                 { num: "44", suffix: "", lbl: "Recruiters", sub: "Across India" },
                 { num: "16", suffix: "", lbl: "Years", sub: "Track record · since 2010" },
               ].map((s) => (
@@ -340,7 +340,7 @@ export default async function Page() {
         Section "2. BRANCH-WISE PLACEMENTS" removed 28 May 2026 per
         user request. The per-branch breakdown (522 / 326 / 145
         Mech / Elec / Civil) summed to 993, which conflicted with
-        the canonical 1,200+ headline elsewhere on the site. The
+        the canonical 1,331 headline elsewhere on the site. The
         cohort-level totals + named alumni list below already
         carry the placement-record argument; the per-branch
         tabulation isn't needed alongside them.
@@ -1094,13 +1094,13 @@ export default async function Page() {
                     color: "color-mix(in oklab, var(--paper) 72%, transparent)",
                     maxWidth: "44ch",
                   }}>
-                    1,200+ alumni walked this floor before you. The placement cell is a continuation of admissions — start the conversation now.
+                    1,331 alumni walked this floor before you. The placement cell is a continuation of admissions — start the conversation now.
                   </p>
                 </div>
 
                 <div className="row" style={{ marginTop: 48, gap: 24, flexWrap: "wrap", alignItems: "center" }}>
                   {[
-                    { num: "1,200+", l: "placed" },
+                    { num: "1,331", l: "placed" },
                     { num: "44", l: "recruiters" },
                     { num: "16", l: "years" },
                     { num: "2200+", l: "alumni" },

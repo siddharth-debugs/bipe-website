@@ -56,7 +56,7 @@ export const FinalCTA = () => (
               </p>
             </div>
 
-            {/* The headline stats (16 years / 1,200+ / 5 branches) already
+            {/* The headline stats (16 years / 1,331 / 5 branches) already
                 live in the StatsBar right under the hero — repeating
                 them here was filler. Show what happens AFTER the user
                 presses Apply instead, so the CTA earns its space. */}

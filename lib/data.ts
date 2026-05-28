@@ -176,7 +176,7 @@ export const DATA: DataShape = {
   ],
   stats: [
     { num: "16", label: "Years serving Eastern UP", sub: "since 2010" },
-    { num: "2200+", label: "Successful alumni", sub: "1200+ placed since 2010" },
+    { num: "2200+", label: "Successful alumni", sub: "1,331 placed since 2010" },
     { num: "5", label: "BTEUP-affiliated branches", sub: "incl. rare Dairy" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
@@ -319,7 +319,7 @@ export const DATA: DataShape = {
     { cat: "Fees", q: "What is the refund policy?", a: "Refunds follow AICTE norms: 100% (less ₹1,000) if you withdraw 15+ days before classes start, 90% within 15 days, 80% within the first 15 days of classes (if the seat is filled), 50% after that, and no refund after 30 days. Refunds are processed within 30 working days." },
     { cat: "Hostel & Campus", q: "Is hostel available?", a: "Yes — for boys. BIPE currently runs a boys' hostel block on campus with a resident warden, staffed gates, visitor registration, fire safety, anti-ragging measures and a 9:30 PM curfew (extendable on parental authorisation). A girls' hostel is on the trust's roadmap; for now, girl students attend as day-scholars or with their own local arrangements — talk to admissions if you need help finding safe accommodation in the area." },
     { cat: "Hostel & Campus", q: "Is the mess vegetarian?", a: "The mess serves three meals a day with both vegetarian and non-vegetarian options. Annual mess fee is ₹36,000." },
-    { cat: "Placements & Career", q: "Where do graduates work?", a: "Alumni work at Mahindra, Krishna Maruti, JCB, Asian Paints, Adani Solar, Ola Electric, RR Parkon, Knorr Bremse, BD Group Campa, Amber and others — 1200+ placements through 2024." },
+    { cat: "Placements & Career", q: "Where do graduates work?", a: "Alumni work at Mahindra, Krishna Maruti, JCB, Asian Paints, Adani Solar, Ola Electric, RR Parkon, Knorr Bremse, BD Group Campa, Amber and others — 1,331 placements through 2025." },
     { cat: "Placements & Career", q: "Can I get a government job after a diploma?", a: "Yes — diploma engineers from BIPE qualify for SSC JE, RRB JE, UPPCL, NDDB, State Dairy Boards, Indian Army Technical and similar central and state recruitment. Several BIPE alumni work as Junior Engineers and Assistant Loco Pilots in Indian Railways and Mumbai Metro." },
     { cat: "Approvals & Trust", q: "Is BIPE AICTE-approved?", a: "Yes. BIPE holds AICTE Permanent ID 1-488233171 and the EoA letter for 2026-27 (F.No. Northern/1-46216893240/2026/EOA, dated 16 March 2026). It is BTEUP-affiliated under JEECUP code 4455 and AISHE-registered with the Department of Higher Education, MoE." },
     { cat: "Approvals & Trust", q: "How do I file a grievance?", a: "Email grievance@bipevns.org or write to the Principal's office. Complaints are treated as confidential and acknowledged within 7 working days. Four statutory committees handle different categories — Anti-Ragging, Internal (POSH), SC/ST and PWD Cell." },

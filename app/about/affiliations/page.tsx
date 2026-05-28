@@ -441,7 +441,7 @@ export default function Page() {
             {[
               {
                 q: "Does AICTE / BTE UP approval guarantee a job after the diploma?",
-                a: "No. Approval guarantees the diploma is government-recognised and the curriculum is BTEUP-standard — that&rsquo;s the floor, not the ceiling. Job outcomes depend on the institute&rsquo;s placement cell, the student&rsquo;s performance, and the wider labour market. See /placements for BIPE&rsquo;s actual record (1,200+ verified placements over 16 years).",
+                a: "No. Approval guarantees the diploma is government-recognised and the curriculum is BTEUP-standard — that&rsquo;s the floor, not the ceiling. Job outcomes depend on the institute&rsquo;s placement cell, the student&rsquo;s performance, and the wider labour market. See /placements for BIPE&rsquo;s actual record (1,331 verified placements over 16 years).",
               },
               {
                 q: "If AICTE approval is annual, what happens if it isn&rsquo;t renewed?",

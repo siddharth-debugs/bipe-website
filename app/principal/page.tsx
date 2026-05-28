@@ -71,7 +71,7 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
   {
     roman: "iv",
     title: "Outcome accountability",
-    sub: "1,200+ verified placements · 16-year record",
+    sub: "1,331 verified placements · 16-year record",
     body:
       "We publish placement records, not just photographs. Alumni now serve at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro and dozens more. Government-job admits — SSC JE, RRB JE, UPPCL — are tracked too.",
   },
@@ -156,7 +156,7 @@ export default function Page() {
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "16", l: "yrs at BIPE" },
-                  { num: "1,200+", l: "placed" },
+                  { num: "1,331", l: "placed" },
                   { num: "5", l: "branches" },
                 ].map((s) => (
                   <div key={s.l}>

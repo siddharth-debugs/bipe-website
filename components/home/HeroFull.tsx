@@ -55,7 +55,7 @@ async function loadHero(): Promise<HeroData> {
     // backend record should be updated via the admin panel to match,
     // otherwise this fix is dormant in production.
     description:
-      "AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,200+ placed · Eastern UP since 2010.",
+      "AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,331 placed · Eastern UP since 2010.",
     cta_primary: { label: "Apply for 2026-27", href: "/apply" },
     cta_secondary: { label: "Book a campus visit", href: "/visit" },
     bg_image_url: BIPE_IMG.heroWide,

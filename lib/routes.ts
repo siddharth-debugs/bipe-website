@@ -88,9 +88,9 @@ export const ROUTES: Record<RouteKey, {
     path: "/about",
     // CTR rewrite 26 May 2026 · numbers in title (key CTR signal for
     // institutional queries). Specifics > "sixteen years of education"
-    // generic prose. Updated to 1,200+/2,200+ post commit 065693f.
-    title: "About BIPE Varanasi · Since 2010 · 1,200+ Placements · BTEUP 4455",
-    description: "BIPE Varanasi — est. 2010 · 6-acre Phoolpur campus · AICTE 1-488233171 · BTEUP 4455 · 1,200+ alumni at Mahindra, Tata, BEL, Indian Railways.",
+    // generic prose. Updated to 1,331/2,200+ post commit 065693f.
+    title: "About BIPE Varanasi · Since 2010 · 1,331 Placements · BTEUP 4455",
+    description: "BIPE Varanasi — est. 2010 · 6-acre Phoolpur campus · AICTE 1-488233171 · BTEUP 4455 · 1,331 alumni at Mahindra, Tata, BEL, Indian Railways.",
   },
   courses: {
     path: "/courses",
@@ -142,21 +142,21 @@ export const ROUTES: Record<RouteKey, {
   },
   placements: {
     path: "/placements",
-    // CTR rewrite 26 May 2026 · bumped to 1,200+ per Siddharth's content
+    // CTR rewrite 26 May 2026 · bumped to 1,331 per Siddharth's content
     // review (commit 065693f). Lead with recruiter names — those are
     // the brand-recognition CTR boosters for "polytechnic placements UP"
     // search intent.
-    title: "Polytechnic Placements UP · 1,200+ at Mahindra, Tata Steel, BEL | BIPE",
-    description: "1,200+ BIPE alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric. 2,200+ alumni network.",
-    quickLink: { label: "Placements", hint: "1,200+ alumni placed", priority: 4 },
+    title: "Polytechnic Placements UP · 1,331 at Mahindra, Tata Steel, BEL | BIPE",
+    description: "1,331 BIPE alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric. 2,200+ alumni network.",
+    quickLink: { label: "Placements", hint: "1,331 alumni placed", priority: 4 },
   },
   alumni: {
     path: "/alumni",
     // CTR rewrite 26 May 2026 · bumped to current published numbers
     // (commit 065693f). "123 with photos" was internal-data styling
     // unsearched by users — replaced with "44 Recruiters" CTR anchor.
-    title: "BIPE Alumni · 2,200+ Network · 1,200+ Placed at 44 Recruiters",
-    description: "Browse 2,200+ BIPE alumni · 1,200+ verified placements at 44 recruiters (2013–2025). Mahindra, Tata Steel, BEL, Indian Railways. Filter by branch.",
+    title: "BIPE Alumni · 2,200+ Network · 1,331 Placed at 44 Recruiters",
+    description: "Browse 2,200+ BIPE alumni · 1,331 verified placements at 44 recruiters (2013–2025). Mahindra, Tata Steel, BEL, Indian Railways. Filter by branch.",
   },
   campus: {
     path: "/campus",
@@ -362,8 +362,8 @@ export const ROUTES: Record<RouteKey, {
     // long-tail BIPE-brand queries that surface in GSC. Dropped all
     // "BIPE vs [named competitor]" keywords — those compete for a tiny
     // volume cluster and leak SERP exposure to competitors.
-    title: "Why BIPE · 16 Years · 1,200+ Placements · AFRC ₹30,150 | Varanasi",
-    description: "Why families across Eastern UP choose BIPE since 2010 — BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, on-campus hostel, 1,200+ placements. Eight pillars.",
+    title: "Why BIPE · 16 Years · 1,331 Placements · AFRC ₹30,150 | Varanasi",
+    description: "Why families across Eastern UP choose BIPE since 2010 — BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, on-campus hostel, 1,331 placements. Eight pillars.",
     keywords: [
       "best polytechnic college in Varanasi",
       "top polytechnic college in Varanasi",

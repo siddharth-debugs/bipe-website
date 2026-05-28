@@ -116,7 +116,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Placement infrastructure",
     bipe:
-      "1,200+ verified placements over 16 years across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty other recruiters. Year-wise named alumni list with named recruiters is public on the site.",
+      "1,331 verified placements over 16 years across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty other recruiters. Year-wise named alumni list with named recruiters is public on the site.",
     context:
       "Placement cells at government polytechnics in UP operate effectively for many students — particularly via central-government JE exams — but typically rely on the student-led application route rather than on-campus drive intensity. Detailed published placement records vary by institute.",
     verifyLabel: "See named alumni list",
@@ -176,7 +176,7 @@ const FAQS: FaqItem[] = [
     question:
       "When should I choose BIPE over a government polytechnic?",
     answer:
-      "When the additional ~₹20,000-25,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of 1,200+ placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or the rare Dairy Engineering branch with the Amul / Mother Dairy / NDDB recruiter pipeline.",
+      "When the additional ~₹20,000-25,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of 1,331 placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or the rare Dairy Engineering branch with the Amul / Mother Dairy / NDDB recruiter pipeline.",
   },
   {
     question:
@@ -818,7 +818,7 @@ export default function Page() {
                   access is non-negotiable.
                 </li>
                 <li>
-                  You want a documented placement record with 1,200+ named alumni at
+                  You want a documented placement record with 1,331 named alumni at
                   named recruiters, not a self-driven job search.
                 </li>
                 <li>

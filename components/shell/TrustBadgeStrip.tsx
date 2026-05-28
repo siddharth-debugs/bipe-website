@@ -13,7 +13,7 @@ import Link from "next/link";
  *   - AISHE Registered           linked to /about/affiliations
  *   - AFRC Compliant             linked to /fees
  *   - Since 2010 · 16 years      linked to /about
- *   - 1,200+ Placements          linked to /placements
+ *   - 1,331 Placements          linked to /placements
  *
  * Visual design — May 2026 upgrade (Direction A · verified badges):
  *   - Each credential renders as a bordered card with a verified
@@ -61,7 +61,7 @@ const BADGES: Badge[] = [
   { label: "AISHE Registered", detail: "Ministry of Education", href: "/about/affiliations" },
   { label: "AFRC Compliant", detail: "₹30,150/year tuition", href: "/fees" },
   { label: "Since 2010", detail: "16 years on record", href: "/about" },
-  { label: "1,200+ Placements", detail: "2,200+ alumni network", href: "/placements" },
+  { label: "1,331 Placements", detail: "2,200+ alumni network", href: "/placements" },
 ];
 
 export function TrustBadgeStrip() {
