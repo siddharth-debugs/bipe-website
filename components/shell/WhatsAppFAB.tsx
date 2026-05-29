@@ -1,16 +1,32 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { BRANCH_OPTIONS } from "@/lib/validation";
+import {
+  WhatsAppForm,
+  type WhatsAppFormRenderProps,
+} from "@/components/forms/WhatsAppForm";
 
-// Admissions WhatsApp line — separate from the general DATA.contact.whatsapp
-// number on purpose: this FAB routes to the dedicated admissions handset.
-const WA_PHONE = "919415202879";
-
+/**
+ * Floating WhatsApp action bubble — the persistent "BIPE Sampark"
+ * chat affordance docked in the lower-right corner. Opens a mini
+ * chat-style panel where the visitor drops a name + course interest
+ * and is then handed off to a real WhatsApp chat with admissions.
+ *
+ * 28 May 2026 — submission logic factored out to the shared
+ * <WhatsAppForm /> component + lib/whatsappHandoff utility module
+ * per user direction "there should be only 2-3 format for form like
+ * one for enquiry one for apply and one whatsapp format". This
+ * surface keeps its floating-panel visual chrome (.wa-* CSS
+ * classes); the WhatsApp-handoff orchestration lives in the shared
+ * module.
+ *
+ * Persistence: FAB does NOT persist to /api/submit by default — the
+ * visitor has already opted in via the affordance and we don't want
+ * a duplicate row in the Inbox per FAB click. The InquiryModal
+ * (which fires unprompted) persists; the FAB doesn't.
+ */
 export function WhatsAppFAB() {
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [course, setCourse] = useState("");
   const panelRef = useRef<HTMLDivElement | null>(null);
 
   // Close on Escape and on outside click while the panel is open.
@@ -30,20 +46,6 @@ export function WhatsAppFAB() {
       document.removeEventListener("mousedown", onClick);
     };
   }, [open]);
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const cleanName = name.trim() || "there";
-    const cleanCourse = course.trim();
-    const text = cleanCourse
-      ? `Hi, I'm ${cleanName}. I'm interested in ${cleanCourse}. Please share details.`
-      : `Hi, I'm ${cleanName}. Please share BIPE admission details.`;
-    const url = `https://api.whatsapp.com/send/?phone=${WA_PHONE}&text=${encodeURIComponent(
-      text,
-    )}&type=phone_number&app_absent=0`;
-    window.open(url, "_blank", "noopener,noreferrer");
-    setOpen(false);
-  };
 
   return (
     <>
@@ -78,7 +80,7 @@ export function WhatsAppFAB() {
             </div>
             <div>
               <div className="wa-panel-title">BIPE Sampark</div>
-              <div className="wa-panel-sub">Admission Enquiry & Assistance</div>
+              <div className="wa-panel-sub">Admission Enquiry &amp; Assistance</div>
             </div>
           </div>
 
@@ -89,37 +91,50 @@ export function WhatsAppFAB() {
             </div>
           </div>
 
-          <form className="wa-panel-form" onSubmit={submit}>
-            <input
-              type="text"
-              required
-              placeholder="Your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              aria-label="Your name"
-            />
-            <select
-              required
-              value={course}
-              onChange={(e) => setCourse(e.target.value)}
-              aria-label="Course interest"
-            >
-              <option value="" disabled>Select course interest…</option>
-              {BRANCH_OPTIONS.map((b) => (
-                <option key={b} value={b}>{b}</option>
-              ))}
-            </select>
-            <button type="submit" className="wa-submit">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="22" y1="2" x2="11" y2="13" />
-                <polygon points="22 2 15 22 11 13 2 9 22 2" />
-              </svg>
-              Chat on WhatsApp
-            </button>
-            <div className="wa-direct">
-              Or call directly: <a href="tel:+919415202879">+91 94152 02879</a>
-            </div>
-          </form>
+          <WhatsAppForm
+            source="whatsapp-fab"
+            gtagEvent="enquiry_submit"
+            onSuccess={() => setOpen(false)}
+            renderFields={({
+              name,
+              branch,
+              setName,
+              setBranch,
+              branchOptions,
+            }: WhatsAppFormRenderProps) => (
+              <div className="wa-panel-form">
+                <input
+                  type="text"
+                  required
+                  placeholder="Your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  aria-label="Your name"
+                />
+                <select
+                  required
+                  value={branch}
+                  onChange={(e) => setBranch(e.target.value)}
+                  aria-label="Course interest"
+                >
+                  <option value="" disabled>Select course interest…</option>
+                  {branchOptions.map((b) => (
+                    <option key={b} value={b}>{b}</option>
+                  ))}
+                </select>
+                <button type="submit" className="wa-submit">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                  Chat on WhatsApp
+                </button>
+                <div className="wa-direct">
+                  Or call directly: <a href="tel:+919415202879">+91 94152 02879</a>
+                </div>
+              </div>
+            )}
+          />
         </div>
       )}
     </>
