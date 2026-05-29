@@ -322,7 +322,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {GOV.map((g) => (
               <article key={g.cat} className="card" style={{ padding: 32 }}>
                 <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 24, alignItems: "start" }}>
@@ -383,8 +383,8 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
-            <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden", maxWidth: 880, margin: "0 auto" }}>
+            <div style={{ padding: "44px 36px", borderBottom: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>JEECUP top rank</div>
               {/* 28 May 2026 — anchored to the actual published Trust
                   policy at the user's direction: candidates within the
@@ -518,7 +518,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {FAQS.map((f, i) => (
               <article key={f.q} className="card" style={{ padding: 32 }}>
                 <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 20, alignItems: "start" }}>
