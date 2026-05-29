@@ -323,8 +323,13 @@ export const DATA: DataShape = {
   // Ather, Hero MotoCorp). Four new recruiters added: RR Parkon,
   // Knorr Bremse, BD Group Campa, Amber.
   recruiters: [
+    // 29 May 2026 — "Hollister" added per user direction. The
+    // surgical-and-medical-device manufacturer (Stuart, FL · Indian
+    // ops in Pune) has been recruiting BIPE diploma graduates; the
+    // earlier curated list missed it.
     "Mahindra", "Krishna Maruti", "JCB", "Asian Paints", "Adani Solar",
     "Ola Electric", "RR Parkon", "Knorr Bremse", "BD Group Campa", "Amber",
+    "Hollister",
   ],
   whyBipe: [
     { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },

@@ -330,11 +330,16 @@ export const FACULTY: Faculty[] = [
   {
     id: "amit-kumar-pal",
     name: "Amit Kumar Pal",
-    designation: "Lecturer, Mechanical Engineering",
+    // 29 May 2026 — TPO designation moved here from "Amit Kumar"
+    // entry below per user correction. Amit Kumar Pal IS the Training
+    // & Placement Officer; Amit Kumar (separate person) is a regular
+    // Mechanical Engineering lecturer.
+    designation: "Lecturer, Mechanical Engineering & TPO",
     department: "Mechanical",
     qualifications: ["B.Tech (Mechanical Engineering), SMS Institute of Technology, Lucknow"],
     experience: "",
-    photo: "",
+    photo: "/faculty/amit-kumar-pal.png",
+    highlight: "Training & Placement Officer",
   },
   {
     id: "vinay-kumar-yadav",
@@ -348,8 +353,11 @@ export const FACULTY: Faculty[] = [
   {
     id: "amrit-shankar",
     name: "Amrit Shankar",
-    designation: "Lecturer, Mechanical Engineering",
-    department: "Mechanical",
+    // 29 May 2026 — branch fixed from Mechanical → Dairy Engineering
+    // per user correction. His B.Tech is in Dairy Technology, so the
+    // Mechanical designation was a filing error.
+    designation: "Lecturer, Dairy Engineering",
+    department: "Dairy",
     qualifications: ["B.Tech (Dairy Technology), Raja Balwant Singh Engineering Technical College, Agra"],
     experience: "5 Years Industry (Automobile · Manufacturing) · 2 Years Teaching",
     photo: "/faculty/amrit-shankar.png",
@@ -421,12 +429,19 @@ export const FACULTY: Faculty[] = [
   {
     id: "amit-kumar",
     name: "Amit Kumar",
-    designation: "Lecturer, Mechanical Engineering & TPO",
+    // 29 May 2026 — TPO designation REMOVED per user correction. The
+    // actual TPO is Amit Kumar Pal (above). Amit Kumar is a regular
+    // Mechanical Engineering lecturer; the prior misattribution came
+    // from an earlier session where the name "Amit Kumar" was used
+    // ambiguously. Photo also cleared because the file at
+    // /faculty/amit-kumar.png is actually a portrait of Amit Kumar
+    // Pal (the TPO), now moved to /faculty/amit-kumar-pal.png. A
+    // real photo of Amit Kumar can be added later via the admin.
+    designation: "Lecturer, Mechanical Engineering",
     department: "Mechanical",
     qualifications: ["B.Tech (Mechanical Engineering), Dr. Ram Manohar Lohia Avadh University"],
     experience: "10+ Years Teaching",
-    photo: "/faculty/amit-kumar.png",
-    highlight: "Training & Placement Officer",
+    photo: "",
   },
   {
     id: "brijmohan-singh",
@@ -449,8 +464,11 @@ export const FACULTY: Faculty[] = [
   {
     id: "anand-kumar-tyagi",
     name: "Anand Kumar Tyagi",
-    designation: "Lecturer, Mechanical Engineering",
-    department: "Mechanical",
+    // 29 May 2026 — branch fixed from Mechanical → Dairy Engineering
+    // per user correction. His B.Tech is in Dairy Technology — same
+    // filing-error fix as Amrit Shankar above.
+    designation: "Lecturer, Dairy Engineering",
+    department: "Dairy",
     qualifications: ["B.Tech (Dairy Technology), IIIT Jabalpur"],
     experience: "4 Years Teaching",
     photo: "/faculty/anand-kumar-tyagi.png",

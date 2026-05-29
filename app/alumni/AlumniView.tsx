@@ -113,7 +113,15 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
     });
   }, [all, q, branch, year, status]);
 
-  // Top recruiters tally for the stats strip
+  // Top recruiters tally for the stats strip. Company names in the
+  // bundled manifest were imported with trailing drive-date suffixes
+  // baked into the string (e.g. "MKC GUJRAT 24/09/2020" or "Vikash
+  // Group, Faridabad 17-05-2018") which made the recruiter look like
+  // a single-day placement. Strip those date patterns at display
+  // time only; the underlying manifest stays as-is so drive history
+  // can still match by raw company+date keys. User-flagged 29 May
+  // 2026 ("333 not in single day 24/09/2020 — its over a period of
+  // time").
   const topRecruiter = useMemo(() => {
     const counts: Record<string, number> = {};
     for (const a of all) counts[a.company] = (counts[a.company] ?? 0) + 1;
@@ -125,7 +133,13 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
         name = k;
       }
     }
-    return { name, count: max };
+    // Strip trailing date patterns: " 24/09/2020", "-17-05-2018",
+    // " 03.02.2018", etc. Also strip a leading comma+location
+    // fragment if present.
+    const cleaned = name
+      .replace(/[\s,-]+\d{1,2}[/.\-]\d{1,2}[/.\-]\d{2,4}\s*$/, "")
+      .trim();
+    return { name: cleaned || name, count: max };
   }, [all]);
 
   function resetFilters() {
@@ -248,14 +262,22 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
             {[
               // 28 May 2026 — stats reframed to put the canonical
               // 1,331 / 44 numbers up front, with the directory
-              // subset (997 named / 16 drives / top-recruiter tally)
-              // following. Keeps the SEO-relevant numbers consistent
-              // with /placements + homepage while still surfacing the
+              // subset (997 named / top-recruiter tally) following.
+              // Keeps the SEO-relevant numbers consistent with
+              // /placements + homepage while still surfacing the
               // directory-level detail the rest of this page renders.
+              //
+              // 29 May 2026 — "Drives documented: 16" stat dropped
+              // per user direction "16 is not correct figure". The
+              // 16 was just the count of recruiter-drives in the
+              // bundled manifest subset, not BIPE's full historical
+              // total, so claiming it as a sitewide stat was
+              // misleading. The 16-drive accordion further down the
+              // page still surfaces them as "named drive records"
+              // without making any totality claim.
               { num: "1,331", l: "Total placements · TPO-verified" },
               { num: "44", l: "Recruiters across India" },
               { num: manifest.totalAlumni.toString(), l: "Named in this directory" },
-              { num: manifest.totalDrives.toString(), l: "Drives documented" },
               {
                 num: topRecruiter.count.toString(),
                 l: `Top recruiter · ${topRecruiter.name.slice(0, 24)}${topRecruiter.name.length > 24 ? "…" : ""}`,
