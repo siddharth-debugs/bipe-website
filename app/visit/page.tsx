@@ -329,7 +329,13 @@ export default function Page() {
               tone: "neutral",
             },
           ] as Channel[]).map((ch) => (
-            <article key={ch.num} className="card" style={{
+            // bipe-channel-row class — see globals.css. The 3-column
+            // grid (number · text · CTA) crushes the middle column on
+            // mobile, wrapping the title text one letter per line. The
+            // safety-net rule at globals.css:1680 explicitly skips
+            // class*="card" elements; this class is the explicit
+            // opt-in to mobile stacking.
+            <article key={ch.num} className="card bipe-channel-row" style={{
               padding: 0, marginBottom: 14, overflow: "hidden",
               display: "grid", gridTemplateColumns: "auto 1fr auto",
               gap: 0, alignItems: "center",

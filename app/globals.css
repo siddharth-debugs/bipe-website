@@ -1695,7 +1695,12 @@ body.no-motion .skeleton { animation: none; }
   [style*="grid-template-columns:repeat(3"]:not([class*="bipe-grid"]),
   [style*="grid-template-columns:repeat(2"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1fr 1fr"]:not([class*="bipe-grid"]),
-  [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]) {
+  [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  /* /visit · "Or use another channel" cards — number / text / CTA.
+     The 3-col auto-1fr-auto grid squeezes the middle text column to
+     a few px on mobile, wrapping "WhatsApp instant" one letter per
+     line. Stack at narrow viewports. */
+  .bipe-channel-row {
     grid-template-columns: minmax(0, 1fr) !important;
     gap: 18px !important;
     align-items: start !important;
