@@ -345,7 +345,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   ]);
   const footerContact = {
     phone: liveContact.phone,
-    phone2: liveContact.phone2,
     email: liveContact.email,
     // Placement inbox isn't editable from the admin Contact singleton
     // yet — pull from the typed DATA.contact constant. Will move to

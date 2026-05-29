@@ -36,7 +36,6 @@ export type Facility = { name: string; count: string; body: string };
 
 export type ContactInfo = {
   phone: string;
-  phone2: string;
   email: string;
   emailPlacement: string;
   phonePlacement: string;
@@ -85,8 +84,16 @@ export type DataShape = {
 
 export const DATA: DataShape = {
   contact: {
-    phone: "+91-9198646464",
-    phone2: "+91-9198767676",
+    // 28 May 2026 — consolidated to a single admissions handset per
+    // user direction "Use only one number for call 9415202879, remove
+    // 9198646464 and 9198767676". The previous voice/WhatsApp split
+    // (9198646464 voice + 9198767676 WhatsApp) is retired. 9415202879
+    // is now both the call number AND the WhatsApp handoff target —
+    // the BIPE_ADMISSIONS_WA_PHONE constant in lib/whatsappHandoff.ts
+    // already used 9415202879 for the wa.me handoffs from
+    // InquiryModal + WhatsAppFAB, so that side of the world was
+    // already converged.
+    phone: "+91-9415202879",
     // PRIMARY OFFICIAL EMAIL — migrated 25 May 2026 from
     // admissions@bipevns.org → info@bipe.ac.in. The .ac.in TLD is
     // restricted to recognised Indian educational institutions; using
@@ -122,14 +129,15 @@ export const DATA: DataShape = {
     // produces an identical URL string to the previous hand-encoded
     // English version at module-load time.
     //
-    // WhatsApp NUMBER UPDATE 28 May 2026: WhatsApp is on the alt
-    // handset (+91-9198767676), NOT on the primary line. Surface the
-    // wa.me URL against 919198767676 so the chat opens on the right
-    // number; the Contact card WhatsApp display now reads C.phone2
-    // explicitly, not C.phone (was showing the primary phone — wrong
-    // number to chat at). The primary handset (+91-9198646464) stays
-    // as the voice-call line.
-    whatsapp: `https://wa.me/919198767676?text=${encodeURIComponent(
+    // WhatsApp UPDATE 28 May 2026 (later in the day): the prior
+    // direction routed WhatsApp to the alt handset (+91-9198767676)
+    // and call to the primary (+91-9198646464). Both have now been
+    // retired in favour of a single admissions handset
+    // (+91-9415202879) per "Use only one number for call 9415202879,
+    // remove 9198646464 and 9198767676". The wa.me URL now hits
+    // 919415202879 — same destination the InquiryModal + WhatsAppFAB
+    // surfaces have always used for their handoffs.
+    whatsapp: `https://wa.me/919415202879?text=${encodeURIComponent(
       "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए",
     )}`,
     address:

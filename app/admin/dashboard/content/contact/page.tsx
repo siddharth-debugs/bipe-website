@@ -45,9 +45,11 @@ export default function ContactInfoAdmin() {
         <>
           <Section title="Phones & email">
             <FieldGrid>
-              <Field label="Primary phone"><input className="admin-input" value={data.phone} onChange={(e) => set("phone", e.target.value)} style={{ width: "100%" }} /></Field>
-              <Field label="Alternate phone"><input className="admin-input" value={data.phone2} onChange={(e) => set("phone2", e.target.value)} style={{ width: "100%" }} /></Field>
-              <Field label="WhatsApp link" full><input className="admin-input" value={data.whatsapp_url} onChange={(e) => set("whatsapp_url", e.target.value)} placeholder="https://wa.me/9198…" style={{ width: "100%" }} /></Field>
+              {/* 28 May 2026 — "Alternate phone" admin field removed
+                  alongside the broader phone consolidation (single
+                  admissions handset 9415202879). */}
+              <Field label="Admissions phone"><input className="admin-input" value={data.phone} onChange={(e) => set("phone", e.target.value)} style={{ width: "100%" }} /></Field>
+              <Field label="WhatsApp link" full><input className="admin-input" value={data.whatsapp_url} onChange={(e) => set("whatsapp_url", e.target.value)} placeholder="https://wa.me/9415…" style={{ width: "100%" }} /></Field>
               <Field label="Primary email" full><input className="admin-input" type="email" value={data.email} onChange={(e) => set("email", e.target.value)} style={{ width: "100%" }} /></Field>
               <Field label="Principal's email"><input className="admin-input" type="email" value={data.email_principal} onChange={(e) => set("email_principal", e.target.value)} style={{ width: "100%" }} /></Field>
               <Field label="Grievance email"><input className="admin-input" type="email" value={data.email_grievance} onChange={(e) => set("email_grievance", e.target.value)} style={{ width: "100%" }} /></Field>

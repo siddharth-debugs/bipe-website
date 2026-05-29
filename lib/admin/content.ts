@@ -134,7 +134,6 @@ export type BranchWrite = Partial<Omit<BranchRow, "id" | "created_at" | "updated
 export interface ContactInfoRow {
   id: number;
   phone: string;
-  phone2: string;
   whatsapp_url: string;
   email: string;
   email_principal: string;

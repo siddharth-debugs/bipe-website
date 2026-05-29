@@ -231,7 +231,6 @@ export default function Page() {
               <div style={{ marginTop: 22, display: "flex", flexDirection: "column", gap: 10 }}>
                 {[
                   ["PHONE", C.phone],
-                  ["ALT PHONE", C.phone2],
                   ["EMAIL", C.email],
                 ].map(([k, v]) => (
                   <div key={k} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", paddingBottom: 8, borderBottom: "1px dashed var(--line-2)" }}>
@@ -291,14 +290,13 @@ export default function Page() {
                 </p>
                 <div style={{ marginTop: 18, paddingTop: 14, borderTop: "1px dashed var(--line-2)" }}>
                   <div className="eyebrow" style={{ color: "var(--ink-3)" }}>NUMBER</div>
-                  {/* 28 May 2026 — WhatsApp is on phone2 (alt handset),
-                      not the primary voice line. Previously this card
-                      displayed C.phone, matching neither the wa.me URL
-                      (which was also wrong before today's fix) nor the
-                      actual WhatsApp-receiving handset. Now reads from
-                      C.phone2 so the displayed number is the one the
-                      chat actually lands on. */}
-                  <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "#1eaf55", fontSize: 18 }}>{C.phone2}</div>
+                  {/* 28 May 2026 — phone consolidation. Both this
+                      WhatsApp card AND the Phone card below now show
+                      the single admissions handset (C.phone =
+                      +91-9415202879). The earlier WhatsApp-is-on-
+                      phone2 split has been retired per user direction.
+                  */}
+                  <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "#1eaf55", fontSize: 18 }}>{C.phone}</div>
                 </div>
                 <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ marginTop: 18, width: "100%", justifyContent: "center" }}>
                   <WhatsAppIcon /> Open chat
@@ -327,13 +325,12 @@ export default function Page() {
                 </p>
                 <div style={{ marginTop: 18, paddingTop: 14, borderTop: "1px dashed var(--line-2)", display: "flex", flexDirection: "column", gap: 8 }}>
                   <div>
-                    <div className="eyebrow" style={{ color: "var(--ink-3)" }}>PRIMARY</div>
+                    <div className="eyebrow" style={{ color: "var(--ink-3)" }}>ADMISSIONS</div>
                     <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--brand)", fontSize: 18 }}>{C.phone}</div>
                   </div>
-                  <div>
-                    <div className="eyebrow" style={{ color: "var(--ink-3)" }}>ALT</div>
-                    <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--brand)", fontSize: 18 }}>{C.phone2}</div>
-                  </div>
+                  {/* 28 May 2026 — "ALT" phone row dropped. The single
+                      admissions handset (9415202879) now serves both
+                      voice and WhatsApp. */}
                 </div>
                 <a href={`tel:${C.phone}`} className="btn btn-primary" style={{ marginTop: 18, width: "100%", justifyContent: "center" }}>
                   <PhoneIcon /> Call now

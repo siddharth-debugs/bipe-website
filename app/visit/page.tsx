@@ -52,7 +52,15 @@ export default function Page() {
   const C = DATA.contact;
   const directionsUrl = "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi";
   // TODO: replace with actual campus coordinates once GPS-confirmed by Estate Office
-  const mapEmbedUrl = "https://www.google.com/maps?q=Phoolpur,+Varanasi+221206&output=embed";
+  // 28 May 2026 — switched from the legacy /maps?q=...&output=embed
+  // URL (which Google has been intermittently 403-ing without an API
+  // key) to the maps.google.com?q=...&t=&z=15&ie=UTF8&iwloc=&output=embed
+  // form, which is the same robust pattern /contact and
+  // /campus/phoolpur already use. Also boosted the BIPE-specific
+  // anchor in the query so the map centres on the campus pin, not on
+  // generic Phoolpur township.
+  const mapEmbedUrl =
+    "https://maps.google.com/maps?q=BIPE+Phoolpur+Varanasi&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
   return (
     <div className="page-enter">
@@ -460,10 +468,15 @@ export default function Page() {
 
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 22 }}>
             <div className="card" style={{ padding: 0, overflow: "hidden", minHeight: 420, position: "relative" }}>
+              {/* height: 420 (explicit) instead of height: 100% — the
+                  100% form collapses to 0 on mobile when the parent
+                  card stacks via bipe-split's responsive rule, which
+                  left the map slot rendering as an empty white box
+                  (28 May 2026 bug report on mobile). */}
               <iframe
                 src={mapEmbedUrl}
                 title="BIPE campus location · Phoolpur, Varanasi"
-                style={{ border: 0, width: "100%", height: "100%", minHeight: 420, display: "block" }}
+                style={{ border: 0, width: "100%", height: 420, minHeight: 420, display: "block" }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen

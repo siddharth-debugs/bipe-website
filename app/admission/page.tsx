@@ -602,9 +602,6 @@ export default async function Page() {
                   <a href={`tel:${DATA.contact.phone}`} className="btn btn-ghost btn-sm">
                     <PhoneIcon /> {DATA.contact.phone}
                   </a>
-                  <a href={`tel:${DATA.contact.phone2}`} className="btn btn-ghost btn-sm">
-                    <PhoneIcon /> {DATA.contact.phone2}
-                  </a>
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

@@ -13,7 +13,6 @@ import { BackToTop } from "./BackToTop";
  */
 export interface FooterContact {
   phone: string;
-  phone2: string;
   email: string;
   emailPlacement: string;
   whatsapp: string;
@@ -40,7 +39,6 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
   // (e.g. local dev with the backend down).
   const C = {
     phone: contact?.phone || DATA.contact.phone,
-    phone2: contact?.phone2 || DATA.contact.phone2,
     email: contact?.email || DATA.contact.email,
     emailPlacement: contact?.emailPlacement || DATA.contact.emailPlacement,
     whatsapp: contact?.whatsapp || DATA.contact.whatsapp,

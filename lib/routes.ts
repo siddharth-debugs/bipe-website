@@ -122,7 +122,7 @@ export const ROUTES: Record<RouteKey, {
     // power word that lifts CTR on transactional intent. Hindi support
     // signal kept because primary audience is Hindi-medium.
     title: "Apply to BIPE 2026-27 · Free Application · JEECUP 4455 · हिंदी",
-    description: "Apply to BIPE Phoolpur 2026-27 free · 5 minutes · JEECUP 4455. Counsellor call within 24 hrs. हिंदी / English WhatsApp +91-9198767676.",
+    description: "Apply to BIPE Phoolpur 2026-27 free · 5 minutes · JEECUP 4455. Counsellor call within 24 hrs. हिंदी / English WhatsApp +91-9415202879.",
     quickLink: { label: "Apply for 2026-27", hint: "Application form · 5 minutes", priority: 1 },
   },
   visit: {
@@ -139,8 +139,8 @@ export const ROUTES: Record<RouteKey, {
     path: "/contact",
     // CTR rewrite 26 May 2026 · lead with phone (most-searched contact
     // signal) instead of generic "Phone, Email, Address" label.
-    title: "Contact BIPE · +91-9198646464 · info@bipe.ac.in · Phoolpur Varanasi",
-    description: "Call BIPE: +91-9198646464 · WhatsApp: +91-9198767676 · info@bipe.ac.in · Gajokhar, Phoolpur, Varanasi 221206. हिंदी / English.",
+    title: "Contact BIPE · +91-9415202879 · info@bipe.ac.in · Phoolpur Varanasi",
+    description: "Call BIPE: +91-9415202879 · WhatsApp: +91-9415202879 · info@bipe.ac.in · Gajokhar, Phoolpur, Varanasi 221206. हिंदी / English.",
     quickLink: { label: "Contact", hint: "Phone · WhatsApp · address", priority: 6 },
   },
   placements: {

@@ -111,7 +111,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do I get to BIPE from Varanasi Cantt?",
-    a: "Confirm your visit on WhatsApp (+91-9198767676) and BIPE will share the campus pin and easiest route. An app-cab (Ola / Uber) or pre-paid auto from the station auto-stand reaches Phoolpur in about 35 minutes off-peak — roughly ₹300-500.",
+    a: "Confirm your visit on WhatsApp (+91-9415202879) and BIPE will share the campus pin and easiest route. An app-cab (Ola / Uber) or pre-paid auto from the station auto-stand reaches Phoolpur in about 35 minutes off-peak — roughly ₹300-500.",
   },
   {
     q: "Is the Phoolpur campus the only BIPE location?",

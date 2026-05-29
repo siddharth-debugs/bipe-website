@@ -33,7 +33,7 @@ const SECTIONS: Section[] = [
         <p><strong>Banaras Institute of Polytechnic &amp; Engineering (BIPE)</strong></p>
         <p>{DATA.contact.address}</p>
         <p>
-          Telephone: <a href={`tel:${DATA.contact.phone}`}>{DATA.contact.phone}</a> · Alt <a href={`tel:${DATA.contact.phone2}`}>{DATA.contact.phone2}</a><br />
+          Telephone: <a href={`tel:${DATA.contact.phone}`}>{DATA.contact.phone}</a><br />
           Email: <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a><br />
           Web: <a href="https://bipevns.org">https://bipevns.org</a>
         </p>

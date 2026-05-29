@@ -414,7 +414,7 @@ export default function Page() {
                 <Link href="/visit" className="btn btn-primary btn-lg" style={{ justifyContent: "space-between" }}>
                   Book a campus visit <ArrowIcon size={16} />
                 </Link>
-                <a href="https://wa.me/919198767676?text=Hi%20BIPE%20%E2%80%94%20I%20am%20comparing%20government%20polytechnic%20options%20against%20BIPE.%20Can%20you%20help%20me%20decide%3F" target="_blank" rel="noopener noreferrer" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)", justifyContent: "space-between" }}>
+                <a href="https://wa.me/919415202879?text=Hi%20BIPE%20%E2%80%94%20I%20am%20comparing%20government%20polytechnic%20options%20against%20BIPE.%20Can%20you%20help%20me%20decide%3F" target="_blank" rel="noopener noreferrer" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)", justifyContent: "space-between" }}>
                   WhatsApp counsellor <WhatsAppIcon />
                 </a>
                 <Link href="/private-vs-government-polytechnic" className="btn btn-ghost btn-lg" style={{ justifyContent: "space-between" }}>

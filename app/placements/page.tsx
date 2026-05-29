@@ -620,7 +620,7 @@ export default async function Page() {
                 mobile users). Switched 28 May 2026 to WhatsApp + a mailto
                 fallback so at least one path always works. */}
             <a
-              href={`https://wa.me/919198767676?text=${encodeURIComponent("नमस्ते BIPE — I'd like to submit my alumni story for the placements page.")}`}
+              href={`https://wa.me/919415202879?text=${encodeURIComponent("नमस्ते BIPE — I'd like to submit my alumni story for the placements page.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="pill"

@@ -325,10 +325,6 @@ export default function Page() {
                   <span><PhoneIcon /> {DATA.contact.phone}</span>
                   <ArrowIcon size={16} />
                 </a>
-                <a href={`tel:${DATA.contact.phone2}`} className="btn btn-lg btn-ghost" style={{ justifyContent: "space-between" }}>
-                  <span><PhoneIcon /> {DATA.contact.phone2}</span>
-                  <ArrowIcon size={16} />
-                </a>
               </div>
             </div>
           </div>

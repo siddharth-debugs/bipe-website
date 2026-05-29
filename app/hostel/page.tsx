@@ -449,8 +449,6 @@ export default function Page() {
                   <div className="muted" style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase" }}>Warden desk</div>
                   <div style={{ color: "var(--ink-2)" }}>
                     <a href={`tel:${DATA.contact.phone}`} style={{ color: "var(--brand)", fontWeight: 600 }}>{DATA.contact.phone}</a>
-                    {" / "}
-                    <a href={`tel:${DATA.contact.phone2}`} style={{ color: "var(--brand)", fontWeight: 600 }}>{DATA.contact.phone2}</a>
                     {" · "}
                     <a href={`mailto:${DATA.contact.email}`} style={{ color: "var(--brand)", fontWeight: 600 }}>{DATA.contact.email}</a>
                   </div>

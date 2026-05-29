@@ -115,7 +115,6 @@ export interface PublicPageSection {
 }
 export interface PublicContact {
   phone: string;
-  phone2: string;
   whatsapp_url: string;
   email: string;
   email_principal: string;
@@ -390,7 +389,6 @@ export async function getContact(): Promise<PublicContact> {
   const social = (key: string) => DATA.social.find((s) => s.name.toLowerCase() === key)?.url ?? "";
   return {
     phone: c.phone,
-    phone2: c.phone2,
     whatsapp_url: c.whatsapp,
     email: c.email,
     email_principal: c.emailPrincipal,

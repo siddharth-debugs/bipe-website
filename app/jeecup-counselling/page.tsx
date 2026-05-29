@@ -217,7 +217,7 @@ export default function Page() {
               Apply for 2026-27 <ArrowIcon size={16} />
             </Link>
             <a
-              href="https://wa.me/919198767676?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
+              href="https://wa.me/919415202879?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost btn-lg"
@@ -680,14 +680,14 @@ export default function Page() {
               </div>
               <div style={{ display: "grid", gap: 12 }}>
                 <a
-                  href="tel:+919198646464"
+                  href="tel:+919415202879"
                   className="btn btn-primary btn-lg"
                   style={{ justifyContent: "space-between" }}
                 >
-                  Call +91-9198646464 <PhoneIcon />
+                  Call +91-9415202879 <PhoneIcon />
                 </a>
                 <a
-                  href="https://wa.me/919198767676?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
+                  href="https://wa.me/919415202879?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-lg"

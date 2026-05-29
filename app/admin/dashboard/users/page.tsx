@@ -351,7 +351,7 @@ function UserEditorSheet({
                   id="phone"
                   value={form.phone ?? ""}
                   onChange={(e) => set("phone", e.target.value.replace(/\D/g, "").slice(0, 10))}
-                  placeholder="9198646464"
+                  placeholder="9415202879"
                   disabled={!!user && user.is_superuser}
                 />
                 <p className="text-[11px] text-[var(--ink-3)]">10 digits, no country code. They log in with this number.</p>

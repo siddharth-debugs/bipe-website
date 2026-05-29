@@ -273,11 +273,10 @@ export default function Page() {
                 Want to call?
               </div>
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.65 }}>
-                Mon–Sat, 9 AM to 6 PM. Two lines, both staffed. The admissions desk fields most enquiries inside three minutes.
+                Mon–Sat, 9 AM to 6 PM. The admissions desk fields most enquiries inside three minutes.
               </p>
               <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 4, fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--brand)", fontWeight: 600 }}>
                 <span><PhoneIcon /> {DATA.contact.phone}</span>
-                <span><PhoneIcon /> {DATA.contact.phone2}</span>
               </div>
             </a>
 
