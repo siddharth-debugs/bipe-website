@@ -105,6 +105,7 @@ export async function POST(req: Request) {
         phone: d.phone,
         name: d.name,
         branch: d.branch,
+        submissionId: r.id ?? undefined,
       });
     }
     return r.ok
@@ -140,6 +141,7 @@ export async function POST(req: Request) {
         phone: d.phone,
         name: d.name,
         branch: d.branch ?? undefined,
+        submissionId: r.id ?? undefined,
       });
     }
     return r.ok
@@ -178,6 +180,7 @@ export async function POST(req: Request) {
         phone: d.phone,
         name: d.name,
         branch: d.branch,
+        submissionId: r.id ?? undefined,
       });
     }
     return r.ok
@@ -213,6 +216,7 @@ export async function POST(req: Request) {
       phone: d.phone,
       name: d.name,
       branch: d.branch,
+      submissionId: r.id ?? undefined,
     });
   }
   return r.ok

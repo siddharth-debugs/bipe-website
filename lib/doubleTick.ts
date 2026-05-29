@@ -150,6 +150,54 @@ export async function sendDoubleTickTemplate(
 }
 
 /**
+ * Default template name for every form submission. Approved on the
+ * Double Tick account 29 May 2026. Body has 4 placeholders:
+ *
+ *   {{1}}  →  visitor's first name
+ *   {{2}}  →  reference ID, formatted "BIPE/{TYPE}/YYYY/NN"
+ *             (e.g. BIPE/ENQ/2026/01, BIPE/APP/2026/12)
+ *   {{3}}  →  course / branch of interest
+ *   {{4}}  →  callback timeline in hours (default "24")
+ *
+ * Per-form-type overrides via the DOUBLETICK_TEMPLATE_* env vars
+ * still take precedence so future template variants (a dedicated
+ * "apply received" copy, a "visit confirmed" copy with date+slot)
+ * can be wired without code changes.
+ */
+const DEFAULT_TEMPLATE_NAME = "enquiry_s_v1_submitted";
+
+/**
+ * Form-type → short code used in the reference ID middle segment.
+ * Kept terse so the operator-facing ref reads cleanly when it
+ * surfaces in the WhatsApp body. */
+const FORM_TYPE_CODE: Record<
+  "apply" | "enquiry" | "visit" | "contact",
+  string
+> = {
+  apply: "APP",
+  enquiry: "ENQ",
+  visit: "VIS",
+  contact: "ENQ",
+};
+
+/**
+ * Build the BIPE/TYPE/YYYY/NN reference ID. NN is zero-padded to at
+ * least two digits.
+ */
+function buildReferenceId(
+  formType: "apply" | "enquiry" | "visit" | "contact",
+  submissionId: number | string,
+): string {
+  const code = FORM_TYPE_CODE[formType];
+  const year = new Date().getFullYear();
+  const seq =
+    typeof submissionId === "number"
+      ? String(submissionId).padStart(2, "0")
+      : String(submissionId);
+  return `BIPE/${code}/${year}/${seq}`;
+}
+
+/**
  * Best-effort: fire the appropriate template after a successful form
  * submission. Always returns void — failures are swallowed and
  * logged. Designed to be invoked WITHOUT await from /api/submit
@@ -157,30 +205,36 @@ export async function sendDoubleTickTemplate(
  * the background).
  */
 export function fireSubmissionConfirmation(args: {
-  /** Submission type — determines which template env var is read. */
+  /** Submission type. Routes to the right env-var template override
+   *  AND drives the reference-ID middle segment (APP / ENQ / VIS). */
   formType: "apply" | "enquiry" | "visit" | "contact";
   /** Submitter phone (the recipient of the WhatsApp confirmation). */
   phone: string;
-  /** Submitter name. Used as placeholder {{1}} by default. */
+  /** Submitter name. First word becomes placeholder {{1}}. */
   name: string;
-  /** Optional branch interest. Used as placeholder {{2}} by default. */
+  /** Optional branch interest. Used as placeholder {{3}} (course). */
   branch?: string;
+  /** Submission ID from the backend (used in the reference ID at
+   *  placeholder {{2}}). Defaults to "00" when missing. */
+  submissionId?: number | string;
+  /** Callback timeline in hours. Defaults to "24". */
+  callbackHours?: string;
 }): void {
   const templateName = resolveTemplateName(args.formType);
-  if (!templateName) {
-    // No template configured for this form type — silently skip. The
-    // operator can wire it later by setting the env var.
-    return;
-  }
+  if (!templateName) return; // Template lookup failed AND no default
 
-  // Default placeholder mapping: {{1}} = first name, {{2}} = branch.
-  // If the operator's approved template uses a different mapping,
-  // they'll need to expose a custom env-var-driven mapping here.
-  // Start narrow; iterate when the approved templates land.
   const firstName = args.name.trim().split(/\s+/)[0] || args.name.trim();
-  const placeholders = [firstName, args.branch ?? ""].filter(Boolean);
+  const referenceId = buildReferenceId(
+    args.formType,
+    args.submissionId ?? "00",
+  );
+  const course = args.branch?.trim() || "General enquiry";
+  const callbackHours = args.callbackHours || "24";
 
-  // Fire and forget. Log on failure but never throw.
+  // 4-placeholder body per the approved enquiry_s_v1_submitted
+  // template. Order matters — DT maps positionally to {{1}}..{{4}}.
+  const placeholders = [firstName, referenceId, course, callbackHours];
+
   sendDoubleTickTemplate({
     to: args.phone,
     templateName,
@@ -200,6 +254,9 @@ export function fireSubmissionConfirmation(args: {
 
 /**
  * Map a formType to the env var holding its approved template name.
+ * Per-form-type overrides win; otherwise the form-type-specific
+ * env var hierarchy applies; otherwise DEFAULT_TEMPLATE_NAME (the
+ * single approved enquiry_s_v1_submitted template) is used.
  * The /visit form gets a dedicated template if configured;
  * otherwise it falls back to the Enquiry template (same callback
  * flow, slightly different copy if you want it).
@@ -209,16 +266,21 @@ function resolveTemplateName(
 ): string | undefined {
   switch (formType) {
     case "apply":
-      return process.env.DOUBLETICK_TEMPLATE_APPLY_RECEIVED || undefined;
+      return (
+        process.env.DOUBLETICK_TEMPLATE_APPLY_RECEIVED || DEFAULT_TEMPLATE_NAME
+      );
     case "visit":
       return (
         process.env.DOUBLETICK_TEMPLATE_VISIT_RECEIVED ||
         process.env.DOUBLETICK_TEMPLATE_ENQUIRY_RECEIVED ||
-        undefined
+        DEFAULT_TEMPLATE_NAME
       );
     case "enquiry":
     case "contact":
-      return process.env.DOUBLETICK_TEMPLATE_ENQUIRY_RECEIVED || undefined;
+      return (
+        process.env.DOUBLETICK_TEMPLATE_ENQUIRY_RECEIVED ||
+        DEFAULT_TEMPLATE_NAME
+      );
   }
 }
 
