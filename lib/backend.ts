@@ -16,20 +16,18 @@
  * every form on the site.
  */
 
-type IngestKind =
-  | "apply"
-  | "contact"
-  | "enquiry"
-  | "visit"
-  // 29 May 2026 — alumni introduction requests. The visitor wants to
-  // talk to a specific alumnus; the placement cell verifies the
-  // request out-of-band before sharing any number. Backend endpoint
-  // is /submissions/ingest/alumni-contact/ — until the Django side
-  // ships that route, POSTs return 404 + the visitor sees the
-  // friendly "couldn't save" message + WhatsApp fallback. The full
-  // payload still lands in Vercel server logs so the operator has
-  // an audit trail in the gap.
-  | "alumni-contact";
+type IngestKind = "apply" | "contact" | "enquiry" | "visit";
+
+// 29 May 2026 — alumni introduction requests deliberately bypass this
+// backend ingest path. Per user direction, those requests are sent
+// straight to the admin's WhatsApp number via Double Tick instead of
+// being recorded as backend submission rows. See:
+//   * app/api/submit/route.ts        — "alumni-contact" branch
+//   * lib/doubleTick.ts              — fireAlumniIntroAdminNotification
+//
+// If you ever want to bring these back into the Django dashboard, add
+// "alumni-contact" to IngestKind above and re-wire the forwardToBackend
+// call in the route.
 
 const HEADER = "X-Bipe-Submit-Token";
 

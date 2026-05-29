@@ -256,6 +256,113 @@ export function fireSubmissionConfirmation(args: {
 }
 
 /**
+ * Best-effort: fire a WhatsApp notification to the BIPE admin number
+ * with a full alumni-introduction-request summary. Per user direction
+ * 29 May 2026 ("don't show this as new 'alumni-contact' row in the
+ * backend dashboard. send admin message through whatsapp"), the
+ * admin's WhatsApp inbox is the single source of truth for these
+ * requests — no Django row is created.
+ *
+ * Configuration:
+ *   DOUBLETICK_ADMIN_NUMBER                      — required; the
+ *     placement-cell / TPO WhatsApp number that receives these
+ *     notifications. MUST differ from DOUBLETICK_FROM_NUMBER (DT
+ *     can't send from a number to itself).
+ *   DOUBLETICK_TEMPLATE_ALUMNI_CONTACT_ADMIN     — optional override;
+ *     defaults to DEFAULT_TEMPLATE_NAME so the flow ships without
+ *     waiting for a dedicated admin template to be approved. Approve
+ *     a purpose-built template later (with one placeholder per
+ *     visitor + alumnus + purpose field) for cleaner copy.
+ *
+ * Failure mode: any DT error (network, missing env var, template
+ * rejection) is logged and swallowed. The visitor's response stays
+ * {ok: true} regardless. If admin number is missing, we log a LOUD
+ * warning — this is the only audit trail for the request, so the
+ * operator needs to notice and fix the env asap.
+ */
+export function fireAlumniIntroAdminNotification(args: {
+  /** Short reference suffix, e.g. "A3F7". Built into BIPE/ALU/YYYY/{suffix}
+   *  so the admin can quote it back to the visitor on the verification
+   *  call. Use the SAME suffix you pass to fireSubmissionConfirmation
+   *  so both messages share a reference. */
+  refSuffix: string;
+  visitorName: string;
+  visitorPhone: string;
+  visitorEmail?: string;
+  purpose: string;
+  purposeNote?: string;
+  alumniId: number;
+  alumniName: string;
+  alumniBranch?: string;
+  alumniYear?: string;
+  alumniCompany?: string;
+}): void {
+  const adminNumber = process.env.DOUBLETICK_ADMIN_NUMBER;
+  if (!adminNumber) {
+    console.warn(
+      "[doubleTick] ALUMNI INTRO REQUEST RECEIVED but DOUBLETICK_ADMIN_NUMBER is missing — admin will NOT be notified. Configure the env var to restore the audit trail.",
+    );
+    return;
+  }
+
+  const templateName =
+    process.env.DOUBLETICK_TEMPLATE_ALUMNI_CONTACT_ADMIN ||
+    DEFAULT_TEMPLATE_NAME;
+
+  const refId = buildReferenceId("alumni-contact", args.refSuffix);
+
+  // Cram the full request into the {{3}} placeholder. With the default
+  // enquiry_s_v1_submitted template the admin will read this rendered
+  // as "...interest in {summary}..." — awkward grammatically but every
+  // field they need to verify is there. Once a dedicated admin
+  // template is approved (with one placeholder per field), set
+  // DOUBLETICK_TEMPLATE_ALUMNI_CONTACT_ADMIN and update the
+  // placeholders array to match.
+  const alumnusDetail = [
+    args.alumniName,
+    args.alumniBranch,
+    args.alumniYear,
+    args.alumniCompany,
+  ]
+    .filter((p): p is string => !!p && p.length > 0)
+    .join(", ");
+  const summary = [
+    `${args.visitorName} (${args.visitorPhone}) wants intro to ${alumnusDetail} [#${args.alumniId}]`,
+    `Purpose: ${args.purpose}`,
+    args.purposeNote ? `Note: ${args.purposeNote}` : null,
+    args.visitorEmail ? `Email: ${args.visitorEmail}` : null,
+  ]
+    .filter((p): p is string => !!p && p.length > 0)
+    .join(". ")
+    .replace(/\s+/g, " ")
+    .slice(0, 700);
+
+  // {{4}} = "now" so the admin reads it as urgent. With a dedicated
+  // template later, this placeholder slot can move to something
+  // semantically correct (e.g. a deadline field).
+  const placeholders = ["BIPE Admin", refId, summary, "now"];
+
+  sendDoubleTickTemplate({
+    to: adminNumber,
+    templateName,
+    placeholders,
+  })
+    .then((result) => {
+      if (!result.ok) {
+        console.warn(
+          `[doubleTick] alumni intro admin notification FAILED: ${result.error}`,
+        );
+      }
+    })
+    .catch((err) => {
+      console.warn(
+        "[doubleTick] alumni intro admin notification threw:",
+        err,
+      );
+    });
+}
+
+/**
  * Map a formType to the env var holding its approved template name.
  * Per-form-type overrides win; otherwise the form-type-specific
  * env var hierarchy applies; otherwise DEFAULT_TEMPLATE_NAME (the

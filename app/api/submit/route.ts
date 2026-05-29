@@ -8,7 +8,10 @@ import {
 } from "@/lib/validation";
 import { forwardToBackend } from "@/lib/backend";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
-import { fireSubmissionConfirmation } from "@/lib/doubleTick";
+import {
+  fireAlumniIntroAdminNotification,
+  fireSubmissionConfirmation,
+} from "@/lib/doubleTick";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -163,43 +166,48 @@ export async function POST(req: Request) {
       );
     }
     const d = result.data;
-    const r = await forwardToBackend("alumni-contact", {
-      // Visitor (the requester) — placement cell calls THIS number to
-      // verify before sharing the alumnus's number.
-      name: d.name,
-      phone: d.phone,
-      email: d.email ?? "",
-      consent: d.consent,
+
+    // 29 May 2026 — alumni intro requests bypass the Django backend
+    // entirely per user direction "don't show this as new
+    // 'alumni-contact' row in the backend dashboard. send admin
+    // message through whatsapp". The admin's WhatsApp inbox is the
+    // single source of truth for these requests; the Vercel server
+    // log is the secondary audit trail. Reference ID is generated
+    // locally (4-char base36 suffix is unique enough for the volume
+    // this form sees) and the SAME suffix goes into both messages so
+    // admin can quote it back when calling the visitor.
+    const refSuffix = Math.random().toString(36).slice(2, 6).toUpperCase();
+
+    // 1. WhatsApp the admin with the full request payload.
+    fireAlumniIntroAdminNotification({
+      refSuffix,
+      visitorName: d.name,
+      visitorPhone: d.phone,
+      visitorEmail: d.email || undefined,
       purpose: d.purpose,
-      purposeNote: d.purposeNote ?? "",
-      // Target alumnus — operator joins on alumniId in the admin to
-      // pull the actual contact number from the TPO XLSX. The other
-      // fields are denormalised for readability in the admin row.
+      purposeNote: d.purposeNote || undefined,
       alumniId: d.alumniId,
       alumniName: d.alumniName,
-      alumniBranch: d.alumniBranch ?? "",
-      alumniYear: d.alumniYear ?? "",
-      alumniCompany: d.alumniCompany ?? "",
+      alumniBranch: d.alumniBranch || undefined,
+      alumniYear: d.alumniYear || undefined,
+      alumniCompany: d.alumniCompany || undefined,
     });
-    if (r.ok) {
-      // {{3}} placeholder in the WhatsApp template doubles as "what
-      // is this enquiry about" — for alumni-contact we use a short
-      // "Intro with {Name}" string so the visitor's confirmation is
-      // self-explanatory. {{4}} = 48h because verification touches
-      // both visitor and alumnus before the introduction goes out.
-      const introLabel = `Intro with ${d.alumniName}`.slice(0, 60);
-      fireSubmissionConfirmation({
-        formType: "alumni-contact",
-        phone: d.phone,
-        name: d.name,
-        branch: introLabel,
-        submissionId: r.id ?? undefined,
-        callbackHours: "48",
-      });
-    }
-    return r.ok
-      ? NextResponse.json({ ok: true, id: r.id })
-      : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
+
+    // 2. WhatsApp the visitor with the same ref so they can quote
+    //    it when admin calls back to verify. {{3}} = "Intro with
+    //    {Name}", {{4}} = 48h because verification touches both
+    //    sides.
+    const introLabel = `Intro with ${d.alumniName}`.slice(0, 60);
+    fireSubmissionConfirmation({
+      formType: "alumni-contact",
+      phone: d.phone,
+      name: d.name,
+      branch: introLabel,
+      submissionId: refSuffix,
+      callbackHours: "48",
+    });
+
+    return NextResponse.json({ ok: true, id: refSuffix });
   }
 
   if (formType === "visit") {

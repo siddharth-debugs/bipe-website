@@ -215,6 +215,12 @@ export type EnquiryFormData = z.infer<typeof enquiryFormSchema>;
 // asks alumnus for consent) before sharing any number. The site is
 // strictly the intake form.
 //
+// Delivery mechanism (29 May 2026): admin gets the full request as a
+// WhatsApp message via Double Tick — NOT as a Django backend row. See
+// fireAlumniIntroAdminNotification in lib/doubleTick.ts. Configure
+// DOUBLETICK_ADMIN_NUMBER (and ideally a dedicated approved template)
+// before launch so the audit trail is intact.
+//
 // Selectable "purpose" tickers — single-select chips so the visitor
 // can't ambiguously pick "everything". "Other" reveals an optional
 // 500-char free-text field so the operator has context to verify.
