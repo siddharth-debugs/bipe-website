@@ -95,7 +95,7 @@ export const DATA: DataShape = {
     // already converged.
     phone: "+91-9415202879",
     // PRIMARY OFFICIAL EMAIL — migrated 25 May 2026 from
-    // admissions@bipevns.org → info@bipe.ac.in. The .ac.in TLD is
+    // info@bipe.ac.in → info@bipe.ac.in. The .ac.in TLD is
     // restricted to recognised Indian educational institutions; using
     // info@bipe.ac.in as the front-door contact reinforces the
     // institutional credibility on every page that surfaces a mailto.
@@ -110,13 +110,29 @@ export const DATA: DataShape = {
     // operationally route to specific staff. Migrate per-committee
     // when the corresponding mailbox is set up on the new domain.
     email: "info@bipe.ac.in",
-    // Placement cell — separate inbox/handset from the front-door
-    // admissions line. Surface on /placements (Reach the cell card)
-    // and the placement-cell CTA blocks.
-    emailPlacement: "bipetpo@gmail.com",
+    // 28 May 2026 — email consolidation per user direction "use only
+    // info@bipe.ac.in for mail". All non-statutory mailboxes (TPO /
+    // bipetpo@gmail.com, principal@bipe.ac.in / principal@bipevns.org,
+    // chairman@, accounts@, admissions@, admissions2026@gmail.com,
+    // bipeinstitute@gmail.com, jeecuphelp@gmail.com) collapse to
+    // info@bipe.ac.in. The emailPlacement / emailPrincipal field NAMES
+    // are kept so consumers don't break — both currently alias to the
+    // same address. If/when BIPE adds a real placement@bipe.ac.in or
+    // principal@bipe.ac.in mailbox, update the constant here.
+    //
+    // The 5 statutory committee mailboxes BELOW (grievance, anti-
+    // ragging, IC POSH, SC/ST cell, PWD cell) STAY on @bipevns.org per
+    // UGC Anti-Ragging Regs 2009 + AICTE PG10 disclosure: those
+    // committees must be reachable at named, distinct addresses for
+    // compliance. The phonePlacement field (TPO line, currently
+    // Amit Kumar's handset on 9415202879) is the SAME number as the
+    // primary admissions phone after the phone consolidation, but
+    // kept for the semantic clarity that "this is the placement cell
+    // line" on the /placements CTA blocks.
+    emailPlacement: "info@bipe.ac.in",
     phonePlacement: "+91-9415202879",
     emailGrievance: "grievance@bipevns.org",
-    emailPrincipal: "principal@bipe.ac.in",
+    emailPrincipal: "info@bipe.ac.in",
     emailAntiRagging: "antiragging@bipevns.org",
     emailIC: "ic@bipevns.org",
     emailScSt: "scst@bipevns.org",

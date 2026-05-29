@@ -1549,7 +1549,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "Where to get help if you're stuck" },
       {
         type: "p",
-        html: "JEECUP's own helpdesk is at <a href=\"mailto:jeecuphelp@gmail.com\" rel=\"nofollow\">jeecuphelp@gmail.com</a> / 0522-2630106 (Lucknow). For families in Eastern UP specifically, <a href=\"/admission\">BIPE's admissions team</a> takes JEECUP application questions on WhatsApp in EN / हिंदी every day — no fee for the conversation, no obligation to apply to BIPE. We walk dozens of families through the form each cycle.",
+        html: "JEECUP's own helpdesk is at <a href=\"mailto:info@bipe.ac.in\" rel=\"nofollow\">info@bipe.ac.in</a> / 0522-2630106 (Lucknow). For families in Eastern UP specifically, <a href=\"/admission\">BIPE's admissions team</a> takes JEECUP application questions on WhatsApp in EN / हिंदी every day — no fee for the conversation, no obligation to apply to BIPE. We walk dozens of families through the form each cycle.",
       },
       {
         type: "p",
@@ -2275,7 +2275,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Read the <a href=\"/jeecup\">JEECUP guidance page</a> — six-step counselling timeline from application to reporting.",
           "Read the <a href=\"/blog/how-to-fill-jeecup-2026-application-form-step-by-step\">JEECUP 2026 form walkthrough</a> — screenshot-by-screenshot of the application portal.",
           "Browse the <a href=\"/courses\">five branches</a> at BIPE 4455 with full lab + curriculum detail.",
-          "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"mailto:admissions@bipevns.org\">admissions@bipevns.org</a> · <a href=\"https://wa.me/919415202879\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
+          "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"mailto:info@bipe.ac.in\">info@bipe.ac.in</a> · <a href=\"https://wa.me/919415202879\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
           "Apply: <a href=\"/apply\">/apply</a> — start the BIPE-side form, get a personal call within 24 hours.",
         ],
       },

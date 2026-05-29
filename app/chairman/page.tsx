@@ -122,7 +122,7 @@ const PILLARS: { roman: string; title: string; sub: string; body: string }[] = [
     title: "Doors that stay open",
     sub: "Reach the Chairman directly",
     body:
-      "If something at BIPE is not as it should be, I want to know. Write to chairman@bipevns.org or to the Principal's office, and I will see your note personally. The trust between a family and an institution is built on listening, not on press releases.",
+      "If something at BIPE is not as it should be, I want to know. Write to info@bipe.ac.in or to the Principal's office, and I will see your note personally. The trust between a family and an institution is built on listening, not on press releases.",
   },
 ];
 
@@ -213,8 +213,8 @@ export default function Page() {
 
               <div style={{ marginTop: 28, display: "grid", gap: 10, gridTemplateColumns: "auto 1fr", alignItems: "center" }}>
                 <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>OFFICE</span>
-                <a href="mailto:chairman@bipevns.org" style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--brand)", fontWeight: 600 }}>
-                  chairman@bipevns.org
+                <a href="mailto:info@bipe.ac.in" style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--brand)", fontWeight: 600 }}>
+                  info@bipe.ac.in
                 </a>
                 <span className="pill pill-accent">TRUST</span>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--ink-2)", fontWeight: 600 }}>

@@ -299,7 +299,7 @@ export default function Page() {
             </div>
           </div>
           <p className="muted" style={{ marginTop: 16, fontSize: 13, textAlign: "center", maxWidth: 720, marginInline: "auto" }}>
-            Items marked TBD are pending the AFRC notification for 2026-27. Once published, this page is updated within seven working days. Email <a href="mailto:accounts@bipevns.org" style={{ color: "var(--brand)" }}>accounts@bipevns.org</a> for the latest figures in writing.
+            Items marked TBD are pending the AFRC notification for 2026-27. Once published, this page is updated within seven working days. Email <a href="mailto:info@bipe.ac.in" style={{ color: "var(--brand)" }}>info@bipe.ac.in</a> for the latest figures in writing.
           </p>
         </div>
       </section>
@@ -450,8 +450,8 @@ export default function Page() {
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
                   Processed in 30 working days
                 </div>
-                <a href="mailto:accounts@bipevns.org" style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--accent)", fontWeight: 600 }}>
-                  accounts@bipevns.org
+                <a href="mailto:info@bipe.ac.in" style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--accent)", fontWeight: 600 }}>
+                  info@bipe.ac.in
                 </a>
               </div>
             </div>

@@ -451,7 +451,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right", fontSize: 14 }}>
-              PDFs are publicly available. If a link is on request, write to <a href="mailto:principal@bipevns.org" style={{ color: "var(--brand)", fontWeight: 600 }}>principal@bipevns.org</a>.
+              PDFs are publicly available. If a link is on request, write to <a href="mailto:info@bipe.ac.in" style={{ color: "var(--brand)", fontWeight: 600 }}>info@bipe.ac.in</a>.
             </p>
           </div>
 

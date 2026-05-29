@@ -139,8 +139,8 @@ export default function Page() {
 
               <div style={{ marginTop: 28, display: "grid", gap: 10, gridTemplateColumns: "auto 1fr", alignItems: "center" }}>
                 <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>OFFICE</span>
-                <a href="mailto:principal@bipe.ac.in" style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--brand)", fontWeight: 600 }}>
-                  principal@bipe.ac.in
+                <a href="mailto:info@bipe.ac.in" style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--brand)", fontWeight: 600 }}>
+                  info@bipe.ac.in
                 </a>
                 <span className="pill pill-accent">CONTACT</span>
                 <a href="tel:+919415202879" style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>

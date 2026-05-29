@@ -4,7 +4,7 @@
  *
  * Curated subset (6 of 23) of physical clippings the institute has
  * collected since 2020. Originals are scans from print editions —
- * uploaded by bipeinstitute@gmail.com to the institute's Drive in
+ * uploaded by info@bipe.ac.in to the institute's Drive in
  * May 2026 and pulled into /public/press/ in this commit.
  *
  * Used by components/about/PressMentions.tsx to render an "In the

@@ -6,7 +6,7 @@
  * made.
  *
  * Email is NOT used as a secondary key — too many prospects share a
- * single household email ("admissions2026@gmail.com" pattern). Phone
+ * single household email ("info@bipe.ac.in" pattern). Phone
  * is the operator-facing identifier anyway, since that's what they
  * call / WhatsApp.
  *

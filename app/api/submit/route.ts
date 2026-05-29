@@ -7,6 +7,7 @@ import {
 } from "@/lib/validation";
 import { forwardToBackend } from "@/lib/backend";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
+import { fireSubmissionConfirmation } from "@/lib/doubleTick";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -98,6 +99,14 @@ export async function POST(req: Request) {
       visitTime: d.visit === "yes" ? d.visitTime : "",
       notes: d.notes,
     });
+    if (r.ok) {
+      fireSubmissionConfirmation({
+        formType: "apply",
+        phone: d.phone,
+        name: d.name,
+        branch: d.branch,
+      });
+    }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
       : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
@@ -125,6 +134,14 @@ export async function POST(req: Request) {
       message: d.message ?? "",
       consent: d.consent ?? false,
     });
+    if (r.ok) {
+      fireSubmissionConfirmation({
+        formType: "enquiry",
+        phone: d.phone,
+        name: d.name,
+        branch: d.branch ?? undefined,
+      });
+    }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
       : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
@@ -155,6 +172,14 @@ export async function POST(req: Request) {
       needsShuttle: !!d.needsShuttle,
       notes: d.notes,
     });
+    if (r.ok) {
+      fireSubmissionConfirmation({
+        formType: "visit",
+        phone: d.phone,
+        name: d.name,
+        branch: d.branch,
+      });
+    }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
       : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
@@ -182,6 +207,14 @@ export async function POST(req: Request) {
     source: d.source,
     message: d.message,
   });
+  if (r.ok) {
+    fireSubmissionConfirmation({
+      formType: "contact",
+      phone: d.phone,
+      name: d.name,
+      branch: d.branch,
+    });
+  }
   return r.ok
     ? NextResponse.json({ ok: true, id: r.id })
     : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
