@@ -378,35 +378,46 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 5. MESS & FOOD                                                          */}
       {/* ====================================================================== */}
-      <section className="section" style={{ position: "relative", overflow: "hidden", padding: 0 }}>
-        <div style={{ position: "relative" }}>
-          <Img src={BIPE_IMG.mess} label="MESS · DINING HALL" style={{ height: 540, borderRadius: 0 }} />
-          <div aria-hidden="true" style={{
-            position: "absolute", inset: 0,
-            background: "linear-gradient(90deg, var(--ink) 0%, color-mix(in oklab, var(--ink) 80%, transparent) 45%, transparent 75%)",
-          }} />
-          <div className="container" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center" }}>
-            <div style={{ maxWidth: 560, color: "var(--paper)" }}>
-              <div className="eyebrow" style={{ color: "var(--accent)" }}>Mess · Three meals daily</div>
-              <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "14ch" }}>
-                A kitchen that{" "}
-                <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
-                  feeds the floor.
-                </span>
-              </h2>
-              <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 84%, transparent)" }}>
-                Three meals a day — vegetarian and non-vegetarian options, monthly menu rotation, hygiene-first kitchen practice. Festival specials on Holi, Diwali, Eid, Christmas. Roti is hand-rolled, not machine-pressed.
-              </p>
-              <div style={{ marginTop: 26, display: "flex", gap: 10, flexWrap: "wrap" }}>
-                {["Veg & non-veg", "Monthly menu", "Festival specials", "Hand-rolled roti"].map((t) => (
-                  <span key={t} style={{
-                    padding: "8px 14px", borderRadius: 999,
-                    background: "color-mix(in oklab, var(--paper) 12%, transparent)",
-                    border: "1px solid color-mix(in oklab, var(--paper) 22%, transparent)",
-                    fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase",
-                  }}>{t}</span>
-                ))}
-              </div>
+      {/* 29 May 2026 — content-driven height. The previous structure
+          fixed the inner wrapper at height: 540 (driven by the Img)
+          with the heading + paragraph + 4 chips absolutely positioned
+          OVER it. On narrow viewports the content wraps to many lines
+          and overflows BOTH ends of the 540px image, leaving the
+          heading floating above the dark band and the chips bleeding
+          into the next section's background (user-reported, screenshot
+          on file). New structure: image is absolutely positioned to
+          fill whatever height the content needs; padding-driven
+          content sits in the document flow so the section grows on
+          phones. min-height keeps the desktop visual intact. */}
+      <section className="section" style={{ position: "relative", overflow: "hidden", padding: 0, minHeight: 540 }}>
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+          <Img src={BIPE_IMG.mess} label="MESS · DINING HALL" style={{ height: "100%", borderRadius: 0 }} />
+        </div>
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0, zIndex: 1,
+          background: "linear-gradient(90deg, var(--ink) 0%, color-mix(in oklab, var(--ink) 80%, transparent) 55%, color-mix(in oklab, var(--ink) 30%, transparent) 100%)",
+        }} />
+        <div className="container" style={{ position: "relative", zIndex: 2, padding: "clamp(56px, 8vw, 96px) 0" }}>
+          <div style={{ maxWidth: "min(100%, 560px)", color: "var(--paper)" }}>
+            <div className="eyebrow" style={{ color: "var(--accent)" }}>Mess · Three meals daily</div>
+            <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "14ch" }}>
+              A kitchen that{" "}
+              <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
+                feeds the floor.
+              </span>
+            </h2>
+            <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 84%, transparent)" }}>
+              Three meals a day — vegetarian and non-vegetarian options, monthly menu rotation, hygiene-first kitchen practice. Festival specials on Holi, Diwali, Eid, Christmas. Roti is hand-rolled, not machine-pressed.
+            </p>
+            <div style={{ marginTop: 26, display: "flex", gap: 10, flexWrap: "wrap" }}>
+              {["Veg & non-veg", "Monthly menu", "Festival specials", "Hand-rolled roti"].map((t) => (
+                <span key={t} style={{
+                  padding: "8px 14px", borderRadius: 999,
+                  background: "color-mix(in oklab, var(--paper) 12%, transparent)",
+                  border: "1px solid color-mix(in oklab, var(--paper) 22%, transparent)",
+                  fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase",
+                }}>{t}</span>
+              ))}
             </div>
           </div>
         </div>
