@@ -223,9 +223,14 @@ export const DATA: DataShape = {
   ],
   stats: [
     { num: "16", label: "Years on record", sub: "since 2010" },
-    // 29 May 2026 — sub text reads the placement count from
-    // lib/placement-stats.ts so a TPO XLSX refresh ripples here too.
-    { num: "2200+", label: "Successful alumni", sub: `${_placed} placed since 2010` },
+    // 29 May 2026 — stat priority flipped per user direction:
+    // 1,331 placements is the auditable joining-letter-verified
+    // trust signal (concrete, TPO-confirmed) and now leads. The
+    // 2,200+ alumni-network figure is a softer total-headcount
+    // claim that demotes to the sub-line. The 1,331 number reads
+    // from lib/placement-stats.ts so a TPO XLSX refresh ripples
+    // through automatically.
+    { num: _placed, label: "Placements · TPO-verified", sub: "Across the 2,200+ alumni network since 2010" },
     { num: "5", label: "BTEUP-affiliated branches", sub: "incl. rare Dairy" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },

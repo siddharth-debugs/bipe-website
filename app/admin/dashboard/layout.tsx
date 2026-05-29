@@ -15,6 +15,7 @@ import {
   Users as UsersIcon,
   ShieldCheck,
   TrendingUp,
+  BarChart3,
 } from "lucide-react";
 import { cn } from "@/lib/admin/utils";
 
@@ -31,6 +32,7 @@ const NAV: NavItem[] = [
   { href: "/admin/dashboard/inbox",    label: "Inbox",    Icon: Inbox,         perms: ["accounts.manage_submissions", "submissions.view_applysubmission", "submissions.view_contactsubmission", "submissions.view_visitsubmission"] },
   { href: "/admin/dashboard/content",  label: "Content",  Icon: FileText,      perms: ["accounts.manage_content"] },
   { href: "/admin/dashboard/seo",      label: "SEO ranks", Icon: TrendingUp },
+  { href: "/admin/dashboard/analytics", label: "Analytics", Icon: BarChart3 },
   { href: "/admin/dashboard/users",    label: "Users",    Icon: UsersIcon,     perms: ["accounts.manage_users"] },
   { href: "/admin/dashboard/roles",    label: "Roles",    Icon: ShieldCheck,   perms: ["accounts.manage_roles"] },
   { href: "/admin/dashboard/settings", label: "Settings", Icon: Settings },
