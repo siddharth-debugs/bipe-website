@@ -11,7 +11,7 @@ import "leaflet/dist/leaflet.css";
  * divIcons — no PNG icon assets, no Leaflet image-asset URL gymnastics.
  *
  * Coordinates are district headquarters except for "BIPE Phoolpur",
- * which is the campus itself (Village Gajokhar, Post Parsara, Phoolpur).
+ * which is the campus itself (Gajokhar, Phoolpur).
  */
 type Pin = {
   name: string;

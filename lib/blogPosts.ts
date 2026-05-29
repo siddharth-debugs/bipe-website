@@ -1589,7 +1589,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "In the 1970s, Dr. Rai was an Assistant Professor of <strong>Soil Chemistry at Pantnagar Agriculture University</strong> — Govind Ballabh Pant University of Agriculture and Technology, the institution that has trained more agricultural scientists than any other in India. From there, the 1980s–2000s were spent in the <strong>Indian Police Service</strong>, with postings across Uttar Pradesh. The Trust was founded after his retirement; <a href=\"/about\">BIPE was established in 2010</a> on a six-acre campus at Village Gajokhar, Post Parsara, Phoolpur — about 14 km from the Varanasi Cantt railway station.",
+        html: "In the 1970s, Dr. Rai was an Assistant Professor of <strong>Soil Chemistry at Pantnagar Agriculture University</strong> — Govind Ballabh Pant University of Agriculture and Technology, the institution that has trained more agricultural scientists than any other in India. From there, the 1980s–2000s were spent in the <strong>Indian Police Service</strong>, with postings across Uttar Pradesh. The Trust was founded after his retirement; <a href=\"/about\">BIPE was established in 2010</a> on a six-acre campus at Gajokhar, Phoolpur — about 14 km from the Varanasi Cantt railway station.",
       },
       {
         type: "p",

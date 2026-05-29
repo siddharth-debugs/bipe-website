@@ -76,7 +76,7 @@ const HOSTEL_JSON_LD = {
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Village Gajokhar, Post Parsara, Phoolpur",
+    streetAddress: "Gajokhar, Phoolpur",
     addressLocality: "Varanasi",
     postalCode: "221206",
     addressRegion: "Uttar Pradesh",

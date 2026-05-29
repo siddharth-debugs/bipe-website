@@ -186,7 +186,7 @@ export default async function Page() {
       name: "BIPE Phoolpur Campus, Varanasi",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Village Gajokhar, Post Parsara",
+        streetAddress: "Gajokhar, Phoolpur",
         addressLocality: "Phoolpur",
         addressRegion: "Uttar Pradesh",
         postalCode: "221206",

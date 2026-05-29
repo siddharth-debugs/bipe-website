@@ -123,7 +123,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What's the pincode for the BIPE Phoolpur campus?",
-    a: "221206 — Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, Uttar Pradesh. Useful when filling JEECUP forms, ordering deliveries, or sharing the address with parents.",
+    a: "221206 — Gajokhar, Phoolpur, Varanasi 221206, UP. Useful when filling JEECUP forms, ordering deliveries, or sharing the address with parents.",
   },
 ];
 
@@ -137,7 +137,7 @@ const placeJsonLd = {
   url: CANONICAL,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Village Gajokhar, Post Parsara, Phoolpur",
+    streetAddress: "Gajokhar, Phoolpur",
     addressLocality: "Varanasi",
     postalCode: "221206",
     addressRegion: "Uttar Pradesh",
@@ -208,7 +208,7 @@ export default function Page() {
             <div className="card" style={{ padding: 28, background: "color-mix(in oklab, var(--brand) 8%, var(--white))" }}>
               <div className="eyebrow" style={{ color: "var(--brand)" }}>Address</div>
               <div style={{ marginTop: 14, fontSize: 16, lineHeight: 1.7, fontWeight: 500 }}>
-                Village Gajokhar, Post Parsara,<br />
+                Gajokhar, Phoolpur,<br />
                 Phoolpur, Varanasi 221206,<br />
                 Uttar Pradesh
               </div>

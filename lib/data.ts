@@ -133,7 +133,7 @@ export const DATA: DataShape = {
       "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए",
     )}`,
     address:
-      "Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, Uttar Pradesh",
+      "Gajokhar, Phoolpur, Varanasi 221206, UP",
     jeecup: "4455",
     aicte: "1-488233171",
     aicteEoaRef: "Northern/1-46216893240/2026/EOA",
