@@ -89,9 +89,9 @@ export const Branches = ({
               className="bipe-h1"
               style={{ marginTop: 14, color: "var(--paper)", maxWidth: "22ch" }}
             >
-              One path to engineering,{" "}
+              Engineering,{" "}
               <span className="serif" style={{ color: "var(--accent)" }}>
-                after high school.
+                on a working schedule.
               </span>
             </h2>
             <p
@@ -99,14 +99,15 @@ export const Branches = ({
               style={{
                 color: "color-mix(in oklab, var(--paper) 70%, transparent)",
                 marginTop: 14,
-                maxWidth: "54ch",
+                maxWidth: "min(100%, 60ch)",
               }}
             >
-              A diploma is not a lesser qualification — it&apos;s a fast-track
-              to engineering and technical careers. In just three years after
-              high school you gain practical skills, industry exposure and a
-              recognised credential that opens multiple doors. Five
-              BTEUP-affiliated branches; one mentor for every twenty students.
+              A BTEUP diploma at BIPE is engineering on a working schedule —
+              apply after Class 10 (three-year programme) or after Class 12
+              (lateral entry to the second year, JEECUP Group K). Practical
+              labs, industry exposure and a BTEUP-recognised credential that
+              opens both a job and the second-year B.Tech door. Five branches;
+              one mentor for every twenty students.
             </p>
           </div>
           <Link

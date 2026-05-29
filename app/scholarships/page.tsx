@@ -404,7 +404,7 @@ export default function Page() {
               <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
                 Tuition waiver · top 2,000 JEECUP 2026 rank
               </div>
-              <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "min(100%, 64ch)" }}>
+              <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)" }}>
                 Trust scholarship of 50% on the published ₹30,150 annual tuition for any candidate within the top 2,000 JEECUP 2026 All-India rank. Applied directly at the time of fee deposit on production of the JEECUP rank card. Stackable on top of UP Govt post-matric reimbursement.
               </p>
             </div>
@@ -423,7 +423,7 @@ export default function Page() {
               <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
                 90%+ in Class 10 · marksheet proof
               </div>
-              <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "min(100%, 64ch)" }}>
+              <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)" }}>
                 For students with 90%+ aggregate in Class 10. Show the 10th marksheet at the time of fee deposit; the 10% tuition reduction is applied immediately.
               </p>
             </div>
@@ -457,7 +457,7 @@ export default function Page() {
             </h2>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22, maxWidth: 1080, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {[
               {
                 n: "01",

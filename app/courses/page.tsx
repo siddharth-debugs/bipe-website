@@ -648,10 +648,10 @@ export default async function Page() {
                   marginTop: 22,
                   fontSize: 15.5,
                   lineHeight: 1.7,
-                  maxWidth: "44ch",
+                  maxWidth: "min(100%, 60ch)",
                 }}
               >
-                A BTEUP diploma is not a lesser degree — it is a faster one. It opens three independent doors: a job in industry the year you graduate, eligibility for diploma-only government technical exams, and direct entry into the second year of a B.Tech if you want to keep studying.
+                A BTEUP diploma is a faster route through engineering — open after Class 10 (three-year programme) or after Class 12 (two-year lateral entry, JEECUP Group K). It opens three independent doors: a job in industry the year you graduate, eligibility for diploma-only government technical exams, and direct entry into the second year of a B.Tech if you want to keep studying.
               </p>
               <div
                 style={{
