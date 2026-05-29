@@ -347,7 +347,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "Is there a BIPE shuttle from Azamgarh during admission season?",
-        a: "Our free admission-season shuttle runs from Varanasi Cantt station, not from Azamgarh directly. From Azamgarh, take a train or bus to Varanasi Cantt (2.5-3 hours), and we'll pick you up there. WhatsApp +91-9198646464 to confirm the shuttle schedule before your visit.",
+        a: "Our free admission-season shuttle runs from Varanasi Cantt station, not from Azamgarh directly. From Azamgarh, take a train or bus to Varanasi Cantt (2.5-3 hours), and we'll pick you up there. WhatsApp +91-9198767676 to confirm the shuttle schedule before your visit.",
       },
     ],
     alumniNote:
@@ -415,7 +415,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "Can I visit BIPE from Mau without an overnight stay?",
-        a: "A Saturday day-trip from Mau is feasible — train at 7-8 AM, arrive Varanasi Cantt by 9-10 AM, BIPE shuttle to Phoolpur, 2-3 hours on campus, return train by 4-5 PM. WhatsApp +91-9198646464 to coordinate.",
+        a: "A Saturday day-trip from Mau is feasible — train at 7-8 AM, arrive Varanasi Cantt by 9-10 AM, BIPE shuttle to Phoolpur, 2-3 hours on campus, return train by 4-5 PM. WhatsApp +91-9198767676 to coordinate.",
       },
     ],
     alumniNote:
@@ -535,7 +535,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Chandauli has Government Polytechnic Chandauli serving the district. The institute is BTE UP-affiliated and follows the standard UP government polytechnic fee structure. For Chandauli students with a strong JEECUP rank who want the standard 3-4 engineering branches and live in the city, the government route is the right choice. BIPE serves the broader Chandauli district — particularly outer-block students who need hostel access, and any student wanting the Dairy Engineering branch (not commonly available at the local government polytechnic).",
     transitNarrative:
-      "From Chandauli, the DDU railway junction provides frequent passenger trains to Varanasi Cantt in 25-30 minutes. State-roadways buses on NH-7 take 75 minutes. Many Chandauli students at BIPE travel via DDU train + shared auto from Cantt to Phoolpur (45 min). Free BIPE shuttle from Varanasi Cantt on Saturdays during admission season — WhatsApp +91-9198646464 to book.",
+      "From Chandauli, the DDU railway junction provides frequent passenger trains to Varanasi Cantt in 25-30 minutes. State-roadways buses on NH-7 take 75 minutes. Many Chandauli students at BIPE travel via DDU train + shared auto from Cantt to Phoolpur (45 min). Free BIPE shuttle from Varanasi Cantt on Saturdays during admission season — WhatsApp +91-9198767676 to book.",
     faqs: [
       {
         q: "How far is Chandauli from BIPE Phoolpur — and is daily commute viable?",

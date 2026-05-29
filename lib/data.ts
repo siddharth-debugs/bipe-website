@@ -121,7 +121,15 @@ export const DATA: DataShape = {
     // Devanagari + em-dash + ASCII mix without hand-encoded escapes —
     // produces an identical URL string to the previous hand-encoded
     // English version at module-load time.
-    whatsapp: `https://wa.me/919198646464?text=${encodeURIComponent(
+    //
+    // WhatsApp NUMBER UPDATE 28 May 2026: WhatsApp is on the alt
+    // handset (+91-9198767676), NOT on the primary line. Surface the
+    // wa.me URL against 919198767676 so the chat opens on the right
+    // number; the Contact card WhatsApp display now reads C.phone2
+    // explicitly, not C.phone (was showing the primary phone — wrong
+    // number to chat at). The primary handset (+91-9198646464) stays
+    // as the voice-call line.
+    whatsapp: `https://wa.me/919198767676?text=${encodeURIComponent(
       "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए",
     )}`,
     address:

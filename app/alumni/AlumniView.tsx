@@ -190,16 +190,31 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
           <div style={{ maxWidth: 820 }}>
             <div className="eyebrow">Alumni</div>
             <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
-              {manifest.totalAlumni.toLocaleString("en-IN")} placements,{" "}
+              1,331 placements,{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                 shipping work across India.
               </span>
             </h1>
+            {/* 28 May 2026 — hero reconciled to the canonical TPO-
+                verified figure (1,331 placements across 44 recruiters
+                between 2016 and 2025) that the rest of the site uses
+                (/placements, homepage, /why-bipe, /private-vs-
+                government-polytechnic). The searchable directory below
+                still surfaces the 997 named records from the bundled
+                manifest — the gap is disclosed honestly in the lead
+                copy instead of being papered over. Add the remaining
+                ~334 named records to lib/alumni-manifest.json as
+                quarterly batches and the directory will catch up to
+                the headline. */}
             <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-              {manifest.totalJoined.toLocaleString("en-IN")} BIPE students joined a company off campus
-              through {manifest.totalDrives} recruiter drives between 2016 and 2021. A further{" "}
-              {manifest.totalOffered.toLocaleString("en-IN")} were offered a role and chose another path
-              — shown below tagged as <em>Offered</em>. Filter by branch, year, recruiter or status.
+              1,331 TPO-verified placements across 44 recruiters between 2016 and 2025 — the
+              canonical placement record. The searchable directory below lists{" "}
+              {manifest.totalAlumni.toLocaleString("en-IN")} named alumni from{" "}
+              {manifest.totalDrives} documented recruiter drives; of those,{" "}
+              {manifest.totalJoined.toLocaleString("en-IN")} joined the company and{" "}
+              {manifest.totalOffered.toLocaleString("en-IN")} were offered a role and chose another
+              path (tagged <em>Offered</em>). The remaining named records are added in
+              quarterly batches.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
               <Link href="/placements" className="btn btn-primary">
@@ -231,10 +246,16 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
             }}
           >
             {[
-              { num: manifest.totalAlumni.toString(), l: "Total placements" },
-              { num: manifest.totalJoined.toString(), l: "Joined the company" },
-              { num: manifest.totalOffered.toString(), l: "Offered · moved on" },
-              { num: manifest.totalDrives.toString(), l: "Recruiter drives" },
+              // 28 May 2026 — stats reframed to put the canonical
+              // 1,331 / 44 numbers up front, with the directory
+              // subset (997 named / 16 drives / top-recruiter tally)
+              // following. Keeps the SEO-relevant numbers consistent
+              // with /placements + homepage while still surfacing the
+              // directory-level detail the rest of this page renders.
+              { num: "1,331", l: "Total placements · TPO-verified" },
+              { num: "44", l: "Recruiters across India" },
+              { num: manifest.totalAlumni.toString(), l: "Named in this directory" },
+              { num: manifest.totalDrives.toString(), l: "Drives documented" },
               {
                 num: topRecruiter.count.toString(),
                 l: `Top recruiter · ${topRecruiter.name.slice(0, 24)}${topRecruiter.name.length > 24 ? "…" : ""}`,
@@ -401,7 +422,7 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
           >
             Showing {Math.min(visible, filtered.length).toLocaleString("en-IN")} of{" "}
             {filtered.length.toLocaleString("en-IN")} · filtered from{" "}
-            {manifest.totalAlumni.toLocaleString("en-IN")} alumni
+            {manifest.totalAlumni.toLocaleString("en-IN")} named alumni · subset of 1,331 TPO-verified placements
           </div>
 
           {/* Alumni grid */}
@@ -559,14 +580,14 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
             <div>
               <div className="eyebrow">Drive history</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "22ch" }}>
-                Sixteen drives.{" "}
+                Sixteen documented drives.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  Six years.
+                  Named by date.
                 </span>
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right", fontSize: 14 }}>
-              Click any row to expand the cohort placed in that drive.
+              Click any row to expand the cohort placed in that drive. Earlier and later drives are still being reconciled into the named directory.
             </p>
           </div>
 

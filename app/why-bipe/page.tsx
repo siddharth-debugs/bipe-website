@@ -455,7 +455,7 @@ export default function Page() {
                   Book a campus visit <ArrowIcon size={16} />
                 </Link>
                 <a
-                  href="https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20want%20to%20know%20more%20about%20the%20Phoolpur%20campus%20and%202026%20admissions."
+                  href="https://wa.me/919198767676?text=Hi%20BIPE%20%E2%80%94%20I%20want%20to%20know%20more%20about%20the%20Phoolpur%20campus%20and%202026%20admissions."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-lg"

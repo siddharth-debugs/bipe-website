@@ -217,7 +217,7 @@ export default function Page() {
               Apply for 2026-27 <ArrowIcon size={16} />
             </Link>
             <a
-              href="https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
+              href="https://wa.me/919198767676?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost btn-lg"
@@ -687,7 +687,7 @@ export default function Page() {
                   Call +91-9198646464 <PhoneIcon />
                 </a>
                 <a
-                  href="https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
+                  href="https://wa.me/919198767676?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-lg"

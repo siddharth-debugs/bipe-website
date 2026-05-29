@@ -287,7 +287,14 @@ export default function Page() {
                 </p>
                 <div style={{ marginTop: 18, paddingTop: 14, borderTop: "1px dashed var(--line-2)" }}>
                   <div className="eyebrow" style={{ color: "var(--ink-3)" }}>NUMBER</div>
-                  <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "#1eaf55", fontSize: 18 }}>{C.phone}</div>
+                  {/* 28 May 2026 — WhatsApp is on phone2 (alt handset),
+                      not the primary voice line. Previously this card
+                      displayed C.phone, matching neither the wa.me URL
+                      (which was also wrong before today's fix) nor the
+                      actual WhatsApp-receiving handset. Now reads from
+                      C.phone2 so the displayed number is the one the
+                      chat actually lands on. */}
+                  <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "#1eaf55", fontSize: 18 }}>{C.phone2}</div>
                 </div>
                 <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ marginTop: 18, width: "100%", justifyContent: "center" }}>
                   <WhatsAppIcon /> Open chat

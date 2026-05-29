@@ -270,7 +270,7 @@ export default function Page() {
                 </p>
               </div>
               <div style={{ display: "grid", gap: 12 }}>
-                <a href="https://wa.me/919198646464?text=Hi%20BIPE%20%E2%80%94%20I%20want%20to%20understand%20whether%20government%2C%20aided%2C%20or%20BIPE%20is%20best%20for%20my%20JEECUP%20rank." target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg" style={{ justifyContent: "space-between" }}>
+                <a href="https://wa.me/919198767676?text=Hi%20BIPE%20%E2%80%94%20I%20want%20to%20understand%20whether%20government%2C%20aided%2C%20or%20BIPE%20is%20best%20for%20my%20JEECUP%20rank." target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg" style={{ justifyContent: "space-between" }}>
                   WhatsApp counsellor <WhatsAppIcon />
                 </a>
                 <Link href="/visit" className="btn btn-ghost btn-lg" style={{ justifyContent: "space-between" }}>
