@@ -251,7 +251,7 @@ export default async function Page() {
             </p>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {STEPS.map((s) => (
               <article key={s.n} className="card" style={{ padding: 28, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -526,7 +526,7 @@ export default async function Page() {
             </p>
           </div>
 
-          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {REASONS.map((r) => (
               <article key={r.roman} className="card" style={{ padding: 32, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{

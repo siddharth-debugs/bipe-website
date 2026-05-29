@@ -324,7 +324,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {[
               {
                 year: "Year 1",
@@ -544,7 +544,7 @@ export default function Page() {
           {/* 28 May 2026 — grid switched 2-col → 3-col to fit the curated
               3-card lineup cleanly (was 4 cards in a 2×2 grid; OBC card
               dropped, JEECUP-merit card re-anchored to top-2,000-rank). */}
-          <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {SCENARIOS.map((s) => (
               <article key={s.tag} className="card" style={{ padding: 26 }}>
                 <div className="eyebrow" style={{ color: "var(--brand)" }}>{s.tag}</div>

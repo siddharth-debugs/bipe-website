@@ -144,7 +144,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {AFTER.map((a) => (
               <article key={a.n} className="card" style={{ padding: 28, position: "relative", overflow: "hidden" }}>
                 <div aria-hidden="true" style={{
@@ -200,7 +200,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {DISCUSS.map((d) => (
               <article key={d.n} style={{
                 padding: 32,
@@ -243,7 +243,7 @@ export default function Page() {
             </h2>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 14, maxWidth: 880, margin: "0 auto" }}>
             <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="card" style={{
               padding: 28, display: "block", textDecoration: "none", color: "var(--ink)",
             }}>

@@ -299,7 +299,7 @@ export default function Page() {
               Eight things you should not have to ask about. Listed here so the conversation moves on.
             </p>
           </div>
-          <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 14, maxWidth: 880, margin: "0 auto" }}>
             {AMENITIES.map((a) => (
               <div key={a.title} style={{
                 padding: "22px 22px",

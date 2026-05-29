@@ -596,7 +596,7 @@ export default async function Page() {
             </p>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {ALUMNI.map((a) => (
               <article key={a.name} className="card" style={{ padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>
                 <div>
@@ -923,7 +923,7 @@ export default async function Page() {
             </p>
           </div>
 
-          <div className="bipe-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 18, maxWidth: 880, margin: "0 auto" }}>
             {PLACEMENT_VOICES.map((t) => (
               <figure
                 key={t.name}

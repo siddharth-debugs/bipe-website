@@ -78,14 +78,14 @@ export const WhyBipe = ({ items: liveItems }: { items?: WhyItem[] } = {}) => {
           </div>
         </div>
 
-        <div className="grid bipe-grid-3" style={{ gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 24, overflow: "hidden", background: "var(--white)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: 24, overflow: "hidden", background: "var(--white)", maxWidth: 880, margin: "0 auto" }}>
           {rest.map((w, i) => (
             <div key={i}
               className="reveal"
               onMouseEnter={() => setActive(i + 1)}
               style={{
                 padding: "36px 32px 32px",
-                borderRight: i < rest.length - 1 ? "1px solid var(--line)" : "none",
+                borderBottom: i < rest.length - 1 ? "1px solid var(--line)" : "none",
                 transition: "background .25s var(--ease)",
                 transitionDelay: `${i * 70}ms`,
                 background: active === i + 1 ? "var(--brand-tint)" : "transparent",

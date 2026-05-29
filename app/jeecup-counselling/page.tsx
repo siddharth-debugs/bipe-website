@@ -249,12 +249,13 @@ export default function Page() {
             confirm. Miss the window, lose the seat.
           </p>
           <div
-            className="bipe-grid-3"
             style={{
               marginTop: 36,
               display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: 24,
+              gridTemplateColumns: "minmax(0, 1fr)",
+              gap: 18,
+              maxWidth: 880,
+              margin: "36px auto 0",
             }}
           >
             {ROUNDS.map((r) => (
@@ -410,12 +411,13 @@ export default function Page() {
             counselling.
           </p>
           <div
-            className="bipe-grid-3"
             style={{
               marginTop: 32,
               display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: 14,
+              gridTemplateColumns: "minmax(0, 1fr)",
+              gap: 12,
+              maxWidth: 880,
+              margin: "32px auto 0",
             }}
           >
             {DOCUMENTS.map((d, i) => (
@@ -522,12 +524,13 @@ export default function Page() {
             </span>
           </h2>
           <div
-            className="bipe-grid-3"
             style={{
               marginTop: 32,
               display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: 18,
+              gridTemplateColumns: "minmax(0, 1fr)",
+              gap: 14,
+              maxWidth: 880,
+              margin: "32px auto 0",
             }}
           >
             {[
