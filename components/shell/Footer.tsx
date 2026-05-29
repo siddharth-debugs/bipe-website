@@ -53,7 +53,13 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
     email: contact?.email || DATA.contact.email,
     emailPlacement: contact?.emailPlacement || DATA.contact.emailPlacement,
     whatsapp: DATA.contact.whatsapp,
-    address: contact?.address || DATA.contact.address,
+    // 29 May 2026 — address PINNED to DATA.contact.address for the
+    // same reason as phone above: backend admin row was still
+    // serving the long "Village Gajokhar, Post Parsara, Phoolpur,
+    // Varanasi 221206, UP" form even after the short-address fix
+    // shipped in lib/data.ts. Re-wire to `contact?.address || ...`
+    // when the admin record is brought in line.
+    address: DATA.contact.address,
     jeecup: contact?.jeecup || DATA.contact.jeecup,
     aicte: contact?.aicte || DATA.contact.aicte,
   };

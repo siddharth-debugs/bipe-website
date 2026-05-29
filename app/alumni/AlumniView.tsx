@@ -334,7 +334,17 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
           </div>
 
           {/* Filters */}
+          {/* 29 May 2026 — bipe-alumni-filters class added for explicit
+              mobile stacking. The 2-column auto-1fr layout puts
+              branches on the left and years on the right; on phones
+              the year column's pills (10 of them at full width) were
+              overflowing into the branch area and visually layering.
+              The site-wide safety-net @media rule was missed here for
+              an as-yet-unclear reason (possibly RSC vs Client
+              serialisation of the inline style hash). Explicit class
+              + dedicated rule in app/globals.css is the reliable fix. */}
           <div
+            className="bipe-alumni-filters"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr auto",

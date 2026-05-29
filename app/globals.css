@@ -1696,6 +1696,12 @@ body.no-motion .skeleton { animation: none; }
   [style*="grid-template-columns:repeat(2"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1fr 1fr"]:not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  /* /alumni · Directory filter grid — branches (1fr) / years (auto).
+     Years column auto-sizes to its content (10 year pills + "All
+     years") which on phones overflows into the branches column and
+     creates a visually layered mess. Stack into a single column at
+     narrow viewports. */
+  .bipe-alumni-filters,
   /* /visit · "Or use another channel" cards — number / text / CTA.
      The 3-col auto-1fr-auto grid squeezes the middle text column to
      a few px on mobile, wrapping "WhatsApp instant" one letter per
