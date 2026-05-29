@@ -199,7 +199,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Need help with Family ID linkage at BIPE?",
-    ctaBody: "Our placement and student-welfare cell helps current BIPE students through the linking flow during the first 2 weeks of each session. WhatsApp +91-9005882866 with your name + branch + year and we'll walk you through it. Free, EN / हिंदी.",
+    ctaBody: "Our placement and student-welfare cell helps current BIPE students through the linking flow during the first 2 weeks of each session. WhatsApp +91-7310077788 with your name + branch + year and we'll walk you through it. Free, EN / हिंदी.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -282,7 +282,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Semester exam coming up?",
-    ctaBody: "BIPE's exam cell helps every BTEUP-registered student with admit-card download, centre allocation, and any portal issues during exam season. Visit the admin block or WhatsApp +91-9005882866 ahead.",
+    ctaBody: "BIPE's exam cell helps every BTEUP-registered student with admit-card download, centre allocation, and any portal issues during exam season. Visit the admin block or WhatsApp +91-7310077788 ahead.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -366,7 +366,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Worried about your exam prep?",
-    ctaBody: "BIPE conducts internal pre-board exams 3-4 weeks before each BTEUP cycle, plus revision classes and faculty doubt-clearing sessions in the final fortnight. Drop into the academic office or WhatsApp +91-9005882866 to discuss your specific subject concerns.",
+    ctaBody: "BIPE conducts internal pre-board exams 3-4 weeks before each BTEUP cycle, plus revision classes and faculty doubt-clearing sessions in the final fortnight. Drop into the academic office or WhatsApp +91-7310077788 to discuss your specific subject concerns.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -454,7 +454,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Result not what you hoped?",
-    ctaBody: "BIPE's academic mentors review every student's semester result personally. We help you decide between grace marks, revaluation, supplementary, or simply harder prep for next cycle. Drop into the academic office or WhatsApp +91-9005882866 for a confidential consultation.",
+    ctaBody: "BIPE's academic mentors review every student's semester result personally. We help you decide between grace marks, revaluation, supplementary, or simply harder prep for next cycle. Drop into the academic office or WhatsApp +91-7310077788 for a confidential consultation.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -541,7 +541,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Payment giving you trouble?",
-    ctaBody: "BIPE's academic and accounts office helps current students through any BTEUP fee-payment issue — failed transactions, missing receipts, late-fee disputes. Drop in during 9am-5pm Mon-Sat or WhatsApp +91-9005882866.",
+    ctaBody: "BIPE's academic and accounts office helps current students through any BTEUP fee-payment issue — failed transactions, missing receipts, late-fee disputes. Drop in during 9am-5pm Mon-Sat or WhatsApp +91-7310077788.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -647,7 +647,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Joining BIPE this session?",
-    ctaBody: "BIPE's academic office hand-holds every new student through BTEUP registration in the first 2 weeks. We tell you what to bring, when to submit, and confirm your registration is in BTEUP's system. WhatsApp +91-9005882866 ahead of joining and we'll send the registration checklist for your branch.",
+    ctaBody: "BIPE's academic office hand-holds every new student through BTEUP registration in the first 2 weeks. We tell you what to bring, when to submit, and confirm your registration is in BTEUP's system. WhatsApp +91-7310077788 ahead of joining and we'll send the registration checklist for your branch.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -797,7 +797,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Picking the right branch for you?",
-    ctaBody: "BIPE's academic mentors walk every prospective student through the BTEUP syllabus for the branches they're considering. Honest read on workload, math content, lab time, and where the diploma leads. WhatsApp +91-9005882866 with your Class 10 marks and we'll map the syllabus to your fit.",
+    ctaBody: "BIPE's academic mentors walk every prospective student through the BTEUP syllabus for the branches they're considering. Honest read on workload, math content, lab time, and where the diploma leads. WhatsApp +91-7310077788 with your Class 10 marks and we'll map the syllabus to your fit.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -897,7 +897,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Got a back paper to clear?",
-    ctaBody: "BIPE's academic office helps every back-paper student plan supplementary registration, draft a revision schedule, and access previous-year question papers for the failed subjects. Drop into the academic block during 9am-5pm Mon-Sat or WhatsApp +91-9005882866.",
+    ctaBody: "BIPE's academic office helps every back-paper student plan supplementary registration, draft a revision schedule, and access previous-year question papers for the failed subjects. Drop into the academic block during 9am-5pm Mon-Sat or WhatsApp +91-7310077788.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -985,7 +985,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Need a CGPA-to-college mapping?",
-    ctaBody: "BIPE's placement and academic offices help every senior-year student translate their CGPA into realistic next-step options — B.Tech lateral entry colleges, government job eligibility, private placement opportunities. WhatsApp +91-9005882866 with your current CGPA for an honest mapping.",
+    ctaBody: "BIPE's placement and academic offices help every senior-year student translate their CGPA into realistic next-step options — B.Tech lateral entry colleges, government job eligibility, private placement opportunities. WhatsApp +91-7310077788 with your current CGPA for an honest mapping.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -1072,7 +1072,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Verifying BIPE before applying?",
-    ctaBody: "BIPE's AICTE Permanent ID is 1-488233171 (verify at facilities.aicte.gov.in) · JEECUP code 4455 (verify at jeecup.admissions.nic.in) · BTEUP-affiliated (verify at bteup.ac.in). All three are independently checkable. WhatsApp +91-9005882866 if you want help verifying any of them.",
+    ctaBody: "BIPE's AICTE Permanent ID is 1-488233171 (verify at facilities.aicte.gov.in) · JEECUP code 4455 (verify at jeecup.admissions.nic.in) · BTEUP-affiliated (verify at bteup.ac.in). All three are independently checkable. WhatsApp +91-7310077788 if you want help verifying any of them.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -1168,11 +1168,11 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "Can BIPE accept transfer students into ongoing semesters?",
-        a: "Yes, subject to: branch + semester seat availability, valid NOC from the previous BTEUP college, current-cycle BTEUP approval. We've had transfer students join from semesters 2 and 3 in past years. WhatsApp +91-9005882866 with your current college name, branch, semester, and reason — we'll tell you within 48 hours whether we can take you.",
+        a: "Yes, subject to: branch + semester seat availability, valid NOC from the previous BTEUP college, current-cycle BTEUP approval. We've had transfer students join from semesters 2 and 3 in past years. WhatsApp +91-7310077788 with your current college name, branch, semester, and reason — we'll tell you within 48 hours whether we can take you.",
       },
     ],
     ctaTitle: "Considering migration to or from BIPE?",
-    ctaBody: "BIPE's academic office handles ~5-10 migration cases per cycle — both directions. We're honest about whether your reason justifies the disruption and what your post-migration prospects look like. WhatsApp +91-9005882866 to schedule a confidential 15-min consultation.",
+    ctaBody: "BIPE's academic office handles ~5-10 migration cases per cycle — both directions. We're honest about whether your reason justifies the disruption and what your post-migration prospects look like. WhatsApp +91-7310077788 to schedule a confidential 15-min consultation.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -1273,7 +1273,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Lost or damaged your BIPE marksheet?",
-    ctaBody: "BIPE's academic office handles all duplicate-marksheet applications for BIPE alumni. We provide the application form, walk you through the FIR / affidavit (if needed), and forward to BTEUP within 10 days of complete submission. Visit Mon-Sat 9am-5pm or WhatsApp +91-9005882866.",
+    ctaBody: "BIPE's academic office handles all duplicate-marksheet applications for BIPE alumni. We provide the application form, walk you through the FIR / affidavit (if needed), and forward to BTEUP within 10 days of complete submission. Visit Mon-Sat 9am-5pm or WhatsApp +91-7310077788.",
   },
 ];
 

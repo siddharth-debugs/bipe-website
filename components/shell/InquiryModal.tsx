@@ -208,7 +208,7 @@ export function InquiryModal() {
 
                 <div className="inq-direct">
                   Or call admissions:{" "}
-                  <a href="tel:+919005882866">+91 90058 82866</a>
+                  <a href="tel:+919415202879">+91 94152 02879</a>
                 </div>
               </div>
             )}

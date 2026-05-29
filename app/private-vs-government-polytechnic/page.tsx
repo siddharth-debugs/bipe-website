@@ -137,7 +137,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Application support & responsiveness",
     bipe:
-      "WhatsApp counsellor on +91-9005882866 (EN / हिंदी). Application call within 24 hours. Travel guidance from Varanasi Cantt for campus visits during admission season. Transparent fee receipts.",
+      "WhatsApp counsellor on +91-7310077788 (EN / हिंदी). Application call within 24 hours. Travel guidance from Varanasi Cantt for campus visits during admission season. Transparent fee receipts.",
     context:
       "Government polytechnic admissions are run through the JEECUP counselling system and state portals — formal but less hand-held. Families comfortable navigating government online systems may find this entirely sufficient.",
     verifyLabel: "Visit the campus",
@@ -982,7 +982,7 @@ export default function Page() {
                   Book a campus visit <ArrowIcon size={16} />
                 </Link>
                 <a
-                  href="https://wa.me/919005882866?text=Hi%20BIPE%20%E2%80%94%20I%20am%20deciding%20between%20a%20government%20polytechnic%20and%20BIPE.%20Can%20you%20help%20me%20compare%3F"
+                  href="https://wa.me/917310077788?text=Hi%20BIPE%20%E2%80%94%20I%20am%20deciding%20between%20a%20government%20polytechnic%20and%20BIPE.%20Can%20you%20help%20me%20compare%3F"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-lg"

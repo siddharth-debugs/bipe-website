@@ -737,7 +737,7 @@ export default function JeecupResourceTemplate({
                   Start application <ArrowIcon size={16} />
                 </Link>
                 <a
-                  href={`https://wa.me/919005882866?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20JEECUP%202026%20question%20about%20${encodeURIComponent(
+                  href={`https://wa.me/917310077788?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20JEECUP%202026%20question%20about%20${encodeURIComponent(
                     data.shortTitle
                   )}.`}
                   target="_blank"

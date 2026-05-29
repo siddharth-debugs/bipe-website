@@ -293,7 +293,7 @@ export default function Page() {
                   {/* 28 May 2026 — phone consolidation. Both this
                       WhatsApp card AND the Phone card below now show
                       the single admissions handset (C.phone =
-                      +91-9005882866). The earlier WhatsApp-is-on-
+                      +91-9415202879). The earlier WhatsApp-is-on-
                       phone2 split has been retired per user direction.
                   */}
                   <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "#1eaf55", fontSize: 18 }}>{C.phone}</div>
@@ -329,7 +329,7 @@ export default function Page() {
                     <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--brand)", fontSize: 18 }}>{C.phone}</div>
                   </div>
                   {/* 28 May 2026 — "ALT" phone row dropped. The single
-                      admissions handset (9005882866) now serves both
+                      admissions handset (9415202879) now serves both
                       voice and WhatsApp. */}
                 </div>
                 <a href={`tel:${C.phone}`} className="btn btn-primary" style={{ marginTop: 18, width: "100%", justifyContent: "center" }}>

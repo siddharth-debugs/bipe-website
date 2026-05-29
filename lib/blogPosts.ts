@@ -361,7 +361,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Confused hain — Dairy aapke liye sahi hai? <strong>WhatsApp +91-9005882866</strong> par baat karें — BIPE ka academic team aapki interest, family context, financial outlook सुनकr honest fit suggest karega। Hum BIPE Dairy ki extra-promotion nahi karenge — agar aap genuinely Mechanical / CSE ke liye fit hain, hum vahi kahenge। Aapka future important hai, sahi branch mein hum साथ hain।",
+          "Confused hain — Dairy aapke liye sahi hai? <strong>WhatsApp +91-7310077788</strong> par baat karें — BIPE ka academic team aapki interest, family context, financial outlook सुनकr honest fit suggest karega। Hum BIPE Dairy ki extra-promotion nahi karenge — agar aap genuinely Mechanical / CSE ke liye fit hain, hum vahi kahenge। Aapka future important hai, sahi branch mein hum साथ hain।",
       },
       {
         type: "p",
@@ -584,7 +584,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "<strong>WhatsApp +91-9005882866</strong> par baat karें — EN / हिंदी, jaisi aapko comfortable। Aapke parents bhi join kar sakte hain conversation mein। Aapka future important hai, sahi branch mein hum saath hain। 🌱",
+          "<strong>WhatsApp +91-7310077788</strong> par baat karें — EN / हिंदी, jaisi aapko comfortable। Aapke parents bhi join kar sakte hain conversation mein। Aapka future important hai, sahi branch mein hum saath hain। 🌱",
       },
     ],
   },
@@ -797,7 +797,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "<strong>WhatsApp +91-9005882866</strong> par baat karें — EN / हिंदी, jaisi aapko comfortable। Aapka future important hai, sahi decision mein hum saath hain। 🌱",
+          "<strong>WhatsApp +91-7310077788</strong> par baat karें — EN / हिंदी, jaisi aapko comfortable। Aapka future important hai, sahi decision mein hum saath hain। 🌱",
       },
     ],
   },
@@ -995,7 +995,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Form bharne mein kahin atke? Document issue hai? Group selection mein doubt hai? <strong>WhatsApp +91-9005882866</strong> par baat karें — BIPE ki admissions team free guidance देती hai। Hum BIPE ke specific promotion nahi karenge — pehle aapka form sahi se bharaayenge, फिर BIPE ke baare mein baat hogi अगar aap chahें।",
+          "Form bharne mein kahin atke? Document issue hai? Group selection mein doubt hai? <strong>WhatsApp +91-7310077788</strong> par baat karें — BIPE ki admissions team free guidance देती hai। Hum BIPE ke specific promotion nahi karenge — pehle aapka form sahi se bharaayenge, फिर BIPE ke baare mein baat hogi अगar aap chahें।",
       },
       {
         type: "p",
@@ -1289,7 +1289,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "<strong>WhatsApp +91-9005882866 par baat karein</strong> — हमारी team free guidance देती hai, no enrolment pressure। EN / हिंदी, jaisi aapko comfortable lage। Hum aapki current situation सुनेंगे, branch + rank dekhenge, aur honest path-fit suggest karenge — sirf BIPE ke favour mein argue nahi karenge। Aapka future important hai, sahi decision mein hum saath hain।",
+          "<strong>WhatsApp +91-7310077788 par baat karein</strong> — हमारी team free guidance देती hai, no enrolment pressure। EN / हिंदी, jaisi aapko comfortable lage। Hum aapki current situation सुनेंगे, branch + rank dekhenge, aur honest path-fit suggest karenge — sirf BIPE ke favour mein argue nahi karenge। Aapka future important hai, sahi decision mein hum saath hain।",
       },
       {
         type: "p",
@@ -2221,7 +2221,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Choose a branch that closed earlier</strong>. Branches at BIPE 4455 close in roughly this order: CSE first, then Mech Production, then Electrical, Civil, Dairy. If your rank doesn't make CSE, try Electrical or Civil first.",
           "<strong>Use later counselling rounds</strong>. Rank-holders who confirmed in Round 1 sometimes upgrade or drop in Round 2/3; seats reopen. The spot round picks up the rest.",
           "<strong>Treat lateral entry as a Plan B</strong>. If you complete Class 12 with PCM and the rank gap is wide, lateral entry into Year 2 the following year is a real route — used by many BIPE alumni.",
-          "<strong>Talk to admissions directly</strong>. Counselling rules occasionally allow institute-level choices outside the central allotment. The team at +91-9005882866 or info@bipe.ac.in can walk you through what's possible given your specific rank and branch preferences.",
+          "<strong>Talk to admissions directly</strong>. Counselling rules occasionally allow institute-level choices outside the central allotment. The team at +91-9415202879 or info@bipe.ac.in can walk you through what's possible given your specific rank and branch preferences.",
         ],
       },
       {
@@ -2275,7 +2275,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Read the <a href=\"/jeecup\">JEECUP guidance page</a> — six-step counselling timeline from application to reporting.",
           "Read the <a href=\"/blog/how-to-fill-jeecup-2026-application-form-step-by-step\">JEECUP 2026 form walkthrough</a> — screenshot-by-screenshot of the application portal.",
           "Browse the <a href=\"/courses\">five branches</a> at BIPE 4455 with full lab + curriculum detail.",
-          "Talk to admissions: <a href=\"tel:+919005882866\">+91-9005882866</a> · <a href=\"mailto:info@bipe.ac.in\">info@bipe.ac.in</a> · <a href=\"https://wa.me/919005882866\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
+          "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"mailto:info@bipe.ac.in\">info@bipe.ac.in</a> · <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
           "Apply: <a href=\"/apply\">/apply</a> — start the BIPE-side form, get a personal call within 24 hours.",
         ],
       },
@@ -2527,7 +2527,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<a href=\"/fees\">पूरी फीस संरचना</a> — AFRC-approved, transparent",
           "<a href=\"/scholarships\">UP सरकार की scholarship</a> — पात्रता + portal link",
           "<a href=\"/visit\">Campus visit बुक करें</a> — फूलपुर campus, ~35 min from Varanasi Cantt by auto",
-          "WhatsApp पर बात करें: <a href=\"https://wa.me/919005882866\" target=\"_blank\" rel=\"noopener\">+91-9005882866</a> — Hindi में जवाब मिलेगा",
+          "WhatsApp पर बात करें: <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">+91-7310077788</a> — Hindi में जवाब मिलेगा",
           "Application शुरू करें: <a href=\"/apply\">/apply</a> — 5 मिनट का form, 24 घंटे में personal call",
         ],
       },
@@ -2649,7 +2649,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Check the <a href=\"/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025\">JEECUP cutoff data</a> — real ranks from 2024-25 and 2025-26",
           "Browse <a href=\"/courses\">all 5 BIPE branches</a> with semester themes + recruiters",
           "Read the <a href=\"/blog/junior-engineer-eligibility-after-diploma\">Junior Engineer pathway guide</a>",
-          "Talk to admissions: <a href=\"tel:+919005882866\">+91-9005882866</a> · <a href=\"https://wa.me/919005882866\" target=\"_blank\" rel=\"noopener\">WhatsApp (Hindi or English)</a>",
+          "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">WhatsApp (Hindi or English)</a>",
           "Apply: <a href=\"/apply\">/apply</a> — 5-minute form, personal call within 24 hours",
         ],
       },
@@ -2820,7 +2820,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "See <a href=\"/blog/career-options-after-12th-polytechnic-up\">all 12 career paths after polytechnic</a> with named recruiters and pay scales",
           "Read the <a href=\"/blog/junior-engineer-eligibility-after-diploma\">Junior Engineer pathway guide</a> for diploma holders",
           "Compare BIPE against other Varanasi polytechnics: <a href=\"/why-bipe\">/why-bipe</a>",
-          "Talk to BIPE admissions: <a href=\"tel:+919005882866\">+91-9005882866</a> · <a href=\"https://wa.me/919005882866\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>",
+          "Talk to BIPE admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>",
         ],
       },
       {
@@ -3109,7 +3109,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Ready to enrol?",
         html:
-          "If you've read this far, you're either choosing a branch or finishing one. Either way, see <a href=\"/courses\">/courses</a> for all five BIPE branches with full per-semester subject detail. Already decided? Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or call admissions at <a href=\"tel:+919005882866\">+91-9005882866</a>.",
+          "If you've read this far, you're either choosing a branch or finishing one. Either way, see <a href=\"/courses\">/courses</a> for all five BIPE branches with full per-semester subject detail. Already decided? Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
       },
     ],
   },
@@ -3377,7 +3377,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Choosing a branch with government jobs in mind?",
         html:
-          "See the 5 BIPE branches at <a href=\"/courses\">/courses</a> — the per-branch pages list the specific JE exams each one is eligible for. Civil / Mechanical / Electrical have the broadest pipelines. Apply for 2026-27 at <a href=\"/apply\">/apply</a> · call admissions at <a href=\"tel:+919005882866\">+91-9005882866</a>.",
+          "See the 5 BIPE branches at <a href=\"/courses\">/courses</a> — the per-branch pages list the specific JE exams each one is eligible for. Civil / Mechanical / Electrical have the broadest pipelines. Apply for 2026-27 at <a href=\"/apply\">/apply</a> · call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
       },
     ],
   },
@@ -3633,7 +3633,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Salary is a planning question. Plan with us.",
         html:
-          "If you're a Class 10 / Class 12 student or family member trying to model what the diploma actually returns financially, two next steps. <strong>Visit <a href=\"/placements\">/placements</a></strong> for the full branch-wise breakdown and the named alumni profiles. <strong>Visit campus</strong> &mdash; book on <a href=\"/visit\">/visit</a> &mdash; and talk to current third-year students who are in placement season right now. Their concrete answers about specific company offers will be far more useful than any blog post. Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or WhatsApp the admissions team at <a href=\"https://wa.me/919005882866\">+91-9005882866</a> in Hindi or English. Hindi readers: <a href=\"/blog/polytechnic-salary-2026-hindi\">पॉलिटेक्निक सैलरी 2026 — हिन्दी गाइड</a>.",
+          "If you're a Class 10 / Class 12 student or family member trying to model what the diploma actually returns financially, two next steps. <strong>Visit <a href=\"/placements\">/placements</a></strong> for the full branch-wise breakdown and the named alumni profiles. <strong>Visit campus</strong> &mdash; book on <a href=\"/visit\">/visit</a> &mdash; and talk to current third-year students who are in placement season right now. Their concrete answers about specific company offers will be far more useful than any blog post. Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or WhatsApp the admissions team at <a href=\"https://wa.me/917310077788\">+91-7310077788</a> in Hindi or English. Hindi readers: <a href=\"/blog/polytechnic-salary-2026-hindi\">पॉलिटेक्निक सैलरी 2026 — हिन्दी गाइड</a>.",
       },
     ],
   },
@@ -3846,7 +3846,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "सैलरी एक planning का सवाल है — साथ planning कीजिए",
         html:
-          "अगर आप Class 10 / Class 12 student हैं या परिवार में कोई — और डिप्लोमा वाक़ई financially क्या देगा, यह model करना चाहते हैं — तो दो step। <strong>देखें <a href=\"/placements\">/placements</a></strong> पूरी branch-wise breakdown और named alumni profiles के लिए। <strong>Campus visit करें</strong> — book करें <a href=\"/visit\">/visit</a> पर — और current third-year students से बात करें जो अभी placement season में हैं। उनके specific company offers के concrete answers किसी blog post से ज़्यादा useful होंगे। 2026-27 के लिए apply करें <a href=\"/apply\">/apply</a> पर, या WhatsApp <a href=\"https://wa.me/919005882866\">+91-9005882866</a> Hindi या English में। English readers: <a href=\"/blog/polytechnic-salary-in-india-2026\">English version of this guide</a>.",
+          "अगर आप Class 10 / Class 12 student हैं या परिवार में कोई — और डिप्लोमा वाक़ई financially क्या देगा, यह model करना चाहते हैं — तो दो step। <strong>देखें <a href=\"/placements\">/placements</a></strong> पूरी branch-wise breakdown और named alumni profiles के लिए। <strong>Campus visit करें</strong> — book करें <a href=\"/visit\">/visit</a> पर — और current third-year students से बात करें जो अभी placement season में हैं। उनके specific company offers के concrete answers किसी blog post से ज़्यादा useful होंगे। 2026-27 के लिए apply करें <a href=\"/apply\">/apply</a> पर, या WhatsApp <a href=\"https://wa.me/917310077788\">+91-7310077788</a> Hindi या English में। English readers: <a href=\"/blog/polytechnic-salary-in-india-2026\">English version of this guide</a>.",
       },
     ],
   },

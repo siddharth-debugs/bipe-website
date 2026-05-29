@@ -94,15 +94,15 @@ export type DataShape = {
 export const DATA: DataShape = {
   contact: {
     // 28 May 2026 — consolidated to a single admissions handset per
-    // user direction "Use only one number for call 9005882866, remove
+    // user direction "Use only one number for call 9415202879, remove
     // 9198646464 and 9198767676". The previous voice/WhatsApp split
-    // (9198646464 voice + 9198767676 WhatsApp) is retired. 9005882866
+    // (9198646464 voice + 9198767676 WhatsApp) is retired. 9415202879
     // is now both the call number AND the WhatsApp handoff target —
     // the BIPE_ADMISSIONS_WA_PHONE constant in lib/whatsappHandoff.ts
-    // already used 9005882866 for the wa.me handoffs from
+    // already used 9415202879 for the wa.me handoffs from
     // InquiryModal + WhatsAppFAB, so that side of the world was
     // already converged.
-    phone: "+91-9005882866",
+    phone: "+91-9415202879",
     // PRIMARY OFFICIAL EMAIL — migrated 25 May 2026 from
     // info@bipe.ac.in → info@bipe.ac.in. The .ac.in TLD is
     // restricted to recognised Indian educational institutions; using
@@ -134,12 +134,12 @@ export const DATA: DataShape = {
     // UGC Anti-Ragging Regs 2009 + AICTE PG10 disclosure: those
     // committees must be reachable at named, distinct addresses for
     // compliance. The phonePlacement field (TPO line, currently
-    // Amit Kumar's handset on 9005882866) is the SAME number as the
+    // Amit Kumar's handset on 9415202879) is the SAME number as the
     // primary admissions phone after the phone consolidation, but
     // kept for the semantic clarity that "this is the placement cell
     // line" on the /placements CTA blocks.
     emailPlacement: "info@bipe.ac.in",
-    phonePlacement: "+91-9005882866",
+    phonePlacement: "+91-9415202879",
     emailGrievance: "grievance@bipevns.org",
     emailPrincipal: "info@bipe.ac.in",
     emailAntiRagging: "antiragging@bipevns.org",
@@ -158,11 +158,11 @@ export const DATA: DataShape = {
     // direction routed WhatsApp to the alt handset (+91-9198767676)
     // and call to the primary (+91-9198646464). Both have now been
     // retired in favour of a single admissions handset
-    // (+91-9005882866) per "Use only one number for call 9005882866,
+    // (+91-9415202879) per "Use only one number for call 9415202879,
     // remove 9198646464 and 9198767676". The wa.me URL now hits
-    // 919005882866 — same destination the InquiryModal + WhatsAppFAB
+    // 919415202879 — same destination the InquiryModal + WhatsAppFAB
     // surfaces have always used for their handoffs.
-    whatsapp: `https://wa.me/919005882866?text=${encodeURIComponent(
+    whatsapp: `https://wa.me/917310077788?text=${encodeURIComponent(
       "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए",
     )}`,
     address:
