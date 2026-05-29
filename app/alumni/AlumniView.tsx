@@ -93,8 +93,22 @@ function Avatar({ name, photo, size = 56 }: { name: string; photo?: string; size
  * lists and headline stats still come from the manifest — those are
  * not currently first-class entities in the backend.
  */
-export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
-  const all: Alumnus[] = alumni && alumni.length > 0 ? alumni : manifest.alumni;
+export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = {}) {
+  // 29 May 2026 — pinned to the manifest. Previously this fell back
+  // to a backend `alumni` prop (sourced from /api/v1/content/alumni/)
+  // so admin edits could show without a rebuild. But the backend
+  // admin row currently holds 997 stale records while the bundled
+  // manifest carries the full 1,331 from the TPO XLSX. Surfaces like
+  // "Showing 24 of 997 · filtered from 1,331 TPO-verified placements"
+  // exposed the gap. Same pattern as the Footer phone/address pins:
+  // prefer the data we control until the backend admin record is
+  // brought in line. Re-enable the prop override by switching back to
+  // `alumni && alumni.length > 0 ? alumni : manifest.alumni` once the
+  // admin record carries all 1,331 rows. The _backendAlumni rename is
+  // intentional — keep the prop in the signature for future re-enable
+  // but explicit-flag it as ignored.
+  void _backendAlumni;
+  const all: Alumnus[] = manifest.alumni;
   const drives: Drive[] = manifest.drives;
 
   const [q, setQ] = useState("");

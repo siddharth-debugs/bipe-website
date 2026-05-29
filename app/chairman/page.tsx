@@ -6,6 +6,7 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { SITE_URL } from "@/lib/routes";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("chairman"); }
 
@@ -322,7 +323,7 @@ export default function Page() {
               </p>
 
               <p style={{ marginTop: 22 }}>
-                A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood — and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record — 1,331 verified alumni placements now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more — is the only kind of report card we believe in.
+                A polytechnic is not a building. It is a quiet promise made to the family that sends us their child. The promise is that three years from now, that young person will walk out with skills that earn them a livelihood — and with the self-respect that comes from knowing they did the work themselves. Our faculty take that promise personally. Our placement record — {formatPlacements(PLACEMENT_STATS.totalPlacements)} verified alumni placements now serving at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, Amul, Mother Dairy and many more — is the only kind of report card we believe in.
               </p>
 
               <p style={{ marginTop: 22 }}>

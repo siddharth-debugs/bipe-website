@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metadataFor("whyBipe");
@@ -77,7 +78,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "Placement record on the public record",
     position:
-      "1,331 verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty others. Year-wise named alumni list with named recruiters — not logos, not testimonials, the actual list.",
+      `${formatPlacements(PLACEMENT_STATS.totalPlacements)} verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty others. Year-wise named alumni list with named recruiters — not logos, not testimonials, the actual list.`,
     verifyLabel: "See the named alumni list",
     verifyPath: "/alumni",
   },
@@ -98,7 +99,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "16 years on record · Purwanchal Educational Trust",
     position:
-      "Founded 2010 by Purwanchal Educational Trust. AISHE submitted annually. AICTE Annexure-18 mandatory disclosure published every academic year. 2,200+ alumni network · 1,331 verified placements. The founding documents and current-year disclosure are public — every claim above is auditable, today, by you.",
+      `Founded 2010 by Purwanchal Educational Trust. AISHE submitted annually. AICTE Annexure-18 mandatory disclosure published every academic year. 2,200+ alumni network · ${formatPlacements(PLACEMENT_STATS.totalPlacements)} verified placements. The founding documents and current-year disclosure are public — every claim above is auditable, today, by you.`,
     verifyLabel: "Read the mandatory disclosure",
     verifyPath: "/mandatory-disclosure",
   },
@@ -184,7 +185,7 @@ export default function Page() {
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              1,331 placements.
+              {formatPlacements(PLACEMENT_STATS.totalPlacements)} placements.
             </span>{" "}
             The private polytechnic families keep choosing.
           </h1>

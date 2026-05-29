@@ -3,6 +3,10 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
+
+const _placed = formatPlacements(PLACEMENT_STATS.totalPlacements);
+const _recruiters = PLACEMENT_STATS.totalRecruiters;
 
 export async function generateMetadata(): Promise<Metadata> {
   return metadataFor("aidedPolytechnicUp");
@@ -219,7 +223,7 @@ export default function Page() {
                 <li>Your rank doesn&rsquo;t safely secure an aided seat in your branch</li>
                 <li>You want Dairy Engineering (BIPE is one of 4 BTE UP Dairy programmes in UP)</li>
                 <li>You need hostel access on-campus (BIPE&rsquo;s Phoolpur hostel)</li>
-                <li>You want documented placement infrastructure (1,331 verified placements at 44 recruiters)</li>
+                <li>You want documented placement infrastructure ({_placed} verified placements at {_recruiters} recruiters)</li>
                 <li>You&rsquo;re from Eastern UP and BIPE is the geographically practical 5-branch option</li>
               </ul>
             </article>

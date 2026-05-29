@@ -14,6 +14,16 @@ import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { PlacementsGallery } from "@/components/placements/PlacementsGallery";
 import { BriefcaseBusiness, Handshake } from "lucide-react";
 import { SITE_URL } from "@/lib/routes";
+import {
+  PLACEMENT_STATS,
+  PLACEMENT_VERIFIED,
+  formatPlacements,
+} from "@/lib/placement-stats";
+
+// 29 May 2026 — every hardcoded placement count on this page now reads
+// from lib/placement-stats.ts. To refresh: replace the TPO XLSX in
+// data/source/ and re-run scripts/parse-placement-xlsx.py — every
+// "1,331" / "44 recruiters" / "Top recruiter" on this page updates.
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("placements"); }
 
@@ -152,7 +162,7 @@ const ALUMNI_JSON_LD = {
   url: `${SITE_URL}/placements`,
   name: "Placements · BIPE Varanasi",
   description:
-    "Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — 1,331 placements through 2025, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.",
+    `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.`,
   about: {
     "@type": "CollegeOrUniversity",
     name: "Banaras Institute of Polytechnic & Engineering",
@@ -204,7 +214,7 @@ const PROGRAMS: Program[] = [
 const CELL_POINTS: { num: string; title: string; body: string }[] = [
   { num: "01", title: "Curate the recruiter pipeline", body: "Relationships built over sixteen years across mechanical, electrical, civil, dairy and IT verticals — kept warm with quarterly outreach." },
   { num: "02", title: "Train every cohort", body: "Six pre-placement programmes run on rotation — workshop, lecture series, mock interviews, AMCAT, tech talks." },
-  { num: "03", title: "Verify every placement", body: "Only joining-letter-confirmed offers count toward the public number. The 1,331 figure is auditable, not aspirational." },
+  { num: "03", title: "Verify every placement", body: `Only joining-letter-confirmed offers count toward the public number. The ${formatPlacements(PLACEMENT_STATS.totalPlacements)} figure is auditable, not aspirational.` },
   { num: "04", title: "Track the alumni", body: "Quarterly outreach to keep the network warm and the recruiter pipeline fresh — alumni open most of the new doors." },
 ];
 
@@ -286,12 +296,12 @@ export default async function Page() {
               <div className="eyebrow">Placements · Sixteen years</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  1,331
+                  {formatPlacements(PLACEMENT_STATS.totalPlacements)}
                 </span>{" "}
                 careers. Counting.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                Polytechnic placements out of BIPE Varanasi — 1,331 TPO-verified through 2025 · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · alumni at Mahindra, Tata Steel, BEL, Mumbai Metro, JCB and beyond.
+                Polytechnic placements out of BIPE Varanasi — {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified through {PLACEMENT_STATS.endYear} · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · alumni at Mahindra, Tata Steel, BEL, Mumbai Metro, JCB and beyond.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
@@ -305,7 +315,7 @@ export default async function Page() {
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--ink-3)" }}>
                   Tracked &rarr;
                 </span>
-                {["Joining-letter verified", "44 recruiters", "2200+ alumni"].map((t, i) => (
+                {["Joining-letter verified", `${PLACEMENT_STATS.totalRecruiters} recruiters`, "2200+ alumni"].map((t, i) => (
                   <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 14, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 17, color: "var(--ink-2)" }}>
                     {t}
                     {i < 2 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}
@@ -322,8 +332,8 @@ export default async function Page() {
             {/* Vertical stat stack */}
             <div style={{ display: "grid", gap: 14 }}>
               {[
-                { num: "1,331", suffix: "", lbl: "Placed", sub: "TPO-verified 2016-2025 · incl. government posts" },
-                { num: "44", suffix: "", lbl: "Recruiters", sub: "Across India" },
+                { num: formatPlacements(PLACEMENT_STATS.totalPlacements), suffix: "", lbl: "Placed", sub: `TPO-verified ${PLACEMENT_STATS.startYear}-${PLACEMENT_STATS.endYear} · incl. government posts` },
+                { num: PLACEMENT_STATS.totalRecruiters.toString(), suffix: "", lbl: "Recruiters", sub: "Across India" },
                 { num: "16", suffix: "", lbl: "Years", sub: "Track record · since 2010" },
               ].map((s) => (
                 <div key={s.lbl} style={{
@@ -1208,13 +1218,13 @@ export default async function Page() {
                     color: "color-mix(in oklab, var(--paper) 72%, transparent)",
                     maxWidth: "44ch",
                   }}>
-                    1,331 alumni walked this floor before you. The placement cell is a continuation of admissions — start the conversation now.
+                    {formatPlacements(PLACEMENT_STATS.totalPlacements)} alumni walked this floor before you. The placement cell is a continuation of admissions — start the conversation now.
                   </p>
                 </div>
 
                 <div className="row" style={{ marginTop: 48, gap: 24, flexWrap: "wrap", alignItems: "center" }}>
                   {[
-                    { num: "1,331", l: "placed" },
+                    { num: formatPlacements(PLACEMENT_STATS.totalPlacements), l: "placed" },
                     { num: "44", l: "recruiters" },
                     { num: "16", l: "years" },
                     { num: "2200+", l: "alumni" },

@@ -4,6 +4,7 @@ import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metadataFor("aboutAffiliations");
@@ -441,7 +442,7 @@ export default function Page() {
             {[
               {
                 q: "Does AICTE / BTE UP approval guarantee a job after the diploma?",
-                a: "No. Approval guarantees the diploma is government-recognised and the curriculum is BTEUP-standard — that&rsquo;s the floor, not the ceiling. Job outcomes depend on the institute&rsquo;s placement cell, the student&rsquo;s performance, and the wider labour market. See /placements for BIPE&rsquo;s actual record (1,331 verified placements over 16 years).",
+                a: `No. Approval guarantees the diploma is government-recognised and the curriculum is BTEUP-standard — that's the floor, not the ceiling. Job outcomes depend on the institute's placement cell, the student's performance, and the wider labour market. See /placements for BIPE's actual record (${formatPlacements(PLACEMENT_STATS.totalPlacements)} verified placements over 16 years).`,
               },
               {
                 q: "If AICTE approval is annual, what happens if it isn&rsquo;t renewed?",

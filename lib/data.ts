@@ -1,3 +1,12 @@
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
+
+// 29 May 2026 — placement-count and recruiter literals scattered
+// across this module are interpolated from PLACEMENT_STATS so a TPO
+// XLSX refresh updates DATA.stats, DATA.whyBipe, DATA.faq etc.
+// automatically.
+const _placed = formatPlacements(PLACEMENT_STATS.totalPlacements);
+const _endYear = PLACEMENT_STATS.endYear;
+
 export type BranchImage = { src: string; alt: string };
 
 export type Branch = {
@@ -214,7 +223,9 @@ export const DATA: DataShape = {
   ],
   stats: [
     { num: "16", label: "Years on record", sub: "since 2010" },
-    { num: "2200+", label: "Successful alumni", sub: "1,331 placed since 2010" },
+    // 29 May 2026 — sub text reads the placement count from
+    // lib/placement-stats.ts so a TPO XLSX refresh ripples here too.
+    { num: "2200+", label: "Successful alumni", sub: `${_placed} placed since 2010` },
     { num: "5", label: "BTEUP-affiliated branches", sub: "incl. rare Dairy" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
@@ -335,7 +346,7 @@ export const DATA: DataShape = {
     { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },
     { num: "02", metric: "3-layer", metricLabel: "assessment", title: "Outcome-based pedagogy.", body: "Semester exam + continuous assessment + project work, calibrated against published Program Outcomes. We measure progress, not attendance.", icon: "M3 17l6-6 4 4 8-8" },
     { num: "03", metric: "4 only", metricLabel: "institutes in UP offer this", title: "Rare Dairy Engineering diploma.", body: "BTEUP-affiliated Dairy Engineering (Code 327) — offered by only four institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
-    { num: "04", metric: "1,331", metricLabel: "TPO-verified placements", title: "Sixteen years on record.", body: "1,331 TPO-verified placements (2016-2025) at Mahindra, Tata Steel, Krishna Maruti, JCB, Asian Paints — incl. government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police). AFRC-approved fees, no hidden charges.", icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
+    { num: "04", metric: _placed, metricLabel: "TPO-verified placements", title: "Sixteen years on record.", body: `${_placed} TPO-verified placements (${PLACEMENT_STATS.startYear}-${_endYear}) at Mahindra, Tata Steel, Krishna Maruti, JCB, Asian Paints — incl. government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police). AFRC-approved fees, no hidden charges.`, icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
   ],
   testimonials: [
     // Drawn from genuine BIPE Facebook feedback (2017–2025) — translated /
@@ -362,7 +373,7 @@ export const DATA: DataShape = {
     { cat: "Fees", q: "What is the refund policy?", a: "Refunds follow AICTE norms: 100% (less ₹1,000) if you withdraw 15+ days before classes start, 90% within 15 days, 80% within the first 15 days of classes (if the seat is filled), 50% after that, and no refund after 30 days. Refunds are processed within 30 working days." },
     { cat: "Hostel & Campus", q: "Is hostel available?", a: "Yes — for boys. BIPE currently runs a boys' hostel block on campus with a resident warden, staffed gates, visitor registration, fire safety, anti-ragging measures and a 9:30 PM curfew (extendable on parental authorisation). A girls' hostel is on the trust's roadmap; for now, girl students attend as day-scholars or with their own local arrangements — talk to admissions if you need help finding safe accommodation in the area." },
     { cat: "Hostel & Campus", q: "Is the mess vegetarian?", a: "The mess serves three meals a day with both vegetarian and non-vegetarian options. Annual mess fee is ₹36,000." },
-    { cat: "Placements & Career", q: "Where do graduates work?", a: "Alumni work at Mahindra, Krishna Maruti, JCB, Asian Paints, Adani Solar, Ola Electric, RR Parkon, Knorr Bremse, BD Group Campa, Amber and others — 1,331 placements through 2025." },
+    { cat: "Placements & Career", q: "Where do graduates work?", a: `Alumni work at Mahindra, Krishna Maruti, JCB, Asian Paints, Adani Solar, Ola Electric, RR Parkon, Knorr Bremse, BD Group Campa, Amber and others — ${_placed} placements through ${_endYear}.` },
     { cat: "Placements & Career", q: "Can I get a government job after a diploma?", a: "Yes — diploma engineers from BIPE qualify for SSC JE, RRB JE, UPPCL, NDDB, State Dairy Boards, Indian Army Technical and similar central and state recruitment. Several BIPE alumni work as Junior Engineers and Assistant Loco Pilots in Indian Railways and Mumbai Metro." },
     { cat: "Approvals & Trust", q: "Is BIPE AICTE-approved?", a: "Yes. BIPE holds AICTE Permanent ID 1-488233171 and the EoA letter for 2026-27 (F.No. Northern/1-46216893240/2026/EOA, dated 16 March 2026). It is BTEUP-affiliated under JEECUP code 4455 and AISHE-registered with the Department of Higher Education, MoE." },
     { cat: "Approvals & Trust", q: "How do I file a grievance?", a: "Email grievance@bipevns.org or write to the Principal's office. Complaints are treated as confidential and acknowledged within 7 working days. Four statutory committees handle different categories — Anti-Ragging, Internal (POSH), SC/ST and PWD Cell." },

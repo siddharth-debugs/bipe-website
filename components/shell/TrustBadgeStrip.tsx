@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 /**
  * Site-wide trust-badge strip · 6 institutional credentials.
@@ -61,7 +62,7 @@ const BADGES: Badge[] = [
   { label: "AISHE Registered", detail: "Ministry of Education", href: "/about/affiliations" },
   { label: "AFRC Compliant", detail: "₹30,150/year tuition", href: "/fees" },
   { label: "Since 2010", detail: "16 years on record", href: "/about" },
-  { label: "1,331 Placements", detail: "2,200+ alumni network", href: "/placements" },
+  { label: `${formatPlacements(PLACEMENT_STATS.totalPlacements)} Placements`, detail: "2,200+ alumni network", href: "/placements" },
 ];
 
 export function TrustBadgeStrip() {

@@ -1,5 +1,6 @@
 import React from "react";
 import { DATA } from "@/lib/data";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 export const Recruiters = () => {
   // Pinned to DATA.recruiters as of 28 May 2026.
@@ -15,7 +16,7 @@ export const Recruiters = () => {
   <section className="section-tight">
     <div className="container" style={{ marginBottom: 18 }}>
       <div className="eyebrow" style={{ textAlign: "center" }}>
-        1,331 alumni placed at
+        {formatPlacements(PLACEMENT_STATS.totalPlacements)} alumni placed at
       </div>
     </div>
     <div className="marquee">

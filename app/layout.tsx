@@ -16,6 +16,7 @@ import GoogleAnalyticsBeacon from "@/components/shell/GoogleAnalyticsBeacon";
 import OutboundTracker from "@/components/shell/OutboundTracker";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import { aggregateRatingSchema } from "@/lib/reviews";
+import { PLACEMENT_VERIFIED } from "@/lib/placement-stats";
 import type { Branch } from "@/lib/data";
 import type { PublicContact } from "@/lib/content";
 
@@ -152,8 +153,11 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         },
         {
           "@type": "QuantitativeValue",
-          value: 1331,
-          unitText: "alumni placed on record (TPO-verified 2016-2025, incl. 28 in government posts)",
+          // 29 May 2026 — pulled from lib/placement-stats.ts so the
+          // Schema.org payload stays in sync with /alumni + /placements
+          // automatically whenever the TPO XLSX is refreshed.
+          value: PLACEMENT_VERIFIED.totalPlacements,
+          unitText: `alumni placed on record (TPO-verified ${PLACEMENT_VERIFIED.startYear}-${PLACEMENT_VERIFIED.endYear}, incl. 28 in government posts)`,
         },
       ],
       // hasCredential — credentials the institution itself holds

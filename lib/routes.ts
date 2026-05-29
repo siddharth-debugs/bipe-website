@@ -1,3 +1,13 @@
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
+
+// 29 May 2026 — title/description literals that mention placement
+// counts are now interpolated from PLACEMENT_STATS so a TPO XLSX
+// refresh updates the SERP snippets on /about, /placements, /alumni,
+// /why-bipe automatically.
+const _placed = formatPlacements(PLACEMENT_STATS.totalPlacements);
+const _recruiters = PLACEMENT_STATS.totalRecruiters;
+const _endYear = PLACEMENT_STATS.endYear;
+
 export type RouteKey =
   | "home" | "about" | "courses" | "admission" | "apply" | "visit"
   | "contact" | "placements" | "alumni" | "campus" | "fees" | "scholarships"
@@ -89,8 +99,8 @@ export const ROUTES: Record<RouteKey, {
     // CTR rewrite 26 May 2026 · numbers in title (key CTR signal for
     // institutional queries). Specifics > "sixteen years of education"
     // generic prose. Updated to 1,331/2,200+ post commit 065693f.
-    title: "About BIPE Varanasi · Since 2010 · 1,331 Placements · BTEUP 4455",
-    description: "BIPE Varanasi — est. 2010 · 6-acre Phoolpur campus · AICTE 1-488233171 · BTEUP 4455 · 1,331 alumni at Mahindra, Tata, BEL, Indian Railways.",
+    title: `About BIPE Varanasi · Since 2010 · ${_placed} Placements · BTEUP 4455`,
+    description: `BIPE Varanasi — est. 2010 · 6-acre Phoolpur campus · AICTE 1-488233171 · BTEUP 4455 · ${_placed} alumni at Mahindra, Tata, BEL, Indian Railways.`,
   },
   courses: {
     path: "/courses",
@@ -149,17 +159,17 @@ export const ROUTES: Record<RouteKey, {
     // review (commit 065693f). Lead with recruiter names — those are
     // the brand-recognition CTR boosters for "polytechnic placements UP"
     // search intent.
-    title: "Polytechnic Placements UP · 1,331 at Mahindra, Tata Steel, BEL | BIPE",
-    description: "1,331 BIPE alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric. 2,200+ alumni network.",
-    quickLink: { label: "Placements", hint: "1,331 alumni placed", priority: 4 },
+    title: `Polytechnic Placements UP · ${_placed} at Mahindra, Tata Steel, BEL | BIPE`,
+    description: `${_placed} BIPE alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric. 2,200+ alumni network.`,
+    quickLink: { label: "Placements", hint: `${_placed} alumni placed`, priority: 4 },
   },
   alumni: {
     path: "/alumni",
     // CTR rewrite 26 May 2026 · bumped to current published numbers
     // (commit 065693f). "123 with photos" was internal-data styling
     // unsearched by users — replaced with "44 Recruiters" CTR anchor.
-    title: "BIPE Alumni · 2,200+ Network · 1,331 Placed at 44 Recruiters",
-    description: "Browse 2,200+ BIPE alumni · 1,331 verified placements at 44 recruiters (2013–2025). Mahindra, Tata Steel, BEL, Indian Railways. Filter by branch.",
+    title: `BIPE Alumni · 2,200+ Network · ${_placed} Placed at ${_recruiters} Recruiters`,
+    description: `Browse 2,200+ BIPE alumni · ${_placed} verified placements at ${_recruiters} recruiters (${PLACEMENT_STATS.startYear}–${_endYear}). Mahindra, Tata Steel, BEL, Indian Railways. Filter by branch.`,
   },
   campus: {
     path: "/campus",
@@ -365,8 +375,8 @@ export const ROUTES: Record<RouteKey, {
     // long-tail BIPE-brand queries that surface in GSC. Dropped all
     // "BIPE vs [named competitor]" keywords — those compete for a tiny
     // volume cluster and leak SERP exposure to competitors.
-    title: "Why BIPE · 16 Years · 1,331 Placements · AFRC ₹30,150 | Varanasi",
-    description: "Why families across UP and Bihar choose BIPE since 2010 — BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, on-campus hostel, 1,331 placements. Eight pillars.",
+    title: `Why BIPE · 16 Years · ${_placed} Placements · AFRC ₹30,150 | Varanasi`,
+    description: `Why families across UP and Bihar choose BIPE since 2010 — BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, on-campus hostel, ${_placed} placements. Eight pillars.`,
     keywords: [
       "best polytechnic college in Varanasi",
       "top polytechnic college in Varanasi",

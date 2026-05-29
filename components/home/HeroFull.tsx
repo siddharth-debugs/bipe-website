@@ -4,6 +4,7 @@ import { Img } from "@/components/ui/Img";
 import { ArrowIcon } from "@/components/shell/Icons";
 import { BIPE_IMG } from "@/lib/images";
 import { getPageSection } from "@/lib/content";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 /**
  * Trust strip shown at the foot of the hero. The numeric stats live in
@@ -54,8 +55,7 @@ async function loadHero(): Promise<HeroData> {
     // backend is unreachable or that section is unpublished. The
     // backend record should be updated via the admin panel to match,
     // otherwise this fix is dormant in production.
-    description:
-      "AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · 1,331 placed · since 2010.",
+    description: `AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placed · since 2010.`,
     cta_primary: { label: "Apply for 2026-27", href: "/apply" },
     cta_secondary: { label: "Book a campus visit", href: "/visit" },
     bg_image_url: BIPE_IMG.heroWide,

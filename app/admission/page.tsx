@@ -9,6 +9,7 @@ import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
 import { Counter } from "@/components/ui/Counter";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("admission"); }
 
@@ -79,9 +80,9 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
   },
   {
     roman: "iv",
-    title: "1,331 alumni placed",
+    title: `${formatPlacements(PLACEMENT_STATS.totalPlacements)} alumni placed`,
     body: "Sixteen years in. Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, JCB, Asian Paints — verifiable placement records, not just photographs.",
-    metric: "1,331",
+    metric: formatPlacements(PLACEMENT_STATS.totalPlacements),
     metricLabel: "alumni placed",
   },
 ];

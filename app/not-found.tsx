@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { DATA } from "@/lib/data";
 import { SITE_URL } from "@/lib/routes";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 
 /**
  * Custom 404 — replaces Next.js's default plain text "Not Found"
@@ -51,7 +52,7 @@ const POPULAR_DESTINATIONS: {
   { label: "JEECUP Counselling", hi: "जेईईसीयूपी काउंसलिंग", href: "/jeecup-counselling", body: "Six-step counselling explainer — institute code 4455." },
   { label: "All 5 branches", hi: "शाखाएँ", href: "/courses", body: "CSE, Dairy, Civil, Electrical, Mechanical Engineering (Production)." },
   { label: "Fees & scholarships", hi: "शुल्क और छात्रवृत्ति", href: "/fees", body: "AFRC-approved ₹30,150/year. UP post-matric and EWS support." },
-  { label: "Placement record", hi: "प्लेसमेंट रिकॉर्ड", href: "/placements", body: "1,331 verified placements through 2025. 44 recruiters." },
+  { label: "Placement record", hi: "प्लेसमेंट रिकॉर्ड", href: "/placements", body: `${formatPlacements(PLACEMENT_STATS.totalPlacements)} verified placements through ${PLACEMENT_STATS.endYear}. ${PLACEMENT_STATS.totalRecruiters} recruiters.` },
   { label: "Visit the campus", hi: "कैम्पस देखें", href: "/visit", body: "~35 min from Varanasi Cantt by auto. Mon–Sat 9 AM – 5 PM." },
   { label: "Blog", hi: "ब्लॉग", href: "/blog", body: "10 long-form guides on admission, syllabus, JEECUP and careers." },
   { label: "Search BIPE", hi: "खोजें", href: "/search", body: "Type to filter every page and post on this site." },
