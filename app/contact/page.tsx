@@ -14,8 +14,12 @@ import { SITE_URL } from "@/lib/routes";
 // audit P2 fix. SSR stays on (Next 16 server components don't allow
 // ssr:false anyway) — the form still server-renders its shell; only
 // the validation library load is deferred.
-const ContactForm = dynamic(
-  () => import("./ContactForm").then((m) => m.ContactForm)
+// 28 May 2026 — migrated from the local ./ContactForm to the shared
+// <EnquiryForm /> component (one of 3 canonical form formats site-wide
+// per user direction: Enquiry / Apply / WhatsApp). /contact uses the
+// default context="contact" copy variant.
+const EnquiryForm = dynamic(
+  () => import("@/components/forms/EnquiryForm").then((m) => m.EnquiryForm)
 );
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("contact"); }
@@ -504,7 +508,7 @@ export default function Page() {
             </div>
 
             <div className="card" style={{ padding: 36, background: "var(--white)", boxShadow: "0 24px 60px -28px rgba(10,26,63,0.18)" }}>
-              <ContactForm />
+              <EnquiryForm context="contact" />
             </div>
           </div>
         </div>

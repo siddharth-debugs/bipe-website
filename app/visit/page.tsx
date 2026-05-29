@@ -10,8 +10,15 @@ import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/shell/Icons";
 
 // Dynamic import keeps zod + react-hook-form out of the global
 // shared chunk. See companion comment on /contact and /apply pages.
-const VisitForm = dynamic(
-  () => import("./VisitForm").then((m) => m.VisitForm)
+// 28 May 2026 — migrated from the local ./VisitForm to the shared
+// <EnquiryForm /> component (one of 3 canonical form formats site-wide
+// per user direction). The dedicated date / slot / party / shuttle
+// pickers were dropped at the same direction — admissions calls back
+// within one working day to lock the date conversationally. Visitors
+// can suggest a date in the free-text Message field. The surrounding
+// copy below is updated to reflect that flow.
+const EnquiryForm = dynamic(
+  () => import("@/components/forms/EnquiryForm").then((m) => m.EnquiryForm)
 );
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("visit"); }
@@ -248,13 +255,13 @@ export default function Page() {
             <div>
               <div className="eyebrow" style={{ color: "var(--brand)" }}>Book your visit</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                Pick a date.{" "}
+                Tell us when.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  We&rsquo;ll be ready.
+                  We&rsquo;ll call to confirm.
                 </span>
               </h2>
               <p style={{ color: "var(--ink-2)", marginTop: 18, fontSize: 15.5, lineHeight: 1.7 }}>
-                Tell us when you&rsquo;d like to come and which branch you want to see. A faculty mentor for that branch will be available, and we&rsquo;ll guide you on the easiest route from Varanasi Cantt or your nearest station.
+                Drop your name, mobile and branch interest. Tell us a preferred date and slot in the message field (e.g. <em>&ldquo;Sat 12 Jul, 11 AM with parent&rdquo;</em>) — admissions will call within one working day to lock the date and line up a faculty mentor for that branch.
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: "22px 0 0", display: "flex", flexDirection: "column", gap: 10 }}>
                 {[
@@ -272,7 +279,7 @@ export default function Page() {
             </div>
 
             <div className="card" style={{ padding: 28 }}>
-              <VisitForm />
+              <EnquiryForm context="visit" />
             </div>
           </div>
         </div>
