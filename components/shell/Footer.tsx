@@ -37,11 +37,22 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
   // → ConditionalChrome). Fall back to DATA.contact for anything the
   // live object doesn't supply or when the prop is omitted entirely
   // (e.g. local dev with the backend down).
+  //
+  // PHONE + WHATSAPP PINNED to DATA.contact as of 29 May 2026: the
+  // backend admin record at api.bipevns.org was still serving the
+  // retired 9198646464 (old voice line) on the Footer's "Call
+  // admissions" CTA, even though the static fallback was already on
+  // 9415202879. Same backend-override pattern we've fixed on
+  // Recruiters / News / StatsBar / WhyBipe earlier in the month: the
+  // backend admin row is stale and the static constant is canonical.
+  // Re-wire to `contact?.phone || DATA.contact.phone` once the admin
+  // record is brought in line. Email + address / etc. still read from
+  // the backend because those weren't part of the phone consolidation.
   const C = {
-    phone: contact?.phone || DATA.contact.phone,
+    phone: DATA.contact.phone,
     email: contact?.email || DATA.contact.email,
     emailPlacement: contact?.emailPlacement || DATA.contact.emailPlacement,
-    whatsapp: contact?.whatsapp || DATA.contact.whatsapp,
+    whatsapp: DATA.contact.whatsapp,
     address: contact?.address || DATA.contact.address,
     jeecup: contact?.jeecup || DATA.contact.jeecup,
     aicte: contact?.aicte || DATA.contact.aicte,

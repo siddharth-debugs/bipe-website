@@ -105,7 +105,15 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         longitude: 82.84376279985777,
       },
       hasMap: "https://www.google.com/maps/search/?api=1&query=BIPE+Phoolpur+Varanasi",
-      telephone: contact.phone || DATA.contact.phone,
+      // 29 May 2026 — schema.org telephone PINNED to DATA.contact.phone.
+      // The backend admin record at api.bipevns.org was still serving
+      // the retired 9198646464 on Google's Knowledge Graph payload,
+      // which would have kept the wrong number in search results until
+      // the next admin edit. Same backend-override fix as the Footer
+      // CTA + Recruiters / News / WhyBipe upstream — re-wire to the
+      // `contact.phone || DATA.contact.phone` fallback once the admin
+      // record is brought in line.
+      telephone: DATA.contact.phone,
       email: contact.email || DATA.contact.email,
       // LocalBusiness fields — office hours for admissions / front desk.
       // Mon-Sat 9am-5pm is the institute's regular office cadence.
