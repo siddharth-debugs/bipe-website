@@ -91,7 +91,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "Six-acre Phoolpur campus",
     position:
-      "Six acres at Phoolpur, ~14 km from Varanasi Cantt station. Free shuttle for visits during admission season. 550+ students from twelve districts plus Bihar — a real residential community, not a day-scholar building on a busy road.",
+      "Six acres at Phoolpur, ~14 km from Varanasi Cantt station — ~35 minutes by auto or app-cab. 550+ students from twelve districts plus Bihar — a real residential community, not a day-scholar building on a busy road.",
     verifyLabel: "Plan a campus visit",
     verifyPath: "/visit",
   },
@@ -441,7 +441,7 @@ export default function Page() {
                     maxWidth: "46ch",
                   }}
                 >
-                  Free shuttle from Varanasi Cantt every Saturday during admission season.
+                  Easy access from Varanasi Cantt — ~35 minutes by auto or app-cab. Travel guidance on WhatsApp.
                   Walk through the workshops, sit in on a class, eat at the mess. No
                   enrolment pressure — we want your decision to be informed.
                 </p>

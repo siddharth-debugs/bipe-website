@@ -237,7 +237,7 @@ export function Nav() {
               <MegaItem to="/faculty" title="Faculty" desc="40 mentors · 1:20 ratio" icon="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" />
             </div>
             <div className="nav-mega-footer">
-              <span>Free shuttle · Varanasi Cantt</span>
+              <span>~35 min from Varanasi Cantt by auto</span>
               <Link href="/visit" style={{ color: "var(--brand)", textDecoration: "none", fontWeight: 600 }}>Book a visit →</Link>
             </div>
           </NavMenuWrap>

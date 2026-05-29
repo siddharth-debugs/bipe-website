@@ -1687,7 +1687,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "If that description fits, talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a free shuttle visit</a> from Varanasi Cantt. The chemistry and hydraulics labs, the faculty who teach the dairy modules, and current third-year Dairy students who are mid-placement-season are the best argument for the branch. Walk the floor, ask about Banas Dairy and the Sem-6 placement plant they got assigned to, and the decision usually settles itself.",
+        html: "If that description fits, talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab. The chemistry and hydraulics labs, the faculty who teach the dairy modules, and current third-year Dairy students who are mid-placement-season are the best argument for the branch. Walk the floor, ask about Banas Dairy and the Sem-6 placement plant they got assigned to, and the decision usually settles itself.",
       },
     ],
   },
@@ -1897,7 +1897,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "If you're considering this path, talk to admissions on WhatsApp or <a href=\"/visit\">book a campus visit</a>. The free shuttle from Varanasi Cantt makes the decision easier — see the labs, talk to current third-year students, and walk out with a realistic picture of which BIPE branch + lateral entry combination fits your goals.",
+        html: "If you're considering this path, talk to admissions on WhatsApp or <a href=\"/visit\">book a campus visit</a>. The campus is ~35 minutes from Varanasi Cantt by auto or app-cab — see the labs, talk to current third-year students, and walk out with a realistic picture of which BIPE branch + lateral entry combination fits your goals.",
       },
     ],
   },
@@ -1983,7 +1983,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "If a diploma is the path you're weighing, the BIPE <a href=\"/admission\">admission</a> team takes EN / हिंदी questions on WhatsApp every day. Or book a free shuttle visit from Varanasi Cantt — walk the labs, eat at the mess, talk to current students. That visit usually settles the question one way or the other.",
+        html: "If a diploma is the path you're weighing, the BIPE <a href=\"/admission\">admission</a> team takes EN / हिंदी questions on WhatsApp every day. Or book a campus visit — about 35 minutes from Varanasi Cantt by auto or app-cab. Walk the labs, eat at the mess, talk to current students. That visit usually settles the question one way or the other.",
       },
     ],
   },
@@ -2084,7 +2084,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "If you're a current diploma student or a Class 10 family weighing whether to choose this path, the <a href=\"/courses\">five branches at BIPE</a> map directly onto the JE recruitment branches above. Talk to the admissions team on WhatsApp (EN / हिंदी) or <a href=\"/visit\">book a free shuttle visit</a> from Varanasi Cantt to see the campus.",
+        html: "If you're a current diploma student or a Class 10 family weighing whether to choose this path, the <a href=\"/courses\">five branches at BIPE</a> map directly onto the JE recruitment branches above. Talk to the admissions team on WhatsApp (EN / हिंदी) or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab.",
       },
     ],
   },

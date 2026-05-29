@@ -85,7 +85,7 @@ export const FAQ = ({ items }: { items?: FAQItem[] } = {}) => {
                 Still unsure?
               </div>
               <p style={{ fontSize: 13, color: "var(--ink-2)", marginTop: 8, lineHeight: 1.5 }}>
-                Visit the campus. Free shuttle from Varanasi Cantt — meet faculty, see labs, talk to current students.
+                Visit the campus. ~35 min from Varanasi Cantt by auto — meet faculty, see labs, talk to current students.
               </p>
             </div>
           </aside>

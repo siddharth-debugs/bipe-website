@@ -1273,7 +1273,7 @@ export default async function Page() {
                         marginTop: 2,
                       }}
                     >
-                      Free shuttle · Varanasi Cantt
+                      Cantt → campus · ~35 min by auto
                     </div>
                   </div>
                   <ArrowIcon size={18} />

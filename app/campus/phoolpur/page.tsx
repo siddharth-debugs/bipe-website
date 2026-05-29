@@ -7,7 +7,7 @@ import { ArrowIcon } from "@/components/shell/Icons";
 /**
  * /campus/phoolpur — geo-hub page targeting:
  *   "polytechnic in Phoolpur", "polytechnic colleges in Phoolpur",
- *   "how to reach BIPE", "free shuttle Varanasi Cantt BIPE",
+ *   "how to reach BIPE", "Varanasi Cantt to Phoolpur BIPE",
  *   "Phoolpur Varanasi 221206", "PG near BIPE Phoolpur".
  *
  * Location facts are sourced from existing site pages:
@@ -28,9 +28,9 @@ const MAPS_DIRECTIONS = "https://www.google.com/maps/search/?api=1&query=BIPE+Ph
 const MAPS_EMBED = "https://maps.google.com/maps?q=BIPE+Phoolpur+Varanasi&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = "Polytechnic in Phoolpur · BIPE Varanasi Campus | Directions, Shuttle, Map";
+  const title = "Polytechnic in Phoolpur · BIPE Varanasi Campus | Directions & Map";
   const description =
-    "BIPE — the AICTE-approved polytechnic in Phoolpur, Varanasi. 6-acre campus on the Phoolpur–Parsara road, off NH-56. Khalishpur Railway Station 1.8 km, LBS Airport 14.1 km, free shuttle from Varanasi Cantt.";
+    "BIPE — the AICTE-approved polytechnic in Phoolpur, Varanasi. 6-acre campus on the Phoolpur–Parsara road, off NH-56. Khalishpur Railway Station 1.8 km, LBS Airport 14.1 km, ~35 min auto from Varanasi Cantt.";
   return {
     title,
     description,
@@ -68,8 +68,8 @@ const TRANSPORT: { mode: string; place: string; distance: string; body: string }
   {
     mode: "By rail · long distance",
     place: "Varanasi Cantt / Banaras (Manduadih)",
-    distance: "~14 km · free shuttle",
-    body: "All major north / south / east / west express trains stop here. Confirm your visit on WhatsApp and BIPE arranges a free shuttle from Varanasi Cantt to the Phoolpur campus.",
+    distance: "~14 km · ~35 min by auto",
+    body: "All major north / south / east / west express trains stop here. App-cabs (Ola / Uber) and pre-paid autos from the station auto-stand reach Phoolpur in about 35 minutes off-peak. Confirm your visit on WhatsApp and we'll send the campus pin to your driver.",
   },
   {
     mode: "By air",
@@ -81,7 +81,7 @@ const TRANSPORT: { mode: string; place: string; distance: string; body: string }
     mode: "By road",
     place: "NH-56 · Varanasi → Phoolpur",
     distance: "Highway access",
-    body: "NH-56 runs through Phoolpur, with the campus on the Parsara approach road — easy by car or bike. Free shuttle pickup from Varanasi Cantt on request.",
+    body: "NH-56 runs through Phoolpur, with the campus on the Parsara approach road — easy by car or bike. Travel guidance from Varanasi Cantt on request.",
   },
 ];
 
@@ -111,7 +111,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "How do I get to BIPE from Varanasi Cantt?",
-    a: "Confirm your visit on WhatsApp (+91-9198646464) and BIPE will arrange a free shuttle from Varanasi Cantt Railway Station to the Phoolpur campus. The drive is roughly 35 minutes by road.",
+    a: "Confirm your visit on WhatsApp (+91-9198646464) and BIPE will share the campus pin and easiest route. An app-cab (Ola / Uber) or pre-paid auto from the station auto-stand reaches Phoolpur in about 35 minutes off-peak — roughly ₹300-500.",
   },
   {
     q: "Is the Phoolpur campus the only BIPE location?",
@@ -197,7 +197,7 @@ export default function Page() {
                 A <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>polytechnic</span> in Phoolpur, Varanasi.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "58ch" }}>
-                BIPE has been an AICTE-approved polytechnic in Phoolpur, Varanasi, since {DATA.contact.aicte ? "2010" : "the institution's founding"} — six acres on the Phoolpur–Parsara road, off NH-56. Khalishpur Railway Station is 1.8 km away, LBS Airport 14.1 km, and a free shuttle runs from Varanasi Cantt on request. AICTE permanent ID {DATA.contact.aicte}, BTEUP code {DATA.contact.jeecup}.
+                BIPE has been an AICTE-approved polytechnic in Phoolpur, Varanasi, since {DATA.contact.aicte ? "2010" : "the institution's founding"} — six acres on the Phoolpur–Parsara road, off NH-56. Khalishpur Railway Station is 1.8 km away, LBS Airport 14.1 km, and Varanasi Cantt is a 35-minute auto / app-cab ride. AICTE permanent ID {DATA.contact.aicte}, BTEUP code {DATA.contact.jeecup}.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary">Book a campus visit <ArrowIcon /></Link>
@@ -267,18 +267,22 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── Free shuttle highlight ───────────────────────────────── */}
+      {/* ─── Visit-the-campus callout ─────────────────────────────── */}
+      {/* 28 May 2026 — refactored from a "Free shuttle · On us." brand
+          banner to an honest "easy to reach" callout. BIPE does not
+          run a free shuttle service; the previous banner over-claimed
+          a free pickup. Distance + auto-cab guidance is the truth. */}
       <section className="section">
         <div className="container">
           <div className="card" style={{ padding: 40, background: "var(--brand)", color: "#fff" }}>
             <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 32, alignItems: "center" }}>
               <div>
-                <div className="eyebrow" style={{ color: "rgba(255,255,255,0.7)" }}>Free shuttle</div>
+                <div className="eyebrow" style={{ color: "rgba(255,255,255,0.7)" }}>Visit the campus</div>
                 <h2 className="bipe-h1" style={{ color: "#fff", marginTop: 14, maxWidth: "20ch" }}>
-                  From Varanasi Cantt. <span className="serif">On us.</span>
+                  35 minutes from Varanasi Cantt. <span className="serif">By road.</span>
                 </h2>
                 <p style={{ marginTop: 18, opacity: 0.85, maxWidth: "52ch", lineHeight: 1.7 }}>
-                  Book a Saturday visit and BIPE arranges a free shuttle from Varanasi Cantt Railway Station to the Phoolpur campus. Walk the labs, meet current students, eat at the mess, talk to faculty. Bring your parents — that&apos;s the visit we expect.
+                  Book a Saturday slot — confirm on WhatsApp and we&rsquo;ll send the campus pin to your driver. App-cab from Varanasi Cantt is roughly ₹300-500. Walk the labs, meet current students, eat at the mess, talk to faculty. Bring your parents — that&rsquo;s the visit we expect.
                 </p>
                 <div className="row" style={{ marginTop: 24, gap: 12, flexWrap: "wrap" }}>
                   <Link href="/visit" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Book a visit <ArrowIcon /></Link>

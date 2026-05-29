@@ -127,7 +127,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Mirzapur has government polytechnic seats and a handful of private options at varying levels of approval. Verify any local institute's current AICTE EoA letter and AFRC fee structure before deciding. The five branches and on-campus hostel at BIPE Phoolpur are the differentiators most local options can't match in one place.",
     transitNarrative:
-      "From Mirzapur, take a state-roadways bus to Varanasi Cantt (₹120-140, 1.5 hours), then a shared autorickshaw or shuttle to Phoolpur (45 minutes via NH-19). Trains from Mirzapur Junction reach Varanasi Cantt in under an hour — multiple options every day. During admission season, BIPE runs a free shuttle from Varanasi Cantt on Saturdays — book a visit and we'll save you the second leg.",
+      "From Mirzapur, take a state-roadways bus to Varanasi Cantt (₹120-140, 1.5 hours), then a shared autorickshaw or app-cab to Phoolpur (~35 minutes via NH-19, roughly ₹300-500). Trains from Mirzapur Junction reach Varanasi Cantt in under an hour — multiple options every day. Confirm your visit on WhatsApp and BIPE shares the campus pin and easiest route from Cantt.",
     faqs: [
       {
         q: "How far is BIPE from Mirzapur, and is daily commute realistic?",

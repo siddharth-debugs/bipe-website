@@ -161,7 +161,7 @@ const SECTIONS: Section[] = [
     title: "Hostel and transport",
     body: (
       <>
-        <p>Boys&rsquo; hostel block on the 6-acre campus, with on-campus mess, Wi-Fi, study halls and 24×7 security. Annual mess fee ₹36,000. Free shuttle from Varanasi Cantt for campus visits.</p>
+        <p>Boys&rsquo; hostel block on the 6-acre campus, with on-campus mess, Wi-Fi, study halls and 24×7 security. Mess is billed at ₹4,000/month, paid in advance. The campus is ~35 minutes by auto / app-cab from Varanasi Cantt.</p>
         <p>See the <Link href="/hostel">Hostel page</Link> for the full breakdown.</p>
       </>
     ),

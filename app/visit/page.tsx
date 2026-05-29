@@ -31,8 +31,8 @@ const STEPS: Step[] = [
 
 const MODES: Mode[] = [
   { num: "01", mode: "By air", place: "Lal Bahadur Shastri International Airport", distance: "14.1 km", body: "Direct flights from Delhi, Mumbai, Bengaluru and Kolkata. Pre-paid taxis and autos from arrivals run straight to Phoolpur — about 35 minutes off-peak." },
-  { num: "02", mode: "By rail", place: "Khalishpur Railway Station", distance: "1.8 km", body: "The closest stop to campus. Walk in fifteen minutes, or take an auto in five. For long-distance trains, get down at Varanasi Junction or Cantt — we can arrange a free shuttle on request." },
-  { num: "03", mode: "By road", place: "NH-56 · Varanasi → Phoolpur", distance: "Highway access", body: "NH-56 connects directly to Phoolpur, with the campus on the Parsara approach road. Free shuttle pickup from Varanasi Cantt Railway Station can be arranged when you confirm your visit by WhatsApp." },
+  { num: "02", mode: "By rail", place: "Khalishpur Railway Station", distance: "1.8 km", body: "The closest stop to campus. Walk in fifteen minutes, or take an auto in five. For long-distance trains, get down at Varanasi Junction or Cantt — autos and app-cabs to Phoolpur are ~₹300-500 / ~35 min off-peak. Ping us on WhatsApp before you set out and we'll guide you on the cheapest route." },
+  { num: "03", mode: "By road", place: "NH-56 · Varanasi → Phoolpur", distance: "Highway access", body: "NH-56 connects directly to Phoolpur, with the campus on the Parsara approach road. Easiest from Varanasi Cantt is an app-cab (Ola / Uber) or pre-paid auto from the station auto-stand — about 35 minutes off-peak. Confirm your visit on WhatsApp and we'll send the campus pin to your driver." },
 ];
 
 const BRING: Bring[] = [
@@ -180,7 +180,7 @@ export default function Page() {
                 color: "var(--accent-deep)",
                 transform: "rotate(-2deg)",
               }}>
-                ★ Free shuttle · Cantt → Phoolpur
+                ★ Cantt → Phoolpur · ~35 min by auto
               </div>
             </div>
           </div>
@@ -254,13 +254,13 @@ export default function Page() {
                 </span>
               </h2>
               <p style={{ color: "var(--ink-2)", marginTop: 18, fontSize: 15.5, lineHeight: 1.7 }}>
-                Tell us when you&rsquo;d like to come and which branch you want to see. A faculty mentor for that branch will be available, and we&rsquo;ll arrange a free shuttle from Varanasi Cantt if you ask.
+                Tell us when you&rsquo;d like to come and which branch you want to see. A faculty mentor for that branch will be available, and we&rsquo;ll guide you on the easiest route from Varanasi Cantt or your nearest station.
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: "22px 0 0", display: "flex", flexDirection: "column", gap: 10 }}>
                 {[
                   "Confirmation by phone within one working day",
                   "Mon–Sat · 10 AM to 4 PM slots",
-                  "Free shuttle from Varanasi Cantt",
+                  "Auto / app-cab guidance from Varanasi Cantt",
                   "Talk to actual faculty, not just admissions staff",
                 ].map((s) => (
                   <li key={s} style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 12, alignItems: "start", color: "var(--ink-2)", fontSize: 14, lineHeight: 1.55 }}>
@@ -389,7 +389,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "color-mix(in oklab, var(--paper) 78%, transparent)", marginTop: 8, fontSize: 16, lineHeight: 1.7, maxWidth: "52ch" }}>
-              The campus sits along NH-56, eighteen minutes off the airport, ten minutes off Khalishpur railway station. From Varanasi Cantt or BHU we send a free shuttle on request — just ping us on WhatsApp before 8am.
+              The campus sits along NH-56, eighteen minutes off the airport, ten minutes off Khalishpur railway station. From Varanasi Cantt or BHU it&rsquo;s a 35-minute auto / app-cab ride — ping us on WhatsApp before you set out and we&rsquo;ll send the campus pin straight to your driver.
             </p>
           </div>
 
@@ -420,7 +420,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: 28, padding: "16px 22px", border: "1px dashed color-mix(in oklab, var(--paper) 24%, transparent)", borderRadius: 14, fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.06em", color: "color-mix(in oklab, var(--paper) 70%, transparent)", textAlign: "center" }}>
-            Free shuttle from Varanasi Cantt — confirm by WhatsApp the evening before so we can plan the run.
+            Varanasi Cantt → campus is ~35 min by auto / app-cab — confirm by WhatsApp the evening before and we&rsquo;ll send the campus pin to your driver.
           </div>
         </div>
       </section>

@@ -132,7 +132,7 @@ export const FinalCTA = () => (
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>03</span>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 17 }}>Visit campus</div>
-                <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", marginTop: 2 }}>Free shuttle · Varanasi Cantt</div>
+                <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", marginTop: 2 }}>~35 min from Varanasi Cantt</div>
               </div>
               <ArrowIcon size={18} />
             </Link>

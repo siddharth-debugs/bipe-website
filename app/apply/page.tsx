@@ -29,8 +29,8 @@ const AFTER: { n: string; title: string; body: string }[] = [
   },
   {
     n: "03",
-    title: "Free shuttle for visit",
-    body: "From Varanasi Cantt to Phoolpur and back. Book a Saturday — meet current students, walk the labs, eat at the mess. The shuttle is on us.",
+    title: "Travel guidance for visit",
+    body: "From Varanasi Cantt to Phoolpur is ~35 minutes by auto or app-cab. Book a Saturday — confirm on WhatsApp and we'll send the campus pin to your driver, then meet current students, walk the labs, eat at the mess.",
   },
 ];
 
@@ -289,7 +289,7 @@ export default function Page() {
                 Still deciding?
               </div>
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.65 }}>
-                Book a Saturday slot. Free shuttle from Varanasi Cantt. Walk the labs, meet current students, eat at the mess.
+                Book a Saturday slot. ~35 min from Varanasi Cantt by auto / app-cab — we send the campus pin to your driver. Walk the labs, meet current students, eat at the mess.
               </p>
               <span style={{
                 marginTop: 18, display: "inline-flex", alignItems: "center", gap: 8,

@@ -102,7 +102,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Do I have to travel to Lucknow for counselling?",
-    a: "No. JEECUP counselling is online — choice-filling, seat allotment and provisional admission all happen through the portal. The only physical step is reporting at the allotted institute. Once BIPE 4455 is allotted, you report to the Phoolpur campus with documents and fees. The campus is 14 km from Varanasi Cantt; BIPE arranges a free shuttle from Cantt on request.",
+    a: "No. JEECUP counselling is online — choice-filling, seat allotment and provisional admission all happen through the portal. The only physical step is reporting at the allotted institute. Once BIPE 4455 is allotted, you report to the Phoolpur campus with documents and fees. The campus is 14 km from Varanasi Cantt — about 35 minutes by auto or app-cab.",
   },
   {
     q: "What if my JEECUP rank doesn't reach BIPE this round?",

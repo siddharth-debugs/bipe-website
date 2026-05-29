@@ -405,9 +405,9 @@ export default function Page() {
                 </h2>
                 <p style={{ marginTop: 16, color: "var(--ink-2)", fontSize: 16, lineHeight: 1.6, maxWidth: "46ch" }}>
                   Visit BIPE the same day you visit your local government polytechnic. Walk the
-                  workshops, sit in on a class, eat at the mess. Free shuttle from Varanasi
-                  Cantt on Saturdays during admission season. The decision is too important
-                  for one-sided information.
+                  workshops, sit in on a class, eat at the mess. ~35 minutes from Varanasi
+                  Cantt by auto or app-cab. The decision is too important for one-sided
+                  information.
                 </p>
               </div>
               <div style={{ display: "grid", gap: 12 }}>

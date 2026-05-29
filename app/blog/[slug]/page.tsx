@@ -433,8 +433,8 @@ export default async function BlogPostPage(
                 lineHeight: 1.7,
               }}
             >
-              BIPE&apos;s admissions team takes EN / हिंदी questions on WhatsApp every day. Or book
-              a free shuttle visit from Varanasi Cantt to walk the labs.
+              BIPE&apos;s admissions team takes EN / हिंदी questions on WhatsApp every day. Or book a
+              campus visit — ~35 minutes from Varanasi Cantt by auto or app-cab.
             </p>
             <div
               className="row"

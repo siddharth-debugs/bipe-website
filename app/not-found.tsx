@@ -52,7 +52,7 @@ const POPULAR_DESTINATIONS: {
   { label: "All 5 branches", hi: "शाखाएँ", href: "/courses", body: "CSE, Dairy, Civil, Electrical, Mechanical Engineering (Production)." },
   { label: "Fees & scholarships", hi: "शुल्क और छात्रवृत्ति", href: "/fees", body: "AFRC-approved ₹30,150/year. UP post-matric and EWS support." },
   { label: "Placement record", hi: "प्लेसमेंट रिकॉर्ड", href: "/placements", body: "1,331 verified placements through 2025. 44 recruiters." },
-  { label: "Visit the campus", hi: "कैम्पस देखें", href: "/visit", body: "Free shuttle from Varanasi Cantt. Mon–Sat 9 AM – 5 PM." },
+  { label: "Visit the campus", hi: "कैम्पस देखें", href: "/visit", body: "~35 min from Varanasi Cantt by auto. Mon–Sat 9 AM – 5 PM." },
   { label: "Blog", hi: "ब्लॉग", href: "/blog", body: "10 long-form guides on admission, syllabus, JEECUP and careers." },
   { label: "Search BIPE", hi: "खोजें", href: "/search", body: "Type to filter every page and post on this site." },
 ];

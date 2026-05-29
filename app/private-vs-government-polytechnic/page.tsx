@@ -134,7 +134,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Application support & responsiveness",
     bipe:
-      "WhatsApp counsellor on +91-9198646464 (EN / हिंदी). Application call within 24 hours. Free shuttle from Varanasi Cantt for campus visits during admission season. Transparent fee receipts.",
+      "WhatsApp counsellor on +91-9198646464 (EN / हिंदी). Application call within 24 hours. Travel guidance from Varanasi Cantt for campus visits during admission season. Transparent fee receipts.",
     context:
       "Government polytechnic admissions are run through the JEECUP counselling system and state portals — formal but less hand-held. Families comfortable navigating government online systems may find this entirely sufficient.",
     verifyLabel: "Visit the campus",
@@ -964,7 +964,7 @@ export default function Page() {
                     maxWidth: "46ch",
                   }}
                 >
-                  Free shuttle from Varanasi Cantt every Saturday during admission season.
+                  Easy access from Varanasi Cantt — ~35 minutes by auto / app-cab.
                   See the workshops, talk to current students, eat at the mess. No
                   enrolment pressure — comparison decisions are too important for
                   one-sided information.

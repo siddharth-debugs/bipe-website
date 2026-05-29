@@ -465,7 +465,7 @@ export default function Page() {
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>01</span>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 16 }}>Book a hostel viewing</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Free shuttle from Varanasi Cantt</div>
+                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>~35 min from Varanasi Cantt by auto</div>
                   </div>
                   <ArrowIcon size={16} />
                 </Link>

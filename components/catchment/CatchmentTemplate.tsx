@@ -784,9 +784,9 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
                     maxWidth: "46ch",
                   }}
                 >
-                  Free shuttle from Varanasi Cantt every Saturday during admission season. Sit in
-                  on a class, walk through the workshops, eat at the mess. No enrolment pressure —
-                  we want your decision to be informed.
+                  ~35 minutes from Varanasi Cantt by auto or app-cab. Sit in on a class, walk
+                  through the workshops, eat at the mess. No enrolment pressure — we want your
+                  decision to be informed.
                 </p>
               </div>
               <div style={{ display: "grid", gap: 12 }}>

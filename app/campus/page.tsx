@@ -535,7 +535,7 @@ export default async function Page() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 22, fontSize: 14, color: "var(--ink-2)" }}>
               <span><strong style={{ color: "var(--ink)" }}>Medical room</strong> · on-call doctor</span>
               <span><strong style={{ color: "var(--ink)" }}>Digital attendance</strong> · ERP</span>
-              <span><strong style={{ color: "var(--ink)" }}>Free shuttle</strong> · Varanasi Cantt</span>
+              <span><strong style={{ color: "var(--ink)" }}>~35 min from Cantt</strong> · auto / app-cab</span>
               <span><strong style={{ color: "var(--ink)" }}>24×7 security</strong></span>
             </div>
           </div>

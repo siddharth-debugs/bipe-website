@@ -127,10 +127,13 @@ export const ROUTES: Record<RouteKey, {
   },
   visit: {
     path: "/visit",
-    // CTR rewrite 26 May 2026 · concrete distance + free shuttle as the
+    // CTR rewrite 26 May 2026 · concrete distance + travel time as the
     // two strongest signals for "polytechnic visit Varanasi" intent.
-    title: "Visit BIPE Phoolpur · Free Shuttle from Varanasi Cantt · 14 km",
-    description: "Book a free BIPE campus visit · 14 km from Varanasi Cantt · free Saturday shuttle. Walk the 120-PC lab, chemistry & hydraulics labs, hostel, workshops. No pressure.",
+    // 28 May 2026 · dropped the "free shuttle" framing — BIPE does not
+    // run a free shuttle service; replaced with the honest ~35-min
+    // auto / app-cab from Cantt anchor.
+    title: "Visit BIPE Phoolpur · 14 km from Varanasi Cantt · ~35 min by Auto",
+    description: "Book a free BIPE campus visit · 14 km from Varanasi Cantt · ~35 min by auto or app-cab. Walk the 120-PC lab, chemistry & hydraulics labs, hostel, workshops. No pressure.",
   },
   contact: {
     path: "/contact",

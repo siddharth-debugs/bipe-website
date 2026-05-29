@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Geo-hub: /campus/phoolpur targets "polytechnic in Phoolpur",
-  // "how to reach BIPE", "free shuttle Varanasi Cantt BIPE".
+  // "how to reach BIPE", "Varanasi Cantt to BIPE Phoolpur".
   const geoEntries = [
     {
       url: `${SITE_URL}/campus/phoolpur`,

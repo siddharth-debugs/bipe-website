@@ -72,7 +72,7 @@ export const InlineApply = () => {
             <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 10, fontSize: 13, opacity: 0.8 }}>
               <div className="row" style={{ alignItems: "center", gap: 10 }}><span style={{ color: "var(--accent)" }}>✓</span> Free guidance call within 24 hours</div>
               <div className="row" style={{ alignItems: "center", gap: 10 }}><span style={{ color: "var(--accent)" }}>✓</span> Personal mentor introduction</div>
-              <div className="row" style={{ alignItems: "center", gap: 10 }}><span style={{ color: "var(--accent)" }}>✓</span> Free transport from Varanasi Cantt for visits</div>
+              <div className="row" style={{ alignItems: "center", gap: 10 }}><span style={{ color: "var(--accent)" }}>✓</span> Travel guidance from Varanasi Cantt for visits</div>
             </div>
           </div>
           {sent ? (

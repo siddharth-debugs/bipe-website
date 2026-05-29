@@ -372,7 +372,7 @@ export function VisitForm() {
             {...register("needsShuttle")}
             style={{ marginTop: 3, accentColor: "var(--brand)" }}
           />
-          <span>Free shuttle from Varanasi Cantt — please pick us up</span>
+          <span>I&rsquo;d like travel guidance from Varanasi Cantt</span>
         </label>
 
         <div className={errClass("consent")}>

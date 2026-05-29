@@ -334,7 +334,7 @@ export default function Page() {
               </p>
 
               <p style={{ marginTop: 22 }}>
-                If you are a parent reading this, considering whether to trust BIPE with three of the most important years of your child&rsquo;s life: <strong style={{ color: "var(--ink)" }}>please come and see us.</strong> Walk through the workshops. Talk to current students without our staff in the room. Look at the hostel mess, the toilets, the safety arrangements. Read our fee receipts. We have nothing to hide and a great deal to be proud of. The campus is open Monday to Saturday, and we will arrange a free shuttle from Varanasi Cantt if you write ahead.
+                If you are a parent reading this, considering whether to trust BIPE with three of the most important years of your child&rsquo;s life: <strong style={{ color: "var(--ink)" }}>please come and see us.</strong> Walk through the workshops. Talk to current students without our staff in the room. Look at the hostel mess, the toilets, the safety arrangements. Read our fee receipts. We have nothing to hide and a great deal to be proud of. The campus is open Monday to Saturday, and we&rsquo;ll guide you on the easiest route from Varanasi Cantt if you write ahead.
               </p>
 
               <p style={{ marginTop: 22 }}>

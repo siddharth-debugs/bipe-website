@@ -1320,7 +1320,7 @@ export default async function Page() {
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 17 }}>Visit campus</div>
                     <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", marginTop: 2 }}>
-                      Free shuttle · Varanasi Cantt
+                      Cantt → campus · ~35 min by auto
                     </div>
                   </div>
                   <ArrowIcon size={18} />

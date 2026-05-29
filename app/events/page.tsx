@@ -591,7 +591,7 @@ export default async function Page() {
               </div>
               <ul style={{ listStyle: "none", padding: 0, margin: "20px 0 0 0", display: "grid", gap: 14 }}>
                 {[
-                  ["Free shuttle", "Varanasi Cantt &rarr; campus"],
+                  ["From Cantt", "~35 min &rarr; campus · auto / app-cab"],
                   ["Admissions desk", "Mon–Sat · 9 AM – 5 PM"],
                   ["Visitor pass", "WhatsApp 24 hrs in advance"],
                   ["Phone", DATA.contact.phone],
@@ -671,7 +671,7 @@ export default async function Page() {
                 Walk the campus before the next event.
               </h3>
               <p style={{ marginTop: 8, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.65, maxWidth: "54ch" }}>
-                Free shuttle from Varanasi Cantt. Front desk Mon&ndash;Sat. WhatsApp for a visitor pass.
+                ~35 min from Varanasi Cantt by auto or app-cab. Front desk Mon&ndash;Sat. WhatsApp for a visitor pass.
               </p>
             </div>
             <div style={{ display: "flex", gap: 10, justifyContent: "flex-end", flexWrap: "wrap" }}>

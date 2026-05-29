@@ -414,7 +414,7 @@ export default function Page() {
             <article className="card" style={{ padding: 36, background: "var(--white)" }}>
               <div className="eyebrow">Transport</div>
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
-                Quick note for first-time visitors. The full transport breakdown — air, rail, road, free shuttle — sits on the visit page.
+                Quick note for first-time visitors. The full transport breakdown — air, rail, road, auto / app-cab from Cantt — sits on the visit page.
               </p>
               <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 0 }}>
                 {[

@@ -653,7 +653,7 @@ export default async function Page() {
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>01</span>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 16 }}>Visit campus</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 60%, transparent)", marginTop: 2 }}>Free shuttle from Varanasi Cantt</div>
+                    <div style={{ fontSize: 12, color: "color-mix(in oklab, var(--paper) 60%, transparent)", marginTop: 2 }}>~35 min from Varanasi Cantt by auto</div>
                   </div>
                   <ArrowIcon size={16} />
                 </Link>
