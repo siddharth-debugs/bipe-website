@@ -289,7 +289,7 @@ export default function Page() {
             <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
               <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
               <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
-                <WhatsAppIcon /> Ask about scholarships
+                <WhatsAppIcon /> Ask about Admissions
               </a>
             </div>
           </div>
