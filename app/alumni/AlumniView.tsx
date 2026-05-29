@@ -3,6 +3,11 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import manifest from "@/lib/alumni-manifest.json";
+import {
+  PLACEMENT_STATS,
+  PLACEMENT_VERIFIED,
+  formatPlacements,
+} from "@/lib/placement-stats";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 
@@ -117,30 +122,14 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
   // bundled manifest were imported with trailing drive-date suffixes
   // baked into the string (e.g. "MKC GUJRAT 24/09/2020" or "Vikash
   // Group, Faridabad 17-05-2018") which made the recruiter look like
-  // a single-day placement. Strip those date patterns at display
-  // time only; the underlying manifest stays as-is so drive history
-  // can still match by raw company+date keys. User-flagged 29 May
-  // 2026 ("333 not in single day 24/09/2020 — its over a period of
-  // time").
-  const topRecruiter = useMemo(() => {
-    const counts: Record<string, number> = {};
-    for (const a of all) counts[a.company] = (counts[a.company] ?? 0) + 1;
-    let max = 0;
-    let name = "";
-    for (const [k, v] of Object.entries(counts)) {
-      if (v > max) {
-        max = v;
-        name = k;
-      }
-    }
-    // Strip trailing date patterns: " 24/09/2020", "-17-05-2018",
-    // " 03.02.2018", etc. Also strip a leading comma+location
-    // fragment if present.
-    const cleaned = name
-      .replace(/[\s,-]+\d{1,2}[/.\-]\d{1,2}[/.\-]\d{2,4}\s*$/, "")
-      .trim();
-    return { name: cleaned || name, count: max };
-  }, [all]);
+  // 29 May 2026 — the old useMemo that recomputed topRecruiter from
+  // the manifest was removed. lib/placement-stats.ts now derives a
+  // canonical, pre-cleaned top-recruiter name + count from the
+  // parsed XLSX and exports it as PLACEMENT_STATS.topRecruiterName /
+  // .topRecruiterCount. The XLSX → manifest conversion handles the
+  // company-name canonicalisation (strip embedded dates, dedupe
+  // Vikas/Vikash variants etc.), so consumers don't have to do
+  // it inline anymore.
 
   function resetFilters() {
     setQ("");
@@ -204,31 +193,26 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
           <div style={{ maxWidth: 820 }}>
             <div className="eyebrow">Alumni</div>
             <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "20ch" }}>
-              1,331 placements,{" "}
+              {formatPlacements(PLACEMENT_STATS.totalPlacements)} placements,{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                 shipping work across India.
               </span>
             </h1>
-            {/* 28 May 2026 — hero reconciled to the canonical TPO-
-                verified figure (1,331 placements across 44 recruiters
-                between 2016 and 2025) that the rest of the site uses
-                (/placements, homepage, /why-bipe, /private-vs-
-                government-polytechnic). The searchable directory below
-                still surfaces the 997 named records from the bundled
-                manifest — the gap is disclosed honestly in the lead
-                copy instead of being papered over. Add the remaining
-                ~334 named records to lib/alumni-manifest.json as
-                quarterly batches and the directory will catch up to
-                the headline. */}
+            {/* 29 May 2026 — directory rebuilt from the TPO XLSX
+                (data/source/all-placed-students.xlsx). Manifest now
+                carries all 1,331 named records (was 997), 47
+                documented drives (was 16), and 29 distinct single-
+                recruiter companies + 9 multi-recruiter pool drives.
+                All headline numbers below are derived through
+                lib/placement-stats.ts so a TPO XLSX refresh + parser
+                rerun updates every surface automatically. */}
             <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-              1,331 TPO-verified placements across 44 recruiters between 2016 and 2025 — the
-              canonical placement record. The searchable directory below lists{" "}
-              {manifest.totalAlumni.toLocaleString("en-IN")} named alumni from{" "}
-              {manifest.totalDrives} documented recruiter drives; of those,{" "}
-              {manifest.totalJoined.toLocaleString("en-IN")} joined the company and{" "}
-              {manifest.totalOffered.toLocaleString("en-IN")} were offered a role and chose another
-              path (tagged <em>Offered</em>). The remaining named records are added in
-              quarterly batches.
+              {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified placements
+              across {PLACEMENT_STATS.totalRecruiters} recruiters between{" "}
+              {PLACEMENT_STATS.startYear} and {PLACEMENT_STATS.endYear} — every name
+              auditable from the placement-cell register. Browse the directory below by
+              branch, year or recruiter, or jump to the drive history accordion further
+              down to see each cohort placed in each drive.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
               <Link href="/placements" className="btn btn-primary">
@@ -260,27 +244,17 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
             }}
           >
             {[
-              // 28 May 2026 — stats reframed to put the canonical
-              // 1,331 / 44 numbers up front, with the directory
-              // subset (997 named / top-recruiter tally) following.
-              // Keeps the SEO-relevant numbers consistent with
-              // /placements + homepage while still surfacing the
-              // directory-level detail the rest of this page renders.
-              //
-              // 29 May 2026 — "Drives documented: 16" stat dropped
-              // per user direction "16 is not correct figure". The
-              // 16 was just the count of recruiter-drives in the
-              // bundled manifest subset, not BIPE's full historical
-              // total, so claiming it as a sitewide stat was
-              // misleading. The 16-drive accordion further down the
-              // page still surfaces them as "named drive records"
-              // without making any totality claim.
-              { num: "1,331", l: "Total placements · TPO-verified" },
-              { num: "44", l: "Recruiters across India" },
-              { num: manifest.totalAlumni.toString(), l: "Named in this directory" },
+              // 29 May 2026 — stats now sourced from lib/placement-
+              // stats.ts so a TPO XLSX refresh updates these tiles
+              // automatically (no hand-editing of hardcoded
+              // numbers). All four reflect verified data from the
+              // bundled manifest.
+              { num: formatPlacements(PLACEMENT_STATS.totalPlacements), l: "Total placements · TPO-verified" },
+              { num: PLACEMENT_STATS.totalRecruiters.toString(), l: "Recruiters across India" },
+              { num: PLACEMENT_STATS.totalDrives.toString(), l: "Drives documented" },
               {
-                num: topRecruiter.count.toString(),
-                l: `Top recruiter · ${topRecruiter.name.slice(0, 24)}${topRecruiter.name.length > 24 ? "…" : ""}`,
+                num: PLACEMENT_STATS.topRecruiterCount.toString(),
+                l: `Top recruiter · ${PLACEMENT_STATS.topRecruiterName.slice(0, 24)}${PLACEMENT_STATS.topRecruiterName.length > 24 ? "…" : ""}`,
               },
             ].map((s, i) => (
               <div
@@ -454,7 +428,7 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
           >
             Showing {Math.min(visible, filtered.length).toLocaleString("en-IN")} of{" "}
             {filtered.length.toLocaleString("en-IN")} · filtered from{" "}
-            {manifest.totalAlumni.toLocaleString("en-IN")} named alumni · subset of 1,331 TPO-verified placements
+            {manifest.totalAlumni.toLocaleString("en-IN")} TPO-verified placements
           </div>
 
           {/* Alumni grid */}
@@ -612,14 +586,21 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
             <div>
               <div className="eyebrow">Drive history</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "22ch" }}>
-                Sixteen documented drives.{" "}
+                {PLACEMENT_STATS.totalDrives} documented drives.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   Named by date.
                 </span>
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right", fontSize: 14 }}>
-              Click any row to expand the cohort placed in that drive. Earlier and later drives are still being reconciled into the named directory.
+              Click any row to expand the cohort placed in that drive.{" "}
+              {PLACEMENT_VERIFIED.poolDriveCount > 0 && (
+                <>
+                  {PLACEMENT_VERIFIED.poolDriveCount} of these are multi-recruiter pool drives
+                  ({PLACEMENT_VERIFIED.poolStudentCount} students) where the TPO combined several
+                  recruiters under one entry.
+                </>
+              )}
             </p>
           </div>
 
@@ -695,7 +676,8 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
                           color: "var(--ink-3)",
                         }}
                       >
-                        {d.date} {d.year && d.date !== d.year ? `· ${d.year}` : ""}
+                        {d.date}
+                        {d.year && !d.date.includes(String(d.year)) ? ` · ${d.year}` : ""}
                       </div>
                     </div>
                     <div style={{ display: "flex", gap: 6, whiteSpace: "nowrap" }}>
