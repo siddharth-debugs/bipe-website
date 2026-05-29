@@ -623,8 +623,18 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
             </p>
           </div>
 
+          {/* bipe-drive-accordion class — see globals.css. Two jobs:
+              (1) override the global `.card { padding: 22px !important }`
+              mobile rule that was forcing inner padding even though
+              we set padding: 0 inline (the rows have their own
+              22px padding so the outer card MUST stay at 0);
+              (2) give the accordion <button> children a stable
+              flex/grid mobile layout so each row's number, company
+              name, date, pills and chevron all stay visible. User-
+              flagged 29 May 2026 ("nothing renders — just an empty
+              card with no text" on /alumni mobile). */}
           <div
-            className="card"
+            className="card bipe-drive-accordion"
             style={{ padding: 0, overflow: "hidden", border: "1px solid var(--line)", borderRadius: 18 }}
           >
             {drives.map((d, i) => {
@@ -647,6 +657,7 @@ export function AlumniView({ alumni }: { alumni?: Alumnus[] } = {}) {
                     onClick={() =>
                       setOpenDrives((p) => ({ ...p, [key]: !p[key] }))
                     }
+                    className="bipe-drive-row"
                     style={{
                       width: "100%",
                       padding: "18px 22px",

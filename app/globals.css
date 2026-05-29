@@ -1677,7 +1677,7 @@ body.no-motion .skeleton { animation: none; }
    own responsive treatment above and shouldn't be doubled up.
    ================================================================= */
 @media (max-width: 860px) {
-  [style*="grid-template-columns:auto 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]),
+  [style*="grid-template-columns:auto 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]):not(.bipe-drive-row),
   [style*="grid-template-columns:1fr auto"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]),
   [style*="grid-template-columns:1.05fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
@@ -1788,6 +1788,29 @@ body.no-motion .skeleton { animation: none; }
 @media (max-width: 640px) {
   .card { padding: 22px !important; border-radius: 14px !important; }
   .card.bipe-card-flat { padding: 14px !important; }
+  /* The /alumni Drive-history accordion is a CARD that wraps 16
+     accordion-row buttons. Each ROW has its own 22px padding inline,
+     so the outer card MUST stay at padding: 0 — otherwise the rows
+     get pushed inward and clipped by the card's overflow: hidden,
+     producing the "empty card with no text" appearance user-flagged
+     on 29 May 2026. */
+  .card.bipe-drive-accordion { padding: 0 !important; }
+}
+
+/* /alumni Drive-history row buttons — keep the desktop 4-col grid
+   (auto / 1fr / auto / auto = number / company+date / pills /
+   chevron) on EVERY viewport, including mobile. The site-wide
+   safety net at the bottom of this file would otherwise collapse
+   any inline `auto 1fr` grid to a single column on phones, which
+   stacks the row contents vertically and produces a too-tall, hard-
+   to-scan accordion. Each row's number is small (28px serif), the
+   company name fits, the pills and chevron sit nicely in their auto
+   columns — the desktop layout actually works on 360px viewports. */
+.bipe-drive-row {
+  /* No mobile overrides here — the inline gridTemplateColumns: "auto
+     1fr auto auto" is what we want to keep. The class exists so the
+     safety-net selectors at lines 1797+ can skip it via the
+     :not(.bipe-drive-row) exclusion. */
 }
 
 /* Generic n-column grid collapse for inline grid-template-columns
