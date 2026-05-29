@@ -34,7 +34,13 @@ export const WhyBipe = ({ items: liveItems }: { items?: WhyItem[] } = {}) => {
           <div aria-hidden="true" style={{ position: "absolute", right: -120, top: -120, width: 380, height: 380, borderRadius: "50%", background: "radial-gradient(circle, color-mix(in oklab, var(--brand) 60%, transparent), transparent 70%)", pointerEvents: "none" }} />
 
           <div className="bipe-split" style={{ position: "relative", display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 48, alignItems: "center" }}>
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", color: "var(--accent)", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
+            {/* bipe-vertical-rule-label — hidden on mobile via globals.css.
+                The writing-mode: vertical-rl rotation keeps the SIGNATURE
+                COMMITMENT marker as a thin orange strip on desktop, but
+                on the mobile single-column stack it expands into a tall
+                rotated-text block that creates a big empty zone above
+                the actual stat (user-flagged 29 May 2026). */}
+            <div className="bipe-vertical-rule-label" style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", color: "var(--accent)", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
               SIGNATURE COMMITMENT — 01 / 04
             </div>
             <div>

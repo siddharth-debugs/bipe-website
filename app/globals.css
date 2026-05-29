@@ -1696,6 +1696,16 @@ body.no-motion .skeleton { animation: none; }
   [style*="grid-template-columns:repeat(2"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1fr 1fr"]:not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  /* Homepage WhyBipe "SIGNATURE COMMITMENT — 01 / 04" label uses
+     writing-mode: vertical-rl to render as a thin rotated strip on
+     the LEFT side-column of the dark featured card. On the mobile
+     single-col stack the rotated text becomes a tall vertical block
+     that creates an awkward empty zone above the actual stat —
+     visually decorative only, so hide it on phones. */
+  .bipe-vertical-rule-label {
+    display: none !important;
+  }
+
   /* /alumni · Directory filter grid — branches (1fr) / years (auto).
      Years column auto-sizes to its content (10 year pills + "All
      years") which on phones overflows into the branches column and
