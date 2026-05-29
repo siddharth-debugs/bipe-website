@@ -1695,7 +1695,23 @@ body.no-motion .skeleton { animation: none; }
   [style*="grid-template-columns:repeat(3"]:not([class*="bipe-grid"]),
   [style*="grid-template-columns:repeat(2"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1fr 1fr"]:not([class*="bipe-grid"]),
-  [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]) {
+    /* 29 May 2026 — was previously merged with .bipe-vertical-rule-label's
+       `display: none !important` rule body via a stray comma + comment in
+       the selector list. Result: every inline-style 2-col grid on the
+       site (section headers, inner card grids, FAQ wrappers etc.) was
+       being HIDDEN on mobile, not stacked. Visible symptoms:
+         - /scholarships cards rendered as empty white pills (their inner
+           `auto 1fr` grid was display:none)
+         - /hostel "Eight things you should have" paragraph squeezed to
+           1ch wide when the rule happened to NOT fire (cascade race)
+       Correct behaviour: stack to single column on phones with a sane
+       gap and start-alignment so right-aligned text doesn't strand. */
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    align-items: start !important;
+  }
+
   /* Homepage WhyBipe "SIGNATURE COMMITMENT — 01 / 04" label uses
      writing-mode: vertical-rl to render as a thin rotated strip on
      the LEFT side-column of the dark featured card. On the mobile
