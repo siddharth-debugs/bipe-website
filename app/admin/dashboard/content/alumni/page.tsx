@@ -226,7 +226,7 @@ function Editor({
             </div>
             <div className="sm:col-span-2 space-y-1.5">
               <Label htmlFor="company">Company</Label>
-              <Input id="company" value={form.company || ""} onChange={(e) => set("company", e.target.value)} placeholder="e.g. Mahindra · Tata Motors" />
+              <Input id="company" value={form.company || ""} onChange={(e) => set("company", e.target.value)} placeholder="e.g. Mahindra · Krishna Maruti" />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="role">Role / Designation</Label>

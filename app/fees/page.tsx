@@ -35,13 +35,15 @@ const METHODS: { name: string; sub: string }[] = [
 ];
 
 /**
- * Net-fee scenarios drawn from BIPE's published scholarship policy
- * (see /faq and /scholarships): UP Government post-matric covers full
- * tuition for SC/ST and partial for OBC/EWS/Minority under income
- * thresholds set annually; BIPE merit waivers stack at 25–50% for
- * high JEECUP ranks and 10–25% for Class 10 toppers. Figures below
- * are illustrative — the exact net depends on the year's UP Govt
- * notification and the merit slab the student qualifies for.
+ * Net-fee scenarios — three representative cases (down from four,
+ * 28 May 2026). The OBC + 25% merit card was dropped because BIPE
+ * does not add a merit slab on top of OBC reimbursement; the OBC
+ * story is just the UP Govt post-matric one, and stacking it with a
+ * fake "25% BIPE merit" was misrepresenting the actual aid. The
+ * JEECUP-merit card was also re-anchored to the actual published
+ * Trust policy: top 2,000 JEECUP rank → 50% tuition waiver (was
+ * loosely worded as "25-50% for strong rank", which let the band
+ * drift in conversation).
  */
 const SCENARIOS: { tag: string; title: string; calc: string; net: string; note: string }[] = [
   {
@@ -52,21 +54,14 @@ const SCENARIOS: { tag: string; title: string; calc: string; net: string; note: 
     note: "Sticker price. AFRC-set, the same for every branch at BIPE. Hostel + mess separate.",
   },
   {
-    tag: "02 · Merit",
-    title: "Strong JEECUP rank, 50% BIPE merit",
-    calc: "₹30,150 − 50% merit waiver",
-    net: "≈ ₹15,075 / year",
-    note: "BIPE merit waivers of 25–50% apply to students with high JEECUP ranks. Verified before reporting.",
+    tag: "02 · JEECUP merit",
+    title: "Top 2,000 JEECUP 2026 rank · 50% BIPE scholarship",
+    calc: "₹30,150 − 50% BIPE merit waiver",
+    net: "₹15,075 / year",
+    note: "Applied at the time of fee deposit on production of the JEECUP rank card. Open to candidates with a JEECUP 2026 All-India rank within the top 2,000. Stackable with UP Govt post-matric reimbursement.",
   },
   {
-    tag: "03 · OBC + merit",
-    title: "OBC under income limit + 25% merit",
-    calc: "₹30,150 − UP Govt partial post-matric − 25% merit",
-    net: "Net often ≈ ₹10–15k",
-    note: "Partial UP Govt reimbursement stacks with BIPE merit. Exact net depends on the year's notification on scholarship.up.gov.in.",
-  },
-  {
-    tag: "04 · SC / ST",
+    tag: "03 · SC / ST",
     title: "SC / ST under income limit",
     calc: "₹30,150 reimbursed under UP Govt post-matric",
     net: "Effectively reimbursed",
@@ -87,7 +82,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What scholarships are available?",
-    a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority students under the year's income notification (scholarship.up.gov.in). BIPE also offers merit waivers of 25–50% for high JEECUP ranks and 10–25% for Class 10 toppers. The two stack — many BIPE students pay materially less than the published ₹30,150.",
+    a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority students under the year's income notification (scholarship.up.gov.in). BIPE also offers a 50% tuition waiver for any candidate within the top 2,000 JEECUP 2026 All-India rank, and a 10% waiver for Class 10 toppers (90%+ aggregate). The two stack with the UP Govt reimbursement — many BIPE students pay materially less than the published ₹30,150.",
   },
   {
     q: "What is the refund policy if I cancel after paying?",
@@ -95,7 +90,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What is the total cost of the full 3-year diploma?",
-    a: "Tuition alone is ₹30,150 × 3 = ₹90,450 over the diploma. Recurring components (exam fee, library, ID, etc.) are AICTE/BTEUP norms and add a small recurring amount each semester — published once finalised for each cycle. For on-campus boys' residents, hostel rooms are ₹38,000/year (triple-sharing) or ₹48,000/year (double-sharing), and mess is ₹36,000/year — both separate from tuition and paid semester-wise. Scholarships and merit waivers usually bring the net cash outflow well below the headline.",
+    a: "Tuition alone is ₹30,150 × 3 = ₹90,450 over the diploma. Recurring components (exam fee, library, ID, etc.) are AICTE/BTEUP norms and add a small recurring amount each semester — published once finalised for each cycle. For on-campus boys' residents, accommodation is ₹12,000/year (one-time, non-refundable) and mess is ₹4,000/month, paid in advance — both separate from tuition. Scholarships and merit waivers (including the 50% BIPE waiver for top 2,000 JEECUP rank) usually bring the net cash outflow well below the headline.",
   },
   {
     q: "Are there any hidden charges or capitation fees?",
@@ -108,7 +103,7 @@ const FAQS: { q: string; a: string }[] = [
   // existing Hindi blog posts use.
   {
     q: "BIPE की annual fees कितनी है?",
-    a: "AFRC-approved tuition fee ₹30,150 per year है — सभी 5 branches के लिए same। Plus exam fee, library, caution money आदि छोटे components — पूरा breakdown इसी page पर ऊपर है। Hostel और mess अलग billed होते हैं (₹38-48k room + ₹36k mess per year)।",
+    a: "AFRC-approved tuition fee ₹30,150 per year है — सभी 5 branches के लिए same। Plus exam fee, library, caution money आदि छोटे components — पूरा breakdown इसी page पर ऊपर है। Hostel और mess अलग billed होते हैं (accommodation ₹12,000/year + mess ₹4,000/month)।",
   },
   {
     q: "फीस कब और कैसे जमा करनी होती है?",
@@ -390,7 +385,7 @@ export default function Page() {
           </div>
 
           <div style={{ marginTop: 22, padding: "16px 22px", border: "1px dashed var(--line-2)", borderRadius: 14, fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.06em", color: "var(--ink-3)", textAlign: "center" }}>
-            On-campus hostel · room ₹38,000–48,000/year + mess ₹36,000/year — paid semester-wise, separate from tuition.
+            On-campus boys&rsquo; hostel · accommodation ₹12,000/year (one-time, non-refundable) + mess ₹4,000/month (paid in advance) — separate from tuition. Full break-up on <Link href="/hostel" style={{ color: "var(--brand)" }}>/hostel</Link>.
           </div>
         </div>
       </section>
@@ -546,7 +541,10 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+          {/* 28 May 2026 — grid switched 2-col → 3-col to fit the curated
+              3-card lineup cleanly (was 4 cards in a 2×2 grid; OBC card
+              dropped, JEECUP-merit card re-anchored to top-2,000-rank). */}
+          <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
             {SCENARIOS.map((s) => (
               <article key={s.tag} className="card" style={{ padding: 26 }}>
                 <div className="eyebrow" style={{ color: "var(--brand)" }}>{s.tag}</div>

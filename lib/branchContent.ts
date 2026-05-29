@@ -525,7 +525,7 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
   },
   "mechanical-engineering-production": {
     intro:
-      "The Diploma in Mechanical Engineering (Production) at BIPE is a 3-year, 6-semester BTEUP programme (code 343), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The branch is workshop-first: welding, fitting, foundry, machining and CNC are all taught on the production floor, not from a textbook. Mahindra, Tata Motors, BHEL and JBM Group run apprentice-and-place pipelines with BIPE alumni each year.",
+      "The Diploma in Mechanical Engineering (Production) at BIPE is a 3-year, 6-semester BTEUP programme (code 343), AICTE-approved, JEECUP-admitted under institute code 4455 — 120 seats, AFRC tuition ₹30,150/year. The branch is workshop-first: welding, fitting, foundry, machining and CNC are all taught on the production floor, not from a textbook. Mahindra, BHEL and JBM Group run apprentice-and-place pipelines with BIPE alumni each year.",
     semesterThemes: [
       "Sem 1 — Applied Mathematics, Engineering Physics & Chemistry, Workshop Practice I (carpentry, fitting)",
       "Sem 2 — Engineering Mechanics, Workshop Practice II (welding, foundry, sheet metal)",
@@ -608,7 +608,7 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
           "Production Planning & Control",
           "Power Plant Engineering",
           "Final-year Project — capstone",
-          "Industrial Training (6 months — Mahindra / Tata Motors / BHEL / JBM / Bajaj)",
+          "Industrial Training (6 months — Mahindra / BHEL / JBM / Bajaj)",
           "Project Viva Voce",
         ],
       },
@@ -619,20 +619,20 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
       { name: "Automobile & PT lab", body: "Engine teardown, automobile lab and the production-technology (PT) shop for assembly, fixtures and inspection drills." },
     ],
     careers: [
-      "Production / shop-floor engineer at Mahindra, Tata Motors, BHEL, Bajaj, Hero MotoCorp",
+      "Production / shop-floor engineer at Mahindra, BHEL, Bajaj, Hero MotoCorp",
       "Apprentice → permanent at JBM Group, Krishna Maruti and other Tier-1 auto suppliers",
       "Junior Engineer (Mechanical) — SSC JE, RRB JE, Indian Railways, UP PWD",
       "Quality control & inspection at manufacturing units",
       "Lateral entry to B.Tech Mechanical / Production at AKTU and state universities",
     ],
-    recruiters: ["Mahindra", "Tata Motors", "BHEL", "Bajaj", "JCB"],
+    recruiters: ["Mahindra", "BHEL", "Bajaj", "JCB"],
     faqs: [
       { q: "Is BIPE Mechanical Engineering (Production) BTEUP 343?", a: "Yes — Mechanical Engineering (Production) at BIPE is BTEUP code 343, JEECUP institute code 4455. AICTE permanent ID 1-488233171." },
       { q: "How hands-on is the curriculum?", a: "Very. Workshop Practice runs across Semesters 1 and 2 (carpentry, fitting, welding, foundry, sheet metal), then the campus machine shop hosts Sem-3 and Sem-4 manufacturing modules. Most students log 200+ hours of supervised shop-floor time before they graduate." },
-      { q: "Do mechanical diploma graduates get apprenticed before being hired?", a: "Many do — Mahindra, Tata Motors, BHEL and JBM Group run apprentice-and-place pipelines where 1 year of paid apprenticeship at the company precedes a permanent offer. BIPE has placed alumni through this route every year since 2014." },
+      { q: "Do mechanical diploma graduates get apprenticed before being hired?", a: "Many do — Mahindra, BHEL and JBM Group run apprentice-and-place pipelines where 1 year of paid apprenticeship at the company precedes a permanent offer. BIPE has placed alumni through this route every year since 2014." },
       { q: "Can I take SSC JE or RRB JE after the diploma?", a: "Yes — SSC JE (Mechanical) and RRB JE (Mechanical) accept a 3-year BTEUP diploma as eligibility. UP PWD Mechanical and Indian Railways also recruit through these channels." },
-      { q: "What is the difference between Mechanical Engineering (Production) and Mechanical Automobile diplomas?", a: "Mechanical Engineering (Production) — BTEUP 343, what BIPE offers — focuses on manufacturing processes (turning, milling, CNC, casting, welding), production planning, and shop-floor engineering. Mechanical Engineering (Automobile) is a separate diploma (BTEUP 308 at some polytechnics) that adds engine technology, vehicle dynamics and automobile maintenance modules in place of some production-engineering content. Production is broader and works for any manufacturing industry; Automobile narrows to the auto sector. BIPE Production graduates are routinely hired by Mahindra, Tata Motors and Hero MotoCorp anyway." },
-      { q: "Is the Mahindra / Tata Motors apprenticeship paid?", a: "Yes — apprenticeships under the National Apprenticeship Promotion Scheme (NAPS) pay a stipend of ₹9,000-15,000/month for the apprenticeship year, depending on the company and grade. After successful apprentice completion, the company typically converts to a permanent offer at ₹18,000-26,000/month plus DA and shift allowances. BIPE alumni at JBM Group, Krishna Maruti and Motherson Sumi all came through this paid-apprenticeship pipeline." },
+      { q: "What is the difference between Mechanical Engineering (Production) and Mechanical Automobile diplomas?", a: "Mechanical Engineering (Production) — BTEUP 343, what BIPE offers — focuses on manufacturing processes (turning, milling, CNC, casting, welding), production planning, and shop-floor engineering. Mechanical Engineering (Automobile) is a separate diploma (BTEUP 308 at some polytechnics) that adds engine technology, vehicle dynamics and automobile maintenance modules in place of some production-engineering content. Production is broader and works for any manufacturing industry; Automobile narrows to the auto sector. BIPE Production graduates are routinely hired by Mahindra and Hero MotoCorp anyway." },
+      { q: "Is the Mahindra / BHEL apprenticeship paid?", a: "Yes — apprenticeships under the National Apprenticeship Promotion Scheme (NAPS) pay a stipend of ₹9,000-15,000/month for the apprenticeship year, depending on the company and grade. After successful apprentice completion, the company typically converts to a permanent offer at ₹18,000-26,000/month plus DA and shift allowances. BIPE alumni at JBM Group, Krishna Maruti and Motherson Sumi all came through this paid-apprenticeship pipeline." },
       { q: "Can a mechanical diploma holder work as a CNC operator or programmer?", a: "Yes — Semester 4 Manufacturing Processes II covers CNC milling, turning and EDM, taught on the campus machine shop's actual CNC bench. Graduates start as CNC operators at ₹15,000-22,000/month, then move into CNC programming and production-supervision roles within 2-3 years. Many BIPE mechanical alumni at Bajaj and Mahindra began as CNC operators and now run shop-floor production lines." },
     ],
   },

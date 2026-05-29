@@ -1,12 +1,22 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/shell/Icons";
-import { getEvents } from "@/lib/content";
+import { DATA } from "@/lib/data";
 
-// Server component — fetches events at render time, falls back to the
-// static DATA.events list if the backend is unreachable.
-export const News = async () => {
-  const events = await getEvents();
+// Pinned to DATA.events as of 28 May 2026.
+//
+// Previously this was a server component calling getEvents() with a
+// fallback to DATA.events. The admin record was serving stale +
+// factually-wrong cards ("JEECUP 2026 results declared · May 24"
+// when results aren't out until mid-June; "Tata Motors campus drive
+// — 14 selected" when there was no Tata Motors drive; an
+// 11-Apr-2026 Open House still surfacing as upcoming). Static now
+// wins until the admin record is brought in line — same pattern
+// used on Recruiters.tsx (see comment there).
+export const News = () => {
+  // Normalize each event to a stable id (date|title) so the JSX keys
+  // below stay deterministic without a backend-supplied uuid.
+  const events = DATA.events.map((e) => ({ ...e, id: `${e.date}|${e.title}` }));
   const top = events.slice(0, 3);
   const rest = events.slice(3, 7);
   return (

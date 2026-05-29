@@ -161,7 +161,7 @@ function Editor({
             <div className="sm:col-span-2 space-y-1.5">
               <Label htmlFor="role">Role / context</Label>
               <Input id="role" value={form.role || ""} onChange={(e) => set("role", e.target.value)}
-                placeholder="Mech (2020) → Tata Motors campus hire" />
+                placeholder="Mech (2020) → Krishna Maruti campus hire" />
             </div>
             <div className="sm:col-span-2 space-y-1.5">
               <Label htmlFor="quote">Quote</Label>

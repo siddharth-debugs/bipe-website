@@ -7,6 +7,7 @@ import { HeroFull } from "@/components/home/HeroFull";
 import { BIPE_IMG } from "@/lib/images";
 import { StatsBar } from "@/components/home/StatsBar";
 import { Recruiters } from "@/components/home/Recruiters";
+import { ScholarshipStrip } from "@/components/home/ScholarshipStrip";
 import { WhyBipe } from "@/components/home/WhyBipe";
 import { JeecupSteps } from "@/components/home/JeecupSteps";
 import { CampusLife } from "@/components/home/CampusLife";
@@ -122,6 +123,13 @@ export default async function HomePage() {
       */}
       <StatsBar />
       <Recruiters />
+      {/* 28 May 2026 — Trust 50% scholarship strip added per user
+          direction. Anchors the top-2,000-JEECUP-rank / 50% offer
+          right under the recruiter marquee so strong candidates see
+          it before they leave the homepage. /scholarships carries the
+          full policy + Hindi FAQ; /fees Scenario card 02 carries the
+          worked-example net figure (₹15,075/year). */}
+      <ScholarshipStrip />
       <Countdown />
       {/* WhyBipe items also pinned to DATA.whyBipe (28 May 2026) for the
           same reason as StatsBar above: the backend CMS still carries the

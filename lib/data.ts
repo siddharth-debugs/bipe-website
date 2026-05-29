@@ -271,7 +271,7 @@ export const DATA: DataShape = {
       code: "343", slug: "mechanical-engineering-production",
       name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)",
       seats: 120, fee: "30,150",
-      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, Tata Motors, BHEL apprentice pathways.",
+      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, JCB, BHEL apprentice pathways.",
       tag: null, color: 5,
       thumbnail: {
         src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",
@@ -331,12 +331,23 @@ export const DATA: DataShape = {
     { cat: "Approvals & Trust", q: "How do I file a grievance?", a: "Email grievance@bipevns.org or write to the Principal's office. Complaints are treated as confidential and acknowledged within 7 working days. Four statutory committees handle different categories — Anti-Ragging, Internal (POSH), SC/ST and PWD Cell." },
   ],
   events: [
+    // Curated 28 May 2026 per the audit:
+    //   - "Tata Motors campus drive — 14 selected" REMOVED. The user
+    //     confirmed there is no Tata Motors campus drive at BIPE;
+    //     the event was fabricated and the "14 selected" figure
+    //     can't be substantiated.
+    //   - "Open House for Class 10 students (11 Apr 2026)" REMOVED.
+    //     Past event, no replacement on the calendar; surfacing a
+    //     2-month-old event as "upcoming" was stale-data theatre.
+    // The "JEECUP 2026 results declared (May 24)" card seen on the
+    // live homepage is backend-supplied (admin record) — Recruiters
+    // pattern applies. components/home/News.tsx is pinned to this
+    // static array as of 28 May 2026 so the wrong backend card stops
+    // overriding.
     { date: "May 18, 2026", tag: "Placement", title: "Knorr-Bremse AG, Munich — pool campus drive", body: "Pool campus placement drive with Knorr-Bremse AG (Munich, Germany). Open to eligible final-year branches." },
     { date: "June 9, 2026", tag: "Admission", title: "JEECUP 2026 exam concludes", body: "Computer-based test ran 02–09 June (rescheduled from May). Results expected mid-June; 7-round counselling opens shortly after. Book your campus visit now to lock in your branch preferences." },
     { date: "Apr 24, 2026", tag: "Campus", title: "Industrial visit — Mechanical Engineering students", body: "Industrial visit organised for Mechanical Engineering (Production) students. Plant tour and hands-on shop-floor exposure." },
-    { date: "Apr 22, 2026", tag: "Placement", title: "Tata Motors campus drive — 14 selected", body: "Mechanical Engineering (Production) branch. Joining package ₹3.6 LPA + benefits." },
     { date: "Apr 17, 2026", tag: "Faculty", title: "Workshop: Spring Boot (Java Framework)", body: "One-day hands-on workshop on Spring Boot for Computer Science & Engineering students and faculty." },
-    { date: "Apr 11, 2026", tag: "Admission", title: "Open House for Class 10 students", body: "Lab tours, mentor meetings, and JEECUP guidance. Saturday, 10am–3pm. Free transport from Varanasi Cantt." },
   ],
   jeecupSteps: [
     { step: "01", title: "Apply on JEECUP portal", body: "Register at jeecup.admissions.nic.in. Application opens January, closed 20 May for the 2026 cycle. Fee ₹300 (₹200 for SC/ST)." },

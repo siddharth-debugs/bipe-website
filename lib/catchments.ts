@@ -283,7 +283,7 @@ export const CATCHMENTS: Catchment[] = [
       },
     ],
     alumniNote:
-      "BIPE alumni from Ghazipur have placed at Mahindra, Tata Motors, Indian Railways (multiple cadres), UPPCL, Amul and Mother Dairy across the 2015-2025 cohorts. Named list on /alumni.",
+      "BIPE alumni from Ghazipur have placed at Mahindra, Indian Railways (multiple cadres), UPPCL, Amul and Mother Dairy across the 2015-2025 cohorts. Named list on /alumni.",
     governmentOption: {
       primary: "Government Polytechnic Ghazipur",
       description:
@@ -319,7 +319,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "1,331 placement record — concrete pipeline, not promises",
-        body: "Over 16 years, BIPE has documented 1,331 verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
+        body: "Over 16 years, BIPE has documented 1,331 verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
       },
       {
         headline: "AFRC ₹30,150 — flexibility for distant catchments",

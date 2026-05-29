@@ -62,7 +62,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Does the waiver cover hostel?",
-    a: "Government post-matric covers tuition; hostel and mess are separate. Mess is ₹36,000 per year (₹18,000 per semester); on-campus boys' hostel rooms are ₹38,000/year (triple-sharing) or ₹48,000/year (double-sharing), billed separately. BIPE merit waivers are tuition-only.",
+    a: "Government post-matric covers tuition; hostel and mess are separate. On-campus boys' hostel accommodation is ₹12,000/year (one-time, non-refundable) and mess is ₹4,000/month paid in advance — billed separately from tuition. BIPE merit waivers (including the 50% top-2,000-JEECUP-rank scholarship) are tuition-only.",
   },
   // ─── Hindi vernacular Q&As — for families searching "scholarship in
   // hindi" / "UP government scholarship कितनी" / "BIPE scholarship"
@@ -72,7 +72,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "BIPE merit scholarship क्या है — कितनी मिलती है?",
-    a: "JEECUP में top 5,000 rank वालों को 10-20% tuition waiver मिलता है। Class 10 में 90%+ वालों को 10% waiver। दोनों BIPE Trust की तरफ से, fee deposit के समय directly applied — कोई अलग application form नहीं भरना। ₹30,150 की tuition पर सीधे discount।",
+    a: "JEECUP 2026 में top 2,000 All-India rank वालों को 50% tuition waiver मिलता है — ₹30,150 की tuition पर सीधे ₹15,075/year। Alternatively, Class 10 में 90%+ वालों को 10% waiver। दोनों BIPE Trust की तरफ से, fee deposit के समय directly applied — कोई अलग application form नहीं भरना। (एक student के पास एक समय में सिर्फ़ एक Trust scholarship हो सकती है।)",
   },
   {
     q: "Government scholarship + BIPE merit — दोनों एक साथ मिल सकती हैं?",
@@ -189,7 +189,7 @@ const GRANT_SCHEMES: GrantInput[] = [
     id: "bipe-jeecup-merit",
     name: "BIPE JEECUP Top-Rank Merit Award",
     description:
-      "10–20% tuition waiver on the published ₹30,150 annual tuition for students within the top 5,000 JEECUP rank. Slab published by Trust resolution after JEECUP results each year. Stackable on top of government reimbursements.",
+      "50% tuition waiver on the published ₹30,150 annual tuition for any candidate within the top 2,000 JEECUP 2026 All-India rank. Applied directly at the time of fee deposit on production of the JEECUP rank card. Stackable on top of government post-matric reimbursements.",
     funder: FUNDER_BIPE,
   },
   {
@@ -386,6 +386,12 @@ export default function Page() {
           <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 24, overflow: "hidden" }}>
             <div style={{ padding: "44px 36px", borderRight: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>JEECUP top rank</div>
+              {/* 28 May 2026 — anchored to the actual published Trust
+                  policy at the user's direction: candidates within the
+                  top 2,000 JEECUP 2026 All-India rank get a 50%
+                  scholarship on BIPE tuition. Previous "10-20% upto
+                  5000 rank" framing has been retired in favour of the
+                  concrete top-2000 / 50% number. */}
               <div className="serif" style={{
                 marginTop: 18,
                 fontStyle: "italic", fontWeight: 400,
@@ -393,13 +399,13 @@ export default function Page() {
                 lineHeight: 0.85, color: "var(--accent)",
                 letterSpacing: "-0.02em",
               }}>
-                10–20%
+                50%
               </div>
               <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                Tuition waiver · upto 5000 JEECUP rank
+                Tuition waiver · top 2,000 JEECUP 2026 rank
               </div>
               <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "40ch" }}>
-                The slab is published by Trust resolution after JEECUP results each year. Candidates within the top 5,000 JEECUP rank can expect a 10–20% reduction on the published ₹30,150 tuition.
+                Trust scholarship of 50% on the published ₹30,150 annual tuition for any candidate within the top 2,000 JEECUP 2026 All-India rank. Applied directly at the time of fee deposit on production of the JEECUP rank card. Stackable on top of UP Govt post-matric reimbursement.
               </p>
             </div>
 

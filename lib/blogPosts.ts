@@ -1814,7 +1814,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "ul",
         items: [
           "<strong>You're happy with JE / supervisor roles</strong>: SSC JE, RRB JE, UPPCL JE and similar government cadres don't require B.Tech. If that's where you want to be, the diploma alone is sufficient and the additional three years of B.Tech are pure delay.",
-          "<strong>You've got a strong direct placement</strong>: BIPE's <a href=\"/placements\">recruiter pipeline</a> places mechanical, electrical and dairy diploma graduates directly into Mahindra, Tata Motors, UPPCL, Amul and similar. Walking away from a confirmed offer to chase a B.Tech that takes three more years is usually not the right call.",
+          "<strong>You've got a strong direct placement</strong>: BIPE's <a href=\"/placements\">recruiter pipeline</a> places mechanical, electrical and dairy diploma graduates directly into Mahindra, JCB, UPPCL, Amul and similar. Walking away from a confirmed offer to chase a B.Tech that takes three more years is usually not the right call.",
           "<strong>Cost is prohibitive</strong>: AKTU government colleges via UPCET are affordable, but private-college tuition can be ₹80,000–₹1,50,000 per year. If that's not in the family budget, the diploma career path is the financially smarter route.",
           "<strong>You're considering Class 12 + JEE for IIT/NIT</strong>: lateral entry to IIT/NIT B.Tech exists but is ultra-competitive (single-digit seats per branch in most years). If IIT/NIT is the goal, Class 12 → JEE Advanced is the more realistic path.",
         ],
@@ -1956,7 +1956,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "The diploma's strongest argument is its breadth. A 3-year BTEUP diploma is the eligibility floor for Junior Engineer cadres at SSC, RRB, UPPCL, UP PWD, NDDB and several state utilities. It also makes you eligible for <a href=\"/courses/computer-science-engineering\">lateral entry into the 2nd year of B.Tech</a> at AKTU and state universities — meaning a diploma graduate can still earn a B.Tech in two additional years if they want it. And on the corporate side, manufacturers like Mahindra, Tata Motors, BHEL, JBM Group and Motherson Sumi run apprentice-and-place pipelines hiring diploma graduates directly. <a href=\"/placements\">BIPE's recruiter list</a> covers most of them.",
+        html: "The diploma's strongest argument is its breadth. A 3-year BTEUP diploma is the eligibility floor for Junior Engineer cadres at SSC, RRB, UPPCL, UP PWD, NDDB and several state utilities. It also makes you eligible for <a href=\"/courses/computer-science-engineering\">lateral entry into the 2nd year of B.Tech</a> at AKTU and state universities — meaning a diploma graduate can still earn a B.Tech in two additional years if they want it. And on the corporate side, manufacturers like Mahindra, BHEL, JBM Group and Motherson Sumi run apprentice-and-place pipelines hiring diploma graduates directly. <a href=\"/placements\">BIPE's recruiter list</a> covers most of them.",
       },
       { type: "h2", text: "B.Tech — the full engineering degree, with the longest runway" },
       {
@@ -2414,7 +2414,7 @@ export const BLOG_POSTS: BlogPost[] = [
             "Mechanical Engineering (Production)",
             "343",
             "120",
-            "Mahindra, Tata Motors, BHEL, JBM Group",
+            "Mahindra, BHEL, JBM Group, Krishna Maruti",
           ],
           [
             "कंप्यूटर साइंस एंड इंजीनियरिंग",
@@ -2596,7 +2596,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ol",
         items: [
-          "<strong>Auto-manufacturing (ऑटो-मैन्युफैक्चरिंग)</strong> · Mahindra, Tata Motors, JBM, Motherson Sumi, Hero, Bajaj. Diploma engineers join as supervisors, line engineers, quality inspectors. ₹18,000-30,000 starting in-hand. BIPE Mechanical (Production) graduates regularly placed here.",
+          "<strong>Auto-manufacturing (ऑटो-मैन्युफैक्चरिंग)</strong> · Mahindra, JBM, Motherson Sumi, Krishna Maruti, Hero, Bajaj. Diploma engineers join as supervisors, line engineers, quality inspectors. ₹18,000-30,000 starting in-hand. BIPE Mechanical (Production) graduates regularly placed here.",
           "<strong>Power & utilities</strong> · Tata Power, Adani Solar, BHEL, NTPC. Electrical diploma graduates. ₹20,000-30,000 starting. UPPCL's contract roles also count as a stepping stone to permanent positions.",
           "<strong>Dairy industry (डेयरी उद्योग)</strong> · Amul, Mother Dairy, Parag, Nestlé, NDDB, State Dairy Boards (UP, Bihar, MP, Rajasthan). <a href=\"/courses/dairy-engineering\">Diploma in Dairy Engineering</a> is one of only four such BTEUP programmes in all of UP — recruiter pipelines are real and underserved. ₹18,000-25,000 starting.",
           "<strong>Construction & infrastructure (निर्माण क्षेत्र)</strong> · L&T, Shapoorji Pallonji, NCC, Tata Projects. Smart Cities, Bharatmala, Kashi Vishwanath corridor — civil diploma graduates do site engineering, surveying, quality control. ₹18,000-28,000 starting.",
@@ -2926,7 +2926,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "The mechanical syllabus is workshop-first: students log substantial hours on lathes, milling machines, drilling and grinding stations across Sem 3-4, before moving to design and planning in Sem 5-6. Industrial training in Sem 6 typically lands at Mahindra, Tata Motors, BHEL, JBM Group or Bajaj — the same pipelines that recruit BIPE graduates each year.",
+          "The mechanical syllabus is workshop-first: students log substantial hours on lathes, milling machines, drilling and grinding stations across Sem 3-4, before moving to design and planning in Sem 5-6. Industrial training in Sem 6 typically lands at Mahindra, BHEL, JBM Group or Bajaj — the same pipelines that recruit BIPE graduates each year.",
       },
       {
         type: "ul",
@@ -2934,7 +2934,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Sem 3:</strong> Strength of Materials · Theory of Machines · Thermodynamics · Manufacturing Processes I (Turning, Milling, Drilling) · Industrial Statistics · Machine Shop Lab",
           "<strong>Sem 4:</strong> Thermal Engineering &amp; IC Engines · Fluid Mechanics &amp; Hydraulic Machines · Manufacturing Processes II (CNC, Grinding, EDM) · Machine Design – I · Industrial Management · Refrigeration &amp; Air Conditioning · Hydraulics Lab",
           "<strong>Sem 5:</strong> Industrial Engineering &amp; Operations · Quality Control &amp; Inspection · CAD / CAM · Machine Design – II · Automobile Engineering · Mini Project (Component Design) · Industrial Visit &amp; Report",
-          "<strong>Sem 6:</strong> Tool &amp; Die Design · Production Planning &amp; Control · Power Plant Engineering · Final-year Project (capstone) · Industrial Training (6 months — Mahindra / Tata Motors / BHEL / JBM / Bajaj) · Project Viva Voce",
+          "<strong>Sem 6:</strong> Tool &amp; Die Design · Production Planning &amp; Control · Power Plant Engineering · Final-year Project (capstone) · Industrial Training (6 months — Mahindra / BHEL / JBM / Bajaj) · Project Viva Voce",
         ],
       },
       {

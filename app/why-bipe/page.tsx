@@ -77,7 +77,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "Placement record on the public record",
     position:
-      "1,331 verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Tata Motors, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty others. Year-wise named alumni list with named recruiters — not logos, not testimonials, the actual list.",
+      "1,331 verified alumni placements across Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty others. Year-wise named alumni list with named recruiters — not logos, not testimonials, the actual list.",
     verifyLabel: "See the named alumni list",
     verifyPath: "/alumni",
   },

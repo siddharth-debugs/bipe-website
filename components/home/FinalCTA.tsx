@@ -65,7 +65,11 @@ export const FinalCTA = () => (
                 { num: "24 hr",  l: "callback promise" },
                 { num: "₹0",     l: "to apply" },
                 { num: "1 : 20", l: "mentor ratio" },
-                { num: "5 days", l: "to a decision" },
+                // 28 May 2026: "5 days TO A DECISION" was misleading — BIPE
+                // does not own the decision pace, JEECUP does (rank → 7-round
+                // counselling → seat allotment). Anchored the 4th tile to the
+                // actual BIPE date instead: classes start 15 July 2026.
+                { num: "15 Jul", l: "classes start" },
               ].map((s, i, arr) => (
                 <React.Fragment key={s.l}>
                   <div>

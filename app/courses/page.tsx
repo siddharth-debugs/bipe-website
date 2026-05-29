@@ -39,7 +39,6 @@ const CAREER_TILES: { tag: string; title: string; body: string; chips: string[] 
     chips: [
       "Mahindra",
       "Tata Steel",
-      "Tata Motors",
       "BEL",
       "Wipro",
       "Mumbai Metro",

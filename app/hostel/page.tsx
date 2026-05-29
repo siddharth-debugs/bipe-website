@@ -233,12 +233,12 @@ export default function Page() {
               <p style={{ color: "var(--ink-2)", marginTop: 18, fontSize: 15.5, lineHeight: 1.7 }}>
                 Hostel and mess are paid semester-wise. Bring your own bedding for the first week — the room is furnished but linen rotates with you.
               </p>
-              <div style={{ marginTop: 22, padding: "14px 18px", background: "var(--paper-2)", border: "1px solid var(--line)", borderRadius: 12 }}>
-                <div className="eyebrow" style={{ color: "var(--brand)" }}>Refundable</div>
-                <div style={{ marginTop: 6, fontSize: 14, color: "var(--ink-2)", lineHeight: 1.6 }}>
-                  ₹5,000 caution deposit returns at the end of the diploma — net of any deductions for damages.
-                </div>
-              </div>
+              {/* 28 May 2026 — the "₹5,000 caution deposit (refundable)"
+                  card was removed at the user's direction. BIPE does
+                  not collect a hostel caution deposit; the previous
+                  copy was a hold-over that misrepresented the cost
+                  structure. Annual fees stand as the table to the
+                  right shows — accommodation + mess only. */}
             </div>
             <div className="card" style={{ padding: 0, overflow: "hidden" }}>
               <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 2fr", padding: "14px 26px", background: "var(--paper-2)", borderBottom: "1px solid var(--line)", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--ink-3)" }}>
