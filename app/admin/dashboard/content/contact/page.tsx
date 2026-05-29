@@ -47,7 +47,7 @@ export default function ContactInfoAdmin() {
             <FieldGrid>
               {/* 28 May 2026 — "Alternate phone" admin field removed
                   alongside the broader phone consolidation (single
-                  admissions handset 9415202879). */}
+                  admissions handset 9005882866). */}
               <Field label="Admissions phone"><input className="admin-input" value={data.phone} onChange={(e) => set("phone", e.target.value)} style={{ width: "100%" }} /></Field>
               <Field label="WhatsApp link" full><input className="admin-input" value={data.whatsapp_url} onChange={(e) => set("whatsapp_url", e.target.value)} placeholder="https://wa.me/9415…" style={{ width: "100%" }} /></Field>
               <Field label="Primary email" full><input className="admin-input" type="email" value={data.email} onChange={(e) => set("email", e.target.value)} style={{ width: "100%" }} /></Field>

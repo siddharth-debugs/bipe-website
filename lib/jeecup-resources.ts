@@ -177,7 +177,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     faqs: [
       {
         q: "I missed the 20 May 2026 deadline — can I still register?",
-        a: "No. JEECUP 2026 registration closed on 20 May after an extension from the original 30 April deadline. The next opportunity is JEECUP 2027 (typically opens January 2027). In the meantime, BIPE accepts direct applications outside JEECUP for vacant seats — apply via /apply or call +91-9415202879 to discuss your options.",
+        a: "No. JEECUP 2026 registration closed on 20 May after an extension from the original 30 April deadline. The next opportunity is JEECUP 2027 (typically opens January 2027). In the meantime, BIPE accepts direct applications outside JEECUP for vacant seats — apply via /apply or call +91-9005882866 to discuss your options.",
       },
       {
         q: "I made an error in my form. Can I correct it?",
@@ -185,7 +185,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Can I apply for BIPE without sitting JEECUP?",
-        a: "Yes, but with caveats. JEECUP-route admission is the standard path and gets you a guaranteed allotment through the counselling rounds. BIPE also accepts direct applications for vacant seats after the JEECUP counselling concludes (typically late July / August). Direct admission is rank-independent but seat-limited. WhatsApp +91-9415202879 to ask about current vacancy.",
+        a: "Yes, but with caveats. JEECUP-route admission is the standard path and gets you a guaranteed allotment through the counselling rounds. BIPE also accepts direct applications for vacant seats after the JEECUP counselling concludes (typically late July / August). Direct admission is rank-independent but seat-limited. WhatsApp +91-9005882866 to ask about current vacancy.",
       },
       {
         q: "What is the JEECUP application fee?",
@@ -197,7 +197,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Does BIPE help with the JEECUP form?",
-        a: "Yes. WhatsApp +91-9415202879 with your specific question — common ones include exam-centre choice, group selection, category certificate format, and fee payment troubleshooting. We don't charge for application counselling; the conversation is free and we'll answer in English or Hindi.",
+        a: "Yes. WhatsApp +91-9005882866 with your specific question — common ones include exam-centre choice, group selection, category certificate format, and fee payment troubleshooting. We don't charge for application counselling; the conversation is free and we'll answer in English or Hindi.",
       },
     ],
     ctaTitle: "Registration closed for 2026?",
@@ -300,7 +300,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Can BIPE help if I face an admit-card download issue?",
-        a: "BIPE doesn't have admin access to the JEECUP portal — only JEECUP's helpline can resolve portal-side issues. But our admissions counsellors can walk you through the download steps and help you escalate to the JEECUP helpline if needed. WhatsApp +91-9415202879.",
+        a: "BIPE doesn't have admin access to the JEECUP portal — only JEECUP's helpline can resolve portal-side issues. But our admissions counsellors can walk you through the download steps and help you escalate to the JEECUP helpline if needed. WhatsApp +91-9005882866.",
       },
     ],
     ctaTitle: "After your JEECUP exam",
@@ -362,7 +362,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "06",
         title: "Plan your counselling choices NOW (before rounds open)",
-        body: "Counselling Round 1 opens late June. Don't wait until the choice-filling window starts to think about which branches at which institutes you want. Make a ranked list NOW — talk to family, talk to BIPE counsellors (free, +91-9415202879), and have your 10-20 choice combinations ready when the form opens.",
+        body: "Counselling Round 1 opens late June. Don't wait until the choice-filling window starts to think about which branches at which institutes you want. Make a ranked list NOW — talk to family, talk to BIPE counsellors (free, +91-9005882866), and have your 10-20 choice combinations ready when the form opens.",
       },
     ],
     faqs: [
@@ -388,7 +388,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Where can I get my BIPE seat-allotment confirmation help?",
-        a: "WhatsApp +91-9415202879 with your rank and preferred branch — our counsellors will walk you through the choice-filling order that maximises your odds at BIPE. The conversation is free and we'll answer in English or Hindi. We don't charge for guidance.",
+        a: "WhatsApp +91-9005882866 with your rank and preferred branch — our counsellors will walk you through the choice-filling order that maximises your odds at BIPE. The conversation is free and we'll answer in English or Hindi. We don't charge for guidance.",
       },
     ],
     ctaTitle: "Got your JEECUP rank?",
@@ -472,7 +472,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "How does BIPE's spot round work?",
-        a: "BIPE's spot round opens after Round 6 closes — typically late July / early August 2026. You visit BIPE Phoolpur in person with your JEECUP rank card and documents. The placement-cell desk reviews your rank against current vacancies and offers a seat if you qualify. Spot-round students join the same orientation as Round-1-6 students. WhatsApp +91-9415202879 to confirm spot-round dates before travelling.",
+        a: "BIPE's spot round opens after Round 6 closes — typically late July / early August 2026. You visit BIPE Phoolpur in person with your JEECUP rank card and documents. The placement-cell desk reviews your rank against current vacancies and offers a seat if you qualify. Spot-round students join the same orientation as Round-1-6 students. WhatsApp +91-9005882866 to confirm spot-round dates before travelling.",
       },
       {
         q: "What if I'm allotted BIPE but I want to upgrade?",
@@ -573,7 +573,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     faqs: [
       {
         q: "What if my caste certificate isn't ready by the reporting deadline?",
-        a: "Inform BIPE's admissions office immediately — WhatsApp +91-9415202879. We can often hold a provisional admission for 7-14 days while you complete the certificate at the tehsil. But you MUST flag this proactively; we can't help if you arrive on reporting day with no certificate and no notice.",
+        a: "Inform BIPE's admissions office immediately — WhatsApp +91-9005882866. We can often hold a provisional admission for 7-14 days while you complete the certificate at the tehsil. But you MUST flag this proactively; we can't help if you arrive on reporting day with no certificate and no notice.",
       },
       {
         q: "Do I need original documents or do photocopies work?",
@@ -620,7 +620,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       { label: "Official portal", value: "jeecup.admissions.nic.in", sub: "All official notices" },
       { label: "Helpline hours", value: "Mon-Sat · 10am-5pm", sub: "Closed Sundays + holidays" },
       { label: "Response time", value: "Same day for portal issues", sub: "Slower for fee/marks disputes" },
-      { label: "BIPE counsellor", value: "+91-9415202879 · call · +91-9415202879 · WhatsApp", sub: "EN / हिंदी" },
+      { label: "BIPE counsellor", value: "+91-9005882866 · call · +91-9005882866 · WhatsApp", sub: "EN / हिंदी" },
     ],
     contacts: {
       eyebrow: "Official JEECUP helpline channels",
@@ -629,7 +629,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
         { label: "Official portal banner", value: "jeecup.admissions.nic.in (helpline number changes annually — always verify on the homepage banner at result time)", href: "https://jeecup.admissions.nic.in" },
         { label: "Official email (general)", value: "Contact via the 'Help / Contact' form on the JEECUP portal — direct email IDs are published per cycle" },
         { label: "Office address", value: "Joint Entrance Examination Council (UP), Director's Office at the Board of Technical Education building, Lucknow" },
-        { label: "BIPE counsellor (institute-side issues)", value: "+91-9415202879 (call) · +91-9415202879 (WhatsApp) · EN / हिंदी", href: "https://wa.me/919415202879" },
+        { label: "BIPE counsellor (institute-side issues)", value: "+91-9005882866 (call) · +91-9005882866 (WhatsApp) · EN / हिंदी", href: "https://wa.me/919005882866" },
         { label: "BIPE email (admissions support)", value: "info@bipe.ac.in", href: "mailto:info@bipe.ac.in" },
       ],
     },
@@ -657,7 +657,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "05",
         title: "BIPE counsellor support — for institute-side guidance",
-        body: "If your issue is about BIPE specifically (where to fit in your choice list, when to report, what documents BIPE needs, whether to wait for an upgrade), call our admissions counsellor at +91-9415202879. We don't have access to your JEECUP portal but we can advise on the BIPE-side decisions.",
+        body: "If your issue is about BIPE specifically (where to fit in your choice list, when to report, what documents BIPE needs, whether to wait for an upgrade), call our admissions counsellor at +91-9005882866. We don't have access to your JEECUP portal but we can advise on the BIPE-side decisions.",
       },
     ],
     faqs: [
@@ -683,7 +683,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "BIPE admissions counsellor on WhatsApp",
-    ctaBody: "For BIPE-specific questions — choice-filling strategy, document checklists, branch-by-branch fit, when to visit — WhatsApp +91-9415202879. Free, no enrolment pressure, EN / हिंदी.",
+    ctaBody: "For BIPE-specific questions — choice-filling strategy, document checklists, branch-by-branch fit, when to visit — WhatsApp +91-9005882866. Free, no enrolment pressure, EN / हिंदी.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -775,7 +775,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Need a study plan for JEECUP Group A?",
-    ctaBody: "BIPE's admissions team has helped 1,000+ students through JEECUP prep. WhatsApp +91-9415202879 with your current preparation level (started · midway · pre-exam) and we'll send a free 30/60/90-day study plan tailored to your timeline.",
+    ctaBody: "BIPE's admissions team has helped 1,000+ students through JEECUP prep. WhatsApp +91-9005882866 with your current preparation level (started · midway · pre-exam) and we'll send a free 30/60/90-day study plan tailored to your timeline.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -862,7 +862,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Want BIPE's curated past-paper analysis?",
-    ctaBody: "Our academic mentors have analysed JEECUP papers 2020-2025 and produced a topic-weightage chart + sample answer sheets. WhatsApp +91-9415202879 and we'll share the PDF — free, no enrolment pressure, no email gate.",
+    ctaBody: "Our academic mentors have analysed JEECUP papers 2020-2025 and produced a topic-weightage chart + sample answer sheets. WhatsApp +91-9005882866 and we'll share the PDF — free, no enrolment pressure, no email gate.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -950,7 +950,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Unsure if you're eligible for JEECUP?",
-    ctaBody: "WhatsApp +91-9415202879 with your Class 10 status (cleared / appearing / pending) and your state of residence — BIPE's admissions team will confirm eligibility within 10 minutes. Free, no enrolment pressure, EN / हिंदी.",
+    ctaBody: "WhatsApp +91-9005882866 with your Class 10 status (cleared / appearing / pending) and your state of residence — BIPE's admissions team will confirm eligibility within 10 minutes. Free, no enrolment pressure, EN / हिंदी.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -1037,7 +1037,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Want a CBT practice test?",
-    ctaBody: "BIPE shares 2 mock JEECUP CBT tests (Group A) free via WhatsApp ahead of every cycle. Simulates the real interface · 100 questions · 150 minutes · answer key included. WhatsApp +91-9415202879 to request — no enrolment pressure.",
+    ctaBody: "BIPE shares 2 mock JEECUP CBT tests (Group A) free via WhatsApp ahead of every cycle. Simulates the real interface · 100 questions · 150 minutes · answer key included. WhatsApp +91-9005882866 to request — no enrolment pressure.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -1074,7 +1074,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "02",
         title: "Day 4-7 · Talk to BIPE admissions for honest rank interpretation",
-        body: "WhatsApp +91-9415202879 with your rank, branch preferences, and home district. Our admissions counsellors give an honest 10-minute reality check — whether your rank realistically gets you BIPE 4455 in your preferred branch, or whether you should consider government polytechnic options first. We don't oversell — we tell you what's most likely.",
+        body: "WhatsApp +91-9005882866 with your rank, branch preferences, and home district. Our admissions counsellors give an honest 10-minute reality check — whether your rank realistically gets you BIPE 4455 in your preferred branch, or whether you should consider government polytechnic options first. We don't oversell — we tell you what's most likely.",
       },
       {
         n: "03",
@@ -1100,7 +1100,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     faqs: [
       {
         q: "My JEECUP rank is higher than I expected — what should I aim for?",
-        a: "If your rank is below 5,000: top-tier government polytechnics are open. 5,000-20,000: Eastern UP government polytechnics + BIPE for popular branches. 20,000-50,000: BIPE comfortably for most branches. 50,000+: BIPE for rarer branches (Dairy, sometimes Civil); consider direct admission alongside JEECUP. WhatsApp +91-9415202879 for branch-by-branch honest interpretation.",
+        a: "If your rank is below 5,000: top-tier government polytechnics are open. 5,000-20,000: Eastern UP government polytechnics + BIPE for popular branches. 20,000-50,000: BIPE comfortably for most branches. 50,000+: BIPE for rarer branches (Dairy, sometimes Civil); consider direct admission alongside JEECUP. WhatsApp +91-9005882866 for branch-by-branch honest interpretation.",
       },
       {
         q: "My JEECUP rank is lower than I hoped — what are my options?",
@@ -1116,7 +1116,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Can I attend BIPE without going through JEECUP counselling?",
-        a: "Yes, via direct admission for vacant seats. BIPE accepts direct applications after JEECUP Round 6 concludes (typically August). Available seats vary by branch + year. WhatsApp +91-9415202879 in August 2026 to check current-cycle vacancy. Direct admission isn't rank-restricted but is seat-limited.",
+        a: "Yes, via direct admission for vacant seats. BIPE accepts direct applications after JEECUP Round 6 concludes (typically August). Available seats vary by branch + year. WhatsApp +91-9005882866 in August 2026 to check current-cycle vacancy. Direct admission isn't rank-restricted but is seat-limited.",
       },
       {
         q: "Will my parents need to come to BIPE during reporting?",
@@ -1124,7 +1124,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Just got your JEECUP result?",
-    ctaBody: "WhatsApp +91-9415202879 with your rank, branch preferences, and home district within 48 hours. BIPE's admissions counsellor gives a free 10-minute honest interpretation — whether BIPE 4455 fits your rank, and how to optimise your counselling choice list to maximise the right outcome.",
+    ctaBody: "WhatsApp +91-9005882866 with your rank, branch preferences, and home district within 48 hours. BIPE's admissions counsellor gives a free 10-minute honest interpretation — whether BIPE 4455 fits your rank, and how to optimise your counselling choice list to maximise the right outcome.",
   },
 ];
 

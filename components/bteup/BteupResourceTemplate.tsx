@@ -779,7 +779,7 @@ export default function BteupResourceTemplate({
                   Start application <ArrowIcon size={16} />
                 </Link>
                 <a
-                  href={`https://wa.me/919415202879?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20BTEUP%20question%20about%20${encodeURIComponent(
+                  href={`https://wa.me/919005882866?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20BTEUP%20question%20about%20${encodeURIComponent(
                     data.shortTitle
                   )}.`}
                   target="_blank"

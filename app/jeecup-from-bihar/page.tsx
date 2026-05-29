@@ -129,7 +129,7 @@ export default function Page() {
         <div className="container" style={{ maxWidth: 820, textAlign: "center" }}>
           <h2 className="bipe-h2" style={{ color: "#fff" }}>Talk to admissions in Hindi or English.</h2>
           <p style={{ marginTop: 12, opacity: 0.9, lineHeight: 1.7 }}>
-            Call +91-9415202879 or WhatsApp +91-9415202879 (separate handset for chat). Our counsellors are familiar with the Bihar Board, JEECUP all-India quota and the practicalities of moving a child from Patna, Ara, Buxar, Sasaram or Gaya to the BIPE campus.
+            Call +91-9005882866 or WhatsApp +91-9005882866 (separate handset for chat). Our counsellors are familiar with the Bihar Board, JEECUP all-India quota and the practicalities of moving a child from Patna, Ara, Buxar, Sasaram or Gaya to the BIPE campus.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Start application</Link>

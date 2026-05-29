@@ -281,7 +281,7 @@ export default function Page() {
                 </p>
               </div>
               <div style={{ display: "grid", gap: 12 }}>
-                <a href="https://wa.me/919415202879?text=Hi%20BIPE%20%E2%80%94%20My%20JEECUP%202026%20rank%20is%20%5Brank%5D%2C%20I%20want%20to%20discuss%20whether%20government%20or%20BIPE%20fits%20best." target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg" style={{ justifyContent: "space-between" }}>
+                <a href="https://wa.me/919005882866?text=Hi%20BIPE%20%E2%80%94%20My%20JEECUP%202026%20rank%20is%20%5Brank%5D%2C%20I%20want%20to%20discuss%20whether%20government%20or%20BIPE%20fits%20best." target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg" style={{ justifyContent: "space-between" }}>
                   WhatsApp with your rank <WhatsAppIcon />
                 </a>
                 <Link href="/apply" className="btn btn-ghost btn-lg" style={{ justifyContent: "space-between" }}>

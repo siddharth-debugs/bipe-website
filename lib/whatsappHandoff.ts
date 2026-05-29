@@ -30,8 +30,8 @@
  * here. Visual presentation stays surface-specific by design.
  *
  * Per the 28 May 2026 user directive "use only one number for call
- * 9415202879, remove 9198646464 and 9198767676" — BOTH WhatsApp
- * surfaces ALREADY converged on 9415202879 for the chat handoff well
+ * 9005882866, remove 9198646464 and 9198767676" — BOTH WhatsApp
+ * surfaces ALREADY converged on 9005882866 for the chat handoff well
  * before that direction was given. The fuller phone consolidation
  * shipped later the same day brought DATA.contact.phone in line too,
  * so this number now matches the site-wide voice / WhatsApp single
@@ -49,7 +49,7 @@ import { track } from "@/lib/analytics";
  * Modal handoffs build their wa.me URLs programmatically and want a
  * named anchor that's stable across refactors.
  */
-export const BIPE_ADMISSIONS_WA_PHONE = "919415202879";
+export const BIPE_ADMISSIONS_WA_PHONE = "919005882866";
 
 export type WhatsAppHandoffFields = {
   /** Visitor name. Required. Trimmed before use. */

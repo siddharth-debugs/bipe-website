@@ -121,7 +121,7 @@ export default function Page() {
         <div className="container" style={{ maxWidth: 820, textAlign: "center" }}>
           <h2 className="bipe-h2">Need help in Hindi?</h2>
           <p style={{ marginTop: 12, color: "var(--ink-2)", lineHeight: 1.7 }}>
-            Call +91-9415202879 or WhatsApp +91-9415202879 (separate handset for chat). Our counsellors handle Bihar admissions every season and can talk you through documents, hostel timing, and the JEECUP counselling rounds in Hindi or English.
+            Call +91-9005882866 or WhatsApp +91-9005882866 (separate handset for chat). Our counsellors handle Bihar admissions every season and can talk you through documents, hostel timing, and the JEECUP counselling rounds in Hindi or English.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/apply" className="btn btn-primary">Start application</Link>

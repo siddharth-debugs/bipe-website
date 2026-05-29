@@ -130,7 +130,7 @@ export function WhatsAppFAB() {
                   Chat on WhatsApp
                 </button>
                 <div className="wa-direct">
-                  Or call directly: <a href="tel:+919415202879">+91 94152 02879</a>
+                  Or call directly: <a href="tel:+919005882866">+91 90058 82866</a>
                 </div>
               </div>
             )}

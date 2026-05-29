@@ -42,7 +42,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
   // backend admin record at api.bipevns.org was still serving the
   // retired 9198646464 (old voice line) on the Footer's "Call
   // admissions" CTA, even though the static fallback was already on
-  // 9415202879. Same backend-override pattern we've fixed on
+  // 9005882866. Same backend-override pattern we've fixed on
   // Recruiters / News / StatsBar / WhyBipe earlier in the month: the
   // backend admin row is stale and the static constant is canonical.
   // Re-wire to `contact?.phone || DATA.contact.phone` once the admin

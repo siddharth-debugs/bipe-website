@@ -18,7 +18,7 @@
  *   DOUBLETICK_API_KEY                       — required (no fallback)
  *   DOUBLETICK_FROM_NUMBER                   — BIPE WhatsApp Business
  *                                              sender number, e.g.
- *                                              "919415202879"
+ *                                              "919005882866"
  *   DOUBLETICK_TEMPLATE_APPLY_RECEIVED       — template for /apply
  *   DOUBLETICK_TEMPLATE_ENQUIRY_RECEIVED     — template for /contact +
  *                                              /visit (Enquiry flow)
@@ -47,7 +47,7 @@ export type DoubleTickResult =
   | { ok: false; error: string };
 
 export type DoubleTickTemplateInput = {
-  /** Recipient phone in E.164 sans `+`, e.g. "919415202879". */
+  /** Recipient phone in E.164 sans `+`, e.g. "919005882866". */
   to: string;
   /** Approved Double Tick template name (configured in the DT
    *  dashboard). */
@@ -87,8 +87,8 @@ export async function sendDoubleTickTemplate(
     input.language || process.env.DOUBLETICK_TEMPLATE_LANGUAGE || "en";
 
   // Normalise the destination to a digits-only string with country
-  // code. Accept either "+919415202879", "919415202879" or
-  // "9415202879" (defaulting to +91 India for the bare-10-digit case
+  // code. Accept either "+919005882866", "919005882866" or
+  // "9005882866" (defaulting to +91 India for the bare-10-digit case
   // since this site only collects Indian mobiles).
   const to = normaliseIndianMsisdn(input.to);
   if (!to) {
@@ -395,8 +395,8 @@ function resolveTemplateName(
 }
 
 /**
- * Accept "+919415202879", "919415202879", "9415202879", or "094..."
- * and return "919415202879". Returns null if the input is anything
+ * Accept "+919005882866", "919005882866", "9005882866", or "094..."
+ * and return "919005882866". Returns null if the input is anything
  * else (not 10/11/12 digits after normalisation).
  */
 function normaliseIndianMsisdn(raw: string): string | null {

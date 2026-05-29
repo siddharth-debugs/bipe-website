@@ -798,7 +798,7 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
                   Book a campus visit <ArrowIcon size={16} />
                 </Link>
                 <a
-                  href={`https://wa.me/919415202879?text=Hi%20BIPE%20%E2%80%94%20I%20am%20from%20${encodeURIComponent(data.town)}%2C%20interested%20in%202026-27%20admissions.`}
+                  href={`https://wa.me/919005882866?text=Hi%20BIPE%20%E2%80%94%20I%20am%20from%20${encodeURIComponent(data.town)}%2C%20interested%20in%202026-27%20admissions.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-lg"
