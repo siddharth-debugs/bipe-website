@@ -205,6 +205,77 @@ export const enquiryFormSchema = z.object({
 export type EnquiryFormData = z.infer<typeof enquiryFormSchema>;
 
 // ===================================================================
+// ALUMNI CONTACT REQUEST — visitor wants to talk to a specific alumnus
+// ===================================================================
+// Privacy posture: alumni phone numbers are NEVER bundled into the
+// public site — the source XLSX lives in data/source/ (operator-only)
+// and the parser scrubs phone fields out of lib/alumni-manifest.json.
+// This form captures the visitor's intent + their own contact details;
+// the placement cell verifies the request out-of-band (calls visitor,
+// asks alumnus for consent) before sharing any number. The site is
+// strictly the intake form.
+//
+// Selectable "purpose" tickers — single-select chips so the visitor
+// can't ambiguously pick "everything". "Other" reveals an optional
+// 500-char free-text field so the operator has context to verify.
+export const ALUMNI_REQUEST_PURPOSES = [
+  "Course / branch advice",
+  "Career mentorship",
+  "Placement / job referral",
+  "Higher studies guidance",
+  "Industry insight",
+  "Admission decision help",
+  "Other",
+] as const;
+
+export const alumniContactRequestSchema = z
+  .object({
+    formType: z.literal("alumni-contact"),
+
+    // Visitor's own details — required so the placement cell can verify
+    // before introducing.
+    name: nameField,
+    phone: phoneField,
+    email: optionalEmail,
+
+    // Why they want to connect — single-select from the chips above.
+    purpose: z.enum(ALUMNI_REQUEST_PURPOSES, {
+      message: "Tell us why you'd like to connect",
+    }),
+    // Only required when purpose === "Other"; the refine below enforces
+    // it conditionally so the chip-only flow stays one tap.
+    purposeNote: z
+      .string()
+      .trim()
+      .max(500, "Note must be under 500 characters")
+      .optional()
+      .or(z.literal("")),
+
+    // Which alumnus are they asking about? Sourced from the manifest at
+    // CTA-click time (id + descriptive fields). All five travel to the
+    // backend so the operator's admin can render the request without
+    // re-joining against the manifest.
+    alumniId: z.number().int().positive(),
+    alumniName: z.string().trim().min(1).max(120),
+    alumniBranch: z.string().trim().max(120).optional().or(z.literal("")),
+    alumniYear: z.string().trim().max(10).optional().or(z.literal("")),
+    alumniCompany: z.string().trim().max(160).optional().or(z.literal("")),
+
+    consent: consentField,
+  })
+  .refine(
+    (v) =>
+      v.purpose !== "Other" ||
+      (typeof v.purposeNote === "string" && v.purposeNote.trim().length > 0),
+    {
+      message: "Add a one-line note so we can verify your request",
+      path: ["purposeNote"],
+    },
+  );
+
+export type AlumniContactRequestData = z.infer<typeof alumniContactRequestSchema>;
+
+// ===================================================================
 // VISIT FORM — book a campus visit
 // ===================================================================
 export const VISIT_PARTY_OPTIONS = [

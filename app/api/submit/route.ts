@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import {
+  alumniContactRequestSchema,
   applyFormSchema,
   contactFormSchema,
   enquiryFormSchema,
@@ -142,6 +143,58 @@ export async function POST(req: Request) {
         name: d.name,
         branch: d.branch ?? undefined,
         submissionId: r.id ?? undefined,
+      });
+    }
+    return r.ok
+      ? NextResponse.json({ ok: true, id: r.id })
+      : NextResponse.json({ ok: false, error: r.error }, { status: 502 });
+  }
+
+  if (formType === "alumni-contact") {
+    const result = alumniContactRequestSchema.safeParse(body);
+    if (!result.success) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error: "Validation failed",
+          fieldErrors: result.error.flatten().fieldErrors,
+        },
+        { status: 400 },
+      );
+    }
+    const d = result.data;
+    const r = await forwardToBackend("alumni-contact", {
+      // Visitor (the requester) — placement cell calls THIS number to
+      // verify before sharing the alumnus's number.
+      name: d.name,
+      phone: d.phone,
+      email: d.email ?? "",
+      consent: d.consent,
+      purpose: d.purpose,
+      purposeNote: d.purposeNote ?? "",
+      // Target alumnus — operator joins on alumniId in the admin to
+      // pull the actual contact number from the TPO XLSX. The other
+      // fields are denormalised for readability in the admin row.
+      alumniId: d.alumniId,
+      alumniName: d.alumniName,
+      alumniBranch: d.alumniBranch ?? "",
+      alumniYear: d.alumniYear ?? "",
+      alumniCompany: d.alumniCompany ?? "",
+    });
+    if (r.ok) {
+      // {{3}} placeholder in the WhatsApp template doubles as "what
+      // is this enquiry about" — for alumni-contact we use a short
+      // "Intro with {Name}" string so the visitor's confirmation is
+      // self-explanatory. {{4}} = 48h because verification touches
+      // both visitor and alumnus before the introduction goes out.
+      const introLabel = `Intro with ${d.alumniName}`.slice(0, 60);
+      fireSubmissionConfirmation({
+        formType: "alumni-contact",
+        phone: d.phone,
+        name: d.name,
+        branch: introLabel,
+        submissionId: r.id ?? undefined,
+        callbackHours: "48",
       });
     }
     return r.ok

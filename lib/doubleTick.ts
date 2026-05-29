@@ -171,13 +171,16 @@ const DEFAULT_TEMPLATE_NAME = "enquiry_s_v1_submitted";
  * Kept terse so the operator-facing ref reads cleanly when it
  * surfaces in the WhatsApp body. */
 const FORM_TYPE_CODE: Record<
-  "apply" | "enquiry" | "visit" | "contact",
+  "apply" | "enquiry" | "visit" | "contact" | "alumni-contact",
   string
 > = {
   apply: "APP",
   enquiry: "ENQ",
   visit: "VIS",
   contact: "ENQ",
+  // Alumni introduction requests. "ALU" keeps the 3-char convention
+  // and reads cleanly in the WhatsApp body ("BIPE/ALU/2026/01").
+  "alumni-contact": "ALU",
 };
 
 /**
@@ -185,7 +188,7 @@ const FORM_TYPE_CODE: Record<
  * least two digits.
  */
 function buildReferenceId(
-  formType: "apply" | "enquiry" | "visit" | "contact",
+  formType: "apply" | "enquiry" | "visit" | "contact" | "alumni-contact",
   submissionId: number | string,
 ): string {
   const code = FORM_TYPE_CODE[formType];
@@ -207,7 +210,7 @@ function buildReferenceId(
 export function fireSubmissionConfirmation(args: {
   /** Submission type. Routes to the right env-var template override
    *  AND drives the reference-ID middle segment (APP / ENQ / VIS). */
-  formType: "apply" | "enquiry" | "visit" | "contact";
+  formType: "apply" | "enquiry" | "visit" | "contact" | "alumni-contact";
   /** Submitter phone (the recipient of the WhatsApp confirmation). */
   phone: string;
   /** Submitter name. First word becomes placeholder {{1}}. */
@@ -262,7 +265,7 @@ export function fireSubmissionConfirmation(args: {
  * flow, slightly different copy if you want it).
  */
 function resolveTemplateName(
-  formType: "apply" | "enquiry" | "visit" | "contact",
+  formType: "apply" | "enquiry" | "visit" | "contact" | "alumni-contact",
 ): string | undefined {
   switch (formType) {
     case "apply":

@@ -16,7 +16,20 @@
  * every form on the site.
  */
 
-type IngestKind = "apply" | "contact" | "enquiry" | "visit";
+type IngestKind =
+  | "apply"
+  | "contact"
+  | "enquiry"
+  | "visit"
+  // 29 May 2026 — alumni introduction requests. The visitor wants to
+  // talk to a specific alumnus; the placement cell verifies the
+  // request out-of-band before sharing any number. Backend endpoint
+  // is /submissions/ingest/alumni-contact/ — until the Django side
+  // ships that route, POSTs return 404 + the visitor sees the
+  // friendly "couldn't save" message + WhatsApp fallback. The full
+  // payload still lands in Vercel server logs so the operator has
+  // an audit trail in the gap.
+  | "alumni-contact";
 
 const HEADER = "X-Bipe-Submit-Token";
 

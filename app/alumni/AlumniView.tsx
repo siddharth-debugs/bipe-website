@@ -10,6 +10,10 @@ import {
 } from "@/lib/placement-stats";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import {
+  AlumniContactRequestModal,
+  type AlumniTarget,
+} from "@/components/forms/AlumniContactRequestForm";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -117,6 +121,25 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
   const [status, setStatus] = useState<"all" | "joined" | "offered">("all");
   const [visible, setVisible] = useState<number>(PAGE_SIZE);
   const [openDrives, setOpenDrives] = useState<Record<string, boolean>>({});
+  // 29 May 2026 — alumni introduction request modal. Click "Request
+  // introduction" on any card to open. The alumnus is captured in
+  // requestedAlumni so the modal knows whose card kicked it off.
+  // Phone numbers are NEVER in the bundle; this is intake-only.
+  const [requestedAlumni, setRequestedAlumni] = useState<AlumniTarget | null>(null);
+
+  function openRequest(a: Alumnus) {
+    // Coerce nullable manifest fields to undefined so the AlumniTarget
+    // shape (which the modal expects as string | undefined) stays
+    // satisfied. The manifest can legitimately carry null for any of
+    // branch / year / company when the source row was incomplete.
+    setRequestedAlumni({
+      id: a.id,
+      name: a.name,
+      branch: a.branch ?? undefined,
+      year: a.year ?? undefined,
+      company: a.company ?? undefined,
+    });
+  }
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -339,7 +362,18 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right", fontSize: 14 }}>
-              Phone numbers are kept private. Reach out via the BIPE office if you&apos;d like to be put in touch with an alumnus.
+              Phone numbers stay private. Tap{" "}
+              <span
+                style={{
+                  color: "var(--brand)",
+                  fontWeight: 600,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Request introduction
+              </span>{" "}
+              on any card and our placement cell will verify and connect you,
+              with the alumnus&apos;s permission.
             </p>
           </div>
 
@@ -485,7 +519,7 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
                     display: "grid",
                     gridTemplateColumns: "auto 1fr",
                     gap: 14,
-                    alignItems: "center",
+                    alignItems: "start",
                     background: "var(--white)",
                     position: "relative",
                     opacity: a.status === "offered" ? 0.82 : 1,
@@ -560,6 +594,34 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
                     >
                       → {a.company}
                     </div>
+                    {/* Request introduction CTA — opens the modal pre-loaded
+                        with this alumnus. The modal sends the visitor's
+                        details + reason to the placement cell; the alumnus
+                        phone number is NEVER exposed to the page. */}
+                    <button
+                      type="button"
+                      onClick={() => openRequest(a)}
+                      style={{
+                        marginTop: 10,
+                        padding: 0,
+                        background: "none",
+                        border: "none",
+                        color: "var(--brand)",
+                        fontFamily: "var(--font-mono)",
+                        fontSize: 10.5,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        fontWeight: 700,
+                        cursor: "pointer",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 4,
+                      }}
+                      aria-label={`Request introduction to ${a.name}`}
+                    >
+                      Request introduction
+                      <ArrowIcon size={12} />
+                    </button>
                   </div>
                 </article>
               ))}
@@ -805,6 +867,26 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
                               >
                                 {shortBranch(a.branch)} · {a.year}
                               </div>
+                              <button
+                                type="button"
+                                onClick={() => openRequest(a)}
+                                style={{
+                                  marginTop: 4,
+                                  padding: 0,
+                                  background: "none",
+                                  border: "none",
+                                  color: "var(--brand)",
+                                  fontFamily: "var(--font-mono)",
+                                  fontSize: 9,
+                                  letterSpacing: "0.12em",
+                                  textTransform: "uppercase",
+                                  fontWeight: 700,
+                                  cursor: "pointer",
+                                }}
+                                aria-label={`Request introduction to ${a.name}`}
+                              >
+                                Request intro →
+                              </button>
                             </div>
                           </div>
                         ))}
@@ -942,6 +1024,19 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
           </div>
         </div>
       </section>
+
+      {/* Alumni introduction request modal — opens when a visitor clicks
+          "Request introduction" on any alumnus card. The phone of the
+          alumnus stays off the wire; only the alumnus ID + descriptive
+          fields plus the visitor's own contact details + reason travel
+          to /api/submit. Admin verifies out-of-band before connecting. */}
+      {requestedAlumni && (
+        <AlumniContactRequestModal
+          alumnus={requestedAlumni}
+          open={requestedAlumni !== null}
+          onClose={() => setRequestedAlumni(null)}
+        />
+      )}
     </div>
   );
 }
