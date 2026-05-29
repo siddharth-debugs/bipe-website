@@ -1666,11 +1666,16 @@ body.no-motion .skeleton { animation: none; }
    "How to choose"). This block catches the common inline patterns
    via attribute selectors and forces a single column at <=860px.
 
-   IMPORTANT: React serializes inline style with NO SPACE after the
-   colon (e.g. style="grid-template-columns:auto 1fr"). CSS
-   [style*="..."] is exact-substring, so the selectors MUST omit the
-   space after the colon to match. With a space, the rule silently
-   never fires.
+   29 May 2026 — earlier this file claimed React serialised inline
+   styles with NO SPACE after the colon. Live preview audit on a 375px
+   viewport proved that wrong for this Next.js version: React-DOM
+   actually outputs WITH a space (e.g.
+   style="grid-template-columns: auto 1fr auto"). The rules below were
+   therefore silently no-op'ing — verified via the homepage
+   ScholarshipStrip computed columns showing `77px 0px 143px` (middle
+   column collapsed to 0) while this @media block was supposed to
+   force single-column. Every selector now ships in BOTH variants
+   (with and without space) so the safety net actually fires.
 
    :not() exclusions are deliberate: elements that DO carry a
    class (bipe-split, bipe-grid-*, nav-*, etc.) already have their
@@ -1678,24 +1683,43 @@ body.no-motion .skeleton { animation: none; }
    ================================================================= */
 @media (max-width: 860px) {
   [style*="grid-template-columns:auto 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]):not(.bipe-drive-row),
+  [style*="grid-template-columns: auto 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]):not(.bipe-drive-row),
   [style*="grid-template-columns:1fr auto"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]),
+  [style*="grid-template-columns: 1fr auto"]:not([class*="bipe-split"]):not([class*="bipe-grid"]):not([class*="nav-"]):not([class*="card"]),
   [style*="grid-template-columns:1.05fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.05fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.2fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.2fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.3fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.3fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.35fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.35fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.4fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.4fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.5fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.5fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1.6fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1.6fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1.3fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns: 1fr 1.3fr"]:not([class*="bipe-split"]),
   [style*="grid-template-columns:1fr 1.5fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns: 1fr 1.5fr"]:not([class*="bipe-split"]),
   [style*="grid-template-columns:2fr 1fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns: 2fr 1fr"]:not([class*="bipe-split"]),
   [style*="grid-template-columns:1fr 2fr"]:not([class*="bipe-split"]),
+  [style*="grid-template-columns: 1fr 2fr"]:not([class*="bipe-split"]),
   [style*="grid-template-columns:repeat(4"]:not([class*="bipe-grid"]),
+  [style*="grid-template-columns: repeat(4"]:not([class*="bipe-grid"]),
   [style*="grid-template-columns:repeat(3"]:not([class*="bipe-grid"]),
+  [style*="grid-template-columns: repeat(3"]:not([class*="bipe-grid"]),
   [style*="grid-template-columns:repeat(2"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: repeat(2"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
   [style*="grid-template-columns:1fr 1fr 1fr"]:not([class*="bipe-grid"]),
-  [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]) {
+  [style*="grid-template-columns: 1fr 1fr 1fr"]:not([class*="bipe-grid"]),
+  [style*="grid-template-columns:1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]),
+  [style*="grid-template-columns: 1fr 1fr"]:not([class*="bipe-split"]):not([class*="bipe-grid"]) {
     /* 29 May 2026 — was previously merged with .bipe-vertical-rule-label's
        `display: none !important` rule body via a stray comma + comment in
        the selector list. Result: every inline-style 2-col grid on the
@@ -1740,10 +1764,12 @@ body.no-motion .skeleton { animation: none; }
   /* When a stacked layout's second child still carries justifySelf:end +
      textAlign:right (from the desktop two-column heading/paragraph pattern),
      reset on mobile so the now-stacked paragraph reads naturally. */
-  [style*="justify-self:end"] {
+  [style*="justify-self:end"],
+  [style*="justify-self: end"] {
     justify-self: start !important;
   }
-  [style*="text-align:right"] {
+  [style*="text-align:right"],
+  [style*="text-align: right"] {
     text-align: left !important;
   }
 }
