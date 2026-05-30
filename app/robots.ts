@@ -51,6 +51,36 @@ export default function robots(): MetadataRoute.Robots {
     // Annexure-18). Net effect: GSC's "Blocked" row drops to 0;
     // any residual links to the old PDF land on the correct HTML
     // page.
+    //
+    // ─── DO NOT add /*/opengraph-image or similar Next.js auto-
+    //     generated endpoints to this list ────────────────────────
+    //
+    // BITE (bitevns.ac.in, the sibling institute's site) shipped
+    // exactly this pattern in their robots.txt and accumulated:
+    //   - 128 "Blocked by robots.txt" entries in GSC (one per
+    //     route's auto-generated /<route>/opengraph-image URL)
+    //   - 36 "Indexed though blocked by robots.txt" entries
+    //     (URL-only SERP results from external links — worst
+    //     possible SERP outcome)
+    //
+    // Why robots.txt is the wrong tool for OG image / form-page
+    // endpoints:
+    //
+    //   robots.txt blocks CRAWLING. If external sites link to a
+    //   URL, Google indexes it as a URL-only entry even when
+    //   blocked. The correct mechanism is X-Robots-Tag: noindex
+    //   HTTP header — that lets Google crawl AND not index.
+    //
+    // If a future BIPE feature ever needs to hide a path from the
+    // index (a /alumni/register form, per-page OG endpoints, a
+    // /search page result, etc.), add an X-Robots-Tag header in
+    // next.config.ts instead — NOT a robots.txt Disallow. See
+    // BITE_SEO_FIXES.md (repo root) for the full pattern + diagnostic.
+    //
+    // BIPE today has no per-page opengraph-image endpoints (OG URLs
+    // come from static Cloudinary URLs in lib/seo.ts), so this is
+    // a preventive note — don't reintroduce the bug pattern when
+    // adding future features.
   ];
 
   return {
