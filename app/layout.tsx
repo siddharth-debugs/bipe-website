@@ -265,6 +265,22 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
           value: "Q139892164",
           url: "https://www.wikidata.org/wiki/Q139892164",
         },
+        // Google Knowledge Graph identifier (Machine ID / MID) — the
+        // single most powerful identifier for the right-side Knowledge
+        // Panel. This MID came from the verified BIPE Google Business
+        // Profile (FFID in the Maps URL captured 29 May 2026); it was
+        // then mirrored into Wikidata Q139892164 via the P2671 property
+        // so all three sources (Wikidata, schema, GBP) now reference
+        // the same entity ID. With this triple-binding in place, Google
+        // can resolve the BIPE entity with full confidence and start
+        // building the Knowledge Panel on brand SERPs. The Google
+        // search URL is the canonical way to dereference an MID.
+        {
+          "@type": "PropertyValue",
+          propertyID: "Google Knowledge Graph ID",
+          value: "/g/11b7y7yyyn",
+          url: "https://www.google.com/search?kgmid=/g/11b7y7yyyn",
+        },
       ],
       // accreditedBy — Phase 1.5 strategy (May 2026). BTE UP and AICTE
       // are the institute's two formal accrediting bodies; surfacing
