@@ -336,7 +336,14 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+          {/* Decorative tile pair — desktop-only visual chrome that
+              closes out the page next to the CTA stack. On mobile
+              the 2-col grid collapses to single column and the two
+              220px-tall tiles add 440px+ of empty scroll length for
+              no information value. Hidden via .bipe-hide-mobile
+              (same utility used for the hero Reporting-day folder
+              tile higher up on this same page). */}
+          <div className="bipe-hide-mobile bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
             <IconTile icon={Files} label="Verification desk · day one" tone="brand" style={{ height: 220, borderRadius: 18 }} />
             <IconTile icon={Stamp} label="Seal & signature" tone="accent" style={{ height: 220, borderRadius: 18 }} />
           </div>

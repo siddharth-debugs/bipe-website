@@ -591,7 +591,13 @@ export default function Page() {
           </div>
 
           <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-            <IconTile icon={Award} label="Award day · 2024 cohort" tone="accent" style={{ height: 220, borderRadius: 18 }} />
+            {/* IconTile is decorative chrome paired with a real
+                portal-form photo. On mobile the strip stacks to
+                single column — hide the icon companion so only the
+                real photo surfaces. */}
+            <div className="bipe-hide-mobile">
+              <IconTile icon={Award} label="Award day · 2024 cohort" tone="accent" style={{ height: 220, borderRadius: 18 }} />
+            </div>
             <Img src={BIPE_IMG.studentWriting} label="Filing the portal form" style={{ height: 220, borderRadius: 18 }} />
           </div>
         </div>

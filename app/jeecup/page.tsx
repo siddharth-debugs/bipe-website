@@ -635,7 +635,13 @@ export default function Page() {
           </div>
 
           <div className="bipe-img-strip" style={{ marginTop: 28, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-            <IconTile icon={BookOpenCheck} label="Exam shift · CBT" tone="brand" style={{ height: 220, borderRadius: 18 }} />
+            {/* IconTile is decorative chrome paired with a real
+                counselling-hall photo. On mobile the strip stacks
+                to single column — hide the icon companion so only
+                the real photo surfaces. */}
+            <div className="bipe-hide-mobile">
+              <IconTile icon={BookOpenCheck} label="Exam shift · CBT" tone="brand" style={{ height: 220, borderRadius: 18 }} />
+            </div>
             <Img src={BIPE_IMG.counsellingHall} label="Counselling round · Lucknow" style={{ height: 220, borderRadius: 18 }} />
           </div>
         </div>

@@ -1109,8 +1109,12 @@ export default async function Page() {
                 ))}
               </div>
 
-              {/* Two images below, integrated as one cohesive strip */}
-              <div className="bipe-img-strip" style={{
+              {/* Two decorative IconTiles — desktop-only visual
+                  chrome. On mobile both tiles stack to full width
+                  and add ~600px of empty scroll for no info value.
+                  Hidden via .bipe-hide-mobile (same utility used on
+                  /documents). */}
+              <div className="bipe-hide-mobile bipe-img-strip" style={{
                 marginTop: 18,
                 display: "grid",
                 gridTemplateColumns: "1.3fr 1fr",
