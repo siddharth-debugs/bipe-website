@@ -1220,10 +1220,20 @@ body.no-motion .wa-panel { animation: none; }
 @media (max-width: 1080px) {
   .nav-link { padding: 8px 9px; font-size: 13px; }
 }
-@media (max-width: 1280px) {
-  /* Below the Tailwind `xl` breakpoint, swap the inline desktop nav
-     for the hamburger + drawer experience. The "Apply for 2026-27"
-     label collapses to just "Apply" too — see hide-md / show-md.   */
+/* 30 May 2026 — bumped from 1280 to 1440 because typical laptop
+   viewports (1366×768, 1440×900) sit right in the awkward zone:
+   wider than 1280 so the full nav row tries to render, but not
+   wide enough to fit 8 nav links + 2-line brand text + search +
+   the long "Apply for 2026-27" button. The button was overflowing
+   off the right edge (user-reported screenshot 30 May).
+   Switching the breakpoint to 1440px means anything below a
+   16-inch MacBook-class display gets the short "Apply" + the
+   nav drawer — clean, no overflow. */
+@media (max-width: 1440px) {
+  /* Below the Tailwind `2xl` breakpoint, swap the inline desktop
+     nav for the hamburger + drawer experience. The
+     "Apply for 2026-27" label collapses to just "Apply" too —
+     see hide-md / show-md. */
   .nav-links.primary { display: none; }
   .hide-md { display: none !important; }
   .show-md { display: inline !important; }
