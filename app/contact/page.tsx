@@ -447,7 +447,22 @@ export default function Page() {
             </article>
           </div>
 
-          {/* Embedded Google Map */}
+          {/* Embedded map — switched 30 May 2026 from
+              maps.google.com/maps?q=...&output=embed to
+              OpenStreetMap's static embed for reliability:
+                - Google's legacy `output=embed` is silently blanked
+                  by Safari's Intelligent Tracking Prevention and
+                  Google's own anti-bot heuristics (user-reported on
+                  /contact mobile, screenshot 30 May).
+                - OSM requires no API key and renders identically
+                  across every browser; bbox + marker hit the actual
+                  Phoolpur campus pin via the chairman-captured
+                  sub-metre-precise coordinates (25.532166, 82.843763)
+                  shared with the schema's GeoCoordinates and the
+                  Wikidata P625 entry.
+              "Open in Google Maps" anchor below preserves the
+              one-tap-to-directions path for visitors who want
+              navigation rather than just the at-a-glance pin. */}
           <div
             className="card"
             style={{
@@ -457,16 +472,36 @@ export default function Page() {
               border: "1px solid var(--line)",
               borderRadius: 18,
               aspectRatio: "21 / 9",
+              position: "relative",
             }}
           >
             <iframe
-              title="BIPE Phoolpur, Varanasi — Google Map"
-              src="https://maps.google.com/maps?q=BIPE+Phoolpur+Varanasi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="BIPE Phoolpur, Varanasi — Campus Map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=82.8392,25.5293,82.8484,25.5351&layer=mapnik&marker=25.532166,82.843763"
               style={{ width: "100%", height: "100%", border: 0, display: "block" }}
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+          <a
+            href="https://maps.app.goo.gl/fa1zNXmZuRg7Si139"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              marginTop: 10,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6,
+              fontFamily: "var(--font-mono)",
+              fontSize: 11,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "var(--brand)",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
+          >
+            Open in Google Maps for directions <ArrowIcon size={12} />
+          </a>
         </div>
       </section>
 
