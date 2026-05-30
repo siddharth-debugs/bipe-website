@@ -1761,6 +1761,32 @@ body.no-motion .skeleton { animation: none; }
     gap: 18px !important;
     align-items: start !important;
   }
+
+  /* /fees · "Every component itemised" table rows. Desktop layout is
+     4 columns: number / item / value / note (auto 1.5fr 1fr 1.6fr).
+     The middle 1fr value column gets squeezed below ~720px and the
+     long note column overlaps it character-wise. Inline-style safety
+     net doesn't catch this because the substring "1.5fr" sits AFTER
+     the auto column, not adjacent to the colon.
+
+     Mobile layout: keep the number column (auto), expand the item
+     column to fill (1fr), keep the value (auto) on row 1, then drop
+     the note to a full-width row 2 via grid-column: 1 / -1 on the
+     last child. Reads as:
+
+       01  Tuition          ₹30,150
+           AFRC-approved · same for all 5 branches · per year */
+  .bipe-fee-row {
+    grid-template-columns: auto 1fr auto !important;
+    row-gap: 6px !important;
+    column-gap: 12px !important;
+    align-items: center !important;
+  }
+  .bipe-fee-row > :last-child {
+    grid-column: 1 / -1 !important;
+    text-align: left !important;
+    margin-top: 2px;
+  }
   /* When a stacked layout's second child still carries justifySelf:end +
      textAlign:right (from the desktop two-column heading/paragraph pattern),
      reset on mobile so the now-stacked paragraph reads naturally. */

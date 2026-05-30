@@ -266,7 +266,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="card" style={{ padding: 0, overflow: "hidden", maxWidth: 980, margin: "0 auto" }}>
+          <div className="card bipe-fee-table" style={{ padding: 0, overflow: "hidden", maxWidth: 980, margin: "0 auto" }}>
             <div style={{ padding: 28, background: "var(--brand)", color: "#fff" }}>
               <div className="eyebrow" style={{ color: "color-mix(in oklab, #fff 78%, transparent)" }}>Per Student · Per Year</div>
               <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 72, lineHeight: 1, marginTop: 8, letterSpacing: "-0.02em" }}>
@@ -278,7 +278,7 @@ export default function Page() {
             </div>
             <div>
               {COMPONENTS.map((c, i) => (
-                <div key={c.k} style={{
+                <div key={c.k} className="bipe-fee-row" style={{
                   display: "grid", gridTemplateColumns: "auto 1.5fr 1fr 1.6fr",
                   gap: 18,
                   padding: "20px 26px",
