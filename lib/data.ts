@@ -55,6 +55,12 @@ export type ContactInfo = {
   emailScSt: string;
   emailPwd: string;
   whatsapp: string;
+  /** Display string for the WhatsApp Business number (the line that
+   *  RECEIVES messages and FROM-sends DT confirmations). Distinct from
+   *  `phone` since 29 May 2026's split-routing — `phone` is the call
+   *  line, `whatsappPhone` is the WhatsApp line. The two are different
+   *  per BIPE's operator setup. */
+  whatsappPhone: string;
   address: string;
   jeecup: string;
   aicte: string;
@@ -165,6 +171,13 @@ export const DATA: DataShape = {
     whatsapp: `https://wa.me/917310077788?text=${encodeURIComponent(
       "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए",
     )}`,
+    // Display string for the WhatsApp Business number — used by the
+    // /contact channel cards, the Double Tick template body, etc.
+    // Distinct from `phone` since the 29 May 2026 split-routing
+    // commit: phone (+91-9415202879) is the long-established call
+    // line families have saved; whatsappPhone (+91-7310077788) is
+    // the WABA-approved sender that handles all WhatsApp messaging.
+    whatsappPhone: "+91-7310077788",
     address:
       "Gajokhar, Phoolpur, Varanasi 221206, UP",
     jeecup: "4455",

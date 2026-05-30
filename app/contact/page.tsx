@@ -290,13 +290,17 @@ export default function Page() {
                 </p>
                 <div style={{ marginTop: 18, paddingTop: 14, borderTop: "1px dashed var(--line-2)" }}>
                   <div className="eyebrow" style={{ color: "var(--ink-3)" }}>NUMBER</div>
-                  {/* 28 May 2026 — phone consolidation. Both this
-                      WhatsApp card AND the Phone card below now show
-                      the single admissions handset (C.phone =
-                      +91-9415202879). The earlier WhatsApp-is-on-
-                      phone2 split has been retired per user direction.
-                  */}
-                  <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "#1eaf55", fontSize: 18 }}>{C.phone}</div>
+                  {/* 29 May 2026 — split routing per user direction
+                      "call will remain with 9415202879 / WhatsApp and
+                      message number will be done on +917310077788".
+                      The WhatsApp card now shows C.whatsappPhone
+                      (the WABA-approved sender that receives messages
+                      and originates DT confirmations), distinct from
+                      the Phone card below which still shows C.phone
+                      (the call line families have long had saved).
+                      Earlier "phone consolidation" comment from 28 May
+                      retired by this routing change. */}
+                  <div style={{ marginTop: 4, fontFamily: "var(--font-mono)", fontWeight: 700, color: "#1eaf55", fontSize: 18 }}>{C.whatsappPhone}</div>
                 </div>
                 <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa" style={{ marginTop: 18, width: "100%", justifyContent: "center" }}>
                   <WhatsAppIcon /> Open chat
