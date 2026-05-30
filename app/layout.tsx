@@ -71,8 +71,28 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         "Founded 2010 by the Purwanchal Educational Trust; AFRC-approved tuition ₹30,150 / academic year. " +
         "Not a government institution — privately funded, publicly accountable through AICTE / BTEUP / AISHE.",
       url: SITE_URL,
-      logo: `${SITE_URL}/bipe-logo.svg`,
-      image: `${SITE_URL}/bipe-logo.svg`,
+      // ImageObject (not bare URL) for logo — Google's Knowledge Panel
+      // documentation specifies the ImageObject form when you want the
+      // panel to display the logo at a known size. The dimensions
+      // 600x600 cover the SVG's natural 1:1 viewport; the actual
+      // rendering scales down for the Knowledge Panel chip.
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/bipe-logo.svg`,
+        width: 600,
+        height: 600,
+      },
+      // image (vs logo) — Knowledge Panel chooses these for the
+      // "see outside" / building photo on entity cards (the same slot
+      // where BITE's Babatpur campus exterior shows on its SERP).
+      // Hero campus photo is the right cover image for BIPE's
+      // institutional entity, not the logo mark.
+      image: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/hero-campus.jpg`,
+        width: 1600,
+        height: 900,
+      },
       foundingDate: "2010",
       founder: {
         "@type": "Organization",
@@ -116,6 +136,24 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       // record is brought in line.
       telephone: DATA.contact.phone,
       email: contact.email || DATA.contact.email,
+      // contactPoint — explicit admissions desk entry. Google's
+      // Knowledge Panel parses ContactPoint arrays more cleanly than
+      // bare telephone/email at root level (which it does still
+      // accept, kept above for backward compatibility). The
+      // contactType + areaServed combo signals "admissions desk for
+      // applicants in this region", which surfaces in the panel's
+      // contact-action chips when present. Added 29 May 2026 along
+      // with the GBP setup work (see BIPE_GBP_SETUP.md).
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: DATA.contact.phone,
+          contactType: "Admissions",
+          email: contact.email || DATA.contact.email,
+          areaServed: ["IN-UP", "IN-BR"],
+          availableLanguage: ["en", "hi"],
+        },
+      ],
       // LocalBusiness fields — office hours for admissions / front desk.
       // Mon-Sat 9am-5pm is the institute's regular office cadence.
       openingHoursSpecification: [
