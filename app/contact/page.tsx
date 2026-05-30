@@ -447,60 +447,127 @@ export default function Page() {
             </article>
           </div>
 
-          {/* Embedded map — switched 30 May 2026 from
-              maps.google.com/maps?q=...&output=embed to
-              OpenStreetMap's static embed for reliability:
-                - Google's legacy `output=embed` is silently blanked
-                  by Safari's Intelligent Tracking Prevention and
-                  Google's own anti-bot heuristics (user-reported on
-                  /contact mobile, screenshot 30 May).
-                - OSM requires no API key and renders identically
-                  across every browser; bbox + marker hit the actual
-                  Phoolpur campus pin via the chairman-captured
-                  sub-metre-precise coordinates (25.532166, 82.843763)
-                  shared with the schema's GeoCoordinates and the
-                  Wikidata P625 entry.
-              "Open in Google Maps" anchor below preserves the
-              one-tap-to-directions path for visitors who want
-              navigation rather than just the at-a-glance pin. */}
-          <div
-            className="card"
-            style={{
-              marginTop: 22,
-              padding: 0,
-              overflow: "hidden",
-              border: "1px solid var(--line)",
-              borderRadius: 18,
-              aspectRatio: "21 / 9",
-              position: "relative",
-            }}
-          >
-            <iframe
-              title="BIPE Phoolpur, Varanasi — Campus Map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=82.8392,25.5293,82.8484,25.5351&layer=mapnik&marker=25.532166,82.843763"
-              style={{ width: "100%", height: "100%", border: 0, display: "block" }}
-              loading="lazy"
-            />
-          </div>
+          {/* Location card — replaced the embedded iframe (first
+              Google's deprecated maps.google.com/maps?q=...&output=
+              embed, then OpenStreetMap's static embed). Both blanked
+              silently in Safari + some mobile browsers (user-reported
+              twice — 30 May screenshots). A styled card that links
+              out to the verified GBP map for directions is more
+              reliable AND more useful: every browser renders it,
+              and tapping it opens the visitor's native Maps app
+              with directions pre-loaded. The campus coordinates +
+              landmark distances communicate location at a glance
+              without depending on a third-party iframe. */}
           <a
             href="https://maps.app.goo.gl/fa1zNXmZuRg7Si139"
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              marginTop: 10,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 6,
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "var(--brand)",
-              fontWeight: 700,
+              marginTop: 22,
+              display: "block",
+              padding: "26px 28px",
+              borderRadius: 18,
+              border: "1px solid var(--line)",
+              background: "linear-gradient(135deg, color-mix(in oklab, var(--brand) 6%, var(--white)) 0%, color-mix(in oklab, var(--accent) 4%, var(--white)) 100%)",
+              color: "var(--ink)",
               textDecoration: "none",
             }}
           >
-            Open in Google Maps for directions <ArrowIcon size={12} />
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "auto 1fr auto",
+                gap: 18,
+                alignItems: "center",
+              }}
+            >
+              {/* Pin icon */}
+              <div
+                aria-hidden="true"
+                style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: 12,
+                  background: "var(--brand)",
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+
+              <div style={{ minWidth: 0 }}>
+                <div
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10.5,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "var(--ink-3)",
+                  }}
+                >
+                  BIPE Phoolpur · Verified on Google Maps
+                </div>
+                <div
+                  style={{
+                    marginTop: 6,
+                    fontWeight: 700,
+                    fontSize: 16,
+                    color: "var(--ink)",
+                    lineHeight: 1.35,
+                  }}
+                >
+                  Gajokhar, Phoolpur, Varanasi 221206
+                </div>
+                <div
+                  style={{
+                    marginTop: 6,
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 12,
+                    color: "var(--ink-2)",
+                  }}
+                >
+                  25.5322°N · 82.8438°E
+                </div>
+                <div
+                  style={{
+                    marginTop: 10,
+                    fontSize: 13,
+                    color: "var(--ink-2)",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  ~14 km from Varanasi Cantt · 35 min by app-cab or auto · 1.8 km from Khalishpur Station
+                </div>
+              </div>
+
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "10px 16px",
+                  borderRadius: 999,
+                  background: "var(--brand)",
+                  color: "#fff",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
+                }}
+              >
+                Get Directions <ArrowIcon size={12} />
+              </div>
+            </div>
           </a>
         </div>
       </section>

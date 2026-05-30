@@ -121,7 +121,14 @@ export default function Page() {
               </div>
             </div>
 
-            <IconTile icon={FolderOpen} label="Reporting-day folder" tone="brand" aspectRatio="4/5" iconSize={88} style={{ borderRadius: 18 }} />
+            {/* Decorative IconTile — desktop-only visual companion to
+                the hero copy on the left. On mobile (bipe-split
+                collapses to single column) the 4:5 tile becomes a
+                giant near-empty box adding scroll length for no
+                content value. .bipe-hide-mobile hides at <=860px. */}
+            <div className="bipe-hide-mobile">
+              <IconTile icon={FolderOpen} label="Reporting-day folder" tone="brand" aspectRatio="4/5" iconSize={88} style={{ borderRadius: 18 }} />
+            </div>
           </div>
         </div>
       </section>

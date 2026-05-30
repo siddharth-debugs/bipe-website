@@ -1787,6 +1787,16 @@ body.no-motion .skeleton { animation: none; }
     text-align: left !important;
     margin-top: 2px;
   }
+
+  /* Generic "desktop-only" utility. Use for decorative companion
+     elements that have no information value when a bipe-split
+     collapses to single column on mobile — e.g. the Reporting-day
+     folder IconTile on /documents that becomes a giant near-empty
+     4:5 box at narrow widths. Add the className inline; no other
+     CSS adjustments needed. */
+  .bipe-hide-mobile {
+    display: none !important;
+  }
   /* When a stacked layout's second child still carries justifySelf:end +
      textAlign:right (from the desktop two-column heading/paragraph pattern),
      reset on mobile so the now-stacked paragraph reads naturally. */
