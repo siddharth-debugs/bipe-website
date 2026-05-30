@@ -389,13 +389,19 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
             </span>
             {DATA.social
               // DATA.social is the canonical sameAs source for schema.org
-              // (consumed by app/layout.tsx). It includes a Wikidata entry
-              // for entity-graph binding, but Wikidata isn't a follow-able
-              // social channel — filter it out of the visible footer
-              // strip. Any non-social identifier (Wikidata, ROR, ORCID
-              // when added) can use the same wikidata.org / non-social-
-              // domain check.
-              .filter((s) => !s.url.includes("wikidata.org"))
+              // (consumed by app/layout.tsx). It includes entity-binding
+              // entries that aren't follow-able social channels —
+              // Wikidata (Q139892164) and the Google Business Profile
+              // short URL — both filtered out of the visible footer
+              // strip so they feed schema only. Any future non-social
+              // identifier (ROR, ORCID, etc.) can extend this list
+              // using the same domain-substring pattern.
+              .filter(
+                (s) =>
+                  !s.url.includes("wikidata.org") &&
+                  !s.url.includes("maps.app.goo.gl") &&
+                  !s.url.includes("g.page"),
+              )
               .map((s) => (
               <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" style={{
                 display: "inline-flex", alignItems: "center", gap: 8,

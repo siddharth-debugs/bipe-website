@@ -208,6 +208,16 @@ export const DATA: DataShape = {
     // (see components/shell/Footer.tsx) so this entry feeds schema
     // without cluttering the UI.
     { name: "Wikidata",  handle: "Q139892164", url: "https://www.wikidata.org/wiki/Q139892164" },
+    // Google Business Profile (verified + owned in BGI - Colleges
+    // group, screenshot shared 29 May 2026). Listing the GBP short
+    // URL in schema.org `sameAs` is the strongest possible identity-
+    // binding signal — Google can match its own GBP record back to
+    // the website, which is what unlocks the right-side Knowledge
+    // Panel + map-pack entry on brand SERPs. See BIPE_GBP_SETUP.md
+    // for the full Knowledge Panel playbook. Filtered out of the
+    // Footer's "Follow BIPE" strip via the same domain-check pattern
+    // as Wikidata above.
+    { name: "Google Business Profile", handle: "Banaras Institute of Polytechnic & Engineering", url: "https://maps.app.goo.gl/fa1zNXmZuRg7Si139" },
   ],
   regulators: [
     { name: "AICTE", full: "All India Council for Technical Education", url: "https://www.aicte-india.org/" },
