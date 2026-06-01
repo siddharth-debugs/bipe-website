@@ -215,6 +215,47 @@ export default async function BranchPage(
                 <Link href="/apply" className="btn btn-primary">Apply for 2026-27 <ArrowIcon /></Link>
                 <Link href="/jeecup" className="btn btn-ghost">JEECUP 4455 guidance <ArrowIcon /></Link>
               </div>
+              {/* Deeper-reading callout — only renders when the branch
+                  data declares a long-form post. Added 2026-06-01 to
+                  give topically-aligned blog posts a strong internal
+                  link from the matching branch page; helps GSC move
+                  "Crawled — currently not indexed" posts into the
+                  index. See lib/branchContent.ts → deeperReading. */}
+              {detail.deeperReading && (
+                <Link
+                  href={`/blog/${detail.deeperReading.slug}`}
+                  style={{
+                    display: "block",
+                    marginTop: 22,
+                    padding: "16px 20px",
+                    borderRadius: 14,
+                    border: "1px solid color-mix(in oklab, var(--brand) 22%, var(--line))",
+                    background: "color-mix(in oklab, var(--brand) 4%, var(--white))",
+                    textDecoration: "none",
+                    color: "var(--ink)",
+                    maxWidth: "56ch",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: 10.5,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "var(--brand)",
+                      marginBottom: 6,
+                    }}
+                  >
+                    Deep dive · Blog
+                  </div>
+                  <div style={{ fontWeight: 600, fontSize: 14.5, marginBottom: 4 }}>
+                    {detail.deeperReading.label} <ArrowIcon size={13} />
+                  </div>
+                  <div style={{ fontSize: 13, lineHeight: 1.55, color: "var(--ink-2)" }}>
+                    {detail.deeperReading.summary}
+                  </div>
+                </Link>
+              )}
             </div>
 
             <div>

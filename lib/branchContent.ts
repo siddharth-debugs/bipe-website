@@ -63,6 +63,15 @@ export type BranchDetail = {
   recruiters: string[];
   /** 4–5 branch-specific FAQ Q&As — also fed into FAQPage JSON-LD. */
   faqs: { q: string; a: string }[];
+  /**
+   * Optional deep-dive link to a single long-form blog post about
+   * this branch. Rendered as a "Read the full background" callout
+   * below the hero lead. Added 2026-06-01 to nudge GSC-stuck blog
+   * posts into the index by giving them strong internal pagerank
+   * from the topically-matched branch page. Wire one branch at a
+   * time as long-form posts exist.
+   */
+  deeperReading?: { slug: string; label: string; summary: string };
 };
 
 /**
@@ -301,6 +310,12 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
       { q: "Is dairy engineering a good career choice in 2026?", a: "Yes — for a specific reason. The Indian dairy market is the world's largest by volume (235 million metric tonnes/year) and is shifting from unorganised milkman supply to organised processed dairy (paneer, curd, ghee, ice-cream, condensed milk). That shift creates structural demand for trained dairy engineers that doesn't exist in the same way for mechanical or civil. Recruiter pipelines like Amul / NDDB / Parag actively visit polytechnics with dairy diplomas because there are only four such polytechnics in UP. Lower competition for jobs, sector tailwinds." },
       { q: "How do BIPE Dairy Engineering students get hands-on plant experience?", a: "BIPE does not operate its own pilot dairy plant. Hands-on plant exposure comes through three channels: (1) on-campus labs — chemistry for milk-quality and fat/plate-count testing, hydraulics for the process-fluid mechanics that move milk through real plants, mechanics-of-solids for the materials science of processing equipment; (2) structured cohort industrial visits to active dairy plants (most recently Banas Dairy Plant Varanasi) where students walk the floor with pasteurisers, separators, homogenisers, storage silos and capping/packaging lines in live operation; (3) a mandatory six-month industrial training placement in Semester 6 at one of Amul, Mother Dairy, NDDB or Parag — the real machine time happens there, supervised by the host plant's shift engineers. The BTEUP syllabus unit operations get taught on actual production equipment, not lab models — just not on equipment BIPE itself owns." },
     ],
+    deeperReading: {
+      slug: "why-dairy-engineering-bipe-rare-bteup-327",
+      label: "Read the full background",
+      summary:
+        "Only four UP polytechnics offer BTEUP 327 Dairy Engineering. A profile-grounded look at the Eastern UP milk economy, Dr. Chandrika Rai's path from Pantnagar Soil Chemistry to founding BIPE, and what the diploma actually teaches.",
+    },
   },
   "civil-engineering": {
     intro:
