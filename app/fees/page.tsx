@@ -18,12 +18,13 @@ const COMPONENTS: { k: string; v: string; note: string }[] = [
   { k: "ID card", v: "TBD", note: "One-time" },
 ];
 
+// 1 June 2026 — refund schedule simplified to the three tiers the
+// institute actually publishes. Earlier 5-row "15+ / 15-day / 30-day"
+// AICTE template was a placeholder; this is the lived policy.
 const REFUND: { window: string; amount: string; note: string }[] = [
-  { window: "15+ days before classes start", amount: "100%", note: "Less ₹1,000 administrative" },
-  { window: "Less than 15 days before classes", amount: "90%", note: "Standard window" },
-  { window: "Within 15 days of classes starting", amount: "80%", note: "If vacancy is filled" },
-  { window: "After 15 days of classes", amount: "50%", note: "If vacancy is filled" },
-  { window: "After 30 days of classes", amount: "—", note: "No refund" },
+  { window: "Within one week of application", amount: "100%", note: "Full refund, no questions asked" },
+  { window: "After one week but before classes begin", amount: "50%", note: "Half-fee returned" },
+  { window: "Within one week of classes commencing", amount: "10%", note: "Token refund; seat already reserved" },
 ];
 
 const METHODS: { name: string; sub: string }[] = [
