@@ -300,6 +300,11 @@ const nextConfig: NextConfig = {
       { source: "/bipe-events",                   destination: "/events",             permanent: true },
       { source: "/save-index",                    destination: "/",                   permanent: true },
       { source: "/save-career",                   destination: "/placements",         permanent: true },
+      // /career — surfaced by GSC validation 5/30/26 (1 of 1 failed in
+      // "Not found (404)" batch). External backlinks still point here
+      // from the pre-2024 Wix site. Same destination as /save-career
+      // since the career narrative now lives on /placements.
+      { source: "/career",                        destination: "/placements",         permanent: true },
 
       // ─── GSC "Crawled - currently not indexed" + "Blocked" follow-up 2026-05-22 ─
       //
