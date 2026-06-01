@@ -33,7 +33,15 @@ export type RouteKey =
   | "bteupSyllabus" | "bteupBackPaper" | "bteupGrading"
   | "bteupColleges" | "bteupMigration" | "bteupDuplicateMarksheet";
 
-export const SITE_URL = "https://www.bipevns.org";
+// 2026-06-01 — flipped from "https://www.bipevns.org" to apex.
+// Vercel's domain config enforces www → apex (308). Every canonical
+// URL, sitemap entry, OG URL and Schema @id derives from this
+// constant, so the previous www value emitted canonicals that the
+// live server immediately redirected — GSC flagged 12 such URLs as
+// "Redirect error" because canonicals must resolve to a 200 directly.
+// Apex matches what Vercel serves and what users actually land on
+// after the redirect.
+export const SITE_URL = "https://bipevns.org";
 
 export const ROUTES: Record<RouteKey, {
   path: string;
