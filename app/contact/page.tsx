@@ -523,7 +523,7 @@ export default function Page() {
                     lineHeight: 1.35,
                   }}
                 >
-                  Gajokhar, Phoolpur, Varanasi 221206
+                  Gajokhar, Phoolpur, Varanasi, Uttar Pradesh 221206
                 </div>
                 <div
                   style={{

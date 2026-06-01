@@ -178,8 +178,12 @@ export const DATA: DataShape = {
     // line families have saved; whatsappPhone (+91-7310077788) is
     // the WABA-approved sender that handles all WhatsApp messaging.
     whatsappPhone: "+91-7310077788",
+    // 1 June 2026 — canonical NAP string, aligned to the verified GBP
+    // ("Gajokhar, Phoolpur, Uttar Pradesh 221206") with "Varanasi"
+    // district retained per owner decision. Every display surface
+    // (Footer, /contact, /campus) pulls from this single source.
     address:
-      "Gajokhar, Phoolpur, Varanasi 221206, UP",
+      "Gajokhar, Phoolpur, Varanasi, Uttar Pradesh 221206",
     jeecup: "4455",
     aicte: "1-488233171",
     aicteEoaRef: "Northern/1-46216893240/2026/EOA",

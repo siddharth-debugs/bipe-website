@@ -123,7 +123,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What's the pincode for the BIPE Phoolpur campus?",
-    a: "221206 — Gajokhar, Phoolpur, Varanasi 221206, UP. Useful when filling JEECUP forms, ordering deliveries, or sharing the address with parents.",
+    a: "221206 — Gajokhar, Phoolpur, Varanasi, Uttar Pradesh 221206. Useful when filling JEECUP forms, ordering deliveries, or sharing the address with parents.",
   },
 ];
 
@@ -209,8 +209,7 @@ export default function Page() {
               <div className="eyebrow" style={{ color: "var(--brand)" }}>Address</div>
               <div style={{ marginTop: 14, fontSize: 16, lineHeight: 1.7, fontWeight: 500 }}>
                 Gajokhar, Phoolpur,<br />
-                Phoolpur, Varanasi 221206,<br />
-                Uttar Pradesh
+                Varanasi, Uttar Pradesh 221206
               </div>
               <div style={{ marginTop: 18, paddingTop: 18, borderTop: "1px solid var(--line)", fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.08em", color: "var(--ink-2)" }}>
                 <div>AICTE · {DATA.contact.aicte}</div>

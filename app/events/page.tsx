@@ -187,7 +187,7 @@ export default async function Page() {
       address: {
         "@type": "PostalAddress",
         streetAddress: "Gajokhar, Phoolpur",
-        addressLocality: "Phoolpur",
+        addressLocality: "Varanasi",
         addressRegion: "Uttar Pradesh",
         postalCode: "221206",
         addressCountry: "IN",
