@@ -20,6 +20,7 @@ import {
   CalendarDays,
   ChevronLeft,
   ChevronRight,
+  Download,
   GraduationCap,
   Inbox as InboxIcon,
   Mail,
@@ -107,6 +108,7 @@ export default function InboxPage() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [drawerKey, setDrawerKey] = useState<string | null>(null);
+  const [exporting, setExporting] = useState(false);
 
   async function load() {
     setLoading(true);
@@ -240,6 +242,23 @@ export default function InboxPage() {
     setFollowUpsByKey((prev) => ({ ...prev, [leadKey]: followUps }));
   }
 
+  // Dynamic import keeps the ~600kB exceljs bundle out of the
+  // initial dashboard chunk; only ships when an operator actually
+  // clicks Export.
+  async function handleExport() {
+    if (exporting) return;
+    setExporting(true);
+    setErr(null);
+    try {
+      const { exportInboxToExcel } = await import("@/lib/admin/excel-export");
+      await exportInboxToExcel({ rows, leadGroups: groups, followUpsByKey });
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Could not generate the export.");
+    } finally {
+      setExporting(false);
+    }
+  }
+
   // ─── Render ───────────────────────────────────────────────────────────
   return (
     <>
@@ -248,6 +267,28 @@ export default function InboxPage() {
         title="Inbox"
         accent="— one row per prospect."
         description="Apply, Contact, Enquiry and Visit submissions are grouped by phone so each prospect appears once. Click a row to open the full timeline + every submission they made."
+        right={
+          <button
+            type="button"
+            onClick={handleExport}
+            disabled={exporting || loading || rows.length === 0}
+            className="admin-btn-soft"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "9px 16px",
+              fontWeight: 600,
+              borderColor: "color-mix(in oklab, var(--brand) 35%, transparent)",
+              background: "var(--brand)",
+              color: "#fff",
+            }}
+            title="Download every lead + submission as a styled Excel workbook"
+          >
+            <Download size={14} />
+            {exporting ? "Preparing…" : "Export to Excel"}
+          </button>
+        }
       />
 
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
