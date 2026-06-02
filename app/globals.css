@@ -2462,9 +2462,12 @@ body.no-motion .skeleton { animation: none; }
   border-radius: 2px;
   transition: transform .25s var(--ease), opacity .2s;
 }
-@media (max-width: 1280px) {
-  /* Show the hamburger trigger at the same `xl` cutoff that hides
-     the inline desktop nav, so the swap is atomic. */
+@media (max-width: 1440px) {
+  /* Show the hamburger trigger at the same cutoff that hides the
+     inline desktop nav (.nav-links.primary, hidden at max-width:1440px),
+     so the swap is atomic. 1 June 2026: bumped 1280→1440 to close the
+     1281–1440px dead zone where neither the desktop links nor the
+     hamburger rendered — nav was unreachable on 1366/1440 laptops. */
   .nav-hamburger { display: inline-flex; }
 }
 
@@ -2667,12 +2670,12 @@ body.no-motion .skeleton { animation: none; }
   flex-direction: column;
   gap: 8px;
 }
-@media (min-width: 1281px) {
-  /* Above the `xl` breakpoint the inline desktop nav is in use, so
+@media (min-width: 1441px) {
+  /* Above the breakpoint the inline desktop nav is in use, so
      suppress the drawer + backdrop entirely (the hamburger that would
      toggle them is already hidden by .nav-hamburger's base display:none).
      Keep this threshold in lock-step with the .nav-hamburger media query
-     a few rules above. */
+     a few rules above (max-width:1440px → this is min-width:1441px). */
   .nav-drawer, .nav-drawer-backdrop { display: none !important; }
 }
 
