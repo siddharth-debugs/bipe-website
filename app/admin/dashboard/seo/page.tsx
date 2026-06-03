@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/admin/ui/PageHeader";
+import GscPositionsPanel from "@/components/admin/seo/GscPositionsPanel";
 import {
   POSITION_SNAPSHOTS,
   latestSnapshot,
@@ -161,8 +162,13 @@ export default async function SeoPositionsPage() {
         }
       />
 
+      {/* ── Live positions from Google Search Console (free) ─────── */}
+      <div style={{ marginTop: 28 }}>
+        <GscPositionsPanel />
+      </div>
+
       {/* ── Semrush domain overview ────────────────────────────── */}
-      <section style={{ marginTop: 28, marginBottom: 36 }}>
+      <section style={{ marginBottom: 36 }}>
         <div
           style={{
             display: "flex",
