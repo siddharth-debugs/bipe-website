@@ -108,16 +108,24 @@ export interface SeoSnapshot {
  * Pro+API plan would have).
  */
 export const SEO_SNAPSHOT: SeoSnapshot = {
-  date: "2026-05-20",
+  // 2026-06-03 — the `overview` block below was refreshed from a fresh
+  // domain_rank call (rank / keywords / traffic / cost are current as of
+  // today). topPages, topPositions and competitors are STILL the
+  // 2026-05-20 pull — a full position refresh needs more Semrush API
+  // units (exhausted on the 2026-06-03 audit run). So: headline tiles
+  // are current; the per-URL and per-position tables lag until the next
+  // full pull. The keyword count moved 18 → 26 (+8 newly-ranked terms);
+  // those 8 are not yet itemised in topPositions for the same reason.
+  date: "2026-06-03",
   source: "semrush",
   database: "in",
 
   overview: {
     domain: "bipevns.org",
-    rank: 492591,
-    organicKeywords: 18,
-    organicTraffic: 397,
-    organicCost: 0,
+    rank: 467169,
+    organicKeywords: 26,
+    organicTraffic: 438,
+    organicCost: 4,
   },
 
   topPages: [
