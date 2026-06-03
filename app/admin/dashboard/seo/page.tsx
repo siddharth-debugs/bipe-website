@@ -16,6 +16,11 @@ import {
 // the FIRST request after deploy actually calls Semrush with the
 // live env key.
 export const dynamic = "force-dynamic";
+
+// Renders as "SEO Ranks · BIPE Admin" (template from app/admin/layout.tsx)
+// — so a printed/exported report is named correctly instead of carrying
+// the public homepage title.
+export const metadata = { title: "SEO Ranks" };
 import {
   SEO_SNAPSHOT,
   indexedZombiePages,
