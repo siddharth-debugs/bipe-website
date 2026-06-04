@@ -14,6 +14,7 @@ import { DATA } from "@/lib/data";
 import AnalyticsBeacon from "@/components/shell/AnalyticsBeacon";
 import GoogleAnalyticsBeacon from "@/components/shell/GoogleAnalyticsBeacon";
 import MicrosoftClarityBeacon from "@/components/shell/MicrosoftClarityBeacon";
+import ClaritySessionTags from "@/components/shell/ClaritySessionTags";
 import OutboundTracker from "@/components/shell/OutboundTracker";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import { aggregateRatingSchema } from "@/lib/reviews";
@@ -467,6 +468,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </a>
         <LangProvider>
           <ConditionalChrome contact={footerContact}>{children}</ConditionalChrome>
+          <ClaritySessionTags />
         </LangProvider>
         <AnalyticsBeacon />
         <GoogleAnalyticsBeacon />
