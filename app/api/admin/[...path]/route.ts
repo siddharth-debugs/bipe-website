@@ -103,8 +103,7 @@ async function proxy(req: NextRequest, ctx: { params: Promise<{ path: string[] }
       // "default" matches the implicit profile used by fetch() calls
       // that don't pass an explicit cacheLife profile (which is what
       // lib/content.ts does). Without this second arg the entire next
-      // build fails type-check (TS2554). See same fix in
-      // app/api/seo/refresh/route.ts.
+      // build fails type-check (TS2554).
       revalidateTag(CONTENT_CACHE_TAG, "default");
     } catch {
       // revalidateTag throws in some Next versions when called outside
