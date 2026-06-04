@@ -18,14 +18,28 @@ export async function generateMetadata(
   const post = getPostBySlug(slug);
   if (!post) return {};
   const path = `/blog/${post.slug}`;
+
+  // hreflang: most posts have no translation, so we only declare en-IN
+  // (declaring hi-IN with no real Hindi page would be hreflang-lying).
+  // Posts that DO have a genuine language sibling (e.g. the salary pair)
+  // set `hreflangAlternates` — emit the full set + an x-default that
+  // points at the English version.
+  let languages: Record<string, string> = { "en-IN": path };
+  if (post.hreflangAlternates?.length) {
+    languages = Object.fromEntries(
+      post.hreflangAlternates.map((a) => [a.hreflang, `/blog/${a.slug}`]),
+    );
+    const en = post.hreflangAlternates.find((a) => a.hreflang.startsWith("en"));
+    languages["x-default"] = en ? `/blog/${en.slug}` : path;
+  }
+  const ogLocale = (post.lang ?? "en-IN").replace("-", "_");
+
   return {
     title: post.metaTitle,
     description: post.metaDescription,
     alternates: {
       canonical: path,
-      // en-IN only — see comment in lib/seo.ts. The site has no SSR
-      // Hindi variant; declaring hi-IN here would be hreflang-lying.
-      languages: { "en-IN": path },
+      languages,
     },
     openGraph: {
       title: post.metaTitle,
@@ -33,7 +47,7 @@ export async function generateMetadata(
       url: `${SITE_URL}${path}`,
       siteName: "BIPE",
       type: "article",
-      locale: "en_IN",
+      locale: ogLocale,
       publishedTime: post.publishedISO,
       images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630, alt: post.title }],
     },

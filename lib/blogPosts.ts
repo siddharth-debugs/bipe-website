@@ -167,6 +167,17 @@ export type BlogPost = {
   metaTitle: string;
   metaDescription: string;
   sections: BlogSection[];
+  /** BCP-47 language of THIS post (default "en-IN"). Drives og:locale. */
+  lang?: string;
+  /**
+   * Language-equivalent versions for hreflang — include THIS post plus
+   * its sibling(s), each with a BCP-47 tag. generateMetadata emits
+   * <link rel="alternate" hreflang> from this, so Google serves
+   * searchers the right-language URL (e.g. a Hindi searcher gets the
+   * Hindi salary post instead of the English one). Omit when a post has
+   * no translation. The "en-*" entry is also used as x-default.
+   */
+  hreflangAlternates?: { hreflang: string; slug: string }[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -3391,6 +3402,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: "polytechnic-salary-in-india-2026",
+    lang: "en-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "polytechnic-salary-in-india-2026" },
+      { hreflang: "hi-IN", slug: "polytechnic-salary-2026-hindi" },
+    ],
     title: "Polytechnic salary in India 2026 — what a BTE UP diploma engineer actually earns",
     category: "Career · Salary & Outcomes",
     date: "21 May 2026",
@@ -3648,6 +3664,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: "polytechnic-salary-2026-hindi",
+    lang: "hi-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "polytechnic-salary-in-india-2026" },
+      { hreflang: "hi-IN", slug: "polytechnic-salary-2026-hindi" },
+    ],
     title: "पॉलिटेक्निक के बाद सैलरी 2026 — एक diploma engineer कितना कमाता है",
     category: "Career · Hindi",
     date: "21 May 2026",
