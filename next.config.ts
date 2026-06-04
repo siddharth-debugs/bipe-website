@@ -46,6 +46,11 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     // GA4 — gtag.js loader. Required for the GoogleAnalyticsBeacon
     // component (Consent Mode v2 + GA4 measurement) added 25 May 2026.
     "https://www.googletagmanager.com",
+    // Microsoft Clarity — tag loader (www.clarity.ms/tag/<id>) and the
+    // sub-resources it pulls. Added with the Clarity beacon (Jun 2026);
+    // without these the CSP silently blocks Clarity from loading.
+    "https://www.clarity.ms",
+    "https://*.clarity.ms",
   ],
 
   // style-src: 'unsafe-inline' required for Next.js's inline-critical
@@ -66,6 +71,8 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     // GA4 pixel beacons (transparent 1x1 GIFs for events that fall
     // back from sendBeacon to img request).
     "https://www.google-analytics.com",
+    // Microsoft Clarity image beacons.
+    "https://*.clarity.ms",
   ],
 
   // font-src: data: needed because some icon fonts inline as data URIs.
@@ -86,6 +93,10 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     "https://analytics.google.com",
     "https://*.analytics.google.com",
     "https://*.google-analytics.com",
+    // Microsoft Clarity — session/recording data ingest (c.clarity.ms
+    // etc.) + the Bing collector Clarity uses for some signals.
+    "https://*.clarity.ms",
+    "https://c.bing.com",
   ],
 
   // frame-ancestors: forbid being iframed by anyone but self.
