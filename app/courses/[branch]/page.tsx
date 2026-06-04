@@ -8,6 +8,7 @@ import { SITE_URL } from "@/lib/routes";
 import { Img } from "@/components/ui/Img";
 import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { ArrowIcon } from "@/components/shell/Icons";
+import ClarityTag from "@/components/shell/ClarityTag";
 
 type Params = { branch: string };
 
@@ -184,6 +185,9 @@ export default async function BranchPage(
 
   return (
     <article className="page-enter">
+      {/* Tag the Clarity session with this programme so replays/heatmaps
+          can be filtered by branch (e.g. visitors who viewed Dairy). */}
+      <ClarityTag value={b.name} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />

@@ -35,19 +35,81 @@
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    /** Microsoft Clarity queue/API — present only on the live host
+     *  (the beacon injects it for bipevns.org only). */
+    clarity?: (...args: unknown[]) => void;
   }
 }
 
 export type AnalyticsParams = Record<string, string | number | boolean | undefined>;
 
+/**
+ * ─── Microsoft Clarity custom signals ────────────────────────────
+ *
+ * Mirrors our GA4 events into Clarity so session replays + heatmaps
+ * can be filtered the same way — e.g. "show recordings where
+ * application_submit_success fired", or "filter to programme = Dairy
+ * Engineering". No-ops when Clarity isn't loaded (localhost / Vercel
+ * preview — the beacon only injects on the live bipevns.org host) and
+ * never throws. Clarity API ref: clarity("set", key, value) for tags,
+ * clarity("event", name) for custom events.
+ */
+function clarityApi(): ((...a: unknown[]) => void) | null {
+  if (typeof window === "undefined") return null;
+  const c = window.clarity;
+  return typeof c === "function" ? c : null;
+}
+
+/** Fire a Clarity custom event — becomes a filter in the portal. */
+export function clarityEvent(name: string): void {
+  try {
+    clarityApi()?.("event", name);
+  } catch {
+    /* analytics must never throw */
+  }
+}
+
+/** Set a Clarity custom tag (key → value) on the current session, so
+ *  recordings + heatmaps can be filtered by it. */
+export function clarityTag(key: string, value: string | string[]): void {
+  try {
+    clarityApi()?.("set", key, value);
+  } catch {
+    /* analytics must never throw */
+  }
+}
+
+/** GA4 event name → friendlier Clarity custom-event name, for the
+ *  conversions we actually filter replays by. Unmapped events fire to
+ *  Clarity under their GA4 name. */
+const CLARITY_EVENT_NAME: Record<string, string> = {
+  apply_submit: "application_submit_success",
+  enquiry_submit: "enquiry_submit_success",
+  visit_submit: "visit_booked",
+  contact_submit: "contact_submit_success",
+};
+
 export function track(eventName: string, params: AnalyticsParams = {}): void {
   if (typeof window === "undefined") return;
+
+  // GA4 (unchanged) — short-circuits if gtag isn't loaded.
   const gtag = window.gtag;
-  if (typeof gtag !== "function") return;
-  try {
-    gtag("event", eventName, params);
-  } catch {
-    // Analytics must never throw user-visible errors.
+  if (typeof gtag === "function") {
+    try {
+      gtag("event", eventName, params);
+    } catch {
+      // Analytics must never throw user-visible errors.
+    }
+  }
+
+  // Mirror into Clarity: every tracked event becomes a Clarity custom
+  // event, and if it carries a branch/programme, tag the session too —
+  // so you can pull replays of, e.g., people who applied for Dairy
+  // Engineering. Both calls are independent no-ops without Clarity.
+  clarityEvent(CLARITY_EVENT_NAME[eventName] ?? eventName);
+  const programme = params.branch ?? params.programme;
+  if (typeof programme === "string" && programme.trim()) {
+    clarityTag("programme", programme);
   }
 }
 
