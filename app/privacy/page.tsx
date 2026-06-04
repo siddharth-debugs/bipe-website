@@ -48,7 +48,6 @@ export default function Page() {
               <li><strong>Admission &amp; academic data</strong> — Aadhaar, transfer / character certificates, marksheets, attendance, semester grades.</li>
               <li><strong>Hostel &amp; campus data</strong> — emergency contact, medical disclosures (where voluntarily shared), gate-entry logs.</li>
               <li><strong>Website analytics</strong> — page views, device type, referral source. Cookies are limited and disclosed via the cookie banner where applicable.</li>
-              <li><strong>Behavioural analytics</strong> — to improve the site we use heatmaps and anonymised session recordings (Microsoft Clarity). Recordings are configured to <strong>mask all on-screen text</strong>, so the names, phone numbers, email addresses and documents you enter into forms are never captured — only anonymous interaction patterns (clicks, scrolls, navigation). This data is processed by Microsoft as our processor and is used solely to fix usability problems.</li>
             </ul>
           </article>
 
