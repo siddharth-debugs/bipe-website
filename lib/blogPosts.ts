@@ -192,6 +192,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // who reached BIPE via Hindi queries.
   {
     slug: "dairy-engineering-course-up-rare-branch",
+    lang: "hi-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "why-dairy-engineering-bipe-rare-bteup-327" },
+      { hreflang: "hi-IN", slug: "dairy-engineering-course-up-rare-branch" },
+    ],
     title: "Dairy Engineering — UP ka chhupa hua moka, sasta diploma, badi naukri",
     category: "Career Guidance · Hinglish",
     date: "27 May 2026",
@@ -608,6 +613,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // students), different angle (decision framework, not procedural).
   {
     slug: "diploma-ke-baad-btech-aktu-lateral-entry-2026",
+    lang: "hi-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "diploma-to-btech-lateral-entry-up-aktu" },
+      { hreflang: "hi-IN", slug: "diploma-ke-baad-btech-aktu-lateral-entry-2026" },
+    ],
     title: "Diploma ke baad B.Tech — AKTU lateral entry ka pura rasta",
     category: "Career Guidance · Hinglish",
     date: "27 May 2026",
@@ -821,6 +831,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // teens fill the form, not the teen filling it solo.
   {
     slug: "jeecup-form-kaise-bharein-2026-step-by-step",
+    lang: "hi-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "how-to-fill-jeecup-2026-application-form-step-by-step" },
+      { hreflang: "hi-IN", slug: "jeecup-form-kaise-bharein-2026-step-by-step" },
+    ],
     title: "JEECUP form kaise bharein 2026 — Step-by-step Hinglish guide",
     category: "Admission · Hinglish",
     date: "27 May 2026",
@@ -1312,6 +1327,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: "how-to-fill-jeecup-2026-application-form-step-by-step",
+    lang: "en-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "how-to-fill-jeecup-2026-application-form-step-by-step" },
+      { hreflang: "hi-IN", slug: "jeecup-form-kaise-bharein-2026-step-by-step" },
+    ],
     title: "How to fill the JEECUP 2026 application form — step-by-step with screenshots",
     category: "Admission · JEECUP",
     date: "19 May 2026",
@@ -1572,6 +1592,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: "why-dairy-engineering-bipe-rare-bteup-327",
+    lang: "en-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "why-dairy-engineering-bipe-rare-bteup-327" },
+      { hreflang: "hi-IN", slug: "dairy-engineering-course-up-rare-branch" },
+    ],
     title: "Why BIPE offers Dairy Engineering — a rare BTEUP diploma in Eastern UP",
     category: "Branches · Dairy Engineering",
     date: "19 May 2026",
@@ -1706,6 +1731,11 @@ export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: "diploma-to-btech-lateral-entry-up-aktu",
+    lang: "en-IN",
+    hreflangAlternates: [
+      { hreflang: "en-IN", slug: "diploma-to-btech-lateral-entry-up-aktu" },
+      { hreflang: "hi-IN", slug: "diploma-ke-baad-btech-aktu-lateral-entry-2026" },
+    ],
     title: "Diploma to B.Tech lateral entry in UP — the AKTU pathway after polytechnic",
     category: "Career · Lateral Entry",
     date: "19 May 2026",
