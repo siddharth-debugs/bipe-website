@@ -13,6 +13,7 @@ import { DATA } from "@/lib/data";
 // INP-driven rationale (May 2026 CWV report).
 import AnalyticsBeacon from "@/components/shell/AnalyticsBeacon";
 import GoogleAnalyticsBeacon from "@/components/shell/GoogleAnalyticsBeacon";
+import MicrosoftClarityBeacon from "@/components/shell/MicrosoftClarityBeacon";
 import OutboundTracker from "@/components/shell/OutboundTracker";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import { aggregateRatingSchema } from "@/lib/reviews";
@@ -469,6 +470,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </LangProvider>
         <AnalyticsBeacon />
         <GoogleAnalyticsBeacon />
+        <MicrosoftClarityBeacon />
         <OutboundTracker />
       </body>
     </html>

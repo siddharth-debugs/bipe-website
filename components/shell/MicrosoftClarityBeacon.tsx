@@ -1,0 +1,46 @@
+"use client";
+
+import Script from "next/script";
+
+/**
+ * Microsoft Clarity — heatmaps + masked session recordings.
+ *
+ * Why the project ID is hardcoded (not an env var):
+ *   A Clarity project ID is NOT a secret — it ships in the client
+ *   tracking script to every visitor regardless. Using NEXT_PUBLIC_*
+ *   for it caused the earlier "Almost there / not detected" problem:
+ *   NEXT_PUBLIC_ vars are inlined at BUILD time, so a var added after a
+ *   build doesn't appear until a fresh rebuild. Hardcoding removes that
+ *   failure mode — the tag loads on the very next deploy, every time.
+ *
+ * Host guard:
+ *   The tag only fires on the live bipevns.org domain, so localhost dev
+ *   and Vercel preview deployments don't pollute the recordings.
+ *
+ * PRIVACY (DPDP Act 2023 + minors):
+ *   BIPE applicants include Class-10 minors. Set the Clarity project's
+ *   Masking mode to "Mask All" (dashboard -> Settings -> Masking) so
+ *   every on-screen text node — names, phone numbers, emails on the
+ *   apply/enquiry forms — is masked; only anonymous interaction (clicks,
+ *   scrolls, navigation) is recorded. /privacy discloses this.
+ *
+ * Loads with strategy="afterInteractive" (like gtag.js) so the ~30 KB
+ * tag fetches AFTER hydration and never competes with the main thread.
+ */
+const CLARITY_ID = "x1cg48mhiw";
+
+export default function MicrosoftClarityBeacon() {
+  return (
+    <Script id="ms-clarity" strategy="afterInteractive">
+      {`
+        if (typeof location !== "undefined" && location.hostname.endsWith("bipevns.org")) {
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "${CLARITY_ID}");
+        }
+      `}
+    </Script>
+  );
+}
