@@ -7,7 +7,7 @@ import { BRANCH_DETAIL } from "@/lib/branchContent";
 import { SITE_URL } from "@/lib/routes";
 import { Img } from "@/components/ui/Img";
 import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
-import { ArrowIcon } from "@/components/shell/Icons";
+import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import ClarityTag from "@/components/shell/ClarityTag";
 
 type Params = { branch: string };
@@ -183,6 +183,18 @@ export default async function BranchPage(
     })),
   };
 
+  // Branch-aware WhatsApp deep link — opens the chat pre-filled with the
+  // branch the visitor is reading, so the admissions counsellor has
+  // context from the first message instead of a blank "नमस्ते". Clarity
+  // (Jun 2026) showed chat is the hot next step from these pages.
+  // Hindi-framed to match the site's WhatsApp default (see lib/data.ts —
+  // English implicitly signals "not for you" to the Hindi-medium audience);
+  // the English branch name is how the programmes are named everywhere.
+  // Same WABA handset as DATA.contact.whatsapp (917310077788).
+  const branchWaUrl = `https://wa.me/${DATA.contact.whatsappPhone.replace(/\D/g, "")}?text=${encodeURIComponent(
+    `नमस्ते BIPE — ${b.name} diploma (2026-27) की जानकारी चाहिए`,
+  )}`;
+
   return (
     <article className="page-enter">
       {/* Tag the Clarity session with this programme so replays/heatmaps
@@ -218,6 +230,9 @@ export default async function BranchPage(
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary">Apply for 2026-27 <ArrowIcon /></Link>
                 <Link href="/jeecup" className="btn btn-ghost">JEECUP 4455 guidance <ArrowIcon /></Link>
+                <a href={branchWaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
+                  <WhatsAppIcon /> Ask on WhatsApp
+                </a>
               </div>
               {/* Deeper-reading callout — only renders when the branch
                   data declares a long-form post. Added 2026-06-01 to
@@ -576,6 +591,9 @@ export default async function BranchPage(
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Apply for {b.name} <ArrowIcon /></Link>
+              <a href={branchWaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
+                <WhatsAppIcon /> Ask on WhatsApp
+              </a>
               <Link href="/visit" className="btn btn-ghost" style={{ borderColor: "rgba(255,255,255,0.4)", color: "#fff" }}>Visit the campus <ArrowIcon /></Link>
             </div>
           </div>
