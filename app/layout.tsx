@@ -457,6 +457,33 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className={`${geist.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
         {/*
+          Browser auto-translate crash guard — MUST run before hydration,
+          so it's the first inline script in <body>.
+
+          Google/Safari Translate wraps text nodes in <font> elements.
+          When React then unmounts during a client-side <Link> navigation,
+          it calls removeChild on a text node the translator has relocated,
+          throwing "NotFoundError: Failed to execute 'removeChild' on
+          'Node'" and crashing the whole SPA — the page freezes and a
+          reload just re-triggers it. BIPE's audience auto-translates to
+          Hindi, so this hit real visitors: Clarity recorded repeated
+          removeChild errors on /bteup-result-check where users clicked
+          branch links and got stuck.
+
+          Fix (the standard one for the React + Translate issue): make
+          removeChild / insertBefore no-op gracefully when the node's
+          parent has already changed. That's ONLY the crash case — every
+          normal React DOM op (parent matches) runs unchanged. We do NOT
+          disable translation, since serving the Hindi audience is the
+          whole point.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              '(function(){if(typeof Node!=="function"||!Node.prototype)return;var r=Node.prototype.removeChild;Node.prototype.removeChild=function(c){if(c&&c.parentNode!==this){return c;}return r.apply(this,arguments);};var i=Node.prototype.insertBefore;Node.prototype.insertBefore=function(n,e){if(e&&e.parentNode!==this){return n;}return i.apply(this,arguments);};})();',
+          }}
+        />
+        {/*
           Skip-to-content a11y link — visually hidden until keyboard-
           focused, then jumps the user past Nav directly to <main>.
           WCAG 2.1 AA Success Criterion 2.4.1 (Bypass Blocks). The
