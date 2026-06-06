@@ -110,6 +110,16 @@ export default function Page() {
                 Sixty to ninety minutes on campus, in Hindi or English, Monday to Saturday, 9am to 5pm. Walk-ins welcome. The campus tells you things a brochure can&apos;t.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
+                {/* Primary path → the on-page booking form (anchored #book).
+                    Added 6 Jun 2026: Clarity showed visitors landing on this
+                    hero and backtracking to the homepage because the form was
+                    buried below the fold — this is the immediate path to it. */}
+                <a href="#book" className="btn btn-primary btn-lg">
+                  Book your visit
+                  <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
+                    विज़िट फ़ॉर्म भरें
+                  </span>
+                </a>
                 {/* Bilingual CTA pair — Hindi sub-label under each. */}
                 <a href={C.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
                   <WhatsAppIcon /> Book on WhatsApp
@@ -247,7 +257,7 @@ export default function Page() {
       {/* ====================================================================== */}
       {/* 3. BOOKING FORM                                                         */}
       {/* ====================================================================== */}
-      <section className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden" }}>
+      <section id="book" className="section" style={{ background: "var(--paper-2)", position: "relative", overflow: "hidden", scrollMarginTop: 96 }}>
         <div aria-hidden="true" style={{
           position: "absolute", left: -160, top: -120, width: 380, height: 380, borderRadius: "50%",
           background: "color-mix(in oklab, var(--brand) 18%, transparent)",

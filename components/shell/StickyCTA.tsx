@@ -11,7 +11,7 @@ export const StickyCTA = () => (
     <a href={`tel:${DATA.contact.phone}`} className="btn btn-ghost btn-sm">
       <PhoneIcon /> Call
     </a>
-    <Link href="/visit" className="btn btn-ghost btn-sm hide-md">Book visit</Link>
+    <Link href="/visit#book" className="btn btn-ghost btn-sm hide-md">Book visit</Link>
     <Link href="/apply" className="btn btn-primary btn-sm">
       Apply <ArrowIcon />
     </Link>

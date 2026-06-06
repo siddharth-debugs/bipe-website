@@ -57,7 +57,7 @@ async function loadHero(): Promise<HeroData> {
     // otherwise this fix is dormant in production.
     description: `AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placed · since 2010.`,
     cta_primary: { label: "Apply for 2026-27", href: "/apply" },
-    cta_secondary: { label: "Book a campus visit", href: "/visit" },
+    cta_secondary: { label: "Book a campus visit", href: "/visit#book" },
     bg_image_url: BIPE_IMG.heroWide,
     bg_image_alt: "BIPE campus — main building",
     approvals: FALLBACK_APPROVALS,

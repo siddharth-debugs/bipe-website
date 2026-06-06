@@ -119,7 +119,7 @@ export const FinalCTA = () => (
               <span style={{ width: 28, height: 28, borderRadius: "50%", background: "#25D366", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}><WhatsAppIcon /></span>
             </a>
 
-            <Link href="/visit"
+            <Link href="/visit#book"
               style={{
                 display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
                 padding: "22px 24px", borderRadius: 14,

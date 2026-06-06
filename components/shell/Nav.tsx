@@ -238,7 +238,7 @@ export function Nav() {
             </div>
             <div className="nav-mega-footer">
               <span>~35 min from Varanasi Cantt by auto</span>
-              <Link href="/visit" style={{ color: "var(--brand)", textDecoration: "none", fontWeight: 600 }}>Book a visit →</Link>
+              <Link href="/visit#book" style={{ color: "var(--brand)", textDecoration: "none", fontWeight: 600 }}>Book a visit →</Link>
             </div>
           </NavMenuWrap>
 
