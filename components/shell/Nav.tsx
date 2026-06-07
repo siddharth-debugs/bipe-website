@@ -7,7 +7,7 @@ import { DATA } from "@/lib/data";
 import { useLang } from "@/lib/lang";
 import { ArrowIcon, WhatsAppIcon } from "./Icons";
 import { BrandMark } from "./BrandMark";
-import { NavSearchButton } from "./CommandK";
+import { NavSearchButton } from "./NavSearchButton";
 
 const routeForPath = (pathname: string): string => {
   if (pathname === "/" || pathname === "") return "home";

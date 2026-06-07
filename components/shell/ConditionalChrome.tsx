@@ -1,13 +1,23 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { Nav } from "./Nav";
 import { Footer, type FooterContact } from "./Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { WhatsAppFAB } from "./WhatsAppFAB";
-import { InquiryModal } from "./InquiryModal";
 import { TrustBadgeStrip } from "./TrustBadgeStrip";
-import { CommandK } from "./CommandK";
+
+// CommandK (⌘K palette) and InquiryModal (timed enquiry popup) render
+// nothing until the user triggers them (a keypress / the Nav search
+// button / a delay timer). Statically importing them shipped their JS in
+// the initial bundle and hydrated it inside the first long task — wasted
+// main-thread work that inflated INP. Lazy-loading with ssr:false moves
+// both into a chunk that loads AFTER hydration, off the early-interaction
+// critical path; their own listeners/timers attach a beat later, which is
+// imperceptible. (CWV INP work, Jun 2026.)
+const InquiryModal = dynamic(() => import("./InquiryModal").then((m) => m.InquiryModal), { ssr: false });
+const CommandK = dynamic(() => import("./CommandK").then((m) => m.CommandK), { ssr: false });
 
 /**
  * The public site's Nav + Footer + scroll-reveal observer should NOT

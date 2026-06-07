@@ -24,14 +24,19 @@ import Script from "next/script";
  *   apply/enquiry forms — is masked; only anonymous interaction (clicks,
  *   scrolls, navigation) is recorded. /privacy discloses this.
  *
- * Loads with strategy="afterInteractive" (like gtag.js) so the ~30 KB
- * tag fetches AFTER hydration and never competes with the main thread.
+ * Loads with strategy="lazyOnload" so Clarity's session recorder — which
+ * instruments the whole DOM and attaches event listeners across the page
+ * — fires only once the page is idle (after the load event), keeping it
+ * out of the early-interaction window that INP measures. It was previously
+ * afterInteractive, which runs right after hydration and inflated INP /
+ * main-thread time (PSI mobile, Jun 2026). Recording starts a moment
+ * later, which is immaterial for heatmaps/replays.
  */
 const CLARITY_ID = "x1cg48mhiw";
 
 export default function MicrosoftClarityBeacon() {
   return (
-    <Script id="ms-clarity" strategy="afterInteractive">
+    <Script id="ms-clarity" strategy="lazyOnload">
       {`
         if (typeof location !== "undefined" && location.hostname.endsWith("bipevns.org")) {
           (function(c,l,a,r,i,t,y){
