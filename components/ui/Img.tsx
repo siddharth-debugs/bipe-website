@@ -119,6 +119,18 @@ export function Img({
   const useLoader = isCloudinary && !hasFixedWidth;
   return (
     <div className={className} style={wrapStyle}>
+      {/* Placeholder rendered FIRST so it sits BEHIND the image. It shows
+          until the image's own onLoad fires (and stays put if the image
+          errors, since onLoad never fires then). Previously this div
+          rendered AFTER the image — painting on TOP of it — and the
+          image itself was held at opacity:0 until a post-hydration
+          onLoad + a 0.5s fade. That double client-JS gate meant the LCP
+          image stayed invisible on mobile until the JS bundle downloaded
+          and hydrated, pushing field LCP past 4s (GSC CWV, Jun 2026). */}
+      {!loaded && (
+        <div className="ph" data-label={label}
+             style={{ position: "absolute", inset: 0, borderRadius: "inherit", border: "none" }} />
+      )}
       {!errored && (
         <NextImage
           src={src}
@@ -131,17 +143,15 @@ export function Img({
           unoptimized={isCloudinary && !useLoader}
           onLoad={() => setLoaded(true)}
           onError={() => setErrored(true)}
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-            opacity: loaded ? 1 : 0,
-            transition: "opacity .5s var(--ease)",
-          }}
+          // No JS opacity gate: the image is visible (opacity:1) in the
+          // SSR HTML, so it counts toward LCP the instant its bytes
+          // decode instead of waiting for hydration. Non-priority
+          // (below-the-fold) images get a pure-CSS fade via .img-reveal;
+          // priority/LCP images skip the animation entirely so nothing
+          // can delay their paint.
+          className={priority ? undefined : "img-reveal"}
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
-      )}
-      {(!loaded || errored) && (
-        <div className="ph" data-label={label}
-             style={{ position: "absolute", inset: 0, borderRadius: "inherit", border: "none" }} />
       )}
       {label && loaded && !errored && (
         <div style={{

@@ -708,6 +708,16 @@ body.no-motion .reveal { opacity: 1; transform: none; transition: none; }
   color: var(--ink-3);
 }
 
+/* Image reveal — pure-CSS fade for non-priority (below-the-fold) images.
+   Replaces the old JS opacity-on-onLoad gate in components/ui/Img.tsx,
+   which kept images invisible until client hydration and pushed mobile
+   field LCP past 4s. Priority/LCP images get NO animation (instant
+   paint, see Img.tsx); only lazy images animate, and LCP never applies
+   to them. Respects reduced-motion. */
+@keyframes img-reveal { from { opacity: 0; } to { opacity: 1; } }
+.img-reveal { animation: img-reveal 0.5s var(--ease) both; }
+@media (prefers-reduced-motion: reduce) { .img-reveal { animation: none; } }
+
 ::selection { background: var(--brand); color: #fff; }
 
 /* Scrollbar — slim, brand-tinted, deep enough to see */
