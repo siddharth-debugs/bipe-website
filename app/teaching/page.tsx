@@ -99,7 +99,7 @@ export default function Page() {
             </div>
 
             <div className="bipe-collage" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 14, height: 540 }}>
-              <Img src={BIPE_IMG.weldingHands} label="Workshop · welding" style={{ gridRow: "1 / 3", borderRadius: 18, height: "100%" }} />
+              <Img src={BIPE_IMG.weldingHands} label="Workshop · welding" priority sizes="(max-width: 860px) 100vw, 22vw" style={{ gridRow: "1 / 3", borderRadius: 18, height: "100%" }} />
               <Img src={BIPE_IMG.computerLab} label="120-PC lab" style={{ borderRadius: 18, height: "100%" }} />
               <Img src={BIPE_IMG.surveying} label="Survey camp" style={{ borderRadius: 18, height: "100%" }} />
             </div>

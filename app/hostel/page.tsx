@@ -209,7 +209,7 @@ export default function Page() {
 
             {/* Stacked image pair — boys hostel exterior + interior */}
             <div style={{ display: "grid", gap: 14 }}>
-              <Img src={BIPE_IMG.hostelBoys} label="HOSTEL · EXTERIOR" style={{ height: 260, borderRadius: 18 }} />
+              <Img src={BIPE_IMG.hostelBoys} label="HOSTEL · EXTERIOR" priority sizes="(max-width: 768px) 100vw, 40vw" style={{ height: 260, borderRadius: 18 }} />
               <Img src={BIPE_IMG.hostel} label="HOSTEL · INTERIOR" style={{ height: 220, borderRadius: 18, marginLeft: 40 }} />
             </div>
           </div>

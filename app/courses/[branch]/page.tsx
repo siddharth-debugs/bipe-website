@@ -278,7 +278,7 @@ export default async function BranchPage(
             </div>
 
             <div>
-              <CrossfadeSlider images={detail.labs.length ? b.slides : b.slides} aspectRatio="4/3" radius={18} />
+              <CrossfadeSlider images={detail.labs.length ? b.slides : b.slides} aspectRatio="4/3" radius={18} priorityFirst />
             </div>
           </div>
 

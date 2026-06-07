@@ -15,6 +15,10 @@ export interface CrossfadeSliderProps {
   className?: string;
   /** Optional element rendered on top of the slider (e.g. brand chip). */
   overlay?: React.ReactNode;
+  /** When true, the first slide loads with fetchPriority="high" so an
+   *  above-the-fold hero slider preloads its LCP image. Leave false for
+   *  below-the-fold galleries so they don't compete for bandwidth. */
+  priorityFirst?: boolean;
 }
 
 /**
@@ -33,6 +37,7 @@ export const CrossfadeSlider = ({
   radius = 16,
   className,
   overlay,
+  priorityFirst = false,
 }: CrossfadeSliderProps) => {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -85,6 +90,7 @@ export const CrossfadeSlider = ({
             src={img.src}
             alt={img.alt}
             loading={i === 0 ? "eager" : "lazy"}
+            fetchPriority={i === 0 && priorityFirst ? "high" : "auto"}
             decoding="async"
             style={{
               position: "absolute",

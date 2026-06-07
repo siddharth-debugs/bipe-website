@@ -115,7 +115,7 @@ export default function Page() {
                 background: "color-mix(in oklab, var(--brand) 6%, transparent)",
                 pointerEvents: "none",
               }} />
-              <Img src={BIPE_IMG.principal} alt="Rahul Srivastava — Principal, BIPE Varanasi" aspectRatio="4/5" style={{ borderRadius: 18, position: "relative" }} />
+              <Img src={BIPE_IMG.principal} alt="Rahul Srivastava — Principal, BIPE Varanasi" aspectRatio="4/5" priority sizes="(max-width: 768px) 100vw, 40vw" style={{ borderRadius: 18, position: "relative" }} />
               <div style={{
                 position: "absolute", left: 16, bottom: 16, right: 16,
                 display: "flex", justifyContent: "space-between", alignItems: "center",
