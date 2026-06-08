@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { FormSelect } from "@/components/ui/FormSelect";
 import {
   WhatsAppForm,
@@ -13,10 +14,17 @@ import {
  * the visitor to WhatsApp as a bonus. Even if WhatsApp is blocked the
  * lead lands in the admin Inbox.
  *
- * Trigger: 3-second timer on every page load. We deliberately don't
- * suppress repeat displays — admissions want every visit to surface
- * the WhatsApp ask. If the visitor explicitly closes it, the
- * `dismissed` ref keeps it shut for the rest of THAT page view.
+ * Trigger: a 3-second timer, but gated two ways (tuned down 8 Jun 2026
+ * after Clarity showed the full-screen popup interrupting blog readers
+ * before they'd read anything):
+ *   - NEVER on /blog/* — those are the Google-organic landing pages where
+ *     a full-screen, content-covering popup risks the mobile intrusive-
+ *     interstitial ranking penalty. The in-content CTA + the WhatsApp FAB
+ *     carry the ask there instead.
+ *   - frequency-capped via localStorage — at most once per 7 days, and
+ *     not for 90 days after the visitor has already submitted a lead.
+ * If the visitor explicitly closes it, `dismissedRef` also keeps it shut
+ * for the rest of THAT page view.
  *
  * 28 May 2026 — submission logic factored out to the shared
  * <WhatsAppForm /> component + lib/whatsappHandoff utility module
@@ -34,16 +42,39 @@ export function InquiryModal() {
   // visitor has dismissed or submitted it — the 3s timer would
   // otherwise re-fire on rerenders that remount the component.
   const dismissedRef = useRef(false);
+  const pathname = usePathname();
 
-  // ─── Trigger: 3-second timer on each fresh page load ───────────────────
+  // ─── Trigger: 3s timer, gated by route (#1) + frequency cap (#2) ────────
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (dismissedRef.current) return;
+    // #1 — never on blog posts: a content-covering interstitial on the
+    // Google-organic landing pages risks the mobile ranking penalty.
+    if (pathname?.startsWith("/blog")) return;
+    // #2 — frequency cap: at most once / 7 days; 90 days after a lead.
+    const DAY = 86_400_000;
+    const now = Date.now();
+    try {
+      const lead = Number(localStorage.getItem("bipe_inq_lead") || 0);
+      const shown = Number(localStorage.getItem("bipe_inq_shown") || 0);
+      if (lead && now - lead < 90 * DAY) return;
+      if (shown && now - shown < 7 * DAY) return;
+    } catch {
+      /* storage blocked (private mode) — fall through and show once */
+    }
     const t = window.setTimeout(() => {
-      if (!dismissedRef.current) setOpen(true);
+      if (dismissedRef.current) return;
+      setOpen(true);
+      try {
+        localStorage.setItem("bipe_inq_shown", String(Date.now()));
+      } catch {
+        /* ignore */
+      }
     }, 3000);
     return () => window.clearTimeout(t);
-  }, []);
+    // Re-evaluate on SPA navigation so the route + cap checks apply per page.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   function close() {
     dismissedRef.current = true;
@@ -118,6 +149,12 @@ export function InquiryModal() {
             onSuccess={({ name }) => {
               setSuccessName(name.split(" ")[0]);
               dismissedRef.current = true;
+              // They're a lead now — suppress the popup for 90 days (#2).
+              try {
+                localStorage.setItem("bipe_inq_lead", String(Date.now()));
+              } catch {
+                /* ignore */
+              }
               // Close the modal shortly after the WhatsApp window opens
               // (handled inside WhatsAppForm). 1100 ms gives the success
               // state a beat to read before fading out.
