@@ -16,7 +16,7 @@ export type RouteKey =
   | "mandatoryDisclosure" | "aiPolicy"
   | "privacy" | "terms" | "antiRagging"
   | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar"
-  | "jeecupCounselling" | "whyBipe" | "aboutAffiliations"
+  | "jeecupCounselling" | "whyBipe" | "aboutAffiliations" | "earlyRegistration"
   | "privateVsGovernment"
   | "polytechnicInMirzapur" | "polytechnicInJaunpur" | "polytechnicInGhazipur"
   | "polytechnicInAzamgarh" | "polytechnicInMau" | "polytechnicInBhadohi"
@@ -73,6 +73,11 @@ export const ROUTES: Record<RouteKey, {
    */
   quickLink?: { label: string; hint: string; priority: number };
 }> = {
+  earlyRegistration: {
+    path: "/early-registration",
+    title: "Early Seat Registration · JEECUP 2026 · BIPE Varanasi (Code 4455)",
+    description: "Appeared in JEECUP 2026? Register free at BIPE Varanasi — reserve your branch under direct admission (code 4455), get a ₹1,200 scholarship, and visit within 7 days. Complements JEECUP counselling.",
+  },
   home: {
     path: "/",
     // CTR rewrite 29 May 2026 · added "& Engineering" to the title
