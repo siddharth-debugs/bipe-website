@@ -50,9 +50,13 @@ export function InquiryModal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (dismissedRef.current) return;
-    // #1 — never on blog posts: a content-covering interstitial on the
-    // Google-organic landing pages risks the mobile ranking penalty.
-    if (pathname?.startsWith("/blog")) return;
+    // #1 — never on blog posts (a content-covering interstitial on the
+    // Google-organic landing pages risks the mobile ranking penalty), nor
+    // on pages built around their own primary form — /apply and
+    // /early-registration — where the generic enquiry popup just competes
+    // with the form the visitor came to fill (found in preview, Jun 2026).
+    const NO_POPUP = ["/blog", "/apply", "/early-registration"];
+    if (pathname && NO_POPUP.some((p) => pathname.startsWith(p))) return;
     // #2 — frequency cap: at most once / 7 days; 90 days after a lead.
     const DAY = 86_400_000;
     const now = Date.now();
