@@ -154,7 +154,20 @@ export type BlogSection =
   | { type: "ul" | "ol"; items: string[] }
   | { type: "callout"; title?: string; html: string }
   | { type: "table"; headers: string[]; rows: string[][]; caption?: string }
-  | { type: "image"; src: string; alt: string; caption?: string };
+  | { type: "image"; src: string; alt: string; caption?: string }
+  // In-content conversion card. The blog template auto-injects one before
+  // the 2nd h2 of every post (Clarity Jun 2026: blogs are 53% of entries
+  // but 75% of sessions are single-page — the content ranks, then dead-
+  // ends). A post may place its own `cta` block, which suppresses the
+  // auto-injected default.
+  | {
+      type: "cta";
+      title: string;
+      body?: string;
+      applyLabel?: string;
+      waLabel?: string;
+      whatsappText?: string;
+    };
 
 export type BlogPost = {
   slug: string;

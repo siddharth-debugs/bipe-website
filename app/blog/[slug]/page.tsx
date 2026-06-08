@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BLOG_POSTS, getPostBySlug, postWordCount, postCoverImage, type BlogSection } from "@/lib/blogPosts";
 import { SITE_URL } from "@/lib/routes";
 import { ArrowIcon } from "@/components/shell/Icons";
+import { DATA } from "@/lib/data";
 
 type Params = { slug: string };
 
@@ -58,6 +59,42 @@ export async function generateMetadata(
       images: [`${SITE_URL}/og-default.png`],
     },
   };
+}
+
+// ── In-content blog CTA ──────────────────────────────────────────────
+// Blog posts are 53% of entries but 75% of sessions are single-page
+// (Clarity, Jun 2026): the content ranks and pulls big Google traffic,
+// then dead-ends. These helpers inject a conversion card mid-article to
+// turn that traffic into enquiries. Server-rendered <a>/<Link>, no client
+// JS; the wa.me click is caught by the global outbound listener.
+const BLOG_WA_DIGITS = DATA.contact.whatsappPhone.replace(/\D/g, "");
+const blogWaUrl = (text: string) =>
+  `https://wa.me/${BLOG_WA_DIGITS}?text=${encodeURIComponent(text)}`;
+// Hindi-first opener, matching the site's WhatsApp default.
+const DEFAULT_BLOG_WA_TEXT = "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए";
+
+// Inject a conversion CTA just before the 2nd h2 — early enough to clear
+// the ~40% scroll line Clarity showed readers stop at, on a clean section
+// boundary. `hi` picks Hindi copy. Suppressed if the post already places
+// its own cta block.
+function withInlineCta(sections: BlogSection[], hi: boolean): BlogSection[] {
+  if (sections.some((s) => s.type === "cta")) return sections;
+  const h2s = sections.flatMap((s, idx) => (s.type === "h2" ? [idx] : []));
+  const at = h2s.length >= 2 ? h2s[1] : Math.min(3, sections.length);
+  const cta: BlogSection = hi
+    ? {
+        type: "cta",
+        title: "पॉलिटेक्निक डिप्लोमा का सोच रहे हैं? BIPE में 2026-27 admission खुले हैं।",
+        body: "AICTE-approved · BTEUP code 4455 · Phoolpur, Varanasi में 5 diploma branches। Admission team से हिंदी में बात करें — कोई pressure नहीं, सिर्फ़ सही जानकारी।",
+        applyLabel: "अभी Apply करें",
+        waLabel: "WhatsApp पर बात करें",
+      }
+    : {
+        type: "cta",
+        title: "Planning your polytechnic diploma? BIPE is enrolling for 2026-27.",
+        body: "AICTE-approved · BTEUP code 4455 · five diploma branches in Phoolpur, Varanasi. Talk to admissions in Hindi or English — no pressure, just answers.",
+      };
+  return [...sections.slice(0, at), cta, ...sections.slice(at)];
 }
 
 function renderSection(s: BlogSection, i: number) {
@@ -168,6 +205,42 @@ function renderSection(s: BlogSection, i: number) {
           )}
         </figure>
       );
+    case "cta": {
+      const waText = s.whatsappText || DEFAULT_BLOG_WA_TEXT;
+      return (
+        <div
+          key={i}
+          style={{
+            margin: "32px 0",
+            padding: "26px 28px",
+            borderRadius: 18,
+            background: "var(--brand)",
+            color: "var(--paper)",
+            boxShadow: "0 20px 44px -26px color-mix(in oklab, var(--brand) 75%, transparent)",
+          }}
+        >
+          <div className="eyebrow" style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", marginBottom: 10 }}>
+            Admissions open · 2026-27
+          </div>
+          <div style={{ fontFamily: "var(--font-display, var(--font-sans))", fontWeight: 600, fontSize: 22, lineHeight: 1.22, maxWidth: "26ch" }}>
+            {s.title}
+          </div>
+          {s.body && (
+            <p style={{ marginTop: 10, fontSize: 14.5, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 86%, transparent)", maxWidth: "54ch" }}>
+              {s.body}
+            </p>
+          )}
+          <div className="row" style={{ marginTop: 18, gap: 12, flexWrap: "wrap" }}>
+            <Link href="/apply" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)", border: "none", fontWeight: 600 }}>
+              {s.applyLabel || "Apply for 2026-27"} <ArrowIcon size={16} />
+            </Link>
+            <a href={blogWaUrl(waText)} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-wa">
+              {s.waLabel || "WhatsApp admissions"}
+            </a>
+          </div>
+        </div>
+      );
+    }
     case "table":
       return (
         <div
@@ -377,7 +450,10 @@ export default async function BlogPostPage(
       {/* ─── Body ─────────────────────────────────────────────────── */}
       <section className="section" style={{ paddingTop: 8 }}>
         <div className="container" style={{ maxWidth: 780 }}>
-          {post.sections.map((s, i) => renderSection(s, i))}
+          {withInlineCta(
+            post.sections,
+            (post.lang ?? "").toLowerCase().startsWith("hi") || /[ऀ-ॿ]/.test(post.title),
+          ).map((s, i) => renderSection(s, i))}
         </div>
       </section>
 

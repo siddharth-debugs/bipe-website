@@ -116,7 +116,14 @@ export const applyFormSchema = z
 
     // Step 2 — branch interest
     branch: branchField,
-    category: z.enum(CATEGORY_OPTIONS),
+    // Optional as of Jun 2026 — Clarity recordings showed /apply
+    // abandonment around the category step (declaring a caste category
+    // felt intrusive for a first enquiry). The admissions call collects
+    // it instead, so it no longer blocks a lead.
+    category: z
+      .enum(CATEGORY_OPTIONS)
+      .optional()
+      .or(z.literal("" as unknown as (typeof CATEGORY_OPTIONS)[number])),
     board: z
       .enum(BOARD_OPTIONS)
       .optional()

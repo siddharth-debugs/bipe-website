@@ -94,7 +94,7 @@ export function ApplyView() {
   };
 
   const REQUIRED: ReadonlySet<keyof ApplyFormData> = new Set([
-    "name", "phone", "branch", "category",
+    "name", "phone", "branch",
   ] as const);
 
   const fieldProps = (k: keyof ApplyFormData) => {
@@ -272,7 +272,7 @@ export function ApplyView() {
                   </div>
                   <div className={"field " + (fieldError("category") ? "field-error" : "")}>
                     <label htmlFor="category">
-                      Category
+                      Category <span style={{ color: "var(--ink-3)" }}>(optional)</span>
                       <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· कैटेगरी</span>
                     </label>
                     <Controller
@@ -284,13 +284,15 @@ export function ApplyView() {
                           value={field.value || ""}
                           onValueChange={field.onChange}
                           onBlur={field.onBlur}
-                          required
-                          placeholder="Select category"
+                          placeholder="Select category (or skip)"
                           options={CATEGORY_OPTIONS.map((c) => ({ value: c, label: c }))}
                         />
                       )}
                     />
                     {fieldError("category") && <span id="category-err" role="alert" className="error-msg">{fieldError("category")}</span>}
+                    <span className="muted" style={{ fontSize: 11.5, marginTop: 4, display: "block" }}>
+                      Only for fee &amp; scholarship guidance — skip if unsure.
+                    </span>
                   </div>
                 </div>
 
