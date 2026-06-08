@@ -13,9 +13,14 @@ import Script from "next/script";
  *   build doesn't appear until a fresh rebuild. Hardcoding removes that
  *   failure mode — the tag loads on the very next deploy, every time.
  *
- * Host guard:
- *   The tag only fires on the live bipevns.org domain, so localhost dev
- *   and Vercel preview deployments don't pollute the recordings.
+ * Host + path guard:
+ *   The tag fires only on the live bipevns.org domain (so localhost dev
+ *   and Vercel preview deployments don't pollute the recordings) AND not
+ *   on /admin/* — the admin team's dashboard sessions were ~10% of all
+ *   recordings (Clarity dashboard, Jun 2026), skewing every metric and
+ *   needlessly capturing internal lead data. The check runs on the
+ *   initial (lazyOnload) page load, which catches the real case: the
+ *   admin team logs in at /admin and stays there for the whole session.
  *
  * PRIVACY (DPDP Act 2023 + minors):
  *   BIPE applicants include Class-10 minors. Set the Clarity project's
@@ -38,7 +43,7 @@ export default function MicrosoftClarityBeacon() {
   return (
     <Script id="ms-clarity" strategy="lazyOnload">
       {`
-        if (typeof location !== "undefined" && location.hostname.endsWith("bipevns.org")) {
+        if (typeof location !== "undefined" && location.hostname.endsWith("bipevns.org") && !location.pathname.startsWith("/admin")) {
           (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

@@ -2,6 +2,7 @@
 
 import React, { CSSProperties, useState } from "react";
 import NextImage from "next/image";
+import Link from "next/link";
 
 export type ImgProps = {
   src: string;
@@ -14,6 +15,10 @@ export type ImgProps = {
   priority?: boolean;
   /** Optional sizes hint passed to next/image for responsive selection. */
   sizes?: string;
+  /** When set, the whole tile becomes a link to this href (its wrapper
+   *  renders as a <Link>). Use to give otherwise-decorative imagery a
+   *  destination and avoid "dead clicks" on gallery-style photo grids. */
+  href?: string;
 };
 
 /**
@@ -87,6 +92,7 @@ export function Img({
   aspectRatio,
   priority = false,
   sizes = "(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 50vw",
+  href,
 }: ImgProps) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
@@ -117,8 +123,8 @@ export function Img({
   const isCloudinary = typeof src === "string" && src.includes("res.cloudinary.com");
   const hasFixedWidth = isCloudinary && /\/upload\/[^/]*w_\d+/.test(src);
   const useLoader = isCloudinary && !hasFixedWidth;
-  return (
-    <div className={className} style={wrapStyle}>
+  const inner = (
+    <>
       {/* Placeholder rendered FIRST so it sits BEHIND the image. It shows
           until the image's own onLoad fires (and stays put if the image
           errors, since onLoad never fires then). Previously this div
@@ -162,6 +168,25 @@ export function Img({
           padding: "4px 8px", borderRadius: 6,
         }}>{label}</div>
       )}
+    </>
+  );
+
+  // When href is set, the wrapper itself becomes the link so it stays the
+  // exact grid/flex child every layout rule already targets (e.g.
+  // .bipe-collage > *) — sizing is preserved. This gives otherwise-
+  // decorative imagery a real destination, killing the "dead clicks"
+  // Clarity flagged on gallery-style photo grids (Jun 2026). display:block
+  // makes the <a> lay out like the <div> it replaces.
+  if (href) {
+    return (
+      <Link href={href} className={className} style={{ ...wrapStyle, display: "block" }}>
+        {inner}
+      </Link>
+    );
+  }
+  return (
+    <div className={className} style={wrapStyle}>
+      {inner}
     </div>
   );
 }
