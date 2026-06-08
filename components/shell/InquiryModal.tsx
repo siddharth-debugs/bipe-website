@@ -14,17 +14,19 @@ import {
  * the visitor to WhatsApp as a bonus. Even if WhatsApp is blocked the
  * lead lands in the admin Inbox.
  *
- * Trigger: a 3-second timer, but gated two ways (tuned down 8 Jun 2026
- * after Clarity showed the full-screen popup interrupting blog readers
- * before they'd read anything):
+ * Trigger: engagement-based — fires when the visitor scrolls past ~50% or
+ * shows desktop exit-intent (35s fallback), NOT on a blind short timer.
+ * Tuned down 8 Jun 2026 after Clarity showed the old full-screen 3s popup
+ * interrupting blog readers before they'd read anything. Also gated:
  *   - NEVER on /blog/* — those are the Google-organic landing pages where
- *     a full-screen, content-covering popup risks the mobile intrusive-
- *     interstitial ranking penalty. The in-content CTA + the WhatsApp FAB
- *     carry the ask there instead.
+ *     a content-covering popup risks the mobile intrusive-interstitial
+ *     ranking penalty. The in-content CTA + the WhatsApp FAB carry the ask
+ *     there instead.
  *   - frequency-capped via localStorage — at most once per 7 days, and
  *     not for 90 days after the visitor has already submitted a lead.
- * If the visitor explicitly closes it, `dismissedRef` also keeps it shut
- * for the rest of THAT page view.
+ * Renders as a dismissible bottom-sheet on mobile (.inq-sheet), not a
+ * full-screen takeover. `dismissedRef` also keeps it shut for the rest of
+ * the current view once closed.
  *
  * 28 May 2026 — submission logic factored out to the shared
  * <WhatsAppForm /> component + lib/whatsappHandoff utility module
@@ -44,7 +46,7 @@ export function InquiryModal() {
   const dismissedRef = useRef(false);
   const pathname = usePathname();
 
-  // ─── Trigger: 3s timer, gated by route (#1) + frequency cap (#2) ────────
+  // ─── Trigger: engagement (#3), gated by route (#1) + freq cap (#2) ──────
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (dismissedRef.current) return;
@@ -62,17 +64,40 @@ export function InquiryModal() {
     } catch {
       /* storage blocked (private mode) — fall through and show once */
     }
-    const t = window.setTimeout(() => {
-      if (dismissedRef.current) return;
+    // #3 — show on ENGAGEMENT, not a blind short timer: when the visitor
+    // scrolls past ~50% (genuine interest) or shows desktop exit-intent. A
+    // long 35s fallback still reaches readers who don't scroll (short
+    // pages) without the old 3s interruption.
+    let done = false;
+    let timer = 0;
+    const cleanup = () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("mouseout", onExitIntent);
+    };
+    const fire = () => {
+      if (done || dismissedRef.current) return;
+      done = true;
+      cleanup();
       setOpen(true);
       try {
         localStorage.setItem("bipe_inq_shown", String(Date.now()));
       } catch {
         /* ignore */
       }
-    }, 3000);
-    return () => window.clearTimeout(t);
-    // Re-evaluate on SPA navigation so the route + cap checks apply per page.
+    };
+    function onScroll() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY / max >= 0.5) fire();
+    }
+    function onExitIntent(e: MouseEvent) {
+      if (e.clientY <= 0 && !e.relatedTarget) fire();
+    }
+    timer = window.setTimeout(fire, 35000);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("mouseout", onExitIntent);
+    return cleanup;
+    // Re-evaluate on SPA navigation so route + cap checks apply per page.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
@@ -95,7 +120,7 @@ export function InquiryModal() {
 
   return (
     <div
-      className="inq-backdrop"
+      className="inq-backdrop inq-sheet"
       role="presentation"
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
@@ -106,7 +131,7 @@ export function InquiryModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="inq-title"
-        className="inq-card"
+        className="inq-card inq-sheet-card"
       >
         <button
           type="button"

@@ -3231,4 +3231,26 @@ body.no-motion .skeleton { animation: none; }
 @media (max-width: 480px) {
   .inq-card { border-radius: 14px; }
   .inq-title { font-size: 17px; }
+
+  /* InquiryModal as a dismissible bottom-sheet on mobile (#4, Jun 2026):
+     a centered full-card read as a takeover. Anchor it edge-to-edge at the
+     bottom, rounded top, capped height with internal scroll, sliding up —
+     content stays visible above it. Dismiss via the close button, a
+     backdrop tap, or Escape (all unchanged). Scoped to .inq-sheet so the
+     shared Alumni modal keeps its centered card. */
+  .inq-backdrop.inq-sheet {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .inq-card.inq-sheet-card {
+    max-width: 100%;
+    border-radius: 18px 18px 0 0;
+    max-height: 88vh;
+    overflow-y: auto;
+    animation: inq-sheet-up 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+@keyframes inq-sheet-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
