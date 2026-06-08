@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { metadataFor } from "@/lib/seo";
 import { getBranchesMapped, getPageSection } from "@/lib/content";
 import type { Stat, WhyItem, Facility, JeecupStep } from "@/lib/data";
+import Link from "next/link";
 import { HeroFull } from "@/components/home/HeroFull";
 import { BIPE_IMG } from "@/lib/images";
 import { StatsBar } from "@/components/home/StatsBar";
@@ -109,6 +110,29 @@ export default async function HomePage() {
         JPEG when AVIF is disabled at the account.
       */}
       <HeroFull />
+
+      {/* JEECUP 2026 · Early Seat Registration — campaign entry point
+          (added Jun 2026). Slim strip under the hero linking to the
+          /early-registration funnel. */}
+      <Link
+        href="/early-registration"
+        aria-label="Early Seat Registration for JEECUP 2026 — register free"
+        style={{
+          display: "block",
+          background: "color-mix(in oklab, var(--accent) 16%, var(--paper))",
+          borderBottom: "1px solid color-mix(in oklab, var(--accent) 42%, var(--line))",
+          textDecoration: "none",
+          color: "var(--ink)",
+        }}
+      >
+        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, padding: "12px 16px", flexWrap: "wrap", textAlign: "center" }}>
+          <span className="eyebrow" style={{ color: "var(--brand)", whiteSpace: "nowrap", margin: 0 }}>JEECUP 2026 · New</span>
+          <span style={{ fontWeight: 600, fontSize: 14.5 }}>
+            Early Seat Registration is open — reserve your branch + a ₹1,200 scholarship.
+          </span>
+          <span className="btn btn-primary btn-sm" style={{ whiteSpace: "nowrap" }}>Register free →</span>
+        </div>
+      </Link>
       {/*
         StatsBar is no longer wired to the backend PageSection.
         Reason 28 May 2026: the Django admin had stale stats

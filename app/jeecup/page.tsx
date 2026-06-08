@@ -186,6 +186,19 @@ export default function Page() {
                 </a>
                 <Link href="/apply" className="btn btn-ghost btn-lg">Begin application</Link>
               </div>
+              {/* Early Seat Registration campaign entry point (Jun 2026) */}
+              <Link href="/early-registration" style={{
+                display: "flex", alignItems: "center", gap: 12, marginTop: 20, padding: "14px 18px",
+                borderRadius: 14, border: "1px solid color-mix(in oklab, var(--accent) 45%, var(--line))",
+                background: "color-mix(in oklab, var(--accent) 12%, var(--white))",
+                textDecoration: "none", color: "var(--ink)", maxWidth: "58ch",
+              }}>
+                <span style={{ fontSize: 22 }} aria-hidden="true">🎓</span>
+                <span style={{ fontSize: 14, lineHeight: 1.55 }}>
+                  <strong>Appeared in JEECUP 2026?</strong> Register free for Early Seat Registration — reserve your branch + a ₹1,200 scholarship.
+                </span>
+                <ArrowIcon size={16} />
+              </Link>
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "7", l: "Counselling rounds" },
