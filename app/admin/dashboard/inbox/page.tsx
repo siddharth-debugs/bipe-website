@@ -26,6 +26,7 @@ import {
   Mail,
   MessageCircle,
   RefreshCcw,
+  Sparkles,
 } from "lucide-react";
 
 import {
@@ -62,6 +63,13 @@ const KIND_META: Record<
   enquiry: { label: "Enquiry", Icon: MessageCircle },
   visit: { label: "Visit", Icon: CalendarDays },
 };
+
+// A lead counts as "Early Registration" if any of its enquiry submissions
+// came from the /early-registration JEECUP campaign (source set by the
+// Early Seat Registration form). Lets the Inbox badge + filter them out of
+// the general enquiry stream.
+const isEarlyReg = (g: LeadGroup): boolean =>
+  g.rows.some((r) => r.kind === "enquiry" && r.source === "early-registration");
 
 const STATUS_BUCKETS: { value: StatusBucket; label: string }[] = [
   { value: "all", label: "All" },
@@ -121,7 +129,7 @@ export default function InboxPage() {
   const searchParams = useSearchParams();
   const initialKind = (() => {
     const k = searchParams.get("kind");
-    return k === "apply" || k === "contact" || k === "enquiry" || k === "visit"
+    return k === "apply" || k === "contact" || k === "enquiry" || k === "visit" || k === "early"
       ? k
       : "all";
   })();
@@ -135,7 +143,7 @@ export default function InboxPage() {
       ? (b as StatusBucket)
       : "all";
   })();
-  const [kindFilter, setKindFilter] = useState<"all" | Kind>(initialKind);
+  const [kindFilter, setKindFilter] = useState<"all" | Kind | "early">(initialKind);
   const [bucket, setBucket] = useState<StatusBucket>(initialBucket);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -213,10 +221,14 @@ export default function InboxPage() {
     return out;
   }, [groups]);
 
+  const earlyCount = useMemo(() => groups.filter(isEarlyReg).length, [groups]);
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return groups.filter((g) => {
-      if (kindFilter !== "all" && g.kindCounts[kindFilter] === 0) return false;
+      if (kindFilter === "early") {
+        if (!isEarlyReg(g)) return false;
+      } else if (kindFilter !== "all" && g.kindCounts[kindFilter] === 0) return false;
       if (bucket !== "all" && statusBucket(g) !== bucket) return false;
       if (q) {
         const hay = [
@@ -338,6 +350,13 @@ export default function InboxPage() {
               />
             );
           })}
+          <KindChip
+            label="Early Reg"
+            count={earlyCount}
+            Icon={Sparkles}
+            active={kindFilter === "early"}
+            onClick={() => setKindFilter("early")}
+          />
         </div>
 
         {/* Status bucket chips */}
@@ -555,6 +574,16 @@ function LeadRow({ group, onClick }: { group: LeadGroup; onClick: () => void }) 
               );
             })}
         </div>
+        {isEarlyReg(group) && (
+          <span style={{
+            display: "inline-flex", alignItems: "center", gap: 4, marginTop: 6,
+            padding: "2px 9px", borderRadius: 999, fontSize: 10.5, fontWeight: 700,
+            background: "color-mix(in oklab, var(--accent) 24%, transparent)",
+            color: "var(--ink)", border: "1px solid color-mix(in oklab, var(--accent) 45%, transparent)",
+          }}>
+            <Sparkles size={11} /> Early Registration
+          </span>
+        )}
         {group.followUpCount > 0 && (
           <div style={{ fontSize: 10.5, color: "var(--ink-3)", marginTop: 4 }}>
             {group.followUpCount} follow-up
