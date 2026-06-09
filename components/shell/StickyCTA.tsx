@@ -3,24 +3,21 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowIcon, WhatsAppIcon } from "./Icons";
-import { DATA } from "@/lib/data";
 
 /**
- * Persistent, collapsible bottom action bar — the always-on "invite" so an
- * interested visitor never has to scroll-hunt for a CTA. Complements the
- * occasional engagement popup (InquiryModal) and the WhatsApp FAB; the FAB
- * sits at bottom:84px on mobile precisely to clear this bar.
+ * Bottom admissions bar — a persistent, dismissible banner: headline +
+ * subtext + a single accent CTA. The always-on "invite" so an interested
+ * visitor never has to scroll-hunt for the CTA; complements the gentle
+ * engagement popup. No WhatsApp here — the floating FAB already covers it,
+ * and a second WhatsApp affordance would just be repetition.
  *
- * - Context-aware primary CTA: "Register free" on the JEECUP campaign pages,
- *   "Apply 2026-27" everywhere else.
- * - Minimise (✕) collapses it to a small re-openable pill — it never
- *   vanishes (the whole point: dismiss should hide, not strand the user).
- *   The choice is remembered in sessionStorage for the rest of the visit.
- * - Hidden where the form itself is the CTA (/apply, /early-registration),
- *   on /admin (ConditionalChrome doesn't mount it there), and on desktop
- *   (the top nav already keeps "Apply" permanently visible) — mobile-only
- *   via the .cta-bar media query in globals.css.
+ * - Context-aware: the JEECUP campaign pages push "Register free" → the
+ *   Early Seat Registration funnel; everywhere else "Apply" → /apply.
+ * - Dismiss = MINIMISE, not vanish: ✕ collapses it to a small re-openable
+ *   pill (remembered in sessionStorage for the rest of the visit).
+ * - Mounted site-wide (non-admin); mobile-only (desktop keeps "Apply" in
+ *   the top nav); hidden on /apply + /early-registration where the page's
+ *   own form is the CTA. The WhatsApp FAB sits at bottom:84px to clear it.
  */
 export const StickyCTA = () => {
   const pathname = usePathname() ?? "/";
@@ -45,39 +42,45 @@ export const StickyCTA = () => {
     }
   };
 
-  // Don't show where the page's own form is the CTA.
+  // Hidden where the page's own form is the CTA.
   if (pathname.startsWith("/apply") || pathname.startsWith("/early-registration")) return null;
-  // Render only after we've read the minimise preference, to avoid a flash
-  // of the expanded bar for visitors who minimised it earlier this visit.
+  // Render only after the minimise preference is read, to avoid a flash of
+  // the expanded bar for visitors who minimised it earlier this visit.
   if (!ready) return null;
 
   const campaign = pathname.startsWith("/jeecup");
-  const primary = campaign
-    ? { href: "/early-registration", label: "Register free" }
-    : { href: "/apply", label: "Apply 2026-27" };
+  const copy = campaign
+    ? {
+        title: "JEECUP 2026 seats",
+        sub: "Register free · preferred branch + a ₹1,200 scholarship",
+        href: "/early-registration",
+        cta: "Register",
+      }
+    : {
+        title: "Admissions 2026-27",
+        sub: "Open now — apply free in 5 minutes, callback in 24 hrs",
+        href: "/apply",
+        cta: "Apply",
+      };
 
   if (collapsed) {
     return (
-      <button
-        type="button"
-        className="cta-bar-pill"
-        onClick={() => setMin(false)}
-        aria-label="Show admissions quick-actions"
-      >
-        <span aria-hidden="true">↑</span> {primary.label}
+      <button type="button" className="cta-bar-pill" onClick={() => setMin(false)} aria-label="Show the admissions bar">
+        <span aria-hidden="true">↑</span> {copy.cta}
       </button>
     );
   }
 
   return (
-    <div className="cta-bar" role="region" aria-label="Quick admissions actions">
-      <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-sm">
-        <WhatsAppIcon /> WhatsApp
-      </a>
-      <Link href={primary.href} className="btn btn-primary btn-sm">
-        {primary.label} <ArrowIcon size={14} />
+    <div className="cta-bar" role="region" aria-label="Admissions">
+      <div className="cta-bar-text">
+        <div className="cta-bar-title">{copy.title}</div>
+        <div className="cta-bar-sub">{copy.sub}</div>
+      </div>
+      <Link href={copy.href} className="cta-bar-action">
+        {copy.cta}
       </Link>
-      <button type="button" className="cta-bar-min" onClick={() => setMin(true)} aria-label="Minimise quick-actions">
+      <button type="button" className="cta-bar-min" onClick={() => setMin(true)} aria-label="Dismiss the admissions bar">
         ✕
       </button>
     </div>
