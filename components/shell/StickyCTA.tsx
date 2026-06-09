@@ -26,7 +26,7 @@ export const StickyCTA = () => {
   // only the title adapts to context.
   const copy = {
     title: pathname.startsWith("/jeecup") ? "JEECUP 2026 seats — Open" : "Admissions 2026-27 — Open",
-    sub: "Register free · preferred branch + a ₹1,200 PET scholarship",
+    sub: "Freeze branch + Get ₹1,200 PET scholarship",
     href: "/early-registration",
     cta: "Register",
   };
