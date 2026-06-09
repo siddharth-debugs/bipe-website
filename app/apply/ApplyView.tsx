@@ -332,14 +332,12 @@ export function ApplyView() {
                 </div>
               )}
 
-              <div className="between" style={{ marginTop: 32, paddingTop: 22, borderTop: "1px solid var(--line)", flexWrap: "wrap", gap: 12 }}>
-                <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-                  <WhatsAppIcon /> Chat with admissions
-                </a>
+              <div style={{ marginTop: 32, paddingTop: 22, borderTop: "1px solid var(--line)" }}>
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg"
                   disabled={isSubmitting}
+                  style={{ width: "100%", justifyContent: "center" }}
                 >
                   {isSubmitting ? "Submitting…" : <>Submit application <ArrowIcon /></>}
                 </button>
