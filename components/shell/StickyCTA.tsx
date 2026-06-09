@@ -22,20 +22,14 @@ export const StickyCTA = () => {
   // Hidden where the page's own form is the CTA.
   if (pathname.startsWith("/apply") || pathname.startsWith("/early-registration")) return null;
 
-  const campaign = pathname.startsWith("/jeecup");
-  const copy = campaign
-    ? {
-        title: "JEECUP 2026 seats",
-        sub: "Register free · preferred branch + a ₹1,200 scholarship",
-        href: "/early-registration",
-        cta: "Register",
-      }
-    : {
-        title: "Admissions 2026-27",
-        sub: "Open now — apply free in 5 minutes, callback in 24 hrs",
-        href: "/apply",
-        cta: "Apply",
-      };
+  // Always drives to the free Early Seat Registration funnel (per owner);
+  // only the title adapts to context.
+  const copy = {
+    title: pathname.startsWith("/jeecup") ? "JEECUP 2026 seats" : "Admissions 2026-27",
+    sub: "Register free · preferred branch + a ₹1,200 PET scholarship",
+    href: "/early-registration",
+    cta: "Register free",
+  };
 
   return (
     <div className="cta-bar" role="region" aria-label="Admissions">

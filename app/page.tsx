@@ -128,7 +128,7 @@ export default async function HomePage() {
         <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, padding: "12px 16px", flexWrap: "wrap", textAlign: "center" }}>
           <span className="eyebrow" style={{ color: "var(--brand)", whiteSpace: "nowrap", margin: 0 }}>JEECUP 2026 · New</span>
           <span style={{ fontWeight: 600, fontSize: 14.5 }}>
-            Early Seat Registration is open — reserve your branch + a ₹1,200 scholarship.
+            Early Seat Registration is open — reserve your branch + a ₹1,200 PET scholarship.
           </span>
           <span className="btn btn-primary btn-sm" style={{ whiteSpace: "nowrap" }}>Register free →</span>
         </div>

@@ -195,7 +195,7 @@ export default function Page() {
               }}>
                 <span style={{ fontSize: 22 }} aria-hidden="true">🎓</span>
                 <span style={{ fontSize: 14, lineHeight: 1.55 }}>
-                  <strong>Appeared in JEECUP 2026?</strong> Register free for Early Seat Registration — reserve your branch + a ₹1,200 scholarship.
+                  <strong>Appeared in JEECUP 2026?</strong> Register free for Early Seat Registration — reserve your branch + a ₹1,200 PET scholarship.
                 </span>
                 <ArrowIcon size={16} />
               </Link>

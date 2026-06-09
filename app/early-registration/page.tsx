@@ -12,12 +12,12 @@ const BENEFITS = [
   {
     tag: "Your branch, held",
     title: "Seat & branch reserved for early registrants",
-    body: "Register and visit within 7 days, and BIPE reserves your preferred branch for you (code 4455) — open regardless of your JEECUP rank, subject to seats and basic eligibility.",
+    body: "Register and visit within 7 days, and BIPE reserves your preferred branch for you (code 4455) — subject to seats and basic eligibility.",
   },
   {
-    tag: "₹1,200 scholarship",
+    tag: "₹1,200 PET scholarship",
     title: "A ₹1,200 PET scholarship — just for registering early",
-    body: "Early registrants who join for 2026-27 get a one-time ₹1,200 scholarship credited toward admission. Our thank-you for deciding early.",
+    body: "Early registrants who join for 2026-27 get a one-time ₹1,200 PET scholarship credited toward admission. Our thank-you for deciding early.",
   },
   {
     tag: "Popular branches fill first",
@@ -34,7 +34,7 @@ const BENEFITS = [
 const STEPS = [
   { n: "01", t: "Register free", d: "Fill the short form below — name, phone, JEECUP application number, group and preferred branch. Two minutes." },
   { n: "02", t: "Visit within 7 days", d: "Come to BIPE Phoolpur within a week. Tour the campus, meet the admissions team, ask anything." },
-  { n: "03", t: "Branch + ₹1,200 locked", d: "Your preferred branch is confirmed at BIPE and the ₹1,200 scholarship is applied. We also guide you through JEECUP counselling for code 4455." },
+  { n: "03", t: "Branch + ₹1,200 locked", d: "Your preferred branch is confirmed at BIPE and the ₹1,200 PET scholarship is applied. We also guide you through JEECUP counselling for code 4455." },
 ];
 
 export default function Page() {
@@ -59,11 +59,11 @@ export default function Page() {
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
             Appeared in JEECUP 2026? Register free in two minutes. Visit campus within 7 days and BIPE reserves your preferred branch for
-            you (code 4455) — <strong>regardless of your rank</strong>, subject to seats &amp; eligibility — plus a
-            <strong> ₹1,200 scholarship</strong>.
+            you (code 4455) — subject to seats &amp; eligibility — plus a
+            <strong> ₹1,200 PET scholarship</strong>.
           </p>
           <p lang="hi" style={{ marginTop: 14, maxWidth: "60ch", color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
-            JEECUP 2026 दिया है? फ्री में रजिस्टर करें, 7 दिन में campus आएं — आपकी पसंदीदा branch BIPE में reserve, साथ में ₹1,200 scholarship।
+            JEECUP 2026 दिया है? फ्री में रजिस्टर करें, 7 दिन में campus आएं — आपकी पसंदीदा branch BIPE में reserve, साथ में ₹1,200 PET scholarship।
           </p>
           <div className="row" style={{ gap: 12, marginTop: 28, flexWrap: "wrap" }}>
             <Link href="#register" className="btn btn-primary btn-lg">Register free now <ArrowIcon size={16} /></Link>
