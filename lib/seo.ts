@@ -82,7 +82,10 @@ export async function metadataFor(slug: RouteKey): Promise<Metadata> {
         "x-default": r.path,
       },
     },
-    robots: { index: true, follow: true },
+    // Routes flagged `noindex` (e.g. the /early-registration conversion LP)
+    // render noindex,follow so they don't compete in organic search; a
+    // noindexed URL also can't be chosen as the canonical for other pages.
+    robots: { index: !r.noindex, follow: true },
     openGraph: {
       title: r.title,
       description: r.description,

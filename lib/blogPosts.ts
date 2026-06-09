@@ -206,10 +206,12 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "dairy-engineering-course-up-rare-branch",
     lang: "hi-IN",
-    hreflangAlternates: [
-      { hreflang: "en-IN", slug: "why-dairy-engineering-bipe-rare-bteup-327" },
-      { hreflang: "hi-IN", slug: "dairy-engineering-course-up-rare-branch" },
-    ],
+    // No hreflangAlternates: the English dairy post (why-…-327) is a
+    // DISTINCT article (BIPE's institutional story / the Chairman's
+    // rationale), NOT a translation of this career-guidance piece. Pairing
+    // them as hreflang translation alternates made Google merge the two
+    // (GSC "Duplicate, Google chose different canonical", Jun 2026). Each
+    // now stands on its own language signal — this one is hi-IN.
     title: "Dairy Engineering — UP ka chhupa hua moka, sasta diploma, badi naukri",
     category: "Career Guidance · Hinglish",
     date: "27 May 2026",
@@ -232,6 +234,11 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "p",
         html:
           "Reality · UP mein BTEUP-affiliated dairy diploma sirf <strong>~4 colleges</strong> offer karते hain (BIPE BTEUP 327 unke mein se ek)। Country-wide demand high — Amul, Mother Dairy, NDDB, Parag, Nestlé sab consistently hiring kar rahe hain dairy diploma graduates। Supply low + demand high = naukri ki competition kam, salary stable, growth steady।",
+      },
+      {
+        type: "p",
+        html:
+          "BIPE ne yeh rare branch <strong>kyon</strong> offer kiya — Chairman Dr. Chandrika Rai ki Pantnagar-to-IPS journey aur Eastern UP ki milk economy ka pura context English mein yahan padhें: <a href=\"/blog/why-dairy-engineering-bipe-rare-bteup-327\">Why BIPE offers Dairy Engineering</a>।",
       },
 
       { type: "h2", text: "India ki dairy industry · scale samjhें" },
@@ -408,6 +415,7 @@ export const BLOG_POSTS: BlogPost[] = [
   // but "here's how to think about your fit."
   {
     slug: "mechanical-ya-computer-science-kaunsi-branch-chunein",
+    lang: "hi-IN",
     title: "Mechanical ya Computer Science — kaunsi branch chunein?",
     category: "Career Guidance · Hinglish",
     date: "27 May 2026",
@@ -1055,6 +1063,7 @@ export const BLOG_POSTS: BlogPost[] = [
   // bilingual register before Posts 2-5 ship.
   {
     slug: "polytechnic-ke-baad-kya-karein-career-options-2026",
+    lang: "hi-IN",
     title: "पॉलिटेक्निक के बाद क्या करें — Career options after diploma in 2026",
     category: "Career Guidance · Hinglish",
     date: "27 May 2026",
@@ -1606,10 +1615,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "why-dairy-engineering-bipe-rare-bteup-327",
     lang: "en-IN",
-    hreflangAlternates: [
-      { hreflang: "en-IN", slug: "why-dairy-engineering-bipe-rare-bteup-327" },
-      { hreflang: "hi-IN", slug: "dairy-engineering-course-up-rare-branch" },
-    ],
+    // No hreflangAlternates — see the Hinglish dairy post. These two are
+    // sibling articles on the same branch (career guide vs. institutional
+    // story), not translations of each other.
     title: "Why BIPE offers Dairy Engineering — a rare BTEUP diploma in Eastern UP",
     category: "Branches · Dairy Engineering",
     date: "19 May 2026",
@@ -1629,7 +1637,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "callout",
         title: "What this post is",
-        html: "A profile-grounded look at <strong>BTEUP Dairy Engineering at BIPE</strong> — the regional context, the chairman's background, the curriculum, and the recruiter pipeline. Quotes from Dr. Chandrika Rai are drawn from his existing published <a href=\"/chairman\">Chairman's Message</a>. Career and admission facts are verified on <a href=\"/courses/dairy-engineering\">/courses/dairy-engineering</a> and <a href=\"/placements\">/placements</a>.",
+        html: "A profile-grounded look at <strong>BTEUP Dairy Engineering at BIPE</strong> — the regional context, the chairman's background, the curriculum, and the recruiter pipeline. Quotes from Dr. Chandrika Rai are drawn from his existing published <a href=\"/chairman\">Chairman's Message</a>. Career and admission facts are verified on <a href=\"/courses/dairy-engineering\">/courses/dairy-engineering</a> and <a href=\"/placements\">/placements</a>. Weighing it as a career choice? The <a href=\"/blog/dairy-engineering-course-up-rare-branch\">Hindi/Hinglish career guide</a> covers salary, scope and an honest fit-check.",
       },
       { type: "h2", text: "The man behind the decision" },
       {
@@ -2343,6 +2351,7 @@ export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: "polytechnic-kya-hai-aur-kaise-kare",
+    lang: "hi-IN",
     title: "Polytechnic Kya Hai aur Kaise Kare — पूरी हिन्दी गाइड",
     category: "Guide · Hindi",
     date: "20 May 2026",

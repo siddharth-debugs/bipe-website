@@ -20,12 +20,13 @@ export async function generateMetadata(
   if (!post) return {};
   const path = `/blog/${post.slug}`;
 
-  // hreflang: most posts have no translation, so we only declare en-IN
-  // (declaring hi-IN with no real Hindi page would be hreflang-lying).
-  // Posts that DO have a genuine language sibling (e.g. the salary pair)
-  // set `hreflangAlternates` — emit the full set + an x-default that
-  // points at the English version.
-  let languages: Record<string, string> = { "en-IN": path };
+  // hreflang: a post with no translation sibling declares only its OWN
+  // language (post.lang). This previously hardcoded "en-IN", which
+  // mislabelled standalone Hindi/Hinglish posts as English — a real
+  // signal-contradiction (a hi-IN post claiming hreflang en-IN). Posts
+  // that DO have a genuine translation set `hreflangAlternates` — emit
+  // the full set + an x-default pointing at the English version.
+  let languages: Record<string, string> = { [post.lang ?? "en-IN"]: path };
   if (post.hreflangAlternates?.length) {
     languages = Object.fromEntries(
       post.hreflangAlternates.map((a) => [a.hreflang, `/blog/${a.slug}`]),
@@ -344,14 +345,13 @@ export default async function BlogPostPage(
   //                 Optional in spec but useful as a topical-cluster
   //                 signal.
   const cover = postCoverImage(post);
-  const isHindiPost = /(kya-hai|kaise-kare|hindi-|^hi-)/.test(post.slug);
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${canonical}#article`,
     headline: post.title,
     description: post.metaDescription,
-    inLanguage: isHindiPost ? "hi-IN" : "en-IN",
+    inLanguage: post.lang ?? "en-IN",
     datePublished: post.publishedISO,
     dateModified: post.publishedISO,
     wordCount: postWordCount(post),
@@ -396,7 +396,10 @@ export default async function BlogPostPage(
   const otherPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
-    <article className="page-enter">
+    // lang on the article subtree: the site chrome (nav/footer) stays
+    // en-IN via the root <html>, but the post body carries its own
+    // language so Hindi/Hinglish posts aren't read as English content.
+    <article className="page-enter" lang={post.lang ?? "en-IN"}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}

@@ -72,9 +72,25 @@ export const ROUTES: Record<RouteKey, {
    * before adding more.
    */
   quickLink?: { label: string; hint: string; priority: number };
+  /**
+   * When true, the route is left out of the sitemap and rendered with
+   * robots `noindex, follow`. For conversion landing pages we drive
+   * traffic to from our own surfaces (sticky bar, homepage banner, blog
+   * CTAs) but that must NOT compete in organic search.
+   *
+   * Set on /early-registration (Jun 2026): GSC "Duplicate, Google chose
+   * different canonical than user" showed Google treating that ~2.6k-word
+   * campaign page as the canonical over /apply, /fees and /contact —
+   * folding three evergreen pages into one seasonal LP. noindex,follow
+   * pulls it out of the canonical contest (a noindex URL can't be chosen
+   * as canonical for others) while still passing internal link equity.
+   */
+  noindex?: boolean;
 }> = {
   earlyRegistration: {
     path: "/early-registration",
+    // Conversion LP, not an organic-search target — see `noindex` above.
+    noindex: true,
     title: "Early Seat Registration · JEECUP 2026 · BIPE Varanasi (Code 4455)",
     description: "Appeared in JEECUP 2026? Register free at BIPE Varanasi — reserve your branch (code 4455), get a ₹1,200 PET scholarship, and visit within 7 days. Complements JEECUP counselling.",
   },

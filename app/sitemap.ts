@@ -16,7 +16,11 @@ const HIGH_PRIORITY = new Set([
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const routeEntries = Object.values(ROUTES).map((r) => ({
+  const routeEntries = Object.values(ROUTES)
+    // Skip noindex routes (e.g. /early-registration) — don't submit a URL
+    // we're telling Google not to index.
+    .filter((r) => !r.noindex)
+    .map((r) => ({
     // Canonical for the homepage is SITE_URL with no trailing slash — match it
     // here so the sitemap and rendered <link rel="canonical"> agree.
     url: r.path === "/" ? SITE_URL : `${SITE_URL}${r.path}`,
