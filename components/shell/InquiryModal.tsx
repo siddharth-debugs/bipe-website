@@ -9,10 +9,11 @@ import {
 } from "@/components/forms/WhatsAppForm";
 
 /**
- * Site-wide prospectus popup. Captures name + phone + branch interest,
- * persists the lead via /api/submit?formType=enquiry, then forwards
- * the visitor to WhatsApp as a bonus. Even if WhatsApp is blocked the
- * lead lands in the admin Inbox.
+ * Site-wide prospectus popup. Captures name + phone + branch interest
+ * and persists the lead via /api/submit?formType=enquiry so it lands
+ * in the admin Inbox. Submission-only — it does NOT redirect to
+ * WhatsApp (per owner, Jun 2026); the floating WhatsApp FAB already
+ * offers chat for visitors who prefer it.
  *
  * Trigger: engagement-based — fires when the visitor scrolls past ~50% or
  * shows desktop exit-intent (35s fallback), NOT on a blind short timer.
@@ -22,8 +23,9 @@ import {
  *     a content-covering popup risks the mobile intrusive-interstitial
  *     ranking penalty. The in-content CTA + the WhatsApp FAB carry the ask
  *     there instead.
- *   - frequency-capped via localStorage — at most once per 7 days, and
- *     not for 90 days after the visitor has already submitted a lead.
+ *   - frequency-capped — at most once per browsing SESSION (so it
+ *     returns on the visitor's next visit, not only after 7 days), and
+ *     not for 90 days after they've already submitted a lead.
  * Renders as a dismissible bottom-sheet on mobile (.inq-sheet), not a
  * full-screen takeover. `dismissedRef` also keeps it shut for the rest of
  * the current view once closed.
@@ -57,14 +59,16 @@ export function InquiryModal() {
     // with the form the visitor came to fill (found in preview, Jun 2026).
     const NO_POPUP = ["/blog", "/apply", "/early-registration"];
     if (pathname && NO_POPUP.some((p) => pathname.startsWith(p))) return;
-    // #2 — frequency cap: at most once / 7 days; 90 days after a lead.
+    // #2 — frequency cap: at most once per BROWSING SESSION (so a
+    // visitor who closes it without enquiring sees it again on their
+    // next visit), and not for 90 days after they've left a real lead.
     const DAY = 86_400_000;
     const now = Date.now();
     try {
       const lead = Number(localStorage.getItem("bipe_inq_lead") || 0);
-      const shown = Number(localStorage.getItem("bipe_inq_shown") || 0);
       if (lead && now - lead < 90 * DAY) return;
-      if (shown && now - shown < 7 * DAY) return;
+      // Session-scoped, not 7-day: clears when the tab/session ends.
+      if (sessionStorage.getItem("bipe_inq_shown")) return;
     } catch {
       /* storage blocked (private mode) — fall through and show once */
     }
@@ -85,7 +89,8 @@ export function InquiryModal() {
       cleanup();
       setOpen(true);
       try {
-        localStorage.setItem("bipe_inq_shown", String(Date.now()));
+        // Per-session flag — shows once per visit, returns next session.
+        sessionStorage.setItem("bipe_inq_shown", "1");
       } catch {
         /* ignore */
       }
@@ -152,10 +157,10 @@ export function InquiryModal() {
         <div className="inq-head">
           <div className="inq-eyebrow">Admissions Open · 2026-27</div>
           <h2 id="inq-title" className="inq-title">
-            Talk to BIPE Admissions on WhatsApp
+            Have an admissions question?
           </h2>
           <p className="inq-sub">
-            Fees, branches, JEECUP cut-offs &amp; campus details — straight from the admissions team.
+            Fees, branches, JEECUP cut-offs &amp; campus details — leave your number and our admissions team calls you back.
           </p>
         </div>
 
@@ -167,7 +172,7 @@ export function InquiryModal() {
               </svg>
             </div>
             <h3>Thank you, {successName}!</h3>
-            <p>Opening WhatsApp now — our admissions team will reply shortly.</p>
+            <p>Our admissions team will call you back shortly.</p>
           </div>
         ) : (
           <WhatsAppForm
@@ -175,6 +180,9 @@ export function InquiryModal() {
             persist
             requirePhone
             gtagEvent="enquiry_submit"
+            // Submission-only: save the lead to the Inbox, DON'T open
+            // WhatsApp (the floating FAB already offers chat). Owner, Jun 2026.
+            openOnSuccess={false}
             onSuccess={({ name }) => {
               setSuccessName(name.split(" ")[0]);
               dismissedRef.current = true;
@@ -184,10 +192,8 @@ export function InquiryModal() {
               } catch {
                 /* ignore */
               }
-              // Close the modal shortly after the WhatsApp window opens
-              // (handled inside WhatsAppForm). 1100 ms gives the success
-              // state a beat to read before fading out.
-              window.setTimeout(() => setOpen(false), 1100);
+              // Give the success state a beat to read, then close.
+              window.setTimeout(() => setOpen(false), 1600);
             }}
             renderFields={({
               name,
@@ -264,9 +270,10 @@ export function InquiryModal() {
                     </>
                   ) : (
                     <>
-                      Chat with admissions
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.45 0 .09 5.36.09 11.95c0 2.11.55 4.17 1.6 5.99L0 24l6.22-1.63a11.94 11.94 0 0 0 5.82 1.49h.01c6.59 0 11.95-5.36 11.95-11.95 0-3.19-1.24-6.19-3.48-8.43Zm-8.47 18.38h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.69.97.99-3.6-.24-.37a9.9 9.9 0 0 1-1.52-5.31c0-5.48 4.46-9.94 9.94-9.94 2.66 0 5.15 1.03 7.03 2.91a9.87 9.87 0 0 1 2.92 7.03c0 5.48-4.46 9.94-9.94 9.94Z" />
+                      Request a callback
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                       </svg>
                     </>
                   )}
