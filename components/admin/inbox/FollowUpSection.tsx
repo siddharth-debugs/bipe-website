@@ -37,7 +37,7 @@ import {
   type FollowUpOutcome,
   type LeadStatus,
 } from "@/lib/admin/api";
-import { BRANCH_OPTIONS } from "@/lib/validation";
+import { BRANCH_OPTIONS } from "@/lib/formOptions";
 import { FormSelect } from "@/components/ui/FormSelect";
 
 interface Props {

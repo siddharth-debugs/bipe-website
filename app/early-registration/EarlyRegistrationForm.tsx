@@ -6,7 +6,7 @@ import { Honeypot } from "@/components/shell/Honeypot";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { DATA } from "@/lib/data";
 import { track } from "@/lib/analytics";
-import { BRANCH_OPTIONS } from "@/lib/validation";
+import { BRANCH_OPTIONS } from "@/lib/formOptions";
 
 /**
  * Early Seat Registration form (JEECUP 2026 campaign).

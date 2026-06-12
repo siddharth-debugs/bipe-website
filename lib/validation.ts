@@ -1,4 +1,11 @@
 import { z } from "zod";
+import { BRANCH_OPTIONS, SOURCE_OPTIONS } from "./formOptions";
+
+// Re-export for back-compat: the server schemas below + any genuine
+// zodResolver forms still import these from here. CLIENT components that
+// need ONLY the option lists should import from "@/lib/formOptions"
+// directly, so they don't pull zod into their bundle.
+export { BRANCH_OPTIONS, SOURCE_OPTIONS };
 
 /**
  * Form validation schemas, shared between client (react-hook-form +
@@ -10,24 +17,8 @@ import { z } from "zod";
  * branches). Updating one without the other is a footgun.
  */
 
-export const BRANCH_OPTIONS = [
-  "Civil Engineering",
-  "Electrical Engineering",
-  "Mechanical Engineering (Production)",
-  "Computer Science & Engineering",
-  "Dairy Engineering",
-  "Not sure yet — guide me",
-] as const;
-
-export const SOURCE_OPTIONS = [
-  "Friend / Family",
-  "Google search",
-  "Newspaper / advertisement",
-  "Visited the campus",
-  "School counsellor",
-  "JEECUP guide",
-  "Other",
-] as const;
+// BRANCH_OPTIONS + SOURCE_OPTIONS now live in lib/formOptions.ts (zod-free)
+// and are imported + re-exported at the top of this file.
 
 export const CATEGORY_OPTIONS = [
   "General",

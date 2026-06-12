@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { BRANCH_OPTIONS } from "@/lib/validation";
+import { BRANCH_OPTIONS } from "@/lib/formOptions";
 import { Honeypot } from "@/components/shell/Honeypot";
 import {
   submitWhatsAppHandoff,
