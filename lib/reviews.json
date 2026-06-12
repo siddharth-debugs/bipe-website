@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-05-29T08:13:30.389Z",
+    "lastUpdated": "2026-06-12T08:45:25.623Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
@@ -11,17 +11,6 @@
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT25ScmJFNVBYMTloTkZWcWFUQmFiaTFWWkRFMlltYxAB",
-      "rating": 5,
-      "text": "Excellent for their placements......\nGreat methods of teaching....",
-      "publishTime": "2025-07-25T12:54:28.800635709Z",
-      "relativeTime": "10 months ago",
-      "author": {
-        "name": "Jaideep Chitranshh",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXY6gLDsyi9rs5s81QseIo-plwpL1_KasHU9fW7Zhknbsq-hT6X=s128-c0x00000000-cc-rp-mo"
-      }
-    },
     {
       "id": "ChZDSUhNMG9nS0VJQ0FnSUNna3FDcGRREAE",
       "rating": 5,
@@ -42,6 +31,17 @@
       "author": {
         "name": "Harsh Rai",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV8tQsuGBzozVz3DSo4WKSeaceG3255RK8JJ-ltKJcZHsfiRY8jNg=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "ChdDSUhNMG9nS0VJQ0FnSURBOUlTSXNBRRAB",
+      "rating": 5,
+      "text": "best polytechnic  collage    100 %campus placement   good faculty   all subject book  available in library.  best workshop   play ground  reading hall & more are available.",
+      "publishTime": "2018-04-26T06:14:46.009Z",
+      "relativeTime": "8 years ago",
+      "author": {
+        "name": "Ankit Mishra",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKnfUHUtMAKkmMBLFQBIvDRm6yeJW_70R2-OqZLR3-_gvaV0w=s128-c0x00000000-cc-rp-mo"
       }
     },
     {
