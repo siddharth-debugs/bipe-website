@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -97,10 +98,15 @@ import { GoogleAnalytics } from "@next/third-parties/google";
  *
  *   - The consent-mode script is tiny (<1 KB inline) and runs
  *     synchronously before paint. No INP impact.
- *   - GoogleAnalytics from @next/third-parties uses strategy=
- *     "afterInteractive" internally — gtag.js loads AFTER React
- *     hydration completes, so it doesn't compete with the same
- *     main-thread window we just spent commit 8632da2 defending.
+ *   - gtag.js (via @next/third-parties GoogleAnalytics) defaults to
+ *     "afterInteractive" — i.e. it loads RIGHT AFTER hydration, which
+ *     still overlaps the early-interaction window and showed up in the
+ *     blog INP trace (GSC mobile INP ~240ms, Jun 2026). We therefore
+ *     mount <GoogleAnalytics> only once the main thread goes idle
+ *     (requestIdleCallback, 3s hard cap) so gtag's ~50 KB parse/exec
+ *     stays out of that window. No data loss: the consent script below
+ *     installs the dataLayer stub first, so any pageview/event fired
+ *     before gtag arrives is QUEUED and processed once it loads.
  *
  * Env var:
  *
@@ -111,7 +117,36 @@ import { GoogleAnalytics } from "@next/third-parties/google";
  */
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
+/**
+ * True once the browser is idle (or a 3s hard cap elapses). Used to defer
+ * mounting gtag.js out of the early-interaction window — see the
+ * "Performance / INP" note above. Events fired earlier are safe: the
+ * consent <Script> installs the dataLayer queue stub before this runs.
+ */
+function useIdleMount(): boolean {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    let fired = false;
+    const go = () => {
+      if (fired) return;
+      fired = true;
+      setReady(true);
+    };
+    const ric = (
+      window as typeof window & {
+        requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      }
+    ).requestIdleCallback;
+    if (ric) ric(go, { timeout: 3000 });
+    else window.setTimeout(go, 1800);
+    const cap = window.setTimeout(go, 3000); // hard cap for engines w/o RIC timeout
+    return () => window.clearTimeout(cap);
+  }, []);
+  return ready;
+}
+
 export default function GoogleAnalyticsBeacon() {
+  const ready = useIdleMount();
   if (!GA_ID) return null;
 
   return (
@@ -134,7 +169,8 @@ export default function GoogleAnalyticsBeacon() {
           });
         `}
       </Script>
-      <GoogleAnalytics gaId={GA_ID} />
+      {/* gtag.js mounts only after the main thread goes idle (INP). */}
+      {ready && <GoogleAnalytics gaId={GA_ID} />}
     </>
   );
 }
