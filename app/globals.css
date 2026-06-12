@@ -1087,8 +1087,13 @@ body.no-motion .live-dot { animation: none; }
 
 .page-enter { animation: pageIn .55s var(--ease); }
 @keyframes pageIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: none; }
+  /* Transform-only — NO opacity fade. An opacity:0 start gates the LCP
+     element (the H1 on text-led pages like blog posts) because Chrome
+     can't record a "contentful paint" until the element is visible,
+     adding ~0.3-0.5s to mobile LCP (GSC flagged blog LCP > 4s, Jun 2026).
+     A subtle translateY keeps the entrance motion without hiding text. */
+  from { transform: translateY(8px); }
+  to   { transform: none; }
 }
 body.no-motion .page-enter { animation: none; }
 
