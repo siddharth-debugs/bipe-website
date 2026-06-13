@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-06-12T08:45:25.623Z",
+    "lastUpdated": "2026-06-13T08:00:45.593Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
@@ -11,6 +11,28 @@
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2xKclZIWTNVSEl4VkZWaE1sSnVhbmx4VUdscmNXYxAB",
+      "rating": 5,
+      "text": "\"If you are looking for a college that prioritizes your career, BIPE is a fantastic choice. The placement cell is proactive and brings in top-tier companies. Unlike other institutions, their comprehensive corporate training starts as early as the first year. The coursework is rigorous but practical, focusing heavily on real-world case studies rather than just rote learning. The campus itself is peaceful and green, providing a great environment to focus on studies.\"",
+      "publishTime": "2026-05-21T13:05:10.390803119Z",
+      "relativeTime": "3 weeks ago",
+      "author": {
+        "name": "Poonam srivastava",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLCP4QxdZ6MMKrONgeIu85UPKlmUOIs_Vsac_sQAo4nqe3luA=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2t0M2VqQm9ZeTFEVWxOYVozaE9OVTF4ZGpoa1NrRRAB",
+      "rating": 5,
+      "text": "This is best institute for diploma engineering because there are best lab and qualified teachers and provided best job opportunity in multinational company through campus placement",
+      "publishTime": "2026-05-21T05:26:18.227468976Z",
+      "relativeTime": "3 weeks ago",
+      "author": {
+        "name": "vijay yadav",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKG-G379kIEoi-5gP8-xhAda8wWAEBnbpFWnsPYdkdLTfny6Q=s128-c0x00000000-cc-rp-mo"
+      }
+    },
     {
       "id": "ChZDSUhNMG9nS0VJQ0FnSUNna3FDcGRREAE",
       "rating": 5,
@@ -31,17 +53,6 @@
       "author": {
         "name": "Harsh Rai",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV8tQsuGBzozVz3DSo4WKSeaceG3255RK8JJ-ltKJcZHsfiRY8jNg=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "ChdDSUhNMG9nS0VJQ0FnSURBOUlTSXNBRRAB",
-      "rating": 5,
-      "text": "best polytechnic  collage    100 %campus placement   good faculty   all subject book  available in library.  best workshop   play ground  reading hall & more are available.",
-      "publishTime": "2018-04-26T06:14:46.009Z",
-      "relativeTime": "8 years ago",
-      "author": {
-        "name": "Ankit Mishra",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKnfUHUtMAKkmMBLFQBIvDRm6yeJW_70R2-OqZLR3-_gvaV0w=s128-c0x00000000-cc-rp-mo"
       }
     },
     {
