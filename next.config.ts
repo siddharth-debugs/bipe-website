@@ -51,6 +51,9 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     // without these the CSP silently blocks Clarity from loading.
     "https://www.clarity.ms",
     "https://*.clarity.ms",
+    // Meta Pixel — fbevents.js loader for the MetaPixelBeacon component
+    // (PageView tracking, pixel 1035125302305497). Added 13 Jun 2026.
+    "https://connect.facebook.net",
   ],
 
   // style-src: 'unsafe-inline' required for Next.js's inline-critical
@@ -73,6 +76,9 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     "https://www.google-analytics.com",
     // Microsoft Clarity image beacons.
     "https://*.clarity.ms",
+    // Meta Pixel beacons — the tracking pixel + <noscript> fallback
+    // fire 1x1 GIF GETs to facebook.com/tr. Added 13 Jun 2026.
+    "https://www.facebook.com",
   ],
 
   // font-src: data: needed because some icon fonts inline as data URIs.
@@ -97,6 +103,11 @@ const CSP_DIRECTIVES: Record<string, string[]> = {
     // etc.) + the Bing collector Clarity uses for some signals.
     "https://*.clarity.ms",
     "https://c.bing.com",
+    // Meta Pixel — newer fbevents.js builds send events via fetch to
+    // facebook.com/tr (falling back to the img beacon in img-src).
+    // connect.facebook.net covers the loader's own config fetch.
+    "https://www.facebook.com",
+    "https://connect.facebook.net",
   ],
 
   // frame-ancestors: forbid being iframed by anyone but self.
