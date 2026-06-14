@@ -49,6 +49,7 @@ export default function Page() {
               <li><strong>Hostel &amp; campus data</strong> — emergency contact, medical disclosures (where voluntarily shared), gate-entry logs.</li>
               <li><strong>Website analytics</strong> — page views, device type, referral source. Cookies are limited and disclosed via the cookie banner where applicable.</li>
               <li><strong>Behavioural analytics</strong> — to improve the site we use heatmaps and anonymised session recordings (Microsoft Clarity). The information you type into forms — name, phone number, email, documents — is <strong>masked</strong> and is not captured; recordings show only anonymous interaction (clicks, scrolls, navigation) and page layout. This data is processed by Microsoft as our processor and is used solely to fix usability problems.</li>
+              <li><strong>Advertising measurement (Meta Pixel)</strong> — to understand how our Facebook / Instagram admission ads perform and to show relevant updates to people who have already visited, we use the Meta (Facebook) Pixel. It records standard page-visit events along with your browser / device type and IP-derived approximate location, and shares these with Meta Platforms, who act as an <strong>independent controller</strong> for ad measurement and targeting. The Pixel does <strong>not</strong> capture what you type into forms (name, phone, documents). You can limit this in your Meta ad-preferences settings, or block it through your browser&rsquo;s cookie controls or an ad blocker.</li>
             </ul>
           </article>
 
@@ -109,7 +110,7 @@ export default function Page() {
           <article style={{ paddingTop: 28 }}>
             <h2 className="bipe-h3" style={{ fontSize: 22 }}>Updates to this policy</h2>
             <p style={{ marginTop: 10, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7 }}>
-              This policy is reviewed annually by the Principal&rsquo;s office. The current version is 2026.1 — last reviewed April 2026. Material changes are announced on the homepage and emailed to enrolled students and parents.
+              This policy is reviewed annually by the Principal&rsquo;s office. The current version is 2026.2 — last updated June 2026 (Meta Pixel disclosure added). Material changes are announced on the homepage and emailed to enrolled students and parents.
             </p>
           </article>
         </div>
