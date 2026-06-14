@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { track } from "@/lib/analytics";
+import { trackMetaEvent } from "@/lib/metaEvents";
 
 /**
  * Delegated click tracker for outbound CTAs.
@@ -63,6 +64,7 @@ export default function OutboundTracker() {
           link_url: href,
           link_text: linkText,
         });
+        void trackMetaEvent("Contact", { custom: { channel: "call" } });
         return;
       }
 
@@ -71,6 +73,7 @@ export default function OutboundTracker() {
           link_url: href,
           link_text: linkText,
         });
+        void trackMetaEvent("Contact", { custom: { channel: "whatsapp" } });
         return;
       }
 

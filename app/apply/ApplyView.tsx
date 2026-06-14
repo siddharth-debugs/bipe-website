@@ -9,6 +9,7 @@ import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { Honeypot } from "@/components/shell/Honeypot";
 import { track } from "@/lib/analytics";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import {
   applyFormSchema,
   applyDefaults,
@@ -79,6 +80,13 @@ export function ApplyView() {
         ? `BIPE-${String(json.id).padStart(6, "0")}`
         : "BIPE-PENDING";
       track("apply_submit", { branch: data.branch, ref });
+      // Meta Lead — Pixel + CAPI, deduped via shared event_id. PII passed
+      // for match quality (DPDP/consent posture owner-deferred).
+      void trackMetaEvent("Lead", {
+        email: data.email,
+        phone: data.phone,
+        custom: { form: "apply" },
+      });
       setSubmitStatus({ state: "success", ref });
     } catch {
       setSubmitStatus({

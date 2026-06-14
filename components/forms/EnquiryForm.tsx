@@ -8,6 +8,7 @@ import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { Honeypot } from "@/components/shell/Honeypot";
 import { track } from "@/lib/analytics";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import {
   contactFormSchema,
   contactDefaults,
@@ -155,6 +156,12 @@ export function EnquiryForm({ context = "contact" }: EnquiryFormProps = {}) {
         return;
       }
       track(copy.gtagEvent, { branch: data.branch });
+      // Meta Lead — Pixel + CAPI, deduped. `context` = "contact" | "visit".
+      void trackMetaEvent("Lead", {
+        email: data.email,
+        phone: data.phone,
+        custom: { form: context },
+      });
       setStatus({
         state: "success",
         firstName: data.name.trim().split(/\s+/)[0] || "there",

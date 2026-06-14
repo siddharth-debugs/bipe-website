@@ -6,6 +6,7 @@ import { Honeypot } from "@/components/shell/Honeypot";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { DATA } from "@/lib/data";
 import { track } from "@/lib/analytics";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import { BRANCH_OPTIONS } from "@/lib/formOptions";
 
 /**
@@ -75,6 +76,8 @@ export function EarlyRegistrationForm() {
       }
       const ref = json.id ? `BIPE-ESR-${String(json.id).padStart(5, "0")}` : "BIPE-ESR";
       track("enquiry_submit", { branch: branch || undefined, source: "early-registration" });
+      // Meta Lead — Pixel + CAPI, deduped. ESR collects no email; phone only.
+      void trackMetaEvent("Lead", { phone, custom: { form: "early_registration" } });
       setStatus({ state: "success", ref, name: name.trim().split(" ")[0] });
     } catch {
       setStatus({ state: "error", message: "Network error. Please try again or WhatsApp us." });
