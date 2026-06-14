@@ -6,6 +6,7 @@ import { DATA } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 import { Honeypot } from "@/components/shell/Honeypot";
 import { track } from "@/lib/analytics";
+import { trackMetaEvent } from "@/lib/metaEvents";
 
 type SendState = "idle" | "submitting" | "error";
 
@@ -48,6 +49,11 @@ export const InlineApply = () => {
         branch: form.branch,
         mode: form.mode,
         source: "home-inline",
+      });
+      // Meta Lead — homepage quick-enquiry. No email here; phone only.
+      void trackMetaEvent("Lead", {
+        phone: form.phone.trim() || undefined,
+        custom: { form: "home_inline" },
       });
       setSent(true);
       setSend("idle");

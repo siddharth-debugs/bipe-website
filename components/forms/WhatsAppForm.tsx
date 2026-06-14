@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { BRANCH_OPTIONS } from "@/lib/formOptions";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import { Honeypot } from "@/components/shell/Honeypot";
 import {
   submitWhatsAppHandoff,
@@ -168,6 +169,14 @@ export function WhatsAppForm({
     }
 
     onSuccess?.({ whatsAppUrl: result.whatsAppUrl, name: cleanName });
+
+    // Meta Lead — covers BOTH consumers of this form (the InquiryModal popup
+    // and the WhatsApp FAB). No email collected here; phone only. `source`
+    // labels which surface (e.g. "inquiry-modal" vs the FAB's source).
+    void trackMetaEvent("Lead", {
+      phone: cleanPhone || undefined,
+      custom: { form: source },
+    });
 
     if (openOnSuccess) {
       window.open(result.whatsAppUrl, "_blank", "noopener,noreferrer");
