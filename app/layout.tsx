@@ -458,6 +458,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="preconnect" href="https://va.vercel-scripts.com" />
         <link rel="preconnect" href="https://vitals.vercel-insights.com" />
 
+        {/* Meta (Facebook) App association — fb:app_id ties bipevns.org to the
+            "BIPE Website Integration" app (972609782147968) for Sharing-
+            Debugger validation + App-level domain insights. Must be emitted as
+            property= (not name=), which the Next.js Metadata API can't do, so
+            it's a raw <head> tag here. Added Jun 2026. */}
+        <meta property="fb:app_id" content="972609782147968" />
+
         <script
           type="application/ld+json"
           // dangerouslySetInnerHTML is intentional — schema built from typed sources, no user input.
