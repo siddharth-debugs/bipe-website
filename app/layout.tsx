@@ -374,8 +374,16 @@ export const metadata: Metadata = {
   // verified via DNS TXT on Wix; this <meta> gives a second,
   // code-side verification path so we don't lose GSC access if the
   // DNS record gets edited by mistake.
+  //
+  // facebook-domain-verification (Jun 2026): verifies bipevns.org in Meta
+  // Business Manager — the prerequisite for configuring the Meta Pixel /
+  // ads / catalog against this domain. Emitted via verification.other as
+  // <meta name="facebook-domain-verification" content="…">.
   verification: {
     google: "OZV4dGpmUItyv5MzDzQ7WxFZDyhNja62R_rP1joizYY",
+    other: {
+      "facebook-domain-verification": "ssks90718djt8yzmo4m5lt085ohv7l",
+    },
   },
   openGraph: {
     title: ROUTES.home.title,
