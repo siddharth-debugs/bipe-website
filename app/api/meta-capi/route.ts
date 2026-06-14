@@ -109,6 +109,8 @@ export async function POST(req: Request) {
       console.error("[meta-capi] Meta error:", JSON.stringify(json).slice(0, 400));
       return NextResponse.json({ ok: false }, { status: 502 });
     }
+    // Success log for observability — event name + count only, no PII.
+    console.log(`[meta-capi] ${eventName} ok — events_received=${json.events_received ?? 0}`);
     // Minimal client response — enough to confirm receipt, no sensitive bits.
     return NextResponse.json({ ok: true, events_received: json.events_received ?? 0 });
   } catch (e) {
