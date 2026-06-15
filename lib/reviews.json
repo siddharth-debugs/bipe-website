@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-06-13T08:00:45.593Z",
+    "lastUpdated": "2026-06-15T10:42:46.128Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
@@ -23,6 +23,28 @@
       }
     },
     {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2pSeVZtdHpaWGhpTUU1d2VIQlJVMGxUTnpkS2MyYxAB",
+      "rating": 5,
+      "text": "It is a very good college, studies are very good.",
+      "publishTime": "2026-05-21T06:50:02.806011962Z",
+      "relativeTime": "3 weeks ago",
+      "author": {
+        "name": "ANUP KUMAR",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV2EDtWTYrlsbG8s3x6EjNaNMiNv5yRCcQDCo0TUyejNauvbKk=s128-c0x00000000-cc-rp-mo-ba3"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2xWS1ZEUjVOMUZIWDJFMGFIZHBjVlpXVW1OT2NsRRAB",
+      "rating": 5,
+      "text": "One of the best college in purvanchal(u.p)\nAvailable all facilities here...\nlabirary,play ground,computer lab, all labs\nyou can learn extra activities\n100% placement here...",
+      "publishTime": "2026-05-21T06:40:24.646064855Z",
+      "relativeTime": "3 weeks ago",
+      "author": {
+        "name": "Nauminath Vishwakarma",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVAr0RDVXdo0NJTJFN7j2XYJJBLJEfjWbezLLRc91X-ha1D78FP=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT2t0M2VqQm9ZeTFEVWxOYVozaE9OVTF4ZGpoa1NrRRAB",
       "rating": 5,
       "text": "This is best institute for diploma engineering because there are best lab and qualified teachers and provided best job opportunity in multinational company through campus placement",
@@ -31,28 +53,6 @@
       "author": {
         "name": "vijay yadav",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKG-G379kIEoi-5gP8-xhAda8wWAEBnbpFWnsPYdkdLTfny6Q=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "ChZDSUhNMG9nS0VJQ0FnSUNna3FDcGRREAE",
-      "rating": 5,
-      "text": "Very good college. Each class was extremely productive . The college atmosphere was perfect for studies. The teachers are always ready to help. If you want to do diploma or polytechnic there is no where better to go.",
-      "publishTime": "2018-05-06T10:29:31.171Z",
-      "relativeTime": "8 years ago",
-      "author": {
-        "name": "Aditya Rai",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKl7bwvNXKFBzX-UQ1MWev8anA5xXh_BDExXnCwWau2f9nF-w=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "ChZDSUhNMG9nS0VJQ0FnSUNnZ0w3Vk5nEAE",
-      "rating": 5,
-      "text": "Banaras Institute Of Polytechnic & Engineering is the best Diploma collage in whole varanasi best service provider as like 100% campus placement.\nModern labs, laboratry  workshop nice hostel facility.\nAnd also rule and regulation.",
-      "publishTime": "2018-04-26T08:31:05.931Z",
-      "relativeTime": "8 years ago",
-      "author": {
-        "name": "Harsh Rai",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV8tQsuGBzozVz3DSo4WKSeaceG3255RK8JJ-ltKJcZHsfiRY8jNg=s128-c0x00000000-cc-rp-mo"
       }
     },
     {
