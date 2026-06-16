@@ -557,7 +557,15 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.005em;
-  overflow-x: hidden;
+  /* Suppress horizontal scroll from decorative overflow (hero blur
+     circles etc.) WITHOUT turning <body> into a scroll container.
+     `overflow-x: hidden` would force overflow-y to `auto`, making the
+     body the scroller — which breaks the sticky <nav>'s backdrop-filter
+     in Chromium (the blur silently drops, only the bg colour renders).
+     `overflow-x: clip` clips the same way but creates no scroll
+     container, so the document stays the scroller and the frosted-glass
+     nav blurs correctly. (Fix: Jun 2026 — header backdrop blur.) */
+  overflow-x: clip;
 }
 body.no-motion { --motion-mult: 0; }
 
@@ -841,13 +849,13 @@ body.no-motion .live-dot { animation: none; }
 
 .nav {
   position: sticky; top: 0; z-index: 40;
-  /* Full-bar frosted glass — verified working on the live build with
-     blur(20px) applied directly here. (Earlier we'd moved this to
-     .nav-inner because of a suspected sticky + overflow-x bug; that
-     turned out not to bite in the current Chromium, so the simpler
-     option of putting the filter on the outer element wins — the
-     blur now spans the full viewport width automatically.) */
-  background: rgba(246, 244, 238, 0.68);
+  /* Full-bar frosted glass. backdrop-filter only samples a real
+     backdrop while the *document* (not <body>) is the scroll container
+     — so this depends on `body { overflow-x: clip }` rather than
+     `hidden` (see the body rule above). With `hidden`, body becomes the
+     scroller and Chromium drops the blur on this sticky bar, leaving
+     just the translucent bg. Keep the two rules in sync. */
+  background: rgba(246, 244, 238, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--line);
