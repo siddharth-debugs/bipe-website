@@ -3,6 +3,7 @@ import Link from "next/link";
 import { metadataFor } from "@/lib/seo";
 import { ArrowIcon } from "@/components/shell/Icons";
 import { EarlyRegistrationForm } from "./EarlyRegistrationForm";
+import { RegistrationCountdown } from "./RegistrationCountdown";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metadataFor("earlyRegistration");
@@ -65,6 +66,7 @@ export default function Page() {
           <p lang="hi" style={{ marginTop: 14, maxWidth: "60ch", color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
             JEECUP 2026 दिया है? फ्री में रजिस्टर करें, 7 दिन में campus आएं — आपकी पसंदीदा branch BIPE में reserve, साथ में ₹1,200 PET scholarship।
           </p>
+          <RegistrationCountdown />
           <div className="row" style={{ gap: 12, marginTop: 28, flexWrap: "wrap" }}>
             <Link href="#register" className="btn btn-primary btn-lg">Register free now <ArrowIcon size={16} /></Link>
             <Link href="/visit#book" className="btn btn-ghost btn-lg">See the campus first</Link>
