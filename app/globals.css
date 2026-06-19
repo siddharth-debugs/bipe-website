@@ -796,6 +796,53 @@ body.no-motion .live-dot { animation: none; }
   50% { opacity: 0.4; transform: scale(1.3); }
 }
 
+/* ── JEECUP results-day announcement banner (homepage, app/page.tsx) ───
+   Prominence + gentle motion: a slow gold "sheen" sweeps the band and the
+   primary CTA emits an expanding ring. CSS-only (GPU transform + a single
+   box-shadow on a pseudo-element), gated on reduced-motion + body.no-motion
+   so it never competes with the LCP/INP budget. */
+.jeecup-result-bar { position: relative; overflow: hidden; }
+.jeecup-result-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 32%,
+    color-mix(in oklab, var(--accent) 24%, transparent) 50%,
+    transparent 68%
+  );
+  transform: translateX(-110%);
+  animation: jeecup-sheen 5s ease-in-out infinite;
+}
+.jeecup-result-cta { position: relative; }
+.jeecup-result-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 60%, transparent);
+  animation: jeecup-cta-pulse 2.4s ease-in-out infinite;
+}
+@keyframes jeecup-sheen {
+  0%   { transform: translateX(-110%); }
+  55%  { transform: translateX(110%); }
+  100% { transform: translateX(110%); }
+}
+@keyframes jeecup-cta-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 60%, transparent); }
+  70%  { box-shadow: 0 0 0 8px color-mix(in oklab, var(--accent) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 0%, transparent); }
+}
+body.no-motion .jeecup-result-bar::before,
+body.no-motion .jeecup-result-cta::after { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .jeecup-result-bar::before,
+  .jeecup-result-cta::after { animation: none; }
+}
+
 .adm-strip {
   background:
     radial-gradient(ellipse at 0% 50%, color-mix(in oklab, var(--brand) 28%, var(--ink)) 0%, var(--ink) 55%);

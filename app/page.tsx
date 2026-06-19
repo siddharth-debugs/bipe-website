@@ -117,18 +117,19 @@ export default async function HomePage() {
           + branch + ₹1,200 PET scholarship via /early-registration. */}
       <aside
         aria-label="JEECUP 2026 result announcement"
-        style={{ background: "var(--ink)", color: "var(--paper)", borderTop: "3px solid var(--accent)" }}
+        className="jeecup-result-bar"
+        style={{ background: "var(--ink)", color: "var(--paper)", borderTop: "3px solid var(--accent)", borderBottom: "1px solid color-mix(in oklab, var(--accent) 40%, transparent)" }}
       >
         <div
           className="container"
-          style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 18, padding: "14px 16px", flexWrap: "wrap", textAlign: "center" }}
+          style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 18, padding: "16px", flexWrap: "wrap", textAlign: "center" }}
         >
           <span style={{ display: "inline-flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             <span className="row" style={{ alignItems: "center", gap: 8 }}>
               <span className="live-dot" />
               <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Result Out</span>
             </span>
-            <span style={{ fontWeight: 600, fontSize: 15, lineHeight: 1.4 }}>
+            <span style={{ fontWeight: 700, fontSize: 16, lineHeight: 1.4 }}>
               JEECUP 2026 results are out — lock your branch at BIPE (code 4455) before counselling.
               <span style={{ display: "block", fontWeight: 400, fontSize: 13, opacity: 0.82, marginTop: 2 }}>
                 जेईईसीयूपी 2026 का रिज़ल्ट आ गया है — अपनी सीट और ब्रांच अभी सुरक्षित करें।
@@ -143,8 +144,8 @@ export default async function HomePage() {
             >
               Check your result →
             </Link>
-            <Link href="/early-registration" className="btn btn-primary btn-sm" style={{ whiteSpace: "nowrap" }}>
-              Register free →
+            <Link href="/early-registration" className="btn btn-primary btn-sm jeecup-result-cta" style={{ whiteSpace: "nowrap" }}>
+              Register Now →
             </Link>
           </span>
         </div>
