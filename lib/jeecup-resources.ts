@@ -68,6 +68,14 @@ export interface JeecupResource {
   headlineAccent: string;
   /** Hero lead paragraph */
   lead: string;
+  /** Optional prominent banner pinned to the very top of the hero — for
+   *  time-sensitive states like "result declared". Most pages omit it. */
+  heroAlert?: {
+    badge: string;
+    text: string;
+    primary: { label: string; href: string };
+    secondary?: { label: string; href: string };
+  };
   /** 3-4 stat cards under hero */
   quickStats: ResourceQuickStat[];
   /** Main process steps (5-7 entries) */
@@ -312,7 +320,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     slug: "jeecup-result-2026",
     shortTitle: "JEECUP Result 2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "Check JEECUP 2026 result at jeecup.admissions.nic.in — login, download rank card, understand category rank, plan counselling. Results expected mid-June 2026 (within ~10 days of the 9 June exam).",
+    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, understand your category rank and plan counselling. Appeared in JEECUP 2026? Lock your branch at BIPE (code 4455) with a ₹1,200 PET scholarship.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",
@@ -323,15 +331,21 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       "JEECUP रिजल्ट 2026",
       "JEECUP result kaise check kare",
     ],
-    eyebrow: "JEECUP 2026 · RESULT + RANK CARD",
-    headline: "JEECUP 2026 result —",
-    headlineAccent: "from result page to rank card.",
-    lead: "JEECUP 2026 results are expected mid-June 2026 — within roughly 10 days of the final exam shift on 9 June. The result includes your raw marks, percentile, all-India rank, category rank (if applicable), and a downloadable rank card. This page walks through the check process and explains what each number means for counselling.",
+    eyebrow: "JEECUP 2026 · RESULT IS OUT",
+    headline: "JEECUP 2026 result is out —",
+    headlineAccent: "check your rank card now.",
+    heroAlert: {
+      badge: "Result declared",
+      text: "JEECUP 2026 results are out. Check your rank on the official portal, then lock your branch at BIPE (code 4455) with a ₹1,200 PET scholarship.",
+      primary: { label: "Check on JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
+      secondary: { label: "Lock seat + ₹1,200 →", href: "/early-registration" },
+    },
+    lead: "JEECUP 2026 results are out. Log in at jeecup.admissions.nic.in to see your raw marks, percentile, all-India rank, category rank (if applicable), and to download your rank card. This page walks through the check process and explains what each number means for counselling — and how to reserve your branch at BIPE while the counselling rounds run.",
     quickStats: [
-      { label: "Expected", value: "Mid-June 2026", sub: "~10 days post-exam" },
+      { label: "Status", value: "Result declared", sub: "Out now — check the portal" },
       { label: "Where", value: "jeecup.admissions.nic.in", sub: "Result tab" },
       { label: "What you get", value: "Marks · Rank · Card", sub: "Downloadable PDF" },
-      { label: "Counselling opens", value: "Late June 2026", sub: "7 rounds through August" },
+      { label: "Counselling", value: "Begins shortly", sub: "7 rounds through August" },
     ],
     steps: [
       {

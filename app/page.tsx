@@ -111,28 +111,44 @@ export default async function HomePage() {
       */}
       <HeroFull />
 
-      {/* JEECUP 2026 · Early Seat Registration — campaign entry point
-          (added Jun 2026). Slim strip under the hero linking to the
-          /early-registration funnel. */}
-      <Link
-        href="/early-registration"
-        aria-label="Early Seat Registration for JEECUP 2026 — register free"
-        style={{
-          display: "block",
-          background: "color-mix(in oklab, var(--accent) 16%, var(--paper))",
-          borderBottom: "1px solid color-mix(in oklab, var(--accent) 42%, var(--line))",
-          textDecoration: "none",
-          color: "var(--ink)",
-        }}
+      {/* JEECUP 2026 · RESULT OUT — results-day announcement (15 Jun 2026,
+          replacing the generic early-reg strip). Two actions: check the result
+          (our /jeecup-result-2026 explainer → official portal) and lock a seat
+          + branch + ₹1,200 PET scholarship via /early-registration. */}
+      <aside
+        aria-label="JEECUP 2026 result announcement"
+        style={{ background: "var(--ink)", color: "var(--paper)", borderTop: "3px solid var(--accent)" }}
       >
-        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, padding: "12px 16px", flexWrap: "wrap", textAlign: "center" }}>
-          <span className="eyebrow" style={{ color: "var(--brand)", whiteSpace: "nowrap", margin: 0 }}>JEECUP 2026 · New</span>
-          <span style={{ fontWeight: 600, fontSize: 14.5 }}>
-            Early Seat Registration is open — reserve your branch + a ₹1,200 PET scholarship.
+        <div
+          className="container"
+          style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 18, padding: "14px 16px", flexWrap: "wrap", textAlign: "center" }}
+        >
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+            <span className="row" style={{ alignItems: "center", gap: 8 }}>
+              <span className="live-dot" />
+              <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Result Out</span>
+            </span>
+            <span style={{ fontWeight: 600, fontSize: 15, lineHeight: 1.4 }}>
+              JEECUP 2026 results are out — lock your branch at BIPE (code 4455) + a ₹1,200 PET scholarship.
+              <span style={{ display: "block", fontWeight: 400, fontSize: 13, opacity: 0.82, marginTop: 2 }}>
+                जेईईसीयूपी 2026 का रिज़ल्ट आ गया है — अपनी सीट और ब्रांच अभी सुरक्षित करें।
+              </span>
+            </span>
           </span>
-          <span className="btn btn-primary btn-sm" style={{ whiteSpace: "nowrap" }}>Register free →</span>
+          <span className="row" style={{ gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
+            <Link
+              href="/jeecup-result-2026"
+              className="btn btn-sm"
+              style={{ background: "color-mix(in oklab, var(--paper) 16%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 30%, transparent)", whiteSpace: "nowrap" }}
+            >
+              Check your result →
+            </Link>
+            <Link href="/early-registration" className="btn btn-primary btn-sm" style={{ whiteSpace: "nowrap" }}>
+              Lock seat + ₹1,200 →
+            </Link>
+          </span>
         </div>
-      </Link>
+      </aside>
       {/*
         StatsBar is no longer wired to the backend PageSection.
         Reason 28 May 2026: the Django admin had stale stats

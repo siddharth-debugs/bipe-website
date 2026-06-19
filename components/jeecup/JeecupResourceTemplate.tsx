@@ -157,6 +157,68 @@ export default function JeecupResourceTemplate({
         />
 
         <div className="container" style={{ position: "relative" }}>
+          {data.heroAlert ? (
+            <div
+              role="status"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 16,
+                flexWrap: "wrap",
+                padding: "16px 20px",
+                marginBottom: 28,
+                borderRadius: 16,
+                background: "var(--ink)",
+                color: "var(--paper)",
+                border: "1px solid color-mix(in oklab, var(--accent) 55%, transparent)",
+              }}
+            >
+              <span className="row" style={{ alignItems: "center", gap: 8, flexShrink: 0 }}>
+                <span className="live-dot" />
+                <span
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 10,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "var(--accent)",
+                    fontWeight: 600,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {data.heroAlert.badge}
+                </span>
+              </span>
+              <span style={{ flex: 1, minWidth: 220, fontSize: 14.5, lineHeight: 1.5 }}>
+                {data.heroAlert.text}
+              </span>
+              <span className="row" style={{ gap: 10, flexWrap: "wrap" }}>
+                <a
+                  href={data.heroAlert.primary.href}
+                  target={data.heroAlert.primary.href.startsWith("http") ? "_blank" : undefined}
+                  rel={data.heroAlert.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="btn btn-primary btn-sm"
+                  style={{ whiteSpace: "nowrap" }}
+                >
+                  {data.heroAlert.primary.label}
+                </a>
+                {data.heroAlert.secondary ? (
+                  <Link
+                    href={data.heroAlert.secondary.href}
+                    className="btn btn-sm"
+                    style={{
+                      background: "color-mix(in oklab, var(--paper) 16%, transparent)",
+                      color: "var(--paper)",
+                      border: "1px solid color-mix(in oklab, var(--paper) 30%, transparent)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {data.heroAlert.secondary.label}
+                  </Link>
+                ) : null}
+              </span>
+            </div>
+          ) : null}
           <div className="eyebrow">{data.eyebrow}</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "26ch" }}>
             {data.headline}{" "}

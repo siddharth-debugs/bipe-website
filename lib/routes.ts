@@ -770,7 +770,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupResult: {
     path: "/jeecup-result-2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "Check JEECUP 2026 result at jeecup.admissions.nic.in — login, download rank card, understand category rank, plan counselling. Results expected mid-June 2026.",
+    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, plan counselling. Appeared in JEECUP 2026? Lock your branch at BIPE (code 4455) with a ₹1,200 PET scholarship.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",

@@ -33,7 +33,7 @@ export const Countdown = () => {
               <span className="eyebrow" style={{ color: "var(--brand)" }}>Counselling Live</span>
             </div>
             <h2 className="bipe-h2">Classes begin <span className="serif">15 July, 2026.</span></h2>
-            <p className="lead" style={{ marginTop: 14 }}>JEECUP exam window 02–09 June 2026. Counselling opens after results (mid-June). Seat allotment is rank-based — apply early, and check our visit slots before they fill.</p>
+            <p className="lead" style={{ marginTop: 14 }}>JEECUP 2026 results are out — counselling begins shortly. Seat allotment is rank-based, so reserve your branch early and check our visit slots before they fill.</p>
             <div className="row" style={{ marginTop: 22, flexWrap: "wrap" }}>
               <Link href="/apply" className="btn btn-primary">Apply now <ArrowIcon /></Link>
               <Link href="/jeecup" className="btn btn-ghost">JEECUP guide</Link>

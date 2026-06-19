@@ -30,7 +30,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "04",
     title: "Get your rank card",
-    body: "Results are expected mid-June 2026 (within ~10 days of the last exam shift on 9 June). Save the rank card — it is the single document that decides everything that follows in counselling.",
+    body: "JEECUP 2026 results are out — log in at jeecup.admissions.nic.in and download your rank card. Save it: the rank card is the single document that decides everything that follows in counselling.",
   },
   {
     n: "05",
