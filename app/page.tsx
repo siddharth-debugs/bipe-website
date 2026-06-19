@@ -129,7 +129,7 @@ export default async function HomePage() {
               <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Result Out</span>
             </span>
             <span style={{ fontWeight: 600, fontSize: 15, lineHeight: 1.4 }}>
-              JEECUP 2026 results are out — lock your branch at BIPE (code 4455) + a ₹1,200 PET scholarship.
+              JEECUP 2026 results are out — lock your branch at BIPE (code 4455) before counselling.
               <span style={{ display: "block", fontWeight: 400, fontSize: 13, opacity: 0.82, marginTop: 2 }}>
                 जेईईसीयूपी 2026 का रिज़ल्ट आ गया है — अपनी सीट और ब्रांच अभी सुरक्षित करें।
               </span>
@@ -144,7 +144,7 @@ export default async function HomePage() {
               Check your result →
             </Link>
             <Link href="/early-registration" className="btn btn-primary btn-sm" style={{ whiteSpace: "nowrap" }}>
-              Lock seat + ₹1,200 →
+              Register free →
             </Link>
           </span>
         </div>
