@@ -78,6 +78,18 @@ export interface JeecupResource {
   };
   /** 3-4 stat cards under hero */
   quickStats: ResourceQuickStat[];
+  /** Optional data tables (e.g. rank-band → outcome, real cutoffs). Rendered
+   *  as styled, horizontally-scrollable tables after the quick-stats. Most
+   *  pages omit this. */
+  tables?: {
+    eyebrow: string;
+    heading: string;
+    intro?: string;
+    columns: string[];
+    rows: string[][];
+    note?: string;
+    noteLink?: { label: string; href: string };
+  }[];
   /** Main process steps (5-7 entries) */
   steps: ResourceStep[];
   /** Optional checklist block (rendered as bullet list) */
@@ -407,6 +419,127 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     ],
     ctaTitle: "Got your JEECUP rank?",
     ctaBody: "Talk to BIPE before you fill choices. We'll review your rank, your preferred branch, your home district and give you an honest read on whether government or BIPE fits best — and how to order your choices to maximise the right outcome.",
+  },
+
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: "jeecup-rank-predictor-2026",
+    shortTitle: "JEECUP Rank Predictor 2026",
+    title: "JEECUP Rank Predictor 2026 · What Your Rank Opens + BIPE Cutoffs | 4455",
+    description: "JEECUP 2026 rank guide — what each rank band realistically opens, and BIPE 4455's actual filed closing ranks by branch. Honest rank reading — no fake marks-to-rank calculator.",
+    keywords: [
+      "JEECUP rank predictor",
+      "JEECUP rank predictor 2026",
+      "JEECUP rank wise college",
+      "JEECUP marks vs rank",
+      "JEECUP college predictor",
+      "JEECUP rank for BIPE",
+      "JEECUP rank list 2026",
+      "JEECUP rank kitni honi chahiye",
+    ],
+    eyebrow: "JEECUP 2026 · RANK PREDICTOR",
+    headline: "JEECUP 2026 rank predictor —",
+    headlineAccent: "what your rank actually opens.",
+    heroAlert: {
+      badge: "Result declared",
+      text: "JEECUP 2026 results are out. See what your rank realistically opens — then lock your branch at BIPE (code 4455).",
+      primary: { label: "Check your rank card →", href: "https://jeecup.admissions.nic.in" },
+      secondary: { label: "Lock seat + ₹1,200 →", href: "/early-registration" },
+    },
+    lead: "There is no honest way to convert raw marks into an exact JEECUP rank — your rank depends on each year's normalisation (how many candidates sat the exam and how hard the paper was). What we CAN show you, from BIPE's actual filed admission rank lists, is the part that matters: what each rank band realistically opens, and the real closing ranks for every branch at BIPE 4455. Use it to read your rank card — not to guess a number off a calculator.",
+    quickStats: [
+      { label: "Your real rank", value: "On the rank card", sub: "jeecup.admissions.nic.in" },
+      { label: "BIPE Group A closes", value: "~1,69,000", sub: "2025-26 · CSE, the toughest" },
+      { label: "Real shot under", value: "1,30,000", sub: "every branch in range" },
+      { label: "Pick by interest", value: "Under 50,000", sub: "not rank-constrained" },
+    ],
+    tables: [
+      {
+        eyebrow: "Rank-wise outcome",
+        heading: "Your Group A rank → what opens",
+        intro: "Indicative bands for the 2026 cycle, based on Eastern UP government closing ranks and BIPE's filed cutoffs. Government cutoffs vary by district, branch and category — treat these as direction, not a guarantee.",
+        columns: ["Your Group A All-India rank", "What typically opens", "BIPE 4455"],
+        rows: [
+          ["Under 5,000", "Top-tier government polytechnics (Lucknow / Kanpur band)", "Any branch — well inside"],
+          ["5,000 – 20,000", "Eastern UP government polytechnics (Jaunpur ~16k, Mirzapur band)", "Any branch — comfortable"],
+          ["20,000 – 50,000", "Mixed government availability; popular branches tighten", "Any branch — pick by interest"],
+          ["50,000 – 1,00,000", "Government seats thin out in popular branches", "Real margin, even in later rounds"],
+          ["1,00,000 – 1,30,000", "Government options narrow sharply", "Strong chance at every branch"],
+          ["1,30,000 – 1,69,000", "Few government seats left", "Still in range — apply early, rounds matter"],
+        ],
+        note: "Bands are All-India Group A ranks. Reserved-category (SC/ST/OBC/EWS) ranks open seats at higher numbers, so your effective reach is wider. WhatsApp your exact rank to +91-7310077788 for a branch-by-branch read.",
+      },
+      {
+        eyebrow: "Real cutoffs · not projections",
+        heading: "BIPE 4455 real closing ranks",
+        intro: "Actual closing ranks from BIPE's Student Admission Rank Lists as filed with JEECUP (Group A · regular) — admitted students, not marketing math. Ranks rose from 2024-25 to 2025-26 as UP's candidate pool grew.",
+        columns: ["Branch (BTEUP code)", "2024-25 closing", "2025-26 closing"],
+        rows: [
+          ["Computer Science & Engg (118)", "1,48,127", "1,68,929"],
+          ["Mechanical · Production (113)", "1,58,221", "1,68,298"],
+          ["Electrical Engineering (105)", "1,57,754", "1,66,491"],
+          ["Civil Engineering (102)", "1,57,313", "1,66,030"],
+          ["Dairy Engineering (123)", "— (new branch)", "1,47,826"],
+        ],
+        note: "Lateral entry (Group K) closes far tighter — roughly 1,750–2,850 in recent years. Full branch + lateral breakdown with admission counts:",
+        noteLink: { label: "See the JEECUP rank-list analysis", href: "/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025" },
+      },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Get your rank from the rank card — not a calculator",
+        body: "Log in at jeecup.admissions.nic.in and download your rank card. It shows your All-India rank and (if applicable) your category rank. That is your real, official rank — no third-party 'predictor' is more accurate than the rank card itself.",
+      },
+      {
+        n: "02",
+        title: "Use your All-India Group A rank",
+        body: "Read the All-India Group A rank against the bands above. If you have a category rank (SC/ST/OBC/EWS), remember reserved seats open at higher rank numbers — your effective reach is wider than the General band suggests.",
+      },
+      {
+        n: "03",
+        title: "Match your rank to what opens",
+        body: "Find your band. Below ~50,000 you can choose by interest. Between 50,000 and ~1,30,000 you have real margin at BIPE across branches. Up to ~1,69,000 you are still in range — but apply early, because branch availability tightens in the later counselling rounds.",
+      },
+      {
+        n: "04",
+        title: "Shortlist branches before choice-filling opens",
+        body: "Don't wait for the window to decide. Make a ranked branch list now, and add BIPE (code 4455) against every branch you'd accept — many applicants list 4455 for all five branches so a lower rank still lands a seat. See our 7-round counselling guide at /jeecup-counselling for the ordering strategy.",
+      },
+      {
+        n: "05",
+        title: "Lock your seat early",
+        body: "Early Seat Registration reserves your preferred branch at BIPE while the counselling rounds run (and holds a ₹1,200 PET scholarship). It complements JEECUP counselling — you still fill 4455 in the official rounds. Register free, then visit campus within 7 days to confirm.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is there a JEECUP marks vs rank formula?",
+        a: "No reliable one. JEECUP doesn't publish a fixed marks-to-rank table, because rank depends on each year's normalisation — the number of candidates and the difficulty of the paper both move it. Any site claiming an exact 'marks to rank' conversion is guessing. The only accurate rank is the one on your official rank card.",
+      },
+      {
+        q: "What rank do I need for BIPE?",
+        a: "In 2025-26 every Group A branch at BIPE 4455 closed between roughly 1,47,000 and 1,69,000. So if your Group A All-India rank is under ~1,30,000 you have a real shot at any branch; under ~1,00,000 you have margin even in later rounds; under 50,000 you can choose purely by interest. Lateral entry (Group K) is far tighter — roughly 1,750–2,850.",
+      },
+      {
+        q: "What rank do I need for Computer Science at BIPE?",
+        a: "CSE (BTEUP 118) is BIPE's most competitive branch and still closed at rank 1,68,929 in 2025-26 (up from 1,48,127 the year before). A Group A rank under ~1,40,000 gives a comfortable shot at CSE; closer to the closing rank, secure it in an early counselling round rather than waiting.",
+      },
+      {
+        q: "My rank is above 1,50,000 — do I still have options?",
+        a: "Yes. BIPE's 2025-26 closing ranks ran up to ~1,69,000, so ranks in the 1,50,000s were admitted last cycle. Apply early and keep BIPE 4455 in your choice list across rounds. WhatsApp +91-7310077788 with your rank and we'll give you an honest, branch-by-branch read.",
+      },
+      {
+        q: "Are these the official cutoffs?",
+        a: "These are BIPE's actual filed Student Admission Rank Lists (real admitted students for 2024-25 and 2025-26), not projections. JEECUP itself doesn't publish a single 'cutoff' before counselling — closing ranks are only known after each round. Use these as a realistic guide; your final allotment depends on the live counselling rounds.",
+      },
+      {
+        q: "Rank kitni honi chahiye BIPE ke liye?",
+        a: "Group A me agar aapki All-India rank 1,30,000 se kam hai to BIPE ki kisi bhi branch me achhi chance hai; 1,00,000 se kam hai to baad ke rounds me bhi margin hai; 50,000 se kam hai to apni pasand ki branch chun sakte hain. 2025-26 me sabhi branches 1,47,000–1,69,000 ke beech band hui thi. Apni exact rank +91-7310077788 par WhatsApp karein.",
+      },
+    ],
+    ctaTitle: "Know your rank — now place it right.",
+    ctaBody: "Send us your JEECUP rank and we'll tell you, honestly, which branches are realistic at BIPE and how to order your counselling choices to land one. Free, in English or Hindi — and we'll hold your preferred branch with Early Seat Registration while the rounds run.",
   },
 
   // ─────────────────────────────────────────────────────────────────

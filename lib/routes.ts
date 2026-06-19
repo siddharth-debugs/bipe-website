@@ -27,7 +27,7 @@ export type RouteKey =
   | "jeecupRegistration" | "jeecupAdmitCard" | "jeecupResult"
   | "jeecupSeatAllotment" | "jeecupDocumentVerification" | "jeecupHelpline"
   | "jeecupSyllabus" | "jeecupPreviousPapers" | "jeecupEligibility"
-  | "jeecupExamPattern" | "jeecupAfterResults"
+  | "jeecupExamPattern" | "jeecupAfterResults" | "jeecupRankPredictor"
   | "bteupFamilyId" | "bteupAdmitCard" | "bteupExamDates"
   | "bteupResult" | "bteupFees" | "bteupRegistration"
   | "bteupSyllabus" | "bteupBackPaper" | "bteupGrading"
@@ -779,6 +779,21 @@ export const ROUTES: Record<RouteKey, {
       "JEECUP merit list",
       "JEECUP रिजल्ट 2026",
       "JEECUP result kaise check kare",
+    ],
+  },
+  jeecupRankPredictor: {
+    path: "/jeecup-rank-predictor-2026",
+    title: "JEECUP Rank Predictor 2026 · What Your Rank Opens + BIPE Cutoffs | 4455",
+    description: "JEECUP 2026 rank guide — what each rank band realistically opens, and BIPE 4455's actual filed closing ranks by branch (CSE closed 1,68,929 · Mechanical · Electrical · Civil · Dairy). Honest rank reading — no fake marks-to-rank calculator.",
+    keywords: [
+      "JEECUP rank predictor",
+      "JEECUP rank predictor 2026",
+      "JEECUP rank wise college",
+      "JEECUP marks vs rank",
+      "JEECUP college predictor",
+      "JEECUP rank for BIPE",
+      "JEECUP rank list 2026",
+      "JEECUP rank kitni honi chahiye",
     ],
   },
   jeecupSeatAllotment: {

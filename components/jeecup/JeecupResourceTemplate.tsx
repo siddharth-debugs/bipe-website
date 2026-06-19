@@ -326,6 +326,120 @@ export default function JeecupResourceTemplate({
       </section>
 
       {/* ====================================================================== */}
+      {/* 2b. DATA TABLES (optional) — rank bands, real cutoffs, etc.             */}
+      {/* ====================================================================== */}
+      {data.tables?.length ? (
+        <section className="section">
+          <div className="container">
+            {data.tables.map((t, ti) => (
+              <div key={t.heading} style={{ marginTop: ti === 0 ? 0 : 52 }}>
+                <div className="eyebrow">{t.eyebrow}</div>
+                <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "30ch" }}>
+                  {t.heading.split(" ").slice(0, -2).join(" ")}{" "}
+                  <span
+                    className="serif"
+                    style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
+                  >
+                    {t.heading.split(" ").slice(-2).join(" ")}
+                  </span>
+                </h2>
+                {t.intro ? (
+                  <p style={{ marginTop: 16, color: "var(--ink-2)", maxWidth: "74ch", lineHeight: 1.7 }}>
+                    {t.intro}
+                  </p>
+                ) : null}
+                <div
+                  style={{
+                    marginTop: 24,
+                    overflowX: "auto",
+                    border: "1px solid var(--line)",
+                    borderRadius: 14,
+                  }}
+                >
+                  <table
+                    style={{
+                      width: "100%",
+                      borderCollapse: "collapse",
+                      fontSize: 14.5,
+                    }}
+                  >
+                    <thead>
+                      <tr>
+                        {t.columns.map((c) => (
+                          <th
+                            key={c}
+                            style={{
+                              textAlign: "left",
+                              padding: "13px 18px",
+                              background: "var(--paper-2)",
+                              color: "var(--ink-1)",
+                              fontWeight: 600,
+                              borderBottom: "1px solid var(--line)",
+                            }}
+                          >
+                            {c}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {t.rows.map((row, ri) => (
+                        <tr key={ri}>
+                          {row.map((cell, ci) => (
+                            <td
+                              key={ci}
+                              style={{
+                                padding: "13px 18px",
+                                borderBottom:
+                                  ri === t.rows.length - 1 ? "none" : "1px solid var(--line)",
+                                color: ci === 0 ? "var(--ink-1)" : "var(--ink-2)",
+                                fontWeight: ci === 0 ? 600 : 400,
+                                lineHeight: 1.5,
+                                verticalAlign: "top",
+                              }}
+                            >
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {t.note || t.noteLink ? (
+                  <p
+                    style={{
+                      marginTop: 14,
+                      color: "var(--ink-3)",
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      maxWidth: "74ch",
+                    }}
+                  >
+                    {t.note}
+                    {t.note && t.noteLink ? " " : ""}
+                    {t.noteLink ? (
+                      <Link
+                        href={t.noteLink.href}
+                        style={{
+                          color: "var(--brand)",
+                          fontWeight: 600,
+                          textDecoration: "none",
+                          borderBottom: "1px solid var(--brand)",
+                        }}
+                      >
+                        {t.noteLink.label} →
+                      </Link>
+                    ) : null}
+                  </p>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* ====================================================================== */}
       {/* 3. PROCESS STEPS                                                        */}
       {/* ====================================================================== */}
       <section className="section">

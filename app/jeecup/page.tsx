@@ -530,6 +530,7 @@ export default function Page() {
               ["JEECUP Registration 2026", "Form, fee, documents, errors", "/jeecup-registration-2026"],
               ["JEECUP Admit Card 2026", "Download · verify · troubleshoot", "/jeecup-admit-card-2026"],
               ["JEECUP Result 2026", "Rank card · what to do next", "/jeecup-result-2026"],
+              ["JEECUP Rank Predictor 2026", "What your rank opens · real cutoffs", "/jeecup-rank-predictor-2026"],
               ["JEECUP Seat Allotment 2026", "7-round cycle · freeze / float", "/jeecup-seat-allotment-2026"],
               ["Document Verification Checklist", "Originals · copies · timeline", "/jeecup-document-verification-checklist"],
               ["JEECUP Helpline Contact", "Official channels · BIPE support", "/jeecup-helpline-contact"],
