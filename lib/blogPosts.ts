@@ -328,6 +328,132 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   // ─────────────────────────────────────────────────────────────────
+  // Jun 2026 · Natural Hinglish · branch-selection decision query
+  // Target: "polytechnic me kaun si branch best hai" / "polytechnic best
+  // branch". Gap: only a 2-way Mechanical-vs-CSE post existed; this compares
+  // all 5 BIPE branches and links each to its /courses page (hub post).
+  {
+    slug: "polytechnic-me-kaun-si-branch-best-hai-2026",
+    lang: "hi-IN",
+    title: "Polytechnic में कौन सी Branch सबसे अच्छी है? — सभी 5 branches की honest तुलना (2026)",
+    category: "Guide · Hindi",
+    date: "20 June 2026",
+    publishedISO: "2026-06-20",
+    readTime: "11 min read",
+    excerpt:
+      "Mechanical, Electrical, Civil, Computer Science, या Dairy — Polytechnic में कौन सी branch चुनें? हर branch की scope, naukri, और किसके लिए सही है — Eastern UP / Bihar के students के लिए एक honest हिन्दी गाइड।",
+    metaTitle: "Polytechnic की कौन सी Branch सबसे अच्छी है? · 2026",
+    metaDescription:
+      "Mechanical, Electrical, Civil, CSE या Dairy — Polytechnic में कौन सी branch best है? हर branch की naukri scope और किसके लिए सही — एक honest हिन्दी comparison (BIPE 4455)।",
+    sections: [
+      {
+        type: "callout",
+        title: "इस गाइड में क्या है",
+        html:
+          "<p style=\"margin: 0;\">Polytechnic में admission तो मिल गया — पर branch कौन सी चुनें? यह फ़ैसला आपके अगले 3 साल और career की दिशा तय करता है। यह गाइड BIPE की पाँचों branches — Mechanical, Electrical, Civil, Computer Science, और Dairy — की honest तुलना करती है: हर एक में क्या पढ़ते हैं, naukri का scope कैसा है, और किस student के लिए कौन सी सही है।</p>",
+      },
+      { type: "h2", text: "पहले एक सच — कोई एक 'best' branch नहीं होती" },
+      {
+        type: "p",
+        html:
+          "हर साल students पूछते हैं — '<em>सबसे अच्छी branch कौन सी है?</em>' सच यह है कि <strong>कोई universal best branch नहीं होती</strong>। जो branch आपके interest और स्वभाव से match करती है, और जिसमें आप मन लगाकर पढ़ेंगे — वही आपके लिए best है। trend में चल रही एक branch, जिसमें आपका मन नहीं लगता, आपको पीछे ही ले जाएगी। नीचे हर branch को practically समझें ताकि आप अपना सही match चुन सकें।",
+      },
+      { type: "h2", text: "BIPE की 5 branches — एक नज़र में" },
+      {
+        type: "table",
+        caption: "पाँचों branches का मोटा खाका। नीचे हर एक detail में।",
+        headers: ["Branch", "किस तरह का काम", "मुख्य naukri scope"],
+        rows: [
+          ["Mechanical (Production)", "Machines, manufacturing, design", "Automobile, steel, manufacturing + JE posts"],
+          ["Electrical", "Power, wiring, motors, grid", "UPPCL, Railways, Metro + सबसे ज़्यादा सरकारी JE भर्तियाँ"],
+          ["Civil", "Construction, roads, buildings", "Infrastructure, Smart Cities, site engineer + JE"],
+          ["Computer Science", "Software, IT, computers", "IT companies, software, government IT cadres"],
+          ["Dairy", "Milk processing, food tech", "Amul, Mother Dairy, NDDB — rare branch, कम competition"],
+        ],
+      },
+      { type: "h2", text: "हर branch — detail में" },
+      { type: "h3", text: "Mechanical Engineering (Production)" },
+      {
+        type: "p",
+        html:
+          "BIPE की सबसे बड़ी और सबसे versatile branch — machines, manufacturing, automobile, और production का काम। <strong>Mahindra, Tata Steel, JCB, Motherson</strong> जैसी companies regularly hire करती हैं। अगर आपको machines और हाथ से काम पसंद है, और एक broad, safe career चाहिए — Mechanical strong choice है। <a href=\"/courses/mechanical-engineering-production\">Branch detail देखें</a>।",
+      },
+      { type: "h3", text: "Electrical Engineering" },
+      {
+        type: "p",
+        html:
+          "सरकारी नौकरी के लिए सबसे मज़बूत branch — power systems, motors, wiring, grid। <strong>RRB JE, SSC JE, UPPCL</strong> जैसी Junior Engineer भर्तियाँ Electrical diploma holders के लिए सबसे ज़्यादा खुलती हैं — Indian Railways और Mumbai Metro तक। अगर सरकारी JE नौकरी आपका goal है, Electrical देखें — <a href=\"/courses/electrical-engineering\">Branch detail</a>।",
+      },
+      { type: "h3", text: "Civil Engineering" },
+      {
+        type: "p",
+        html:
+          "Construction, roads, buildings, और infrastructure का काम। India में Smart Cities, Bharatmala, और Varanasi में Kashi corridor जैसे बड़े projects चल रहे हैं — site engineer और JE roles की demand है। बनाना, plan करना और field का काम पसंद हो — Civil — <a href=\"/courses/civil-engineering\">Branch detail</a>।",
+      },
+      { type: "h3", text: "Computer Science & Engineering" },
+      {
+        type: "p",
+        html:
+          "Software, IT, और computers का future-proof रास्ता — IT companies, software development, और government IT cadres में scope। तेज़ी से बढ़ती field; coding और computers में interest है तो CSE सबसे demand वाली modern branch है — <a href=\"/courses/computer-science-engineering\">Branch detail</a>।",
+      },
+      { type: "h3", text: "Dairy Engineering" },
+      {
+        type: "p",
+        html:
+          "BIPE की rare और unique branch — पूरे UP में सिर्फ़ ~4 BTEUP-affiliated dairy diploma programmes हैं। Milk processing और food technology का काम; <strong>Amul, Mother Dairy, Parag, NDDB</strong> का pipeline। कम competition + एक specialized career — <a href=\"/courses/dairy-engineering\">Branch detail</a> और <a href=\"/blog/dairy-engineering-course-up-rare-branch\">Dairy क्यों एक छुपा मौका है</a>।",
+      },
+      {
+        type: "cta",
+        title: "अपनी branch पर honest guidance चाहिए?",
+        body: "अपना interest और (अगर है तो) JEECUP rank हमें बताएँ — BIPE की admission team हिन्दी में बताएगी कि कौन सी branch आपके लिए realistic और सही है। code 4455, 5 branches, AFRC fee ₹30,150/साल।",
+        applyLabel: "Enquiry करें",
+        waLabel: "WhatsApp पर पूछें",
+        whatsappText: "Hi BIPE — polytechnic branch chunne mein guidance chahiye.",
+      },
+      { type: "h2", text: "कौन सी branch आपके लिए? (decision guide)" },
+      {
+        type: "ul",
+        items: [
+          "<strong>सरकारी JE नौकरी चाहिए (Railways / SSC / UPPCL):</strong> Electrical या Civil — इनमें JE भर्तियाँ सबसे ज़्यादा।",
+          "<strong>Broad, safe, manufacturing career:</strong> Mechanical — सबसे versatile, हर industry में काम।",
+          "<strong>Computers / coding में interest, future-proof:</strong> Computer Science।",
+          "<strong>कम competition + specialized niche:</strong> Dairy Engineering।",
+          "<strong>दुविधा Mechanical या CSE में?</strong> <a href=\"/blog/mechanical-ya-computer-science-kaunsi-branch-chunein\">यह deep comparison पढ़ें</a>।",
+        ],
+      },
+      { type: "h2", text: "अक्सर पूछे जाने वाले सवाल (FAQ)" },
+      { type: "h3", text: "सबसे ज़्यादा सरकारी नौकरी किस branch में मिलती है?" },
+      {
+        type: "p",
+        html:
+          "<strong>Electrical और Civil</strong> में Junior Engineer (JE) की सरकारी भर्तियाँ सबसे ज़्यादा खुलती हैं — RRB JE, SSC JE, UPPCL, राज्य PWD। Mechanical भी अच्छी है। पूरा exam pipeline — <a href=\"/blog/government-jobs-after-polytechnic-diploma-2026\">सरकारी नौकरियाँ after polytechnic</a>।",
+      },
+      { type: "h3", text: "Computer Science या Mechanical — कौन बेहतर?" },
+      {
+        type: "p",
+        html:
+          "depends on interest. Mechanical broad + manufacturing/JE-heavy; CSE modern + IT-focused + future-proof। दोनों की detail तुलना — <a href=\"/blog/mechanical-ya-computer-science-kaunsi-branch-chunein\">Mechanical ya Computer Science</a>।",
+      },
+      { type: "h3", text: "सबसे आसान branch कौन सी है?" },
+      {
+        type: "p",
+        html:
+          "'आसान' branch की तलाश सही approach नहीं — जिसमें आपका interest है, वही आपको आसान लगेगी और उसी में आप अच्छा करेंगे। हर branch की मेहनत अलग तरह की है, मात्रा नहीं।",
+      },
+      { type: "h3", text: "क्या admission के बाद branch बदल सकते हैं?" },
+      {
+        type: "p",
+        html:
+          "Admission के बाद branch बदलना मुश्किल है — counselling में जो allotted होती है वही चलती है। इसलिए <strong>choice-filling के समय</strong> branches को सोच-समझकर priority order में रखें। BIPE के पाँचों branches के लिए institute code <strong>4455</strong> ही है।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>आख़िर में —</strong> सही branch वो है जो आपके interest, strength और career goal से match करे, trend से नहीं। BIPE की पाँचों branches एक जगह देखें — <a href=\"/courses\">Courses</a> — या <a href=\"/apply\">admission enquiry</a> करें, हम हिन्दी में guide करेंगे।",
+      },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────
   // Phase B Post 5 · May 2026 · Natural Hinglish
   // Target keyword: डेयरी इंजीनियरिंग कोर्स (~590/mo)
   // BIPE's Dairy Engineering moat · rare branch in UP, only ~4
