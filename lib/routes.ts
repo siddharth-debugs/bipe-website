@@ -375,8 +375,8 @@ export const ROUTES: Record<RouteKey, {
   },
   jeecupVsBcece: {
     path: "/jeecup-vs-bcece",
-    title: "JEECUP vs BCECE · Bihar polytechnic options compared | BIPE",
-    description: "JEECUP (UP) vs BCECE (Bihar) — eligibility, syllabus, counselling, fees, seats. How Bihar students secure a BIPE seat via JEECUP 4455.",
+    title: "JEECUP vs BCECE 2026 · Which Polytechnic Exam for Bihar Students?",
+    description: "Bihar student choosing between JEECUP (UP) and BCECE? Compare eligibility, difficulty, seats, fees & counselling — plus how to get a BIPE Varanasi seat via JEECUP code 4455 under the all-India quota.",
   },
   admissionFromBihar: {
     path: "/admission-from-bihar",
