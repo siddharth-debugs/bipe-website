@@ -2396,6 +2396,20 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "h2",
+        text: "JEECUP क्या है?",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>JEECUP</strong> (Joint Entrance Examination Council, Uttar Pradesh — Polytechnic) उत्तर प्रदेश की वह प्रवेश परीक्षा है जिसके ज़रिए राज्य के सरकारी और निजी पॉलिटेक्निक संस्थानों में 3-साल के डिप्लोमा कोर्स में admission मिलता है। इसे <strong>UPJEE (Polytechnic)</strong> भी कहा जाता है। 10वीं पास छात्र इसके लिए आवेदन कर सकते हैं — परीक्षा online (CBT) होती है, और रैंक के आधार पर counselling में सीट मिलती है।",
+      },
+      {
+        type: "p",
+        html:
+          "संक्षेप में — <strong>JEECUP का मतलब है पॉलिटेक्निक में admission का रास्ता।</strong> पूरी प्रक्रिया (रजिस्ट्रेशन → admit card → परीक्षा → रिज़ल्ट → counselling) के लिए देखें हमारी <a href=\"/jeecup\">JEECUP 2026 गाइड</a>, और BIPE में सीट कैसे पक्की करें इसके लिए <a href=\"/jeecup-counselling\">JEECUP counselling गाइड — कोड 4455</a>।",
+      },
+      {
+        type: "h2",
         text: "Polytechnic Course की अवधि और संरचना",
       },
       {
