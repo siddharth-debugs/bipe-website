@@ -195,6 +195,139 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // Jun 2026 · Natural Hinglish · top-of-funnel entry point
+  // Target: "10वीं के बाद क्या करें" / "10th ke baad kya kare" — one of the
+  // highest-volume decision queries for 10th-pass students in Eastern UP /
+  // Bihar. Gap: we had 12th-after + after-polytechnic, but no 10th-after
+  // post. Positions polytechnic as the hero answer and funnels into the
+  // existing winning posts (salary, govt-jobs, B.Tech lateral) + /jeecup.
+  {
+    slug: "10th-ke-baad-kya-kare-polytechnic-2026",
+    lang: "hi-IN",
+    title: "10वीं के बाद क्या करें? — Polytechnic से इंजीनियर बनने का सबसे सीधा रास्ता (2026)",
+    category: "Guide · Hindi",
+    date: "20 June 2026",
+    publishedISO: "2026-06-20",
+    readTime: "10 min read",
+    excerpt:
+      "10वीं के बाद confusion? 11th-12th, ITI, या Polytechnic — कौन सा रास्ता सही है? Eastern UP और बिहार के students के लिए एक honest हिन्दी गाइड — हर option की अवधि, कमाई, और 10वीं के बाद सीधे इंजीनियर बनने का सबसे छोटा रास्ता।",
+    metaTitle: "10वीं के बाद क्या करें? · Polytechnic Guide 2026",
+    metaDescription:
+      "10वीं के बाद 11th-12th, ITI या Polytechnic? तीनों की honest तुलना — अवधि, fees और naukri का scope। Polytechnic 3-साल का diploma है — JEECUP 2026 से सीधा engineer बनें।",
+    sections: [
+      {
+        type: "callout",
+        title: "इस गाइड में क्या है",
+        html:
+          "<p style=\"margin: 0;\">10वीं पास करने के बाद सबसे बड़ा सवाल यही होता है — <em>अब क्या?</em> यह गाइड Eastern UP और बिहार के उन families के लिए है जो पहली बार यह फ़ैसला ले रहे हैं। हम तीनों main रास्ते — 11th-12th, ITI, और Polytechnic (diploma) — की honest तुलना करेंगे, और बताएँगे कि 10वीं के बाद सबसे कम समय में इंजीनियर बनने का सीधा रास्ता कौन सा है।</p>",
+      },
+      { type: "h2", text: "10वीं के बाद कौन-कौन से रास्ते हैं?" },
+      {
+        type: "p",
+        html:
+          "10वीं के बाद आपके सामने मोटे तौर पर तीन रास्ते होते हैं — और तीनों सही हैं, बस आपके goal पर depend करता है:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>11th–12th (फिर college):</strong> अगर आपको doctor, scientist, या pure B.Tech (4 साल) बनना है। समय ज़्यादा लगता है — 12th के 2 साल, फिर 4 साल degree।",
+          "<strong>ITI (1–2 साल):</strong> अगर आपको जल्दी एक specific trade (electrician, fitter, welder) में skill चाहिए और तुरंत काम शुरू करना है। सबसे छोटा रास्ता, पर आगे growth limited।",
+          "<strong>Polytechnic / Diploma (3 साल):</strong> अगर आपको <em>इंजीनियर</em> बनना है — सबसे कम समय में, theory + practical दोनों के साथ। यही इस गाइड का hero रास्ता है।",
+        ],
+      },
+      { type: "h2", text: "तीनों का सीधा comparison" },
+      {
+        type: "table",
+        caption: "10वीं के बाद के तीन मुख्य रास्ते — मोटा खाका। गहराई से: Polytechnic vs ITI।",
+        headers: ["रास्ता", "अवधि", "क्या बनते हैं", "किसके लिए सही"],
+        rows: [
+          ["11th–12th + B.Tech", "2 + 4 = 6 साल", "Graduate Engineer / कोई भी degree", "जिनके पास समय + budget है, pure degree चाहिए"],
+          ["ITI", "1–2 साल", "Skilled tradesman (ITI certificate)", "जल्दी एक trade सीखकर काम शुरू करना है"],
+          ["Polytechnic (Diploma)", "3 साल", "Diploma Engineer (Junior Engineer eligible)", "10वीं के बाद सीधे engineer — कम समय, अच्छी naukri"],
+        ],
+      },
+      { type: "h2", text: "Polytechnic सबसे सीधा इंजीनियरिंग रास्ता क्यों है?" },
+      {
+        type: "p",
+        html:
+          "<strong>Polytechnic</strong> 10वीं के बाद का <strong>3 साल का AICTE-approved diploma course</strong> है, जहाँ classroom से ज़्यादा workshop और lab में काम होता है। 12th + B.Tech (6 साल) के मुकाबले आप <strong>आधे समय</strong> में engineer बन जाते हैं। पूरी जानकारी — <a href=\"/blog/polytechnic-kya-hai-aur-kaise-kare\">पॉलिटेक्निक क्या है और कैसे करें</a>।",
+      },
+      {
+        type: "p",
+        html:
+          "और सबसे बड़ी बात — diploma एक dead end नहीं है। इसके बाद तीन रास्ते खुलते हैं:",
+      },
+      {
+        type: "ul",
+        items: [
+          "<strong>सीधी सरकारी नौकरी:</strong> SSC JE, RRB JE, UPPCL जैसी Junior Engineer भर्तियाँ diploma holders के लिए खुली हैं — <a href=\"/blog/government-jobs-after-polytechnic-diploma-2026\">पूरा exam pipeline देखें</a>।",
+          "<strong>B.Tech (Lateral Entry):</strong> diploma के बाद AKTU से सीधे B.Tech के <em>दूसरे साल</em> में entry — पहला साल skip — <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">पूरा रास्ता समझें</a>।",
+          "<strong>Private naukri:</strong> Mahindra, Tata, JCB जैसी companies diploma engineers को सीधे hire करती हैं — <a href=\"/blog/polytechnic-salary-in-india-2026\">salary कितनी मिलती है</a>।",
+        ],
+      },
+      {
+        type: "cta",
+        title: "10वीं पास? BIPE में अपनी सीट का रास्ता समझें",
+        body: "BIPE Varanasi (JEECUP code 4455) में 5 branches — Mechanical, Electrical, Civil, Computer Science, Dairy। AFRC fee ₹30,150/साल। हमारी admission team हिन्दी में आपके सारे सवालों का जवाब देगी।",
+        applyLabel: "Enquiry करें",
+        waLabel: "WhatsApp पर पूछें",
+        whatsappText: "Hi BIPE — 10वीं के बाद polytechnic admission के बारे में जानना है।",
+      },
+      { type: "h2", text: "किसको Polytechnic चुनना चाहिए?" },
+      {
+        type: "ul",
+        items: [
+          "जिन्हें इंजीनियरिंग में interest है पर 6 साल (12th + degree) का इंतज़ार नहीं करना।",
+          "जिन families का budget limited है — diploma सस्ता है और कमाई जल्दी शुरू हो जाती है।",
+          "जो हाथ से काम (practical) करना पसंद करते हैं, सिर्फ़ किताबी पढ़ाई नहीं।",
+          "जिन्हें सरकारी Junior Engineer नौकरी या तुरंत private job चाहिए।",
+        ],
+      },
+      { type: "h2", text: "Polytechnic में admission कैसे होता है? (JEECUP 2026)" },
+      {
+        type: "p",
+        html:
+          "उत्तर प्रदेश में सभी polytechnic संस्थानों में admission <strong>JEECUP</strong> (Joint Entrance Examination Council, UP — Polytechnic) के through होता है। 10वीं पास students Group A के लिए apply करते हैं, exam online (CBT) होता है, और rank के आधार पर counselling में सीट मिलती है। BIPE का institute code <strong>4455</strong> है। पूरी प्रक्रिया — <a href=\"/jeecup\">JEECUP 2026 गाइड</a> और <a href=\"/jeecup-counselling\">counselling गाइड</a>।",
+      },
+      { type: "h2", text: "BIPE Varanasi — घर के पास, सही फ़ैसला" },
+      {
+        type: "p",
+        html:
+          "<strong>Banaras Institute of Polytechnic &amp; Engineering (BIPE)</strong> Phoolpur, Varanasi में 2010 से चल रहा एक AICTE-approved, BTEUP-affiliated polytechnic है। 5 branches, AFRC fee ₹30,150/साल, और पिछले 16 साल में <strong>1,331 verified placements</strong> — Mahindra, Tata Steel, JCB, Indian Railways तक। Varanasi Cantt से सिर्फ़ 14 km। SC/ST/OBC/EWS students के लिए UP सरकार की <a href=\"/scholarships\">post-matric scholarship</a> के बाद net fee और कम।",
+      },
+      { type: "h2", text: "अक्सर पूछे जाने वाले सवाल (FAQ)" },
+      { type: "h3", text: "10वीं के बाद सबसे अच्छा course कौन सा है?" },
+      {
+        type: "p",
+        html:
+          "इसका कोई एक जवाब नहीं — आपके goal पर depend करता है। अगर इंजीनियर बनना है और कम समय में अच्छी नौकरी चाहिए, तो <strong>Polytechnic (diploma)</strong> सबसे सीधा रास्ता है। doctor या research के लिए 11th-12th science; और तुरंत एक trade सीखकर काम के लिए ITI।",
+      },
+      { type: "h3", text: "क्या 10वीं के बाद सीधे polytechnic कर सकते हैं?" },
+      {
+        type: "p",
+        html:
+          "हाँ — Polytechnic का Group A track खास 10वीं पास students के लिए ही है (न्यूनतम 35% कुल अंक)। 12th करने की ज़रूरत नहीं। JEECUP exam देकर admission मिलता है।",
+      },
+      { type: "h3", text: "Polytechnic के बाद कितनी salary मिलती है?" },
+      {
+        type: "p",
+        html:
+          "शुरुआती salary branch और company पर depend करती है — typically ₹15,000–₹30,000/महीना से शुरू, और सरकारी Junior Engineer posts में काफ़ी ज़्यादा। विस्तार से — <a href=\"/blog/polytechnic-salary-2026-hindi\">पॉलिटेक्निक salary 2026</a>।",
+      },
+      { type: "h3", text: "Polytechnic vs ITI — कौन बेहतर है?" },
+      {
+        type: "p",
+        html:
+          "ITI छोटा (1–2 साल) और एक specific trade पर focused है; Polytechnic (3 साल) एक diploma engineer बनाता है, जिसके बाद Junior Engineer नौकरी और B.Tech दोनों के रास्ते खुलते हैं। पूरी तुलना — <a href=\"/blog/polytechnic-vs-iti\">Polytechnic vs ITI</a>।",
+      },
+      {
+        type: "p",
+        html:
+          "<strong>आख़िर में —</strong> 10वीं एक नई शुरुआत है, अंत नहीं। सही रास्ता वही है जो आपके interest, समय और family के budget से match करे — और इंजीनियरिंग के लिए, Polytechnic वो सबसे सीधा पुल है। <a href=\"/apply\">BIPE में enquiry करें</a> या <a href=\"/jeecup-counselling\">JEECUP counselling गाइड</a> पढ़ें।",
+      },
+    ],
+  },
+  // ─────────────────────────────────────────────────────────────────
   // Phase B Post 5 · May 2026 · Natural Hinglish
   // Target keyword: डेयरी इंजीनियरिंग कोर्स (~590/mo)
   // BIPE's Dairy Engineering moat · rare branch in UP, only ~4
