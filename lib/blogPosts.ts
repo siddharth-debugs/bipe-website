@@ -2541,7 +2541,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "फीस कितनी होती है?",
+        text: "JEECUP / पॉलिटेक्निक की फीस कितनी होती है?",
       },
       {
         type: "ul",
