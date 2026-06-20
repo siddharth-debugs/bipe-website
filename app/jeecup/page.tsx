@@ -169,13 +169,12 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">JEECUP guidance</div>
-              <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
-                Your{" "}
+              <div className="eyebrow">JEECUP 2026 · Complete Guide</div>
+              <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "18ch" }}>
+                JEECUP 2026 —{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  map
-                </span>{" "}
-                through JEECUP.
+                  your step-by-step map.
+                </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
                 JEECUP 2026 — the UP Joint Entrance Examination for Polytechnic — is the single state-wide counselling route to BIPE. Six steps from your kitchen table to a confirmed seat in Phoolpur.
