@@ -36,7 +36,7 @@
  *   - Recruiter / institution names: Mahindra, Tata Steel, JCB,
  *     Motherson, Indian Railways, Amul, NDDB, Mumbai Metro, AKTU
  *   - Numbers, currency, dates, units: ₹30,150/year, 1:20 ratio,
- *     1,331, 15 July 2026, 7 rounds
+ *     1,331, 1 August 2026, 7 rounds
  *   - Geographic English forms: Varanasi, Phoolpur, Eastern UP, Bihar,
  *     Lucknow
  *
