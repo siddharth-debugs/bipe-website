@@ -16,9 +16,9 @@ const BENEFITS = [
     body: "Register and visit within 7 days, and BIPE reserves your preferred branch for you (code 4455) — subject to seats and basic eligibility.",
   },
   {
-    tag: "₹1,200 PET scholarship",
-    title: "A ₹1,200 PET scholarship — just for registering early",
-    body: "Early registrants who join for 2026-27 get a one-time ₹1,200 PET scholarship credited toward admission. Our thank-you for deciding early.",
+    tag: "Free counselling guidance",
+    title: "We guide your JEECUP choice-filling",
+    body: "Our admissions team helps you order your counselling choices so BIPE code 4455 lands the branch you want — free, on call or WhatsApp.",
   },
   {
     tag: "Popular branches fill first",
@@ -28,14 +28,14 @@ const BENEFITS = [
   {
     tag: "Free · zero risk",
     title: "Completely free, completely non-binding",
-    body: "Registration costs nothing and commits you to nothing. Visit, see the labs and hostel, talk to faculty — then decide. Your reserved branch and scholarship are simply held for a week.",
+    body: "Registration costs nothing and commits you to nothing. Visit, see the labs and hostel, talk to faculty — then decide. Your reserved branch is simply held for a week.",
   },
 ];
 
 const STEPS = [
   { n: "01", t: "Register free", d: "Fill the short form below — name, phone, JEECUP application number, group and preferred branch. Two minutes." },
   { n: "02", t: "Visit within 7 days", d: "Come to BIPE Phoolpur within a week. Tour the campus, meet the admissions team, ask anything." },
-  { n: "03", t: "Branch + ₹1,200 locked", d: "Your preferred branch is confirmed at BIPE and the ₹1,200 PET scholarship is applied. We also guide you through JEECUP counselling for code 4455." },
+  { n: "03", t: "Branch reserved + guidance", d: "Your preferred branch is confirmed at BIPE, and we guide you through JEECUP counselling choice-filling for code 4455." },
 ];
 
 export default function Page() {
@@ -60,11 +60,14 @@ export default function Page() {
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
             Got your JEECUP 2026 rank? Do your <strong>Pre-Counselling Registration</strong> — free, in two minutes — and BIPE reserves
-            your preferred branch (code 4455) before you fill your counselling choices. Subject to seats &amp; eligibility, plus a
-            <strong> ₹1,200 PET scholarship</strong>.
+            your preferred branch (code 4455) before you fill your counselling choices, plus <strong>free choice-filling guidance</strong>.
+            Subject to seats &amp; eligibility.
           </p>
           <p lang="hi" style={{ marginTop: 14, maxWidth: "60ch", color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
-            JEECUP 2026 की rank मिल गई? choice-filling से पहले Pre-Counselling Registration करें — फ्री, 2 मिनट में — और BIPE में अपनी पसंदीदा branch (code 4455) reserve करें, साथ में ₹1,200 PET scholarship।
+            JEECUP 2026 की rank मिल गई? choice-filling से पहले Pre-Counselling Registration करें — फ्री, 2 मिनट में — और BIPE में अपनी पसंदीदा branch (code 4455) reserve करें, साथ में फ्री choice-filling guidance।
+          </p>
+          <p className="muted" style={{ marginTop: 12, fontSize: 12.5, color: "var(--ink-3)", maxWidth: "60ch" }}>
+            <strong>Note:</strong> the ₹1,200 PET scholarship offer closed on 22 June 2026 and is no longer available — Pre-Counselling Registration itself stays free.
           </p>
           <RegistrationCountdown />
           <div className="row" style={{ gap: 12, marginTop: 28, flexWrap: "wrap" }}>
@@ -131,8 +134,7 @@ export default function Page() {
           <p className="muted" style={{ marginTop: 20, fontSize: 12, lineHeight: 1.75 }}>
             <strong>The details:</strong> &ldquo;Seat &amp; branch reserved&rdquo; refers to BIPE&rsquo;s own institute seats at the
             Phoolpur campus, JEECUP code 4455 — held for 7 days from registration, subject to seat availability and basic
-            eligibility (Class 10 passed). The ₹1,200 PET scholarship is a one-time admission credit for early registrants who enrol for
-            2026-27. Pre-Counselling Registration runs <strong>alongside the official JEECUP counselling, not in place of it</strong> — you remain
+            eligibility (Class 10 passed). Pre-Counselling Registration runs <strong>alongside the official JEECUP counselling, not in place of it</strong> — you remain
             free to participate in counselling, and we&rsquo;ll guide you through choice-filling for code 4455.
           </p>
         </div>

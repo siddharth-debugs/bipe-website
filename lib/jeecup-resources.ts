@@ -332,7 +332,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     slug: "jeecup-result-2026",
     shortTitle: "JEECUP Result 2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, understand your category rank and plan counselling. Appeared in JEECUP 2026? Lock your branch at BIPE (code 4455) with a ₹1,200 PET scholarship.",
+    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, understand your category rank and plan counselling. Appeared in JEECUP 2026? Reserve your branch at BIPE (code 4455) before choice-filling.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",
@@ -348,9 +348,9 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headlineAccent: "check your rank card now.",
     heroAlert: {
       badge: "Result declared",
-      text: "JEECUP 2026 results are out. Check your rank on the official portal, then lock your branch at BIPE (code 4455) with a ₹1,200 PET scholarship.",
+      text: "JEECUP 2026 results are out. Check your rank on the official portal, then reserve your branch at BIPE (code 4455) before you fill your counselling choices.",
       primary: { label: "Check on JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
-      secondary: { label: "Lock seat + ₹1,200 →", href: "/early-registration" },
+      secondary: { label: "Pre-Counselling Registration →", href: "/early-registration" },
     },
     lead: "JEECUP 2026 results are out. Log in at jeecup.admissions.nic.in to see your raw marks, percentile, all-India rank, category rank (if applicable), and to download your rank card. This page walks through the check process and explains what each number means for counselling — and how to reserve your branch at BIPE while the counselling rounds run.",
     quickStats: [
@@ -444,7 +444,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       badge: "Result declared",
       text: "JEECUP 2026 results are out. See what your rank realistically opens — then lock your branch at BIPE (code 4455).",
       primary: { label: "Check your rank card →", href: "https://jeecup.admissions.nic.in" },
-      secondary: { label: "Lock seat + ₹1,200 →", href: "/early-registration" },
+      secondary: { label: "Pre-Counselling Registration →", href: "/early-registration" },
     },
     lead: "There is no honest way to convert raw marks into an exact JEECUP rank — your rank depends on each year's normalisation (how many candidates sat the exam and how hard the paper was). What we CAN show you, from BIPE's actual filed admission rank lists, is the part that matters: what each rank band realistically opens, and the real closing ranks for every branch at BIPE 4455. Use it to read your rank card — not to guess a number off a calculator.",
     quickStats: [
@@ -509,7 +509,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "05",
         title: "Lock your seat early",
-        body: "Early Seat Registration reserves your preferred branch at BIPE while the counselling rounds run (and holds a ₹1,200 PET scholarship). It complements JEECUP counselling — you still fill 4455 in the official rounds. Register free, then visit campus within 7 days to confirm.",
+        body: "Pre-Counselling Registration reserves your preferred branch at BIPE while the counselling rounds run. It complements JEECUP counselling — you still fill 4455 in the official rounds. Register free, then visit campus within 7 days to confirm.",
       },
     ],
     faqs: [

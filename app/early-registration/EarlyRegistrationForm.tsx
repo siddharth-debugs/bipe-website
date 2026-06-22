@@ -109,11 +109,11 @@ export function EarlyRegistrationForm() {
           {status.name}, आप रजिस्टर हो गए हैं।
         </p>
         <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7, maxWidth: "46ch", marginInline: "auto" }}>
-          Reference <b style={{ color: "var(--brand)", fontFamily: "var(--font-mono)" }}>{status.ref}</b>. Your branch and the
-          ₹1,200 scholarship are held for <b>7 days</b> — visit campus within a week to confirm. Our admissions team will also call you shortly.
+          Reference <b style={{ color: "var(--brand)", fontFamily: "var(--font-mono)" }}>{status.ref}</b>. Your preferred branch is
+          held for <b>7 days</b> — visit campus within a week to confirm. Our admissions team will also call you shortly.
         </p>
         <p lang="hi" style={{ marginTop: 10, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.85, maxWidth: "48ch", marginInline: "auto" }}>
-          आपकी पसंदीदा ब्रांच और <b>₹1,200 स्कॉलरशिप 7 दिन</b> के लिए सुरक्षित है — एक हफ़्ते के अंदर कैंपस आकर कन्फर्म करें। हमारी एडमिशन टीम जल्द ही आपको कॉल भी करेगी।
+          आपकी पसंदीदा ब्रांच <b>7 दिन</b> के लिए सुरक्षित है — एक हफ़्ते के अंदर कैंपस आकर कन्फर्म करें। हमारी एडमिशन टीम जल्द ही आपको कॉल भी करेगी।
         </p>
         <div className="row" style={{ justifyContent: "center", marginTop: 26, gap: 12, flexWrap: "wrap" }}>
           <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">

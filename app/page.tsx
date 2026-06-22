@@ -115,6 +115,10 @@ export default async function HomePage() {
           pivoted from the results banner). Official Phase-1 schedule is live:
           Round 1 choice-filling 25–30 June. Two actions: the counselling guide
           + schedule (/jeecup-counselling) and lock a seat (/early-registration). */}
+      {/* Auto-hides after the 3rd counselling round (25 Jul 2026), per owner —
+          "keep the announcement only till the end of 3rd round". Static page
+          rebuilds daily (reviews bot), so this re-evaluates within ~1 day. */}
+      {Date.now() < new Date("2026-07-26T00:00:00+05:30").getTime() && (
       <aside
         aria-label="JEECUP 2026 counselling announcement"
         className="jeecup-result-bar"
@@ -150,6 +154,7 @@ export default async function HomePage() {
           </span>
         </div>
       </aside>
+      )}
       {/*
         StatsBar is no longer wired to the backend PageSection.
         Reason 28 May 2026: the Django admin had stale stats

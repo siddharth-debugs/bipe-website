@@ -194,7 +194,7 @@ export default function Page() {
               }}>
                 <span style={{ fontSize: 22 }} aria-hidden="true">🎓</span>
                 <span style={{ fontSize: 14, lineHeight: 1.55 }}>
-                  <strong>Got your JEECUP 2026 rank?</strong> Do your Pre-Counselling Registration — reserve your branch + a ₹1,200 PET scholarship.
+                  <strong>Got your JEECUP 2026 rank?</strong> Do your Pre-Counselling Registration — reserve your branch (code 4455) before you fill choices.
                 </span>
                 <ArrowIcon size={16} />
               </Link>

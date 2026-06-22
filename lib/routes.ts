@@ -92,7 +92,7 @@ export const ROUTES: Record<RouteKey, {
     // Conversion LP, not an organic-search target — see `noindex` above.
     noindex: true,
     title: "Pre-Counselling Registration · JEECUP 2026 · BIPE Varanasi (Code 4455)",
-    description: "Got your JEECUP 2026 rank? Do your Pre-Counselling Registration at BIPE Varanasi — reserve your branch (code 4455) before choice-filling, get free counselling guidance + a ₹1,200 PET scholarship. Complements official JEECUP counselling.",
+    description: "Got your JEECUP 2026 rank? Do your Pre-Counselling Registration at BIPE Varanasi — reserve your branch (code 4455) before choice-filling and get free counselling guidance. Complements official JEECUP counselling.",
   },
   home: {
     path: "/",
@@ -770,7 +770,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupResult: {
     path: "/jeecup-result-2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, plan counselling. Appeared in JEECUP 2026? Lock your branch at BIPE (code 4455) with a ₹1,200 PET scholarship.",
+    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, plan counselling. Appeared in JEECUP 2026? Reserve your branch at BIPE (code 4455) before choice-filling.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",

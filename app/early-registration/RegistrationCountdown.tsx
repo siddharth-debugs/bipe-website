@@ -6,9 +6,9 @@ import Link from "next/link";
 /**
  * Live countdown to the Pre-Counselling Registration deadline.
  *
- * Deadline: end of 31 July 2026, anchored to IST (+05:30) so every
- * visitor counts down to the *same* instant regardless of their device
- * timezone — covers the main JEECUP counselling window (Rounds 1-3).
+ * Deadline: end of 25 July 2026 — the close of the 3rd counselling round —
+ * anchored to IST (+05:30) so every visitor counts down to the *same*
+ * instant regardless of their device timezone.
  * Edit the one constant below to move the deadline.
  *
  * Mirrors the home page's <Countdown> ticking + cell pattern
@@ -17,7 +17,7 @@ import Link from "next/link";
  * Once the deadline passes, diff pins to 0 and a "closed" notice
  * replaces the cells.
  */
-const DEADLINE = "2026-08-01T00:00:00+05:30"; // close of 31 Jul 2026, IST (through main counselling)
+const DEADLINE = "2026-07-26T00:00:00+05:30"; // close of 25 Jul 2026, IST (end of 3rd counselling round)
 
 const cell = (n: number, label: string) => (
   <div
@@ -83,7 +83,7 @@ export function RegistrationCountdown() {
       <div className="row" style={{ alignItems: "center", gap: 10, marginBottom: 14 }}>
         <span className="live-dot" />
         <span className="eyebrow" style={{ color: "var(--brand)" }} suppressHydrationWarning>
-          {closed ? "Pre-Counselling Registration closed" : "Registration closes 31 July 2026"}
+          {closed ? "Pre-Counselling Registration closed" : "Registration closes 25 July 2026"}
         </span>
       </div>
 
