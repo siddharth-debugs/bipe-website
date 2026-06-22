@@ -229,6 +229,80 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
+      {/* 1b. OFFICIAL 2026 SCHEDULE (Phase 1 · Rounds 1–3) — added 22 Jun 2026  */}
+      {/* when JEECUP published the Main Counselling dates. Source: official      */}
+      {/* notification at jeecup.admissions.nic.in.                              */}
+      {/* ====================================================================== */}
+      <section className="section">
+        <div className="container">
+          <div className="row" style={{ alignItems: "center", gap: 10, marginBottom: 4 }}>
+            <span className="live-dot" />
+            <span className="eyebrow" style={{ color: "var(--brand)", margin: 0 }}>JEECUP 2026 · Official counselling schedule</span>
+          </div>
+          <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "28ch" }}>
+            The 2026 dates are{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+              out.
+            </span>
+          </h2>
+          <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "64ch", lineHeight: 1.7 }}>
+            JEECUP has released the Phase-1 Main Counselling schedule (Rounds 1–3) for qualified
+            UP-state candidates. Counselling is fully online at{" "}
+            <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer">
+              jeecup.admissions.nic.in
+            </a>
+            . <strong>Round 1 choice-filling runs 25–30 June</strong> — add BIPE&apos;s institute code{" "}
+            <strong>4455</strong> against every branch you&apos;d accept.
+          </p>
+          <div style={{ marginTop: 24, overflowX: "auto", border: "1px solid var(--line)", borderRadius: 14 }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14.5 }}>
+              <thead>
+                <tr>
+                  {["Round", "Choice filling", "Seat allotment", "Fee + reporting"].map((c) => (
+                    <th
+                      key={c}
+                      style={{ textAlign: "left", padding: "13px 18px", background: "var(--paper-2)", color: "var(--ink-1)", fontWeight: 600, borderBottom: "1px solid var(--line)" }}
+                    >
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Round 1", "25–30 June 2026", "1 July 2026", "Freeze/Float + ₹3,250: 2–5 July · doc verification to 6 July"],
+                  ["Round 2", "7–9 July 2026", "10 July 2026", "Deposit: 11–13 July · doc verification to 14 July"],
+                  ["Round 3", "16–19 July 2026", "20 July 2026", "Auto-freeze + deposit: 21–23 July · doc verification to 24 July"],
+                ].map((row, ri, arr) => (
+                  <tr key={row[0]}>
+                    {row.map((cell, ci) => (
+                      <td
+                        key={ci}
+                        style={{ padding: "13px 18px", borderBottom: ri === arr.length - 1 ? "none" : "1px solid var(--line)", color: ci === 0 ? "var(--ink-1)" : "var(--ink-2)", fontWeight: ci === 0 ? 600 : 400, lineHeight: 1.5, verticalAlign: "top" }}
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p style={{ marginTop: 14, color: "var(--ink-3)", fontSize: 13, lineHeight: 1.6, maxWidth: "70ch" }}>
+            Counselling fee is ₹3,250 (₹3,000 seat-acceptance, adjusted into tuition, + ₹250 counselling), paid online. Document verification is at any district Help Center (Freeze candidates). The full cycle runs in 5 phases; out-of-UP candidates join from Phase 4. <strong>Classes for Session 2026-27 begin 1 August 2026.</strong> Source: JEECUP official notification.
+          </p>
+          <div className="row" style={{ marginTop: 22, gap: 12, flexWrap: "wrap" }}>
+            <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              Open JEECUP portal <ArrowIcon size={16} />
+            </a>
+            <Link href="/early-registration" className="btn btn-ghost">
+              Lock your seat at BIPE
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
       {/* 2. THE 7 ROUNDS                                                         */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
@@ -300,8 +374,8 @@ export default function Page() {
               fontStyle: "italic",
             }}
           >
-            Round dates shift each year. For exact 2026 dates, always cross-check the official
-            JEECUP portal at{" "}
+            The official Phase-1 (Round 1–3) dates for 2026 are published — see the schedule at the
+            top of this page. JEECUP can still revise dates between rounds; always cross-check{" "}
             <a
               href="https://jeecup.admissions.nic.in"
               target="_blank"

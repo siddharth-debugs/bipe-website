@@ -111,12 +111,12 @@ export default async function HomePage() {
       */}
       <HeroFull />
 
-      {/* JEECUP 2026 · RESULT OUT — results-day announcement (15 Jun 2026,
-          replacing the generic early-reg strip). Two actions: check the result
-          (our /jeecup-result-2026 explainer → official portal) and lock a seat
-          + branch + ₹1,200 PET scholarship via /early-registration. */}
+      {/* JEECUP 2026 · COUNSELLING DATES OUT — announcement (22 Jun 2026,
+          pivoted from the results banner). Official Phase-1 schedule is live:
+          Round 1 choice-filling 25–30 June. Two actions: the counselling guide
+          + schedule (/jeecup-counselling) and lock a seat (/early-registration). */}
       <aside
-        aria-label="JEECUP 2026 result announcement"
+        aria-label="JEECUP 2026 counselling announcement"
         className="jeecup-result-bar"
         style={{ background: "var(--ink)", color: "var(--paper)", borderTop: "3px solid var(--accent)", borderBottom: "1px solid color-mix(in oklab, var(--accent) 40%, transparent)" }}
       >
@@ -127,22 +127,22 @@ export default async function HomePage() {
           <span style={{ display: "inline-flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             <span className="row" style={{ alignItems: "center", gap: 8 }}>
               <span className="live-dot" />
-              <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Result Out</span>
+              <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Counselling Dates Out</span>
             </span>
             <span style={{ fontWeight: 700, fontSize: 16, lineHeight: 1.4 }}>
-              JEECUP 2026 results are out — lock your branch at BIPE (code 4455) before counselling.
+              JEECUP 2026 counselling dates are out — Round 1 choice-filling 25–30 June. Add BIPE code 4455.
               <span style={{ display: "block", fontWeight: 400, fontSize: 13, opacity: 0.82, marginTop: 2 }}>
-                जेईईसीयूपी 2026 का रिज़ल्ट आ गया है — अपनी सीट और ब्रांच अभी सुरक्षित करें।
+                जेईईसीयूपी 2026 काउंसलिंग शुरू — Round 1 choice-filling 25–30 जून। अपनी सीट अभी सुरक्षित करें।
               </span>
             </span>
           </span>
           <span className="row" style={{ gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
             <Link
-              href="/jeecup-result-2026"
+              href="/jeecup-counselling"
               className="btn btn-sm"
               style={{ background: "color-mix(in oklab, var(--paper) 16%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 30%, transparent)", whiteSpace: "nowrap" }}
             >
-              Check your result →
+              Counselling dates →
             </Link>
             <Link href="/early-registration" className="btn btn-primary btn-sm jeecup-result-cta" style={{ whiteSpace: "nowrap" }}>
               Register Now →

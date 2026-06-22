@@ -141,7 +141,7 @@ export function Nav() {
             <span className="nav-utility-divider" />
             <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>JEECUP {C.jeecup}</span>
             <span className="nav-utility-divider" />
-            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>Classes start 15 July</span>
+            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>Classes start 1 Aug</span>
           </div>
           <div className="nav-utility-right">
             <a href={`tel:${C.phone}`} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>

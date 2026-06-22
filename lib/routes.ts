@@ -155,7 +155,7 @@ export const ROUTES: Record<RouteKey, {
     // admission [year]". Lead with the literal phrase + keep the
     // JEECUP date anchor in the tail for the engaged-funnel reader.
     title: "Polytechnic Admission 2026-27 · JEECUP 4455 · Exam 02-09 June | BIPE Varanasi",
-    description: "Polytechnic admission 2026-27 at BIPE Varanasi — apply via JEECUP (UPJEE Polytechnic) code 4455. Exam 02-09 June, 7-round counselling, classes begin 15 July 2026.",
+    description: "Polytechnic admission 2026-27 at BIPE Varanasi — apply via JEECUP (UPJEE Polytechnic) code 4455. Exam 02-09 June, 7-round counselling, classes begin 1 August 2026.",
     keywords: [
       "JEECUP 2026 admission",
       "polytechnic admission Varanasi",

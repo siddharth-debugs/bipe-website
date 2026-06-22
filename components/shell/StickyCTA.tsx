@@ -25,7 +25,7 @@ export const StickyCTA = () => {
   // Always drives to the free Early Seat Registration funnel (per owner);
   // only the title adapts to context.
   const copy = {
-    title: pathname.startsWith("/jeecup") ? "JEECUP 2026 Result — out now" : "Admissions 2026-27 — Open",
+    title: pathname.startsWith("/jeecup") ? "JEECUP 2026 Counselling — dates out" : "Admissions 2026-27 — Open",
     sub: "Freeze branch + Get ₹1,200 PET scholarship",
     href: "/early-registration",
     cta: "Register",

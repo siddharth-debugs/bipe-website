@@ -41,7 +41,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   },
   {
     n: "06",
-    title: "Begin classes — 15 July 2026",
+    title: "Begin classes — 1 August 2026",
     body: "Orientation, mentor allocation, hostel allotment. Three years that change your career trajectory and your family's expectations.",
   },
 ];

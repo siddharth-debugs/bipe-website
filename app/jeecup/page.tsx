@@ -201,8 +201,8 @@ export default function Page() {
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "7", l: "Counselling rounds" },
-                  { num: "Jun", l: "Exam window · 02-09" },
-                  { num: "Jul 15", l: "Classes begin" },
+                  { num: "25 Jun", l: "Round 1 choice-filling" },
+                  { num: "Aug 1", l: "Classes begin" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, lineHeight: 0.9, color: "var(--brand)" }}>{s.num}</div>
