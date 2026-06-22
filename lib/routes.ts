@@ -91,8 +91,8 @@ export const ROUTES: Record<RouteKey, {
     path: "/early-registration",
     // Conversion LP, not an organic-search target — see `noindex` above.
     noindex: true,
-    title: "Early Seat Registration · JEECUP 2026 · BIPE Varanasi (Code 4455)",
-    description: "Appeared in JEECUP 2026? Register free at BIPE Varanasi — reserve your branch (code 4455), get a ₹1,200 PET scholarship, and visit within 7 days. Complements JEECUP counselling.",
+    title: "Pre-Counselling Registration · JEECUP 2026 · BIPE Varanasi (Code 4455)",
+    description: "Got your JEECUP 2026 rank? Do your Pre-Counselling Registration at BIPE Varanasi — reserve your branch (code 4455) before choice-filling, get free counselling guidance + a ₹1,200 PET scholarship. Complements official JEECUP counselling.",
   },
   home: {
     path: "/",

@@ -296,7 +296,7 @@ export default function Page() {
               Open JEECUP portal <ArrowIcon size={16} />
             </a>
             <Link href="/early-registration" className="btn btn-ghost">
-              Lock your seat at BIPE
+              Pre-Counselling Registration
             </Link>
           </div>
         </div>

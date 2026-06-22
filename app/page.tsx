@@ -127,12 +127,12 @@ export default async function HomePage() {
           <span style={{ display: "inline-flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
             <span className="row" style={{ alignItems: "center", gap: 8 }}>
               <span className="live-dot" />
-              <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Counselling Dates Out</span>
+              <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Counselling on now</span>
             </span>
             <span style={{ fontWeight: 700, fontSize: 16, lineHeight: 1.4 }}>
-              JEECUP 2026 counselling dates are out — Round 1 choice-filling 25–30 June. Add BIPE code 4455.
+              Pre-Counselling Registration is open — reserve your branch at BIPE (code 4455) before you fill choices.
               <span style={{ display: "block", fontWeight: 400, fontSize: 13, opacity: 0.82, marginTop: 2 }}>
-                जेईईसीयूपी 2026 काउंसलिंग शुरू — Round 1 choice-filling 25–30 जून। अपनी सीट अभी सुरक्षित करें।
+                JEECUP counselling शुरू (Round 1: 25–30 जून) — choice-filling से पहले BIPE में Pre-Counselling Registration करके अपनी ब्रांच (code 4455) सुरक्षित करें।
               </span>
             </span>
           </span>
