@@ -3,7 +3,8 @@ import dynamic from "next/dynamic";
 import { metadataFor } from "@/lib/seo";
 import { getBranchesMapped, getPageSection } from "@/lib/content";
 import type { Stat, WhyItem, Facility, JeecupStep } from "@/lib/data";
-import Link from "next/link";
+import { JeecupCounsellingBanner } from "@/components/home/JeecupCounsellingBanner";
+import { bannerRoundAt } from "@/lib/jeecupBannerRounds";
 import { HeroFull } from "@/components/home/HeroFull";
 import { BIPE_IMG } from "@/lib/images";
 import { StatsBar } from "@/components/home/StatsBar";
@@ -111,50 +112,12 @@ export default async function HomePage() {
       */}
       <HeroFull />
 
-      {/* JEECUP 2026 · COUNSELLING DATES OUT — announcement (22 Jun 2026,
-          pivoted from the results banner). Official Phase-1 schedule is live:
-          Round 1 choice-filling 25–30 June. Two actions: the counselling guide
-          + schedule (/jeecup-counselling) and lock a seat (/early-registration). */}
-      {/* Auto-hides after the 3rd counselling round (25 Jul 2026), per owner —
-          "keep the announcement only till the end of 3rd round". Static page
-          rebuilds daily (reviews bot), so this re-evaluates within ~1 day. */}
-      {Date.now() < new Date("2026-07-26T00:00:00+05:30").getTime() && (
-      <aside
-        aria-label="JEECUP 2026 counselling announcement"
-        className="jeecup-result-bar"
-        style={{ background: "var(--ink)", color: "var(--paper)", borderTop: "3px solid var(--accent)", borderBottom: "1px solid color-mix(in oklab, var(--accent) 40%, transparent)" }}
-      >
-        <div
-          className="container"
-          style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 18, padding: "16px", flexWrap: "wrap", textAlign: "center" }}
-        >
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
-            <span className="row" style={{ alignItems: "center", gap: 8 }}>
-              <span className="live-dot" />
-              <span className="eyebrow" style={{ color: "var(--accent)", margin: 0, whiteSpace: "nowrap" }}>JEECUP 2026 · Counselling on now</span>
-            </span>
-            <span style={{ fontWeight: 700, fontSize: 16, lineHeight: 1.4 }}>
-              Pre-Counselling Registration is open — reserve your branch at BIPE (code 4455) before you fill choices.
-              <span style={{ display: "block", fontWeight: 400, fontSize: 13, opacity: 0.82, marginTop: 2 }}>
-                JEECUP counselling शुरू (Round 1: 25–30 जून) — choice-filling से पहले BIPE में Pre-Counselling Registration करके अपनी ब्रांच (code 4455) सुरक्षित करें।
-              </span>
-            </span>
-          </span>
-          <span className="row" style={{ gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
-            <Link
-              href="/jeecup-counselling"
-              className="btn btn-sm"
-              style={{ background: "color-mix(in oklab, var(--paper) 16%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 30%, transparent)", whiteSpace: "nowrap" }}
-            >
-              Counselling dates →
-            </Link>
-            <Link href="/early-registration" className="btn btn-primary btn-sm jeecup-result-cta" style={{ whiteSpace: "nowrap" }}>
-              Register Now →
-            </Link>
-          </span>
-        </div>
-      </aside>
-      )}
+      {/* JEECUP 2026 counselling announcement — auto-rolls Round 1 → 2 → 3 as
+          each choice-filling window closes, then hides after Round 3 (25 Jul).
+          Schedule + copy live in lib/jeecupBannerRounds.ts; the client component
+          re-checks the live clock so it flips at the exact IST threshold with no
+          manual edits. The server passes the build-time round so hydration matches. */}
+      <JeecupCounsellingBanner initialN={bannerRoundAt(Date.now())?.n ?? 0} />
       {/*
         StatsBar is no longer wired to the backend PageSection.
         Reason 28 May 2026: the Django admin had stale stats
