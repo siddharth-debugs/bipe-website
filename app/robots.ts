@@ -100,6 +100,11 @@ export default function robots(): MetadataRoute.Robots {
       })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    // No `host:` directive — Next.js emits it as a `Host:` line, but Google's
+    // robots parser doesn't support `Host` (it was a Yandex-only directive,
+    // since deprecated) and flags it as an unrecognized directive in GSC's
+    // robots.txt report (the "1 issue" warning on every variant, Jun 2026).
+    // The canonical host is already established by 301s + rel=canonical + the
+    // GSC domain property, so `Host` added nothing. Sitemap line stays.
   };
 }
