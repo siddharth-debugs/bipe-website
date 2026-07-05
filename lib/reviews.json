@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-06-30T08:04:48.534Z",
+    "lastUpdated": "2026-07-05T07:44:15.271Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
@@ -12,6 +12,17 @@
   "worstRating": 1,
   "reviews": [
     {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT25wamVXRkRZbWd0VERGTVYwazFjVUptWkY5RkxVRRAB",
+      "rating": 5,
+      "text": "Best Technical educational platform in whole Purvanchal U.P",
+      "publishTime": "2026-05-22T14:30:51.126666094Z",
+      "relativeTime": "a month ago",
+      "author": {
+        "name": "MUKESH KUMAR",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUVdoD4W_OVoCY6hrNzFQR_e8bR6R7otxWDCiifBs_7g93Jvg=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT2xKclZIWTNVSEl4VkZWaE1sSnVhbmx4VUdscmNXYxAB",
       "rating": 5,
       "text": "\"If you are looking for a college that prioritizes your career, BIPE is a fantastic choice. The placement cell is proactive and brings in top-tier companies. Unlike other institutions, their comprehensive corporate training starts as early as the first year. The coursework is rigorous but practical, focusing heavily on real-world case studies rather than just rote learning. The campus itself is peaceful and green, providing a great environment to focus on studies.\"",
@@ -20,17 +31,6 @@
       "author": {
         "name": "Poonam srivastava",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLCP4QxdZ6MMKrONgeIu85UPKlmUOIs_Vsac_sQAo4nqe3luA=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT2pSeVZtdHpaWGhpTUU1d2VIQlJVMGxUTnpkS2MyYxAB",
-      "rating": 5,
-      "text": "It is a very good college, studies are very good.",
-      "publishTime": "2026-05-21T06:50:02.806011962Z",
-      "relativeTime": "a month ago",
-      "author": {
-        "name": "ANUP KUMAR",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjV2EDtWTYrlsbG8s3x6EjNaNMiNv5yRCcQDCo0TUyejNauvbKk=s128-c0x00000000-cc-rp-mo-ba3"
       }
     },
     {
