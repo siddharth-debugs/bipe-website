@@ -225,6 +225,14 @@ export default function Page() {
               WhatsApp admissions <WhatsAppIcon />
             </a>
           </div>
+          {/* Other-state funnel — Bihar merit-seekers landing on the counselling
+              head term get routed to the dedicated state guide (added Jul 2026). */}
+          <p style={{ marginTop: 16, fontSize: 13.5, color: "var(--ink-3)", maxWidth: "60ch" }}>
+            Counselling from <strong>Bihar</strong> or another state? No UP domicile certificate needed —{" "}
+            <Link href="/jeecup-from-bihar" style={{ color: "var(--brand)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 3 }}>
+              see the JEECUP-from-Bihar guide →
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -371,12 +371,12 @@ export const ROUTES: Record<RouteKey, {
   jeecupFromBihar: {
     path: "/jeecup-from-bihar",
     title: "JEECUP from Bihar · Apply to BIPE Varanasi (code 4455)",
-    description: "Bihar students can apply to BIPE Varanasi via JEECUP under the all-India category. Step-by-step for Patna, Gaya, Bhojpur, Buxar, Kaimur applicants.",
+    description: "Bihar students can apply to BIPE Varanasi via JEECUP in the open / general category — no UP domicile certificate needed. Step-by-step for Patna, Gaya, Bhojpur, Buxar, Kaimur applicants.",
   },
   jeecupVsBcece: {
     path: "/jeecup-vs-bcece",
     title: "JEECUP vs BCECE 2026 · Which Polytechnic Exam for Bihar Students?",
-    description: "Bihar student choosing between JEECUP (UP) and BCECE? Compare eligibility, difficulty, seats, fees & counselling — plus how to get a BIPE Varanasi seat via JEECUP code 4455 under the all-India quota.",
+    description: "Bihar student choosing between JEECUP (UP) and BCECE? Compare eligibility, difficulty, seats, fees & counselling — plus how to get a BIPE Varanasi seat via JEECUP code 4455 in the open / general category.",
   },
   admissionFromBihar: {
     path: "/admission-from-bihar",

@@ -160,7 +160,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "04",
         title: "Pick exam centre preferences",
-        body: "JEECUP lets you pick 3 exam-centre preferences. Pick centres realistic for your travel logistics — preferably your home district or a major adjacent district. Eastern UP centres include Varanasi, Jaunpur, Mau, Ghazipur, Azamgarh, Mirzapur, Sonbhadra. Bihar applicants choose Patna, Gaya, Bhagalpur, Muzaffarpur via the all-India category.",
+        body: "JEECUP lets you pick 3 exam-centre preferences. Pick centres realistic for your travel logistics — preferably your home district or a major adjacent district. Eastern UP centres include Varanasi, Jaunpur, Mau, Ghazipur, Azamgarh, Mirzapur, Sonbhadra. Bihar and other out-of-state applicants can choose Patna, Gaya, Bhagalpur, Muzaffarpur.",
       },
       {
         n: "05",
@@ -213,7 +213,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "I'm a Bihar resident — can I apply via JEECUP for BIPE?",
-        a: "Yes. JEECUP is open to candidates from any state. Bihar residents fall under the all-India category for JEECUP-allotted seats. BIPE participates fully in this category — see our /jeecup-from-bihar and /admission-from-bihar pages for the Bihar-specific transit + documents context.",
+        a: "Yes. JEECUP is open to candidates from any state. Bihar residents are admitted in the open / general category — UP-domicile candidates hold the state-reserved seats, while other-state candidates are placed largely in private polytechnics, which is exactly what BIPE is. See our /jeecup-from-bihar and /admission-from-bihar pages for the Bihar-specific transit + documents context.",
       },
       {
         q: "Does BIPE help with the JEECUP form?",
@@ -669,7 +669,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "03",
         title: "Domicile / residence certificate (UP-quota claimants)",
-        body: "If you're claiming UP state quota (most BIPE allottees), bring your UP-issued domicile or residence certificate. Bihar / other-state candidates applying under the all-India quota don't need this. Issued by your tehsil office — start the application 2-3 weeks before reporting.",
+        body: "If you're claiming UP state quota (most BIPE allottees), bring your UP-issued domicile or residence certificate. Bihar / other-state candidates admitted in the open / general category don't need this. Issued by your tehsil office — start the application 2-3 weeks before reporting.",
       },
       {
         n: "04",
@@ -1036,7 +1036,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       { label: "Group A eligibility", value: "Class 10 pass", sub: "Maths + Science compulsory" },
       { label: "Minimum marks", value: "35% aggregate", sub: "General · lower for reserved" },
       { label: "Age limit", value: "No upper bound", sub: "Many groups · check per group" },
-      { label: "Open to", value: "All states", sub: "UP + all-India categories" },
+      { label: "Open to", value: "All states", sub: "UP-domicile + other-state" },
     ],
     steps: [
       {
@@ -1061,8 +1061,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         n: "05",
-        title: "State domicile — UP-quota vs all-India quota",
-        body: "JEECUP has two reservation tracks: UP-domicile (priority for UP residents) and all-India (open to candidates from any state). BIPE participates in both. If you're a UP resident with a domicile certificate, you're eligible for UP-quota seats (more competitive in rank, larger seat pool). If you're from Bihar, MP, Delhi, etc., you compete in all-India category — fewer seats but still real opportunity. See /jeecup-from-bihar for Bihar-specific guidance.",
+        title: "State domicile — UP-quota vs other-state (open)",
+        body: "JEECUP separates seats two ways: UP-domicile (priority for UP residents — the large majority of seats and the state's reserved categories) and open / general (candidates from any state). BIPE participates in both. If you're a UP resident with a domicile certificate, you're eligible for the UP-quota reserved seats (larger pool). If you're from Bihar, MP, Delhi, etc., you compete in the open / general category — fewer seats, oriented toward private polytechnics like BIPE, but a real opportunity, and no UP domicile certificate is needed. See /jeecup-from-bihar for Bihar-specific guidance.",
       },
       {
         n: "06",
@@ -1077,7 +1077,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Can I apply for JEECUP from outside Uttar Pradesh?",
-        a: "Absolutely. JEECUP is open to candidates from any Indian state. Bihar, Madhya Pradesh, Delhi, Jharkhand, Haryana — all eligible. You apply under the 'all-India' category. Domicile certificate from your home state isn't strictly required for JEECUP itself (only for reserved-category claims). See /jeecup-from-bihar for Bihar-specific details.",
+        a: "Absolutely. JEECUP is open to candidates from any Indian state. Bihar, Madhya Pradesh, Delhi, Jharkhand, Haryana — all eligible. You're admitted in the open / general category (no UP domicile certificate is needed for a private polytechnic like BIPE). A domicile certificate from your home state isn't required for JEECUP itself (only for reserved-category claims). See /jeecup-from-bihar for Bihar-specific details.",
       },
       {
         q: "What if my Class 10 marksheet hasn't arrived yet?",

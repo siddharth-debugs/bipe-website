@@ -1218,7 +1218,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Eastern UP students ke liye common centres: Varanasi, Jaunpur, Mau, Ghazipur, Azamgarh, Mirzapur, Sonbhadra। Bihar applicants Patna, Gaya, Bhagalpur, Muzaffarpur pick kar sakte hain (all-India category)।",
+          "Eastern UP students ke liye common centres: Varanasi, Jaunpur, Mau, Ghazipur, Azamgarh, Mirzapur, Sonbhadra। Bihar applicants Patna, Gaya, Bhagalpur, Muzaffarpur pick kar sakte hain (kisi bhi state se allowed)।",
       },
       {
         type: "callout",

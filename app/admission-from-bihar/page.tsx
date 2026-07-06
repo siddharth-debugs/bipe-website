@@ -55,7 +55,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Do I need a UP residence certificate?",
-    a: "No. BIPE does not require a UP residence certificate. Bihar applicants are admitted in the all-India / open category under JEECUP and the home address remains your permanent address.",
+    a: "No. BIPE does not require a UP residence certificate. Bihar applicants are admitted in the open / general category under JEECUP, and your home address stays as your permanent address.",
   },
   {
     q: "Can I keep my Bihar Aadhaar address?",
@@ -85,7 +85,7 @@ export default function Page() {
       <PageHeader
         eyebrow="Admission from Bihar"
         title={<>Documents, hostel and the <span className="serif">practical bits.</span></>}
-        lead="Bihar candidates take admission at BIPE through JEECUP under the all-India category. Bihar Board (BSEB) marksheets are accepted exactly the same as CBSE. The list below is everything a family from Patna, Ara, Buxar, Gaya or Bhagalpur needs to know before the counselling window opens."
+        lead="Bihar candidates take admission at BIPE through JEECUP in the open / general category — no UP domicile certificate required. Bihar Board (BSEB) marksheets are accepted exactly the same as CBSE. The list below is everything a family from Patna, Ara, Buxar, Gaya or Bhagalpur needs to know before the counselling window opens."
       />
 
       <section className="section">

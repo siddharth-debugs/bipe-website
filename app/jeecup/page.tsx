@@ -86,7 +86,7 @@ const PREP: { num: string; doc: string; sub: string }[] = [
 const FAQS: { q: string; a: string }[] = [
   {
     q: "Who is eligible for JEECUP and BIPE 4455?",
-    a: "JEECUP Group A (Polytechnic Engineering) is open to anyone who has passed Class 10 with Mathematics and Science. There is no upper age limit for most Group A polytechnic seats. Domicile is not restricted to UP — students from Bihar, Jharkhand, MP and elsewhere can apply via the all-India category. BIPE specifically admits via JEECUP institute code 4455 across all five BTEUP branches.",
+    a: "JEECUP Group A (Polytechnic Engineering) is open to anyone who has passed Class 10 with Mathematics and Science. There is no upper age limit for most Group A polytechnic seats. Domicile is not restricted to UP — students from Bihar, Jharkhand, MP and elsewhere can apply and are admitted in the open / general category (no UP domicile certificate is required for a private polytechnic like BIPE). BIPE specifically admits via JEECUP institute code 4455 across all five BTEUP branches.",
   },
   {
     q: "What is BIPE's JEECUP institute code?",
@@ -111,7 +111,7 @@ const FAQS: { q: string; a: string }[] = [
   // ─── Hindi vernacular Q&As — same audience cluster as /fees page ───
   {
     q: "JEECUP 2026 के लिए कौन apply कर सकता है?",
-    a: "JEECUP Group A (Polytechnic Engineering) के लिए Class 10 pass with Math + Science चाहिए। कोई upper age limit नहीं। UP domicile आवश्यक नहीं — Bihar, Jharkhand, MP और बाकी राज्यों से भी apply कर सकते हैं all-India category में। BIPE की admission JEECUP institute code 4455 से होती है, पाँचों BTEUP branches के लिए।",
+    a: "JEECUP Group A (Polytechnic Engineering) के लिए Class 10 pass with Math + Science चाहिए। कोई upper age limit नहीं। UP domicile आवश्यक नहीं — Bihar, Jharkhand, MP और बाकी राज्यों से भी open / general category में apply कर सकते हैं (BIPE जैसे private polytechnic में admission के लिए UP domicile certificate ज़रूरी नहीं)। BIPE की admission JEECUP institute code 4455 से होती है, पाँचों BTEUP branches के लिए।",
   },
   {
     q: "BIPE का JEECUP code क्या है और कैसे इस्तेमाल करें?",
@@ -198,6 +198,14 @@ export default function Page() {
                 </span>
                 <ArrowIcon size={16} />
               </Link>
+              {/* Other-state funnel — route JEECUP-merit seekers from across the
+                  Bihar border to the dedicated state guide (added Jul 2026). */}
+              <p style={{ marginTop: 14, fontSize: 13, color: "var(--ink-3)", maxWidth: "58ch" }}>
+                From Bihar or another state?{" "}
+                <Link href="/jeecup-from-bihar" style={{ color: "var(--brand)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 3 }}>
+                  See the JEECUP-from-Bihar guide →
+                </Link>
+              </p>
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "7", l: "Counselling rounds" },

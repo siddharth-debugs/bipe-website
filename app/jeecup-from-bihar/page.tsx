@@ -9,7 +9,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "01",
     title: "Register on the JEECUP portal",
-    body: "Visit jeecup.admissions.nic.in and create a candidate profile. Bihar residence is fine — JEECUP fills the bulk of polytechnic seats under the all-India category, which is open to candidates from any state.",
+    body: "Visit jeecup.admissions.nic.in and create a candidate profile. Bihar residence is fine — JEECUP is open to candidates from any state, and no UP domicile certificate is needed to apply. Other-state candidates are admitted in the open / general category, and private polytechnics like BIPE (code 4455) are exactly where those seats sit.",
   },
   {
     n: "02",
@@ -52,11 +52,11 @@ const DISTRICTS: { name: string; note: string }[] = [
 const FAQ: { q: string; a: string }[] = [
   {
     q: "Can a Bihar resident apply to BIPE via JEECUP?",
-    a: "Yes. JEECUP is open to candidates from any state. The all-India quota inside JEECUP counselling is where Bihar applicants are placed, and BIPE participates in it under code 4455.",
+    a: "Yes. JEECUP is open to candidates from any state. Bihar applicants are admitted in the open / general category — UP-domicile candidates hold the state-reserved seats, while other-state candidates are placed largely in private polytechnics, which is exactly what BIPE (code 4455) is.",
   },
   {
     q: "Do I need a UP domicile certificate?",
-    a: "No domicile certificate is required to apply or to take admission at BIPE. UP-domicile applies only to UP-state-reservation quotas inside JEECUP — Bihar candidates apply in the open / all-India pool.",
+    a: "No domicile certificate is required to apply or to take admission at BIPE. UP-domicile only affects UP's reserved-category seats and state scholarships — Bihar candidates are admitted in the open / general category.",
   },
   {
     q: "Will Bihar Board (BSEB) marks be accepted?",
@@ -78,7 +78,7 @@ export default function Page() {
       <PageHeader
         eyebrow="For Bihar applicants"
         title={<>Apply to BIPE Varanasi <span className="serif">via JEECUP.</span></>}
-        lead="JEECUP is the entrance exam for AICTE-approved polytechnics in Uttar Pradesh. Bihar candidates are welcome — admissions run under the all-India category and Bihar Board, CBSE and other state-board marksheets are accepted exactly the same way."
+        lead="JEECUP is the entrance exam for AICTE-approved polytechnics in Uttar Pradesh. Bihar candidates are welcome — admission is in the open / general category, no UP domicile certificate required, and Bihar Board, CBSE and other state-board marksheets are accepted exactly the same way."
       />
 
       <section className="section">
@@ -129,7 +129,7 @@ export default function Page() {
         <div className="container" style={{ maxWidth: 820, textAlign: "center" }}>
           <h2 className="bipe-h2" style={{ color: "#fff" }}>Talk to admissions in Hindi or English.</h2>
           <p style={{ marginTop: 12, opacity: 0.9, lineHeight: 1.7 }}>
-            Call +91-9415202879 or WhatsApp +91-7310077788 (separate handset for chat). Our counsellors are familiar with the Bihar Board, JEECUP all-India quota and the practicalities of moving a child from Patna, Ara, Buxar, Sasaram or Gaya to the BIPE campus.
+            Call +91-9415202879 or WhatsApp +91-7310077788 (separate handset for chat). Our counsellors are familiar with the Bihar Board, JEECUP's open-category admission for other-state students, and the practicalities of moving a child from Patna, Ara, Buxar, Sasaram or Gaya to the BIPE campus.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Start application</Link>
