@@ -467,7 +467,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
           ["1,00,000 – 1,30,000", "Government options narrow sharply", "Strong chance at every branch"],
           ["1,30,000 – 1,69,000", "Few government seats left", "Still in range — apply early, rounds matter"],
         ],
-        note: "Bands are All-India Group A ranks. Reserved-category (SC/ST/OBC/EWS) ranks open seats at higher numbers, so your effective reach is wider. WhatsApp your exact rank to +91-7310077788 for a branch-by-branch read.",
+        note: "Bands are All-India Group A ranks — the same numbers apply whether you're from UP, Bihar or any other state (other-state candidates are admitted in the open / general category). Reserved-category (SC/ST/OBC/EWS) ranks open seats at higher numbers, so your effective reach is wider. WhatsApp your exact rank to +91-7310077788 for a branch-by-branch read.",
+        noteLink: { label: "From Bihar? See the JEECUP-from-Bihar guide", href: "/jeecup-from-bihar" },
       },
       {
         eyebrow: "Real cutoffs · not projections",
@@ -520,6 +521,10 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         q: "What rank do I need for BIPE?",
         a: "In 2025-26 every Group A branch at BIPE 4455 closed between roughly 1,47,000 and 1,69,000. So if your Group A All-India rank is under ~1,30,000 you have a real shot at any branch; under ~1,00,000 you have margin even in later rounds; under 50,000 you can choose purely by interest. Lateral entry (Group K) is far tighter — roughly 1,750–2,850.",
+      },
+      {
+        q: "I'm from Bihar or another state — do these rank bands apply to me?",
+        a: "Yes. JEECUP issues one All-India Group A rank, and the bands above apply to every candidate regardless of home state. As an other-state candidate you're admitted in the open / general category — no UP domicile certificate is needed for a private polytechnic like BIPE. See the step-by-step at /jeecup-from-bihar and the documents list at /admission-from-bihar.",
       },
       {
         q: "What rank do I need for Computer Science at BIPE?",

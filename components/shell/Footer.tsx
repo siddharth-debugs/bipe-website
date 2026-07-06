@@ -344,7 +344,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
           {/* Admission column — 2026-05-20: added JEECUP Counselling
               (high-value 18,100/mo head term page that had no footer
               link previously) and JEECUP from Bihar (geo landing). */}
-          <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["JEECUP Counselling", "/jeecup-counselling"], ["JEECUP from Bihar", "/jeecup-from-bihar"], ["Apply now", "/apply"]]} />
+          <Col heading="Admission" items={[["Admission", "/admission"], ["Fees", "/fees"], ["Scholarships", "/scholarships"], ["Documents", "/documents"], ["JEECUP Guidance", "/jeecup"], ["JEECUP Counselling", "/jeecup-counselling"], ["JEECUP from Bihar", "/jeecup-from-bihar"], ["Admission from Bihar", "/admission-from-bihar"], ["Apply now", "/apply"]]} />
           {/* About & Campus — 2026-05-20: added Affiliations &
               Approvals (consolidated 7-affiliation page) and Why BIPE
               (category-leader brand page). Both were route-live but

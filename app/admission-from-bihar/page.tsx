@@ -126,6 +126,7 @@ export default function Page() {
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/apply" className="btn btn-primary">Start application</Link>
             <Link href="/jeecup-from-bihar" className="btn btn-ghost">JEECUP from Bihar</Link>
+            <Link href="/jeecup-rank-predictor-2026" className="btn btn-ghost">Check your rank</Link>
             <Link href="/jeecup-vs-bcece" className="btn btn-ghost">JEECUP vs BCECE</Link>
           </div>
         </div>

@@ -81,6 +81,26 @@ export default function Page() {
         lead="JEECUP is the entrance exam for AICTE-approved polytechnics in Uttar Pradesh. Bihar candidates are welcome — admission is in the open / general category, no UP domicile certificate required, and Bihar Board, CBSE and other state-board marksheets are accepted exactly the same way."
       />
 
+      {/* Merit-intent bridge — a Bihar student who already has their rank wants
+          to know which BIPE branch it reaches (added Jul 2026). */}
+      <div className="container" style={{ maxWidth: 980, marginTop: 8 }}>
+        <Link
+          href="/jeecup-rank-predictor-2026"
+          style={{
+            display: "flex", alignItems: "center", gap: 12, padding: "14px 18px",
+            borderRadius: 14, border: "1px solid color-mix(in oklab, var(--brand) 35%, var(--line))",
+            background: "color-mix(in oklab, var(--brand) 7%, var(--white))",
+            textDecoration: "none", color: "var(--ink)",
+          }}
+        >
+          <span style={{ fontSize: 20 }} aria-hidden="true">📊</span>
+          <span style={{ fontSize: 14, lineHeight: 1.55, flex: 1 }}>
+            <strong>Already have your JEECUP 2026 rank?</strong> See which BIPE branch it reaches — real filed closing ranks, by branch.
+          </span>
+          <span aria-hidden="true" style={{ color: "var(--brand)", fontWeight: 700 }}>→</span>
+        </Link>
+      </div>
+
       <section className="section">
         <div className="container" style={{ maxWidth: 980 }}>
           <div className="eyebrow">The six steps, end to end</div>
