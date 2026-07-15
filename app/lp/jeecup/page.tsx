@@ -44,7 +44,7 @@ export default function Page() {
       >
         <div
           className="container"
-          style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "12px 0" }}
+          style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap", paddingTop: 12, paddingBottom: 12 }}
         >
           <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -81,10 +81,15 @@ export default function Page() {
           style={{
             position: "relative",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            // min(320px, 100%) — the track can never demand more than the
+            // container, so sub-360px phones don't get sideways scroll.
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
             gap: "clamp(24px, 4vw, 48px)",
             alignItems: "start",
-            padding: "clamp(28px, 5vw, 56px) 0 40px",
+            // Top/bottom only — a `padding` shorthand would zero the
+            // horizontal 24px that .container provides.
+            paddingTop: "clamp(28px, 5vw, 56px)",
+            paddingBottom: 40,
           }}
         >
           {/* message */}
@@ -109,11 +114,14 @@ export default function Page() {
               ))}
             </div>
 
+            {/* Flex, not `grid auto 1fr` — globals.css force-stacks that inline
+                pattern at ≤860px (the mobile safety net), which broke these
+                rows into awkward two-line stacks on phones. */}
             <ul style={{ marginTop: 22, listStyle: "none", padding: 0, display: "grid", gap: 10 }}>
               {PROOF.map(([k, v]) => (
-                <li key={k} style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 12, alignItems: "baseline", fontSize: 14.5, color: "var(--ink-2)" }}>
+                <li key={k} style={{ display: "flex", flexWrap: "wrap", columnGap: 12, rowGap: 2, alignItems: "baseline", fontSize: 14.5, color: "var(--ink-2)" }}>
                   <span className="serif" style={{ fontStyle: "italic", color: "var(--brand)", fontWeight: 400, fontSize: 17, minWidth: 92 }}>{k}</span>
-                  <span>{v}</span>
+                  <span style={{ flex: "1 1 22ch" }}>{v}</span>
                 </li>
               ))}
             </ul>
@@ -140,7 +148,7 @@ export default function Page() {
       <footer style={{ borderTop: "1px solid var(--line)", background: "var(--white)" }}>
         <div
           className="container"
-          style={{ padding: "20px 0", fontSize: 12.5, color: "var(--ink-3)", display: "flex", flexWrap: "wrap", gap: "6px 16px", justifyContent: "space-between" }}
+          style={{ paddingTop: 20, paddingBottom: 20, fontSize: 12.5, color: "var(--ink-3)", display: "flex", flexWrap: "wrap", gap: "6px 16px", justifyContent: "space-between" }}
         >
           <span>Banaras Institute of Polytechnic &amp; Engineering · Gajokhar, Phoolpur, Varanasi 221206 · JEECUP 4455</span>
           <span>Private, AICTE-approved polytechnic. Not a government institution.</span>
