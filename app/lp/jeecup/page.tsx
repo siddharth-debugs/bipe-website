@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DATA } from "@/lib/data";
 import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 import LpLeadForm from "./LpLeadForm";
+import LpScheduleNote from "./LpScheduleNote";
+import { phaseIndexAt } from "./lpSchedule";
 
 /**
  * /lp/jeecup — dedicated paid-ad landing page (Meta / Google).
@@ -109,6 +111,11 @@ export default function Page() {
             <p className="lead" style={{ marginTop: 18, maxWidth: "52ch", color: "var(--ink-2)" }}>
               Do your <strong>free Pre-Counselling Registration</strong> and hold your preferred branch at BIPE Varanasi — AICTE-approved, JEECUP code <strong>4455</strong>. Open / general category, so <strong>no UP domicile is needed</strong> — Bihar students welcome. Classes begin 1 August.
             </p>
+
+            {/* Live counselling-schedule strip — rolls Round 3 → allotment →
+                spot window on the exact IST dates, so the page always agrees
+                with whichever schedule-phased ad brought the click here. */}
+            <LpScheduleNote initialIndex={phaseIndexAt(Date.now())} />
 
             <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>
               {TRUST.map(([t, s]) => (
