@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DATA } from "@/lib/data";
+import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 import LpLeadForm from "./LpLeadForm";
 
 /**
@@ -18,10 +19,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// Placements figure derives from lib/placement-stats (the TPO manifest) —
+// never hardcode it: a stale "993" from the old per-branch PDF sum slipped in
+// here once and conflicted with the canonical 1,331 the site (and the video
+// ad) use. See app/placements/page.tsx for the same resolution.
 const TRUST: [string, string][] = [
   ["AICTE-approved", "Permanent ID 1-488233171"],
   ["BTEUP · code 4455", "5 diploma branches"],
-  ["993+ placements", "Mahindra · Tata · BEL"],
+  [`${formatPlacements(PLACEMENT_STATS.totalPlacements)}+ placements`, "TPO-verified · Mahindra · Tata · BEL"],
   ["Since 2010", "16 years on record"],
 ];
 
