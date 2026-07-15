@@ -16,6 +16,7 @@ import GoogleAnalyticsBeacon from "@/components/shell/GoogleAnalyticsBeacon";
 import MicrosoftClarityBeacon from "@/components/shell/MicrosoftClarityBeacon";
 import ClaritySessionTags from "@/components/shell/ClaritySessionTags";
 import MetaPixelBeacon from "@/components/shell/MetaPixelBeacon";
+import FbclidCapture from "@/components/shell/FbclidCapture";
 import OutboundTracker from "@/components/shell/OutboundTracker";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import { aggregateRatingSchema } from "@/lib/reviews";
@@ -517,6 +518,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <GoogleAnalyticsBeacon />
         <MicrosoftClarityBeacon />
         <MetaPixelBeacon />
+        <FbclidCapture />
         <OutboundTracker />
       </body>
     </html>

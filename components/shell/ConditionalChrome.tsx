@@ -40,9 +40,19 @@ export function ConditionalChrome({
 }) {
   const path = usePathname() ?? "/";
   const isAdmin = path.startsWith("/admin");
+  // Ad landing pages (/lp/*) run chrome-free — one message, one form, no nav
+  // or footer to leak the click. The page supplies its own minimal layout.
+  const isLanding = path.startsWith("/lp");
 
   if (isAdmin) {
     return <>{children}</>;
+  }
+  if (isLanding) {
+    return (
+      <main id="main-content" tabIndex={-1}>
+        {children}
+      </main>
+    );
   }
 
   return (
