@@ -15,12 +15,14 @@ const at = (iso: string) => new Date(iso).getTime();
 export const LP_PHASES: Array<LpPhase & { until: number }> = [
   {
     badge: "Round 3 · 16–19 July",
-    text: "Round 3 choice-filling opens 16 July — the last main round. Seats at BIPE moved fast in Rounds 1 & 2: do your Pre-Counselling Registration today and walk into choice-filling with your branch held.",
+    // "160+" is the owner-confirmed count (164 admitted across Rounds 1–2 +
+    // Round-3 confirmations, 16 Jul 2026) — rounded down so it stays true.
+    text: "Round 3 choice-filling opens 16 July — the last main round. 160+ admissions are already confirmed at BIPE this season: do your Pre-Counselling Registration today and walk into choice-filling with your branch held.",
     until: at("2026-07-16T00:00:00+05:30"),
   },
   {
     badge: "Round 3 LIVE · closes 19 July",
-    text: "Round 3 choice-filling is ON (16–19 July) — the last main round. Add BIPE code 4455 to your choices now; seats moved fast in Rounds 1 & 2.",
+    text: "Round 3 choice-filling is ON (16–19 July) — the last main round. Add BIPE code 4455 to your choices now — 160+ admissions already confirmed this season.",
     until: at("2026-07-20T00:00:00+05:30"),
   },
   {
