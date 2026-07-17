@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { DATA } from "@/lib/data";
 import { BANNER_ROUNDS, bannerRoundAt } from "@/lib/jeecupBannerRounds";
 
 /**
@@ -61,6 +62,16 @@ export function JeecupCounsellingBanner({ initialN }: { initialN: number }) {
           <Link href="/early-registration" className="btn btn-primary btn-sm jeecup-result-cta" style={{ whiteSpace: "nowrap" }}>
             Register Now →
           </Link>
+          {/* Direct line for the counselling-anxious (owner request, Jul 2026) —
+              label derives the round from the same schedule, so it rolls itself.
+              A missed call still lands in the admissions log = ring-back lead. */}
+          <a
+            href={`tel:${DATA.contact.phone.replace(/[^\d+]/g, "")}`}
+            className="btn btn-sm"
+            style={{ background: "var(--accent)", color: "var(--ink)", fontWeight: 700, whiteSpace: "nowrap" }}
+          >
+            📞 Round {round.n} help? Call
+          </a>
         </span>
       </div>
     </aside>
