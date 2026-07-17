@@ -6,6 +6,7 @@ import { Nav } from "./Nav";
 import { Footer, type FooterContact } from "./Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { WhatsAppFAB } from "./WhatsAppFAB";
+import { CallFAB } from "./CallFAB";
 import { StickyCTA } from "./StickyCTA";
 import { TrustBadgeStrip } from "./TrustBadgeStrip";
 
@@ -62,6 +63,7 @@ export function ConditionalChrome({
       <main id="main-content" tabIndex={-1}>{children}</main>
       <Footer contact={contact} />
       <WhatsAppFAB />
+      <CallFAB />
       <StickyCTA />
       <InquiryModal />
       <CommandK />
