@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { DATA } from "@/lib/data";
 import { LP_PHASES, phaseIndexAt } from "./lpSchedule";
 
 /**
@@ -57,6 +58,28 @@ export default function LpScheduleNote({ initialIndex }: { initialIndex: number 
         </span>
       </span>
       <span style={{ flex: "1 1 30ch", fontSize: 13.5, lineHeight: 1.55 }}>{p.text}</span>
+      {/* Urgent-contact row (owner request, Jul 2026): some visitors in a live
+          counselling window won't fill a form but WILL tap call/WhatsApp. A
+          missed call still lands in the admissions call log = a lead to ring
+          back. Labels stay phase-generic so they never go stale. */}
+      <span style={{ flexBasis: "100%", display: "flex", gap: 10, flexWrap: "wrap", marginTop: 4 }}>
+        <a
+          href={`tel:${DATA.contact.phone.replace(/[^\d+]/g, "")}`}
+          className="btn btn-sm"
+          style={{ background: "var(--accent)", color: "var(--ink)", fontWeight: 700, whiteSpace: "nowrap" }}
+        >
+          📞 Urgent? Call admissions
+        </a>
+        <a
+          href={DATA.contact.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-sm"
+          style={{ background: "color-mix(in oklab, var(--paper) 16%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 30%, transparent)", whiteSpace: "nowrap" }}
+        >
+          WhatsApp karein
+        </a>
+      </span>
     </div>
   );
 }
