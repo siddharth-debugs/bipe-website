@@ -20,10 +20,14 @@ import {
  * classes); the WhatsApp-handoff orchestration lives in the shared
  * module.
  *
- * Persistence: FAB does NOT persist to /api/submit by default — the
- * visitor has already opted in via the affordance and we don't want
- * a duplicate row in the Inbox per FAB click. The InquiryModal
- * (which fires unprompted) persists; the FAB doesn't.
+ * Persistence: FAB does NOT persist to /api/submit and does NOT ask
+ * for a phone number — owner direction 17 Jul 2026, modeled on the
+ * sibling institute's "BITE Sampark" bubble (bitevns.ac.in): name +
+ * course only, course selection mandatory, visible inline errors,
+ * then straight into the wa.me chat. (A brief same-day experiment
+ * with phone + Double Tick persistence was reverted — the visitor's
+ * own WhatsApp message IS the contact channel here; the InquiryModal
+ * remains the persisted call-back surface.)
  */
 export function WhatsAppFAB() {
   const [open, setOpen] = useState(false);
@@ -93,6 +97,7 @@ export function WhatsAppFAB() {
 
           <WhatsAppForm
             source="whatsapp-fab"
+            requireBranch
             gtagEvent="enquiry_submit"
             onSuccess={() => setOpen(false)}
             renderFields={({
@@ -100,6 +105,8 @@ export function WhatsAppFAB() {
               branch,
               setName,
               setBranch,
+              status,
+              errorMsg,
               branchOptions,
             }: WhatsAppFormRenderProps) => (
               <div className="wa-panel-form">
@@ -122,7 +129,12 @@ export function WhatsAppFAB() {
                     <option key={b} value={b}>{b}</option>
                   ))}
                 </select>
-                <button type="submit" className="wa-submit">
+                {status === "error" && errorMsg && (
+                  <div role="alert" style={{ color: "var(--danger)", fontSize: 12.5, lineHeight: 1.5 }}>
+                    {errorMsg}
+                  </div>
+                )}
+                <button type="submit" className="wa-submit" disabled={status === "sending"}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <line x1="22" y1="2" x2="11" y2="13" />
                     <polygon points="22 2 15 22 11 13 2 9 22 2" />

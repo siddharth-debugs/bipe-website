@@ -1291,6 +1291,7 @@ body.no-motion .wa-panel { animation: none; }
   gap: 8px;
   transition: background .15s var(--ease);
 }
+.wa-submit:disabled { opacity: 0.6; cursor: default; }
 .wa-submit:hover { background: #20bd5a; }
 .wa-direct {
   text-align: center;

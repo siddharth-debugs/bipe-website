@@ -84,6 +84,10 @@ export interface WhatsAppFormProps {
   /** Whether to require a 10-digit phone (10 digits, starts 6-9).
    *  Defaults to false (FAB-style: name + course only). */
   requirePhone?: boolean;
+  /** Whether a course/branch selection is mandatory before the
+   *  handoff (BITE-Sampark parity, owner direction 17 Jul 2026).
+   *  Defaults to false so the InquiryModal keeps its behaviour. */
+  requireBranch?: boolean;
   /** Override the default gtag event name. */
   gtagEvent?: string;
   /** Render-prop returning the styled form fields. The component
@@ -109,6 +113,7 @@ export function WhatsAppForm({
   source,
   persist = false,
   requirePhone = false,
+  requireBranch = false,
   gtagEvent,
   renderFields,
   onSuccess,
@@ -135,6 +140,11 @@ export function WhatsAppForm({
     }
     if (requirePhone && !/^[6-9]\d{9}$/.test(cleanPhone)) {
       setErrorMsg("Please enter a valid 10-digit Indian mobile number.");
+      setStatus("error");
+      return;
+    }
+    if (requireBranch && !branch) {
+      setErrorMsg("Please select your course interest to continue.");
       setStatus("error");
       return;
     }
