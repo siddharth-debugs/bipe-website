@@ -146,7 +146,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       primary: { label: "Reserve your branch — free →", href: "/early-registration" },
       secondary: { label: "Open JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
     },
-    lead: "JEECUP 2026 counselling runs in two phases. Rounds 1–3 (Phase 1) were open only to Uttar Pradesh domicile candidates. Round 4 begins Phase 2 — the single biggest opening after Round 1 — because two large groups become eligible at once: candidates from other states (Bihar, Jharkhand, MP and beyond), and UP candidates who did not register, were not allotted, or missed Rounds 1–3. Other-state candidates are admitted in the open / general category (no UP reservation), and those open seats concentrate in private polytechnics — which is exactly what BIPE is (code 4455). Exact Round-4 dates release progressively on jeecup.admissions.nic.in, so lock your branch at BIPE first and fill 4455 the moment choice-filling opens.",
+    lead: "JEECUP 2026 counselling runs in two phases. Rounds 1–3 (Phase 1) were open only to Uttar Pradesh domicile candidates. Round 4 begins Phase 2 — the single biggest opening after Round 1 — because three groups become eligible at once: candidates from other states (Bihar, Jharkhand, MP and beyond); UP candidates who did not register, were not allotted, or missed Rounds 1–3; and candidates whose earlier allotment lapsed — allotted a seat in Round 1 or 2 but didn't verify documents or pay in time. That last group was barred from Rounds 2–3, and JEECUP's official notification re-admits them from Round 4. Other-state candidates are admitted in the open / general category (no UP reservation), and those open seats concentrate in private polytechnics — which is exactly what BIPE is (code 4455). Exact Round-4 dates release progressively on jeecup.admissions.nic.in, so lock your branch at BIPE first and fill 4455 the moment choice-filling opens.",
     quickStats: [
       { label: "Who's eligible now", value: "All states", sub: "Bihar, Jharkhand, MP + missed R1–3" },
       { label: "Category", value: "Open / General", sub: "no UP domicile certificate needed" },
@@ -177,11 +177,12 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
         rows: [
           ["From UP but missed Rounds 1–3", "Yes — Round 4 is your entry point back in"],
           ["From UP, applied but not allotted a seat yet", "Yes — fresh choice-filling in Round 4"],
+          ["Allotted a seat in R1/R2 but didn't pay or report (Freeze/Float lapsed)", "Yes — barred from Rounds 2–3, but the official notification lets you rejoin in Round 4"],
           ["From Bihar / Jharkhand / MP / any other state", "Yes — Phase 2 (Round 4+) is the FIRST round you're eligible for"],
-          ["Already accepted and froze a seat in Rounds 1–3", "No — your seat is locked (upgrade only if you chose to float)"],
+          ["Froze a seat AND completed admission (fee paid + verified + reported)", "No — your seat is locked (upgrade only if you chose to Float)"],
           ["Want a private polytechnic like BIPE", "Yes — other-state / open seats concentrate in private colleges"],
         ],
-        note: "Other-state candidates compete in the open / general category and don't get UP's reserved-category seats — that's the one rule to know. Everything else works exactly like Rounds 1–3.",
+        note: "Two rules to know: other-state candidates compete in the open / general category (no UP reservation), and a candidate whose earlier allotment lapsed — allotted a seat but didn't verify documents or pay in time — is re-admitted to counselling from Round 4. Both are straight from JEECUP's official counselling notification.",
       },
     ],
     steps: [
@@ -224,6 +225,10 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         q: "I missed Rounds 1–3 — can I still get in through Round 4?",
         a: "Yes. Round 4 is the big re-opening. Whether you didn't register in time, weren't allotted a seat, or simply sat the earlier rounds out, Round 4 lets you fill fresh choices. Check the portal for whether you need to (re)register for Phase 2, reserve your branch at BIPE now, and add code 4455 when choice-filling opens.",
+      },
+      {
+        q: "I was allotted a seat earlier but didn't take admission — can I join Round 4?",
+        a: "Yes. JEECUP's official counselling notification (Point 5) is explicit: a candidate allotted a seat in Round 1 or 2 who did NOT complete admission — chose Freeze but didn't get documents verified or didn't pay the admission fee in time, or chose Float but didn't deposit the security + counselling fee — is not eligible for Rounds 2 and 3, but CAN participate again in Round 4. So a lapsed earlier allotment does not shut you out; Round 4 reopens for you. (Candidates who actually completed their Freeze — paid, verified and reported — are admitted and locked in.) Reserve your branch at BIPE (code 4455) and fill 4455 when Round 4 choice-filling opens.",
       },
       {
         q: "Do I need to register again for Round 4?",
