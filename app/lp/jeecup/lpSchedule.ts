@@ -33,7 +33,7 @@ export const LP_PHASES: Array<LpPhase & { until: number }> = [
   {
     badge: "Round 3 allotment · Round 4 next",
     text: "Round 3 allotment is out (20 July) — report by 25 July if allotted. Not allotted, or from another state? Round 4 (Phase 2) opens next and it's open to ALL states. Register below and we'll guide you in.",
-    until: at("2026-07-23T00:00:00+05:30"),
+    until: at("2026-07-20T00:00:00+05:30"), // Round 3 selection done → advance to Round 4 (owner, 20 Jul)
   },
   {
     badge: "Round 4 · Phase 2 · all states",

@@ -62,7 +62,7 @@ export const BANNER_ROUNDS: BannerRound[] = [
       "JEECUP Round 3 allotment is out — report by 25 July if you got a seat. Missed Rounds 1–3, or from another state? Round 4 (Phase 2) opens next for ALL states. Reserve your branch at BIPE, code 4455.",
     hindi:
       "JEECUP Round 3 allotment आ गया — seat मिली तो 25 जुलाई तक report करें। मौका छूट गया या दूसरे राज्य से हैं? Round 4 (Phase 2) सभी राज्यों के लिए खुल रहा है। BIPE में reserve करें, code 4455।",
-    rollAtMs: at("2026-07-23T00:00:00+05:30"), // Round 3 reporting → roll to Round 4
+    rollAtMs: at("2026-07-20T00:00:00+05:30"), // Round 3 selection done → focus shifts to Round 4 (owner, 20 Jul)
   },
   {
     n: 4,
