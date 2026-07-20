@@ -28,6 +28,7 @@ export type RouteKey =
   | "jeecupSeatAllotment" | "jeecupDocumentVerification" | "jeecupHelpline"
   | "jeecupSyllabus" | "jeecupPreviousPapers" | "jeecupEligibility"
   | "jeecupExamPattern" | "jeecupAfterResults" | "jeecupRankPredictor"
+  | "jeecupRound4"
   | "bteupFamilyId" | "bteupAdmitCard" | "bteupExamDates"
   | "bteupResult" | "bteupFees" | "bteupRegistration"
   | "bteupSyllabus" | "bteupBackPaper" | "bteupGrading"
@@ -794,6 +795,22 @@ export const ROUTES: Record<RouteKey, {
       "JEECUP rank for BIPE",
       "JEECUP rank list 2026",
       "JEECUP rank kitni honi chahiye",
+    ],
+  },
+  jeecupRound4: {
+    path: "/jeecup-round-4-2026",
+    title: "JEECUP Round 4 2026 · Phase 2 Opens for ALL States (Bihar too) | BIPE 4455",
+    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1. Now open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, dates, choice-filling and how to lock a BIPE seat — code 4455.",
+    keywords: [
+      "JEECUP round 4",
+      "JEECUP round 4 2026",
+      "JEECUP round 4 eligibility",
+      "JEECUP round 4 other state",
+      "JEECUP phase 2 counselling",
+      "JEECUP round 4 choice filling",
+      "JEECUP counselling for Bihar students",
+      "JEECUP round 4 date",
+      "JEECUP round 4 registration",
     ],
   },
   jeecupSeatAllotment: {

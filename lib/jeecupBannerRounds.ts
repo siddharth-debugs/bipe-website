@@ -1,24 +1,32 @@
 /**
  * JEECUP 2026 counselling-round schedule + copy for the homepage announcement.
  *
- * The banner auto-rolls Round 1 → 2 → 3 as each round's choice-filling window
- * closes, then hides after Round 3 ends. All thresholds are IST (+05:30) so the
- * roll happens at the same instant for every visitor, regardless of their device
- * timezone. This module is pure data + a pure function (no "use client", no
- * Date.now() at module scope) so the server's initial render and the client's
- * live re-check agree — no hydration mismatch.
+ * The banner auto-rolls through the live counselling round as each window
+ * closes. All thresholds are IST (+05:30) so the roll happens at the same
+ * instant for every visitor, regardless of device timezone. Pure data + a pure
+ * function (no "use client", no Date.now() at module scope) so the server's
+ * initial render and the client's live re-check agree — no hydration mismatch.
  *
- * Official JEECUP 2026 Phase-1 schedule (per the counselling notification):
- *   Round 1 — choice-filling 25–30 Jun, seat allotment 1 Jul
- *   Round 2 — choice-filling 7–9 Jul,  seat allotment 10 Jul
- *   Round 3 — choice-filling 16–19 Jul, seat allotment 20 Jul (round ends ~25 Jul)
+ * Official JEECUP 2026 structure — TWO PHASES, five main rounds:
+ *   PHASE 1 · Rounds 1–3 · UP-DOMICILE ONLY
+ *     Round 1 — choice-filling 25–30 Jun, allotment 1 Jul
+ *     Round 2 — choice-filling 7–9 Jul,   allotment 10 Jul
+ *     Round 3 — choice-filling 16–19 Jul, allotment 20 Jul (report by ~25 Jul)
+ *   PHASE 2 · Rounds 4–5 · OPEN TO ALL STATES (Bihar, Jharkhand, MP…)
+ *     Round 4 — the major re-opening: other-state candidates become eligible
+ *               for the first time, plus UP candidates who missed/weren't
+ *               allotted in Rounds 1–3. Dates released progressively on the
+ *               portal (Round-4 choice-filling expected ~23–25 Jul) — so the
+ *               Round-4/5 copy below deliberately avoids a hard date and points
+ *               to jeecup.admissions.nic.in.
+ *     Round 5 — final round (choice-filling expected early Aug).
  *
- * To re-use for a future cycle, edit the dates in the copy + the `rollAt`
- * thresholds below. The banner shows round N while now < rollAt[N], then the
- * next one; once now ≥ the last rollAt it returns null (hidden).
+ * To re-use for a future cycle, edit the copy + `rollAt` thresholds. The banner
+ * shows round N while now < rollAt[N], then the next one; once now ≥ the last
+ * rollAt it returns null (hidden).
  */
 export type BannerRound = {
-  n: 1 | 2 | 3;
+  n: 1 | 2 | 3 | 4 | 5;
   eyebrow: string;
   headline: string;
   hindi: string;
@@ -49,16 +57,34 @@ export const BANNER_ROUNDS: BannerRound[] = [
   },
   {
     n: 3,
-    eyebrow: "JEECUP 2026 · Round 3",
+    eyebrow: "JEECUP 2026 · Round 3 Allotment",
     headline:
-      "Pre-Counselling Registration is open — reserve your branch at BIPE (code 4455) before Round 3 choice-filling (16–19 July).",
+      "JEECUP Round 3 allotment is out — report by 25 July if you got a seat. Missed Rounds 1–3, or from another state? Round 4 (Phase 2) opens next for ALL states. Reserve your branch at BIPE, code 4455.",
     hindi:
-      "JEECUP Round 3 choice-filling 16–19 जुलाई — choice-filling से पहले BIPE में अपनी ब्रांच (code 4455) reserve करें।",
-    rollAtMs: at("2026-07-26T00:00:00+05:30"), // close of Round 3 (25 Jul) → then hide
+      "JEECUP Round 3 allotment आ गया — seat मिली तो 25 जुलाई तक report करें। मौका छूट गया या दूसरे राज्य से हैं? Round 4 (Phase 2) सभी राज्यों के लिए खुल रहा है। BIPE में reserve करें, code 4455।",
+    rollAtMs: at("2026-07-23T00:00:00+05:30"), // Round 3 reporting → roll to Round 4
+  },
+  {
+    n: 4,
+    eyebrow: "JEECUP 2026 · Round 4 · Phase 2 open",
+    headline:
+      "JEECUP Round 4 is the big one — Phase 2 opens to ALL states (Bihar, Jharkhand, MP too), plus anyone who missed Rounds 1–3. Open / general category, no UP domicile needed. Reserve your branch at BIPE — code 4455.",
+    hindi:
+      "JEECUP Round 4 सबसे बड़ा मौका — Phase 2 में अब सभी राज्यों के students eligible (Bihar, Jharkhand, MP भी), और जिनका Rounds 1–3 में मौका छूटा वो भी। Open / general category, UP domicile ज़रूरी नहीं। BIPE में branch reserve करें — code 4455।",
+    rollAtMs: at("2026-08-06T00:00:00+05:30"), // Round 4 window → roll to Round 5
+  },
+  {
+    n: 5,
+    eyebrow: "JEECUP 2026 · Round 5 · Final round",
+    headline:
+      "JEECUP Round 5 — the final counselling round. Last seats at BIPE (code 4455), open to all states. Classes begin 1 August — reserve your branch now before the seats close.",
+    hindi:
+      "JEECUP Round 5 — आख़िरी counselling round। BIPE में last seats (code 4455), सभी राज्यों के लिए। Classes 1 August से — seats बंद होने से पहले अभी reserve करें।",
+    rollAtMs: at("2026-08-16T00:00:00+05:30"), // end of Phase 2 → then hide
   },
 ];
 
-/** The round to show at `nowMs`, or null once Round 3 has ended. */
+/** The round to show at `nowMs`, or null once the final round has ended. */
 export function bannerRoundAt(nowMs: number): BannerRound | null {
   for (const r of BANNER_ROUNDS) if (nowMs < r.rollAtMs) return r;
   return null;

@@ -534,6 +534,7 @@ export default function Page() {
           >
             {[
               // Phase 2 batch · procedural sequence (Jan → Aug 2026)
+              ["JEECUP Round 4 2026 · Phase 2", "All states now eligible · missed R1–3?", "/jeecup-round-4-2026"],
               ["JEECUP Registration 2026", "Form, fee, documents, errors", "/jeecup-registration-2026"],
               ["JEECUP Admit Card 2026", "Download · verify · troubleshoot", "/jeecup-admit-card-2026"],
               ["JEECUP Result 2026", "Rank card · what to do next", "/jeecup-result-2026"],

@@ -81,6 +81,27 @@ export default function Page() {
         lead="JEECUP is the entrance exam for AICTE-approved polytechnics in Uttar Pradesh. Bihar candidates are welcome — admission is in the open / general category, no UP domicile certificate required, and Bihar Board, CBSE and other state-board marksheets are accepted exactly the same way."
       />
 
+      {/* Round 4 alert (Jul 2026) — the strategic moment for Bihar: Phase 1
+          (Rounds 1–3) was UP-domicile only; Round 4 opens Phase 2, the FIRST
+          round other-state candidates can join. Links to the round hub. */}
+      <div className="container" style={{ maxWidth: 980, marginTop: 8 }}>
+        <Link
+          href="/jeecup-round-4-2026"
+          style={{
+            display: "flex", alignItems: "center", gap: 12, padding: "15px 18px",
+            borderRadius: 14, border: "1px solid color-mix(in oklab, var(--accent) 55%, transparent)",
+            background: "var(--ink)", color: "var(--paper)",
+            textDecoration: "none",
+          }}
+        >
+          <span style={{ fontSize: 20 }} aria-hidden="true">🎯</span>
+          <span style={{ fontSize: 14, lineHeight: 1.55, flex: 1 }}>
+            <strong style={{ color: "var(--accent)" }}>Round 4 is your round.</strong> Rounds 1–3 were UP-domicile only — Round 4 (Phase 2) is the first round Bihar &amp; other-state students can join. See the full round guide →
+          </span>
+          <span aria-hidden="true" style={{ color: "var(--accent)", fontWeight: 700 }}>→</span>
+        </Link>
+      </div>
+
       {/* Merit-intent bridge — a Bihar student who already has their rank wants
           to know which BIPE branch it reaches (added Jul 2026). */}
       <div className="container" style={{ maxWidth: 980, marginTop: 8 }}>

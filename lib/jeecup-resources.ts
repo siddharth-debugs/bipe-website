@@ -116,6 +116,140 @@ export interface JeecupResource {
 
 export const JEECUP_RESOURCES: JeecupResource[] = [
   // ─────────────────────────────────────────────────────────────────
+  // JEECUP Round 4 (Phase 2) — the strategic re-opening. Placed first so it
+  // leads the cross-link grid on every resource page while it's the live round.
+  // Dates for Round 4/5 release progressively on the portal, so the copy avoids
+  // hard dates and points to jeecup.admissions.nic.in. Verified July 2026:
+  // Phase 1 (Rounds 1–3) is UP-domicile only; Phase 2 (Round 4+) opens to all
+  // states in the open/general category (no UP reservation for other-state).
+  {
+    slug: "jeecup-round-4-2026",
+    shortTitle: "JEECUP Round 4 · Phase 2",
+    title: "JEECUP Round 4 2026 · Phase 2 Opens for ALL States (Bihar too) | BIPE 4455",
+    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1. Now open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, dates and how to lock a BIPE seat — code 4455.",
+    keywords: [
+      "JEECUP round 4",
+      "JEECUP round 4 2026",
+      "JEECUP round 4 eligibility",
+      "JEECUP round 4 other state",
+      "JEECUP phase 2 counselling",
+      "JEECUP round 4 choice filling",
+      "JEECUP counselling for Bihar students",
+      "JEECUP round 4 me kaun apply kar sakta hai",
+    ],
+    eyebrow: "JEECUP 2026 · ROUND 4 · PHASE 2",
+    headline: "JEECUP Round 4 is the big re-opening —",
+    headlineAccent: "and this time, every state is in.",
+    heroAlert: {
+      badge: "Round 4 · all states",
+      text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opens Phase 2 — other-state candidates and anyone who missed the first rounds can finally join. Reserve your BIPE branch (code 4455) now.",
+      primary: { label: "Reserve your branch — free →", href: "/early-registration" },
+      secondary: { label: "Open JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
+    },
+    lead: "JEECUP 2026 counselling runs in two phases. Rounds 1–3 (Phase 1) were open only to Uttar Pradesh domicile candidates. Round 4 begins Phase 2 — the single biggest opening after Round 1 — because two large groups become eligible at once: candidates from other states (Bihar, Jharkhand, MP and beyond), and UP candidates who did not register, were not allotted, or missed Rounds 1–3. Other-state candidates are admitted in the open / general category (no UP reservation), and those open seats concentrate in private polytechnics — which is exactly what BIPE is (code 4455). Exact Round-4 dates release progressively on jeecup.admissions.nic.in, so lock your branch at BIPE first and fill 4455 the moment choice-filling opens.",
+    quickStats: [
+      { label: "Who's eligible now", value: "All states", sub: "Bihar, Jharkhand, MP + missed R1–3" },
+      { label: "Category", value: "Open / General", sub: "no UP domicile certificate needed" },
+      { label: "BIPE code", value: "4455", sub: "5 BTEUP branches" },
+      { label: "Classes begin", value: "1 August", sub: "reserve your seat before then" },
+    ],
+    tables: [
+      {
+        eyebrow: "The full round map",
+        heading: "Every JEECUP 2026 round, explained",
+        intro: "JEECUP 2026 has two phases across its main rounds. This is who each round is for — and why Round 4 is the one to watch if you're from another state or missed the earlier rounds.",
+        columns: ["Round", "Phase & window", "Who can participate", "At BIPE (4455)"],
+        rows: [
+          ["Round 1", "Phase 1 · 25–30 Jun (done)", "UP-domicile candidates — the first, largest round", "Seats moved fast"],
+          ["Round 2", "Phase 1 · 7–9 Jul (done)", "UP-domicile · upgrade / fresh allotment", "160+ admitted so far this season"],
+          ["Round 3", "Phase 1 · 16–19 Jul · allotment 20 Jul", "UP-domicile · last Phase-1 round", "Allottees report by ~25 Jul"],
+          ["Round 4", "Phase 2 · dates on the portal (expected late Jul)", "ALL STATES now eligible — Bihar, Jharkhand, MP — plus anyone who missed Rounds 1–3", "Reserve now, fill 4455 when it opens"],
+          ["Round 5", "Phase 2 · expected early Aug", "All states · final counselling round", "Last seats before classes begin"],
+        ],
+        note: "Round-4 and Round-5 choice-filling/allotment dates are released step by step on the official portal — check it daily during your active round, and keep your branch reserved at BIPE so a late-published date never costs you a seat:",
+        noteLink: { label: "From Bihar? See the state-by-state guide", href: "/jeecup-from-bihar" },
+      },
+      {
+        eyebrow: "Can you join Round 4?",
+        heading: "Round 4 eligibility, situation by situation",
+        intro: "If any of these is you, Round 4 (Phase 2) is your round.",
+        columns: ["Your situation", "Round 4?"],
+        rows: [
+          ["From UP but missed Rounds 1–3", "Yes — Round 4 is your entry point back in"],
+          ["From UP, applied but not allotted a seat yet", "Yes — fresh choice-filling in Round 4"],
+          ["From Bihar / Jharkhand / MP / any other state", "Yes — Phase 2 (Round 4+) is the FIRST round you're eligible for"],
+          ["Already accepted and froze a seat in Rounds 1–3", "No — your seat is locked (upgrade only if you chose to float)"],
+          ["Want a private polytechnic like BIPE", "Yes — other-state / open seats concentrate in private colleges"],
+        ],
+        note: "Other-state candidates compete in the open / general category and don't get UP's reserved-category seats — that's the one rule to know. Everything else works exactly like Rounds 1–3.",
+      },
+    ],
+    steps: [
+      {
+        n: "01",
+        title: "Check whether a fresh registration is needed",
+        body: "Round 4 (Phase 2) may require candidates who didn't register earlier — especially other-state candidates — to register/re-register on jeecup.admissions.nic.in. The portal publishes the exact Phase-2 registration window step by step, so log in and check the notice for your case. If you already registered in Phase 1, your login usually carries forward.",
+      },
+      {
+        n: "02",
+        title: "Reserve your branch at BIPE first — free",
+        body: "Don't wait for the portal to publish the choice-filling date to decide. Do your Pre-Counselling Registration at BIPE now: it holds your preferred branch (code 4455) and gets you free choice-filling guidance, so the moment Round 4 opens you already know exactly which branches to list. It complements JEECUP counselling — you still fill 4455 in the official round.",
+      },
+      {
+        n: "03",
+        title: "Fill your choices — add code 4455",
+        body: "When Round-4 choice-filling opens, search for BIPE Phoolpur, Varanasi or enter institute code 4455 directly, and list it against every branch you'd accept — CSE, Mechanical (Production), Electrical, Civil, Dairy. Single-choice filling is the most common reason candidates miss a seat; list generously.",
+      },
+      {
+        n: "04",
+        title: "Seat allotment and acceptance",
+        body: "After choice-filling closes, JEECUP publishes the Round-4 allotment. If BIPE 4455 is allotted, accept the seat and pay the seat-acceptance fee within the round window (typically 3–5 days). The counselling fee for the cycle is ₹3,250; keep it ready.",
+      },
+      {
+        n: "05",
+        title: "Report to campus + document verification",
+        body: "Report to BIPE within the published window with originals plus two self-attested copies — Class 10 marksheet, rank card, ID, and (for reserved-category claims) a valid certificate. Other-state candidates do NOT need a UP domicile certificate. Our team handles Bihar and other-state admissions every season.",
+      },
+      {
+        n: "06",
+        title: "Confirm before 1 August",
+        body: "Classes begin 1 August. Confirm your seat and hostel slot at the time of fee payment — out-of-state applicants are prioritised for hostel allotment. If Round 4 doesn't land your branch, keep 4455 in your Round-5 list; the final round often still has BIPE seats.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can Bihar / other-state students join JEECUP Round 4?",
+        a: "Yes — and Round 4 is the first round you can join. Phase 1 (Rounds 1–3) is reserved for UP-domicile candidates; Phase 2 begins at Round 4 and opens to candidates from every state (Bihar, Jharkhand, MP and others). You're admitted in the open / general category — no UP domicile certificate needed — and BIPE, being a private polytechnic (code 4455), is exactly where those open seats sit. See our /jeecup-from-bihar guide for the state-specific steps.",
+      },
+      {
+        q: "I missed Rounds 1–3 — can I still get in through Round 4?",
+        a: "Yes. Round 4 is the big re-opening. Whether you didn't register in time, weren't allotted a seat, or simply sat the earlier rounds out, Round 4 lets you fill fresh choices. Check the portal for whether you need to (re)register for Phase 2, reserve your branch at BIPE now, and add code 4455 when choice-filling opens.",
+      },
+      {
+        q: "Do I need to register again for Round 4?",
+        a: "It depends on your Phase-1 status. Candidates who never registered — often other-state candidates — usually need to register in the Phase-2 window that JEECUP publishes on the portal. Candidates already registered in Phase 1 normally continue with the same login. The official Round-4 notice on jeecup.admissions.nic.in spells out your exact case; check it daily during the round.",
+      },
+      {
+        q: "What are the exact JEECUP Round 4 dates?",
+        a: "JEECUP releases Round-4 (and Round-5) choice-filling and allotment dates progressively on the official portal rather than all at once, so we don't publish a fixed date here — a wrong date could cost you a seat. Round 4 is expected to open in the days after Round-3 reporting (late July). Watch jeecup.admissions.nic.in, and keep your branch reserved at BIPE so you're ready the moment it opens.",
+      },
+      {
+        q: "Do other-state candidates get UP reservation in Round 4?",
+        a: "No — and that's the only real difference. Other-state candidates are admitted in the open / general category and are not eligible for UP's SC/ST/OBC/EWS reserved-category seats or UP state scholarships. Everything else — choice-filling, allotment, the ₹3,250 counselling fee, reporting — works the same as for UP candidates.",
+      },
+      {
+        q: "Which BIPE branches are open in Round 4?",
+        a: "All five BTEUP diploma branches at BIPE (code 4455) — Computer Science & Engineering, Mechanical (Production), Electrical, Civil, and Dairy Engineering — participate through JEECUP counselling. Availability by branch depends on how Phase-1 seats filled; WhatsApp your JEECUP rank to +91-7310077788 and we'll give you an honest, branch-by-branch read for Round 4.",
+      },
+      {
+        q: "Round 4 me kaun apply kar sakta hai?",
+        a: "Round 4 (Phase 2) me sabhi state ke candidates apply kar sakte hain — Bihar, Jharkhand, MP sab. Jo UP se hain lekin Rounds 1–3 me register nahi kar paye ya seat nahi mili, wo bhi Round 4 me fresh choices bhar sakte hain. Other-state candidates open / general category me admit hote hain (UP domicile certificate zaroori nahi). BIPE (code 4455) me abhi apni branch reserve karein — jaise hi choice-filling khule, 4455 add kar dein.",
+      },
+    ],
+    ctaTitle: "Round 4 is open to you — lock your BIPE seat",
+    ctaBody: "Reserve your preferred branch at BIPE (code 4455) now, before Round-4 choice-filling opens — free, two minutes. Admissions will call you back in Hindi or English to guide your Phase-2 choices, whichever state you're from.",
+  },
+  // ─────────────────────────────────────────────────────────────────
   {
     slug: "jeecup-registration-2026",
     shortTitle: "JEECUP Registration 2026",
