@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-07-22T07:06:05.327Z",
+    "lastUpdated": "2026-07-23T06:46:00.405Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
@@ -11,17 +11,6 @@
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT25wamVXRkRZbWd0VERGTVYwazFjVUptWkY5RkxVRRAB",
-      "rating": 5,
-      "text": "Best Technical educational platform in whole Purvanchal U.P",
-      "publishTime": "2026-05-22T14:30:51.126666094Z",
-      "relativeTime": "2 months ago",
-      "author": {
-        "name": "MUKESH KUMAR",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUVdoD4W_OVoCY6hrNzFQR_e8bR6R7otxWDCiifBs_7g93Jvg=s128-c0x00000000-cc-rp-mo"
-      }
-    },
     {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT2xKclZIWTNVSEl4VkZWaE1sSnVhbmx4VUdscmNXYxAB",
       "rating": 5,
@@ -42,6 +31,17 @@
       "author": {
         "name": "Nauminath Vishwakarma",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVAr0RDVXdo0NJTJFN7j2XYJJBLJEfjWbezLLRc91X-ha1D78FP=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT210MFFsZG5SVk5uTlRsRmVXSTRTVGhpZFZvdE0xRRAB",
+      "rating": 5,
+      "text": "Overall, my experience at this college was very positive, though there is always room for improvement.\nExcellent faculty who give 100% effort, great lab facilities, and a very safe, ragging-free campus environment. The location is also very convenient with easy access to public transport.\nIf you are serious about your studies and career, the academic and placement quality makes it completely worth the investment.\"",
+      "publishTime": "2026-05-21T05:58:20.015667159Z",
+      "relativeTime": "2 months ago",
+      "author": {
+        "name": "Jaideep Chitranshh",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUdnBz5FdOczyGqX0Okep4ql-igJTkAfk3cXlKHJmK8zcb-fd2W=s128-c0x00000000-cc-rp-mo"
       }
     },
     {
