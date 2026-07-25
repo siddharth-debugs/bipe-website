@@ -6,10 +6,11 @@ import Link from "next/link";
 /**
  * Live countdown to the Pre-Counselling Registration deadline.
  *
- * Deadline: end of 25 July 2026 — the close of the 3rd counselling round —
- * anchored to IST (+05:30) so every visitor counts down to the *same*
- * instant regardless of their device timezone.
- * Edit the one constant below to move the deadline.
+ * Deadline: end of 27 July 2026 — BIPE's Round 4 Pre-Counselling Registration
+ * deadline (owner-confirmed 25 Jul 2026 via the Double Tick R4 notice: complete
+ * registration by then and the BIPE office reserves your branch + seat).
+ * Anchored to IST (+05:30) so every visitor counts down to the *same* instant
+ * regardless of their device timezone. Edit the one constant below to move it.
  *
  * Mirrors the home page's <Countdown> ticking + cell pattern
  * (components/home/Countdown.tsx): Date.now() differs server↔client by
@@ -17,7 +18,7 @@ import Link from "next/link";
  * Once the deadline passes, diff pins to 0 and a "closed" notice
  * replaces the cells.
  */
-const DEADLINE = "2026-07-26T00:00:00+05:30"; // close of 25 Jul 2026, IST (end of 3rd counselling round)
+const DEADLINE = "2026-07-28T00:00:00+05:30"; // close of 27 Jul 2026, IST (BIPE Round 4 Pre-Counselling Registration deadline)
 
 const cell = (n: number, label: string) => (
   <div
@@ -83,7 +84,7 @@ export function RegistrationCountdown() {
       <div className="row" style={{ alignItems: "center", gap: 10, marginBottom: 14 }}>
         <span className="live-dot" />
         <span className="eyebrow" style={{ color: "var(--brand)" }} suppressHydrationWarning>
-          {closed ? "Pre-Counselling Registration closed" : "Registration closes 25 July 2026"}
+          {closed ? "Pre-Counselling Registration closed" : "Round 4 registration closes 27 July 2026"}
         </span>
       </div>
 
