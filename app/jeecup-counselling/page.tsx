@@ -254,13 +254,14 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "64ch", lineHeight: 1.7 }}>
-            JEECUP has released the Phase-1 Main Counselling schedule (Rounds 1–3) for qualified
-            UP-state candidates. Counselling is fully online at{" "}
+            JEECUP counselling runs in two phases. <strong>Phase 1 (Rounds 1–3, UP-domicile only) is complete</strong> —
+            the schedule below is on record. <strong>Round 4 (Phase 2) is now open to all states</strong>, including candidates
+            who missed the earlier rounds, and classes begin 1 August. Counselling is fully online at{" "}
             <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer">
               jeecup.admissions.nic.in
             </a>
-            . <strong>Round 1 choice-filling runs 25–30 June</strong> — add BIPE&apos;s institute code{" "}
-            <strong>4455</strong> against every branch you&apos;d accept.
+            . Add BIPE&apos;s institute code <strong>4455</strong> against every branch you&apos;d accept, and see the{" "}
+            <Link href="/jeecup-round-4-2026" style={{ color: "var(--brand)", fontWeight: 600 }}>Round 4 guide</Link>.
           </p>
           <div style={{ marginTop: 24, overflowX: "auto", border: "1px solid var(--line)", borderRadius: 14 }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14.5 }}>
