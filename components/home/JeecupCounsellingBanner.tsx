@@ -60,7 +60,7 @@ export function JeecupCounsellingBanner({ initialN }: { initialN: number }) {
             Counselling dates →
           </Link>
           <Link href="/early-registration" className="btn btn-primary btn-sm jeecup-result-cta" style={{ whiteSpace: "nowrap" }}>
-            Register Now →
+            Talk to admissions →
           </Link>
           {/* Direct line for the counselling-anxious (owner request, Jul 2026) —
               label derives the round from the same schedule, so it rolls itself.

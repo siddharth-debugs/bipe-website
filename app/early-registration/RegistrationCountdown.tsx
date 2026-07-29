@@ -90,16 +90,12 @@ export function RegistrationCountdown() {
 
       {closed ? (
         <p style={{ color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.65 }} suppressHydrationWarning>
-          Pre-Counselling Registration for 2026-27 has closed. JEECUP counselling for
-          BIPE code 4455 may still be open —{" "}
-          <Link href="/jeecup" style={{ color: "var(--brand)", fontWeight: 600 }}>
-            see the JEECUP guide
-          </Link>{" "}
-          or{" "}
+          Pre-Counselling Registration for 2026-27 has closed. But <strong>JEECUP Round 4 counselling is on</strong> and
+          classes begin 1 August — leave your details below and BIPE admissions will call you about a seat (code 4455), or{" "}
           <Link href="/contact" style={{ color: "var(--brand)", fontWeight: 600 }}>
             contact admissions
-          </Link>
-          .
+          </Link>{" "}
+          directly.
         </p>
       ) : (
         <div className="row" style={{ gap: 10, flexWrap: "wrap" }}>

@@ -141,8 +141,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headline: "JEECUP Round 4 is the big re-opening —",
     headlineAccent: "and this time, every state is in.",
     heroAlert: {
-      badge: "Round 4 · reserve by 27 July",
-      text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opens Phase 2 — other-state candidates and anyone who missed the first rounds can finally join. BIPE's Pre-Counselling Registration deadline is 27 July 2026: register by then and the office holds your branch + seat (code 4455).",
+      badge: "Round 4 · classes 1 Aug",
+      text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opens Phase 2 — other-state candidates and anyone who missed the first rounds can finally join. Round 4 counselling is on now: add BIPE code 4455 to your choices and talk to admissions today. Classes begin 1 August.",
       primary: { label: "Reserve your branch — free →", href: "/early-registration" },
       secondary: { label: "Open JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
     },
@@ -193,8 +193,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         n: "02",
-        title: "Reserve your branch at BIPE — deadline 27 July",
-        body: "Don't wait for the portal to publish the choice-filling date to decide. Do your Pre-Counselling Registration at BIPE before the 27 July 2026 deadline: complete it by then and the BIPE office reserves your preferred branch (code 4455) and seat, plus free choice-filling guidance — so the moment Round 4 opens you already know exactly which branches to list. It complements JEECUP counselling — you still fill 4455 in the official round.",
+        title: "Talk to BIPE admissions about your seat",
+        body: "Call or WhatsApp BIPE admissions now — they'll help you order your Round-4 choices so code 4455 lands the branch you want, and confirm seat availability branch by branch. With classes beginning 1 August, the fastest route to a confirmed seat is a direct conversation. It complements JEECUP counselling — you still fill 4455 in the official round.",
       },
       {
         n: "03",

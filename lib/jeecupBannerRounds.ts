@@ -66,11 +66,11 @@ export const BANNER_ROUNDS: BannerRound[] = [
   },
   {
     n: 4,
-    eyebrow: "JEECUP 2026 · Round 4 · reserve by 27 July",
+    eyebrow: "JEECUP 2026 · Round 4 · Classes begin 1 Aug",
     headline:
-      "JEECUP Round 4 is the big one — Phase 2 opens to ALL states (Bihar, Jharkhand, MP too), plus anyone who missed Rounds 1–3. Reserve your branch at BIPE by 27 July (code 4455) — register by then and the office holds your branch + seat.",
+      "JEECUP Round 4 (Phase 2) counselling is on — open to ALL states (Bihar, Jharkhand, MP too) and anyone who missed Rounds 1–3. Add BIPE code 4455 to your choices. Classes begin 1 August — talk to admissions today.",
     hindi:
-      "JEECUP Round 4 सबसे बड़ा मौका — Phase 2 में अब सभी राज्यों के students eligible (Bihar, Jharkhand, MP भी), और जिनका Rounds 1–3 में मौका छूटा वो भी। 27 जुलाई तक BIPE में branch reserve करें (code 4455) — तब तक registration पूरा करें और office आपकी branch + seat hold कर देगा।",
+      "JEECUP Round 4 (Phase 2) counselling चल रही है — सभी राज्यों के लिए (Bihar, Jharkhand, MP भी) और जिनका Rounds 1–3 में मौका छूटा उनके लिए भी। BIPE code 4455 अपनी choices में add करें। Classes 1 August से — आज ही admissions से बात करें।",
     rollAtMs: at("2026-08-06T00:00:00+05:30"), // Round 4 window → roll to Round 5
   },
   {

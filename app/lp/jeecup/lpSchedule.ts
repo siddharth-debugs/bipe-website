@@ -36,8 +36,8 @@ export const LP_PHASES: Array<LpPhase & { until: number }> = [
     until: at("2026-07-20T00:00:00+05:30"), // Round 3 selection done → advance to Round 4 (owner, 20 Jul)
   },
   {
-    badge: "Round 4 · reserve by 27 July",
-    text: "Round 4 is the big re-opening — Phase 2 welcomes candidates from every state (Bihar, Jharkhand, MP too) and anyone who missed Rounds 1–3. BIPE's Pre-Counselling Registration deadline is 27 July: complete it by then and the office reserves your branch + seat (code 4455). 160+ admitted so far.",
+    badge: "Round 4 · classes begin 1 Aug",
+    text: "Round 4 is the big re-opening — Phase 2 welcomes candidates from every state (Bihar, Jharkhand, MP too) and anyone who missed Rounds 1–3. Add BIPE code 4455 to your choices. Classes begin 1 August — leave your number and admissions will guide you to a seat fast. 160+ admitted so far.",
     until: at("2026-08-06T00:00:00+05:30"),
   },
   {
