@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+import { headers } from "next/headers";
 import { LangProvider } from "@/lib/lang";
 import { ConditionalChrome } from "@/components/shell/ConditionalChrome";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
+import { getPostBySlug } from "@/lib/blogPosts";
 // AnalyticsBeacon is a client component that defers Vercel Analytics
 // via dynamic({ ssr: false }) — Next.js forbids that flag inside Server
 // Components (which RootLayout is), so the wrapper exists to sidestep
@@ -441,8 +443,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     aicte: liveContact.aicte_id,
   };
   const orgJsonLd = buildOrgJsonLd(liveBranches, liveContact);
+
+  // Per-route <html lang>. App Router renders a single <html> here in the
+  // root layout, so without the request path it can't know a Hindi blog
+  // post should be served as lang="hi-IN". middleware.ts forwards the path
+  // as the `x-pathname` header; for /blog/<slug> we use the post's own
+  // declared language (blogPosts.ts `lang`), else the site default en-IN.
+  // This makes the container lang agree with the post's self-referencing
+  // hi-IN hreflang — clearing the Semrush hreflang language-mismatch. Reading
+  // a header opts routes into dynamic rendering (accepted trade, Aug 2026
+  // audit); the live-data fetches above stay tag-cached (revalidate 300).
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const blogSlug = pathname.match(/^\/blog\/([^/?#]+)/)?.[1];
+  const htmlLang = (blogSlug ? getPostBySlug(blogSlug)?.lang : undefined) ?? "en-IN";
+
   return (
-    <html lang="en-IN">
+    <html lang={htmlLang}>
       <head>
         {/*
           Preconnect hints (Phase 2 SEO audit May 2026 — BIPE had 0
