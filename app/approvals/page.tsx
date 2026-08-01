@@ -105,11 +105,14 @@ const DISCLOSURE: { num: string; label: string }[] = [
   { num: "100%", label: "Wi-Fi coverage" },
 ];
 
-const DOWNLOADS: { title: string; size: string; href: string }[] = [
-  // TODO: replace placeholder hrefs once PDFs are uploaded to /public/downloads/
-  { title: "AICTE EoA Letter 2026-27", size: "PDF · ~480 KB", href: "/downloads/aicte-eoa-2026-27.pdf" },
-  { title: "Mandatory Disclosure (Annexure-18)", size: "PDF · ~2.1 MB", href: "/downloads/mandatory-disclosure-2026-27.pdf" },
-  { title: "BTEUP Affiliation Letter", size: "PDF · on request", href: "/downloads/bteup-affiliation.pdf" },
+const DOWNLOADS: { title: string; size: string; href: string; page?: boolean }[] = [
+  { title: "AICTE EoA Letter 2026-27", size: "PDF · ~216 KB", href: "/downloads/aicte-eoa-2026-27.pdf" },
+  { title: "BTEUP Affiliation Letter 2026-27", size: "PDF · ~905 KB", href: "/downloads/bteup-affiliation.pdf" },
+  // No standalone Annexure-18 PDF yet — link to the on-site mandatory
+  // disclosure page instead (AICTE requires the disclosure at a prominent
+  // location; that page already carries the Annexure-18 content). `page`
+  // renders it as a normal link, not a PDF download.
+  { title: "Mandatory Disclosure (Annexure-18)", size: "On this site", href: "/mandatory-disclosure", page: true },
 ];
 
 export default function Page() {
@@ -457,8 +460,7 @@ export default function Page() {
 
           <div className="bipe-form-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
             {DOWNLOADS.map((d, i) => (
-              // TODO: real PDFs not yet uploaded — placeholder hrefs only
-              <a key={d.title} href={d.href} download style={{
+              <a key={d.title} href={d.href} {...(d.page ? {} : { download: true })} style={{
                 display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 18, alignItems: "center",
                 padding: "22px 24px", borderRadius: 16,
                 background: "var(--white)", border: "1px solid var(--line)",
@@ -472,7 +474,7 @@ export default function Page() {
                   display: "flex", alignItems: "center", justifyContent: "center",
                   position: "relative",
                 }}>
-                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", color: "var(--brand)" }}>PDF</div>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", color: "var(--brand)" }}>{d.page ? "WEB" : "PDF"}</div>
                   <span style={{
                     position: "absolute", top: -1, right: -1,
                     fontFamily: "var(--font-mono)", fontSize: 8,
