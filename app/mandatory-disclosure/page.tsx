@@ -219,7 +219,7 @@ const SECTIONS: Section[] = [
     title: "AICTE LoA / EoA letters",
     body: (
       <>
-        <p>The latest Extension of Approval (EoA) for 2026-27: <strong>F.No. {DATA.contact.aicteEoaRef}</strong>, issued {DATA.contact.aicteEoaDate}. Verifiable on the <a href="https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php" target="_blank" rel="noopener noreferrer">AICTE public dashboard</a>.</p>
+        <p>The latest Extension of Approval (EoA) for 2026-27: <strong>F.No. {DATA.contact.aicteEoaRef}</strong>, issued {DATA.contact.aicteEoaDate}. Verifiable on the <a href="https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php" target="_blank" rel="noopener noreferrer">AICTE public dashboard</a>.</p>
         <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>Year-wise LoA / EoA letters from 2010 to 2026 are being consolidated as PDF scans and will be uploaded to the <Link href="/approvals">Approvals page</Link> in batches. The current 2026-27 EoA reference is verifiable on the AICTE public dashboard linked above; older letters available on request from <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
       </>
     ),

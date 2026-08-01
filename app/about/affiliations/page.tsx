@@ -58,7 +58,7 @@ const AFFILIATIONS: Affiliation[] = [
       "Statutory body of the Government of India that approves all technical-education institutions (B.Tech, M.Tech, MBA, diploma). Issues the Extension of Approval (EoA) annually.",
     ourStatus: "Approved · Permanent",
     ourCode: `Permanent ID: ${DATA.contact.aicte} · EoA ${DATA.contact.aicteEoaRef} dated ${DATA.contact.aicteEoaDate}`,
-    verifyUrl: "https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php",
+    verifyUrl: "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php",
     verifyLabel: "AICTE Dashboard (public)",
     note: "Look up the AICTE Permanent ID on the dashboard — institute name, location, branches, and current EoA all appear publicly.",
   },

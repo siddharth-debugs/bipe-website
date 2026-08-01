@@ -994,17 +994,17 @@ export default async function Page() {
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                   <NextImage
-                    src="/faculty/amit-kumar.png"
-                    alt="Amit Kumar — BIPE Training & Placement Officer"
+                    src="/faculty/amit-kumar-pal.png"
+                    alt="Amit Kumar Pal — BIPE Training & Placement Officer"
                     width={72}
                     height={72}
                     style={{ borderRadius: 14, objectFit: "cover", flexShrink: 0 }}
                   />
                   <div style={{ minWidth: 0 }}>
                     <div className="eyebrow" style={{ color: "var(--brand)" }}>Training &amp; Placement Officer</div>
-                    <div style={{ fontWeight: 700, fontSize: 18, marginTop: 4 }}>Amit Kumar</div>
+                    <div style={{ fontWeight: 700, fontSize: 18, marginTop: 4 }}>Amit Kumar Pal</div>
                     <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2, lineHeight: 1.4 }}>
-                      Lecturer · Mechanical Engineering · 10+ years
+                      Lecturer · Mechanical Engineering
                     </div>
                   </div>
                 </div>

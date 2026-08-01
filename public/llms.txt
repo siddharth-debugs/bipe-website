@@ -1,5 +1,4 @@
-# llms.txt — Banaras Institute of Polytechnic & Engineering (BIPE)
-# https://www.bipevns.org
+# Banaras Institute of Polytechnic & Engineering (BIPE)
 
 > BIPE (Banaras Institute of Polytechnic & Engineering) is an AICTE-approved
 > polytechnic in Phoolpur, Varanasi, Uttar Pradesh, India. Founded in 2010
@@ -46,9 +45,9 @@ Mathematics and Science.
 Admission exclusively via JEECUP (UPJEE Polytechnic) Group A counselling.
 Apply at https://jeecup.admissions.nic.in — choose institute code 4455.
 
-Bihar candidates: JEECUP fills BTEUP seats under an "all-India" category,
-so Bihar students who appear for DCECE/BCECE are eligible to simultaneously
-apply via JEECUP and choose BIPE 4455. BIPE is the closest BTEUP institute
+Bihar candidates: JEECUP admits other-state candidates in the open/general
+category (no UP-domicile requirement), so Bihar students who appear for
+DCECE/BCECE are eligible to simultaneously apply via JEECUP and choose BIPE 4455. BIPE is the closest BTEUP institute
 to several Bihar border districts (Buxar, Bhojpur, Rohtas).
 
 ## Recruiters
@@ -61,21 +60,21 @@ R. R. Parkon · and others. 915 documented placement records (2016-2021):
 
 ## Key Pages
 
-- /about           — Institutional history, vision, AICTE approval details
-- /courses         — All five programmes with BTEUP codes + seat matrix
-- /admission       — Step-by-step JEECUP counselling guide
-- /jeecup          — JEECUP code 4455, process, common pitfalls
-- /fees            — Fee structure, scholarships, AFRC approval
-- /scholarships    — UP post-matric, EWS, BIPE merit waivers
-- /placements      — Recruiter list + outcomes overview
-- /alumni          — 915 placement records (filterable by branch/year)
-- /faq             — Q&As on eligibility, fees, hostel, branches, JEECUP
-- /approvals       — AICTE EoA letter, BTEUP affiliation, AISHE
-- /mandatory-disclosure — AICTE Annexure-18
-- /contact         — Phone, email, address, embedded map, social handles
-- /faculty         — Named faculty roster with qualifications
-- /chairman        — Dr. Chandrika Rai, IPS (Retd.) — Chairman Trustee
-- /principal       — Rahul Srivastava, M.Tech — Principal
+- [About](https://bipevns.org/about): Institutional history, vision, AICTE approval details
+- [Courses](https://bipevns.org/courses): All five programmes with BTEUP codes + seat matrix
+- [Admission](https://bipevns.org/admission): Step-by-step JEECUP counselling guide
+- [JEECUP](https://bipevns.org/jeecup): JEECUP code 4455, process, common pitfalls
+- [Fees](https://bipevns.org/fees): Fee structure, scholarships, AFRC approval
+- [Scholarships](https://bipevns.org/scholarships): UP post-matric, EWS, BIPE merit waivers
+- [Placements](https://bipevns.org/placements): Recruiter list + outcomes overview
+- [Alumni](https://bipevns.org/alumni): Placement records filterable by branch/year
+- [FAQ](https://bipevns.org/faq): Q&As on eligibility, fees, hostel, branches, JEECUP
+- [Approvals](https://bipevns.org/approvals): AICTE EoA letter, BTEUP affiliation, AISHE
+- [Mandatory Disclosure](https://bipevns.org/mandatory-disclosure): AICTE Annexure-18
+- [Contact](https://bipevns.org/contact): Phone, email, address, embedded map, social handles
+- [Faculty](https://bipevns.org/faculty): Named faculty roster with qualifications
+- [Chairman](https://bipevns.org/chairman): Dr. Chandrika Rai, IPS (Retd.) — Chairman Trustee
+- [Principal](https://bipevns.org/principal): Rahul Srivastava, M.Tech — Principal
 
 ## Contact
 
@@ -97,4 +96,4 @@ Disallowed paths (per /robots.txt):
 - /admin/      (dashboard, auth-gated)
 - /static/admin/, /private/
 
-Last updated: 2026-05-15
+Last updated: 2026-08-01

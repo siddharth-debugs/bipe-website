@@ -34,7 +34,7 @@ const APPROVALS: Approval[] = [
       { label: "EoA F.No.", value: "Northern/1-46216893240/2026/EOA" },
       { label: "Issued", value: "16 March 2026" },
     ],
-    verify: { label: "Verify on AICTE portal", href: "https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php" },
+    verify: { label: "Verify on AICTE portal", href: "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php" },
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M3 21V10l9-6 9 6v11M9 21V12h6v9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -566,7 +566,7 @@ export default function Page() {
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                <a href="https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php" target="_blank" rel="noopener noreferrer" style={{
+                <a href="https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php" target="_blank" rel="noopener noreferrer" style={{
                   padding: "16px 22px", borderRadius: 14,
                   background: "var(--accent)", color: "var(--ink)",
                   display: "flex", justifyContent: "space-between", alignItems: "center",

@@ -238,7 +238,7 @@ export const DATA: DataShape = {
   ],
   regulators: [
     { name: "AICTE", full: "All India Council for Technical Education", url: "https://www.aicte-india.org/" },
-    { name: "AICTE Dashboard", full: "AICTE Approval Dashboard (Public)", url: "https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php" },
+    { name: "AICTE Dashboard", full: "AICTE Approval Dashboard (Public)", url: "https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php" },
     { name: "BTEUP", full: "Board of Technical Education, Uttar Pradesh", url: "https://bteup.ac.in/" },
     { name: "JEECUP", full: "Joint Entrance Examination Council, UP — Polytechnic", url: "https://jeecup.admissions.nic.in/" },
     { name: "AFRC UP", full: "Admission & Fee Regulatory Committee, UP", url: "http://afrcup2018.in/" },

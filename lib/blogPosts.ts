@@ -2841,7 +2841,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>AICTE-approved permanent ID 1-488233171</strong> — आप <a href=\"https://facilities.aicte-india.org/dashboard/pages/dashboardaa.php\" target=\"_blank\" rel=\"noopener\">AICTE की वेबसाइट</a> पर खुद verify कर सकते हैं।",
+          "<strong>AICTE-approved permanent ID 1-488233171</strong> — आप <a href=\"https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php\" target=\"_blank\" rel=\"noopener\">AICTE की वेबसाइट</a> पर खुद verify कर सकते हैं।",
           "<strong>BTEUP-affiliated कॉलेज कोड 4455</strong> — सभी 5 शाखाएँ Board of Technical Education से मान्यता प्राप्त।",
           "<strong>AFRC-approved tuition fee ₹30,150/साल</strong> — कोई capitation fee नहीं, कोई छुपी फीस नहीं।",
           "<strong>Boys' hostel on-campus</strong> — furnished कमरे, mess, 24×7 security, resident warden।",
