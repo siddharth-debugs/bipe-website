@@ -29,7 +29,7 @@ export async function generateMetadata(
   // engineering" 3,600/mo, "diploma in electrical engineering" 2,400/mo.
   // Title pattern rewritten to lead with the exact phrase searchers
   // type — "Diploma in <Branch>" — instead of "<Branch> Diploma".
-  const title = `Diploma in ${b.name} · Varanasi · BTEUP ${b.code} | BIPE`;
+  const title = `Diploma in ${b.name} · BTEUP ${b.code} | BIPE Varanasi`;
   // Phase 2 SEO audit (May 2026): branch meta descriptions were ~210
   // chars and getting truncated at Google's ~155-160 char cap. Rewrote
   // to stay under 145 chars across all 5 branches, keeping the high-
