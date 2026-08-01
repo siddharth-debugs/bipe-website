@@ -105,7 +105,7 @@ export const ROUTES: Record<RouteKey, {
     // contains both nouns, so this is not a stretch claim; it's
     // calling the institution what it actually is. Two head queries
     // for the price of one title.
-    title: "Polytechnic & Engineering College in Varanasi · BTE UP, AICTE Approved · BIPE 4455",
+    title: "Polytechnic & Engineering College in Varanasi · AICTE | BIPE 4455",
     // Description rewritten 29 May 2026 to include "engineering
     // colleges in Varanasi" verbatim (1,000/mo) in addition to the
     // original "polytechnic college in Varanasi". Drops "diploma
@@ -144,7 +144,7 @@ export const ROUTES: Record<RouteKey, {
     // leads with the literal phrase + keeps the Dairy moat in the
     // tail. "Diploma courses" stays in the description for the
     // 5,400/mo "what is polytechnic courses" cluster too.
-    title: "Polytechnic Courses in Varanasi · 5 BTEUP Diploma Branches incl. Dairy | BIPE 4455",
+    title: "Polytechnic Courses in Varanasi · 5 BTEUP Branches incl. Dairy | BIPE",
     description: "Polytechnic course list at BIPE Varanasi — 5 BTEUP diploma branches: Civil, CSE, Electrical, Mechanical Production, rare Dairy Engineering. AICTE · ₹30,150/year · JEECUP 4455.",
   },
   admission: {
@@ -155,7 +155,7 @@ export const ROUTES: Record<RouteKey, {
     // matched brand searchers but missed everyone typing "polytechnic
     // admission [year]". Lead with the literal phrase + keep the
     // JEECUP date anchor in the tail for the engaged-funnel reader.
-    title: "Polytechnic Admission 2026-27 · JEECUP 4455 · Exam 02-09 June | BIPE Varanasi",
+    title: "Polytechnic Admission 2026-27 · JEECUP 4455 | BIPE Varanasi",
     description: "Polytechnic admission 2026-27 at BIPE Varanasi — apply via JEECUP (UPJEE Polytechnic) code 4455. Exam 02-09 June, 7-round counselling, classes begin 1 August 2026.",
     keywords: [
       "JEECUP 2026 admission",
@@ -243,7 +243,7 @@ export const ROUTES: Record<RouteKey, {
     // scholarship" both have decent volume that this page targets).
     // The specific savings anchor "up to ₹19,000/year" stays — it's
     // a strong CTR lifter on scholarship-intent searches.
-    title: "Polytechnic Scholarship UP · BIPE Post-Matric up to ₹19,000/year · SC/ST/OBC/EWS",
+    title: "Polytechnic Scholarship UP · Post-Matric up to ₹19,000/yr | BIPE",
     description: "Polytechnic scholarship at BIPE Varanasi — UP Post-Matric covers SC/ST/OBC/Minority/EWS tuition (family income <₹2L). Net cost can drop to ₹4-10k/year. Portal help included.",
   },
   documents: {
@@ -260,7 +260,7 @@ export const ROUTES: Record<RouteKey, {
     // CTR refresh 29 May 2026 · added "Complete Guide" + "2026
     // Exam Dates" to lift CTR on the procedural-intent searcher
     // who needs to verify the page covers their stage of the funnel.
-    title: "JEECUP 2026 Complete Guide · Exam 02-09 June · 6-Step Counselling | BIPE 4455",
+    title: "JEECUP 2026 Complete Guide · 6-Step Counselling | BIPE 4455",
     description: "Complete JEECUP 2026 guide — application, entrance window 02-09 June, rank, 7-round counselling, seat allotment, reporting at BIPE 4455. Step-by-step.",
     keywords: [
       "JEECUP 2026",
@@ -429,7 +429,7 @@ export const ROUTES: Record<RouteKey, {
     // (~110/mo total: best/top/private polytechnic in varanasi) and
     // sets up a credible click — the page itself substantiates the
     // claim with 16-year track record + verified placements.
-    title: `Best Private Polytechnic in Varanasi · ${_placed} Placements · AFRC ₹30,150 | BIPE Since 2010`,
+    title: `Best Private Polytechnic in Varanasi · ${_placed} Placements | BIPE`,
     description: `Why families across UP and Bihar choose BIPE — the leading private polytechnic college in Varanasi since 2010. BTEUP, AICTE 1-488233171, AFRC ₹30,150/year, ${_placed} placements, on-campus hostel.`,
     keywords: [
       "best polytechnic college in Varanasi",
@@ -653,7 +653,7 @@ export const ROUTES: Record<RouteKey, {
   },
   aidedPolytechnicUp: {
     path: "/aided-polytechnic-uttar-pradesh",
-    title: "Aided Polytechnic in UP · The 19 Institutes Between Government & Private | BIPE",
+    title: "Aided Polytechnic in UP · 19 Institutes, Govt vs Private | BIPE",
     description: "Aided polytechnic in UP — 19 institutes, govt-funded privately managed. Lower fees, JEECUP-based. How aided compares with government + BIPE. 2026 guide.",
     keywords: [
       "aided polytechnic UP",
@@ -717,7 +717,7 @@ export const ROUTES: Record<RouteKey, {
     // CTR refresh 29 May 2026 · added "Step-by-Step" — power phrase
     // that lifts CTR on procedural queries, lifts the snippet over
     // the generic ".gov.in" results that rank around it.
-    title: "JEECUP Counselling 2026 · Step-by-Step 7-Round Guide · Choice Filling | BIPE 4455",
+    title: "JEECUP Counselling 2026 · 7-Round Guide + Choice Filling | BIPE 4455",
     description: "JEECUP counselling 2026 step-by-step — 7 rounds (expanded from 5), choice filling, documents, seat allotment, reporting, common mistakes. How BIPE (4455) fits in.",
     quickLink: { label: "JEECUP counselling 2026", hint: "7-round guide", priority: 3 },
     keywords: [
@@ -868,7 +868,7 @@ export const ROUTES: Record<RouteKey, {
     // searchers don't know JEECUP is what they need until they read
     // a result that mentions both. Title and description now cover
     // both clusters.
-    title: "Polytechnic & JEECUP Syllabus 2026 · Group A + Branch-wise Topics | BIPE 4455",
+    title: "JEECUP Syllabus 2026 · Group A + Branch-wise Topics | BIPE 4455",
     description: "Complete polytechnic & JEECUP 2026 syllabus — Group A (Class 10 Maths/Physics/Chemistry) plus all 12 JEECUP groups + branch-wise BTEUP topics, weightage, NCERT-mapping.",
     keywords: [
       "JEECUP syllabus",
@@ -903,7 +903,7 @@ export const ROUTES: Record<RouteKey, {
     // Searchers often start with the generic "can I do polytechnic
     // after X" framing before they encounter JEECUP — this page
     // should win both queries.
-    title: "Polytechnic & JEECUP Eligibility 2026 · After 10th, 12th, ITI | BIPE 4455",
+    title: "JEECUP Eligibility 2026 · After 10th, 12th, ITI | BIPE 4455",
     description: "Polytechnic & JEECUP 2026 eligibility — Group-by-Group requirements, age limits, domicile, reserved category, minimum marks after Class 10 / 12 / ITI. Honest guide from BIPE.",
     keywords: [
       "JEECUP eligibility",

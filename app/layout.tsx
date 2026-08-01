@@ -254,10 +254,15 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         ? { aggregateRating: aggregateRatingSchema() }
         : {}),
       identifier: [
-        { "@type": "PropertyValue", propertyID: "AICTE Permanent ID", value: contact.aicte_id || DATA.contact.aicte },
-        { "@type": "PropertyValue", propertyID: "JEECUP Code", value: contact.jeecup_code || DATA.contact.jeecup },
-        { "@type": "PropertyValue", propertyID: "BTEUP", value: "Affiliated · 4455" },
-        { "@type": "PropertyValue", propertyID: "AISHE", value: "Registered" },
+        // Every PropertyValue carries an explicit `name` (human-readable
+        // label) alongside `propertyID` — schema.org's recommended complete
+        // form. Without `name`, strict validators (Semrush, some Google
+        // checks) mark the PropertyValue "invalid", which was inflating the
+        // site-wide identifier rows into ~609 flagged items (Aug 2026 audit).
+        { "@type": "PropertyValue", name: "AICTE Permanent ID", propertyID: "AICTE Permanent ID", value: contact.aicte_id || DATA.contact.aicte },
+        { "@type": "PropertyValue", name: "JEECUP Code", propertyID: "JEECUP Code", value: contact.jeecup_code || DATA.contact.jeecup },
+        { "@type": "PropertyValue", name: "BTEUP Affiliation", propertyID: "BTEUP", value: "Affiliated · 4455" },
+        { "@type": "PropertyValue", name: "AISHE Registration", propertyID: "AISHE", value: "Registered" },
         // Wikidata Q-number — explicit propertyID "Wikidata" is the
         // strongest entity-link signal for Google's Knowledge Graph,
         // AI assistants, and entity-link resolvers. The Wikidata URL
@@ -265,6 +270,7 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         // is preferred for entity binding. Added May 2026.
         {
           "@type": "PropertyValue",
+          name: "Wikidata",
           propertyID: "Wikidata",
           value: "Q139892164",
           url: "https://www.wikidata.org/wiki/Q139892164",
@@ -281,6 +287,7 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         // search URL is the canonical way to dereference an MID.
         {
           "@type": "PropertyValue",
+          name: "Google Knowledge Graph ID",
           propertyID: "Google Knowledge Graph ID",
           value: "/g/11b7y7yyyn",
           url: "https://www.google.com/search?kgmid=/g/11b7y7yyyn",

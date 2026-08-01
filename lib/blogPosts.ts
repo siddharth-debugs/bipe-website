@@ -1885,7 +1885,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Only four polytechnics in Uttar Pradesh offer the BTEUP 327 Dairy Engineering diploma. BIPE is one of them. A profile-grounded look at the regional and personal context behind the decision — Eastern UP's milk economy, Dr. Chandrika Rai's path from Pantnagar Soil Chemistry to founding the institute, and what the diploma actually trains a student to do.",
     metaTitle:
-      "Why BIPE offers Dairy Engineering — BTEUP 327, one of only 4 in UP | BIPE Varanasi",
+      "Dairy Engineering Diploma — BTEUP 327, one of only 4 in UP | BIPE",
     metaDescription:
       "Only four UP polytechnics offer Dairy Engineering (BTEUP 327). The Eastern UP milk economy, Dr. Chandrika Rai's path from Pantnagar to BIPE, and what the diploma actually teaches.",
     sections: [
@@ -2234,7 +2234,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "The three technical-education paths open to a Class 10 student in India — a polytechnic diploma, an ITI trade certificate, or a B.Tech after Class 12. Duration, eligibility, careers, and which student each route suits.",
     metaTitle:
-      "Diploma vs ITI vs B.Tech after Class 10 — pathway guide for Eastern UP | BIPE",
+      "Diploma vs ITI vs B.Tech after Class 10 — Eastern UP guide | BIPE",
     metaDescription:
       "Polytechnic diploma vs ITI trade certificate vs B.Tech degree — duration, eligibility, careers, government job eligibility and lateral-entry options for students after Class 10.",
     sections: [
@@ -2320,7 +2320,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "A 3-year BTEUP diploma is the eligibility floor for Junior Engineer cadres at SSC, RRB, UPPCL, UP PWD and several state utilities. Here's the verified list of exams, branches, age limits, exam patterns and where BIPE alumni have landed.",
     metaTitle:
-      "Junior Engineer eligibility after a diploma — SSC JE, RRB JE, UPPCL guide | BIPE",
+      "Junior Engineer eligibility after diploma — SSC JE, RRB JE, UPPCL",
     metaDescription:
       "Polytechnic diploma holders are eligible for SSC JE, RRB JE, UPPCL and state PWD Junior Engineer exams. Branches, age limits, exam patterns and verified BIPE alumni placements in these cadres.",
     sections: [
@@ -3017,7 +3017,7 @@ export const BLOG_POSTS: BlogPost[] = [
     // both title and description so the SERP itself resolves the
     // "same or different?" question.
     metaTitle:
-      "Polytechnic vs ITI — 3-Year Diploma vs 1-Year Trade Certificate · Class 10 Choice 2026",
+      "Polytechnic vs ITI 2026 — Diploma vs Trade Certificate | BIPE",
     metaDescription:
       "Polytechnic = 3-year engineer-grade diploma (JEECUP, ₹35k JE jobs, B.Tech lateral entry). ITI = 1-2 year trade certificate (₹15-20k craftsman jobs). Branch-wise comparison for UP/Bihar families.",
     sections: [
@@ -4010,7 +4010,7 @@ export const BLOG_POSTS: BlogPost[] = [
     // the three salary anchors (₹35-44k / ₹18-25k / ₹12-22k) that
     // are the actual reason a parent clicks this result.
     metaTitle:
-      "Polytechnic Salary 2026 — Kitni Milti Hai? सरकारी JE ₹35-44k · Private ₹18-25k",
+      "Polytechnic Salary 2026 — सरकारी JE ₹35-44k · Private ₹18-25k",
     metaDescription:
       "पॉलिटेक्निक के बाद कितनी सैलरी मिलती है? सरकारी JE ₹35-44k/महीना, Tier-1 private (Mahindra, Tata) ₹18-25k, regional manufacturing ₹12-22k। ब्रांच और साल के हिसाब से पूरी range — हिन्दी में।",
     sections: [
