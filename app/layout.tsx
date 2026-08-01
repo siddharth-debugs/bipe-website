@@ -22,7 +22,6 @@ import FbclidCapture from "@/components/shell/FbclidCapture";
 import OutboundTracker from "@/components/shell/OutboundTracker";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import { aggregateRatingSchema } from "@/lib/reviews";
-import { PLACEMENT_VERIFIED } from "@/lib/placement-stats";
 import type { Branch } from "@/lib/data";
 import type { PublicContact } from "@/lib/content";
 
@@ -174,36 +173,13 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       // fee, not a transactional purchase). Helps the local pack
       // surface "polytechnic fees" SERP context.
       priceRange: "INR 30,150 / academic year (AFRC-approved tuition)",
-      // numberOfStudents — surfaces in Google's Knowledge Panel and
-      // AI Overview answer cards for "BIPE Varanasi students" queries.
-      // Two-row form (current enrolment + cumulative alumni) is the
-      // BITE pattern Google parses cleanly. Bumped 28 May 2026 to
-      // match the TPO-provided verified placement list (2016-2025):
-      // 1,331 placements on record (28 in government organisations
-      // — ALP Indian Railways, UPPCL, SSC JE, UP Police, etc.).
-      // Alumni network 2,200+, current enrolment ~550. Update on
-      // major cohort changes (annually after the placement office
-      // closes its year-end audit).
-      numberOfStudents: [
-        {
-          "@type": "QuantitativeValue",
-          value: 550,
-          unitText: "students currently enrolled",
-        },
-        {
-          "@type": "QuantitativeValue",
-          value: 2200,
-          unitText: "alumni network",
-        },
-        {
-          "@type": "QuantitativeValue",
-          // 29 May 2026 — pulled from lib/placement-stats.ts so the
-          // Schema.org payload stays in sync with /alumni + /placements
-          // automatically whenever the TPO XLSX is refreshed.
-          value: PLACEMENT_VERIFIED.totalPlacements,
-          unitText: `alumni placed on record (TPO-verified ${PLACEMENT_VERIFIED.startYear}-${PLACEMENT_VERIFIED.endYear}, incl. 28 in government posts)`,
-        },
-      ],
+      // NOTE (Aug 2026 audit): `numberOfStudents` removed. It is valid
+      // schema.org on EducationalOrganization, but this node is also
+      // typed LocalBusiness/Organization, and validators (Semrush,
+      // Google-profile checks) reject it on those profiles — flagging
+      // every page. The enrolment/alumni/placement stats remain fully
+      // visible to Google + AI crawlers via page content, /about,
+      // /placements, and llms.txt, so the entity facts are not lost.
       // hasCredential — credentials the institution itself holds
       // (different from `accreditedBy` above, which lists the boards
       // doing the accrediting). Both are valid schema.org properties
@@ -240,12 +216,10 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
           },
         },
       ],
-      // dateModified at the Organization level (not just WebSite).
-      // Signals freshness of institutional information to Google.
-      // Hard-coded to the latest significant fact-change date rather
-      // than auto-updated, because Google penalises false-fresh
-      // signals (e.g., page-render date when content hasn't changed).
-      dateModified: "2026-05-26",
+      // NOTE (Aug 2026 audit): org-level `dateModified` removed — it is
+      // a CreativeWork property, invalid on Organization, and every page
+      // was flagged for it. The WebSite node below keeps its (valid)
+      // dateModified for the freshness signal.
       // AggregateRating — the gold-star rich-result that lifts SERP
       // CTR by 30-50% on its own (more than any title rewrite). Reads
       // from lib/reviews.json via lib/reviews.ts. Renders null when
@@ -295,25 +269,11 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
           url: "https://www.google.com/search?kgmid=/g/11b7y7yyyn",
         },
       ],
-      // accreditedBy — Phase 1.5 strategy (May 2026). BTE UP and AICTE
-      // are the institute's two formal accrediting bodies; surfacing
-      // them as explicit `accreditedBy` references (separate from the
-      // identifier PropertyValue rows above) gives Google a cleaner
-      // entity link to the boards' own knowledge-graph entries and
-      // strengthens E-E-A-T trust signals for the YMYL education
-      // vertical.
-      accreditedBy: [
-        {
-          "@type": "EducationalOrganization",
-          name: "Board of Technical Education, Uttar Pradesh (BTE UP)",
-          url: "https://bteup.ac.in/",
-        },
-        {
-          "@type": "EducationalOrganization",
-          name: "All India Council for Technical Education (AICTE)",
-          url: "https://www.aicte-india.org/",
-        },
-      ],
+      // NOTE (Aug 2026 audit): the former `accreditedBy` array removed —
+      // it is not a schema.org property (it validated as invalid on
+      // every page). The same BTE UP + AICTE accreditation facts are
+      // already expressed through the valid `hasCredential` →
+      // `recognizedBy` chain above, so no signal is lost.
       department: branches.map((b) => ({
         "@type": "EducationalOrganization",
         name: `Department of ${b.name}`,
@@ -346,6 +306,11 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         "query-input": "required name=search_term_string",
       },
     },
+    // offers + hasCourseInstance are REQUIRED by Google's Course-info
+    // spec — without both, every Course node validates as "invalid"
+    // (the bulk of Semrush's 609 flagged items, Aug 2026 audit: 5
+    // nodes × ~100 pages). Mirrors the fuller per-branch pattern in
+    // app/courses/[branch]/page.tsx.
     ...branches.map((b) => ({
       "@type": "Course",
       "@id": `${SITE_URL}/courses#${b.slug}`,
@@ -354,7 +319,40 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       courseCode: b.code,
       provider: { "@id": `${SITE_URL}#org` },
       educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
+      educationalLevel: "Diploma",
       inLanguage: ["en-IN"],
+      offers: {
+        "@type": "Offer",
+        category: "Tuition",
+        price: b.fee.replace(/,/g, ""),
+        priceCurrency: "INR",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/courses/${b.slug}`,
+      },
+      hasCourseInstance: [
+        {
+          "@type": "CourseInstance",
+          courseMode: "Onsite",
+          location: {
+            "@type": "Place",
+            name: "BIPE Phoolpur Campus, Varanasi",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Gajokhar, Phoolpur",
+              addressLocality: "Varanasi",
+              addressRegion: "Uttar Pradesh",
+              postalCode: "221206",
+              addressCountry: "IN",
+            },
+          },
+          courseSchedule: {
+            "@type": "Schedule",
+            duration: "P3Y",
+            repeatFrequency: "Yearly",
+            repeatCount: 3,
+          },
+        },
+      ],
     })),
   ],
   };
