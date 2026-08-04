@@ -8,6 +8,7 @@ import { bannerRoundAt } from "@/lib/jeecupBannerRounds";
 import { HeroFull } from "@/components/home/HeroFull";
 import { BIPE_IMG } from "@/lib/images";
 import { StatsBar } from "@/components/home/StatsBar";
+import { Leadership } from "@/components/home/Leadership";
 import { Recruiters } from "@/components/home/Recruiters";
 import { ScholarshipStrip } from "@/components/home/ScholarshipStrip";
 import { WhyBipe } from "@/components/home/WhyBipe";
@@ -131,6 +132,14 @@ export default async function HomePage() {
         the backend stats row is verified clean.
       */}
       <StatsBar />
+      {/* Leadership band (Aug 2026) — Chairman, Director, Principal.
+          Placed immediately after the numbers and above the recruiter
+          marquee: the appointment of Prof. (Dr.) S. P. Tewari, a
+          38-year IIT (BHU) professor, as Director is the strongest
+          credibility signal on the homepage and was previously not
+          represented here at all (the homepage carried no leadership
+          surface before this). */}
+      <Leadership />
       <Recruiters />
       {/* 28 May 2026 — Trust 50% scholarship strip added per user
           direction. Anchors the top-2,000-JEECUP-rank / 50% offer

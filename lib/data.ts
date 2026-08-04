@@ -424,6 +424,7 @@ export const DATA: DataShape = {
     // pattern applies. components/home/News.tsx is pinned to this
     // static array as of 28 May 2026 so the wrong backend card stops
     // overriding.
+    { date: "Aug 3, 2026", tag: "Institute", title: "Prof. (Dr.) S. P. Tewari joins BIPE as Director", body: "Prof. S. P. Tewari — who taught Mechanical Engineering at IIT (BHU) Varanasi for 38 years, retiring as Professor in 2019 — has joined BIPE as Director. Ph.D. in Welding, Fellow of the Institution of Engineers (India), and a former AICTE Expert Visit Committee member." },
     { date: "May 18, 2026", tag: "Placement", title: "Knorr-Bremse AG, Munich — pool campus drive", body: "Pool campus placement drive with Knorr-Bremse AG (Munich, Germany). Open to eligible final-year branches." },
     { date: "June 9, 2026", tag: "Admission", title: "JEECUP 2026 exam concludes", body: "Computer-based test ran 02–09 June (rescheduled from May). Results expected mid-June; 7-round counselling opens shortly after. Book your campus visit now to lock in your branch preferences." },
     { date: "Apr 24, 2026", tag: "Campus", title: "Industrial visit — Mechanical Engineering students", body: "Industrial visit organised for Mechanical Engineering (Production) students. Plant tour and hands-on shop-floor exposure." },

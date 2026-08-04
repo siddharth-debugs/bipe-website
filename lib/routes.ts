@@ -12,7 +12,7 @@ export type RouteKey =
   | "home" | "about" | "courses" | "admission" | "apply" | "visit"
   | "contact" | "placements" | "alumni" | "campus" | "fees" | "scholarships"
   | "documents" | "jeecup" | "hostel" | "faculty" | "events"
-  | "chairman" | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
+  | "chairman" | "director" | "principal" | "teaching" | "approvals" | "faq" | "blog" | "grievance"
   | "mandatoryDisclosure" | "aiPolicy"
   | "privacy" | "terms" | "antiRagging"
   | "jeecupFromBihar" | "jeecupVsBcece" | "admissionFromBihar"
@@ -302,6 +302,16 @@ export const ROUTES: Record<RouteKey, {
     path: "/chairman",
     title: "Chairman's Message — Dr. Chandrika Rai, IPS (Retd.) | BIPE",
     description: "From Pantnagar Agriculture University to the IPS to founding Purwanchal Educational Trust — Dr. Chandrika Rai's note to every BIPE family.",
+  },
+  // Director — appointed 3 August 2026. Like the Principal entry below,
+  // the name here MUST stay in sync with the single canonical source
+  // (DIRECTOR in lib/leadership.ts). Do not retype the name in more
+  // files — the May 2026 SERP audit caught Google surfacing a stale
+  // leadership name from a drifted title string.
+  director: {
+    path: "/director",
+    title: "Director's Message — Prof. S. P. Tewari | BIPE",
+    description: "Prof. (Dr.) S. P. Tewari — 38 years teaching at IIT (BHU) Varanasi — is BIPE's Director. His message to every student and parent who chooses a diploma.",
   },
   principal: {
     path: "/principal",

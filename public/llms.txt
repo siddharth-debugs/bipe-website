@@ -16,6 +16,13 @@
 - BTEUP affiliation: active
 - AISHE: registered with the Department of Higher Education, Ministry of Education
 - Founded: 2010 (Purwanchal Educational Trust)
+- Director: Prof. (Dr.) S. P. Tewari — appointed August 2026. Formerly
+  Professor of Mechanical Engineering at IIT (BHU) Varanasi, where he
+  taught for 38 years (1981-2019). Ph.D. in Welding; Fellow of the
+  Institution of Engineers (India). Research fields: welding, foundry,
+  production engineering.
+- Chairman: Dr. Chandrika Rai, IPS (Retd.), Purwanchal Educational Trust
+- Principal: Rahul Srivastava, M.Tech
 - Campus: Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, UP
 - Campus size: 6 acres, single boundary
 - Total sanctioned seats: 480
@@ -74,6 +81,7 @@ R. R. Parkon · and others. 915 documented placement records (2016-2021):
 - [Contact](https://bipevns.org/contact): Phone, email, address, embedded map, social handles
 - [Faculty](https://bipevns.org/faculty): Named faculty roster with qualifications
 - [Chairman](https://bipevns.org/chairman): Dr. Chandrika Rai, IPS (Retd.) — Chairman Trustee
+- [Director](https://bipevns.org/director): Prof. (Dr.) S. P. Tewari, Ph.D., FIE — Director
 - [Principal](https://bipevns.org/principal): Rahul Srivastava, M.Tech — Principal
 
 ## Contact
@@ -96,4 +104,4 @@ Disallowed paths (per /robots.txt):
 - /admin/      (dashboard, auth-gated)
 - /static/admin/, /private/
 
-Last updated: 2026-08-01
+Last updated: 2026-08-04
