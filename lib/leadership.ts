@@ -17,9 +17,13 @@
  * public admissions website would be a privacy harm and they carry no
  * value for a student or parent. Only professional credentials appear.
  *
- * NOTE ON SPELLING: the résumé, and his institutional email at
- * IIT (BHU), both spell the surname "Tewari" (not "Tiwari"). That
- * spelling is used throughout and should not be "corrected".
+ * NOTE ON SPELLING — SETTLED, DO NOT "CORRECT":
+ * the surname is "Tewari", not "Tiwari". His résumé and his IIT (BHU)
+ * email (sptewari.mec@iitbhu.ac.in) both use Tewari, and the owner
+ * confirmed it explicitly on 4 Aug 2026. In Devanagari this is
+ * "तेवारी" (not "तिवारी") — check any Hindi copy that renders his
+ * name. Unrelated alumni named Tiwari appear elsewhere in the repo;
+ * those are different people and are spelled correctly.
  */
 
 export type LeaderCredential = { label: string; value: string };

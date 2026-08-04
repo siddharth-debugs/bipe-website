@@ -6,7 +6,7 @@ Prepared 4 August 2026 · Landing page: https://bipevns.org/director
 
 ## ⚠️ Before you post — two checks
 
-1. **Spelling:** his own résumé and his IIT (BHU) email both spell it **Tewari** (not Tiwari). All copy below uses Tewari. If the office prefers Tiwari, change it here *and* on the website together.
+1. ~~**Spelling**~~ — ✅ **settled 4 Aug 2026: it is "Tewari".** Confirmed by the office, and it matches his résumé and his IIT (BHU) email. In Hindi that is **तेवारी**, not तिवारी. All copy below uses both correctly — please don't let anyone "fix" it back.
 2. **The quote** used in these posts is drafted from his career record and is **pending his sign-off**. Please get his approval before publishing — it is presented as his own words.
 
 **Images to use** (already on the site, and in `/public/leadership/`):
@@ -60,9 +60,9 @@ Welcome, Sir. 🙏
 
 🎓 **बीआईपीई के लिए गौरव का दिन।**
 
-हमें यह बताते हुए गर्व है कि **प्रो. (डॉ.) एस. पी. तिवारी** ने बनारस इंस्टिट्यूट ऑफ पॉलिटेक्निक एंड इंजीनियरिंग, वाराणसी के **निदेशक** का पदभार ग्रहण किया है।
+हमें यह बताते हुए गर्व है कि **प्रो. (डॉ.) एस. पी. तेवारी** ने बनारस इंस्टिट्यूट ऑफ पॉलिटेक्निक एंड इंजीनियरिंग, वाराणसी के **निदेशक** का पदभार ग्रहण किया है।
 
-प्रो. तिवारी ने **आई.आई.टी. (बी.एच.यू.) वाराणसी** में **38 वर्षों** तक मैकेनिकल इंजीनियरिंग पढ़ाया — 1981 में प्रवक्ता के रूप में जुड़े और 2019 में प्रोफ़ेसर के पद से सेवानिवृत्त हुए। इस दौरान उन्होंने **8 पीएच.डी. शोधार्थियों** और **40 एम.टेक. शोध-प्रबंधों** का मार्गदर्शन किया, **56 शोध-पत्र** प्रकाशित किए और **5 पुस्तकें** लिखीं।
+प्रो. तेवारी ने **आई.आई.टी. (बी.एच.यू.) वाराणसी** में **38 वर्षों** तक मैकेनिकल इंजीनियरिंग पढ़ाया — 1981 में प्रवक्ता के रूप में जुड़े और 2019 में प्रोफ़ेसर के पद से सेवानिवृत्त हुए। इस दौरान उन्होंने **8 पीएच.डी. शोधार्थियों** और **40 एम.टेक. शोध-प्रबंधों** का मार्गदर्शन किया, **56 शोध-पत्र** प्रकाशित किए और **5 पुस्तकें** लिखीं।
 
 🔹 पीएच.डी. (वेल्डिंग) — आई.टी.-बी.एच.यू., वाराणसी
 🔹 फेलो, इंस्टिट्यूशन ऑफ इंजीनियर्स (इंडिया)
@@ -189,6 +189,6 @@ BIPE — AICTE-approved polytechnic, Phoolpur, Varanasi. JEECUP code 4455.
 
 **WhatsApp broadcast** (to the admitted-student and enquiry lists) — short version:
 
-> 🎓 बड़ी खबर — प्रो. (डॉ.) एस. पी. तिवारी, जिन्होंने आई.आई.टी. (बी.एच.यू.) वाराणसी में 38 वर्ष तक पढ़ाया, अब बीआईपीई के निदेशक हैं।
+> 🎓 बड़ी खबर — प्रो. (डॉ.) एस. पी. तेवारी, जिन्होंने आई.आई.टी. (बी.एच.यू.) वाराणसी में 38 वर्ष तक पढ़ाया, अब बीआईपीई के निदेशक हैं।
 > उनका संदेश पढ़ें: https://bipevns.org/director
 > प्रवेश जारी · JEECUP कोड 4455 · 📞 +91 91986 46464
