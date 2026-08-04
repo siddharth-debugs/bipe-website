@@ -9,6 +9,7 @@ import { HeroFull } from "@/components/home/HeroFull";
 import { BIPE_IMG } from "@/lib/images";
 import { StatsBar } from "@/components/home/StatsBar";
 import { Leadership } from "@/components/home/Leadership";
+import { DirectorAnnouncement } from "@/components/home/DirectorAnnouncement";
 import { Recruiters } from "@/components/home/Recruiters";
 import { ScholarshipStrip } from "@/components/home/ScholarshipStrip";
 import { WhyBipe } from "@/components/home/WhyBipe";
@@ -119,6 +120,12 @@ export default async function HomePage() {
           re-checks the live clock so it flips at the exact IST threshold with no
           manual edits. The server passes the build-time round so hydration matches. */}
       <JeecupCounsellingBanner initialN={bannerRoundAt(Date.now())?.n ?? 0} />
+      {/* Director appointment announcement (Aug 2026). Placed here, directly
+          under the counselling banner, because it is time-sensitive news and
+          the featured <News /> card sits near the foot of a long page. Retire
+          this band once the appointment is no longer news; /director and the
+          <Leadership /> band below carry it permanently. */}
+      <DirectorAnnouncement />
       {/*
         StatsBar is no longer wired to the backend PageSection.
         Reason 28 May 2026: the Django admin had stale stats
