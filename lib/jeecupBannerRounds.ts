@@ -71,15 +71,17 @@ export const BANNER_ROUNDS: BannerRound[] = [
       "JEECUP Round 4 (Phase 2) counselling is on — open to ALL states (Bihar, Jharkhand, MP too) and anyone who missed Rounds 1–3. Add BIPE code 4455 to your choices. Classes begin 1 August — talk to admissions today.",
     hindi:
       "JEECUP Round 4 (Phase 2) counselling चल रही है — सभी राज्यों के लिए (Bihar, Jharkhand, MP भी) और जिनका Rounds 1–3 में मौका छूटा उनके लिए भी। BIPE code 4455 अपनी choices में add करें। Classes 1 August से — आज ही admissions से बात करें।",
-    rollAtMs: at("2026-08-06T00:00:00+05:30"), // Round 4 window → roll to Round 5
+    // Rolled forward to 4 Aug (owner direction): the session has started
+    // and JEECUP moved on to the final round, so Round-4 copy was stale.
+    rollAtMs: at("2026-08-04T00:00:00+05:30"), // Round 4 window → roll to Round 5
   },
   {
     n: 5,
     eyebrow: "JEECUP 2026 · Round 5 · Final round",
     headline:
-      "JEECUP Round 5 — the final counselling round. Last seats at BIPE (code 4455), open to all states. Classes begin 1 August — reserve your branch now before the seats close.",
+      "JEECUP Round 5 is the FINAL counselling round — last seats at BIPE (code 4455), open to all states including Bihar. Classes are already under way, so talk to admissions today and join with minimal catch-up.",
     hindi:
-      "JEECUP Round 5 — आख़िरी counselling round। BIPE में last seats (code 4455), सभी राज्यों के लिए। Classes 1 August से — seats बंद होने से पहले अभी reserve करें।",
+      "JEECUP Round 5 — आख़िरी counselling round। BIPE में last seats (code 4455), सभी राज्यों के लिए (Bihar भी)। Classes शुरू हो चुकी हैं — आज ही admissions से बात करें।",
     rollAtMs: at("2026-08-16T00:00:00+05:30"), // end of Phase 2 → then hide
   },
 ];

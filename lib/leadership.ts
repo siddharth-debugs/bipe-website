@@ -154,7 +154,7 @@ export const DIRECTOR_QUOTE = {
   en: "The best engineers I taught were never the ones with the highest marks. They were the ones who were not afraid of the workshop.",
   /** The word rendered in accent colour inside the English quote. */
   highlight: "workshop",
-  hi: "मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं थे — वे वे थे जो कार्यशाला से नहीं डरते थे।",
+  hi: "मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं, बल्कि वे थे जिन्हें कार्यशाला से डर नहीं लगता था।",
 };
 
 /* ────────────────────────── Chairman ────────────────────────── */

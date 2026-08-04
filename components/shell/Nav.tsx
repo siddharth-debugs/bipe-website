@@ -141,7 +141,7 @@ export function Nav() {
             <span className="nav-utility-divider" />
             <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>JEECUP {C.jeecup}</span>
             <span className="nav-utility-divider" />
-            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>Classes start 1 Aug</span>
+            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>Round 5 · Final round</span>
           </div>
           <div className="nav-utility-right">
             <a href={`tel:${C.phone}`} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
@@ -206,7 +206,7 @@ export function Nav() {
             <div className="nav-mega-grid">
               <MegaItem to="/admission" title="Overview" desc="JEECUP Group A · key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
               <MegaItem to="/apply" title="Apply now" desc="Single-step form · callback in 24 hrs" icon="M14 3l7 7-11 11H3v-7L14 3z" />
-              <MegaItem to="/early-registration" title="Round 4 Admissions Enquiry" desc="JEECUP 2026 · Round 4 counselling on · classes begin 1 Aug" icon="M9 11l3 3L20 5M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" />
+              <MegaItem to="/early-registration" title="Round 5 Admissions Enquiry" desc="JEECUP 2026 · Round 5 — final round · classes on" icon="M9 11l3 3L20 5M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" />
               <MegaItem to="/jeecup" title="JEECUP Guidance" desc="6-step counselling explainer" icon="M12 2v20M5 8l7-6 7 6M5 16l7 6 7-6" />
               <MegaItem to="/fees" title="Fees" desc="₹30,150/year — AFRC-approved" icon="M3 7h18v10H3zM7 12h2M14 12h3" />
               <MegaItem to="/scholarships" title="Scholarships" desc="UP post-matric & EWS support" icon="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z" />
@@ -308,7 +308,7 @@ export function Nav() {
           </Link>
           <Link href="/early-registration" className="btn btn-sm" onClick={() => setDrawerOpen(false)}
             style={{ justifyContent: "center", marginTop: 8, background: "var(--accent)", color: "var(--ink)", border: "none", fontWeight: 600 }}>
-            JEECUP 2026 · Round 4 Admissions →
+            JEECUP 2026 · Round 5 Admissions →
           </Link>
           <div className="nav-drawer-lang">
             <button onClick={() => setLang("en")} data-on={lang === "en"} aria-pressed={lang === "en"}>EN</button>

@@ -6,7 +6,7 @@ import Link from "next/link";
 /**
  * Live countdown to the Pre-Counselling Registration deadline.
  *
- * Deadline: end of 27 July 2026 — BIPE's Round 4 Pre-Counselling Registration
+ * Deadline: end of 27 July 2026 — BIPE's Round 5 admissions enquiry
  * deadline (owner-confirmed 25 Jul 2026 via the Double Tick R4 notice: complete
  * registration by then and the BIPE office reserves your branch + seat).
  * Anchored to IST (+05:30) so every visitor counts down to the *same* instant
@@ -18,7 +18,7 @@ import Link from "next/link";
  * Once the deadline passes, diff pins to 0 and a "closed" notice
  * replaces the cells.
  */
-const DEADLINE = "2026-07-28T00:00:00+05:30"; // close of 27 Jul 2026, IST (BIPE Round 4 Pre-Counselling Registration deadline)
+const DEADLINE = "2026-07-28T00:00:00+05:30"; // close of 27 Jul 2026, IST (BIPE Round 5 admissions enquiry)
 
 const cell = (n: number, label: string) => (
   <div
@@ -84,14 +84,14 @@ export function RegistrationCountdown() {
       <div className="row" style={{ alignItems: "center", gap: 10, marginBottom: 14 }}>
         <span className="live-dot" />
         <span className="eyebrow" style={{ color: "var(--brand)" }} suppressHydrationWarning>
-          {closed ? "Pre-Counselling Registration closed" : "Round 4 registration closes 27 July 2026"}
+          {closed ? "Pre-Counselling Registration closed" : "Round 5 — final counselling round"}
         </span>
       </div>
 
       {closed ? (
         <p style={{ color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.65 }} suppressHydrationWarning>
-          Pre-Counselling Registration for 2026-27 has closed. But <strong>JEECUP Round 4 counselling is on</strong> and
-          classes begin 1 August — leave your details below and BIPE admissions will call you about a seat (code 4455), or{" "}
+          Pre-Counselling Registration for 2026-27 has closed. But <strong>JEECUP Round 5 — the final round — is on</strong> and
+          classes are already under way — leave your details below and BIPE admissions will call you about a seat (code 4455), or{" "}
           <Link href="/contact" style={{ color: "var(--brand)", fontWeight: 600 }}>
             contact admissions
           </Link>{" "}

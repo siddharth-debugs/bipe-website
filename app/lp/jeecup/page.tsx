@@ -109,7 +109,7 @@ export default function Page() {
               </span>
             </h1>
             <p className="lead" style={{ marginTop: 18, maxWidth: "52ch", color: "var(--ink-2)" }}>
-              Do your <strong>free Pre-Counselling Registration</strong> and hold your preferred branch at BIPE Varanasi — AICTE-approved, JEECUP code <strong>4455</strong>. Open / general category, so <strong>no UP domicile is needed</strong> — Bihar students welcome. Classes begin 1 August.
+              Do your <strong>free Pre-Counselling Registration</strong> and hold your preferred branch at BIPE Varanasi — AICTE-approved, JEECUP code <strong>4455</strong>. Open / general category, so <strong>no UP domicile is needed</strong> — Bihar students welcome. Classes are already under way.
             </p>
 
             {/* Live counselling-schedule strip — rolls Round 3 → allotment →

@@ -7,46 +7,43 @@ import {
   DIRECTOR,
   DIRECTOR_QUOTE,
   DIRECTOR_TAGLINE,
-  PRINCIPAL,
-  PRINCIPAL_QUOTE,
 } from "@/lib/leadership";
 
 /**
- * Homepage leadership band — Chairman, Director, Principal.
+ * Homepage leadership band — Chairman and Director, side by side.
  *
  * Added Aug 2026 with the appointment of Prof. (Dr.) S. P. Tewari as
  * Director. Before this the homepage carried NO leadership surface at
- * all, so the three trust anchors of the institution (the founding
- * trust chairman, the academic director and the principal) were
- * invisible to a first-time visitor.
+ * all, so the institution's trust anchors were invisible to a
+ * first-time visitor.
  *
- * The Director card is deliberately given the visual lead — a full
- * flag row above the other two, an accent "newly appointed" badge and
- * the largest portrait — because an IIT (BHU) professor of 38 years
- * choosing a polytechnic is the single strongest credibility signal
- * BIPE has, and it is new information for every returning visitor.
+ * Two equal columns by owner direction (4 Aug 2026): the Chairman of
+ * the founding trust and the Director carry the institution's
+ * authority, and giving them matching cards reads as a leadership
+ * pair rather than a hierarchy. The Principal is deliberately NOT on
+ * the homepage — his message stays at /principal and is reachable
+ * from the nav, footer and the Director page's own next-step block.
  *
- * All names, roles and quotes come from lib/leadership.ts so this
- * component can never drift from the individual leadership pages.
+ * All names, roles, portraits and quotes come from lib/leadership.ts
+ * so this band can never drift from the individual leadership pages.
  */
 
-const CARD_STYLE: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  padding: 26,
-  borderRadius: 18,
-  border: "1px solid var(--line)",
-  background: "var(--white)",
-};
-
-const ROLE_STYLE: React.CSSProperties = {
-  marginTop: 6,
-  fontFamily: "var(--font-mono)",
-  fontSize: 10,
-  letterSpacing: "0.14em",
-  textTransform: "uppercase",
-  color: "var(--ink-3)",
-};
+const LEADERS = [
+  {
+    leader: DIRECTOR,
+    quote: DIRECTOR_QUOTE.en,
+    badge: "NEWLY APPOINTED · AUGUST 2026",
+    strapline: DIRECTOR_TAGLINE,
+    cta: "Read the Director’s message",
+  },
+  {
+    leader: CHAIRMAN,
+    quote: CHAIRMAN_QUOTE.en,
+    badge: null,
+    strapline: "Founder · Purwanchal Educational Trust",
+    cta: "Read the Chairman’s message",
+  },
+];
 
 export const Leadership = () => (
   <section className="section bipe-pad" style={{ paddingTop: 84, paddingBottom: 84, position: "relative", overflow: "hidden" }}>
@@ -63,108 +60,82 @@ export const Leadership = () => (
         <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>answer for us.</span>
       </h2>
 
-      {/* ── Featured: the Director ─────────────────────────────── */}
       <div
         className="reveal"
         style={{
           marginTop: 40,
           display: "grid",
-          gridTemplateColumns: "auto 1fr",
-          gap: 34,
-          alignItems: "center",
-          padding: 30,
-          borderRadius: 22,
-          border: "1px solid color-mix(in oklab, var(--brand) 24%, transparent)",
-          background: "var(--brand-tint)",
+          gap: 22,
+          gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
+          alignItems: "stretch",
         }}
       >
-        <div style={{ position: "relative", width: 172, height: 172, flexShrink: 0 }}>
-          <div aria-hidden="true" style={{
-            position: "absolute", inset: 0, transform: "translate(10px, 10px)",
-            border: "1px solid var(--brand)", borderRadius: 16, pointerEvents: "none",
-          }} />
-          <div style={{
-            position: "relative", width: "100%", height: "100%",
-            overflow: "hidden", borderRadius: 16,
-            border: "1px solid var(--line)", background: "var(--white)",
-          }}>
-            <Image
-              src={DIRECTOR.photo}
-              alt={`${DIRECTOR.name} — Director, BIPE`}
-              fill
-              sizes="172px"
-              style={{ objectFit: "cover", objectPosition: "center top" }}
-            />
-          </div>
-        </div>
-
-        <div style={{ minWidth: 0 }}>
-          <span
-            className="pill pill-accent"
-            style={{ display: "inline-block" }}
+        {LEADERS.map(({ leader, quote, badge, strapline, cta }) => (
+          <div
+            key={leader.href}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              padding: 30,
+              borderRadius: 20,
+              border: badge
+                ? "1px solid color-mix(in oklab, var(--brand) 24%, transparent)"
+                : "1px solid var(--line)",
+              background: badge ? "var(--brand-tint)" : "var(--white)",
+            }}
           >
-            NEWLY APPOINTED · AUGUST 2026
-          </span>
-          <div className="serif" style={{ marginTop: 14, fontStyle: "italic", fontWeight: 400, fontSize: 32, lineHeight: 1.15, color: "var(--brand)" }}>
-            {DIRECTOR.name}
-          </div>
-          <div style={ROLE_STYLE}>
-            {DIRECTOR.role} · {DIRECTOR_TAGLINE}
-          </div>
-          <p className="serif" style={{
-            marginTop: 16, fontStyle: "italic", fontSize: 19, lineHeight: 1.55,
-            color: "var(--ink-2)", maxWidth: "52ch",
-          }}>
-            &ldquo;{DIRECTOR_QUOTE.en}&rdquo;
-          </p>
-          <Link href={DIRECTOR.href} className="btn btn-primary" style={{ marginTop: 20 }}>
-            Read the Director&rsquo;s message <ArrowIcon size={14} />
-          </Link>
-        </div>
-      </div>
-
-      {/* ── Chairman + Principal ───────────────────────────────── */}
-      <div
-        className="reveal"
-        style={{
-          marginTop: 20,
-          display: "grid",
-          gap: 20,
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-        }}
-      >
-        {[
-          { leader: CHAIRMAN, quote: CHAIRMAN_QUOTE.en, cta: "Read the Chairman’s message" },
-          { leader: PRINCIPAL, quote: PRINCIPAL_QUOTE.en, cta: "Read the Principal’s message" },
-        ].map(({ leader, quote, cta }) => (
-          <div key={leader.href} style={CARD_STYLE}>
-            <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+            {/* Portrait, then identity beneath it.
+                Stacked rather than side-by-side: at two-column widths a
+                side-by-side header leaves ~150px for the name, which
+                wraps "Prof. (Dr.) S. P. Tewari" onto three ragged
+                lines. Full-width names read far better. */}
+            <div style={{ position: "relative", width: 150, height: 150 }}>
+              <div aria-hidden="true" style={{
+                position: "absolute", inset: 0, transform: "translate(10px, 10px)",
+                border: "1px solid var(--brand)", borderRadius: 16, pointerEvents: "none",
+              }} />
               <div style={{
-                position: "relative", width: 84, height: 84, flexShrink: 0,
-                overflow: "hidden", borderRadius: 14,
-                border: "1px solid var(--line)", background: "var(--brand-tint)",
+                position: "relative", width: "100%", height: "100%",
+                overflow: "hidden", borderRadius: 16,
+                border: "1px solid var(--line)", background: "var(--white)",
               }}>
                 <Image
                   src={leader.photo}
                   alt={`${leader.name} — ${leader.role}`}
                   fill
-                  sizes="84px"
+                  sizes="150px"
                   style={{ objectFit: "cover", objectPosition: "center top" }}
                 />
               </div>
-              <div style={{ minWidth: 0 }}>
-                <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 24, lineHeight: 1.2, color: "var(--brand)" }}>
-                  {leader.name}
-                </div>
-                <div style={{ marginTop: 4, fontSize: 12.5, color: "var(--ink-3)", fontWeight: 600 }}>
-                  {leader.postNominal}
-                </div>
-                <div style={ROLE_STYLE}>{leader.role}</div>
+            </div>
+
+            <div style={{ marginTop: 20 }}>
+              {badge && (
+                <span className="pill pill-accent" style={{ display: "inline-block", marginBottom: 12 }}>
+                  {badge}
+                </span>
+              )}
+              <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 30, lineHeight: 1.15, color: "var(--brand)" }}>
+                {leader.name}
+              </div>
+              <div style={{ marginTop: 6, fontSize: 13.5, color: "var(--ink-3)", fontWeight: 600 }}>
+                {leader.postNominal}
+              </div>
+              <div style={{
+                marginTop: 8,
+                fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.13em",
+                textTransform: "uppercase", color: "var(--ink-3)", lineHeight: 1.6,
+              }}>
+                {leader.role}
+              </div>
+              <div style={{ marginTop: 5, fontSize: 12.5, color: "var(--ink-3)" }}>
+                {strapline}
               </div>
             </div>
 
+            {/* Quote */}
             <p className="serif" style={{
-              marginTop: 20, fontStyle: "italic", fontSize: 17, lineHeight: 1.6,
+              marginTop: 24, fontStyle: "italic", fontSize: 18.5, lineHeight: 1.6,
               color: "var(--ink-2)", flexGrow: 1,
             }}>
               &ldquo;{quote}&rdquo;
@@ -172,12 +143,10 @@ export const Leadership = () => (
 
             <Link
               href={leader.href}
-              style={{
-                marginTop: 18, display: "inline-flex", alignItems: "center", gap: 8,
-                fontWeight: 600, fontSize: 14.5, color: "var(--brand)",
-              }}
+              className={badge ? "btn btn-primary" : "btn btn-ghost"}
+              style={{ marginTop: 22, alignSelf: "flex-start" }}
             >
-              {cta} <ArrowIcon size={13} />
+              {cta} <ArrowIcon size={14} />
             </Link>
           </div>
         ))}

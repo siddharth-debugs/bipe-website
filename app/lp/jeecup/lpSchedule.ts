@@ -38,11 +38,11 @@ export const LP_PHASES: Array<LpPhase & { until: number }> = [
   {
     badge: "Round 4 · classes begin 1 Aug",
     text: "Round 4 is the big re-opening — Phase 2 welcomes candidates from every state (Bihar, Jharkhand, MP too) and anyone who missed Rounds 1–3. Add BIPE code 4455 to your choices. Classes begin 1 August — leave your number and admissions will guide you to a seat fast. 160+ admitted so far.",
-    until: at("2026-08-06T00:00:00+05:30"),
+    until: at("2026-08-04T00:00:00+05:30"),
   },
   {
-    badge: "Round 5 · final round · classes 1 Aug",
-    text: "JEECUP Round 5 is the final counselling round — last seats at BIPE, open to all states. Classes begin 1 August. Register now and admissions will walk you through the fastest route to a confirmed seat.",
+    badge: "Round 5 · FINAL round · classes on",
+    text: "JEECUP Round 5 is the FINAL counselling round — the last seats at BIPE, open to all states including Bihar. Classes are already under way, so leave your number now and admissions will walk you through the fastest route to a confirmed seat.",
     until: Number.POSITIVE_INFINITY,
   },
 ];
