@@ -187,8 +187,91 @@ BIPE — AICTE-approved polytechnic, Phoolpur, Varanasi. JEECUP code 4455.
 | Day 2 | Facebook (Hindi version) | `director-joining-2.jpg` |
 | Day 7 | Google Business Profile post #2 | `director-joining-2.jpg` |
 
-**WhatsApp broadcast** (to the admitted-student and enquiry lists) — short version:
+# 5 · DOUBLE TICK / WHATSAPP — JEECUP ASPIRANTS
 
-> 🎓 बड़ी खबर — प्रो. (डॉ.) एस. पी. तिवारी, जिन्होंने आई.आई.टी. (बी.एच.यू.) वाराणसी में 38 वर्ष तक पढ़ाया, अब बीआईपीई के निदेशक हैं।
-> उनका संदेश पढ़ें: https://bipevns.org/director
-> प्रवेश जारी · JEECUP कोड 4455 · 📞 +91 91986 46464
+**Audience:** JEECUP aspirants (enquiry list, exam-centre list, un-admitted leads).
+**Why this differs from the Facebook post:** Facebook is institutional pride — *"a proud day for us."* An aspirant on WhatsApp is asking a different question: *"should I put 4455 in my choice list, and do I still have time?"* So the appointment is framed as **evidence for their decision**, not as our news, and every version closes on Round 5 + code 4455.
+
+**WhatsApp formatting:** `*bold*` (single asterisks, not double), `_italic_`, `~strike~`. Markdown `**` will render literally — don't paste the Facebook version.
+
+---
+
+## 5a · RECOMMENDED — Hindi (approx. 900 characters)
+
+🎓 *जिस कॉलेज को आप JEECUP में चुन रहे हैं, वहाँ एक बड़ी ख़बर है।*
+
+*प्रो. (डॉ.) एस. पी. तिवारी* — जिन्होंने *IIT (BHU) वाराणसी* में *38 वर्ष* तक मैकेनिकल इंजीनियरिंग पढ़ाया — अब *BIPE के निदेशक* हैं।
+
+38 वर्ष अध्यापन · 8 पीएच.डी. · 56 शोध-पत्र · 5 पुस्तकें
+फेलो, इंस्टिट्यूशन ऑफ इंजीनियर्स (इंडिया)
+
+विद्यार्थियों के नाम उनका संदेश:
+_"मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं, बल्कि वे थे जिन्हें कार्यशाला से डर नहीं लगता था।"_
+
+*आपके लिए इसका मतलब क्या है?*
+जो मार्गदर्शन अब तक IIT के विद्यार्थियों को मिलता था, वह अब ₹30,150/वर्ष की डिप्लोमा फीस में आपको मिलेगा।
+
+⚠️ *JEECUP Round 5 — यह आख़िरी round है*
+सभी राज्यों के लिए खुला (बिहार भी)। अपनी choice list में *BIPE कोड 4455* ज़रूर जोड़ें। कक्षाएँ शुरू हो चुकी हैं, इसलिए देर न करें।
+
+📞 अभी बात करें: +91 91986 46464
+🔗 पूरा संदेश: bipevns.org/director
+
+*BIPE* · फूलपुर, वाराणसी
+
+---
+
+## 5b · SHORT — Hindi (approx. 400 characters, best read-through)
+
+🎓 *BIPE के नए निदेशक — IIT (BHU) में 38 वर्ष तक प्रोफ़ेसर*
+
+*प्रो. (डॉ.) एस. पी. तिवारी* ने BIPE के निदेशक का पदभार संभाला है।
+
+_"मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं थे।"_
+
+⚠️ *JEECUP Round 5 आख़िरी round है* — सभी राज्यों के लिए खुला।
+अपनी choice list में *कोड 4455* डालें।
+
+📞 +91 91986 46464
+🔗 bipevns.org/director
+
+---
+
+## 5c · HINGLISH (for younger aspirants — often out-performs pure Hindi)
+
+🎓 *Bada update — BIPE ko naye Director mile hain.*
+
+*Prof. (Dr.) S. P. Tewari* — jinhone *IIT (BHU) Varanasi* mein *38 saal* Mechanical Engineering padhaya — ab BIPE ke *Director* hain.
+
+Unka students ke liye message:
+_"Jin best engineers ko maine padhaya, unke marks sabse zyada nahi the — unhe workshop se dar nahi lagta tha."_
+
+Matlab: jo guidance ab tak IIT ke students ko milti thi, wo ab aapko ₹30,150/saal ki diploma fees mein milegi.
+
+⚠️ *JEECUP Round 5 — last round chal raha hai.* Sabhi states ke liye open (Bihar bhi). Apni choice list mein *code 4455* zaroor daalein.
+
+📞 +91 91986 46464
+🔗 bipevns.org/director
+
+---
+
+## 5d · Sending notes
+
+- **Template approval:** if this goes as a Double Tick *marketing template*, it needs Meta approval first (usually a few hours). Submit 5b — short templates clear approval more reliably than long ones with heavy formatting.
+- **Opt-in:** send only to contacts who enquired or gave their number at an exam centre. Do not push to purchased or scraped lists — that risks the WhatsApp number being blocked, which would cost you the admissions line mid-counselling.
+- **Timing:** 10am–1pm or 5–8pm gets the best read rates with this audience. Avoid school hours.
+- **Follow-up:** anyone who replies is a hot Round-5 lead — route them straight to the admissions desk, not into a drip.
+- **Image:** attach `director-joining-1.jpg` above the text. WhatsApp shows the image first, so it earns the read.
+
+---
+
+# 6 · Posting order (suggested)
+
+| When | Channel | Asset |
+|---|---|---|
+| Day 1, ~11am | Facebook (English) + link in first comment | `director-joining-1.jpg` |
+| Day 1, ~11am | Instagram carousel + Story | `-1.jpg` then `-2.jpg` |
+| Day 1, ~12pm | **Double Tick broadcast (5a or 5b)** to the JEECUP enquiry list | `director-joining-1.jpg` |
+| Day 1, afternoon | Google Business Profile post #1 | `director-joining-1.jpg` |
+| Day 2 | Facebook (Hindi version) | `director-joining-2.jpg` |
+| Day 7 | Google Business Profile post #2 | `director-joining-2.jpg` |
