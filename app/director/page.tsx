@@ -119,13 +119,12 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 64, alignItems: "center" }}>
             {/* LEFT — portrait in an offset outline frame.
-                maxWidth is deliberate: the only portrait of Prof. Tewari
-                we hold is the 321x307 image from his own résumé, so the
-                frame is capped near native size. Without the cap the
-                stacked mobile layout blows it up to ~740px and it goes
-                visibly soft. Replace the cap when a high-resolution
-                campus photograph is taken. */}
-            <div style={{ position: "relative", width: "100%", maxWidth: 340, marginInline: "auto" }}>
+                Now a proper 889x1000 studio headshot (supplied 4 Aug
+                2026), so the earlier 340px cap that protected the
+                low-resolution résumé scan is gone; 4:5 matches the
+                chairman page's portrait proportion and crops this
+                source almost not at all. */}
+            <div style={{ position: "relative", width: "100%", maxWidth: 400, marginInline: "auto" }}>
               <div aria-hidden="true" style={{
                 position: "absolute", inset: 0, transform: "translate(16px, 16px)",
                 border: "1px solid var(--brand)", borderRadius: 18, pointerEvents: "none",
@@ -133,25 +132,16 @@ export default function Page() {
               <div style={{
                 position: "relative", overflow: "hidden", borderRadius: 18,
                 border: "1px solid var(--line)", background: "var(--white)",
-                aspectRatio: "1 / 1",
+                aspectRatio: "4 / 5",
               }}>
                 <Image
                   src={DIRECTOR.photo}
                   alt={`${DIRECTOR.name} — Director, Banaras Institute of Polytechnic & Engineering`}
                   fill
-                  sizes="340px"
+                  sizes="(max-width: 900px) 92vw, 400px"
                   priority
-                  style={{ objectFit: "cover", objectPosition: "center top" }}
+                  style={{ objectFit: "cover", objectPosition: "center 20%" }}
                 />
-                <div style={{
-                  position: "absolute", left: 0, right: 0, bottom: 0,
-                  padding: "10px 14px",
-                  background: "color-mix(in oklab, var(--ink) 82%, transparent)",
-                  color: "var(--paper)",
-                  fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase",
-                }}>
-                  Director · Appointed August 2026
-                </div>
               </div>
             </div>
 
