@@ -56,6 +56,22 @@ export const DIRECTOR: Leader = {
   href: "/director",
 };
 
+/**
+ * Full name, as he signs it.
+ *
+ * On his 5 Aug 2026 mark-up he corrected "S. P." to "Satya Prakash" at
+ * the pull-quote signature, and his own typed message is signed
+ * "Prof. Satya Prakash Tewari". Applied at those two places only.
+ *
+ * PENDING (Q2 with him): whether the full name should replace "S. P."
+ * everywhere — page title, hero H1, nav, homepage cards, nameplate,
+ * social posts. Until he answers, DIRECTOR.name above stays "S. P."
+ * so the compact surfaces are untouched.
+ */
+export const DIRECTOR_FULL_NAME = "Prof. (Dr.) Satya Prakash Tewari";
+/** Exactly as he signs the message — no "(Dr.)". */
+export const DIRECTOR_SIGNATURE_NAME = "Prof. Satya Prakash Tewari";
+
 /** One-line positioning used in nav, cards and meta descriptions. */
 export const DIRECTOR_TAGLINE =
   "38 years teaching at IIT (BHU) Varanasi";
@@ -81,49 +97,70 @@ export const DIRECTOR_STATS: LeaderCredential[] = [
   { label: "Research grants sanctioned", value: "₹15 L" },
 ];
 
-/** Degrees, most recent first. */
+/**
+ * Degrees, most recent first.
+ * Fields corrected by him on 5 Aug 2026: the Ph.D. and the M.E. are
+ * both in Mechanical Engineering, with the specialisation in brackets.
+ */
 export const DIRECTOR_EDUCATION: { degree: string; field: string; institute: string; year: string }[] = [
-  { degree: "Ph.D.", field: "Welding", institute: "IT-BHU, Varanasi (now IIT BHU)", year: "1998" },
-  { degree: "M.E.", field: "Production Engineering", institute: "MLNREC, Allahabad (now MNNIT)", year: "1980" },
+  { degree: "Ph.D.", field: "Mechanical Engineering (Welding)", institute: "IT-BHU, Varanasi (now IIT BHU)", year: "1998" },
+  { degree: "M.E.", field: "Mechanical Engineering (Production Engineering)", institute: "MLNREC, Allahabad (now MNNIT)", year: "1980" },
   { degree: "B.E.", field: "Mechanical Engineering", institute: "MLNREC, Allahabad (now MNNIT)", year: "1978" },
 ];
 
-/** Rank progression in a single department across 38 years. */
-export const DIRECTOR_CAREER: { years: string; title: string }[] = [
-  { years: "2009 – 2019", title: "Professor, Mechanical Engineering, IIT (BHU) Varanasi" },
-  { years: "2006 – 2009", title: "Associate Professor, IT-BHU Varanasi" },
-  { years: "1998 – 2005", title: "Reader, IT-BHU Varanasi" },
-  { years: "1989 – 1998", title: "Lecturer (Senior Scale), IT-BHU Varanasi" },
-  { years: "1981 – 1989", title: "Lecturer, IT-BHU Varanasi" },
+/*
+ * DIRECTOR_CAREER (the five-row Lecturer→Professor rank progression)
+ * was REMOVED on 5 Aug 2026 — he struck out every row on his mark-up.
+ * PENDING (Q5 with him): whether he wants it gone entirely or reduced
+ * to a single line, since it is the clearest evidence for the 38-year
+ * figure. Restore from git history (commit f7190c7) if he asks.
+ */
+
+/**
+ * National roles — HIS OWN WORDING.
+ *
+ * On his 5 Aug 2026 mark-up he struck the heading "Roles he has held
+ * nationally" and wrote "National Roles and Responsibilities", then
+ * attached a typed list of exactly these six items, each ticked, and
+ * struck the longer descriptions that had been on the cards. On the
+ * second item he struck "Examiner, Evaluator & Interview", leaving
+ * "UPSC & State PSC Expert".
+ *
+ * Note he genericised two of them himself — "National Research Project
+ * Reviewer" rather than naming SERB/DST, and "a Premier Professional
+ * Engineering Institution" rather than naming the Institution of
+ * Engineers (India). That is his preference; do not "restore" the
+ * specifics.
+ */
+export const DIRECTOR_NATIONAL_ROLES: string[] = [
+  "AICTE Expert & Accreditation Committee Member",
+  "UPSC & State PSC Expert",
+  "National Research Project Reviewer",
+  "Reviewer for Reputed Research Journals",
+  "Board of Studies & Curriculum Development Expert",
+  "Fellow of a Premier Professional Engineering Institution",
 ];
 
-/** National-level roles — the strongest external trust signals. */
-export const DIRECTOR_NATIONAL_ROLES: { title: string; body: string }[] = [
-  {
-    title: "AICTE Expert Visit Committee",
-    body: "Served on AICTE Expert Visit Committees (2019), inspecting institutions across Odisha, Hyderabad and Assam — the same approval machinery BIPE is assessed by.",
-  },
-  {
-    title: "UPSC & UPPSC examiner",
-    body: "Civil-services examiner and evaluator — interviewer, paper setter, head examiner and moderator for UPSC and UPPSC examinations.",
-  },
-  {
-    title: "SERB · DST research reviewer",
-    body: "Reviewer of research projects for the Science and Engineering Research Board, Department of Science & Technology, Government of India.",
-  },
-  {
-    title: "Board of Studies member",
-    body: "Curriculum design as a Board of Studies member at KNIT Sultanpur, VBS Purvanchal University Jaunpur, SRM University Barabanki and IET Faizabad.",
-  },
-  {
-    title: "Fellow, Institution of Engineers (India)",
-    body: "Elected Fellow (FIE) of the Institution of Engineers (India) in 2010.",
-  },
-  {
-    title: "Journal reviewer",
-    body: "Standing reviewer for DRDO, Sadhana (Indian Academy of Sciences) and other national research journals.",
-  },
-];
+/**
+ * ONE ITEM STILL OPEN — the tail of the English pull quote.
+ *
+ * On the 5 Aug proof he hand-wrote the quote to show a capitalisation
+ * change: "Minds, guided by values" in lower case, which IS applied
+ * above. Directly beneath it he wrote "Building a Strong Nation" and
+ * struck it through.
+ *
+ * Read at 600dpi that strike is deliberate, but it is more likely a
+ * struck false start than a deletion instruction, because:
+ *   - the phrase is his own, from the tagline he supplied on 4 Aug;
+ *   - he left the Hindi line completely unmarked, and it still ends
+ *     "सशक्त राष्ट्र का निर्माण" = "building a strong nation". Cutting
+ *     the English alone would leave the two lines saying different
+ *     things.
+ *
+ * So the phrase is KEPT. If he confirms he wanted it cut, delete the
+ * final clause here and the matching "— सशक्त राष्ट्र का निर्माण" from
+ * `hi` below, so the two languages stay in step.
+ */
 
 /** Honours. Only awards explicitly listed in the résumé. */
 export const DIRECTOR_HONOURS: { title: string; body: string }[] = [
@@ -142,28 +179,48 @@ export const DIRECTOR_HONOURS: { title: string; body: string }[] = [
 ];
 
 /**
- * The Director's message.
+ * The Director's message — HIS OWN WORDS, with two additions he approved.
  *
- * STATUS: drafted by the institute's communications workflow from his
- * career record, and pending his own sign-off before it is presented
- * anywhere as a verbatim personal statement. Do not syndicate to press
- * or social channels until the office confirms.
+ * Round 1 (5 Aug 2026): he struck the previously drafted message and
+ * supplied his own typed text.
+ * Round 2 (5 Aug 2026, second mark-up): he was offered a variant that
+ * kept his text intact and added two short passages naming his 38 years
+ * at IIT (BHU) and his own field. He wrote on it: "Text with two
+ * additions and one modification, inclusion is final." — so BOTH
+ * additions below are approved by him and are marked.
+ *
+ * Every other sentence is his, verbatim and in his order. Do not edit
+ * for style; any change must come from him.
  */
 export const DIRECTOR_MESSAGE: string[] = [
-  "For thirty-eight years I taught engineering at IIT (BHU), Varanasi. In that time I learned something that took me by surprise, and that I have never since been able to unlearn: the students who travelled furthest were rarely the ones who arrived with the highest marks. They were the ones who were not afraid of the workshop — who would pick up a piece of steel, strike an arc, and find out for themselves what the metal would do.",
-  "That is a large part of why I have come to BIPE.",
-  "A diploma is not a smaller version of a degree. It is a different kind of education — closer to the machine, closer to the site, closer to the work itself. The engineer who can read a drawing and also cut, weld and assemble the thing it describes is exactly the engineer that every workshop, every railway yard and every construction site in this country is short of. I have spent my career on welding, casting and production — the oldest conversation there is between a person and a material — and I can tell you that this conversation is not learned from a screen. It is learned standing up, with your hands.",
-  "Many of our students are the first in their family to study engineering. Some arrive quietly unsure whether they belong in an engineering institution at all. To them I want to say something plainly: you belong here. Your rank in an entrance examination measures one morning of your life. It does not measure your hands, your patience, or how far you are willing to go.",
-  "To parents, I make a simpler promise. You are trusting us with three years of your child's life at the precise moment their future is decided. We will teach them properly. We will keep our workshops busy and our laboratories honest. And we will treat your child with the same seriousness I was expected to show every student who walked into my classroom at IIT (BHU).",
-  "Come and see the campus. Ask us difficult questions. That is how good institutions are built — and that is the institution I have joined BIPE to help build.",
+  "It gives me immense pleasure to welcome you to our Polytechnic Institute. Technical education plays a vital role in shaping skilled professionals who contribute to the nation's industrial, technological, and socio-economic development. Our mission is not only to impart sound technical knowledge but also to develop competence, creativity, discipline, ethical values, and a lifelong passion for learning among our students.",
+  // Addition 1 — approved by him, 5 Aug 2026.
+  "I have spent thirty-eight years teaching mechanical engineering at IIT (BHU), Varanasi, and I have come to a polytechnic by choice. A diploma is not a smaller version of a degree; it is a different kind of education — closer to the machine, closer to the site, and closer to the work itself.",
+  // Addition 2 — the final two sentences of this paragraph, approved by him.
+  "At our institute, we are committed to providing a dynamic learning environment where theory is effectively integrated with practical training through modern laboratories, workshops, industry interaction, internships, and project-based learning. We strive to bridge the gap between academic education and industrial expectations so that our students become confident, competent, and employable professionals. In my own field — welding, casting and production — I have seen repeatedly that this understanding is not gained from a screen. It is gained standing at the machine, with one's hands.",
+  "Innovation, research orientation, entrepreneurship, digital learning, and sustainable development are the guiding principles of our academic activities. We encourage our students to think critically, solve real-life engineering problems, and continuously upgrade their knowledge and skills to meet the challenges of an ever-evolving technological world.",
+  "Our dedicated faculty members and staff remain committed to mentoring students in their academic, professional, and personal growth. We firmly believe that every student possesses immense potential, and it is our responsibility to provide the right guidance, opportunities, and environment to help them achieve excellence.",
+  "I invite students, parents, alumni, industry partners, and all stakeholders to join us in our journey towards academic excellence, innovation, and nation building. Together, let us create an institution that stands as a model of quality technical education, skill development, and professional integrity.",
+  "I extend my best wishes to all and look forward to your valuable support and cooperation.",
 ];
 
-/** The line lifted into the full-bleed pull quote. */
+/**
+ * The full-bleed pull quote — replaced by him on 5 Aug 2026.
+ *
+ * CONFIRMED 5 Aug 2026: he reviewed the rendered page and returned the
+ * Devanagari below unmarked, so the transcription of his handwriting is
+ * correct.
+ *
+ * OPEN: on the same proof he wrote over the ENGLISH line — see
+ * DIRECTOR_QUOTE_OPEN_QUESTION below. Do not publish the English until
+ * that is settled.
+ */
 export const DIRECTOR_QUOTE = {
-  en: "The best engineers I taught were never the ones with the highest marks. They were the ones who were not afraid of the workshop.",
-  /** The word rendered in accent colour inside the English quote. */
-  highlight: "workshop",
-  hi: "मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं, बल्कि वे थे जिन्हें कार्यशाला से डर नहीं लगता था।",
+  en: "Skilled Hands, Innovative Minds, guided by values, Building a Strong Nation.",
+  /** The phrase rendered in accent colour inside the English quote. */
+  highlight: "Building a Strong Nation",
+  hi: "कुशल हाथ, नवोन्मेषी मस्तिष्क, मूल्यों से निर्देशित — सशक्त राष्ट्र का निर्माण।",
+  hiConfirmed: true,
 };
 
 /* ────────────────────────── Chairman ────────────────────────── */

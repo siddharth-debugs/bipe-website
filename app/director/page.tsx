@@ -7,13 +7,14 @@ import { ArrowIcon } from "@/components/shell/Icons";
 import { SITE_URL } from "@/lib/routes";
 import {
   DIRECTOR,
-  DIRECTOR_CAREER,
   DIRECTOR_EDUCATION,
   DIRECTOR_HONOURS,
   DIRECTOR_MESSAGE,
   DIRECTOR_NATIONAL_ROLES,
   DIRECTOR_QUOTE,
   DIRECTOR_STATS,
+  DIRECTOR_FULL_NAME,
+  DIRECTOR_SIGNATURE_NAME,
 } from "@/lib/leadership";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -45,7 +46,7 @@ const DIRECTOR_JSON_LD = {
     honorificPrefix: "Prof. (Dr.)",
     jobTitle: "Director",
     description:
-      "Director of Banaras Institute of Polytechnic & Engineering (BIPE), Varanasi. Formerly Professor of Mechanical Engineering at IIT (BHU) Varanasi, where he taught for 38 years. Ph.D. in Welding; Fellow of the Institution of Engineers (India).",
+      "Director of Banaras Institute of Polytechnic & Engineering (BIPE), Varanasi. Formerly Professor of Mechanical Engineering at IIT (BHU) Varanasi, where he taught mechanical engineering for 38 years. Ph.D. in Mechanical Engineering (Welding); Fellow of the Institution of Engineers (India).",
     image: `${SITE_URL}${DIRECTOR.photo}`,
     url: `${SITE_URL}/director`,
     worksFor: { "@id": `${SITE_URL}#org` },
@@ -71,7 +72,7 @@ const DIRECTOR_JSON_LD = {
     hasCredential: [
       {
         "@type": "EducationalOccupationalCredential",
-        credentialCategory: "Ph.D. (Welding), IT-BHU Varanasi",
+        credentialCategory: "Ph.D. Mechanical Engineering (Welding), IT-BHU Varanasi",
       },
       {
         "@type": "EducationalOccupationalCredential",
@@ -157,7 +158,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 18, maxWidth: "52ch" }}>
-                For thirty-eight years he taught engineering at <strong>IIT (BHU), Varanasi</strong> — rising from Lecturer in 1981 to Professor of Mechanical Engineering. He now leads BIPE.
+                For thirty-eight years he taught mechanical engineering at <strong>IIT (BHU), Varanasi</strong> — rising from Lecturer in 1981 to Professor of Mechanical Engineering. He now leads BIPE.
               </p>
               <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", color: "var(--ink-3)", marginTop: 8, fontSize: 17 }}>
                 {DIRECTOR.roleHi} · पूर्व प्रोफ़ेसर, आई.आई.टी. (बी.एच.यू.) वाराणसी
@@ -166,7 +167,7 @@ export default function Page() {
               <div style={{ marginTop: 28, display: "grid", gap: 10, gridTemplateColumns: "auto 1fr", alignItems: "center" }}>
                 <span className="pill" style={{ background: "var(--brand)", color: "#fff" }}>DOCTORATE</span>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--ink-2)", fontWeight: 600 }}>
-                  Ph.D. (Welding) · IT-BHU Varanasi
+                  Ph.D. Mechanical Engineering (Welding), IT-BHU Varanasi
                 </span>
                 <span className="pill pill-accent">FELLOW</span>
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--ink-2)", fontWeight: 600 }}>
@@ -211,10 +212,10 @@ export default function Page() {
       {/* ====================================================================== */}
       <section id="message" className="section bipe-pad" style={{ paddingTop: 84, paddingBottom: 84 }}>
         <div className="container" style={{ maxWidth: 780 }}>
-          <div className="eyebrow" style={{ textAlign: "center" }}>A note from the director&rsquo;s desk</div>
-          <h2 className="bipe-h2" style={{ marginTop: 14, textAlign: "center", maxWidth: "20ch", marginInline: "auto" }}>
-            Why I came to a{" "}
-            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>polytechnic.</span>
+          <div className="eyebrow" style={{ textAlign: "center" }}>From the director&rsquo;s desk</div>
+          <h2 className="bipe-h2" style={{ marginTop: 14, textAlign: "center", maxWidth: "22ch", marginInline: "auto" }}>
+            Welcome to our{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>institute.</span>
           </h2>
 
           <div style={{ marginTop: 44, fontSize: 17, lineHeight: 1.8, color: "var(--ink-2)" }}>
@@ -228,7 +229,7 @@ export default function Page() {
           {/* Signature block */}
           <div style={{ marginTop: 40, paddingTop: 28, borderTop: "1px solid var(--line)" }}>
             <div className="serif" style={{ fontStyle: "italic", fontSize: 26, color: "var(--brand)", lineHeight: 1.2 }}>
-              {DIRECTOR.name}
+              {DIRECTOR_SIGNATURE_NAME}
             </div>
             <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--ink-3)" }}>
               Director · BIPE Varanasi · Former Professor, IIT (BHU)
@@ -268,8 +269,8 @@ export default function Page() {
             color: "var(--paper)",
             maxWidth: "24ch", margin: "0 auto",
           }}>
-            The best engineers I taught were never the ones with the highest marks. They were the ones who were not afraid of the{" "}
-            <span style={{ color: "var(--accent)" }}>workshop.</span>
+            Skilled Hands, Innovative Minds, guided by values,{" "}
+            <span style={{ color: "var(--accent)" }}>Building a Strong Nation.</span>
           </p>
           <p className="serif" style={{
             marginTop: 28,
@@ -287,7 +288,7 @@ export default function Page() {
             flexWrap: "wrap", justifyContent: "center",
           }}>
             <span style={{ width: 36, height: 1, background: "var(--accent)" }} />
-            {DIRECTOR.name} · Director
+            {DIRECTOR_FULL_NAME} · Director
             <span style={{ width: 36, height: 1, background: "var(--accent)" }} />
           </div>
         </div>
@@ -336,71 +337,38 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 6. CAREER + EDUCATION                                                   */}
+      {/* 6. IIT (BHU) + EDUCATION                                                */}
       {/* ====================================================================== */}
+      {/* 5 Aug 2026 — reshaped on his own mark-up: he struck out the five-row
+          Lecturer→Professor rank progression and the research-field box, and
+          corrected the department wording. What remains is the IIT (BHU)
+          statement plus his three degrees, which he corrected rather than
+          struck. See lib/leadership.ts for the pending questions. */}
       <section className="section bipe-pad" style={{ paddingTop: 64, paddingBottom: 84 }}>
         <div className="container">
-          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56 }}>
-            {/* Career */}
-            <div>
-              <div className="eyebrow">Thirty-eight years, one department</div>
-              <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                IIT (BHU){" "}
-                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>Varanasi.</span>
-              </h2>
-              <div style={{ marginTop: 28 }}>
-                {DIRECTOR_CAREER.map((c) => (
-                  <div key={c.years} style={{
-                    display: "grid", gridTemplateColumns: "auto 1fr", gap: 18,
-                    padding: "16px 0", borderTop: "1px solid var(--line)",
-                  }}>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.08em", color: "var(--accent-deep)", whiteSpace: "nowrap", paddingTop: 3 }}>
-                      {c.years}
-                    </div>
-                    <div style={{ fontSize: 15, color: "var(--ink-2)", lineHeight: 1.6 }}>{c.title}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="eyebrow">Thirty-eight years, Mechanical Engineering Department</div>
+          <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
+            IIT (BHU){" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>Varanasi.</span>
+          </h2>
 
-            {/* Education */}
-            <div>
-              <div className="eyebrow">Education</div>
-              <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                Where he{" "}
-                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>trained.</span>
-              </h2>
-              <div style={{ marginTop: 28, display: "grid", gap: 14 }}>
-                {DIRECTOR_EDUCATION.map((e) => (
-                  <div key={e.degree} style={{
-                    padding: "20px 22px", borderRadius: 14,
-                    border: "1px solid var(--line)", background: "var(--white)",
-                  }}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap" }}>
-                      <span className="serif" style={{ fontStyle: "italic", fontSize: 24, color: "var(--brand)" }}>{e.degree}</span>
-                      <span style={{ fontSize: 15, fontWeight: 600 }}>{e.field}</span>
-                    </div>
-                    <div style={{ marginTop: 8, fontSize: 14, color: "var(--ink-3)", lineHeight: 1.6 }}>
-                      {e.institute} · {e.year}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div style={{
-                marginTop: 22, padding: "20px 22px", borderRadius: 14,
-                border: "1px solid color-mix(in oklab, var(--brand) 22%, transparent)",
-                background: "var(--brand-tint)",
+          <div className="eyebrow" style={{ marginTop: 44 }}>Education</div>
+          <div style={{
+            marginTop: 18, display: "grid", gap: 16,
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          }}>
+            {DIRECTOR_EDUCATION.map((e) => (
+              <div key={e.degree} style={{
+                padding: "22px 24px", borderRadius: 14,
+                border: "1px solid var(--line)", background: "var(--white)",
               }}>
-                <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>Research field</div>
-                <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.7, color: "var(--ink-2)" }}>
-                  Welding, foundry and production engineering — published in the <em>Welding Journal</em> (AWS, USA), <em>ISIJ International</em> (Japan), <em>Journal of Alloys and Compounds</em> and <em>Sadhana</em> (Indian Academy of Sciences). The same craft that sits at the centre of BIPE&rsquo;s largest branch,{" "}
-                  <Link href="/courses/mechanical-engineering-production" style={{ color: "var(--brand)", fontWeight: 600 }}>
-                    Mechanical Engineering (Production)
-                  </Link>.
-                </p>
+                <span className="serif" style={{ fontStyle: "italic", fontSize: 26, color: "var(--brand)" }}>{e.degree}</span>
+                <div style={{ marginTop: 6, fontSize: 15, fontWeight: 600, lineHeight: 1.45 }}>{e.field}</div>
+                <div style={{ marginTop: 8, fontSize: 14, color: "var(--ink-3)", lineHeight: 1.6 }}>
+                  {e.institute} · {e.year}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -412,21 +380,30 @@ export default function Page() {
         <div className="container">
           <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>Beyond the classroom</div>
           <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "22ch" }}>
-            Roles he has held{" "}
-            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>nationally.</span>
+            National Roles &amp;{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>Responsibilities.</span>
           </h2>
 
+          {/* Ticked list, matching the typed sheet he supplied on 5 Aug 2026:
+              six items, his wording, no descriptive body. He struck the
+              longer card copy that used to sit here. */}
           <div style={{
-            marginTop: 40, display: "grid", gap: 18,
-            gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+            marginTop: 36, display: "grid", gap: 14,
+            gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
           }}>
             {DIRECTOR_NATIONAL_ROLES.map((r) => (
-              <div key={r.title} style={{
-                padding: "24px 24px 26px", borderRadius: 16,
+              <div key={r} style={{
+                display: "grid", gridTemplateColumns: "auto 1fr", gap: 14, alignItems: "center",
+                padding: "18px 22px", borderRadius: 14,
                 border: "1px solid var(--line)", background: "var(--white)",
               }}>
-                <div style={{ fontWeight: 700, fontSize: 16, letterSpacing: "-0.005em" }}>{r.title}</div>
-                <p style={{ marginTop: 12, fontSize: 14.5, lineHeight: 1.7, color: "var(--ink-2)" }}>{r.body}</p>
+                <span aria-hidden="true" style={{
+                  width: 26, height: 26, borderRadius: "50%", flexShrink: 0,
+                  background: "var(--brand)", color: "#fff",
+                  display: "inline-flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 14, fontWeight: 700, lineHeight: 1,
+                }}>&#10003;</span>
+                <span style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.5 }}>{r}</span>
               </div>
             ))}
           </div>
