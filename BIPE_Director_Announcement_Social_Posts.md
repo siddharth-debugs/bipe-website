@@ -138,6 +138,15 @@ Welcome, **Prof. (Dr.) S. P. Tewari** — our new Director.
 
 # 3 · GOOGLE BUSINESS PROFILE
 
+> ### ⚠️ POLICY — read before posting
+> **Never put a phone number, email address or WhatsApp number in the body of a Google Business Profile post.**
+> Google's posts content policy treats contact details in post text as a violation. On 5 Aug 2026 the first
+> version of this post — which ended with the institute's phone number — was removed by Google, **and posting
+> was switched off for the whole Business Profile.** Contact details belong in the profile's own fields, where
+> they already are; a post that repeats them adds nothing and risks the profile.
+> Also avoid: `**markdown**` (renders literally), ALL-CAPS shouting, and price/discount claims.
+
+
 **Post type:** "What's new" · **Button:** `Learn more` → `https://bipevns.org/director`
 **Photo:** `director-joining-1.jpg`
 *(Keep under 1,500 characters — this draft is ~950. The first ~100 characters are what shows before "Read more", so the hook is front-loaded.)*
@@ -156,8 +165,6 @@ Banaras Institute of Polytechnic & Engineering is an AICTE-approved, BTEUP-affil
 
 Admissions are through JEECUP — institute code **4455**.
 
-📞 +91 91986 46464
-
 ---
 
 ## 3b · GOOGLE BUSINESS PROFILE — second post (a week later)
@@ -173,7 +180,6 @@ In his message to students and parents he writes: "A diploma is not a smaller ve
 Read his full message on our website.
 
 BIPE — AICTE-approved polytechnic, Phoolpur, Varanasi. JEECUP code 4455.
-📞 +91 91986 46464
 
 ---
 
