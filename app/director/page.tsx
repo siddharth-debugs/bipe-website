@@ -13,7 +13,6 @@ import {
   DIRECTOR_NATIONAL_ROLES,
   DIRECTOR_QUOTE,
   DIRECTOR_STATS,
-  DIRECTOR_FULL_NAME,
   DIRECTOR_SIGNATURE_NAME,
 } from "@/lib/leadership";
 
@@ -288,7 +287,7 @@ export default function Page() {
             flexWrap: "wrap", justifyContent: "center",
           }}>
             <span style={{ width: 36, height: 1, background: "var(--accent)" }} />
-            {DIRECTOR_FULL_NAME} · Director
+            {DIRECTOR.name} · Director
             <span style={{ width: 36, height: 1, background: "var(--accent)" }} />
           </div>
         </div>
@@ -369,6 +368,24 @@ export default function Page() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Research field — restored 5 Aug 2026 in a plainer form at his
+              direction. He struck the earlier version, which named the
+              individual journals; this states the fields and the link to
+              BIPE's largest branch without listing publications. */}
+          <div style={{
+            marginTop: 30, padding: "22px 26px", borderRadius: 14,
+            border: "1px solid color-mix(in oklab, var(--brand) 22%, transparent)",
+            background: "var(--brand-tint)",
+          }}>
+            <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>Research fields</div>
+            <p style={{ marginTop: 10, fontSize: 15.5, lineHeight: 1.7, color: "var(--ink-2)", maxWidth: "72ch" }}>
+              Welding, foundry and production engineering — the same craft that sits at the centre of BIPE&rsquo;s largest branch,{" "}
+              <Link href="/courses/mechanical-engineering-production" style={{ color: "var(--brand)", fontWeight: 600 }}>
+                Mechanical Engineering (Production)
+              </Link>.
+            </p>
           </div>
         </div>
       </section>
