@@ -298,7 +298,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section bipe-pad" style={{ paddingTop: 84, paddingBottom: 40 }}>
         <div className="container">
-          <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>August 2026 · Phoolpur campus</div>
+          <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>3 August 2026 · Phoolpur campus</div>
           <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "18ch" }}>
             The day he{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>joined us.</span>
@@ -312,7 +312,7 @@ export default function Page() {
             gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
           }}>
             {[
-              { src: "/leadership/director-joining-1.jpg", alt: "Prof. S. P. Tewari welcomed as Director at the BIPE Phoolpur campus, August 2026" },
+              { src: "/leadership/director-joining-1.jpg", alt: "Prof. S. P. Tewari welcomed as Director at the BIPE Phoolpur campus, 3 August 2026" },
               { src: "/leadership/director-joining-2.jpg", alt: "Prof. S. P. Tewari being presented a bouquet on joining BIPE as Director" },
             ].map((img) => (
               <figure key={img.src} style={{ margin: 0 }}>

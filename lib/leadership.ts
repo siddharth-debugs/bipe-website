@@ -135,6 +135,7 @@ export const DIRECTOR_EDUCATION: { degree: string; field: string; institute: str
 export const DIRECTOR_NATIONAL_ROLES: string[] = [
   "AICTE Expert & Accreditation Committee Member",
   "UPSC & State PSC Expert",
+  "DRDO Expert",
   "National Research Project Reviewer",
   "Reviewer for Reputed Research Journals",
   "Board of Studies & Curriculum Development Expert",
