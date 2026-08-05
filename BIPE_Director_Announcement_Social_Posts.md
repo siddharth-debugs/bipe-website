@@ -7,7 +7,7 @@ Prepared 4 August 2026 · Landing page: https://bipevns.org/director
 ## ⚠️ Before you post — two checks
 
 1. ~~**Spelling**~~ — ✅ **settled 4 Aug 2026.** English is **Tewari** (matches his résumé and his IIT (BHU) email). Hindi is **तिवारी**. The two deliberately do NOT mirror each other — that is the office's confirmed usage, so please don't "harmonise" them in either direction.
-2. **The quote** used in these posts is drafted from his career record and is **pending his sign-off**. Please get his approval before publishing — it is presented as his own words.
+2. ~~**The quote**~~ — ✅ **settled 5 Aug 2026.** The quote and the Director's message are now **his own words**, supplied and corrected by him in writing. No further sign-off needed.
 
 **Images to use** (already on the site, and in `/public/leadership/`):
 - `director-joining-1.jpg` — posed handshake, both facing camera → **best single image for Facebook + GMB**
@@ -40,7 +40,7 @@ He brings with him:
 
 In his message to our students, he writes:
 
-*"The best engineers I taught were never the ones with the highest marks. They were the ones who were not afraid of the workshop."*
+*"Skilled Hands, Innovative Minds, guided by values, Building a Strong Nation."*
 
 That is exactly why we are glad he has chosen a polytechnic. Many of our students are the first engineers in their family — and they will now learn in an institution led by someone who spent a lifetime at one of India's finest engineering schools.
 
@@ -72,7 +72,7 @@ Welcome, Sir. 🙏
 
 विद्यार्थियों के नाम अपने संदेश में वे लिखते हैं:
 
-*"मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं, बल्कि वे थे जिन्हें कार्यशाला से डर नहीं लगता था।"*
+*"कुशल हाथ, नवोन्मेषी मस्तिष्क, मूल्यों से निर्देशित — सशक्त राष्ट्र का निर्माण।"*
 
 हमारे अनेक विद्यार्थी अपने परिवार की पहली पीढ़ी के इंजीनियर हैं। अब वे ऐसे संस्थान में पढ़ेंगे जिसका नेतृत्व देश के श्रेष्ठतम इंजीनियरिंग संस्थान में जीवन बिताने वाले शिक्षक कर रहे हैं।
 
@@ -105,7 +105,7 @@ Fellow, Institution of Engineers (India).
 
 His message to our students 👇
 
-*"The best engineers I taught were never the ones with the highest marks. They were the ones who were not afraid of the workshop."*
+*"Skilled Hands, Innovative Minds, guided by values, Building a Strong Nation."*
 
 Many of our students are the first engineers in their family. They'll now learn in an institution led by someone who spent a lifetime at one of India's finest engineering schools.
 
@@ -128,7 +128,7 @@ Welcome, Sir 🙏
 
 Welcome, **Prof. (Dr.) S. P. Tewari** — our new Director.
 
-*"The best engineers I taught were never the ones with the highest marks. They were the ones who were not afraid of the workshop."*
+*"Skilled Hands, Innovative Minds, guided by values, Building a Strong Nation."*
 
 🔗 Full message in bio · JEECUP code 4455
 
@@ -171,7 +171,7 @@ Admissions are through JEECUP — institute code **4455**.
 
 *Spacing two posts a week apart keeps the profile active, which helps local ranking. Use `director-joining-2.jpg` for this one.*
 
-**"The best engineers were not afraid of the workshop" — a message from our new Director.**
+**"Skilled Hands, Innovative Minds, guided by values, Building a Strong Nation" — a message from our new Director.**
 
 Prof. (Dr.) S. P. Tewari, who taught at IIT (BHU) Varanasi for 38 years, has joined BIPE Varanasi as Director.
 
@@ -212,7 +212,7 @@ BIPE — AICTE-approved polytechnic, Phoolpur, Varanasi. JEECUP code 4455.
 फेलो, इंस्टिट्यूशन ऑफ इंजीनियर्स (इंडिया)
 
 विद्यार्थियों के नाम उनका संदेश:
-_"मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं, बल्कि वे थे जिन्हें कार्यशाला से डर नहीं लगता था।"_
+_"कुशल हाथ, नवोन्मेषी मस्तिष्क, मूल्यों से निर्देशित — सशक्त राष्ट्र का निर्माण।"_
 
 *आपके लिए इसका मतलब क्या है?*
 जो मार्गदर्शन अब तक IIT के विद्यार्थियों को मिलता था, वह अब ₹30,150/वर्ष की डिप्लोमा फीस में आपको मिलेगा।
@@ -233,7 +233,7 @@ _"मैंने जिन सर्वश्रेष्ठ इंजीनि
 
 *प्रो. (डॉ.) एस. पी. तिवारी* ने BIPE के निदेशक का पदभार संभाला है।
 
-_"मैंने जिन सर्वश्रेष्ठ इंजीनियरों को पढ़ाया, वे सर्वाधिक अंक पाने वाले नहीं थे।"_
+_"कुशल हाथ, नवोन्मेषी मस्तिष्क, मूल्यों से निर्देशित — सशक्त राष्ट्र का निर्माण।"_
 
 ⚠️ *JEECUP Round 5 आख़िरी round है* — सभी राज्यों के लिए खुला।
 अपनी choice list में *कोड 4455* डालें।
@@ -250,7 +250,8 @@ _"मैंने जिन सर्वश्रेष्ठ इंजीनि
 *Prof. (Dr.) S. P. Tewari* — jinhone *IIT (BHU) Varanasi* mein *38 saal* Mechanical Engineering padhaya — ab BIPE ke *Director* hain.
 
 Unka students ke liye message:
-_"Jin best engineers ko maine padhaya, unke marks sabse zyada nahi the — unhe workshop se dar nahi lagta tha."_
+_"Skilled Hands, Innovative Minds, guided by values, Building a Strong Nation."_
+(कुशल हाथ, नवोन्मेषी मस्तिष्क, मूल्यों से निर्देशित — सशक्त राष्ट्र का निर्माण।)
 
 Matlab: jo guidance ab tak IIT ke students ko milti thi, wo ab aapko ₹30,150/saal ki diploma fees mein milegi.
 
