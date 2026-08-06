@@ -32,17 +32,26 @@ An appeal is far more likely to succeed if the profile is clean when a reviewer 
 > posts content policy* article — it is informational. There is no Appeal button
 > there. Verified by clicking it. Use the route below instead.
 
-**The route that works — Support inside Business Profile Manager.**
+**CONFIRMED ROUTE (verified on screen, 5 Aug 2026):**
 
-1. Go to **business.google.com** and sign in as an **Owner or Manager**
-2. Select **Banaras Institute of Polytechnic & Engineering** from the business list
-3. In the **left sidebar**, click **Support**
-4. Choose **Contact us**
-5. Describe the issue — pick the topic closest to *posts*, *policy* or *content removal*
-6. Google then offers a contact method — typically **chat, email or callback**. Chat resolves fastest when available.
-7. Paste the message from the next section. **Put `Routing ID: DPNB` in the first line.**
+1. Go to **business.google.com** — stay on the *Businesses* list, do **not** click into a business
+   (clicking the business name opens the public profile in Search, not the support tools)
+2. Left sidebar → **Support**
+3. A **Help** panel opens on the right
+4. Under *Popular help resources*, click:
+   **→ "Appeal Business Profile content & profile restrictions"**
+5. Follow that flow for **Banaras Institute of Polytechnic & Engineering**
+6. Paste the appeal message below, with `Routing ID: DPNB` on the first line
 
-**If the profile itself shows a notification.** Open the profile and look for a policy banner or the removed post. If an **Appeal** or **Request review** control appears there, use it — arriving that way attaches the case automatically. Do not submit both that and a Support case; duplicates slow the queue.
+That fourth item is the correct entry point for this exact case — a post removed for
+content, plus a profile-level posting restriction. It is the one Google routes to the
+review queue that can restore posting.
+
+**Note the warning banner** at the top of that Help panel: *"Do not share any private or
+confidential personal or business-related information in this public forum."* If the flow
+routes you to the **Community forum** rather than a private support case, do not post
+account details there. Look for the contact/appeal form instead — the appeal text below
+contains nothing confidential, but never paste account identifiers into a public thread.
 
 **Always quote:** `Routing ID: DPNB`
 
