@@ -26,16 +26,23 @@ An appeal is far more likely to succeed if the profile is clean when a reviewer 
 
 ## How to appeal
 
-Google moves this interface around, so use whichever of these you find first — all three reach the same review queue.
+> **CORRECTED 5 Aug 2026.** An earlier version of this guide said the removal email
+> contains an appeal link. **It does not.** The link in that email
+> ("content policy") goes only to the *Business Profile photos & videos policy and
+> posts content policy* article — it is informational. There is no Appeal button
+> there. Verified by clicking it. Use the route below instead.
 
-**Route 1 — from the email (easiest).**
-Open the "Your post has been removed" email. Use the **Help Center / appeal** link inside it. Because you are arriving from the notification, the Routing ID is already attached to your case.
+**The route that works — Support inside Business Profile Manager.**
 
-**Route 2 — from Business Profile Manager.**
-Sign in as an **Owner or Manager** of the profile, open the profile, and look for the removed post or a policy notification. Where an **Appeal** or **Request review** option is offered, use it.
+1. Go to **business.google.com** and sign in as an **Owner or Manager**
+2. Select **Banaras Institute of Polytechnic & Engineering** from the business list
+3. In the **left sidebar**, click **Support**
+4. Choose **Contact us**
+5. Describe the issue — pick the topic closest to *posts*, *policy* or *content removal*
+6. Google then offers a contact method — typically **chat, email or callback**. Chat resolves fastest when available.
+7. Paste the message from the next section. **Put `Routing ID: DPNB` in the first line.**
 
-**Route 3 — Business Profile Help → Contact us.**
-Go to Google Business Profile Help, choose **Contact us**, pick the topic covering posts or a policy/suspension issue, and quote the Routing ID in the first line of your message.
+**If the profile itself shows a notification.** Open the profile and look for a policy banner or the removed post. If an **Appeal** or **Request review** control appears there, use it — arriving that way attaches the case automatically. Do not submit both that and a Support case; duplicates slow the queue.
 
 **Always quote:** `Routing ID: DPNB`
 
