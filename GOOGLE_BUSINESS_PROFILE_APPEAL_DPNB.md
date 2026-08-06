@@ -32,26 +32,39 @@ An appeal is far more likely to succeed if the profile is clean when a reviewer 
 > posts content policy* article — it is informational. There is no Appeal button
 > there. Verified by clicking it. Use the route below instead.
 
-**CONFIRMED ROUTE (verified on screen, 5 Aug 2026):**
+**CONFIRMED ROUTE (read off Google's own help panel, 5 Aug 2026):**
 
-1. Go to **business.google.com** — stay on the *Businesses* list, do **not** click into a business
-   (clicking the business name opens the public profile in Search, not the support tools)
-2. Left sidebar → **Support**
-3. A **Help** panel opens on the right
-4. Under *Popular help resources*, click:
-   **→ "Appeal Business Profile content & profile restrictions"**
-5. Follow that flow for **Banaras Institute of Polytechnic & Engineering**
-6. Paste the appeal message below, with `Routing ID: DPNB` on the first line
+1. **business.google.com** → stay on the *Businesses* list, do **not** click into a business
+   (clicking the name opens the public profile in Search, not the support tools)
+2. Left sidebar → **Support** → Help panel opens
+3. **"Appeal Business Profile content & profile restrictions"**
+4. Scroll to the routing table under *Submit an appeal*
 
-That fourth item is the correct entry point for this exact case — a post removed for
-content, plus a profile-level posting restriction. It is the one Google routes to the
-review queue that can restore posting.
+**Which row applies to us.** The table splits every task into **"Businesses in the UK or EEA"**
+and **"Rest of world"**. BIPE is in India → always use the **Rest of world** column.
 
-**Note the warning banner** at the top of that Help panel: *"Do not share any private or
-confidential personal or business-related information in this public forum."* If the flow
-routes you to the **Community forum** rather than a private support case, do not post
-account details there. Look for the contact/appeal form instead — the appeal text below
-contains nothing confidential, but never paste account identifiers into a public thread.
+| Task | Rest of world route |
+|---|---|
+| Appeal rejected profile edits | Contact us |
+| Appeal media restrictions | Contact us |
+| **Appeal other content restrictions** ← **this is us** | **Contact us** |
+| Appeal review removal decision | Reviews management tool |
+
+A removed post plus posting switched off is a **content restriction**, so our route is
+**Contact us** — not the Appeals tool. The Appeals tool is the UK/EEA path for most of these
+rows and is also where you check status afterwards.
+
+**Google's own conditions, quoted from that panel:**
+- Decisions take **up to 5 business days**.
+- **Do not submit multiple appeals** for the same issue before a decision arrives.
+- **Do not create a new Business Profile** for the same business while the appeal is under review.
+- If the *profile itself* were restricted or suspended, that must be reinstated **before**
+  content decisions can be appealed. BIPE's profile is still **Verified** and only posting is
+  off, so this does not block us.
+
+**Note the panel's yellow banner** — "Do not share any private or confidential information in
+this public forum." If a route lands you in the **Community forum**, do not paste account
+details there. The appeal text below is safe to post anywhere, but never add account IDs.
 
 **Always quote:** `Routing ID: DPNB`
 
