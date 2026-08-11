@@ -7,6 +7,7 @@ import {
   visitFormSchema,
 } from "@/lib/validation";
 import { forwardToBackend } from "@/lib/backend";
+import { forwardLeadToCrm } from "@/lib/crm-forward";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import {
   fireAlumniIntroAdminNotification,
@@ -111,6 +112,12 @@ export async function POST(req: Request) {
         branch: d.branch,
         submissionId: r.id ?? undefined,
       });
+      // Also land it in the Sampark CRM as a BIPE lead (fire-and-forget).
+      void forwardLeadToCrm({
+        name: d.name, phone: d.phone, email: d.email, branch: d.branch,
+        formType: "apply", source: d.source, backendId: r.id,
+        attribution: (body as { attribution?: unknown }).attribution,
+      });
     }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
@@ -146,6 +153,12 @@ export async function POST(req: Request) {
         name: d.name,
         branch: d.branch ?? undefined,
         submissionId: r.id ?? undefined,
+      });
+      void forwardLeadToCrm({
+        name: d.name, phone: d.phone, email: d.email ?? "",
+        branch: d.branch ?? "", formType: "enquiry", source: d.source,
+        backendId: r.id,
+        attribution: (body as { attribution?: unknown }).attribution,
       });
     }
     return r.ok
@@ -243,6 +256,11 @@ export async function POST(req: Request) {
         branch: d.branch,
         submissionId: r.id ?? undefined,
       });
+      void forwardLeadToCrm({
+        name: d.name, phone: d.phone, email: d.email, branch: d.branch,
+        formType: "visit", backendId: r.id,
+        attribution: (body as { attribution?: unknown }).attribution,
+      });
     }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
@@ -278,6 +296,11 @@ export async function POST(req: Request) {
       name: d.name,
       branch: d.branch,
       submissionId: r.id ?? undefined,
+    });
+    void forwardLeadToCrm({
+      name: d.name, phone: d.phone, email: d.email, branch: d.branch,
+      formType: "contact", source: d.source, backendId: r.id,
+      attribution: (body as { attribution?: unknown }).attribution,
     });
   }
   return r.ok
