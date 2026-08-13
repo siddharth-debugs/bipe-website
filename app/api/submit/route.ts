@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import {
   alumniContactRequestSchema,
   applyFormSchema,
@@ -112,12 +112,14 @@ export async function POST(req: Request) {
         branch: d.branch,
         submissionId: r.id ?? undefined,
       });
-      // Also land it in the Sampark CRM as a BIPE lead (fire-and-forget).
-      void forwardLeadToCrm({
+      // Also land it in the Sampark CRM as a BIPE lead. after() runs it
+      // once the response is sent — a bare un-awaited promise is KILLED
+      // when Vercel freezes the function, so it must ride after().
+      after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email, branch: d.branch,
         formType: "apply", source: d.source, backendId: r.id,
         attribution: (body as { attribution?: unknown }).attribution,
-      });
+      }));
     }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
@@ -154,12 +156,12 @@ export async function POST(req: Request) {
         branch: d.branch ?? undefined,
         submissionId: r.id ?? undefined,
       });
-      void forwardLeadToCrm({
+      after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email ?? "",
         branch: d.branch ?? "", formType: "enquiry", source: d.source,
         backendId: r.id,
         attribution: (body as { attribution?: unknown }).attribution,
-      });
+      }));
     }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
@@ -256,11 +258,11 @@ export async function POST(req: Request) {
         branch: d.branch,
         submissionId: r.id ?? undefined,
       });
-      void forwardLeadToCrm({
+      after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email, branch: d.branch,
         formType: "visit", backendId: r.id,
         attribution: (body as { attribution?: unknown }).attribution,
-      });
+      }));
     }
     return r.ok
       ? NextResponse.json({ ok: true, id: r.id })
