@@ -105,13 +105,13 @@ export async function POST(req: Request) {
       notes: d.notes,
     });
     if (r.ok) {
-      fireSubmissionConfirmation({
+      after(() => fireSubmissionConfirmation({
         formType: "apply",
         phone: d.phone,
         name: d.name,
         branch: d.branch,
         submissionId: r.id ?? undefined,
-      });
+      }));
       // Also land it in the Sampark CRM as a BIPE lead. after() runs it
       // once the response is sent — a bare un-awaited promise is KILLED
       // when Vercel freezes the function, so it must ride after().
@@ -149,13 +149,13 @@ export async function POST(req: Request) {
       consent: d.consent ?? false,
     });
     if (r.ok) {
-      fireSubmissionConfirmation({
+      after(() => fireSubmissionConfirmation({
         formType: "enquiry",
         phone: d.phone,
         name: d.name,
         branch: d.branch ?? undefined,
         submissionId: r.id ?? undefined,
-      });
+      }));
       after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email ?? "",
         branch: d.branch ?? "", formType: "enquiry", source: d.source,
@@ -194,7 +194,7 @@ export async function POST(req: Request) {
     const refSuffix = Math.random().toString(36).slice(2, 6).toUpperCase();
 
     // 1. WhatsApp the admin with the full request payload.
-    fireAlumniIntroAdminNotification({
+    after(() => fireAlumniIntroAdminNotification({
       refSuffix,
       visitorName: d.name,
       visitorPhone: d.phone,
@@ -206,21 +206,21 @@ export async function POST(req: Request) {
       alumniBranch: d.alumniBranch || undefined,
       alumniYear: d.alumniYear || undefined,
       alumniCompany: d.alumniCompany || undefined,
-    });
+    }));
 
     // 2. WhatsApp the visitor with the same ref so they can quote
     //    it when admin calls back to verify. {{3}} = "Intro with
     //    {Name}", {{4}} = 48h because verification touches both
     //    sides.
     const introLabel = `Intro with ${d.alumniName}`.slice(0, 60);
-    fireSubmissionConfirmation({
+    after(() => fireSubmissionConfirmation({
       formType: "alumni-contact",
       phone: d.phone,
       name: d.name,
       branch: introLabel,
       submissionId: refSuffix,
       callbackHours: "48",
-    });
+    }));
 
     return NextResponse.json({ ok: true, id: refSuffix });
   }
@@ -251,13 +251,13 @@ export async function POST(req: Request) {
       notes: d.notes,
     });
     if (r.ok) {
-      fireSubmissionConfirmation({
+      after(() => fireSubmissionConfirmation({
         formType: "visit",
         phone: d.phone,
         name: d.name,
         branch: d.branch,
         submissionId: r.id ?? undefined,
-      });
+      }));
       after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email, branch: d.branch,
         formType: "visit", backendId: r.id,
@@ -292,13 +292,13 @@ export async function POST(req: Request) {
     message: d.message,
   });
   if (r.ok) {
-    fireSubmissionConfirmation({
+    after(() => fireSubmissionConfirmation({
       formType: "contact",
       phone: d.phone,
       name: d.name,
       branch: d.branch,
       submissionId: r.id ?? undefined,
-    });
+    }));
     void forwardLeadToCrm({
       name: d.name, phone: d.phone, email: d.email, branch: d.branch,
       formType: "contact", source: d.source, backendId: r.id,
