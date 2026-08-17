@@ -1,10 +1,8 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
 import { forwardToBackend } from "@/lib/backend";
-import {
-  fireMetaLeadAdminNotification,
-  fireSubmissionConfirmation,
-} from "@/lib/doubleTick";
+import { forwardLeadToCrm } from "@/lib/crm-forward";
+import { fireMetaLeadAdminNotification } from "@/lib/doubleTick";
 import { BRANCH_OPTIONS } from "@/lib/formOptions";
 
 export const runtime = "nodejs";
@@ -238,6 +236,16 @@ async function processLead(leadgenId: string, pageToken: string): Promise<void> 
     });
     if (r.ok) submissionId = r.id;
     else console.warn(`[meta-leads] backend ingest failed for lead ${leadgenId}: ${r.error}`);
+    // Land it in the Sampark CRM too (2026-08-17) — until now Meta ad leads
+    // stopped at the website inbox and never reached the consultants'
+    // queues, callbacks, or the auto-ack. Deliberately NOT gated on r.ok:
+    // a backend hiccup should not cost the CRM the lead (the CRM dedups by
+    // mobile). The CRM's own ack covers the student confirmation.
+    await forwardLeadToCrm({
+      name, phone: phone10, email, branch,
+      formType: "enquiry", source: "meta-instant-form",
+      backendId: r.ok ? r.id : undefined,
+    });
   } else {
     console.warn(`[meta-leads] lead ${leadgenId} has no usable Indian mobile ("${phoneRaw}") — skipping backend ingest, admin ping still fires`);
   }
@@ -253,14 +261,7 @@ async function processLead(leadgenId: string, pageToken: string): Promise<void> 
     campaign: campaign || undefined,
   });
 
-  // 3) Student confirmation — same template every website form sends.
-  if (submissionId !== null && phone10) {
-    fireSubmissionConfirmation({
-      formType: "enquiry",
-      phone: phone10,
-      name,
-      branch: branch || branchAnswer || undefined,
-      submissionId,
-    });
-  }
+  // 3) Student confirmation now comes from the Sampark CRM's auto-ack
+  //    (bipe_enquiry_response on the BIPE number) when the forward above
+  //    lands — one ack, one sender, on the lead's timeline.
 }

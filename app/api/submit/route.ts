@@ -105,13 +105,12 @@ export async function POST(req: Request) {
       notes: d.notes,
     });
     if (r.ok) {
-      after(() => fireSubmissionConfirmation({
-        formType: "apply",
-        phone: d.phone,
-        name: d.name,
-        branch: d.branch,
-        submissionId: r.id ?? undefined,
-      }));
+      // The enquirer's WhatsApp ack now comes from the Sampark CRM (template
+      // bipe_enquiry_response on the BIPE number, 2026-08-17) the moment the
+      // forward below lands — one ack, one sender, logged on the lead's
+      // timeline. The old direct send here pushed 4 placeholders into a
+      // template with 2 real slots (enquiry_s_v1_submitted's ref/course are
+      // FROZEN sample text), so the vendor rejected every send anyway.
       // Also land it in the Sampark CRM as a BIPE lead. after() runs it
       // once the response is sent — a bare un-awaited promise is KILLED
       // when Vercel freezes the function, so it must ride after().
@@ -149,13 +148,12 @@ export async function POST(req: Request) {
       consent: d.consent ?? false,
     });
     if (r.ok) {
-      after(() => fireSubmissionConfirmation({
-        formType: "enquiry",
-        phone: d.phone,
-        name: d.name,
-        branch: d.branch ?? undefined,
-        submissionId: r.id ?? undefined,
-      }));
+      // The enquirer's WhatsApp ack now comes from the Sampark CRM (template
+      // bipe_enquiry_response on the BIPE number, 2026-08-17) the moment the
+      // forward below lands — one ack, one sender, logged on the lead's
+      // timeline. The old direct send here pushed 4 placeholders into a
+      // template with 2 real slots (enquiry_s_v1_submitted's ref/course are
+      // FROZEN sample text), so the vendor rejected every send anyway.
       after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email ?? "",
         branch: d.branch ?? "", formType: "enquiry", source: d.source,
@@ -251,13 +249,12 @@ export async function POST(req: Request) {
       notes: d.notes,
     });
     if (r.ok) {
-      after(() => fireSubmissionConfirmation({
-        formType: "visit",
-        phone: d.phone,
-        name: d.name,
-        branch: d.branch,
-        submissionId: r.id ?? undefined,
-      }));
+      // The enquirer's WhatsApp ack now comes from the Sampark CRM (template
+      // bipe_enquiry_response on the BIPE number, 2026-08-17) the moment the
+      // forward below lands — one ack, one sender, logged on the lead's
+      // timeline. The old direct send here pushed 4 placeholders into a
+      // template with 2 real slots (enquiry_s_v1_submitted's ref/course are
+      // FROZEN sample text), so the vendor rejected every send anyway.
       after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email, branch: d.branch,
         formType: "visit", backendId: r.id,
@@ -292,18 +289,15 @@ export async function POST(req: Request) {
     message: d.message,
   });
   if (r.ok) {
-    after(() => fireSubmissionConfirmation({
-      formType: "contact",
-      phone: d.phone,
-      name: d.name,
-      branch: d.branch,
-      submissionId: r.id ?? undefined,
-    }));
-    void forwardLeadToCrm({
+    // See the apply branch — the CRM sends the single WhatsApp ack now.
+    // And the forward MUST ride after(): a bare fire-and-forget promise is
+    // killed when Vercel freezes the function post-response (same bug
+    // 61615d8 fixed for the other three types; this path was missed).
+    after(() => forwardLeadToCrm({
       name: d.name, phone: d.phone, email: d.email, branch: d.branch,
       formType: "contact", source: d.source, backendId: r.id,
       attribution: (body as { attribution?: unknown }).attribution,
-    });
+    }));
   }
   return r.ok
     ? NextResponse.json({ ok: true, id: r.id })
