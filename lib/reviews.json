@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-07-24T06:44:28.275Z",
+    "lastUpdated": "2026-08-17T05:04:56.994Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
@@ -11,6 +11,39 @@
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2xkQlJVMUJSekpGUmtNd1YySTVZM2xWY2t4QmJWRRAB",
+      "rating": 5,
+      "text": "I am a 2022 Mechanical Engineering from Banaras Institute of Polytechnic & Engineering, Varanasi. My experience at this college was very positive. The faculty members were supportive, knowledgeable, and always encouraged us to improve both our technical knowledge and practical skills.\nNumber 1 college in varanasi",
+      "publishTime": "2026-07-23T14:16:16.398534553Z",
+      "relativeTime": "3 weeks ago",
+      "author": {
+        "name": "Avanish Verma",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUOj7L0Bwj1UjIB-4KzFfKbF1XhLjEvmUe6smilPji2Irgerw0=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2tSUE9GcDNhbWhCVUVONFgyeGhVMlZTV0VrNExVRRAB",
+      "rating": 5,
+      "text": "Hello Friends 👋Today, with the knowledge and skills I gained during my time at the college, I am working as an Engineer in the manufacturing industry with a good salary package. I am grateful to the faculty and the institution for helping me build a successful career.\n\nI would recommend Banaras Institute of Polytechnic & Engineering to students who want quality technical education and a strong start to their professional journey.",
+      "publishTime": "2026-07-19T09:40:41.580538415Z",
+      "relativeTime": "4 weeks ago",
+      "author": {
+        "name": "Bhumihar shivbrat Rai",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUXGNuPhnlk6JZq9pa3PWMwuh1p1Ez90xnPQgW-H-7W8Ze-ee1meQ=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2tsUVNubFBWSFZ5YkhOUmFWaGZhRXcwYlhoQk9WRRAB",
+      "rating": 5,
+      "text": "Highly recommended institute for Civil Engineering! I completed my course here and had a wonderful learning experience. The faculty is supportive, the labs are well-equipped, and the environment is highly conducive to academic growth. Great place to build a strong foundation in engineering.\"",
+      "publishTime": "2026-07-19T07:57:43.549846331Z",
+      "relativeTime": "4 weeks ago",
+      "author": {
+        "name": "VINAY VISHWAKARMA",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIOXpiBSs11l0U6iywWm-vGf2fdunH2FT3m-Jd0DFiEDU3Y8A=s128-c0x00000000-cc-rp-mo"
+      }
+    },
     {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT2xKclZIWTNVSEl4VkZWaE1sSnVhbmx4VUdscmNXYxAB",
       "rating": 5,
@@ -23,17 +56,6 @@
       }
     },
     {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT2xWS1ZEUjVOMUZIWDJFMGFIZHBjVlpXVW1OT2NsRRAB",
-      "rating": 5,
-      "text": "One of the best college in purvanchal(u.p)\nAvailable all facilities here...\nlabirary,play ground,computer lab, all labs\nyou can learn extra activities\n100% placement here...",
-      "publishTime": "2026-05-21T06:40:24.646064855Z",
-      "relativeTime": "2 months ago",
-      "author": {
-        "name": "Nauminath Vishwakarma",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjVAr0RDVXdo0NJTJFN7j2XYJJBLJEfjWbezLLRc91X-ha1D78FP=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT210MFFsZG5SVk5uTlRsRmVXSTRTVGhpZFZvdE0xRRAB",
       "rating": 5,
       "text": "Overall, my experience at this college was very positive, though there is always room for improvement.\nExcellent faculty who give 100% effort, great lab facilities, and a very safe, ragging-free campus environment. The location is also very convenient with easy access to public transport.\nIf you are serious about your studies and career, the academic and placement quality makes it completely worth the investment.\"",
@@ -42,28 +64,6 @@
       "author": {
         "name": "Jaideep Chitranshh",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUdnBz5FdOczyGqX0Okep4ql-igJTkAfk3cXlKHJmK8zcb-fd2W=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT2t0M2VqQm9ZeTFEVWxOYVozaE9OVTF4ZGpoa1NrRRAB",
-      "rating": 5,
-      "text": "This is best institute for diploma engineering because there are best lab and qualified teachers and provided best job opportunity in multinational company through campus placement",
-      "publishTime": "2026-05-21T05:26:18.227468976Z",
-      "relativeTime": "2 months ago",
-      "author": {
-        "name": "vijay yadav",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocKG-G379kIEoi-5gP8-xhAda8wWAEBnbpFWnsPYdkdLTfny6Q=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT25BMFZraDBSMVpSV2pSS1FWWlhlV2x5UkRjMU5GRRAB",
-      "rating": 5,
-      "text": "Best polytechnic college in purvanchal ,best labs and placement.",
-      "publishTime": "2026-05-21T05:22:41.671057866Z",
-      "relativeTime": "2 months ago",
-      "author": {
-        "name": "A.K.G",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjWzeaFmsjcooku6InBAzVqbXdM0f2_f71J869Rg_KUrJ7qpVDFv=s128-c0x00000000-cc-rp-mo"
       }
     }
   ]
