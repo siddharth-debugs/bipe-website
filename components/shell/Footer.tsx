@@ -46,12 +46,20 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
   // Recruiters / News / StatsBar / WhyBipe earlier in the month: the
   // backend admin row is stale and the static constant is canonical.
   // Re-wire to `contact?.phone || DATA.contact.phone` once the admin
-  // record is brought in line. Email + address / etc. still read from
-  // the backend because those weren't part of the phone consolidation.
+  // record is brought in line.
+  //
+  // EMAIL PINNED TOO as of 2 Sep 2026: the same CMS contact record was
+  // found still serving the retired bipevns@gmail.com, which the Footer
+  // rendered as the visible admissions email and in its mailto: on every
+  // page. lib/data.ts records the owner's directive ("use only
+  // info@bipe.ac.in for mail"), so the seed is the audited canonical --
+  // the same conclusion app/llms.txt/route.ts reached when it chose
+  // DATA.contact over getContact(). Re-wire both email fields to
+  // `contact?.… || DATA.contact.…` once the admin record is corrected.
   const C = {
     phone: DATA.contact.phone,
-    email: contact?.email || DATA.contact.email,
-    emailPlacement: contact?.emailPlacement || DATA.contact.emailPlacement,
+    email: DATA.contact.email,
+    emailPlacement: DATA.contact.emailPlacement,
     whatsapp: DATA.contact.whatsapp,
     // 29 May 2026 — address PINNED to DATA.contact.address for the
     // same reason as phone above: backend admin row was still
