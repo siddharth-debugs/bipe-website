@@ -332,7 +332,7 @@ export const DATA: DataShape = {
       code: "328", slug: "electrical-engineering",
       name: "Electrical Engineering", hi: "इलेक्ट्रिकल इंजीनियरिंग",
       seats: 120, fee: "30,150",
-      desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. UPPCL, Tata Power, Adani Solar recruit our graduates.",
+      desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. Exide, Secure Meters, Adani Solar recruit our graduates.",
       tag: null, color: 4,
       thumbnail: {
         src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151049/bipe/labs/ee/ee-machin",
@@ -348,7 +348,7 @@ export const DATA: DataShape = {
       code: "343", slug: "mechanical-engineering-production",
       name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)",
       seats: 120, fee: "30,150",
-      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, JCB, BHEL apprentice pathways.",
+      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, JCB, Krishna Maruti apprentice pathways.",
       tag: null, color: 5,
       thumbnail: {
         src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",

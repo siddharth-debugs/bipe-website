@@ -2299,7 +2299,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "How BIPE fits the diploma path" },
       {
         type: "p",
-        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year across all five branches. The placement record on file: <a href=\"/placements\">1,331 joining-letter-verified placements through 2025</a> across 44 recruiters, alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, UPPCL, Amul, Mother Dairy and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
+        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year across all five branches. The placement record on file: <a href=\"/placements\">1,331 joining-letter-verified placements through 2025</a> across 44 recruiters, alumni at Krishna Maruti, Motherson, JBM Group, Hollister and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
       },
       {
         type: "p",

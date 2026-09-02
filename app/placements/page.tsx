@@ -162,7 +162,12 @@ const ALUMNI_JSON_LD = {
   url: `${SITE_URL}/placements`,
   name: "Placements · BIPE Varanasi",
   description:
-    `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, with named alumni at Mahindra, Tata Steel, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.`,
+    // Names must come from lib/alumni-manifest.json — this sentence cites
+    // the joining-letter-verified count, so the companies beside it have to
+    // be in the dataset that produces it. The previous set (Tata Steel,
+    // Indian Railways) was on the owner's struck list and absent from the
+    // manifest. See the same rule at lib/routes.ts placements.
+    `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, with named alumni at Krishna Maruti, Motherson, JBM Group, Hollister and Exide.`,
   about: {
     "@type": "CollegeOrUniversity",
     name: "Banaras Institute of Polytechnic & Engineering",
@@ -301,7 +306,7 @@ export default async function Page() {
                 careers. Counting.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                Polytechnic placements out of BIPE Varanasi — {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified through {PLACEMENT_STATS.endYear} · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · alumni at Mahindra, Tata Steel, BEL, Mumbai Metro, JCB and beyond.
+                Polytechnic placements out of BIPE Varanasi — {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified through {PLACEMENT_STATS.endYear} · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · alumni at Krishna Maruti, Motherson, JBM Group, Hollister and beyond.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
