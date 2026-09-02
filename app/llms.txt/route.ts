@@ -239,6 +239,38 @@ async function buildBody(): Promise<string> {
     }
   }
 
+  // Branch facts are CMS-first, and getBranchesMapped() has no content
+  // guard of its own (unlike getContact(), which seed-enforces identity
+  // fields). A 3 Sep 2026 verification sweep found this the one place
+  // llms.txt republishes unguarded CMS values as institutional fact:
+  // seats, fee and branch name feed the "Total sanctioned seats",
+  // tuition and per-branch lines below. The flat-fee check underneath
+  // catches a ONE-branch fee edit but not a uniform one, and nothing
+  // caught a seats edit at all — so compare against the audited seed.
+  // A legitimate change belongs in lib/data.ts and the CMS together,
+  // exactly as NAP edits do.
+  for (const b of branches) {
+    const seed = DATA.branches.find((s) => s.slug === b.slug);
+    if (!seed) {
+      throw new Error(`llms.txt: branch "${b.slug}" exists in the CMS but not in DATA.branches — add it to the seed before publishing it as fact`);
+    }
+    for (const [field, cms, expected] of [
+      ["seats", String(b.seats), String(seed.seats)],
+      ["fee", b.fee, seed.fee],
+      ["code", b.code, seed.code],
+      ["name", b.name, seed.name],
+    ] as const) {
+      if (cms !== expected) {
+        throw new Error(
+          `llms.txt: CMS branch "${b.slug}" ${field} ("${cms}") diverges from the DATA.branches seed ("${expected}") — reconcile both in one pass before deploying`,
+        );
+      }
+    }
+  }
+  if (branches.length !== DATA.branches.length) {
+    throw new Error(`llms.txt: CMS lists ${branches.length} branches, the seed lists ${DATA.branches.length} — the seat total and "N BTEUP-affiliated diploma branches" heading would both be wrong`);
+  }
+
   const totalSeats = branches.reduce((sum, b) => sum + b.seats, 0);
 
   // One flat AFRC fee across branches is a claim, not an assumption —
