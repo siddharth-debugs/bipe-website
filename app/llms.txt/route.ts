@@ -10,7 +10,7 @@ import {
 } from "@/lib/leadership";
 import { BLOG_POSTS } from "@/lib/blogPosts";
 import { BRANCH_DETAIL } from "@/lib/branchContent";
-import { getBranchesMapped } from "@/lib/content";
+import { getBranchesMapped, getContact } from "@/lib/content";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 
@@ -28,16 +28,12 @@ import sitemap from "@/app/sitemap";
  * Seed-only facts (EoA reference, placement stats, leadership, blog)
  * update at the next build like every other surface.
  *
- * CONTACT IS DELIBERATELY SEED-SOURCED (DATA.contact), NOT getContact():
- * on 2 Sep 2026 the CMS contact record was found stale — it still
- * carries the phone number retired 28 May 2026 (9198646464), the
- * retired bipevns@gmail.com, the pre-June long-form address, and an
- * empty grievance email — and that stale record is live in the footer
- * of every page. lib/data.ts records the owner's explicit directives
- * ("Use only one number for call 9415202879", "use only
- * info@bipe.ac.in for mail"), so the seed is the audited canonical.
- * Once the CMS contact record is corrected in the admin dashboard,
- * flip these fields to getContact() so admin edits flow here too.
+ * Contact flows through getContact() like every other surface. That is
+ * safe against the stale-CMS-record class of bug found 2 Sep 2026
+ * (retired 9198646464 / bipevns@gmail.com outranking the audited seed)
+ * because getContact() itself now enforces the seed for identity-
+ * critical NAP fields — see the overlay in lib/content.ts. Fields with
+ * no CMS column (whatsappPhone, AICTE EoA ref/date) stay seed literals.
  *
  * Drift protection (enforced at prerender, so `next build` fails):
  *   - page()/blogPost() throw if a linked path/slug no longer exists or
@@ -193,10 +189,11 @@ function directorStat(label: string): string {
 }
 
 async function buildBody(): Promise<string> {
-  // Branches: CMS-first with seed fallback — the same data path
-  // /courses renders from (lib/content.ts). Contact: seed only, until
-  // the stale CMS contact record is corrected (see header comment).
-  const branches = await getBranchesMapped();
+  // Branches and contact: CMS-first with seed fallback — the same data
+  // path the pages render from (lib/content.ts; identity NAP fields are
+  // seed-enforced inside getContact(), see header comment). `seed`
+  // remains for fields with no CMS column (whatsappPhone, EoA ref/date).
+  const [branches, contact] = await Promise.all([getBranchesMapped(), getContact()]);
   const seed = DATA.contact;
 
   const sitemapPaths = new Set(
@@ -305,8 +302,8 @@ async function buildBody(): Promise<string> {
 
 > BIPE (Banaras Institute of Polytechnic & Engineering) is an AICTE-approved
 > polytechnic in Phoolpur, Varanasi, Uttar Pradesh, India. Founded in 2010
-> by Purwanchal Educational Trust. JEECUP institute code: ${seed.jeecup}.
-> AICTE Permanent ID: ${seed.aicte}. BTEUP-affiliated. AISHE-registered.
+> by Purwanchal Educational Trust. JEECUP institute code: ${contact.jeecup_code}.
+> AICTE Permanent ID: ${contact.aicte_id}. BTEUP-affiliated. AISHE-registered.
 > Annual tuition: ${fee} (AFRC-approved). Catchment: Eastern Uttar
 > Pradesh + Bihar.
 
@@ -314,10 +311,10 @@ async function buildBody(): Promise<string> {
 
 - Full name: Banaras Institute of Polytechnic & Engineering
 - Short name: BIPE
-- JEECUP code: ${seed.jeecup}
-- AICTE Permanent ID: ${seed.aicte}
+- JEECUP code: ${contact.jeecup_code}
+- AICTE Permanent ID: ${contact.aicte_id}
 - AICTE EoA 2026-27: F.No. ${seed.aicteEoaRef} dated ${seed.aicteEoaDate}
-- BTEUP affiliation: active (College Code ${seed.jeecup})
+- BTEUP affiliation: active (College Code ${contact.jeecup_code})
 - AISHE: registered with the Department of Higher Education, Ministry of Education
 - Founded: 2010 (Purwanchal Educational Trust)
 - Director: ${DIRECTOR.name} — appointed August 2026. Formerly
@@ -328,7 +325,7 @@ async function buildBody(): Promise<string> {
   dissertations; ${directorStat("Research papers")} research papers; ${directorStat("Books authored")} books.
 - Chairman: ${CHAIRMAN.name}, ${CHAIRMAN.postNominal}, Purwanchal Educational Trust
 - Principal: ${PRINCIPAL.name}, ${PRINCIPAL.postNominal}
-- Campus: ${seed.address}
+- Campus: ${contact.address}
 - Campus size: 6 acres, single boundary
 - Total sanctioned seats: ${totalSeats}
 - Faculty: 40 (1:20 mentor ratio, with parent home visits)
@@ -354,15 +351,15 @@ see Admissions).
 ## Admissions
 
 Admission exclusively via JEECUP (UPJEE Polytechnic) counselling — institute
-code ${seed.jeecup}. Group A is the entrance for the 3-year diploma (Class 10 pass
+code ${contact.jeecup_code}. Group A is the entrance for the 3-year diploma (Class 10 pass
 with Mathematics and Science); Group K lateral entry admits Class 12 / ITI
 candidates directly into the 2nd year (two-year route).
-Apply at https://jeecup.admissions.nic.in — choose institute code ${seed.jeecup}.
+Apply at https://jeecup.admissions.nic.in — choose institute code ${contact.jeecup_code}.
 
 Bihar candidates: JEECUP admits other-state candidates in the open/general
 category (no UP-domicile requirement), so Bihar students who appear for
 DCECE/BCECE are eligible to simultaneously apply via JEECUP and choose
-BIPE ${seed.jeecup}. BIPE is 2–3 hours by road from the Bihar border districts —
+BIPE ${contact.jeecup_code}. BIPE is 2–3 hours by road from the Bihar border districts —
 Buxar ~85 km, Bhojpur (Ara) ~135 km, Rohtas (Sasaram) ~145 km.
 
 ## Placements
@@ -410,11 +407,11 @@ ${FLAGSHIP_GUIDES.map((g) => `- [${g.label}](${blogPost(g.slug)}): ${g.desc}`).j
 
 ## Contact
 
-- Phone (calls): ${seed.phone}
+- Phone (calls): ${contact.phone}
 - WhatsApp: ${seed.whatsappPhone} (https://wa.me/${waDigits})
-- Email: ${seed.email}
-- Grievance: ${seed.emailGrievance} (acknowledged within 7 working days)
-- Address: ${seed.address}
+- Email: ${contact.email}
+- Grievance: ${contact.email_grievance} (acknowledged within 7 working days)
+- Address: ${contact.address}
 - Office hours: Mon–Sat · 9:00 AM – 5:00 PM IST
 
 ## Crawler Policy
