@@ -173,9 +173,16 @@ const ALUMNI_JSON_LD = {
     // Metro, Chandan Pathak · Motherson Sumi, Naveen Pandey · IEPC).
     // Most graduated 2013-2015, before the manifest's 2016 start, which
     // is why they are absent from it — absence there is NOT evidence
-    // against them. Mahindra was dropped from the original sentence
-    // because it is the one name with no named alumnus on this page.
-    `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, plus named alumni at Tata Steel BSL, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.`,
+    // against them.
+    //
+    // MAHINDRA: owner-confirmed 3 Sep 2026 ("I confirm that Mahindra has
+    // our alumnus"). It has no entry in the FEATURED list below, so a
+    // future sweep will find no on-page backing and be tempted to drop
+    // it again — don't. This comment is the record, the same way
+    // lib/data.ts:415 records the owner ruling that removed the
+    // fabricated Tata Motors drive. If the office supplies the name,
+    // branch and year, add them to FEATURED and delete this note.
+    `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, plus named alumni at Mahindra, Tata Steel BSL, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.`,
   about: {
     "@type": "CollegeOrUniversity",
     name: "Banaras Institute of Polytechnic & Engineering",
@@ -314,7 +321,7 @@ export default async function Page() {
                 careers. Counting.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                Polytechnic placements out of BIPE Varanasi — {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified through {PLACEMENT_STATS.endYear} · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · named alumni at Tata Steel BSL, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.
+                Polytechnic placements out of BIPE Varanasi — {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified through {PLACEMENT_STATS.endYear} · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · named alumni at Mahindra, Tata Steel BSL, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
