@@ -563,7 +563,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "If your JEECUP rank confidently secures a Government Polytechnic Chandauli seat in the branch you want and you live in Chandauli city, the government route is the right choice. Day-scholar is feasible and the fee gap (~₹15,000-25,000/year vs BIPE) is meaningful.",
       whenBipe:
-        "BIPE wins for Chandauli students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you specifically want Dairy Engineering; (c) you're from outer Chandauli blocks (Naugarh, Sakaldiha, Chakia) and need hostel; (d) you want documented placement infrastructure with named alumni at Indian Railways and 43 other recruiters. /private-vs-government-polytechnic has the wider framework.",
+        "BIPE wins for Chandauli students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you specifically want Dairy Engineering; (c) you're from outer Chandauli blocks (Naugarh, Sakaldiha, Chakia) and need hostel; (d) you want documented placement infrastructure — 44 recruiters on record, plus named alumni who reached Indian Railways through the RRB route. /private-vs-government-polytechnic has the wider framework.",
     },
   },
 
