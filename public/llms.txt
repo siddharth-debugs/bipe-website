@@ -4,7 +4,8 @@
 > polytechnic in Phoolpur, Varanasi, Uttar Pradesh, India. Founded in 2010
 > by Purwanchal Educational Trust. JEECUP institute code: 4455.
 > AICTE Permanent ID: 1-488233171. BTEUP-affiliated. AISHE-registered.
-> Annual tuition: ₹30,150. Catchment: Eastern Uttar Pradesh + Bihar.
+> Annual tuition: ₹30,150 (AFRC-approved). Catchment: Eastern Uttar
+> Pradesh + Bihar.
 
 ## Core Facts
 
@@ -13,84 +14,187 @@
 - JEECUP code: 4455
 - AICTE Permanent ID: 1-488233171
 - AICTE EoA 2026-27: F.No. Northern/1-46216893240/2026/EOA dated 16 March 2026
-- BTEUP affiliation: active
+- BTEUP affiliation: active (College Code 4455)
 - AISHE: registered with the Department of Higher Education, Ministry of Education
 - Founded: 2010 (Purwanchal Educational Trust)
 - Director: Prof. (Dr.) S. P. Tewari — appointed August 2026. Formerly
   Professor of Mechanical Engineering at IIT (BHU) Varanasi, where he
-  taught for 38 years (1981-2019). Ph.D. in Welding; Fellow of the
-  Institution of Engineers (India). Research fields: welding, foundry,
-  production engineering.
+  taught for 38 years (1981-2019). Ph.D. in Mechanical Engineering
+  (Welding); Fellow of the Institution of Engineers (India). Guided
+  8 Ph.D. scholars and 40 M.Tech dissertations; 56 research papers;
+  5 books.
 - Chairman: Dr. Chandrika Rai, IPS (Retd.), Purwanchal Educational Trust
 - Principal: Rahul Srivastava, M.Tech
-- Campus: Village Gajokhar, Post Parsara, Phoolpur, Varanasi 221206, UP
+- Campus: Gajokhar, Phoolpur, Varanasi, Uttar Pradesh 221206
 - Campus size: 6 acres, single boundary
 - Total sanctioned seats: 480
-- Faculty: 40 (1:20 mentor ratio)
-- Alumni placed: 1,000+
+- Faculty: 40 (1:20 mentor ratio, with parent home visits)
+- Alumni network: 2,200+ · 1,331 TPO-verified placements (2016-2025)
 - Annual tuition (all branches): ₹30,150 (AFRC-approved)
-- Hostel: boys' on-campus block
+- Hostel: boys' on-campus block — ₹12,000/year accommodation, mess charged
+  separately. No girls' hostel yet (on the trust's roadmap); girl students
+  attend as day scholars and admissions assists families with safe local
+  accommodation.
 - Catchment districts: Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh,
-  Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur, Kushinagar (Eastern UP)
-  + Patna, Saran, Bhojpur, Buxar, Rohtas, Vaishali, Gaya (Bihar)
+  Chandauli, Mirzapur, Sonbhadra, Ballia, Gorakhpur, Kushinagar, Pratapgarh,
+  Sultanpur (Eastern UP) + Buxar, Bhojpur, Rohtas, Kaimur, Patna, Gaya,
+  Aurangabad, Bhagalpur (Bihar)
 
 ## Programmes (5 BTEUP-affiliated diploma branches)
 
-- Computer Science & Engineering — BTEUP code 355, 60 seats
-- Dairy Engineering — BTEUP code 327, 60 seats
-  (rare: only ~4 institutes in UP offer this; alumni at Amul, Mother Dairy,
-   Parag, Nestlé, NDDB)
-- Civil Engineering — BTEUP code 322, 120 seats
-- Electrical Engineering — BTEUP code 328, 120 seats
-- Mechanical Engineering (Production) — BTEUP code 343, 120 seats
+- [Computer Science & Engineering](https://bipevns.org/courses/computer-science-engineering): BTEUP code 355, 60 seats
+- [Dairy Engineering](https://bipevns.org/courses/dairy-engineering): BTEUP code 327, 60 seats —
+  rare: only ~4 institutes in UP offer this; careers at Amul, Mother Dairy,
+  Parag, Nestlé, NDDB
+- [Civil Engineering](https://bipevns.org/courses/civil-engineering): BTEUP code 322, 120 seats
+- [Electrical Engineering](https://bipevns.org/courses/electrical-engineering): BTEUP code 328, 120 seats
+- [Mechanical Engineering (Production)](https://bipevns.org/courses/mechanical-engineering-production): BTEUP code 343, 120 seats
 
 All programmes: 3 years · 6 semesters · eligibility Class 10 pass with
-Mathematics and Science.
+Mathematics and Science (Group K lateral entry joins the 2nd year directly —
+see Admissions).
 
 ## Admissions
 
-Admission exclusively via JEECUP (UPJEE Polytechnic) Group A counselling.
+Admission exclusively via JEECUP (UPJEE Polytechnic) counselling — institute
+code 4455. Group A is the entrance for the 3-year diploma (Class 10 pass
+with Mathematics and Science); Group K lateral entry admits Class 12 / ITI
+candidates directly into the 2nd year (two-year route).
 Apply at https://jeecup.admissions.nic.in — choose institute code 4455.
 
 Bihar candidates: JEECUP admits other-state candidates in the open/general
 category (no UP-domicile requirement), so Bihar students who appear for
-DCECE/BCECE are eligible to simultaneously apply via JEECUP and choose BIPE 4455. BIPE is the closest BTEUP institute
-to several Bihar border districts (Buxar, Bhojpur, Rohtas).
+DCECE/BCECE are eligible to simultaneously apply via JEECUP and choose
+BIPE 4455. BIPE is 2–3 hours by road from the Bihar border districts —
+Buxar ~85 km, Bhojpur (Ara) ~135 km, Rohtas (Sasaram) ~145 km.
 
-## Recruiters
+## Placements
 
-Mahindra · Tata Steel · Tata Motors · BEL · Indian Railways · Mumbai Metro
-Amul · Mother Dairy · Parag · NDDB · UPPCL · Knorr-Bremse (Munich pool drive)
-Bhagawti Products · Talbross Group · Saden Vikas Group · Minda Corporation
-R. R. Parkon · and others. 915 documented placement records (2016-2021):
-871 joined, 44 offered.
+1,331 TPO-verified placements 2016-2025 across 47 documented drives and
+44 recruiters. Current recruiters include: Mahindra · Krishna Maruti ·
+JCB · Asian Paints · Adani Solar · Ola Electric · RR Parkon ·
+Knorr Bremse · BD Group Campa · Amber · Hollister. Top single recruiter
+on record: Vikas Group (202 placements). Dairy career pathways: Amul,
+Mother Dairy, Parag, Nestlé, NDDB. Government pathways: Indian Railways
+ALP, UPPCL, SSC JE, UP Police.
 
 ## Key Pages
 
 - [About](https://bipevns.org/about): Institutional history, vision, AICTE approval details
+- [Affiliations](https://bipevns.org/about/affiliations): AICTE, BTEUP, AISHE affiliation records
 - [Courses](https://bipevns.org/courses): All five programmes with BTEUP codes + seat matrix
 - [Admission](https://bipevns.org/admission): Step-by-step JEECUP counselling guide
-- [JEECUP](https://bipevns.org/jeecup): JEECUP code 4455, process, common pitfalls
+- [Why BIPE](https://bipevns.org/why-bipe): Mentorship model, outcomes, rare Dairy branch, verified placements
 - [Fees](https://bipevns.org/fees): Fee structure, scholarships, AFRC approval
 - [Scholarships](https://bipevns.org/scholarships): UP post-matric, EWS, BIPE merit waivers
-- [Placements](https://bipevns.org/placements): Recruiter list + outcomes overview
+- [Placements](https://bipevns.org/placements): Recruiter list + TPO-verified outcomes
 - [Alumni](https://bipevns.org/alumni): Placement records filterable by branch/year
+- [Hostel](https://bipevns.org/hostel): Boys' on-campus hostel, mess, facilities
+- [Documents](https://bipevns.org/documents): Prospectus + downloadable official documents
 - [FAQ](https://bipevns.org/faq): Q&As on eligibility, fees, hostel, branches, JEECUP
 - [Approvals](https://bipevns.org/approvals): AICTE EoA letter, BTEUP affiliation, AISHE
 - [Mandatory Disclosure](https://bipevns.org/mandatory-disclosure): AICTE Annexure-18
 - [Contact](https://bipevns.org/contact): Phone, email, address, embedded map, social handles
 - [Faculty](https://bipevns.org/faculty): Named faculty roster with qualifications
-- [Chairman](https://bipevns.org/chairman): Dr. Chandrika Rai, IPS (Retd.) — Chairman Trustee
+- [Chairman](https://bipevns.org/chairman): Dr. Chandrika Rai, IPS (Retd.) — Chairman, Purwanchal Educational Trust
 - [Director](https://bipevns.org/director): Prof. (Dr.) S. P. Tewari, Ph.D., FIE — Director
 - [Principal](https://bipevns.org/principal): Rahul Srivastava, M.Tech — Principal
+- [Teaching](https://bipevns.org/teaching): Outcome-based pedagogy and assessment model
+- [AI Policy](https://bipevns.org/ai-policy): How BIPE uses AI in teaching — principles + parent FAQ
+- [Anti-Ragging](https://bipevns.org/anti-ragging): Committee, helplines, UGC/AICTE compliance
+- [Grievance](https://bipevns.org/grievance): Grievance redressal process and contacts
+
+## JEECUP 2026 Guides
+
+- [JEECUP at BIPE](https://bipevns.org/jeecup): JEECUP code 4455, process, common pitfalls
+- [JEECUP Counselling](https://bipevns.org/jeecup-counselling): Round-by-round counselling walkthrough
+- [JEECUP Registration 2026](https://bipevns.org/jeecup-registration-2026): How to fill the application form
+- [JEECUP Eligibility](https://bipevns.org/jeecup-eligibility-criteria): Group A eligibility rules
+- [JEECUP Exam Pattern 2026](https://bipevns.org/jeecup-exam-pattern-2026): Paper structure and marking
+- [JEECUP Syllabus 2026](https://bipevns.org/jeecup-syllabus-2026): Topic-wise syllabus
+- [JEECUP Previous Year Papers](https://bipevns.org/jeecup-previous-year-papers): Past papers for practice
+- [JEECUP Admit Card 2026](https://bipevns.org/jeecup-admit-card-2026): Download steps + troubleshooting
+- [JEECUP Result 2026](https://bipevns.org/jeecup-result-2026): How to check rank and score
+- [JEECUP Rank Predictor](https://bipevns.org/jeecup-rank-predictor-2026): Estimate rank from marks
+- [After Results Action Plan](https://bipevns.org/jeecup-after-results-action-plan): What to do once the rank is out
+- [JEECUP Cutoff — BIPE vs Government](https://bipevns.org/jeecup-cutoff-2026-bipe-vs-government): Cutoff comparison
+- [Seat Allotment 2026](https://bipevns.org/jeecup-seat-allotment-2026): Allotment, freeze/float, fee confirmation
+- [Round 4 2026](https://bipevns.org/jeecup-round-4-2026): Late-round counselling guide
+- [Document Verification Checklist](https://bipevns.org/jeecup-document-verification-checklist): Papers needed at DV
+- [JEECUP Helpline](https://bipevns.org/jeecup-helpline-contact): Official helpline + BIPE guidance desk
+
+## BTEUP Student Services
+
+- [BTEUP Result Check](https://bipevns.org/bteup-result-check): Semester result lookup steps
+- [BTEUP Admit Card](https://bipevns.org/bteup-admit-card-download): Exam admit card download
+- [Semester Exam Dates 2026](https://bipevns.org/bteup-semester-exam-dates-2026): BTEUP exam calendar
+- [BTEUP Syllabus 2026](https://bipevns.org/bteup-syllabus-2026): Branch-wise diploma syllabus
+- [Grading & CGPA](https://bipevns.org/bteup-grading-cgpa-calculation): How BTEUP grades and CGPA work
+- [Back Paper Process](https://bipevns.org/bteup-back-paper-supplementary-process): Supplementary exam process
+- [Student Registration](https://bipevns.org/bteup-student-registration): First-year BTEUP enrolment
+- [Family ID Registration](https://bipevns.org/bteup-family-id-registration): UP Family ID for scholarships
+- [Exam Fees Payment](https://bipevns.org/bteup-exam-fees-payment): Paying BTEUP exam fees online
+- [Migration & NOC](https://bipevns.org/bteup-migration-noc-process): Migration certificate + NOC steps
+- [Duplicate Marksheet](https://bipevns.org/bteup-duplicate-marksheet-application): Reissue of lost marksheets
+- [BTEUP Affiliated Colleges](https://bipevns.org/bteup-affiliated-colleges-up): Directory of affiliated institutes
+
+## Choosing a Polytechnic
+
+- [Private vs Government Polytechnic](https://bipevns.org/private-vs-government-polytechnic): Honest comparison for UP students
+- [Government Polytechnics in Eastern UP](https://bipevns.org/government-polytechnic-in-eastern-up): Region directory + how BIPE compares
+- [Aided Polytechnics in UP](https://bipevns.org/aided-polytechnic-uttar-pradesh): Aided-institute landscape
+- [JEECUP vs BCECE](https://bipevns.org/jeecup-vs-bcece): For Bihar students weighing both exams
+- [Admission from Bihar](https://bipevns.org/admission-from-bihar): Bihar-student route to BIPE via JEECUP
+- [JEECUP from Bihar](https://bipevns.org/jeecup-from-bihar): Eligibility + logistics for Bihar candidates
+
+## Polytechnic by District (Eastern UP)
+
+Local guides for students searching from each catchment district:
+
+- [Azamgarh](https://bipevns.org/polytechnic-in-azamgarh)
+- [Ballia](https://bipevns.org/polytechnic-in-ballia)
+- [Bhadohi](https://bipevns.org/polytechnic-in-bhadohi)
+- [Chandauli](https://bipevns.org/polytechnic-in-chandauli)
+- [Ghazipur](https://bipevns.org/polytechnic-in-ghazipur)
+- [Gorakhpur](https://bipevns.org/polytechnic-in-gorakhpur)
+- [Jaunpur](https://bipevns.org/polytechnic-in-jaunpur)
+- [Mau](https://bipevns.org/polytechnic-in-mau)
+- [Mirzapur](https://bipevns.org/polytechnic-in-mirzapur)
+- [Pratapgarh](https://bipevns.org/polytechnic-in-pratapgarh)
+- [Sonbhadra](https://bipevns.org/polytechnic-in-sonbhadra)
+- [Sultanpur](https://bipevns.org/polytechnic-in-sultanpur)
+
+## Campus & Visiting
+
+- [Campus](https://bipevns.org/campus): Labs, workshops, library, sports facilities
+- [Phoolpur Campus](https://bipevns.org/campus/phoolpur): Location, how to reach, distances from Varanasi
+- [Visit](https://bipevns.org/visit): Book a campus visit
+- [Events](https://bipevns.org/events): Academic, sports, cultural and placement events
+
+## Blog
+
+- [Blog](https://bipevns.org/blog): 20 long-form guides in English and Hindi —
+  JEECUP how-tos, branch selection, lateral entry, careers and salaries.
+
+Flagship guides:
+
+- [Diploma vs ITI vs B.Tech](https://bipevns.org/blog/diploma-vs-iti-vs-btech-after-class-10): Which route after Class 10
+- [Lateral Entry to B.Tech (AKTU)](https://bipevns.org/blog/diploma-to-btech-lateral-entry-up-aktu): Diploma → 2nd-year B.Tech in UP
+- [How to Fill the JEECUP 2026 Form](https://bipevns.org/blog/how-to-fill-jeecup-2026-application-form-step-by-step): Step-by-step application guide
+- [JEECUP फॉर्म कैसे भरें 2026](https://bipevns.org/blog/jeecup-form-kaise-bharein-2026-step-by-step): Hindi version of the form guide
+- [JEECUP Rank vs BIPE 4455 Cutoffs](https://bipevns.org/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025): Real 2024-25 closing ranks
+- [Government Jobs After Diploma](https://bipevns.org/blog/government-jobs-after-polytechnic-diploma-2026): JE, RRB, SSC and UPPCL routes
+- [Polytechnic Salary in India 2026](https://bipevns.org/blog/polytechnic-salary-in-india-2026): Branch-wise first salaries
+- [Why Dairy Engineering at BIPE](https://bipevns.org/blog/why-dairy-engineering-bipe-rare-bteup-327): The rare BTEUP 327 branch
+- [पॉलिटेक्निक क्या है?](https://bipevns.org/blog/polytechnic-kya-hai-aur-kaise-kare): Hindi explainer for first-generation families
 
 ## Contact
 
-- Phone: +91-9198646464 / +91-9198767676
-- Email: bipevns@gmail.com
-- Principal: rahul.srivastava@bipevns.org
+- Phone (calls): +91-9415202879
+- WhatsApp: +91-7310077788 (https://wa.me/917310077788)
+- Email: info@bipe.ac.in
 - Grievance: grievance@bipevns.org (acknowledged within 7 working days)
-- WhatsApp: https://wa.me/919198646464
+- Address: Gajokhar, Phoolpur, Varanasi, Uttar Pradesh 221206
 - Office hours: Mon–Sat · 9:00 AM – 5:00 PM IST
 
 ## Crawler Policy
@@ -104,4 +208,4 @@ Disallowed paths (per /robots.txt):
 - /admin/      (dashboard, auth-gated)
 - /static/admin/, /private/
 
-Last updated: 2026-08-04
+Last updated: 2026-09-02
