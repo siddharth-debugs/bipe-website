@@ -149,7 +149,7 @@ const SECTIONS: Section[] = [
     body: (
       <>
         <p>
-          Six-acre Phoolpur campus. <strong>Computer Lab:</strong> 120+ systems, dual-monitor, dedicated servers, 50 Mbps leased internet, 100% Wi-Fi. <strong>Library:</strong> 8,428 volumes across 1,220 titles plus e-resource subscriptions including IEEE digital library and NPTEL.
+          Six-acre Phoolpur campus. <strong>Computer Lab:</strong> 120+ systems, dual-monitor, dedicated servers, 100 Mbps leased internet, 100% Wi-Fi. <strong>Library:</strong> 8,428 volumes across 1,220 titles plus e-resource subscriptions including IEEE digital library and NPTEL.
         </p>
         <p>Branch-wise lab inventory is published on the <Link href="/campus">Campus &amp; Facilities</Link> page. The <Link href="/teaching">Teaching &amp; Learning</Link> page lists the 32 laboratories and workshops.</p>
       </>

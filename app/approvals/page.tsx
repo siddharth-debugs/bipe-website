@@ -101,7 +101,7 @@ const DISCLOSURE: { num: string; label: string }[] = [
   { num: "8,428", label: "Books · volumes" },
   { num: "1,220", label: "Library titles" },
   { num: "120", label: "PCs in lab" },
-  { num: "50 Mbps", label: "Leased internet" },
+  { num: "100 Mbps", label: "Leased internet" },
   { num: "100%", label: "Wi-Fi coverage" },
 ];
 
