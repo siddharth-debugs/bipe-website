@@ -144,8 +144,8 @@ export default function Page() {
                   info@bipe.ac.in
                 </a>
                 <span className="pill pill-accent">CONTACT</span>
-                <a href="tel:+919415202879" style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>
-                  +91 91987 67676
+                <a href={`tel:${DATA.contact.phone.replace(/[^+\d]/g, "")}`} style={{ fontFamily: "var(--font-mono)", fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>
+                  {DATA.contact.phone}
                 </a>
               </div>
 
