@@ -74,7 +74,7 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
     title: "Outcome accountability",
     sub: `${formatPlacements(PLACEMENT_STATS.totalPlacements)} verified placements · 16-year record`,
     body:
-      "We publish placement records, not just photographs. Alumni now serve at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro and dozens more. Government-job admits — SSC JE, RRB JE, UPPCL — are tracked too.",
+      "We publish placement records, not just photographs. Alumni now serve at Tata Steel BSL, Mumbai Metro, Motherson Sumi, Indian Railways and dozens more — each of those a named graduate on our placements page. Government-job admits — SSC JE, RRB JE, UPPCL — are tracked too.",
   },
 ];
 
