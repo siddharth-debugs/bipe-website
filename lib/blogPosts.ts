@@ -36,7 +36,7 @@
  *   - Recruiter / institution names: Mahindra, Tata Steel, JCB,
  *     Motherson, Indian Railways, Amul, NDDB, Mumbai Metro, AKTU
  *   - Numbers, currency, dates, units: ₹30,150/year, 1:20 ratio,
- *     1,331, 1 August 2026, 7 rounds
+ *     1,331, 1 August 2026, 5 rounds
  *   - Geographic English forms: Varanasi, Phoolpur, Eastern UP, Bihar,
  *     Lucknow
  *
@@ -87,7 +87,7 @@
  *   Sample body paragraph showing all three registers blended:
  *
  *     "JEECUP exam ke baad रिजल्ट कैसे check karein? June ke mid
- *      mein result aa jata hai, fir 7-round counselling shuru hoti
+ *      mein result aa jata hai, fir 5-round counselling shuru hoti
  *      hai. Apna rank card download kar lo — yahi sabse important
  *      document hai. Counselling mein BIPE Varanasi (institute code
  *      4455) ko apni choice list mein add karna mat bhoolna. हमने
@@ -612,7 +612,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE Dairy Engineering ki real taakat ek combination hai — <strong>small cohort</strong> (typically 30-40 per year), <strong>specialised curriculum</strong> jo UP ke sirf 4 BTEUP-affiliated colleges offer karते hain, <strong>on-campus labs</strong> jo dairy unit-operation fundamentals teach karते hain (chemistry, hydraulics, mechanics-of-solids), <strong>regular cohort industrial visits</strong> jaise recent Banas Dairy Plant Varanasi visit, aur <strong>mandatory 6-month Sem-6 industrial training</strong> at Amul / Mother Dairy / NDDB / Parag।",
+          "BIPE Dairy Engineering ki real taakat ek combination hai — <strong>small cohort</strong> (60 sanctioned seats; pehla batch 2025-26 mein aaya), <strong>specialised curriculum</strong> jo UP ke sirf 4 BTEUP-affiliated colleges offer karते hain, <strong>on-campus labs</strong> jo dairy unit-operation fundamentals teach karते hain (chemistry, hydraulics, mechanics-of-solids), <strong>regular cohort industrial visits</strong> jaise recent Banas Dairy Plant Varanasi visit, aur <strong>mandatory 6-month Sem-6 industrial training</strong> at Amul / Mother Dairy / NDDB / Parag।",
       },
       {
         type: "p",
@@ -622,7 +622,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai (typically 30-40 students per year, not 100+ like Mechanical)। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Lekin placement-wise yeh strength hai — small cohort + specialised industry = high placement-rate per student।",
+          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai — 60 sanctioned seats hain aur pehla batch 2025-26 mein 5 students ke saath shuru hua, Mechanical jaisa 100+ nahi। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Lekin placement-wise yeh strength hai — small cohort + specialised industry = high placement-rate per student।",
       },
 
       { type: "h2", text: "Future ahead · 2026 aur uske baad" },
@@ -1039,7 +1039,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE ke 1,331 placed alumni mein से approximately 20% ne B.Tech lateral entry route choose kiya। Sabse common destinations: HBTU Kanpur, MMMUT Gorakhpur, IET Lucknow, JSS Noida। Kuch ne direct higher studies pursue ki (M.Tech, MBA), kuch ne business shuru kiya।",
+          "Institute ke higher-studies register (2019-2025 batches) mein 16 alumni B.Tech lateral entry route se gaye hain। Sabse common destinations: HBTU Kanpur, MMMUT Gorakhpur, IET Lucknow, JSS Noida। Kuch ne direct higher studies pursue ki (M.Tech, MBA), kuch ne business shuru kiya।",
       },
 
       { type: "h2", text: "Common pitfalls · jin mein students fas jaate hain" },
@@ -1551,16 +1551,15 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE ke 1,331 verified placed alumni mein distribution roughly aisa rehta hai:",
+          "BIPE ke 1,331 verified placed alumni (2016-2025) mein se jo registers mein documented hai:",
       },
       {
         type: "ul",
         items: [
-          "~40% private placement (Mahindra, Tata, JCB, Motherson, etc.)",
-          "~25% government job (RRB JE, SSC JE, UPPCL, Indian Railways)",
-          "~20% B.Tech lateral entry (AKTU + other state universities)",
-          "~10% higher diploma + specialisation",
-          "~5% business / freelance / own work",
+          "Private-sector placement — sabse badi share, 44 recruiters ke saath (Mahindra, Tata, JCB, Motherson, etc.)",
+          "Government post — 28 documented alumni (RRB JE, SSC JE, UPPCL, Indian Railways). TPO ka register paper-trail hai, exhaustive count nahi।",
+          "B.Tech lateral entry — 16 alumni (2019-2025 batches), institute ke higher-studies register ke mutabik (AKTU + other state universities)।",
+          "Baaki alumni higher diploma, specialisation, business ya freelance route lete hain — inka formal register maintain nahi hota।",
         ],
       },
       { type: "p", html: "Yeh distribution branch-wise differ karti hai:" },
@@ -1861,7 +1860,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "Where to get help if you're stuck" },
       {
         type: "p",
-        html: "JEECUP's own helpdesk is at <a href=\"mailto:info@bipe.ac.in\" rel=\"nofollow\">info@bipe.ac.in</a> / 0522-2630106 (Lucknow). For families in Eastern UP specifically, <a href=\"/admission\">BIPE's admissions team</a> takes JEECUP application questions on WhatsApp in EN / हिंदी every day — no fee for the conversation, no obligation to apply to BIPE. We walk dozens of families through the form each cycle.",
+        html: "JEECUP's own helpdesk is reachable through the Help / Contact form on <a href=\"https://jeecup.admissions.nic.in\" rel=\"nofollow\">jeecup.admissions.nic.in</a> and on 0522-2630106 (Lucknow). For families in Eastern UP specifically, <a href=\"/admission\">BIPE's admissions team</a> takes JEECUP application questions on WhatsApp in EN / हिंदी every day — no fee for the conversation, no obligation to apply to BIPE. We walk dozens of families through the form each cycle.",
       },
       {
         type: "p",
@@ -2063,7 +2062,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Conducted by</strong>: National Testing Agency (NTA) on behalf of AKTU. Online CBT, typically in May/June.",
           "<strong>Eligibility</strong>: A 3-year diploma in engineering recognised by a state board (BTEUP qualifies) or AICTE, with a minimum of 45% aggregate marks (40% for SC/ST/OBC/PwD as per UP norms — verify current notification).",
           "<strong>Exam pattern</strong>: One paper covering Engineering Mathematics, Engineering Aptitude, and your diploma branch's core subjects. Multiple-choice, two-hour duration. Negative marking applies in most years.",
-          "<strong>Application window</strong>: Usually January–April of your final diploma year (the 2026 cycle opened 15 Jan and closed 20 May after an extension). Exam follows in June (02–09 June for 2026), results mid-June, 7-round counselling from late June through August, classes begin 1 August for new and returning students at BIPE.",
+          "<strong>Application window</strong>: Usually January–April of your final diploma year (the 2026 cycle opened 15 Jan and closed 20 May after an extension). Exam follows in June (02–09 June for 2026), results mid-June, 5-round counselling from late June through August, classes begin 1 August for new and returning students at BIPE.",
           "<strong>Where to look for the current notification</strong>: <a href=\"https://upcet.nta.nic.in\" rel=\"nofollow noopener\" target=\"_blank\">upcet.nta.nic.in</a> and the AKTU notifications page.",
         ],
       },
@@ -2469,7 +2468,7 @@ export const BLOG_POSTS: BlogPost[] = [
         caption:
           "BIPE 4455 closing ranks (Group A · regular). Source: BIPE's filed Student Admission Rank Lists for 2024-25 and 2025-26.",
         headers: [
-          "Branch (BTEUP code)",
+          "Branch (JEECUP counselling code)",
           "2024-25 closing rank",
           "2025-26 closing rank",
           "2024-25 admissions",
@@ -2490,8 +2489,8 @@ export const BLOG_POSTS: BlogPost[] = [
         html:
           "<p style=\"margin: 0;\"><strong>The closing-rank ceiling has been generous.</strong> In 2025-26, even the most competitive of our branches (Computer Science) closed at rank 168,929. Roughly speaking: if your Group A rank is anywhere under 130,000, you have a real chance at every branch we offer. Under 100,000, you have margin even in late counselling rounds. Under 50,000, you have your pick of branches and can choose by interest rather than by rank constraint.</p>" +
           "<p style=\"margin: 12px 0 0;\">Why the numbers grew between 2024-25 and 2025-26: JEECUP rank inflation tracks the number of test-takers. UP's polytechnic exam pool has grown year over year; absolute ranks have moved with it.</p>" +
-          "<p style=\"margin: 12px 0 0;\"><strong>Dairy Engineering (BTEUP 123)</strong> appears in 2025-26 with 5 admissions at a closing rank of 147,826. This is the first cohort at BIPE — and one of only four BTEUP-affiliated dairy diploma programmes across all of Uttar Pradesh. <a href=\"/courses/dairy-engineering\">More on the branch →</a></p>" +
-          "<p style=\"margin: 12px 0 0;\"><strong>Mechanical Automobile (BTEUP 112)</strong> appears in 2024-25 with 11 admissions and is empty in 2025-26 — the slot was phased out in favour of an expanded Mechanical (Production) cohort, which grew from 30 to 33 in the same period.</p>",
+          "<p style=\"margin: 12px 0 0;\"><strong>Dairy Engineering (JEECUP code 123; BTEUP 327)</strong> appears in 2025-26 with 5 admissions at a closing rank of 147,826. This is the first cohort at BIPE — and one of only four BTEUP-affiliated dairy diploma programmes across all of Uttar Pradesh. <a href=\"/courses/dairy-engineering\">More on the branch →</a></p>" +
+          "<p style=\"margin: 12px 0 0;\"><strong>Mechanical Automobile (JEECUP code 112)</strong> appears in 2024-25 with 11 admissions and is empty in 2025-26 — the slot was phased out in favour of an expanded Mechanical (Production) cohort, which grew from 30 to 33 in the same period.</p>",
       },
       {
         type: "h2",
@@ -2785,7 +2784,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Registration करें:</strong> मोबाइल नंबर और ईमेल से नया खाता बनाएँ। OTP verify होने पर username और password मिल जाएगा।",
           "<strong>Application form भरें:</strong> व्यक्तिगत जानकारी, माता-पिता का विवरण, 10वीं (या 12वीं) के अंक, श्रेणी (General/OBC/SC/ST), पता।",
           "<strong>Documents upload करें:</strong> 10वीं की मार्कशीट, आधार कार्ड, फोटो, हस्ताक्षर। Files की size सीमा का ध्यान रखें।",
-          "<strong>Application fee जमा करें:</strong> सामान्यतः ₹200–500 (श्रेणी के अनुसार)। Net banking, UPI, debit/credit कार्ड स्वीकार होते हैं।",
+          "<strong>Application fee जमा करें:</strong> ₹300 (General / OBC / Minority) और ₹200 (SC / ST / PH)। Net banking, UPI, debit/credit कार्ड स्वीकार होते हैं।",
           "<strong>Admit card download करें:</strong> परीक्षा से लगभग 10 दिन पहले admit card जारी होता है।",
           "<strong>परीक्षा दें:</strong> April-May में online JEECUP exam होती है — गणित, विज्ञान, अंग्रेज़ी पर आधारित।",
           "<strong>Counselling में हिस्सा लें:</strong> Result के बाद counselling के 5 राउंड चलते हैं। यहाँ <strong>संस्थान कोड 4455 (BIPE)</strong> भरें यदि बीआईपीई आपका विकल्प है।",
@@ -2922,7 +2921,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "ol",
         items: [
           "<strong>SSC JE — Junior Engineer (Civil / Electrical / Mechanical)</strong> · Eligibility: 3-year diploma. Pay scale: ₹35,000-44,000 + DA. Recruiters: CPWD, MES, Border Roads, Railways, Central PWD. The single biggest government-job pipeline for diploma holders. Annual exam — start prep in semester 5. <a href=\"/blog/junior-engineer-eligibility-after-diploma\">Full SSC JE guide →</a>",
-          "<strong>RRB JE — Indian Railways Junior Engineer</strong> · Eligibility: 3-year diploma. Pay scale: ₹35,000+ DA + housing. Six BIPE alumni currently at Indian Railways including ALP and JE grades. Mumbai Metro and Indian Railways together are the largest single recruiter group at BIPE.",
+          "<strong>RRB JE — Indian Railways Junior Engineer</strong> · Eligibility: 3-year diploma. Pay scale: ₹35,000+ DA + housing. BIPE alumni work at Indian Railways in both ALP and JE grades — the TPO's government-posting register is a paper trail, not an exhaustive count. Mumbai Metro and Indian Railways together are the largest single recruiter group at BIPE.",
           "<strong>UPSSSC / UPPCL Junior Engineer</strong> · Eligibility: diploma (Electrical for UPPCL). Pay: ₹35,000-44,000. UP state PSUs run their own annual recruitment for diploma engineers.",
           "<strong>State PWD / Irrigation / Water Resources JE</strong> · Civil engineers from BIPE regularly clear UP state PWD JE recruitment. Direct posting in district headquarters around home.",
           "<strong>Defence engineering services</strong> · DRDO, MES (Military Engineering Services), Border Roads Organisation — all hire diploma engineers as JE-grade through SSC. Less glamorous than B.Tech defence roles but real careers with full benefits.",
@@ -3796,7 +3795,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "The Indian Railways ALP track is a third path that sits between the two: lower starting salary than a JE but extremely stable, with predictable annual increments and a clear retirement arc. About <strong>3-5 BIPE alumni per cohort</strong> end up here &mdash; Pramod Kumar Patel (Mechanical Production, 2014) is one named example on our <a href=\"/placements\">/placements</a> page.",
+          "The Indian Railways ALP track is a third path that sits between the two: lower starting salary than a JE but extremely stable, with predictable annual increments and a clear retirement arc. <strong>BIPE alumni turn up on this track every few batches</strong> &mdash; Pramod Kumar Patel (Mechanical Production, 2014) is one named example on our <a href=\"/placements\">/placements</a> page.",
       },
 
       // ============== H2: Branch-wise salaries ==============
@@ -4069,7 +4068,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE ने 2024 तक <strong>1,331 joining-letter-verified placements</strong> shipped किए हैं — 44 recruiters के साथ। Branch breakdown clear है: 522 Mechanical Production, 326 Electrical, 145 Civil, और CSE + Dairy maturing pipelines हैं। जिस branch की पाइपलाइन सबसे गहरी है, उसी की salary signal भी सबसे predictable है।",
+          "BIPE ने 2025 तक <strong>1,331 joining-letter-verified placements</strong> shipped किए हैं — 44 recruiters के साथ। Branch pipelines में Mechanical (Production) और Electrical सबसे गहरे हैं, Civil उसके बाद, और CSE + Dairy maturing pipelines हैं। जिस branch की पाइपलाइन सबसे गहरी है, उसी की salary signal भी सबसे predictable है।",
       },
       {
         type: "table",

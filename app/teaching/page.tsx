@@ -264,7 +264,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Civil surveying, electrical machines, mechanical shops, automotive bays, dairy pilot plant, the 120-system computer lab. Every diploma student logs lab hours every semester.
+              Civil surveying, electrical machines, mechanical shops, automotive bays, dairy chemistry and hydraulics labs, the 120-system computer lab. Every diploma student logs lab hours every semester.
             </p>
           </div>
 

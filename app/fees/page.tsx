@@ -87,7 +87,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What is the refund policy if I cancel after paying?",
-    a: "Refunds follow AICTE norms: 100% (less ₹1,000 administrative) if you withdraw 15+ days before classes start, 90% if within 15 days, 80% within the first 15 days of classes (provided the seat is filled), 50% after that, and no refund after 30 days of classes. Caution money is refundable on completion of the diploma. Refunds are processed within 30 working days.",
+    a: "Three tiers, keyed to when you withdraw: 100% refund within one week of application (no questions asked); 50% after one week but before classes begin; 10% within one week of classes commencing. Caution money is refundable on completion of the diploma. Refunds are processed within 30 working days.",
   },
   {
     q: "What is the total cost of the full 3-year diploma?",
@@ -321,7 +321,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Tuition is paid annually, before the relevant academic year. Hostel and mess are charged semester-wise — split into smaller payments to ease the family budget.
+              Tuition is paid annually, before the relevant academic year. Hostel accommodation is billed once a year and mess monthly in advance — split into smaller payments to ease the family budget.
             </p>
           </div>
 
@@ -439,7 +439,7 @@ export default function Page() {
             <div>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>Refund policy</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "14ch" }}>
-                AICTE-aligned{" "}
+                A published{" "}
                 <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
                   refund schedule.
                 </span>

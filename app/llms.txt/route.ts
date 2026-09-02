@@ -10,7 +10,7 @@ import {
 } from "@/lib/leadership";
 import { BLOG_POSTS } from "@/lib/blogPosts";
 import { BRANCH_DETAIL } from "@/lib/branchContent";
-import { getBranchesMapped, getContact } from "@/lib/content";
+import { getBranchesMapped, getContact, OFFICE_HOURS } from "@/lib/content";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 
@@ -412,7 +412,7 @@ ${FLAGSHIP_GUIDES.map((g) => `- [${g.label}](${blogPost(g.slug)}): ${g.desc}`).j
 - Email: ${contact.email}
 - Grievance: ${contact.email_grievance} (acknowledged within 7 working days)
 - Address: ${contact.address}
-- Office hours: Mon–Sat · 9:00 AM – 5:00 PM IST
+- Office hours: ${OFFICE_HOURS} IST
 
 ## Crawler Policy
 

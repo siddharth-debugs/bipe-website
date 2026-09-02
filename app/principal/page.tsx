@@ -135,7 +135,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 18, maxWidth: "48ch" }}>
-                M.Tech · BTEUP-recognised · Principal, BIPE Varanasi. Sixteen years training students into engineers who can hold a tool, read a drawing, and pay for their own life.
+                M.Tech · BTEUP-recognised · Principal, BIPE Varanasi. Thirteen years training students into engineers who can hold a tool, read a drawing, and pay for their own life.
               </p>
 
               <div style={{ marginTop: 28, display: "grid", gap: 10, gridTemplateColumns: "auto 1fr", alignItems: "center" }}>
@@ -264,7 +264,7 @@ export default function Page() {
                 Our workshops, laboratories and industry partnerships ensure that every BIPE graduate steps into the job market with <strong style={{ color: "var(--ink)" }}>confidence, competence and professional character</strong>. To our students: honour your craft, respect your tools, and take pride in work done right.
               </p>
               <p style={{ marginTop: 22 }}>
-                Sixteen years of training students from across UP and Bihar into skilled diploma technicians — professionals who can <em>hold a tool, read a drawing and build an independent livelihood</em>.
+                Thirteen years of training students from across UP and Bihar into skilled diploma technicians — professionals who can <em>hold a tool, read a drawing and build an independent livelihood</em>.
               </p>
               <p style={{ marginTop: 22 }}>
                 To every parent, student and well-wisher — <strong style={{ color: "var(--brand)" }}>welcome to the BIPE family.</strong>

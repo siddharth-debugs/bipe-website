@@ -381,6 +381,20 @@ export async function getPageSection(page: string, key: string): Promise<PublicP
   return list.find((s) => s.section_key === key) ?? null;
 }
 
+/**
+ * Office hours in the three shapes the site renders them. Every surface
+ * imports from here — six pages had drifted to a 9–6 close and /campus/phoolpur
+ * to 09:30–17:30, all stale against the front desk's actual 9–5.
+ *
+ * Declared above seedContact() because that function reads OFFICE_HOURS: if
+ * the seed ever becomes an eagerly-evaluated module-scope constant, a
+ * declaration below it would throw a temporal-dead-zone ReferenceError on
+ * import and take down every page that imports this module.
+ */
+export const OFFICE_HOURS = "Mon–Sat · 9:00 AM – 5:00 PM";
+export const OFFICE_HOURS_COMPACT = "MON–SAT · 9–5";
+export const OFFICE_HOURS_PROSE = "Mon–Sat, 9 AM to 5 PM";
+
 /** PublicContact built entirely from the code seed (DATA.contact +
  *  DATA.social). Used both as the backend-down fallback and as the
  *  authoritative source for the identity overlay in getContact(). */
@@ -404,7 +418,7 @@ function seedContact(): PublicContact {
     youtube_url: social("youtube"),
     x_url: social("x"),
     linkedin_url: social("linkedin"),
-    office_hours: "Mon–Sat · 9:00 AM – 5:00 PM",
+    office_hours: OFFICE_HOURS,
   };
 }
 

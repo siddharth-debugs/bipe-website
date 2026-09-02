@@ -101,7 +101,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Branch portfolio · Dairy Engineering moat",
     bipe:
-      "Five branches including Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh. Pilot dairy plant on campus; Amul / Mother Dairy / NDDB recruiter pipeline that comes with it.",
+      "Five branches including Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh. On-campus chemistry and hydraulics labs, industrial visits to working plants, a mandatory six-month plant training in Semester 6, and the Amul / Mother Dairy / NDDB recruiter pipeline that comes with it.",
     context:
       "Government Polytechnic Varanasi offers the standard four engineering branches. Dairy Engineering is not commonly available in UP government polytechnics outside the dedicated state agricultural-engineering institutes.",
     verifyLabel: "Explore the five branches",
@@ -119,7 +119,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Placement infrastructure",
     bipe:
-      `${_placed} verified placements over 16 years across Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and forty other recruiters. Year-wise named alumni list with named recruiters is public on the site.`,
+      `${_placed} verified placements across Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather and the rest of ${PLACEMENT_STATS.totalRecruiters} recruiters on record. Year-wise named alumni list with named recruiters is public on the site.`,
     context:
       "Placement cells at government polytechnics in UP operate effectively for many students — particularly via central-government JE exams — but typically rely on the student-led application route rather than on-campus drive intensity. Detailed published placement records vary by institute.",
     verifyLabel: "See named alumni list",
@@ -128,7 +128,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Lab equipment refresh cycle",
     bipe:
-      "Private institutes can update lab equipment independent of state procurement cycles. BIPE's mechanical workshop, dairy pilot plant, 120-computer CSE lab, electrical lab and civil survey yard are kept current to industry-standard practice.",
+      "Private institutes can update lab equipment independent of state procurement cycles. BIPE's mechanical workshop, dairy chemistry and hydraulics labs, 120-computer CSE lab, electrical lab and civil survey yard are kept current to industry-standard practice.",
     context:
       "Government institute equipment refresh is governed by state procurement timelines — which can be slower but is fully funded when it happens. Both models have trade-offs.",
     verifyLabel: "See campus & facilities",

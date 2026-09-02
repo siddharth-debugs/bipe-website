@@ -533,7 +533,7 @@ export default async function BranchPage(
                   Class 10 pass. <span className="serif">JEECUP 4455.</span>
                 </h2>
                 <p style={{ marginTop: 16, color: "var(--ink-2)", lineHeight: 1.7 }}>
-                  Eligibility for the {b.name} diploma is a Class 10 pass with Mathematics and Science. Admission is through JEECUP Group A — choose institute code 4455 and BTEUP code {b.code} during counselling. AICTE permanent ID 1-488233171.
+                  Eligibility for the {b.name} diploma is a Class 10 pass with Mathematics and Science. Admission is through JEECUP Group A — choose institute code 4455 and the {b.name} branch during counselling (BTEUP curriculum code {b.code}). AICTE permanent ID 1-488233171.
                 </p>
                 <div className="row" style={{ marginTop: 22, gap: 10, flexWrap: "wrap" }}>
                   <Link href="/admission" className="btn btn-ghost">Admission process <ArrowIcon /></Link>

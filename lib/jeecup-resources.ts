@@ -141,8 +141,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headline: "JEECUP Round 4 is the big re-opening —",
     headlineAccent: "and this time, every state is in.",
     heroAlert: {
-      badge: "Round 4 · classes 1 Aug",
-      text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opens Phase 2 — other-state candidates and anyone who missed the first rounds can finally join. Round 4 counselling is on now: add BIPE code 4455 to your choices and talk to admissions today. Classes begin 1 August.",
+      badge: "Round 5 · classes under way",
+      text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opened Phase 2 to other-state candidates and anyone who missed the first rounds; Round 5 is the final round of the cycle. Add BIPE code 4455 to your choices and talk to admissions today — classes began 1 August, so late joiners catch up with support.",
       primary: { label: "Reserve your branch — free →", href: "/early-registration" },
       secondary: { label: "Open JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
     },
@@ -463,7 +463,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "After your JEECUP exam",
-    ctaBody: "Once you have your rank card, fill the choice-filling form with BIPE Varanasi (code 4455) as a priority. Read our 7-round counselling guide and book a campus visit to lock in your branch before allotment.",
+    ctaBody: "Once you have your rank card, fill the choice-filling form with BIPE Varanasi (code 4455) as a priority. Read our 5-round counselling guide and book a campus visit to lock in your branch before allotment.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -496,7 +496,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       { label: "Status", value: "Result declared", sub: "Out now — check the portal" },
       { label: "Where", value: "jeecup.admissions.nic.in", sub: "Result tab" },
       { label: "What you get", value: "Marks · Rank · Card", sub: "Downloadable PDF" },
-      { label: "Counselling", value: "Begins shortly", sub: "7 rounds through August" },
+      { label: "Counselling", value: "Begins shortly", sub: "5 rounds through August" },
     ],
     steps: [
       {
@@ -549,7 +549,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "When can I start choice filling at JEECUP?",
-        a: "Counselling Round 1 choice filling opens approximately 5-7 days after results. Watch the JEECUP portal banner for the exact dates. The 2026 cycle has 7 rounds total (up from 5), so even if you miss the Round 1 window, Rounds 2-6 provide further opportunities. See /jeecup-counselling for the full round-by-round strategy.",
+        a: "Counselling Round 1 choice filling opens approximately 5-7 days after results. Watch the JEECUP portal banner for the exact dates. The 2026 cycle has 5 rounds total across two phases (up from), so even if you miss the Round 1 window, Rounds 2-6 provide further opportunities. See /jeecup-counselling for the full round-by-round strategy.",
       },
       {
         q: "Where can I get my BIPE seat-allotment confirmation help?",
@@ -613,7 +613,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
         eyebrow: "Real cutoffs · not projections",
         heading: "BIPE 4455 real closing ranks",
         intro: "Actual closing ranks from BIPE's Student Admission Rank Lists as filed with JEECUP (Group A · regular) — admitted students, not marketing math. Ranks rose from 2024-25 to 2025-26 as UP's candidate pool grew.",
-        columns: ["Branch (BTEUP code)", "2024-25 closing", "2025-26 closing"],
+        columns: ["Branch (JEECUP counselling code)", "2024-25 closing", "2025-26 closing"],
         rows: [
           ["Computer Science & Engg (118)", "1,48,127", "1,68,929"],
           ["Mechanical · Production (113)", "1,58,221", "1,68,298"],
@@ -644,7 +644,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "04",
         title: "Shortlist branches before choice-filling opens",
-        body: "Don't wait for the window to decide. Make a ranked branch list now, and add BIPE (code 4455) against every branch you'd accept — many applicants list 4455 for all five branches so a lower rank still lands a seat. See our 7-round counselling guide at /jeecup-counselling for the ordering strategy.",
+        body: "Don't wait for the window to decide. Make a ranked branch list now, and add BIPE (code 4455) against every branch you'd accept — many applicants list 4455 for all five branches so a lower rank still lands a seat. See our 5-round counselling guide at /jeecup-counselling for the ordering strategy.",
       },
       {
         n: "05",
@@ -667,7 +667,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "What rank do I need for Computer Science at BIPE?",
-        a: "CSE (BTEUP 118) is BIPE's most competitive branch and still closed at rank 1,68,929 in 2025-26 (up from 1,48,127 the year before). A Group A rank under ~1,40,000 gives a comfortable shot at CSE; closer to the closing rank, secure it in an early counselling round rather than waiting.",
+        a: "CSE (JEECUP counselling code 118; BTEUP curriculum code 355) is BIPE's most competitive branch and still closed at rank 1,68,929 in 2025-26 (up from 1,48,127 the year before). A Group A rank under ~1,40,000 gives a comfortable shot at CSE; closer to the closing rank, secure it in an early counselling round rather than waiting.",
       },
       {
         q: "My rank is above 1,50,000 — do I still have options?",
@@ -911,7 +911,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       { label: "Official portal", value: "jeecup.admissions.nic.in", sub: "All official notices" },
       { label: "Helpline hours", value: "Mon-Sat · 10am-5pm", sub: "Closed Sundays + holidays" },
       { label: "Response time", value: "Same day for portal issues", sub: "Slower for fee/marks disputes" },
-      { label: "BIPE counsellor", value: "+91-9415202879 · call · +91-9415202879 · WhatsApp", sub: "EN / हिंदी" },
+      { label: "BIPE counsellor", value: "+91-9415202879 · call · +91-7310077788 · WhatsApp", sub: "EN / हिंदी" },
     ],
     contacts: {
       eyebrow: "Official JEECUP helpline channels",

@@ -4,7 +4,7 @@ import NextImage from "next/image";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { DATA } from "@/lib/data";
-import { getPageSection, getRecruiters, getTestimonials } from "@/lib/content";
+import { getPageSection, getRecruiters, getTestimonials, OFFICE_HOURS_COMPACT } from "@/lib/content";
 import { PageIntro } from "@/components/shared/PageIntro";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -1186,7 +1186,7 @@ export default async function Page() {
                   textTransform: "uppercase",
                   color: "color-mix(in oklab, var(--paper) 75%, transparent)",
                 }}>
-                  Placement cell · Open · Mon–Sat 9–6
+                  Placement cell · Open · {OFFICE_HOURS_COMPACT}
                 </span>
               </div>
               <div style={{
@@ -1352,7 +1352,7 @@ export default async function Page() {
                       {DATA.contact.phone}
                     </a>
                   </span>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em" }}>MON–SAT · 9–6</span>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em" }}>{OFFICE_HOURS_COMPACT}</span>
                 </div>
               </div>
             </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "./Icons";
 import { BackToTop } from "./BackToTop";
+import { OFFICE_HOURS_COMPACT } from "@/lib/content";
 
 /**
  * Subset of the live ContactInfo singleton the Footer actually renders.
@@ -312,7 +313,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
                 textTransform: "uppercase",
                 color: "color-mix(in oklab, var(--paper) 55%, transparent)",
               }}>
-                Email · Mon–Sat 9–6
+                Email · {OFFICE_HOURS_COMPACT}
               </div>
               <div style={{
                 fontFamily: "var(--font-mono)",

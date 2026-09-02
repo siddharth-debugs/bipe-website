@@ -71,9 +71,9 @@ const LABS: { eyebrow: string; title: string; body: string; img: string; tags: s
   {
     eyebrow: "DAIRY · RARE IN UP",
     title: "Dairy Processing Lab",
-    body: "Pasteurisation pilot plant, dairy chemistry and microbiology benches, cold-chain storage. Mirrors what an Amul or Parag floor processes look like.",
+    body: "Dairy chemistry and microbiology benches — plate counts, fat percentage, antibiotic-residue testing. Plant-floor time comes from industrial visits to working plants like Banas Dairy, Varanasi.",
     img: BIPE_IMG.dairy,
-    tags: ["Pasteurisation", "Microbiology", "Cold chain"],
+    tags: ["Milk quality", "Microbiology", "Industrial visits"],
   },
   {
     eyebrow: "COMPUTER CENTRE",
@@ -157,7 +157,7 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Our 6-acre Phoolpur campus houses five BTEUP branches, 40 faculty and 550+ students. Library, 120-computer lab, dairy pilot plant, mechanical workshops, hostels and a sports ground — all within one boundary.
+                Our 6-acre Phoolpur campus houses five BTEUP branches, 40 faculty and 550+ students. Library, 120-computer lab, dairy chemistry and hydraulics labs, mechanical workshops, boys&rsquo; hostel and a sports ground — all within one boundary.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a campus visit <ArrowIcon size={16} /></Link>

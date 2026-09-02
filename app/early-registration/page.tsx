@@ -64,7 +64,7 @@ export default function Page() {
             Round-5 choices, and confirm branch availability. Subject to seats &amp; eligibility.
           </p>
           <p lang="hi" style={{ marginTop: 14, maxWidth: "60ch", color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
-            Pre-Counselling Registration 27 जुलाई को बंद हो गई — पर JEECUP Round 4 (Phase 2) counselling चल रही है, सभी राज्यों के लिए, और classes 1 August से हैं। नीचे details भरें — BIPE admissions आपको seat (code 4455) के बारे में call करेंगे और Round-5 choices में guide करेंगे।
+            Pre-Counselling Registration 27 जुलाई को बंद हो गई — पर JEECUP Round 5 — आख़िरी counselling round — चल रहा है, सभी राज्यों के लिए, और classes शुरू हो चुकी हैं। नीचे details भरें — BIPE admissions आपको seat (code 4455) के बारे में call करेंगे और Round-5 choices में guide करेंगे।
           </p>
           <p className="muted" style={{ marginTop: 12, fontSize: 12.5, color: "var(--ink-3)", maxWidth: "60ch" }}>
             <strong>Note:</strong> the ₹1,200 PET scholarship offer closed on 22 June 2026 and is no longer available — Pre-Counselling Registration itself stays free.

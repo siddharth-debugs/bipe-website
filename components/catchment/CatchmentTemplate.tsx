@@ -174,7 +174,7 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
               { label: "Distance", value: `${data.distanceKm} km`, sub: "by road from Phoolpur" },
               { label: "By road", value: data.roadTime, sub: data.highways.split(",")[0] },
               { label: "By train", value: data.railTime, sub: data.nearestStation },
-              { label: "From Cantt", value: "~14 km · 35-45 min", sub: "BIPE shuttle on Sat" },
+              { label: "From Cantt", value: "~14 km · 35-45 min", sub: "Auto or app-cab" },
             ].map((s) => (
               <article
                 key={s.label}

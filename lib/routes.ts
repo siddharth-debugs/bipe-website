@@ -156,7 +156,7 @@ export const ROUTES: Record<RouteKey, {
     // admission [year]". Lead with the literal phrase + keep the
     // JEECUP date anchor in the tail for the engaged-funnel reader.
     title: "Polytechnic Admission 2026-27 · JEECUP 4455 | BIPE Varanasi",
-    description: "Polytechnic admission 2026-27 at BIPE Varanasi — apply via JEECUP (UPJEE Polytechnic) code 4455. Exam 02-09 June, 7-round counselling, classes begin 1 August 2026.",
+    description: "Polytechnic admission 2026-27 at BIPE Varanasi — apply via JEECUP (UPJEE Polytechnic) code 4455. Exam 02-09 June, 5-round counselling, classes begin 1 August 2026.",
     keywords: [
       "JEECUP 2026 admission",
       "polytechnic admission Varanasi",
@@ -225,7 +225,7 @@ export const ROUTES: Record<RouteKey, {
     // (120-PC, mechanical workshop, library, hostel) are unchanged
     // and still outperform a generic "Six acres" framing.
     title: "BIPE Campus · 6-Acre Phoolpur · 120-PC Lab, Workshops, Hostel",
-    description: "Six-acre BIPE Phoolpur campus: 120-PC programming lab, mechanical workshop, chemistry & hydraulics labs, electrical lab, 12,000+ book library, hostels, sports ground.",
+    description: "Six-acre BIPE Phoolpur campus: 120-PC programming lab, mechanical workshop, chemistry & hydraulics labs, electrical lab, 8,428-volume library, boys' hostel, sports ground.",
   },
   fees: {
     path: "/fees",
@@ -241,9 +241,10 @@ export const ROUTES: Record<RouteKey, {
     // CTR rewrite 29 May 2026 · lead with "Polytechnic Scholarship"
     // (multi-cluster query: "polytechnic scholarship", "UP polytechnic
     // scholarship" both have decent volume that this page targets).
-    // The specific savings anchor "up to ₹19,000/year" stays — it's
-    // a strong CTR lifter on scholarship-intent searches.
-    title: "Polytechnic Scholarship UP · Post-Matric up to ₹19,000/yr | BIPE",
+    // The old "up to ₹19,000/year" anchor was kept purely as a CTR
+    // lifter and was never sourced — it also undercut this page's own
+    // content, which reimburses the full ₹30,150 tuition for SC/ST.
+    title: "Polytechnic Scholarship UP · Post-Matric Tuition Reimbursement | BIPE",
     description: "Polytechnic scholarship at BIPE Varanasi — UP Post-Matric covers SC/ST/OBC/Minority/EWS tuition (family income <₹2L). Net cost can drop to ₹4-10k/year. Portal help included.",
   },
   documents: {
@@ -261,7 +262,7 @@ export const ROUTES: Record<RouteKey, {
     // Exam Dates" to lift CTR on the procedural-intent searcher
     // who needs to verify the page covers their stage of the funnel.
     title: "JEECUP 2026 Complete Guide · 6-Step Counselling | BIPE 4455",
-    description: "Complete JEECUP 2026 guide — application, entrance window 02-09 June, rank, 7-round counselling, seat allotment, reporting at BIPE 4455. Step-by-step.",
+    description: "Complete JEECUP 2026 guide — application, entrance window 02-09 June, rank, 5-round counselling, seat allotment, reporting at BIPE 4455. Step-by-step.",
     keywords: [
       "JEECUP 2026",
       "JEECUP application 2026",
@@ -728,8 +729,8 @@ export const ROUTES: Record<RouteKey, {
     // that lifts CTR on procedural queries, lifts the snippet over
     // the generic ".gov.in" results that rank around it.
     title: "JEECUP Counselling 2026 · 7-Round Guide + Choice Filling | BIPE 4455",
-    description: "JEECUP counselling 2026 step-by-step — 7 rounds (expanded from 5), choice filling, documents, seat allotment, reporting, common mistakes. How BIPE (4455) fits in.",
-    quickLink: { label: "JEECUP counselling 2026", hint: "7-round guide", priority: 3 },
+    description: "JEECUP counselling 2026 step-by-step — 5 rounds in two phases, choice filling, documents, seat allotment, reporting, common mistakes. How BIPE (4455) fits in.",
+    quickLink: { label: "JEECUP counselling 2026", hint: "5-round guide", priority: 3 },
     keywords: [
       "JEECUP counselling 2026",
       "JEECUP counselling rounds",

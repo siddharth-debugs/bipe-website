@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { OFFICE_HOURS_COMPACT } from "@/lib/content";
 
 export const FinalCTA = () => (
   <section className="section" style={{ paddingTop: 48 }}>
@@ -66,7 +67,7 @@ export const FinalCTA = () => (
                 { num: "₹0",     l: "to apply" },
                 { num: "1 : 20", l: "mentor ratio" },
                 // 28 May 2026: "5 days TO A DECISION" was misleading — BIPE
-                // does not own the decision pace, JEECUP does (rank → 7-round
+                // does not own the decision pace, JEECUP does (rank → 5-round
                 // counselling → seat allotment). Anchored the 4th tile to the
                 // actual BIPE date instead: classes start 1 August 2026.
                 { num: "1 Aug", l: "classes start" },
@@ -139,7 +140,7 @@ export const FinalCTA = () => (
 
             <div style={{ marginTop: 18, paddingTop: 18, borderTop: "1px solid color-mix(in oklab, var(--paper) 10%, transparent)", fontSize: 12, color: "color-mix(in oklab, var(--paper) 55%, transparent)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span>Or call <a href={`tel:${DATA.contact.phone}`} style={{ color: "var(--paper)", textDecoration: "none", fontWeight: 600 }}>{DATA.contact.phone}</a></span>
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em" }}>MON–SAT · 9–6</span>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em" }}>{OFFICE_HOURS_COMPACT}</span>
             </div>
           </div>
         </div>

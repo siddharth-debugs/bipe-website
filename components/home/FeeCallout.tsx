@@ -24,7 +24,7 @@ export const FeeCallout = () => (
           </div>
           {([
             ["Tuition fee", "₹30,150"],
-            ["Caution money (refundable)", "₹3,000"],
+            ["Caution money (refundable)", "TBD"],
             ["Exam & registration (BTEUP)", "Pass-through"],
             ["Hostel + Mess", "Optional · separate"],
           ] as [string, string][]).map(([k, v]) => (

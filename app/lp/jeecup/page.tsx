@@ -34,7 +34,7 @@ const TRUST: [string, string][] = [
 
 const PROOF: [string, string][] = [
   ["₹30,150", "AFRC-approved tuition / year"],
-  ["Boys' hostel", "on-campus · shuttle from Cantt"],
+  ["Boys' hostel", "on-campus · 35 min from Cantt"],
   ["Bihar welcome", "open category · no UP domicile"],
 ];
 

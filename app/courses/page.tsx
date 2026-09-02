@@ -62,7 +62,7 @@ const CAREER_TILES: { tag: string; title: string; body: string; chips: string[] 
   },
 ];
 
-import { getBranchesMapped, getRecruiters } from "@/lib/content";
+import { getBranchesMapped, getRecruiters, OFFICE_HOURS_COMPACT } from "@/lib/content";
 
 export default async function Page() {
   const [branches, liveRecruiters] = await Promise.all([
@@ -1301,7 +1301,7 @@ export default async function Page() {
                     </a>
                   </span>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.1em" }}>
-                    MON–SAT · 9–6
+                    {OFFICE_HOURS_COMPACT}
                   </span>
                 </div>
               </div>

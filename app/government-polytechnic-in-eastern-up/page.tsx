@@ -108,7 +108,7 @@ const FAQS = [
   },
   {
     q: "If my JEECUP rank is borderline for a government seat, should I take BIPE or wait?",
-    a: "JEECUP counselling has 7 rounds for the 2026 cycle (expanded from 5 in earlier years). If your rank is genuinely close to a government polytechnic cutoff in a branch you want, sit through the rounds — government seats sometimes open up after upgradation across the additional rounds. But don't lose your BIPE preference: list it in your choices simultaneously. BIPE participates in JEECUP under institute code 4455 and is a strong fallback if the government seat doesn't materialise. The risk of waiting too long: by the final round, both options may be gone.",
+    a: "JEECUP counselling ran 5 rounds across two phases for the 2026 cycle. If your rank is genuinely close to a government polytechnic cutoff in a branch you want, sit through the rounds — government seats sometimes open up after upgradation across the additional rounds. But don't lose your BIPE preference: list it in your choices simultaneously. BIPE participates in JEECUP under institute code 4455 and is a strong fallback if the government seat doesn't materialise. The risk of waiting too long: by the final round, both options may be gone.",
   },
   {
     q: "Are the placement records published by these government polytechnics comparable to BIPE's?",

@@ -20,7 +20,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "02",
     title: "Pay application fee",
-    body: "Roughly ₹300–500 depending on category — paid online during registration. SC/ST candidates pay the lower slab.",
+    body: "₹300 for General / OBC / Minority and ₹200 for SC / ST / PH candidates — paid online during registration.",
   },
   {
     n: "03",
@@ -539,7 +539,7 @@ export default function Page() {
               ["JEECUP Admit Card 2026", "Download · verify · troubleshoot", "/jeecup-admit-card-2026"],
               ["JEECUP Result 2026", "Rank card · what to do next", "/jeecup-result-2026"],
               ["JEECUP Rank Predictor 2026", "What your rank opens · real cutoffs", "/jeecup-rank-predictor-2026"],
-              ["JEECUP Seat Allotment 2026", "7-round cycle · freeze / float", "/jeecup-seat-allotment-2026"],
+              ["JEECUP Seat Allotment 2026", "5-round cycle · freeze / float", "/jeecup-seat-allotment-2026"],
               ["Document Verification Checklist", "Originals · copies · timeline", "/jeecup-document-verification-checklist"],
               ["JEECUP Helpline Contact", "Official channels · BIPE support", "/jeecup-helpline-contact"],
               // Phase 5 expansion · reference + preparation pages
@@ -638,7 +638,7 @@ export default function Page() {
                   </span>
                 </h2>
                 <p style={{ marginTop: 14, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "44ch" }}>
-                  Forms confusing? Choice-filling intimidating? Read the <Link href="/jeecup-counselling" style={{ color: "var(--accent)", textDecoration: "underline" }}>JEECUP counselling 2026 guide</Link> for the 7 rounds, choice-filling order, documents and common mistakes — or call us. There is no fee for the conversation; we will walk you through your options branch-by-branch.
+                  Forms confusing? Choice-filling intimidating? Read the <Link href="/jeecup-counselling" style={{ color: "var(--accent)", textDecoration: "underline" }}>JEECUP counselling 2026 guide</Link> for the 5 rounds, choice-filling order, documents and common mistakes — or call us. There is no fee for the conversation; we will walk you through your options branch-by-branch.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

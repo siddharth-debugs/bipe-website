@@ -58,7 +58,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What income proof is needed?",
-    a: "An income certificate from the tehsildar / SDM (₹2.5 lakh family income for OBC, ₹2 lakh for SC/ST per current UP norms) plus a category certificate. Apply for both at the tehsil the day after JEECUP results — they take 7 to 10 working days.",
+    a: "An income certificate from the tehsildar / SDM (₹2 lakh family income for OBC, ₹2.5 lakh for SC/ST per current UP norms) plus a category certificate. Apply for both at the tehsil the day after JEECUP results — they take 7 to 10 working days.",
   },
   {
     q: "Does the waiver cover hostel?",
@@ -165,7 +165,7 @@ const GRANT_SCHEMES: GrantInput[] = [
     id: "obc-post-matric",
     name: "OBC Post-Matric Scholarship (Uttar Pradesh)",
     description:
-      "Partial tuition reimbursement for OBC students at BIPE, subject to the UP State Government's family income ceiling (currently ₹2.5 lakh).",
+      "Partial tuition reimbursement for OBC students at BIPE, subject to the UP State Government's family income ceiling (currently ₹2 lakh).",
     funder: FUNDER_UP_GOVT,
     url: "https://scholarship.up.gov.in",
   },

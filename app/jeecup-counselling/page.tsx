@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
  *
  * The existing /jeecup page is structured around BIPE's 6-step
  * guidance funnel and reads as a hub. This page is laser-focused on
- * the counselling stage specifically — the 7 rounds (updated from 5
+ * the counselling stage specifically — the 5 rounds in two phases (updated
  * for the 2026 cycle), choice filling, documents, seat allotment,
  * reporting — so it can rank cleanly for the head term without
  * diluting /jeecup.
@@ -61,7 +61,7 @@ const ROUNDS: { n: string; title: string; window: string; body: string }[] = [
     title: "Fourth main-round allotment",
     window: "Approximately late July",
     body:
-      "JEECUP introduced two additional rounds for the 2026 cycle (5 → 7), so the main-round window now extends deeper into July. Use this round if your rank didn't secure a seat in Rounds 1-4 or if you're still trying for an upgrade in your preferred branch.",
+      "The 2026 cycle ran five main rounds across two phases — Rounds 1-3 for UP-domicile candidates, then Rounds 4-5 open to every state. Use this round if your rank didn't secure a seat in Rounds 1-4 or if you're still trying for an upgrade in your preferred branch.",
   },
   {
     n: "Round 6",
@@ -203,11 +203,11 @@ export default function Page() {
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              All seven rounds explained.
+              All five rounds explained.
             </span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-            JEECUP counselling is the bridge between your rank and your seat. Seven rounds for the
+            JEECUP counselling is the bridge between your rank and your seat. Five rounds for the
             2026 cycle (up from 5 in previous years), one institute code (BIPE Varanasi is{" "}
             <strong>4455</strong>) — and a choice-filling order that decides whether you actually
             land at BIPE or somewhere unintended. This page covers all of it, in order.
@@ -254,9 +254,9 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "64ch", lineHeight: 1.7 }}>
-            JEECUP counselling runs in two phases. <strong>Phase 1 (Rounds 1–3, UP-domicile only) is complete</strong> —
-            the schedule below is on record. <strong>Round 4 (Phase 2) is now open to all states</strong>, including candidates
-            who missed the earlier rounds, and classes are already under way. Counselling is fully online at{" "}
+            JEECUP counselling runs in two phases. <strong>Phase 1 (Rounds 1–3) was UP-domicile only</strong> —
+            the schedule below is on record. <strong>Phase 2 (Rounds 4–5) opened to all states</strong>, including candidates
+            who missed the earlier rounds, with Round 5 the final round of the cycle; classes are already under way. Counselling is fully online at{" "}
             <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer">
               jeecup.admissions.nic.in
             </a>
@@ -298,7 +298,7 @@ export default function Page() {
             </table>
           </div>
           <p style={{ marginTop: 14, color: "var(--ink-3)", fontSize: 13, lineHeight: 1.6, maxWidth: "70ch" }}>
-            Counselling fee is ₹3,250 (₹3,000 seat-acceptance, adjusted into tuition, + ₹250 counselling), paid online. Document verification is at any district Help Center (Freeze candidates). The full cycle runs in 5 phases; out-of-UP candidates join from Phase 4. <strong>Classes for Session 2026-27 begin 1 August 2026.</strong> Source: JEECUP official notification.
+            Counselling fee is ₹3,250 (₹3,000 seat-acceptance, adjusted into tuition, + ₹250 counselling), paid online. Document verification is at any district Help Center (Freeze candidates). The full cycle runs in two phases across five rounds; out-of-UP candidates join from Round 4. <strong>Classes for Session 2026-27 begin 1 August 2026.</strong> Source: JEECUP official notification.
           </p>
           <div className="row" style={{ marginTop: 22, gap: 12, flexWrap: "wrap" }}>
             <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -316,7 +316,7 @@ export default function Page() {
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container">
-          <div className="eyebrow">The 7 rounds · 2026 cycle</div>
+          <div className="eyebrow">The 5 rounds · 2026 cycle</div>
           <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "26ch" }}>
             What happens in{" "}
             <span
@@ -327,7 +327,7 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "62ch" }}>
-            JEECUP runs four central counselling rounds + one institute-level spot round. Each
+            JEECUP ran five counselling rounds across two phases. Each
             round opens a fresh choice-filling window, allots seats, and gives you 3–5 days to
             confirm. Miss the window, lose the seat.
           </p>

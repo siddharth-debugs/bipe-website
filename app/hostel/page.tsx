@@ -231,7 +231,7 @@ export default function Page() {
                 </span>
               </h2>
               <p style={{ color: "var(--ink-2)", marginTop: 18, fontSize: 15.5, lineHeight: 1.7 }}>
-                Hostel and mess are paid semester-wise. Bring your own bedding for the first week — the room is furnished but linen rotates with you.
+                Accommodation is paid yearly and mess monthly, in advance. Bring your own bedding for the first week — the room is furnished but linen rotates with you.
               </p>
               {/* 28 May 2026 — the "₹5,000 caution deposit (refundable)"
                   card was removed at the user's direction. BIPE does

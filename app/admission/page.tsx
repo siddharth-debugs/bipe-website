@@ -51,9 +51,9 @@ const DATES: CalEntry[] = [
   { month: "JAN", year: "2026",                title: "JEECUP application opens",  sub: "Online · jeecup.admissions.nic.in" },
   { month: "MAY", day: "20", year: "2026",     title: "Application closes",        sub: "Extended deadline · no further extension" },
   { month: "JUN", day: "02-09", year: "2026", title: "Entrance exam",             sub: "CBT · multiple shifts across UP" },
-  { month: "JUN", year: "2026",                title: "Results + counselling",     sub: "Results mid-June · 7-round counselling opens" },
-  { month: "JUL", day: "15", year: "2026",     title: "Session begins",            sub: "Orientation week at BIPE" },
-  { month: "AUG", year: "2026",                title: "Final counselling rounds",  sub: "Late admits via Rounds 5-7 · spot round" },
+  { month: "JUN", year: "2026",                title: "Results + counselling",     sub: "Results mid-June · 5-round counselling opens" },
+  { month: "AUG", day: "01", year: "2026",     title: "Session begins",            sub: "Orientation week at BIPE" },
+  { month: "AUG", year: "2026",                title: "Final counselling rounds",  sub: "Late admits via Round 5 · the final round" },
 ];
 
 const REASONS: { roman: string; title: string; body: string; metric: string; metricLabel: string }[] = [

@@ -46,7 +46,7 @@ const SECTIONS: Section[] = [
     title: "Sponsoring trust / society",
     body: (
       <>
-        <p><strong>Purvanchal Educational Trust</strong> — registered charitable trust based in Varanasi, sponsoring BIPE since 2010.</p>
+        <p><strong>Purwanchal Educational Trust</strong> — registered charitable trust based in Varanasi, sponsoring BIPE since 2010.</p>
         <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The full trustees roster, trust registration number and constitution-deed reference will be published in the next disclosure cycle once consolidated by the trust office. Available on request — <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
       </>
     ),
@@ -126,7 +126,7 @@ const SECTIONS: Section[] = [
     title: "Fee structure",
     body: (
       <>
-        <p>Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical for all 5 BTEUP branches. Refunds follow AICTE norms: 100% (less ₹1,000 processing) if you withdraw 15+ days before classes start, and a tapered scale thereafter — full schedule on the <Link href="/fees">Fees page</Link>.</p>
+        <p>Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical for all 5 BTEUP branches. Refunds are made on a three-tier scale: 100% within one week of application, 50% after one week but before classes begin, and 10% within one week of classes commencing — full schedule on the <Link href="/fees">Fees page</Link>.</p>
         <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The AFRC fee-notification PDF for 2026-27 will be uploaded to the public <Link href="/approvals">Approvals page</Link> once the printed copy is released from the trust office. The fee structure summarised above is the AFRC-approved tuition currently in force.</p>
       </>
     ),
@@ -172,7 +172,7 @@ const SECTIONS: Section[] = [
     title: "Scholarships and financial assistance",
     body: (
       <>
-        <p>UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority categories. BIPE also offers merit-based waivers (25–50% for high JEECUP ranks; 10–25% for Class 10 toppers). See the <Link href="/scholarships">Scholarships page</Link>.</p>
+        <p>UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority categories. BIPE also offers two Trust merit awards: a 50% tuition waiver for candidates within the top 2,000 JEECUP All-India rank, and a 10% waiver for Class 10 toppers with 90%+ aggregate. See the <Link href="/scholarships">Scholarships page</Link>.</p>
       </>
     ),
   },

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
+import { OFFICE_HOURS_PROSE } from "@/lib/content";
 
 // Dynamic import keeps zod + react-hook-form out of the global
 // shared chunk. See companion comment on /contact and /visit pages.
@@ -37,7 +38,7 @@ const AFTER: { n: string; title: string; body: string }[] = [
 const DISCUSS: { n: string; title: string; body: string }[] = [
   { n: "01", title: "Best branch fit by rank", body: "Given your JEECUP rank (or expected) and 10th marks, which of the five branches give the strongest career return?" },
   { n: "02", title: "Fee + scholarship eligibility", body: "Net annual figure after every reimbursement and waiver you qualify for — in writing, before any deposit." },
-  { n: "03", title: "Hostel availability", body: "Boys' hostel block, semester-wise rates, current vacancy, mess options. Book early or be on the waitlist." },
+  { n: "03", title: "Hostel availability", body: "Boys' hostel block, yearly accommodation and monthly mess rates, current vacancy. Book early or be on the waitlist." },
   { n: "04", title: "Document gaps you can fix", body: "Missing TC? Migration certificate stuck at the board? We tell you what is fixable in the verification window — and how." },
 ];
 
@@ -273,7 +274,7 @@ export default function Page() {
                 Want to call?
               </div>
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.65 }}>
-                Mon–Sat, 9 AM to 6 PM. The admissions desk fields most enquiries inside three minutes.
+                {OFFICE_HOURS_PROSE}. The admissions desk fields most enquiries inside three minutes.
               </p>
               <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 4, fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--brand)", fontWeight: 600 }}>
                 <span><PhoneIcon /> {DATA.contact.phone}</span>

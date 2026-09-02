@@ -290,7 +290,7 @@ export default function Page() {
               </div>
               <div style={{ paddingLeft: 32, borderLeft: "1px solid rgba(255,255,255,0.2)" }}>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7 }}>Visit hours</div>
-                <div style={{ marginTop: 8, fontSize: 16, lineHeight: 1.7 }}>Monday–Saturday<br />09:30 — 17:30 IST</div>
+                <div style={{ marginTop: 8, fontSize: 16, lineHeight: 1.7 }}>Monday–Saturday<br />09:00 — 17:00 IST</div>
                 <div style={{ marginTop: 22, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.7 }}>Front desk</div>
                 <div style={{ marginTop: 8, fontSize: 16 }}>{DATA.contact.phone}</div>
               </div>
@@ -369,7 +369,7 @@ export default function Page() {
               Come see the campus. <span className="serif">Bring your parents.</span>
             </h2>
             <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "52ch", margin: "18px auto 0", lineHeight: 1.7 }}>
-              The Phoolpur campus is open Monday to Saturday. WhatsApp the team to confirm your day — we&apos;ll arrange the shuttle from Varanasi Cantt if you need one.
+              The Phoolpur campus is open Monday to Saturday. WhatsApp the team to confirm your day — we&apos;ll send the campus pin to your driver and help you arrange a cab from Varanasi Cantt if you need one.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/visit" className="btn btn-primary">Book a visit <ArrowIcon /></Link>

@@ -31,7 +31,7 @@ type Bring = { who: string; title: string; body: string };
 const STEPS: Step[] = [
   { num: "01", title: "Welcome at the gate", body: "Security signs you in, prints a visitor pass, and walks your family to the admissions cell. Free water, washrooms, and a quiet waiting room — no rush." },
   { num: "02", title: "Principal's overview", body: "Ten to fifteen minutes with the Principal or admissions head — pedagogy, AFRC fees, the placement record, and what makes a BIPE diploma different from the seven other polytechnics in the district." },
-  { num: "03", title: "Lab & workshop tour", body: "Walk the spaces that match your branch interest — the 120-computer lab, the dairy pilot plant, the welding-and-fitting workshop, the electrical machines bench. Touch the equipment. Ask the lab assistant questions." },
+  { num: "03", title: "Lab & workshop tour", body: "Walk the spaces that match your branch interest — the 120-computer lab, the dairy chemistry and hydraulics labs, the welding-and-fitting workshop, the electrical machines bench. Touch the equipment. Ask the lab assistant questions." },
   { num: "04", title: "Hostel + mess walkthrough", body: "Visit the boys' hostel block — current room layout, mess hall and study commons. Meet the warden if available. Look at a real room. Eat lunch with current students if you're around at noon." },
   { num: "05", title: "Q&A — Hindi or English", body: "Sit down with the admissions team. Ask anything — fees, scholarships, JEECUP counselling strategy, hostel curfew, mess menu. We answer in your language, with no salesman script." },
 ];
@@ -597,7 +597,7 @@ export default function Page() {
             <span style={{ color: "var(--accent)" }}>Engineering</span> is built by hand.
           </p>
           <p style={{ marginTop: 28, color: "color-mix(in oklab, var(--paper) 80%, transparent)", fontSize: 17, lineHeight: 1.7, maxWidth: "60ch", margin: "28px auto 0" }}>
-            We&apos;ve watched hundreds of families decide on the diploma here on a 90-minute walk. The campus tells you things a brochure can&apos;t — the smell of the welding shop, the rhythm of the dairy plant, the look on a student&apos;s face when they explain what they&apos;re building. Come and see for yourself.
+            We&apos;ve watched hundreds of families decide on the diploma here on a 90-minute walk. The campus tells you things a brochure can&apos;t — the smell of the welding shop, the rhythm of the machine shop, the look on a student&apos;s face when they explain what they&apos;re building. Come and see for yourself.
           </p>
           <div style={{ marginTop: 28, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
             — Admissions cell, BIPE

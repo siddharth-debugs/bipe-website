@@ -75,7 +75,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Travel — how do I get to BIPE from Bihar?",
-    a: "Train to Varanasi Junction (Cantt) or Banaras (Manduadih). BIPE runs a campus shuttle from the Cantt station and Phoolpur is about 35 minutes by road. Patna, Ara and Buxar all have multiple daily express trains.",
+    a: "Train to Varanasi Junction (Cantt) or Banaras (Manduadih). From there Phoolpur is about 35 minutes by auto or app-cab. Patna, Ara and Buxar all have multiple daily express trains.",
   },
 ];
 

@@ -25,7 +25,7 @@ export const CampusLife = ({ items }: { items?: Facility[] } = {}) => (
           facilities hub) — taps become navigation instead of nothing. */}
       <div className="reveal bipe-collage" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "260px 200px", gap: 14 }}>
         <Img href="/campus" src={BIPE_IMG.workshop} alt="BIPE mechanical workshop — machining bay with lathes and milling machines" label="WORKSHOP · MACHINING BAY" style={{ gridRow: "span 2", height: "100%" }} />
-        <Img href="/campus" src={BIPE_IMG.dairy} alt="BIPE Dairy Engineering pilot plant — pasteuriser and processing line" label="DAIRY PILOT PLANT" style={{ height: "100%" }} />
+        <Img href="/campus" src={BIPE_IMG.dairy} alt="BIPE Dairy Engineering — one of only four BTEUP dairy diploma programmes in Uttar Pradesh" label="DAIRY ENGINEERING" style={{ height: "100%" }} />
         <Img href="/campus" src={BIPE_IMG.computerLab} alt="BIPE 120-computer programming lab for the Computer Science diploma" label="120-COMPUTER LAB" style={{ height: "100%" }} />
         <Img href="/campus" src={BIPE_IMG.hostel} alt="BIPE student hostel Block A on the Phoolpur campus" label="HOSTEL · BLOCK A" style={{ height: "100%" }} />
         <Img href="/campus" src={BIPE_IMG.library} alt="BIPE library and reading room" label="LIBRARY" style={{ height: "100%" }} />

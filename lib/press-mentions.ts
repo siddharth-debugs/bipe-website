@@ -102,7 +102,7 @@ export const PRESS_MENTIONS: PressMention[] = [
     headlineHi:
       "‘टेक्नोफेस्ट 2020’ में भावी इंजीनियरों एवं तकनीशियनों ने दिखाई अपनी प्रतिभा",
     summary:
-      "Janmukh's report on Technofest 2020 covering NRG, civil, mechanical, woodcraft and mixed-discipline student projects, with chief guest S.K. Sachdev (UPCB Yuko Bank) and Banaras Group Institutions chair Dr Chandrika Roy.",
+      "Janmukh's report on Technofest 2020 covering NRG, civil, mechanical, woodcraft and mixed-discipline student projects, with chief guest S.K. Sachdev (UPCB Yuko Bank) and Banaras Group Institutions chair Dr Chandrika Rai.",
     src: "/press/janmukh-technofest-2020-03-07.jpg",
   },
   {

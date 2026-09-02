@@ -131,7 +131,7 @@ export const CATCHMENTS: Catchment[] = [
     faqs: [
       {
         q: "How far is BIPE from Mirzapur, and is daily commute realistic?",
-        a: "BIPE's Phoolpur campus is 75 km from Mirzapur — about an hour and 45 minutes by road, or one hour by train + shuttle. Daily commute is technically possible but not sustainable across a 3-year diploma. Almost every Mirzapur student takes a hostel seat. Verify hostel availability during application — out-of-Varanasi candidates are accommodated first.",
+        a: "BIPE's Phoolpur campus is 75 km from Mirzapur — about an hour and 45 minutes by road, or one hour by train + auto. Daily commute is technically possible but not sustainable across a 3-year diploma. Almost every Mirzapur student takes a hostel seat. Verify hostel availability during application — out-of-Varanasi candidates are accommodated first.",
       },
       {
         q: "Are BIPE's diploma certificates the same as government polytechnic in Mirzapur?",
@@ -267,7 +267,7 @@ export const CATCHMENTS: Catchment[] = [
     faqs: [
       {
         q: "How long is the journey from Ghazipur to BIPE?",
-        a: "Train + shuttle: ~2 hours 15 minutes total (90 min train + 35 min Cantt-to-Phoolpur). Direct road: ~2 hours via NH-29 and NH-19. Daily commute is not viable across a 3-year diploma — hostel is essential.",
+        a: "Train + auto: ~2 hours 15 minutes total (90 min train + 35 min Cantt-to-Phoolpur). Direct road: ~2 hours via NH-29 and NH-19. Daily commute is not viable across a 3-year diploma — hostel is essential.",
       },
       {
         q: "Does BIPE offer Dairy Engineering recruitment opportunities specifically for Ghazipur students?",
@@ -346,8 +346,8 @@ export const CATCHMENTS: Catchment[] = [
         a: "Mechanical (Production) is the most aligned branch — covers production-floor systems, machine maintenance, basic CAD/CAM. For textile-machinery-specific work, the broader skill set transfers; many BIPE Mechanical graduates work in factory settings across the textile, automotive and consumer-goods belts of UP and beyond.",
       },
       {
-        q: "Is there a BIPE shuttle from Azamgarh during admission season?",
-        a: "Our free admission-season shuttle runs from Varanasi Cantt station, not from Azamgarh directly. From Azamgarh, take a train or bus to Varanasi Cantt (2.5-3 hours), and we'll pick you up there. WhatsApp +91-7310077788 to confirm the shuttle schedule before your visit.",
+        q: "How do I reach the campus from Azamgarh on a visit day?",
+        a: "Take a train or bus to Varanasi Cantt (2.5-3 hours), then an auto or app-cab for the final 14 km to Phoolpur — roughly 35 minutes and ₹300-500. WhatsApp +91-7310077788 before you travel and the team will share the campus pin and help you arrange the last leg.",
       },
     ],
     alumniNote:
@@ -415,7 +415,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "Can I visit BIPE from Mau without an overnight stay?",
-        a: "A Saturday day-trip from Mau is feasible — train at 7-8 AM, arrive Varanasi Cantt by 9-10 AM, BIPE shuttle to Phoolpur, 2-3 hours on campus, return train by 4-5 PM. WhatsApp +91-7310077788 to coordinate.",
+        a: "A Saturday day-trip from Mau is feasible — train at 7-8 AM, arrive Varanasi Cantt by 9-10 AM, auto or app-cab to Phoolpur, 2-3 hours on campus, return train by 4-5 PM. WhatsApp +91-7310077788 to coordinate.",
       },
     ],
     alumniNote:
@@ -425,7 +425,7 @@ export const CATCHMENTS: Catchment[] = [
       description:
         "Mau's local government polytechnic capacity is limited compared to larger neighbouring districts. Many Mau-based JEECUP applicants list Government Polytechnic Azamgarh or Ghazipur as a fallback if the local seat doesn't materialise. Verify the current Mau government polytechnic listing on the BTE UP portal each admission cycle.",
       whenGovernment:
-        "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (up to ₹19,000/year for income <₹2 lakh), which can effectively reduce net cost to near-zero.",
+        "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (for family income <₹2 lakh), which can effectively reduce net cost to near-zero.",
       whenBipe:
         "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with 5 branches available; (b) you want Dairy Engineering or the full branch portfolio; (c) you specifically want the 1,331 alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
     },
@@ -447,7 +447,7 @@ export const CATCHMENTS: Catchment[] = [
     whyBipeReasons: [
       {
         headline: "Closest option — BIPE is 50 km from Bhadohi",
-        body: "Bhadohi is among BIPE's nearest catchment districts. NH-19 connects directly to Phoolpur. Daily commute is still not advised across a 3-year diploma (the morning + evening loop is 2.5 hours total), but it's at the lower end of the catchment range. Hostel residence is the right choice for most.",
+        body: "Bhadohi is among BIPE's nearest catchment districts. NH-19 runs to Varanasi, and NH-56 carries you onward to Phoolpur. Daily commute is still not advised across a 3-year diploma (the morning + evening loop is 2.5 hours total), but it's at the lower end of the catchment range. Hostel residence is the right choice for most.",
       },
       {
         headline: "Mechanical (Production) maps onto carpet-machinery and export-industry needs",
@@ -539,7 +539,7 @@ export const CATCHMENTS: Catchment[] = [
     faqs: [
       {
         q: "How far is Chandauli from BIPE Phoolpur — and is daily commute viable?",
-        a: "BIPE Phoolpur is 40 km from Chandauli city (1 hour 15 min by road via NH-7, or ~30 min by train to Varanasi Cantt + shuttle). Daily commute is technically possible across a 3-year diploma but tiring. For students from Chandauli city centre, day-scholar is feasible; for outer-block students (Naugarh, Sakaldiha), hostel is essential.",
+        a: "BIPE Phoolpur is 40 km from Chandauli city (1 hour 15 min by road via NH-7, or ~30 min by train to Varanasi Cantt + auto). Daily commute is technically possible across a 3-year diploma but tiring. For students from Chandauli city centre, day-scholar is feasible; for outer-block students (Naugarh, Sakaldiha), hostel is essential.",
       },
       {
         q: "Does BIPE prepare students for Indian Railways recruitment (RRB JE) given Chandauli's DDU connection?",
@@ -595,7 +595,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "AFRC fee + UP Post-Matric Scholarship → real net affordability",
-        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship (SC/ST/OBC/Minority/EWS, family income < ₹2 lakh) covers tuition in full for eligible candidates. BIPE's office walks every Ballia applicant through the Samaj Kalyan portal application at admission. Net out-of-pocket for eligible students typically falls to ₹6,000-12,000/year — comparable to government polytechnic figures.",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship (family income < ₹2 lakh) reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates. BIPE's office walks every Ballia applicant through the Samaj Kalyan portal application at admission. Net out-of-pocket for eligible students typically falls to ₹6,000-12,000/year — comparable to government polytechnic figures.",
       },
     ],
     branchAngle:
@@ -663,7 +663,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "UP Post-Matric Scholarship coverage is meaningful here",
-        body: "Sonbhadra has a high proportion of SC, ST, and EWS households. The UP Post-Matric Scholarship covers BIPE's AFRC-approved tuition in full for eligible candidates. BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Sonbhadra students typically falls to ₹4,000-10,000/year — comparable to or below government polytechnic figures.",
+        body: "Sonbhadra has a high proportion of SC, ST, and EWS households. The UP Post-Matric Scholarship reimburses BIPE's AFRC-approved tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates. BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Sonbhadra students typically falls to ₹4,000-10,000/year — comparable to or below government polytechnic figures.",
       },
     ],
     branchAngle:
@@ -731,7 +731,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "AFRC ₹30,150 + scholarship eligibility = real affordability",
-        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship covers tuition in full for eligible SC / ST / OBC / Minority / EWS candidates. For most Sultanpur families with mid-income agriculture-based households, net out-of-pocket falls to ₹4,000-10,000/year — comparable to government polytechnic figures.",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates. For most Sultanpur families with mid-income agriculture-based households, net out-of-pocket falls to ₹4,000-10,000/year — comparable to government polytechnic figures.",
       },
     ],
     branchAngle:
@@ -799,7 +799,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "AFRC fees + scholarship for the typical Pratapgarh income band",
-        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship covers tuition in full for eligible SC / ST / OBC / Minority / EWS candidates. For most Pratapgarh agricultural households, net out-of-pocket falls to ₹4,000-10,000/year — comparable to government polytechnic figures even before factoring in BIPE's wider rank band and 5-branch portfolio.",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates. For most Pratapgarh agricultural households, net out-of-pocket falls to ₹4,000-10,000/year — comparable to government polytechnic figures even before factoring in BIPE's wider rank band and 5-branch portfolio.",
       },
     ],
     branchAngle:
@@ -867,7 +867,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "AFRC fees + scholarship coverage offset the distance economics",
-        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship covers tuition in full for eligible SC / ST / OBC / Minority / EWS candidates from Gorakhpur — the scholarship is portable across UP. For many Gorakhpur families, the choice between local government polytechnic + BIPE comes down to branch availability and placement-cell strength, not raw fee math after scholarship clears.",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates from Gorakhpur — the scholarship is portable across UP. For many Gorakhpur families, the choice between local government polytechnic + BIPE comes down to branch availability and placement-cell strength, not raw fee math after scholarship clears.",
       },
     ],
     branchAngle:
@@ -883,7 +883,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does the train journey from Gorakhpur to BIPE work?",
-        a: "Gorakhpur Junction has multiple daily express trains to Varanasi Cantt — typical journey 4 hours. From Cantt, shared auto or BIPE shuttle (free on Saturdays during admission season) covers the final 14 km to Phoolpur in 35-45 minutes. Total door-to-door 5-5.5 hours. Weekend home-visits during semesters are workable on this corridor.",
+        a: "Gorakhpur Junction has multiple daily express trains to Varanasi Cantt — typical journey 4 hours. From Cantt, a shared auto or app-cab covers the final 14 km to Phoolpur in 35-45 minutes. Total door-to-door 5-5.5 hours. Weekend home-visits during semesters are workable on this corridor.",
       },
       {
         q: "Does BIPE prepare students for Indian Railways recruitment given Gorakhpur's railway-hub culture?",
