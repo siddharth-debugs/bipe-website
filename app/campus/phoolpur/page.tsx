@@ -88,7 +88,7 @@ const TRANSPORT: { mode: string; place: string; distance: string; body: string }
 const LIVING: { title: string; body: string }[] = [
   {
     title: "On-campus boys' hostel",
-    body: "A boys' hostel block on the Phoolpur campus — resident warden, 24×7 security, on-campus mess with vegetarian and non-vegetarian options. Confirm your hostel slot at the time of fee payment; out-of-state applicants are prioritised.",
+    body: "A boys' hostel block on the Phoolpur campus — resident warden, 24×7 security, pure-vegetarian on-campus mess. Confirm your hostel slot at the time of fee payment; out-of-state applicants are prioritised.",
   },
   {
     title: "PG and rented accommodation",

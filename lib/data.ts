@@ -404,7 +404,7 @@ export const DATA: DataShape = {
     { cat: "Fees", q: "What scholarships are available?", a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority categories. BIPE also offers merit-based waivers of 25–50% for high JEECUP ranks and 10–25% for Class 10 toppers. Many BIPE students pay much less than the published fee." },
     { cat: "Fees", q: "What is the refund policy?", a: "Refunds follow AICTE norms: 100% (less ₹1,000) if you withdraw 15+ days before classes start, 90% within 15 days, 80% within the first 15 days of classes (if the seat is filled), 50% after that, and no refund after 30 days. Refunds are processed within 30 working days." },
     { cat: "Hostel & Campus", q: "Is hostel available?", a: "Yes — for boys. BIPE currently runs a boys' hostel block on campus with a resident warden, staffed gates, visitor registration, fire safety, anti-ragging measures and a 9:30 PM curfew (extendable on parental authorisation). A girls' hostel is on the trust's roadmap; for now, girl students attend as day-scholars or with their own local arrangements — talk to admissions if you need help finding safe accommodation in the area." },
-    { cat: "Hostel & Campus", q: "Is the mess vegetarian?", a: "The mess serves three meals a day with both vegetarian and non-vegetarian options. Annual mess fee is ₹36,000." },
+    { cat: "Hostel & Campus", q: "Is the mess vegetarian?", a: "Yes — the mess is pure vegetarian, serving three meals a day with a monthly menu rotation. Mess fee is ₹4,000 per month, paid in advance, separate from tuition." },
     { cat: "Placements & Career", q: "Where do graduates work?", a: `Alumni work at Mahindra, Krishna Maruti, JCB, Asian Paints, Adani Solar, Ola Electric, RR Parkon, Knorr Bremse, BD Group Campa, Amber and others — ${_placed} placements through ${_endYear}.` },
     { cat: "Placements & Career", q: "Can I get a government job after a diploma?", a: "Yes — diploma engineers from BIPE qualify for SSC JE, RRB JE, UPPCL, NDDB, State Dairy Boards, Indian Army Technical and similar central and state recruitment. Several BIPE alumni work as Junior Engineers and Assistant Loco Pilots in Indian Railways and Mumbai Metro." },
     { cat: "Approvals & Trust", q: "Is BIPE AICTE-approved?", a: "Yes. BIPE holds AICTE Permanent ID 1-488233171 and the EoA letter for 2026-27 (F.No. Northern/1-46216893240/2026/EOA, dated 16 March 2026). It is BTEUP-affiliated under JEECUP code 4455 and AISHE-registered with the Department of Higher Education, MoE." },
@@ -445,7 +445,7 @@ export const DATA: DataShape = {
     { name: "Electrical Lab", count: "12 benches", body: "Machines, electronics, control systems, renewables, EV battery & motor lab." },
     { name: "Civil Survey Yard", count: "6 acres", body: "Total stations, theodolites, level instruments. On-site survey camp every 4th semester." },
     { name: "Library", count: "12,000+ titles", body: "Print + digital. Subscription to e-resources, IEEE digital library, NPTEL." },
-    { name: "Hostels", count: "Boys + Girls", body: "Separate blocks, on-campus mess, Wi-Fi, study halls, 24×7 security." },
+    { name: "Boys' Hostel", count: "On-campus", body: "Furnished rooms, on-campus mess, Wi-Fi, study halls, 24×7 security. A girls' hostel is on the trust's roadmap." },
     { name: "Sports & Ground", count: "On-campus", body: "Cricket, football, volleyball, indoor games. Annual sports week in February." },
   ],
 };

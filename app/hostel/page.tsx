@@ -106,10 +106,10 @@ const FEES: { k: string; v: string; note: string }[] = [
 
 const AMENITIES: { icon: React.ReactNode; title: string; body: string }[] = [
   { icon: <BedIcon />, title: "Furnished room", body: "Bed, mattress, study desk and chair." },
-  { icon: <PlateIcon />, title: "3 meals a day", body: "Vegetarian and non-vegetarian options." },
+  { icon: <PlateIcon />, title: "3 meals a day", body: "Pure-vegetarian menu · monthly rotation." },
   { icon: <DropIcon />, title: "24/7 water", body: "Backed by 6-bore rainwater + tank reserve." },
   { icon: <BoltIcon />, title: "Backup power", body: "Generator + UPS across the hostel." },
-  { icon: <WifiIcon />, title: "Wi-Fi in commons", body: "50 Mbps firewalled · campus-wide." },
+  { icon: <WifiIcon />, title: "Wi-Fi in commons", body: "100 Mbps firewalled · campus-wide." },
   { icon: <CrossIcon />, title: "Medical room", body: "On-call doctor and emergency access." },
   { icon: <ShieldIcon />, title: "24×7 security", body: "Staffed gate and visitor register." },
   { icon: <BellIcon />, title: "Parent hotline", body: "Emergency line into the warden's desk." },
@@ -407,10 +407,10 @@ export default function Page() {
               </span>
             </h2>
             <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 84%, transparent)" }}>
-              Three meals a day — vegetarian and non-vegetarian options, monthly menu rotation, hygiene-first kitchen practice. Festival specials on Holi, Diwali, Eid, Christmas. Roti is hand-rolled, not machine-pressed.
+              Three pure-vegetarian meals a day — monthly menu rotation, hygiene-first kitchen practice. Festival specials on Holi, Diwali, Eid, Christmas. Roti is hand-rolled, not machine-pressed.
             </p>
             <div style={{ marginTop: 26, display: "flex", gap: 10, flexWrap: "wrap" }}>
-              {["Veg & non-veg", "Monthly menu", "Festival specials", "Hand-rolled roti"].map((t) => (
+              {["Pure vegetarian", "Monthly menu", "Festival specials", "Hand-rolled roti"].map((t) => (
                 <span key={t} style={{
                   padding: "8px 14px", borderRadius: 999,
                   background: "color-mix(in oklab, var(--paper) 12%, transparent)",
