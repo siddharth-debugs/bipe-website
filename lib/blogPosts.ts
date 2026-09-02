@@ -2807,7 +2807,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>सरकारी पॉलिटेक्निक:</strong> ₹6,000–15,000/साल। कम फीस लेकिन सीमित सीटें और अक्सर ज़्यादा competition।",
           "<strong>निजी पॉलिटेक्निक (AFRC-approved):</strong> ₹25,000–60,000/साल। बीआईपीई <strong>₹30,150/साल</strong> है (AFRC-अनुमोदित, छुपी हुई फीस नहीं)।",
-          "<strong>हॉस्टल + मेस:</strong> अलग शुल्क, आमतौर पर ₹36,000–60,000/साल।",
+          "<strong>हॉस्टल + मेस:</strong> अलग शुल्क। बीआईपीई में <strong>₹12,000/साल</strong> आवास + <strong>₹4,000/माह</strong> शुद्ध शाकाहारी मेस (कुल ≈₹60,000/साल)।",
           "<strong>छात्रवृत्ति (Scholarship):</strong> SC/ST/OBC/Minority/EWS छात्रों के लिए UP सरकार की <a href=\"/scholarships\">Post-Matric Scholarship</a> लागू होती है — पूरी फीस वापस मिल सकती है।",
         ],
       },
