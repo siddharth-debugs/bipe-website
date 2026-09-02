@@ -162,12 +162,20 @@ const ALUMNI_JSON_LD = {
   url: `${SITE_URL}/placements`,
   name: "Placements · BIPE Varanasi",
   description:
-    // Names must come from lib/alumni-manifest.json — this sentence cites
-    // the joining-letter-verified count, so the companies beside it have to
-    // be in the dataset that produces it. The previous set (Tata Steel,
-    // Indian Railways) was on the owner's struck list and absent from the
-    // manifest. See the same rule at lib/routes.ts placements.
-    `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, with named alumni at Krishna Maruti, Motherson, JBM Group, Hollister and Exide.`,
+    // TWO DIFFERENT CLAIMS, TWO DIFFERENT SOURCES — don't collapse them:
+    //   "X recruits here" / "N placements at X" → must be manifest-backed
+    //     (lib/alumni-manifest.json) or on the owner-curated marquee.
+    //     That rule governs lib/routes.ts metadata and the branch descs.
+    //   "named alumni at X"  → must match the FEATURED list below, which
+    //     is where the named people actually are.
+    // The names here are exactly that list (Ankit Kr Singh · Tata Steel
+    // BSL, Pramod Kumar Patel · Indian Railways, Hariom Rai · Mumbai
+    // Metro, Chandan Pathak · Motherson Sumi, Naveen Pandey · IEPC).
+    // Most graduated 2013-2015, before the manifest's 2016 start, which
+    // is why they are absent from it — absence there is NOT evidence
+    // against them. Mahindra was dropped from the original sentence
+    // because it is the one name with no named alumnus on this page.
+    `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, plus named alumni at Tata Steel BSL, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.`,
   about: {
     "@type": "CollegeOrUniversity",
     name: "Banaras Institute of Polytechnic & Engineering",
@@ -306,7 +314,7 @@ export default async function Page() {
                 careers. Counting.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                Polytechnic placements out of BIPE Varanasi — {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified through {PLACEMENT_STATS.endYear} · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · alumni at Krishna Maruti, Motherson, JBM Group, Hollister and beyond.
+                Polytechnic placements out of BIPE Varanasi — {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified through {PLACEMENT_STATS.endYear} · sixteen years on record · alumni in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC) · named alumni at Tata Steel BSL, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
