@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> { return metadataFor
 
 const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "6", label: "Acres", sub: "Phoolpur · single boundary" },
-  { num: "8428", label: "Books", sub: "1,220 unique titles" },
+  { num: "8,428", label: "Books", sub: "1,220 unique titles" },
   { num: "120", suffix: "+", label: "Networked PCs", sub: "Computer centre" },
   { num: "100", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
   { num: "40", label: "Faculty", sub: "1:20 mentor ratio" },
@@ -252,7 +252,7 @@ export default async function Page() {
                 padding: "20px 24px", boxShadow: "0 24px 48px -20px rgba(10,26,63,0.18)",
               }}>
                 <div className="serif" style={{ fontStyle: "italic", fontSize: 56, lineHeight: 0.9, color: "var(--brand)" }}>
-                  <Counter to="8428" />
+                  <Counter to="8,428" />
                 </div>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)", marginTop: 6 }}>
                   Books on the shelf
