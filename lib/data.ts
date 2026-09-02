@@ -6,6 +6,9 @@ import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 // automatically.
 const _placed = formatPlacements(PLACEMENT_STATS.totalPlacements);
 const _endYear = PLACEMENT_STATS.endYear;
+// Canonical NAP address — contact.address and the location FAQ share it so
+// the two can never drift apart.
+const _address = "Gajokhar, Phoolpur, Varanasi, Uttar Pradesh 221206";
 
 export type BranchImage = { src: string; alt: string };
 
@@ -182,8 +185,7 @@ export const DATA: DataShape = {
     // ("Gajokhar, Phoolpur, Uttar Pradesh 221206") with "Varanasi"
     // district retained per owner decision. Every display surface
     // (Footer, /contact, /campus) pulls from this single source.
-    address:
-      "Gajokhar, Phoolpur, Varanasi, Uttar Pradesh 221206",
+    address: _address,
     jeecup: "4455",
     aicte: "1-488233171",
     aicteEoaRef: "Northern/1-46216893240/2026/EOA",
@@ -404,6 +406,11 @@ export const DATA: DataShape = {
     { cat: "Fees", q: "What scholarships are available?", a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority categories. BIPE also offers two Trust merit awards: a 50% tuition waiver for any candidate within the top 2,000 JEECUP All-India rank, and a 10% waiver for Class 10 toppers with 90%+ aggregate. Many BIPE students pay much less than the published fee." },
     { cat: "Fees", q: "What is the refund policy?", a: "Three tiers, keyed to when you withdraw: 100% refund within one week of application, 50% after one week but before classes begin, and 10% within one week of classes commencing. Caution money is refundable on completion of the diploma. Refunds are processed within 30 working days — full schedule on the Fees page." },
     { cat: "Hostel & Campus", q: "Is hostel available?", a: "Yes — for boys. BIPE currently runs a boys' hostel block on campus with a resident warden, staffed gates, visitor registration, fire safety, anti-ragging measures and a 9:30 PM curfew (extendable on parental authorisation). A girls' hostel is on the trust's roadmap; for now, girl students attend as day-scholars or with their own local arrangements — talk to admissions if you need help finding safe accommodation in the area." },
+    // Added 3 Sep 2026: the CMS home/faq section carried a "Where is BIPE
+    // located?" answer that DATA.faq had no equivalent for, so clearing that
+    // section (to restore the other 11 canonical FAQs it was suppressing)
+    // would have dropped location from /faq and from the FAQPage JSON-LD.
+    { cat: "Hostel & Campus", q: "Where is BIPE located?", a: `BIPE is at ${_address} — a 6-acre campus on the Phoolpur–Parsara road, off NH-56. It is about 14 km from Varanasi Cantt railway station, roughly 35 minutes by auto or app-cab; Khalishpur station is 1.8 km away and LBS Airport 14.1 km. WhatsApp admissions before you travel and the team will send the campus pin to your driver.` },
     { cat: "Hostel & Campus", q: "Is the mess vegetarian?", a: "Yes — the mess is pure vegetarian, serving three meals a day with a monthly menu rotation. Mess fee is ₹4,000 per month, paid in advance, separate from tuition." },
     { cat: "Placements & Career", q: "Where do graduates work?", a: `Alumni work at Mahindra, Krishna Maruti, JCB, Asian Paints, Adani Solar, Ola Electric, RR Parkon, Knorr Bremse, BD Group Campa, Amber and others — ${_placed} placements through ${_endYear}.` },
     { cat: "Placements & Career", q: "Can I get a government job after a diploma?", a: "Yes — diploma engineers from BIPE qualify for SSC JE, RRB JE, UPPCL, NDDB, State Dairy Boards, Indian Army Technical and similar central and state recruitment. Several BIPE alumni work as Junior Engineers and Assistant Loco Pilots in Indian Railways and Mumbai Metro." },
