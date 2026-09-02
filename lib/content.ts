@@ -381,10 +381,10 @@ export async function getPageSection(page: string, key: string): Promise<PublicP
   return list.find((s) => s.section_key === key) ?? null;
 }
 
-export async function getContact(): Promise<PublicContact> {
-  const b = await getContent();
-  if (b?.contact) return b.contact;
-  // Static fallback from DATA.contact + DATA.social
+/** PublicContact built entirely from the code seed (DATA.contact +
+ *  DATA.social). Used both as the backend-down fallback and as the
+ *  authoritative source for the identity overlay in getContact(). */
+function seedContact(): PublicContact {
   const c = DATA.contact;
   const social = (key: string) => DATA.social.find((s) => s.name.toLowerCase() === key)?.url ?? "";
   return {
@@ -405,5 +405,46 @@ export async function getContact(): Promise<PublicContact> {
     x_url: social("x"),
     linkedin_url: social("linkedin"),
     office_hours: "Mon–Sat · 9:00 AM – 5:00 PM",
+  };
+}
+
+/**
+ * Identity-critical NAP + entity fields are SEED-AUTHORITATIVE: the CMS
+ * bundle can no longer override them.
+ *
+ * 2 Sep 2026 incident: the backend Contact singleton was a 15 May
+ * snapshot — retired phone 9198646464, retired bipevns@gmail.com, the
+ * pre-June long-form address, an empty grievance email, the dead
+ * @bipevns YouTube handle and a personal /in/ LinkedIn URL — and it
+ * silently outranked the audited seed in the footer payload and the
+ * schema.org JSON-LD of every page. The owner's NAP directives (28 May
+ * phone consolidation, 1 Jun canonical address, info@bipe.ac.in
+ * migration) land in lib/data.ts via reviewed commits, so lib/data.ts
+ * is the audited record; a CMS row that disagrees with it is stale by
+ * definition. Identity edits therefore go through lib/data.ts. The
+ * admin Contact singleton stays authoritative for the operational
+ * fields only (map links, office hours — and any future columns, which
+ * the spread passes through).
+ */
+export async function getContact(): Promise<PublicContact> {
+  const seed = seedContact();
+  const b = await getContent();
+  if (!b?.contact) return seed;
+  return {
+    ...b.contact,
+    phone: seed.phone,
+    whatsapp_url: seed.whatsapp_url,
+    email: seed.email,
+    email_principal: seed.email_principal,
+    email_grievance: seed.email_grievance,
+    email_anti_ragging: seed.email_anti_ragging,
+    address: seed.address,
+    aicte_id: seed.aicte_id,
+    jeecup_code: seed.jeecup_code,
+    facebook_url: seed.facebook_url,
+    instagram_url: seed.instagram_url,
+    youtube_url: seed.youtube_url,
+    x_url: seed.x_url,
+    linkedin_url: seed.linkedin_url,
   };
 }
