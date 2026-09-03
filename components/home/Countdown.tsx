@@ -62,7 +62,7 @@ export const Countdown = () => {
                   Classes have <span className="serif">begun.</span>
                 </h2>
                 <p className="lead" style={{ marginTop: 14 }} suppressHydrationWarning>
-                  The 2026-27 session started on 1 August — but JEECUP <strong>Round 5, the final counselling round</strong>, is still running and a few seats remain at BIPE. Add code 4455 to your choices, then talk to admissions the same day so you can join with minimal catch-up.
+                  The 2026-27 session started on 1 August, and JEECUP counselling has now concluded — <strong>Round 5 was the final round</strong>, and it closed in mid-August. If you are still without a seat, talk to BIPE admissions (code 4455): they will tell you honestly what is open before you travel.
                 </p>
               </>
             ) : (
@@ -86,10 +86,10 @@ export const Countdown = () => {
               minWidth: 240,
             }} suppressHydrationWarning>
               <div className="serif" style={{ fontStyle: "italic", fontSize: 40, lineHeight: 1.1, color: "var(--brand)" }}>
-                Round 5
+                Counselling
               </div>
               <div style={{ marginTop: 10, fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)", lineHeight: 1.7 }}>
-                Final counselling round<br />Open to all states
+                Concluded · Round 5 was final<br />Talk to admissions
               </div>
               <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid var(--line)", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", color: "var(--brand)", fontWeight: 700 }}>
                 BIPE CODE 4455

@@ -44,7 +44,7 @@ export interface Catchment {
   townHindi: string;
   /** Hindi pronunciation hint shown in the hero subline */
   state: string;
-  /** Straight-line distance from BIPE Phoolpur in kilometres */
+  /** Road distance from BIPE Phoolpur in kilometres */
   distanceKm: number;
   /** Typical road journey time */
   roadTime: string;
@@ -107,7 +107,7 @@ export const CATCHMENTS: Catchment[] = [
     whyBipeReasons: [
       {
         headline: "Dairy Engineering is rare — and Mirzapur is in a dairy belt",
-        body: "Mirzapur and its surrounding blocks have hundreds of small and mid-scale dairy units. BIPE's Dairy Engineering diploma is one of only four BTE UP–affiliated Dairy programmes in the entire state. For a Mirzapur family with even partial dairy income, the placement pipeline (Amul, Mother Dairy, NDDB, regional dairy cooperatives) directly translates the diploma into a livelihood near home.",
+        body: "Mirzapur and its surrounding blocks have hundreds of small and mid-scale dairy units. BIPE's Dairy Engineering diploma is one of only four BTE UP–affiliated Dairy programmes in the entire state. For a Mirzapur family with even partial dairy income, Amul, Mother Dairy, NDDB and the regional dairy cooperatives are the kind of employer the qualification opens up. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
       },
       {
         headline: "Mechanical (Production) for the brassware + carpet machinery industry",
@@ -139,7 +139,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "What about UP Government scholarships for Mirzapur students?",
-        a: "Full UP Post-Matric Scholarship is available to eligible SC / ST / OBC / Minority / EWS candidates regardless of home district. We help with the Samaj Kalyan portal application during admission. For many Mirzapur families, this brings net out-of-pocket close to the government polytechnic figure.",
+        a: "The UP Post-Matric Scholarship is portable regardless of home district — it reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates. We help with the Samaj Kalyan portal application during admission. For many Mirzapur families, this brings net out-of-pocket close to the government polytechnic figure.",
       },
       {
         q: "Does BIPE have placement support for Mirzapur students specifically?",
@@ -243,7 +243,7 @@ export const CATCHMENTS: Catchment[] = [
     whyBipeReasons: [
       {
         headline: "Dairy Engineering = direct industry pipeline from Ghazipur",
-        body: "Ghazipur sits on one of the densest small-and-mid-scale dairy clusters in Eastern UP. BIPE's Dairy Engineering programme — one of just four BTE UP Dairy diplomas in the state — feeds directly into Amul / Mother Dairy / Parag / NDDB / regional dairy cooperatives. The branch pays back the tuition gap multiple times over for a Ghazipur dairy-household student.",
+        body: "Ghazipur sits on one of the densest small-and-mid-scale dairy clusters in Eastern UP. BIPE's Dairy Engineering programme — one of just four BTE UP Dairy diplomas in the state — points at Amul / Mother Dairy / Parag / NDDB and the regional dairy cooperatives, the kind of employer the qualification opens up. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
       },
       {
         headline: "Civil + Mechanical for the government engineering pipeline",
@@ -271,7 +271,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "Does BIPE offer Dairy Engineering recruitment opportunities specifically for Ghazipur students?",
-        a: "Recruitment is institution-wide, not town-specific. But BIPE's Dairy Engineering placement pipeline (Amul, Mother Dairy, Parag, NDDB, regional cooperatives) is particularly relevant for Ghazipur students because of the dense local dairy economy — many BIPE Dairy alumni return to Ghazipur to anchor or expand family operations.",
+        a: "Recruitment is institution-wide, not town-specific. And the Dairy branch is new — the first cohort entered in 2025-26, so there is no Dairy placement record yet. What the diploma opens up (Amul, Mother Dairy, Parag, NDDB, regional cooperatives) is particularly relevant for Ghazipur students because of the dense local dairy economy, including families who want to run or expand their own operations.",
       },
       {
         q: "What documents does a Ghazipur applicant need?",
@@ -323,7 +323,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "AFRC ₹30,150 — flexibility for distant catchments",
-        body: "The published tuition is ₹30,150/year. For SC / ST / OBC / Minority / EWS Azamgarh students, the UP Post-Matric Scholarship covers most or all of this — net out-of-pocket is often in the ₹4,000-12,000/year range. Hostel and mess are billed separately and discussed openly during admission.",
+        body: "The published tuition is ₹30,150/year. For Azamgarh students, the UP Post-Matric Scholarship reimburses this in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates — net out-of-pocket is often in the ₹4,000-12,000/year range. Hostel and mess are billed separately and discussed openly during admission.",
       },
     ],
     branchAngle:
@@ -425,7 +425,7 @@ export const CATCHMENTS: Catchment[] = [
       description:
         "Mau's local government polytechnic capacity is limited compared to larger neighbouring districts. Many Mau-based JEECUP applicants list Government Polytechnic Azamgarh or Ghazipur as a fallback if the local seat doesn't materialise. Verify the current Mau government polytechnic listing on the BTE UP portal each admission cycle.",
       whenGovernment:
-        "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (for family income <₹2 lakh), which can effectively reduce net cost to near-zero.",
+        "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (family income under ₹2.5 lakh for SC/ST, ₹2 lakh for OBC/Minority/EWS), which can effectively reduce net cost to near-zero.",
       whenBipe:
         "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with 5 branches available; (b) you want Dairy Engineering or the full branch portfolio; (c) you specifically want the 1,331 alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
     },
@@ -455,7 +455,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "Dairy Engineering for the agricultural-overlap segment",
-        body: "Bhadohi has significant rural-block dairy activity outside the carpet-export centre. BIPE's Dairy Engineering programme — one of only four BTE UP-affiliated Dairy diplomas — channels these households into Amul / Mother Dairy / Parag / NDDB and regional cooperatives.",
+        body: "Bhadohi has significant rural-block dairy activity outside the carpet-export centre. BIPE's Dairy Engineering programme — one of only four BTE UP-affiliated Dairy diplomas — points these households at Amul / Mother Dairy / Parag / NDDB and the regional cooperatives. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
       },
       {
         headline: "AFRC ₹30,150 with no hidden charges — fits the export-economy budget",
@@ -527,7 +527,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "AFRC ₹30,150 + UP Post-Matric Scholarship eligibility",
-        body: "AFRC-approved tuition is fixed at ₹30,150/year. The UP Post-Matric Scholarship reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates (income < ₹2 lakh) — BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Chandauli students often falls to ₹6,000-12,000/year.",
+        body: "AFRC-approved tuition is fixed at ₹30,150/year. The UP Post-Matric Scholarship reimburses tuition in full for eligible SC / ST candidates (family income under ₹2.5 lakh) and in part for OBC / Minority / EWS candidates (under ₹2 lakh) — BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Chandauli students often falls to ₹6,000-12,000/year.",
       },
     ],
     branchAngle:
@@ -591,11 +591,11 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "5 branches including Dairy — relevant for Ballia's agricultural overlay",
-        body: "Ballia is a strong agricultural district with significant dairy and sugarcane activity. BIPE's Dairy Engineering programme — one of only four BTE UP-affiliated Dairy diplomas in the entire state — channels these households into Amul / Mother Dairy / Parag / NDDB recruiters. For families with dairy or agro-processing roots, this is structurally the right branch.",
+        body: "Ballia is a strong agricultural district with significant dairy and sugarcane activity. BIPE's Dairy Engineering programme — one of only four BTE UP-affiliated Dairy diplomas in the entire state — points these households at Amul / Mother Dairy / Parag / NDDB. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028. For families with dairy or agro-processing roots, this is structurally the right branch.",
       },
       {
         headline: "AFRC fee + UP Post-Matric Scholarship → real net affordability",
-        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship (family income < ₹2 lakh) reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates. BIPE's office walks every Ballia applicant through the Samaj Kalyan portal application at admission. Net out-of-pocket for eligible students typically falls to ₹6,000-12,000/year — comparable to government polytechnic figures.",
+        body: "AFRC-approved tuition is ₹30,150/year. UP Post-Matric Scholarship reimburses tuition in full for eligible SC / ST candidates (family income under ₹2.5 lakh) and in part for OBC / Minority / EWS candidates (under ₹2 lakh). BIPE's office walks every Ballia applicant through the Samaj Kalyan portal application at admission. Net out-of-pocket for eligible students typically falls to ₹6,000-12,000/year — comparable to government polytechnic figures.",
       },
     ],
     branchAngle:
@@ -727,7 +727,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "5 branches including the Dairy moat",
-        body: "Sultanpur is a strong agricultural district with significant dairy and sugarcane activity. BIPE's Dairy Engineering programme — one of 4 BTE UP-affiliated Dairy diplomas in the entire state — channels these households into Amul / Mother Dairy / Parag / NDDB recruiters. Most Sultanpur-accessible polytechnics don't offer this branch.",
+        body: "Sultanpur is a strong agricultural district with significant dairy and sugarcane activity. BIPE's Dairy Engineering programme — one of 4 BTE UP-affiliated Dairy diplomas in the entire state — points these households at Amul / Mother Dairy / Parag / NDDB. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028. Most Sultanpur-accessible polytechnics don't offer this branch.",
       },
       {
         headline: "AFRC ₹30,150 + scholarship eligibility = real affordability",

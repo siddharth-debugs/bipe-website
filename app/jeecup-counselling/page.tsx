@@ -61,7 +61,7 @@ const ROUNDS: { n: string; title: string; window: string; body: string }[] = [
     title: "Final main-round allotment",
     window: "Approximately late July",
     body:
-      "The 2026 cycle ran five main rounds across two phases — Rounds 1-3 for UP-domicile candidates, then Rounds 4-5 open to every state. Use this round if your rank didn't secure a seat in Rounds 1-4 or if you're still trying for an upgrade in your preferred branch.",
+      "The 2026 cycle ran five main rounds across two phases — Rounds 1-3 for UP-domicile candidates, then Rounds 4-5 open to every state. Round 5 was the last centrally-run allotment — the round for candidates whose rank hadn't secured a seat in Rounds 1-4, or who were still trying for an upgrade. It has now closed, and with it the 2026 counselling cycle.",
   },
   {
     n: "Spot Round",
@@ -120,7 +120,7 @@ const MISTAKES: { title: string; body: string }[] = [
   {
     title: "Skipping the spot round when you should attend",
     body:
-      "Common: candidate doesn't get a seat in Rounds 1–4, assumes it's over, doesn't attend the institute-level spot round. BIPE's spot round usually has 10–30 vacancies each year — direct application, on-campus, often less competitive than central rounds.",
+      "Common: candidate doesn't get a seat in Rounds 1–5, assumes it's over, doesn't attend the institute-level spot round. BIPE's spot round usually has 10–30 vacancies each year — direct application, on-campus, often less competitive than central rounds.",
   },
 ];
 
@@ -247,13 +247,13 @@ export default function Page() {
             </span>
           </h2>
           <p style={{ marginTop: 18, color: "var(--ink-2)", maxWidth: "64ch", lineHeight: 1.7 }}>
-            JEECUP counselling runs in two phases. <strong>Phase 1 (Rounds 1–3) was UP-domicile only</strong> —
+            JEECUP counselling ran in two phases. <strong>Phase 1 (Rounds 1–3) was UP-domicile only</strong> —
             the schedule below is on record. <strong>Phase 2 (Rounds 4–5) opened to all states</strong>, including candidates
-            who missed the earlier rounds, with Round 5 the final round of the cycle; classes are already under way. Counselling is fully online at{" "}
+            who missed the earlier rounds. <strong>Round 5 was the final round, and counselling has now concluded</strong> — classes are already under way. Counselling runs fully online at{" "}
             <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer">
               jeecup.admissions.nic.in
             </a>
-            . Add BIPE&apos;s institute code <strong>4455</strong> against every branch you&apos;d accept, and see the{" "}
+            . In counselling you list BIPE&apos;s institute code <strong>4455</strong> against every branch you&apos;d accept — for how Phase 2 worked, see the{" "}
             <Link href="/jeecup-round-4-2026" style={{ color: "var(--brand)", fontWeight: 600 }}>Round 4-5 guide</Link>.
           </p>
           <div style={{ marginTop: 24, overflowX: "auto", border: "1px solid var(--line)", borderRadius: 14 }}>

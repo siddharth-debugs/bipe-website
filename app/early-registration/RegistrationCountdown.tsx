@@ -90,8 +90,8 @@ export function RegistrationCountdown() {
 
       {closed ? (
         <p style={{ color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.65 }} suppressHydrationWarning>
-          Pre-Counselling Registration for 2026-27 has closed. But <strong>JEECUP Round 5 — the final round — is on</strong> and
-          classes are already under way — leave your details below and BIPE admissions will call you about a seat (code 4455), or{" "}
+          Pre-Counselling Registration for 2026-27 has closed, and <strong>JEECUP counselling has concluded</strong> — Round 5 was the final round. Classes
+          are already under way — leave your details below and BIPE admissions will call you back about code 4455, or{" "}
           <Link href="/contact" style={{ color: "var(--brand)", fontWeight: 600 }}>
             contact admissions
           </Link>{" "}

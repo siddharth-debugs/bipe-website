@@ -538,7 +538,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "46ch", justifySelf: "end", textAlign: "right", lineHeight: 1.7 }}>
-              The headline tuition is ₹30,150, but most BIPE students pay materially less. Four representative scenarios below. Exact eligibility is verified at admission — talk to accounts before reporting.
+              The headline tuition is ₹30,150, but most BIPE students pay materially less. Three representative scenarios below. Exact eligibility is verified at admission — talk to accounts before reporting.
             </p>
           </div>
 

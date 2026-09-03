@@ -254,7 +254,7 @@ export const ROUTES: Record<RouteKey, {
     // lifter and was never sourced — it also undercut this page's own
     // content, which reimburses the full ₹30,150 tuition for SC/ST.
     title: "Polytechnic Scholarship UP · Post-Matric Tuition Reimbursement | BIPE",
-    description: "Polytechnic scholarship at BIPE Varanasi — UP Post-Matric covers SC/ST/OBC/Minority/EWS tuition (family income <₹2L). Net cost can drop to ₹4-10k/year. Portal help included.",
+    description: "Polytechnic scholarship at BIPE Varanasi — UP Post-Matric reimburses tuition in full for SC/ST, in part for OBC/Minority/EWS (family income <₹2L). Net cost can drop to ₹4-10k/year.",
   },
   documents: {
     path: "/documents",
@@ -361,7 +361,7 @@ export const ROUTES: Record<RouteKey, {
   },
   grievance: {
     path: "/grievance",
-    title: "Grievance Redressal · 4 statutory committees | BIPE",
+    title: "Grievance Redressal · 5 statutory committees | BIPE",
     description: "Grievance Redressal Cell, Anti-Ragging, POSH Internal Committee, SC/ST Committee and PWD Cell. Confidential grievance handling per AICTE, UGC, POSH 2013 and RPWD 2016.",
   },
   mandatoryDisclosure: {
@@ -791,7 +791,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupResult: {
     path: "/jeecup-result-2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, plan counselling. Appeared in JEECUP 2026? Reserve your branch at BIPE (code 4455) before choice-filling.",
+    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, plan counselling. Appeared in JEECUP 2026? Rounds 1–4 have closed — ask BIPE (code 4455) what is still vacant.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",
@@ -941,7 +941,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupExamPattern: {
     path: "/jeecup-exam-pattern-2026",
     title: "JEECUP Exam Pattern 2026 · CBT Format + Marking Scheme | BIPE 4455",
-    description: "JEECUP 2026 exam pattern — Computer-Based Test, 100 questions in 150 minutes, marking scheme, negative marking, section weighting, CBT navigation tips.",
+    description: "JEECUP 2026 exam pattern — Computer-Based Test, 100 questions in 150 minutes, marking scheme, no negative marking, section weighting, CBT navigation tips.",
     keywords: [
       "JEECUP exam pattern",
       "JEECUP exam pattern 2026",
@@ -1005,7 +1005,7 @@ export const ROUTES: Record<RouteKey, {
   bteupExamDates: {
     path: "/bteup-semester-exam-dates-2026",
     title: "BTEUP Semester Exam Dates 2026 · Odd + Even Cycle | BIPE 4455",
-    description: "BTEUP exam calendar 2026 — odd semester (Apr-Jun), even semester (Oct-Dec), practical exam window, supplementary cycle. Verified pattern from bteup.ac.in.",
+    description: "BTEUP exam calendar 2026 — odd semester (Nov), even semester (late Apr-May), practical exam window, supplementary cycle. Verified pattern from bteup.ac.in.",
     keywords: [
       "BTEUP exam date",
       "BTEUP semester exam dates",
@@ -1018,7 +1018,7 @@ export const ROUTES: Record<RouteKey, {
   bteupResult: {
     path: "/bteup-result-check",
     title: "BTEUP Result 2026 · Semester Result + Grace / Revaluation | BIPE 4455",
-    description: "Check BTEUP semester result at bteup.ac.in — marksheet download, grade explainer, grace marks, revaluation. Result timeline ~2 months post-exam.",
+    description: "Check BTEUP semester result at bteup.ac.in — marksheet download, grade explainer, grace marks, revaluation. Result timeline ~6 weeks post-exam.",
     keywords: [
       "BTEUP result",
       "BTEUP result 2026",

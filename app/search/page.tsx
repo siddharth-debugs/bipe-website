@@ -19,7 +19,7 @@ import { SITE_URL } from "@/lib/routes";
  *   2. There's no server backend doing the actual search — it's
  *      client-side filtering over BLOG_POSTS + ROUTES, similar to a
  *      static-site search. Good enough for a site this small (~70
- *      routes + 10 blog posts).
+ *      routes + 20 blog posts).
  *
  * SEO:
  *

@@ -41,8 +41,8 @@ export const LP_PHASES: Array<LpPhase & { until: number }> = [
     until: at("2026-08-04T00:00:00+05:30"),
   },
   {
-    badge: "Round 5 · FINAL round · classes on",
-    text: "JEECUP Round 5 is the FINAL counselling round — the last seats at BIPE, open to all states including Bihar. Classes are already under way, so leave your number now and admissions will walk you through the fastest route to a confirmed seat.",
+    badge: "Counselling concluded · classes on",
+    text: "JEECUP counselling has concluded — Round 5 was the final round and it closed in mid-August. Classes are already under way, so leave your number and BIPE admissions will tell you honestly what is still open at code 4455 and what joining now would involve.",
     until: Number.POSITIVE_INFINITY,
   },
 ];

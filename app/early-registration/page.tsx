@@ -53,18 +53,18 @@ export default function Page() {
           background: "color-mix(in oklab, var(--brand) 20%, transparent)", filter: "blur(130px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative", maxWidth: 880 }}>
-          <div className="eyebrow">JEECUP 2026 · Round 5 · Final round · classes on</div>
+          <div className="eyebrow">JEECUP 2026 · Counselling concluded · Classes under way</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
-            Round 5 is on —{" "}
-            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>get your seat at BIPE.</span>
+            Counselling has closed —{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>talk to us about a seat.</span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-            Pre-Counselling Registration closed on 27 July — but <strong>JEECUP Round 5 — the final counselling round — is on</strong>, open to every state,
-            and <strong>classes are already under way</strong>. Leave your details and BIPE admissions will call you about a seat (code 4455), guide your
-            Round-5 choices, and confirm branch availability. Subject to seats &amp; eligibility.
+            Pre-Counselling Registration closed on 27 July, and <strong>JEECUP counselling has concluded</strong> — Round 5 was the final round and it closed
+            in mid-August. <strong>Classes are already under way.</strong> Leave your details and BIPE admissions will call you back, tell you honestly what is
+            open at code 4455, and talk you through what joining now would involve. Subject to seats &amp; eligibility.
           </p>
           <p lang="hi" style={{ marginTop: 14, maxWidth: "60ch", color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
-            Pre-Counselling Registration 27 जुलाई को बंद हो गई — पर JEECUP Round 5 — आख़िरी counselling round — चल रहा है, सभी राज्यों के लिए, और classes शुरू हो चुकी हैं। नीचे details भरें — BIPE admissions आपको seat (code 4455) के बारे में call करेंगे और Round-5 choices में guide करेंगे।
+            Pre-Counselling Registration 27 जुलाई को बंद हो गई, और JEECUP counselling भी पूरी हो चुकी है — Round 5 आख़िरी round था, जो अगस्त के मध्य में ख़त्म हो गया। Classes शुरू हो चुकी हैं। नीचे details भरें — BIPE admissions आपको call करके ईमानदारी से बताएँगे कि code 4455 पर क्या खुला है।
           </p>
           <p className="muted" style={{ marginTop: 12, fontSize: 12.5, color: "var(--ink-3)", maxWidth: "60ch" }}>
             <strong>Note:</strong> the ₹1,200 PET scholarship offer closed on 22 June 2026 and is no longer available — this admissions enquiry is free.
@@ -117,13 +117,13 @@ export default function Page() {
       <section id="register" className="section" style={{ background: "var(--paper-2)", scrollMarginTop: 96 }}>
         <div className="container" style={{ maxWidth: 760 }}>
           <div className="card" style={{ padding: "40px 40px" }}>
-            <div className="eyebrow" style={{ color: "var(--brand)" }}>Round 5 Admissions Enquiry · 2026-27</div>
+            <div className="eyebrow" style={{ color: "var(--brand)" }}>Admissions Enquiry · 2026-27</div>
             <h2 className="bipe-h2" style={{ marginTop: 8, fontSize: 30 }}>
               Leave your details — we&rsquo;ll call you
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>.</span>
             </h2>
             <p className="muted" style={{ marginTop: 8, fontSize: 14, maxWidth: "56ch" }}>
-              Fill the basics — our admissions team calls to guide your Round-5 choices (code 4455) and talk you through joining now that classes are under way.
+              Fill the basics — our admissions team calls you back, tells you honestly what is open at code 4455, and talks you through joining now that classes are under way.
             </p>
             <div style={{ marginTop: 26 }}>
               <EarlyRegistrationForm />

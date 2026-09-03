@@ -557,7 +557,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Quality Control Analyst</strong> · daily milk testing, microbial analysis, regulatory compliance। Entry ₹15,000-22,000/mo।",
           "<strong>Cold Chain Specialist</strong> · refrigeration + supply-chain combined। Demand rising rapidly with last-mile dairy delivery। Entry ₹18,000-28,000/mo।",
           "<strong>Dairy Cooperative Officer</strong> · UP Dairy Federation, state-level milk unions। Government-track role with stability + pension।",
-          "<strong>NDDB Junior Officer</strong> · research + development role at India's apex dairy body। Competitive but BIPE alumni have entered।",
+          "<strong>NDDB Junior Officer</strong> · research + development role at India's apex dairy body। Competitive — aur BIPE ka pehla Dairy batch 2025-26 mein aaya hai, toh yeh abhi ek target hai, track record nahi।",
           "<strong>Smaller dairy entrepreneurs</strong> · diploma + family land = small paneer / milk-collection center business। Capital ₹3-5 lakh।",
         ],
       },
@@ -651,7 +651,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Dairy Engineering एक <strong>honest niche</strong> hai। Yeh \"sexy\" branch nahi hai (jaise CSE) ya \"mass-market\" branch nahi hai (jaise Mechanical) — lekin specific student ke liye yeh sabse strong choice ho sakta hai। Less competition, stable industry, real placement pipeline (Amul / Mother Dairy / NDDB hiring at BIPE), 6-month industrial training jo aksar direct job offers mein convert hoti hai।",
+          "Dairy Engineering एक <strong>honest niche</strong> hai। Yeh \"sexy\" branch nahi hai (jaise CSE) ya \"mass-market\" branch nahi hai (jaise Mechanical) — lekin specific student ke liye yeh sabse strong choice ho sakta hai। Less competition, stable industry, industry-wide hiring pipeline (Amul / Mother Dairy / NDDB), 6-month industrial training jo aksar direct job offers mein convert hoti hai। BIPE ka pehla Dairy batch 2025-26 mein aaya — abhi koi BIPE Dairy passout nahi, toh yeh sab aage ka rasta hai, past record nahi।",
       },
       {
         type: "p",
@@ -1413,7 +1413,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Motherson Sumi Systems</strong> · auto components (Mech + Electrical)।",
           "<strong>Indian Railways diploma-trainee program</strong> · alternate path to RRB JE।",
           "<strong>UPPCL, Tata Power, Adani Solar</strong> · Electrical-specific।",
-          "<strong>Amul, Mother Dairy, NDDB</strong> · Dairy Engineering pipeline।",
+          "<strong>Amul, Mother Dairy, NDDB</strong> · Dairy Engineering ka target pipeline — pehla Dairy batch 2025-26 mein aaya, abhi koi passout nahi।",
         ],
       },
       {
@@ -1570,7 +1570,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Electrical</strong> · ~40% UPPCL / Railways / state PSU।",
           "<strong>Civil</strong> · ~35% government PWD / SSC JE + ~30% private construction।",
           "<strong>Computer Science</strong> · evenly split, growing trend in IT placement।",
-          "<strong>Dairy Engineering</strong> · ~70% Amul / Mother Dairy / Parag / NDDB pipeline (rare branch, specialised market)।",
+          "<strong>Dairy Engineering</strong> · pehla batch 2025-26 mein aaya, abhi koi passout nahi — toh koi distribution figure nahi hai। Target pipeline: Amul / Mother Dairy / Parag / NDDB (rare branch, specialised market)।",
         ],
       },
 
@@ -1956,10 +1956,10 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "p",
         html: "BIPE has chosen the external-partnership model rather than running its own pilot plant. The honest disclosure: BIPE does <strong>not</strong> operate a pilot dairy plant on campus. Plant-floor exposure for Dairy Engineering students comes through three channels — (1) on-campus <a href=\"/courses/dairy-engineering\">chemistry, hydraulics and mechanics-of-solids labs</a> that teach the unit-operation fundamentals (milk-quality and FSSAI-aligned testing, process fluid mechanics on the BIPEHYD/201 series rigs, processing-equipment materials science); (2) structured cohort industrial visits to active dairy plants (most recently Banas Dairy Plant Varanasi) where students walk a real floor with pasteurisers, separators, homogenisers, storage silos and packaging lines in live operation; (3) a mandatory six-month industrial training placement in Semester 6 at Amul, Mother Dairy, NDDB or Parag — the real machine time happens there, supervised by the host plant's shift engineers. The combination is genuinely strong; it's just honest about what's BIPE's and what's the partner plant's.",
       },
-      { type: "h2", text: "Where graduates actually go" },
+      { type: "h2", text: "Where this diploma is meant to lead" },
       {
         type: "p",
-        html: "BIPE's <a href=\"/placements\">recruiter ecology</a> for Dairy Engineering reads exactly like the dairy industry's senior end:",
+        html: "BIPE's first Dairy cohort entered in 2025-26, so the branch has no graduates and no placement record of its own yet — its first students finish in 2028. The <a href=\"/placements\">employers</a> this diploma is built for read like the dairy industry's senior end:",
       },
       {
         type: "ul",
@@ -1970,13 +1970,13 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Nestlé</strong> — Moga plant operations and quality, plus the company's smaller-format Indian dairy sites.",
           "<strong>NDDB</strong> — the National Dairy Development Board's project-engineering and field roles, plus its many subsidiaries (Mother Dairy, Dairy Services).",
           "<strong>State dairy boards</strong> — Junior Engineer cadres at Bihar, UP and MP state dairy federations, recruited via state SSC equivalents.",
-          "<strong>Self-employment</strong> — alumni who have started small-scale paneer / ghee / curd ventures, leveraging the industrial-visit exposure and the six-month industrial training placement.",
+          "<strong>Self-employment</strong> — small-scale paneer / ghee / curd ventures, built on the industrial-visit exposure and the six-month industrial training placement.",
         ],
       },
       { type: "h2", text: "Lateral pathways for those who want to go further" },
       {
         type: "p",
-        html: "A Dairy Engineering diploma isn't a closed door — it opens onto a B.Tech in Food Technology or Chemical Engineering via <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">AKTU lateral entry</a>, or to a B.Tech in Dairy Technology at NDRI Karnal, GBPUAT Pantnagar, SHIATS Allahabad and a handful of other ICAR institutes through their respective entrance tests. Several BIPE Dairy alumni have used this route to move into research and process-development roles further down the chain.",
+        html: "A Dairy Engineering diploma isn't a closed door — it opens onto a B.Tech in Food Technology or Chemical Engineering via <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">AKTU lateral entry</a>, or to a B.Tech in Dairy Technology at NDRI Karnal, GBPUAT Pantnagar, SHIATS Allahabad and a handful of other ICAR institutes through their respective entrance tests. It is a route into research and process-development roles further down the chain — open from the diploma onwards, though BIPE's first Dairy cohort is still mid-course, so no BIPE Dairy student has taken it yet.",
       },
       { type: "h2", text: "What Dr. Rai says about the work" },
       {
@@ -2002,7 +2002,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "If that description fits, talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab. The chemistry and hydraulics labs, the faculty who teach the dairy modules, and current third-year Dairy students who are mid-placement-season are the best argument for the branch. Walk the floor, ask about Banas Dairy and the Sem-6 placement plant they got assigned to, and the decision usually settles itself.",
+        html: "If that description fits, talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab. The chemistry and hydraulics labs, the faculty who teach the dairy modules, and the current Dairy cohort — the first one, admitted in 2025-26 — are the best argument for the branch. Walk the floor, ask about the Banas Dairy visit and how the Sem-6 industrial training gets arranged, and the decision usually settles itself.",
       },
     ],
   },
@@ -2442,7 +2442,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "JEECUP (the UP Joint Entrance Examination for Polytechnic, conducted by the Joint Entrance Examination Council (Polytechnic), Uttar Pradesh) runs <strong>five counselling rounds</strong> after the entrance exam — Rounds 1 through 4 in the main cycle, plus a spot-round for unfilled seats. In each round you fill choices (which institute + branch combinations you're willing to accept), and the system allocates seats to you in priority order based on your rank.",
+          "JEECUP (the UP Joint Entrance Examination for Polytechnic, conducted by the Joint Entrance Examination Council (Polytechnic), Uttar Pradesh) runs <strong>five counselling rounds</strong> after the entrance exam, in two phases — Rounds 1-3 for UP-domicile candidates, then Rounds 4-5 open to every state, with Round 5 the last centrally-run round. An unnumbered institute-level spot round follows for seats still unfilled. In each round you fill choices (which institute + branch combinations you're willing to accept), and the system allocates seats to you in priority order based on your rank.",
       },
       {
         type: "p",
@@ -2673,7 +2673,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>अवधि (Duration):</strong> 3 साल · 6 सेमेस्टर (semester यानी छमाही)। प्रत्येक सेमेस्टर में लगभग 6 विषय।",
+          "<strong>अवधि (Duration):</strong> 3 साल · 6 सेमेस्टर (semester यानी छमाही)। प्रत्येक सेमेस्टर में 5 से 7 विषय (theory और lab मिलाकर)।",
           "<strong>शिक्षा का माध्यम:</strong> अधिकांश यूपी पॉलिटेक्निक में हिन्दी और अंग्रेज़ी दोनों में पढ़ाई होती है। BTEUP की किताबें भी दोनों भाषाओं में मिलती हैं।",
           "<strong>परीक्षा:</strong> प्रत्येक सेमेस्टर के अंत में लिखित परीक्षा + practical परीक्षा।",
           "<strong>अंतिम वर्ष:</strong> सेमेस्टर 6 में अनिवार्य industrial training — किसी असली कारखाने या साइट पर 6 महीने (लगभग 600 घंटे) की placement, साथ में capstone project जिसकी जाँच external examiner करता है।",
@@ -2807,7 +2807,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>सरकारी पॉलिटेक्निक:</strong> ₹12,000–22,000/साल। कम फीस लेकिन सीमित सीटें और अक्सर ज़्यादा competition।",
           "<strong>निजी पॉलिटेक्निक (AFRC-approved):</strong> ₹25,000–60,000/साल। बीआईपीई <strong>₹30,150/साल</strong> है (AFRC-अनुमोदित, छुपी हुई फीस नहीं)।",
           "<strong>हॉस्टल + मेस:</strong> अलग शुल्क, आमतौर पर ₹36,000–60,000/साल।",
-          "<strong>छात्रवृत्ति (Scholarship):</strong> SC/ST/OBC/Minority/EWS छात्रों के लिए UP सरकार की <a href=\"/scholarships\">Post-Matric Scholarship</a> लागू होती है — पूरी फीस वापस मिल सकती है।",
+          "<strong>छात्रवृत्ति (Scholarship):</strong> UP सरकार की <a href=\"/scholarships\">Post-Matric Scholarship</a> — SC/ST छात्रों को पूरी ट्यूशन फीस वापस मिलती है, और OBC/Minority/EWS छात्रों को आंशिक (partial) राशि।",
         ],
       },
       {
@@ -3215,7 +3215,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Each semester has <strong>six or seven subjects</strong> — a mix of theory, practical (lab) and workshop — dropping to five or six in the final semester, where the six-month industrial training carries most of the load. Theory subjects have an end-semester written exam worth 60 marks plus internal sessional assessment worth 40. Practical and workshop subjects are the inverse — a 40-mark practical exam and viva plus 60 marks of sessional. Pass marks are typically 33% in theory and 50% in practical / sessional components.",
+          "Each semester has <strong>six or seven subjects</strong> — a mix of theory, practical (lab) and workshop — dropping to five or six in the final semester, where the six-month industrial training carries most of the load. Theory subjects have an end-semester written exam worth 60 marks plus internal sessional assessment worth 40. Practical and workshop subjects are the inverse — a 40-mark practical exam and viva plus 60 marks of sessional. Pass marks are 40% in each component — internal and external counted separately.",
       },
       {
         type: "callout",
@@ -3426,7 +3426,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "All of them. If you fail a subject, you carry it forward as a back paper and re-sit it in the next examination cycle. BTE UP allows up to 4 backs at any point during the 3-year programme; more than 4 disqualifies the candidate until the existing back log is cleared. The final diploma is awarded only after every subject across all six semesters is passed.",
+          "All of them. If you fail a subject, you carry it forward as a back paper and re-sit it in the next examination cycle. BTE UP publishes no cap on the number of back papers you may carry or register for in one sitting — the limit is time: a 3-year diploma must be completed within 6 academic sessions. The final diploma is awarded only after every subject across all six semesters is passed.",
       },
       { type: "h3", text: "Will the syllabus prepare me for SSC JE / RRB JE?" },
       {

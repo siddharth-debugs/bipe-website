@@ -58,7 +58,7 @@ const FAQS = [
   },
   {
     q: "What's the BIPE rank cutoff for the Dairy Engineering branch specifically?",
-    a: "Dairy Engineering is rare across UP — only four BTE UP-affiliated Dairy programmes exist in the entire state, and BIPE is one of them. JEECUP-rank competition for Dairy at BIPE is consequently lower than government polytechnic CSE/Mechanical popular cutoffs, but the rarity of the programme makes it a strategic choice for families in dairy-belt districts (Ghazipur, Mirzapur, parts of Jaunpur). The branch's placement pipeline — Amul, Mother Dairy, NDDB, regional cooperatives — is the long-term value.",
+    a: "Dairy Engineering is rare across UP — only four BTE UP-affiliated Dairy programmes exist in the entire state, and BIPE is one of them. JEECUP-rank competition for Dairy at BIPE is consequently lower than government polytechnic CSE/Mechanical popular cutoffs, but the rarity of the programme makes it a strategic choice for families in dairy-belt districts (Ghazipur, Mirzapur, parts of Jaunpur). The careers the branch opens up — Amul, Mother Dairy, NDDB, regional cooperatives — are the long-term value; the first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
   },
   {
     q: "When is JEECUP 2026 counselling and how many rounds are there?",

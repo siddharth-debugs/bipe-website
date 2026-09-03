@@ -85,13 +85,17 @@ export default function Page() {
       <PageHeader
         eyebrow="Admission from Bihar"
         title={<>Documents, hostel and the <span className="serif">practical bits.</span></>}
-        lead="Bihar candidates take admission at BIPE through JEECUP in the open / general category — no UP domicile certificate required. Bihar Board (BSEB) marksheets are accepted exactly the same as CBSE. The list below is everything a family from Patna, Ara, Buxar, Gaya or Bhagalpur needs to know before the counselling window opens."
+        lead="Bihar candidates take admission at BIPE through JEECUP in the open / general category — no UP domicile certificate required. Bihar Board (BSEB) marksheets are accepted exactly the same as CBSE. The summary below covers the papers Bihar families from Patna, Ara, Buxar, Gaya or Bhagalpur ask about most; the full reporting checklist lives on our Documents page."
       />
 
       <section className="section">
         <div className="container" style={{ maxWidth: 980 }}>
-          <div className="eyebrow">The full document checklist</div>
-          <h2 className="bipe-h2" style={{ marginTop: 14, marginBottom: 24 }}>Eight documents, in order.</h2>
+          <div className="eyebrow">Documents — the Bihar-specific bits</div>
+          <h2 className="bipe-h2" style={{ marginTop: 14, marginBottom: 14 }}>Eight that Bihar families ask about.</h2>
+          <p style={{ marginBottom: 24, color: "var(--ink-2)", lineHeight: 1.7, maxWidth: "64ch" }}>
+            This is a summary of the papers that come up most often from Bihar, not the whole list. The full reporting checklist is the{" "}
+            <Link href="/documents">ten mandatory documents</Link> every BIPE candidate brings on the day — read that page as well.
+          </p>
           <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             {DOCS.map((d) => (
               <div key={d.n} className="card" style={{ padding: 24 }}>

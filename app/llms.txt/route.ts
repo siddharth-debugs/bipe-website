@@ -94,7 +94,7 @@ const KEY_PAGES: Entry[] = [
   { path: "/placements", label: "Placements", desc: "Recruiter list + TPO-verified outcomes" },
   { path: "/alumni", label: "Alumni", desc: "Placement records filterable by branch/year" },
   { path: "/hostel", label: "Hostel", desc: "Boys' on-campus hostel, mess, facilities" },
-  { path: "/documents", label: "Documents", desc: "Prospectus + downloadable official documents" },
+  { path: "/documents", label: "Documents", desc: "Reporting-day checklist — ten mandatory documents, plus conditional and optional ones" },
   { path: "/faq", label: "FAQ", desc: "Q&As on eligibility, fees, hostel, branches, JEECUP" },
   { path: "/approvals", label: "Approvals", desc: "AICTE EoA letter, BTEUP affiliation, AISHE" },
   { path: "/mandatory-disclosure", label: "Mandatory Disclosure", desc: "AICTE Annexure-18" },

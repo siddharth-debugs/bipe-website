@@ -141,8 +141,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headline: "JEECUP Round 4 is the big re-opening —",
     headlineAccent: "and this time, every state is in.",
     heroAlert: {
-      badge: "Round 5 · classes under way",
-      text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opened Phase 2 to other-state candidates and anyone who missed the first rounds; Round 5 is the final round of the cycle. Add BIPE code 4455 to your choices and talk to admissions today — classes began 1 August, so late joiners catch up with support.",
+      badge: "Counselling concluded · classes under way",
+      text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opened Phase 2 to other-state candidates and anyone who missed the first rounds, and Round 5 was the final round — JEECUP counselling has now concluded. Classes began 1 August, so talk to BIPE admissions (code 4455) about what is still open; late joiners catch up with support.",
       primary: { label: "Talk to admissions →", href: "/early-registration" },
       secondary: { label: "Open JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
     },
@@ -164,9 +164,9 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
           ["Round 2", "Phase 1 · 7–9 Jul (done)", "UP-domicile · upgrade / fresh allotment", "160+ admitted so far this season"],
           ["Round 3", "Phase 1 · 16–19 Jul · allotment 20 Jul", "UP-domicile · last Phase-1 round", "Allottees report by ~25 Jul"],
           ["Round 4", "Phase 2 · closed", "ALL STATES eligible — Bihar, Jharkhand, MP — plus anyone who missed Rounds 1–3", "Round closed — ask admissions about vacant seats"],
-          ["Round 5", "Phase 2 · the final round", "All states · last centrally-run allotment", "Last seats — ask admissions what is vacant"],
+          ["Round 5", "Phase 2 · the final round · closed", "All states · last centrally-run allotment", "Round closed — ask admissions what is vacant"],
         ],
-        note: "Round 4 has closed and classes began 1 August; Round 5 is the final round of the cycle. If you are still without a seat, ask BIPE admissions directly what is vacant rather than waiting on a portal date:",
+        note: "Rounds 4 and 5 have both closed — Round 5 was the final round of the cycle — and classes began 1 August. If you are still without a seat, ask BIPE admissions directly what is vacant rather than waiting on a portal date:",
         noteLink: { label: "From Bihar? See the state-by-state guide", href: "/jeecup-from-bihar" },
       },
       {
@@ -214,7 +214,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "06",
         title: "Joining after 1 August",
-        body: "Classes began 1 August, and late joiners catch up with support. Confirm your seat and hostel slot at the time of fee payment — out-of-state applicants are prioritised for hostel allotment. If Round 4 didn't land your branch, keep 4455 on your list for Round 5, the final round, and ask admissions what is still vacant.",
+        body: "Classes began 1 August, and late joiners catch up with support. Confirm your seat and hostel slot at the time of fee payment — out-of-state applicants are prioritised for hostel allotment. Counselling has concluded — Round 5 was the final round — so if the rounds didn't land your branch, ask BIPE admissions (code 4455) directly what is still vacant.",
       },
     ],
     faqs: [
@@ -224,7 +224,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "I missed Rounds 1–3 — can I still get in through Round 4?",
-        a: "Round 4 was the big re-opening — whether you didn't register in time, weren't allotted a seat, or simply sat the earlier rounds out, it let you fill fresh choices. That round has now closed and classes began 1 August, so ask BIPE admissions (code 4455) what is still vacant, and keep 4455 on your list for Round 5, the final round, if you are still in counselling.",
+        a: "Round 4 was the big re-opening — whether you didn't register in time, weren't allotted a seat, or simply sat the earlier rounds out, it let you fill fresh choices. That round has now closed and classes began 1 August, so ask BIPE admissions (code 4455) what is still vacant. Round 5, the final round, has since closed too, so the counselling cycle is over — a direct conversation with the college is now the route.",
       },
       {
         q: "I was allotted a seat earlier but didn't take admission — can I join Round 4?",
@@ -236,7 +236,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "What are the exact JEECUP Round 4 dates?",
-        a: "JEECUP released Round-4 and Round-5 choice-filling and allotment dates progressively on the official portal rather than all at once, so we never published a fixed date here — a wrong date could cost you a seat. Round 4 ran after Round-3 reporting and has closed; Round 5 is the final round of the cycle, and classes began 1 August. Ask BIPE admissions what is still vacant rather than waiting on a date.",
+        a: "JEECUP released Round-4 and Round-5 choice-filling and allotment dates progressively on the official portal rather than all at once, so we never published a fixed date here — a wrong date could cost you a seat. Round 4 ran after Round-3 reporting and has closed; Round 5, the final round, closed in mid-August, and classes began 1 August. Ask BIPE admissions what is still vacant rather than waiting on a date.",
       },
       {
         q: "Do other-state candidates get UP reservation in Round 4?",
@@ -463,7 +463,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "After your JEECUP exam",
-    ctaBody: "Once you have your rank card, fill the choice-filling form with BIPE Varanasi (code 4455) as a priority. Read our 5-round counselling guide and book a campus visit to lock in your branch before allotment.",
+    ctaBody: "Once you have your rank card, fill the choice-filling form with BIPE Varanasi (code 4455) as a priority. Read our 5-round counselling guide and book a campus visit to see the branch workshops for yourself.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -487,7 +487,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headlineAccent: "check your rank card now.",
     heroAlert: {
       badge: "Result declared",
-      text: "JEECUP 2026 results are out. Check your rank on the official portal — then, with Rounds 1–4 closed and classes under way, talk to BIPE admissions (code 4455) about a seat.",
+      text: "JEECUP 2026 results are out. Check your rank on the official portal — then, with all five counselling rounds closed and classes under way, talk to BIPE admissions (code 4455) about a seat.",
       primary: { label: "Check on JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
       secondary: { label: "Admissions enquiry →", href: "/early-registration" },
     },
@@ -496,7 +496,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       { label: "Status", value: "Result declared", sub: "Out now — check the portal" },
       { label: "Where", value: "jeecup.admissions.nic.in", sub: "Result tab" },
       { label: "What you get", value: "Marks · Rank · Card", sub: "Downloadable PDF" },
-      { label: "Counselling", value: "Final round", sub: "Rounds 1–4 closed · classes began 1 Aug" },
+      { label: "Counselling", value: "Concluded", sub: "All 5 rounds closed · classes began 1 Aug" },
     ],
     steps: [
       {
@@ -527,7 +527,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "06",
         title: "Plan your counselling choices before you log in",
-        body: "Counselling Round 1 opened in late June 2026 and Round 5 is the final round. Never use the choice-filling window itself to decide which branches at which institutes you want — make a ranked list first, talk to family, talk to BIPE counsellors (free, +91-9415202879), and have your 10-20 choice combinations ready before the form opens.",
+        body: "Counselling Round 1 opened in late June 2026 and Round 5, the final round, closed in mid-August. Never use the choice-filling window itself to decide which branches at which institutes you want — make a ranked list first, talk to family, talk to BIPE counsellors (free, +91-9415202879), and have your 10-20 choice combinations ready before the form opens.",
       },
     ],
     faqs: [
@@ -557,7 +557,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Got your JEECUP rank?",
-    ctaBody: "Send us your JEECUP rank. We'll weigh it against your preferred branch and your home district and give you an honest read on whether government or BIPE fits best — and, with Rounds 1–4 closed, what is realistic from here.",
+    ctaBody: "Send us your JEECUP rank. We'll weigh it against your preferred branch and your home district and give you an honest read on whether government or BIPE fits best — and, with counselling now concluded, what is realistic from here.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -581,7 +581,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headlineAccent: "what your rank actually opens.",
     heroAlert: {
       badge: "Result declared",
-      text: "JEECUP 2026 results are out. See what your rank realistically opens — then lock your branch at BIPE (code 4455).",
+      text: "JEECUP 2026 results are out. See what your rank realistically opens — then ask BIPE admissions (code 4455) what is still vacant.",
       primary: { label: "Check your rank card →", href: "https://jeecup.admissions.nic.in" },
       secondary: { label: "Admissions enquiry →", href: "/early-registration" },
     },
@@ -705,9 +705,9 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     eyebrow: "JEECUP 2026 · SEAT ALLOTMENT GUIDE",
     headline: "JEECUP 2026 seat allotment —",
     headlineAccent: "round-wise · freeze, float, or withdraw.",
-    lead: "JEECUP 2026 ran 5 counselling rounds across two phases, from late June through August 2026. This page covers how seat allotment works at each round, when to freeze your seat, when to float for an upgrade, and how the institute-level spot round (Round 7) works at BIPE.",
+    lead: "JEECUP 2026 ran 5 counselling rounds across two phases, from late June through August 2026. This page covers how seat allotment works at each round, when to freeze your seat, when to float for an upgrade, and how the institute-level spot round works at BIPE.",
     quickStats: [
-      { label: "Total rounds", value: "7 (was 5)", sub: "Expanded for 2026 cycle" },
+      { label: "Total rounds", value: "5", sub: "Two phases · Round 5 final" },
       { label: "Counselling opens", value: "Late June 2026", sub: "After JEECUP results" },
       { label: "Spot round", value: "After Round 5 · August", sub: "Institute-level at BIPE" },
       { label: "BIPE code", value: "4455", sub: "Single institute code · 5 branches" },
@@ -731,7 +731,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "04",
         title: "Round 5 · Final main-round allotment",
-        body: "Last centrally-administered round. After this, the only path to a JEECUP-allotted seat is the institute-level spot round. Most candidates have settled by now. If you're still floating, this is your last chance to upgrade via the central portal.",
+        body: "Last centrally-administered round, and it closed in mid-August 2026. After it, the only path to a JEECUP-allotted seat is the institute-level spot round. Round 5 was the last chance to upgrade through the central portal; the 2026 cycle has now finished.",
       },
       {
         n: "05",
@@ -823,7 +823,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "05",
         title: "Income certificate (EWS / scholarship claimants)",
-        body: "EWS reservation needs an income certificate showing family income below ₹8 lakh/year. UP Post-Matric Scholarship requires income below ₹2 lakh/year. Both are issued by the tehsil office — typically 1-2 weeks to process. Apply EARLY.",
+        body: "EWS reservation needs an income certificate showing family income below ₹8 lakh/year. UP Post-Matric Scholarship requires income below ₹2.5 lakh/year for SC / ST and below ₹2 lakh/year for OBC / Minority. Both are issued by the tehsil office — typically 1-2 weeks to process. Apply EARLY.",
       },
       {
         n: "06",
@@ -1249,7 +1249,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     slug: "jeecup-exam-pattern-2026",
     shortTitle: "JEECUP Exam Pattern",
     title: "JEECUP Exam Pattern 2026 · CBT Format + Marking Scheme | BIPE 4455",
-    description: "JEECUP 2026 exam pattern — Computer-Based Test format, 100 questions in 150 minutes, marking scheme, negative marking, section weighting, navigation interface tips.",
+    description: "JEECUP 2026 exam pattern — Computer-Based Test format, 100 questions in 150 minutes, marking scheme, no negative marking, section weighting, navigation interface tips.",
     keywords: [
       "JEECUP exam pattern",
       "JEECUP exam pattern 2026",
@@ -1262,7 +1262,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     eyebrow: "JEECUP 2026 · EXAM PATTERN",
     headline: "JEECUP 2026 exam pattern —",
     headlineAccent: "format, timing, marking.",
-    lead: "JEECUP 2026 is a Computer-Based Test (CBT) — multiple-choice questions across Maths, Physics and Chemistry for Group A. 100 questions, 150 minutes, 4 marks each, no negative marking, negative marking. This page covers the exam format, marking scheme, what the CBT interface actually looks like, and tips for navigating it efficiently.",
+    lead: "JEECUP 2026 is a Computer-Based Test (CBT) — multiple-choice questions across Maths, Physics and Chemistry for Group A. 100 questions, 150 minutes, 4 marks each, no negative marking. This page covers the exam format, marking scheme, what the CBT interface actually looks like, and tips for navigating it efficiently.",
     quickStats: [
       { label: "Format", value: "Computer-Based Test", sub: "All questions on screen · click-to-answer" },
       { label: "Questions", value: "100", sub: "Multiple-choice · 4 options each" },

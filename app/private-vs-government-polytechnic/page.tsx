@@ -428,9 +428,9 @@ export default function Page() {
               >
                 AFRC-approved tuition. No capitation, no donation, no &lsquo;development
                 fund&rsquo;. Hostel and mess billed separately and disclosed line by line.
-                Receipts for every payment. Full UP Post-Matric scholarship eligible for
-                SC / ST / OBC / Minority / EWS — net out-of-pocket can come close to
-                government figure for eligible students.
+                Receipts for every payment. UP Post-Matric reimburses tuition in full for
+                SC / ST and in part for OBC / Minority / EWS — net out-of-pocket can come
+                close to the government figure for eligible students.
               </p>
               <p style={{ marginTop: 14 }}>
                 <Link href="/fees" className="btn btn-ghost" style={{ fontSize: 13 }}>

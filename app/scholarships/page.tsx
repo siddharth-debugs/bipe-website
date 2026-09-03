@@ -83,8 +83,9 @@ const FAQS: { q: string; a: string }[] = [
 /**
  * Schema.org JSON-LD for /scholarships — two blocks:
  *
- *   1. FAQPage — the 4 Q&As (eligibility, timing, income proof, hostel
- *      coverage). Matches the pattern already used on /fees, /faq, and
+ *   1. FAQPage — every entry in FAQS (four English Q&As on eligibility,
+ *      timing, income proof and hostel coverage, plus three in Hindi).
+ *      Matches the pattern already used on /fees, /faq, and
  *      /jeecup. Eligible for the FAQ rich-result accordion in SERP.
  *
  *   2. CollectionPage + ItemList<MonetaryGrant> — the 6 scholarship
@@ -157,7 +158,7 @@ const GRANT_SCHEMES: GrantInput[] = [
     id: "sc-st-post-matric",
     name: "SC / ST Post-Matric Scholarship (Uttar Pradesh)",
     description:
-      "Full tuition reimbursement for SC and ST students at BIPE, subject to the UP State Government's annual income ceiling.",
+      "Full tuition reimbursement for SC and ST students at BIPE, subject to the UP State Government's family income ceiling (currently ₹2.5 lakh).",
     funder: FUNDER_UP_GOVT,
     url: "https://scholarship.up.gov.in",
   },
@@ -507,7 +508,7 @@ export default function Page() {
             <div>
               <div className="eyebrow">Common questions</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                Four questions{" "}
+                Seven questions{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   every family asks.
                 </span>

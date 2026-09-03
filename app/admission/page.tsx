@@ -22,7 +22,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "02",
     title: "Take the JEECUP exam",
-    body: "Computer-based test on Class-10 Mathematics & Science. Group A is the entrance for the 3-year BTEUP diploma — multiple shifts, results in late May.",
+    body: "Computer-based test on Class-10 Mathematics & Science. Group A is the entrance for the 3-year BTEUP diploma — multiple shifts, results in mid-June.",
   },
   {
     n: "03",
@@ -74,7 +74,7 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
   {
     roman: "iii",
     title: "Rare Dairy Engineering",
-    body: "Offered by fewer than 1.1% of UP polytechnics. Alumni placed at Amul, Mother Dairy, Parag, Nestlé and the NDDB across the country.",
+    body: "Offered by fewer than 1.1% of UP polytechnics. Amul, Mother Dairy, Parag, Nestlé and the NDDB are the employers it opens up — the first cohort entered in 2025-26.",
     metric: "<1.1%",
     metricLabel: "of UP polytechnics",
   },

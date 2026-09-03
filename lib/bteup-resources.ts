@@ -224,7 +224,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     eyebrow: "BTEUP 2026 · ADMIT CARD GUIDE",
     headline: "BTEUP semester admit card —",
     headlineAccent: "download, verify, troubleshoot.",
-    lead: "BTEUP semester exam admit cards are released on bteup.ac.in approximately 2 weeks before each exam cycle (typically May for odd-sem theory, November for even-sem theory). This page walks through the download flow, the details to verify against your registration, and what to do if something doesn't match.",
+    lead: "BTEUP semester exam admit cards are released on bteup.ac.in approximately 2 weeks before each exam cycle (typically late October for odd-sem theory, April for even-sem theory). This page walks through the download flow, the details to verify against your registration, and what to do if something doesn't match.",
     quickStats: [
       { label: "Released", value: "~2 weeks pre-exam", sub: "Watch bteup.ac.in" },
       { label: "Login", value: "Student portal", sub: "Roll number + password" },
@@ -266,7 +266,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "When will the BTEUP 2026 admit card be released?",
-        a: "Approximately 2 weeks before each exam cycle begins. Odd-semester theory admit cards typically release in May, even-semester theory in November. Practical exam admit cards release ~10 days before practicals start (which can be at the institute itself, not a central centre). Watch the bteup.ac.in homepage banner for exact dates.",
+        a: "Approximately 2 weeks before each exam cycle begins. Odd-semester theory admit cards typically release in late October, before the November papers; even-semester theory in April, before the papers that run from late April into May. Practical exam admit cards release ~10 days before practicals start (which can be at the institute itself, not a central centre). Watch the bteup.ac.in homepage banner for exact dates.",
       },
       {
         q: "I forgot my BTEUP password — how do I download my admit card?",
@@ -294,7 +294,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     slug: "bteup-semester-exam-dates-2026",
     shortTitle: "BTEUP Semester Exam Dates",
     title: "BTEUP Semester Exam Dates 2026 · Odd + Even Cycle Calendar | BIPE 4455",
-    description: "BTEUP semester exam calendar 2026 — odd semester (Apr-Jun) and even semester (Oct-Dec) windows, practical schedule, supplementary cycle. Verified from bteup.ac.in.",
+    description: "BTEUP semester exam calendar 2026 — odd semester (Nov) and even semester (late Apr-May) windows, practical schedule, supplementary cycle. Verified from bteup.ac.in.",
     keywords: [
       "BTEUP exam date",
       "BTEUP semester exam dates",
@@ -308,10 +308,10 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     eyebrow: "BTEUP 2026 · EXAM CALENDAR",
     headline: "BTEUP semester exams —",
     headlineAccent: "when each cycle runs.",
-    lead: "BTEUP runs two main exam cycles a year — odd semester (typically April-June, covering Sem 1, 3, 5) and even semester (typically October-December, covering Sem 2, 4, 6). Plus practical exams within each cycle and a supplementary cycle for backlog clearance. Specific 2026 dates are published per cycle by BTEUP — this page lays out the typical calendar pattern + where to find the latest schedule.",
+    lead: "BTEUP runs two main exam cycles a year — odd semester (theory typically in November, covering Sem 1, 3, 5) and even semester (theory from late April into May, covering Sem 2, 4, 6). Plus practical exams within each cycle and a supplementary cycle for backlog clearance. Specific 2026 dates are published per cycle by BTEUP — this page lays out the typical calendar pattern + where to find the latest schedule.",
     quickStats: [
-      { label: "Odd sem theory", value: "Apr – Jun", sub: "Sem 1, 3, 5 · annual" },
-      { label: "Even sem theory", value: "Oct – Dec", sub: "Sem 2, 4, 6 · annual" },
+      { label: "Odd sem theory", value: "November", sub: "Sem 1, 3, 5 · annual" },
+      { label: "Even sem theory", value: "Apr – May", sub: "Sem 2, 4, 6 · annual" },
       { label: "Practical window", value: "Pre-theory · 2 weeks", sub: "At institute · BIPE Phoolpur" },
       { label: "Supplementary", value: "After main result", sub: "January after the December result · July after the June one" },
     ],
@@ -339,7 +339,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "05",
         title: "Track results + plan for supplementary if needed",
-        body: "Results typically release 2 months after the cycle closes. If you have a backlog (failed subject or shortage of attendance), the supplementary cycle gives you a re-attempt. Supplementary registration is fee-paid and time-bound — usually a 2-week window starting ~1 week after main results.",
+        body: "Results typically release about six weeks after the cycle closes. If you have a backlog (failed subject or shortage of attendance), the supplementary cycle gives you a re-attempt. Supplementary registration is fee-paid and time-bound — usually a 2-week window starting ~1 week after main results.",
       },
       {
         n: "06",
@@ -354,7 +354,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "Are odd and even semester exams in the same month every year?",
-        a: "Roughly. Odd semester usually runs April-June (sometimes shifted by a few weeks due to elections, public holidays, or pandemic-style disruptions). Even semester usually runs October-December. Exact dates float year to year — always check the current-cycle calendar before planning.",
+        a: "Roughly. Odd-semester theory usually runs in November (sometimes shifted by a few weeks due to elections, public holidays, or pandemic-style disruptions). Even-semester theory usually runs from late April into May. Exact dates float year to year — always check the current-cycle calendar before planning.",
       },
       {
         q: "What if I have a personal emergency on an exam date?",
@@ -362,7 +362,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "When do BTEUP practical exams happen?",
-        a: "About 2 weeks BEFORE the theory exam window. Practicals are at YOUR institute (BIPE Phoolpur for BIPE students) under an external BTEUP examiner. Most semesters carry three or four lab and workshop subjects alongside the theory papers. You'll know your practical date 3-4 weeks ahead via BIPE's notice board.",
+        a: "About 2 weeks BEFORE the theory exam window. Practicals are at YOUR institute (BIPE Phoolpur for BIPE students) under an external BTEUP examiner. Every semester's plan mixes lab and workshop subjects in with the theory papers, and each of those carries its own practical exam. You'll know your practical date 3-4 weeks ahead via BIPE's notice board.",
       },
       {
         q: "What is the BTEUP supplementary exam cycle?",
@@ -378,7 +378,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     slug: "bteup-result-check",
     shortTitle: "BTEUP Result Check",
     title: "BTEUP Result 2026 · Semester Result Check + Grace / Revaluation | BIPE 4455",
-    description: "Check your BTEUP semester result at bteup.ac.in — login, marksheet download, understand grades, apply for grace marks or revaluation. Result timeline typically ~2 months post-exam.",
+    description: "Check your BTEUP semester result at bteup.ac.in — login, marksheet download, understand grades, apply for grace marks or revaluation. Result timeline typically ~6 weeks post-exam.",
     keywords: [
       "BTEUP result",
       "BTEUP result 2026",
@@ -394,7 +394,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     headlineAccent: "from result page to marksheet.",
     lead: "BTEUP semester results follow about six weeks after the exam cycle closes — odd-semester results in December, even-semester results in June. The result includes subject-wise marks, grades, attendance, and pass / fail status per subject. This page walks through the check flow, marksheet download, and what to do if you spot an error.",
     quickStats: [
-      { label: "Released", value: "~2 months post-exam", sub: "Watch bteup.ac.in" },
+      { label: "Released", value: "~6 weeks post-exam", sub: "Watch bteup.ac.in" },
       { label: "Where", value: "bteup.ac.in", sub: "Result tab · student portal" },
       { label: "Marksheet", value: "Downloadable PDF", sub: "Hard copy from BIPE later" },
       { label: "Pass mark", value: "40% in each component", sub: "Internal and external counted separately" },
@@ -438,7 +438,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "What does 'CT' or 'AB' on my BTEUP result mean?",
-        a: "CT = 'Carry Trial' (i.e., failed but eligible to re-attempt in supplementary). AB = 'Absent' (you didn't appear; treated as backlog). Both count as backlogs — you need to clear them in the next supplementary cycle to graduate on time. Reach out to your branch in-charge at BIPE to plan the supplementary attempt.",
+        a: "CT = 'Carry Trial' (i.e., failed but eligible to re-attempt in supplementary). AB = 'Absent' (you didn't appear; treated as backlog). Both count as backlogs — you need to clear them at the next back-paper sitting to graduate on time. Reach out to your branch in-charge at BIPE to plan the supplementary attempt.",
       },
       {
         q: "I think there's an error in my marks — what should I do?",
@@ -454,7 +454,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "What if I have a backlog after the diploma?",
-        a: "You CANNOT graduate with active backlogs. Clear them through the back-paper sittings, which run inside the two main exam windows rather than as a separate cycle. BTEUP does not publish a maximum number of back subjects per sitting — its own fee schedule charges a flat fee for up to two and a per-subject fee beyond that. What is capped is TIME: a 3-year diploma must be completed within 6 academic sessions. BIPE's academic office tracks every student's backlog status — talk to your branch in-charge for a personalised supplementary plan.",
+        a: "You CANNOT graduate with active backlogs. Clear them at the back-paper sittings, which run inside the two main exam windows rather than as a third standalone cycle — the January sitting follows the December odd-semester result, the July sitting follows the June even-semester result. BTEUP does not publish a maximum number of back subjects per sitting — its own fee schedule charges a flat fee for up to two and a per-subject fee beyond that. What is capped is TIME: a 3-year diploma must be completed within 6 academic sessions. BIPE's academic office tracks every student's backlog status — talk to your branch in-charge for a personalised supplementary plan.",
       },
     ],
     ctaTitle: "Result not what you hoped?",
@@ -696,7 +696,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       eyebrow: "Skip ahead · branch syllabus",
       heading: "Per-branch syllabus on BIPE",
       intro:
-        "If you already know your branch, jump straight to its 6-semester subject list. These pages show theory + practical per semester, with BTEUP subject codes — curated by BIPE's faculty from the official BTEUP gazette.",
+        "If you already know your branch, jump straight to its 6-semester subject list. These pages show the theory and lab subjects for each semester — subject names, curated by BIPE's faculty from the official BTEUP gazette. Subject codes and the marks split change with each gazette revision, so every branch page links straight to bteup.ac.in instead.",
       branches: [
         {
           href: "/courses/mechanical-engineering-production",
@@ -744,7 +744,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "03",
         title: "Download the semester-wise PDFs",
-        body: "Each semester is a separate PDF. The first page lists theory subjects (5-7 per semester) and practical subjects (4-6 per semester) with subject codes, periods per week, internal + external marks, and pass percentage. The rest of the PDF is the topic-by-topic breakdown for each subject.",
+        body: `Each semester is a separate PDF. The first page lists every subject in that semester — ${SUBJECTS_PER_SEMESTER} of them across BIPE's branches, theory and lab together — with subject codes, periods per week, internal + external marks, and pass percentage. The rest of the PDF is the topic-by-topic breakdown for each subject.`,
       },
       {
         n: "04",
@@ -781,7 +781,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "How is BTEUP syllabus different from CBSE / NCERT?",
-        a: "BTEUP is application-heavy. Where NCERT focuses on concept depth, BTEUP focuses on workshop / lab / field application. A semester's theory subject typically pairs with a practical subject — for example, 'Strength of Materials' theory in Civil pairs with a 'Materials Testing Lab' practical. The internal 30% reflects practical mastery.",
+        a: "BTEUP is application-heavy. Where NCERT focuses on concept depth, BTEUP focuses on workshop / lab / field application. A semester's theory subject typically pairs with a practical subject — for example, 'Strength of Materials' theory in Civil pairs with a 'Materials Testing Lab' practical. The internal component — 40% of a theory subject, 60% of a practical — reflects practical mastery.",
       },
       {
         q: "What if my branch's syllabus changes mid-diploma?",
@@ -858,7 +858,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "06",
         title: "Check supplementary result + plan ahead",
-        body: "Results declare ~2 months after the cycle closes. If you cleared the backlog: your main-cycle marksheet now shows the passing grade. If you didn't: another supplementary cycle is available in the next window (6 months later). Up to 2-3 consecutive failed attempts is allowed; beyond that, BTEUP may require a 'special permission' application for further re-attempts.",
+        body: "Results declare about six weeks after the cycle closes. If you cleared the backlog: your main-cycle marksheet now shows the passing grade. If you didn't: another supplementary cycle is available in the next window (6 months later). BTEUP publishes no cap on how many times you may re-attempt a back paper — what is fixed is the time: a 3-year diploma must be completed within 6 academic sessions, so every missed cycle eats into that window.",
       },
     ],
     checklist: {
@@ -934,12 +934,12 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "01",
         title: "Find your raw marks on the BTEUP marksheet",
-        body: "Each subject lists: internal marks (out of 30 for theory / 50 for practical), external marks (out of 70 for theory / 50 for practical), total (out of 100), and grade. The marksheet PDF is available on bteup.ac.in immediately after result declaration.",
+        body: "Each subject lists: internal marks (out of 40 for theory / 60 for practical), external marks (out of 60 for theory / 40 for practical), total (out of 100), and grade. The marksheet PDF is available on bteup.ac.in immediately after result declaration.",
       },
       {
         n: "02",
         title: "Map raw marks to grade (the 10-point scale)",
-        body: "Standard BTEUP grade band: 90-100 = O (Outstanding, 10 points), 80-89 = A+ (9), 70-79 = A (8), 60-69 = B+ (7), 50-59 = B (6), 40-49 = C (5), 33-39 = P (Pass, 4), Below 33 = F (Fail, 0). The grade points are what enter the SGPA / CGPA formulas — not the raw marks.",
+        body: "Standard BTEUP grade band: 90-100 = O (Outstanding, 10 points), 80-89 = A+ (9), 70-79 = A (8), 60-69 = B+ (7), 50-59 = B (6), 40-49 = C (5, the lowest passing band), Below 40 = F (Fail, 0). Pass needs 40% in each component — internal and external counted separately — so a subject where either component falls below 40 is a fail even if the total reaches 40. The grade points are what enter the SGPA / CGPA formulas — not the raw marks.",
       },
       {
         n: "03",
@@ -959,7 +959,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "06",
         title: "Check class division based on CGPA / percentage",
-        body: "Standard BTEUP division: 75%+ (or CGPA 7.9+) = First Division with Distinction, 60-75% (CGPA 6.3-7.9) = First Division, 45-60% (CGPA 4.7-6.3) = Second Division, 33-45% (CGPA 3.5-4.7) = Third Division. Your final marksheet states your division — important for government job applications.",
+        body: "Standard BTEUP division: 75%+ (or CGPA 7.9+) = First Division with Distinction, 60-75% (CGPA 6.3-7.9) = First Division, 45-60% (CGPA 4.7-6.3) = Second Division, 40-45% (CGPA 4.2-4.7) = Third Division. Your final marksheet states your division — important for government job applications.",
       },
     ],
     faqs: [
