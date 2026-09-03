@@ -48,7 +48,7 @@ const POLYTECHNICS: GovtPoly[] = [
     seats: "Standard government intake",
     fees: "Government structure (~₹12,000-22,000/year)",
     notes:
-      "Serves Mirzapur district. Limited Dairy Engineering presence in the region — the dairy-specific career path goes via the rare BTE UP Dairy-affiliated programmes (BIPE is one of only four in UP).",
+      "Serves Mirzapur district. Dairy Engineering is not offered here; the branch is rare statewide, with only four BTE UP-affiliated programmes in all of UP. BIPE runs one of them, but it took its last intake in 2025-26 and is closed to new admissions from 2026-27 — a Mirzapur applicant choosing BIPE picks from Civil, Electrical, Mechanical Engineering (Production) or Computer Science & Engineering.",
   },
   {
     name: "Government Polytechnic Jaunpur",
@@ -67,7 +67,7 @@ const POLYTECHNICS: GovtPoly[] = [
     seats: "Standard government intake",
     fees: "Government structure (~₹12,000-22,000/year)",
     notes:
-      "Serves Ghazipur's agricultural and small-industry belt. Dairy Engineering — the natural fit for Ghazipur's dairy-cluster households — is generally not offered at this government polytechnic.",
+      "Serves Ghazipur's agricultural and small-industry belt. Dairy Engineering is generally not offered at this government polytechnic — and it is closed to new admissions at BIPE from 2026-27 too, so Ghazipur applicants are choosing between the standard engineering branches on either route.",
   },
   {
     name: "Government Polytechnic Bara, Prayagraj",
@@ -116,7 +116,7 @@ const FAQS = [
   },
   {
     q: "What if I want Dairy Engineering specifically — can a government polytechnic in Eastern UP offer it?",
-    a: "Dairy Engineering is rare across UP — only four BTE UP-affiliated Dairy Engineering programmes exist in the entire state, and BIPE is one of them. Government polytechnics in the Eastern UP districts listed above generally do not offer Dairy Engineering. For students from dairy-cluster districts (Ghazipur, Mirzapur, parts of Jaunpur), BIPE is structurally the right choice for this branch.",
+    a: "Two answers, and the second one matters more. First: no — government polytechnics in the Eastern UP districts listed above generally do not offer Dairy Engineering, and the branch is rare statewide, with only four BTE UP-affiliated Dairy Engineering programmes in all of UP. Second: BIPE is one of those four, but BIPE's Dairy Engineering took its last intake in 2025-26 and is closed to new admissions from 2026-27, so it is not a branch you can fill as a JEECUP choice — do not plan a counselling strategy around it. The enrolled cohort continues with labs, faculty and the mandatory Semester-6 plant training unchanged and graduates in 2028. For a new applicant, BIPE admits to four branches: Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering.",
   },
 ];
 
@@ -354,7 +354,7 @@ export default function Page() {
               </h3>
               <ul style={{ marginTop: 14, paddingLeft: 20, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.7 }}>
                 <li>Your rank doesn&rsquo;t safely secure your preferred branch at a government polytechnic</li>
-                <li>You want Dairy Engineering (rare — only 4 BTE UP programmes in all of UP, BIPE is one)</li>
+                <li>You want real branch choice — 420 seats across four admitting branches, where the nearest government polytechnic (Kuru Pindra) admits 60 students in total</li>
                 <li>You&rsquo;re from outside Varanasi city — hostel access is essential</li>
                 <li>You want documented placement infrastructure ({_placed} verified placements at {_recruiters} recruiters)</li>
                 <li>Smaller cohort + named faculty mentors matters to your learning</li>

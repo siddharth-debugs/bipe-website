@@ -10,7 +10,7 @@
  * never breaks on a CMS hiccup.
  */
 
-import { DATA } from "@/lib/data";
+import { DATA, BRANCH_CLOSURES } from "@/lib/data";
 
 const BACKEND_BASE =
   process.env.BIPE_BACKEND_URL?.trim().replace(/\/+$/, "") ||
@@ -348,23 +348,43 @@ export async function getAlumni(): Promise<PublicAlumnus[]> {
 export async function getBranchesMapped(): Promise<typeof DATA.branches> {
   const live = await getBranches();
   if (!live || live.length === 0) return DATA.branches;
-  return live.map((b) => ({
-    code: b.code,
-    slug: b.slug,
-    name: b.name,
-    hi: b.name_hi,
-    seats: b.seats,
-    fee: b.fee_year,
-    desc: b.short_description,
-    tag: b.tag || null,
-    color: b.color_index,
-    thumbnail: { src: b.thumbnail_url, alt: b.thumbnail_alt },
-    slides: [
-      ...(b.slide1_url ? [{ src: b.slide1_url, alt: b.slide1_alt }] : []),
-      ...(b.slide2_url ? [{ src: b.slide2_url, alt: b.slide2_alt }] : []),
-      ...(b.slide3_url ? [{ src: b.slide3_url, alt: b.slide3_alt }] : []),
-    ],
-  }));
+  return live.map((b) => {
+    // A branch closed to new admissions has its PITCH fields pinned to the
+    // seed. The CMS row for Dairy still reads "Rare diploma — offered by
+    // only 4 institutes including BIPE...", which is a recruitment pitch
+    // for a branch that no longer recruits, and CMS-first mapping means a
+    // repo edit to `desc` would never reach production on its own. Pinning
+    // is the durable fix: it does not depend on someone remembering to
+    // PATCH a row, and it cannot regress if the stale row is ever
+    // republished. Only desc/tag are pinned — seats, code and name stay
+    // CMS-supplied and are separately asserted against the seed at build
+    // time in app/llms.txt/route.ts. 3 Sep 2026.
+    const closure = BRANCH_CLOSURES[b.slug];
+    const seed = closure ? DATA.branches.find((s) => s.slug === b.slug) : undefined;
+    return {
+      code: b.code,
+      slug: b.slug,
+      name: b.name,
+      hi: b.name_hi,
+      seats: b.seats,
+      fee: b.fee_year,
+      desc: seed ? seed.desc : b.short_description,
+      tag: seed ? seed.tag : b.tag || null,
+      color: b.color_index,
+      thumbnail: { src: b.thumbnail_url, alt: b.thumbnail_alt },
+      slides: [
+        ...(b.slide1_url ? [{ src: b.slide1_url, alt: b.slide1_alt }] : []),
+        ...(b.slide2_url ? [{ src: b.slide2_url, alt: b.slide2_alt }] : []),
+        ...(b.slide3_url ? [{ src: b.slide3_url, alt: b.slide3_alt }] : []),
+      ],
+      // SEED-ENFORCED, not CMS-supplied. Admission closure is a claim the
+      // repo owns: there is no `admissions` column in the CMS bundle, and
+      // there must not be one that can silently re-open a closed branch to
+      // applicants. Same overlay shape as getContact()'s identity fields.
+      // 3 Sep 2026 — see BRANCH_CLOSURES in lib/data.ts.
+      admissions: closure,
+    };
+  });
 }
 
 export async function getPageSections(page: string): Promise<PublicPageSection[]> {

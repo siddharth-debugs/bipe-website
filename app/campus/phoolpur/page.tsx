@@ -115,7 +115,12 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Is the Phoolpur campus the only BIPE location?",
-    a: "Yes — BIPE has a single 6-acre campus in Phoolpur, Varanasi. All five BTEUP-affiliated branches (CSE, Civil, Electrical, Mechanical Engineering Production and the rare Dairy Engineering) are taught here.",
+    // 3 Sep 2026 · the question is "is this the only campus", so the
+    // honest answer still names all five branches taught here — that is
+    // what the building contains. But this answer also ships as FAQPage
+    // JSON-LD and can surface standalone in a rich result, where a bare
+    // list reads as a menu, so the Dairy line now carries its own status.
+    a: "Yes — BIPE has a single 6-acre campus in Phoolpur, Varanasi. All five BTEUP-affiliated branches are taught here: CSE, Civil, Electrical, Mechanical Engineering (Production) and Dairy Engineering. New applicants choose from the first four — Dairy Engineering is closed to new admissions from 2026-27 and its final batch graduates in 2028.",
   },
   {
     q: "Are there hostels and PGs around BIPE?",

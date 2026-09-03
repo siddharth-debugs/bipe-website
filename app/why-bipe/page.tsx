@@ -4,6 +4,7 @@ import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
+import { ADMITTING_SEATS } from "@/lib/data";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metadataFor("whyBipe");
@@ -62,10 +63,18 @@ const PILLARS: Pillar[] = [
     verifyPath: "/fees",
   },
   {
-    topic: "Five branches — including the Dairy moat",
+    // 3 Sep 2026 — this pillar used to be "Five branches — including the
+    // Dairy moat" and sold Dairy Engineering's rarity as a reason to pick
+    // BIPE. Dairy closed to new admissions from 2026-27, so the rarity is
+    // no longer something an applicant can buy into and the pillar had to
+    // stand on the four branches that are actually open. The closure is
+    // stated in the last sentence rather than omitted — a family that has
+    // heard about the Dairy programme deserves to learn here that it is
+    // shut, not after they have ranked it in JEECUP choice-filling.
+    topic: `Four branches open for 2026-27 — ${ADMITTING_SEATS} seats`,
     position:
-      "Civil, Computer Science & Engineering, Electrical, Mechanical (Production), and the rare Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh. On-campus chemistry and hydraulics labs, industrial visits to working plants, a mandatory six-month plant training in Semester 6, and the Amul / Mother Dairy / NDDB career pipeline the qualification opens up — the first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
-    verifyLabel: "Explore the five branches",
+      "Civil, Computer Science & Engineering, Electrical and Mechanical (Production) — four 3-year BTEUP diplomas, each with its own workshop and lab block, industrial visits to working plants, and the mandatory six-month industrial training in Semester 6 that turns a syllabus into a CV. Dairy Engineering, our fifth branch, took its last intake in 2025-26 and is closed to new admissions; that cohort is being taught out to its 2028 graduation.",
+    verifyLabel: "Explore the four branches",
     verifyPath: "/courses",
   },
   {

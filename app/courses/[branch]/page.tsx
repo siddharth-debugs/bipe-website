@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { DATA } from "@/lib/data";
+import { DATA, admittingOf } from "@/lib/data";
 import { getBranchesMapped } from "@/lib/content";
 import { BRANCH_DETAIL } from "@/lib/branchContent";
 import { SITE_URL } from "@/lib/routes";
@@ -40,7 +40,12 @@ export async function generateMetadata(
   // to stay under 145 chars across all 5 branches, keeping the high-
   // value tokens (branch, BTEUP code, JEECUP 4455, AFRC fee, seats,
   // AICTE approval) and dropping the b.desc tail that was being cut.
-  const description = `Diploma in ${b.name} (BTEUP ${b.code}) · BIPE Varanasi · JEECUP 4455 · AFRC ₹${b.fee}/yr · ${b.seats} seats · AICTE-approved.`;
+  // A closed branch gets its own description. The default one advertises
+  // "JEECUP 4455 · N seats", which is exactly the snippet a search result
+  // would put under a branch nobody can apply to. 3 Sep 2026.
+  const description = b.admissions
+    ? `Diploma in ${b.name} (BTEUP ${b.code}) · BIPE Varanasi · closed to new admissions from ${b.admissions.closedFrom} · final cohort graduates ${b.admissions.finalCohortGraduates}.`
+    : `Diploma in ${b.name} (BTEUP ${b.code}) · BIPE Varanasi · JEECUP 4455 · AFRC ₹${b.fee}/yr · ${b.seats} seats · AICTE-approved.`;
   return {
     title,
     description,
@@ -83,6 +88,18 @@ export default async function BranchPage(
   const detail = BRANCH_DETAIL[branch];
   if (!detail) notFound();
 
+  // Set only for a branch that has stopped admitting and is teaching out its
+  // final cohort. Everything closure-aware on this page keys off this object
+  // — never off the slug — so the next branch to close inherits all of it.
+  // The page itself stays fully published: there are students mid-course in
+  // a closed branch and this is their syllabus, lab and FAQ reference.
+  // 3 Sep 2026.
+  const closure = b.admissions;
+  // Counted off the same live list the page was built from, so the number a
+  // closed branch points readers at cannot drift away from what /courses
+  // actually shows them when they follow the link.
+  const admittingCount = admittingOf(branches).length;
+
   const path = `/courses/${b.slug}`;
   const canonical = `${SITE_URL}${path}`;
 
@@ -111,10 +128,14 @@ export default async function BranchPage(
     inLanguage: ["en-IN"],
     educationalLevel: "Diploma",
     educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
-    coursePrerequisites:
-      "Class 10 pass with Mathematics and Science (minimum 35% aggregate). " +
-      "Admission via JEECUP Group A — choose BIPE institute code 4455 and BTEUP " +
-      `branch code ${b.code} during counselling.`,
+    // Structured data is the copy most likely to be read back by an AI
+    // assistant answering "how do I get into this course", so the closed
+    // branch must not carry counselling instructions here either.
+    coursePrerequisites: closure
+      ? `Closed to new admissions from ${closure.closedFrom}. The last intake was ${closure.lastIntake} and that cohort graduates in ${closure.finalCohortGraduates}. New applicants should choose one of the branches BIPE still admits to, via JEECUP Group A, institute code 4455.`
+      : "Class 10 pass with Mathematics and Science (minimum 35% aggregate). " +
+        "Admission via JEECUP Group A — choose BIPE institute code 4455 and BTEUP " +
+        `branch code ${b.code} during counselling.`,
     occupationalCredentialAwarded: detail.careers[0],
     provider: {
       "@type": "CollegeOrUniversity",
@@ -127,8 +148,10 @@ export default async function BranchPage(
       category: "Tuition",
       price: b.fee.replace(/,/g, ""),
       priceCurrency: "INR",
-      availability: "https://schema.org/InStock",
-      url: `${canonical}#apply`,
+      availability: closure
+        ? "https://schema.org/Discontinued"
+        : "https://schema.org/InStock",
+      url: closure ? `${SITE_URL}/courses` : `${canonical}#apply`,
     },
     // hasCourseInstance is the rich-result trigger. One instance per
     // branch — BIPE runs a single full-time on-campus cohort starting
@@ -196,8 +219,13 @@ export default async function BranchPage(
   // English implicitly signals "not for you" to the Hindi-medium audience);
   // the English branch name is how the programmes are named everywhere.
   // Same WABA handset as DATA.contact.whatsapp (917310077788).
+  // On a closed branch the prefilled message drops "(2026-27)" — that read
+  // as an enquiry about admission to a session with no intake. The running
+  // batch is what a parent or an enrolled student would be writing about.
   const branchWaUrl = `https://wa.me/${DATA.contact.whatsappPhone.replace(/\D/g, "")}?text=${encodeURIComponent(
-    `नमस्ते BIPE — ${b.name} diploma (2026-27) की जानकारी चाहिए`,
+    closure
+      ? `नमस्ते BIPE — ${b.name} (BTEUP ${b.code}) के चालू बैच के बारे में जानकारी चाहिए`
+      : `नमस्ते BIPE — ${b.name} diploma (2026-27) की जानकारी चाहिए`,
   )}`;
 
   return (
@@ -220,6 +248,59 @@ export default async function BranchPage(
             <span style={{ color: "var(--brand)" }}>{b.name}</span>
           </nav>
 
+          {/* Closure notice — first thing under the breadcrumb, ahead of the
+              h1, because the reader has to know this before they read a word
+              of the pitch below it. role="note" + aria-labelledby so a screen
+              reader announces it as a standalone advisory rather than as a
+              stray heading, and a solid left rule so it does not read as
+              decoration at a glance. */}
+          {closure && (
+            <div
+              role="note"
+              aria-labelledby="admissions-closure-heading"
+              style={{
+                marginBottom: 32,
+                padding: "20px 24px",
+                borderRadius: 14,
+                background: "color-mix(in oklab, var(--accent) 12%, var(--white))",
+                border: "1px solid color-mix(in oklab, var(--accent) 45%, var(--line))",
+                borderLeft: "5px solid var(--accent-deep)",
+              }}
+            >
+              <div
+                id="admissions-closure-heading"
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  color: "var(--accent-deep)",
+                }}
+              >
+                Closed to new admissions from {closure.closedFrom}
+              </div>
+              <p style={{ marginTop: 10, color: "var(--ink-1)", fontSize: 15, lineHeight: 1.7, maxWidth: "78ch" }}>
+                BIPE is not admitting to the {b.name} diploma for {closure.closedFrom}. The last
+                intake was the {closure.lastIntake} session, so this branch should not be listed
+                as a choice for BIPE in JEECUP counselling.
+              </p>
+              <p style={{ marginTop: 8, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7, maxWidth: "78ch" }}>
+                <strong>Nothing changes for the students already enrolled.</strong> The{" "}
+                {closure.lastIntake} batch is being taught out to its{" "}
+                {closure.finalCohortGraduates} graduation on the same BTEUP {b.code} curriculum —
+                the same faculty, the same labs, the same industrial visits and the same mandatory
+                six-month industrial training in Semester 6. The syllabus, lab and FAQ detail on
+                this page is theirs, and it stays published.
+              </p>
+              <div className="row" style={{ marginTop: 16, gap: 10, flexWrap: "wrap" }}>
+                <Link href="/courses" className="btn btn-ghost btn-sm" style={{ whiteSpace: "normal" }}>
+                  See the branches open for 2026-27 <ArrowIcon size={13} />
+                </Link>
+              </div>
+            </div>
+          )}
+
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
               <div className="eyebrow">Academics · BTEUP {b.code}</div>
@@ -233,8 +314,20 @@ export default async function BranchPage(
                 {detail.intro}
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary">Apply for 2026-27 <ArrowIcon /></Link>
-                <Link href="/jeecup" className="btn btn-ghost">JEECUP 4455 guidance <ArrowIcon /></Link>
+                {/* No Apply and no "add 4455 in counselling" prompt on a
+                    closed branch — both would be inviting an application to
+                    an intake that does not exist. WhatsApp stays: it is how
+                    an enrolled student or their parent reaches the office. */}
+                {closure ? (
+                  <Link href="/courses" className="btn btn-primary">
+                    Branches open for 2026-27 <ArrowIcon />
+                  </Link>
+                ) : (
+                  <>
+                    <Link href="/apply" className="btn btn-primary">Apply for 2026-27 <ArrowIcon /></Link>
+                    <Link href="/jeecup" className="btn btn-ghost">JEECUP 4455 guidance <ArrowIcon /></Link>
+                  </>
+                )}
                 <a href={branchWaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
                   <WhatsAppIcon /> Ask on WhatsApp
                 </a>
@@ -291,9 +384,16 @@ export default async function BranchPage(
           <div className="card" style={{ marginTop: 48, padding: 28, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
             {[
               { num: b.code, l: `BTEUP code · ${b.name.split(" ")[0]}` },
-              { num: `${b.seats}`, l: "Seats · annual intake" },
+              // Seats and the JEECUP code are the two numbers on this strip
+              // that only mean anything to an applicant. On a closed branch
+              // they become the closure dates instead.
+              closure
+                ? { num: closure.finalCohortGraduates, l: "Final cohort graduates" }
+                : { num: `${b.seats}`, l: "Seats · annual intake" },
               { num: `₹${b.fee}`, l: "Tuition · AFRC, per year" },
-              { num: "4455", l: "JEECUP institute · BIPE" },
+              closure
+                ? { num: closure.lastIntake, l: "Last intake · session" }
+                : { num: "4455", l: "JEECUP institute · BIPE" },
             ].map((s) => (
               <div key={s.l}>
                 <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, color: "var(--brand)", lineHeight: 0.95 }}>
@@ -533,17 +633,43 @@ export default async function BranchPage(
           <div className="card" style={{ padding: 40, background: "color-mix(in oklab, var(--brand) 8%, var(--white))" }}>
             <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
               <div>
-                <div className="eyebrow">Eligibility & Admission</div>
-                <h2 className="bipe-h1" style={{ marginTop: 12, fontSize: 36, maxWidth: "16ch" }}>
-                  Class 10 pass. <span className="serif">JEECUP 4455.</span>
-                </h2>
-                <p style={{ marginTop: 16, color: "var(--ink-2)", lineHeight: 1.7 }}>
-                  Eligibility for the {b.name} diploma is a Class 10 pass with Mathematics and Science. Admission is through JEECUP Group A — choose institute code 4455 and the {b.name} branch during counselling (BTEUP curriculum code {b.code}). AICTE permanent ID 1-488233171.
-                </p>
-                <div className="row" style={{ marginTop: 22, gap: 10, flexWrap: "wrap" }}>
-                  <Link href="/admission" className="btn btn-ghost">Admission process <ArrowIcon /></Link>
-                  <Link href="/documents" className="btn btn-ghost">Documents checklist <ArrowIcon /></Link>
-                </div>
+                {/* The single highest-risk paragraph on the page: unedited, it
+                    tells a reader to select this branch during counselling.
+                    Rewritten wholesale for a closed branch rather than
+                    softened. 3 Sep 2026. */}
+                <div className="eyebrow">{closure ? "Admissions" : "Eligibility & Admission"}</div>
+                {closure ? (
+                  <>
+                    <h2 className="bipe-h1" style={{ marginTop: 12, fontSize: 36, maxWidth: "16ch" }}>
+                      Not admitting. <span className="serif">Still teaching.</span>
+                    </h2>
+                    <p style={{ marginTop: 16, color: "var(--ink-2)", lineHeight: 1.7 }}>
+                      There is no {closure.closedFrom} intake for the {b.name} diploma, so it is not
+                      on the JEECUP choice list for BIPE. The {closure.lastIntake} batch continues on
+                      BTEUP curriculum code {b.code} and graduates in {closure.finalCohortGraduates}.
+                      New applicants are admitted to BIPE&apos;s other branches through JEECUP Group A
+                      under institute code 4455 — same campus, same AFRC fee, AICTE permanent ID
+                      1-488233171.
+                    </p>
+                    <div className="row" style={{ marginTop: 22, gap: 10, flexWrap: "wrap" }}>
+                      <Link href="/courses" className="btn btn-ghost">Branches open for 2026-27 <ArrowIcon /></Link>
+                      <Link href="/admission" className="btn btn-ghost">Admission process <ArrowIcon /></Link>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="bipe-h1" style={{ marginTop: 12, fontSize: 36, maxWidth: "16ch" }}>
+                      Class 10 pass. <span className="serif">JEECUP 4455.</span>
+                    </h2>
+                    <p style={{ marginTop: 16, color: "var(--ink-2)", lineHeight: 1.7 }}>
+                      Eligibility for the {b.name} diploma is a Class 10 pass with Mathematics and Science. Admission is through JEECUP Group A — choose institute code 4455 and the {b.name} branch during counselling (BTEUP curriculum code {b.code}). AICTE permanent ID 1-488233171.
+                    </p>
+                    <div className="row" style={{ marginTop: 22, gap: 10, flexWrap: "wrap" }}>
+                      <Link href="/admission" className="btn btn-ghost">Admission process <ArrowIcon /></Link>
+                      <Link href="/documents" className="btn btn-ghost">Documents checklist <ArrowIcon /></Link>
+                    </div>
+                  </>
+                )}
               </div>
               <div>
                 <div className="eyebrow">Fees & Scholarships</div>
@@ -589,13 +715,23 @@ export default async function BranchPage(
         <div className="container">
           <div className="card" style={{ padding: 40, textAlign: "center", background: "var(--brand)", color: "#fff" }}>
             <h2 className="bipe-h1" style={{ color: "#fff", maxWidth: "20ch", margin: "0 auto" }}>
-              Three years. <span className="serif">One diploma. A career.</span>
+              {closure ? (
+                <>Three years. <span className="serif">Seen through to the end.</span></>
+              ) : (
+                <>Three years. <span className="serif">One diploma. A career.</span></>
+              )}
             </h2>
             <p style={{ marginTop: 18, opacity: 0.85, maxWidth: "48ch", margin: "18px auto 0", lineHeight: 1.7 }}>
-              Applications for the 2026-27 {b.name} cohort are open. Five minutes to apply — personal guidance call within 24 hours.
+              {closure
+                ? `The ${b.name} batch admitted in ${closure.lastIntake} finishes here in ${closure.finalCohortGraduates}, with the labs, industrial visits and Semester-6 training unchanged. If you are applying now, BIPE has ${admittingCount} branches open for 2026-27.`
+                : `Applications for the 2026-27 ${b.name} cohort are open. Five minutes to apply — personal guidance call within 24 hours.`}
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Apply for {b.name} <ArrowIcon /></Link>
+              {closure ? (
+                <Link href="/courses" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>See the {admittingCount} open branches <ArrowIcon /></Link>
+              ) : (
+                <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Apply for {b.name} <ArrowIcon /></Link>
+              )}
               <a href={branchWaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
                 <WhatsAppIcon /> Ask on WhatsApp
               </a>

@@ -27,6 +27,14 @@ export async function generateMetadata(): Promise<Metadata> {
  * and the "sarkari = real" prestige myth, both of which are bigger
  * conversion blockers than anything Kashi/SHEAT/VNITM can do.
  *
+ * Dairy update (3 Sep 2026): Dairy Engineering is closed to new
+ * admissions from 2026-27 and is no longer a reason to pick BIPE on
+ * this page. The branch-portfolio row that carried the "Dairy moat"
+ * argument is now a seat-depth argument, which is the honest remaining
+ * differentiator against a government polytechnic's fixed Round-1
+ * per-branch capacity. Dairy is not erased — it is stated as a running
+ * programme that has stopped admitting.
+ *
  * Editorial stance (per user direction 25 May 2026):
  *   - Fee anchor: sourced range with footnote (not a single figure)
  *   - Comparator: Government Polytechnic Varanasi specifically
@@ -61,7 +69,7 @@ const IDENTICAL: IdenticalRow[] = [
   {
     topic: "Syllabus & semester structure",
     detail:
-      "Both follow the BTE UP-prescribed syllabus for each branch (Civil, Electrical, Mechanical Production, Computer Science & Engineering, Dairy). Six semesters over three years. Same paper codes, same minimum-pass marks, same external practicals.",
+      "Both follow the BTE UP-prescribed syllabus for each branch (Civil, Electrical, Mechanical Production, Computer Science & Engineering). Six semesters over three years. Same paper codes, same minimum-pass marks, same external practicals.",
   },
   {
     topic: "Government job eligibility",
@@ -99,12 +107,12 @@ const DIFFERENCES: DifferenceRow[] = [
     verifyPath: "/faculty",
   },
   {
-    topic: "Branch portfolio · Dairy Engineering moat",
+    topic: "Branch availability & seat depth",
     bipe:
-      "Five branches including Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh. On-campus chemistry and hydraulics labs, industrial visits to working plants, a mandatory six-month plant training in Semester 6, and the Amul / Mother Dairy / NDDB recruiter pipeline that comes with it.",
+      "420 seats across four admitting branches — Civil (120), Electrical (120), Mechanical Engineering Production (120) and Computer Science & Engineering (60) — and branch-wise availability that persists into the later JEECUP rounds rather than closing in Round 1. In practice that means the branch you actually want stays reachable at a wider rank band. (BIPE also runs Dairy Engineering, but it took its last intake in 2025-26 and is closed to new admissions from 2026-27; the enrolled cohort is taught out to its 2028 graduation.)",
     context:
-      "Government Polytechnic Varanasi offers the standard four engineering branches. Dairy Engineering is not commonly available in UP government polytechnics outside the dedicated state agricultural-engineering institutes.",
-    verifyLabel: "Explore the five branches",
+      "Government Polytechnic Varanasi offers the standard four engineering branches, with fixed per-branch capacity that fills sharply by rank in Round 1. Verify the current branch list and intake with the institute directly before choice-filling.",
+    verifyLabel: "See the four admitting branches",
     verifyPath: "/courses",
   },
   {
@@ -128,7 +136,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Lab equipment refresh cycle",
     bipe:
-      "Private institutes can update lab equipment independent of state procurement cycles. BIPE's mechanical workshop, dairy chemistry and hydraulics labs, 120-computer CSE lab, electrical lab and civil survey yard are kept current to industry-standard practice.",
+      "Private institutes can update lab equipment independent of state procurement cycles. BIPE's mechanical workshop, chemistry and hydraulics labs, 120-computer CSE lab, electrical lab and civil survey yard are kept current to industry-standard practice.",
     context:
       "Government institute equipment refresh is governed by state procurement timelines — which can be slower but is fully funded when it happens. Both models have trade-offs.",
     verifyLabel: "See campus & facilities",
@@ -179,7 +187,7 @@ const FAQS: FaqItem[] = [
     question:
       "When should I choose BIPE over a government polytechnic?",
     answer:
-      `When the additional ~₹8,000-18,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of ${_placed} placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or the rare Dairy Engineering branch with the Amul / Mother Dairy / NDDB recruiter pipeline.`,
+      `When the additional ~₹8,000-18,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of ${_placed} placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or a preferred branch that a Round-1 government cutoff has already closed to you — BIPE's four admitting branches stay reachable across the later JEECUP rounds.`,
   },
   {
     question:
@@ -763,7 +771,7 @@ export default function Page() {
                 </li>
                 <li>
                   The branch you want is offered at Government Polytechnic Varanasi (Civil,
-                  Electrical, Mechanical or CSE — not Dairy).
+                  Electrical, Mechanical or CSE).
                 </li>
               </ul>
               <p
@@ -829,8 +837,9 @@ export default function Page() {
                   learns.
                 </li>
                 <li>
-                  You specifically want Dairy Engineering — one of only four BTE UP-
-                  affiliated Dairy programmes in all of UP.
+                  Your JEECUP rank doesn&rsquo;t safely secure your preferred branch at a
+                  government polytechnic — BIPE&rsquo;s four branches stay open at a wider
+                  rank band across the later counselling rounds.
                 </li>
               </ul>
               <p

@@ -110,7 +110,12 @@ export const ROUTES: Record<RouteKey, {
     // colleges in Varanasi" verbatim (1,000/mo) in addition to the
     // original "polytechnic college in Varanasi". Drops "diploma
     // engineering" boilerplate for a tighter sentence.
-    description: "Top polytechnic & engineering college in Varanasi — BIPE is AICTE-approved with 5 BTEUP diploma branches including rare Dairy Engineering. JEECUP 4455. Apply for 2026-27.",
+    // 3 Sep 2026 · "5 BTEUP diploma branches including rare Dairy
+    // Engineering" dropped. This sentence ends in "Apply for 2026-27",
+    // so every noun in it is read as something you can apply to —
+    // and Dairy Engineering took its last intake in 2025-26. Four is
+    // the number a new applicant can act on; see ADMITTING_BRANCHES.
+    description: "Top polytechnic & engineering college in Varanasi — AICTE-approved, 4 BTEUP diploma branches. JEECUP 4455. Apply for the 2026-27 session.",
     keywords: [
       "BIPE Varanasi",
       "polytechnic in Varanasi",
@@ -141,11 +146,19 @@ export const ROUTES: Record<RouteKey, {
     // CTR rewrite 29 May 2026 · "polytechnic course" (18,100/mo) is
     // the highest-volume query this page can credibly target — was
     // missed by the previous "Diploma Courses" framing. New title
-    // leads with the literal phrase + keeps the Dairy moat in the
-    // tail. "Diploma courses" stays in the description for the
-    // 5,400/mo "what is polytechnic courses" cluster too.
-    title: "Polytechnic Courses in Varanasi · 5 BTEUP Branches incl. Dairy | BIPE",
-    description: "Polytechnic course list at BIPE Varanasi — 5 BTEUP diploma branches: Civil, CSE, Electrical, Mechanical Production, rare Dairy Engineering. AICTE · ₹30,150/year · JEECUP 4455.",
+    // leads with the literal phrase. "Diploma courses" stays in the
+    // description for the 5,400/mo "what is polytechnic courses"
+    // cluster too.
+    // 3 Sep 2026 · the "incl. Dairy" tail is gone from the title — a
+    // course list reads as a menu of what you can still apply to, and
+    // Dairy Engineering closed to new admissions from 2026-27. The word
+    // "Dairy" is deliberately KEPT in the description, attached to the
+    // closure: this is the one ROUTES entry a site search or Cmd-K
+    // query for "dairy" resolves to (the branch page lives under the
+    // dynamic /courses/[slug] route and is not in this map), so the
+    // answer a searcher gets should be "closed", not nothing.
+    title: "Polytechnic Courses in Varanasi · 4 BTEUP Branches · JEECUP 4455 | BIPE",
+    description: "Polytechnic course list at BIPE Varanasi — 4 branches open for 2026-27: Civil, CSE, Electrical, Mechanical Production. Dairy closed to new admissions.",
   },
   admission: {
     path: "/admission",
@@ -233,6 +246,10 @@ export const ROUTES: Record<RouteKey, {
     // milk-quality and process-fluid modules). Other specifics
     // (120-PC, mechanical workshop, library, hostel) are unchanged
     // and still outperform a generic "Six acres" framing.
+    // 3 Sep 2026 · still accurate after the Dairy admission closure —
+    // those labs keep running the milk-quality modules for the cohort
+    // graduating in 2028. Nothing here to unwind; noting it so the
+    // next reader doesn't "fix" a true sentence.
     title: "BIPE Campus · 6-Acre Phoolpur · 120-PC Lab, Workshops, Hostel",
     description: "Six-acre BIPE Phoolpur campus: 120-PC programming lab, mechanical workshop, chemistry & hydraulics labs, electrical lab, 8,428-volume library, boys' hostel, sports ground.",
   },
@@ -475,7 +492,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInMirzapur: {
     path: "/polytechnic-in-mirzapur",
     title: "Polytechnic in Mirzapur · BIPE Varanasi · 75 km, JEECUP 4455",
-    description: "Polytechnic for Mirzapur students — BIPE Phoolpur 75 km via NH-19. 5 BTEUP branches incl. rare Dairy. On-campus hostel. AFRC ₹30,150/year. JEECUP 4455.",
+    description: "Polytechnic for Mirzapur students — BIPE Phoolpur 75 km via NH-19. 4 BTEUP branches open for 2026-27. On-campus hostel. AFRC ₹30,150/year. JEECUP 4455.",
     keywords: [
       "polytechnic in Mirzapur",
       "diploma college Mirzapur",
@@ -488,7 +505,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInJaunpur: {
     path: "/polytechnic-in-jaunpur",
     title: "Polytechnic in Jaunpur · BIPE Varanasi · 55 km, JEECUP 4455",
-    description: "Polytechnic for Jaunpur students — BIPE Phoolpur 55 km via NH-19. 5 branches incl. Dairy Engineering. On-campus hostel. AFRC ₹30,150/year. JEECUP 4455.",
+    description: "Polytechnic for Jaunpur students — BIPE Phoolpur 55 km via NH-19. 4 BTEUP branches for 2026-27. On-campus hostel. AFRC ₹30,150/year. JEECUP 4455.",
     keywords: [
       "polytechnic in Jaunpur",
       "diploma college Jaunpur",
@@ -501,20 +518,24 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInGhazipur: {
     path: "/polytechnic-in-ghazipur",
     title: "Polytechnic in Ghazipur · BIPE Varanasi · 80 km, JEECUP 4455",
-    description: "Polytechnic for Ghazipur students — BIPE Phoolpur 80 km via NH-29. 5 BTEUP branches with Dairy Engineering for the local dairy belt. AFRC ₹30,150/year.",
+    description: "Polytechnic for Ghazipur students — BIPE Phoolpur 80 km via NH-29. 4 BTEUP branches open for 2026-27. Hostel on campus. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Ghazipur",
       "diploma college Ghazipur",
       "BIPE Ghazipur",
       "polytechnic near Ghazipur",
-      "Dairy Engineering Ghazipur",
+      // 3 Sep 2026 · was "Dairy Engineering Ghazipur". Pulling dairy
+      // searchers onto a page whose only dairy programme is closed to
+      // new admissions is a wasted click for them and a bad-faith one
+      // for us; swapped for the branch this catchment can actually join.
+      "Mechanical diploma Ghazipur",
       "ग़ाज़ीपुर पॉलिटेक्निक",
     ],
   },
   polytechnicInAzamgarh: {
     path: "/polytechnic-in-azamgarh",
     title: "Polytechnic in Azamgarh · BIPE Varanasi · 120 km, JEECUP 4455",
-    description: "Polytechnic for Azamgarh students — BIPE Phoolpur 120 km via NH-233. On-campus hostel essential at this distance. 5 BTEUP branches. AFRC ₹30,150/year.",
+    description: "Polytechnic for Azamgarh students — BIPE Phoolpur 120 km via NH-233. On-campus hostel essential at this distance. 4 BTEUP branches. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Azamgarh",
       "diploma college Azamgarh",
@@ -527,7 +548,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInMau: {
     path: "/polytechnic-in-mau",
     title: "Polytechnic in Mau · BIPE Varanasi · 95 km, JEECUP 4455",
-    description: "Polytechnic for Mau students — BIPE Phoolpur 95 km via NH-29 / NH-19. 5 BTEUP branches. UP Post-Matric scholarship-eligible. AFRC ₹30,150/year.",
+    description: "Polytechnic for Mau students — BIPE Phoolpur 95 km via NH-29 / NH-19. 4 BTEUP branches. UP Post-Matric scholarship-eligible. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Mau",
       "diploma college Mau",
@@ -540,7 +561,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInBhadohi: {
     path: "/polytechnic-in-bhadohi",
     title: "Polytechnic in Bhadohi · BIPE Varanasi · 50 km, JEECUP 4455",
-    description: "Polytechnic for Bhadohi students — BIPE Phoolpur 50 km via NH-19. Mechanical & Dairy for the carpet-belt + agricultural households. AFRC ₹30,150/year.",
+    description: "Polytechnic for Bhadohi students — BIPE Phoolpur 50 km via NH-19. Mechanical & Civil for the carpet-belt and farming households. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Bhadohi",
       "diploma college Bhadohi",
@@ -592,7 +613,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInSonbhadra: {
     path: "/polytechnic-in-sonbhadra",
     title: "Polytechnic in Sonbhadra · BIPE Varanasi · 115 km, JEECUP 4455",
-    description: "Polytechnic for Sonbhadra — BIPE Phoolpur 115 km via NH-39. 5 branches incl. Electrical for NTPC / UPPCL pipeline. On-campus hostel. AFRC ₹30,150/year.",
+    description: "Polytechnic for Sonbhadra — BIPE Phoolpur 115 km via NH-39. 4 branches incl. Electrical for NTPC / UPPCL pipeline. On-campus hostel. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Sonbhadra",
       "diploma college Sonbhadra",
@@ -606,7 +627,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInSultanpur: {
     path: "/polytechnic-in-sultanpur",
     title: "Polytechnic in Sultanpur · BIPE Varanasi · 165 km, JEECUP 4455",
-    description: "Polytechnic for Sultanpur (Awadh) — BIPE Phoolpur 165 km via NH-128. 5 BTEUP branches incl. rare Dairy for agricultural households. AFRC ₹30,150/year.",
+    description: "Polytechnic for Sultanpur (Awadh) — BIPE Phoolpur 165 km via NH-128. 4 BTEUP branches open for 2026-27. On-campus hostel. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Sultanpur",
       "diploma college Sultanpur",
@@ -620,7 +641,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInPratapgarh: {
     path: "/polytechnic-in-pratapgarh",
     title: "Polytechnic in Pratapgarh · BIPE Varanasi · 170 km, JEECUP 4455",
-    description: "Polytechnic for Pratapgarh — BIPE Phoolpur 170 km via NH-128. Dairy for agricultural + Mechanical for Army TES / RRB JE belt. AFRC ₹30,150/year.",
+    description: "Polytechnic for Pratapgarh — BIPE Phoolpur 170 km via NH-128. Mechanical for the Army TES / RRB JE belt, plus Civil, Electrical and CSE. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Pratapgarh",
       "diploma college Pratapgarh",
@@ -634,7 +655,7 @@ export const ROUTES: Record<RouteKey, {
   polytechnicInGorakhpur: {
     path: "/polytechnic-in-gorakhpur",
     title: "Polytechnic in Gorakhpur · BIPE Varanasi · 205 km, JEECUP 4455",
-    description: "Polytechnic for Gorakhpur — BIPE Phoolpur 205 km via NH-29. 5 BTEUP branches incl. rare Dairy. On-campus hostel at this distance. AFRC ₹30,150/year.",
+    description: "Polytechnic for Gorakhpur — BIPE Phoolpur 205 km via NH-29. 4 BTEUP branches open for 2026-27. On-campus hostel at this distance. AFRC ₹30,150/year.",
     keywords: [
       "polytechnic in Gorakhpur",
       "diploma college Gorakhpur",
@@ -805,7 +826,12 @@ export const ROUTES: Record<RouteKey, {
   jeecupRankPredictor: {
     path: "/jeecup-rank-predictor-2026",
     title: "JEECUP Rank Predictor 2026 · What Your Rank Opens + BIPE Cutoffs | 4455",
-    description: "JEECUP 2026 rank guide — what each rank band realistically opens, and BIPE 4455's actual filed closing ranks by branch (CSE closed 1,68,929 · Mechanical · Electrical · Civil · Dairy). Honest rank reading — no fake marks-to-rank calculator.",
+    // 3 Sep 2026 · Dairy dropped from the closing-rank list. A reader
+    // on a rank-predictor page is deciding what to put in their JEECUP
+    // choice order, so a branch named here reads as one to rank — and
+    // Dairy Engineering has no 2026-27 intake to rank for. Its 2025-26
+    // closing rank is history, not a target.
+    description: "JEECUP 2026 rank guide — what each rank band realistically opens, plus BIPE 4455's filed closing ranks (CSE 1,68,929 · Mechanical · Electrical · Civil).",
     keywords: [
       "JEECUP rank predictor",
       "JEECUP rank predictor 2026",

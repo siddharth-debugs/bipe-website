@@ -268,7 +268,9 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "cta",
         title: "10वीं पास? BIPE में अपनी सीट का रास्ता समझें",
-        body: "BIPE Varanasi (JEECUP code 4455) में 5 branches — Mechanical, Electrical, Civil, Computer Science, Dairy। AFRC fee ₹30,150/साल। हमारी admission team हिन्दी में आपके सारे सवालों का जवाब देगी।",
+        // 3 Sep 2026 · CTA अब सिर्फ़ admitting branches बताता है। Dairy
+        // Engineering (BTEUP 327) का आख़िरी intake 2025-26 था।
+        body: "BIPE Varanasi (JEECUP code 4455) में 2026-27 के लिए 4 branches में admission — Mechanical, Electrical, Civil, Computer Science। AFRC fee ₹30,150/साल। हमारी admission team हिन्दी में आपके सारे सवालों का जवाब देगी।",
         applyLabel: "Enquiry करें",
         waLabel: "WhatsApp पर पूछें",
         whatsappText: "Hi BIPE — 10वीं के बाद polytechnic admission के बारे में जानना है।",
@@ -293,7 +295,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "<strong>Banaras Institute of Polytechnic &amp; Engineering (BIPE)</strong> Phoolpur, Varanasi में 2010 से चल रहा एक AICTE-approved, BTEUP-affiliated polytechnic है। 5 branches, AFRC fee ₹30,150/साल, और पिछले 16 साल में <strong>1,331 verified placements</strong> — Mahindra, Tata Steel, JCB, Indian Railways तक। Varanasi Cantt से सिर्फ़ 14 km। SC/ST/OBC/EWS students के लिए UP सरकार की <a href=\"/scholarships\">post-matric scholarship</a> के बाद net fee और कम।",
+          "<strong>Banaras Institute of Polytechnic &amp; Engineering (BIPE)</strong> Phoolpur, Varanasi में 2010 से चल रहा एक AICTE-approved, BTEUP-affiliated polytechnic है। 2026-27 में 4 branches में admission, AFRC fee ₹30,150/साल, और पिछले 16 साल में <strong>1,331 verified placements</strong> — Mahindra, Tata Steel, JCB, Indian Railways तक। Varanasi Cantt से सिर्फ़ 14 km। SC/ST/OBC/EWS students के लिए UP सरकार की <a href=\"/scholarships\">post-matric scholarship</a> के बाद net fee और कम।",
       },
       { type: "h2", text: "अक्सर पूछे जाने वाले सवाल (FAQ)" },
       { type: "h3", text: "10वीं के बाद सबसे अच्छा course कौन सा है?" },
@@ -331,26 +333,33 @@ export const BLOG_POSTS: BlogPost[] = [
   // Jun 2026 · Natural Hinglish · branch-selection decision query
   // Target: "polytechnic me kaun si branch best hai" / "polytechnic best
   // branch". Gap: only a 2-way Mechanical-vs-CSE post existed; this compares
-  // all 5 BIPE branches and links each to its /courses page (hub post).
+  // the BIPE branches a new applicant can choose and links each to its
+  // /courses page (hub post).
+  //
+  // 3 Sep 2026 · Dairy Engineering (BTEUP 327) closed to new admissions from
+  // 2026-27. This post is a choice-filling guide, so Dairy comes out of the
+  // comparison table and the decision list entirely — a reader who ranks a
+  // closed branch loses a real seat. The branch is not erased: it keeps a
+  // labelled closure block that still links to /courses/dairy-engineering.
   {
     slug: "polytechnic-me-kaun-si-branch-best-hai-2026",
     lang: "hi-IN",
-    title: "Polytechnic में कौन सी Branch सबसे अच्छी है? — सभी 5 branches की honest तुलना (2026)",
+    title: "Polytechnic में कौन सी Branch सबसे अच्छी है? — चारों branches की honest तुलना (2026)",
     category: "Guide · Hindi",
     date: "20 June 2026",
     publishedISO: "2026-06-20",
     readTime: "11 min read",
     excerpt:
-      "Mechanical, Electrical, Civil, Computer Science, या Dairy — Polytechnic में कौन सी branch चुनें? हर branch की scope, naukri, और किसके लिए सही है — Eastern UP / Bihar के students के लिए एक honest हिन्दी गाइड।",
+      "Mechanical, Electrical, Civil या Computer Science — Polytechnic में कौन सी branch चुनें? हर branch की scope, naukri, और किसके लिए सही है — Eastern UP / Bihar के students के लिए एक honest हिन्दी गाइड।",
     metaTitle: "Polytechnic की कौन सी Branch सबसे अच्छी है? · 2026",
     metaDescription:
-      "Mechanical, Electrical, Civil, CSE या Dairy — Polytechnic में कौन सी branch best है? हर branch की naukri scope और किसके लिए सही — एक honest हिन्दी comparison (BIPE 4455)।",
+      "Mechanical, Electrical, Civil या CSE — Polytechnic में कौन सी branch best है? हर branch की naukri scope और किसके लिए सही — एक honest हिन्दी comparison (BIPE 4455, 2026-27 में 4 branches)।",
     sections: [
       {
         type: "callout",
         title: "इस गाइड में क्या है",
         html:
-          "<p style=\"margin: 0;\">Polytechnic में admission तो मिल गया — पर branch कौन सी चुनें? यह फ़ैसला आपके अगले 3 साल और career की दिशा तय करता है। यह गाइड BIPE की पाँचों branches — Mechanical, Electrical, Civil, Computer Science, और Dairy — की honest तुलना करती है: हर एक में क्या पढ़ते हैं, naukri का scope कैसा है, और किस student के लिए कौन सी सही है।</p>",
+          "<p style=\"margin: 0;\">Polytechnic में admission तो मिल गया — पर branch कौन सी चुनें? यह फ़ैसला आपके अगले 3 साल और career की दिशा तय करता है। यह गाइड BIPE की उन <strong>चार branches</strong> की honest तुलना करती है जिनमें 2026-27 में admission है — Mechanical, Electrical, Civil, और Computer Science: हर एक में क्या पढ़ते हैं, naukri का scope कैसा है, और किस student के लिए कौन सी सही है।</p><p style=\"margin: 12px 0 0;\"><strong>ध्यान दें:</strong> Dairy Engineering (BTEUP 327) में 2026-27 से नए admission नहीं हैं — आख़िरी batch 2025-26 में आया था और 2028 में pass out करेगा। इसलिए वह इस तुलना में नहीं है; JEECUP choice list में उसे न रखें।</p>",
       },
       { type: "h2", text: "पहले एक सच — कोई एक 'best' branch नहीं होती" },
       {
@@ -358,17 +367,16 @@ export const BLOG_POSTS: BlogPost[] = [
         html:
           "हर साल students पूछते हैं — '<em>सबसे अच्छी branch कौन सी है?</em>' सच यह है कि <strong>कोई universal best branch नहीं होती</strong>। जो branch आपके interest और स्वभाव से match करती है, और जिसमें आप मन लगाकर पढ़ेंगे — वही आपके लिए best है। trend में चल रही एक branch, जिसमें आपका मन नहीं लगता, आपको पीछे ही ले जाएगी। नीचे हर branch को practically समझें ताकि आप अपना सही match चुन सकें।",
       },
-      { type: "h2", text: "BIPE की 5 branches — एक नज़र में" },
+      { type: "h2", text: "BIPE की 4 admitting branches — एक नज़र में" },
       {
         type: "table",
-        caption: "पाँचों branches का मोटा खाका। नीचे हर एक detail में।",
+        caption: "2026-27 में admission वाली चारों branches का मोटा खाका। नीचे हर एक detail में।",
         headers: ["Branch", "किस तरह का काम", "मुख्य naukri scope"],
         rows: [
           ["Mechanical (Production)", "Machines, manufacturing, design", "Automobile, steel, manufacturing + JE posts"],
           ["Electrical", "Power, wiring, motors, grid", "UPPCL, Railways, Metro + सबसे ज़्यादा सरकारी JE भर्तियाँ"],
           ["Civil", "Construction, roads, buildings", "Infrastructure, Smart Cities, site engineer + JE"],
           ["Computer Science", "Software, IT, computers", "IT companies, software, government IT cadres"],
-          ["Dairy", "Milk processing, food tech", "Amul, Mother Dairy, NDDB — rare branch, कम competition"],
         ],
       },
       { type: "h2", text: "हर branch — detail में" },
@@ -396,16 +404,20 @@ export const BLOG_POSTS: BlogPost[] = [
         html:
           "Software, IT, और computers का future-proof रास्ता — IT companies, software development, और government IT cadres में scope। तेज़ी से बढ़ती field; coding और computers में interest है तो CSE सबसे demand वाली modern branch है — <a href=\"/courses/computer-science-engineering\">Branch detail</a>।",
       },
-      { type: "h3", text: "Dairy Engineering" },
+      // 3 Sep 2026 · Dairy का section हटाया नहीं — reader को यह पता होना
+      // चाहिए कि branch चल तो रही है पर admission बंद है। Pitch की जगह
+      // सिर्फ़ status; internal links बरक़रार ताकि पुराने URLs 404 न हों।
+      { type: "h3", text: "Dairy Engineering — 2026-27 में admission बंद" },
       {
-        type: "p",
+        type: "callout",
+        title: "Dairy Engineering (BTEUP 327) · नए admission नहीं",
         html:
-          "BIPE की rare और unique branch — पूरे UP में सिर्फ़ ~4 BTEUP-affiliated dairy diploma programmes हैं। Milk processing और food technology का काम; <strong>Amul, Mother Dairy, Parag, NDDB</strong> का pipeline। कम competition + एक specialized career — <a href=\"/courses/dairy-engineering\">Branch detail</a> और <a href=\"/blog/dairy-engineering-course-up-rare-branch\">Dairy क्यों एक छुपा मौका है</a>।",
+          "BIPE में Dairy Engineering अभी <strong>चल रही है</strong> — पढ़ाई, labs, faculty और Semester-6 का 6-महीने industrial training सब पहले जैसा — लेकिन इसका <strong>आख़िरी intake 2025-26 था</strong>। 2026-27 से इसमें नए admission नहीं हैं और आख़िरी batch 2028 में pass out करेगा। इसलिए यह तुलना में शामिल नहीं है और JEECUP choice-filling में इसे न भरें। Branch और उसकी industry के बारे में पढ़ना हो तो — <a href=\"/courses/dairy-engineering\">Branch detail</a> और <a href=\"/blog/dairy-engineering-course-up-rare-branch\">Dairy Engineering गाइड</a>।",
       },
       {
         type: "cta",
         title: "अपनी branch पर honest guidance चाहिए?",
-        body: "अपना interest और (अगर है तो) JEECUP rank हमें बताएँ — BIPE की admission team हिन्दी में बताएगी कि कौन सी branch आपके लिए realistic और सही है। code 4455, 5 branches, AFRC fee ₹30,150/साल।",
+        body: "अपना interest और (अगर है तो) JEECUP rank हमें बताएँ — BIPE की admission team हिन्दी में बताएगी कि कौन सी branch आपके लिए realistic और सही है। code 4455, 2026-27 में 4 branches, AFRC fee ₹30,150/साल।",
         applyLabel: "Enquiry करें",
         waLabel: "WhatsApp पर पूछें",
         whatsappText: "Hi BIPE — polytechnic branch chunne mein guidance chahiye.",
@@ -417,7 +429,6 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>सरकारी JE नौकरी चाहिए (Railways / SSC / UPPCL):</strong> Electrical या Civil — इनमें JE भर्तियाँ सबसे ज़्यादा।",
           "<strong>Broad, safe, manufacturing career:</strong> Mechanical — सबसे versatile, हर industry में काम।",
           "<strong>Computers / coding में interest, future-proof:</strong> Computer Science।",
-          "<strong>कम competition + specialized niche:</strong> Dairy Engineering।",
           "<strong>दुविधा Mechanical या CSE में?</strong> <a href=\"/blog/mechanical-ya-computer-science-kaunsi-branch-chunein\">यह deep comparison पढ़ें</a>।",
         ],
       },
@@ -444,21 +455,23 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Admission के बाद branch बदलना मुश्किल है — counselling में जो allotted होती है वही चलती है। इसलिए <strong>choice-filling के समय</strong> branches को सोच-समझकर priority order में रखें। BIPE के पाँचों branches के लिए institute code <strong>4455</strong> ही है।",
+          "Admission के बाद branch बदलना मुश्किल है — counselling में जो allotted होती है वही चलती है। इसलिए <strong>choice-filling के समय</strong> branches को सोच-समझकर priority order में रखें। BIPE की चारों admitting branches — Civil, Electrical, Mechanical (Production), Computer Science — के लिए institute code <strong>4455</strong> ही है। Dairy Engineering 2026-27 की choice list में नहीं है, उसे न भरें।",
       },
       {
         type: "p",
         html:
-          "<strong>आख़िर में —</strong> सही branch वो है जो आपके interest, strength और career goal से match करे, trend से नहीं। BIPE की पाँचों branches एक जगह देखें — <a href=\"/courses\">Courses</a> — या <a href=\"/apply\">admission enquiry</a> करें, हम हिन्दी में guide करेंगे।",
+          "<strong>आख़िर में —</strong> सही branch वो है जो आपके interest, strength और career goal से match करे, trend से नहीं। BIPE की चारों admitting branches एक जगह देखें — <a href=\"/courses\">Courses</a> — या <a href=\"/apply\">admission enquiry</a> करें, हम हिन्दी में guide करेंगे।",
       },
     ],
   },
   // ─────────────────────────────────────────────────────────────────
   // Phase B Post 5 · May 2026 · Natural Hinglish
   // Target keyword: डेयरी इंजीनियरिंग कोर्स (~590/mo)
-  // BIPE's Dairy Engineering moat · rare branch in UP, only ~4
-  // BTEUP-affiliated dairy diploma programmes. Lower competition
-  // for placements (Amul, NDDB, Mother Dairy, Parag pipeline).
+  // Was written as a recruitment piece — "BIPE's Dairy moat", rare branch,
+  // lower placement competition. 3 Sep 2026: that framing is retired (see
+  // the note below the slug). The industry material — only ~4 BTEUP dairy
+  // diploma programmes in UP, the Amul / NDDB / Mother Dairy / Parag
+  // pipeline — is still accurate and still serves the cohort in the branch.
   // Different from existing English /blog/why-dairy-engineering-bipe-
   // rare-bteup-327 · this Hinglish version targets parents/students
   // who reached BIPE via Hindi queries.
@@ -471,23 +484,34 @@ export const BLOG_POSTS: BlogPost[] = [
     // them as hreflang translation alternates made Google merge the two
     // (GSC "Duplicate, Google chose different canonical", Jun 2026). Each
     // now stands on its own language signal — this one is hi-IN.
-    title: "Dairy Engineering — UP ka chhupa hua moka, sasta diploma, badi naukri",
+    // 3 Sep 2026 · BIPE ne Dairy Engineering (BTEUP 327) ko 2026-27 se naye
+    // admissions ke liye band kar diya. Post delete NAHI ki — yeh rank karti
+    // hai aur industry ka analysis abhi bhi sahi hai. Jo badla: title/excerpt
+    // ka "chhupa hua moka" pitch, "pick karें agar" framing, aur closing
+    // advice. Sabse upar ek dated editorial note.
+    title: "Dairy Engineering (BTEUP 327) — UP ki rare branch, course aur career ka pura picture",
     category: "Career Guidance · Hinglish",
     date: "27 May 2026",
     publishedISO: "2026-05-27",
     readTime: "9 min read",
     excerpt:
-      "Dairy Engineering ek rare BTEUP branch hai — UP mein sirf 4 colleges offer karte hain (BIPE inमें se ek)। Amul, NDDB, Mother Dairy, Parag ka direct pipeline। Low competition + specialised market = strong placement odds।",
+      "Update 3 Sep 2026 · BIPE mein Dairy Engineering ke naye admission band hain (aakhri batch 2025-26)। Yeh guide branch ka course, industry aur career picture samjhati hai — UP mein sirf 4 BTEUP colleges yeh diploma chalate hain।",
     metaTitle:
       "Dairy Engineering Diploma · UP Rare Branch | BIPE BTEUP 327 Hinglish",
     metaDescription:
-      "Dairy Engineering ek rare BTEUP branch hai — UP mein sirf 4 colleges (BIPE inमें se ek)। Amul / NDDB / Mother Dairy / Parag direct hiring pipeline + 6-month Sem-6 industrial training। Course, career, salary, honest fit framework।",
+      "BIPE mein Dairy Engineering (BTEUP 327) ke naye admission 2026-27 se band — aakhri batch 2025-26 mein aaya, 2028 mein pass out। Course structure, dairy industry, salary aur career picture — UP ki 4 BTEUP dairy programmes mein se ek।",
     sections: [
-      { type: "h2", text: "Dairy Engineering · UP ka chhupa hua moka" },
+      {
+        type: "callout",
+        title: "Editorial update · 3 September 2026",
+        html:
+          "<strong>BIPE mein Dairy Engineering (BTEUP 327) ke naye admission 2026-27 se band hain।</strong> Aakhri intake 2025-26 mein hua tha; woh batch abhi padh raha hai — teaching, labs, faculty aur mandatory Semester-6 industrial training sab pehle jaisa chal raha hai — aur <strong>2028 mein pass out karega</strong>. Naye applicant ke liye BIPE 4455 par <strong>chaar branches</strong> khuli hain: Civil, Electrical, Mechanical Engineering (Production), aur Computer Science &amp; Engineering — <a href=\"/courses\">/courses</a> par detail. JEECUP choice-filling mein Dairy Engineering na bharें. Neeche ka industry aur course analysis reference ke liye rakha gaya hai, khaas taur pe current Dairy students ke liye.",
+      },
+      { type: "h2", text: "Dairy Engineering · UP ki ek rare branch" },
       {
         type: "p",
         html:
-          "Diploma engineering ke 5 branches mein से Dairy Engineering सबसे <strong>under-rated</strong> hai। Family bolti hai \"Computer Science karo, future hai\"। Yaar bolते hain \"Mechanical sahi hai, placement strong\"। Dairy ke baare mein koi baat नहीं karता। Aur yahi reason hai jisse yeh branch ek <strong>chhupa hua moka</strong> ban gaya hai।",
+          "Diploma engineering ki branches mein से Dairy Engineering सबसे <strong>under-discussed</strong> hai। Family bolti hai \"Computer Science karo, future hai\"। Yaar bolते hain \"Mechanical sahi hai, placement strong\"। Dairy ke baare mein koi baat नहीं karता। Isi wajah se iska course aur career picture zyadatar logon ko pata hi nahi hota — yeh guide wahi picture rakhti hai।",
       },
       {
         type: "p",
@@ -548,7 +572,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Dairy Engineering diploma ke baad placement opportunities concrete हैं — yahi branch की <strong>biggest moat</strong> hai:",
+          "Dairy Engineering diploma ke baad placement opportunities concrete हैं — is branch ki सबसे बड़ी <strong>taakat</strong> yahi rahi hai:",
       },
       {
         type: "ul",
@@ -578,41 +602,50 @@ export const BLOG_POSTS: BlogPost[] = [
           "Yeh salaries Mechanical / Electrical ke comparable hain — slightly lower at entry-level, comparable in mid-career, sometimes higher in specialised dairy R&D roles। <strong>Stability factor zyada</strong>: dairy industry recession-proof hai (milk demand never crashes), placement competition kam hai (fewer dairy diploma holders nationally)।",
       },
 
-      { type: "h2", text: "Yeh branch kis student ke liye hai · honest fit" },
+      { type: "h2", text: "Yeh branch kis student ke liye bani hai · honest fit" },
       {
+        // 3 Sep 2026 · "pick karें agar" ab galat advice hai — BIPE is branch
+        // mein admit nahi kar raha. Framing ko fit-description mein badla,
+        // reader ko chaar admitting branches ki taraf bheja.
         type: "p",
-        html: "<strong>Dairy Engineering pick karें agar:</strong>",
+        html: "<strong>Dairy Engineering un students ke liye bani hai jo:</strong>",
       },
       {
         type: "ul",
         items: [
-          "Aapko biology / chemistry + engineering ka combination interesting lagta hai।",
-          "Family / community mein dairy farming ya agriculture connection hai (natural mentorship)।",
-          "Stable career chahiye, बहुत quick growth ka pressure nahi hai।",
-          "Food processing / quality control / FMCG industry mein interest hai।",
-          "Rural India ke development pe genuine interest hai (cooperatives, NDDB, etc.)।",
-          "Niche skill build करना hai jo कम competitive markets mein high-leverage de।",
+          "Jinko biology / chemistry + engineering ka combination interesting lagta hai।",
+          "Jinke family / community mein dairy farming ya agriculture connection hai (natural mentorship)।",
+          "Jinhें stable career chahiye, बहुत quick growth ka pressure nahi hai।",
+          "Jinka food processing / quality control / FMCG industry mein interest hai।",
+          "Jinka rural India ke development pe genuine interest hai (cooperatives, NDDB, etc.)।",
+          "Jo niche skill build करना chahte hain jo कम competitive markets mein high-leverage de।",
         ],
       },
       {
         type: "p",
-        html: "<strong>Dairy Engineering SKIP karें agar:</strong>",
+        html: "<strong>Yeh branch un students ke liye nahi hai jo:</strong>",
       },
       {
         type: "ul",
         items: [
-          "Aap pure mechanical / electrical / civil work mein zyada interested hain (jo dairy mein bhi present hai but secondary)।",
-          "Aapko cold chain, milk plants, food handling jaise environments uncomfortable lagते hain।",
+          "Pure mechanical / electrical / civil work mein zyada interested hain (jo dairy mein bhi present hai but secondary)।",
+          "Cold chain, milk plants, food handling jaise environments mein uncomfortable feel karते hain।",
           "B.Tech lateral entry (CSE) ya IT path target kar rahe hain — dairy diploma se transition possible hai but unnecessarily complex।",
-          "Aapko biochemistry + microbiology dono boring lagते hain।",
+          "Jinhें biochemistry + microbiology dono boring lagते hain।",
         ],
+      },
+      {
+        type: "callout",
+        title: "Agar yeh profile aapse milta hai",
+        html:
+          "BIPE 4455 par Dairy Engineering ab naye admission nahi le raha (aakhri intake 2025-26)। Iska matlab do cheezें hain। Ek — is profile ke liye BIPE par jo chaar branches khuli hain unmein <strong>Mechanical Engineering (Production)</strong> aur <strong>Civil</strong> sabse kareeb padti hain (process machinery, plant utilities, quality-control ka kaam), aur <strong>Electrical</strong> refrigeration / cold-chain side ko touch karti hai — <a href=\"/courses\">/courses</a> par detail. Do — UP mein BTEUP 327 chalane wale baaki teen institutes JEECUP ke apne codes par hain; wahan ka status aap JEECUP portal par check kar sakte hain, hum uske baare mein claim nahi karte।",
       },
 
-      { type: "h2", text: "BIPE ki Dairy Engineering ki taakat" },
+      { type: "h2", text: "BIPE ki Dairy Engineering — abhi kya chal raha hai" },
       {
         type: "p",
         html:
-          "BIPE Dairy Engineering ki real taakat ek combination hai — <strong>small cohort</strong> (60 sanctioned seats; pehla batch 2025-26 mein aaya), <strong>specialised curriculum</strong> jo UP ke sirf 4 BTEUP-affiliated colleges offer karते hain, <strong>on-campus labs</strong> jo dairy unit-operation fundamentals teach karते hain (chemistry, hydraulics, mechanics-of-solids), <strong>regular cohort industrial visits</strong> jaise recent Banas Dairy Plant Varanasi visit, aur <strong>mandatory 6-month Sem-6 industrial training</strong> at Amul / Mother Dairy / NDDB / Parag।",
+          "Jo cohort abhi padh raha hai, uske paas ek combination hai — <strong>small cohort</strong> (60 sanctioned seats; pehla aur aakhri batch 2025-26 mein aaya), <strong>specialised curriculum</strong> jo UP ke sirf 4 BTEUP-affiliated colleges offer karते hain, <strong>on-campus labs</strong> jo dairy unit-operation fundamentals teach karते hain (chemistry, hydraulics, mechanics-of-solids), <strong>regular cohort industrial visits</strong> jaise recent Banas Dairy Plant Varanasi visit, aur <strong>mandatory 6-month Sem-6 industrial training</strong> at Amul / Mother Dairy / NDDB / Parag।",
       },
       {
         type: "p",
@@ -622,7 +655,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai — 60 sanctioned seats hain aur pehla batch 2025-26 mein 5 students ke saath shuru hua, Mechanical jaisa 100+ nahi। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Lekin placement-wise yeh strength hai — small cohort + specialised industry = high placement-rate per student।",
+          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai — 60 sanctioned seats hain aur pehla batch 2025-26 mein 5 students ke saath shuru hua, Mechanical jaisa 100+ nahi। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Aur yeh cohort ab aage nahi badhega: 2026-27 se is branch mein naye admission nahi hain, toh 2025-26 wala batch hi aakhri batch hai (2028 mein pass out)।",
       },
 
       { type: "h2", text: "Future ahead · 2026 aur uske baad" },
@@ -647,16 +680,19 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
       },
 
-      { type: "h2", text: "Closing · BIPE ki advice" },
+      { type: "h2", text: "Closing · yeh post ab kis kaam ka hai" },
       {
+        // 3 Sep 2026 · Purana closing "specific student ke liye yeh sabse
+        // strong choice ho sakta hai" tha — ab woh advice kisi ka seat
+        // kharch kara sakti hai. Industry analysis raha, conclusion badla.
         type: "p",
         html:
-          "Dairy Engineering एक <strong>honest niche</strong> hai। Yeh \"sexy\" branch nahi hai (jaise CSE) ya \"mass-market\" branch nahi hai (jaise Mechanical) — lekin specific student ke liye yeh sabse strong choice ho sakta hai। Less competition, stable industry, industry-wide hiring pipeline (Amul / Mother Dairy / NDDB), 6-month industrial training jo aksar direct job offers mein convert hoti hai। BIPE ka pehla Dairy batch 2025-26 mein aaya — abhi koi BIPE Dairy passout nahi, toh yeh sab aage ka rasta hai, past record nahi।",
+          "Dairy Engineering एक <strong>honest niche</strong> hai। Yeh \"sexy\" branch nahi hai (jaise CSE) ya \"mass-market\" branch nahi hai (jaise Mechanical) — dairy industry stable hai, hiring pipeline (Amul / Mother Dairy / NDDB / Parag) real hai, aur 6-month industrial training aksar direct job offers mein convert hoti hai। <strong>Lekin BIPE par yeh branch naye applicants ke liye khuli nahi hai।</strong> Pehla batch 2025-26 mein aaya, wahi aakhri hai, aur woh 2028 mein pass out karega — abhi koi BIPE Dairy passout nahi hai। Upar ka course aur industry analysis is post mein isliye rakha gaya hai ki current Dairy students aur is field ko samajhne wale readers ko kaam aaye।",
       },
       {
         type: "p",
         html:
-          "Confused hain — Dairy aapke liye sahi hai? <strong>WhatsApp +91-7310077788</strong> par baat karें — BIPE ka academic team aapki interest, family context, financial outlook सुनकr honest fit suggest karega। Hum BIPE Dairy ki extra-promotion nahi karenge — agar aap genuinely Mechanical / CSE ke liye fit hain, hum vahi kahenge। Aapka future important hai, sahi branch mein hum साथ hain।",
+          "Branch chunne mein confusion hai? <strong>WhatsApp +91-7310077788</strong> par baat karें — BIPE ka academic team aapki interest, family context aur financial outlook सुनकr honest fit suggest karega, un <strong>chaar branches</strong> mein se jinmein 2026-27 mein admission hai: Civil, Electrical, Mechanical (Production), Computer Science &amp; Engineering। Agar aap genuinely kisi doosre institute ke liye fit hain, hum vahi kahenge। Aapka future important hai, sahi branch mein hum साथ hain।",
       },
       {
         type: "p",
@@ -691,7 +727,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "JEECUP counselling ka time aane wala hai। BIPE 4455 aapne choice list mein rakh diya hai। Ab sawaal aata hai — <strong>kaunsi branch pickें?</strong> Mechanical, Computer Science, Electrical, Civil, Dairy — सबकी अपनी apki value hai। Lekin specifically Mechanical aur CSE ke beech mein sabse zyada confusion hota hai। Yeh post us confusion ko solve karne ka attempt hai — honest comparison, BIPE alumni examples, decision framework।",
+          "JEECUP counselling ka time aane wala hai। BIPE 4455 aapne choice list mein rakh diya hai। Ab sawaal aata hai — <strong>kaunsi branch pickें?</strong> Mechanical, Computer Science, Electrical, Civil — 2026-27 mein yahi chaar options hain, aur सबकी अपनी apki value hai। Lekin specifically Mechanical aur CSE ke beech mein sabse zyada confusion hota hai। Yeh post us confusion ko solve karne ka attempt hai — honest comparison, BIPE alumni examples, decision framework।",
       },
       {
         type: "p",
@@ -1876,18 +1912,28 @@ export const BLOG_POSTS: BlogPost[] = [
     // No hreflangAlternates — see the Hinglish dairy post. These two are
     // sibling articles on the same branch (career guide vs. institutional
     // story), not translations of each other.
+    // 3 Sep 2026 · Branch closed to new admissions from 2026-27. This post is
+    // the institutional story, not an admission pitch, so the body survives
+    // mostly intact — what changed is the standing editorial note up top, the
+    // present-tense "60 seats per intake, admitted through JEECUP" line, and
+    // the closing "if you're thinking about this branch" call to apply.
     title: "Why BIPE offers Dairy Engineering — a rare BTEUP diploma in Eastern UP",
     category: "Branches · Dairy Engineering",
     date: "19 May 2026",
     publishedISO: "2026-05-19",
     readTime: "9 min read",
     excerpt:
-      "Only four polytechnics in Uttar Pradesh offer the BTEUP 327 Dairy Engineering diploma. BIPE is one of them. A profile-grounded look at the regional and personal context behind the decision — Eastern UP's milk economy, Dr. Chandrika Rai's path from Pantnagar Soil Chemistry to founding the institute, and what the diploma actually trains a student to do.",
+      "Update, 3 September 2026: Dairy Engineering is closed to new admissions from 2026-27 and the final cohort graduates in 2028. The story of why BIPE took on the branch in the first place — Eastern UP's milk economy, Dr. Chandrika Rai's path from Pantnagar Soil Chemistry to founding the institute, and what the diploma actually trains a student to do.",
     metaTitle:
       "Dairy Engineering Diploma — BTEUP 327, one of only 4 in UP | BIPE",
     metaDescription:
-      "Only four UP polytechnics offer Dairy Engineering (BTEUP 327). The Eastern UP milk economy, Dr. Chandrika Rai's path from Pantnagar to BIPE, and what the diploma actually teaches.",
+      "BIPE's Dairy Engineering (BTEUP 327) closed to new admissions from 2026-27; the final cohort graduates in 2028. The Eastern UP milk economy, Dr. Chandrika Rai's path from Pantnagar to BIPE, and what the diploma teaches.",
     sections: [
+      {
+        type: "callout",
+        title: "Editorial note · 3 September 2026",
+        html: "<strong>Dairy Engineering is closed to new admissions from the 2026-27 session.</strong> The branch took its last intake in 2025-26. That cohort is being taught out — teaching, labs, faculty and the mandatory Semester-6 industrial training all continue unchanged — and <strong>graduates in 2028</strong>. If you are applying through JEECUP for 2026-27, BIPE 4455 admits to <strong>four branches</strong>: Civil Engineering, Electrical Engineering, Mechanical Engineering (Production) and Computer Science &amp; Engineering — see <a href=\"/courses\">/courses</a>. Do not list Dairy Engineering in your choice filling. Everything below is the record of why the branch was started and what it teaches; it stands for the cohort still in it.",
+      },
       {
         type: "p",
         html: "Across all of Uttar Pradesh — a state with more than 150 polytechnics — only <strong>four</strong> offer the Dairy Engineering diploma under BTEUP code 327. BIPE is one of them. The other three are scattered across the state, none of them in the eastern districts where the diploma's specific kind of expertise is most needed. This piece is about why the decision to offer this rare branch was made, who made it, and what it actually teaches a student to do.",
@@ -1895,7 +1941,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "callout",
         title: "What this post is",
-        html: "A profile-grounded look at <strong>BTEUP Dairy Engineering at BIPE</strong> — the regional context, the chairman's background, the curriculum, and the recruiter pipeline. Quotes from Dr. Chandrika Rai are drawn from his existing published <a href=\"/chairman\">Chairman's Message</a>. Career and admission facts are verified on <a href=\"/courses/dairy-engineering\">/courses/dairy-engineering</a> and <a href=\"/placements\">/placements</a>. Weighing it as a career choice? The <a href=\"/blog/dairy-engineering-course-up-rare-branch\">Hindi/Hinglish career guide</a> covers salary, scope and an honest fit-check.",
+        html: "A profile-grounded look at <strong>BTEUP Dairy Engineering at BIPE</strong> — the regional context, the chairman's background, the curriculum, and the recruiter pipeline. Quotes from Dr. Chandrika Rai are drawn from his existing published <a href=\"/chairman\">Chairman's Message</a>. Career and admission facts are verified on <a href=\"/courses/dairy-engineering\">/courses/dairy-engineering</a> and <a href=\"/placements\">/placements</a>. The <a href=\"/blog/dairy-engineering-course-up-rare-branch\">Hindi/Hinglish companion guide</a> covers the salary and scope picture for the cohort now in the branch.",
       },
       { type: "h2", text: "The man behind the decision" },
       {
@@ -1935,7 +1981,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "What the diploma actually teaches" },
       {
         type: "p",
-        html: "Three years, six semesters, AICTE-approved, BTEUP-affiliated under code 327. 60 seats per intake, admitted through <a href=\"/jeecup\">JEECUP</a> under BIPE's institute code 4455. AFRC-set tuition of ₹30,150 per year — the same as every other branch at BIPE. <a href=\"/scholarships\">UP Government post-matric scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
+        html: "Three years, six semesters, AICTE-approved, BTEUP-affiliated under code 327. 60 sanctioned seats, admitted through <a href=\"/jeecup\">JEECUP</a> under BIPE's institute code 4455 — the last such intake was 2025-26. AFRC-set tuition of ₹30,150 per year — the same as every other branch at BIPE. <a href=\"/scholarships\">UP Government post-matric scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
       },
       {
         type: "p",
@@ -1959,7 +2005,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "Where this diploma is meant to lead" },
       {
         type: "p",
-        html: "BIPE's first Dairy cohort entered in 2025-26, so the branch has no graduates and no placement record of its own yet — its first students finish in 2028. The <a href=\"/placements\">employers</a> this diploma is built for read like the dairy industry's senior end:",
+        html: "BIPE's first Dairy cohort entered in 2025-26 — and, with the branch closed to new admissions from 2026-27, it is also the last. The branch has no graduates and no placement record of its own yet; those students finish in 2028. The <a href=\"/placements\">employers</a> this diploma is built for read like the dairy industry's senior end:",
       },
       {
         type: "ul",
@@ -1995,14 +2041,14 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         html: "&ldquo;I am also keenly aware that the world your children are entering is changing faster than any classroom syllabus can keep up with. Artificial intelligence, automation, electric mobility, <strong>dairy automation</strong>, smart manufacturing — these are not abstract concepts; they will be the hands a BIPE diploma engineer will work alongside on day one. So we teach our students to use modern tools well, to question them when they fail, and to never substitute a tool for the discipline of thinking. This is what an honest education looks like in 2026.&rdquo;",
       },
-      { type: "h2", text: "If you're thinking about this branch" },
+      { type: "h2", text: "Where this leaves an applicant for 2026-27" },
       {
         type: "p",
-        html: "Dairy Engineering at BIPE rewards a specific kind of student — one who's comfortable spending time on a plant floor, who has the curiosity to understand why a pasteuriser fails when it does, and who can see the connection between the small dairy farms across Eastern UP and the formal industry that turns their milk into a packaged product. It doesn't suit a student who wants the prestige of CSE or a quiet desk job — but neither does the milk economy.",
+        html: "Dairy Engineering at BIPE rewarded a specific kind of student — one comfortable spending time on a plant floor, curious about why a pasteuriser fails when it does, able to see the connection between the small dairy farms across Eastern UP and the formal industry that turns their milk into a packaged product. That is still a real description of the work, and of the cohort now in Year 2 of the diploma. What has changed is availability: <strong>the branch took its last intake in 2025-26 and is closed to new admissions from 2026-27</strong>. Those students graduate in 2028, and the branch runs in full until then.",
       },
       {
         type: "p",
-        html: "If that description fits, talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab. The chemistry and hydraulics labs, the faculty who teach the dairy modules, and the current Dairy cohort — the first one, admitted in 2025-26 — are the best argument for the branch. Walk the floor, ask about the Banas Dairy visit and how the Sem-6 industrial training gets arranged, and the decision usually settles itself.",
+        html: "For 2026-27, BIPE 4455 admits to four branches — Civil, Electrical, Mechanical Engineering (Production) and Computer Science &amp; Engineering, 420 seats between them. If the plant-floor description above is what drew you here, Mechanical (Production) is the closest fit on process machinery and quality control, and Electrical covers the refrigeration and utilities side. Talk to <a href=\"/admission\">admissions</a> on WhatsApp (EN / हिंदी), or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab. The chemistry and hydraulics labs are worth walking either way; they are shared teaching labs and keep serving the Dairy cohort finishing in 2028.",
       },
     ],
   },
@@ -2134,7 +2180,10 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "ul",
         items: [
           "<strong>You're happy with JE / supervisor roles</strong>: SSC JE, RRB JE, UPPCL JE and similar government cadres don't require B.Tech. If that's where you want to be, the diploma alone is sufficient and the additional three years of B.Tech are pure delay.",
-          "<strong>You've got a strong direct placement</strong>: BIPE's <a href=\"/placements\">recruiter pipeline</a> places mechanical, electrical and dairy diploma graduates directly into Mahindra, JCB, UPPCL, Amul and similar. Walking away from a confirmed offer to chase a B.Tech that takes three more years is usually not the right call.",
+          // 3 Sep 2026 · "dairy diploma graduates" came out of this list — BIPE's
+          // first and only Dairy cohort entered 2025-26 and graduates in 2028, so
+          // there is no Dairy placement to walk away from yet.
+          "<strong>You've got a strong direct placement</strong>: BIPE's <a href=\"/placements\">recruiter pipeline</a> places mechanical, electrical and civil diploma graduates directly into Mahindra, JCB, UPPCL, Amul and similar. Walking away from a confirmed offer to chase a B.Tech that takes three more years is usually not the right call.",
           "<strong>Cost is prohibitive</strong>: AKTU government colleges via UPCET are affordable, but private-college tuition can be ₹80,000–₹1,50,000 per year. If that's not in the family budget, the diploma career path is the financially smarter route.",
           "<strong>You're considering Class 12 + JEE for IIT/NIT</strong>: lateral entry to IIT/NIT B.Tech exists but is ultra-competitive (single-digit seats per branch in most years). If IIT/NIT is the goal, Class 12 → JEE Advanced is the more realistic path.",
         ],
@@ -2166,7 +2215,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "How this fits at BIPE" },
       {
         type: "p",
-        html: "BIPE's <a href=\"/teaching\">outcome-based pedagogy</a> and 1:20 mentor ratio are structured around the assumption that some students will go straight to JE / corporate placement, and others will pursue lateral entry — both are first-class outcomes. The placement cell tracks both pipelines, and faculty mentors discuss the trade-off with each cohort in the final year. <a href=\"/courses\">All five BTEUP branches at BIPE</a> map cleanly onto AKTU B.Tech entries via the table above, so whichever branch you pick at BIPE, the lateral entry door stays open.",
+        html: "BIPE's <a href=\"/teaching\">outcome-based pedagogy</a> and 1:20 mentor ratio are structured around the assumption that some students will go straight to JE / corporate placement, and others will pursue lateral entry — both are first-class outcomes. The placement cell tracks both pipelines, and faculty mentors discuss the trade-off with each cohort in the final year. <a href=\"/courses\">Every BTEUP branch at BIPE</a> maps cleanly onto AKTU B.Tech entries via the table above, so whichever of the four branches admitting in 2026-27 you pick, the lateral entry door stays open.",
       },
       { type: "h2", text: "Real BIPE alumni on the AKTU pathway" },
       {
@@ -2272,7 +2321,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "Polytechnic diploma — the engineering on-ramp after Class 10" },
       {
         type: "p",
-        html: "A <strong>polytechnic diploma in engineering</strong> is a 3-year, 6-semester programme that takes a Class 10 student to the floor of an engineering career. In Uttar Pradesh it's awarded by the Board of Technical Education UP (BTEUP) and admission is through the Joint Entrance Examination Council UP (<a href=\"/jeecup\">JEECUP</a>). BIPE, for example, runs under JEECUP institute code <strong>4455</strong> and offers five BTEUP-affiliated branches: Computer Science &amp; Engineering (355), Civil (322), Electrical (328), Mechanical Engineering Production (343), and the rare Dairy Engineering (327).",
+        html: "A <strong>polytechnic diploma in engineering</strong> is a 3-year, 6-semester programme that takes a Class 10 student to the floor of an engineering career. In Uttar Pradesh it's awarded by the Board of Technical Education UP (BTEUP) and admission is through the Joint Entrance Examination Council UP (<a href=\"/jeecup\">JEECUP</a>). BIPE, for example, runs under JEECUP institute code <strong>4455</strong> and offers five BTEUP-affiliated branches: Computer Science &amp; Engineering (355), Civil (322), Electrical (328), Mechanical Engineering Production (343), and Dairy Engineering (327) — the last of which took its final intake in 2025-26 and is closed to new admissions from 2026-27.",
       },
       {
         type: "p",
@@ -2299,7 +2348,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "How BIPE fits the diploma path" },
       {
         type: "p",
-        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year across all five branches. The placement record on file: <a href=\"/placements\">1,331 joining-letter-verified placements through 2025</a> across 44 recruiters, alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, UPPCL, Amul, Mother Dairy and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
+        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year, identical across branches. The placement record on file: <a href=\"/placements\">1,331 joining-letter-verified placements through 2025</a> across 44 recruiters, alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, UPPCL, Amul, Mother Dairy and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
       },
       {
         type: "p",
@@ -2404,7 +2453,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "If you're a current diploma student or a Class 10 family weighing whether to choose this path, the <a href=\"/courses\">five branches at BIPE</a> map directly onto the JE recruitment branches above. Talk to the admissions team on WhatsApp (EN / हिंदी) or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab.",
+        html: "If you're a current diploma student or a Class 10 family weighing whether to choose this path, the <a href=\"/courses\">four branches BIPE admits to in 2026-27</a> map directly onto the JE recruitment branches above. Talk to the admissions team on WhatsApp (EN / हिंदी) or <a href=\"/visit\">book a campus visit</a> from Varanasi Cantt — about 35 minutes by auto or app-cab.",
       },
     ],
   },
@@ -2428,10 +2477,11 @@ export const BLOG_POSTS: BlogPost[] = [
         title: "TL;DR · Where your JEECUP rank lands you",
         html:
           "<ul style=\"margin: 0; padding-left: 22px;\">" +
-          "<li><strong>Group A (regular, post-Class 10)</strong> closing ranks at BIPE 4455 in 2025-26 ranged from <strong>147,826</strong> (Dairy Engineering) to <strong>168,929</strong> (Computer Science).</li>" +
+          "<li><strong>Group A (regular, post-Class 10)</strong> closing ranks at BIPE 4455 in 2025-26 ranged from <strong>166,030</strong> (Civil) to <strong>168,929</strong> (Computer Science) across the four branches open for 2026-27.</li>" +
           "<li><strong>Group K (lateral entry, post-Class 12 PCM or B.Sc / ITI)</strong> closing ranks were much tighter — <strong>1,757</strong> for Civil, <strong>5,492</strong> for Mech Production, <strong>7,506</strong> for Electrical.</li>" +
-          "<li>If your Group A rank is under 130,000, you have a comfortable margin on every branch we offer. Under 50,000 means you have your pick of branches.</li>" +
+          "<li>If your Group A rank is under 130,000, you have a comfortable margin on every branch open for 2026-27. Under 50,000 means you have your pick of them.</li>" +
           "<li>If your Group K rank is under 5,000, BIPE lateral-entry seats are realistic across all four branches.</li>" +
+          "<li><strong>Dairy Engineering is not on the 2026-27 menu.</strong> It took its last intake in 2025-26 (closing rank 147,826) and is closed to new admissions; the final cohort graduates in 2028. Don't put it in your choice list.</li>" +
           "</ul>" +
           "<p style=\"margin: 12px 0 0;\">All numbers below are from BIPE's <em>Student Admission Rank Lists</em> as filed with JEECUP — actual admitted students for 2024-25 and 2025-26 cycles. No projections, no marketing math.</p>",
       },
@@ -2477,7 +2527,7 @@ export const BLOG_POSTS: BlogPost[] = [
         rows: [
           ["Civil Engineering (102)", "1,57,313", "1,66,030", "25", "25"],
           ["Computer Science & Engg (118)", "1,48,127", "1,68,929", "27", "26"],
-          ["Dairy Engineering (123)", "—", "1,47,826", "0", "5"],
+          ["Dairy Engineering (123) — closed to new admissions", "—", "1,47,826", "0", "5"],
           ["Electrical Engineering (105)", "1,57,754", "1,66,491", "48", "56"],
           ["Mechanical (Production) (113)", "1,58,221", "1,68,298", "30", "33"],
           ["Mechanical (Automobile) (112)", "1,48,572", "—", "11", "0"],
@@ -2487,9 +2537,9 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Reading the table",
         html:
-          "<p style=\"margin: 0;\"><strong>The closing-rank ceiling has been generous.</strong> In 2025-26, even the most competitive of our branches (Computer Science) closed at rank 168,929. Roughly speaking: if your Group A rank is anywhere under 130,000, you have a real chance at every branch we offer. Under 100,000, you have margin even in late counselling rounds. Under 50,000, you have your pick of branches and can choose by interest rather than by rank constraint.</p>" +
+          "<p style=\"margin: 0;\"><strong>The closing-rank ceiling has been generous.</strong> In 2025-26, even the most competitive of our branches (Computer Science) closed at rank 168,929. Roughly speaking: if your Group A rank is anywhere under 130,000, you have a real chance at every branch open for 2026-27. Under 100,000, you have margin even in late counselling rounds. Under 50,000, you have your pick of them and can choose by interest rather than by rank constraint.</p>" +
           "<p style=\"margin: 12px 0 0;\">Why the numbers grew between 2024-25 and 2025-26: JEECUP rank inflation tracks the number of test-takers. UP's polytechnic exam pool has grown year over year; absolute ranks have moved with it.</p>" +
-          "<p style=\"margin: 12px 0 0;\"><strong>Dairy Engineering (JEECUP code 123; BTEUP 327)</strong> appears in 2025-26 with 5 admissions at a closing rank of 147,826. This is the first cohort at BIPE — and one of only four BTEUP-affiliated dairy diploma programmes across all of Uttar Pradesh. <a href=\"/courses/dairy-engineering\">More on the branch →</a></p>" +
+          "<p style=\"margin: 12px 0 0;\"><strong>Dairy Engineering (JEECUP code 123; BTEUP 327)</strong> appears in 2025-26 with 5 admissions at a closing rank of 147,826 — the first cohort at BIPE, and the last. The branch is <strong>closed to new admissions from 2026-27</strong>; those students are being taught out and graduate in 2028. The row is kept here because it is real 2025-26 admission data, not because the seat is available — it is not a choice in this year's counselling. <a href=\"/courses/dairy-engineering\">More on the branch →</a></p>" +
           "<p style=\"margin: 12px 0 0;\"><strong>Mechanical Automobile (JEECUP code 112)</strong> appears in 2024-25 with 11 admissions and is empty in 2025-26 — the slot was phased out in favour of an expanded Mechanical (Production) cohort, which grew from 30 to 33 in the same period.</p>",
       },
       {
@@ -2538,7 +2588,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>Choose a branch that closed earlier</strong>. Branches at BIPE 4455 close in roughly this order: CSE first, then Mech Production, then Electrical, Civil, Dairy. If your rank doesn't make CSE, try Electrical or Civil first.",
+          "<strong>Choose a branch that closed earlier</strong>. The four branches at BIPE 4455 close in roughly this order: CSE first, then Mech Production, then Electrical, then Civil. If your rank doesn't make CSE, try Electrical or Civil first.",
           "<strong>Use later counselling rounds</strong>. Rank-holders who confirmed in Round 1 sometimes upgrade or drop in Round 2/3; seats reopen. The spot round picks up the rest.",
           "<strong>Treat lateral entry as a Plan B</strong>. If you complete Class 12 with PCM and the rank gap is wide, lateral entry into Year 2 the following year is a real route — used by many BIPE alumni.",
           "<strong>Talk to admissions directly</strong>. Counselling rules occasionally allow institute-level choices outside the central allotment. The team at +91-9415202879 or info@bipe.ac.in can walk you through what's possible given your specific rank and branch preferences.",
@@ -2558,7 +2608,11 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>Eastern UP recruitment</strong>. Recruiters who hire at BIPE (Mahindra, Tata Steel, BEL, Indian Railways, UPPCL, JBM, Motherson, Amul) hire across branches. Your branch matters less than your performance and your willingness to relocate.",
           "<strong>Rural campus, low fee</strong>. BIPE is AFRC-approved at ₹30,150/year. That's substantially lower than urban polytechnics with similar approvals — and the campus is six acres in Phoolpur with on-campus hostel for boys.",
-          "<strong>Dairy is genuinely rare</strong>. If you're considering Dairy Engineering and have a good rank, this is a strategic choice — only four institutes in UP offer it, and recruiter pipelines (Amul, Mother Dairy, Parag, Nestlé, NDDB) are real and largely uncrowded.",
+          // 3 Sep 2026 · This bullet used to read "Dairy is genuinely rare —
+          // if you have a good rank, this is a strategic choice". Acting on
+          // that in 2026-27 counselling would burn a real seat on a branch
+          // that no longer admits, so it is now the correction instead.
+          "<strong>Dairy Engineering is off the menu this year</strong>. It took its last intake in 2025-26 and is closed to new admissions from 2026-27; the final cohort graduates in 2028. Your four options at BIPE 4455 are Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering — 420 seats in total. Don't rank Dairy in choice filling.",
         ],
       },
       {
@@ -2575,7 +2629,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>Put your preferred branch at BIPE 4455 first</strong>. If you most want Mechanical Production at BIPE, BIPE-Production should be choice #1 — even if other institutes for Production might \"have higher placements on paper.\"",
           "<strong>Then your second-preference branch at BIPE</strong> as choice #2 — same institute, different branch as a fallback. Most candidates skip this and end up at a different institute when they would have happily taken a different BIPE branch.",
-          "<strong>Then BIPE for every branch you'd accept</strong> in descending order of preference. This locks BIPE as your institute as long as ANY seat in ANY of your acceptable branches is open.",
+          "<strong>Then BIPE for every branch you'd accept</strong> in descending order of preference — from the four that admit in 2026-27. This locks BIPE as your institute as long as ANY seat in ANY of your acceptable branches is open.",
           "<strong>Only after exhausting BIPE</strong> should you list other institutes. Don't interleave — every other-institute choice you put before another BIPE choice is a vote against staying at BIPE.",
         ],
       },
@@ -2583,7 +2637,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Honest counsel from admissions",
         html:
-          "We've watched families fill choices brilliantly and badly for sixteen years. The single most common mistake: interleaving institutes by perceived \"prestige\" rather than committing to one institute and listing all its branches first. If you genuinely want BIPE, list every BIPE branch (in your preference order) before listing any other institute. If you don't, you'll occasionally end up at a more distant or more expensive institute when BIPE had a seat open in a branch you'd have been happy with.",
+          "We've watched families fill choices brilliantly and badly for sixteen years. The single most common mistake: interleaving institutes by perceived \"prestige\" rather than committing to one institute and listing all its branches first. If you genuinely want BIPE, list every BIPE branch that admits in 2026-27 — Civil, Electrical, Mechanical (Production), Computer Science &amp; Engineering — in your preference order, before listing any other institute. If you don't, you'll occasionally end up at a more distant or more expensive institute when BIPE had a seat open in a branch you'd have been happy with.",
       },
       {
         type: "h2",
@@ -2594,7 +2648,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "Read the <a href=\"/jeecup\">JEECUP guidance page</a> — six-step counselling timeline from application to reporting.",
           "Read the <a href=\"/blog/how-to-fill-jeecup-2026-application-form-step-by-step\">JEECUP 2026 form walkthrough</a> — screenshot-by-screenshot of the application portal.",
-          "Browse the <a href=\"/courses\">five branches</a> at BIPE 4455 with full lab + curriculum detail.",
+          "Browse the <a href=\"/courses\">four branches open for 2026-27</a> at BIPE 4455 with full lab + curriculum detail.",
           "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"mailto:info@bipe.ac.in\">info@bipe.ac.in</a> · <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
           "Apply: <a href=\"/apply\">/apply</a> — start the BIPE-side form, get a personal call within 24 hours.",
         ],
@@ -2628,12 +2682,12 @@ export const BLOG_POSTS: BlogPost[] = [
     // title (URL still shows bipevns.org so brand isn't lost), leads
     // with the question form matched verbatim to the 3,440/mo query,
     // and replaces the everything-and-the-kitchen-sink description
-    // with 4 concrete numbers (3 साल · ₹30,150 · 5 branches · JEECUP)
+    // with 4 concrete numbers (3 साल · ₹30,150 · 4 branches · JEECUP)
     // that survive SERP truncation.
     metaTitle:
       "Polytechnic Kya Hota Hai? — 3 साल का Diploma · ₹30,150/साल · JEECUP 2026",
     metaDescription:
-      "पॉलिटेक्निक 10वीं के बाद का 3 साल का AICTE-approved diploma course है। Mechanical, Electrical, Civil, CSE, Dairy की 5 branches। फीस ₹30,150/साल। JEECUP entrance। B.Tech lateral entry possible।",
+      "पॉलिटेक्निक 10वीं के बाद का 3 साल का AICTE-approved diploma course है। Mechanical, Electrical, Civil, CSE — 2026-27 में 4 branches में admission। फीस ₹30,150/साल। JEECUP entrance। B.Tech lateral entry possible।",
     sections: [
       {
         type: "callout",
@@ -2716,12 +2770,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BTEUP के तहत 20+ शाखाएँ (branches) उपलब्ध हैं, लेकिन सबसे लोकप्रिय और प्लेसमेंट के नज़रिए से मजबूत 5 ये हैं — और ये पाँचों <a href=\"/courses\">बीआईपीई वाराणसी</a> में उपलब्ध हैं:",
+          "BTEUP के तहत 20+ शाखाएँ (branches) उपलब्ध हैं, लेकिन सबसे लोकप्रिय और प्लेसमेंट के नज़रिए से मजबूत 5 ये हैं — ये पाँचों <a href=\"/courses\">बीआईपीई वाराणसी</a> में चलती हैं, और <strong>2026-27 में इनमें से 4 में admission है</strong> (Dairy Engineering का आख़िरी intake 2025-26 था):",
       },
       {
         type: "table",
         caption:
-          "बीआईपीई की पाँच शाखाएँ — BTEUP कोड, सीटें, और कैरियर का संकेत।",
+          "बीआईपीई की पाँच शाखाएँ — BTEUP कोड, सीटें, और कैरियर का संकेत। 2026-27 में नए admission चार में; Dairy Engineering बंद है।",
         headers: [
           "ब्रांच (हिन्दी)",
           "ब्रांच (अंग्रेज़ी)",
@@ -2762,16 +2816,19 @@ export const BLOG_POSTS: BlogPost[] = [
             "डेयरी इंजीनियरिंग",
             "Dairy Engineering",
             "327",
-            "60",
-            "Amul, Mother Dairy, Parag, Nestlé — UP में सिर्फ़ 4 पॉलिटेक्निक में",
+            "60 sanctioned — 2026-27 से नए admission नहीं",
+            "Amul, Mother Dairy, Parag, Nestlé — आख़िरी batch 2025-26, pass out 2028",
           ],
         ],
       },
       {
         type: "callout",
         title: "ब्रांच कैसे चुनें",
+        // 3 Sep 2026 · "डेयरी सबसे रणनीतिक है" वाला हिस्सा हटाया — यह सीधे
+        // choice-filling की सलाह थी, और 2026-27 की choice list में वह branch
+        // है ही नहीं। उसकी जगह मैकेनिकल आया; closure status वाक्य के अंत में।
         html:
-          "<p style=\"margin: 0;\">ब्रांच चुनना केवल \"कौन सी सबसे प्रसिद्ध है\" के आधार पर नहीं करना चाहिए। तीन सवाल खुद से पूछें — (1) मुझे hands-on काम पसंद है या programming? (2) मेरे जिले में कौन से उद्योग हैं? (3) मेरे रिश्तेदारों में कौन से कैरियर पहले से हैं? सिविल और इलेक्ट्रिकल सबसे \"safe\" विकल्प हैं (सरकारी नौकरी की सबसे ज़्यादा संभावना); डेयरी सबसे रणनीतिक है (UP में दुर्लभ, recruiters कम भीड़); CSE सबसे आधुनिक है।</p>",
+          "<p style=\"margin: 0;\">ब्रांच चुनना केवल \"कौन सी सबसे प्रसिद्ध है\" के आधार पर नहीं करना चाहिए। तीन सवाल खुद से पूछें — (1) मुझे hands-on काम पसंद है या programming? (2) मेरे जिले में कौन से उद्योग हैं? (3) मेरे रिश्तेदारों में कौन से कैरियर पहले से हैं? 2026-27 में चुनने के लिए चार branches हैं — सिविल और इलेक्ट्रिकल सबसे \"safe\" विकल्प हैं (सरकारी नौकरी की सबसे ज़्यादा संभावना); मैकेनिकल (Production) सबसे versatile है (सबसे बड़ी placement cohort); CSE सबसे आधुनिक है। डेयरी इंजीनियरिंग इस सूची में नहीं है — उसका आख़िरी intake 2025-26 था और 2026-27 से उसमें नए admission नहीं हैं।</p>",
       },
       {
         type: "h2",
@@ -2835,18 +2892,21 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "बीआईपीई (Banaras Institute of Polytechnic & Engineering) — JEECUP संस्थान कोड <strong>4455</strong> — वाराणसी के फूलपुर तहसील में 6 एकड़ के campus पर स्थित है। 16 साल का track record, 1,331 verified alumni placements, और 5 BTEUP-affiliated branches। प्रमुख विशेषताएँ:",
+          "बीआईपीई (Banaras Institute of Polytechnic & Engineering) — JEECUP संस्थान कोड <strong>4455</strong> — वाराणसी के फूलपुर तहसील में 6 एकड़ के campus पर स्थित है। 16 साल का track record, 1,331 verified alumni placements, और 5 BTEUP-affiliated branches — जिनमें से 4 में 2026-27 में admission है। प्रमुख विशेषताएँ:",
       },
       {
         type: "ul",
         items: [
           "<strong>AICTE-approved permanent ID 1-488233171</strong> — आप <a href=\"https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php\" target=\"_blank\" rel=\"noopener\">AICTE की वेबसाइट</a> पर खुद verify कर सकते हैं।",
-          "<strong>BTEUP-affiliated कॉलेज कोड 4455</strong> — सभी 5 शाखाएँ Board of Technical Education से मान्यता प्राप्त।",
+          "<strong>BTEUP-affiliated कॉलेज कोड 4455</strong> — सभी शाखाएँ Board of Technical Education से मान्यता प्राप्त।",
           "<strong>AFRC-approved tuition fee ₹30,150/साल</strong> — कोई capitation fee नहीं, कोई छुपी फीस नहीं।",
           "<strong>Boys' hostel on-campus</strong> — furnished कमरे, mess, 24×7 security, resident warden।",
           "<strong>1:20 mentor ratio</strong> — हर faculty member 20 छात्रों की एक cohort का mentor है।",
           "<strong>Eastern UP catchment</strong> — वाराणसी, मऊ, ग़ाज़ीपुर, आज़मगढ़, मिर्ज़ापुर, और बिहार से 100+ छात्र हर साल।",
-          "<strong>Dairy Engineering branch</strong> — पूरे UP में केवल 4 पॉलिटेक्निक में उपलब्ध — Amul / Mother Dairy / NDDB के लिए सीधी पाइपलाइन।",
+          // 3 Sep 2026 · यह bullet पहले Dairy को "BIPE क्यों चुनें" की वजह
+          // बताता था। अब branch नए applicants के लिए खुली नहीं, इसलिए इसे
+          // admitting-branch की सूची + closure status से बदला गया।
+          "<strong>2026-27 में 4 branches में admission</strong> — Civil, Electrical, Mechanical (Production), Computer Science। Dairy Engineering (BTEUP 327) अभी चल रही है पर उसका आख़िरी intake 2025-26 था — नए admission नहीं।",
         ],
       },
       {
@@ -2856,7 +2916,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<a href=\"/courses\">बीआईपीई की 5 शाखाएँ</a> — विस्तृत curriculum + recruiter list",
+          "<a href=\"/courses\">बीआईपीई की शाखाएँ</a> — विस्तृत curriculum + recruiter list (2026-27 में admission 4 में)",
           "<a href=\"/jeecup\">JEECUP 2026 — 6-step counselling guide</a> — आवेदन से कक्षा तक",
           "<a href=\"/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025\">JEECUP rank vs BIPE 4455 cutoffs</a> — पिछले 2 साल का असली रैंक data",
           "<a href=\"/fees\">पूरी फीस संरचना</a> — AFRC-approved, transparent",
@@ -2933,7 +2993,10 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>Auto-manufacturing (ऑटो-मैन्युफैक्चरिंग)</strong> · Mahindra, JBM, Motherson Sumi, Krishna Maruti, Hero, Bajaj. Diploma engineers join as supervisors, line engineers, quality inspectors. ₹18,000-30,000 starting in-hand. BIPE Mechanical (Production) graduates regularly placed here.",
           "<strong>Power & utilities</strong> · Tata Power, Adani Solar, BHEL, NTPC. Electrical diploma graduates. ₹20,000-30,000 starting. UPPCL's contract roles also count as a stepping stone to permanent positions.",
-          "<strong>Dairy industry (डेयरी उद्योग)</strong> · Amul, Mother Dairy, Parag, Nestlé, NDDB, State Dairy Boards (UP, Bihar, MP, Rajasthan). <a href=\"/courses/dairy-engineering\">Diploma in Dairy Engineering</a> is one of only four such BTEUP programmes in all of UP — recruiter pipelines are real and underserved. ₹18,000-25,000 starting.",
+          // 3 Sep 2026 · The rarity fact is still true and stays; what came out
+          // is "underserved", which read as a reason to pick a branch BIPE no
+          // longer admits to. Closure status carried in the same bullet.
+          "<strong>Dairy industry (डेयरी उद्योग)</strong> · Amul, Mother Dairy, Parag, Nestlé, NDDB, State Dairy Boards (UP, Bihar, MP, Rajasthan). <a href=\"/courses/dairy-engineering\">Diploma in Dairy Engineering</a> is one of only four such BTEUP programmes in all of UP, and the recruiter pipeline is real. ₹18,000-25,000 starting. <em>For 2026-27 applicants: BIPE's Dairy branch took its last intake in 2025-26 and is closed to new admissions — that cohort graduates in 2028.</em>",
           "<strong>Construction & infrastructure (निर्माण क्षेत्र)</strong> · L&T, Shapoorji Pallonji, NCC, Tata Projects. Smart Cities, Bharatmala, Kashi Vishwanath corridor — civil diploma graduates do site engineering, surveying, quality control. ₹18,000-28,000 starting.",
         ],
       },
@@ -2971,7 +3034,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Banaras Institute of Polytechnic & Engineering (BIPE) — JEECUP institute code <strong>4455</strong>, BTE UP affiliated, AICTE-approved — is one of the polytechnics serving Eastern UP and Bihar for this exact career pipeline. 16 years on record, 1,331 verified placements at the named recruiters above, five BTEUP branches (Civil, CSE, Dairy, Electrical, Mechanical Production), AFRC tuition ₹30,150/year. <a href=\"/why-bipe\">See how BIPE compares against other Varanasi polytechnics →</a>",
+          "Banaras Institute of Polytechnic & Engineering (BIPE) — JEECUP institute code <strong>4455</strong>, BTE UP affiliated, AICTE-approved — is one of the polytechnics serving Eastern UP and Bihar for this exact career pipeline. 16 years on record, 1,331 verified placements at the named recruiters above, four branches open for 2026-27 admission (Civil, CSE, Electrical, Mechanical Production — Dairy Engineering took its last intake in 2025-26), AFRC tuition ₹30,150/year. <a href=\"/why-bipe\">See how BIPE compares against other Varanasi polytechnics →</a>",
       },
       {
         type: "h2",
@@ -2982,7 +3045,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "Read the <a href=\"/blog/polytechnic-kya-hai-aur-kaise-kare\">Hindi guide to polytechnic admission</a> — पूरी प्रक्रिया हिन्दी में",
           "Check the <a href=\"/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025\">JEECUP cutoff data</a> — real ranks from 2024-25 and 2025-26",
-          "Browse <a href=\"/courses\">all 5 BIPE branches</a> with semester themes + recruiters",
+          "Browse the <a href=\"/courses\">four BIPE branches open for 2026-27</a> with semester themes + recruiters",
           "Read the <a href=\"/blog/junior-engineer-eligibility-after-diploma\">Junior Engineer pathway guide</a>",
           "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">WhatsApp (Hindi or English)</a>",
           "Apply: <a href=\"/apply\">/apply</a> — 5-minute form, personal call within 24 hours",
@@ -3047,7 +3110,7 @@ export const BLOG_POSTS: BlogPost[] = [
           ["Annual tuition (private AFRC)", "₹25,000-60,000 / year (BIPE ₹30,150)", "₹15,000-40,000 / year"],
           ["Qualification awarded", "Diploma in [Branch] Engineering", "Trade Certificate (NTC) in [Trade]"],
           ["Curriculum scope", "Engineering theory + workshop / lab + final-year industrial training", "Trade-specific hands-on training; minimal theory"],
-          ["Branches / Trades", "Civil / Mech / Electrical / CSE / Dairy / others (BIPE has 5)", "Fitter / Welder / Electrician / Mechanic / Stenographer / 60+ trades"],
+          ["Branches / Trades", "Civil / Mech / Electrical / CSE / Dairy / others (BIPE runs 5, admits to 4 from 2026-27)", "Fitter / Welder / Electrician / Mechanic / Stenographer / 60+ trades"],
           ["Starting govt-job role", "Junior Engineer (JE)", "Craftsman / Technician"],
           ["Starting pay (govt)", "₹35,000-44,000 + DA + allowances", "₹19,900-29,200 + DA + allowances"],
           ["Lateral entry to B.Tech", "YES — AKTU / UPCET-L into B.Tech Year 2", "NO direct route (would need diploma first)"],
@@ -3142,7 +3205,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE is a polytechnic — JEECUP institute code 4455 — so the recommendations here that point to polytechnic are biased in that direction. We've been honest about when ITI fits better. If polytechnic is your route, BIPE&rsquo;s five branches (Civil, CSE, Dairy, Electrical, Mechanical Production) all admit via JEECUP Group A (regular, post-10th) and Group K (lateral entry, post-ITI or post-12 PCM). The same 16 BIPE alumni who moved to B.Tech via AKTU lateral entry — <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">documented here</a> — used the polytechnic-then-B.Tech path that ITI doesn&rsquo;t open as easily.",
+          "BIPE is a polytechnic — JEECUP institute code 4455 — so the recommendations here that point to polytechnic are biased in that direction. We've been honest about when ITI fits better. If polytechnic is your route, BIPE&rsquo;s four admitting branches (Civil, CSE, Electrical, Mechanical Production) take students via JEECUP Group A (regular, post-10th) and Group K (lateral entry, post-ITI or post-12 PCM). Dairy Engineering (BTEUP 327) still runs for the cohort in it, but is closed to new admissions from 2026-27. The same 16 BIPE alumni who moved to B.Tech via AKTU lateral entry — <a href=\"/blog/diploma-to-btech-lateral-entry-up-aktu\">documented here</a> — used the polytechnic-then-B.Tech path that ITI doesn&rsquo;t open as easily.",
       },
       {
         type: "h2",
@@ -3345,7 +3408,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Dairy is one of only four BTE UP-affiliated diploma programmes of its kind in all of Uttar Pradesh. Curriculum follows the chain: chemistry / microbiology of milk → processing technology → plant operations → products. Industrial training in Sem 6 typically lands at Amul, Mother Dairy, NDDB, Parag or Nestlé — career options that simply don't exist for graduates of the other branches.",
+          // 3 Sep 2026 · The syllabus stays in full — the branch still runs and
+          // its students still sit these papers. What went is the closing clause
+          // ("career options the other branches don't have"), which in a post
+          // written for branch-choosers was a pitch for a branch that no longer
+          // admits. Replaced with the closure status.
+          "Dairy is one of only four BTE UP-affiliated diploma programmes of its kind in all of Uttar Pradesh. Curriculum follows the chain: chemistry / microbiology of milk → processing technology → plant operations → products. Industrial training in Sem 6 typically lands at Amul, Mother Dairy, NDDB, Parag or Nestlé. <strong>One thing to know before you read on:</strong> BIPE took its last Dairy intake in 2025-26 and the branch is closed to new admissions from 2026-27. The syllabus below is here for the cohort now in it — which graduates in 2028 — not as a branch to rank in this year's counselling.",
       },
       {
         type: "ul",
@@ -3444,7 +3512,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Ready to enrol?",
         html:
-          "If you've read this far, you're either choosing a branch or finishing one. Either way, see <a href=\"/courses\">/courses</a> for all five BIPE branches with full per-semester subject detail. Already decided? Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
+          "If you've read this far, you're either choosing a branch or finishing one. Either way, see <a href=\"/courses\">/courses</a> for full per-semester subject detail on every BIPE branch. For 2026-27 there are four to choose between — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering; Dairy Engineering took its last intake in 2025-26. Already decided? Apply at <a href=\"/apply\">/apply</a>, or call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
       },
     ],
   },
@@ -3495,7 +3563,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<li><strong>Yes, you can sit for government Junior Engineer (JE) exams immediately after a 3-year polytechnic diploma.</strong> No degree needed, no further qualification needed. The diploma IS the eligibility.</li>" +
           "<li><strong>Five exam pipelines</strong> matter for diploma holders in UP / Bihar: <strong>SSC JE</strong> (central government engineering departments), <strong>RRB JE</strong> (Indian Railways), <strong>UPPCL JE</strong> (UP electricity board), <strong>UP PWD JE</strong> (state public works), <strong>Indian Army Technical Entry / Navy SSR</strong> (defence).</li>" +
           "<li><strong>Starting in-hand salary</strong> for SSC JE / RRB JE / UPPCL JE ranges from ₹35,000-44,000 per month plus DA + allowances. After 3-5 years (with one promotion) the in-hand crosses ₹52,000/month at most central-government JE postings.</li>" +
-          "<li><strong>Branch matters.</strong> Civil / Mechanical / Electrical diploma holders have the most government pipelines open to them. CSE and Dairy graduates have fewer JE-cadre exams but more central-government IT cadre and State Dairy Federation exams respectively.</li>" +
+          "<li><strong>Branch matters.</strong> Civil / Mechanical / Electrical diploma holders have the most government pipelines open to them; CSE has fewer JE-cadre exams but its own central-government IT cadre route. Those four are the branches BIPE admits to in 2026-27. Dairy Engineering — closed to new admissions from 2026-27, final cohort graduating 2028 — routes to State Dairy Federation and NDDB cadres instead.</li>" +
           "<li><strong>Preparation starts in Year 3 of the diploma.</strong> Most successful BIPE alumni start mock-test routines in Semester 5 and sit their first attempt within 6 months of graduating.</li>" +
           "</ul>",
       },
@@ -3629,13 +3697,16 @@ export const BLOG_POSTS: BlogPost[] = [
           ["Mechanical (343)", "✓✓ (Mech)", "✓✓ (Mech)", "—", "✓ (limited)", "✓✓ (Army/Navy)", "ALP, BHEL, DRDO"],
           ["Electrical (328)", "✓✓ (Elec)", "✓✓ (Elec)", "✓✓ (primary)", "✓ (limited)", "✓ (Army TES)", "NPCIL, Power Grid"],
           ["Computer Science (355)", "—", "✓ (IT)", "—", "—", "✓ (Army Sigs)", "Banks IT, NIC"],
-          ["Dairy (327)", "—", "—", "—", "—", "—", "State Dairy Federations, NDDB, FSSAI"],
+          ["Dairy (327) — closed to new admissions", "—", "—", "—", "—", "—", "State Dairy Federations, NDDB, FSSAI"],
         ],
       },
       {
         type: "p",
         html:
-          "Two takeaways. First: Civil, Mechanical and Electrical are the highest-coverage branches for government engineering jobs. If government employment is your primary goal, pick one of those three. Second: CSE and Dairy aren't shut out — they just have <em>different</em> pipelines (central government IT cadres for CSE, dairy federation and FSSAI cadres for Dairy) and need a slightly tailored prep approach.",
+          // 3 Sep 2026 · Reworded so the "aren't shut out, just tailor your prep"
+          // encouragement applies only to CSE. Said of Dairy in a branch-choice
+          // post it read as an invitation to rank a branch that no longer admits.
+          "Two takeaways. First: Civil, Mechanical and Electrical are the highest-coverage branches for government engineering jobs. If government employment is your primary goal, pick one of those three. Second: CSE isn't shut out — it just has a <em>different</em> pipeline (central-government IT cadres) and needs a slightly tailored prep approach. The Dairy row is in the table for the cohort already in the branch: BIPE closed Dairy Engineering to new admissions from 2026-27, so it is not one of the four branches you are choosing between this year.",
       },
 
       { type: "h2", text: "Preparation timeline — what to do when" },
@@ -3712,7 +3783,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Choosing a branch with government jobs in mind?",
         html:
-          "See the 5 BIPE branches at <a href=\"/courses\">/courses</a> — the per-branch pages list the specific JE exams each one is eligible for. Civil / Mechanical / Electrical have the broadest pipelines. Apply for 2026-27 at <a href=\"/apply\">/apply</a> · call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
+          "See the four branches BIPE admits to in 2026-27 at <a href=\"/courses\">/courses</a> — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering. The per-branch pages list the specific JE exams each one is eligible for; Civil / Mechanical / Electrical have the broadest pipelines. Apply for 2026-27 at <a href=\"/apply\">/apply</a> · call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
       },
     ],
   },
@@ -3753,7 +3824,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<li><strong>Tier-1 private (Mahindra, Tata Steel, JCB, Asian Paints, Tata Power)</strong> — ₹18,000-25,000 in-hand at entry, ₹35,000-50,000 by year 5 if you stay, faster jumps if you switch.</li>" +
           "<li><strong>Regional manufacturing / auto-components (Motherson, JBM, Talbros, RR Kabel)</strong> — ₹12,000-22,000 at entry, ₹25,000-35,000 by year 5.</li>" +
           "<li><strong>Civil site engineering (Smart Cities, Bharatmala contractors, Kashi corridor)</strong> — ₹15,000-25,000 at entry, ₹35,000-55,000 by year 5 if you specialise.</li>" +
-          "<li><strong>Branch matters enormously.</strong> Mechanical Production and Electrical have the broadest salary ranges (most government + most private pipelines). Civil has the highest private-side ceiling. CSE and Dairy have narrower volumes but specialist premium niches.</li>" +
+          "<li><strong>Branch matters enormously.</strong> Mechanical Production and Electrical have the broadest salary ranges (most government + most private pipelines). Civil has the highest private-side ceiling. CSE has the narrowest volume but a specialist premium. Those four are what BIPE admits to in 2026-27 — the Dairy figures further down are for the cohort finishing in 2028, not a branch you can pick.</li>" +
           "<li><strong>Geography is the multiplier.</strong> A diploma engineer earning ₹20,000 in Varanasi can earn ₹30,000-40,000 in Delhi NCR and ₹40,000-55,000 in Mumbai or Pune for the same skill set. Cost of living offsets some — but not all — of the premium.</li>" +
           "</ul>",
       },
@@ -3813,7 +3884,7 @@ export const BLOG_POSTS: BlogPost[] = [
           ["Electrical (328)", "UPPCL JE · RRB JE Electrical · SSC JE Electrical", "Tata Power, Adani Solar, Bajaj, UPPCL, Indian Railways", "₹20,000-24,000"],
           ["Civil (322)", "SSC JE Civil · UP PWD JE · Indian Railways JE Civil", "L&T site, Mumbai Metro contractors, Smart Cities contractors", "₹18,000-22,000"],
           ["Computer Science & Engineering (355)", "Central IT cadre exams · SSC CGL · UPPCL CSE roles", "Wipro Infrastructure, Asian Paints IT, regional IT/BPO", "₹18,000-22,000"],
-          ["Dairy (327)", "State Dairy Federation · NDDB", "Amul, Mother Dairy, Parag, Nestlé Dairy, Heritage", "₹15,000-20,000"],
+          ["Dairy (327) — closed to new admissions", "State Dairy Federation · NDDB", "Amul, Mother Dairy, Parag, Nestlé Dairy, Heritage", "₹15,000-20,000"],
         ],
         caption: "Median in-hand from BIPE 2022-24 joining letters where data was disclosed by the recruiter. Excludes overtime/shift allowances. Ranges narrow within 2 years of joining for most branches.",
       },
@@ -3824,8 +3895,12 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
+        // 3 Sep 2026 · The scarcity economics are unchanged and still describe
+        // what the cohort in the branch is walking into. What this paragraph can
+        // no longer do is read as a reason to choose Dairy at BIPE, so the
+        // closure lands in the same breath as the salary argument.
         html:
-          "<strong>Dairy Engineering looks low on the entry chart but corrects fast.</strong> BIPE is one of only four polytechnics in Uttar Pradesh that runs BTEUP 327 Dairy Engineering &mdash; that scarcity means within 18-24 months of joining a dairy major (Amul, Parag, Mother Dairy, NDDB), salaries catch up to the wider engineering median because there's simply not enough supply to keep wages low. See <a href=\"/blog/why-dairy-engineering-bipe-rare-bteup-327\">our deeper post on Dairy Engineering rarity</a>.",
+          "<strong>Dairy Engineering starts low on the entry chart and corrects fast.</strong> BIPE is one of only four polytechnics in Uttar Pradesh that runs BTEUP 327, and dairy diploma holders are scarce nationally &mdash; so within 18-24 months of joining a dairy major (Amul, Parag, Mother Dairy, NDDB), salaries catch up to the wider engineering median because there's simply not enough supply to keep wages low. That is the industry picture, and it is the one the students now in the branch are walking into. It is <strong>not</strong> a branch on offer for 2026-27: BIPE took its last Dairy intake in 2025-26 and closed it to new admissions; that cohort graduates in 2028. The full account is in <a href=\"/blog/why-dairy-engineering-bipe-rare-bteup-327\">our post on why BIPE ran the branch</a>.",
       },
 
       // ============== H2: The 3-year arc ==============
@@ -3902,7 +3977,10 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ol",
         items: [
-          "<strong>Branch choice.</strong> The single biggest lever. Mechanical Production and Electrical have the broadest opportunity sets; Civil has the highest private-side ceiling; Dairy has the most scarcity-driven premium. Pick a branch you'll actually study (interest matters more than predicted salary), but know what each branch costs and earns.",
+          // 3 Sep 2026 · This is choice advice given to an applicant, so it now
+          // ranks only the four branches that admit. Dairy's scarcity premium is
+          // still described above — as industry context, not as a pick.
+          "<strong>Branch choice.</strong> The single biggest lever. Across the four branches BIPE admits to in 2026-27: Mechanical Production and Electrical have the broadest opportunity sets; Civil has the highest private-side ceiling; CSE has the widest gap between an unskilled and a skilled graduate. Pick a branch you'll actually study (interest matters more than predicted salary), but know what each branch costs and earns.",
           "<strong>Government exam preparation.</strong> A serious student who starts SSC JE / RRB JE / UPPCL JE preparation in Semester 5 (during the diploma) and clears within 12 months of graduation is on a fundamentally different income curve from one who treats the diploma as the end of preparation. Government clearance roughly doubles the entry salary versus a regional private placement.",
           "<strong>Demonstrable technical skill.</strong> AutoCAD / SolidWorks / PLC / STAAD Pro / Python &mdash; pick one or two based on your branch and become genuinely good at them by Semester 6. Tier-1 private employers screen for these skills before they screen for marks.",
           "<strong>Geographic willingness.</strong> Same diploma + same skills = ~1.5x salary in Delhi NCR and ~2x salary in Mumbai or Pune compared to Varanasi or Lucknow. Cost of living offsets ~30-50% of the premium; the rest goes to net savings or quality of life.",
@@ -4023,7 +4101,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<li><strong>Tier-1 private (Mahindra, Tata Steel, JCB, Asian Paints)</strong> — ₹18,000-25,000 शुरू में, 5 साल में ₹35,000-50,000 (अगर वहीं रहे), जल्दी switch करने पर इससे ज़्यादा।</li>" +
           "<li><strong>क्षेत्रीय manufacturing (Motherson, JBM, Talbros, RR Kabel)</strong> — ₹12,000-22,000 शुरू में, 5 साल में ₹25,000-35,000।</li>" +
           "<li><strong>Civil site engineering (Smart Cities, Bharatmala, Kashi corridor)</strong> — ₹15,000-25,000 शुरू में, 5 साल में ₹35,000-55,000 अगर specialise करें।</li>" +
-          "<li><strong>Branch मायने रखती है।</strong> Mechanical Production और Electrical में सबसे ज़्यादा pipeline है; Civil की private-side ceiling सबसे ऊँची है; Dairy में scarcity premium है।</li>" +
+          "<li><strong>Branch मायने रखती है।</strong> Mechanical Production और Electrical में सबसे ज़्यादा pipeline है; Civil की private-side ceiling सबसे ऊँची है; CSE का volume कम पर specialist premium है। 2026-27 में admission इन्हीं चार में है — नीचे दिए Dairy Engineering के आँकड़े उस batch के लिए हैं जो 2028 में pass out करेगा।</li>" +
           "<li><strong>शहर multiplier है।</strong> Varanasi में ₹20,000 वाली job Delhi NCR में ₹30,000-40,000, Mumbai में ₹40,000-55,000 तक हो सकती है — same skill, different city।</li>" +
           "</ul>",
       },
@@ -4078,7 +4156,7 @@ export const BLOG_POSTS: BlogPost[] = [
           ["Electrical (328)", "UPPCL JE · RRB JE Electrical · SSC JE Electrical", "Tata Power, Adani Solar, Bajaj, UPPCL", "₹20,000-24,000"],
           ["Civil (322)", "SSC JE Civil · UP PWD JE · Indian Railways JE Civil", "L&T site, Mumbai Metro contractors", "₹18,000-22,000"],
           ["Computer Science (355)", "Central IT cadre · SSC CGL · UPPCL CSE roles", "Wipro Infrastructure, Asian Paints IT", "₹18,000-22,000"],
-          ["Dairy (327)", "State Dairy Federation · NDDB", "Amul, Mother Dairy, Parag, Nestlé", "₹15,000-20,000"],
+          ["Dairy (327) — 2026-27 से नए admission नहीं", "State Dairy Federation · NDDB", "Amul, Mother Dairy, Parag, Nestlé", "₹15,000-20,000"],
         ],
         caption: "BIPE के 2022-24 joining letters का median, जहाँ recruiter ने salary disclose की। Overtime/shift allowance अलग।",
       },
@@ -4089,8 +4167,11 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
+        // 3 Sep 2026 · English post के साथ मिलाकर — scarcity वाली economics
+        // वैसी ही रहीं (branch में जो batch है उसी के लिए), पर अब यह पैराग्राफ़
+        // किसी नए applicant के लिए "इसे चुनो" नहीं पढ़ा जा सकता।
         html:
-          "<strong>Dairy की शुरुआती salary कम लगती है पर जल्दी correct होती है।</strong> UP में सिर्फ 4 polytechnic ही BTEUP 327 Dairy Engineering offer करते हैं — BIPE उनमें से एक है। यह scarcity का मतलब है कि किसी dairy major (Amul, Parag, Mother Dairy, NDDB) में join करने के 18-24 महीने में salary पूरे engineering median तक पहुँच जाती है। देखें <a href=\"/blog/why-dairy-engineering-bipe-rare-bteup-327\">Dairy Engineering की rarity पर हमारा detailed post</a>।",
+          "<strong>Dairy की शुरुआती salary कम लगती है पर जल्दी correct होती है।</strong> UP में सिर्फ 4 polytechnic ही BTEUP 327 Dairy Engineering offer करते हैं — BIPE उनमें से एक है — और देश भर में dairy diploma holders कम हैं। यह scarcity का मतलब है कि किसी dairy major (Amul, Parag, Mother Dairy, NDDB) में join करने के 18-24 महीने में salary पूरे engineering median तक पहुँच जाती है। यह industry की तस्वीर है और उसी batch के लिए है जो अभी branch में है — <strong>2026-27 में इस branch में नए admission नहीं हैं</strong> (आख़िरी intake 2025-26, pass out 2028)। पूरी कहानी: <a href=\"/blog/why-dairy-engineering-bipe-rare-bteup-327\">BIPE ने यह branch क्यों चलाई</a>।",
       },
 
       // ============== H2: 3, 5, 10 year arc combined ==============
@@ -4166,7 +4247,9 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ol",
         items: [
-          "<strong>Branch की पसंद।</strong> सबसे बड़ा lever। Mechanical Production और Electrical में सबसे चौड़ा opportunity set; Civil की private ceiling सबसे ऊँची; Dairy में scarcity premium। ऐसी branch चुनें जिसे आप वाकई पढ़ेंगे — interest predicted salary से ज़्यादा मायने रखती है।",
+          // 3 Sep 2026 · यह सीधे applicant को दी जा रही सलाह है, इसलिए अब सिर्फ़
+          // उन्हीं चार branches की रैंकिंग है जिनमें 2026-27 में admission है।
+          "<strong>Branch की पसंद।</strong> सबसे बड़ा lever। 2026-27 में जिन चार branches में admission है, उनमें — Mechanical Production और Electrical में सबसे चौड़ा opportunity set; Civil की private ceiling सबसे ऊँची; CSE में unskilled और skilled graduate के बीच सबसे बड़ा फ़र्क़। ऐसी branch चुनें जिसे आप वाकई पढ़ेंगे — interest predicted salary से ज़्यादा मायने रखती है।",
           "<strong>सरकारी exam की तैयारी।</strong> जो student Semester 5 में SSC JE / RRB JE / UPPCL JE की तैयारी शुरू करता है और graduation के 12 महीने में clear कर लेता है — वो fundamentally अलग income curve पर है। सरकारी clearance regional private placement की entry salary को लगभग double कर देता है।",
           "<strong>Demonstrable technical skill।</strong> AutoCAD / SolidWorks / PLC / STAAD Pro / Python — branch के हिसाब से एक-दो चुनें और Semester 6 तक उनमें genuinely अच्छे बनें। Tier-1 private employers marks से पहले इन skills को screen करते हैं।",
           "<strong>शहर के लिए तैयार रहना।</strong> Same diploma + same skills = Delhi NCR में ~1.5x salary, Mumbai या Pune में ~2x — Varanasi या Lucknow के मुक़ाबले।",

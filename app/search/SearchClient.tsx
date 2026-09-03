@@ -74,11 +74,17 @@ export function SearchClient() {
 
         {/* Input row */}
         <div style={{ marginTop: 28, position: "relative" }}>
+          {/* 3 Sep 2026 · "dairy engineering" swapped out of the example
+              queries below. The index is untouched — "dairy" still matches
+              the /courses description and both Dairy blog posts, so the
+              branch stays findable. What changed is that the site no longer
+              *suggests* it to an applicant who hadn't asked for it, sitting
+              among three live admission topics. */}
           <input
             type="search"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Try 'fees', 'jeecup counselling', 'dairy engineering', 'hostel'…"
+            placeholder="Try 'fees', 'jeecup counselling', 'placements', 'hostel'…"
             autoFocus
             aria-label="Search BIPE"
             style={{

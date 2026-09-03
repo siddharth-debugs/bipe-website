@@ -30,7 +30,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Per-branch landing pages under /courses/[slug] — high priority since
-  // they target the rarest BTEUP keyword clusters (e.g. dairy engineering UP).
+  // they target long-tail BTEUP keyword clusters ("civil engineering
+  // diploma Varanasi" and the like).
+  //
+  // 3 Sep 2026 · this maps DATA.branches, NOT ADMITTING_BRANCHES, and it
+  // must keep doing so. /courses/dairy-engineering stays in the sitemap:
+  // the branch is closed to new admissions but still running, its page is
+  // live and ranking, and the 2025-26 cohort needs it until 2028. Pulling
+  // the URL would deindex a 200 page mid-course. The closure notice
+  // belongs on the page — a sitemap has nowhere to say it.
   const branchEntries = DATA.branches.map((b) => ({
     url: `${SITE_URL}/courses/${b.slug}`,
     lastModified,

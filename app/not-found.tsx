@@ -30,7 +30,7 @@ import { BLOG_POSTS } from "@/lib/blogPosts";
 export const metadata: Metadata = {
   title: "Page not found · BIPE",
   description:
-    "The page you were looking for doesn't exist or has moved. Try Apply for 2026-27, JEECUP guidance, our 5 diploma branches, or search across BIPE.",
+    "The page you were looking for doesn't exist or has moved. Try Apply for 2026-27, JEECUP guidance, the 4 diploma branches admitting this session, or search across BIPE.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/" },
   openGraph: {
@@ -51,7 +51,12 @@ const POPULAR_DESTINATIONS: {
 }[] = [
   { label: "Apply for 2026-27", hi: "आवेदन करें", href: "/apply", body: "Five-minute application form, callback within 24 hours." },
   { label: "JEECUP Counselling", hi: "जेईईसीयूपी काउंसलिंग", href: "/jeecup-counselling", body: "Six-step counselling explainer — institute code 4455." },
-  { label: "All 5 branches", hi: "शाखाएँ", href: "/courses", body: "CSE, Dairy, Civil, Electrical, Mechanical Engineering (Production)." },
+  // 3 Sep 2026 — was "All 5 branches" / "CSE, Dairy, Civil, Electrical,
+  // Mechanical Engineering (Production)". A nav card is a list of things
+  // you can go and pick, so it names the four branches open for 2026-27.
+  // Dairy Engineering closed to new admissions from 2026-27 and its page
+  // is still live for the cohort finishing in 2028 — /courses links it.
+  { label: "The 4 branches admitting", hi: "शाखाएँ", href: "/courses", body: "Civil, CSE, Electrical, Mechanical Engineering (Production) — open for 2026-27." },
   { label: "Fees & scholarships", hi: "शुल्क और छात्रवृत्ति", href: "/fees", body: "AFRC-approved ₹30,150/year. UP post-matric and EWS support." },
   { label: "Placement record", hi: "प्लेसमेंट रिकॉर्ड", href: "/placements", body: `${formatPlacements(PLACEMENT_STATS.totalPlacements)} verified placements through ${PLACEMENT_STATS.endYear}. ${PLACEMENT_STATS.totalRecruiters} recruiters.` },
   { label: "Visit the campus", hi: "कैम्पस देखें", href: "/visit", body: "~35 min from Varanasi Cantt by auto. Mon–Sat 9 AM – 5 PM." },

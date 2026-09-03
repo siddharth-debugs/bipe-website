@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { forwardToBackend } from "@/lib/backend";
 import { forwardLeadToCrm } from "@/lib/crm-forward";
 import { fireMetaLeadAdminNotification } from "@/lib/doubleTick";
-import { BRANCH_OPTIONS } from "@/lib/formOptions";
+import { BRANCH_OPTIONS_ALL } from "@/lib/formOptions";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -201,7 +201,7 @@ async function processLead(leadgenId: string, pageToken: string): Promise<void> 
   // Loose-map the branch answer onto the canonical BRANCH_OPTIONS so the
   // admin row filters like website leads; unmatched answers ride the message.
   const branch =
-    BRANCH_OPTIONS.find(
+    BRANCH_OPTIONS_ALL.find(
       (b) => branchAnswer && (norm(b).includes(norm(branchAnswer)) || norm(branchAnswer).includes(norm(b))),
     ) ?? "";
 

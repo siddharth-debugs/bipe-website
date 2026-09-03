@@ -19,7 +19,7 @@ import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
  */
 const FALLBACK_APPROVALS = [
   { label: "AICTE-approved",   sub: "ID 1-488233171" },
-  { label: "BTEUP-affiliated", sub: "5 branches · code 4455" },
+  { label: "BTEUP-affiliated", sub: "4 branches · code 4455" },
   { label: "JEECUP code 4455", sub: "single counselling route" },
   { label: "AISHE registered", sub: "Dept. of Higher Education · MoE" },
 ];
@@ -55,7 +55,7 @@ async function loadHero(): Promise<HeroData> {
     // backend is unreachable or that section is unpublished. The
     // backend record should be updated via the admin panel to match,
     // otherwise this fix is dormant in production.
-    description: `AICTE-approved polytechnic college in Varanasi — diploma engineering across 5 branches.\nMentor 1:20 · ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placed · since 2010.`,
+    description: `AICTE-approved polytechnic college in Varanasi — diploma engineering across 4 branches.\nMentor 1:20 · ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placed · since 2010.`,
     cta_primary: { label: "Apply for 2026-27", href: "/apply" },
     cta_secondary: { label: "Book a campus visit", href: "/visit#book" },
     bg_image_url: BIPE_IMG.heroWide,

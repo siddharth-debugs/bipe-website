@@ -680,7 +680,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     eyebrow: "BTEUP 2026 · SYLLABUS GUIDE",
     headline: "BTEUP 2026 syllabus —",
     headlineAccent: "branch + semester, end-to-end.",
-    lead: "BTEUP publishes a 6-semester syllabus for each of its 40+ affiliated diploma branches. This page covers the structural pattern of the syllabus (theory + practical + internal weightage), where to download official PDFs, and the branch-by-branch contour for BIPE's 5 BTEUP-affiliated branches (Mechanical, Electrical, Civil, CSE, Dairy).",
+    lead: "BTEUP publishes a 6-semester syllabus for each of its 40+ affiliated diploma branches. This page covers the structural pattern of the syllabus (theory + practical + internal weightage), where to download official PDFs, and the branch-by-branch contour for BIPE's 5 BTEUP-affiliated branches (Mechanical, Electrical, Civil, CSE, Dairy) — the first four of which admit new students in 2026-27, Dairy having taken its last intake in 2025-26.",
     quickStats: [
       { label: "Total semesters", value: "6", sub: "3 years · 2 semesters per year" },
       { label: "Per branch", value: `${SUBJECTS_PER_SEMESTER} subjects`, sub: "Per semester · theory + lab together" },
@@ -759,7 +759,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "06",
         title: "Cross-reference with BIPE's branch-specific page",
-        body: "BIPE publishes a curated semester-by-semester syllabus summary for each of its 5 branches at /courses/[branch] (e.g., /courses/dairy-engineering). The summary is shorter than the official BTEUP PDF but easier to scan when you're picking branches at JEECUP counselling.",
+        body: "BIPE publishes a curated semester-by-semester syllabus summary for each of its 5 branches at /courses/[branch] (e.g., /courses/civil-engineering). The summary is shorter than the official BTEUP PDF but easier to scan when you're picking branches at JEECUP counselling — note that four of the five admit in 2026-27; Dairy Engineering took its last intake in 2025-26.",
       },
     ],
     checklist: {
@@ -1072,7 +1072,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "How does BIPE compare to other BTEUP colleges in Eastern UP?",
-        a: "BIPE is one of ~25 private BTEUP-affiliated polytechnics in the Eastern UP region. /government-polytechnic-in-eastern-up and /private-vs-government-polytechnic show the comparison framework. Honestly: government polytechnics have lower fees and equivalent academic recognition; BIPE differentiates on placement infrastructure, on-campus hostel, and the rare Dairy Engineering branch. The right choice depends on your priorities.",
+        a: "BIPE is one of ~25 private BTEUP-affiliated polytechnics in the Eastern UP region. /government-polytechnic-in-eastern-up and /private-vs-government-polytechnic show the comparison framework. Honestly: government polytechnics have lower fees and equivalent academic recognition; BIPE differentiates on placement infrastructure, on-campus hostel, and its workshop and lab capacity. The right choice depends on your priorities.",
       },
     ],
     ctaTitle: "Verifying BIPE before applying?",

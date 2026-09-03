@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> { return metadataFor
 // TODO: confirm exact admission / examination / library / caution / ID-card fees
 // with Accounts Office once 2026-27 AFRC notification is published.
 const COMPONENTS: { k: string; v: string; note: string }[] = [
-  { k: "Tuition", v: "₹30,150", note: "AFRC-approved · same for all 5 branches · per year" },
+  { k: "Tuition", v: "₹30,150", note: "AFRC-approved · same for every branch · per year" },
   { k: "Admission fee", v: "TBD", note: "Year 1 only · payable at reporting" },
   { k: "Examination fee", v: "TBD", note: "BTEUP norms · pass-through · per semester" },
   { k: "Library fee", v: "TBD", note: "Annual" },
@@ -79,7 +79,7 @@ const SCENARIOS: { tag: string; title: string; calc: string; net: string; note: 
 const FAQS: { q: string; a: string }[] = [
   {
     q: "What is the annual tuition at BIPE?",
-    a: "Annual tuition is ₹30,150 — AFRC-approved and the same for all 5 BTEUP branches. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the page above and follow AICTE/BTEUP norms. Hostel and mess are charged separately.",
+    a: "Annual tuition is ₹30,150 — AFRC-approved and identical across every BTEUP branch at BIPE. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the page above and follow AICTE/BTEUP norms. Hostel and mess are charged separately.",
   },
   {
     q: "What scholarships are available?",
@@ -104,7 +104,7 @@ const FAQS: { q: string; a: string }[] = [
   // existing Hindi blog posts use.
   {
     q: "BIPE की annual fees कितनी है?",
-    a: "AFRC-approved tuition fee ₹30,150 per year है — सभी 5 branches के लिए same। Plus exam fee, library, caution money आदि छोटे components — पूरा breakdown इसी page पर ऊपर है। Hostel और mess अलग billed होते हैं (accommodation ₹12,000/year + mess ₹4,000/month)।",
+    a: "AFRC-approved tuition fee ₹30,150 per year है — हर branch के लिए same। Plus exam fee, library, caution money आदि छोटे components — पूरा breakdown इसी page पर ऊपर है। Hostel और mess अलग billed होते हैं (accommodation ₹12,000/year + mess ₹4,000/month)।",
   },
   {
     q: "फीस कब और कैसे जमा करनी होती है?",
@@ -171,7 +171,7 @@ export default function Page() {
                 a year. Every other rupee accounted for.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Polytechnic fees in UP — BIPE&rsquo;s tuition is AFRC-approved, identical across all 5 branches. No capitation, no donation, no surprise charge at any semester. Receipts for every transaction — itemised and stamped.
+                Polytechnic fees in UP — BIPE&rsquo;s tuition is AFRC-approved, identical across every branch. No capitation, no donation, no surprise charge at any semester. Receipts for every transaction — itemised and stamped.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
@@ -180,7 +180,7 @@ export default function Page() {
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
                   { num: "₹30,150", l: "annual tuition" },
-                  { num: "5", l: "branches · same fee" },
+                  { num: "4", l: "branches · same fee" },
                   { num: "0", l: "capitation · donation" },
                 ].map((s) => (
                   <div key={s.l}>
@@ -274,7 +274,7 @@ export default function Page() {
                 ₹30,150
               </div>
               <div style={{ marginTop: 8, opacity: 0.88, fontSize: 14 }}>
-                Tuition · AFRC-approved · same across all 5 branches
+                Tuition · AFRC-approved · same across every branch
               </div>
             </div>
             <div>

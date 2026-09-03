@@ -69,10 +69,20 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       "@id": `${SITE_URL}#org`,
       name: "Banaras Institute of Polytechnic & Engineering",
       alternateName: ["BIPE", "BIPE Varanasi", "Banaras Institute of Polytechnic and Engineering"],
+      // 3 Sep 2026 — the branch clause was "across five branches — Civil,
+      // Computer Science & Engineering, Dairy, Electrical, and Mechanical
+      // (Production)". This description is the site-wide entity blurb that
+      // search engines and AI assistants quote back when someone asks what
+      // BIPE offers, so it has to describe what a 2026-27 applicant can
+      // actually join. The institute still runs five branches (see the
+      // `department` array below, which stays at five); only the intake
+      // narrowed.
       description:
         "Private, AICTE-approved polytechnic college in Varanasi (Uttar Pradesh, India). " +
-        "BTEUP-affiliated diploma engineering across five branches — Civil, Computer Science & Engineering, " +
-        "Dairy, Electrical, and Mechanical (Production). JEECUP institute code 4455. " +
+        "BTEUP-affiliated diploma engineering — admissions in four branches from 2026-27: Civil, " +
+        "Computer Science & Engineering, Electrical, and Mechanical (Production). Dairy Engineering " +
+        "is closed to new admissions from 2026-27; its final cohort graduates in 2028. " +
+        "JEECUP institute code 4455. " +
         "Founded 2010 by the Purwanchal Educational Trust; AFRC-approved tuition ₹30,150 / academic year. " +
         "Not a government institution — privately funded, publicly accountable through AICTE / BTEUP / AISHE.",
       url: SITE_URL,
@@ -315,7 +325,14 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       "@type": "Course",
       "@id": `${SITE_URL}/courses#${b.slug}`,
       name: `Diploma in ${b.name}`,
-      description: b.desc,
+      // 3 Sep 2026 — the closure has to reach the structured data too.
+      // The seed description already carries it, but `desc` is one of the
+      // CMS-overridable fields, so append the sentence defensively when
+      // whatever came down doesn't already say it.
+      description:
+        b.admissions && !/closed to new admissions/i.test(b.desc)
+          ? `${b.desc} Closed to new admissions from ${b.admissions.closedFrom}; the final cohort graduates in ${b.admissions.finalCohortGraduates}.`
+          : b.desc,
       courseCode: b.code,
       provider: { "@id": `${SITE_URL}#org` },
       educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
@@ -326,7 +343,14 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         category: "Tuition",
         price: b.fee.replace(/,/g, ""),
         priceCurrency: "INR",
-        availability: "https://schema.org/InStock",
+        // A Course node for a branch that no longer admits must not tell a
+        // crawler the seat is still buyable. Discontinued is schema.org's
+        // ItemAvailability value for an offer withdrawn from sale; the
+        // Course node itself stays so /courses/dairy-engineering keeps its
+        // structured data for the cohort still enrolled in it.
+        availability: b.admissions
+          ? "https://schema.org/Discontinued"
+          : "https://schema.org/InStock",
         url: `${SITE_URL}/courses/${b.slug}`,
       },
       hasCourseInstance: [

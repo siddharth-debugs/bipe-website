@@ -48,7 +48,7 @@ const PITFALLS: { roman: string; title: string; body: string }[] = [
   {
     roman: "i",
     title: "Listing only one branch",
-    body: "JEECUP allotment depends on rank, seats and how flexibly you fill choices. Listing a single branch can leave you without a seat even when better-ranked branches were open. List five to ten in order of preference.",
+    body: "JEECUP allotment depends on rank, seats and how flexibly you fill choices. Listing a single branch can leave you without a seat even when better-ranked branches were open. List five to ten choices in order of preference.",
   },
   {
     roman: "ii",
@@ -86,11 +86,11 @@ const PREP: { num: string; doc: string; sub: string }[] = [
 const FAQS: { q: string; a: string }[] = [
   {
     q: "Who is eligible for JEECUP and BIPE 4455?",
-    a: "JEECUP Group A (Polytechnic Engineering) is open to anyone who has passed Class 10 with Mathematics and Science. There is no upper age limit for most Group A polytechnic seats. Domicile is not restricted to UP — students from Bihar, Jharkhand, MP and elsewhere can apply and are admitted in the open / general category (no UP domicile certificate is required for a private polytechnic like BIPE). BIPE specifically admits via JEECUP institute code 4455 across all five BTEUP branches.",
+    a: "JEECUP Group A (Polytechnic Engineering) is open to anyone who has passed Class 10 with Mathematics and Science. There is no upper age limit for most Group A polytechnic seats. Domicile is not restricted to UP — students from Bihar, Jharkhand, MP and elsewhere can apply and are admitted in the open / general category (no UP domicile certificate is required for a private polytechnic like BIPE). BIPE specifically admits via JEECUP institute code 4455. For 2026-27 that is four BTEUP branches — Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering. Dairy Engineering took its last intake in 2025-26 and is closed to new admissions from 2026-27; the enrolled cohort is taught out and graduates in 2028.",
   },
   {
     q: "What is BIPE's JEECUP institute code?",
-    a: "4455. You enter this code during the JEECUP counselling choice-filling round to add BIPE to your preference list — once for each branch you want to consider. Many applicants add 4455 against all five branches in case their rank doesn't reach their first choice.",
+    a: "4455. You enter this code during the JEECUP counselling choice-filling round to add BIPE to your preference list — once for each branch you want to consider. Many applicants add 4455 against all four branches open for 2026-27 — Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering — in case their rank doesn't reach their first choice. Do not list Dairy Engineering in your choice order: it took its last intake in 2025-26 and admits no one from 2026-27.",
   },
   {
     q: "When does the JEECUP application typically open?",
@@ -98,7 +98,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What does the JEECUP Group A exam actually cover?",
-    a: "Group A — the polytechnic engineering paper — is a Class-10-syllabus test in Mathematics, Physics and Chemistry. It's a 150-minute computer-based test (CBT) — 100 multiple-choice questions, 4 marks each, and no negative marking, so there is no penalty for attempting every question. The syllabus is the standard NCERT Class 9–10 maths and science curriculum — no advanced topics. There are other JEECUP groups (B–K) for specialised tracks like agriculture and pharmacy, but Group A is the route into the five BTEUP branches at BIPE.",
+    a: "Group A — the polytechnic engineering paper — is a Class-10-syllabus test in Mathematics, Physics and Chemistry. It's a 150-minute computer-based test (CBT) — 100 multiple-choice questions, 4 marks each, and no negative marking, so there is no penalty for attempting every question. The syllabus is the standard NCERT Class 9–10 maths and science curriculum — no advanced topics. There are other JEECUP groups (B–K) for specialised tracks like agriculture and pharmacy, but Group A is the route into the four BTEUP branches BIPE admits to in 2026-27.",
   },
   {
     q: "Do I have to travel to Lucknow for counselling?",
@@ -111,11 +111,11 @@ const FAQS: { q: string; a: string }[] = [
   // ─── Hindi vernacular Q&As — same audience cluster as /fees page ───
   {
     q: "JEECUP 2026 के लिए कौन apply कर सकता है?",
-    a: "JEECUP Group A (Polytechnic Engineering) के लिए Class 10 pass with Math + Science चाहिए। कोई upper age limit नहीं। UP domicile आवश्यक नहीं — Bihar, Jharkhand, MP और बाकी राज्यों से भी open / general category में apply कर सकते हैं (BIPE जैसे private polytechnic में admission के लिए UP domicile certificate ज़रूरी नहीं)। BIPE की admission JEECUP institute code 4455 से होती है, पाँचों BTEUP branches के लिए।",
+    a: "JEECUP Group A (Polytechnic Engineering) के लिए Class 10 pass with Math + Science चाहिए। कोई upper age limit नहीं। UP domicile आवश्यक नहीं — Bihar, Jharkhand, MP और बाकी राज्यों से भी open / general category में apply कर सकते हैं (BIPE जैसे private polytechnic में admission के लिए UP domicile certificate ज़रूरी नहीं)। BIPE की admission JEECUP institute code 4455 से होती है — 2026-27 में चार BTEUP branches के लिए: Civil, Electrical, Mechanical (Production) और Computer Science & Engineering। Dairy Engineering में 2026-27 से naye admission नहीं हैं — आख़िरी batch 2025-26 में आया था और 2028 में pass out करेगा।",
   },
   {
     q: "BIPE का JEECUP code क्या है और कैसे इस्तेमाल करें?",
-    a: "BIPE का JEECUP institute code 4455 है। Counselling के choice-filling round में इसी code से BIPE को add करना होता है। पाँचों branches के लिए 4455 ही code है — branch अलग से select होती है। ज़्यादातर applicants सभी 5 branches के सामने 4455 add कर देते हैं, ताकि rank कम होने पर भी कोई एक branch मिल जाए।",
+    a: "BIPE का JEECUP institute code 4455 है। Counselling के choice-filling round में इसी code से BIPE को add करना होता है। चारों admitting branches के लिए 4455 ही code है — branch अलग से select होती है। ज़्यादातर applicants चारों branches (Civil, Electrical, Mechanical (Production), Computer Science & Engineering) के सामने 4455 add कर देते हैं, ताकि rank कम होने पर भी कोई एक branch मिल जाए। Dairy Engineering को choice list में मत डालिए — उसमें 2026-27 से admission बंद है, आख़िरी batch 2025-26 में आया था।",
   },
   {
     q: "BIPE में admission कैसे होता है — सिर्फ JEECUP से?",
@@ -338,7 +338,7 @@ export default function Page() {
             <h2 className="bipe-h1" style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch", marginInline: "auto" }}>
               One group.{" "}
               <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
-                Five branches.
+                Four branches.
               </span>
             </h2>
           </div>
@@ -350,12 +350,12 @@ export default function Page() {
                 10th-pass route
               </div>
               <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                Three years · five branches
+                Three years · four branches
               </div>
               <div className="bipe-form-row" style={{ marginTop: 22, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
                   ["Eligibility", "Class 10 pass with Maths & Science"],
-                  ["Branches", "CS&E · Civil · Electrical · Mech (Prod.) · Dairy"],
+                  ["Branches", "CS&E · Civil · Electrical · Mech (Prod.)"],
                   ["Duration", "3 years · 6 semesters"],
                   ["Best for", "Students leaving Class 10 in 2026"],
                 ].map(([k, v]) => (
@@ -368,9 +368,15 @@ export default function Page() {
             </div>
           </div>
 
+          <p style={{ marginTop: 22, textAlign: "center", maxWidth: "72ch", marginInline: "auto", fontSize: 13.5, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 66%, transparent)" }}>
+            BIPE runs five BTEUP branches but admits to four from 2026-27.{" "}
+            <Link href="/courses/dairy-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Dairy Engineering</Link>{" "}
+            took its last intake in 2025-26 and is closed to new admissions — it is still taught, with labs, faculty and the Semester-6 industrial training unchanged, and its final cohort graduates in 2028. Do not rank it in choice-filling.
+          </p>
+
           <div style={{ marginTop: 28, display: "flex", justifyContent: "center" }}>
             <Link href="/courses" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)" }}>
-              View all 5 BTEUP polytechnic branches <ArrowIcon size={16} />
+              View the 4 branches open for 2026-27 <ArrowIcon size={16} />
             </Link>
           </div>
         </div>

@@ -36,7 +36,7 @@ const AFTER: { n: string; title: string; body: string }[] = [
 ];
 
 const DISCUSS: { n: string; title: string; body: string }[] = [
-  { n: "01", title: "Best branch fit by rank", body: "Given your JEECUP rank (or expected) and 10th marks, which of the five branches give the strongest career return?" },
+  { n: "01", title: "Best branch fit by rank", body: "Given your JEECUP rank (or expected) and 10th marks, which of the four branches admitting in 2026-27 give the strongest career return?" },
   { n: "02", title: "Fee + scholarship eligibility", body: "Net annual figure after every reimbursement and waiver you qualify for — in writing, before any deposit." },
   { n: "03", title: "Hostel availability", body: "Boys' hostel block, yearly accommodation and monthly mess rates, current vacancy. Book early or be on the waitlist." },
   { n: "04", title: "Document gaps you can fix", body: "Missing TC? Migration certificate stuck at the board? We tell you what is fixable in the verification window — and how." },
@@ -346,7 +346,7 @@ export default function Page() {
               }}
             >
               <Link href="/courses" style={{ color: "var(--brand)" }}>
-                Browse all 5 branches →
+                Browse 4 branches open for 2026-27 →
               </Link>
               <Link href="/fees" style={{ color: "var(--brand)" }}>
                 Fees 2026-27 →

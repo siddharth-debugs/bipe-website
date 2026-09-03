@@ -1,11 +1,11 @@
 import { z } from "zod";
-import { BRANCH_OPTIONS, SOURCE_OPTIONS } from "./formOptions";
+import { BRANCH_OPTIONS, BRANCH_OPTIONS_ALL, SOURCE_OPTIONS } from "./formOptions";
 
 // Re-export for back-compat: the server schemas below + any genuine
 // zodResolver forms still import these from here. CLIENT components that
 // need ONLY the option lists should import from "@/lib/formOptions"
 // directly, so they don't pull zod into their bundle.
-export { BRANCH_OPTIONS, SOURCE_OPTIONS };
+export { BRANCH_OPTIONS, BRANCH_OPTIONS_ALL, SOURCE_OPTIONS };
 
 /**
  * Form validation schemas, shared between client (react-hook-form +
@@ -79,7 +79,7 @@ const optionalEmail = z
   .optional()
   .or(z.literal(""));
 
-const branchField = z.enum(BRANCH_OPTIONS, {
+const branchField = z.enum(BRANCH_OPTIONS_ALL, {
   message: "Pick a branch you're interested in",
 });
 
@@ -192,9 +192,9 @@ export const enquiryFormSchema = z.object({
   phone: phoneField,
   email: optionalEmail,
   branch: z
-    .enum(BRANCH_OPTIONS)
+    .enum(BRANCH_OPTIONS_ALL)
     .optional()
-    .or(z.literal("" as unknown as (typeof BRANCH_OPTIONS)[number])),
+    .or(z.literal("" as unknown as (typeof BRANCH_OPTIONS_ALL)[number])),
   source: z.string().trim().max(80).optional().or(z.literal("")),
   message: z.string().trim().max(1000).optional().or(z.literal("")),
   consent: z.boolean().optional(),

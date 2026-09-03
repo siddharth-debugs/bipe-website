@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
-import { DATA } from "@/lib/data";
+import { DATA, ADMITTING_BRANCHES, ADMITTING_SEATS } from "@/lib/data";
 import { getPageSection } from "@/lib/content";
 import { PageIntro } from "@/components/shared/PageIntro";
 import { BIPE_IMG } from "@/lib/images";
@@ -37,7 +37,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "05",
     title: "Pay tuition fees",
-    body: "Annual tuition ₹30,150 — AFRC-approved, identical for all 5 branches. UPI · NetBanking · DD · or cash at the Accounts Office.",
+    body: "Annual tuition ₹30,150 — AFRC-approved, identical for all 4 branches. UPI · NetBanking · DD · or cash at the Accounts Office.",
   },
   {
     n: "06",
@@ -60,7 +60,7 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
   {
     roman: "i",
     title: "AFRC-approved fees, no capitation",
-    body: "₹30,150 a year, identical for all 5 branches. Every component itemised. Receipts for every rupee. No donation, no surprise charge at any semester.",
+    body: "₹30,150 a year, identical for all 4 branches. Every component itemised. Receipts for every rupee. No donation, no surprise charge at any semester.",
     metric: "₹30,150",
     metricLabel: "annual · AFRC",
   },
@@ -71,12 +71,21 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
     metric: "1:20",
     metricLabel: "mentor : student",
   },
+  // 3 Sep 2026 — this slot used to pitch Dairy Engineering ("offered by
+  // fewer than 1.1% of UP polytechnics") as a reason to choose BIPE. The
+  // branch is closed to new admissions from 2026-27, so the card was
+  // recruiting for something no reader of this page can join. Replaced
+  // with the seat maths for the branches that ARE admitting, computed from
+  // ADMITTING_BRANCHES so the figures cannot drift out of lib/data.ts.
+  // The Dairy programme itself is untouched — still taught, still on
+  // /courses, final cohort graduating 2028; see the eligibility panel
+  // below for the closure notice.
   {
     roman: "iii",
-    title: "Rare Dairy Engineering",
-    body: "Offered by fewer than 1.1% of UP polytechnics. Amul, Mother Dairy, Parag, Nestlé and the NDDB are the employers it opens up — the first cohort entered in 2025-26.",
-    metric: "<1.1%",
-    metricLabel: "of UP polytechnics",
+    title: `${ADMITTING_SEATS} seats across ${ADMITTING_BRANCHES.length} branches`,
+    body: `${ADMITTING_BRANCHES.map((b) => `${b.name} — ${b.seats}`).join(" · ")}. Every branch BTEUP-affiliated and on the same ₹30,150 AFRC fee, so the choice is about the work, not the price.`,
+    metric: String(ADMITTING_SEATS),
+    metricLabel: `seats · ${ADMITTING_BRANCHES.length} branches`,
   },
   {
     roman: "iv",
@@ -135,7 +144,7 @@ export default async function Page() {
                 JEECUP code 4455.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                BIPE is an AICTE-approved polytechnic in Varanasi, BTEUP-affiliated. Polytechnic admissions in Varanasi are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 5 branches.
+                BIPE is an AICTE-approved polytechnic in Varanasi, BTEUP-affiliated. Polytechnic admissions in Varanasi are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 4 branches.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 {/* Bilingual CTAs — Hindi sub-label under English action.
@@ -459,24 +468,29 @@ export default async function Page() {
                   After Class 10 · Maths & Science
                 </div>
                 <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "44ch" }}>
-                  The single route into BIPE. Three years, six semesters, five BTEUP branches open to you —{" "}
+                  The single route into BIPE. Three years, six semesters, four BTEUP branches open to you in 2026-27 —{" "}
                   <Link href="/courses/computer-science-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Computer Science &amp; Engineering</Link>,{" "}
                   <Link href="/courses/civil-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Civil</Link>,{" "}
-                  <Link href="/courses/electrical-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Electrical</Link>,{" "}
-                  <Link href="/courses/mechanical-engineering-production" style={{ color: "var(--accent)", textDecoration: "underline" }}>Mechanical Engineering (Production)</Link>, and the rare{" "}
-                  <Link href="/courses/dairy-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Dairy Engineering</Link>.
+                  <Link href="/courses/electrical-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Electrical</Link>, and{" "}
+                  <Link href="/courses/mechanical-engineering-production" style={{ color: "var(--accent)", textDecoration: "underline" }}>Mechanical Engineering (Production)</Link>.
+                </p>
+                <p style={{ marginTop: 14, fontSize: 13.5, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 60%, transparent)", maxWidth: "44ch" }}>
+                  BIPE runs a fifth branch,{" "}
+                  <Link href="/courses/dairy-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Dairy Engineering</Link>,
+                  {" "}which is closed to new admissions from 2026-27. Its last intake was 2025-26 and that
+                  cohort is taught out to graduation in 2028 — it is not a choice in this year&rsquo;s counselling.
                 </p>
                 <Link href="/courses" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--accent)", fontWeight: 600, fontSize: 14 }}>
-                  View all 5 BTEUP polytechnic branches <ArrowIcon size={14} />
+                  View the 4 branches open for 2026-27 <ArrowIcon size={14} />
                 </Link>
               </div>
               <div style={{ paddingLeft: 36, borderLeft: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexDirection: "column", gap: 22 }}>
                 <div>
                   <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 64, color: "var(--accent)", lineHeight: 0.9 }}>
-                    <Counter to="480" />
+                    <Counter to={String(ADMITTING_SEATS)} />
                   </span>
                   <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                    Total seats · 5 branches
+                    Seats open · {ADMITTING_BRANCHES.length} branches
                   </div>
                 </div>
                 <div>

@@ -29,7 +29,11 @@ const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "120", suffix: "+", label: "Networked PCs", sub: "Computer centre" },
   { num: "100", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
   { num: "40", label: "Faculty", sub: "1:20 mentor ratio" },
-  { num: "5", label: "BTEUP branches", sub: "Including Dairy" },
+  // 3 Sep 2026 · sub was "Including Dairy". Five is what BIPE runs and
+  // teaches; four is what a 2026-27 applicant can join. Both are true and
+  // this band is read by applicants, so it now carries both numbers
+  // instead of advertising the closed one. See ADMITTING_BRANCHES.
+  { num: "5", label: "BTEUP branches", sub: "4 admitting in 2026-27" },
 ];
 
 const LIB_PILLS: string[] = [
@@ -43,8 +47,11 @@ const LIB_PILLS: string[] = [
 
 // Direct Cloudinary photos from BIPE's own workshop/lab library
 // (lib/labs-manifest.json). Hand-picked to favour shots with students
-// actually working — not equipment-only frames. Dairy stays on
-// placeholder because we have no in-house dairy lab photography yet.
+// actually working — not equipment-only frames. Dairy is the one entry
+// off this manifest: it uses BIPE_IMG.dairy, the single verified frame
+// from the Drive dairy folder (the rest of that folder is mis-filed
+// mechanical shots — see lib/images.ts). Comment corrected 3 Sep 2026;
+// it still claimed a placeholder that had already been replaced.
 const CL = "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900";
 const LABS: { eyebrow: string; title: string; body: string; img: string; tags: string[] }[] = [
   {
@@ -68,10 +75,15 @@ const LABS: { eyebrow: string; title: string; body: string; img: string; tags: s
     img: `${CL}/v1778151561/bipe/labs/mechanical/machin-shop-3`,
     tags: ["Welding", "Foundry", "CNC", "Lathe"],
   },
+  // 3 Sep 2026 · eyebrow was "DAIRY · RARE IN UP". The lab, the benches
+  // and the Banas Dairy visits are all real and still timetabled, so the
+  // card stays — what goes is the rarity framing, which on a campus tour
+  // page reads as a reason to pick BIPE for a branch you can no longer
+  // join. Closure stated in the body so nobody reads the card as an offer.
   {
-    eyebrow: "DAIRY · RARE IN UP",
+    eyebrow: "DAIRY · FINAL BATCH",
     title: "Dairy Processing Lab",
-    body: "Dairy chemistry and microbiology benches — plate counts, fat percentage, antibiotic-residue testing. Plant-floor time comes from industrial visits to working plants like Banas Dairy, Varanasi.",
+    body: "Dairy chemistry and microbiology benches — plate counts, fat percentage, antibiotic-residue testing, with plant-floor time on industrial visits to working plants like Banas Dairy, Varanasi. Dairy Engineering is closed to new admissions from 2026-27; the lab runs on for the batch graduating in 2028.",
     img: BIPE_IMG.dairy,
     tags: ["Milk quality", "Microbiology", "Industrial visits"],
   },
@@ -157,7 +169,7 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Our 6-acre Phoolpur campus houses five BTEUP branches, 40 faculty and 550+ students. Library, 120-computer lab, dairy chemistry and hydraulics labs, mechanical workshops, boys&rsquo; hostel and a sports ground — all within one boundary.
+                Our 6-acre Phoolpur campus houses five BTEUP branches (four admitting in 2026-27), 40 faculty and 550+ students. Library, 120-computer lab, dairy chemistry and hydraulics labs, mechanical workshops, boys&rsquo; hostel and a sports ground — all within one boundary.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a campus visit <ArrowIcon size={16} /></Link>

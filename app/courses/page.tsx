@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { metadataFor } from "@/lib/seo";
-import { DATA } from "@/lib/data";
+import { DATA, admittingOf, seatsOf } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { CoursesView } from "./CoursesView";
 import { PLACEMENT_STATS } from "@/lib/placement-stats";
@@ -13,12 +13,17 @@ const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
   {
     num: "01",
     title: "Follow what you build, not what you score.",
-    body: "Dairy and Civil don't pull the highest cut-offs but offer some of the strongest recruiter pipelines in UP. Pick the workshop you want to live in for three years.",
+    // 3 Sep 2026: this named Dairy first. These four tips are the advice a
+    // family reads immediately before choice-filling, so every branch named
+    // here has to be one they can actually rank. Civil and Electrical carry
+    // the same point — both are large cohorts with deep recruiter and
+    // JE-exam pipelines.
+    body: "Civil and Electrical don't pull the highest cut-offs but offer some of the strongest recruiter pipelines in UP. Pick the workshop you want to live in for three years.",
   },
   {
     num: "02",
     title: "Read the seat count.",
-    body: "Civil 120, Electrical 120, Mechanical Engineering (Production) 120 — bigger cohorts mean wider alumni networks and stronger cross-batch mentorship. Smaller branches like CS&E and Dairy run more intimate cohorts.",
+    body: "Civil 120, Electrical 120, Mechanical Engineering (Production) 120 — bigger cohorts mean wider alumni networks and stronger cross-batch mentorship. CS&E runs a smaller, more intimate cohort of 60.",
   },
   {
     num: "03",
@@ -27,9 +32,14 @@ const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
     // family to walk BIPE's own labs, so naming a pasteuriser asserted
     // equipment BIPE does not own — contradicted one click away on
     // /courses/dairy-engineering ("BIPE does not run its own pilot
-    // plant"). The milk-analysis bench is real; see lib/data.ts dairy
-    // facilities. Keep this triad to kit BIPE actually has.
-    body: "Walk through the lab the branch lives in. Three years on a CNC, behind a survey instrument or over a milk-analysis bench shape the engineer you become — far more than where you ranked at 16.",
+    // plant"). Keep this triad to kit BIPE actually has.
+    //
+    // Same day, second pass: the milk-analysis bench replaced it and has
+    // now gone too. It is real kit, but it belongs to Dairy, and this tip
+    // asks a prospective student to picture the lab they will spend three
+    // years in — so the triad has to be drawn from branches they can still
+    // enter. Networking rack = CS&E.
+    body: "Walk through the lab the branch lives in. Three years on a CNC, behind a survey instrument or at a networking rack shape the engineer you become — far more than where you ranked at 16.",
   },
   {
     num: "04",
@@ -76,7 +86,16 @@ export default async function Page() {
     getBranchesMapped(),
     getRecruiters(),
   ]);
-  const totalSeats = branches.reduce((s, b) => s + b.seats, 0);
+  // Seat maths, 3 Sep 2026. This page still LISTS every branch BIPE runs —
+  // Dairy included, because it is still being taught and its page must stay
+  // reachable — but every seat figure it prints is a marketing number aimed
+  // at someone deciding where to apply. So the total is summed over the
+  // admitting branches only (420), never over all five (480, the sanctioned
+  // figure that belongs on /approvals and /mandatory-disclosure). Computed
+  // from the live CMS list rather than the ADMITTING_SEATS constant so a
+  // seat edit in the CMS still flows through.
+  const admitting = admittingOf(branches);
+  const admittingSeats = seatsOf(admitting);
   // Recruiter COUNT must come from PLACEMENT_STATS, never from the length
   // of the CMS logo strip. Until 3 Sep 2026 this counted live rows, so
   // /courses published "18+ verified recruiters" while /placements,
@@ -144,12 +163,12 @@ export default async function Page() {
                   className="serif"
                   style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
                 >
-                  Five
+                  Four
                 </span>{" "}
-                BTEUP polytechnic branches in Varanasi. Three years to a career.
+                BTEUP polytechnic branches open in Varanasi. Three years to a career.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                AICTE-approved diploma courses, AFRC-published tuition of ₹30,150 a year, {totalSeats} seats across 2026-27 — including Dairy Engineering, offered by under 1.1% of UP polytechnics. Every branch listed here is BTEUP-affiliated, taught on the same Phoolpur campus, under the same mentor structure.
+                AICTE-approved diploma courses, AFRC-published tuition of ₹30,150 a year, {admittingSeats} seats open across the four branches admitting in 2026-27. Every branch listed here is BTEUP-affiliated, taught on the same Phoolpur campus, under the same mentor structure. Dairy Engineering (BTEUP 327) is listed too and still runs, but it took its last intake in 2025-26 and admits no one for 2026-27.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
@@ -171,8 +190,8 @@ export default async function Page() {
                 }}
               >
                 {[
-                  { num: "5", l: "BTEUP branches" },
-                  { num: `${totalSeats}`, l: "seats · 2026-27" },
+                  { num: `${admitting.length}`, l: "BTEUP branches open" },
+                  { num: `${admittingSeats}`, l: "seats · 2026-27" },
                   { num: "₹30,150", l: "tuition · per year" },
                 ].map((s) => (
                   <div key={s.l}>
@@ -304,7 +323,11 @@ export default async function Page() {
                     color: "var(--accent)",
                     letterSpacing: "-0.04em",
                   }}>
-                    5
+                    {/* Counted, not typed. This numeral and the "Admitting"
+                        figure in the metadata strip below are the same fact;
+                        one was a literal and one was computed, which is how
+                        they drift apart. 3 Sep 2026. */}
+                    {admitting.length}
                   </div>
                   <div style={{ paddingTop: 14, flex: 1 }}>
                     <div style={{
@@ -314,7 +337,7 @@ export default async function Page() {
                       textTransform: "uppercase",
                       color: "color-mix(in oklab, var(--paper) 55%, transparent)",
                     }}>
-                      BTEUP-affiliated
+                      BTEUP-affiliated · admitting
                     </div>
                     <div style={{
                       marginTop: 4,
@@ -351,15 +374,38 @@ export default async function Page() {
                   textTransform: "uppercase",
                   color: "color-mix(in oklab, var(--paper) 78%, transparent)",
                 }}>
+                  {/* Hand-abbreviated on purpose — the full names
+                      ("Mechanical Engineering (Production)") blow out this
+                      two-column mono grid. Renumbered 01-04 over the four
+                      admitting branches, 3 Sep 2026. Dairy stays on the card
+                      (BIPE still runs it) but drops out of the numbered
+                      sequence and spans the full width below it: a numbered
+                      05 slot inside a catalogue card reads as a fifth thing
+                      you can choose. */}
                   {[
-                    "01 · Computer Science & Engg.",
-                    "02 · Dairy Engg.",
-                    "03 · Civil Engg.",
-                    "04 · Electrical Engg.",
-                    "05 · Mech Engg. (Prod.)",
-                  ].map((b) => (
-                    <span key={b} style={{ display: "block" }}>
-                      {b}
+                    { l: "01 · Computer Science & Engg.", closed: false },
+                    { l: "02 · Civil Engg.", closed: false },
+                    { l: "03 · Electrical Engg.", closed: false },
+                    { l: "04 · Mech Engg. (Prod.)", closed: false },
+                    { l: "Dairy Engg. · closed to new admissions", closed: true },
+                  ].map((br) => (
+                    <span
+                      key={br.l}
+                      style={{
+                        display: "block",
+                        ...(br.closed
+                          ? {
+                              gridColumn: "1 / -1",
+                              marginTop: 4,
+                              paddingTop: 10,
+                              borderTop:
+                                "1px dashed color-mix(in oklab, var(--paper) 18%, transparent)",
+                              color: "color-mix(in oklab, var(--paper) 52%, transparent)",
+                            }
+                          : {}),
+                      }}
+                    >
+                      {br.l}
                     </span>
                   ))}
                 </div>
@@ -374,9 +420,9 @@ export default async function Page() {
                   gap: 0,
                 }}>
                   {[
-                    { l: "Seats", v: `${totalSeats}` },
+                    { l: "Seats", v: `${admittingSeats}` },
                     { l: "Tuition", v: "₹30,150/yr" },
-                    { l: "Branches", v: "5" },
+                    { l: "Admitting", v: `${admitting.length}` },
                   ].map((m, i, arr) => (
                     <div key={m.l} style={{
                       paddingLeft: i === 0 ? 0 : 14,
@@ -521,7 +567,7 @@ export default async function Page() {
                 }}
               >
                 {[
-                  { num: `${totalSeats}`, l: "Seats · 5 branches" },
+                  { num: `${admittingSeats}`, l: `Seats · ${admitting.length} branches` },
                   { num: "10th", l: "Maths · Science pass" },
                   { num: "4455", l: "JEECUP code · BIPE" },
                   { num: "₹30,150", l: "Tuition · per year" },
@@ -579,7 +625,7 @@ export default async function Page() {
                 color: "var(--ink-2)",
               }}
             >
-              <span style={{ color: "var(--brand)", fontWeight: 700 }}>JEECUP code 4455</span> — apply once, choose any branch in counselling.
+              <span style={{ color: "var(--brand)", fontWeight: 700 }}>JEECUP code 4455</span> — apply once, choose any of the four admitting branches in counselling.
             </div>
             <Link href="/jeecup" className="btn btn-ghost btn-sm">
               How JEECUP works <ArrowIcon size={14} />
@@ -1095,7 +1141,7 @@ export default async function Page() {
                       maxWidth: "44ch",
                     }}
                   >
-                    Apply once on JEECUP, choose any of the five branches in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
+                    Apply once on JEECUP, choose any of the four branches open for 2026-27 in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
                   </p>
                 </div>
 
@@ -1106,7 +1152,10 @@ export default async function Page() {
                   {[
                     { num: "16", l: "years" },
                     { num: "2,200+", l: "alumni" },
-                    { num: "5", l: "branches" },
+                    // "branches open" is an admission claim sitting under a
+                    // "Pick a branch" heading, so it counts the admitting
+                    // list rather than carrying a literal. 3 Sep 2026.
+                    { num: `${admitting.length}`, l: "branches open" },
                     { num: "1:20", l: "mentor ratio" },
                   ].map((s, i) => (
                     <React.Fragment key={s.l}>

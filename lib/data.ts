@@ -29,6 +29,53 @@ export type Branch = {
   // All entries MUST be landscape (ratio ≥ 1.3); the crossfade slider
   // crops to 16:9 and portrait shots show an awful centre-strip.
   slides: BranchImage[];
+  // Set when the branch has stopped taking new admissions but is still
+  // teaching an enrolled cohort to graduation. The branch stays in this
+  // array on purpose — it is still a running programme with students in
+  // it, still AICTE-sanctioned, and its detail page must stay reachable
+  // for the cohort mid-course. What changes is that it must never appear
+  // in an admission pitch again. Use ADMITTING_BRANCHES for anything a
+  // prospective applicant sees; use DATA.branches for anything about
+  // what BIPE actually runs. See BRANCH_CLOSURES below.
+  admissions?: BranchClosure;
+};
+
+/**
+ * A branch that is closed to new admissions and teaching out its final
+ * cohort. `lastIntake` is the last session that admitted students;
+ * `closedFrom` is the first session with no intake; `finalCohortGraduates`
+ * is when the last enrolled student finishes.
+ */
+export type BranchClosure = {
+  closedFrom: string;
+  lastIntake: string;
+  finalCohortGraduates: string;
+};
+
+/**
+ * Owner decision, 3 Sep 2026: Dairy Engineering (BTEUP 327) stops
+ * admitting from the 2026-27 session. The 2025-26 cohort is being taught
+ * out and finishes in 2028, so the branch keeps running — it is not
+ * deleted from the site, and /courses/dairy-engineering must keep
+ * resolving for students who are mid-course.
+ *
+ * Deliberately seed-only: this is NOT read from the CMS. A marketing
+ * flag that decides whether the site invites a 15-year-old to pick a
+ * closing branch must not be flippable by a stale CMS row — same
+ * reasoning as the getContact() identity overlay. getBranchesMapped()
+ * re-applies this over the CMS bundle by slug.
+ *
+ * The 480-seat / five-branch SANCTIONED intake published on /approvals
+ * and /mandatory-disclosure is unchanged and must stay unchanged until
+ * the AICTE/BTEUP seat-surrender letter lands — those pages mirror the
+ * approval on file, not what BIPE is currently marketing.
+ */
+export const BRANCH_CLOSURES: Record<string, BranchClosure> = {
+  "dairy-engineering": {
+    closedFrom: "2026-27",
+    lastIntake: "2025-26",
+    finalCohortGraduates: "2028",
+  },
 };
 
 export type Stat = { num: string; label: string; sub: string };
@@ -260,7 +307,12 @@ export const DATA: DataShape = {
     // from lib/placement-stats.ts so a TPO XLSX refresh ripples
     // through automatically.
     { num: _placed, label: "Placements · TPO-verified", sub: "Across the 2,200+ alumni network since 2010" },
-    { num: "5", label: "BTEUP-affiliated branches", sub: "incl. rare Dairy" },
+    // Was 5 / "incl. rare Dairy" until 3 Sep 2026. This stat sits on the
+    // homepage in front of prospective students, so it has to count what
+    // they can actually apply to — four — not the five BIPE is sanctioned
+    // for. The sanctioned five is still stated on /approvals and
+    // /mandatory-disclosure, where it belongs. See BRANCH_CLOSURES.
+    { num: "4", label: "Branches admitting 2026-27", sub: "BTEUP-affiliated · JEECUP code 4455" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
   ],
@@ -285,8 +337,11 @@ export const DATA: DataShape = {
       code: "327", slug: "dairy-engineering",
       name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग",
       seats: 60, fee: "30,150",
-      desc: "Rare diploma — offered by only 4 institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé, NDDB.",
-      tag: "Rare", color: 2,
+      desc: "Closed to new admissions from 2026-27. The 2025-26 cohort is being taught out and finishes in 2028; teaching, labs and industrial training run unchanged until then.",
+      // Reads from BRANCH_CLOSURES so the dates have exactly one source
+      // of truth shared with the getBranchesMapped() overlay.
+      admissions: BRANCH_CLOSURES["dairy-engineering"],
+      tag: "Closed to admissions", color: 2,
       // Dairy photography update 2026-05-28: replaced the Drive-synced
       // Cloudinary placeholder + two SVG illustration fallbacks with
       // real BIPE lab photos (hydraulics, chemistry — both used by
@@ -384,7 +439,15 @@ export const DATA: DataShape = {
   whyBipe: [
     { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },
     { num: "02", metric: "3-layer", metricLabel: "assessment", title: "Outcome-based pedagogy.", body: "Semester exam + continuous assessment + project work, calibrated against published Program Outcomes. Attendance carries internal marks, and 75% per subject is the BTEUP exam-eligibility bar.", icon: "M3 17l6-6 4 4 8-8" },
-    { num: "03", metric: "4 only", metricLabel: "institutes in UP offer this", title: "Rare Dairy Engineering diploma.", body: "BTEUP-affiliated Dairy Engineering (Code 327) — offered by only four institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
+    // Pillar 03 was "Rare Dairy Engineering diploma" — the branch's
+    // scarcity in UP as a reason to choose BIPE. Retired 3 Sep 2026 when
+    // Dairy closed to new admissions: a reason-to-apply built on a branch
+    // nobody can apply to is the worst kind of stale claim. Replaced with
+    // the workshop/lab infrastructure, which is verifiable and is what
+    // the four admitting branches actually run on. The "8 sections" and
+    // "120 systems" figures are the owner-ratified ones in
+    // DATA.facilities — keep the three in sync.
+    { num: "03", metric: "8", metricLabel: "workshop sections", title: "Built for hands, not slides.", body: "Fitting, welding, foundry, machining, CNC and sheet metal across eight workshop sections, a 120-system computer lab, a survey yard and branch labs. Every diploma student gets hands-on hours, every semester.", icon: "M12 8a4 4 0 100 8 4 4 0 000-8zM12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" },
     { num: "04", metric: _placed, metricLabel: "TPO-verified placements", title: "Sixteen years on record.", body: `${_placed} TPO-verified placements (${PLACEMENT_STATS.startYear}-${_endYear}) at Mahindra, Tata Steel, Krishna Maruti, JCB, Asian Paints — incl. government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police). AFRC-approved fees, no hidden charges.`, icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
   ],
   testimonials: [
@@ -407,7 +470,7 @@ export const DATA: DataShape = {
     { cat: "Admission", q: "How do I apply to BIPE?", a: "Admissions are exclusively through JEECUP counselling under college code 4455. Register at jeecup.admissions.nic.in, take the entrance, and choose BIPE 4455 during counselling. You can also fill our Apply form for personal guidance from our admissions team." },
     { cat: "Admission", q: "What is the eligibility?", a: "For the 3-year diploma you need a Class 10 pass with Mathematics and Science. Admission is through JEECUP Group A (UPJEE Polytechnic), with BIPE listed as institute code 4455 during counselling." },
     { cat: "Admission", q: "What documents do I need?", a: "Mandatory: JEECUP rank card / allotment letter, Class 10 marksheet, school transfer & character certificate, Aadhaar, 8 passport photos, bank passbook front page and an anti-ragging undertaking. If you claimed SC / ST / OBC / EWS reservation in your JEECUP application, a valid category certificate — issued within the last 3 years, name matching your Class 10 marksheet — is mandatory at reporting; without it the reservation lapses. An income certificate is mandatory for EWS and for anyone claiming a UP post-matric or NSP scholarship. See the Documents page for the full list." },
-    { cat: "Fees", q: "What is the annual tuition?", a: "Annual tuition is ₹30,150 — AFRC-approved and the same for all 5 branches. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the Fees page; some are still being finalised. Hostel and mess are separate." },
+    { cat: "Fees", q: "What is the annual tuition?", a: "Annual tuition is ₹30,150 — AFRC-approved and the same for every branch, admitting or teaching out. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the Fees page; some are still being finalised. Hostel and mess are separate." },
     { cat: "Fees", q: "What scholarships are available?", a: "UP Government post-matric scholarships cover full or partial tuition for SC, ST, OBC, EWS and Minority categories. BIPE also offers two Trust merit awards: a 50% tuition waiver for any candidate within the top 2,000 JEECUP All-India rank, and a 10% waiver for Class 10 toppers with 90%+ aggregate. Many BIPE students pay much less than the published fee." },
     { cat: "Fees", q: "What is the refund policy?", a: "Three tiers, keyed to when you withdraw: 100% refund within one week of application, 50% after one week but before classes begin, and 10% within one week of classes commencing. Caution money is refundable on completion of the diploma. Refunds are processed within 30 working days — full schedule on the Fees page." },
     { cat: "Hostel & Campus", q: "Is hostel available?", a: "Yes — for boys. BIPE currently runs a boys' hostel block on campus with a resident warden, staffed gates, visitor registration, fire safety, anti-ragging measures and a 9:30 PM curfew (extendable on parental authorisation). A girls' hostel is on the trust's roadmap; for now, girl students attend as day-scholars or with their own local arrangements — talk to admissions if you need help finding safe accommodation in the area." },
@@ -468,7 +531,12 @@ export const DATA: DataShape = {
     // /approvals and /mandatory-disclosure — see memory project_internet_100mbps.
     { name: "Computer Lab", count: "120 systems", body: "Latest specs, dual monitors, 100 Mbps firewalled internet. Open 8am–10pm. Programming, simulation, GIS." },
     { name: "Mechanical Workshop", count: "8 sections", body: "Fitting, welding, foundry, machining, CNC, sheet metal — every diploma student gets hands-on hours." },
-    { name: "Dairy Engineering Labs", count: "Rare in UP", body: "Chemistry and hydraulics benches for milk-quality testing and process-fluid work, plus industrial visits to working plants like Banas Dairy." },
+    // Was "Dairy Engineering Labs · Rare in UP" until 3 Sep 2026. The
+    // rarity line was an admission pitch for a branch that has stopped
+    // admitting, but the labs themselves are real, shared teaching
+    // spaces and are still in use — so the tile stays and only the
+    // pitch goes. See BRANCH_CLOSURES.
+    { name: "Chemistry & Hydraulics Labs", count: "2 labs", body: "Milk-quality and biochemistry benches, plus pumps, valves and flow rigs for process-fluid work. Shared teaching labs, still serving the Dairy cohort finishing in 2028." },
     { name: "Electrical Lab", count: "12 benches", body: "Machines, electronics, control systems, renewables, EV battery & motor lab." },
     { name: "Civil Survey Yard", count: "6 acres", body: "Total stations, theodolites, level instruments. On-site survey camp every 4th semester." },
     { name: "Library", count: "8,428 volumes", body: "1,220 titles, 36 journals, 95 magazines. Print + digital, with IEEE digital library, NPTEL and DELNET access." },
@@ -476,3 +544,37 @@ export const DATA: DataShape = {
     { name: "Sports & Ground", count: "On-campus", body: "Cricket, football, volleyball, indoor games. Annual sports week in February." },
   ],
 };
+
+/**
+ * ── Admitting vs. running branches ──────────────────────────────────
+ *
+ * BIPE RUNS five BTEUP-affiliated branches and is SANCTIONED for 480
+ * seats across them. From 2026-27 it ADMITS to four of them, 420 seats.
+ * Those are three different true numbers and they are not
+ * interchangeable — the same trap as the three recruiter counts.
+ *
+ *   DATA.branches        → what BIPE runs (5). Use for anything
+ *                          describing the institute, teaching, faculty,
+ *                          labs, or a student already enrolled.
+ *   ADMITTING_BRANCHES   → what a new applicant can choose (4). Use for
+ *                          anything an admission-seeker reads: JEECUP
+ *                          choice-filling, fees-per-branch, seat counts
+ *                          on marketing pages, "N branches" headlines.
+ *   SANCTIONED_SEATS     → 480. Regulatory figure only — /approvals and
+ *                          /mandatory-disclosure mirror the AICTE/BTEUP
+ *                          approval on file and must NOT be changed to
+ *                          420 until the seat-surrender letter lands.
+ *
+ * Never tell a prospective student to list a closed branch in JEECUP
+ * counselling. That is the one failure mode here that costs somebody a
+ * real seat.
+ */
+export const isAdmitting = <T extends { admissions?: BranchClosure }>(b: T) => !b.admissions;
+
+export const admittingOf = <T extends { admissions?: BranchClosure }>(list: T[]) => list.filter(isAdmitting);
+
+export const seatsOf = <T extends { seats: number }>(list: T[]) => list.reduce((sum, b) => sum + b.seats, 0);
+
+export const ADMITTING_BRANCHES = admittingOf(DATA.branches);
+export const ADMITTING_SEATS = seatsOf(ADMITTING_BRANCHES);
+export const SANCTIONED_SEATS = seatsOf(DATA.branches);

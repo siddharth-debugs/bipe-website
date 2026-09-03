@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
+import { ADMITTING_BRANCHES, ADMITTING_SEATS } from "@/lib/data";
 
 export async function generateMetadata(): Promise<Metadata> {
   return metadataFor("jeecupCutoff2026");
@@ -32,7 +33,11 @@ const CUTOFFS: CutoffRow[] = [
   { institute: "BIPE Phoolpur (private · code 4455)", branch: "Computer Science Engineering", marksGeneral: "Open to wider rank band", closingRank: "Final rounds · upgradation seats", category: "BIPE" },
   { institute: "BIPE Phoolpur (private · code 4455)", branch: "Mechanical (Production)", marksGeneral: "Open to wider rank band", closingRank: "Final rounds · upgradation seats", category: "BIPE" },
   { institute: "BIPE Phoolpur (private · code 4455)", branch: "Electrical Engineering", marksGeneral: "Open to wider rank band", closingRank: "Final rounds · upgradation seats", category: "BIPE" },
-  { institute: "BIPE Phoolpur (private · code 4455)", branch: "Dairy Engineering (rare!)", marksGeneral: "Open to wider rank band", closingRank: "Final rounds · only ~4 BTE UP Dairy programmes in UP", category: "BIPE" },
+  // 3 Sep 2026 — Dairy stays in the table rather than vanishing from it. Families
+  // who heard BIPE runs the branch come here looking for its cutoff; deleting the
+  // row sends them into choice-filling still guessing. The row now answers the
+  // question instead of quoting a rank band nobody can act on.
+  { institute: "BIPE Phoolpur (private · code 4455)", branch: "Dairy Engineering (closed to new admissions)", marksGeneral: "Not in 2026-27 counselling", closingRank: "Last intake 2025-26 · final cohort graduates 2028", category: "BIPE" },
 ];
 
 const FAQS = [
@@ -50,15 +55,15 @@ const FAQS = [
   },
   {
     q: "If I get a borderline rank, should I take a government seat in any branch or wait for BIPE in my preferred branch?",
-    a: "This is the single biggest decision rural families face. The honest answer: take the government seat in your preferred branch if you can, even at a less prestigious institute. Don't take a government seat in a branch you don't actually want — the diploma is 3 years of your life and the branch determines your placement pipeline. If your preferred branch isn't available at government, BIPE's wider rank band makes it the practical option — particularly for rare branches like Dairy Engineering.",
+    a: "This is the single biggest decision rural families face. The honest answer: take the government seat in your preferred branch if you can, even at a less prestigious institute. Don't take a government seat in a branch you don't actually want — the diploma is 3 years of your life and the branch determines your placement pipeline. If your preferred branch isn't available at government, BIPE's wider rank band makes it the practical option — across the four branches BIPE admits to in 2026-27 (Civil, Electrical, Mechanical Engineering Production, Computer Science & Engineering), with on-campus hostel if you are travelling in from outside Varanasi.",
   },
   {
     q: "How does JEECUP rank affect aided polytechnic admission?",
     a: "Aided polytechnics (19 institutes in UP) participate in JEECUP counselling alongside government. Their closing ranks behave similarly to government polytechnics — sharp in Round 1 for popular branches, with upgradations across rounds. Because there are only 19 aided institutes, they fill quickly. Aim for an aided seat only if your rank is comfortably within the historical cutoff band and you've researched the specific institute's branch offerings.",
   },
   {
-    q: "What's the BIPE rank cutoff for the Dairy Engineering branch specifically?",
-    a: "Dairy Engineering is rare across UP — only four BTE UP-affiliated Dairy programmes exist in the entire state, and BIPE is one of them. JEECUP-rank competition for Dairy at BIPE is consequently lower than government polytechnic CSE/Mechanical popular cutoffs, but the rarity of the programme makes it a strategic choice for families in dairy-belt districts (Ghazipur, Mirzapur, parts of Jaunpur). The careers the branch opens up — Amul, Mother Dairy, NDDB, regional cooperatives — are the long-term value; the first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
+    q: "Can a new applicant still get a Dairy Engineering seat at BIPE?",
+    a: `No — and this matters more than any rank number, so read it before you fill choices. BIPE's Dairy Engineering (BTEUP code 327) took its last intake in the 2025-26 session and is closed to new admissions from 2026-27. There is no Dairy seat to compete for and no cutoff to aim at; do not put the branch on a JEECUP choice list. What remains true: Dairy Engineering is rare across UP, only four BTE UP-affiliated Dairy programmes exist in the entire state and BIPE is one of them, and the cohort already enrolled is being taught out with its labs, faculty and mandatory Semester-6 plant training unchanged — that batch graduates in 2028. For a new applicant, BIPE admits to four branches: Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering, ${ADMITTING_SEATS} seats in total.`,
   },
   {
     q: "When is JEECUP 2026 counselling and how many rounds are there?",
@@ -150,8 +155,9 @@ export default function Page() {
                 prestige route is yours to take.
               </p>
               <p style={{ marginTop: 12, fontSize: 13, fontStyle: "italic", color: "var(--ink-3)", lineHeight: 1.6 }}>
-                BIPE is not the obvious choice for this tier — though Dairy Engineering remains
-                a structural fit if you specifically want that branch (rare across the state).
+                BIPE is not the obvious choice for this tier — though the on-campus hostel
+                and the published year-wise placement record are worth weighing if the
+                flagship institutes sit a long way from home.
               </p>
             </article>
             <article className="card" style={{ padding: 26, background: "var(--paper)", borderTop: "4px solid var(--accent)" }}>
@@ -166,8 +172,8 @@ export default function Page() {
               </p>
               <p style={{ marginTop: 12, fontSize: 13, fontStyle: "italic", color: "var(--ink-3)", lineHeight: 1.6 }}>
                 BIPE is a parallel option — list both in JEECUP choice-filling. If your branch
-                doesn&rsquo;t secure at government, BIPE&rsquo;s 5 branches absorb across later
-                rounds.
+                doesn&rsquo;t secure at government, BIPE&rsquo;s {ADMITTING_BRANCHES.length} admitting
+                branches absorb across later rounds.
               </p>
             </article>
             <article className="card" style={{ padding: 26, background: "color-mix(in oklab, var(--brand) 6%, var(--paper))", borderTop: "4px solid var(--brand)" }}>
@@ -178,11 +184,14 @@ export default function Page() {
               <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.65 }}>
                 Government polytechnic seats in popular Eastern UP institutes are largely gone
                 by this rank tier in Round 1. BIPE participates through all 5 rounds with a
-                wider rank band — 5 branches available, on-campus hostel for distant catchments,
-                AFRC ₹30,150 fees, UP Post-Matric Scholarship for eligible categories.
+                wider rank band — {ADMITTING_BRANCHES.length} branches open to new admissions,
+                on-campus hostel for distant catchments, AFRC ₹30,150 fees, UP Post-Matric
+                Scholarship for eligible categories.
               </p>
               <p style={{ marginTop: 12, fontSize: 13, fontStyle: "italic", color: "var(--brand)", lineHeight: 1.6 }}>
-                JEECUP code 4455. List all 5 branch preferences during choice-filling.
+                JEECUP code 4455. List all {ADMITTING_BRANCHES.length} admitting branch
+                preferences during choice-filling — Dairy Engineering is closed to new
+                admissions and should not go on the list.
               </p>
             </article>
           </div>

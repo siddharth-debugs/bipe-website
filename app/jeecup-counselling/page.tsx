@@ -74,7 +74,7 @@ const ROUNDS: { n: string; title: string; window: string; body: string }[] = [
 
 const CHOICE_TIPS: string[] = [
   "Put your most-preferred branch at BIPE 4455 as your VERY FIRST choice — not your most ambitious-sounding choice. If you want Civil at BIPE, BIPE-Civil should be choice #1.",
-  "Then list every BIPE branch you'd accept, in your preference order. BIPE-Civil → BIPE-Electrical → BIPE-Mechanical Production → BIPE-CSE → BIPE-Dairy.",
+  "Then list every BIPE branch you'd accept, in your preference order. BIPE-Civil → BIPE-Electrical → BIPE-Mechanical Production → BIPE-CSE. Those four are what BIPE admits to in 2026-27 — Dairy Engineering took its last intake in 2025-26 and has no seat to allot, so leave it off the list.",
   "Only AFTER you've exhausted BIPE should you list other institutes. Every other-institute choice you put before another BIPE choice is a vote against staying at BIPE.",
   "Don't interleave by perceived prestige. Algorithm processes choices top-to-bottom and gives you the highest-ranked choice you qualify for — so if BIPE-Mechanical is choice #3 and a distant private institute is choice #2, you'll end up at the distant institute if you qualify for both.",
   "Include lower-preference branches too. Some families list only one branch at BIPE and skip the rest; if their rank doesn't make that branch but would have comfortably made another BIPE branch, they end up elsewhere unnecessarily.",
@@ -455,12 +455,18 @@ export default function Page() {
               <li>BIPE · Electrical Engineering — code 105</li>
               <li>BIPE · Civil Engineering — code 102</li>
               <li>BIPE · Computer Science & Engineering — code 118</li>
-              <li>BIPE · Dairy Engineering — code 123</li>
               <li>(only now, other institutes in preference order)</li>
             </ol>
             <p style={{ marginTop: 16, color: "var(--ink-2)", fontSize: 14, fontStyle: "italic" }}>
-              This locks BIPE as your institute as long as ANY of the five branches has a seat open
-              that your rank qualifies for. If you genuinely want BIPE, this is the order.
+              This locks BIPE as your institute as long as ANY of the four admitting branches has a
+              seat open that your rank qualifies for. If you genuinely want BIPE, this is the order.
+            </p>
+            <p style={{ marginTop: 12, color: "var(--ink-3)", fontSize: 13.5, lineHeight: 1.65 }}>
+              Four BIPE branches, not five: the{" "}
+              <Link href="/courses/dairy-engineering" style={{ color: "var(--brand)" }}>Dairy Engineering</Link>{" "}
+              programme took its last intake in 2025-26 and is closed to new admissions from 2026-27,
+              so it has no seat to allot — the enrolled batch is being taught out to its 2028
+              graduation. Listing it costs you a choice slot and gains you nothing.
             </p>
           </div>
         </div>

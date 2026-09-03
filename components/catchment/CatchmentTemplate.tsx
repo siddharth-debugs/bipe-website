@@ -356,7 +356,7 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
               </p>
               <div style={{ marginTop: 14 }}>
                 <Link href="/courses" className="btn btn-ghost" style={{ fontSize: 13 }}>
-                  Explore all 5 branches <ArrowIcon size={13} />
+                  Explore the branches <ArrowIcon size={13} />
                 </Link>
               </div>
             </article>

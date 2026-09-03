@@ -47,7 +47,7 @@ const KEY_DIFFS = [
     heading: "Branch portfolio",
     govt: "Varies by institute; commonly 3-5 standard engineering branches",
     aided: "Varies; some aided institutes offer specialised branches",
-    private: "Wider variation — niche branches (e.g., Dairy Engineering at BIPE) more common at private",
+    private: "Wider variation — niche branches are more common at private institutes. BIPE runs Dairy Engineering, though it is closed to new admissions from 2026-27",
   },
 ];
 
@@ -66,7 +66,7 @@ const FAQS = [
   },
   {
     q: "Should I aim for an aided polytechnic instead of BIPE?",
-    a: "If your JEECUP rank confidently secures a seat at one of UP's 19 aided polytechnics in a branch you want, and the lower fee structure makes a real difference for your family — yes, the aided route is sensible. If your rank is borderline, or if the aided institute doesn't offer your preferred branch (e.g., Dairy Engineering is rare across both government and aided), or if you need hostel access at a specific location, BIPE remains the structurally better fit. See /private-vs-government-polytechnic for the broader framework.",
+    a: "If your JEECUP rank confidently secures a seat at one of UP's 19 aided polytechnics in a branch you want, and the lower fee structure makes a real difference for your family — yes, the aided route is sensible. If your rank is borderline, or if the aided institute doesn't offer your preferred branch (with only 19 aided institutes statewide, branch coverage is thin), or if you need hostel access at a specific location, BIPE remains the structurally better fit. See /private-vs-government-polytechnic for the broader framework.",
   },
   {
     q: "Are there any aided polytechnics in Eastern UP?",
@@ -221,10 +221,10 @@ export default function Page() {
               </div>
               <ul style={{ paddingLeft: 20, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.7 }}>
                 <li>Your rank doesn&rsquo;t safely secure an aided seat in your branch</li>
-                <li>You want Dairy Engineering (BIPE is one of 4 BTE UP Dairy programmes in UP)</li>
+                <li>Fee is the only thing pulling you toward aided — BIPE&rsquo;s AFRC-approved ₹30,150/year sits at the low end of the private band, and UP Post-Matric reimburses tuition in full for eligible SC / ST students</li>
                 <li>You need hostel access on-campus (BIPE&rsquo;s Phoolpur hostel)</li>
                 <li>You want documented placement infrastructure ({_placed} verified placements at {_recruiters} recruiters)</li>
-                <li>You&rsquo;re from Eastern UP and BIPE is the geographically practical 5-branch option</li>
+                <li>You&rsquo;re from Eastern UP and BIPE is the geographically practical four-branch option (420 seats)</li>
               </ul>
             </article>
           </div>

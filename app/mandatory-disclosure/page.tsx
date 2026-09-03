@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type React from "react";
 import { metadataFor } from "@/lib/seo";
-import { DATA } from "@/lib/data";
+import { DATA, ADMITTING_SEATS } from "@/lib/data";
 import { FACULTY } from "@/lib/faculty";
 import { ArrowIcon } from "@/components/shell/Icons";
 
@@ -98,11 +98,20 @@ const SECTIONS: Section[] = [
     title: "Programmes — branches, codes, intake, fees",
     body: (
       <>
+        {/* 3 Sep 2026 — Dairy Engineering closed to new admissions from
+            2026-27 (last intake 2025-26, enrolled cohort taught out to
+            2028). The SANCTIONED figures below are deliberately left
+            unchanged: this page mirrors the AICTE EoA letter on file, and
+            editing 480 → 420 before the seat-surrender letter lands would
+            misstate the regulatory record. What is added is the
+            distinction between what is sanctioned and what a 2026-27
+            applicant can actually compete for — without it this page
+            reads as an open offer of 60 Dairy seats. */}
         <p>
-          BIPE offers <strong>5 BTEUP-affiliated diploma branches</strong> at JEECUP college code 4455, all 3-year programmes admitted via JEECUP Group A.
+          BIPE is approved for <strong>5 BTEUP-affiliated diploma branches</strong> at JEECUP college code 4455, all 3-year programmes. <strong>Four are admitting in 2026-27</strong> through JEECUP Group A counselling; Dairy Engineering (code 327) took its last intake in 2025-26 and is closed to new admissions while its enrolled cohort is taught out to 2028.
         </p>
         <p>
-          Total sanctioned intake (2026-27): <strong>480 seats</strong> — Civil 120, Electrical 120, Mechanical Engineering (Production) 120, Computer Science &amp; Engineering 60, Dairy Engineering 60. Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical across branches.
+          Total sanctioned intake (2026-27): <strong>480 seats</strong> — Civil 120, Electrical 120, Mechanical Engineering (Production) 120, Computer Science &amp; Engineering 60, Dairy Engineering 60. That is the figure carried on the AICTE Extension of Approval letter on file and is published here unchanged. <strong>{ADMITTING_SEATS} of those seats are open to a 2026-27 applicant</strong>, as Dairy Engineering&rsquo;s 60 are not being filled. Annual tuition is <strong>₹30,150</strong>, AFRC-approved and identical across branches.
         </p>
         <p>See the <Link href="/courses">Courses page</Link> for the full branch catalogue and the <Link href="/fees">Fees page</Link> for the AFRC-approved fee structure.</p>
       </>

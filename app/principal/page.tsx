@@ -54,7 +54,11 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
     title: "Fee transparency",
     sub: "AFRC-approved tuition · published in writing",
     body:
-      "Annual tuition is ₹30,150 — the AFRC-approved figure, identical for all 5 branches. Every component (admission fee, exam fee, library, caution money) is itemised on the Fees page. Receipts are issued for every rupee.",
+      // 3 Sep 2026 — "identical for all 5 branches" became a count an
+      // applicant could misread as five choices, now that Dairy admits
+      // nobody from 2026-27. The fee promise doesn't need a number: it is
+      // the same ₹30,150 in every branch, admitting or teaching out.
+      "Annual tuition is ₹30,150 — the AFRC-approved figure, identical in every branch with no branch-wise premium. Every component (admission fee, exam fee, library, caution money) is itemised on the Fees page. Receipts are issued for every rupee.",
   },
   {
     roman: "ii",
@@ -163,7 +167,10 @@ export default function Page() {
                 {[
                   { num: "16", l: "yrs at BIPE" },
                   { num: formatPlacements(PLACEMENT_STATS.totalPlacements), l: "placed" },
-                  { num: "5", l: "branches" },
+                  // "branches" alone read as five choices; the Principal's
+                  // page is describing the institute he runs, so the label
+                  // now says so. Five are taught, four admit from 2026-27.
+                  { num: "5", l: "branches taught" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, lineHeight: 0.9, color: "var(--brand)" }}>{s.num}</div>

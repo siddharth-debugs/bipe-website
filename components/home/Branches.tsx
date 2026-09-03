@@ -8,7 +8,7 @@ import { ArrowIcon } from "@/components/shell/Icons";
  * May 2026 rewrite (Praveen's call): this used to be a full
  * hover-to-reveal widget with featured-branch preview panel + photo
  * carousel — visually identical to the widget on /courses (rendered
- * by CoursesView.tsx). Visitors clicking the "All 5 branches →" CTA
+ * by CoursesView.tsx). Visitors clicking the branches CTA
  * landed on /courses and saw the same widget, breaking the funnel
  * promise of "see more depth here."
  *
@@ -106,8 +106,8 @@ export const Branches = ({
               apply after Class 10 (three-year programme) or after Class 12
               (lateral entry to the second year, JEECUP Group K). Practical
               labs, industry exposure and a BTEUP-recognised credential that
-              opens both a job and the second-year B.Tech door. Five branches;
-              one mentor for every twenty students.
+              opens both a job and the second-year B.Tech door. Four branches
+              admitting; one mentor for every twenty students.
             </p>
           </div>
           <Link
@@ -119,7 +119,7 @@ export const Branches = ({
                 "1px solid color-mix(in oklab, var(--paper) 25%, transparent)",
             }}
           >
-            All 5 branches <ArrowIcon />
+            Explore the branches <ArrowIcon />
           </Link>
         </div>
 

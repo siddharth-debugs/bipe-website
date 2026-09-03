@@ -37,7 +37,7 @@ import {
   type FollowUpOutcome,
   type LeadStatus,
 } from "@/lib/admin/api";
-import { BRANCH_OPTIONS } from "@/lib/formOptions";
+import { BRANCH_OPTIONS_ALL } from "@/lib/formOptions";
 import { FormSelect } from "@/components/ui/FormSelect";
 
 interface Props {
@@ -465,7 +465,7 @@ function FollowUpForm({
           placeholder="Pick a branch…"
           options={[
             { value: "__none", label: "— no change —" },
-            ...BRANCH_OPTIONS.map((b) => ({ value: b, label: b })),
+            ...BRANCH_OPTIONS_ALL.map((b) => ({ value: b, label: b })),
           ]}
         />
       </div>
