@@ -99,6 +99,46 @@ export const BANNER_ROUNDS: BannerRound[] = [
 // Still to change before any reuse: the eyebrows and dates are 2026-specific,
 // and rollAtMs must move forward or the banner stays hidden. Do NOT reintroduce
 // any claim about seats being available, few, or held.
+//
+// The year half of that is enforced below rather than left to this comment.
+
+/**
+ * Build-time guard: every year printed in a round's copy must match the year
+ * its `rollAtMs` threshold falls in.
+ *
+ * Why this exists. Reviving the banner for a new cycle means editing dates,
+ * and the natural edit is to bump `rollAtMs` and stop. The eyebrows would
+ * still read "JEECUP 2026 · Round 1", so the homepage would announce the wrong
+ * year to every visitor — and nothing would complain, because a stale string
+ * is still a valid string. Throwing here turns that into a failed build: the
+ * page modules import this file, so `next build` collects it, this runs, and
+ * publication stops before anyone sees it.
+ *
+ * The year is read off the IST calendar (thresholds are IST midnight) instead
+ * of the host's local time, so it does not depend on where the build runs.
+ * A JEECUP cycle runs June-August and never crosses a new year, so exact
+ * equality is the right rule; if a future cycle ever does span one, split that
+ * round's copy rather than loosening this.
+ */
+const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
+
+for (const r of BANNER_ROUNDS) {
+  const istYear = new Date(r.rollAtMs + IST_OFFSET_MS).getUTCFullYear();
+  for (const field of ["eyebrow", "headline", "hindi"] as const) {
+    for (const printed of r[field].match(/\b20\d{2}\b/g) ?? []) {
+      if (Number(printed) !== istYear) {
+        throw new Error(
+          `jeecupBannerRounds: Round ${r.n} ${field} says "${printed}" but its ` +
+            `rollAtMs falls in ${istYear} (IST). The dates were moved to a new ` +
+            `cycle without updating the copy, so the banner would announce the ` +
+            `wrong year. Update the eyebrow/headline/hindi text for Round ${r.n} ` +
+            `to ${istYear} — and re-read the retirement note above before ` +
+            `reviving this banner.`,
+        );
+      }
+    }
+  }
+}
 
 /** The round to show at `nowMs`, or null once the final round has ended. */
 export function bannerRoundAt(nowMs: number): BannerRound | null {
