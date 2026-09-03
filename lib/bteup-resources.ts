@@ -309,7 +309,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       { label: "Odd sem theory", value: "Apr – Jun", sub: "Sem 1, 3, 5 · annual" },
       { label: "Even sem theory", value: "Oct – Dec", sub: "Sem 2, 4, 6 · annual" },
       { label: "Practical window", value: "Pre-theory · 2 weeks", sub: "At institute · BIPE Phoolpur" },
-      { label: "Supplementary", value: "After main result", sub: "Typically July + January" },
+      { label: "Supplementary", value: "After main result", sub: "January after the December result · July after the June one" },
     ],
     steps: [
       {
@@ -362,7 +362,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "What is the BTEUP supplementary exam cycle?",
-        a: "A re-attempt window for students who failed a subject (got 'CT' or 'AB' grade) or fell short on attendance. Held twice a year — typically July (for odd-sem backlogs) and January (for even-sem backlogs). Supplementary registration is fee-paid (~₹200-500 per subject), and the window is short (~2 weeks). Track BTEUP notifications carefully.",
+        a: "A re-attempt window for students who failed a subject (got 'CT' or 'AB' grade) or fell short on attendance. Held twice a year — January, after the December odd-semester result, and July, after the June even-semester result (for even-sem backlogs). Supplementary registration is fee-paid (~₹200-500 per subject), and the window is short (~2 weeks). Track BTEUP notifications carefully.",
       },
     ],
     ctaTitle: "Worried about your exam prep?",
@@ -388,7 +388,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     eyebrow: "BTEUP 2026 · RESULT CHECK GUIDE",
     headline: "BTEUP semester result —",
     headlineAccent: "from result page to marksheet.",
-    lead: "BTEUP semester results typically release 2 months after the exam cycle closes — odd-semester results in August / September, even-semester results in February / March. The result includes subject-wise marks, grades, attendance, and pass / fail status per subject. This page walks through the check flow, marksheet download, and what to do if you spot an error.",
+    lead: "BTEUP semester results follow about six weeks after the exam cycle closes — odd-semester results in December, even-semester results in June. The result includes subject-wise marks, grades, attendance, and pass / fail status per subject. This page walks through the check flow, marksheet download, and what to do if you spot an error.",
     quickStats: [
       { label: "Released", value: "~2 months post-exam", sub: "Watch bteup.ac.in" },
       { label: "Where", value: "bteup.ac.in", sub: "Result tab · student portal" },
@@ -430,7 +430,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     faqs: [
       {
         q: "When will BTEUP 2026 semester results be declared?",
-        a: "Approximately 2 months after each cycle closes. Odd-semester results typically declare in August / September 2026; even-semester results in February / March 2027. Exact dates announced on bteup.ac.in. Allow extra time for any cycle disrupted by holidays or special circumstances.",
+        a: "About six weeks after each cycle closes. Odd-semester theory runs in November and the result declares in December; even-semester theory runs from late April into May and the result declares in June. Exact dates announced on bteup.ac.in. Allow extra time for any cycle disrupted by holidays or special circumstances.",
       },
       {
         q: "What does 'CT' or 'AB' on my BTEUP result mean?",
@@ -820,7 +820,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     headlineAccent: "clear it, don't carry it.",
     lead: "A backlog (failed subject) in BTEUP is recoverable — but only if you act in the supplementary cycle window. This page walks through the back-paper / supplementary process: when the cycle runs, how to register, what it costs, and how BIPE's academic office helps students clear backlogs without losing a year of graduation.",
     quickStats: [
-      { label: "Cycles per year", value: "2", sub: "July (for odd-sem backlogs) + January (even-sem)" },
+      { label: "Cycles per year", value: "2", sub: "January (odd-sem backlogs) + July (even-sem)" },
       { label: "Fee per paper", value: "₹200-500", sub: "Plus admin charges · varies by cycle" },
       { label: "Window", value: "~2 weeks", sub: "Per cycle · strict deadline" },
       { label: "Max backlog", value: "No published cap", sub: "Limit is time — 6 sessions for a 3-year diploma" },
@@ -834,7 +834,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "02",
         title: "Wait for BTEUP's supplementary cycle notification",
-        body: "Supplementary cycles run twice yearly — typically July (for odd-semester backlogs from the previous May-June theory cycle) and January (for even-semester backlogs from the November-December theory cycle). BTEUP publishes the cycle notification ~3 weeks before registration opens. Watch bteup.ac.in's notice board.",
+        body: "Supplementary cycles run twice yearly — January, for odd-semester backlogs from the November theory cycle whose result declares in December, and July, for even-semester backlogs from the April-May cycle whose result declares in June. (Older copy had these two the wrong way round: November-December theory cycle). BTEUP publishes the cycle notification ~3 weeks before registration opens. Watch bteup.ac.in's notice board.",
       },
       {
         n: "03",
@@ -889,7 +889,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "Does a supplementary delay my graduation?",
-        a: "Not necessarily. If you clear the back paper in the FIRST supplementary cycle (July or January immediately after the failed semester), graduation timeline isn't affected. If you carry the backlog to multiple supplementary cycles or final-semester subjects fail, then graduation is delayed by ~6 months per failed cycle. The first supplementary is the critical one.",
+        a: "Not necessarily. If you clear the back paper in the FIRST supplementary cycle (January or July, whichever falls immediately after the failed semester's result), graduation timeline isn't affected. If you carry the backlog to multiple supplementary cycles or final-semester subjects fail, then graduation is delayed by ~6 months per failed cycle. The first supplementary is the critical one.",
       },
       {
         q: "What if I have backlogs in several subjects?",
