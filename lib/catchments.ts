@@ -319,7 +319,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "1,331 placement record — concrete pipeline, not promises",
-        body: "Over 16 years, BIPE has documented 1,331 verified placements across 44 recruiters — Mahindra, Krishna Maruti, JCB, Motherson, JBM Group, Asian Paints, Adani Solar, Ola Electric. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
+        body: "Over 16 years, BIPE has documented 1,331 verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
       },
       {
         headline: "AFRC ₹30,150 — flexibility for distant catchments",
@@ -563,7 +563,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "If your JEECUP rank confidently secures a Government Polytechnic Chandauli seat in the branch you want and you live in Chandauli city, the government route is the right choice. Day-scholar is feasible and the fee gap (~₹15,000-25,000/year vs BIPE) is meaningful.",
       whenBipe:
-        "BIPE wins for Chandauli students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you specifically want Dairy Engineering; (c) you're from outer Chandauli blocks (Naugarh, Sakaldiha, Chakia) and need hostel; (d) you want documented placement infrastructure — 44 recruiters on record, plus named alumni who reached Indian Railways through the RRB route. /private-vs-government-polytechnic has the wider framework.",
+        "BIPE wins for Chandauli students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you specifically want Dairy Engineering; (c) you're from outer Chandauli blocks (Naugarh, Sakaldiha, Chakia) and need hostel; (d) you want documented placement infrastructure with named alumni at Indian Railways and 43 other recruiters. /private-vs-government-polytechnic has the wider framework.",
     },
   },
 

@@ -162,18 +162,18 @@ const ALUMNI_JSON_LD = {
   url: `${SITE_URL}/placements`,
   name: "Placements · BIPE Varanasi",
   description:
-    // TWO DIFFERENT CLAIMS, TWO DIFFERENT SOURCES — don't collapse them:
-    //   "X recruits here" / "N placements at X" → must be manifest-backed
-    //     (lib/alumni-manifest.json) or on the owner-curated marquee.
-    //     That rule governs lib/routes.ts metadata and the branch descs.
-    //   "named alumni at X"  → must match the FEATURED list below, which
-    //     is where the named people actually are.
-    // The names here are exactly that list (Ankit Kr Singh · Tata Steel
-    // BSL, Pramod Kumar Patel · Indian Railways, Hariom Rai · Mumbai
-    // Metro, Chandan Pathak · Motherson Sumi, Naveen Pandey · IEPC).
-    // Most graduated 2013-2015, before the manifest's 2016 start, which
-    // is why they are absent from it — absence there is NOT evidence
-    // against them.
+    // These names are the FEATURED named-alumni roster below (Ankit Kr
+    // Singh · Tata Steel BSL, Pramod Kumar Patel · Indian Railways,
+    // Hariom Rai · Mumbai Metro, Chandan Pathak · Motherson Sumi,
+    // Naveen Pandey · IEPC), so each is a real person on this page.
+    //
+    // DO NOT REMOVE NAMES HERE ON THE GROUNDS THAT THEY ARE ABSENT FROM
+    // lib/alumni-manifest.json. That was tried on 3 Sep 2026 and the
+    // owner overruled it: "Do not remove recruiters. the alumnus list
+    // doesn't contain all our alumni." The manifest is a partial record
+    // — Ankit Kr Singh is Civil 2014 and the manifest starts at 2016,
+    // which is why he is missing from it despite being real. If a name
+    // here looks unsupported, ask the office.
     //
     // MAHINDRA: owner-confirmed 3 Sep 2026 ("I confirm that Mahindra has
     // our alumnus"). It has no entry in the FEATURED list below, so a

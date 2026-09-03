@@ -134,7 +134,7 @@ export const ROUTES: Record<RouteKey, {
     // version kept the establishment date; this version moves it
     // into the description to make room for the AICTE ID.
     title: `About BIPE Varanasi · AICTE 1-488233171 · ${_placed} Placements · BTEUP 4455`,
-    description: `BIPE Varanasi — est. 2010 · 6-acre Phoolpur campus · AICTE Permanent ID 1-488233171 · BTEUP 4455 · ${_placed} alumni placed at Krishna Maruti, Motherson, JBM Group.`,
+    description: `BIPE Varanasi — est. 2010 · 6-acre Phoolpur campus · AICTE Permanent ID 1-488233171 · BTEUP 4455 · ${_placed} alumni at Mahindra, Tata Steel, BEL, Indian Railways.`,
   },
   courses: {
     path: "/courses",
@@ -203,20 +203,16 @@ export const ROUTES: Record<RouteKey, {
     // the brand-recognition CTR boosters for "polytechnic placements UP"
     // search intent.
     //
-    // NAMES CHANGED 3 Sep 2026. The previous set (Tata Steel, BEL,
-    // Indian Railways, Amul, Mother Dairy, UPPCL) was every one of them
-    // on the owner's struck list — the same names removed from the
-    // recruiter marquee in lib/data.ts:362-366 for having no current or
-    // recent hiring relationship, and removed from the CMS recruiters
-    // table the same day. Naming them in a description that cites the
-    // TPO-verified count was the weakest footing on the site: none of
-    // them appears in lib/alumni-manifest.json, the dataset that
-    // produces ${_placed}. Every name below IS in that manifest
-    // (Krishna Maruti 65, Motherson 60, JBM Group 33, Hollister 30,
-    // Exide 18), so the claim is backed by the figure it sits beside.
-    // Keep it that way: check the manifest before adding a name here.
-    title: `Polytechnic Placements UP · ${_placed} at Krishna Maruti, Motherson | BIPE`,
-    description: `${_placed} BIPE alumni placed across ${_recruiters} recruiters — Krishna Maruti, Motherson, JBM Group, Hollister, Exide and more. 2,200+ alumni network.`,
+    // DO NOT REMOVE RECRUITER NAMES FROM THIS LINE. On 3 Sep 2026 these
+    // names were swapped out on the theory that a company absent from
+    // lib/alumni-manifest.json was unsupported. The owner overruled it:
+    // "Do not remove recruiters. the alumnus list doesn't contain all
+    // our alumni." The manifest is a PARTIAL record, so absence from it
+    // is not evidence of anything, and this line was restored verbatim.
+    // If a name here looks unsupported, ask the office — do not infer
+    // from the manifest. See memory project-recruiter-claim-sources.
+    title: `Polytechnic Placements UP · ${_placed} at Mahindra, Tata Steel, BEL | BIPE`,
+    description: `${_placed} BIPE alumni placed at Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric. 2,200+ alumni network.`,
     quickLink: { label: "Placements", hint: `${_placed} alumni placed`, priority: 4 },
   },
   alumni: {
@@ -225,7 +221,7 @@ export const ROUTES: Record<RouteKey, {
     // (commit 065693f). "123 with photos" was internal-data styling
     // unsearched by users — replaced with "44 Recruiters" CTR anchor.
     title: `BIPE Alumni · 2,200+ Network · ${_placed} Placed at ${_recruiters} Recruiters`,
-    description: `Browse 2,200+ BIPE alumni · ${_placed} verified placements at ${_recruiters} recruiters (${PLACEMENT_STATS.startYear}–${_endYear}). Krishna Maruti, Motherson, JBM Group, Hollister. Filter by branch.`,
+    description: `Browse 2,200+ BIPE alumni · ${_placed} verified placements at ${_recruiters} recruiters (${PLACEMENT_STATS.startYear}–${_endYear}). Mahindra, Tata Steel, BEL, Indian Railways. Filter by branch.`,
   },
   campus: {
     path: "/campus",

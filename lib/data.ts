@@ -332,7 +332,7 @@ export const DATA: DataShape = {
       code: "328", slug: "electrical-engineering",
       name: "Electrical Engineering", hi: "इलेक्ट्रिकल इंजीनियरिंग",
       seats: 120, fee: "30,150",
-      desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. Exide, Secure Meters, Adani Solar recruit our graduates.",
+      desc: "Power, distribution, renewables, EV. Strong RRB JE / SSC JE pathway. UPPCL, Tata Power, Adani Solar recruit our graduates.",
       tag: null, color: 4,
       thumbnail: {
         src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151049/bipe/labs/ee/ee-machin",
@@ -348,7 +348,7 @@ export const DATA: DataShape = {
       code: "343", slug: "mechanical-engineering-production",
       name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)",
       seats: 120, fee: "30,150",
-      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, JCB, Krishna Maruti apprentice pathways.",
+      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, JCB, BHEL apprentice pathways.",
       tag: null, color: 5,
       thumbnail: {
         src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",
@@ -380,7 +380,7 @@ export const DATA: DataShape = {
     { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },
     { num: "02", metric: "3-layer", metricLabel: "assessment", title: "Outcome-based pedagogy.", body: "Semester exam + continuous assessment + project work, calibrated against published Program Outcomes. We measure progress, not attendance.", icon: "M3 17l6-6 4 4 8-8" },
     { num: "03", metric: "4 only", metricLabel: "institutes in UP offer this", title: "Rare Dairy Engineering diploma.", body: "BTEUP-affiliated Dairy Engineering (Code 327) — offered by only four institutes including BIPE across all UP polytechnics. Careers at Amul, Mother Dairy, Parag, Nestlé and NDDB.", icon: "M9 3h6l1 4-1 14H9L8 7l1-4z" },
-    { num: "04", metric: _placed, metricLabel: "TPO-verified placements", title: "Sixteen years on record.", body: `${_placed} TPO-verified placements (${PLACEMENT_STATS.startYear}-${_endYear}) at Mahindra, Krishna Maruti, Motherson, JCB, Asian Paints — incl. government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police). AFRC-approved fees, no hidden charges.`, icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
+    { num: "04", metric: _placed, metricLabel: "TPO-verified placements", title: "Sixteen years on record.", body: `${_placed} TPO-verified placements (${PLACEMENT_STATS.startYear}-${_endYear}) at Mahindra, Tata Steel, Krishna Maruti, JCB, Asian Paints — incl. government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police). AFRC-approved fees, no hidden charges.`, icon: "M3 21V10l9-6 9 6v11M9 21V12h6v9" },
   ],
   testimonials: [
     // Drawn from genuine BIPE Facebook feedback (2017–2025) — translated /

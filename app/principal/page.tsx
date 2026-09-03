@@ -77,7 +77,7 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
       // Mahindra is owner-confirmed (3 Sep 2026, see d5e3c8d) rather than
       // backed by the on-page featured list; the other four each have a
       // named graduate on /placements. BEL stays out — no evidence either way.
-      "We publish placement records, not just photographs. Alumni now serve at Mahindra, Tata Steel BSL, Mumbai Metro, Motherson Sumi, Indian Railways and dozens more. Government-job admits — SSC JE, RRB JE, UPPCL — are tracked too.",
+      "We publish placement records, not just photographs. Alumni now serve at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro and dozens more. Government-job admits — SSC JE, RRB JE, UPPCL — are tracked too.",
   },
 ];
 
