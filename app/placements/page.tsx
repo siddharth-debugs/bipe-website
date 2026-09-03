@@ -448,6 +448,59 @@ export default async function Page() {
       </section>
 
       {/* ====================================================================== */}
+      {/* 2b. APPRENTICESHIP PATHWAYS                                             */}
+      {/* ====================================================================== */}
+      {/*
+        Added 3 Sep 2026 on owner instruction. This section exists because an
+        apprenticeship selection is NOT a campus drive, and conflating the two
+        is what produced the "Tata Motors campus drive — 14 selected" card that
+        the 28 May audit pulled: it read as 14 direct hires and carried a
+        ₹3.6 LPA package the office cannot substantiate.
+
+        Owner's account, 3 Sep 2026: "14 students were selected for
+        apprenticeship by tata motors, and some also landed in tata motors as
+        employees, exact figures are not available with the office but
+        placement was verified."
+
+        So: the 14 and the 2017-18 session are stated, the conversions are
+        described without a number because none exists, and no package figure
+        appears. Do not add one, and do not move Tata Motors into the recruiter
+        marquee below — that wall is campus-drive recruiters.
+      */}
+      <section className="section bipe-pad" style={{ position: "relative", overflow: "hidden" }}>
+        <div className="container">
+          <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: 56, alignItems: "end", marginBottom: 32 }}>
+            <div>
+              <div className="eyebrow">Apprenticeships · Industry route</div>
+              <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "18ch" }}>
+                <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
+                  Apprenticeship
+                </span>{" "}
+                is a route in, not a consolation.
+              </h2>
+            </div>
+            <p className="lead" style={{ maxWidth: "62ch" }}>
+              A campus drive is not the only way into a manufacturer. Apprenticeships put a diploma holder on the shop floor of a large company, and for some that becomes the job itself.
+            </p>
+          </div>
+
+          <div className="card" style={{ padding: "26px 28px", background: "var(--paper-2)" }}>
+            <div className="eyebrow" style={{ color: "var(--brand)" }}>Tata Motors · 2017-18 session</div>
+            <p style={{ marginTop: 12, fontSize: 16, lineHeight: 1.65, maxWidth: "70ch" }}>
+              Fourteen Mechanical Engineering (Production) students were selected for apprenticeship with <strong>Tata Motors</strong>. Some went on to join the company as employees.
+            </p>
+            <p className="muted" style={{ marginTop: 14, fontSize: 13 }}>
+              The placement office has verified the selection but does not hold exact figures for how many apprentices converted to employment, so no number is claimed here.
+            </p>
+          </div>
+
+          <p className="muted" style={{ marginTop: 22, fontSize: 13, fontFamily: "var(--font-mono)", letterSpacing: "0.04em" }}>
+            Apprentice pathways also run through Mahindra, JCB and BHEL for the Mechanical (Production) branch.
+          </p>
+        </div>
+      </section>
+
+      {/* ====================================================================== */}
       {/* 3. RECRUITER WALL — DARK                                                */}
       {/* ====================================================================== */}
       <section className="section" style={{
