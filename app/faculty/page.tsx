@@ -429,10 +429,12 @@ export default function Page() {
               { num: TOTAL_FACULTY, lbl: "academic faculty", sub: "Named on this page" },
               { num: 5, lbl: "departments", sub: "BTEUP-affiliated" },
               { num: TOTAL_PUBLICATIONS, lbl: "papers published", sub: "Journals + conferences" },
-              // Hardcoded 5 (one per BTEUP-affiliated branch). HODS.length is
-               // currently 4 because the Dairy HOD record isn't published yet,
-               // but the displayed count should reflect the org reality.
-               { num: 5, lbl: "department heads", sub: "One per branch" },
+              // Derived, not hardcoded. This used to read 5 on the assumption
+              // that a Dairy HOD existed but was unpublished; the owner
+              // confirmed on 3 Sep 2026 that there is no Dairy HOD, so the
+              // roster's four was right and the headline was wrong. Reading
+              // HODS.length keeps the two in step if that ever changes.
+              { num: HODS.length, lbl: "department heads", sub: "Across five departments" },
             ].map((s) => (
               <div key={s.lbl}>
                 <div
@@ -789,12 +791,12 @@ export default function Page() {
                 className="bipe-h2"
                 style={{ marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}
               >
-                Five HODs.{" "}
+                Four HODs.{" "}
                 <span
                   className="serif"
                   style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}
                 >
-                  One per branch.
+                  Named, and reachable.
                 </span>
               </h2>
             </div>
