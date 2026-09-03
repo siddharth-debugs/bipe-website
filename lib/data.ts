@@ -432,9 +432,17 @@ export const DATA: DataShape = {
     // surgical-and-medical-device manufacturer (Stuart, FL · Indian
     // ops in Pune) has been recruiting BIPE diploma graduates; the
     // earlier curated list missed it.
+    // 3 Sep 2026 — "Shapoorji Pallonji" added from the owner's session-2026
+    // TPO placement sheet: campus drive 11-08-2026, 3 Civil students, ₹3 LPA.
+    // Spelling is from the company's own logo, NOT the TPO sheet, which
+    // writes "Shopoorji Poloniji" (the same sheet writes "R.R. Porkan" for
+    // RR Parkon and "Knorr -Bresme" for Knorr Bremse). Whoever regenerates
+    // alumni-manifest.json from that XLSX must add these three to the
+    // company-normalisation table first, or the parser will mint duplicate
+    // recruiters alongside the existing RR Parkon and Knorr Bremse rows.
     "Mahindra", "Krishna Maruti", "JCB", "Asian Paints", "Adani Solar",
-    "Ola Electric", "RR Parkon", "Knorr Bremse", "BD Group Campa", "Amber",
-    "Hollister",
+    "Ola Electric", "RR Parkon", "Knorr Bremse", "Shapoorji Pallonji",
+    "BD Group Campa", "Amber", "Hollister",
   ],
   whyBipe: [
     { num: "01", metric: "1:20", metricLabel: "mentor ratio", title: "One mentor. Twenty students. Home visits.", body: "Every BIPE faculty member personally mentors 20 students, with periodic home visits to parents. Institution, parent, and student — bonded as a family.", icon: "M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0" },
