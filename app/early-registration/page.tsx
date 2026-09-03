@@ -12,18 +12,18 @@ export async function generateMetadata(): Promise<Metadata> {
 const BENEFITS = [
   {
     tag: "An honest read on seats",
-    title: "We tell you what is actually open",
-    body: "Pre-Counselling Registration closed on 27 July 2026 and has not reopened. Leave your details and admissions will tell you, branch by branch, whether BIPE (code 4455) still has room for 2026-27.",
+    title: "2026-27 is closed — we say so plainly",
+    body: "Admission to BIPE for session 2026-27 is closed. JEECUP 2026 counselling ended with Round 5 in mid-August and classes began on 1 August, so there is no seat to offer this session. Leave your details for session 2027-28 instead.",
   },
   {
     tag: "Admissions guidance",
-    title: "We walk you through what is left",
-    body: "Our admissions team explains what joining BIPE now involves — which branches still have room, what documents you need, and how quickly you would have to move. Free, on call or WhatsApp.",
+    title: "We walk you through the next cycle",
+    body: "Our admissions team explains how admission to BIPE works — the five branches, the JEECUP route to code 4455, fees, hostel, and the documents to have ready before the next cycle opens. Free, on call or WhatsApp.",
   },
   {
     tag: "Popular branches fill first",
     title: "Computer Science and Mechanical go first",
-    body: "CS and Mechanical seats are limited and were the first to fill this session. Ask about those two early — they are the likeliest to be gone.",
+    body: "CS and Mechanical seats are limited and were the first to fill this session. If either is your target for 2027-28, say so when we call.",
   },
   {
     tag: "Free · zero risk",
@@ -33,9 +33,9 @@ const BENEFITS = [
 ];
 
 const STEPS = [
-  { n: "01", t: "Send your details", d: "Fill the short form below — name, phone, JEECUP application number, group and preferred branch. Two minutes." },
-  { n: "02", t: "We call you back", d: "Admissions ring you in Hindi or English and tell you honestly whether your branch still has room at code 4455." },
-  { n: "03", t: "Visit and decide", d: "If a seat is open, come to BIPE Phoolpur — tour the campus, meet faculty, check the documents you need, then decide." },
+  { n: "01", t: "Send your details", d: "Fill the short form below — name, phone, group and preferred branch. Two minutes." },
+  { n: "02", t: "We call you back", d: "Admissions ring you in Hindi or English, explain that session 2026-27 is closed, and talk you through the branches at code 4455 and the JEECUP route into them." },
+  { n: "03", t: "Visit and decide", d: "Come and see BIPE Phoolpur — tour the campus, meet faculty, check the documents you will need, then decide well before the next cycle opens." },
 ];
 
 export default function Page() {
@@ -53,18 +53,18 @@ export default function Page() {
           background: "color-mix(in oklab, var(--brand) 20%, transparent)", filter: "blur(130px)", pointerEvents: "none",
         }} />
         <div className="container" style={{ position: "relative", maxWidth: 880 }}>
-          <div className="eyebrow">JEECUP 2026 · Counselling concluded · Classes under way</div>
+          <div className="eyebrow">JEECUP 2026 · Counselling concluded · Admission closed</div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
-            Counselling has closed —{" "}
-            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>talk to us about a seat.</span>
+            2026-27 is closed —{" "}
+            <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>talk to us about next year.</span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-            Pre-Counselling Registration closed on 27 July, and <strong>JEECUP counselling has concluded</strong> — Round 5 was the final round and it closed
-            in mid-August. <strong>Classes are already under way.</strong> Leave your details and BIPE admissions will call you back, tell you honestly what is
-            open at code 4455, and talk you through what joining now would involve. Subject to seats &amp; eligibility.
+            Pre-Counselling Registration closed on 27 July, <strong>JEECUP counselling has concluded</strong> — Round 5 was the final round and it closed
+            in mid-August — and <strong>classes began on 1 August</strong>. Admission to BIPE for session 2026-27 is closed and there is no seat left to
+            offer. Leave your details for <strong>session 2027-28</strong> and BIPE admissions will call you back and walk you through the JEECUP 2027 route to code 4455.
           </p>
           <p lang="hi" style={{ marginTop: 14, maxWidth: "60ch", color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.7 }}>
-            Pre-Counselling Registration 27 जुलाई को बंद हो गई, और JEECUP counselling भी पूरी हो चुकी है — Round 5 आख़िरी round था, जो अगस्त के मध्य में ख़त्म हो गया। Classes शुरू हो चुकी हैं। नीचे details भरें — BIPE admissions आपको call करके ईमानदारी से बताएँगे कि code 4455 पर क्या खुला है।
+            Pre-Counselling Registration 27 जुलाई को बंद हो गई, JEECUP counselling भी पूरी हो चुकी है — Round 5 आख़िरी round था, जो अगस्त के मध्य में ख़त्म हो गया — और Classes 1 अगस्त से शुरू हो चुकी हैं। सत्र 2026-27 का admission अब बंद है। अगर आप सत्र 2027-28 की तैयारी कर रहे हैं तो नीचे details भरें — BIPE admissions आपको call करके JEECUP 2027 और code 4455 की पूरी जानकारी देंगे।
           </p>
           <p className="muted" style={{ marginTop: 12, fontSize: 12.5, color: "var(--ink-3)", maxWidth: "60ch" }}>
             <strong>Note:</strong> the ₹1,200 PET scholarship offer closed on 22 June 2026 and is no longer available — this admissions enquiry is free.
@@ -75,8 +75,8 @@ export default function Page() {
             <Link href="/visit#book" className="btn btn-ghost btn-lg">See the campus first</Link>
           </div>
           <p className="muted" style={{ marginTop: 18, fontSize: 12.5, maxWidth: "62ch" }}>
-            <strong>Pre-Counselling Registration for 2026-27 is closed and has not reopened.</strong> This form is an admissions enquiry — it is not a
-            registration, and it does not hold a seat for you.
+            <strong>Admission for session 2026-27 is closed</strong> — Pre-Counselling Registration closed on 27 July 2026 and has not reopened. This
+            form is an enquiry about session 2027-28; it is not a registration, and it holds no seat.
           </p>
         </div>
       </section>
@@ -117,13 +117,13 @@ export default function Page() {
       <section id="register" className="section" style={{ background: "var(--paper-2)", scrollMarginTop: 96 }}>
         <div className="container" style={{ maxWidth: 760 }}>
           <div className="card" style={{ padding: "40px 40px" }}>
-            <div className="eyebrow" style={{ color: "var(--brand)" }}>Admissions Enquiry · 2026-27</div>
+            <div className="eyebrow" style={{ color: "var(--brand)" }}>Admissions Enquiry · Session 2027-28</div>
             <h2 className="bipe-h2" style={{ marginTop: 8, fontSize: 30 }}>
               Leave your details — we&rsquo;ll call you
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>.</span>
             </h2>
             <p className="muted" style={{ marginTop: 8, fontSize: 14, maxWidth: "56ch" }}>
-              Fill the basics — our admissions team calls you back, tells you honestly what is open at code 4455, and talks you through joining now that classes are under way.
+              Fill the basics — our admissions team calls you back, explains that session 2026-27 is closed, and talks you through the branches at code 4455 and the JEECUP 2027 route into them.
             </p>
             <div style={{ marginTop: 26 }}>
               <EarlyRegistrationForm />
@@ -133,9 +133,10 @@ export default function Page() {
           {/* Honest scope / fine print */}
           <p className="muted" style={{ marginTop: 20, fontSize: 12, lineHeight: 1.75 }}>
             <strong>The details:</strong> this form is an admissions enquiry about BIPE&rsquo;s own institute seats at the
-            Phoolpur campus, JEECUP code 4455. It does not reserve a seat and holds nothing for you — any admission is
-            subject to seat availability and basic eligibility (Class 10 passed). <strong>Pre-Counselling Registration for
-            2026-27 closed on 27 July 2026 and has not reopened</strong>; classes began 1 August 2026.
+            Phoolpur campus, JEECUP code 4455. It does not reserve a seat and holds nothing for you. <strong>Admission for
+            session 2026-27 is closed</strong> — Pre-Counselling Registration closed on 27 July 2026 and has not reopened, and
+            classes began 1 August 2026 — so any admission would be for a later session, through JEECUP, and subject to
+            seats and basic eligibility (Class 10 passed).
           </p>
         </div>
       </section>

@@ -62,7 +62,9 @@ import sitemap from "@/app/sitemap";
  * 2,200+ alumni network · the government- and dairy-pathway company
  * lists · programme duration and
  * eligibility wording · grievance 7-working-day SLA · flagship-guide
- * labels/descriptions and section descriptions (curated copy).
+ * labels/descriptions and section descriptions (curated copy) · the
+ * admission-cycle status line under "## Admissions" (session 2026-27
+ * closed, next intake 2027-28 — revise when JEECUP 2027 opens).
  */
 
 // Route handlers are dynamic by default in Next 15+; this content is
@@ -399,7 +401,8 @@ async function buildBody(): Promise<string> {
 - Principal: ${PRINCIPAL.name}, ${PRINCIPAL.postNominal}
 - Campus: ${contact.address}
 - Campus size: 6 acres, single boundary
-- Seats open to a 2026-27 applicant: ${admittingSeats} across ${admitting.length} branches
+- Seats in branches that take new admissions: ${admittingSeats} across ${admitting.length} branches
+  (session 2026-27 admission is CLOSED — JEECUP 2026 counselling concluded; next intake 2027-28)
 - Total sanctioned seats: ${totalSeats}${sanctionedNote}
 - Faculty: 40 (1:20 mentor ratio, with parent home visits)
 - Alumni network: 2,200+ · ${placed} TPO-verified placements (${years})
@@ -423,12 +426,19 @@ see Admissions).
 
 ## Admissions
 
-Admission exclusively via JEECUP (UPJEE Polytechnic) counselling — institute
+Admission status — session 2026-27 is CLOSED. Classes began 1 August 2026
+and JEECUP 2026 counselling concluded with Round 5 in mid-August 2026.
+BIPE has no seats to offer for 2026-27. The next intake is session 2027-28
+via JEECUP 2027 — dates have not been announced. Enquiries about the next
+cycle are welcome on the contact details below.
+
+Admission is exclusively via JEECUP (UPJEE Polytechnic) counselling — institute
 code ${contact.jeecup_code}. Group A is the entrance for the 3-year diploma (Class 10 pass
 with Mathematics and Science); Group K lateral entry admits Class 12 / ITI
 candidates directly into the 2nd year (two-year route).
-Apply at https://jeecup.admissions.nic.in — choose institute code ${contact.jeecup_code}.
-${closedNames.length ? `\nBranches admitting in 2026-27 (${admitting.length}): ${admitting.map((b) => b.name).join(", ")}.\nNOT admitting: ${closedNames.join(", ")} — do not list ${closedNames.length === 1 ? "it" : "them"} in choice-filling. ${closedNames.length === 1 ? "It is" : "They are"} still taught for the enrolled cohort, but no new seat is allotted against ${closedNames.length === 1 ? "it" : "them"}.\n` : ""}
+When JEECUP 2027 opens, apply at https://jeecup.admissions.nic.in and choose
+institute code ${contact.jeecup_code}.
+${closedNames.length ? `\nBranches BIPE admits to (${admitting.length}): ${admitting.map((b) => b.name).join(", ")}.\nNOT admitting: ${closedNames.join(", ")} — do not list ${closedNames.length === 1 ? "it" : "them"} in choice-filling, for 2027-28 or after. ${closedNames.length === 1 ? "It is" : "They are"} still taught for the enrolled cohort, but no new seat is allotted against ${closedNames.length === 1 ? "it" : "them"}.\n` : ""}
 
 Bihar candidates: JEECUP admits other-state candidates in the open/general
 category (no UP-domicile requirement), so Bihar students who appear for

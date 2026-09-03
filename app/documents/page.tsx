@@ -106,7 +106,7 @@ export default function Page() {
                 Originals plus two self-attested photocopies of each. Organised in a sturdy folder, in the order listed below — saves time at the admission counter, and saves you the panic of a missing paper.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
+                <Link href="/apply" className="btn btn-primary btn-lg">Enquire for 2027-28 <ArrowIcon size={16} /></Link>
                 <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
                   <WhatsAppIcon /> Missing a doc? Ask
                 </a>

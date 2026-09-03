@@ -68,7 +68,7 @@ const ROUNDS: { n: string; title: string; window: string; body: string }[] = [
     title: "Institute-level seat filling",
     window: "Approximately August",
     body:
-      "Vacant seats after Round 5 are filled by the institutes themselves under JEECUP supervision. You apply directly to the institute (BIPE), not through the central portal. Rank still matters but the rules are looser. BIPE's spot round usually has 10-30 vacancies each year — direct application on-campus, often less competitive than central rounds.",
+      "In a normal cycle, seats left vacant after Round 5 are filled by the institutes themselves under JEECUP supervision — you apply directly to the institute (BIPE) rather than through the central portal, and rank still matters though the rules are looser. For 2026-27 that stage is over: admission to BIPE for this session is closed and there are no seats left to offer.",
   },
 ];
 
@@ -118,9 +118,9 @@ const MISTAKES: { title: string; body: string }[] = [
       "Common: candidate gets allotted, plans to upload documents \"on the last day,\" portal is slow or crashes, deadline passes. Each round has a hard cutoff — usually 3–5 days from allotment. Upload on Day 1 if possible.",
   },
   {
-    title: "Skipping the spot round when you should attend",
+    title: "Assuming an institute spot round will always mop up",
     body:
-      "Common: candidate doesn't get a seat in Rounds 1–5, assumes it's over, doesn't attend the institute-level spot round. BIPE's spot round usually has 10–30 vacancies each year — direct application, on-campus, often less competitive than central rounds.",
+      "Common: candidate doesn't get a seat in Rounds 1–5 and assumes an institute-level spot round will pick them up. It only helps where seats are actually left — and for session 2026-27 none are: admission at BIPE is closed for this session. Check with the institute before travelling, in any cycle.",
   },
 ];
 
@@ -207,7 +207,7 @@ export default function Page() {
           </p>
           <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
             <Link href="/apply" className="btn btn-primary btn-lg">
-              Apply for 2026-27 <ArrowIcon size={16} />
+              Enquire for 2027-28 <ArrowIcon size={16} />
             </Link>
             <a
               href="https://wa.me/917310077788?text=Hi%20BIPE%20%E2%80%94%20I%20have%20a%20question%20about%20JEECUP%20counselling."
@@ -484,7 +484,7 @@ export default function Page() {
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              ready before Round 1 opens.
+              ready before counselling opens.
             </span>
           </h2>
           <p style={{ marginTop: 22, color: "var(--ink-2)", maxWidth: "62ch" }}>

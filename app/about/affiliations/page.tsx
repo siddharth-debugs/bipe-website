@@ -502,7 +502,7 @@ export default function Page() {
               How BIPE compares
             </Link>
             <Link href="/apply" className="btn btn-ghost btn-lg">
-              Apply for 2026-27
+              Enquire for 2027-28
             </Link>
           </div>
         </div>

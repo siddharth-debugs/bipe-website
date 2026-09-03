@@ -323,7 +323,7 @@ export default async function Page() {
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
-                  Apply for 2026-27 <ArrowIcon size={16} />
+                  Enquire for 2027-28 <ArrowIcon size={16} />
                 </Link>
                 <a href={`mailto:${DATA.contact.email}?subject=Talk%20to%20the%20placement%20cell`} className="btn btn-ghost btn-lg">
                   Talk to placement cell
@@ -663,7 +663,7 @@ export default async function Page() {
               </h2>
             </div>
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              Six alumni · five companies · three branches. A small slice of a 2200+ network — the names below are the ones who allowed us to publish theirs.
+              Six alumni · six companies · three branches. A small slice of a 2200+ network — the names below are the ones who allowed us to publish theirs.
             </p>
           </div>
 
@@ -1352,8 +1352,8 @@ export default async function Page() {
                 }}>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>01</span>
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: 17 }}>Apply for 2026-27</div>
-                    <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>4-step form · 5 minutes</div>
+                    <div style={{ fontWeight: 600, fontSize: 17 }}>Enquire for 2027-28</div>
+                    <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>Single-step form · 5 minutes</div>
                   </div>
                   <ArrowIcon size={18} />
                 </Link>

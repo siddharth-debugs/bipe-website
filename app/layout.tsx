@@ -343,14 +343,20 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         category: "Tuition",
         price: b.fee.replace(/,/g, ""),
         priceCurrency: "INR",
-        // A Course node for a branch that no longer admits must not tell a
-        // crawler the seat is still buyable. Discontinued is schema.org's
-        // ItemAvailability value for an offer withdrawn from sale; the
-        // Course node itself stays so /courses/dairy-engineering keeps its
-        // structured data for the cohort still enrolled in it.
+        // Two independent facts, and the Course node needs both.
+        // 3 Sep 2026 (a) session 2026-27 admission is closed — JEECUP 2026
+        // counselling ended and classes began 1 August — so no branch's
+        // tuition offer is currently open. OutOfStock rather than SoldOut:
+        // what we know is the cycle closed, not that every seat filled.
+        // (b) Dairy Engineering is closed to new admissions permanently,
+        // which is Discontinued, not merely out of stock — and it stays
+        // Discontinued when the 2027-28 intake flips the others back to
+        // InStock. The Course node itself stays either way so
+        // /courses/dairy-engineering keeps structured data for the cohort
+        // still enrolled in it.
         availability: b.admissions
           ? "https://schema.org/Discontinued"
-          : "https://schema.org/InStock",
+          : "https://schema.org/OutOfStock",
         url: `${SITE_URL}/courses/${b.slug}`,
       },
       hasCourseInstance: [

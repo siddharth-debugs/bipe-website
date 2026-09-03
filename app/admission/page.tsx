@@ -41,19 +41,19 @@ const STEPS: { n: string; title: string; body: string }[] = [
   },
   {
     n: "06",
-    title: "Begin classes — 1 August 2026",
-    body: "Orientation, mentor allocation, hostel allotment. Three years that change your career trajectory and your family's expectations.",
+    title: "Begin classes",
+    body: "Orientation, mentor allocation, hostel allotment — that is how the 2026-27 session began on 1 August 2026. Three years that change your career trajectory and your family's expectations.",
   },
 ];
 
 type CalEntry = { month: string; day?: string; year: string; title: string; sub: string };
 const DATES: CalEntry[] = [
-  { month: "JAN", year: "2026",                title: "JEECUP application opens",  sub: "Online · jeecup.admissions.nic.in" },
-  { month: "MAY", day: "20", year: "2026",     title: "Application closes",        sub: "Extended deadline · no further extension" },
+  { month: "JAN", year: "2026",                title: "JEECUP application opened", sub: "Online · jeecup.admissions.nic.in" },
+  { month: "MAY", day: "20", year: "2026",     title: "Application closed",        sub: "Extended deadline · no further extension" },
   { month: "JUN", day: "02-09", year: "2026", title: "Entrance exam",             sub: "CBT · multiple shifts across UP" },
-  { month: "JUN", year: "2026",                title: "Results + counselling",     sub: "Results mid-June · 5-round counselling opens" },
-  { month: "AUG", day: "01", year: "2026",     title: "Session begins",            sub: "Orientation week at BIPE" },
-  { month: "AUG", year: "2026",                title: "Final counselling rounds",  sub: "Late admits via Round 5 · the final round" },
+  { month: "JUN", year: "2026",                title: "Results + counselling",     sub: "Results mid-June · 5-round counselling opened" },
+  { month: "AUG", day: "01", year: "2026",     title: "Session began",             sub: "Orientation week at BIPE" },
+  { month: "AUG", year: "2026",                title: "Counselling closed",        sub: "Round 5, the final round · mid-August" },
 ];
 
 const REASONS: { roman: string; title: string; body: string; metric: string; metricLabel: string }[] = [
@@ -135,7 +135,7 @@ export default async function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">Admission · Session 2026-27</div>
+              <div className="eyebrow">Admission · 2026-27 closed</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "18ch" }}>
                 Admission is{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -144,16 +144,16 @@ export default async function Page() {
                 JEECUP code 4455.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                BIPE is an AICTE-approved polytechnic in Varanasi, BTEUP-affiliated. Polytechnic admissions in Varanasi are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for all 4 branches.
+                Admission for session 2026-27 is closed — classes began on 1 August 2026 and JEECUP counselling ended with Round 5 in mid-August. What follows is the route into the next session, 2027-28. BIPE is an AICTE-approved polytechnic in Varanasi, BTEUP-affiliated. Polytechnic admissions in Varanasi are exclusively through JEECUP counselling under college code <strong style={{ color: "var(--brand)" }}>4455</strong>. AFRC-published tuition from <strong>₹30,150 / year</strong> — identical for every branch.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 {/* Bilingual CTAs — Hindi sub-label under English action.
                     Hindi-medium families see "this site is for me" at
                     the exact moment they're about to act. */}
                 <Link href="/apply" className="btn btn-primary btn-lg">
-                  Begin application <ArrowIcon size={16} />
+                  Enquire for 2027-28 <ArrowIcon size={16} />
                   <span lang="hi" style={{ display: "block", fontSize: 11, fontWeight: 400, opacity: 0.88, marginTop: 2 }}>
-                    आवेदन शुरू करें
+                    अगले सत्र के लिए पूछताछ करें
                   </span>
                 </Link>
                 <Link href="/visit" className="btn btn-ghost btn-lg">
@@ -197,13 +197,13 @@ export default async function Page() {
                 filter: "blur(80px)", pointerEvents: "none",
               }} />
               <div style={{ position: "relative" }}>
-                <div className="eyebrow" style={{ color: "var(--brand)" }}>Three dates · 2026-27</div>
-                <h3 className="bipe-h3" style={{ marginTop: 8, fontSize: 20 }}>Plan around these.</h3>
+                <div className="eyebrow" style={{ color: "var(--brand)" }}>Three dates · 2026-27 cycle</div>
+                <h3 className="bipe-h3" style={{ marginTop: 8, fontSize: 20 }}>How this cycle ran.</h3>
                 <div style={{ marginTop: 22, display: "grid", gap: 14 }}>
                   {[
-                    ["01", "Jan 2026", "Application opens", "Registration · closed 20 May"],
+                    ["01", "Jan 2026", "Application opened", "Registration · closed 20 May"],
                     ["02", "Jun 2026", "Entrance exam", "02–09 June · JEECUP Group A · CBT"],
-                    ["03", "1 Aug", "Classes begin", "Session start · 2026-27"],
+                    ["03", "1 Aug", "Classes began", "Session start · 2026-27"],
                   ].map(([n, d, t, sub]) => (
                     <div key={n} style={{
                       display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center",
@@ -308,15 +308,15 @@ export default async function Page() {
         <div className="container" style={{ maxWidth: 980 }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "start" }}>
             <div>
-              <div className="eyebrow">Calendar · 2026-27</div>
+              <div className="eyebrow">Calendar · 2026-27 cycle</div>
               <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "14ch" }}>
-                Mark these{" "}
+                How it ran, in{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   six dates.
                 </span>
               </h2>
               <p style={{ color: "var(--ink-2)", marginTop: 18, fontSize: 15.5, lineHeight: 1.7 }}>
-                JEECUP publishes its calendar in January. The dates below are the typical window — confirm exact days on the JEECUP portal closer to February 2026.
+                JEECUP publishes its calendar in January. The dates below are how the 2026 cycle ran — the typical shape of a year. Confirm exact days on the JEECUP portal once the 2027 calendar is published.
               </p>
               <a href={`https://${DATA.contact.jeecup === "4455" ? "jeecup.admissions.nic.in" : "jeecup.admissions.nic.in"}`} target="_blank" rel="noopener noreferrer" style={{
                 marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8,
@@ -481,7 +481,7 @@ export default async function Page() {
                   cohort is taught out to graduation in 2028 — it is not a choice in this year&rsquo;s counselling.
                 </p>
                 <Link href="/courses" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--accent)", fontWeight: 600, fontSize: 14 }}>
-                  View the 4 branches open for 2026-27 <ArrowIcon size={14} />
+                  View the 4 branches <ArrowIcon size={14} />
                 </Link>
               </div>
               <div style={{ paddingLeft: 36, borderLeft: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexDirection: "column", gap: 22 }}>
@@ -529,9 +529,9 @@ export default async function Page() {
             <div>
               <div className="eyebrow">Four reasons</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                Why apply{" "}
+                Why families{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                  this cycle.
+                  choose BIPE.
                 </span>
               </h2>
             </div>
@@ -605,7 +605,7 @@ export default async function Page() {
               <div>
                 <div className="eyebrow">Three pathways</div>
                 <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-                  Apply. Visit.{" "}
+                  Enquire. Visit.{" "}
                   <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                     Or talk first.
                   </span>
@@ -627,8 +627,8 @@ export default async function Page() {
                 }}>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>01</span>
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Begin application</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Four-step form · 5 minutes</div>
+                    <div style={{ fontWeight: 600, fontSize: 16 }}>Enquire for 2027-28</div>
+                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Single-step form · 5 minutes</div>
                   </div>
                   <ArrowIcon size={16} />
                 </Link>

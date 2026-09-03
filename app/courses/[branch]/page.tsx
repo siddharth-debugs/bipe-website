@@ -148,9 +148,17 @@ export default async function BranchPage(
       category: "Tuition",
       price: b.fee.replace(/,/g, ""),
       priceCurrency: "INR",
+      // Two independent facts, and this node needs both. (a) Session
+      // 2026-27 admission is closed — JEECUP 2026 counselling ended — so
+      // no branch's tuition offer is open right now: OutOfStock, not
+      // SoldOut. (b) A branch closed to new admissions is Discontinued,
+      // and stays Discontinued when 2027-28 flips the others back to
+      // InStock. Mirrors the site-wide Course nodes in app/layout.tsx.
       availability: closure
         ? "https://schema.org/Discontinued"
-        : "https://schema.org/InStock",
+        : "https://schema.org/OutOfStock",
+      // A closed branch must not deep-link to the enquiry anchor: the
+      // 2027-28 enquiry is real, just not available for this branch.
       url: closure ? `${SITE_URL}/courses` : `${canonical}#apply`,
     },
     // hasCourseInstance is the rich-result trigger. One instance per
@@ -225,7 +233,7 @@ export default async function BranchPage(
   const branchWaUrl = `https://wa.me/${DATA.contact.whatsappPhone.replace(/\D/g, "")}?text=${encodeURIComponent(
     closure
       ? `नमस्ते BIPE — ${b.name} (BTEUP ${b.code}) के चालू बैच के बारे में जानकारी चाहिए`
-      : `नमस्ते BIPE — ${b.name} diploma (2026-27) की जानकारी चाहिए`,
+      : `नमस्ते BIPE — ${b.name} diploma (सत्र 2027-28) की जानकारी चाहिए`,
   )}`;
 
   return (
@@ -295,7 +303,7 @@ export default async function BranchPage(
               </p>
               <div className="row" style={{ marginTop: 16, gap: 10, flexWrap: "wrap" }}>
                 <Link href="/courses" className="btn btn-ghost btn-sm" style={{ whiteSpace: "normal" }}>
-                  See the branches open for 2026-27 <ArrowIcon size={13} />
+                  See the branches BIPE admits to <ArrowIcon size={13} />
                 </Link>
               </div>
             </div>
@@ -314,17 +322,18 @@ export default async function BranchPage(
                 {detail.intro}
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                {/* No Apply and no "add 4455 in counselling" prompt on a
-                    closed branch — both would be inviting an application to
-                    an intake that does not exist. WhatsApp stays: it is how
-                    an enrolled student or their parent reaches the office. */}
+                {/* No enquiry CTA on a closed branch. The 2027-28 enquiry
+                    is genuine, but not for an intake that will not reopen —
+                    offering it here would restage the same false invitation
+                    in a later cycle. WhatsApp stays: it is how an enrolled
+                    student or their parent reaches the office. */}
                 {closure ? (
                   <Link href="/courses" className="btn btn-primary">
-                    Branches open for 2026-27 <ArrowIcon />
+                    Branches BIPE admits to <ArrowIcon />
                   </Link>
                 ) : (
                   <>
-                    <Link href="/apply" className="btn btn-primary">Apply for 2026-27 <ArrowIcon /></Link>
+                    <Link href="/apply" className="btn btn-primary">Enquire for 2027-28 <ArrowIcon /></Link>
                     <Link href="/jeecup" className="btn btn-ghost">JEECUP 4455 guidance <ArrowIcon /></Link>
                   </>
                 )}
@@ -652,7 +661,7 @@ export default async function BranchPage(
                       1-488233171.
                     </p>
                     <div className="row" style={{ marginTop: 22, gap: 10, flexWrap: "wrap" }}>
-                      <Link href="/courses" className="btn btn-ghost">Branches open for 2026-27 <ArrowIcon /></Link>
+                      <Link href="/courses" className="btn btn-ghost">Branches BIPE admits to <ArrowIcon /></Link>
                       <Link href="/admission" className="btn btn-ghost">Admission process <ArrowIcon /></Link>
                     </div>
                   </>
@@ -723,14 +732,14 @@ export default async function BranchPage(
             </h2>
             <p style={{ marginTop: 18, opacity: 0.85, maxWidth: "48ch", margin: "18px auto 0", lineHeight: 1.7 }}>
               {closure
-                ? `The ${b.name} batch admitted in ${closure.lastIntake} finishes here in ${closure.finalCohortGraduates}, with the labs, industrial visits and Semester-6 training unchanged. If you are applying now, BIPE has ${admittingCount} branches open for 2026-27.`
-                : `Applications for the 2026-27 ${b.name} cohort are open. Five minutes to apply — personal guidance call within 24 hours.`}
+                ? `The ${b.name} batch admitted in ${closure.lastIntake} finishes here in ${closure.finalCohortGraduates}, with the labs, industrial visits and Semester-6 training unchanged. Admission to it is closed and will not reopen — BIPE admits to ${admittingCount} other branches, and session 2027-28 enquiries are open.`
+                : `Admission to the 2026-27 ${b.name} cohort is closed. Register your interest in session 2027-28 — five minutes, and a personal guidance call within 24 hours.`}
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               {closure ? (
-                <Link href="/courses" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>See the {admittingCount} open branches <ArrowIcon /></Link>
+                <Link href="/courses" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>See the {admittingCount} other branches <ArrowIcon /></Link>
               ) : (
-                <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Apply for {b.name} <ArrowIcon /></Link>
+                <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Enquire about {b.name} <ArrowIcon /></Link>
               )}
               <a href={branchWaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
                 <WhatsAppIcon /> Ask on WhatsApp

@@ -84,14 +84,15 @@ export function RegistrationCountdown() {
       <div className="row" style={{ alignItems: "center", gap: 10, marginBottom: 14 }}>
         <span className="live-dot" />
         <span className="eyebrow" style={{ color: "var(--brand)" }} suppressHydrationWarning>
-          {closed ? "Pre-Counselling Registration closed" : "Round 5 — final counselling round"}
+          {closed ? "Session 2026-27 · admission closed" : "Round 5 — final counselling round"}
         </span>
       </div>
 
       {closed ? (
         <p style={{ color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.65 }} suppressHydrationWarning>
-          Pre-Counselling Registration for 2026-27 has closed, and <strong>JEECUP counselling has concluded</strong> — Round 5 was the final round. Classes
-          are already under way — leave your details below and BIPE admissions will call you back about code 4455, or{" "}
+          Admission for session 2026-27 is closed — Pre-Counselling Registration ended on 27 July, <strong>JEECUP counselling has concluded</strong> with
+          Round 5 as the final round, and classes began on 1 August. Planning session 2027-28? Leave your details below and BIPE admissions will call you
+          back about code 4455, or{" "}
           <Link href="/contact" style={{ color: "var(--brand)", fontWeight: 600 }}>
             contact admissions
           </Link>{" "}

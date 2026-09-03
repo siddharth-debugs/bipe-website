@@ -71,7 +71,7 @@ const PILLARS: Pillar[] = [
     // stated in the last sentence rather than omitted — a family that has
     // heard about the Dairy programme deserves to learn here that it is
     // shut, not after they have ranked it in JEECUP choice-filling.
-    topic: `Four branches open for 2026-27 — ${ADMITTING_SEATS} seats`,
+    topic: `Four branches — ${ADMITTING_SEATS} seats`,
     position:
       "Civil, Computer Science & Engineering, Electrical and Mechanical (Production) — four 3-year BTEUP diplomas, each with its own workshop and lab block, industrial visits to working plants, and the mandatory six-month industrial training in Semester 6 that turns a syllabus into a CV. Dairy Engineering, our fifth branch, took its last intake in 2025-26 and is closed to new admissions; that cohort is being taught out to its 2028 graduation.",
     verifyLabel: "Explore the four branches",

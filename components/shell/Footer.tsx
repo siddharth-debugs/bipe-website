@@ -91,7 +91,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               animation: "pulse 2s infinite",
               display: "inline-block",
             }} />
-            <span style={{ color: "var(--accent)", fontWeight: 600 }}>Admissions Open · 2026-27</span>
+            <span style={{ color: "var(--accent)", fontWeight: 600 }}>2026-27 Admissions Closed · 2027-28 Enquiries Welcome</span>
           </div>
           <div style={{ color: "color-mix(in oklab, var(--paper) 50%, transparent)" }}>
             JEECUP {C.jeecup}

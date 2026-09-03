@@ -526,7 +526,7 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                       onClick={() => setActive(firstAdmitting.code)}
                       style={{ whiteSpace: "normal", textAlign: "left" }}
                     >
-                      See the {admittingList.length} branches open for 2026-27 <ArrowIcon />
+                      See the {admittingList.length} branches BIPE admits to <ArrowIcon />
                     </button>
                   ) : (
                     <Link href="/apply" className="btn btn-primary">
@@ -581,7 +581,7 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                   "you graduate with", so the five is spelled out into its four
                   + one rather than left for the reader to split. */}
               <div style={{ marginTop: 6 }}>
-                All five branches BIPE runs — the four admitting in 2026-27 and the Dairy
+                All five branches BIPE runs — the four that take new admissions and the Dairy
                 Engineering batch finishing in 2028 — share the same Phoolpur campus, library and
                 faculty mentorship structure. The BTEUP diploma you graduate with is identical,
                 regardless of branch.

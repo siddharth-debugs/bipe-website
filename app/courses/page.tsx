@@ -165,14 +165,14 @@ export default async function Page() {
                 >
                   Four
                 </span>{" "}
-                BTEUP polytechnic branches open in Varanasi. Three years to a career.
+                BTEUP polytechnic branches in Varanasi. Three years to a career.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                AICTE-approved diploma courses, AFRC-published tuition of ₹30,150 a year, {admittingSeats} seats open across the four branches admitting in 2026-27. Every branch listed here is BTEUP-affiliated, taught on the same Phoolpur campus, under the same mentor structure. Dairy Engineering (BTEUP 327) is listed too and still runs, but it took its last intake in 2025-26 and admits no one for 2026-27.
+                AICTE-approved diploma courses, AFRC-published tuition of ₹30,150 a year, {admittingSeats} seats across the four branches BIPE admits to. Every branch listed here is BTEUP-affiliated, taught on the same Phoolpur campus, under the same mentor structure. Dairy Engineering (BTEUP 327) is listed too and still runs, but it took its last intake in 2025-26 and admits no one for 2026-27.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
-                  Apply for 2026-27 <ArrowIcon size={16} />
+                  Enquire for 2027-28 <ArrowIcon size={16} />
                 </Link>
                 <Link href="/campus" className="btn btn-ghost btn-lg">
                   Visit campus
@@ -1053,9 +1053,8 @@ export default async function Page() {
                     width: 8,
                     height: 8,
                     borderRadius: "50%",
-                    background: "var(--accent)",
-                    boxShadow: "0 0 0 4px color-mix(in oklab, var(--accent) 25%, transparent)",
-                    animation: "pulse 2s infinite",
+                    background: "color-mix(in oklab, var(--paper) 45%, transparent)",
+                    boxShadow: "0 0 0 4px color-mix(in oklab, var(--paper) 10%, transparent)",
                   }}
                 />
                 <span
@@ -1067,7 +1066,7 @@ export default async function Page() {
                     color: "color-mix(in oklab, var(--paper) 75%, transparent)",
                   }}
                 >
-                  Branch counselling open · Session 2026-27
+                  Session 2026-27 · classes under way
                 </span>
               </div>
               <div
@@ -1141,7 +1140,7 @@ export default async function Page() {
                       maxWidth: "44ch",
                     }}
                   >
-                    Apply once on JEECUP, choose any of the four branches open for 2026-27 in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
+                    Apply once on JEECUP, choose any of the four branches BIPE admits to in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
                   </p>
                 </div>
 
@@ -1240,9 +1239,9 @@ export default async function Page() {
                     01
                   </span>
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: 17 }}>Apply for 2026-27</div>
+                    <div style={{ fontWeight: 600, fontSize: 17 }}>Enquire for 2027-28</div>
                     <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>
-                      4-step form · 5 minutes
+                      Single-step form · 5 minutes
                     </div>
                   </div>
                   <ArrowIcon size={18} />

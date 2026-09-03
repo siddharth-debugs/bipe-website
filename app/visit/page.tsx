@@ -420,7 +420,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "color-mix(in oklab, var(--paper) 78%, transparent)", marginTop: 8, fontSize: 16, lineHeight: 1.7, maxWidth: "52ch" }}>
-              The campus sits along NH-56, eighteen minutes off the airport, ten minutes off Khalishpur railway station. From Varanasi Cantt or BHU it&rsquo;s a 35-minute auto / app-cab ride — ping us on WhatsApp before you set out and we&rsquo;ll send the campus pin straight to your driver.
+              The campus sits along NH-56, eighteen minutes off the airport, five minutes off Khalishpur railway station. From Varanasi Cantt or BHU it&rsquo;s a 35-minute auto / app-cab ride — ping us on WhatsApp before you set out and we&rsquo;ll send the campus pin straight to your driver.
             </p>
           </div>
 

@@ -104,6 +104,8 @@ const DISTRICTS: District[] = [
   { name: "Ballia",      hi: "बलिया",         tag: "ACTIVE" },
   { name: "Gorakhpur",   hi: "गोरखपुर",       tag: "ACTIVE" },
   { name: "Kushinagar",  hi: "कुशीनगर",       tag: "ACTIVE" },
+  { name: "Pratapgarh",  hi: "प्रतापगढ़",      tag: "ACTIVE" },
+  { name: "Sultanpur",   hi: "सुल्तानपुर",     tag: "ACTIVE" },
 ];
 
 export default async function Page() {
@@ -167,10 +169,10 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches (four of them admitting in 2026-27), 550+ students drawn from twelve districts, 40 faculty &mdash; built to make rural India a credible address for technical education.
+                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches (four of them open to new admissions), 550+ students drawn from twelve districts, 40 faculty &mdash; built to make rural India a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
+                <Link href="/apply" className="btn btn-primary btn-lg">Enquire for 2027-28 <ArrowIcon size={16} /></Link>
                 <Link href="/visit" className="btn btn-ghost btn-lg">Visit campus</Link>
               </div>
 
@@ -349,7 +351,7 @@ export default async function Page() {
                 BIPE was founded in 2010 by the <strong style={{ color: "var(--ink)" }}>Purwanchal Educational Trust</strong>, a registered non-profit, with one stated purpose: to bring accountable, hands-on technical education to families across Eastern Uttar Pradesh who could not afford to send their children to Lucknow, Kanpur or further.
               </p>
               <p style={{ marginTop: 18 }}>
-                Our catchment spans twelve districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur and Kushinagar</strong>. The campus sits on six acres in Phoolpur, on the Phoolpur&ndash;Parsara approach road off NH-56. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
+                Our catchment spans fourteen districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur, Kushinagar, Pratapgarh and Sultanpur</strong>. The campus sits on six acres in Phoolpur, on the Phoolpur&ndash;Parsara approach road off NH-56. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
               </p>
               <p style={{ marginTop: 18 }}>
                 We run <em>five</em> BTEUP-affiliated branches and admit to <em>four</em> of them from 2026-27. <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong> — a programme offered by fewer than 1.1% of UP polytechnics — took its last intake in 2025-26; that cohort finishes in 2028 with its labs, faculty and six-month plant training unchanged, and no new admissions are taken to it. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
@@ -700,8 +702,8 @@ export default async function Page() {
                 }}>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>02</span>
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Apply for 2026-27</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Four-step form · 5 minutes</div>
+                    <div style={{ fontWeight: 600, fontSize: 16 }}>Enquire for 2027-28</div>
+                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Single-step form · 5 minutes</div>
                   </div>
                   <ArrowIcon size={16} />
                 </Link>

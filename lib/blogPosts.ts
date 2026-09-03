@@ -267,13 +267,14 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "cta",
-        title: "10वीं पास? BIPE में अपनी सीट का रास्ता समझें",
-        // 3 Sep 2026 · CTA अब सिर्फ़ admitting branches बताता है। Dairy
-        // Engineering (BTEUP 327) का आख़िरी intake 2025-26 था।
-        body: "BIPE Varanasi (JEECUP code 4455) में 2026-27 के लिए 4 branches में admission — Mechanical, Electrical, Civil, Computer Science। AFRC fee ₹30,150/साल। हमारी admission team हिन्दी में आपके सारे सवालों का जवाब देगी।",
-        applyLabel: "Enquiry करें",
+        title: "10वीं पास? 2027-28 सत्र के लिए BIPE का रास्ता अभी से समझें",
+        // 3 Sep 2026 · दो अलग-अलग बातें एक ही CTA पर पड़ीं — 2026-27 की
+        // counselling पूरी हो चुकी है, और Dairy Engineering (BTEUP 327)
+        // का आख़िरी intake 2025-26 था। इसलिए 4 branches, enquiry 2027-28 की।
+        body: "2026-27 सत्र की JEECUP counselling पूरी हो चुकी है — इस साल कोई सीट बाकी नहीं। BIPE Varanasi (JEECUP code 4455) में 4 branches — Mechanical, Electrical, Civil, Computer Science। AFRC fee ₹30,150/साल। JEECUP 2027 और अगले सत्र के सारे सवालों का जवाब हमारी admission team हिन्दी में देगी।",
+        applyLabel: "2027-28 के लिए enquiry करें",
         waLabel: "WhatsApp पर पूछें",
-        whatsappText: "Hi BIPE — 10वीं के बाद polytechnic admission के बारे में जानना है।",
+        whatsappText: "Hi BIPE — JEECUP 2027 aur 2027-28 session ke admission ke baare mein jaanna hai।",
       },
       { type: "h2", text: "किसको Polytechnic चुनना चाहिए?" },
       {
@@ -417,10 +418,10 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "cta",
         title: "अपनी branch पर honest guidance चाहिए?",
-        body: "अपना interest और (अगर है तो) JEECUP rank हमें बताएँ — BIPE की admission team हिन्दी में बताएगी कि कौन सी branch आपके लिए realistic और सही है। code 4455, 2026-27 में 4 branches, AFRC fee ₹30,150/साल।",
-        applyLabel: "Enquiry करें",
+        body: "2026-27 सत्र की counselling बंद हो चुकी है — पर branch चुनने की तैयारी अभी से शुरू हो सकती है। अपना interest हमें बताएँ — BIPE की admission team हिन्दी में बताएगी कि JEECUP 2027 में कौन सी branch आपके लिए realistic और सही रहेगी। code 4455, 4 branches, AFRC fee ₹30,150/साल।",
+        applyLabel: "2027-28 के लिए enquiry करें",
         waLabel: "WhatsApp पर पूछें",
-        whatsappText: "Hi BIPE — polytechnic branch chunne mein guidance chahiye.",
+        whatsappText: "Hi BIPE — JEECUP 2027 ke liye polytechnic branch chunne mein guidance chahiye.",
       },
       { type: "h2", text: "कौन सी branch आपके लिए? (decision guide)" },
       {
@@ -650,12 +651,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Industrial training partners · Amul (Gujarat), Parag (UP), Mother Dairy (NCR), Banas Dairy Varanasi (recent industrial visit destination), local Banaras dairy cooperatives। <strong>Sem-6 mein structured 6-month placement</strong> ek partner plant par — <strong>1,000+ supervised practical hours</strong> on real production equipment (pasteurizers, separators, homogenisers, packaging lines), not lab models। Many students placement-track shuru karते hain final-semester training se hi — direct conversion to job offers।",
+          "Industrial training partners · Amul (Gujarat), Parag (UP), Mother Dairy (NCR), Banas Dairy Varanasi (recent industrial visit destination), local Banaras dairy cooperatives। <strong>Sem-6 mein structured 6-month industrial training</strong> ek partner plant par — <strong>~600 supervised practical hours</strong> on real production equipment (pasteurizers, separators, homogenisers, packaging lines), not lab models। Dairy industry mein final-semester training aksar job offers mein convert hoti hai — lekin BIPE ka pehla Dairy batch 2025-26 mein aaya, abhi koi BIPE Dairy passout nahi, toh yeh aage ka rasta hai, past record nahi।",
       },
       {
         type: "p",
         html:
-          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai — 60 sanctioned seats hain aur pehla batch 2025-26 mein 5 students ke saath shuru hua, Mechanical jaisa 100+ nahi। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Aur yeh cohort ab aage nahi badhega: 2026-27 se is branch mein naye admission nahi hain, toh 2025-26 wala batch hi aakhri batch hai (2028 mein pass out)।",
+          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai — 60 sanctioned seats hain aur pehla batch 2025-26 mein 5 students ke saath shuru hua, Mechanical jaisa 100+ nahi। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Aur yeh cohort ab aage nahi badhega: 2026-27 se is branch mein naye admission nahi hain, toh 2025-26 wala batch hi aakhri batch hai — woh 2028 mein pass out karega, aur placement ka actual picture tabhi banega।",
       },
 
       { type: "h2", text: "Future ahead · 2026 aur uske baad" },
@@ -727,7 +728,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "JEECUP counselling ka time aane wala hai। BIPE 4455 aapne choice list mein rakh diya hai। Ab sawaal aata hai — <strong>kaunsi branch pickें?</strong> Mechanical, Computer Science, Electrical, Civil — 2026-27 mein yahi chaar options hain, aur सबकी अपनी apki value hai। Lekin specifically Mechanical aur CSE ke beech mein sabse zyada confusion hota hai। Yeh post us confusion ko solve karne ka attempt hai — honest comparison, BIPE alumni examples, decision framework।",
+          "JEECUP counselling mein BIPE 4455 ko choice list mein rakhne se pehle ek sawaal aata hai — <strong>kaunsi branch pickें?</strong> Mechanical, Computer Science, Electrical, Civil — yahi chaar options hain, aur सबकी अपनी apki value hai। Lekin specifically Mechanical aur CSE ke beech mein sabse zyada confusion hota hai। Yeh post us confusion ko solve karne ka attempt hai — honest comparison, BIPE alumni examples, decision framework।",
       },
       {
         type: "p",
@@ -1164,11 +1165,11 @@ export const BLOG_POSTS: BlogPost[] = [
     metaDescription:
       "JEECUP 2026 form bharne ka full step-by-step Hinglish guide — registration, documents, fee, photo upload, common errors। Parents bhi padh sakte hain। BIPE Varanasi (4455)।",
     sections: [
-      { type: "h2", text: "JEECUP 2026 form ka samay aa gaya" },
+      { type: "h2", text: "JEECUP 2026 form band — ab agle cycle ki taiyari" },
       {
         type: "p",
         html:
-          "JEECUP 2026 registration 15 January se 20 May तक चली — extended deadline ke baad band। Agar aapne abhi tक form nahi bhara, toh JEECUP 2027 ka wait karna padega। Lekin yeh post un families ke liye hai jo <strong>future cycles</strong> mein form bharne wale hain, ya BIPE mein direct admission via vacant seats consider कर rahe hain।",
+          "JEECUP 2026 registration 15 January se 20 May तक चली — extended deadline ke baad band। Uske baad ke 5 counselling rounds bhi August 2026 mein poore ho gaye, aur BIPE mein 2026-27 session ki koi seat baaki nahi hai — ab sabko JEECUP 2027 ka wait karna padega। Yeh post un families ke liye hai jo <strong>agle cycle</strong> (session 2027-28) mein form bharne wale hain।",
       },
       {
         type: "p",
@@ -1325,7 +1326,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Form bharne ka pressure khatam — ab admit card ka wait। JEECUP 2026 exam window <strong>02-09 June 2026</strong> hai। Admit card approximately <strong>22-25 May</strong> ko release होगा। Same portal pe (jeecup.admissions.nic.in) login karke download karें।",
+          "Form bharne ka pressure khatam — ab admit card ka wait। 2026 cycle mein exam window <strong>02-09 June 2026</strong> tha, aur admit card usse pehle isi portal par aata hai। Agle cycle ki exact tareekhein JEECUP ke official portal (jeecup.admissions.nic.in) par announce hoti hain — wahin login karke admit card download karें।",
       },
       {
         type: "p",
@@ -1346,7 +1347,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "p",
-        html: "All the best · JEECUP 2026 ke liye। 🌱",
+        html: "All the best · agle JEECUP cycle ke liye। 🌱",
       },
     ],
   },
@@ -1375,7 +1376,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "JEECUP 2026 ka result mid-June mein declare hoga। Aapne diploma karne ka decision liya hai — ya kar rahe hain। Ab sawaal hai: <strong>'iske baad kya?'</strong> Yeh sawaal har polytechnic student ke man mein aata hai। Family bolti hai 'B.Tech karo'। Dost bolते hain 'Mahindra mein placement mil jayegi'। Phupha ji bolते hain 'Railway ki taiyari karo'। Sab apni jagah sahi hain — lekin paths alag hain।",
+          "Aapne diploma karne ka decision liya hai — ya kar rahe hain। Ab sawaal hai: <strong>'iske baad kya?'</strong> Yeh sawaal har polytechnic student ke man mein aata hai। Family bolti hai 'B.Tech karo'। Dost bolते hain 'Mahindra mein placement mil jayegi'। Phupha ji bolते hain 'Railway ki taiyari karo'। Sab apni jagah sahi hain — lekin paths alag hain।",
       },
       {
         type: "p",
@@ -1667,7 +1668,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "callout",
         title: "Scope of this guide",
-        html: "This covers the <strong>application form</strong> stage of JEECUP 2026 — sign-in through fee payment. It does NOT cover choice-filling (where you add BIPE's institute code <strong>4455</strong>), seat allotment, or reporting at the institute — those happen in a separate counselling cycle <em>after</em> the JEECUP exam results are declared. For that flow, see <a href=\"/jeecup\">/jeecup</a>. Screenshots below are from the live JEECUP 2026 portal; the exact button labels and field order may change year to year — always cross-check against <a href=\"https://jeecup.admissions.nic.in\" target=\"_blank\" rel=\"noopener\">jeecup.admissions.nic.in</a> for the current cycle.",
+        html: "The JEECUP 2026 cycle is over — registration closed on 20 May 2026 and the five counselling rounds finished in August 2026, so this walkthrough now stands as preparation for JEECUP 2027 and the 2027-28 session. It covers the <strong>application form</strong> stage — sign-in through fee payment. It does NOT cover choice-filling (where you add BIPE's institute code <strong>4455</strong>), seat allotment, or reporting at the institute — those happen in a separate counselling cycle <em>after</em> the JEECUP exam results are declared. For that flow, see <a href=\"/jeecup\">/jeecup</a>. Screenshots below are from the JEECUP 2026 portal; the exact button labels and field order may change year to year — always cross-check against <a href=\"https://jeecup.admissions.nic.in\" target=\"_blank\" rel=\"noopener\">jeecup.admissions.nic.in</a> for the current cycle.",
       },
       { type: "h2", text: "What you need before you start" },
       {
@@ -2215,7 +2216,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "How this fits at BIPE" },
       {
         type: "p",
-        html: "BIPE's <a href=\"/teaching\">outcome-based pedagogy</a> and 1:20 mentor ratio are structured around the assumption that some students will go straight to JE / corporate placement, and others will pursue lateral entry — both are first-class outcomes. The placement cell tracks both pipelines, and faculty mentors discuss the trade-off with each cohort in the final year. <a href=\"/courses\">Every BTEUP branch at BIPE</a> maps cleanly onto AKTU B.Tech entries via the table above, so whichever of the four branches admitting in 2026-27 you pick, the lateral entry door stays open.",
+        html: "BIPE's <a href=\"/teaching\">outcome-based pedagogy</a> and 1:20 mentor ratio are structured around the assumption that some students will go straight to JE / corporate placement, and others will pursue lateral entry — both are first-class outcomes. The placement cell tracks both pipelines, and faculty mentors discuss the trade-off with each cohort in the final year. <a href=\"/courses\">Every BTEUP branch at BIPE</a> maps cleanly onto AKTU B.Tech entries via the table above, so whichever of the four branches BIPE admits to you pick, the lateral entry door stays open.",
       },
       { type: "h2", text: "Real BIPE alumni on the AKTU pathway" },
       {
@@ -2477,9 +2478,9 @@ export const BLOG_POSTS: BlogPost[] = [
         title: "TL;DR · Where your JEECUP rank lands you",
         html:
           "<ul style=\"margin: 0; padding-left: 22px;\">" +
-          "<li><strong>Group A (regular, post-Class 10)</strong> closing ranks at BIPE 4455 in 2025-26 ranged from <strong>166,030</strong> (Civil) to <strong>168,929</strong> (Computer Science) across the four branches open for 2026-27.</li>" +
+          "<li><strong>Group A (regular, post-Class 10)</strong> closing ranks at BIPE 4455 in 2025-26 ranged from <strong>166,030</strong> (Civil) to <strong>168,929</strong> (Computer Science) across the four branches BIPE admits to.</li>" +
           "<li><strong>Group K (lateral entry, post-Class 12 PCM or B.Sc / ITI)</strong> closing ranks were much tighter — <strong>1,757</strong> for Civil, <strong>5,492</strong> for Mech Production, <strong>7,506</strong> for Electrical.</li>" +
-          "<li>If your Group A rank is under 130,000, you have a comfortable margin on every branch open for 2026-27. Under 50,000 means you have your pick of them.</li>" +
+          "<li>If your Group A rank is under 130,000, you have a comfortable margin on every branch open to new admissions. Under 50,000 means you have your pick of them.</li>" +
           "<li>If your Group K rank is under 5,000, BIPE lateral-entry seats are realistic across all four branches.</li>" +
           "<li><strong>Dairy Engineering is not on the 2026-27 menu.</strong> It took its last intake in 2025-26 (closing rank 147,826) and is closed to new admissions; the final cohort graduates in 2028. Don't put it in your choice list.</li>" +
           "</ul>" +
@@ -2537,7 +2538,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Reading the table",
         html:
-          "<p style=\"margin: 0;\"><strong>The closing-rank ceiling has been generous.</strong> In 2025-26, even the most competitive of our branches (Computer Science) closed at rank 168,929. Roughly speaking: if your Group A rank is anywhere under 130,000, you have a real chance at every branch open for 2026-27. Under 100,000, you have margin even in late counselling rounds. Under 50,000, you have your pick of them and can choose by interest rather than by rank constraint.</p>" +
+          "<p style=\"margin: 0;\"><strong>The closing-rank ceiling has been generous.</strong> In 2025-26, even the most competitive of our branches (Computer Science) closed at rank 168,929. Roughly speaking: if your Group A rank is anywhere under 130,000, you have a real chance at every branch open to new admissions. Under 100,000, you have margin even in late counselling rounds. Under 50,000, you have your pick of them and can choose by interest rather than by rank constraint.</p>" +
           "<p style=\"margin: 12px 0 0;\">Why the numbers grew between 2024-25 and 2025-26: JEECUP rank inflation tracks the number of test-takers. UP's polytechnic exam pool has grown year over year; absolute ranks have moved with it.</p>" +
           "<p style=\"margin: 12px 0 0;\"><strong>Dairy Engineering (JEECUP code 123; BTEUP 327)</strong> appears in 2025-26 with 5 admissions at a closing rank of 147,826 — the first cohort at BIPE, and the last. The branch is <strong>closed to new admissions from 2026-27</strong>; those students are being taught out and graduate in 2028. The row is kept here because it is real 2025-26 admission data, not because the seat is available — it is not a choice in this year's counselling. <a href=\"/courses/dairy-engineering\">More on the branch →</a></p>" +
           "<p style=\"margin: 12px 0 0;\"><strong>Mechanical Automobile (JEECUP code 112)</strong> appears in 2024-25 with 11 admissions and is empty in 2025-26 — the slot was phased out in favour of an expanded Mechanical (Production) cohort, which grew from 30 to 33 in the same period.</p>",
@@ -2591,7 +2592,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Choose a branch that closed earlier</strong>. The four branches at BIPE 4455 close in roughly this order: CSE first, then Mech Production, then Electrical, then Civil. If your rank doesn't make CSE, try Electrical or Civil first.",
           "<strong>Use later counselling rounds</strong>. Rank-holders who confirmed in Round 1 sometimes upgrade or drop in Round 2/3; seats reopen. The spot round picks up the rest.",
           "<strong>Treat lateral entry as a Plan B</strong>. If you complete Class 12 with PCM and the rank gap is wide, lateral entry into Year 2 the following year is a real route — used by many BIPE alumni.",
-          "<strong>Talk to admissions directly</strong>. Counselling rules occasionally allow institute-level choices outside the central allotment. The team at +91-9415202879 or info@bipe.ac.in can walk you through what's possible given your specific rank and branch preferences.",
+          "<strong>Talk to admissions</strong>. Admission for 2026-27 is closed — JEECUP counselling ended in August 2026 and BIPE has no seats left this session. For 2027-28, the team at +91-9415202879 or info@bipe.ac.in can walk you through how these closing ranks map to your branch preferences before you fill choices in JEECUP 2027.",
         ],
       },
       {
@@ -2648,9 +2649,9 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "Read the <a href=\"/jeecup\">JEECUP guidance page</a> — six-step counselling timeline from application to reporting.",
           "Read the <a href=\"/blog/how-to-fill-jeecup-2026-application-form-step-by-step\">JEECUP 2026 form walkthrough</a> — screenshot-by-screenshot of the application portal.",
-          "Browse the <a href=\"/courses\">four branches open for 2026-27</a> at BIPE 4455 with full lab + curriculum detail.",
+          "Browse the <a href=\"/courses\">four branches BIPE admits to</a> at BIPE 4455 with full lab + curriculum detail.",
           "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"mailto:info@bipe.ac.in\">info@bipe.ac.in</a> · <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
-          "Apply: <a href=\"/apply\">/apply</a> — start the BIPE-side form, get a personal call within 24 hours.",
+          "Enquire for 2027-28: <a href=\"/apply\">/apply</a> — admission for 2026-27 is closed, but the form registers your interest for the next JEECUP cycle and still gets you a personal call within 24 hours.",
         ],
       },
       {
@@ -2749,7 +2750,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>योग्यता:</strong> 10वीं पास (Class 10 board exam, 35% कुल अंक न्यूनतम)।",
           "<strong>आयु सीमा:</strong> कोई नहीं — किसी भी उम्र में आवेदन कर सकते हैं।",
-          "<strong>प्रवेश परीक्षा:</strong> JEECUP (Group A) — गणित, विज्ञान, अंग्रेज़ी आधारित।",
+          "<strong>प्रवेश परीक्षा:</strong> JEECUP (Group A) — Class 10 स्तर की गणित, भौतिकी और रसायन विज्ञान पर आधारित; कुल 100 प्रश्न, 400 अंक, कोई negative marking नहीं।",
           "<strong>कोर्स अवधि:</strong> पूरे 3 साल (6 सेमेस्टर)।",
         ],
       },
@@ -2843,7 +2844,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Documents upload करें:</strong> 10वीं की मार्कशीट, आधार कार्ड, फोटो, हस्ताक्षर। Files की size सीमा का ध्यान रखें।",
           "<strong>Application fee जमा करें:</strong> ₹300 (General / OBC / Minority) और ₹200 (SC / ST / PH)। Net banking, UPI, debit/credit कार्ड स्वीकार होते हैं।",
           "<strong>Admit card download करें:</strong> परीक्षा से लगभग 10 दिन पहले admit card जारी होता है।",
-          "<strong>परीक्षा दें:</strong> मई-जून में online JEECUP exam होती है (2026 में 02–09 जून) — गणित, विज्ञान, अंग्रेज़ी पर आधारित।",
+          "<strong>परीक्षा दें:</strong> मई-जून में online JEECUP exam होती है (2026 में 02–09 जून) — Class 10 स्तर की गणित, भौतिकी और रसायन विज्ञान पर आधारित।",
           "<strong>Counselling में हिस्सा लें:</strong> Result के बाद counselling के 5 राउंड चलते हैं। यहाँ <strong>संस्थान कोड 4455 (BIPE)</strong> भरें यदि बीआईपीई आपका विकल्प है।",
           "<strong>Seat allotment के बाद दस्तावेज़ verify करवाएँ:</strong> Allotted institute पर जाकर सभी original documents जमा करें।",
           "<strong>Fee जमा करें और कक्षा में रिपोर्ट करें:</strong> August-September में कक्षा शुरू।",
@@ -2923,7 +2924,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<a href=\"/scholarships\">UP सरकार की scholarship</a> — पात्रता + portal link",
           "<a href=\"/visit\">Campus visit बुक करें</a> — फूलपुर campus, ~35 min from Varanasi Cantt by auto",
           "WhatsApp पर बात करें: <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">+91-7310077788</a> — Hindi में जवाब मिलेगा",
-          "Application शुरू करें: <a href=\"/apply\">/apply</a> — 5 मिनट का form, 24 घंटे में personal call",
+          "2027-28 सत्र के लिए enquiry करें: <a href=\"/apply\">/apply</a> — 2026-27 में प्रवेश बंद है; यह 5 मिनट का form अगले JEECUP cycle के लिए आपकी रुचि दर्ज करता है, 24 घंटे में personal call",
         ],
       },
       {
@@ -3034,7 +3035,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Banaras Institute of Polytechnic & Engineering (BIPE) — JEECUP institute code <strong>4455</strong>, BTE UP affiliated, AICTE-approved — is one of the polytechnics serving Eastern UP and Bihar for this exact career pipeline. 16 years on record, 1,331 verified placements at the named recruiters above, four branches open for 2026-27 admission (Civil, CSE, Electrical, Mechanical Production — Dairy Engineering took its last intake in 2025-26), AFRC tuition ₹30,150/year. <a href=\"/why-bipe\">See how BIPE compares against other Varanasi polytechnics →</a>",
+          "Banaras Institute of Polytechnic & Engineering (BIPE) — JEECUP institute code <strong>4455</strong>, BTE UP affiliated, AICTE-approved — is one of the polytechnics serving Eastern UP and Bihar for this exact career pipeline. 16 years on record, 1,331 verified placements at the named recruiters above, four branches BIPE admits to admission (Civil, CSE, Electrical, Mechanical Production — Dairy Engineering took its last intake in 2025-26), AFRC tuition ₹30,150/year. <a href=\"/why-bipe\">See how BIPE compares against other Varanasi polytechnics →</a>",
       },
       {
         type: "h2",
@@ -3045,10 +3046,10 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "Read the <a href=\"/blog/polytechnic-kya-hai-aur-kaise-kare\">Hindi guide to polytechnic admission</a> — पूरी प्रक्रिया हिन्दी में",
           "Check the <a href=\"/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025\">JEECUP cutoff data</a> — real ranks from 2024-25 and 2025-26",
-          "Browse the <a href=\"/courses\">four BIPE branches open for 2026-27</a> with semester themes + recruiters",
+          "Browse the <a href=\"/courses\">four BIPE branches BIPE admits to</a> with semester themes + recruiters",
           "Read the <a href=\"/blog/junior-engineer-eligibility-after-diploma\">Junior Engineer pathway guide</a>",
           "Talk to admissions: <a href=\"tel:+919415202879\">+91-9415202879</a> · <a href=\"https://wa.me/917310077788\" target=\"_blank\" rel=\"noopener\">WhatsApp (Hindi or English)</a>",
-          "Apply: <a href=\"/apply\">/apply</a> — 5-minute form, personal call within 24 hours",
+          "Enquire for 2027-28: <a href=\"/apply\">/apply</a> — 2026-27 admission is closed; the 5-minute form registers your interest for the next JEECUP cycle, personal call within 24 hours",
         ],
       },
       {
@@ -3510,9 +3511,9 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: "callout",
-        title: "Ready to enrol?",
+        title: "Planning for the 2027-28 session?",
         html:
-          "If you've read this far, you're either choosing a branch or finishing one. Either way, see <a href=\"/courses\">/courses</a> for full per-semester subject detail on every BIPE branch. For 2026-27 there are four to choose between — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering; Dairy Engineering took its last intake in 2025-26. Already decided? Apply at <a href=\"/apply\">/apply</a>, or call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
+          "If you've read this far, you're either choosing a branch or finishing one. Either way, see <a href=\"/courses\">/courses</a> for full per-semester subject detail on every BIPE branch. There are four to choose between — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering; Dairy Engineering took its last intake in 2025-26. Admission for 2026-27 is closed — JEECUP counselling ended in August 2026 and no seats remain this session. Register your interest for 2027-28 at <a href=\"/apply\">/apply</a>, or call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
       },
     ],
   },
@@ -3783,7 +3784,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Choosing a branch with government jobs in mind?",
         html:
-          "See the four branches BIPE admits to in 2026-27 at <a href=\"/courses\">/courses</a> — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering. The per-branch pages list the specific JE exams each one is eligible for; Civil / Mechanical / Electrical have the broadest pipelines. Apply for 2026-27 at <a href=\"/apply\">/apply</a> · call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
+          "See the four branches BIPE admits to at <a href=\"/courses\">/courses</a> — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering. The per-branch pages list the specific JE exams each one is eligible for; Civil / Mechanical / Electrical have the broadest pipelines. Admission for 2026-27 is closed; to register interest for the 2027-28 session via JEECUP 2027, use <a href=\"/apply\">/apply</a> · call admissions at <a href=\"tel:+919415202879\">+91-9415202879</a>.",
       },
     ],
   },
@@ -4051,7 +4052,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "Salary is a planning question. Plan with us.",
         html:
-          "If you're a Class 10 / Class 12 student or family member trying to model what the diploma actually returns financially, two next steps. <strong>Visit <a href=\"/placements\">/placements</a></strong> for the full branch-wise breakdown and the named alumni profiles. <strong>Visit campus</strong> &mdash; book on <a href=\"/visit\">/visit</a> &mdash; and talk to current third-year students who are in placement season right now. Their concrete answers about specific company offers will be far more useful than any blog post. Apply for 2026-27 at <a href=\"/apply\">/apply</a>, or WhatsApp the admissions team at <a href=\"https://wa.me/917310077788\">+91-7310077788</a> in Hindi or English. Hindi readers: <a href=\"/blog/polytechnic-salary-2026-hindi\">पॉलिटेक्निक सैलरी 2026 — हिन्दी गाइड</a>.",
+          "If you're a Class 10 / Class 12 student or family member trying to model what the diploma actually returns financially, two next steps. <strong>Visit <a href=\"/placements\">/placements</a></strong> for the full branch-wise breakdown and the named alumni profiles. <strong>Visit campus</strong> &mdash; book on <a href=\"/visit\">/visit</a> &mdash; and talk to current third-year students who are in placement season right now. Their concrete answers about specific company offers will be far more useful than any blog post. Admission for 2026-27 is closed — JEECUP counselling ended in August 2026 and no seats remain this session. To register interest for 2027-28 via JEECUP 2027, use <a href=\"/apply\">/apply</a>, or WhatsApp the admissions team at <a href=\"https://wa.me/917310077788\">+91-7310077788</a> in Hindi or English. Hindi readers: <a href=\"/blog/polytechnic-salary-2026-hindi\">पॉलिटेक्निक सैलरी 2026 — हिन्दी गाइड</a>.",
       },
     ],
   },
@@ -4274,7 +4275,7 @@ export const BLOG_POSTS: BlogPost[] = [
         type: "callout",
         title: "सैलरी एक planning का सवाल है — साथ planning कीजिए",
         html:
-          "अगर आप Class 10 / Class 12 student हैं या परिवार में कोई — और डिप्लोमा वाक़ई financially क्या देगा, यह model करना चाहते हैं — तो दो step। <strong>देखें <a href=\"/placements\">/placements</a></strong> पूरी branch-wise breakdown और named alumni profiles के लिए। <strong>Campus visit करें</strong> — book करें <a href=\"/visit\">/visit</a> पर — और current third-year students से बात करें जो अभी placement season में हैं। उनके specific company offers के concrete answers किसी blog post से ज़्यादा useful होंगे। 2026-27 के लिए apply करें <a href=\"/apply\">/apply</a> पर, या WhatsApp <a href=\"https://wa.me/917310077788\">+91-7310077788</a> Hindi या English में। English readers: <a href=\"/blog/polytechnic-salary-in-india-2026\">English version of this guide</a>.",
+          "अगर आप Class 10 / Class 12 student हैं या परिवार में कोई — और डिप्लोमा वाक़ई financially क्या देगा, यह model करना चाहते हैं — तो दो step। <strong>देखें <a href=\"/placements\">/placements</a></strong> पूरी branch-wise breakdown और named alumni profiles के लिए। <strong>Campus visit करें</strong> — book करें <a href=\"/visit\">/visit</a> पर — और current third-year students से बात करें जो अभी placement season में हैं। उनके specific company offers के concrete answers किसी blog post से ज़्यादा useful होंगे। 2026-27 सत्र में प्रवेश बंद हो चुका है — JEECUP counselling अगस्त 2026 में ख़त्म हुई और अब कोई सीट बाकी नहीं। 2027-28 सत्र (JEECUP 2027) के लिए अपनी रुचि दर्ज करें <a href=\"/apply\">/apply</a> पर, या WhatsApp <a href=\"https://wa.me/917310077788\">+91-7310077788</a> Hindi या English में। English readers: <a href=\"/blog/polytechnic-salary-in-india-2026\">English version of this guide</a>.",
       },
     ],
   },

@@ -288,7 +288,7 @@ export default function Page() {
               UP Government post-matric scholarships reimburse tuition in full for SC and ST candidates, and in part for OBC, EWS and Minority candidates, subject to the state income ceiling. BIPE merit scholarships — for top JEECUP and 10th-class rankers — stack on top.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
+              <Link href="/apply" className="btn btn-primary btn-lg">Enquire for 2027-28 <ArrowIcon size={16} /></Link>
               <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
                 <WhatsAppIcon /> Ask about Admissions
               </a>
@@ -578,7 +578,7 @@ export default function Page() {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <Link href="/apply" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)", justifyContent: "space-between" }}>
-                  Apply for 2026-27 <ArrowIcon size={16} />
+                  Enquire for 2027-28 <ArrowIcon size={16} />
                 </Link>
                 <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-wa" style={{ justifyContent: "space-between" }}>
                   WhatsApp scholarships <WhatsAppIcon />

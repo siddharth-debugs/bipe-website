@@ -33,7 +33,7 @@ const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   // teaches; four is what a 2026-27 applicant can join. Both are true and
   // this band is read by applicants, so it now carries both numbers
   // instead of advertising the closed one. See ADMITTING_BRANCHES.
-  { num: "5", label: "BTEUP branches", sub: "4 admitting in 2026-27" },
+  { num: "5", label: "BTEUP branches", sub: "4 take new admissions" },
 ];
 
 const LIB_PILLS: string[] = [
@@ -169,7 +169,7 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Our 6-acre Phoolpur campus houses five BTEUP branches (four admitting in 2026-27), 40 faculty and 550+ students. Library, 120-computer lab, dairy chemistry and hydraulics labs, mechanical workshops, boys&rsquo; hostel and a sports ground — all within one boundary.
+                Our 6-acre Phoolpur campus houses five BTEUP branches (four of them still taking new admissions), 40 faculty and 550+ students. Library, 120-computer lab, dairy chemistry and hydraulics labs, mechanical workshops, boys&rsquo; hostel and a sports ground — all within one boundary.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a campus visit <ArrowIcon size={16} /></Link>

@@ -30,7 +30,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "04",
     title: "Get your rank card",
-    body: "JEECUP 2026 results are out — log in at jeecup.admissions.nic.in and download your rank card. Save it: the rank card is the single document that decides everything that follows in counselling.",
+    body: "JEECUP 2026 results were declared in June and that cycle has since closed. In the next cycle, log in at jeecup.admissions.nic.in as soon as results are declared and download your rank card. Save it: the rank card is the single document that decides everything that follows in counselling.",
   },
   {
     n: "05",
@@ -90,7 +90,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What is BIPE's JEECUP institute code?",
-    a: "4455. You enter this code during the JEECUP counselling choice-filling round to add BIPE to your preference list — once for each branch you want to consider. Many applicants add 4455 against all four branches open for 2026-27 — Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering — in case their rank doesn't reach their first choice. Do not list Dairy Engineering in your choice order: it took its last intake in 2025-26 and admits no one from 2026-27.",
+    a: "4455. You enter this code during the JEECUP counselling choice-filling round to add BIPE to your preference list — once for each branch you want to consider. Many applicants add 4455 against all four branches BIPE admits to — Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering — in case their rank doesn't reach their first choice. Do not list Dairy Engineering in your choice order: it took its last intake in 2025-26 and admits no one from 2026-27.",
   },
   {
     q: "When does the JEECUP application typically open?",
@@ -183,7 +183,7 @@ export default function Page() {
                 <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                   JEECUP portal <ArrowIcon size={16} />
                 </a>
-                <Link href="/apply" className="btn btn-ghost btn-lg">Begin application</Link>
+                <Link href="/apply" className="btn btn-ghost btn-lg">Enquire for 2027-28</Link>
               </div>
               {/* Early Seat Registration campaign entry point (Jun 2026) */}
               <Link href="/early-registration" style={{
@@ -194,7 +194,7 @@ export default function Page() {
               }}>
                 <span style={{ fontSize: 22 }} aria-hidden="true">🎓</span>
                 <span style={{ fontSize: 14, lineHeight: 1.55 }}>
-                  <strong>Still looking for a seat for 2026-27?</strong> Pre-Counselling Registration closed on 27 July 2026 — ask BIPE admissions (code 4455) what is still open.
+                  <strong>Planning session 2027-28?</strong> Admission for 2026-27 is closed — leave your details and BIPE admissions (code 4455) will walk you through the next JEECUP cycle.
                 </span>
                 <ArrowIcon size={16} />
               </Link>
@@ -210,7 +210,7 @@ export default function Page() {
                 {[
                   { num: "5", l: "Counselling rounds" },
                   { num: "25 Jun", l: "Round 1 choice-filling" },
-                  { num: "Aug 1", l: "Classes begin" },
+                  { num: "1 Aug", l: "Classes began" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, lineHeight: 0.9, color: "var(--brand)" }}>{s.num}</div>
@@ -376,7 +376,7 @@ export default function Page() {
 
           <div style={{ marginTop: 28, display: "flex", justifyContent: "center" }}>
             <Link href="/courses" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)" }}>
-              View the 4 branches open for 2026-27 <ArrowIcon size={16} />
+              View the 4 branches <ArrowIcon size={16} />
             </Link>
           </div>
         </div>
@@ -540,7 +540,7 @@ export default function Page() {
           >
             {[
               // Phase 2 batch · procedural sequence (Jan → Aug 2026)
-              ["JEECUP Round 4 2026 · Phase 2", "All states now eligible · missed R1–3?", "/jeecup-round-4-2026"],
+              ["JEECUP Round 4 2026 · Phase 2", "Phase 2 recap · counselling now concluded", "/jeecup-round-4-2026"],
               ["JEECUP Registration 2026", "Form, fee, documents, errors", "/jeecup-registration-2026"],
               ["JEECUP Admit Card 2026", "Download · verify · troubleshoot", "/jeecup-admit-card-2026"],
               ["JEECUP Result 2026", "Rank card · what to do next", "/jeecup-result-2026"],
