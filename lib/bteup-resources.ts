@@ -99,6 +99,10 @@ export interface BteupResource {
   ctaBody: string;
 }
 
+// Subject counts are derived from the branch curricula rather than typed
+// here — see the note on SUBJECT_COUNTS in lib/branchContent.ts.
+import { SUBJECTS_PER_SEMESTER } from "@/lib/branchContent";
+
 /* eslint-disable max-len */
 
 export const BTEUP_RESOURCES: BteupResource[] = [
@@ -330,7 +334,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "04",
         title: "Plan your study schedule backwards from the first exam date",
-        body: "Most diploma students underestimate the exam-prep crunch. Once you know your first exam date, work backwards in 5-day study blocks per subject. For most BIPE branches (Mechanical, Electrical, Civil), each semester has 5-7 theory subjects + 4-6 practicals. Start serious revision 4-6 weeks before Day 1 of the cycle.",
+        body: "Most diploma students underestimate the exam-prep crunch. Once you know your first exam date, work backwards in 5-day study blocks per subject. Across BIPE's five branches each semester carries six or seven subjects, theory and lab together, dropping to five in the lightest final semester. Start serious revision 4-6 weeks before Day 1 of the cycle.",
       },
       {
         n: "05",
@@ -358,7 +362,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "When do BTEUP practical exams happen?",
-        a: "About 2 weeks BEFORE the theory exam window. Practicals are at YOUR institute (BIPE Phoolpur for BIPE students) under an external BTEUP examiner. Each branch has 4-6 practical subjects per semester. You'll know your practical date 3-4 weeks ahead via BIPE's notice board.",
+        a: "About 2 weeks BEFORE the theory exam window. Practicals are at YOUR institute (BIPE Phoolpur for BIPE students) under an external BTEUP examiner. Most semesters carry three or four lab and workshop subjects alongside the theory papers. You'll know your practical date 3-4 weeks ahead via BIPE's notice board.",
       },
       {
         q: "What is the BTEUP supplementary exam cycle?",
@@ -679,7 +683,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     lead: "BTEUP publishes a 6-semester syllabus for each of its 40+ affiliated diploma branches. This page covers the structural pattern of the syllabus (theory + practical + internal weightage), where to download official PDFs, and the branch-by-branch contour for BIPE's 5 BTEUP-affiliated branches (Mechanical, Electrical, Civil, CSE, Dairy).",
     quickStats: [
       { label: "Total semesters", value: "6", sub: "3 years · 2 semesters per year" },
-      { label: "Per branch", value: "5-7 theory + 4-6 practical", sub: "Per semester · varies by year" },
+      { label: "Per branch", value: `${SUBJECTS_PER_SEMESTER} subjects`, sub: "Per semester · theory + lab together" },
       { label: "Marking split", value: "60 external + 40 internal", sub: "Per theory subject · practicals inverted" },
       { label: "Official source", value: "bteup.ac.in", sub: "Notice Board · Curriculum tab" },
     ],

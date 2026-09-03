@@ -3198,7 +3198,7 @@ export const BLOG_POSTS: BlogPost[] = [
         title: "TL;DR · 30-second answer",
         html:
           "<ul style=\"margin: 0; padding-left: 22px;\">" +
-          "<li><strong>3 years, 6 semesters.</strong> Each semester runs about 5 months of teaching + 1 month of exams. ~6 subjects per semester (theory + practical + project).</li>" +
+          "<li><strong>3 years, 6 semesters.</strong> Each semester runs about 5 months of teaching + 1 month of exams, carrying six or seven subjects — theory papers, labs and a project together — for 38 to 41 across the whole diploma.</li>" +
           "<li><strong>Semesters 1 and 2 are common</strong> across all branches — Mathematics, Physics, Chemistry, English, Engineering Drawing, Workshop Practice, Basic Electrical / Electronics.</li>" +
           "<li><strong>Semesters 3 to 5 are branch-specific</strong> — this is where the real differences show. Mechanical does thermodynamics and machining; Civil does surveying and structural design; Electrical does machines and power systems; CSE does data structures and web; Dairy does milk processing and plant operations.</li>" +
           "<li><strong>Semester 6 is mostly industrial training</strong> — a mandatory 6-month (~600 hour) placement at a real plant or site, plus a capstone project assessed by an external examiner.</li>" +
@@ -3215,7 +3215,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Each semester has about <strong>6 subjects</strong> — a mix of theory, practical (lab) and workshop. Theory subjects have an end-semester written exam worth 60 marks plus internal sessional assessment worth 40. Practical and workshop subjects are the inverse — a 40-mark practical exam and viva plus 60 marks of sessional. Pass marks are typically 33% in theory and 50% in practical / sessional components.",
+          "Each semester has <strong>six or seven subjects</strong> — a mix of theory, practical (lab) and workshop — dropping to five or six in the final semester, where the six-month industrial training carries most of the load. Theory subjects have an end-semester written exam worth 60 marks plus internal sessional assessment worth 40. Practical and workshop subjects are the inverse — a 40-mark practical exam and viva plus 60 marks of sessional. Pass marks are typically 33% in theory and 50% in practical / sessional components.",
       },
       {
         type: "callout",

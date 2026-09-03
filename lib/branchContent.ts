@@ -652,3 +652,39 @@ export const BRANCH_DETAIL: Record<string, BranchDetail> = {
     ],
   },
 };
+
+/**
+ * Subject counts derived from the semester plans above, so published copy
+ * can never drift from the curriculum data the branch pages render.
+ *
+ * Two contradictory claims used to be hardcoded — "about 6 subjects per
+ * semester" on the syllabus blog and "5-7 theory + 4-6 practical" (i.e.
+ * 9-13) on /bteup-syllabus-2026. The second roughly doubled the workload a
+ * family would picture. The lists here mix theory, lab and workshop
+ * subjects, which is why a single "theory plus practical" split cannot be
+ * read off them: BTEUP examines those separately (theory papers at 60
+ * marks, practicals at 40) but the curriculum lists them as one sequence.
+ */
+const _semCounts = Object.values(BRANCH_DETAIL).flatMap((b) =>
+  b.semesters.map((s) => s.subjects.length),
+);
+
+export const SUBJECT_COUNTS = {
+  /** Fewest subjects in any one semester of any branch. */
+  perSemesterMin: Math.min(..._semCounts),
+  /** Most subjects in any one semester of any branch. */
+  perSemesterMax: Math.max(..._semCounts),
+  /** Subjects across all six semesters, by branch. */
+  perBranchTotal: Object.fromEntries(
+    Object.entries(BRANCH_DETAIL).map(([slug, b]) => [
+      slug,
+      b.semesters.reduce((n, s) => n + s.subjects.length, 0),
+    ]),
+  ) as Record<string, number>,
+} as const;
+
+/** e.g. "6-7" — the per-semester range, for use in copy. */
+export const SUBJECTS_PER_SEMESTER =
+  SUBJECT_COUNTS.perSemesterMin === SUBJECT_COUNTS.perSemesterMax
+    ? String(SUBJECT_COUNTS.perSemesterMin)
+    : `${SUBJECT_COUNTS.perSemesterMin}-${SUBJECT_COUNTS.perSemesterMax}`;
