@@ -28,7 +28,7 @@
  *      the manifest at module-load).
  *
  * The PLACEMENT_CANONICAL block at the bottom is the manual override
- * for marketing-claim numbers (e.g. the "44 recruiters across India"
+ * for marketing-claim numbers (e.g. the "46 recruiters across India"
  * marketing claim that includes named-recruiter-pool drives the data
  * doesn't fully split). When the data and the canonical claim
  * disagree, the canonical claim wins on user-facing surfaces — but
@@ -117,7 +117,13 @@ export const PLACEMENT_CANONICAL = {
    * multi-recruiter pool rows. When this drops below `verified`,
    * use the verified number instead (it's always defensible).
    */
-  totalRecruiters: 44,
+  // 46, not 44 — owner ruling 3 Sep 2026 after the session-2026 drives
+  // added Knorr-Bremse and Shapoorji Pallonji as genuinely new companies
+  // (R R Parkon already existed inside the pooled drives, so it is not a
+  // third increment). Still deliberately above the verified
+  // distinctRecruiters, which cannot see companies folded into
+  // multi-recruiter pool rows.
+  totalRecruiters: 46,
 } as const;
 
 // ─── Combined public-facing constants ──────────────────────────────

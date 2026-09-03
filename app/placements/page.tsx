@@ -23,7 +23,7 @@ import {
 // 29 May 2026 — every hardcoded placement count on this page now reads
 // from lib/placement-stats.ts. To refresh: replace the TPO XLSX in
 // data/source/ and re-run scripts/parse-placement-xlsx.py — every
-// "1,363" / "44 recruiters" / "Top recruiter" on this page updates.
+// "1,363" / "46 recruiters" / "Top recruiter" on this page updates.
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("placements"); }
 

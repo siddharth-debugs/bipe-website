@@ -322,7 +322,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "1,363 placement record — concrete pipeline, not promises",
-        body: "Over 16 years, BIPE has documented 1,363 verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
+        body: "Over 16 years, BIPE has documented 1,363 verified placements across 46 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
       },
       {
         headline: "AFRC ₹30,150 — flexibility for distant catchments",
@@ -634,7 +634,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Ballia is the right choice if your rank confidently secures the branch you want, you live in Ballia city or nearby blocks (no hostel need), and the fee gap is binding for your family. With a strong rank and city residency, this is the obvious option.",
       whenBipe:
-        "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you want the Semester-5 defence and JE exam prep that runs alongside the diploma; (d) you want the documented 1,363 alumni placement record across 44 recruiters. /private-vs-government-polytechnic has the wider framework.",
+        "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you want the Semester-5 defence and JE exam prep that runs alongside the diploma; (d) you want the documented 1,363 alumni placement record across 46 recruiters. /private-vs-government-polytechnic has the wider framework.",
     },
   },
 

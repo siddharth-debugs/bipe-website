@@ -43,7 +43,7 @@ a comprehensive multi-typed schema. As of 29 May 2026 it carries:
 | `contactPoint` | ✅ Explicit Admissions desk with availableLanguage |
 | `openingHoursSpecification` | ✅ Mon-Sat 9-5 |
 | `priceRange` | ✅ ₹30,150 / academic year |
-| `numberOfStudents` | ✅ 550 enrolled · 2,200 alumni · 1,331 placements |
+| `numberOfStudents` | ✅ 550 enrolled · 2,200 alumni · 1,363 placements |
 | `hasCredential` | ✅ AICTE + BTEUP + AISHE |
 | `accreditedBy` | ✅ BTEUP + AICTE |
 | `identifier` | ✅ AICTE Permanent ID + JEECUP + BTEUP + AISHE + Wikidata Q139892164 |
@@ -109,7 +109,7 @@ profiles get smaller panels than fully filled ones.
 | **Business name** | Banaras Institute of Polytechnic & Engineering |
 | **Category** | College (primary) |
 | **Additional categories** | Polytechnic College · Educational Institution · Engineering School |
-| **Description** | (250 chars) "AICTE-approved private polytechnic in Varanasi since 2010. Five BTEUP diploma branches incl. rare Dairy Engineering. JEECUP code 4455. 1,331 TPO-verified placements. AFRC tuition ₹30,150/year." |
+| **Description** | (250 chars) "AICTE-approved private polytechnic in Varanasi since 2010. Four BTEUP diploma branches — Civil, Electrical, Mechanical (Production), Computer Science. JEECUP code 4455. 1,363 TPO-verified placements. AFRC tuition ₹30,150/year." |
 
 ### Location
 
@@ -178,7 +178,6 @@ Add each diploma branch as a "Service":
 2. Diploma in Computer Science & Engineering (BTEUP 355)
 3. Diploma in Electrical Engineering (BTEUP 328)
 4. Diploma in Mechanical Engineering (Production) (BTEUP 343)
-5. Diploma in Dairy Engineering (BTEUP 327)
 
 For each: 1-2 sentence description, mention "BTEUP-affiliated · JEECUP
 code 4455 · AFRC ₹30,150/year".
@@ -219,9 +218,9 @@ GBP shows a Questions & Answers section in the panel. Seed it with
    certificates (if applicable), passport photos, transfer + character
    certificates. Full list at [bipevns.org/documents](https://bipevns.org/documents)."
 
-5. **"Where can I see the placement record?"** → "1,331 TPO-verified
+5. **"Where can I see the placement record?"** → "1,363 TPO-verified
    placements between 2016 and 2025 at Mahindra, Tata Steel, BEL,
-   Indian Railways, UPPCL and 44 recruiters total. Named directory
+   Indian Railways, UPPCL and 46 recruiters total. Named directory
    at [bipevns.org/alumni](https://bipevns.org/alumni)."
 
 Adding owner-answered Q&A pre-empts random user-submitted questions

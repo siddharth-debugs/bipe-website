@@ -1334,7 +1334,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Private-sector placement — sabse badi share, 44 recruiters ke saath (Mahindra, Tata, JCB, Motherson, etc.)",
+          "Private-sector placement — sabse badi share, 46 recruiters ke saath (Mahindra, Tata, JCB, Motherson, etc.)",
           "Government post — 28 documented alumni (RRB JE, SSC JE, UPPCL, Indian Railways). TPO ka register paper-trail hai, exhaustive count nahi।",
           "B.Tech lateral entry — 16 alumni (2019-2025 batches), institute ke higher-studies register ke mutabik (AKTU + other state universities)।",
           "Baaki alumni higher diploma, specialisation, business ya freelance route lete hain — inka formal register maintain nahi hota।",
@@ -1934,7 +1934,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "How BIPE fits the diploma path" },
       {
         type: "p",
-        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year, identical across branches. The placement record on file: <a href=\"/placements\">1,363 joining-letter-verified placements through 2025</a> across 44 recruiters, alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, UPPCL, Amul, Mother Dairy and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
+        html: "BIPE has run the BTEUP diploma in Eastern UP since 2010 — AICTE-approved (Permanent ID 1-488233171), JEECUP institute code 4455, AFRC-set tuition of ₹30,150/year, identical across branches. The placement record on file: <a href=\"/placements\">1,363 joining-letter-verified placements through 2025</a> across 46 recruiters, alumni at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro, UPPCL, Amul, Mother Dairy and beyond. UP Government post-matric <a href=\"/scholarships\">scholarships</a> cover full or partial tuition for SC, ST, OBC, EWS and Minority students.",
       },
       {
         type: "p",
@@ -3406,7 +3406,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE has shipped <strong>1,363 TPO-verified placements through 2026</strong> across 44 recruiters (incl. 28 in government posts &mdash; Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC). Mechanical Production is the largest cohort with the deepest pipeline (Mahindra, Tata Steel, JCB, Motherson Sumi, JBM), followed by Electrical (UPPCL / Tata Power / Indian Railways / Mumbai Metro JE-track) and Civil (Smart Cities, Bharatmala, Kashi corridor site-engineering). The Computer Science pipeline is still maturing. The deepest pipelines have the most predictable salary signal.",
+          "BIPE has shipped <strong>1,363 TPO-verified placements through 2026</strong> across 46 recruiters (incl. 28 in government posts &mdash; Indian Railways ALP, UPPCL, SSC JE, UP Police, UPSSSC). Mechanical Production is the largest cohort with the deepest pipeline (Mahindra, Tata Steel, JCB, Motherson Sumi, JBM), followed by Electrical (UPPCL / Tata Power / Indian Railways / Mumbai Metro JE-track) and Civil (Smart Cities, Bharatmala, Kashi corridor site-engineering). The Computer Science pipeline is still maturing. The deepest pipelines have the most predictable salary signal.",
       },
       {
         type: "table",
@@ -3558,7 +3558,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>1,363 TPO-verified placements</strong> through 2026 across 44 recruiters, including 28 in government posts (Indian Railways ALP, UPPCL, SSC JE / Military Engineering Services, UP Police, UPSSSC) &mdash; the named alumni list is on <a href=\"/placements\">/placements</a>.",
+          "<strong>1,363 TPO-verified placements</strong> through 2026 across 46 recruiters, including 28 in government posts (Indian Railways ALP, UPPCL, SSC JE / Military Engineering Services, UP Police, UPSSSC) &mdash; the named alumni list is on <a href=\"/placements\">/placements</a>.",
           "<strong>Six named alumni</strong> publicly on the placements page with current role + employer, providing the year-5 and year-10 anchors for the ranges above.",
           "<strong>Placement cell processes</strong> &mdash; six-day pre-placement workshop, AMCAT on-campus testing, mock interviews, quarterly tech talks &mdash; all of which feed the verified-placement number rather than the aspirational one.",
         ],
@@ -3664,7 +3664,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BIPE ने 2026 तक <strong>1,363 joining-letter-verified placements</strong> shipped किए हैं — 44 recruiters के साथ। Branch pipelines में Mechanical (Production) और Electrical सबसे गहरे हैं, Civil उसके बाद, और CSE की pipeline अभी बन रही है। जिस branch की पाइपलाइन सबसे गहरी है, उसी की salary signal भी सबसे predictable है।",
+          "BIPE ने 2026 तक <strong>1,363 joining-letter-verified placements</strong> shipped किए हैं — 46 recruiters के साथ। Branch pipelines में Mechanical (Production) और Electrical सबसे गहरे हैं, Civil उसके बाद, और CSE की pipeline अभी बन रही है। जिस branch की पाइपलाइन सबसे गहरी है, उसी की salary signal भी सबसे predictable है।",
       },
       {
         type: "table",
