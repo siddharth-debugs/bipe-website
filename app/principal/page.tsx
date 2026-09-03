@@ -74,9 +74,10 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
     title: "Outcome accountability",
     sub: `${formatPlacements(PLACEMENT_STATS.totalPlacements)} verified placements · 16-year record`,
     body:
-      // Mahindra is owner-confirmed (3 Sep 2026, see d5e3c8d) rather than
-      // backed by the on-page featured list; the other four each have a
-      // named graduate on /placements. BEL stays out — no evidence either way.
+      // Do not prune this list against lib/alumni-manifest.json. Owner
+      // ruling 3 Sep 2026: "Do not remove recruiters. the alumnus list
+      // doesn't contain all our alumni." A sweep removed BEL from here on
+      // exactly that reasoning and it was restored in dd2f4bd.
       "We publish placement records, not just photographs. Alumni now serve at Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro and dozens more. Government-job admits — SSC JE, RRB JE, UPPCL — are tracked too.",
   },
 ];
