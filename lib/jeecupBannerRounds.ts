@@ -87,7 +87,7 @@ export const BANNER_ROUNDS: BannerRound[] = [
 ];
 
 // RETIRED for 2026-27 (3 Sep 2026). Every rollAtMs above is in the past, so
-// bannerRoundAt() returns null and the banner renders nothing — the copy below
+// bannerRoundAt() returns null and the banner renders nothing — the copy above
 // is a record of what ran, not live text. Before reusing this for the 2027
 // cycle, rewrite the headlines: several still say "reserve your branch" and
 // "last seats at BIPE", which the owner's 2026-27 closure ruling forbids.
