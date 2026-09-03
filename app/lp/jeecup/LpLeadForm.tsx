@@ -98,7 +98,7 @@ export default function LpLeadForm() {
           className="pill"
           style={{ background: "color-mix(in oklab, var(--success) 16%, transparent)", color: "var(--success)" }}
         >
-          Reserved · we&apos;ll call you
+          Received · we&apos;ll call you
         </span>
         <p
           className="serif"
@@ -107,7 +107,7 @@ export default function LpLeadForm() {
           Thanks, <span style={{ color: "var(--brand)" }}>{status.first}.</span>
         </p>
         <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.6 }}>
-          Admissions will call <b>{status.phone}</b> shortly — in Hindi or English — to hold your branch (code&nbsp;4455) and walk you through JEECUP counselling.
+          Admissions will call <b>{status.phone}</b> shortly — in Hindi or English — and tell you whether a seat is still open in your branch at code&nbsp;4455.
         </p>
         <a
           href={DATA.contact.whatsapp}
@@ -200,11 +200,11 @@ export default function LpLeadForm() {
         disabled={isSubmitting}
         style={{ marginTop: 16, width: "100%", justifyContent: "center" }}
       >
-        {isSubmitting ? "Reserving…" : <>Reserve my branch <ArrowIcon size={15} /></>}
+        {isSubmitting ? "Sending…" : <>Ask about a seat <ArrowIcon size={15} /></>}
       </button>
 
       <p style={{ marginTop: 10, fontSize: 12, color: "var(--ink-3)", lineHeight: 1.5, textAlign: "center" }}>
-        Free · 2 minutes. By reserving, you agree BIPE Admissions may call / WhatsApp you about 2026-27 admissions. We never share your details.
+        Free · 2 minutes. By sending this, you agree BIPE Admissions may call / WhatsApp you about 2026-27 admissions. We never share your details.
       </p>
 
       <div style={{ marginTop: 12, textAlign: "center" }}>

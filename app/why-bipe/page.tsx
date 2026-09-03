@@ -64,7 +64,7 @@ const PILLARS: Pillar[] = [
   {
     topic: "Five branches — including the Dairy moat",
     position:
-      "Civil, Computer Science & Engineering, Electrical, Mechanical (Production), and the rare Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh. A working-dairy lab and the Amul / Mother Dairy / NDDB recruiter pipeline that comes with it.",
+      "Civil, Computer Science & Engineering, Electrical, Mechanical (Production), and the rare Dairy Engineering — one of only four BTE UP-affiliated Dairy diploma programmes in all of Uttar Pradesh. On-campus chemistry and hydraulics labs, industrial visits to working plants, a mandatory six-month plant training in Semester 6, and the Amul / Mother Dairy / NDDB recruiter pipeline that comes with it.",
     verifyLabel: "Explore the five branches",
     verifyPath: "/courses",
   },

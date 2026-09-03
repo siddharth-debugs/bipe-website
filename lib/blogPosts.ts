@@ -1151,8 +1151,8 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>Class 10 marksheet</strong> · PDF format, under 2 MB, clear scan। Sabhi pages legible hone chahiye।",
           "<strong>Aadhaar number</strong> · 12 digits, yaad rakho ya likh ke रखो। Aadhaar PDF abhi nahi chahiye, sirf number।",
-          "<strong>Passport-size photograph</strong> · JPG format, 10-300 KB, white background, last 6 months ka clicked। Selfie nahi chalega — proper studio photo।",
-          "<strong>Signature</strong> · White paper par black ya blue ink se sign karein, scan karein, JPG (10-50 KB)।",
+          "<strong>Passport-size photograph</strong> · JPG format, 15-200 KB, white background, last 6 months ka clicked। Selfie nahi chalega — proper studio photo।",
+          "<strong>Signature</strong> · White paper par black ya blue ink se sign karein, scan karein, JPG (15-200 KB)।",
           "<strong>Caste certificate scan</strong> (अगर SC/ST/OBC reservation claim करना hai)।",
           "<strong>Income certificate</strong> (अगर EWS ya scholarship claim करना hai)।",
           "<strong>Active mobile number</strong> · jisme OTP receive ho sakte hain।",
@@ -1236,17 +1236,17 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>Photo</strong> file size > 300 KB · ya < 10 KB · ya .png format (sirf .jpg / .jpeg accept hota hai)।",
+          "<strong>Photo</strong> file size > 200 KB · ya < 15 KB · ya .png format (sirf .jpg / .jpeg accept hota hai)।",
           "<strong>Photo</strong> mein white background nahi hai (gali ya car mein liya photo reject)।",
           "<strong>Photo</strong> mein face clearly visible nahi (cap, sunglasses, side-pose — sab reject)।",
-          "<strong>Signature</strong> file > 50 KB · ya pen color लाल / hara (sirf black / blue accept)।",
+          "<strong>Signature</strong> file > 200 KB · ya < 15 KB · ya pen color लाल / hara (sirf black / blue accept)।",
           "<strong>Class 10 marksheet</strong> file > 2 MB · ya kuch pages cut hain (sabhi pages should be visible)।",
         ],
       },
       {
         type: "p",
         html:
-          "Upload karne se पहले: photo aur signature ko mobile app (like \"Photo Resizer\") se compress karein 250 KB ke under। Marksheet PDF ko \"Smallpdf\" jaise tools se compress karein 1.5 MB ke under। Aaram se accept hoga।",
+          "Upload karne se पहले: photo aur signature ko mobile app (like \"Photo Resizer\") se compress karein 15-200 KB ki range mein। Marksheet PDF ko \"Smallpdf\" jaise tools se compress karein 1.5 MB ke under। Aaram se accept hoga।",
       },
 
       { type: "h2", text: "Step 6 · Fee Payment" },
@@ -1780,7 +1780,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "Step 11 — Contact details and exam centre preference" },
       {
         type: "p",
-        html: "After Qualification, the form moves to <strong>Contact Detail</strong> (address, mobile, email — already partly filled from registration) and <strong>Exam Center Details</strong> (a list of preferred exam cities; pick the one nearest to where you'll be in March-April of the cycle).",
+        html: "After Qualification, the form moves to <strong>Contact Detail</strong> (address, mobile, email — already partly filled from registration) and <strong>Exam Center Details</strong> (a list of preferred exam cities; pick the one nearest to where you'll be during the exam window — 02–09 June in the 2026 cycle).",
       },
       {
         type: "image",
@@ -1791,7 +1791,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "h2", text: "Step 12 — Upload photograph, signature and live photograph" },
       {
         type: "p",
-        html: "Three uploads are mandatory:",
+        html: "Three upload slots — photograph and signature are required, the live photograph is optional:",
       },
       {
         type: "ul",
@@ -2506,7 +2506,7 @@ export const BLOG_POSTS: BlogPost[] = [
         caption:
           "BIPE 4455 closing ranks (Group K · lateral entry). Group K sub-groups: K1 (CSE/Civil) · K2 (Electrical) · K3 (Civil) · K4 (Mech Production) · K6 / K7 vary year to year. Source: same Student Admission Rank Lists.",
         headers: [
-          "Branch (BTEUP lateral code)",
+          "Branch (JEECUP Group K lateral-entry code)",
           "2024-25 closing rank",
           "2025-26 closing rank",
           "2024-25 admissions",
@@ -2676,7 +2676,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>अवधि (Duration):</strong> 3 साल · 6 सेमेस्टर (semester यानी छमाही)। प्रत्येक सेमेस्टर में लगभग 6 विषय।",
           "<strong>शिक्षा का माध्यम:</strong> अधिकांश यूपी पॉलिटेक्निक में हिन्दी और अंग्रेज़ी दोनों में पढ़ाई होती है। BTEUP की किताबें भी दोनों भाषाओं में मिलती हैं।",
           "<strong>परीक्षा:</strong> प्रत्येक सेमेस्टर के अंत में लिखित परीक्षा + practical परीक्षा।",
-          "<strong>अंतिम वर्ष:</strong> सेमेस्टर 6 में अनिवार्य industrial training (आमतौर पर एक कारखाने या साइट पर 4-6 हफ़्ते का इंटर्नशिप)।",
+          "<strong>अंतिम वर्ष:</strong> सेमेस्टर 6 में अनिवार्य industrial training — किसी असली कारखाने या साइट पर 6 महीने (लगभग 600 घंटे) की placement, साथ में capstone project जिसकी जाँच external examiner करता है।",
           "<strong>उपाधि:</strong> पास करने पर <em>\"Diploma in &lt;Branch&gt; Engineering\"</em> की डिग्री मिलती है (जैसे — Diploma in Civil Engineering, Diploma in Mechanical Engineering)।",
         ],
       },
@@ -2780,13 +2780,13 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ol",
         items: [
-          "<strong>JEECUP की वेबसाइट पर जाएँ:</strong> <a href=\"https://jeecup.admissions.nic.in\" target=\"_blank\" rel=\"noopener\">jeecup.admissions.nic.in</a> — हर साल फरवरी-मार्च में application portal खुलता है।",
+          "<strong>JEECUP की वेबसाइट पर जाएँ:</strong> <a href=\"https://jeecup.admissions.nic.in\" target=\"_blank\" rel=\"noopener\">jeecup.admissions.nic.in</a> — हर साल जनवरी में application portal खुलता है।",
           "<strong>Registration करें:</strong> मोबाइल नंबर और ईमेल से नया खाता बनाएँ। OTP verify होने पर username और password मिल जाएगा।",
           "<strong>Application form भरें:</strong> व्यक्तिगत जानकारी, माता-पिता का विवरण, 10वीं (या 12वीं) के अंक, श्रेणी (General/OBC/SC/ST), पता।",
           "<strong>Documents upload करें:</strong> 10वीं की मार्कशीट, आधार कार्ड, फोटो, हस्ताक्षर। Files की size सीमा का ध्यान रखें।",
           "<strong>Application fee जमा करें:</strong> ₹300 (General / OBC / Minority) और ₹200 (SC / ST / PH)। Net banking, UPI, debit/credit कार्ड स्वीकार होते हैं।",
           "<strong>Admit card download करें:</strong> परीक्षा से लगभग 10 दिन पहले admit card जारी होता है।",
-          "<strong>परीक्षा दें:</strong> April-May में online JEECUP exam होती है — गणित, विज्ञान, अंग्रेज़ी पर आधारित।",
+          "<strong>परीक्षा दें:</strong> मई-जून में online JEECUP exam होती है (2026 में 02–09 जून) — गणित, विज्ञान, अंग्रेज़ी पर आधारित।",
           "<strong>Counselling में हिस्सा लें:</strong> Result के बाद counselling के 5 राउंड चलते हैं। यहाँ <strong>संस्थान कोड 4455 (BIPE)</strong> भरें यदि बीआईपीई आपका विकल्प है।",
           "<strong>Seat allotment के बाद दस्तावेज़ verify करवाएँ:</strong> Allotted institute पर जाकर सभी original documents जमा करें।",
           "<strong>Fee जमा करें और कक्षा में रिपोर्ट करें:</strong> August-September में कक्षा शुरू।",
@@ -2804,7 +2804,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "<strong>सरकारी पॉलिटेक्निक:</strong> ₹6,000–15,000/साल। कम फीस लेकिन सीमित सीटें और अक्सर ज़्यादा competition।",
+          "<strong>सरकारी पॉलिटेक्निक:</strong> ₹12,000–22,000/साल। कम फीस लेकिन सीमित सीटें और अक्सर ज़्यादा competition।",
           "<strong>निजी पॉलिटेक्निक (AFRC-approved):</strong> ₹25,000–60,000/साल। बीआईपीई <strong>₹30,150/साल</strong> है (AFRC-अनुमोदित, छुपी हुई फीस नहीं)।",
           "<strong>हॉस्टल + मेस:</strong> अलग शुल्क, आमतौर पर ₹36,000–60,000/साल।",
           "<strong>छात्रवृत्ति (Scholarship):</strong> SC/ST/OBC/Minority/EWS छात्रों के लिए UP सरकार की <a href=\"/scholarships\">Post-Matric Scholarship</a> लागू होती है — पूरी फीस वापस मिल सकती है।",
@@ -3043,7 +3043,7 @@ export const BLOG_POSTS: BlogPost[] = [
           ["Duration after Class 10", "3 years · 6 semesters", "1 year (most trades) or 2 years (some trades)"],
           ["Awarding body in UP", "BTE UP (Board of Technical Education, UP)", "NCVT / SCVT under DGT, Ministry of Skill Development"],
           ["Approval / entrance", "AICTE + JEECUP entrance", "DGT-approved curriculum, separate ITI counselling"],
-          ["Annual tuition (govt)", "₹6,000-15,000 / year", "₹3,000-10,000 / year (much lower)"],
+          ["Annual tuition (govt)", "₹12,000-22,000 / year", "₹3,000-10,000 / year (much lower)"],
           ["Annual tuition (private AFRC)", "₹25,000-60,000 / year (BIPE ₹30,150)", "₹15,000-40,000 / year"],
           ["Qualification awarded", "Diploma in [Branch] Engineering", "Trade Certificate (NTC) in [Trade]"],
           ["Curriculum scope", "Engineering theory + workshop / lab + final-year industrial training", "Trade-specific hands-on training; minimal theory"],

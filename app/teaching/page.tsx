@@ -128,7 +128,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Every course module is mapped to a published Program Outcome. Assessment is calibrated against those outcomes — progress is measured, not merely attended.
+              Every course module is mapped to a published Program Outcome. Assessment is calibrated against those outcomes — class tests, lab journals, projects and attendance all feed the score.
             </p>
           </div>
 

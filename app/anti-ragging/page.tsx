@@ -113,7 +113,7 @@ export default function Page() {
               href={`mailto:${DATA.contact.emailAntiRagging}?subject=Request%20for%20Anti-Ragging%20Undertaking%20form`}
               className="btn btn-ghost"
             >
-              Request undertaking from IC
+              Request undertaking from the Anti-Ragging Committee
             </a>
           </div>
         </div>

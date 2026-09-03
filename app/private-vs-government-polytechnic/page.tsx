@@ -173,13 +173,13 @@ const FAQS: FaqItem[] = [
     question:
       "When should I choose Government Polytechnic Varanasi over BIPE?",
     answer:
-      "When the fee gap of ~₹15,000-25,000 per year is the binding constraint on whether the diploma is affordable at all, and your JEECUP rank is strong enough to guarantee a government polytechnic seat, and your family is in or near Varanasi (so hostel access isn't required). In that scenario the government seat is the right choice. We say this openly because the diploma itself is the same — the right question is which delivery model fits your family's situation.",
+      "When the fee gap of ~₹8,000-18,000 per year is the binding constraint on whether the diploma is affordable at all, and your JEECUP rank is strong enough to guarantee a government polytechnic seat, and your family is in or near Varanasi (so hostel access isn't required). In that scenario the government seat is the right choice. We say this openly because the diploma itself is the same — the right question is which delivery model fits your family's situation.",
   },
   {
     question:
       "When should I choose BIPE over a government polytechnic?",
     answer:
-      `When the additional ~₹20,000-25,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of ${_placed} placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or the rare Dairy Engineering branch with the Amul / Mother Dairy / NDDB recruiter pipeline.`,
+      `When the additional ~₹8,000-18,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of ${_placed} placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or the rare Dairy Engineering branch with the Amul / Mother Dairy / NDDB recruiter pipeline.`,
   },
   {
     question:
@@ -746,7 +746,7 @@ export default function Page() {
                 }}
               >
                 <li>
-                  The ₹15,000–25,000/year delta would force a real financial trade-off in
+                  The ₹8,000–18,000/year delta would force a real financial trade-off in
                   your family.
                 </li>
                 <li>
@@ -813,7 +813,7 @@ export default function Page() {
                 }}
               >
                 <li>
-                  The additional ₹20,000–25,000/year is stretchable, especially with the
+                  The additional ₹8,000–18,000/year is stretchable, especially with the
                   UP Post-Matric scholarship for eligible categories.
                 </li>
                 <li>

@@ -93,7 +93,7 @@ export default function Page() {
               Address: {DATA.contact.address}
             </p>
             <p style={{ marginTop: 10, fontSize: 13, color: "var(--ink-3)" }}>
-              Acknowledged within 24 hours · resolved within 15 days where statutorily applicable. See also <Link href="/grievance" style={{ color: "var(--brand)" }}>Grievance Redressal</Link> for category-specific committees.
+              Acknowledged within 7 working days · resolved within 15 days where statutorily applicable. See also <Link href="/grievance" style={{ color: "var(--brand)" }}>Grievance Redressal</Link> for category-specific committees.
             </p>
           </article>
         </div>

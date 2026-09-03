@@ -94,7 +94,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "When does the JEECUP application typically open?",
-    a: "JEECUP runs an annual cycle. Application registration typically opens around January or February, the entrance exam follows in March or April, and counselling rounds run May through July. The exact dates change each year — check jeecup.admissions.nic.in for the current notification. If you tell admissions which JEECUP cycle you're targeting, BIPE can share the latest published dates on WhatsApp.",
+    a: "JEECUP runs an annual cycle. Application registration typically opens in January, the entrance exam follows in May or June, results come about ten days later, and counselling runs from late June through August across two phases and five rounds. In the 2026 cycle registration ran 15 January to 20 May and the exam ran 02–09 June, rescheduled from the original 15–22 May window. The exact dates change each year — check jeecup.admissions.nic.in for the current notification. If you tell admissions which JEECUP cycle you're targeting, BIPE can share the latest published dates on WhatsApp.",
   },
   {
     q: "What does the JEECUP Group A exam actually cover?",
@@ -194,7 +194,7 @@ export default function Page() {
               }}>
                 <span style={{ fontSize: 22 }} aria-hidden="true">🎓</span>
                 <span style={{ fontSize: 14, lineHeight: 1.55 }}>
-                  <strong>Got your JEECUP 2026 rank?</strong> Do your Pre-Counselling Registration — reserve your branch (code 4455) before you fill choices.
+                  <strong>Still looking for a seat for 2026-27?</strong> Pre-Counselling Registration closed on 27 July 2026 — ask BIPE admissions (code 4455) what is still open.
                 </span>
                 <ArrowIcon size={16} />
               </Link>

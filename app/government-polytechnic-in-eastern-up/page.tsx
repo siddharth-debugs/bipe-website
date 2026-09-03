@@ -317,7 +317,7 @@ export default function Page() {
                 The natural first choice
               </h3>
               <ul style={{ marginTop: 14, paddingLeft: 20, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.7 }}>
-                <li>Fee gap of ₹15,000-25,000/year vs BIPE is meaningful</li>
+                <li>Fee gap of ₹8,000-18,000/year vs BIPE is meaningful</li>
                 <li>Your JEECUP rank safely secures a seat in the branch you want</li>
                 <li>Day-scholar feasible (you live in the institute city or close)</li>
                 <li>Comfortable navigating government admission portals and timelines</li>

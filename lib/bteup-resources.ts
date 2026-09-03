@@ -136,7 +136,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "02",
         title: "Log in to the BTEUP student portal",
-        body: "Visit bteup.ac.in. Use the Student Login (separate from the institute / faculty login). Your credentials are issued by BIPE after annual registration — if you don't have login details, ask your branch in-charge. First-year students at BIPE receive credentials within 2 weeks of joining the session.",
+        body: "Visit bteup.ac.in. Use the Student Login (separate from the institute / faculty login). Your credentials are issued by BIPE after annual registration — if you don't have login details, ask your branch in-charge. First-year students don't have credentials on day one — the roll number and portal login typically reach you roughly 6-10 weeks after the session starts, once BTEUP has processed BIPE's institute-batch registration (see /bteup-student-registration). Family ID linking has to wait until then.",
       },
       {
         n: "03",
@@ -199,7 +199,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Need help with Family ID linkage at BIPE?",
-    ctaBody: "Our placement and student-welfare cell helps current BIPE students through the linking flow during the first 2 weeks of each session. WhatsApp +91-7310077788 with your name + branch + year and we'll walk you through it. Free, EN / हिंदी.",
+    ctaBody: "Our placement and student-welfare cell helps current BIPE students through the linking flow — returning students at the start of each session, first-years as soon as their BTEUP login is issued. WhatsApp +91-7310077788 with your name + branch + year and we'll walk you through it. Free, EN / हिंदी.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -578,7 +578,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "02",
         title: "Gather the documents on the checklist",
-        body: "Standard documents: Class 10 marksheet (original + 2 photocopies), Aadhaar (original + photocopy), JEECUP rank card (original + photocopy), passport-size photographs (4-6 copies), caste certificate (if applicable), domicile certificate (if applicable). The packet specifies exactly what's needed for YOUR student category (new admission vs. second/third year continuation).",
+        body: "Standard documents: Class 10 marksheet (original + 2 photocopies), Aadhaar (original + 2 self-attested photocopies), JEECUP rank card (original + photocopy), passport-size photographs (4-6 copies), caste certificate (if applicable), domicile certificate (if applicable). The packet specifies exactly what's needed for YOUR student category (new admission vs. second/third year continuation).",
       },
       {
         n: "03",
@@ -607,7 +607,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       intro: "BIPE distributes the exact checklist with the registration packet each session — the list below is the standard set. Have these ready 2 weeks before the session starts.",
       items: [
         "Class 10 marksheet + certificate (original + 2 self-attested photocopies)",
-        "Aadhaar card (original + photocopy)",
+        "Aadhaar card (original + 2 self-attested photocopies)",
         "JEECUP rank card / allotment letter (for new admissions)",
         "Last semester's BTEUP marksheet (for second / third year continuation)",
         "4-6 recent passport-size colour photographs (white background)",
@@ -1010,7 +1010,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     quickStats: [
       { label: "Total colleges", value: "~1,500+", sub: "Across UP · all categories" },
       { label: "Government", value: "~150", sub: "Polytechnic Education Dept., UP" },
-      { label: "Government-aided", value: "~50", sub: "Hybrid · partial govt funding" },
+      { label: "Government-aided", value: "19", sub: "Hybrid · partial govt funding" },
       { label: "Private (incl. BIPE)", value: "~1,300+", sub: "AICTE-approved + BTEUP-affiliated" },
     ],
     steps: [
@@ -1026,8 +1026,8 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         n: "03",
-        title: "Cross-check AICTE approval at facilities.aicte.gov.in",
-        body: "AICTE approval is separate from BTEUP affiliation. A legitimate polytechnic needs both. Search at facilities.aicte.gov.in by institute name or AICTE Permanent ID. The result shows current-year EoA (Extension of Approval) status. BIPE's AICTE Permanent ID is 1-488233171 — you can verify ours there as a reference example.",
+        title: "Cross-check AICTE approval at facilities.aicte-india.org",
+        body: "AICTE approval is separate from BTEUP affiliation. A legitimate polytechnic needs both. Search by institute name or AICTE Permanent ID on the AICTE public dashboard at facilities.aicte-india.org/dashboard/pages/angulardashboard.php. The result shows current-year EoA (Extension of Approval) status. BIPE's AICTE Permanent ID is 1-488233171 — you can verify ours there as a reference example.",
       },
       {
         n: "04",
@@ -1072,7 +1072,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
     ],
     ctaTitle: "Verifying BIPE before applying?",
-    ctaBody: "BIPE's AICTE Permanent ID is 1-488233171 (verify at facilities.aicte.gov.in) · JEECUP code 4455 (verify at jeecup.admissions.nic.in) · BTEUP-affiliated (verify at bteup.ac.in). All three are independently checkable. WhatsApp +91-7310077788 if you want help verifying any of them.",
+    ctaBody: "BIPE's AICTE Permanent ID is 1-488233171 (verify at facilities.aicte-india.org) · JEECUP code 4455 (verify at jeecup.admissions.nic.in) · BTEUP-affiliated (verify at bteup.ac.in). All three are independently checkable. WhatsApp +91-7310077788 if you want help verifying any of them.",
   },
 
   // ─────────────────────────────────────────────────────────────────

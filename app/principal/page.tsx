@@ -10,6 +10,7 @@ import { FACULTY } from "@/lib/faculty";
 import { personSchema } from "@/lib/faculty-schema";
 import { SITE_URL } from "@/lib/routes";
 import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
+import { OFFICE_HOURS_PROSE } from "@/lib/content";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("principal"); }
 
@@ -362,7 +363,7 @@ export default function Page() {
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)" }}>
                   Walk in. Ask anything.{" "}
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
-                    Mon&ndash;Sat, 9&ndash;6.
+                    {OFFICE_HOURS_PROSE}.
                   </span>
                 </h2>
               </div>

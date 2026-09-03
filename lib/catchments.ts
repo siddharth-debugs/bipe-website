@@ -151,9 +151,9 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Mirzapur",
       description:
-        "Mirzapur has its own BTE UP–affiliated government polytechnic, established under the UP technical-education department. Like all UP government polytechnics, admission is JEECUP-merit based; the per-branch capacity is limited and rank cutoffs vary year to year. Fees in the typical government range of ₹11,870-35,610 per year (verify the current BTE UP gazette).",
+        "Mirzapur has its own BTE UP–affiliated government polytechnic, established under the UP technical-education department. Like all UP government polytechnics, admission is JEECUP-merit based; the per-branch capacity is limited and rank cutoffs vary year to year. Fees in the typical government range of ₹12,000-22,000 per year (verify the current BTE UP gazette).",
       whenGovernment:
-        "If your JEECUP rank confidently secures a Government Polytechnic Mirzapur seat, the fee gap (~₹15,000-25,000/year vs BIPE) is meaningful for any household. Day-scholar commute within Mirzapur city is feasible, removing hostel costs entirely. For cost-binding families, this is the right path.",
+        "If your JEECUP rank confidently secures a Government Polytechnic Mirzapur seat, the fee gap (~₹8,000-18,000/year vs BIPE) is meaningful for any household. Day-scholar commute within Mirzapur city is feasible, removing hostel costs entirely. For cost-binding families, this is the right path.",
       whenBipe:
         "BIPE wins when: (a) your JEECUP rank doesn't safely secure a government seat in the branch you want; (b) you specifically want Dairy Engineering (not commonly offered at government polytechnics in this belt); (c) you're from outer Mirzapur tehsils and would need a hostel anyway; (d) you want documented placement infrastructure (1,331 named alumni). Honest comparison framework on /private-vs-government-polytechnic.",
     },
@@ -199,7 +199,7 @@ export const CATCHMENTS: Catchment[] = [
     faqs: [
       {
         q: "How does BIPE compare with Government Polytechnic Jaunpur?",
-        a: "Both are BTE UP-affiliated — the diploma certificate is identical. Government Polytechnic Jaunpur has a lower fee (~₹6,000-18,000/year vs BIPE's AFRC ₹30,150). BIPE's edge: documented 1,331 placements, on-campus hostel for students from outside Jaunpur city, the Dairy Engineering branch, smaller cohort with named faculty mentors. See /private-vs-government-polytechnic for the honest framework.",
+        a: "Both are BTE UP-affiliated — the diploma certificate is identical. Government Polytechnic Jaunpur has a lower fee (~₹12,000-22,000/year vs BIPE's AFRC ₹30,150). BIPE's edge: documented 1,331 placements, on-campus hostel for students from outside Jaunpur city, the Dairy Engineering branch, smaller cohort with named faculty mentors. See /private-vs-government-polytechnic for the honest framework.",
       },
       {
         q: "Can a Jaunpur student get BIPE admission via JEECUP?",
@@ -219,7 +219,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Jaunpur (founded 1984)",
       description:
-        "Government Polytechnic Jaunpur is one of Eastern UP's longer-established BTE UP–affiliated government institutes. Per recent JEECUP cycles, normal-entry rank cutoffs in popular branches close around 16,000 with ~200+ marks needed in the general category. Fees are in the standard UP government polytechnic range (₹11,870-35,610/year).",
+        "Government Polytechnic Jaunpur is one of Eastern UP's longer-established BTE UP–affiliated government institutes. Per recent JEECUP cycles, normal-entry rank cutoffs in popular branches close around 16,000 with ~200+ marks needed in the general category. Fees are in the standard UP government polytechnic range (₹12,000-22,000/year).",
       whenGovernment:
         "Government Polytechnic Jaunpur has a 40-year track record and a local alumni network. If your JEECUP rank lands you a seat in the branch you want, and your family is in Jaunpur city (no hostel needed), this is a respected, low-fee option.",
       whenBipe:
@@ -275,7 +275,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "What documents does a Ghazipur applicant need?",
-        a: "10th and 12th marksheets, JEECUP 2026 rank card, Aadhaar, caste/income certificate (for scholarship), passport photos, transfer and character certificates. Domicile: not required for BIPE admission. Detailed checklist on /documents.",
+        a: "Class 10 marksheet, JEECUP 2026 rank card, Aadhaar, caste/income certificate (for scholarship), passport photos, transfer and character certificates. A Class 12 / ITI / B.Sc certificate is needed only for Group K lateral entry into the 2nd year. Domicile: a UP-issued domicile / residence certificate is needed if you are claiming the UP state quota, a UP reserved-category seat, or the UP Post-Matric Scholarship — which covers most Ghazipur applicants. Detailed checklist on /documents.",
       },
       {
         q: "Can a Ghazipur student get the UP Government scholarship at BIPE?",
@@ -287,7 +287,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Ghazipur",
       description:
-        "Ghazipur has a BTE UP–affiliated government polytechnic serving the district. Per-branch capacity is rank-limited via JEECUP counselling. Fees follow the standard UP government polytechnic structure (~₹11,870-35,610/year). The institute does not commonly offer Dairy Engineering — a branch Ghazipur's dairy economy specifically benefits from.",
+        "Ghazipur has a BTE UP–affiliated government polytechnic serving the district. Per-branch capacity is rank-limited via JEECUP counselling. Fees follow the standard UP government polytechnic structure (~₹12,000-22,000/year). The institute does not commonly offer Dairy Engineering — a branch Ghazipur's dairy economy specifically benefits from.",
       whenGovernment:
         "If your rank secures Government Polytechnic Ghazipur for Civil, Electrical, or Mechanical Engineering and you live in Ghazipur city or nearby blocks (no hostel need), the lower fee makes government the right choice.",
       whenBipe:
@@ -355,7 +355,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Azamgarh",
       description:
-        "Azamgarh has a BTE UP-affiliated government polytechnic serving the district's large population. Admission is rank-competitive through JEECUP — Azamgarh has one of Eastern UP's larger applicant pools, so cutoffs in popular branches can run sharp. Government fee structure (₹11,870-35,610/year).",
+        "Azamgarh has a BTE UP-affiliated government polytechnic serving the district's large population. Admission is rank-competitive through JEECUP — Azamgarh has one of Eastern UP's larger applicant pools, so cutoffs in popular branches can run sharp. Government fee structure (₹12,000-22,000/year).",
       whenGovernment:
         "Government Polytechnic Azamgarh is a sensible choice if your rank confidently secures the branch you want, you live in Azamgarh city (day-scholar feasible), and the fee gap matters. With a strong rank and city residency, this is the obvious option.",
       whenBipe:
@@ -547,7 +547,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Chandauli?",
-        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹11,870-35,610/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: 5 branches (including the rare Dairy Engineering), on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,331 alumni placement record. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹12,000-22,000/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: 5 branches (including the rare Dairy Engineering), on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,331 alumni placement record. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Can a Bihar-border Chandauli resident apply easily?",
@@ -559,9 +559,9 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Chandauli",
       description:
-        "Chandauli has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
+        "Chandauli has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government fee structure (~₹12,000-22,000/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
       whenGovernment:
-        "If your JEECUP rank confidently secures a Government Polytechnic Chandauli seat in the branch you want and you live in Chandauli city, the government route is the right choice. Day-scholar is feasible and the fee gap (~₹15,000-25,000/year vs BIPE) is meaningful.",
+        "If your JEECUP rank confidently secures a Government Polytechnic Chandauli seat in the branch you want and you live in Chandauli city, the government route is the right choice. Day-scholar is feasible and the fee gap (~₹8,000-18,000/year vs BIPE) is meaningful.",
       whenBipe:
         "BIPE wins for Chandauli students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you specifically want Dairy Engineering; (c) you're from outer Chandauli blocks (Naugarh, Sakaldiha, Chakia) and need hostel; (d) you want documented placement infrastructure with named alumni at Indian Railways and 43 other recruiters. /private-vs-government-polytechnic has the wider framework.",
     },
@@ -627,7 +627,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Ballia",
       description:
-        "Ballia has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government polytechnic fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). The institute serves Ballia city and surrounding blocks well; Dairy Engineering is generally not offered.",
+        "Ballia has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government polytechnic fee structure (~₹12,000-22,000/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). The institute serves Ballia city and surrounding blocks well; Dairy Engineering is generally not offered.",
       whenGovernment:
         "Government Polytechnic Ballia is the right choice if your rank confidently secures the branch you want, you live in Ballia city or nearby blocks (no hostel need), and the fee gap is binding for your family. With a strong rank and city residency, this is the obvious option.",
       whenBipe:
@@ -695,7 +695,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Sonbhadra (Robertsganj)",
       description:
-        "Sonbhadra has its own BTE UP-affiliated government polytechnic at Robertsganj. Standard UP government polytechnic fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Given the strong industrial demand in the district, JEECUP cutoffs at this institute can run sharp for popular branches.",
+        "Sonbhadra has its own BTE UP-affiliated government polytechnic at Robertsganj. Standard UP government polytechnic fee structure (~₹12,000-22,000/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Given the strong industrial demand in the district, JEECUP cutoffs at this institute can run sharp for popular branches.",
       whenGovernment:
         "Government Polytechnic Sonbhadra is the natural choice if your JEECUP rank confidently secures the branch you want in the industry alignment you target (Electrical for NTPC/UPPCL, Mechanical for Hindalco). Day-scholar from Robertsganj is feasible for students living in the district HQ.",
       whenBipe:
@@ -763,7 +763,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Sultanpur",
       description:
-        "Sultanpur has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
+        "Sultanpur has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government fee structure (~₹12,000-22,000/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
       whenGovernment:
         "Government Polytechnic Sultanpur is the natural choice if your rank secures the branch you want and you live in Sultanpur city or nearby blocks. The lower fee structure + day-scholar option is the cost-binding family's optimal path.",
       whenBipe:
@@ -831,7 +831,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Pratapgarh",
       description:
-        "Pratapgarh has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government polytechnic fee structure (~₹11,870-35,610/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
+        "Pratapgarh has its own BTE UP-affiliated government polytechnic serving the district. Standard UP government polytechnic fee structure (~₹12,000-22,000/year). Branches typically include Civil, Electrical, Mechanical (verify current syllabus on BTE UP portal). Dairy Engineering is generally not offered.",
       whenGovernment:
         "Government Polytechnic Pratapgarh is the natural choice if your rank secures the branch you want, you live in or near Pratapgarh city, and the fee gap matters. The lower fee + day-scholar option is the cost-binding family's optimal path.",
       whenBipe:
@@ -899,7 +899,7 @@ export const CATCHMENTS: Catchment[] = [
     governmentOption: {
       primary: "Government Polytechnic Gorakhpur",
       description:
-        "Gorakhpur has a long-established BTE UP-affiliated government polytechnic — one of Eastern UP's larger institutes. Standard government fee structure (~₹11,870-35,610/year). Branches typically include the standard 3-5 engineering offerings. JEECUP cutoffs at GP Gorakhpur run rank-competitive for popular branches given the city's larger applicant pool. Dairy Engineering is generally not offered.",
+        "Gorakhpur has a long-established BTE UP-affiliated government polytechnic — one of Eastern UP's larger institutes. Standard government fee structure (~₹12,000-22,000/year). Branches typically include the standard 3-5 engineering offerings. JEECUP cutoffs at GP Gorakhpur run rank-competitive for popular branches given the city's larger applicant pool. Dairy Engineering is generally not offered.",
       whenGovernment:
         "Government Polytechnic Gorakhpur is the natural choice if your rank confidently secures the branch you want and you live in or near Gorakhpur city. Lower fees + day-scholar feasibility + the city's established educational infrastructure make this the obvious option for cost-binding rank-strong applicants.",
       whenBipe:

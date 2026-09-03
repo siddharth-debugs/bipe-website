@@ -99,25 +99,25 @@ export function EarlyRegistrationForm() {
           ✓
         </div>
         <div className="eyebrow" style={{ marginTop: 20, color: "var(--brand)" }}>
-          Registration received
-          <span lang="hi" style={{ fontWeight: 400, opacity: 0.7, letterSpacing: "normal", textTransform: "none" }}> · रजिस्ट्रेशन मिल गया</span>
+          Enquiry received
+          <span lang="hi" style={{ fontWeight: 400, opacity: 0.7, letterSpacing: "normal", textTransform: "none" }}> · आपकी जानकारी मिल गई</span>
         </div>
         <h3 className="bipe-h3" style={{ marginTop: 8, fontSize: 24 }}>
-          You&rsquo;re registered, {status.name}.
+          We have your details, {status.name}.
         </h3>
         <p lang="hi" style={{ marginTop: 6, color: "var(--ink-2)", fontSize: 15.5, lineHeight: 1.6 }}>
-          {status.name}, आप रजिस्टर हो गए हैं।
+          {status.name}, आपकी जानकारी हमें मिल गई है।
         </p>
         <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7, maxWidth: "46ch", marginInline: "auto" }}>
-          Reference <b style={{ color: "var(--brand)", fontFamily: "var(--font-mono)" }}>{status.ref}</b>. Your preferred branch is
-          held for <b>7 days</b> — visit campus within a week to confirm. Our admissions team will also call you shortly.
+          Reference <b style={{ color: "var(--brand)", fontFamily: "var(--font-mono)" }}>{status.ref}</b>. Our admissions team will call
+          you shortly and tell you honestly whether a seat is still open in your branch for 2026-27.
         </p>
         <p lang="hi" style={{ marginTop: 10, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.85, maxWidth: "48ch", marginInline: "auto" }}>
-          आपकी पसंदीदा ब्रांच <b>7 दिन</b> के लिए सुरक्षित है — एक हफ़्ते के अंदर कैंपस आकर कन्फर्म करें। हमारी एडमिशन टीम जल्द ही आपको कॉल भी करेगी।
+          हमारी एडमिशन टीम जल्द ही आपको कॉल करेगी और साफ़-साफ़ बताएगी कि 2026-27 में आपकी ब्रांच में सीट बची है या नहीं।
         </p>
         <div className="row" style={{ justifyContent: "center", marginTop: 26, gap: 12, flexWrap: "wrap" }}>
           <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
-            <WhatsAppIcon /> Confirm on WhatsApp
+            <WhatsAppIcon /> Ask on WhatsApp
           </a>
           <Link href="/visit#book" className="btn btn-ghost btn-lg">
             Plan my campus visit <ArrowIcon size={16} />
@@ -196,12 +196,12 @@ export function EarlyRegistrationForm() {
       )}
 
       <button type="submit" className="btn btn-primary btn-lg" disabled={status.state === "sending"} style={{ marginTop: 22, width: "100%", justifyContent: "center" }}>
-        {status.state === "sending" ? "Registering…" : <>Register free &amp; reserve my branch <ArrowIcon /></>}
+        {status.state === "sending" ? "Sending…" : <>Send my enquiry &amp; get a call back <ArrowIcon /></>}
       </button>
 
       <p className="muted" style={{ marginTop: 14, fontSize: 12, lineHeight: 1.6, textAlign: "center" }}>
-        Free &amp; non-binding. By registering you agree to be contacted by BIPE Admissions about 2026-27. Students under 18 should
-        register with a parent/guardian. We don&rsquo;t share your details with third parties — see our{" "}
+        Free &amp; non-binding. By sending this you agree to be contacted by BIPE Admissions about 2026-27. Students under 18 should
+        enquire with a parent/guardian. We don&rsquo;t share your details with third parties — see our{" "}
         <Link href="/privacy" style={{ color: "var(--brand)" }}>Privacy Policy</Link>.
       </p>
     </form>

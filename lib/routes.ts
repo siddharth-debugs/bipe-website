@@ -92,8 +92,8 @@ export const ROUTES: Record<RouteKey, {
     path: "/early-registration",
     // Conversion LP, not an organic-search target — see `noindex` above.
     noindex: true,
-    title: "Pre-Counselling Registration · JEECUP 2026 · BIPE Varanasi (Code 4455)",
-    description: "Got your JEECUP 2026 rank? Do your Pre-Counselling Registration at BIPE Varanasi — reserve your branch (code 4455) before choice-filling and get free counselling guidance. Complements official JEECUP counselling.",
+    title: "Admissions Enquiry · Session 2026-27 · BIPE Varanasi (Code 4455)",
+    description: "Pre-Counselling Registration closed on 27 July 2026 and has not reopened. Classes began 1 August. Leave your details and BIPE Varanasi admissions will call you about seat availability — code 4455.",
   },
   home: {
     path: "/",
@@ -260,7 +260,7 @@ export const ROUTES: Record<RouteKey, {
     path: "/documents",
     // CTR rewrite 26 May 2026 · "Full Checklist" + year + JEECUP context.
     title: "Documents for BIPE Admission 2026-27 · Full Checklist · JEECUP 4455",
-    description: "BIPE admission checklist 2026-27: 10th/12th marksheets, JEECUP rank card, Aadhaar, caste/income/EWS certificates, passport photos, transfer + character.",
+    description: "BIPE admission checklist 2026-27: Class 10 marksheet, JEECUP rank card, Aadhaar, caste/income/EWS certificates, passport photos, transfer + character.",
   },
   jeecup: {
     path: "/jeecup",
@@ -300,7 +300,7 @@ export const ROUTES: Record<RouteKey, {
   faculty: {
     path: "/faculty",
     title: "Faculty · 40 BTEUP-recognised mentors · 1:20 ratio | BIPE",
-    description: "40 BTEUP-recognised faculty across 7 departments. 1:20 mentor ratio with periodic home visits. AICTE FDP-trained, OBE-aligned pedagogy.",
+    description: "40 BTEUP-recognised faculty across 5 departments. 1:20 mentor ratio with periodic home visits. AICTE FDP-trained, OBE-aligned pedagogy.",
   },
   events: {
     path: "/events",
@@ -381,7 +381,7 @@ export const ROUTES: Record<RouteKey, {
   },
   terms: {
     path: "/terms",
-    title: "Terms of Use — bipe.ac.in | BIPE Varanasi",
+    title: "Terms of Use — bipevns.org | BIPE Varanasi",
     description: "Terms governing the use of bipevns.org and BIPE digital services. Includes IT Rules 2021 grievance officer details.",
   },
   antiRagging: {
@@ -713,7 +713,7 @@ export const ROUTES: Record<RouteKey, {
     // Varanasi admission" (intercept the comparison searchers), plus
     // Hindi variants. FAQPage schema baked in for rich-result eligibility.
     title: "Private vs Government Polytechnic Varanasi · The Honest Math 2026 | BIPE",
-    description: "Government Polytechnic Varanasi (₹6k-18k/year) vs BIPE (AFRC ₹30,150/year) — what's identical (BTEUP diploma, JE eligibility) vs where the fee delta goes.",
+    description: "Government Polytechnic Varanasi (₹12k-22k/year) vs BIPE (AFRC ₹30,150/year) — what's identical (BTEUP diploma, JE eligibility) vs where the fee delta goes.",
     keywords: [
       "private vs government polytechnic",
       "government vs private polytechnic",

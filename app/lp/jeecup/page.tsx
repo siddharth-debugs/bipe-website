@@ -15,9 +15,9 @@ import { phaseIndexAt } from "./lpSchedule";
  * noindex — it exists to receive ad clicks, not to rank or duplicate /jeecup.
  */
 export const metadata: Metadata = {
-  title: "Reserve your branch at BIPE · JEECUP 2026 (code 4455)",
+  title: "Ask BIPE what is still open · Session 2026-27 (code 4455)",
   description:
-    "JEECUP 2026 counselling is on. Do your free Pre-Counselling Registration and hold your branch at BIPE Varanasi — AICTE-approved, code 4455. Open / general category, no UP domicile needed.",
+    "Pre-Counselling Registration closed on 27 July 2026. Leave your number and BIPE Varanasi admissions will tell you what is still open — AICTE-approved, code 4455. Open / general category, no UP domicile needed.",
   robots: { index: false, follow: false },
 };
 
@@ -101,15 +101,15 @@ export default function Page() {
         >
           {/* message */}
           <div>
-            <span className="eyebrow" style={{ color: "var(--brand)" }}>JEECUP 2026 · Counselling on now</span>
+            <span className="eyebrow" style={{ color: "var(--brand)" }}>Session 2026-27 · classes under way</span>
             <h1 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-              Reserve your branch at BIPE —{" "}
+              A seat at BIPE —{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                before counselling closes.
+                ask what is still open.
               </span>
             </h1>
             <p className="lead" style={{ marginTop: 18, maxWidth: "52ch", color: "var(--ink-2)" }}>
-              Do your <strong>free Pre-Counselling Registration</strong> and hold your preferred branch at BIPE Varanasi — AICTE-approved, JEECUP code <strong>4455</strong>. Open / general category, so <strong>no UP domicile is needed</strong> — Bihar students welcome. Classes are already under way.
+              <strong>Pre-Counselling Registration closed on 27 July 2026.</strong> Leave your number and BIPE Varanasi admissions will tell you honestly what is still open — AICTE-approved, JEECUP code <strong>4455</strong>. Open / general category, so <strong>no UP domicile is needed</strong> — Bihar students welcome. Classes are already under way.
             </p>
 
             {/* Live counselling-schedule strip — rolls Round 3 → allotment →
@@ -146,10 +146,10 @@ export default function Page() {
           >
             <div className="eyebrow" style={{ color: "var(--brand)" }}>Free · 2 minutes</div>
             <h2 className="bipe-h3" style={{ marginTop: 8, fontSize: 22, color: "var(--ink)" }}>
-              Reserve your branch
+              Ask about a seat
             </h2>
             <p style={{ marginTop: 6, marginBottom: 18, fontSize: 13.5, color: "var(--ink-3)", lineHeight: 1.55 }}>
-              Drop your number — admissions calls back within the day, in Hindi or English, to hold your seat and guide your counselling choices.
+              Drop your number — admissions calls back within the day, in Hindi or English, and tells you whether your branch still has room.
             </p>
             <LpLeadForm />
           </div>

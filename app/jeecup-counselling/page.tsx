@@ -85,7 +85,7 @@ const DOCUMENTS: string[] = [
   "JEECUP rank card / allotment letter (printout)",
   "Class 10 marksheet + certificate (original + 2 photocopies)",
   "Class 12 / ITI / B.Sc certificate (for Group K lateral entry)",
-  "Aadhaar card (original + photocopy)",
+  "Aadhaar card (original + 2 self-attested photocopies)",
   "JEECUP application form printout",
   "Domicile / residence certificate (UP-issued, if claiming state quota)",
   "Caste certificate (if claiming SC / ST / OBC reservation — must be valid)",
@@ -298,7 +298,7 @@ export default function Page() {
               Open JEECUP portal <ArrowIcon size={16} />
             </a>
             <Link href="/early-registration" className="btn btn-ghost">
-              Pre-Counselling Registration
+              Admissions enquiry
             </Link>
           </div>
         </div>

@@ -11,31 +11,31 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const BENEFITS = [
   {
-    tag: "Your branch, held",
-    title: "Seat & branch reserved for early registrants",
-    body: "Register and visit within 7 days, and BIPE reserves your preferred branch for you (code 4455) — subject to seats and basic eligibility.",
+    tag: "An honest read on seats",
+    title: "We tell you what is actually open",
+    body: "Pre-Counselling Registration closed on 27 July 2026 and has not reopened. Leave your details and admissions will tell you, branch by branch, whether BIPE (code 4455) still has room for 2026-27.",
   },
   {
-    tag: "Free counselling guidance",
-    title: "We guide your JEECUP choice-filling",
-    body: "Our admissions team helps you order your counselling choices so BIPE code 4455 lands the branch you want — free, on call or WhatsApp.",
+    tag: "Admissions guidance",
+    title: "We walk you through what is left",
+    body: "Our admissions team explains what joining BIPE now involves — which branches still have room, what documents you need, and how quickly you would have to move. Free, on call or WhatsApp.",
   },
   {
     tag: "Popular branches fill first",
-    title: "Priority on Computer Science & Mechanical",
-    body: "CS and Mechanical management seats are limited and fill first. Registering early puts you at the front of the queue for them.",
+    title: "Computer Science and Mechanical go first",
+    body: "CS and Mechanical seats are limited and were the first to fill this session. Ask about those two early — they are the likeliest to be gone.",
   },
   {
     tag: "Free · zero risk",
     title: "Completely free, completely non-binding",
-    body: "Registration costs nothing and commits you to nothing. Visit, see the labs and hostel, talk to faculty — then decide. Your reserved branch is simply held for a week.",
+    body: "The enquiry costs nothing and commits you to nothing. Visit, see the labs and hostel, talk to faculty — then decide.",
   },
 ];
 
 const STEPS = [
-  { n: "01", t: "Register free", d: "Fill the short form below — name, phone, JEECUP application number, group and preferred branch. Two minutes." },
-  { n: "02", t: "Visit within 7 days", d: "Come to BIPE Phoolpur within a week. Tour the campus, meet the admissions team, ask anything." },
-  { n: "03", t: "Branch reserved + guidance", d: "Your preferred branch is confirmed at BIPE, and we guide you through JEECUP counselling choice-filling for code 4455." },
+  { n: "01", t: "Send your details", d: "Fill the short form below — name, phone, JEECUP application number, group and preferred branch. Two minutes." },
+  { n: "02", t: "We call you back", d: "Admissions ring you in Hindi or English and tell you honestly whether your branch still has room at code 4455." },
+  { n: "03", t: "Visit and decide", d: "If a seat is open, come to BIPE Phoolpur — tour the campus, meet faculty, check the documents you need, then decide." },
 ];
 
 export default function Page() {
@@ -67,7 +67,7 @@ export default function Page() {
             Pre-Counselling Registration 27 जुलाई को बंद हो गई — पर JEECUP Round 5 — आख़िरी counselling round — चल रहा है, सभी राज्यों के लिए, और classes शुरू हो चुकी हैं। नीचे details भरें — BIPE admissions आपको seat (code 4455) के बारे में call करेंगे और Round-5 choices में guide करेंगे।
           </p>
           <p className="muted" style={{ marginTop: 12, fontSize: 12.5, color: "var(--ink-3)", maxWidth: "60ch" }}>
-            <strong>Note:</strong> the ₹1,200 PET scholarship offer closed on 22 June 2026 and is no longer available — Pre-Counselling Registration itself stays free.
+            <strong>Note:</strong> the ₹1,200 PET scholarship offer closed on 22 June 2026 and is no longer available — this admissions enquiry is free.
           </p>
           <RegistrationCountdown />
           <div className="row" style={{ gap: 12, marginTop: 28, flexWrap: "wrap" }}>
@@ -75,8 +75,8 @@ export default function Page() {
             <Link href="/visit#book" className="btn btn-ghost btn-lg">See the campus first</Link>
           </div>
           <p className="muted" style={{ marginTop: 18, fontSize: 12.5, maxWidth: "62ch" }}>
-            Pre-Counselling Registration <strong>complements the official JEECUP counselling — it does not replace it.</strong> We also help you
-            fill choices for BIPE code 4455.
+            <strong>Pre-Counselling Registration for 2026-27 is closed and has not reopened.</strong> This form is an admissions enquiry — it is not a
+            registration, and it does not hold a seat for you.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function Page() {
       <section className="section">
         <div className="container">
           <div className="eyebrow">How it works</div>
-          <h2 className="bipe-h2" style={{ marginTop: 12, maxWidth: "22ch" }}>Three steps. Seven days.</h2>
+          <h2 className="bipe-h2" style={{ marginTop: 12, maxWidth: "22ch" }}>Three steps. One phone call.</h2>
           <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 18, marginTop: 28 }}>
             {STEPS.map((s) => (
               <div key={s.n}>
@@ -123,7 +123,7 @@ export default function Page() {
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>.</span>
             </h2>
             <p className="muted" style={{ marginTop: 8, fontSize: 14, maxWidth: "56ch" }}>
-              Fill the basics — our admissions team calls to guide your Round-5 choices (code 4455) and confirm a seat before classes begin.
+              Fill the basics — our admissions team calls to guide your Round-5 choices (code 4455) and talk you through joining now that classes are under way.
             </p>
             <div style={{ marginTop: 26 }}>
               <EarlyRegistrationForm />
@@ -132,10 +132,10 @@ export default function Page() {
 
           {/* Honest scope / fine print */}
           <p className="muted" style={{ marginTop: 20, fontSize: 12, lineHeight: 1.75 }}>
-            <strong>The details:</strong> &ldquo;Seat &amp; branch reserved&rdquo; refers to BIPE&rsquo;s own institute seats at the
-            Phoolpur campus, JEECUP code 4455 — held for 7 days from registration, subject to seat availability and basic
-            eligibility (Class 10 passed). Pre-Counselling Registration runs <strong>alongside the official JEECUP counselling, not in place of it</strong> — you remain
-            free to participate in counselling, and we&rsquo;ll guide you through choice-filling for code 4455.
+            <strong>The details:</strong> this form is an admissions enquiry about BIPE&rsquo;s own institute seats at the
+            Phoolpur campus, JEECUP code 4455. It does not reserve a seat and holds nothing for you — any admission is
+            subject to seat availability and basic eligibility (Class 10 passed). <strong>Pre-Counselling Registration for
+            2026-27 closed on 27 July 2026 and has not reopened</strong>; classes began 1 August 2026.
           </p>
         </div>
       </section>

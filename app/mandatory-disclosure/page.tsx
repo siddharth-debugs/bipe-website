@@ -114,9 +114,10 @@ const SECTIONS: Section[] = [
     title: "Faculty — count, qualifications, ratio",
     body: (
       <>
-        <p><strong>40 BTEUP-recognised faculty</strong> across seven departments (CSE, Civil, Electrical, Mechanical, Dairy Engineering, Applied Sciences &amp; Humanities, Workshop &amp; Practical Training).</p>
-        <p>Mentor-to-student ratio: <strong>1:20</strong> across the diploma. Faculty are AICTE-FDP trained and OBE-aligned. See the <Link href="/faculty">Faculty page</Link> for departmental composition.</p>
-        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The detailed department-wise faculty roster (name, designation, qualification, tenure, experience) per AICTE Annexure-18 §7 is being consolidated by HR for the 2026-27 academic year. The summary above lists current departmental counts; the full roster is available on request from <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
+        <p><strong>40 BTEUP-recognised faculty</strong> across five departments (Computer Science, Civil, Electrical, Mechanical, Dairy Engineering) — one per BTEUP-affiliated branch.</p>
+        <p>Mentor-to-student ratio: <strong>1:20</strong> across the diploma. Faculty are AICTE-FDP trained and OBE-aligned.</p>
+        <p>The department-wise roster required by AICTE Annexure-18 §7 — every academic faculty member&rsquo;s name, designation, qualification and experience — is published in full on the <Link href="/faculty">Faculty page</Link>.</p>
+        <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The one Annexure-18 field not carried there is date of appointment; joining dates are available on request from <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>
       </>
     ),
   },

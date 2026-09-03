@@ -126,7 +126,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     slug: "jeecup-round-4-2026",
     shortTitle: "JEECUP Round 4 · Phase 2",
     title: "JEECUP Round 4 2026 · Phase 2 Opens for ALL States (Bihar too) | BIPE 4455",
-    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1. Now open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, dates and how to lock a BIPE seat — code 4455.",
+    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1, open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, what has closed, and how to ask BIPE about a seat — code 4455.",
     keywords: [
       "JEECUP round 4",
       "JEECUP round 4 2026",
@@ -143,30 +143,30 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     heroAlert: {
       badge: "Round 5 · classes under way",
       text: "Phase 1 (Rounds 1–3) was UP-domicile only. Round 4 opened Phase 2 to other-state candidates and anyone who missed the first rounds; Round 5 is the final round of the cycle. Add BIPE code 4455 to your choices and talk to admissions today — classes began 1 August, so late joiners catch up with support.",
-      primary: { label: "Reserve your branch — free →", href: "/early-registration" },
+      primary: { label: "Talk to admissions →", href: "/early-registration" },
       secondary: { label: "Open JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
     },
-    lead: "JEECUP 2026 counselling runs in two phases. Rounds 1–3 (Phase 1) were open only to Uttar Pradesh domicile candidates. Round 4 begins Phase 2 — the single biggest opening after Round 1 — because three groups become eligible at once: candidates from other states (Bihar, Jharkhand, MP and beyond); UP candidates who did not register, were not allotted, or missed Rounds 1–3; and candidates whose earlier allotment lapsed — allotted a seat in Round 1 or 2 but didn't verify documents or pay in time. That last group was barred from Rounds 2–3, and JEECUP's official notification re-admits them from Round 4. Other-state candidates are admitted in the open / general category (no UP reservation), and those open seats concentrate in private polytechnics — which is exactly what BIPE is (code 4455). Exact Round-4 dates release progressively on jeecup.admissions.nic.in, so lock your branch at BIPE first and fill 4455 the moment choice-filling opens.",
+    lead: "JEECUP 2026 counselling runs in two phases. Rounds 1–3 (Phase 1) were open only to Uttar Pradesh domicile candidates. Round 4 begins Phase 2 — the single biggest opening after Round 1 — because three groups become eligible at once: candidates from other states (Bihar, Jharkhand, MP and beyond); UP candidates who did not register, were not allotted, or missed Rounds 1–3; and candidates whose earlier allotment lapsed — allotted a seat in Round 1 or 2 but didn't verify documents or pay in time. That last group was barred from Rounds 2–3, and JEECUP's official notification re-admits them from Round 4. Other-state candidates are admitted in the open / general category (no UP reservation), and those open seats concentrate in private polytechnics — which is exactly what BIPE is (code 4455). Round 4 has now closed and classes began 1 August, so if you are still without a seat, talk to BIPE admissions (code 4455) about what is vacant.",
     quickStats: [
       { label: "Who's eligible now", value: "All states", sub: "Bihar, Jharkhand, MP + missed R1–3" },
       { label: "Category", value: "Open / General", sub: "no UP domicile certificate needed" },
       { label: "BIPE code", value: "4455", sub: "5 BTEUP branches" },
-      { label: "Classes begin", value: "1 August", sub: "reserve your seat before then" },
+      { label: "Classes began", value: "1 August", sub: "late joiners catch up with support" },
     ],
     tables: [
       {
         eyebrow: "The full round map",
         heading: "Every JEECUP 2026 round, explained",
-        intro: "JEECUP 2026 has two phases across its main rounds. This is who each round is for — and why Round 4 is the one to watch if you're from another state or missed the earlier rounds.",
+        intro: "JEECUP 2026 ran two phases across its main rounds. This is who each round was for — and why Round 4 was the round that reopened the cycle if you're from another state or missed the earlier rounds.",
         columns: ["Round", "Phase & window", "Who can participate", "At BIPE (4455)"],
         rows: [
           ["Round 1", "Phase 1 · 25–30 Jun (done)", "UP-domicile candidates — the first, largest round", "Seats moved fast"],
           ["Round 2", "Phase 1 · 7–9 Jul (done)", "UP-domicile · upgrade / fresh allotment", "160+ admitted so far this season"],
           ["Round 3", "Phase 1 · 16–19 Jul · allotment 20 Jul", "UP-domicile · last Phase-1 round", "Allottees report by ~25 Jul"],
-          ["Round 4", "Phase 2 · dates on the portal (expected late Jul)", "ALL STATES now eligible — Bihar, Jharkhand, MP — plus anyone who missed Rounds 1–3", "Reserve now, fill 4455 when it opens"],
-          ["Round 5", "Phase 2 · expected early Aug", "All states · final counselling round", "Last seats before classes begin"],
+          ["Round 4", "Phase 2 · closed", "ALL STATES eligible — Bihar, Jharkhand, MP — plus anyone who missed Rounds 1–3", "Round closed — ask admissions about vacant seats"],
+          ["Round 5", "Phase 2 · the final round", "All states · last centrally-run allotment", "Last seats — ask admissions what is vacant"],
         ],
-        note: "Round-4 and Round-5 choice-filling/allotment dates are released step by step on the official portal — check it daily during your active round, and keep your branch reserved at BIPE so a late-published date never costs you a seat:",
+        note: "Round 4 has closed and classes began 1 August; Round 5 is the final round of the cycle. If you are still without a seat, ask BIPE admissions directly what is vacant rather than waiting on a portal date:",
         noteLink: { label: "From Bihar? See the state-by-state guide", href: "/jeecup-from-bihar" },
       },
       {
@@ -194,17 +194,17 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "02",
         title: "Talk to BIPE admissions about your seat",
-        body: "Call or WhatsApp BIPE admissions now — they'll help you order your Round-4 choices so code 4455 lands the branch you want, and confirm seat availability branch by branch. With classes beginning 1 August, the fastest route to a confirmed seat is a direct conversation. It complements JEECUP counselling — you still fill 4455 in the official round.",
+        body: "Call or WhatsApp BIPE admissions — they'll confirm seat availability branch by branch and tell you honestly what is still open under code 4455. Classes began 1 August, so a direct conversation is now the fastest route to a seat. It complements JEECUP counselling — you still fill 4455 in any round you're eligible for.",
       },
       {
         n: "03",
         title: "Fill your choices — add code 4455",
-        body: "When Round-4 choice-filling opens, search for BIPE Phoolpur, Varanasi or enter institute code 4455 directly, and list it against every branch you'd accept — CSE, Mechanical (Production), Electrical, Civil, Dairy. Single-choice filling is the most common reason candidates miss a seat; list generously.",
+        body: "In JEECUP choice-filling you search for BIPE Phoolpur, Varanasi or enter institute code 4455 directly, and list it against every branch you'd accept — CSE, Mechanical (Production), Electrical, Civil, Dairy. Single-choice filling is the most common reason candidates miss a seat; list generously.",
       },
       {
         n: "04",
         title: "Seat allotment and acceptance",
-        body: "After choice-filling closes, JEECUP publishes the Round-4 allotment. If BIPE 4455 is allotted, accept the seat and pay the seat-acceptance fee within the round window (typically 3–5 days). The counselling fee for the cycle is ₹3,250; keep it ready.",
+        body: "After choice-filling closes, JEECUP publishes that round's allotment. If BIPE 4455 is allotted, accept the seat and pay the seat-acceptance fee within the round window (typically 3–5 days). The counselling fee for the cycle is ₹3,250; keep it ready.",
       },
       {
         n: "05",
@@ -213,8 +213,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         n: "06",
-        title: "Confirm before 1 August",
-        body: "Classes begin 1 August. Confirm your seat and hostel slot at the time of fee payment — out-of-state applicants are prioritised for hostel allotment. If Round 4 doesn't land your branch, keep 4455 in your Round-5 list; the final round often still has BIPE seats.",
+        title: "Joining after 1 August",
+        body: "Classes began 1 August, and late joiners catch up with support. Confirm your seat and hostel slot at the time of fee payment — out-of-state applicants are prioritised for hostel allotment. If Round 4 didn't land your branch, keep 4455 on your list for Round 5, the final round, and ask admissions what is still vacant.",
       },
     ],
     faqs: [
@@ -224,19 +224,19 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "I missed Rounds 1–3 — can I still get in through Round 4?",
-        a: "Yes. Round 4 is the big re-opening. Whether you didn't register in time, weren't allotted a seat, or simply sat the earlier rounds out, Round 4 lets you fill fresh choices. Check the portal for whether you need to (re)register for Phase 2, reserve your branch at BIPE now, and add code 4455 when choice-filling opens.",
+        a: "Round 4 was the big re-opening — whether you didn't register in time, weren't allotted a seat, or simply sat the earlier rounds out, it let you fill fresh choices. That round has now closed and classes began 1 August, so ask BIPE admissions (code 4455) what is still vacant, and keep 4455 on your list for Round 5, the final round, if you are still in counselling.",
       },
       {
         q: "I was allotted a seat earlier but didn't take admission — can I join Round 4?",
-        a: "Yes. JEECUP's official counselling notification (Point 5) is explicit: a candidate allotted a seat in Round 1 or 2 who did NOT complete admission — chose Freeze but didn't get documents verified or didn't pay the admission fee in time, or chose Float but didn't deposit the security + counselling fee — is not eligible for Rounds 2 and 3, but CAN participate again in Round 4. So a lapsed earlier allotment does not shut you out; Round 4 reopens for you. (Candidates who actually completed their Freeze — paid, verified and reported — are admitted and locked in.) Reserve your branch at BIPE (code 4455) and fill 4455 when Round 4 choice-filling opens.",
+        a: "Yes. JEECUP's official counselling notification (Point 5) is explicit: a candidate allotted a seat in Round 1 or 2 who did NOT complete admission — chose Freeze but didn't get documents verified or didn't pay the admission fee in time, or chose Float but didn't deposit the security + counselling fee — is not eligible for Rounds 2 and 3, but CAN participate again in Round 4. So a lapsed earlier allotment does not shut you out; Round 4 reopens for you. (Candidates who actually completed their Freeze — paid, verified and reported — are admitted and locked in.) Round 4 has since closed, so if that was you, ask BIPE admissions (code 4455) what is still vacant.",
       },
       {
         q: "Do I need to register again for Round 4?",
-        a: "It depends on your Phase-1 status. Candidates who never registered — often other-state candidates — usually need to register in the Phase-2 window that JEECUP publishes on the portal. Candidates already registered in Phase 1 normally continue with the same login. The official Round-4 notice on jeecup.admissions.nic.in spells out your exact case; check it daily during the round.",
+        a: "It depends on your Phase-1 status. Candidates who never registered — often other-state candidates — usually need to register in the Phase-2 window that JEECUP publishes on the portal. Candidates already registered in Phase 1 normally continue with the same login. The official Round-4 notice on jeecup.admissions.nic.in spelled out each case; that round has now closed.",
       },
       {
         q: "What are the exact JEECUP Round 4 dates?",
-        a: "JEECUP releases Round-4 (and Round-5) choice-filling and allotment dates progressively on the official portal rather than all at once, so we don't publish a fixed date here — a wrong date could cost you a seat. Round 4 is expected to open in the days after Round-3 reporting (late July). Watch jeecup.admissions.nic.in, and keep your branch reserved at BIPE so you're ready the moment it opens.",
+        a: "JEECUP released Round-4 and Round-5 choice-filling and allotment dates progressively on the official portal rather than all at once, so we never published a fixed date here — a wrong date could cost you a seat. Round 4 ran after Round-3 reporting and has closed; Round 5 is the final round of the cycle, and classes began 1 August. Ask BIPE admissions what is still vacant rather than waiting on a date.",
       },
       {
         q: "Do other-state candidates get UP reservation in Round 4?",
@@ -244,15 +244,15 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Which BIPE branches are open in Round 4?",
-        a: "All five BTEUP diploma branches at BIPE (code 4455) — Computer Science & Engineering, Mechanical (Production), Electrical, Civil, and Dairy Engineering — participate through JEECUP counselling. Availability by branch depends on how Phase-1 seats filled; WhatsApp your JEECUP rank to +91-7310077788 and we'll give you an honest, branch-by-branch read for Round 4.",
+        a: "All five BTEUP diploma branches at BIPE (code 4455) — Computer Science & Engineering, Mechanical (Production), Electrical, Civil, and Dairy Engineering — participate through JEECUP counselling. Availability by branch depends on how Phase-1 seats filled; WhatsApp your JEECUP rank to +91-7310077788 and we'll give you an honest, branch-by-branch read on what is still vacant.",
       },
       {
         q: "Round 4 me kaun apply kar sakta hai?",
-        a: "Round 4 (Phase 2) me sabhi state ke candidates apply kar sakte hain — Bihar, Jharkhand, MP sab. Jo UP se hain lekin Rounds 1–3 me register nahi kar paye ya seat nahi mili, wo bhi Round 4 me fresh choices bhar sakte hain. Other-state candidates open / general category me admit hote hain (UP domicile certificate zaroori nahi). BIPE (code 4455) me abhi apni branch reserve karein — jaise hi choice-filling khule, 4455 add kar dein.",
+        a: "Round 4 (Phase 2) me sabhi state ke candidates apply kar sakte the — Bihar, Jharkhand, MP sab. Jo UP se hain lekin Rounds 1–3 me register nahi kar paye ya seat nahi mili, wo bhi Round 4 me fresh choices bhar sakte the. Other-state candidates open / general category me admit hote hain (UP domicile certificate zaroori nahi). Round 4 ab band ho chuka hai aur classes 1 August se shuru ho chuki hain — agar ab bhi seat chahiye to BIPE admissions (code 4455) se poochhein ki kya vacant hai.",
       },
     ],
-    ctaTitle: "Round 4 is open to you — lock your BIPE seat",
-    ctaBody: "Reserve your preferred branch at BIPE (code 4455) now, before Round-4 choice-filling opens — free, two minutes. Admissions will call you back in Hindi or English to guide your Phase-2 choices, whichever state you're from.",
+    ctaTitle: "Round 4 has closed — ask about vacant seats",
+    ctaBody: "Round 4 has closed and classes began 1 August, but BIPE still takes direct applications for seats that are vacant (code 4455) — free, two minutes. Admissions will call you back in Hindi or English, whichever state you're from.",
   },
   // ─────────────────────────────────────────────────────────────────
   {
@@ -304,7 +304,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "05",
         title: "Upload documents and photograph",
-        body: "Required: passport-size colour photograph (JPG, 10-300 KB, white background, recent), signature (10-50 KB), Class 10 marksheet (PDF, under 2 MB). Most rejected applications fail here — verify size, format and clarity before clicking upload. The portal sometimes shows 'upload failed' for files just outside spec.",
+        body: "Required: passport-size colour photograph (JPG, 15-200 KB, white background, recent), signature (JPG, 15-200 KB), Class 10 marksheet (PDF, under 2 MB). Most rejected applications fail here — verify size, format and clarity before clicking upload. The portal sometimes shows 'upload failed' for files just outside spec.",
       },
       {
         n: "06",
@@ -324,8 +324,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       items: [
         "Class 10 marksheet (PDF, under 2 MB, all pages clearly legible)",
         "Aadhaar number (the number itself, no PDF needed for registration — only for counselling)",
-        "Passport-size colour photograph (JPG, 10-300 KB, white background, taken in the last 6 months)",
-        "Signature on white paper (JPG, 10-50 KB, black or blue ink only)",
+        "Passport-size colour photograph (JPG, 15-200 KB, white background, taken in the last 6 months)",
+        "Signature on white paper (JPG, 15-200 KB, black or blue ink only)",
         "Caste certificate scan (if claiming SC / ST / OBC reservation) — even if not required at registration, you'll need it within 48 hours of allotment",
         "Income certificate (if claiming EWS or scholarship)",
         "Active mobile number that you control (OTPs go here)",
@@ -471,7 +471,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     slug: "jeecup-result-2026",
     shortTitle: "JEECUP Result 2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, understand your category rank and plan counselling. Appeared in JEECUP 2026? Reserve your branch at BIPE (code 4455) before choice-filling.",
+    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, understand your category rank and plan counselling. Appeared in JEECUP 2026? Rounds 1–4 have closed — ask BIPE (code 4455) what is still vacant.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",
@@ -487,16 +487,16 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headlineAccent: "check your rank card now.",
     heroAlert: {
       badge: "Result declared",
-      text: "JEECUP 2026 results are out. Check your rank on the official portal, then reserve your branch at BIPE (code 4455) before you fill your counselling choices.",
+      text: "JEECUP 2026 results are out. Check your rank on the official portal — then, with Rounds 1–4 closed and classes under way, talk to BIPE admissions (code 4455) about a seat.",
       primary: { label: "Check on JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
-      secondary: { label: "Pre-Counselling Registration →", href: "/early-registration" },
+      secondary: { label: "Admissions enquiry →", href: "/early-registration" },
     },
-    lead: "JEECUP 2026 results are out. Log in at jeecup.admissions.nic.in to see your raw marks, percentile, all-India rank, category rank (if applicable), and to download your rank card. This page walks through the check process and explains what each number means for counselling — and how to reserve your branch at BIPE while the counselling rounds run.",
+    lead: "JEECUP 2026 results are out. Log in at jeecup.admissions.nic.in to see your raw marks, percentile, all-India rank, category rank (if applicable), and to download your rank card. This page walks through the check process and explains what each number means for counselling — and how to talk to BIPE about a seat now that the session has begun.",
     quickStats: [
       { label: "Status", value: "Result declared", sub: "Out now — check the portal" },
       { label: "Where", value: "jeecup.admissions.nic.in", sub: "Result tab" },
       { label: "What you get", value: "Marks · Rank · Card", sub: "Downloadable PDF" },
-      { label: "Counselling", value: "Begins shortly", sub: "5 rounds through August" },
+      { label: "Counselling", value: "Final round", sub: "Rounds 1–4 closed · classes began 1 Aug" },
     ],
     steps: [
       {
@@ -526,8 +526,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         n: "06",
-        title: "Plan your counselling choices NOW (before rounds open)",
-        body: "Counselling Round 1 opens late June. Don't wait until the choice-filling window starts to think about which branches at which institutes you want. Make a ranked list NOW — talk to family, talk to BIPE counsellors (free, +91-9415202879), and have your 10-20 choice combinations ready when the form opens.",
+        title: "Plan your counselling choices before you log in",
+        body: "Counselling Round 1 opened in late June 2026 and Round 5 is the final round. Never use the choice-filling window itself to decide which branches at which institutes you want — make a ranked list first, talk to family, talk to BIPE counsellors (free, +91-9415202879), and have your 10-20 choice combinations ready before the form opens.",
       },
     ],
     faqs: [
@@ -557,7 +557,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Got your JEECUP rank?",
-    ctaBody: "Talk to BIPE before you fill choices. We'll review your rank, your preferred branch, your home district and give you an honest read on whether government or BIPE fits best — and how to order your choices to maximise the right outcome.",
+    ctaBody: "Send us your JEECUP rank. We'll weigh it against your preferred branch and your home district and give you an honest read on whether government or BIPE fits best — and, with Rounds 1–4 closed, what is realistic from here.",
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -583,7 +583,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       badge: "Result declared",
       text: "JEECUP 2026 results are out. See what your rank realistically opens — then lock your branch at BIPE (code 4455).",
       primary: { label: "Check your rank card →", href: "https://jeecup.admissions.nic.in" },
-      secondary: { label: "Pre-Counselling Registration →", href: "/early-registration" },
+      secondary: { label: "Admissions enquiry →", href: "/early-registration" },
     },
     lead: "There is no honest way to convert raw marks into an exact JEECUP rank — your rank depends on each year's normalisation (how many candidates sat the exam and how hard the paper was). What we CAN show you, from BIPE's actual filed admission rank lists, is the part that matters: what each rank band realistically opens, and the real closing ranks for every branch at BIPE 4455. Use it to read your rank card — not to guess a number off a calculator.",
     quickStats: [
@@ -648,8 +648,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         n: "05",
-        title: "Lock your seat early",
-        body: "Pre-Counselling Registration reserves your preferred branch at BIPE while the counselling rounds run. It complements JEECUP counselling — you still fill 4455 in the official rounds. Register free, then visit campus within 7 days to confirm.",
+        title: "Ask BIPE what is still open",
+        body: "Pre-Counselling Registration for 2026-27 closed on 27 July 2026 and has not reopened. Send an admissions enquiry instead and BIPE will tell you, branch by branch, whether code 4455 still has room this session — then visit campus before you decide.",
       },
     ],
     faqs: [
@@ -763,7 +763,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "How does BIPE's spot round work?",
-        a: "BIPE's spot round opens after Round 5 closes — typically late July / early August 2026. You visit BIPE Phoolpur in person with your JEECUP rank card and documents. The placement-cell desk reviews your rank against current vacancies and offers a seat if you qualify. Spot-round students join the same orientation as Round-1-5 students. WhatsApp +91-7310077788 to confirm spot-round dates before travelling.",
+        a: "BIPE's spot round opens after Round 5 closes — typically in August. You visit BIPE Phoolpur in person with your JEECUP rank card and documents. The placement-cell desk reviews your rank against current vacancies and offers a seat if you qualify. Spot-round students join the same orientation as Round-1-5 students. WhatsApp +91-7310077788 to confirm spot-round dates before travelling.",
       },
       {
         q: "What if I'm allotted BIPE but I want to upgrade?",
@@ -803,7 +803,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "01",
         title: "Identity + JEECUP-linked documents (required)",
-        body: "Class 10 marksheet + certificate (original + 2 photocopies), Aadhaar card (original + photocopy), JEECUP application form printout, JEECUP rank card / allotment letter (printout). These four are mandatory for every candidate at every round of reporting.",
+        body: "Class 10 marksheet + certificate (original + 2 photocopies), Aadhaar card (original + 2 self-attested photocopies), JEECUP application form printout, JEECUP rank card / allotment letter (printout). These four are mandatory for every candidate at every round of reporting.",
       },
       {
         n: "02",
@@ -849,7 +849,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
         "Class 10 passing certificate — original + 2 copies",
         "JEECUP application form printout (the PDF saved after registration)",
         "JEECUP rank card / Allotment letter (downloaded from portal)",
-        "Aadhaar card — original + photocopy",
+        "Aadhaar card — original + 2 self-attested photocopies",
         "Domicile / residence certificate (UP-quota only)",
         "Caste certificate (if reservation claimed) — issued within 3 years",
         "Income certificate (if EWS / scholarship claimed)",
@@ -1407,7 +1407,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Can I attend BIPE without going through JEECUP counselling?",
-        a: "Yes, via direct admission for vacant seats. BIPE accepts direct applications after JEECUP Round 5, the final round, concludes (typically August). Available seats vary by branch + year. WhatsApp +91-7310077788 in August 2026 to check current-cycle vacancy. Direct admission isn't rank-restricted but is seat-limited.",
+        a: "Yes, via direct admission for vacant seats. BIPE accepts direct applications after JEECUP Round 5, the final round, concludes (typically August). Available seats vary by branch + year. WhatsApp +91-7310077788 to check current-cycle vacancy. Direct admission isn't rank-restricted but is seat-limited.",
       },
       {
         q: "Will my parents need to come to BIPE during reporting?",
