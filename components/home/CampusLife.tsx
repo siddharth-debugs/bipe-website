@@ -31,7 +31,15 @@ export const CampusLife = ({ items }: { items?: Facility[] } = {}) => (
         <Img href="/campus" src={BIPE_IMG.library} alt="BIPE library and reading room" label="LIBRARY" style={{ height: "100%" }} />
       </div>
       <div className="grid bipe-grid-4" style={{ gridTemplateColumns: "repeat(4, 1fr)", marginTop: 24 }}>
-        {(items && items.length > 0 ? items : DATA.facilities).slice(0, 4).map((f, i) => (
+        {/* slice(0, 8), not 4. BIPE has FIVE branches and the first four
+            tiles are branch labs, so a 4-item cut always hid one branch's
+            facility — Civil Survey Yard was invisible site-wide, since
+            /campus groups its labs differently ("Civil Engineering") and
+            never uses these names. Eight items fill exactly two rows of
+            the repeat(4, 1fr) grid, so nothing is hidden and the layout
+            stays square. DATA.facilities is ordered branch-labs-first so
+            a narrower cut would still lead with them. 3 Sep 2026. */}
+        {(items && items.length > 0 ? items : DATA.facilities).slice(0, 8).map((f, i) => (
           <div key={i} className="reveal" style={{ transitionDelay: `${i * 40}ms` }}>
             <div className="eyebrow" style={{ color: "var(--brand)" }}>{f.count}</div>
             <div style={{ fontWeight: 600, fontSize: 16, marginTop: 6 }}>{f.name}</div>
