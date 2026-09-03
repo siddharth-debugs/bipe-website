@@ -178,9 +178,7 @@ const ALUMNI_JSON_LD = {
     // MAHINDRA: owner-confirmed 3 Sep 2026 ("I confirm that Mahindra has
     // our alumnus"). It has no entry in the FEATURED list below, so a
     // future sweep will find no on-page backing and be tempted to drop
-    // it again — don't. This comment is the record, the same way
-    // lib/data.ts:415 records the owner ruling that removed the
-    // fabricated Tata Motors drive. If the office supplies the name,
+    // it again — don't. This comment is the record. If the office supplies the name,
     // branch and year, add them to FEATURED and delete this note.
     `Joining-letter-verified placement record at Banaras Institute of Polytechnic & Engineering — ${formatPlacements(PLACEMENT_STATS.totalPlacements)} placements through ${PLACEMENT_STATS.endYear}, plus named alumni at Mahindra, Tata Steel BSL, Indian Railways, Mumbai Metro, Motherson Sumi and IEPC.`,
   about: {

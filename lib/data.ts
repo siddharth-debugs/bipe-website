@@ -348,7 +348,7 @@ export const DATA: DataShape = {
       code: "343", slug: "mechanical-engineering-production",
       name: "Mechanical Engineering (Production)", hi: "मैकेनिकल इंजीनियरिंग (प्रोडक्शन)",
       seats: 120, fee: "30,150",
-      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, JCB, BHEL apprentice pathways.",
+      desc: "Hands-on workshop — welding, fitting, foundry, machining, CNC. Mahindra, JCB, Tata Motors, BHEL apprentice pathways.",
       tag: null, color: 5,
       thumbnail: {
         src: "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900/v1778151561/bipe/labs/mechanical/machin-shop-3",
@@ -362,8 +362,13 @@ export const DATA: DataShape = {
     },
   ],
   // Recruiter marquee — curated May 2026 per the Overall.docx review.
-  // Names that don't have a current/recent hiring relationship were
-  // removed (Tata Steel, BEL, Indian Railways, Tata Motors, BHEL,
+  // This array is a DISPLAY choice, not a verdict on whether a company
+  // recruits here: the owner ruled 3 Sep 2026 that the alumni manifest
+  // is partial and absence from it proves nothing. Tata Motors in
+  // particular is a real relationship (14 apprenticeship selections,
+  // some later employed) — see the events note below.
+  // Names not shown on the marquee as of the May review:
+  //   (Tata Steel, BEL, Indian Railways, Tata Motors, BHEL,
   // UPPCL, Tata Power, Amul, Mother Dairy, Parag, Nestlé, NDDB, Bajaj,
   // Ather, Hero MotoCorp). Four new recruiters added: RR Parkon,
   // Knorr Bremse, BD Group Campa, Amber.
@@ -419,10 +424,18 @@ export const DATA: DataShape = {
   ],
   events: [
     // Curated 28 May 2026 per the audit:
-    //   - "Tata Motors campus drive — 14 selected" REMOVED. The user
-    //     confirmed there is no Tata Motors campus drive at BIPE;
-    //     the event was fabricated and the "14 selected" figure
-    //     can't be substantiated.
+    //   - "Tata Motors campus drive — 14 selected" REMOVED as worded.
+    //     CORRECTED 3 Sep 2026 — the earlier note here said the event
+    //     was fabricated and the 14 could not be substantiated. That
+    //     was WRONG and it propagated into three other files and two
+    //     agent sessions. The owner confirms: Tata Motors selected 14
+    //     students for APPRENTICESHIP, and some later joined as
+    //     employees; the placement is verified. What was wrong was the
+    //     framing — "campus drive / 14 selected" reads as 14 direct
+    //     hires, and the CMS copy attached ₹3.6 LPA, which the office
+    //     cannot substantiate. Restore this card only with the
+    //     apprenticeship wording and a date the office supplies; do
+    //     not attach a package figure or an employee count.
     //   - "Open House for Class 10 students (11 Apr 2026)" REMOVED.
     //     Past event, no replacement on the calendar; surfacing a
     //     2-month-old event as "upcoming" was stale-data theatre.

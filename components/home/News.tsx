@@ -9,7 +9,8 @@ import { DATA } from "@/lib/data";
 // fallback to DATA.events. The admin record was serving stale +
 // factually-wrong cards ("JEECUP 2026 results declared · May 24"
 // when results aren't out until mid-June; "Tata Motors campus drive
-// — 14 selected" when there was no Tata Motors drive; an
+// — 14 selected" attaching ₹3.6 LPA to what was actually an
+// apprenticeship selection — see the note in lib/data.ts events; an
 // 11-Apr-2026 Open House still surfacing as upcoming). Static now
 // wins until the admin record is brought in line — same pattern
 // used on Recruiters.tsx (see comment there).
