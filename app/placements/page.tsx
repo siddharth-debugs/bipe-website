@@ -23,7 +23,7 @@ import {
 // 29 May 2026 — every hardcoded placement count on this page now reads
 // from lib/placement-stats.ts. To refresh: replace the TPO XLSX in
 // data/source/ and re-run scripts/parse-placement-xlsx.py — every
-// "1,331" / "44 recruiters" / "Top recruiter" on this page updates.
+// "1,363" / "44 recruiters" / "Top recruiter" on this page updates.
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("placements"); }
 
@@ -47,7 +47,7 @@ const AUDIT_EXTRA_RECRUITERS: string[] = [
 
 // Branch-wise placement breakdown was removed 28 May 2026 per user
 // request -- the per-branch counts (522 / 326 / 145) summed to 993,
-// which conflicted with the canonical 1,331 verified-placements
+// which conflicted with the canonical 1,363 verified-placements
 // figure shown elsewhere on the site. Showing a partial breakdown
 // next to the headline total invited the comparison. The total
 // remains in the hero / schema; the breakdown is no longer published.
@@ -342,7 +342,7 @@ export default async function Page() {
               </div>
               {/* "Download BIPE Placement Record · PDF" button removed
                   28 May 2026 per user request -- the PDF claimed 993 placements
-                  through 2024 which now conflicts with the canonical 1,331
+                  through 2024 which now conflicts with the canonical 1,363
                   verified figure shown elsewhere on the site. The named alumni
                   list below + recruiter strip already carry the record. */}
             </div>
@@ -392,7 +392,7 @@ export default async function Page() {
         Section "2. BRANCH-WISE PLACEMENTS" removed 28 May 2026 per
         user request. The per-branch breakdown (522 / 326 / 145
         Mech / Elec / Civil) summed to 993, which conflicted with
-        the canonical 1,331 headline elsewhere on the site. The
+        the canonical 1,363 headline elsewhere on the site. The
         cohort-level totals + named alumni list below already
         carry the placement-record argument; the per-branch
         tabulation isn't needed alongside them.

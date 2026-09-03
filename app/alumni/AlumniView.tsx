@@ -102,13 +102,13 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
   // to a backend `alumni` prop (sourced from /api/v1/content/alumni/)
   // so admin edits could show without a rebuild. But the backend
   // admin row currently holds 997 stale records while the bundled
-  // manifest carries the full 1,331 from the TPO XLSX. Surfaces like
-  // "Showing 24 of 997 · filtered from 1,331 TPO-verified placements"
+  // manifest carries the full 1,363 from the TPO XLSX. Surfaces like
+  // "Showing 24 of 997 · filtered from 1,363 TPO-verified placements"
   // exposed the gap. Same pattern as the Footer phone/address pins:
   // prefer the data we control until the backend admin record is
   // brought in line. Re-enable the prop override by switching back to
   // `alumni && alumni.length > 0 ? alumni : manifest.alumni` once the
-  // admin record carries all 1,331 rows. The _backendAlumni rename is
+  // admin record carries all 1,363 rows. The _backendAlumni rename is
   // intentional — keep the prop in the signature for future re-enable
   // but explicit-flag it as ignored.
   void _backendAlumni;
@@ -237,7 +237,7 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
             </h1>
             {/* 29 May 2026 — directory rebuilt from the TPO XLSX
                 (data/source/all-placed-students.xlsx). Manifest now
-                carries all 1,331 named records (was 997), 47
+                carries all 1,363 named records (was 997), 47
                 documented drives (was 16), and 29 distinct single-
                 recruiter companies + 9 multi-recruiter pool drives.
                 All headline numbers below are derived through

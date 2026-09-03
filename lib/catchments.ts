@@ -158,7 +158,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "If your JEECUP rank confidently secures a Government Polytechnic Mirzapur seat, the fee gap (~₹8,000-18,000/year vs BIPE) is meaningful for any household. Day-scholar commute within Mirzapur city is feasible, removing hostel costs entirely. For cost-binding families, this is the right path.",
       whenBipe:
-        "BIPE wins when: (a) your JEECUP rank doesn't safely secure a government seat in the branch you want; (b) you want a smaller per-branch cohort with named faculty mentors instead of a large government section; (c) you're from outer Mirzapur tehsils and would need a hostel anyway; (d) you want documented placement infrastructure (1,331 named alumni). Honest comparison framework on /private-vs-government-polytechnic.",
+        "BIPE wins when: (a) your JEECUP rank doesn't safely secure a government seat in the branch you want; (b) you want a smaller per-branch cohort with named faculty mentors instead of a large government section; (c) you're from outer Mirzapur tehsils and would need a hostel anyway; (d) you want documented placement infrastructure (1,363 named alumni). Honest comparison framework on /private-vs-government-polytechnic.",
     },
   },
 
@@ -202,7 +202,7 @@ export const CATCHMENTS: Catchment[] = [
     faqs: [
       {
         q: "How does BIPE compare with Government Polytechnic Jaunpur?",
-        a: "Both are BTE UP-affiliated — the diploma certificate is identical. Government Polytechnic Jaunpur has a lower fee (~₹12,000-22,000/year vs BIPE's AFRC ₹30,150). BIPE's edge: documented 1,331 placements, on-campus hostel for students from outside Jaunpur city, smaller cohort with named faculty mentors. See /private-vs-government-polytechnic for the honest framework.",
+        a: "Both are BTE UP-affiliated — the diploma certificate is identical. Government Polytechnic Jaunpur has a lower fee (~₹12,000-22,000/year vs BIPE's AFRC ₹30,150). BIPE's edge: documented 1,363 placements, on-campus hostel for students from outside Jaunpur city, smaller cohort with named faculty mentors. See /private-vs-government-polytechnic for the honest framework.",
       },
       {
         q: "Can a Jaunpur student get BIPE admission via JEECUP?",
@@ -321,8 +321,8 @@ export const CATCHMENTS: Catchment[] = [
         body: "Azamgarh students often arrive at the diploma decision still weighing options — Civil for government infrastructure work, Mechanical (Production) for production industry and RRB JE, Electrical for UPPCL, CSE for IT cadres. BIPE offers all four under one institute code (JEECUP 4455), so a single choice-filling entry keeps every option on the table.",
       },
       {
-        headline: "1,331 placement record — concrete pipeline, not promises",
-        body: "Over 16 years, BIPE has documented 1,331 verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
+        headline: "1,363 placement record — concrete pipeline, not promises",
+        body: "Over 16 years, BIPE has documented 1,363 verified placements across 44 recruiters — Mahindra, Tata Steel, BEL, Indian Railways, Amul, Mother Dairy, UPPCL, Ola Electric, Ather. Year-wise named list with recruiters is public on /alumni. No vague 'placement record' framing — actual names.",
       },
       {
         headline: "AFRC ₹30,150 — flexibility for distant catchments",
@@ -342,7 +342,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Azamgarh?",
-        a: "Both BTE UP–affiliated, identical diploma certificate. Government Polytechnic Azamgarh has lower fees and is a strong choice for cost-binding families with high enough JEECUP rank. BIPE's differentiators: documented placement record (1,331), on-campus boys' hostel (critical at 120 km), smaller per-branch cohort with named faculty mentors. Detailed comparison on /private-vs-government-polytechnic.",
+        a: "Both BTE UP–affiliated, identical diploma certificate. Government Polytechnic Azamgarh has lower fees and is a strong choice for cost-binding families with high enough JEECUP rank. BIPE's differentiators: documented placement record (1,363), on-campus boys' hostel (critical at 120 km), smaller per-branch cohort with named faculty mentors. Detailed comparison on /private-vs-government-polytechnic.",
       },
       {
         q: "What about the Mubarakpur textile-cluster industry — does BIPE prepare for that?",
@@ -430,7 +430,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (family income under ₹2.5 lakh for SC/ST, ₹2 lakh for OBC/Minority/EWS), which can effectively reduce net cost to near-zero.",
       whenBipe:
-        "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with all four branches available; (b) you want the full branch portfolio under one JEECUP code rather than a single-branch bet; (c) you specifically want the 1,331 alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
+        "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with all four branches available; (b) you want the full branch portfolio under one JEECUP code rather than a single-branch bet; (c) you specifically want the 1,363 alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
     },
   },
 
@@ -482,7 +482,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with government polytechnic options accessible from Bhadohi?",
-        a: "The closest government polytechnic options for Bhadohi students are in nearby districts. Both routes lead to BTE UP-affiliated diplomas — identical certificate. BIPE's edge: documented 1,331 placements, on-campus hostel, smaller cohorts, named faculty mentors. Government route's edge: lower fee. Honest comparison framework on /private-vs-government-polytechnic.",
+        a: "The closest government polytechnic options for Bhadohi students are in nearby districts. Both routes lead to BTE UP-affiliated diplomas — identical certificate. BIPE's edge: documented 1,363 placements, on-campus hostel, smaller cohorts, named faculty mentors. Government route's edge: lower fee. Honest comparison framework on /private-vs-government-polytechnic.",
       },
       {
         q: "Will the UP Post-Matric Scholarship apply for Bhadohi students at BIPE?",
@@ -498,7 +498,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Kuru Pindra in Varanasi might fit Bhadohi students who specifically want Electrical Engineering and have a strong-enough rank for one of its 60 seats. Otherwise, the closest realistic government polytechnic is further from Bhadohi than BIPE.",
       whenBipe:
-        "BIPE wins for Bhadohi students because: (a) BIPE is 50 km, comparable or closer than realistic government polytechnic options for branches beyond Electrical / Textile; (b) BIPE offers four branches against Kuru Pindra's two; (c) Mechanical (Production) maps directly onto the carpet-machinery and export-industry skill base of Bhadohi; (d) the documented 1,331-alumni placement record and named faculty mentors. /private-vs-government-polytechnic has the wider framework.",
+        "BIPE wins for Bhadohi students because: (a) BIPE is 50 km, comparable or closer than realistic government polytechnic options for branches beyond Electrical / Textile; (b) BIPE offers four branches against Kuru Pindra's two; (c) Mechanical (Production) maps directly onto the carpet-machinery and export-industry skill base of Bhadohi; (d) the documented 1,363-alumni placement record and named faculty mentors. /private-vs-government-polytechnic has the wider framework.",
     },
   },
 
@@ -550,7 +550,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Chandauli?",
-        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹12,000-22,000/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: all four branches under one JEECUP code, on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,331 alumni placement record. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹12,000-22,000/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: all four branches under one JEECUP code, on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,363 alumni placement record. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Can a Bihar-border Chandauli resident apply easily?",
@@ -618,7 +618,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Ballia?",
-        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Ballia has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge for Ballia students: hostel access (essential at 150 km), smaller cohort with named faculty mentors, documented placement record of 1,331 named alumni. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Ballia has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge for Ballia students: hostel access (essential at 150 km), smaller cohort with named faculty mentors, documented placement record of 1,363 named alumni. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Will my child be safe in the BIPE hostel at 150 km from home?",
@@ -634,7 +634,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Ballia is the right choice if your rank confidently secures the branch you want, you live in Ballia city or nearby blocks (no hostel need), and the fee gap is binding for your family. With a strong rank and city residency, this is the obvious option.",
       whenBipe:
-        "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you want the Semester-5 defence and JE exam prep that runs alongside the diploma; (d) you want the documented 1,331 alumni placement record across 44 recruiters. /private-vs-government-polytechnic has the wider framework.",
+        "BIPE wins for Ballia students when: (a) hostel is essential because of the 150 km distance and you'd need one anywhere outside Ballia city; (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you want the Semester-5 defence and JE exam prep that runs alongside the diploma; (d) you want the documented 1,363 alumni placement record across 44 recruiters. /private-vs-government-polytechnic has the wider framework.",
     },
   },
 
@@ -686,7 +686,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Sonbhadra?",
-        a: "Both BTE UP-affiliated, identical diploma certificate. Government Polytechnic Sonbhadra (Robertsganj) has lower fees and is a strong choice if your rank confidently secures the branch you want. BIPE's edge for Sonbhadra students: all four branches under one JEECUP code, documented 1,331 placement record, on-campus boys' hostel essential at this distance, named faculty mentors. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated, identical diploma certificate. Government Polytechnic Sonbhadra (Robertsganj) has lower fees and is a strong choice if your rank confidently secures the branch you want. BIPE's edge for Sonbhadra students: all four branches under one JEECUP code, documented 1,363 placement record, on-campus boys' hostel essential at this distance, named faculty mentors. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Will the UP Post-Matric Scholarship apply for Sonbhadra students at BIPE?",
@@ -702,7 +702,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Sonbhadra is the natural choice if your JEECUP rank confidently secures the branch you want in the industry alignment you target (Electrical for NTPC/UPPCL, Mechanical for Hindalco). Day-scholar from Robertsganj is feasible for students living in the district HQ.",
       whenBipe:
-        "BIPE wins for Sonbhadra students when: (a) your rank doesn't safely secure the branch you want at GP Sonbhadra; (b) you want a smaller per-branch cohort with named faculty mentors; (c) you're from outer Sonbhadra (Duddhi, Naugarh) and need hostel anyway; (d) you want the documented 1,331 alumni placement record that includes private-industry recruiters alongside government employers.",
+        "BIPE wins for Sonbhadra students when: (a) your rank doesn't safely secure the branch you want at GP Sonbhadra; (b) you want a smaller per-branch cohort with named faculty mentors; (c) you're from outer Sonbhadra (Duddhi, Naugarh) and need hostel anyway; (d) you want the documented 1,363 alumni placement record that includes private-industry recruiters alongside government employers.",
     },
   },
 
@@ -758,7 +758,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Sultanpur?",
-        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Sultanpur has lower fees and is a strong choice if you have a confident rank, want a standard engineering branch, and live in or near Sultanpur city. BIPE's edge: all four branches under a single JEECUP code, on-campus hostel for outer-district students, documented 1,331 placement record. See /private-vs-government-polytechnic.",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Sultanpur has lower fees and is a strong choice if you have a confident rank, want a standard engineering branch, and live in or near Sultanpur city. BIPE's edge: all four branches under a single JEECUP code, on-campus hostel for outer-district students, documented 1,363 placement record. See /private-vs-government-polytechnic.",
       },
     ],
     alumniNote:
@@ -770,7 +770,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Sultanpur is the natural choice if your rank secures the branch you want and you live in Sultanpur city or nearby blocks. The lower fee structure + day-scholar option is the cost-binding family's optimal path.",
       whenBipe:
-        "BIPE wins for Sultanpur students when: (a) your rank doesn't safely secure the branch you want at the local government polytechnic; (b) you want a smaller per-branch cohort with named faculty mentors; (c) you're going to need hostel anywhere outside Sultanpur city anyway — BIPE has it on-campus; (d) you want the documented 1,331 alumni placement record across diverse recruiters.",
+        "BIPE wins for Sultanpur students when: (a) your rank doesn't safely secure the branch you want at the local government polytechnic; (b) you want a smaller per-branch cohort with named faculty mentors; (c) you're going to need hostel anywhere outside Sultanpur city anyway — BIPE has it on-campus; (d) you want the documented 1,363 alumni placement record across diverse recruiters.",
     },
   },
 
@@ -826,7 +826,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Pratapgarh?",
-        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Pratapgarh has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge: all four branches under one JEECUP code, on-campus hostel (essential at 170 km), 1,331 documented placements. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Pratapgarh has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge: all four branches under one JEECUP code, on-campus hostel (essential at 170 km), 1,363 documented placements. See /private-vs-government-polytechnic for the framework.",
       },
     ],
     alumniNote:
@@ -838,7 +838,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Pratapgarh is the natural choice if your rank secures the branch you want, you live in or near Pratapgarh city, and the fee gap matters. The lower fee + day-scholar option is the cost-binding family's optimal path.",
       whenBipe:
-        "BIPE wins for Pratapgarh students when: (a) hostel is essential at any out-of-district polytechnic (and BIPE has one on-campus); (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you want the Semester-5 Army Technical Entry / RRB JE / SSC JE prep the career-counselling cell runs alongside the diploma; (d) you want the documented 1,331 alumni placement record across diverse recruiters.",
+        "BIPE wins for Pratapgarh students when: (a) hostel is essential at any out-of-district polytechnic (and BIPE has one on-campus); (b) your rank doesn't safely secure the branch you want at the local government polytechnic; (c) you want the Semester-5 Army Technical Entry / RRB JE / SSC JE prep the career-counselling cell runs alongside the diploma; (d) you want the documented 1,363 alumni placement record across diverse recruiters.",
     },
   },
 
@@ -906,7 +906,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Gorakhpur is the natural choice if your rank confidently secures the branch you want and you live in or near Gorakhpur city. Lower fees + day-scholar feasibility + the city's established educational infrastructure make this the obvious option for cost-binding rank-strong applicants.",
       whenBipe:
-        "BIPE wins for Gorakhpur students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you want the Semester-5 onward RRB JE / SSC JE / UPPCL JE coaching that runs alongside the diploma; (c) you want a smaller per-branch cohort with named faculty mentors; (d) you want the documented 1,331 alumni placement record across diverse private-industry + government recruiters. Hostel is essential anywhere outside Gorakhpur city, so the BIPE on-campus hostel option is the natural fit.",
+        "BIPE wins for Gorakhpur students when: (a) your rank doesn't safely secure your preferred branch at the local government polytechnic; (b) you want the Semester-5 onward RRB JE / SSC JE / UPPCL JE coaching that runs alongside the diploma; (c) you want a smaller per-branch cohort with named faculty mentors; (d) you want the documented 1,363 alumni placement record across diverse private-industry + government recruiters. Hostel is essential anywhere outside Gorakhpur city, so the BIPE on-campus hostel option is the natural fit.",
     },
   },
 ];

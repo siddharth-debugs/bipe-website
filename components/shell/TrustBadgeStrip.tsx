@@ -14,7 +14,7 @@ import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
  *   - AISHE Registered           linked to /about/affiliations
  *   - AFRC Compliant             linked to /fees
  *   - Since 2010 · 16 years      linked to /about
- *   - 1,331 Placements          linked to /placements
+ *   - 1,363 Placements          linked to /placements
  *
  * Visual design — May 2026 upgrade (Direction A · verified badges):
  *   - Each credential renders as a bordered card with a verified

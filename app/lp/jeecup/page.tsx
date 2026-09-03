@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 // Placements figure derives from lib/placement-stats (the TPO manifest) —
 // never hardcode it: a stale "993" from the old per-branch PDF sum slipped in
-// here once and conflicted with the canonical 1,331 the site (and the video
+// here once and conflicted with the canonical 1,363 the site (and the video
 // ad) use. See app/placements/page.tsx for the same resolution.
 const TRUST: [string, string][] = [
   ["AICTE-approved", "Permanent ID 1-488233171"],

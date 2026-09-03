@@ -1,9 +1,9 @@
 {
-  "totalAlumni": 1331,
-  "totalJoined": 1331,
+  "totalAlumni": 1363,
+  "totalJoined": 1363,
   "totalOffered": 0,
-  "totalDrives": 47,
-  "distinctRecruiters": 29,
+  "totalDrives": 51,
+  "distinctRecruiters": 32,
   "poolDriveCount": 9,
   "poolStudentCount": 560,
   "topRecruiter": {
@@ -24,6 +24,7 @@
     "Jaieespy Techkart": 25,
     "Bhagawti Products": 23,
     "Rishishwar Construction": 20,
+    "Knorr-Bremse": 19,
     "Siddheshwar": 18,
     "Exide India": 18,
     "Zemencrete": 18,
@@ -32,6 +33,7 @@
     "Radients Appliances": 12,
     "Force Fox": 10,
     "Sigma Tools": 10,
+    "R R Parkon": 10,
     "HFCL": 9,
     "Eaton": 8,
     "MSKH Seating": 6,
@@ -39,6 +41,7 @@
     "Rr Parking System Raigad": 5,
     "Eashu Construction": 4,
     "Rohani Construction": 4,
+    "Shapoorji Pallonji": 3,
     "Asian Paints": 2
   },
   "branches": [
@@ -59,7 +62,8 @@
     "2022",
     "2023",
     "2024",
-    "2025"
+    "2025",
+    "2026"
   ],
   "drives": [
     {
@@ -436,6 +440,38 @@
       "date": "",
       "year": null,
       "joined": 40,
+      "offered": 0
+    },
+    {
+      "company": "Knorr-Bremse",
+      "company_raw": "KNORR-BREMSE",
+      "date": "18-05-2026",
+      "year": 2026,
+      "joined": 19,
+      "offered": 0
+    },
+    {
+      "company": "R R Parkon",
+      "company_raw": "RR PARKON",
+      "date": "18-05-2026",
+      "year": 2026,
+      "joined": 5,
+      "offered": 0
+    },
+    {
+      "company": "R R Parkon",
+      "company_raw": "RR PARKON",
+      "date": "18-05-2026",
+      "year": 2026,
+      "joined": 5,
+      "offered": 0
+    },
+    {
+      "company": "Shapoorji Pallonji",
+      "company_raw": "SHOPOORJI POLONIJI",
+      "date": "18-05-2026",
+      "year": 2026,
+      "joined": 3,
       "offered": 0
     }
   ],
@@ -12417,6 +12453,294 @@
       "year": "2025",
       "company": "Multi-recruiter pool drive",
       "driveDate": "",
+      "status": "joined"
+    },
+    {
+      "id": 1332,
+      "name": "Nitesh Kumar Prajapati",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1333,
+      "name": "Suraj Kumar Gautam",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1334,
+      "name": "Abhinav Singh",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1335,
+      "name": "Nauminath Vishwakarma",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1336,
+      "name": "Vijay Kumar Maurya",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1337,
+      "name": "Deepak Kumar Maurya",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1338,
+      "name": "Pravin Kumar Maurya",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1339,
+      "name": "Ajeet Yadav",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1340,
+      "name": "Aman Kumar Maurya",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1341,
+      "name": "Md Sahil Ansari",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1342,
+      "name": "Saurabh Yadav",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1343,
+      "name": "Ajeet Gond",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1344,
+      "name": "Ankita Pal",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1345,
+      "name": "Prem Vishwakarma",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1346,
+      "name": "Anish Kumar Yadav",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1347,
+      "name": "Chandrakant",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1348,
+      "name": "Ratan Parkhi",
+      "branch": "Civil Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1349,
+      "name": "Kishan Kumar",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1350,
+      "name": "Avik Upadhyay",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "Knorr-Bremse",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1351,
+      "name": "Nitesh Kumar Prajapati",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1352,
+      "name": "Avik Upadhyay",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1353,
+      "name": "Ankita Pal",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1354,
+      "name": "Anish Kumar Yadav",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1355,
+      "name": "Chandrakant",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1356,
+      "name": "Nitesh Kumar Prajapati",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1357,
+      "name": "Avik Upadhyay",
+      "branch": "Mechanical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1358,
+      "name": "Ankita Pal",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1359,
+      "name": "Anish Kumar Yadav",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1360,
+      "name": "Chandrakant",
+      "branch": "Electrical Engineering",
+      "year": "2026",
+      "company": "R R Parkon",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1361,
+      "name": "Ratan Parkhi",
+      "branch": "Civil Engineering",
+      "year": "2026",
+      "company": "Shapoorji Pallonji",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1362,
+      "name": "Prathmesh Yadav",
+      "branch": "Civil Engineering",
+      "year": "2026",
+      "company": "Shapoorji Pallonji",
+      "driveDate": "18-05-2026",
+      "status": "joined"
+    },
+    {
+      "id": 1363,
+      "name": "Arjun Yadav",
+      "branch": "Civil Engineering",
+      "year": "2026",
+      "company": "Shapoorji Pallonji",
+      "driveDate": "18-05-2026",
       "status": "joined"
     }
   ]

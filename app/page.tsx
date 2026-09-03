@@ -130,7 +130,7 @@ export default async function HomePage() {
         StatsBar is no longer wired to the backend PageSection.
         Reason 28 May 2026: the Django admin had stale stats
         ("1,000+ Successful alumni · Mahindra · Tata · BEL") that
-        contradicted the canonical 2,200+ alumni network / 1,331
+        contradicted the canonical 2,200+ alumni network / 1,363
         TPO-verified placements maintained in lib/data.ts. Until the
         backend admin UI is brought in line, the homepage reads
         stats from DATA.stats (default fallback inside StatsBar) so
@@ -159,7 +159,7 @@ export default async function HomePage() {
       {/* WhyBipe items also pinned to DATA.whyBipe (28 May 2026) for the
           same reason as StatsBar above: the backend CMS still carries the
           stale "Eastern UP-built. Thousands placed." text contradicting
-          the canonical 1,331 / regional-positioning instructions. Restore
+          the canonical 1,363 / regional-positioning instructions. Restore
           items={itemsFromSection<WhyItem>(sWhy)} once the backend admin
           record is brought in line. */}
       <WhyBipe />

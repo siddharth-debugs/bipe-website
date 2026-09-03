@@ -7,7 +7,7 @@
  * lib/alumni-manifest.json at module-load time, so when the TPO
  * updates the XLSX in data/source/ and we re-run the parser, every
  * surface that imports from here updates automatically — no grep
- * for stale "1,331" strings, no hand-editing of /placements vs
+ * for stale "1,363" strings, no hand-editing of /placements vs
  * /alumni vs homepage stats.
  *
  *   data/source/all-placed-students.xlsx          (TPO writes here)
@@ -84,7 +84,7 @@ export const PLACEMENT_VERIFIED = {
   /** First and last calendar year the manifest covers. */
   startYear,
   endYear,
-  /** Inclusive years count, e.g. 2016–2025 = 10. */
+  /** Inclusive years count, e.g. 2016–2026 = 10. */
   yearsOnRecord: endYear - startYear + 1,
   /** Full list of distinct branches in the manifest. */
   branches: m.branches,
@@ -127,7 +127,7 @@ export const PLACEMENT_CANONICAL = {
 // stay consistent.
 
 export const PLACEMENT_STATS = {
-  /** "1,331" — the verified placements number. Used on hero strips
+  /** "1,363" — the verified placements number. Used on hero strips
    *  AND structured data, because it's both round AND defensible. */
   totalPlacements: PLACEMENT_VERIFIED.totalPlacements,
   /** "44" — marketing claim used in headline copy. Falls back to the
@@ -155,7 +155,7 @@ export const PLACEMENT_STATS = {
 
 /**
  * Format a placements count with the Indian-locale comma grouping
- * (1,331 not 1331). Use this whenever a number flows into prose.
+ * (1,363 not 1331). Use this whenever a number flows into prose.
  */
 export function formatPlacements(n: number): string {
   return n.toLocaleString("en-IN");

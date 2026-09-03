@@ -110,7 +110,7 @@ async function loadHero(): Promise<HeroData> {
     headline_post:  fallback.headline_post,
     // Description is pinned to the static fallback as of 28 May 2026.
     // The backend admin record still carries a stale "1,000+ placed"
-    // copy that contradicts the canonical 1,331 TPO-verified figure
+    // copy that contradicts the canonical 1,363 TPO-verified figure
     // in lib/data.ts and the Organization schema. Until the admin
     // re-publishes the hero section with the new number, the
     // fallback wins — see lib/data.ts > stats for the source of

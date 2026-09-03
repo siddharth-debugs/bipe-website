@@ -201,7 +201,7 @@ export const ROUTES: Record<RouteKey, {
   },
   placements: {
     path: "/placements",
-    // CTR rewrite 26 May 2026 · bumped to 1,331 per Siddharth's content
+    // CTR rewrite 26 May 2026 · bumped to 1,363 per Siddharth's content
     // review (commit 065693f). Lead with recruiter names — those are
     // the brand-recognition CTR boosters for "polytechnic placements UP"
     // search intent.

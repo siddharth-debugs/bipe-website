@@ -93,6 +93,13 @@ _CANON_MAP: list[tuple[str, str]] = [
     (r"\bMAHINDRA\b", "Mahindra & Mahindra"),
     (r"\bJBM\b", "JBM Group"),
     (r"\bR\s*R\s*PARKON\b", "R R Parkon"),
+    # Session-2026 drives, added 3 Sep 2026. Without these the parser
+    # title-cases the TPO's own spellings into new phantom recruiters:
+    # "SHOPOORJI POLONIJI" -> "Shopoorji Poloniji" alongside the real
+    # Shapoorji Pallonji, and "KNORR-BREMSE" would never group. Names
+    # are taken from the companies' own branding, not the sheet.
+    (r"\bKNORR\b", "Knorr-Bremse"),
+    (r"\bSH[OA]POORJI\b|\bPALLONJI\b|\bPOLONIJI\b", "Shapoorji Pallonji"),
     (r"\bAMBAR\b", "Ambar Enterprises"),
     (r"\bEATON\b", "Eaton"),
     (r"\bEXIDE\b", "Exide India"),
