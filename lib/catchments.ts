@@ -183,7 +183,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "Dairy + agriculture overlap — Jaunpur farms feed the dairy economy",
-        body: "Many Jaunpur households have small dairy income alongside agriculture. BIPE's Dairy Engineering diploma (one of only four BTE UP Dairy programmes in the state) translates this background into a career — Amul / Mother Dairy / Parag / NDDB recruit at BIPE annually.",
+        body: "Many Jaunpur households have small dairy income alongside agriculture. BIPE's Dairy Engineering diploma (one of only four BTE UP Dairy programmes in the state) translates this background into a career — Amul, Mother Dairy, Parag and NDDB are the kind of employer the qualification opens up, and the mandatory six-month Semester-6 training puts students inside a working plant.",
       },
       {
         headline: "JEECUP 4455 — single code, all 5 branches",

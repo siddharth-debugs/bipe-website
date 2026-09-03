@@ -420,7 +420,7 @@ export const DATA: DataShape = {
     { cat: "Placements & Career", q: "Where do graduates work?", a: `Alumni work at Mahindra, Krishna Maruti, JCB, Asian Paints, Adani Solar, Ola Electric, RR Parkon, Knorr Bremse, BD Group Campa, Amber and others — ${_placed} placements through ${_endYear}.` },
     { cat: "Placements & Career", q: "Can I get a government job after a diploma?", a: "Yes — diploma engineers from BIPE qualify for SSC JE, RRB JE, UPPCL, NDDB, State Dairy Boards, Indian Army Technical and similar central and state recruitment. Several BIPE alumni work as Junior Engineers and Assistant Loco Pilots in Indian Railways and Mumbai Metro." },
     { cat: "Approvals & Trust", q: "Is BIPE AICTE-approved?", a: "Yes. BIPE holds AICTE Permanent ID 1-488233171 and the EoA letter for 2026-27 (F.No. Northern/1-46216893240/2026/EOA, dated 16 March 2026). It is BTEUP-affiliated under JEECUP code 4455 and AISHE-registered with the Department of Higher Education, MoE." },
-    { cat: "Approvals & Trust", q: "How do I file a grievance?", a: "Email grievance@bipevns.org or write to the Principal's office. Complaints are treated as confidential and acknowledged within 7 working days. Four statutory committees handle different categories — Anti-Ragging, Internal (POSH), SC/ST and PWD Cell." },
+    { cat: "Approvals & Trust", q: "How do I file a grievance?", a: "Email grievance@bipevns.org or write to the Principal's office. Complaints are treated as confidential and acknowledged within 7 working days. Five statutory committees handle different categories — Grievance Redressal, Anti-Ragging, Internal (POSH), SC/ST and PWD Cell." },
   ],
   events: [
     // Curated 28 May 2026 per the audit:

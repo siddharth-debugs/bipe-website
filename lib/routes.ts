@@ -362,7 +362,7 @@ export const ROUTES: Record<RouteKey, {
   grievance: {
     path: "/grievance",
     title: "Grievance Redressal · 4 statutory committees | BIPE",
-    description: "Anti-Ragging, POSH Internal Committee, SC/ST Committee and PWD Cell. Confidential grievance handling per AICTE, UGC, POSH 2013 and RPWD 2016.",
+    description: "Grievance Redressal Cell, Anti-Ragging, POSH Internal Committee, SC/ST Committee and PWD Cell. Confidential grievance handling per AICTE, UGC, POSH 2013 and RPWD 2016.",
   },
   mandatoryDisclosure: {
     path: "/mandatory-disclosure",

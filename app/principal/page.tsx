@@ -67,7 +67,7 @@ const PROMISES: { roman: string; title: string; sub: string; body: string }[] = 
     title: "Grievance mechanisms",
     sub: "Acknowledged within 7 working days",
     body:
-      "Four statutory committees — Anti-Ragging, Internal (POSH), SC/ST and PWD Cell — each with a public point of contact. Email grievance@bipevns.org or write to the Principal's office; complaints are confidential.",
+      "Five statutory committees — Grievance Redressal, Anti-Ragging, Internal (POSH), SC/ST and PWD Cell — each with a public point of contact. Email grievance@bipevns.org or write to the Principal's office; complaints are confidential.",
   },
   {
     roman: "iv",

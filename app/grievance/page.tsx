@@ -6,7 +6,19 @@ import { PhoneIcon } from "@/components/shell/Icons";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("grievance"); }
 
+// Five statutory committees. The Grievance Redressal Cell was confirmed by
+// the owner (3 Sep 2026) as separately constituted under the AICTE
+// (Establishment of Mechanism for Grievance Redressal) Regulations 2019 —
+// not merely the intake channel routing into the other four, which is how
+// four surfaces had described it while the AICTE mandatory disclosure
+// already listed five.
 const COMMITTEES: { name: string; email: string; basis: string; chair: string }[] = [
+  {
+    name: "Grievance Redressal Cell",
+    email: "grievance@bipevns.org",
+    basis: "AICTE (Establishment of Mechanism for Grievance Redressal) Regulations, 2019",
+    chair: "Constituted under the Principal's office; complaints acknowledged within 7 working days",
+  },
   {
     name: "Anti-Ragging Committee",
     email: "antiragging@bipevns.org",
@@ -39,10 +51,10 @@ export default function Page() {
       <PageHeader
         eyebrow="Grievance Redressal"
         title={<>Safety, dignity, and <span className="serif">equal opportunity.</span></>}
-        lead="Every BIPE student has a right to a safe, dignified and equitable campus. Four statutory committees handle different categories of grievance."
+        lead="Every BIPE student has a right to a safe, dignified and equitable campus. Five statutory committees handle different categories of grievance."
       />
 
-      {/* Four committees */}
+      {/* Five committees */}
       <section className="section">
         <div className="container" style={{ maxWidth: 980 }}>
           <div className="eyebrow">Statutory committees</div>

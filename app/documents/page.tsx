@@ -21,6 +21,10 @@ const MANDATORY: { n: string; title: string; sub: string }[] = [
   { n: "07", title: "Bank Passbook (front page)", sub: "Student's account · for scholarship credit" },
   { n: "08", title: "Anti-Ragging Undertaking", sub: "Signed by both student and parent / guardian" },
   { n: "09", title: "JEECUP Allotment Confirmation", sub: "After choice-locking · printout for verification" },
+  // Added 3 Sep 2026 — owner confirmed the admission office does collect the
+  // filled application-form printout at reporting. The JEECUP verification
+  // checklist had always called it mandatory while this list omitted it.
+  { n: "10", title: "JEECUP Application Form (printout)", sub: "The filled form as submitted on the portal · collected at reporting" },
 ];
 
 const CONDITIONAL: { group: string; chips: string[]; note: string }[] = [
@@ -109,7 +113,7 @@ export default function Page() {
               </div>
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
-                  { num: "9", l: "Mandatory" },
+                  { num: "10", l: "Mandatory" },
                   { num: "10+", l: "Conditional" },
                   { num: "2", l: "Self-attested copies" },
                 ].map((s) => (
@@ -145,9 +149,9 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">Mandatory · Nine documents</div>
+              <div className="eyebrow">Mandatory · Ten documents</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "18ch" }}>
-                These nine{" "}
+                These ten{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   cannot be missed.
                 </span>
@@ -213,7 +217,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Most students need only the nine mandatory items. Scholarship applicants and out-of-state students need additional papers — listed below by reason.
+              Most students need only the ten mandatory items. Scholarship applicants and out-of-state students need additional papers — listed below by reason.
             </p>
           </div>
 
