@@ -151,6 +151,17 @@ def normalize_branch(branch_raw: str) -> str:
         return "Dairy Engineering"
     if "COMPUTER" in b or "CSE" in b:
         return "Computer Science & Engineering"
+    # Fall-through catches, added 3 Sep 2026. Without these the raw
+    # spreadsheet spelling reached the PUBLIC /alumni branch filter as a
+    # pill — live examples were "Diploma Electrcal" (sic), "Diploma
+    # Automobile Test" and "Production". These re-bucket labels only;
+    # no record is added or removed, so the 1,331 total is untouched.
+    if "AUTOMOBILE" in b:
+        return "Mechanical Engineering (Automobile)"
+    if "PRODUCTION" in b:
+        return "Mechanical Engineering (Production)"
+    if "ELECTRCAL" in b or "ELECTRICL" in b:  # known TPO misspellings
+        return "Electrical Engineering"
     return branch_raw.title()
 
 
@@ -175,7 +186,16 @@ def parse_xlsx(path: Path) -> dict:
             if current_drive is not None:
                 branch_raw = c
                 year = None
-                m = re.search(r"(.+?)[-\s.()]*\(?(\d{4})\)?\s*$", branch_raw)
+                # Strip a trailing TPO annotation before looking for the
+                # year. The old pattern anchored (\d{4}) at end-of-string,
+                # so "CE-2020 (NOT JOIN)" matched nothing: the year was
+                # lost and the whole cell became the branch, surfacing on
+                # public /alumni as the filter pill "Ce-2020 (Not Join)".
+                # The 44 "(NOT JOIN)" records ARE placements — owner
+                # confirmed 3 Sep 2026, "1331 is correct, keep it" — so
+                # they belong in their real branch and year like any other.
+                annotated = re.sub(r"\s*\((?:[^()]*)\)\s*$", "", branch_raw).strip()
+                m = re.search(r"(.+?)[-\s.()]*\(?(\d{4})\)?\s*$", annotated or branch_raw)
                 if m:
                     branch_raw = m.group(1).rstrip(" -.()")
                     year = m.group(2)

@@ -42,18 +42,12 @@
     "Asian Paints": 2
   },
   "branches": [
-    "Automobile",
-    "Ce-2020 (Not Join)",
     "Civil Engineering",
-    "Diploma Automobile",
-    "Diploma Automobile Test",
-    "Diploma Electrcal",
     "Electrical Engineering",
     "Electronics Engineering",
     "Mechanical Engineering",
     "Mechanical Engineering (Automobile)",
-    "Mechanical Engineering (Production)",
-    "Production"
+    "Mechanical Engineering (Production)"
   ],
   "years": [
     "2016",
@@ -1728,7 +1722,7 @@
       "id": 143,
       "name": "Abhishek Chaudhary",
       "branch": "Mechanical Engineering (Production)",
-      "year": "2018",
+      "year": "2017",
       "company": "Asian Paints",
       "driveDate": "03-10-2017",
       "status": "joined"
@@ -1737,7 +1731,7 @@
       "id": 144,
       "name": "Nitesh Singh",
       "branch": "Mechanical Engineering (Production)",
-      "year": "2018",
+      "year": "2017",
       "company": "Asian Paints",
       "driveDate": "03-10-2017",
       "status": "joined"
@@ -4121,7 +4115,7 @@
     {
       "id": 409,
       "name": "Prabhat Kamal Mishra",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Hollister",
       "driveDate": "",
@@ -4148,7 +4142,7 @@
     {
       "id": 412,
       "name": "Jagmohan",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Hollister",
       "driveDate": "",
@@ -4211,7 +4205,7 @@
     {
       "id": 419,
       "name": "Anikesh",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Hollister",
       "driveDate": "",
@@ -4220,7 +4214,7 @@
     {
       "id": 420,
       "name": "Kanojiya Manish Ghanshyam",
-      "branch": "Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Hollister",
       "driveDate": "",
@@ -4229,7 +4223,7 @@
     {
       "id": 421,
       "name": "Amresh Pandey",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Hollister",
       "driveDate": "",
@@ -4247,7 +4241,7 @@
     {
       "id": 423,
       "name": "Abhishek Patel",
-      "branch": "Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Hollister",
       "driveDate": "",
@@ -4256,7 +4250,7 @@
     {
       "id": 424,
       "name": "Chandrakant Patel",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Hollister",
       "driveDate": "",
@@ -4401,7 +4395,7 @@
       "id": 440,
       "name": "BAJARANGI YADAV",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4410,7 +4404,7 @@
       "id": 441,
       "name": "PANKAJ YADAV",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4419,7 +4413,7 @@
       "id": 442,
       "name": "VED PRAKASH(TRAINEE)",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4428,7 +4422,7 @@
       "id": 443,
       "name": "MAHESH",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4437,7 +4431,7 @@
       "id": 444,
       "name": "CHANDAN KUMAR PATEL",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4446,7 +4440,7 @@
       "id": 445,
       "name": "BINU BHAI PATEL",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4455,7 +4449,7 @@
       "id": 446,
       "name": "NAVNEET KUMAR",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4464,7 +4458,7 @@
       "id": 447,
       "name": "PARMANAD",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4473,7 +4467,7 @@
       "id": 448,
       "name": "SANI MAURYA",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4482,7 +4476,7 @@
       "id": 449,
       "name": "SAILESH SINGH",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4491,7 +4485,7 @@
       "id": 450,
       "name": "ANIL YADV",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4500,7 +4494,7 @@
       "id": 451,
       "name": "AMIT KUMAR CHAUHAN",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4509,7 +4503,7 @@
       "id": 452,
       "name": "KULDEEP SINGH YADAV",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4518,7 +4512,7 @@
       "id": 453,
       "name": "PRASANT KUMAR MISHRA",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4527,7 +4521,7 @@
       "id": 454,
       "name": "RITU RAJ SINGH",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4536,7 +4530,7 @@
       "id": 455,
       "name": "BRIJESH KUMAR VERMA",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4545,7 +4539,7 @@
       "id": 456,
       "name": "RAHUL MAURYA",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4554,7 +4548,7 @@
       "id": 457,
       "name": "VIKAS SONI",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4563,7 +4557,7 @@
       "id": 458,
       "name": "HIMANSHU PATEL",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4572,7 +4566,7 @@
       "id": 459,
       "name": "CHANRDA GAUTAM",
       "branch": "Civil Engineering",
-      "year": null,
+      "year": "2019",
       "company": "Rishishwar Construction",
       "driveDate": "",
       "status": "joined"
@@ -4715,7 +4709,7 @@
     {
       "id": 475,
       "name": "KISHAN KUMAR",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4724,7 +4718,7 @@
     {
       "id": 476,
       "name": "MANISH KUMAR",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4733,7 +4727,7 @@
     {
       "id": 477,
       "name": "ANKIT SINGH",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4742,7 +4736,7 @@
     {
       "id": 478,
       "name": "ANAND KUMAR MAURYA",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4751,7 +4745,7 @@
     {
       "id": 479,
       "name": "SUNIL KUMAR GUPTA",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4760,7 +4754,7 @@
     {
       "id": 480,
       "name": "MANISH KUMAR",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4769,7 +4763,7 @@
     {
       "id": 481,
       "name": "PRADEEP VISHWAKARMA",
-      "branch": "Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4823,7 +4817,7 @@
     {
       "id": 487,
       "name": "ANIKESH",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4832,7 +4826,7 @@
     {
       "id": 488,
       "name": "SANDEEP KUMAR VERMA",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4841,7 +4835,7 @@
     {
       "id": 489,
       "name": "VISHAL KUMAR CHAUBEY",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4850,7 +4844,7 @@
     {
       "id": 490,
       "name": "SURYAKANT RAI",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4859,7 +4853,7 @@
     {
       "id": 491,
       "name": "VIKAS KUMAR",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4868,7 +4862,7 @@
     {
       "id": 492,
       "name": "SAURABH MISHRA",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4877,7 +4871,7 @@
     {
       "id": 493,
       "name": "ANIKET KUMAR",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4886,7 +4880,7 @@
     {
       "id": 494,
       "name": "AMRESH PANDEY",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4958,7 +4952,7 @@
     {
       "id": 502,
       "name": "RISHABH PRAJAPATI",
-      "branch": "Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4967,7 +4961,7 @@
     {
       "id": 503,
       "name": "VIJAY KUMAR MAURYA",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4976,7 +4970,7 @@
     {
       "id": 504,
       "name": "RAVISHANKAR",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -4985,7 +4979,7 @@
     {
       "id": 505,
       "name": "KISHAN PRAJAPATI",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -5030,7 +5024,7 @@
     {
       "id": 510,
       "name": "SURAJ YADAV",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -5048,7 +5042,7 @@
     {
       "id": 512,
       "name": "ARUN KUMAR PANDEY",
-      "branch": "Production",
+      "branch": "Mechanical Engineering (Production)",
       "year": null,
       "company": "Krishna Maruti",
       "driveDate": "",
@@ -5174,7 +5168,7 @@
     {
       "id": 526,
       "name": "NISHI MISHRA",
-      "branch": "Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": "2019",
       "company": "Taxtron Technologies",
       "driveDate": "",
@@ -5183,7 +5177,7 @@
     {
       "id": 527,
       "name": "NIKITA MISHRA",
-      "branch": "Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": "2019",
       "company": "Taxtron Technologies",
       "driveDate": "",
@@ -6083,7 +6077,7 @@
     {
       "id": 627,
       "name": "ANIL YADAV",
-      "branch": "Diploma Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6092,7 +6086,7 @@
     {
       "id": 628,
       "name": "VIJAY KUMAR VISHWAKARMW",
-      "branch": "Diploma Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6101,7 +6095,7 @@
     {
       "id": 629,
       "name": "SATISH KUMAR PATEL",
-      "branch": "Diploma Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6110,7 +6104,7 @@
     {
       "id": 630,
       "name": "PRASHANT KUMAR",
-      "branch": "Diploma Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6119,7 +6113,7 @@
     {
       "id": 631,
       "name": "DABLU YADAV",
-      "branch": "Diploma Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6128,7 +6122,7 @@
     {
       "id": 632,
       "name": "GANGULY KUMAR",
-      "branch": "Diploma Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6137,7 +6131,7 @@
     {
       "id": 633,
       "name": "SHREYANSHI SINGH",
-      "branch": "Diploma Automobile",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6191,7 +6185,7 @@
     {
       "id": 639,
       "name": "NEERAJ PATEL",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6200,7 +6194,7 @@
     {
       "id": 640,
       "name": "AVANISH KUMAR PATEL",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6209,7 +6203,7 @@
     {
       "id": 641,
       "name": "SACHIN KUMAR SHARMA",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6218,7 +6212,7 @@
     {
       "id": 642,
       "name": "AMIT KUMAR PATEL",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6227,7 +6221,7 @@
     {
       "id": 643,
       "name": "VISHAL KUMAR SINGH",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6236,7 +6230,7 @@
     {
       "id": 644,
       "name": "VEDPRAKASH MAURYA",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6245,7 +6239,7 @@
     {
       "id": 645,
       "name": "JAISWAR VIKASCHANDRA GHANSHYAM",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6254,7 +6248,7 @@
     {
       "id": 646,
       "name": "ABHISHEK SINGH",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6263,7 +6257,7 @@
     {
       "id": 647,
       "name": "SHASHI SHARMA",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6272,7 +6266,7 @@
     {
       "id": 648,
       "name": "ROHIT MISHRA",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6281,7 +6275,7 @@
     {
       "id": 649,
       "name": "PRABHAT SINGH",
-      "branch": "Diploma Electrcal",
+      "branch": "Electrical Engineering",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -6605,8 +6599,8 @@
     {
       "id": 685,
       "name": "ABHISHEK YADAV",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6614,8 +6608,8 @@
     {
       "id": 686,
       "name": "SUJEET KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6623,8 +6617,8 @@
     {
       "id": 687,
       "name": "TUSAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6632,8 +6626,8 @@
     {
       "id": 688,
       "name": "POOJA PRAJAPATI",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6641,8 +6635,8 @@
     {
       "id": 689,
       "name": "ALOK YADAV",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6650,8 +6644,8 @@
     {
       "id": 690,
       "name": "SAURABH KR. SINGH",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6659,8 +6653,8 @@
     {
       "id": 691,
       "name": "DILIP KR. YADAV",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6668,8 +6662,8 @@
     {
       "id": 692,
       "name": "PRADEEP KUMAR(TRAINEE)",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6677,8 +6671,8 @@
     {
       "id": 693,
       "name": "ABHISHEK CHAUHAN",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6686,8 +6680,8 @@
     {
       "id": 694,
       "name": "AMIT KUMAR JHA",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6695,8 +6689,8 @@
     {
       "id": 695,
       "name": "SUPRIYA SINGH",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6704,8 +6698,8 @@
     {
       "id": 696,
       "name": "SAURABH KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6713,8 +6707,8 @@
     {
       "id": 697,
       "name": "RATNESH KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6722,8 +6716,8 @@
     {
       "id": 698,
       "name": "VIKAS KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6731,8 +6725,8 @@
     {
       "id": 699,
       "name": "AVINASH KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6740,8 +6734,8 @@
     {
       "id": 700,
       "name": "HEMANT YADAV",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6749,8 +6743,8 @@
     {
       "id": 701,
       "name": "SATISH CHANDRA",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6758,8 +6752,8 @@
     {
       "id": 702,
       "name": "SAILESH KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6767,8 +6761,8 @@
     {
       "id": 703,
       "name": "AMRIT PATEL",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6776,8 +6770,8 @@
     {
       "id": 704,
       "name": "AMARJEET KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6785,8 +6779,8 @@
     {
       "id": 705,
       "name": "MANISHA KUMARI",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6794,8 +6788,8 @@
     {
       "id": 706,
       "name": "ANAND KUMAR",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6803,8 +6797,8 @@
     {
       "id": 707,
       "name": "SATENDRA KUMAR PAL",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -6812,8 +6806,8 @@
     {
       "id": 708,
       "name": "ANISH KUMAR MAURYA",
-      "branch": "Ce-2020 (Not Join)",
-      "year": null,
+      "branch": "Civil Engineering",
+      "year": "2020",
       "company": "MKC Gujarat",
       "driveDate": "",
       "status": "joined"
@@ -7973,7 +7967,7 @@
     {
       "id": 837,
       "name": "Vinay lal Yadav",
-      "branch": "Diploma Automobile Test",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -8126,7 +8120,7 @@
     {
       "id": 854,
       "name": "Anil Kumar",
-      "branch": "Diploma Automobile Test",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -8180,7 +8174,7 @@
     {
       "id": 860,
       "name": "Yogesh Patel",
-      "branch": "Diploma Automobile Test",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -8324,7 +8318,7 @@
     {
       "id": 876,
       "name": "Vikash kumar Patel",
-      "branch": "Diploma Automobile Test",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -8333,7 +8327,7 @@
     {
       "id": 877,
       "name": "Prashant Tiwari",
-      "branch": "Diploma Automobile Test",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -8405,7 +8399,7 @@
     {
       "id": 885,
       "name": "Vivek Kumar",
-      "branch": "Diploma Automobile Test",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
@@ -8423,7 +8417,7 @@
     {
       "id": 887,
       "name": "Ajeet Kumar",
-      "branch": "Diploma Automobile Test",
+      "branch": "Mechanical Engineering (Automobile)",
       "year": null,
       "company": "Vikas Group",
       "driveDate": "",
