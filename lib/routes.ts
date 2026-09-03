@@ -737,7 +737,7 @@ export const ROUTES: Record<RouteKey, {
     // CTR refresh 29 May 2026 · added "Step-by-Step" — power phrase
     // that lifts CTR on procedural queries, lifts the snippet over
     // the generic ".gov.in" results that rank around it.
-    title: "JEECUP Counselling 2026 · 7-Round Guide + Choice Filling | BIPE 4455",
+    title: "JEECUP Counselling 2026 · 5-Round Guide + Choice Filling | BIPE 4455",
     description: "JEECUP counselling 2026 step-by-step — 5 rounds in two phases, choice filling, documents, seat allotment, reporting, common mistakes. How BIPE (4455) fits in.",
     quickLink: { label: "JEECUP counselling 2026", hint: "5-round guide", priority: 3 },
     keywords: [
@@ -835,8 +835,8 @@ export const ROUTES: Record<RouteKey, {
   },
   jeecupSeatAllotment: {
     path: "/jeecup-seat-allotment-2026",
-    title: "JEECUP Seat Allotment 2026 · 7-Round Cycle + How to Check | BIPE 4455",
-    description: "JEECUP 2026 seat allotment — 7 counselling rounds, how to check allotment, freeze / float / withdraw explained, spot round at BIPE. Institute code 4455.",
+    title: "JEECUP Seat Allotment 2026 · 5-Round Cycle + How to Check | BIPE 4455",
+    description: "JEECUP 2026 seat allotment — 5 counselling rounds in two phases, how to check allotment, freeze / float / withdraw explained, spot round at BIPE. Institute code 4455.",
     keywords: [
       "JEECUP seat allotment",
       "JEECUP seat allotment result",

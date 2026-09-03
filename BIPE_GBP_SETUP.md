@@ -207,7 +207,7 @@ GBP shows a Questions & Answers section in the panel. Seed it with
 2. **"What JEECUP rank gets admission?"** → "BIPE accepts all
    JEECUP-qualified candidates against available seats. There's no
    single rank cutoff — branches fill in priority order during the
-   7 counselling rounds. Apply on [bipevns.org/apply](https://bipevns.org/apply)
+   5 counselling rounds. Apply on [bipevns.org/apply](https://bipevns.org/apply)
    for branch-specific guidance."
 
 3. **"Is the hostel available?"** → "Yes — on-campus boys' hostel

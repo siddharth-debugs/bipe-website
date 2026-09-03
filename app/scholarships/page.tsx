@@ -284,7 +284,7 @@ export default function Page() {
               than the published fee.
             </h1>
             <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-              Full UP Government post-matric scholarships cover tuition for SC, ST, OBC, EWS, Minority and General categories. BIPE merit scholarships — for top JEECUP and 10th-class rankers — stack on top.
+              UP Government post-matric scholarships reimburse tuition in full for SC and ST candidates, and in part for OBC, EWS and Minority candidates, subject to the state income ceiling. BIPE merit scholarships — for top JEECUP and 10th-class rankers — stack on top.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
               <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>

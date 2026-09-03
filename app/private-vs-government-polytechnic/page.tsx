@@ -185,7 +185,7 @@ const FAQS: FaqItem[] = [
     question:
       "Does BIPE offer scholarships to reduce the fee gap?",
     answer:
-      "Yes. The full UP Government Post-Matric scholarship covers tuition for eligible SC / ST / OBC / Minority / EWS students, applied via the Samaj Kalyan portal. We assist with the application at admission time. For many families, this brings net out-of-pocket fees close to the government polytechnic figure.",
+      "Yes. The UP Government Post-Matric scholarship reimburses tuition in full for eligible SC / ST students and in part for OBC / Minority / EWS students, applied via the Samaj Kalyan portal. We assist with the application at admission time. For many families, this brings net out-of-pocket fees close to the government polytechnic figure.",
   },
 ];
 

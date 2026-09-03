@@ -503,13 +503,13 @@ export default function Page() {
               <div>
                 <div className="eyebrow" style={{ color: "var(--accent-deep)" }}>Most students pay much less</div>
                 <h2 className="bipe-h2" style={{ marginTop: 14, maxWidth: "20ch" }}>
-                  UP Government post-matric covers tuition for{" "}
+                  UP Government post-matric reimburses tuition for{" "}
                   <span className="serif" style={{ color: "var(--accent-deep)", fontStyle: "italic", fontWeight: 400 }}>
                     SC · ST · OBC · EWS · Minority.
                   </span>
                 </h2>
                 <p style={{ color: "var(--ink-2)", marginTop: 14, fontSize: 15, lineHeight: 1.7, maxWidth: "48ch" }}>
-                  Most BIPE students see most or all of their tuition reimbursed. BIPE merit scholarships stack on top — JEECUP top-rank waivers and 10th-class topper reductions.
+                  SC and ST candidates see the full ₹30,150 reimbursed; OBC, EWS and Minority candidates receive partial reimbursement, subject to the state income ceiling. BIPE merit scholarships stack on top — JEECUP top-rank waivers and 10th-class topper reductions.
                 </p>
               </div>
               <div style={{ display: "flex", justifyContent: "flex-end" }}>

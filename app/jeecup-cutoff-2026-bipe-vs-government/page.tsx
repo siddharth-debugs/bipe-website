@@ -62,7 +62,7 @@ const FAQS = [
   },
   {
     q: "When is JEECUP 2026 counselling and how many rounds are there?",
-    a: "JEECUP 2026 followed a 5-round counselling cycle in two phases that runs from late June through August 2026, following the rescheduled exam window of 02-09 June 2026. Round 1 sees the sharpest cutoffs; Rounds 2-6 progressively see upgradations, withdrawals, and final seat openings; Round 7 is the institute-level spot round. The full schedule is published on jeecup.admissions.nic.in — and BIPE's counselling guide on /jeecup-counselling walks through each round's strategy.",
+    a: "JEECUP 2026 followed a 5-round counselling cycle in two phases that ran from late June through August 2026, following the rescheduled exam window of 02-09 June 2026. Round 1 sees the sharpest cutoffs; Rounds 2-5 progressively see upgradations, withdrawals, and final seat openings; the institute-level spot round follows Round 5. The full schedule is published on jeecup.admissions.nic.in — and BIPE's counselling guide on /jeecup-counselling walks through each round's strategy.",
   },
 ];
 

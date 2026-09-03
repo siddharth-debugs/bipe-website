@@ -34,7 +34,7 @@ export const FeeCallout = () => (
             </div>
           ))}
           <div style={{ marginTop: 18, padding: 14, background: "var(--brand-soft)", borderRadius: 12, fontSize: 13, color: "var(--brand)" }}>
-            ★ SC/ST/OBC/Minority/EWS — full UP Govt. post-matric scholarship covers tuition.
+            ★ UP Govt. post-matric covers tuition in full for SC/ST, in part for OBC/Minority/EWS.
           </div>
         </div>
       </div>

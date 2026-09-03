@@ -208,7 +208,7 @@ export default function Page() {
               </p>
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
                 {[
-                  { num: "7", l: "Counselling rounds" },
+                  { num: "5", l: "Counselling rounds" },
                   { num: "25 Jun", l: "Round 1 choice-filling" },
                   { num: "Aug 1", l: "Classes begin" },
                 ].map((s) => (

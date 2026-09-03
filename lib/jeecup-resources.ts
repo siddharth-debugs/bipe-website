@@ -549,7 +549,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "When can I start choice filling at JEECUP?",
-        a: "Counselling Round 1 choice filling opens approximately 5-7 days after results. Watch the JEECUP portal banner for the exact dates. The 2026 cycle has 5 rounds total across two phases (up from), so even if you miss the Round 1 window, Rounds 2-6 provide further opportunities. See /jeecup-counselling for the full round-by-round strategy.",
+        a: "Counselling Round 1 choice filling opens approximately 5-7 days after results. Watch the JEECUP portal banner for the exact dates. The 2026 cycle has 5 rounds total across two phases, so even if you miss the Round 1 window, Rounds 2-5 provide further opportunities. See /jeecup-counselling for the full round-by-round strategy.",
       },
       {
         q: "Where can I get my BIPE seat-allotment confirmation help?",
@@ -690,8 +690,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
   {
     slug: "jeecup-seat-allotment-2026",
     shortTitle: "JEECUP Seat Allotment 2026",
-    title: "JEECUP Seat Allotment 2026 · 7-Round Cycle + How to Check | BIPE 4455",
-    description: "JEECUP 2026 seat allotment guide — 7 counselling rounds (expanded from 5), how to check allotment, what 'freeze / float / withdraw' means, when to switch to spot round. BIPE participates under code 4455.",
+    title: "JEECUP Seat Allotment 2026 · 5-Round Cycle + How to Check | BIPE 4455",
+    description: "JEECUP 2026 seat allotment guide — 5 counselling rounds across two phases, how to check allotment, what 'freeze / float / withdraw' means, when to switch to spot round. BIPE participates under code 4455.",
     keywords: [
       "JEECUP seat allotment",
       "JEECUP seat allotment result",
@@ -705,11 +705,11 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     eyebrow: "JEECUP 2026 · SEAT ALLOTMENT GUIDE",
     headline: "JEECUP 2026 seat allotment —",
     headlineAccent: "round-wise · freeze, float, or withdraw.",
-    lead: "JEECUP 2026 introduced 7 counselling rounds (expanded from 5 in previous years), running from late June through August 2026. This page covers how seat allotment works at each round, when to freeze your seat, when to float for an upgrade, and how the institute-level spot round (Round 7) works at BIPE.",
+    lead: "JEECUP 2026 ran 5 counselling rounds across two phases, from late June through August 2026. This page covers how seat allotment works at each round, when to freeze your seat, when to float for an upgrade, and how the institute-level spot round (Round 7) works at BIPE.",
     quickStats: [
       { label: "Total rounds", value: "7 (was 5)", sub: "Expanded for 2026 cycle" },
       { label: "Counselling opens", value: "Late June 2026", sub: "After JEECUP results" },
-      { label: "Spot round", value: "Round 7 · August", sub: "Institute-level at BIPE" },
+      { label: "Spot round", value: "After Round 5 · August", sub: "Institute-level at BIPE" },
       { label: "BIPE code", value: "4455", sub: "Single institute code · 5 branches" },
     ],
     steps: [
@@ -726,17 +726,17 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "03",
         title: "Rounds 3, 4, 5 · Further upgrade windows",
-        body: "Same freeze/float/withdraw logic across each subsequent round. Most BIPE choice-holders settle by Round 3. The expanded 2026 cycle (Rounds 5-6) gives more late-stage upgrade opportunities — useful if your preferred branch had a sharp cutoff in earlier rounds.",
+        body: "Same freeze/float/withdraw logic across each subsequent round. Most BIPE choice-holders settle by Round 3. Rounds 4-5 gives more late-stage upgrade opportunities — useful if your preferred branch had a sharp cutoff in earlier rounds.",
       },
       {
         n: "04",
-        title: "Round 6 · Final main-round allotment",
-        body: "Last centrally-administered round. After this, the only path to a JEECUP-allotted seat is the institute-level spot round (Round 7). Most candidates have settled by now. If you're still floating, this is your last chance to upgrade via the central portal.",
+        title: "Round 5 · Final main-round allotment",
+        body: "Last centrally-administered round. After this, the only path to a JEECUP-allotted seat is the institute-level spot round. Most candidates have settled by now. If you're still floating, this is your last chance to upgrade via the central portal.",
       },
       {
         n: "05",
-        title: "Round 7 · Institute-level spot round",
-        body: "Vacant seats after Round 6 are filled by institutes (BIPE) directly under JEECUP supervision. You apply ON-CAMPUS at BIPE, not through the central portal. BIPE's spot round typically has 10-30 vacancies across branches each year — direct application, less competitive than central rounds, but you must visit Phoolpur in person.",
+        title: "Institute-level spot round (after Round 5)",
+        body: "Vacant seats after Round 5 are filled by institutes (BIPE) directly under JEECUP supervision. You apply ON-CAMPUS at BIPE, not through the central portal. BIPE's spot round typically has 10-30 vacancies across branches each year — direct application, less competitive than central rounds, but you must visit Phoolpur in person.",
       },
       {
         n: "06",
@@ -763,7 +763,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "How does BIPE's spot round work?",
-        a: "BIPE's spot round opens after Round 6 closes — typically late July / early August 2026. You visit BIPE Phoolpur in person with your JEECUP rank card and documents. The placement-cell desk reviews your rank against current vacancies and offers a seat if you qualify. Spot-round students join the same orientation as Round-1-6 students. WhatsApp +91-7310077788 to confirm spot-round dates before travelling.",
+        a: "BIPE's spot round opens after Round 5 closes — typically late July / early August 2026. You visit BIPE Phoolpur in person with your JEECUP rank card and documents. The placement-cell desk reviews your rank against current vacancies and offers a seat if you qualify. Spot-round students join the same orientation as Round-1-5 students. WhatsApp +91-7310077788 to confirm spot-round dates before travelling.",
       },
       {
         q: "What if I'm allotted BIPE but I want to upgrade?",
@@ -1352,8 +1352,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     lead: "JEECUP result declares mid-June 2026. Once you have your rank card, the next 4-6 weeks are time-sensitive — choice filling, document gathering, counselling round 1. This page is the action plan: what to do in the next 7 days, the next 30 days, and how to maximise your odds at BIPE Varanasi (code 4455).",
     quickStats: [
       { label: "Window", value: "Mid-June 2026", sub: "Result declared" },
-      { label: "Counselling opens", value: "Late June 2026", sub: "Round 1 of 7" },
-      { label: "Total rounds", value: "7", sub: "Late June to August" },
+      { label: "Counselling opens", value: "Late June 2026", sub: "Round 1 of 5" },
+      { label: "Total rounds", value: "5", sub: "Two phases · Round 5 final" },
       { label: "Critical decision points", value: "3-5", sub: "Choice filling · seat confirm · float vs freeze" },
     ],
     steps: [
@@ -1395,7 +1395,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "My JEECUP rank is lower than I hoped — what are my options?",
-        a: "Three paths. (1) Direct admission to BIPE: we accept direct applications for vacant seats after Round 6 of JEECUP counselling. WhatsApp us about current vacancy. (2) Re-attempt JEECUP 2027: 1-year gap, focused prep. (3) Alternate diploma routes: B.Voc, ITI, polytechnic from other states' entrance exams (Bihar BCECE, MP DET, etc.). Don't make a decision under panic — talk to advisors first.",
+        a: "Three paths. (1) Direct admission to BIPE: we accept direct applications for vacant seats after the final round, Round 5, of JEECUP counselling. WhatsApp us about current vacancy. (2) Re-attempt JEECUP 2027: 1-year gap, focused prep. (3) Alternate diploma routes: B.Voc, ITI, polytechnic from other states' entrance exams (Bihar BCECE, MP DET, etc.). Don't make a decision under panic — talk to advisors first.",
       },
       {
         q: "How quickly do I need to decide after allotment?",
@@ -1407,7 +1407,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Can I attend BIPE without going through JEECUP counselling?",
-        a: "Yes, via direct admission for vacant seats. BIPE accepts direct applications after JEECUP Round 6 concludes (typically August). Available seats vary by branch + year. WhatsApp +91-7310077788 in August 2026 to check current-cycle vacancy. Direct admission isn't rank-restricted but is seat-limited.",
+        a: "Yes, via direct admission for vacant seats. BIPE accepts direct applications after JEECUP Round 5, the final round, concludes (typically August). Available seats vary by branch + year. WhatsApp +91-7310077788 in August 2026 to check current-cycle vacancy. Direct admission isn't rank-restricted but is seat-limited.",
       },
       {
         q: "Will my parents need to come to BIPE during reporting?",

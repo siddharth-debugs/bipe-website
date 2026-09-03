@@ -58,24 +58,17 @@ const ROUNDS: { n: string; title: string; window: string; body: string }[] = [
   },
   {
     n: "Round 5",
-    title: "Fourth main-round allotment",
+    title: "Final main-round allotment",
     window: "Approximately late July",
     body:
       "The 2026 cycle ran five main rounds across two phases — Rounds 1-3 for UP-domicile candidates, then Rounds 4-5 open to every state. Use this round if your rank didn't secure a seat in Rounds 1-4 or if you're still trying for an upgrade in your preferred branch.",
   },
   {
-    n: "Round 6",
-    title: "Final main-round allotment",
-    window: "Approximately early August",
-    body:
-      "Last main-round window before institute-level spot filling begins. After this, the only path to a seat is the spot round at the institute (BIPE) — central-portal control over branch ends here. Most candidates settled in Rounds 1-4 by this point.",
-  },
-  {
-    n: "Spot Round (Round 7)",
+    n: "Spot Round",
     title: "Institute-level seat filling",
     window: "Approximately August",
     body:
-      "Vacant seats after Round 6 are filled by the institutes themselves under JEECUP supervision. You apply directly to the institute (BIPE), not through the central portal. Rank still matters but the rules are looser. BIPE's spot round usually has 10-30 vacancies each year — direct application on-campus, often less competitive than central rounds.",
+      "Vacant seats after Round 5 are filled by the institutes themselves under JEECUP supervision. You apply directly to the institute (BIPE), not through the central portal. Rank still matters but the rules are looser. BIPE's spot round usually has 10-30 vacancies each year — direct application on-campus, often less competitive than central rounds.",
   },
 ];
 
@@ -207,8 +200,8 @@ export default function Page() {
             </span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "60ch" }}>
-            JEECUP counselling is the bridge between your rank and your seat. Five rounds for the
-            2026 cycle (up from 5 in previous years), one institute code (BIPE Varanasi is{" "}
+            JEECUP counselling is the bridge between your rank and your seat. Five rounds across two
+            phases for the 2026 cycle, one institute code (BIPE Varanasi is{" "}
             <strong>4455</strong>) — and a choice-filling order that decides whether you actually
             land at BIPE or somewhere unintended. This page covers all of it, in order.
           </p>
@@ -312,7 +305,7 @@ export default function Page() {
       </section>
 
       {/* ====================================================================== */}
-      {/* 2. THE 7 ROUNDS                                                         */}
+      {/* 2. THE 5 ROUNDS                                                         */}
       {/* ====================================================================== */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container">

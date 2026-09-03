@@ -211,7 +211,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "What scholarships apply for Jaunpur students at BIPE?",
-        a: "UP Post-Matric Scholarship covers tuition for SC / ST / OBC / Minority / EWS candidates — applied via the Samaj Kalyan portal at admission time. We assist with the application. Several Jaunpur students at BIPE have net out-of-pocket fees in the ₹6,000-12,000/year range after the scholarship clears.",
+        a: "UP Post-Matric Scholarship reimburses tuition in full for SC / ST candidates and in part for OBC / Minority / EWS candidates — applied via the Samaj Kalyan portal at admission time. We assist with the application. Several Jaunpur students at BIPE have net out-of-pocket fees in the ₹6,000-12,000/year range after the scholarship clears.",
       },
     ],
     alumniNote:
@@ -383,7 +383,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "Scholarship coverage often offsets the tuition gap with government polytechnic",
-        body: "UP Post-Matric Scholarship (SC/ST/OBC/Minority/EWS) covers tuition for eligible candidates. For many Mau households, post-scholarship out-of-pocket fees fall to ₹4,000-10,000/year — close to or below government polytechnic figures. We assist with the Samaj Kalyan portal application at admission.",
+        body: "UP Post-Matric Scholarship reimburses tuition in full for eligible SC/ST candidates and in part for OBC/Minority/EWS candidates. For many Mau households, post-scholarship out-of-pocket fees fall to ₹4,000-10,000/year — close to or below government polytechnic figures. We assist with the Samaj Kalyan portal application at admission.",
       },
       {
         headline: "Hostel access — essential at 95 km",
@@ -407,7 +407,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "Will UP Post-Matric Scholarship really cover the tuition?",
-        a: "For eligible SC / ST / OBC / Minority / EWS candidates, the scholarship covers BIPE's AFRC-approved tuition in full. Hostel and mess remain payable separately. Apply via the Samaj Kalyan portal during admission — BIPE's office walks every applicant through the process.",
+        a: "For eligible SC / ST candidates the scholarship covers BIPE's AFRC-approved tuition in full; OBC / Minority / EWS candidates receive partial reimbursement. Hostel and mess remain payable separately. Apply via the Samaj Kalyan portal during admission — BIPE's office walks every applicant through the process.",
       },
       {
         q: "Does BIPE recognise the Mau textile-cluster background?",
@@ -527,7 +527,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "AFRC ₹30,150 + UP Post-Matric Scholarship eligibility",
-        body: "AFRC-approved tuition is fixed at ₹30,150/year. The UP Post-Matric Scholarship covers tuition for eligible SC / ST / OBC / Minority / EWS candidates (income < ₹2 lakh) — BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Chandauli students often falls to ₹6,000-12,000/year.",
+        body: "AFRC-approved tuition is fixed at ₹30,150/year. The UP Post-Matric Scholarship reimburses tuition in full for eligible SC / ST candidates and in part for OBC / Minority / EWS candidates (income < ₹2 lakh) — BIPE's office assists with the Samaj Kalyan portal application. Net out-of-pocket for eligible Chandauli students often falls to ₹6,000-12,000/year.",
       },
     ],
     branchAngle:
