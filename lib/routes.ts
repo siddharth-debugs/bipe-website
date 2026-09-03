@@ -791,7 +791,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupResult: {
     path: "/jeecup-result-2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in, download the rank card, plan counselling. Appeared in JEECUP 2026? Rounds 1–4 have closed — ask BIPE (code 4455) what is still vacant.",
+    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in and download the rank card. Appeared in JEECUP 2026? All five counselling rounds have closed — ask BIPE (code 4455) what is still vacant.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",
@@ -819,8 +819,8 @@ export const ROUTES: Record<RouteKey, {
   },
   jeecupRound4: {
     path: "/jeecup-round-4-2026",
-    title: "JEECUP Round 4 2026 · Phase 2 Opens for ALL States (Bihar too) | BIPE 4455",
-    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1. Now open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, dates, choice-filling and how to lock a BIPE seat — code 4455.",
+    title: "JEECUP Round 4 2026 · Phase 2 Opened for ALL States (Bihar too) | BIPE 4455",
+    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1, open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, what has closed, and how to ask BIPE about a seat — code 4455.",
     keywords: [
       "JEECUP round 4",
       "JEECUP round 4 2026",

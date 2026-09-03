@@ -183,7 +183,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "Dairy + agriculture overlap — Jaunpur farms feed the dairy economy",
-        body: "Many Jaunpur households have small dairy income alongside agriculture. BIPE's Dairy Engineering diploma (one of only four BTE UP Dairy programmes in the state) translates this background into a career — Amul, Mother Dairy, Parag and NDDB are the kind of employer the qualification opens up, and the mandatory six-month Semester-6 training puts students inside a working plant.",
+        body: "Many Jaunpur households have small dairy income alongside agriculture. BIPE's Dairy Engineering diploma (one of only four BTE UP Dairy programmes in the state) translates this background into a career — Amul, Mother Dairy, Parag and NDDB are the kind of employer the qualification opens up, and the mandatory six-month Semester-6 training puts students inside a working plant. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
       },
       {
         headline: "JEECUP 4455 — single code, all 5 branches",
@@ -795,7 +795,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "5 branches with the rare Dairy moat for mango / sugarcane households",
-        body: "Pratapgarh's mango and sugarcane belt has significant agro-processing potential, including dairy adjacent to the farms. BIPE's Dairy Engineering — one of just 4 BTE UP-affiliated Dairy diplomas in UP — channels agriculture-overlap households into Amul / Mother Dairy / Parag / NDDB. The branch is structurally rare; most Pratapgarh-accessible polytechnics don't offer it.",
+        body: "Pratapgarh's mango and sugarcane belt has significant agro-processing potential, including dairy adjacent to the farms. BIPE's Dairy Engineering — one of just 4 BTE UP-affiliated Dairy diplomas in UP — points agriculture-overlap households at Amul / Mother Dairy / Parag / NDDB, the kind of employer the qualification opens up. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028. The branch is structurally rare; most Pratapgarh-accessible polytechnics don't offer it.",
       },
       {
         headline: "AFRC fees + scholarship for the typical Pratapgarh income band",
@@ -859,7 +859,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "Dairy Engineering is rare even in Gorakhpur",
-        body: "Despite Gorakhpur's strong agricultural and dairy economy (the region is part of UP's larger Purvanchal dairy belt), Dairy Engineering as a BTE UP-affiliated diploma branch is rare — only 4 such programmes in the entire state, and BIPE is one. For Gorakhpur students from dairy-overlap households who want the Amul / Mother Dairy / NDDB / Parag pipeline, BIPE is the natural choice.",
+        body: "Despite Gorakhpur's strong agricultural and dairy economy (the region is part of UP's larger Purvanchal dairy belt), Dairy Engineering as a BTE UP-affiliated diploma branch is rare — only 4 such programmes in the entire state, and BIPE is one. For Gorakhpur students from dairy-overlap households, BIPE is the natural choice — Amul / Mother Dairy / NDDB / Parag are the kind of employer the qualification opens up. The first Dairy cohort entered in 2025-26, so its first graduates finish in 2028.",
       },
       {
         headline: "Hostel residence is the only viable model at 205 km",

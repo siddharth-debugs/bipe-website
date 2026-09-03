@@ -617,12 +617,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Industrial training partners · Amul (Gujarat), Parag (UP), Mother Dairy (NCR), Banas Dairy Varanasi (recent industrial visit destination), local Banaras dairy cooperatives। <strong>Sem-6 mein structured 6-month placement</strong> ek partner plant par — <strong>1,000+ supervised practical hours</strong> on real production equipment (pasteurizers, separators, homogenisers, packaging lines), not lab models। Many students placement-track shuru karते hain final-semester training se hi — direct conversion to job offers।",
+          "Industrial training partners · Amul (Gujarat), Parag (UP), Mother Dairy (NCR), Banas Dairy Varanasi (recent industrial visit destination), local Banaras dairy cooperatives। <strong>Sem-6 mein structured 6-month industrial training</strong> ek partner plant par — <strong>~600 supervised practical hours</strong> on real production equipment (pasteurizers, separators, homogenisers, packaging lines), not lab models। Dairy industry mein final-semester training aksar job offers mein convert hoti hai — lekin BIPE ka pehla Dairy batch 2025-26 mein aaya, abhi koi BIPE Dairy passout nahi, toh yeh aage ka rasta hai, past record nahi।",
       },
       {
         type: "p",
         html:
-          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai — 60 sanctioned seats hain aur pehla batch 2025-26 mein 5 students ke saath shuru hua, Mechanical jaisa 100+ nahi। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Lekin placement-wise yeh strength hai — small cohort + specialised industry = high placement-rate per student।",
+          "<strong>Honest disclosure</strong>: BIPE Dairy branch ka cohort small hai — 60 sanctioned seats hain aur pehla batch 2025-26 mein 5 students ke saath shuru hua, Mechanical jaisa 100+ nahi। Yeh kabhi kabhi student-life ki ek limitation hai — chhota peer group, kam classes ki diversity। Small cohort + specialised industry ek genuine advantage ho sakta hai, lekin placement ka dawa abhi nahi — pehla batch 2028 mein pass out karega, tab hi actual placement picture banegi।",
       },
 
       { type: "h2", text: "Future ahead · 2026 aur uske baad" },
@@ -2695,7 +2695,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>योग्यता:</strong> 10वीं पास (Class 10 board exam, 35% कुल अंक न्यूनतम)।",
           "<strong>आयु सीमा:</strong> कोई नहीं — किसी भी उम्र में आवेदन कर सकते हैं।",
-          "<strong>प्रवेश परीक्षा:</strong> JEECUP (Group A) — गणित, विज्ञान, अंग्रेज़ी आधारित।",
+          "<strong>प्रवेश परीक्षा:</strong> JEECUP (Group A) — Class 10 स्तर की गणित, भौतिकी और रसायन विज्ञान पर आधारित; कुल 100 प्रश्न, 400 अंक, कोई negative marking नहीं।",
           "<strong>कोर्स अवधि:</strong> पूरे 3 साल (6 सेमेस्टर)।",
         ],
       },
@@ -2786,7 +2786,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Documents upload करें:</strong> 10वीं की मार्कशीट, आधार कार्ड, फोटो, हस्ताक्षर। Files की size सीमा का ध्यान रखें।",
           "<strong>Application fee जमा करें:</strong> ₹300 (General / OBC / Minority) और ₹200 (SC / ST / PH)। Net banking, UPI, debit/credit कार्ड स्वीकार होते हैं।",
           "<strong>Admit card download करें:</strong> परीक्षा से लगभग 10 दिन पहले admit card जारी होता है।",
-          "<strong>परीक्षा दें:</strong> मई-जून में online JEECUP exam होती है (2026 में 02–09 जून) — गणित, विज्ञान, अंग्रेज़ी पर आधारित।",
+          "<strong>परीक्षा दें:</strong> मई-जून में online JEECUP exam होती है (2026 में 02–09 जून) — Class 10 स्तर की गणित, भौतिकी और रसायन विज्ञान पर आधारित।",
           "<strong>Counselling में हिस्सा लें:</strong> Result के बाद counselling के 5 राउंड चलते हैं। यहाँ <strong>संस्थान कोड 4455 (BIPE)</strong> भरें यदि बीआईपीई आपका विकल्प है।",
           "<strong>Seat allotment के बाद दस्तावेज़ verify करवाएँ:</strong> Allotted institute पर जाकर सभी original documents जमा करें।",
           "<strong>Fee जमा करें और कक्षा में रिपोर्ट करें:</strong> August-September में कक्षा शुरू।",

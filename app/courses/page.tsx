@@ -1007,9 +1007,8 @@ export default async function Page() {
                     width: 8,
                     height: 8,
                     borderRadius: "50%",
-                    background: "var(--accent)",
-                    boxShadow: "0 0 0 4px color-mix(in oklab, var(--accent) 25%, transparent)",
-                    animation: "pulse 2s infinite",
+                    background: "color-mix(in oklab, var(--paper) 45%, transparent)",
+                    boxShadow: "0 0 0 4px color-mix(in oklab, var(--paper) 10%, transparent)",
                   }}
                 />
                 <span
@@ -1021,7 +1020,7 @@ export default async function Page() {
                     color: "color-mix(in oklab, var(--paper) 75%, transparent)",
                   }}
                 >
-                  Branch counselling open · Session 2026-27
+                  Session 2026-27 · classes under way
                 </span>
               </div>
               <div
@@ -1193,7 +1192,7 @@ export default async function Page() {
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 17 }}>Apply for 2026-27</div>
                     <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>
-                      4-step form · 5 minutes
+                      Single-step form · 5 minutes
                     </div>
                   </div>
                   <ArrowIcon size={18} />

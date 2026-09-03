@@ -242,7 +242,7 @@ export default function OverviewPage() {
           href="/admin/dashboard/inbox?kind=apply"
           Icon={GraduationCap}
           eyebrow="Apply form"
-          subtitle="JEECUP candidates · 4-step form"
+          subtitle="JEECUP candidates · single-step form"
           summary={summary?.apply}
         />
         <SummaryCard

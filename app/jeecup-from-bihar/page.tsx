@@ -96,7 +96,7 @@ export default function Page() {
         >
           <span style={{ fontSize: 20 }} aria-hidden="true">🎯</span>
           <span style={{ fontSize: 14, lineHeight: 1.55, flex: 1 }}>
-            <strong style={{ color: "var(--accent)" }}>Round 4 is your round.</strong> Rounds 1–3 were UP-domicile only — Round 4 (Phase 2) is the first round Bihar &amp; other-state students can join. See the full round guide →
+            <strong style={{ color: "var(--accent)" }}>Round 4 was your round — Phase 2 has closed.</strong> Rounds 1–3 were UP-domicile only; Round 4 (Phase 2) was the first round Bihar &amp; other-state students could join, and Round 5 then closed the cycle in mid-August. See the full round guide →
           </span>
           <span aria-hidden="true" style={{ color: "var(--accent)", fontWeight: 700 }}>→</span>
         </Link>

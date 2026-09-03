@@ -663,7 +663,7 @@ export default async function Page() {
               </h2>
             </div>
             <p className="lead" style={{ maxWidth: "60ch" }}>
-              Six alumni · five companies · three branches. A small slice of a 2200+ network — the names below are the ones who allowed us to publish theirs.
+              Six alumni · six companies · three branches. A small slice of a 2200+ network — the names below are the ones who allowed us to publish theirs.
             </p>
           </div>
 
@@ -1353,7 +1353,7 @@ export default async function Page() {
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>01</span>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 17 }}>Apply for 2026-27</div>
-                    <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>4-step form · 5 minutes</div>
+                    <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>Single-step form · 5 minutes</div>
                   </div>
                   <ArrowIcon size={18} />
                 </Link>

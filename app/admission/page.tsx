@@ -614,7 +614,7 @@ export default async function Page() {
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>01</span>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 16 }}>Begin application</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Four-step form · 5 minutes</div>
+                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Single-step form · 5 minutes</div>
                   </div>
                   <ArrowIcon size={16} />
                 </Link>

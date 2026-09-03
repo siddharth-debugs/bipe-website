@@ -341,7 +341,7 @@ export default async function Page() {
                 BIPE was founded in 2010 by the <strong style={{ color: "var(--ink)" }}>Purwanchal Educational Trust</strong>, a registered non-profit, with one stated purpose: to bring accountable, hands-on technical education to families across Eastern Uttar Pradesh who could not afford to send their children to Lucknow, Kanpur or further.
               </p>
               <p style={{ marginTop: 18 }}>
-                Our catchment spans twelve districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur and Kushinagar</strong>. The campus sits on six acres in Phoolpur, on the Phoolpur&ndash;Parsara approach road off NH-56. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
+                Our catchment spans fourteen districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur, Kushinagar, Pratapgarh and Sultanpur</strong>. The campus sits on six acres in Phoolpur, on the Phoolpur&ndash;Parsara approach road off NH-56. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
               </p>
               <p style={{ marginTop: 18 }}>
                 We run <em>five</em> BTEUP-affiliated branches — including <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong>, a programme offered by fewer than 1.1% of UP polytechnics. Our first Dairy cohort entered in 2025-26 and finishes in 2028; Amul, Mother Dairy, Parag, Nestl&eacute; and the NDDB are the employers that qualification opens up. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
@@ -666,7 +666,7 @@ export default async function Page() {
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>02</span>
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 16 }}>Apply for 2026-27</div>
-                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Four-step form · 5 minutes</div>
+                    <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Single-step form · 5 minutes</div>
                   </div>
                   <ArrowIcon size={16} />
                 </Link>

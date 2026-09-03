@@ -478,7 +478,7 @@ export default function Page() {
               className="serif"
               style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}
             >
-              ready before Round 1 opens.
+              ready before counselling opens.
             </span>
           </h2>
           <p style={{ marginTop: 22, color: "var(--ink-2)", maxWidth: "62ch" }}>
