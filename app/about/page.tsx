@@ -104,6 +104,8 @@ const DISTRICTS: District[] = [
   { name: "Ballia",      hi: "बलिया",         tag: "ACTIVE" },
   { name: "Gorakhpur",   hi: "गोरखपुर",       tag: "ACTIVE" },
   { name: "Kushinagar",  hi: "कुशीनगर",       tag: "ACTIVE" },
+  { name: "Pratapgarh",  hi: "प्रतापगढ़",      tag: "ACTIVE" },
+  { name: "Sultanpur",   hi: "सुल्तानपुर",     tag: "ACTIVE" },
 ];
 
 export default async function Page() {
@@ -162,7 +164,7 @@ export default async function Page() {
                 A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches, 550+ students drawn from twelve districts, 40 faculty — built to make rural India a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
+                <Link href="/apply" className="btn btn-primary btn-lg">Enquire for 2027-28 <ArrowIcon size={16} /></Link>
                 <Link href="/visit" className="btn btn-ghost btn-lg">Visit campus</Link>
               </div>
 
@@ -665,7 +667,7 @@ export default async function Page() {
                 }}>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "color-mix(in oklab, #fff 65%, transparent)" }}>02</span>
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: 16 }}>Apply for 2026-27</div>
+                    <div style={{ fontWeight: 600, fontSize: 16 }}>Enquire for 2027-28</div>
                     <div style={{ fontSize: 12, color: "color-mix(in oklab, #fff 70%, transparent)", marginTop: 2 }}>Single-step form · 5 minutes</div>
                   </div>
                   <ArrowIcon size={16} />

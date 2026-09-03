@@ -30,7 +30,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "04",
     title: "Get your rank card",
-    body: "JEECUP 2026 results are out — log in at jeecup.admissions.nic.in and download your rank card. Save it: the rank card is the single document that decides everything that follows in counselling.",
+    body: "JEECUP 2026 results were declared in June and that cycle has since closed. In the next cycle, log in at jeecup.admissions.nic.in as soon as results are declared and download your rank card. Save it: the rank card is the single document that decides everything that follows in counselling.",
   },
   {
     n: "05",
@@ -183,7 +183,7 @@ export default function Page() {
                 <a href="https://jeecup.admissions.nic.in" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                   JEECUP portal <ArrowIcon size={16} />
                 </a>
-                <Link href="/apply" className="btn btn-ghost btn-lg">Begin application</Link>
+                <Link href="/apply" className="btn btn-ghost btn-lg">Enquire for 2027-28</Link>
               </div>
               {/* Early Seat Registration campaign entry point (Jun 2026) */}
               <Link href="/early-registration" style={{
@@ -194,7 +194,7 @@ export default function Page() {
               }}>
                 <span style={{ fontSize: 22 }} aria-hidden="true">🎓</span>
                 <span style={{ fontSize: 14, lineHeight: 1.55 }}>
-                  <strong>Still looking for a seat for 2026-27?</strong> Pre-Counselling Registration closed on 27 July 2026 — ask BIPE admissions (code 4455) what is still open.
+                  <strong>Planning session 2027-28?</strong> Admission for 2026-27 is closed — leave your details and BIPE admissions (code 4455) will walk you through the next JEECUP cycle.
                 </span>
                 <ArrowIcon size={16} />
               </Link>
@@ -210,7 +210,7 @@ export default function Page() {
                 {[
                   { num: "5", l: "Counselling rounds" },
                   { num: "25 Jun", l: "Round 1 choice-filling" },
-                  { num: "Aug 1", l: "Classes begin" },
+                  { num: "1 Aug", l: "Classes began" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 36, lineHeight: 0.9, color: "var(--brand)" }}>{s.num}</div>

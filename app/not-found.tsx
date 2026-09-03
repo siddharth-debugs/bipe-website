@@ -30,7 +30,7 @@ import { BLOG_POSTS } from "@/lib/blogPosts";
 export const metadata: Metadata = {
   title: "Page not found · BIPE",
   description:
-    "The page you were looking for doesn't exist or has moved. Try Apply for 2026-27, JEECUP guidance, our 5 diploma branches, or search across BIPE.",
+    "The page you were looking for doesn't exist or has moved. Try our 2027-28 admission enquiry, JEECUP guidance, our 5 diploma branches, or search across BIPE.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/" },
   openGraph: {
@@ -49,7 +49,7 @@ const POPULAR_DESTINATIONS: {
   href: string;
   body: string;
 }[] = [
-  { label: "Apply for 2026-27", hi: "आवेदन करें", href: "/apply", body: "Five-minute application form, callback within 24 hours." },
+  { label: "Enquire for 2027-28", hi: "पूछताछ करें", href: "/apply", body: "Five-minute enquiry form, callback within 24 hours." },
   { label: "JEECUP Counselling", hi: "जेईईसीयूपी काउंसलिंग", href: "/jeecup-counselling", body: "Six-step counselling explainer — institute code 4455." },
   { label: "All 5 branches", hi: "शाखाएँ", href: "/courses", body: "CSE, Dairy, Civil, Electrical, Mechanical Engineering (Production)." },
   { label: "Fees & scholarships", hi: "शुल्क और छात्रवृत्ति", href: "/fees", body: "AFRC-approved ₹30,150/year. UP post-matric and EWS support." },

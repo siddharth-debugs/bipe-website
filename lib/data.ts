@@ -172,7 +172,7 @@ export const DATA: DataShape = {
     // 919415202879 — same destination the InquiryModal + WhatsAppFAB
     // surfaces have always used for their handoffs.
     whatsapp: `https://wa.me/917310077788?text=${encodeURIComponent(
-      "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए",
+      "नमस्ते BIPE — अगले सत्र 2027-28 (JEECUP 2027) में admission की जानकारी चाहिए",
     )}`,
     // Display string for the WhatsApp Business number — used by the
     // /contact channel cards, the Double Tick template body, etc.
@@ -404,7 +404,8 @@ export const DATA: DataShape = {
     { name: "Aman Yadav", role: "Civil (2021) → Bharatmala project", quote: "Survey camp in 4th sem put me on a real highway alignment crew. That experience got me my first site engineer role on a Bharatmala stretch." },
   ],
   faq: [
-    { cat: "Admission", q: "How do I apply to BIPE?", a: "Admissions are exclusively through JEECUP counselling under college code 4455. Register at jeecup.admissions.nic.in, take the entrance, and choose BIPE 4455 during counselling. You can also fill our Apply form for personal guidance from our admissions team." },
+    { cat: "Admission", q: "Can I still take admission for session 2026-27?", a: "No. JEECUP 2026 counselling has closed and BIPE cannot take admissions for session 2026-27 — classes for this session began on 1 August 2026. The next intake is session 2027-28, through JEECUP 2027. You are welcome to fill our Apply form or message us on WhatsApp to register your interest in that cycle." },
+    { cat: "Admission", q: "How do I apply to BIPE?", a: "Admission to BIPE is exclusively through JEECUP counselling under college code 4455. For session 2026-27 that process is over — counselling closed in mid-August 2026, so applications for this session are no longer possible. For session 2027-28: register at jeecup.admissions.nic.in once JEECUP 2027 opens, sit the entrance, and choose BIPE 4455 during counselling. Fill our Apply form now and our admissions team will guide you through that cycle." },
     { cat: "Admission", q: "What is the eligibility?", a: "For the 3-year diploma you need a Class 10 pass with Mathematics and Science. Admission is through JEECUP Group A (UPJEE Polytechnic), with BIPE listed as institute code 4455 during counselling." },
     { cat: "Admission", q: "What documents do I need?", a: "Mandatory: JEECUP rank card / allotment letter, Class 10 marksheet, school transfer & character certificate, Aadhaar, 8 passport photos, bank passbook front page and an anti-ragging undertaking. If you claimed SC / ST / OBC / EWS reservation in your JEECUP application, a valid category certificate — issued within the last 3 years, name matching your Class 10 marksheet — is mandatory at reporting; without it the reservation lapses. An income certificate is mandatory for EWS and for anyone claiming a UP post-matric or NSP scholarship. See the Documents page for the full list." },
     { cat: "Fees", q: "What is the annual tuition?", a: "Annual tuition is ₹30,150 — AFRC-approved and the same for all 5 branches. Other components (admission fee, exam fee, library, caution money, ID card) are listed on the Fees page; some are still being finalised. Hostel and mess are separate." },
@@ -446,17 +447,17 @@ export const DATA: DataShape = {
     // overriding.
     { date: "Aug 3, 2026", tag: "Institute", title: "Prof. (Dr.) S. P. Tewari joins BIPE as Director", body: "Prof. S. P. Tewari — who taught Mechanical Engineering at IIT (BHU) Varanasi for 38 years, retiring as Professor in 2019 — has joined BIPE as Director. Ph.D. in Welding, Fellow of the Institution of Engineers (India), and a former AICTE Expert Visit Committee member." },
     { date: "May 18, 2026", tag: "Placement", title: "Knorr-Bremse AG, Munich — pool campus drive", body: "Pool campus placement drive with Knorr-Bremse AG (Munich, Germany). Open to eligible final-year branches." },
-    { date: "June 9, 2026", tag: "Admission", title: "JEECUP 2026 exam concludes", body: "Computer-based test ran 02–09 June (rescheduled from May). Results expected mid-June; 5-round counselling opens shortly after. Book your campus visit now to lock in your branch preferences." },
+    { date: "June 9, 2026", tag: "Admission", title: "JEECUP 2026 exam concludes", body: "Computer-based test ran 02–09 June (rescheduled from May). Results followed in June and the five counselling rounds ran to their close in mid-August 2026. Admission for session 2026-27 is now closed." },
     { date: "Apr 24, 2026", tag: "Campus", title: "Industrial visit — Mechanical Engineering students", body: "Industrial visit organised for Mechanical Engineering (Production) students. Plant tour and hands-on shop-floor exposure." },
     { date: "Apr 17, 2026", tag: "Faculty", title: "Workshop: Spring Boot (Java Framework)", body: "One-day hands-on workshop on Spring Boot for Computer Science & Engineering students and faculty." },
   ],
   jeecupSteps: [
-    { step: "01", title: "Apply on JEECUP portal", body: "Register at jeecup.admissions.nic.in. Application opens January, closed 20 May for the 2026 cycle. Fee ₹300 (₹200 for SC/ST)." },
+    { step: "01", title: "Apply on JEECUP portal", body: "Registration is on jeecup.admissions.nic.in. For the 2026 cycle the window opened in January and closed on 20 May, with a fee of ₹300 (₹200 for SC/ST); that cycle is now over. JEECUP 2027 dates will be announced on the same portal." },
     { step: "02", title: "Sit for the entrance", body: "Computer-based test 02–09 June 2026 (rescheduled from the original May window). Diploma engineering is Group A — Maths, Physics, Chemistry from Class 10 syllabus." },
     { step: "03", title: "Get your rank card", body: "Result declared (June 2026). Note your Group A rank — it determines your counselling slot." },
     { step: "04", title: "Counselling — choose BIPE 4455", body: "Online choice-filling across 5 rounds in two phases (Rounds 1-3 UP-domicile, Rounds 4-5 all states). Add BIPE Varanasi (institute code 4455) and your branch preferences in priority order." },
     { step: "05", title: "Seat allotment & report", body: "Seat allotted based on rank + choices. Pay the seat-confirmation fee online, then report to BIPE with documents within the deadline." },
-    { step: "06", title: "Classes begin · 1 August 2026", body: "Session 2026-27 begins 1 August. Orientation, mentor allocation, hostel allotment. Three years that change your career." },
+    { step: "06", title: "Classes began · 1 August 2026", body: "Session 2026-27 began on 1 August with orientation, mentor allocation and hostel allotment. Admission for 2026-27 is closed — the next intake is session 2027-28. Three years that change your career." },
   ],
   facilities: [
     // "100 Mbps firewalled internet" carried over 3 Sep 2026 from the CMS

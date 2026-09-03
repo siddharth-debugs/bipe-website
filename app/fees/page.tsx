@@ -174,7 +174,7 @@ export default function Page() {
                 Polytechnic fees in UP — BIPE&rsquo;s tuition is AFRC-approved, identical across all 5 branches. No capitation, no donation, no surprise charge at any semester. Receipts for every transaction — itemised and stamped.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
+                <Link href="/apply" className="btn btn-primary btn-lg">Enquire for 2027-28 <ArrowIcon size={16} /></Link>
                 <Link href="/scholarships" className="btn btn-ghost btn-lg">See scholarships</Link>
               </div>
               <div className="bipe-stats" style={{ marginTop: 36, paddingTop: 22, borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
@@ -639,7 +639,7 @@ export default function Page() {
                 AFRC · AICTE · BTEUP · AISHE
               </div>
               <div className="row" style={{ justifyContent: "center", marginTop: 36, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary btn-lg">Apply for 2026-27 <ArrowIcon size={16} /></Link>
+                <Link href="/apply" className="btn btn-primary btn-lg">Enquire for 2027-28 <ArrowIcon size={16} /></Link>
                 <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
                   <WhatsAppIcon /> WhatsApp accounts
                 </a>

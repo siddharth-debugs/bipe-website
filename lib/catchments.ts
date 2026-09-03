@@ -275,7 +275,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "What documents does a Ghazipur applicant need?",
-        a: "Class 10 marksheet, JEECUP 2026 rank card, Aadhaar, caste/income certificate (for scholarship), passport photos, transfer and character certificates. A Class 12 / ITI / B.Sc certificate is needed only for Group K lateral entry into the 2nd year. Domicile: a UP-issued domicile / residence certificate is needed if you are claiming the UP state quota, a UP reserved-category seat, or the UP Post-Matric Scholarship — which covers most Ghazipur applicants. Detailed checklist on /documents.",
+        a: "Class 10 marksheet, JEECUP rank card, Aadhaar, caste/income certificate (for scholarship), passport photos, transfer and character certificates. A Class 12 / ITI / B.Sc certificate is needed only for Group K lateral entry into the 2nd year. Domicile: a UP-issued domicile / residence certificate is needed if you are claiming the UP state quota, a UP reserved-category seat, or the UP Post-Matric Scholarship — which covers most Ghazipur applicants. Detailed checklist on /documents.",
       },
       {
         q: "Can a Ghazipur student get the UP Government scholarship at BIPE?",

@@ -136,12 +136,12 @@ export function Nav() {
           <div className="nav-utility-left">
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent)" }} />
-              <span style={{ textTransform: "uppercase", color: "var(--accent)", fontWeight: 600 }}>Admissions Open · 2026-27</span>
+              <span style={{ textTransform: "uppercase", color: "var(--accent)", fontWeight: 600 }}>2026-27 Admissions Closed</span>
             </span>
             <span className="nav-utility-divider" />
             <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>JEECUP {C.jeecup}</span>
             <span className="nav-utility-divider" />
-            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>JEECUP counselling concluded</span>
+            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>2027-28 enquiries welcome</span>
           </div>
           <div className="nav-utility-right">
             <a href={`tel:${C.phone}`} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
@@ -201,7 +201,7 @@ export function Nav() {
             }
           >
             <div style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink-3)", marginBottom: 12, paddingLeft: 14 }}>
-              Join BIPE — Session 2026-27
+              Joining BIPE
             </div>
             <div className="nav-mega-grid">
               <MegaItem to="/admission" title="Overview" desc="JEECUP Group A · key dates" icon="M3 8h18M5 8V5h14v3M3 8v10h18V8M9 12h6" />
@@ -215,9 +215,9 @@ export function Nav() {
             <div className="nav-mega-footer">
               <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)" }} />
-                Admissions open
+                2026-27 admissions closed
               </span>
-              <Link href="/apply" style={{ color: "var(--brand)", textDecoration: "none", fontWeight: 600 }}>Apply now →</Link>
+              <Link href="/apply" style={{ color: "var(--brand)", textDecoration: "none", fontWeight: 600 }}>Enquire for 2027-28 →</Link>
             </div>
           </NavMenuWrap>
 
@@ -254,8 +254,8 @@ export function Nav() {
         <div className="row" style={{ alignItems: "center", gap: 10 }}>
           <NavSearchButton />
           <Link href="/apply" className="btn btn-primary btn-sm" style={{ paddingLeft: 14, paddingRight: 14, whiteSpace: "nowrap" }}>
-            <span className="hide-md">Apply for 2026-27</span>
-            <span style={{ display: "none" }} className="show-md">Apply</span>
+            <span className="hide-md">Enquire for 2027-28</span>
+            <span style={{ display: "none" }} className="show-md">Enquire</span>
             <ArrowIcon size={14} />
           </Link>
           <button
@@ -304,11 +304,11 @@ export function Nav() {
 
         <div className="nav-drawer-cta">
           <Link href="/apply" className="btn btn-primary" style={{ justifyContent: "center" }} onClick={() => setDrawerOpen(false)}>
-            Apply for 2026-27 <ArrowIcon size={14} />
+            Enquire for 2027-28 <ArrowIcon size={14} />
           </Link>
           <Link href="/early-registration" className="btn btn-sm" onClick={() => setDrawerOpen(false)}
             style={{ justifyContent: "center", marginTop: 8, background: "var(--accent)", color: "var(--ink)", border: "none", fontWeight: 600 }}>
-            JEECUP 2026 · Admissions enquiry →
+            Admissions enquiry →
           </Link>
           <div className="nav-drawer-lang">
             <button onClick={() => setLang("en")} data-on={lang === "en"} aria-pressed={lang === "en"}>EN</button>
@@ -394,7 +394,7 @@ const DRAWER_GROUPS: { title: string; items: DrawerItem[] }[] = [
     ],
   },
   {
-    title: "Admission · 2026-27",
+    title: "Admission",
     items: [
       { to: "/admission", label: "Admission Overview", hi: "प्रवेश" },
       { to: "/apply", label: "Apply now", hi: "आवेदन करें" },

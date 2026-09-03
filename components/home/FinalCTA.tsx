@@ -23,7 +23,7 @@ export const FinalCTA = () => (
           <div className="row" style={{ gap: 14, alignItems: "center" }}>
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 0 4px color-mix(in oklab, var(--accent) 25%, transparent)", animation: "pulse 2s infinite" }} />
             <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 75%, transparent)" }}>
-              Admissions Open · Session 2026-27
+              Session 2026-27 Closed · 2027-28 Enquiries Welcome
             </span>
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", color: "color-mix(in oklab, var(--paper) 55%, transparent)" }}>
@@ -96,7 +96,7 @@ export const FinalCTA = () => (
               }}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>01</span>
               <div>
-                <div style={{ fontWeight: 600, fontSize: 17 }}>Apply for 2026-27</div>
+                <div style={{ fontWeight: 600, fontSize: 17 }}>Enquire for 2027-28</div>
                 <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>Single-step form · 5 minutes</div>
               </div>
               <ArrowIcon size={18} />

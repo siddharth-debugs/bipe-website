@@ -127,7 +127,12 @@ export default async function BranchPage(
       category: "Tuition",
       price: b.fee.replace(/,/g, ""),
       priceCurrency: "INR",
-      availability: "https://schema.org/InStock",
+      // 3 Sep 2026 — session 2026-27 admission is closed; the tuition
+      // offer is not open. OutOfStock rather than SoldOut: the cycle
+      // closed, which is not the same claim as every seat being
+      // filled. Mirrors the site-wide Course nodes in app/layout.tsx.
+      // Flip back to InStock when 2027-28 opens.
+      availability: "https://schema.org/OutOfStock",
       url: `${canonical}#apply`,
     },
     // hasCourseInstance is the rich-result trigger. One instance per
@@ -197,7 +202,7 @@ export default async function BranchPage(
   // the English branch name is how the programmes are named everywhere.
   // Same WABA handset as DATA.contact.whatsapp (917310077788).
   const branchWaUrl = `https://wa.me/${DATA.contact.whatsappPhone.replace(/\D/g, "")}?text=${encodeURIComponent(
-    `नमस्ते BIPE — ${b.name} diploma (2026-27) की जानकारी चाहिए`,
+    `नमस्ते BIPE — ${b.name} diploma (सत्र 2027-28) की जानकारी चाहिए`,
   )}`;
 
   return (
@@ -233,7 +238,7 @@ export default async function BranchPage(
                 {detail.intro}
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
-                <Link href="/apply" className="btn btn-primary">Apply for 2026-27 <ArrowIcon /></Link>
+                <Link href="/apply" className="btn btn-primary">Enquire for 2027-28 <ArrowIcon /></Link>
                 <Link href="/jeecup" className="btn btn-ghost">JEECUP 4455 guidance <ArrowIcon /></Link>
                 <a href={branchWaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
                   <WhatsAppIcon /> Ask on WhatsApp
@@ -592,10 +597,10 @@ export default async function BranchPage(
               Three years. <span className="serif">One diploma. A career.</span>
             </h2>
             <p style={{ marginTop: 18, opacity: 0.85, maxWidth: "48ch", margin: "18px auto 0", lineHeight: 1.7 }}>
-              Applications for the 2026-27 {b.name} cohort are open. Five minutes to apply — personal guidance call within 24 hours.
+              Admission to the 2026-27 {b.name} cohort is closed. Register your interest in session 2027-28 — five minutes, and a personal guidance call within 24 hours.
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Apply for {b.name} <ArrowIcon /></Link>
+              <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Enquire about {b.name} <ArrowIcon /></Link>
               <a href={branchWaUrl} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
                 <WhatsAppIcon /> Ask on WhatsApp
               </a>

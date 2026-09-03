@@ -15,9 +15,9 @@ import { phaseIndexAt } from "./lpSchedule";
  * noindex — it exists to receive ad clicks, not to rank or duplicate /jeecup.
  */
 export const metadata: Metadata = {
-  title: "Ask BIPE what is still open · Session 2026-27 (code 4455)",
+  title: "2026-27 admission closed · Ask about 2027-28 (code 4455)",
   description:
-    "Pre-Counselling Registration closed on 27 July 2026. Leave your number and BIPE Varanasi admissions will tell you what is still open — AICTE-approved, code 4455. Open / general category, no UP domicile needed.",
+    "BIPE admission for session 2026-27 is closed — JEECUP 2026 counselling ended with Round 5 in mid-August and classes began 1 August. Leave your number for session 2027-28 and admissions will guide you through JEECUP 2027 — AICTE-approved, code 4455. Open / general category, no UP domicile needed.",
   robots: { index: false, follow: false },
 };
 
@@ -101,15 +101,15 @@ export default function Page() {
         >
           {/* message */}
           <div>
-            <span className="eyebrow" style={{ color: "var(--brand)" }}>Session 2026-27 · classes under way</span>
+            <span className="eyebrow" style={{ color: "var(--brand)" }}>Session 2026-27 closed · planning 2027-28</span>
             <h1 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
-              A seat at BIPE —{" "}
+              2026-27 is closed —{" "}
               <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-                ask what is still open.
+                plan next year with us.
               </span>
             </h1>
             <p className="lead" style={{ marginTop: 18, maxWidth: "52ch", color: "var(--ink-2)" }}>
-              <strong>Pre-Counselling Registration closed on 27 July 2026.</strong> Leave your number and BIPE Varanasi admissions will tell you honestly what is still open — AICTE-approved, JEECUP code <strong>4455</strong>. Open / general category, so <strong>no UP domicile is needed</strong> — Bihar students welcome. Classes are already under way.
+              <strong>Admission to BIPE for session 2026-27 is closed.</strong> JEECUP 2026 counselling has ended and classes began on 1 August 2026, so there is no seat to offer this session. Leave your number for <strong>session 2027-28</strong> and BIPE Varanasi admissions will guide you through JEECUP 2027 — AICTE-approved, JEECUP code <strong>4455</strong>. Open / general category, so <strong>no UP domicile is needed</strong> — Bihar students welcome.
             </p>
 
             {/* Live counselling-schedule strip — rolls Round 3 → allotment →
@@ -146,10 +146,10 @@ export default function Page() {
           >
             <div className="eyebrow" style={{ color: "var(--brand)" }}>Free · 2 minutes</div>
             <h2 className="bipe-h3" style={{ marginTop: 8, fontSize: 22, color: "var(--ink)" }}>
-              Ask about a seat
+              Ask about 2027-28
             </h2>
             <p style={{ marginTop: 6, marginBottom: 18, fontSize: 13.5, color: "var(--ink-3)", lineHeight: 1.55 }}>
-              Drop your number — admissions calls back within the day, in Hindi or English, and tells you whether your branch still has room.
+              Drop your number — admissions calls back within the day, in Hindi or English, and walks you through the branches at code 4455 and the JEECUP 2027 route into them. Nothing is open for 2026-27.
             </p>
             <LpLeadForm />
           </div>

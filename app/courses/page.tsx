@@ -153,7 +153,7 @@ export default async function Page() {
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
-                  Apply for 2026-27 <ArrowIcon size={16} />
+                  Enquire for 2027-28 <ArrowIcon size={16} />
                 </Link>
                 <Link href="/campus" className="btn btn-ghost btn-lg">
                   Visit campus
@@ -1190,7 +1190,7 @@ export default async function Page() {
                     01
                   </span>
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: 17 }}>Apply for 2026-27</div>
+                    <div style={{ fontWeight: 600, fontSize: 17 }}>Enquire for 2027-28</div>
                     <div style={{ fontSize: 12, color: "var(--ink-3)", marginTop: 2 }}>
                       Single-step form · 5 minutes
                     </div>

@@ -141,7 +141,7 @@ export function ApplyView() {
           }}>
             ✓
           </div>
-          <div className="eyebrow" style={{ marginTop: 28, color: "var(--brand)" }}>Application received</div>
+          <div className="eyebrow" style={{ marginTop: 28, color: "var(--brand)" }}>Enquiry received</div>
           <h2 className="bipe-h1" style={{ marginTop: 14 }}>
             Got it,{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -192,13 +192,13 @@ export function ApplyView() {
             }} />
 
             <div style={{ position: "relative" }}>
-              <div className="eyebrow" style={{ color: "var(--brand)" }}>Application form · 2026-27</div>
+              <div className="eyebrow" style={{ color: "var(--brand)" }}>Enquiry form · Session 2027-28</div>
               <h3 className="bipe-h2" style={{ marginTop: 8, fontSize: 32 }}>
-                Apply in under a minute
+                Register interest in under a minute
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>.</span>
               </h3>
               <p className="muted" style={{ marginTop: 8, fontSize: 14, maxWidth: "56ch" }}>
-                Fill in the basics — our admissions team will call within 24 hours to guide you on the next steps.
+                Admission for 2026-27 is closed. Fill in the basics for the next session — our admissions team will call within 24 hours to guide you on JEECUP 2027 and the branches.
               </p>
 
               <div className="grid" style={{ gap: 18, marginTop: 28 }}>
@@ -347,14 +347,14 @@ export function ApplyView() {
                   disabled={isSubmitting}
                   style={{ width: "100%", justifyContent: "center" }}
                 >
-                  {isSubmitting ? "Submitting…" : <>Submit application <ArrowIcon /></>}
+                  {isSubmitting ? "Sending…" : <>Send my details <ArrowIcon /></>}
                 </button>
               </div>
             </div>
           </div>
 
           <p className="muted" style={{ marginTop: 18, fontSize: 12, textAlign: "center" }}>
-            By submitting, you agree to be contacted by BIPE Admissions about 2026-27 admissions. We don&apos;t share your details.
+            By submitting, you agree to be contacted by BIPE Admissions about admission to the next session, 2027-28. We don&apos;t share your details.
           </p>
         </form>
       </div>

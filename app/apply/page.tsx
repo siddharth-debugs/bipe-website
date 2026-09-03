@@ -38,7 +38,7 @@ const AFTER: { n: string; title: string; body: string }[] = [
 const DISCUSS: { n: string; title: string; body: string }[] = [
   { n: "01", title: "Best branch fit by rank", body: "Given your JEECUP rank (or expected) and 10th marks, which of the five branches give the strongest career return?" },
   { n: "02", title: "Fee + scholarship eligibility", body: "Net annual figure after every reimbursement and waiver you qualify for — in writing, before any deposit." },
-  { n: "03", title: "Hostel availability", body: "Boys' hostel block, yearly accommodation and monthly mess rates, current vacancy. Book early or be on the waitlist." },
+  { n: "03", title: "Hostel and mess rates", body: "Boys' hostel block, yearly accommodation and monthly mess rates, and how rooms are allotted at the start of a session." },
   { n: "04", title: "Document gaps you can fix", body: "Missing TC? Migration certificate stuck at the board? We tell you what is fixable in the verification window — and how." },
 ];
 
@@ -67,15 +67,15 @@ export default function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div className="bipe-split" style={{ display: "grid", gridTemplateColumns: "1.25fr 1fr", gap: 56, alignItems: "center" }}>
             <div>
-              <div className="eyebrow">Apply · 2026-27</div>
+              <div className="eyebrow">Enquire · Session 2027-28</div>
               <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "16ch" }}>
-                Begin your application.{" "}
+                Register your interest.{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
                   Five minutes.
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                One short form. One human callback within twenty-four hours. No fee to apply, no commitment, no portal credentials. We meet you where you are in the decision.
+                Admission for session 2026-27 is closed — classes began on 1 August 2026 and JEECUP counselling ended with Round 5 in mid-August. This form is for the next session, 2027-28, through JEECUP 2027. One short form, one human callback within twenty-four hours. No fee, no commitment, no portal credentials.
               </p>
             </div>
 

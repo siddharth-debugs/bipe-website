@@ -75,7 +75,7 @@ const BLOG_WA_DIGITS = DATA.contact.whatsappPhone.replace(/\D/g, "");
 const blogWaUrl = (text: string) =>
   `https://wa.me/${BLOG_WA_DIGITS}?text=${encodeURIComponent(text)}`;
 // Hindi-first opener, matching the site's WhatsApp default.
-const DEFAULT_BLOG_WA_TEXT = "नमस्ते BIPE — 2026-27 admission की जानकारी चाहिए";
+const DEFAULT_BLOG_WA_TEXT = "नमस्ते BIPE — 2027-28 सत्र (JEECUP 2027) की जानकारी चाहिए";
 
 // Inject a conversion CTA just before the 2nd h2 — early enough to clear
 // the ~40% scroll line Clarity showed readers stop at, on a clean section
@@ -88,15 +88,15 @@ function withInlineCta(sections: BlogSection[], hi: boolean): BlogSection[] {
   const cta: BlogSection = hi
     ? {
         type: "cta",
-        title: "पॉलिटेक्निक डिप्लोमा का सोच रहे हैं? BIPE में 2026-27 admission खुले हैं।",
-        body: "AICTE-approved · BTEUP code 4455 · Phoolpur, Varanasi में 5 diploma branches। Admission team से हिंदी में बात करें — कोई pressure नहीं, सिर्फ़ सही जानकारी।",
-        applyLabel: "अभी Apply करें",
+        title: "पॉलिटेक्निक डिप्लोमा का सोच रहे हैं? 2027-28 के लिए BIPE से अभी बात करें।",
+        body: "AICTE-approved · BTEUP code 4455 · Phoolpur, Varanasi में 5 diploma branches। 2026-27 के admission बंद हो चुके हैं — अगले सत्र (2027-28) के लिए admission team से हिंदी में बात करें, कोई pressure नहीं।",
+        applyLabel: "2027-28 के लिए enquiry करें",
         waLabel: "WhatsApp पर बात करें",
       }
     : {
         type: "cta",
-        title: "Planning your polytechnic diploma? BIPE is enrolling for 2026-27.",
-        body: "AICTE-approved · BTEUP code 4455 · five diploma branches in Phoolpur, Varanasi. Talk to admissions in Hindi or English — no pressure, just answers.",
+        title: "Planning your polytechnic diploma? Talk to BIPE about 2027-28.",
+        body: "AICTE-approved · BTEUP code 4455 · five diploma branches in Phoolpur, Varanasi. Admissions for 2026-27 have closed — talk to us in Hindi or English about the next session, no pressure.",
       };
   return [...sections.slice(0, at), cta, ...sections.slice(at)];
 }
@@ -224,7 +224,7 @@ function renderSection(s: BlogSection, i: number) {
           }}
         >
           <div className="eyebrow" style={{ color: "color-mix(in oklab, var(--paper) 72%, transparent)", marginBottom: 10 }}>
-            Admissions open · 2026-27
+            2026-27 closed · 2027-28 enquiries
           </div>
           <div style={{ fontFamily: "var(--font-display, var(--font-sans))", fontWeight: 600, fontSize: 22, lineHeight: 1.22, maxWidth: "26ch" }}>
             {s.title}
@@ -236,7 +236,7 @@ function renderSection(s: BlogSection, i: number) {
           )}
           <div className="row" style={{ marginTop: 18, gap: 12, flexWrap: "wrap" }}>
             <Link href="/apply" className="btn btn-lg" style={{ background: "var(--accent)", color: "var(--ink)", border: "none", fontWeight: 600 }}>
-              {s.applyLabel || "Apply for 2026-27"} <ArrowIcon size={16} />
+              {s.applyLabel || "Enquire for 2027-28"} <ArrowIcon size={16} />
             </Link>
             <a href={blogWaUrl(waText)} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-wa">
               {s.waLabel || "WhatsApp admissions"}
@@ -529,15 +529,17 @@ export default async function BlogPostPage(
                 lineHeight: 1.7,
               }}
             >
-              BIPE&apos;s admissions team takes EN / हिंदी questions on WhatsApp every day. Or book a
-              campus visit — ~35 minutes from Varanasi Cantt by auto or app-cab.
+              Admission for 2026-27 is closed — JEECUP counselling ended in August 2026 and no seats
+              remain this session. For the 2027-28 session via JEECUP 2027, BIPE&apos;s admissions team
+              takes EN / हिंदी questions on WhatsApp every day. Or book a campus visit — ~35 minutes
+              from Varanasi Cantt by auto or app-cab.
             </p>
             <div
               className="row"
               style={{ marginTop: 24, gap: 12, justifyContent: "center", flexWrap: "wrap" }}
             >
               <Link href="/apply" className="btn btn-primary">
-                Apply for 2026-27 <ArrowIcon />
+                Enquire for 2027-28 <ArrowIcon />
               </Link>
               <Link href="/visit" className="btn btn-ghost">
                 Visit the campus <ArrowIcon />

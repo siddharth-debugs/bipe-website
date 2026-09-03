@@ -92,8 +92,8 @@ export const ROUTES: Record<RouteKey, {
     path: "/early-registration",
     // Conversion LP, not an organic-search target — see `noindex` above.
     noindex: true,
-    title: "Admissions Enquiry · Session 2026-27 · BIPE Varanasi (Code 4455)",
-    description: "Pre-Counselling Registration closed on 27 July 2026 and has not reopened. Classes began 1 August. Leave your details and BIPE Varanasi admissions will call you about seat availability — code 4455.",
+    title: "Admissions Enquiry · Session 2027-28 · BIPE Varanasi (Code 4455)",
+    description: "Admission for session 2026-27 is closed — JEECUP 2026 counselling ended with Round 5 in mid-August and classes began 1 August. Leave your details for session 2027-28 and BIPE Varanasi admissions will call you back — code 4455.",
   },
   home: {
     path: "/",
@@ -110,7 +110,7 @@ export const ROUTES: Record<RouteKey, {
     // colleges in Varanasi" verbatim (1,000/mo) in addition to the
     // original "polytechnic college in Varanasi". Drops "diploma
     // engineering" boilerplate for a tighter sentence.
-    description: "Top polytechnic & engineering college in Varanasi — BIPE is AICTE-approved with 5 BTEUP diploma branches including rare Dairy Engineering. JEECUP 4455. Apply for 2026-27.",
+    description: "Top polytechnic & engineering college in Varanasi — BIPE is AICTE-approved with 5 BTEUP diploma branches including rare Dairy Engineering. JEECUP 4455. 2026-27 admission closed — enquire for 2027-28.",
     keywords: [
       "BIPE Varanasi",
       "polytechnic in Varanasi",
@@ -155,8 +155,8 @@ export const ROUTES: Record<RouteKey, {
     // matched brand searchers but missed everyone typing "polytechnic
     // admission [year]". Lead with the literal phrase + keep the
     // JEECUP date anchor in the tail for the engaged-funnel reader.
-    title: "Polytechnic Admission 2026-27 · JEECUP 4455 | BIPE Varanasi",
-    description: "Polytechnic admission 2026-27 at BIPE Varanasi — apply via JEECUP (UPJEE Polytechnic) code 4455. Exam 02-09 June, 5-round counselling, classes begin 1 August 2026.",
+    title: "Polytechnic Admission 2026-27 Closed · JEECUP 4455 | BIPE Varanasi",
+    description: "Polytechnic admission at BIPE Varanasi runs through JEECUP (UPJEE Polytechnic) code 4455. The 2026-27 cycle is closed — classes began 1 August 2026. Next intake: session 2027-28 via JEECUP 2027.",
     keywords: [
       "JEECUP 2026 admission",
       "polytechnic admission Varanasi",
@@ -174,9 +174,9 @@ export const ROUTES: Record<RouteKey, {
     // to single-step in commit cedbe1a). Lead with "Free Application" —
     // power word that lifts CTR on transactional intent. Hindi support
     // signal kept because primary audience is Hindi-medium.
-    title: "Apply to BIPE 2026-27 · Free Application · JEECUP 4455 · हिंदी",
-    description: "Apply to BIPE Phoolpur 2026-27 free · 5 minutes · JEECUP 4455. Counsellor call within 24 hrs. हिंदी / English WhatsApp +91-7310077788.",
-    quickLink: { label: "Apply for 2026-27", hint: "Application form · 5 minutes", priority: 1 },
+    title: "BIPE Admission Enquiry 2027-28 · JEECUP 4455 · Varanasi · हिंदी",
+    description: "Admission to BIPE Phoolpur for 2026-27 is closed — JEECUP 2026 counselling has ended. Leave your details for session 2027-28 · free · 5 minutes · JEECUP 4455. Counsellor call within 24 hrs. हिंदी / English WhatsApp +91-7310077788.",
+    quickLink: { label: "Enquire for 2027-28", hint: "Next-session enquiry · 5 minutes", priority: 1 },
   },
   visit: {
     path: "/visit",
@@ -259,8 +259,8 @@ export const ROUTES: Record<RouteKey, {
   documents: {
     path: "/documents",
     // CTR rewrite 26 May 2026 · "Full Checklist" + year + JEECUP context.
-    title: "Documents for BIPE Admission 2026-27 · Full Checklist · JEECUP 4455",
-    description: "BIPE admission checklist 2026-27: Class 10 marksheet, JEECUP rank card, Aadhaar, caste/income/EWS certificates, passport photos, transfer + character.",
+    title: "Documents for BIPE Admission · Full Checklist · JEECUP 4455",
+    description: "BIPE admission document checklist: Class 10 marksheet, JEECUP rank card, Aadhaar, caste/income/EWS certificates, passport photos, transfer + character.",
   },
   jeecup: {
     path: "/jeecup",
@@ -391,8 +391,8 @@ export const ROUTES: Record<RouteKey, {
   },
   jeecupFromBihar: {
     path: "/jeecup-from-bihar",
-    title: "JEECUP from Bihar · Apply to BIPE Varanasi (code 4455)",
-    description: "Bihar students can apply to BIPE Varanasi via JEECUP in the open / general category — no UP domicile certificate needed. Step-by-step for Patna, Gaya, Bhojpur, Buxar, Kaimur applicants.",
+    title: "JEECUP from Bihar · Applying to BIPE Varanasi (code 4455)",
+    description: "Bihar students can apply to BIPE Varanasi via JEECUP in the open / general category — no UP domicile certificate needed. Step-by-step for Patna, Gaya, Bhojpur, Buxar, Kaimur applicants. The 2026-27 cycle is closed; the next intake is session 2027-28.",
   },
   jeecupVsBcece: {
     path: "/jeecup-vs-bcece",
@@ -738,7 +738,7 @@ export const ROUTES: Record<RouteKey, {
     // that lifts CTR on procedural queries, lifts the snippet over
     // the generic ".gov.in" results that rank around it.
     title: "JEECUP Counselling 2026 · 5-Round Guide + Choice Filling | BIPE 4455",
-    description: "JEECUP counselling 2026 step-by-step — 5 rounds in two phases, choice filling, documents, seat allotment, reporting, common mistakes. How BIPE (4455) fits in.",
+    description: "JEECUP counselling 2026 step-by-step — 5 rounds in two phases, choice filling, documents, seat allotment, reporting, common mistakes, and how BIPE (4455) fits in. The 2026 cycle closed in August 2026.",
     quickLink: { label: "JEECUP counselling 2026", hint: "5-round guide", priority: 3 },
     keywords: [
       "JEECUP counselling 2026",
@@ -791,7 +791,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupResult: {
     path: "/jeecup-result-2026",
     title: "JEECUP Result 2026 · Rank Card Check + What to Do Next | BIPE 4455",
-    description: "JEECUP 2026 result is OUT — check your rank at jeecup.admissions.nic.in and download the rank card. Appeared in JEECUP 2026? All five counselling rounds have closed — ask BIPE (code 4455) what is still vacant.",
+    description: "JEECUP 2026 result — check your rank at jeecup.admissions.nic.in and download the rank card. All five counselling rounds have closed and BIPE cannot admit for 2026-27. The next intake is session 2027-28 via JEECUP 2027.",
     keywords: [
       "JEECUP result",
       "JEECUP result 2026",
@@ -820,7 +820,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupRound4: {
     path: "/jeecup-round-4-2026",
     title: "JEECUP Round 4 2026 · Phase 2 Opened for ALL States (Bihar too) | BIPE 4455",
-    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1, open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, what has closed, and how to ask BIPE about a seat — code 4455.",
+    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1, open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility and what closed when. Counselling has since ended; BIPE cannot admit for 2026-27.",
     keywords: [
       "JEECUP round 4",
       "JEECUP round 4 2026",
@@ -836,7 +836,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupSeatAllotment: {
     path: "/jeecup-seat-allotment-2026",
     title: "JEECUP Seat Allotment 2026 · 5-Round Cycle + How to Check | BIPE 4455",
-    description: "JEECUP 2026 seat allotment — 5 counselling rounds in two phases, how to check allotment, freeze / float / withdraw explained, spot round at BIPE. Institute code 4455.",
+    description: "JEECUP 2026 seat allotment — 5 counselling rounds in two phases, how to check allotment, freeze / float / withdraw explained. All rounds have closed and BIPE cannot admit for 2026-27. Institute code 4455.",
     keywords: [
       "JEECUP seat allotment",
       "JEECUP seat allotment result",
@@ -955,7 +955,7 @@ export const ROUTES: Record<RouteKey, {
   jeecupAfterResults: {
     path: "/jeecup-after-results-action-plan",
     title: "After JEECUP Result 2026 · Step-by-step Action Plan | BIPE 4455",
-    description: "JEECUP 2026 result aa gaya — what to do next? Rank interpretation, document gathering, counselling choice list, 7 + 30-day action plan from BIPE.",
+    description: "JEECUP 2026 result aa gaya — ab kya kare? Rank interpretation, document gathering, counselling choice list, 7 + 30-day action plan from BIPE. The 2026-27 counselling has closed; the next cycle is 2027-28.",
     keywords: [
       "JEECUP result kya kare",
       "JEECUP after result action",

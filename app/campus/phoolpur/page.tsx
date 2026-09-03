@@ -373,7 +373,7 @@ export default function Page() {
             </p>
             <div className="row" style={{ marginTop: 28, gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/visit" className="btn btn-primary">Book a visit <ArrowIcon /></Link>
-              <Link href="/apply" className="btn btn-ghost">Apply for 2026-27 <ArrowIcon /></Link>
+              <Link href="/apply" className="btn btn-ghost">Enquire for 2027-28 <ArrowIcon /></Link>
               <Link href="/campus" className="btn btn-ghost">All facilities <ArrowIcon /></Link>
             </div>
           </div>

@@ -108,7 +108,7 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
 
         <div className="container" style={{ position: "relative" }}>
           <div className="eyebrow">
-            {data.town} catchment · {data.townHindi} · 2026-27
+            {data.town} catchment · {data.townHindi} · session 2027-28
           </div>
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "26ch" }}>
             Polytechnic for {data.town} students —{" "}
@@ -137,7 +137,7 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
               Book a campus visit <ArrowIcon size={16} />
             </Link>
             <Link href="/apply" className="btn btn-ghost btn-lg">
-              Start application
+              Enquire for 2027-28
             </Link>
           </div>
         </div>
@@ -798,7 +798,7 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
                   Book a campus visit <ArrowIcon size={16} />
                 </Link>
                 <a
-                  href={`https://wa.me/917310077788?text=Hi%20BIPE%20%E2%80%94%20I%20am%20from%20${encodeURIComponent(data.town)}%2C%20interested%20in%202026-27%20admissions.`}
+                  href={`https://wa.me/917310077788?text=Hi%20BIPE%20%E2%80%94%20I%20am%20from%20${encodeURIComponent(data.town)}%2C%20interested%20in%202027-28%20admissions.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-lg"
@@ -815,7 +815,7 @@ export default function CatchmentTemplate({ data }: { data: Catchment }) {
                   className="btn btn-ghost btn-lg"
                   style={{ justifyContent: "space-between" }}
                 >
-                  Start application <ArrowIcon size={16} />
+                  Enquire for 2027-28 <ArrowIcon size={16} />
                 </Link>
               </div>
             </div>

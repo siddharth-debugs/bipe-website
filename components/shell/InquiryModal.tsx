@@ -155,12 +155,12 @@ export function InquiryModal() {
         </button>
 
         <div className="inq-head">
-          <div className="inq-eyebrow">Admissions Open · 2026-27</div>
+          <div className="inq-eyebrow">Enquiries Open · 2027-28</div>
           <h2 id="inq-title" className="inq-title">
             Have an admissions question?
           </h2>
           <p className="inq-sub">
-            Fees, branches, JEECUP cut-offs &amp; campus details — leave your number and our admissions team calls you back.
+            Admission for 2026-27 is closed. Ask about session 2027-28 — fees, branches, JEECUP cut-offs &amp; campus details. Leave your number and our admissions team calls you back.
           </p>
         </div>
 

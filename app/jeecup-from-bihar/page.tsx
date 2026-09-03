@@ -19,7 +19,7 @@ const STEPS: { n: string; title: string; body: string }[] = [
   {
     n: "03",
     title: "Sit Group A — the diploma exam",
-    body: "Three-year diploma branches at BIPE sit Group A: Class-10 syllabus Maths, Physics, Chemistry. Computer-based test in May/June 2026, exam centres in Patna, Gaya, Bhagalpur and Muzaffarpur.",
+    body: "Three-year diploma branches at BIPE sit Group A: Class-10 syllabus Maths, Physics, Chemistry. Computer-based test in the May/June window — the 2026 paper ran 02–09 June — with exam centres in Patna, Gaya, Bhagalpur and Muzaffarpur.",
   },
   {
     n: "04",
@@ -78,7 +78,7 @@ export default function Page() {
       <PageHeader
         eyebrow="For Bihar applicants"
         title={<>Apply to BIPE Varanasi <span className="serif">via JEECUP.</span></>}
-        lead="JEECUP is the entrance exam for AICTE-approved polytechnics in Uttar Pradesh. Bihar candidates are welcome — admission is in the open / general category, no UP domicile certificate required, and Bihar Board, CBSE and other state-board marksheets are accepted exactly the same way."
+        lead="JEECUP is the entrance exam for AICTE-approved polytechnics in Uttar Pradesh. Bihar candidates are welcome — admission is in the open / general category, no UP domicile certificate required, and Bihar Board, CBSE and other state-board marksheets are accepted exactly the same way. Admission for session 2026-27 is closed — JEECUP 2026 counselling concluded in mid-August — so this guide is for the next cycle."
       />
 
       {/* Round 4 alert (Jul 2026) — the strategic moment for Bihar: Phase 1
@@ -173,7 +173,7 @@ export default function Page() {
             Call +91-9415202879 or WhatsApp +91-7310077788 (separate handset for chat). Our counsellors are familiar with the Bihar Board, JEECUP's open-category admission for other-state students, and the practicalities of moving a child from Patna, Ara, Buxar, Sasaram or Gaya to the BIPE campus.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Start application</Link>
+            <Link href="/apply" className="btn btn-primary" style={{ background: "#fff", color: "var(--brand)" }}>Enquire for 2027-28</Link>
             <Link href="/jeecup-vs-bcece" className="btn btn-ghost" style={{ borderColor: "#fff", color: "#fff" }}>JEECUP vs BCECE</Link>
             <Link href="/admission-from-bihar" className="btn btn-ghost" style={{ borderColor: "#fff", color: "#fff" }}>Documents from Bihar</Link>
           </div>

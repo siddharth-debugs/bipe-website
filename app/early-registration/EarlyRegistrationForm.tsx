@@ -43,13 +43,11 @@ export function EarlyRegistrationForm() {
       return setStatus({ state: "error", message: "Please enter the student's full name." });
     if (phone.length !== 10)
       return setStatus({ state: "error", message: "Enter a valid 10-digit student mobile number." });
-    if (appNo.trim().length < 4)
-      return setStatus({ state: "error", message: "Enter your JEECUP 2026 application number." });
 
     setStatus({ state: "sending" });
     const message =
-      "EARLY SEAT REGISTRATION — JEECUP 2026\n" +
-      `JEECUP application no: ${appNo.trim()}\n` +
+      "ADMISSION ENQUIRY — SESSION 2027-28\n" +
+      `JEECUP application no: ${appNo.trim() || "—"}\n` +
       `JEECUP group: ${group.trim() || "—"}\n` +
       `Branch preference: ${branch || "Not specified"}\n` +
       `Parent/guardian phone: ${parentPhone || "—"}`;
@@ -109,11 +107,11 @@ export function EarlyRegistrationForm() {
           {status.name}, आपकी जानकारी हमें मिल गई है।
         </p>
         <p style={{ marginTop: 12, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7, maxWidth: "46ch", marginInline: "auto" }}>
-          Reference <b style={{ color: "var(--brand)", fontFamily: "var(--font-mono)" }}>{status.ref}</b>. Our admissions team will call
-          you shortly and tell you honestly whether a seat is still open in your branch for 2026-27.
+          Reference <b style={{ color: "var(--brand)", fontFamily: "var(--font-mono)" }}>{status.ref}</b>. Session 2026-27 is closed, so our
+          admissions team will call you shortly about session 2027-28 and the JEECUP route into your branch.
         </p>
         <p lang="hi" style={{ marginTop: 10, color: "var(--ink-2)", fontSize: 14.5, lineHeight: 1.85, maxWidth: "48ch", marginInline: "auto" }}>
-          हमारी एडमिशन टीम जल्द ही आपको कॉल करेगी और साफ़-साफ़ बताएगी कि 2026-27 में आपकी ब्रांच में सीट बची है या नहीं।
+          सत्र 2026-27 का admission बंद हो चुका है। हमारी एडमिशन टीम जल्द ही आपको कॉल करके सत्र 2027-28 और JEECUP की पूरी जानकारी देगी।
         </p>
         <div className="row" style={{ justifyContent: "center", marginTop: 26, gap: 12, flexWrap: "wrap" }}>
           <a href={DATA.contact.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-wa btn-lg">
@@ -159,10 +157,11 @@ export function EarlyRegistrationForm() {
           </div>
           <div className="field">
             <label htmlFor="esr-appno">
-              JEECUP 2026 application no.
+              JEECUP application no.
+              <span style={{ color: "var(--ink-3)" }}> (if you have one)</span>
               <span lang="hi" style={{ fontWeight: 400, marginLeft: 6, opacity: 0.65, fontSize: 12 }}>· आवेदन संख्या</span>
             </label>
-            <input id="esr-appno" value={appNo} onChange={(e) => setAppNo(e.target.value)} placeholder="From your JEECUP form" maxLength={30} required />
+            <input id="esr-appno" value={appNo} onChange={(e) => setAppNo(e.target.value)} placeholder="From your JEECUP form" maxLength={30} />
           </div>
         </div>
 
@@ -200,7 +199,7 @@ export function EarlyRegistrationForm() {
       </button>
 
       <p className="muted" style={{ marginTop: 14, fontSize: 12, lineHeight: 1.6, textAlign: "center" }}>
-        Free &amp; non-binding. By sending this you agree to be contacted by BIPE Admissions about 2026-27. Students under 18 should
+        Free &amp; non-binding. By sending this you agree to be contacted by BIPE Admissions about session 2027-28. Students under 18 should
         enquire with a parent/guardian. We don&rsquo;t share your details with third parties — see our{" "}
         <Link href="/privacy" style={{ color: "var(--brand)" }}>Privacy Policy</Link>.
       </p>

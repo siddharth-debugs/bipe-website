@@ -326,7 +326,14 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         category: "Tuition",
         price: b.fee.replace(/,/g, ""),
         priceCurrency: "INR",
-        availability: "https://schema.org/InStock",
+        // 3 Sep 2026 — session 2026-27 admission is closed (JEECUP 2026
+        // counselling ended, classes began 1 August), so the tuition
+        // offer is not open. InStock here was a machine-readable claim
+        // that a seat can be taken up, emitted on EVERY page of the
+        // site. OutOfStock rather than SoldOut: what we know is that
+        // the cycle closed, not that every seat was filled. Flip back
+        // to InStock when the 2027-28 intake opens.
+        availability: "https://schema.org/OutOfStock",
         url: `${SITE_URL}/courses/${b.slug}`,
       },
       hasCourseInstance: [

@@ -85,7 +85,7 @@ export default function Page() {
       <PageHeader
         eyebrow="Admission from Bihar"
         title={<>Documents, hostel and the <span className="serif">practical bits.</span></>}
-        lead="Bihar candidates take admission at BIPE through JEECUP in the open / general category — no UP domicile certificate required. Bihar Board (BSEB) marksheets are accepted exactly the same as CBSE. The summary below covers the papers Bihar families from Patna, Ara, Buxar, Gaya or Bhagalpur ask about most; the full reporting checklist lives on our Documents page."
+        lead="Bihar candidates take admission at BIPE through JEECUP in the open / general category — no UP domicile certificate required. Bihar Board (BSEB) marksheets are accepted exactly the same as CBSE. Admission for session 2026-27 is closed — JEECUP 2026 counselling concluded in mid-August — so this is a reference for the next cycle. The summary below covers the papers Bihar families from Patna, Ara, Buxar, Gaya or Bhagalpur ask about most; the full reporting checklist lives on our Documents page."
       />
 
       <section className="section">
@@ -128,7 +128,7 @@ export default function Page() {
             Call +91-9415202879 or WhatsApp +91-7310077788 (separate handset for chat). Our counsellors handle Bihar admissions every season and can talk you through documents, hostel timing, and the JEECUP counselling rounds in Hindi or English.
           </p>
           <div style={{ marginTop: 24, display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/apply" className="btn btn-primary">Start application</Link>
+            <Link href="/apply" className="btn btn-primary">Enquire for 2027-28</Link>
             <Link href="/jeecup-from-bihar" className="btn btn-ghost">JEECUP from Bihar</Link>
             <Link href="/jeecup-rank-predictor-2026" className="btn btn-ghost">Check your rank</Link>
             <Link href="/jeecup-vs-bcece" className="btn btn-ghost">JEECUP vs BCECE</Link>
