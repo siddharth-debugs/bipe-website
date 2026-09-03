@@ -12,7 +12,6 @@ export type Department =
   | "Civil"
   | "Mechanical"
   | "Computer Science"
-  | "Dairy"
   | "Office";
 
 export interface Faculty {
@@ -43,10 +42,10 @@ export interface Faculty {
  * in OFFICE_STAFF below). The xlsx columns map to:
  *   xlsx Designation     → designation
  *   xlsx Qualification   → first entry in qualifications[]
- *   xlsx Branch          → Department (Applied + DAIRY → Dairy;
- *                          Applied + C.S.E. → Computer Science;
- *                          DAIRY + MECHANICAL → Mechanical, since
- *                          they're assigned to the Mech department)
+ *   xlsx Branch          → Department (Applied + C.S.E. → Computer
+ *                          Science; DAIRY → Mechanical, since Dairy is
+ *                          no longer offered and dairy-technology staff
+ *                          are assigned to the Mechanical department)
  *   xlsx College Name    → appended to the qualification string
  *
  * Where we already had richer detail (publications, certifications,
@@ -353,11 +352,14 @@ export const FACULTY: Faculty[] = [
   {
     id: "amrit-shankar",
     name: "Amrit Shankar",
-    // 29 May 2026 — branch fixed from Mechanical → Dairy Engineering
-    // per user correction. His B.Tech is in Dairy Technology, so the
-    // Mechanical designation was a filing error.
-    designation: "Lecturer, Dairy Engineering",
-    department: "Dairy",
+    // 3 Sep 2026 — reassigned to Mechanical Engineering per owner
+    // direction, reversing the 29 May 2026 move to Dairy. Dairy
+    // Engineering is no longer offered, and his degree (B.Tech Dairy
+    // Technology) sits in the mechanical family; his industry experience
+    // is automobile/manufacturing. Qualification left as his real degree
+    // — the department is an assignment, the credential is a fact.
+    designation: "Lecturer, Mechanical Engineering",
+    department: "Mechanical",
     qualifications: ["B.Tech (Dairy Technology), Raja Balwant Singh Engineering Technical College, Agra"],
     experience: "5 Years Industry (Automobile · Manufacturing) · 2 Years Teaching",
     photo: "/faculty/amrit-shankar.png",
@@ -464,11 +466,12 @@ export const FACULTY: Faculty[] = [
   {
     id: "anand-kumar-tyagi",
     name: "Anand Kumar Tyagi",
-    // 29 May 2026 — branch fixed from Mechanical → Dairy Engineering
-    // per user correction. His B.Tech is in Dairy Technology — same
-    // filing-error fix as Amrit Shankar above.
-    designation: "Lecturer, Dairy Engineering",
-    department: "Dairy",
+    // 3 Sep 2026 — reassigned to Mechanical Engineering per owner
+    // direction, reversing the 29 May 2026 move to Dairy (branch no
+    // longer offered). Same handling as Amrit Shankar: department is
+    // Mechanical, real degree (B.Tech Dairy Technology) kept as-is.
+    designation: "Lecturer, Mechanical Engineering",
+    department: "Mechanical",
     qualifications: ["B.Tech (Dairy Technology), IIIT Jabalpur"],
     experience: "4 Years Teaching",
     photo: "/faculty/anand-kumar-tyagi.png",
@@ -487,12 +490,15 @@ export const FACULTY: Faculty[] = [
     photo: "",
   },
 
-  // ─────── Dairy Engineering ───────
   {
     id: "rashi-vishwakarma",
     name: "Rashi Vishwakarma",
-    designation: "Lecturer (Applied), Dairy Engineering",
-    department: "Dairy",
+    // 3 Sep 2026 — reassigned to Mechanical per owner direction (Dairy
+    // no longer offered). She is an applied-science lecturer (M.Sc
+    // Physics / B.Sc Maths), so this is a pure department move — her
+    // credentials are cross-branch and unchanged.
+    designation: "Lecturer (Applied), Mechanical Engineering",
+    department: "Mechanical",
     qualifications: [
       "M.Sc (Physics), T.D. College, Jaunpur",
       "B.Sc (Mathematics), Mahatma Gandhi Kashi Vidyapith University",
@@ -713,7 +719,6 @@ export const DEPT_LABELS: Record<Department, string> = {
   Civil: "Civil Engineering",
   Mechanical: "Mechanical Engineering",
   "Computer Science": "Computer Science & Engineering",
-  Dairy: "Dairy Engineering",
   Office: "Office Staff",
 };
 
@@ -728,7 +733,6 @@ export const FACULTY_BY_DEPT = (FACULTY).reduce<Record<Department, Faculty[]>>(
     Civil: [],
     Mechanical: [],
     "Computer Science": [],
-    Dairy: [],
     Office: [],
   },
 );
