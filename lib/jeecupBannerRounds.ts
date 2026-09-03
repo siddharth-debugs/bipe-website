@@ -41,27 +41,27 @@ export const BANNER_ROUNDS: BannerRound[] = [
     n: 1,
     eyebrow: "JEECUP 2026 · Round 1",
     headline:
-      "Pre-Counselling Registration is open — reserve your branch at BIPE (code 4455) before Round 1 choice-filling (25–30 June).",
+      "Pre-Counselling Registration is open — add BIPE (code 4455) to your choice list before Round 1 choice-filling (25–30 June).",
     hindi:
-      "JEECUP Round 1 choice-filling 25–30 जून — choice-filling से पहले BIPE में अपनी ब्रांच (code 4455) reserve करें।",
+      "JEECUP Round 1 choice-filling 25–30 जून — choice-filling से पहले अपनी choices में BIPE (code 4455) जोड़ें।",
     rollAtMs: at("2026-07-01T00:00:00+05:30"), // after Round 1 choice-filling
   },
   {
     n: 2,
     eyebrow: "JEECUP 2026 · Round 2",
     headline:
-      "Pre-Counselling Registration is open — reserve your branch at BIPE (code 4455) before Round 2 choice-filling (7–9 July).",
+      "Pre-Counselling Registration is open — add BIPE (code 4455) to your choice list before Round 2 choice-filling (7–9 July).",
     hindi:
-      "JEECUP Round 2 choice-filling 7–9 जुलाई — choice-filling से पहले BIPE में अपनी ब्रांच (code 4455) reserve करें।",
+      "JEECUP Round 2 choice-filling 7–9 जुलाई — choice-filling से पहले अपनी choices में BIPE (code 4455) जोड़ें।",
     rollAtMs: at("2026-07-10T00:00:00+05:30"), // after Round 2 choice-filling
   },
   {
     n: 3,
     eyebrow: "JEECUP 2026 · Round 3 Allotment",
     headline:
-      "JEECUP Round 3 allotment is out — report by 25 July if you got a seat. Missed Rounds 1–3, or from another state? Round 4 (Phase 2) opens next for ALL states. Reserve your branch at BIPE, code 4455.",
+      "JEECUP Round 3 allotment is out — report by 25 July if you got a seat. Missed Rounds 1–3, or from another state? Round 4 (Phase 2) opens next for ALL states. Add BIPE (code 4455) to your choice list.",
     hindi:
-      "JEECUP Round 3 allotment आ गया — seat मिली तो 25 जुलाई तक report करें। मौका छूट गया या दूसरे राज्य से हैं? Round 4 (Phase 2) सभी राज्यों के लिए खुल रहा है। BIPE में reserve करें, code 4455।",
+      "JEECUP Round 3 allotment आ गया — seat मिली तो 25 जुलाई तक report करें। मौका छूट गया या दूसरे राज्य से हैं? Round 4 (Phase 2) सभी राज्यों के लिए खुल रहा है। अपनी choices में BIPE (code 4455) जोड़ें।",
     rollAtMs: at("2026-07-20T00:00:00+05:30"), // Round 3 selection done → focus shifts to Round 4 (owner, 20 Jul)
   },
   {
@@ -79,18 +79,26 @@ export const BANNER_ROUNDS: BannerRound[] = [
     n: 5,
     eyebrow: "JEECUP 2026 · Round 5 · Final round",
     headline:
-      "JEECUP Round 5 is the FINAL counselling round — last seats at BIPE (code 4455), open to all states including Bihar. Classes are already under way, so talk to admissions today and join with minimal catch-up.",
+      "JEECUP Round 5 is the FINAL counselling round, open to all states including Bihar. Add BIPE (code 4455) to your choice list. Classes are already under way, so a seat allotted now means some catch-up.",
     hindi:
-      "JEECUP Round 5 — आख़िरी counselling round। BIPE में last seats (code 4455), सभी राज्यों के लिए (Bihar भी)। Classes शुरू हो चुकी हैं — आज ही admissions से बात करें।",
+      "JEECUP Round 5 — आख़िरी counselling round, सभी राज्यों के लिए (Bihar भी)। अपनी choices में BIPE (code 4455) जोड़ें। Classes शुरू हो चुकी हैं, इसलिए कुछ catch-up करना होगा।",
     rollAtMs: at("2026-08-16T00:00:00+05:30"), // end of Phase 2 → then hide
   },
 ];
 
 // RETIRED for 2026-27 (3 Sep 2026). Every rollAtMs above is in the past, so
-// bannerRoundAt() returns null and the banner renders nothing — the copy above
-// is a record of what ran, not live text. Before reusing this for the 2027
-// cycle, rewrite the headlines: several still say "reserve your branch" and
-// "last seats at BIPE", which the owner's 2026-27 closure ruling forbids.
+// bannerRoundAt() returns null and the banner renders nothing.
+//
+// The headlines were scrubbed of seat-availability claims on 3 Sep 2026: they
+// used to say "reserve your branch at BIPE" and "last seats at BIPE", which the
+// owner's 2026-27 closure ruling forbids — and which misdescribed the mechanism
+// anyway, since a candidate adds code 4455 to their JEECUP choice list rather
+// than reserving anything with the college. They now say that instead, so
+// reviving this for a future cycle is safe on that count.
+//
+// Still to change before any reuse: the eyebrows and dates are 2026-specific,
+// and rollAtMs must move forward or the banner stays hidden. Do NOT reintroduce
+// any claim about seats being available, few, or held.
 
 /** The round to show at `nowMs`, or null once the final round has ended. */
 export function bannerRoundAt(nowMs: number): BannerRound | null {
