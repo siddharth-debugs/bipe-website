@@ -838,7 +838,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "02",
         title: "Wait for BTEUP's supplementary cycle notification",
-        body: "Supplementary cycles run twice yearly — January, for odd-semester backlogs from the November theory cycle whose result declares in December, and July, for even-semester backlogs from the April-May cycle whose result declares in June. (Older copy had these two the wrong way round: November-December theory cycle). BTEUP publishes the cycle notification ~3 weeks before registration opens. Watch bteup.ac.in's notice board.",
+        body: "Supplementary cycles run twice yearly — January, for odd-semester backlogs from the November theory cycle whose result declares in December, and July, for even-semester backlogs from the April-May cycle whose result declares in June. BTEUP publishes the cycle notification ~3 weeks before registration opens. Watch bteup.ac.in's notice board.",
       },
       {
         n: "03",
