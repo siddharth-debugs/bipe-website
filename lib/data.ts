@@ -459,7 +459,14 @@ export const DATA: DataShape = {
     { step: "06", title: "Classes begin · 1 August 2026", body: "Session 2026-27 begins 1 August. Orientation, mentor allocation, hostel allotment. Three years that change your career." },
   ],
   facilities: [
-    { name: "Computer Lab", count: "120 systems", body: "Latest specs, dual monitors. Open 8am–10pm. Programming, simulation, GIS." },
+    // "100 Mbps firewalled internet" carried over 3 Sep 2026 from the CMS
+    // home/facilities row before that row was unpublished. The CMS version
+    // of this tile mentioned the leased line and the seed did not; the row
+    // was suppressing four other facilities (Electrical Lab, Civil Survey
+    // Yard, Boys' Hostel, Sports & Ground), so it was retired in favour of
+    // this array. Keep the speed here in sync with /campus, /hostel,
+    // /approvals and /mandatory-disclosure — see memory project_internet_100mbps.
+    { name: "Computer Lab", count: "120 systems", body: "Latest specs, dual monitors, 100 Mbps firewalled internet. Open 8am–10pm. Programming, simulation, GIS." },
     { name: "Mechanical Workshop", count: "8 sections", body: "Fitting, welding, foundry, machining, CNC, sheet metal — every diploma student gets hands-on hours." },
     { name: "Dairy Engineering Labs", count: "Rare in UP", body: "Chemistry and hydraulics benches for milk-quality testing and process-fluid work, plus industrial visits to working plants like Banas Dairy." },
     { name: "Electrical Lab", count: "12 benches", body: "Machines, electronics, control systems, renewables, EV battery & motor lab." },
