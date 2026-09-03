@@ -47,7 +47,7 @@ const KEY_DIFFS = [
     heading: "Branch portfolio",
     govt: "Varies by institute; commonly 3-5 standard engineering branches",
     aided: "Varies; some aided institutes offer specialised branches",
-    private: "Wider variation — niche branches are more common at private institutes. BIPE runs Dairy Engineering, though it is closed to new admissions from 2026-27",
+    private: "Varies widely by institute, and seat depth varies with it. BIPE runs four branches across 420 seats — Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering — so per-branch availability holds into the later JEECUP rounds",
   },
 ];
 

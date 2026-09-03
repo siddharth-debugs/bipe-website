@@ -26,7 +26,6 @@ import { Alumni, AlumnusRow, AlumnusWrite } from "@/lib/admin/content";
 const BRANCHES = [
   "Civil Engineering",
   "Computer Science & Engineering",
-  "Dairy Engineering",
   "Electrical Engineering",
   "Electronics Engineering",
   "Mechanical Engineering",

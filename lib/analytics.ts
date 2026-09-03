@@ -48,7 +48,7 @@ export type AnalyticsParams = Record<string, string | number | boolean | undefin
  *
  * Mirrors our GA4 events into Clarity so session replays + heatmaps
  * can be filtered the same way — e.g. "show recordings where
- * application_submit_success fired", or "filter to programme = Dairy
+ * application_submit_success fired", or "filter to programme = Civil
  * Engineering". No-ops when Clarity isn't loaded (localhost / Vercel
  * preview — the beacon only injects on the live bipevns.org host) and
  * never throws. Clarity API ref: clarity("set", key, value) for tags,
@@ -104,8 +104,8 @@ export function track(eventName: string, params: AnalyticsParams = {}): void {
 
   // Mirror into Clarity: every tracked event becomes a Clarity custom
   // event, and if it carries a branch/programme, tag the session too —
-  // so you can pull replays of, e.g., people who applied for Dairy
-  // Engineering. Both calls are independent no-ops without Clarity.
+  // so you can pull replays of, e.g., people who applied for Computer
+  // Science. Both calls are independent no-ops without Clarity.
   clarityEvent(CLARITY_EVENT_NAME[eventName] ?? eventName);
   const programme = params.branch ?? params.programme;
   if (typeof programme === "string" && programme.trim()) {

@@ -29,11 +29,7 @@ const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "120", suffix: "+", label: "Networked PCs", sub: "Computer centre" },
   { num: "100", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
   { num: "40", label: "Faculty", sub: "1:20 mentor ratio" },
-  // 3 Sep 2026 · sub was "Including Dairy". Five is what BIPE runs and
-  // teaches; four is what a 2026-27 applicant can join. Both are true and
-  // this band is read by applicants, so it now carries both numbers
-  // instead of advertising the closed one. See ADMITTING_BRANCHES.
-  { num: "5", label: "BTEUP branches", sub: "4 take new admissions" },
+  { num: "4", label: "BTEUP branches", sub: "420 seats · JEECUP 4455" },
 ];
 
 const LIB_PILLS: string[] = [
@@ -47,11 +43,7 @@ const LIB_PILLS: string[] = [
 
 // Direct Cloudinary photos from BIPE's own workshop/lab library
 // (lib/labs-manifest.json). Hand-picked to favour shots with students
-// actually working — not equipment-only frames. Dairy is the one entry
-// off this manifest: it uses BIPE_IMG.dairy, the single verified frame
-// from the Drive dairy folder (the rest of that folder is mis-filed
-// mechanical shots — see lib/images.ts). Comment corrected 3 Sep 2026;
-// it still claimed a placeholder that had already been replaced.
+// actually working — not equipment-only frames.
 const CL = "https://res.cloudinary.com/dg8sty5ej/image/upload/f_auto,q_auto,w_900";
 const LABS: { eyebrow: string; title: string; body: string; img: string; tags: string[] }[] = [
   {
@@ -74,18 +66,6 @@ const LABS: { eyebrow: string; title: string; body: string; img: string; tags: s
     body: "Welding, foundry, forging, machining (lathes, milling), CNC and an engine test bench. Every diploma student logs hands-on workshop hours each semester.",
     img: `${CL}/v1778151561/bipe/labs/mechanical/machin-shop-3`,
     tags: ["Welding", "Foundry", "CNC", "Lathe"],
-  },
-  // 3 Sep 2026 · eyebrow was "DAIRY · RARE IN UP". The lab, the benches
-  // and the Banas Dairy visits are all real and still timetabled, so the
-  // card stays — what goes is the rarity framing, which on a campus tour
-  // page reads as a reason to pick BIPE for a branch you can no longer
-  // join. Closure stated in the body so nobody reads the card as an offer.
-  {
-    eyebrow: "DAIRY · FINAL BATCH",
-    title: "Dairy Processing Lab",
-    body: "Dairy chemistry and microbiology benches — plate counts, fat percentage, antibiotic-residue testing, with plant-floor time on industrial visits to working plants like Banas Dairy, Varanasi. Dairy Engineering is closed to new admissions from 2026-27; the lab runs on for the batch graduating in 2028.",
-    img: BIPE_IMG.dairy,
-    tags: ["Milk quality", "Microbiology", "Industrial visits"],
   },
   {
     eyebrow: "COMPUTER CENTRE",
@@ -169,7 +149,7 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "54ch" }}>
-                Our 6-acre Phoolpur campus houses five BTEUP branches (four of them still taking new admissions), 40 faculty and 550+ students. Library, 120-computer lab, dairy chemistry and hydraulics labs, mechanical workshops, boys&rsquo; hostel and a sports ground — all within one boundary.
+                Our 6-acre Phoolpur campus houses four BTEUP branches, 40 faculty and 550+ students. Library, 120-computer lab, electrical-machines and hydraulics labs, the survey yard, mechanical workshops, boys&rsquo; hostel and a sports ground — all within one boundary.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/visit" className="btn btn-primary btn-lg">Book a campus visit <ArrowIcon size={16} /></Link>
@@ -369,7 +349,7 @@ export default async function Page() {
         <div className="container" style={{ position: "relative" }}>
           <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 32, alignItems: "end", marginBottom: 48, paddingBottom: 28, borderBottom: "1px solid var(--line)" }}>
             <div>
-              <div className="eyebrow">Five labs</div>
+              <div className="eyebrow">Four labs</div>
               <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "16ch" }}>
                 Labs that{" "}
                 <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
@@ -383,10 +363,10 @@ export default async function Page() {
           </div>
 
           <div className="bipe-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 22 }}>
-            {LABS.map((lab, idx) => (
+            {LABS.map((lab) => (
               <article key={lab.title} className="card" style={{
                 padding: 0, overflow: "hidden",
-                gridColumn: idx < 3 ? "span 2" : "span 3",
+                gridColumn: "span 3",
               }}>
                 <Img src={lab.img} label={lab.eyebrow} style={{ height: 220, borderRadius: 0 }} />
                 <div style={{ padding: 24 }}>

@@ -48,7 +48,7 @@ const POLYTECHNICS: GovtPoly[] = [
     seats: "Standard government intake",
     fees: "Government structure (~₹12,000-22,000/year)",
     notes:
-      "Serves Mirzapur district. Dairy Engineering is not offered here; the branch is rare statewide, with only four BTE UP-affiliated programmes in all of UP. BIPE runs one of them, but it took its last intake in 2025-26 and is closed to new admissions from 2026-27 — a Mirzapur applicant choosing BIPE picks from Civil, Electrical, Mechanical Engineering (Production) or Computer Science & Engineering.",
+      "Serves Mirzapur district. Standard government intake and fee structure, with Round-1 closing ranks that have run around 18,000-25,000 in the general category. Mirzapur applicants comparing this against BIPE are weighing the same four engineering branches on either route — the difference is seat depth, hostel access and placement support rather than the branch list.",
   },
   {
     name: "Government Polytechnic Jaunpur",
@@ -67,7 +67,7 @@ const POLYTECHNICS: GovtPoly[] = [
     seats: "Standard government intake",
     fees: "Government structure (~₹12,000-22,000/year)",
     notes:
-      "Serves Ghazipur's agricultural and small-industry belt. Dairy Engineering is generally not offered at this government polytechnic — and it is closed to new admissions at BIPE from 2026-27 too, so Ghazipur applicants are choosing between the standard engineering branches on either route.",
+      "Serves Ghazipur's agricultural and small-industry belt. Standard government intake and fee structure. Ghazipur is 80 km from Phoolpur, so applicants who miss the Round-1 cutoff here commonly list BIPE alongside the Varanasi-district government options — with the on-campus hostel doing the work a daily commute cannot.",
   },
   {
     name: "Government Polytechnic Bara, Prayagraj",
@@ -115,8 +115,8 @@ const FAQS = [
     a: `Most UP government polytechnics do not publish year-wise named placement data publicly. Government-recruitment placements happen through national-level exams (SSC JE, RRB JE) which students self-apply to — the institute's role is academic preparation, not on-campus drive intensity. BIPE's documented record of ${_placed} named placements across ${_recruiters} recruiters is a private-institute advantage that government polytechnics typically don't replicate. The named placement list is public on /alumni.`,
   },
   {
-    q: "What if I want Dairy Engineering specifically — can a government polytechnic in Eastern UP offer it?",
-    a: "Two answers, and the second one matters more. First: no — government polytechnics in the Eastern UP districts listed above generally do not offer Dairy Engineering, and the branch is rare statewide, with only four BTE UP-affiliated Dairy Engineering programmes in all of UP. Second: BIPE is one of those four, but BIPE's Dairy Engineering took its last intake in 2025-26 and is closed to new admissions from 2026-27, so it is not a branch you can fill as a JEECUP choice — do not plan a counselling strategy around it. The enrolled cohort continues with labs, faculty and the mandatory Semester-6 plant training unchanged and graduates in 2028. For a new applicant, BIPE admits to four branches: Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering.",
+    q: "The government polytechnic near me doesn't offer the branch I want. What are my options?",
+    a: "This is the most common reason Eastern UP families end up at a private polytechnic, and it is a better reason than rank alone. Most district government polytechnics run three standard branches (Civil, Electrical, Mechanical) at fixed per-branch capacity, and Government Polytechnic Kuru Pindra — the only general government polytechnic inside Varanasi district — runs just two, Electrical and Textile, with 60 seats in total. If your branch isn't on that list, no rank secures it. BIPE runs four branches across 420 seats: Civil (120), Electrical (120), Mechanical Engineering (Production) (120) and Computer Science & Engineering (60) — Computer Science in particular is thinly covered by the government polytechnics in this belt. Seat depth is also why BIPE's branch-wise availability persists into the later JEECUP rounds instead of closing in Round 1.",
   },
 ];
 
@@ -354,7 +354,7 @@ export default function Page() {
               </h3>
               <ul style={{ marginTop: 14, paddingLeft: 20, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.7 }}>
                 <li>Your rank doesn&rsquo;t safely secure your preferred branch at a government polytechnic</li>
-                <li>You want real branch choice — 420 seats across four admitting branches, where the nearest government polytechnic (Kuru Pindra) admits 60 students in total</li>
+                <li>You want real branch choice — 420 seats across four branches, where the nearest government polytechnic (Kuru Pindra) admits 60 students in total</li>
                 <li>You&rsquo;re from outside Varanasi city — hostel access is essential</li>
                 <li>You want documented placement infrastructure ({_placed} verified placements at {_recruiters} recruiters)</li>
                 <li>Smaller cohort + named faculty mentors matters to your learning</li>

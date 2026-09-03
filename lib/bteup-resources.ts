@@ -334,7 +334,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "04",
         title: "Plan your study schedule backwards from the first exam date",
-        body: "Most diploma students underestimate the exam-prep crunch. Once you know your first exam date, work backwards in 5-day study blocks per subject. Across BIPE's five branches each semester carries six or seven subjects, theory and lab together, dropping to five in the lightest final semester. Start serious revision 4-6 weeks before Day 1 of the cycle.",
+        body: "Most diploma students underestimate the exam-prep crunch. Once you know your first exam date, work backwards in 5-day study blocks per subject. Across BIPE's four branches each semester carries six or seven subjects, theory and lab together, dropping to five in the lightest final semester. Start serious revision 4-6 weeks before Day 1 of the cycle.",
       },
       {
         n: "05",
@@ -666,7 +666,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     slug: "bteup-syllabus-2026",
     shortTitle: "BTEUP Syllabus 2026",
     title: "BTEUP Syllabus 2026 · Branch-wise + Semester-wise Curriculum | BIPE 4455",
-    description: "Complete BTEUP 2026 syllabus — branch-by-branch (Mechanical, Electrical, Civil, CSE, Dairy) and semester-by-semester. Download official PDFs, theory + practical breakdown, NEP-aligned changes.",
+    description: "Complete BTEUP 2026 syllabus — branch-by-branch (Mechanical, Electrical, Civil, CSE) and semester-by-semester. Download official PDFs, theory + practical breakdown, NEP-aligned changes.",
     keywords: [
       "BTEUP syllabus",
       "BTEUP syllabus 2026",
@@ -680,7 +680,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     eyebrow: "BTEUP 2026 · SYLLABUS GUIDE",
     headline: "BTEUP 2026 syllabus —",
     headlineAccent: "branch + semester, end-to-end.",
-    lead: "BTEUP publishes a 6-semester syllabus for each of its 40+ affiliated diploma branches. This page covers the structural pattern of the syllabus (theory + practical + internal weightage), where to download official PDFs, and the branch-by-branch contour for BIPE's 5 BTEUP-affiliated branches (Mechanical, Electrical, Civil, CSE, Dairy) — the first four of which admit new students in 2026-27, Dairy having taken its last intake in 2025-26.",
+    lead: "BTEUP publishes a 6-semester syllabus for each of its 40+ affiliated diploma branches. This page covers the structural pattern of the syllabus (theory + practical + internal weightage), where to download official PDFs, and the branch-by-branch contour for BIPE's four BTEUP-affiliated branches (Mechanical, Electrical, Civil, CSE).",
     quickStats: [
       { label: "Total semesters", value: "6", sub: "3 years · 2 semesters per year" },
       { label: "Per branch", value: `${SUBJECTS_PER_SEMESTER} subjects`, sub: "Per semester · theory + lab together" },
@@ -722,12 +722,6 @@ export const BTEUP_RESOURCES: BteupResource[] = [
           label: "Computer Science & Engineering",
           summary: "Data structures, OS, networking, web, AI/IoT (NEP additions).",
         },
-        {
-          href: "/courses/dairy-engineering",
-          code: "327",
-          label: "Dairy Engineering",
-          summary: "Milk processing, plant operations, refrigeration, food safety.",
-        },
       ],
     },
     steps: [
@@ -759,7 +753,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "06",
         title: "Cross-reference with BIPE's branch-specific page",
-        body: "BIPE publishes a curated semester-by-semester syllabus summary for each of its 5 branches at /courses/[branch] (e.g., /courses/civil-engineering). The summary is shorter than the official BTEUP PDF but easier to scan when you're picking branches at JEECUP counselling — note that four of the five admit in 2026-27; Dairy Engineering took its last intake in 2025-26.",
+        body: "BIPE publishes a curated semester-by-semester syllabus summary for each of its four branches at /courses/[branch] (e.g., /courses/civil-engineering). The summary is shorter than the official BTEUP PDF but easier to scan when you're picking branches at JEECUP counselling.",
       },
     ],
     checklist: {
@@ -789,7 +783,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "Are NCERT books enough for BTEUP exams?",
-        a: "For first-year theory (Maths, Physics, Chemistry, English) — NCERT Class 11-12 is largely sufficient. For branch-specific subjects from semester 3 onwards, you need branch-specialised textbooks (the BTEUP syllabus PDF lists recommended texts). BIPE library carries the recommended texts for all 5 branches.",
+        a: "For first-year theory (Maths, Physics, Chemistry, English) — NCERT Class 11-12 is largely sufficient. For branch-specific subjects from semester 3 onwards, you need branch-specialised textbooks (the BTEUP syllabus PDF lists recommended texts). BIPE library carries the recommended texts for all four branches.",
       },
       {
         q: "How much weightage do BTEUP internal marks carry?",

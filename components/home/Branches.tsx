@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DATA } from "@/lib/data";
+import { DATA, PUBLIC_BRANCHES } from "@/lib/data";
 import { ArrowIcon } from "@/components/shell/Icons";
 
 /**
@@ -27,12 +27,16 @@ import { ArrowIcon } from "@/components/shell/Icons";
  *
  * `branches` is optional: the home server page passes the live list
  * from getBranchesMapped() so admin edits flow through. Falls back
- * to DATA.branches if omitted (e.g. backend down).
+ * to PUBLIC_BRANCHES if omitted (e.g. backend down).
  */
 export const Branches = ({
   branches,
 }: { branches?: typeof DATA.branches } = {}) => {
-  const list = branches && branches.length > 0 ? branches : DATA.branches;
+  // PUBLIC_BRANCHES, not DATA.branches. The fallback fires on a CMS
+  // outage, and the raw seed array still carries retired branches — so
+  // the failure mode was "backend blips, homepage silently grows a fifth
+  // branch". Same bug class as the one fixed in CoursesView. 3 Sep 2026.
+  const list = branches && branches.length > 0 ? branches : PUBLIC_BRANCHES;
 
   return (
     <section

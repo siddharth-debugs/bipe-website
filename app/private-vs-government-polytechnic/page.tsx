@@ -27,14 +27,6 @@ export async function generateMetadata(): Promise<Metadata> {
  * and the "sarkari = real" prestige myth, both of which are bigger
  * conversion blockers than anything Kashi/SHEAT/VNITM can do.
  *
- * Dairy update (3 Sep 2026): Dairy Engineering is closed to new
- * admissions from 2026-27 and is no longer a reason to pick BIPE on
- * this page. The branch-portfolio row that carried the "Dairy moat"
- * argument is now a seat-depth argument, which is the honest remaining
- * differentiator against a government polytechnic's fixed Round-1
- * per-branch capacity. Dairy is not erased — it is stated as a running
- * programme that has stopped admitting.
- *
  * Editorial stance (per user direction 25 May 2026):
  *   - Fee anchor: sourced range with footnote (not a single figure)
  *   - Comparator: Government Polytechnic Varanasi specifically
@@ -109,10 +101,10 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Branch availability & seat depth",
     bipe:
-      "420 seats across four admitting branches — Civil (120), Electrical (120), Mechanical Engineering Production (120) and Computer Science & Engineering (60) — and branch-wise availability that persists into the later JEECUP rounds rather than closing in Round 1. In practice that means the branch you actually want stays reachable at a wider rank band. (BIPE also runs Dairy Engineering, but it took its last intake in 2025-26 and is closed to new admissions from 2026-27; the enrolled cohort is taught out to its 2028 graduation.)",
+      "420 seats across four branches — Civil (120), Electrical (120), Mechanical Engineering Production (120) and Computer Science & Engineering (60) — and branch-wise availability that persists into the later JEECUP rounds rather than closing in Round 1. In practice that means the branch you actually want stays reachable at a wider rank band.",
     context:
       "Government Polytechnic Varanasi offers the standard four engineering branches, with fixed per-branch capacity that fills sharply by rank in Round 1. Verify the current branch list and intake with the institute directly before choice-filling.",
-    verifyLabel: "See the four admitting branches",
+    verifyLabel: "See the four branches",
     verifyPath: "/courses",
   },
   {
@@ -187,7 +179,7 @@ const FAQS: FaqItem[] = [
     question:
       "When should I choose BIPE over a government polytechnic?",
     answer:
-      `When the additional ~₹8,000-18,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of ${_placed} placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or a preferred branch that a Round-1 government cutoff has already closed to you — BIPE's four admitting branches stay reachable across the later JEECUP rounds.`,
+      `When the additional ~₹8,000-18,000 per year can be stretched, AND you want one or more of: a dedicated on-campus placement cell with a documented record of ${_placed} placements; on-campus boys' hostel because you're coming from outside Varanasi; smaller cohort sizes with named faculty mentors; or a preferred branch that a Round-1 government cutoff has already closed to you — BIPE's four branches stay reachable across the later JEECUP rounds.`,
   },
   {
     question:

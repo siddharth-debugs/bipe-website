@@ -36,7 +36,7 @@ const AFTER: { n: string; title: string; body: string }[] = [
 ];
 
 const DISCUSS: { n: string; title: string; body: string }[] = [
-  { n: "01", title: "Best branch fit by rank", body: "Given your JEECUP rank (or expected) and 10th marks, which of the four branches BIPE admits to give the strongest career return?" },
+  { n: "01", title: "Best branch fit by rank", body: "Given your JEECUP rank (or expected) and 10th marks, which of our four branches gives the strongest career return?" },
   { n: "02", title: "Fee + scholarship eligibility", body: "Net annual figure after every reimbursement and waiver you qualify for — in writing, before any deposit." },
   { n: "03", title: "Hostel and mess rates", body: "Boys' hostel block, yearly accommodation and monthly mess rates, and how rooms are allotted at the start of a session." },
   { n: "04", title: "Document gaps you can fix", body: "Missing TC? Migration certificate stuck at the board? We tell you what is fixable in the verification window — and how." },

@@ -69,19 +69,14 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       "@id": `${SITE_URL}#org`,
       name: "Banaras Institute of Polytechnic & Engineering",
       alternateName: ["BIPE", "BIPE Varanasi", "Banaras Institute of Polytechnic and Engineering"],
-      // 3 Sep 2026 — the branch clause was "across five branches — Civil,
-      // Computer Science & Engineering, Dairy, Electrical, and Mechanical
-      // (Production)". This description is the site-wide entity blurb that
-      // search engines and AI assistants quote back when someone asks what
-      // BIPE offers, so it has to describe what a 2026-27 applicant can
-      // actually join. The institute still runs five branches (see the
-      // `department` array below, which stays at five); only the intake
-      // narrowed.
+      // Site-wide entity blurb — the sentence search engines and AI
+      // assistants quote back when someone asks what BIPE offers. Keep it
+      // to the four branches the site publishes; `branches` is already the
+      // public list (see lib/content.ts → getBranchesMapped).
       description:
         "Private, AICTE-approved polytechnic college in Varanasi (Uttar Pradesh, India). " +
-        "BTEUP-affiliated diploma engineering — admissions in four branches from 2026-27: Civil, " +
-        "Computer Science & Engineering, Electrical, and Mechanical (Production). Dairy Engineering " +
-        "is closed to new admissions from 2026-27; its final cohort graduates in 2028. " +
+        "BTEUP-affiliated diploma engineering in four branches: Civil, " +
+        "Computer Science & Engineering, Electrical, and Mechanical (Production). " +
         "JEECUP institute code 4455. " +
         "Founded 2010 by the Purwanchal Educational Trust; AFRC-approved tuition ₹30,150 / academic year. " +
         "Not a government institution — privately funded, publicly accountable through AICTE / BTEUP / AISHE.",
@@ -325,14 +320,7 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
       "@type": "Course",
       "@id": `${SITE_URL}/courses#${b.slug}`,
       name: `Diploma in ${b.name}`,
-      // 3 Sep 2026 — the closure has to reach the structured data too.
-      // The seed description already carries it, but `desc` is one of the
-      // CMS-overridable fields, so append the sentence defensively when
-      // whatever came down doesn't already say it.
-      description:
-        b.admissions && !/closed to new admissions/i.test(b.desc)
-          ? `${b.desc} Closed to new admissions from ${b.admissions.closedFrom}; the final cohort graduates in ${b.admissions.finalCohortGraduates}.`
-          : b.desc,
+      description: b.desc,
       courseCode: b.code,
       provider: { "@id": `${SITE_URL}#org` },
       educationalCredentialAwarded: "Diploma in Engineering (3-year, BTEUP)",
@@ -343,20 +331,12 @@ function buildOrgJsonLd(branches: Branch[], contact: PublicContact): Record<stri
         category: "Tuition",
         price: b.fee.replace(/,/g, ""),
         priceCurrency: "INR",
-        // Two independent facts, and the Course node needs both.
-        // 3 Sep 2026 (a) session 2026-27 admission is closed — JEECUP 2026
-        // counselling ended and classes began 1 August — so no branch's
-        // tuition offer is currently open. OutOfStock rather than SoldOut:
-        // what we know is the cycle closed, not that every seat filled.
-        // (b) Dairy Engineering is closed to new admissions permanently,
-        // which is Discontinued, not merely out of stock — and it stays
-        // Discontinued when the 2027-28 intake flips the others back to
-        // InStock. The Course node itself stays either way so
-        // /courses/dairy-engineering keeps structured data for the cohort
-        // still enrolled in it.
-        availability: b.admissions
-          ? "https://schema.org/Discontinued"
-          : "https://schema.org/OutOfStock",
+        // 3 Sep 2026 — session 2026-27 admission is closed (JEECUP 2026
+        // counselling ended, classes began 1 August), so the tuition offer
+        // is not open. OutOfStock rather than SoldOut: the cycle closed,
+        // which is not the claim that every seat filled. Flip back to
+        // InStock when the 2027-28 intake opens.
+        availability: "https://schema.org/OutOfStock",
         url: `${SITE_URL}/courses/${b.slug}`,
       },
       hasCourseInstance: [

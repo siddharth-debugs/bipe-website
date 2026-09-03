@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
-import { DATA, ADMITTING_BRANCHES, ADMITTING_SEATS } from "@/lib/data";
+import { DATA, PUBLIC_BRANCHES, PUBLIC_SEATS } from "@/lib/data";
 import { getPageSection } from "@/lib/content";
 import { PageIntro } from "@/components/shared/PageIntro";
 import { BIPE_IMG } from "@/lib/images";
@@ -71,21 +71,14 @@ const REASONS: { roman: string; title: string; body: string; metric: string; met
     metric: "1:20",
     metricLabel: "mentor : student",
   },
-  // 3 Sep 2026 — this slot used to pitch Dairy Engineering ("offered by
-  // fewer than 1.1% of UP polytechnics") as a reason to choose BIPE. The
-  // branch is closed to new admissions from 2026-27, so the card was
-  // recruiting for something no reader of this page can join. Replaced
-  // with the seat maths for the branches that ARE admitting, computed from
-  // ADMITTING_BRANCHES so the figures cannot drift out of lib/data.ts.
-  // The Dairy programme itself is untouched — still taught, still on
-  // /courses, final cohort graduating 2028; see the eligibility panel
-  // below for the closure notice.
+  // Seat maths computed from PUBLIC_BRANCHES so the figures cannot drift
+  // out of lib/data.ts.
   {
     roman: "iii",
-    title: `${ADMITTING_SEATS} seats across ${ADMITTING_BRANCHES.length} branches`,
-    body: `${ADMITTING_BRANCHES.map((b) => `${b.name} — ${b.seats}`).join(" · ")}. Every branch BTEUP-affiliated and on the same ₹30,150 AFRC fee, so the choice is about the work, not the price.`,
-    metric: String(ADMITTING_SEATS),
-    metricLabel: `seats · ${ADMITTING_BRANCHES.length} branches`,
+    title: `${PUBLIC_SEATS} seats across ${PUBLIC_BRANCHES.length} branches`,
+    body: `${PUBLIC_BRANCHES.map((b) => `${b.name} — ${b.seats}`).join(" · ")}. Every branch BTEUP-affiliated and on the same ₹30,150 AFRC fee, so the choice is about the work, not the price.`,
+    metric: String(PUBLIC_SEATS),
+    metricLabel: `seats · ${PUBLIC_BRANCHES.length} branches`,
   },
   {
     roman: "iv",
@@ -468,17 +461,11 @@ export default async function Page() {
                   After Class 10 · Maths & Science
                 </div>
                 <p style={{ marginTop: 22, fontSize: 15, lineHeight: 1.7, color: "color-mix(in oklab, var(--paper) 78%, transparent)", maxWidth: "44ch" }}>
-                  The single route into BIPE. Three years, six semesters, four BTEUP branches open to you in 2026-27 —{" "}
+                  The single route into BIPE. Three years, six semesters, four BTEUP branches —{" "}
                   <Link href="/courses/computer-science-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Computer Science &amp; Engineering</Link>,{" "}
                   <Link href="/courses/civil-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Civil</Link>,{" "}
                   <Link href="/courses/electrical-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Electrical</Link>, and{" "}
                   <Link href="/courses/mechanical-engineering-production" style={{ color: "var(--accent)", textDecoration: "underline" }}>Mechanical Engineering (Production)</Link>.
-                </p>
-                <p style={{ marginTop: 14, fontSize: 13.5, lineHeight: 1.65, color: "color-mix(in oklab, var(--paper) 60%, transparent)", maxWidth: "44ch" }}>
-                  BIPE runs a fifth branch,{" "}
-                  <Link href="/courses/dairy-engineering" style={{ color: "var(--accent)", textDecoration: "underline" }}>Dairy Engineering</Link>,
-                  {" "}which is closed to new admissions from 2026-27. Its last intake was 2025-26 and that
-                  cohort is taught out to graduation in 2028 — it is not a choice in this year&rsquo;s counselling.
                 </p>
                 <Link href="/courses" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 8, color: "var(--accent)", fontWeight: 600, fontSize: 14 }}>
                   View the 4 branches <ArrowIcon size={14} />
@@ -487,10 +474,10 @@ export default async function Page() {
               <div style={{ paddingLeft: 36, borderLeft: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", display: "flex", flexDirection: "column", gap: 22 }}>
                 <div>
                   <span className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 64, color: "var(--accent)", lineHeight: 0.9 }}>
-                    <Counter to={String(ADMITTING_SEATS)} />
+                    <Counter to={String(PUBLIC_SEATS)} />
                   </span>
                   <div style={{ marginTop: 8, fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "color-mix(in oklab, var(--paper) 60%, transparent)" }}>
-                    Seats open · {ADMITTING_BRANCHES.length} branches
+                    Seats · {PUBLIC_BRANCHES.length} branches
                   </div>
                 </div>
                 <div>

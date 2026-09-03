@@ -341,7 +341,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               <ArrowIcon size={12} />
             </Link>
           </div>
-          <Col heading="Academics" items={[["All branches", "/courses"], ["Placements", "/placements"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Dairy Engineering", "/courses/dairy-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
+          <Col heading="Academics" items={[["All branches", "/courses"], ["Placements", "/placements"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
           {/* Admission column — 2026-05-20: added JEECUP Counselling
               (high-value 18,100/mo head term page that had no footer
               link previously) and JEECUP from Bihar (geo landing). */}

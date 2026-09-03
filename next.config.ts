@@ -256,6 +256,18 @@ const nextConfig: NextConfig = {
   // would be guess-work without Semrush corroboration.
   async redirects() {
     return [
+      // ─── Retired content, 3 Sep 2026 ────────────────────────────
+      //
+      // The Dairy Engineering branch was withdrawn from the public site.
+      // These three URLs are indexed and carry inbound links, so they 301
+      // rather than 404 — a 404 reads as a broken site, a 301 passes the
+      // accumulated authority to the surviving hub and quietly drops the
+      // old URL from the index. Deliberately no interstitial and no
+      // explanatory page: the removal is not announced.
+      { source: "/courses/dairy-engineering",                    destination: "/courses", permanent: true },
+      { source: "/blog/dairy-engineering-course-up-rare-branch", destination: "/blog",    permanent: true },
+      { source: "/blog/why-dairy-engineering-bipe-rare-bteup-327", destination: "/blog",  permanent: true },
+
       // ─── Semrush May 2026 snapshot (4 URLs) ─────────────────────
       { source: "/thank-u",             destination: "/",        permanent: true },
       { source: "/bipe-media",          destination: "/events",  permanent: true },

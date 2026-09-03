@@ -223,14 +223,14 @@ const ALUMNI_JSON_LD = {
 type Program = { num: string; title: string; cadence: string; body: string };
 const PROGRAMS: Program[] = [
   { num: "01", title: "6-Day Industry-Ready Skill Enhancement Workshop", cadence: "Annual · February", body: "Resume drafting, communication, technical refresher and mock GD-PI in the run-up to placement season. Every final-year student attends." },
-  { num: "02", title: "AICTE Impact Lecture Series", cadence: "Periodic · invited", body: "Industry leaders, alumni and government officials address full cohorts on emerging tracks — EVs, smart infrastructure, dairy supply chains." },
+  { num: "02", title: "AICTE Impact Lecture Series", cadence: "Periodic · invited", body: "Industry leaders, alumni and government officials address full cohorts on emerging tracks and career routes — EVs, smart infrastructure, SSC JE and RRB JE recruitment." },
   { num: "03", title: "Mock Interview Sessions", cadence: "Quarterly", body: "Panel-style mocks with HR mentors and technical reviewers from regional industry. Recorded feedback follows every session." },
   { num: "04", title: "AMCAT On-Campus Examination", cadence: "Annual", body: "The Aspiring Minds employability assessment, conducted on campus and open to every final-year student to support job applications." },
   { num: "05", title: "Tech Talk Series", cadence: "Quarterly · alumni-led", body: "Short branch-specific technical talks by alumni and faculty — what changed in the field, what the cohort should learn next." },
 ];
 
 const CELL_POINTS: { num: string; title: string; body: string }[] = [
-  { num: "01", title: "Curate the recruiter pipeline", body: "Relationships built over sixteen years across mechanical, electrical, civil, dairy and IT verticals — kept warm with quarterly outreach." },
+  { num: "01", title: "Curate the recruiter pipeline", body: "Relationships built over sixteen years across mechanical, electrical, civil and IT verticals — kept warm with quarterly outreach." },
   { num: "02", title: "Train every cohort", body: "Five pre-placement programmes run on rotation — workshop, lecture series, mock interviews, AMCAT, tech talks." },
   { num: "03", title: "Verify every placement", body: `Only joining-letter-confirmed offers count toward the public number. The ${formatPlacements(PLACEMENT_STATS.totalPlacements)} figure is auditable, not aspirational.` },
   { num: "04", title: "Track the alumni", body: "Quarterly outreach to keep the network warm and the recruiter pipeline fresh — alumni open most of the new doors." },

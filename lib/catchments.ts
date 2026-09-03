@@ -34,18 +34,8 @@
  * against public timetables (Indian Railways + UP State RoadTransport)
  * as of May 2026. Refresh annually before each admission cycle.
  *
- * Dairy closure pass — 3 Sep 2026. BIPE admits to four branches from
- * 2026-27; Dairy Engineering (BTEUP 327) took its last intake in
- * 2025-26 and its final cohort graduates in 2028. Every district pitch
- * below that used Dairy as a reason to *choose* BIPE now names a
- * branch a 2026-27 applicant can actually enrol in. Two editorial
- * calls worth recording: (a) CatchmentTemplate hardcodes the line
- * "four reasons BIPE is a fit" above whyBipeReasons, so every town
- * must keep exactly four entries — the Dairy items were rewritten in
- * place, never deleted; (b) the closure is stated explicitly only on
- * the dairy-belt pages where a reader would otherwise come looking
- * for the branch (Mirzapur, Jaunpur, Ghazipur, Azamgarh, Bhadohi,
- * Ballia, Gorakhpur), not pasted onto all twelve.
+ * CatchmentTemplate hardcodes the line "four reasons BIPE is a fit"
+ * above whyBipeReasons, so every town must keep exactly four entries.
  */
 
 export interface Catchment {
@@ -136,9 +126,9 @@ export const CATCHMENTS: Catchment[] = [
       },
     ],
     branchAngle:
-      "Civil Engineering for the Vindhya stone and infrastructure pipeline; Electrical for UPPCL recruitment; Mechanical (Production) for industrial Mirzapur; Computer Science for the IT / state-government cadre route. Those four are what a 2026-27 applicant chooses from — Dairy Engineering took its last intake in 2025-26 and is closed to new admissions.",
+      "Civil Engineering for the Vindhya stone and infrastructure pipeline; Electrical for UPPCL recruitment; Mechanical (Production) for industrial Mirzapur; Computer Science for the IT / state-government cadre route.",
     localContext:
-      "Mirzapur has government polytechnic seats and a handful of private options at varying levels of approval. Verify any local institute's current AICTE EoA letter and AFRC fee structure before deciding. The four admitting branches and the on-campus hostel at BIPE Phoolpur are the differentiators most local options can't match in one place.",
+      "Mirzapur has government polytechnic seats and a handful of private options at varying levels of approval. Verify any local institute's current AICTE EoA letter and AFRC fee structure before deciding. BIPE Phoolpur's four branches and its on-campus hostel are the differentiators most local options can't match in one place.",
     transitNarrative:
       "From Mirzapur, take a state-roadways bus to Varanasi Cantt (₹120-140, 1.5 hours), then a shared autorickshaw or app-cab to Phoolpur (~35 minutes via NH-19, roughly ₹300-500). Trains from Mirzapur Junction reach Varanasi Cantt in under an hour — multiple options every day. Confirm your visit on WhatsApp and BIPE shares the campus pin and easiest route from Cantt.",
     faqs: [
@@ -188,7 +178,7 @@ export const CATCHMENTS: Catchment[] = [
     whyBipeReasons: [
       {
         headline: "The closest four-branch private polytechnic to Jaunpur",
-        body: "At 55 km, BIPE Phoolpur is the nearest BTE UP–affiliated private polytechnic offering all four admitting branches (Civil, CSE, Electrical, Mechanical (Production)) under one roof. For a Jaunpur student who wants choice — or who's still deciding between branches — BIPE is the natural option.",
+        body: "At 55 km, BIPE Phoolpur is the nearest BTE UP–affiliated private polytechnic offering all four branches (Civil, CSE, Electrical, Mechanical (Production)) under one roof. For a Jaunpur student who wants choice — or who's still deciding between branches — BIPE is the natural option.",
       },
       {
         headline: "Hostel = the difference between doable and impossible",
@@ -199,12 +189,12 @@ export const CATCHMENTS: Catchment[] = [
         body: "A BTE UP diploma is the eligibility document for SSC JE, RRB JE and UPPCL JE — the exams Jaunpur families most often plan around. Electrical feeds the Purvanchal grid's substation and JE cadres; Civil feeds state PWD and the NH-19 corridor work. BIPE's career-counselling cell runs structured prep for that exam cluster from Semester 5 onward, alongside the on-campus placement drives.",
       },
       {
-        headline: "JEECUP 4455 — single code, all four admitting branches",
-        body: "When you fill the JEECUP choice-filling form, BIPE's institute code is 4455 — list all four admitting branch preferences (Civil, Electrical, Mechanical (Production), Computer Science) under this single code. Most Jaunpur students who lose a BIPE seat lose it to single-choice filling, not rank. Fill all four. Dairy Engineering is closed to new admissions from 2026-27, so it is not a choice-filling option this cycle.",
+        headline: "JEECUP 4455 — single code, all four branches",
+        body: "When you fill the JEECUP choice-filling form, BIPE's institute code is 4455 — list all four branch preferences (Civil, Electrical, Mechanical (Production), Computer Science) under this single code. Most Jaunpur students who lose a BIPE seat lose it to single-choice filling, not rank. Fill all four.",
       },
     ],
     branchAngle:
-      "Civil for Jaunpur PWD and the Smart Cities corridor; Electrical for UPPCL substations across the Purvanchal grid; Mechanical (Production) for industrial work in the broader region; CSE for state IT cadres and private placements. Four branches admit in 2026-27; Dairy Engineering's last intake was 2025-26 and that batch passes out in 2028.",
+      "Civil for Jaunpur PWD and the Smart Cities corridor; Electrical for UPPCL substations across the Purvanchal grid; Mechanical (Production) for industrial work in the broader region; CSE for state IT cadres and private placements.",
     localContext:
       "Jaunpur has Government Polytechnic Jaunpur and a few smaller private options. The local government polytechnic is well respected, and for cost-binding families it remains a strong choice. BIPE's differentiators are placement intensity, on-campus hostel and a smaller per-branch cohort — see /private-vs-government-polytechnic for the honest comparison.",
     transitNarrative:
@@ -252,11 +242,11 @@ export const CATCHMENTS: Catchment[] = [
     nearestStation: "Ghazipur City (GCT)",
     highways: "NH-29 (Ghazipur–Varanasi) connecting to NH-19 onward to Phoolpur",
     econProfile:
-      "Ganga-riverside district with the government opium factory, dairy farming, fisheries and agro-processing. ICAR-affiliated agricultural research presence and one of Eastern UP's largest cattle markets. A natural fit for any technical or dairy-related diploma.",
+      "Ganga-riverside district with the government opium factory, dairy farming, fisheries and agro-processing. ICAR-affiliated agricultural research presence and one of Eastern UP's largest cattle markets.",
     whyBipeReasons: [
       {
         headline: "Civil for the Purvanchal Expressway terminus and the Bharatmala upgrades",
-        body: "The Purvanchal Expressway ends in Ghazipur district at Haidaria on NH-31, and the Bharatmala-linked highway and bridge work around it runs on diploma-level site engineers, surveyors and supervisors. BIPE's Civil branch is the direct route into that — state PWD, NHAI contractors and the construction firms that follow the corridor. It is one of four branches BIPE admits to in 2026-27; Dairy Engineering took its last intake in 2025-26.",
+        body: "The Purvanchal Expressway ends in Ghazipur district at Haidaria on NH-31, and the Bharatmala-linked highway and bridge work around it runs on diploma-level site engineers, surveyors and supervisors. BIPE's Civil branch is the direct route into that — state PWD, NHAI contractors and the construction firms that follow the corridor.",
       },
       {
         headline: "Civil + Mechanical for the government engineering pipeline",
@@ -283,8 +273,8 @@ export const CATCHMENTS: Catchment[] = [
         a: "Train + auto: ~2 hours 15 minutes total (90 min train + 35 min Cantt-to-Phoolpur). Direct road: ~2 hours via NH-29 and NH-19. Daily commute is not viable across a 3-year diploma — hostel is essential.",
       },
       {
-        q: "Ghazipur is a dairy district — can my child still take Dairy Engineering at BIPE?",
-        a: "Not from 2026-27. Dairy Engineering took its last intake in 2025-26 — that batch is being taught out with its labs, faculty and the mandatory six-month Semester-6 industrial training intact, and graduates in 2028. A new applicant chooses from the four admitting branches: Civil, Electrical, Mechanical (Production) and Computer Science. On the placement half of the question: recruitment at BIPE is institution-wide rather than town-specific, and for Ghazipur students the Civil and Mechanical routes into state PWD, NHAI contractors, Indian Railways and SSC JE are the strongest local fit.",
+        q: "Which BIPE branch suits a Ghazipur student best?",
+        a: "You choose from Civil, Electrical, Mechanical (Production) and Computer Science. For Ghazipur students the Civil and Mechanical routes are usually the strongest local fit — state PWD, NHAI contractors on the Purvanchal Expressway terminus and the Bharatmala upgrades, Indian Railways and SSC JE. Electrical feeds UPPCL's substation and JE cadres across the district. Recruitment at BIPE is institution-wide rather than town-specific: every final-year student attends the branch-wise drives the placement cell runs.",
       },
       {
         q: "What documents does a Ghazipur applicant need?",
@@ -328,7 +318,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         headline: "Four branches with cross-industry placements",
-        body: "Azamgarh students often arrive at the diploma decision still weighing options — Civil for government infrastructure work, Mechanical (Production) for production industry and RRB JE, Electrical for UPPCL, CSE for IT cadres. BIPE offers all four under one institute code (JEECUP 4455), so a single choice-filling entry keeps every option on the table. Dairy Engineering, BIPE's fifth branch, stopped admitting after the 2025-26 intake and finishes teaching out its cohort in 2028.",
+        body: "Azamgarh students often arrive at the diploma decision still weighing options — Civil for government infrastructure work, Mechanical (Production) for production industry and RRB JE, Electrical for UPPCL, CSE for IT cadres. BIPE offers all four under one institute code (JEECUP 4455), so a single choice-filling entry keeps every option on the table.",
       },
       {
         headline: "1,331 placement record — concrete pipeline, not promises",
@@ -372,7 +362,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Azamgarh is a sensible choice if your rank confidently secures the branch you want, you live in Azamgarh city (day-scholar feasible), and the fee gap matters. With a strong rank and city residency, this is the obvious option.",
       whenBipe:
-        "BIPE wins for Azamgarh families when: (a) hostel is non-negotiable (most outer-district students need it); (b) your rank is comfortable but not safe for the branch you want at the government polytechnic; (c) you want all four admitting branches available under one JEECUP code rather than a single-branch gamble; (d) you value documented placement-cell support across every branch. /private-vs-government-polytechnic has the framework.",
+        "BIPE wins for Azamgarh families when: (a) hostel is non-negotiable (most outer-district students need it); (b) your rank is comfortable but not safe for the branch you want at the government polytechnic; (c) you want all four branches available under one JEECUP code rather than a single-branch gamble; (d) you value documented placement-cell support across every branch. /private-vs-government-polytechnic has the framework.",
     },
   },
 
@@ -392,7 +382,7 @@ export const CATCHMENTS: Catchment[] = [
     whyBipeReasons: [
       {
         headline: "Branch portfolio that fits Mau's economic pull",
-        body: "Mau students aim for stable income — either government JE jobs or industry placements. BIPE's four admitting branches (Civil, Electrical, Mechanical (Production), CSE) cover every major SSC JE / RRB JE / UPPCL pipeline. The placement cell coaches Semester 5-6 students for these exams alongside on-campus drives.",
+        body: "Mau students aim for stable income — either government JE jobs or industry placements. BIPE's four branches (Civil, Electrical, Mechanical (Production), CSE) cover every major SSC JE / RRB JE / UPPCL pipeline. The placement cell coaches Semester 5-6 students for these exams alongside on-campus drives.",
       },
       {
         headline: "Scholarship coverage often offsets the tuition gap with government polytechnic",
@@ -410,7 +400,7 @@ export const CATCHMENTS: Catchment[] = [
     branchAngle:
       "Mechanical (Production) for the powerloom + textile cluster; Electrical for UPPCL JE; Civil for state PWD and infrastructure work; CSE for central-government IT cadre exams.",
     localContext:
-      "Mau has limited local polytechnic infrastructure — most technical-education aspirants travel to nearby districts (Azamgarh, Varanasi, Ballia, Ghazipur). BIPE Phoolpur is among the closest private polytechnic options carrying all four admitting branches with full hostel residence. Government Polytechnic seats in the broader region are available but rank-competitive.",
+      "Mau has limited local polytechnic infrastructure — most technical-education aspirants travel to nearby districts (Azamgarh, Varanasi, Ballia, Ghazipur). BIPE Phoolpur is among the closest private polytechnic options carrying all four branches with full hostel residence. Government Polytechnic seats in the broader region are available but rank-competitive.",
     transitNarrative:
       "Mau Junction has frequent trains to Varanasi Cantt — 1.5 to 2 hours depending on the service. Road via NH-29 through Ghazipur takes ~2.5 hours. From Varanasi Cantt to Phoolpur is the standard 14-km leg by shared auto or app-cab (~35 min, roughly ₹300-500). WhatsApp the admission office before a visit and we'll share the campus pin and the easiest route from Cantt.",
     faqs: [
@@ -440,7 +430,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "If your rank secures a government seat at Azamgarh or in Mau itself (where available), the lower fee structure is a real advantage — particularly when combined with the UP Post-Matric Scholarship (family income under ₹2.5 lakh for SC/ST, ₹2 lakh for OBC/Minority/EWS), which can effectively reduce net cost to near-zero.",
       whenBipe:
-        "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with all four admitting branches available; (b) you want the full branch portfolio under one JEECUP code rather than a single-branch bet; (c) you specifically want the 1,331 alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
+        "BIPE wins for Mau students when: (a) the nearest government polytechnic option is in Azamgarh (~3 hours, hostel-required) — at that point you may as well hostel at BIPE with all four branches available; (b) you want the full branch portfolio under one JEECUP code rather than a single-branch bet; (c) you specifically want the 1,331 alumni placement track record. UP Post-Matric Scholarship is portable — BIPE assists with the application.",
     },
   },
 
@@ -476,7 +466,7 @@ export const CATCHMENTS: Catchment[] = [
       },
     ],
     branchAngle:
-      "Mechanical (Production) for the carpet-machinery and industrial belt; Civil for infrastructure and state PWD; Electrical for UPPCL substations; CSE for central-government IT cadre routes. Those four are what a 2026-27 applicant chooses from; Dairy Engineering is closed to new admissions and its final batch graduates in 2028.",
+      "Mechanical (Production) for the carpet-machinery and industrial belt; Civil for infrastructure and state PWD; Electrical for UPPCL substations; CSE for central-government IT cadre routes.",
     localContext:
       "Bhadohi has a relatively thin local polytechnic ecosystem — most technical-education aspirants from Bhadohi travel either to BIPE Phoolpur (50 km) or to government polytechnics in nearby districts. The proximity makes BIPE a natural option for Bhadohi families wanting denser placement infrastructure and an on-campus residential environment.",
     transitNarrative:
@@ -508,7 +498,7 @@ export const CATCHMENTS: Catchment[] = [
       whenGovernment:
         "Government Polytechnic Kuru Pindra in Varanasi might fit Bhadohi students who specifically want Electrical Engineering and have a strong-enough rank for one of its 60 seats. Otherwise, the closest realistic government polytechnic is further from Bhadohi than BIPE.",
       whenBipe:
-        "BIPE wins for Bhadohi students because: (a) BIPE is 50 km, comparable or closer than realistic government polytechnic options for branches beyond Electrical / Textile; (b) BIPE admits to four branches against Kuru Pindra's two; (c) Mechanical (Production) maps directly onto the carpet-machinery and export-industry skill base of Bhadohi; (d) the documented 1,331-alumni placement record and named faculty mentors. /private-vs-government-polytechnic has the wider framework.",
+        "BIPE wins for Bhadohi students because: (a) BIPE is 50 km, comparable or closer than realistic government polytechnic options for branches beyond Electrical / Textile; (b) BIPE offers four branches against Kuru Pindra's two; (c) Mechanical (Production) maps directly onto the carpet-machinery and export-industry skill base of Bhadohi; (d) the documented 1,331-alumni placement record and named faculty mentors. /private-vs-government-polytechnic has the wider framework.",
     },
   },
 
@@ -528,7 +518,7 @@ export const CATCHMENTS: Catchment[] = [
     whyBipeReasons: [
       {
         headline: "BIPE's closest Eastern UP neighbour — just 40 km away",
-        body: "Chandauli is adjacent to Varanasi district. BIPE Phoolpur is the nearest private polytechnic running all four admitting branches — closer than the major government polytechnics outside Chandauli. The 40 km commute via NH-7 (or 30 min train ride to Cantt) makes it geographically practical, but hostel remains the smart choice across a 3-year diploma.",
+        body: "Chandauli is adjacent to Varanasi district. BIPE Phoolpur is the nearest private polytechnic running all four branches — closer than the major government polytechnics outside Chandauli. The 40 km commute via NH-7 (or 30 min train ride to Cantt) makes it geographically practical, but hostel remains the smart choice across a 3-year diploma.",
       },
       {
         headline: "Mechanical + Electrical map onto the Indian Railways recruitment pipeline",
@@ -560,7 +550,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Chandauli?",
-        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹12,000-22,000/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: all four admitting branches under one JEECUP code, on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,331 alumni placement record. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated — same diploma certificate. Government Polytechnic Chandauli has lower fees (typical ₹12,000-22,000/year range) and is a good fit if you have a strong rank, want one of the standard engineering branches, and live in Chandauli city. BIPE's edge: all four branches under one JEECUP code, on-campus hostel for outer-block students, smaller cohort with named faculty mentors, documented 1,331 alumni placement record. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Can a Bihar-border Chandauli resident apply easily?",
@@ -612,7 +602,7 @@ export const CATCHMENTS: Catchment[] = [
       },
     ],
     branchAngle:
-      "Mechanical (Production) for Army Technical Entry and Indian Railways RRB JE (Ballia's prime career pipeline); Civil for state PWD, Bharatmala / Ganga-bridge projects and infrastructure work; Electrical for UPPCL JE and Indian Railways electrification; CSE for central-government IT cadres. Dairy Engineering is no longer on this list — it closed to new admissions after the 2025-26 intake, and its final batch graduates in 2028.",
+      "Mechanical (Production) for Army Technical Entry and Indian Railways RRB JE (Ballia's prime career pipeline); Civil for state PWD, Bharatmala / Ganga-bridge projects and infrastructure work; Electrical for UPPCL JE and Indian Railways electrification; CSE for central-government IT cadres.",
     localContext:
       "Ballia has Government Polytechnic Ballia and a small private polytechnic ecosystem. The local government polytechnic is the natural first choice for cost-binding families with strong-enough JEECUP rank. Many Ballia students who can't secure their preferred branch locally — or who want a denser placement-cell pipeline with hostel residence — move to BIPE Phoolpur.",
     transitNarrative:
@@ -696,7 +686,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Sonbhadra?",
-        a: "Both BTE UP-affiliated, identical diploma certificate. Government Polytechnic Sonbhadra (Robertsganj) has lower fees and is a strong choice if your rank confidently secures the branch you want. BIPE's edge for Sonbhadra students: all four admitting branches under one JEECUP code, documented 1,331 placement record, on-campus boys' hostel essential at this distance, named faculty mentors. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated, identical diploma certificate. Government Polytechnic Sonbhadra (Robertsganj) has lower fees and is a strong choice if your rank confidently secures the branch you want. BIPE's edge for Sonbhadra students: all four branches under one JEECUP code, documented 1,331 placement record, on-campus boys' hostel essential at this distance, named faculty mentors. See /private-vs-government-polytechnic for the framework.",
       },
       {
         q: "Will the UP Post-Matric Scholarship apply for Sonbhadra students at BIPE?",
@@ -768,7 +758,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Sultanpur?",
-        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Sultanpur has lower fees and is a strong choice if you have a confident rank, want a standard engineering branch, and live in or near Sultanpur city. BIPE's edge: all four admitting branches under a single JEECUP code, on-campus hostel for outer-district students, documented 1,331 placement record. See /private-vs-government-polytechnic.",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Sultanpur has lower fees and is a strong choice if you have a confident rank, want a standard engineering branch, and live in or near Sultanpur city. BIPE's edge: all four branches under a single JEECUP code, on-campus hostel for outer-district students, documented 1,331 placement record. See /private-vs-government-polytechnic.",
       },
     ],
     alumniNote:
@@ -836,7 +826,7 @@ export const CATCHMENTS: Catchment[] = [
       },
       {
         q: "How does BIPE compare with Government Polytechnic Pratapgarh?",
-        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Pratapgarh has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge: all four admitting branches under one JEECUP code, on-campus hostel (essential at 170 km), 1,331 documented placements. See /private-vs-government-polytechnic for the framework.",
+        a: "Both BTE UP-affiliated, identical diploma. Government Polytechnic Pratapgarh has lower fees and is a strong choice for cost-binding families with rank. BIPE's edge: all four branches under one JEECUP code, on-campus hostel (essential at 170 km), 1,331 documented placements. See /private-vs-government-polytechnic for the framework.",
       },
     ],
     alumniNote:
@@ -884,7 +874,7 @@ export const CATCHMENTS: Catchment[] = [
       },
     ],
     branchAngle:
-      "Mechanical (Production) for the Indian Railways RRB JE pipeline (Gorakhpur Junction is one of India's largest railway hubs, with the longest platform — the rail recruitment culture runs deep here); Electrical for UPPCL JE and railway electrification; Civil for state PWD and the Bharatmala corridor; CSE for central-government IT cadre routes. Dairy Engineering — the branch Purvanchal dairy-belt families ask about — took its last intake in 2025-26 and no longer admits; the enrolled batch is taught out to 2028.",
+      "Mechanical (Production) for the Indian Railways RRB JE pipeline (Gorakhpur Junction is one of India's largest railway hubs, with the longest platform — the rail recruitment culture runs deep here); Electrical for UPPCL JE and railway electrification; Civil for state PWD and the Bharatmala corridor; CSE for central-government IT cadre routes.",
     localContext:
       "Gorakhpur has Government Polytechnic Gorakhpur, Madan Mohan Malaviya University of Technology (degree-level) and a substantial private polytechnic ecosystem within the city. For cost-binding Gorakhpur families with strong JEECUP rank, the local government polytechnic is the natural choice. BIPE serves Gorakhpur students who don't secure their preferred branch locally, or who want the documented placement-cell pipeline that includes diverse private-industry recruiters alongside the regional government pathway.",
     transitNarrative:

@@ -264,7 +264,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Civil surveying, electrical machines, mechanical shops, automotive bays, dairy chemistry and hydraulics labs, the 120-system computer lab. Every diploma student logs lab hours every semester.
+              Civil surveying, electrical machines, mechanical shops, automotive bays, hydraulics and materials-testing labs, the 120-system computer lab. Every diploma student logs lab hours every semester.
             </p>
           </div>
 
@@ -311,10 +311,10 @@ export default function Page() {
             <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--ink-3)" }}>
               Skills students leave with &rarr;
             </span>
-            {["Welding", "Fitting", "CNC programming", "AutoCAD", "PLC / SCADA", "Surveying", "EV battery service", "Dairy processing", "Power systems"].map((s, i) => (
+            {["Welding", "Fitting", "CNC programming", "AutoCAD", "PLC / SCADA", "Surveying", "EV battery service", "Power systems"].map((s, i, arr) => (
               <React.Fragment key={s}>
                 <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 16, color: "var(--ink)" }}>{s}</span>
-                {i < 8 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}
+                {i < arr.length - 1 && <span style={{ width: 4, height: 4, borderRadius: 999, background: "var(--accent)" }} />}
               </React.Fragment>
             ))}
           </div>
@@ -403,12 +403,12 @@ export default function Page() {
               {
                 eyebrow: "AICTE-MANDATED",
                 title: "Internships",
-                body: "Every BIPE student completes the AICTE-mandated internship at a regional employer — a manufacturing unit, dairy plant, infra contractor or utility — supervised by a faculty mentor.",
+                body: "Every BIPE student completes the AICTE-mandated internship at a regional employer — a manufacturing unit, infra contractor, workshop or utility — supervised by a faculty mentor.",
               },
               {
                 eyebrow: "FIELD WORK",
                 title: "Industry site visits",
-                body: "Periodic visits to manufacturing units and dairies — RR, BLW, PHD, Sort String among the regular hosts. Drawings come alive when students stand on the slab.",
+                body: "Periodic visits to manufacturing units and infrastructure sites — RR, BLW, PHD, Sort String among the regular hosts. Drawings come alive when students stand on the slab.",
               },
               {
                 eyebrow: "WRITTEN OUTPUT",

@@ -1,4 +1,4 @@
-import { DATA, BRANCH_CLOSURES, admittingOf, seatsOf } from "@/lib/data";
+import { DATA, RETIRED_BRANCH_SLUGS, PUBLIC_BRANCHES } from "@/lib/data";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { PLACEMENT_STATS, formatPlacements } from "@/lib/placement-stats";
 import {
@@ -59,8 +59,7 @@ import sitemap from "@/app/sitemap";
  * girls'-hostel status · Eastern-UP and Bihar catchment lists · Bihar
  * road distances · founded 2010 / Purwanchal Educational Trust ·
  * director "appointed August 2026" and tenure years "1981-2019" ·
- * 2,200+ alumni network · the government- and dairy-pathway company
- * lists · programme duration and
+ * 2,200+ alumni network · the government-pathway company list · programme duration and
  * eligibility wording · grievance 7-working-day SLA · flagship-guide
  * labels/descriptions and section descriptions (curated copy) · the
  * admission-cycle status line under "## Admissions" (session 2026-27
@@ -169,19 +168,14 @@ const FLAGSHIP_GUIDES: { slug: string; label: string; desc: string }[] = [
   { slug: "jeecup-rank-vs-bipe-4455-cutoffs-2024-2025", label: "JEECUP Rank vs BIPE 4455 Cutoffs", desc: "Real 2024-25 closing ranks" },
   { slug: "government-jobs-after-polytechnic-diploma-2026", label: "Government Jobs After Diploma", desc: "JE, RRB, SSC and UPPCL routes" },
   { slug: "polytechnic-salary-in-india-2026", label: "Polytechnic Salary in India 2026", desc: "Branch-wise first salaries" },
-  { slug: "why-dairy-engineering-bipe-rare-bteup-327", label: "Why Dairy Engineering at BIPE", desc: "Background on BTEUP 327 — the branch closed to new admissions from 2026-27" },
   { slug: "polytechnic-kya-hai-aur-kaise-kare", label: "पॉलिटेक्निक क्या है?", desc: "Hindi explainer for first-generation families" },
 ];
 
 // Only the rare branch carries an annotation; keyed by slug so a
 // branch rename surfaces here as a build diff.
-// 3 Sep 2026 — the Dairy note used to sell the branch ("rare: only ~4
-// institutes in UP offer this; careers at Amul, Mother Dairy, Parag,
-// Nestlé, NDDB"). That is a recruitment pitch, and this file is the one
-// an assistant quotes verbatim to a family asking what BIPE offers. The
-// branch closed to new admissions from 2026-27, so the pitch is gone;
-// the closure sentence is appended automatically from `b.admissions`
-// in branchLines below, which is why there is no dairy entry here now.
+// Per-branch annotations appended to the programme lines. Empty today —
+// keep it that way unless a note is a verifiable fact about the branch
+// rather than a pitch for it.
 const BRANCH_NOTES: Record<string, string> = {};
 
 /* ─────────────────────────── rendering ───────────────────────────── */
@@ -273,35 +267,23 @@ async function buildBody(): Promise<string> {
       }
     }
   }
-  if (branches.length !== DATA.branches.length) {
-    throw new Error(`llms.txt: CMS lists ${branches.length} branches, the seed lists ${DATA.branches.length} — the seat total and "N BTEUP-affiliated diploma branches" heading would both be wrong`);
+  if (branches.length !== PUBLIC_BRANCHES.length) {
+    throw new Error(`llms.txt: ${branches.length} public branches came through, the seed has ${PUBLIC_BRANCHES.length} — the seat total and the "N BTEUP-affiliated diploma branches" heading would both be wrong`);
+  }
+  // A retired branch must never surface here. getBranchesMapped() filters
+  // them, so reaching this means the filter was bypassed or a slug was
+  // renamed — either way the site would start advertising a branch BIPE
+  // no longer offers, which is the exact thing retirement prevents.
+  for (const b of branches) {
+    if (RETIRED_BRANCH_SLUGS.has(b.slug)) {
+      throw new Error(`llms.txt: retired branch "${b.slug}" reached the public branch list`);
+    }
   }
 
   const totalSeats = branches.reduce((sum, b) => sum + b.seats, 0);
 
-  // Every slug in BRANCH_CLOSURES must actually resolve to a branch. A
-  // typo here would silently drop the "closed to admissions" sentence
-  // from the branch line and from getBranchesMapped()'s overlay, and the
-  // file would go back to advertising an intake that does not exist —
-  // failing quietly in the one direction that matters. 3 Sep 2026.
-  for (const slug of Object.keys(BRANCH_CLOSURES)) {
-    if (!branches.some((b) => b.slug === slug)) {
-      throw new Error(
-        `llms.txt: BRANCH_CLOSURES names "${slug}" but no branch has that slug — the closure notice would silently vanish and llms.txt would advertise the branch as open`,
-      );
-    }
-  }
-
-  const admitting = admittingOf(branches);
-  const admittingSeats = seatsOf(admitting);
-  const closedNames = branches.filter((b) => b.admissions).map((b) => b.name);
-  const sanctionedNote = closedNames.length
-    ? ` across ${branches.length} branches — regulatory figure from the AICTE/BTEUP approval on file. It still` +
-      ` counts ${closedNames.join(", ")}, which is closed to new admissions, so it is NOT the number of` +
-      ` seats a 2026-27 applicant can compete for.`
-    : ` across ${branches.length} branches`;
-  if (admitting.length === 0) {
-    throw new Error("llms.txt: every branch is closed to admissions — that is almost certainly a data error, not a real state");
+  if (branches.length === 0) {
+    throw new Error("llms.txt: no public branches — almost certainly a data error, not a real state");
   }
 
   // One flat AFRC fee across branches is a claim, not an assumption —
@@ -343,18 +325,7 @@ async function buildBody(): Promise<string> {
     .map((b) => {
       const path = `/courses/${b.slug}`;
       usedPaths.add(path);
-      // A branch closed to new admissions has to SAY SO on the same line
-      // as its seat count. This file exists to be quoted back verbatim by
-      // an assistant, and "60 seats" with no qualifier reads as an open
-      // offer — the one error here that could cost a family a JEECUP
-      // choice. Driven off b.admissions, never a hardcoded slug.
-      const closure = b.admissions
-        ? ` — CLOSED TO NEW ADMISSIONS from ${b.admissions.closedFrom}` +
-          ` (last intake ${b.admissions.lastIntake}; the enrolled cohort is being taught out and` +
-          ` graduates in ${b.admissions.finalCohortGraduates}). Not available in JEECUP counselling.` +
-          ` The ${b.seats} seats below are the AICTE-sanctioned figure, not an open intake.`
-        : "";
-      return `- [${b.name}](${SITE_URL}${path}): BTEUP code ${b.code}, ${b.seats} seats${BRANCH_NOTES[b.slug] ?? ""}${closure}`;
+      return `- [${b.name}](${SITE_URL}${path}): BTEUP code ${b.code}, ${b.seats} seats${BRANCH_NOTES[b.slug] ?? ""}`;
     })
     .join("\n");
 
@@ -401,9 +372,8 @@ async function buildBody(): Promise<string> {
 - Principal: ${PRINCIPAL.name}, ${PRINCIPAL.postNominal}
 - Campus: ${contact.address}
 - Campus size: 6 acres, single boundary
-- Seats in branches that take new admissions: ${admittingSeats} across ${admitting.length} branches
+- Total seats: ${totalSeats} across ${branches.length} branches
   (session 2026-27 admission is CLOSED — JEECUP 2026 counselling concluded; next intake 2027-28)
-- Total sanctioned seats: ${totalSeats}${sanctionedNote}
 - Faculty: 40 (1:20 mentor ratio, with parent home visits)
 - Alumni network: 2,200+ · ${placed} TPO-verified placements (${years})
 - Annual tuition (all branches): ${fee} (AFRC-approved)
@@ -416,7 +386,7 @@ async function buildBody(): Promise<string> {
   Sultanpur (Eastern UP) + Buxar, Bhojpur, Rohtas, Kaimur, Patna, Gaya,
   Aurangabad, Bhagalpur (Bihar)
 
-## Programmes (${branches.length} BTEUP-affiliated diploma branches; ${admitting.length} admitting for 2026-27)
+## Programmes (${branches.length} BTEUP-affiliated diploma branches)
 
 ${branchLines}
 
@@ -438,7 +408,6 @@ with Mathematics and Science); Group K lateral entry admits Class 12 / ITI
 candidates directly into the 2nd year (two-year route).
 When JEECUP 2027 opens, apply at https://jeecup.admissions.nic.in and choose
 institute code ${contact.jeecup_code}.
-${closedNames.length ? `\nBranches BIPE admits to (${admitting.length}): ${admitting.map((b) => b.name).join(", ")}.\nNOT admitting: ${closedNames.join(", ")} — do not list ${closedNames.length === 1 ? "it" : "them"} in choice-filling, for 2027-28 or after. ${closedNames.length === 1 ? "It is" : "They are"} still taught for the enrolled cohort, but no new seat is allotted against ${closedNames.length === 1 ? "it" : "them"}.\n` : ""}
 
 Bihar candidates: JEECUP admits other-state candidates in the open/general
 category (no UP-domicile requirement), so Bihar students who appear for
@@ -450,8 +419,7 @@ Buxar ~85 km, Bhojpur (Ara) ~135 km, Rohtas (Sasaram) ~145 km.
 
 ${placed} TPO-verified placements ${years} across ${PLACEMENT_STATS.totalDrives} documented drives and
 ${PLACEMENT_STATS.totalRecruiters} recruiters. Current recruiters include: ${DATA.recruiters.join(" · ")}. Top single recruiter
-on record: ${PLACEMENT_STATS.topRecruiterName} (${PLACEMENT_STATS.topRecruiterCount} placements). Dairy career pathways (for the
-cohort teaching out to 2028): Amul, Mother Dairy, Parag, Nestlé, NDDB. Government pathways: Indian Railways
+on record: ${PLACEMENT_STATS.topRecruiterName} (${PLACEMENT_STATS.topRecruiterCount} placements). Government pathways: Indian Railways
 ALP, UPPCL, SSC JE, UP Police.
 
 ## Key Pages

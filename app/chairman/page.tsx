@@ -331,7 +331,7 @@ export default function Page() {
               </p>
 
               <p style={{ marginTop: 22 }}>
-                I am also keenly aware that the world your children are entering is changing faster than any classroom syllabus can keep up with. Artificial intelligence, automation, electric mobility, dairy automation, smart manufacturing — these are not abstract concepts; they will be the hands a BIPE diploma engineer will work alongside on day one. So we teach our students to use modern tools well, to question them when they fail, and to never substitute a tool for the discipline of thinking. This is what an honest education looks like in 2026.
+                I am also keenly aware that the world your children are entering is changing faster than any classroom syllabus can keep up with. Artificial intelligence, automation, electric mobility, renewable power, smart manufacturing — these are not abstract concepts; they will be the hands a BIPE diploma engineer will work alongside on day one. So we teach our students to use modern tools well, to question them when they fail, and to never substitute a tool for the discipline of thinking. This is what an honest education looks like in 2026.
               </p>
 
               <p style={{ marginTop: 22 }}>

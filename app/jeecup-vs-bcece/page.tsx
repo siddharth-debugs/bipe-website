@@ -24,10 +24,7 @@ const WHEN_BCECE: string[] = [
 
 const WHEN_JEECUP: string[] = [
   "You want a BTEUP diploma + a campus close to Varanasi (Buxar, Ara, Sasaram, Kaimur are all under 3 hours).",
-  // 3 Sep 2026 — Dairy dropped from this list: it is closed to new admissions
-  // from 2026-27, so it cannot be a reason a Bihar applicant picks JEECUP.
-  // Mechanical Engineering (Production) is the true half of the original claim.
-  "You want a rarer branch — Mechanical Engineering (Production) is under-supplied in Bihar polytechnics and is one of the four branches BIPE admits to in 2026-27.",
+  "You want a rarer branch — Mechanical Engineering (Production) is under-supplied in Bihar polytechnics and is one of BIPE's four branches.",
   "You want a private polytechnic with AICTE permanent ID, AFRC-approved fees and a clear placement record.",
   "You want guaranteed Hindi-medium teaching plus hostel for out-of-state students from day one.",
 ];

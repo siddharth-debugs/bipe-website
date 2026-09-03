@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { metadataFor } from "@/lib/seo";
-import { DATA, admittingOf, seatsOf } from "@/lib/data";
+import { DATA, seatsOf } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { CoursesView } from "./CoursesView";
 import { PLACEMENT_STATS } from "@/lib/placement-stats";
@@ -13,11 +13,6 @@ const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
   {
     num: "01",
     title: "Follow what you build, not what you score.",
-    // 3 Sep 2026: this named Dairy first. These four tips are the advice a
-    // family reads immediately before choice-filling, so every branch named
-    // here has to be one they can actually rank. Civil and Electrical carry
-    // the same point — both are large cohorts with deep recruiter and
-    // JE-exam pipelines.
     body: "Civil and Electrical don't pull the highest cut-offs but offer some of the strongest recruiter pipelines in UP. Pick the workshop you want to live in for three years.",
   },
   {
@@ -28,17 +23,9 @@ const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
   {
     num: "03",
     title: "Look at the workshop, not the cut-off.",
-    // "beside a pasteuriser" removed 3 Sep 2026. The sentence invites a
-    // family to walk BIPE's own labs, so naming a pasteuriser asserted
-    // equipment BIPE does not own — contradicted one click away on
-    // /courses/dairy-engineering ("BIPE does not run its own pilot
-    // plant"). Keep this triad to kit BIPE actually has.
-    //
-    // Same day, second pass: the milk-analysis bench replaced it and has
-    // now gone too. It is real kit, but it belongs to Dairy, and this tip
-    // asks a prospective student to picture the lab they will spend three
-    // years in — so the triad has to be drawn from branches they can still
-    // enter. Networking rack = CS&E.
+    // Keep this triad to kit BIPE actually has, one item per branch a
+    // reader can picture themselves in: CNC (Mechanical), survey
+    // instrument (Civil), networking rack (CS&E).
     body: "Walk through the lab the branch lives in. Three years on a CNC, behind a survey instrument or at a networking rack shape the engineer you become — far more than where you ranked at 16.",
   },
   {
@@ -52,7 +39,7 @@ const CAREER_TILES: { tag: string; title: string; body: string; chips: string[] 
   {
     tag: "INDUSTRY",
     title: "Diploma engineers on the floor.",
-    body: "Recruiters return to BIPE year after year for shop-floor and field-engineer hires across automotive, infrastructure, electrical and dairy.",
+    body: "Recruiters return to BIPE year after year for shop-floor and field-engineer hires across automotive, infrastructure, electrical and process-plant work.",
     chips: [
       "Mahindra",
       "Tata Steel",
@@ -68,8 +55,8 @@ const CAREER_TILES: { tag: string; title: string; body: string; chips: string[] 
   {
     tag: "GOVERNMENT",
     title: "Diploma-eligible technical exams.",
-    body: "A BTEUP diploma is the eligibility for Junior Engineer cadres in Indian Railways, UPPCL and the State Dairy Boards — every year, BIPE alumni clear them.",
-    chips: ["SSC JE", "RRB JE", "UPPCL", "Indian Railways", "Loco Pilot", "NDDB", "State Dairy Boards"],
+    body: "A BTEUP diploma is the eligibility for Junior Engineer cadres in Indian Railways, UPPCL and UP PWD — every year, BIPE alumni clear them.",
+    chips: ["SSC JE", "RRB JE", "UPPCL", "Indian Railways", "Loco Pilot", "UP PWD", "Indian Army Technical"],
   },
   {
     tag: "B.TECH PATHWAY",
@@ -86,16 +73,12 @@ export default async function Page() {
     getBranchesMapped(),
     getRecruiters(),
   ]);
-  // Seat maths, 3 Sep 2026. This page still LISTS every branch BIPE runs —
-  // Dairy included, because it is still being taught and its page must stay
-  // reachable — but every seat figure it prints is a marketing number aimed
-  // at someone deciding where to apply. So the total is summed over the
-  // admitting branches only (420), never over all five (480, the sanctioned
-  // figure that belongs on /approvals and /mandatory-disclosure). Computed
-  // from the live CMS list rather than the ADMITTING_SEATS constant so a
-  // seat edit in the CMS still flows through.
-  const admitting = admittingOf(branches);
-  const admittingSeats = seatsOf(admitting);
+  // Seat total is summed over the branches this page actually lists (420),
+  // not carried as a literal — and computed from the live CMS list rather
+  // than the PUBLIC_SEATS constant so a seat edit in the CMS still flows
+  // through. The sanctioned AICTE figure belongs only on /approvals and
+  // /mandatory-disclosure; never print it here.
+  const totalSeats = seatsOf(branches);
   // Recruiter COUNT must come from PLACEMENT_STATS, never from the length
   // of the CMS logo strip. Until 3 Sep 2026 this counted live rows, so
   // /courses published "18+ verified recruiters" while /placements,
@@ -168,7 +151,7 @@ export default async function Page() {
                 BTEUP polytechnic branches in Varanasi. Three years to a career.
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "56ch" }}>
-                AICTE-approved diploma courses, AFRC-published tuition of ₹30,150 a year, {admittingSeats} seats across the four branches BIPE admits to. Every branch listed here is BTEUP-affiliated, taught on the same Phoolpur campus, under the same mentor structure. Dairy Engineering (BTEUP 327) is listed too and still runs, but it took its last intake in 2025-26 and admits no one for 2026-27.
+                AICTE-approved diploma courses, AFRC-published tuition of ₹30,150 a year, {totalSeats} seats across our four branches. Every branch is BTEUP-affiliated, taught on the same Phoolpur campus, under the same mentor structure.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">
@@ -190,8 +173,8 @@ export default async function Page() {
                 }}
               >
                 {[
-                  { num: `${admitting.length}`, l: "BTEUP branches open" },
-                  { num: `${admittingSeats}`, l: "seats · 2026-27" },
+                  { num: `${branches.length}`, l: "BTEUP branches" },
+                  { num: `${totalSeats}`, l: "seats · 2026-27" },
                   { num: "₹30,150", l: "tuition · per year" },
                 ].map((s) => (
                   <div key={s.l}>
@@ -323,11 +306,11 @@ export default async function Page() {
                     color: "var(--accent)",
                     letterSpacing: "-0.04em",
                   }}>
-                    {/* Counted, not typed. This numeral and the "Admitting"
+                    {/* Counted, not typed. This numeral and the "Branches"
                         figure in the metadata strip below are the same fact;
                         one was a literal and one was computed, which is how
-                        they drift apart. 3 Sep 2026. */}
-                    {admitting.length}
+                        they drift apart. */}
+                    {branches.length}
                   </div>
                   <div style={{ paddingTop: 14, flex: 1 }}>
                     <div style={{
@@ -337,7 +320,7 @@ export default async function Page() {
                       textTransform: "uppercase",
                       color: "color-mix(in oklab, var(--paper) 55%, transparent)",
                     }}>
-                      BTEUP-affiliated · admitting
+                      BTEUP-affiliated · Varanasi
                     </div>
                     <div style={{
                       marginTop: 4,
@@ -376,36 +359,15 @@ export default async function Page() {
                 }}>
                   {/* Hand-abbreviated on purpose — the full names
                       ("Mechanical Engineering (Production)") blow out this
-                      two-column mono grid. Renumbered 01-04 over the four
-                      admitting branches, 3 Sep 2026. Dairy stays on the card
-                      (BIPE still runs it) but drops out of the numbered
-                      sequence and spans the full width below it: a numbered
-                      05 slot inside a catalogue card reads as a fifth thing
-                      you can choose. */}
+                      two-column mono grid. */}
                   {[
-                    { l: "01 · Computer Science & Engg.", closed: false },
-                    { l: "02 · Civil Engg.", closed: false },
-                    { l: "03 · Electrical Engg.", closed: false },
-                    { l: "04 · Mech Engg. (Prod.)", closed: false },
-                    { l: "Dairy Engg. · closed to new admissions", closed: true },
-                  ].map((br) => (
-                    <span
-                      key={br.l}
-                      style={{
-                        display: "block",
-                        ...(br.closed
-                          ? {
-                              gridColumn: "1 / -1",
-                              marginTop: 4,
-                              paddingTop: 10,
-                              borderTop:
-                                "1px dashed color-mix(in oklab, var(--paper) 18%, transparent)",
-                              color: "color-mix(in oklab, var(--paper) 52%, transparent)",
-                            }
-                          : {}),
-                      }}
-                    >
-                      {br.l}
+                    "01 · Computer Science & Engg.",
+                    "02 · Civil Engg.",
+                    "03 · Electrical Engg.",
+                    "04 · Mech Engg. (Prod.)",
+                  ].map((l) => (
+                    <span key={l} style={{ display: "block" }}>
+                      {l}
                     </span>
                   ))}
                 </div>
@@ -420,9 +382,9 @@ export default async function Page() {
                   gap: 0,
                 }}>
                   {[
-                    { l: "Seats", v: `${admittingSeats}` },
+                    { l: "Seats", v: `${totalSeats}` },
                     { l: "Tuition", v: "₹30,150/yr" },
-                    { l: "Admitting", v: `${admitting.length}` },
+                    { l: "Branches", v: `${branches.length}` },
                   ].map((m, i, arr) => (
                     <div key={m.l} style={{
                       paddingLeft: i === 0 ? 0 : 14,
@@ -567,7 +529,7 @@ export default async function Page() {
                 }}
               >
                 {[
-                  { num: `${admittingSeats}`, l: `Seats · ${admitting.length} branches` },
+                  { num: `${totalSeats}`, l: `Seats · ${branches.length} branches` },
                   { num: "10th", l: "Maths · Science pass" },
                   { num: "4455", l: "JEECUP code · BIPE" },
                   { num: "₹30,150", l: "Tuition · per year" },
@@ -625,7 +587,7 @@ export default async function Page() {
                 color: "var(--ink-2)",
               }}
             >
-              <span style={{ color: "var(--brand)", fontWeight: 700 }}>JEECUP code 4455</span> — apply once, choose any of the four admitting branches in counselling.
+              <span style={{ color: "var(--brand)", fontWeight: 700 }}>JEECUP code 4455</span> — apply once, choose any of our four branches in counselling.
             </div>
             <Link href="/jeecup" className="btn btn-ghost btn-sm">
               How JEECUP works <ArrowIcon size={14} />
@@ -1140,7 +1102,7 @@ export default async function Page() {
                       maxWidth: "44ch",
                     }}
                   >
-                    Apply once on JEECUP, choose any of the four branches BIPE admits to in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
+                    Apply once on JEECUP, choose any of our four branches in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
                   </p>
                 </div>
 
@@ -1151,10 +1113,9 @@ export default async function Page() {
                   {[
                     { num: "16", l: "years" },
                     { num: "2,200+", l: "alumni" },
-                    // "branches open" is an admission claim sitting under a
-                    // "Pick a branch" heading, so it counts the admitting
-                    // list rather than carrying a literal. 3 Sep 2026.
-                    { num: `${admitting.length}`, l: "branches open" },
+                    // Counted off the same list the page renders, never a
+                    // literal — a CMS edit must not leave this stale.
+                    { num: `${branches.length}`, l: "branches" },
                     { num: "1:20", l: "mentor ratio" },
                   ].map((s, i) => (
                     <React.Fragment key={s.l}>

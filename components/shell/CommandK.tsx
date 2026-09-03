@@ -273,11 +273,6 @@ export function CommandK() {
             <div className="cmdk-empty">
               No results for <strong>&ldquo;{trimmed}&rdquo;</strong>
               <br />
-              {/* 3 Sep 2026 · "dairy" removed from the suggested queries —
-                  it prompted a search for a branch closed to new admissions.
-                  The corpus is unchanged: typing "dairy" still resolves to
-                  /courses and the Dairy blog posts, which now state the
-                  closure. Suggestion surface, not the index. */}
               <span className="cmdk-empty-hint">
                 Try &ldquo;fees&rdquo;, &ldquo;JEECUP&rdquo;, &ldquo;placements&rdquo;
                 or &ldquo;hostel&rdquo;.

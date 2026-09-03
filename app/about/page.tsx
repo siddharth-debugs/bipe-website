@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { metadataFor, breadcrumbJsonLd } from "@/lib/seo";
-import { DATA, admittingOf, seatsOf } from "@/lib/data";
+import { DATA, seatsOf } from "@/lib/data";
 import { getBranchesMapped, getPageSection } from "@/lib/content";
 import { BIPE_IMG } from "@/lib/images";
 import { Img } from "@/components/ui/Img";
@@ -19,7 +19,7 @@ type Stat = { num: string; label: string; suffix?: string };
 const STATS: Stat[] = [
   { num: "2010", label: "Founded" },
   { num: "6", label: "Acres" },
-  { num: "5", label: "Branches" },
+  { num: "4", label: "Branches" },
   { num: "550", label: "Students", suffix: "+" },
   { num: "40", label: "Faculty" },
   { num: "1:20", label: "Mentor ratio" },
@@ -113,14 +113,7 @@ export default async function Page() {
   // the static branches otherwise. Used by the branch-wise seat
   // allotment table below.
   const branches = await getBranchesMapped();
-  // Two different true totals, and the seat table below has to print both.
-  // `sanctionedSeats` is the AICTE/BTEUP figure on file (480 across five
-  // branches) and stays until the seat-surrender letter lands; `openSeats`
-  // is what a 2026-27 applicant can actually apply for (420 across four),
-  // now that Dairy Engineering has stopped admitting. Printing only the
-  // first would read as 60 available Dairy seats. 3 Sep 2026.
-  const sanctionedSeats = seatsOf(branches);
-  const openSeats = seatsOf(admittingOf(branches));
+  const totalSeats = seatsOf(branches);
   // Optional admin-managed intro block shown above the existing
   // editorial copy. Renders only when a published row exists.
   const intro = await getPageSection("about", "intro");
@@ -169,7 +162,7 @@ export default async function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Five BTEUP-affiliated branches (four of them open to new admissions), 550+ students drawn from twelve districts, 40 faculty &mdash; built to make rural India a credible address for technical education.
+                A six-acre AICTE-approved polytechnic in Varanasi, with its campus in Phoolpur. Four BTEUP-affiliated branches, 550+ students drawn from twelve districts, 40 faculty &mdash; built to make rural India a credible address for technical education.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/apply" className="btn btn-primary btn-lg">Enquire for 2027-28 <ArrowIcon size={16} /></Link>
@@ -354,7 +347,7 @@ export default async function Page() {
                 Our catchment spans fourteen districts — <strong style={{ color: "var(--ink)" }}>Varanasi, Mau, Ghazipur, Jaunpur, Bhadohi, Azamgarh, Chandauli, Mirzapur, Sonebhadra, Ballia, Gorakhpur, Kushinagar, Pratapgarh and Sultanpur</strong>. The campus sits on six acres in Phoolpur, on the Phoolpur&ndash;Parsara approach road off NH-56. Three-quarters of our students are first-generation engineering aspirants. Many arrive shy of English and leave fluent in lathes, theodolites and PLC ladder logic.
               </p>
               <p style={{ marginTop: 18 }}>
-                We run <em>five</em> BTEUP-affiliated branches and admit to <em>four</em> of them from 2026-27. <strong style={{ color: "var(--brand)" }}>Dairy Engineering</strong> — a programme offered by fewer than 1.1% of UP polytechnics — took its last intake in 2025-26; that cohort finishes in 2028 with its labs, faculty and six-month plant training unchanged, and no new admissions are taken to it. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
+                We run <em>four</em> BTEUP-affiliated branches — <strong style={{ color: "var(--brand)" }}>Civil, Electrical, Mechanical Engineering (Production) and Computer Science &amp; Engineering</strong> — taught in an eight-section workshop, a 120-system computer lab and our own survey yard. Civil and Mechanical Engineering (Production) alumni work on Smart Cities, Bharatmala alignments and the Kashi Vishwanath corridor. Computer Science &amp; Engineering graduates clear B.Tech entrances; Electrical graduates write SSC JE and RRB JE.
               </p>
               <p style={{ marginTop: 18 }}>
                 Sixteen years in, {formatPlacements(PLACEMENT_STATS.totalPlacements)} TPO-verified BIPE alumni serve at <strong style={{ color: "var(--ink)" }}>Mahindra, Tata Steel, BEL, Indian Railways, Mumbai Metro</strong> and dozens of other employers — including 28 in government posts (Indian Railways ALP, UPPCL, SSC JE, UP Police). Most of them came from villages within 80 kilometres of our gate. That is the story we are most proud of.
@@ -421,7 +414,7 @@ export default async function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              The 2026-27 sanctioned intake under JEECUP college code 4455 — five 3-year BTEUP-affiliated diploma courses, {sanctionedSeats} sanctioned seats. Of those, <strong style={{ color: "var(--ink)" }}>{openSeats} across four branches are open to a new applicant</strong> this session.
+              The 2026-27 sanctioned intake under JEECUP college code 4455 — four 3-year BTEUP-affiliated diploma courses, <strong style={{ color: "var(--ink)" }}>{totalSeats} seats</strong>.
             </p>
           </div>
 
@@ -450,22 +443,6 @@ export default async function Page() {
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 16, color: "var(--ink)" }}>{b.name}</div>
                   <div className="serif" style={{ fontStyle: "italic", color: "var(--ink-3)", fontSize: 14, marginTop: 2 }}>{b.hi}</div>
-                  {/* A sanctioned seat is not the same as an available
-                      seat. Without this marker the Dairy row reads as 60
-                      seats a 2026-27 applicant could rank in JEECUP
-                      choice-filling. 3 Sep 2026. */}
-                  {b.admissions && (
-                    <div style={{
-                      marginTop: 6,
-                      display: "inline-block",
-                      fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase",
-                      color: "var(--ink-2)",
-                      border: "1px solid var(--line)", borderRadius: 999,
-                      padding: "3px 10px",
-                    }}>
-                      Closed to new admissions from {b.admissions.closedFrom} · final cohort graduates {b.admissions.finalCohortGraduates}
-                    </div>
-                  )}
                 </div>
                 <div className="serif" style={{
                   fontStyle: "italic", fontWeight: 400, fontSize: 30,
@@ -486,27 +463,16 @@ export default async function Page() {
               alignItems: "center",
             }}>
               <div style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--brand)", minWidth: 80 }}>TOTAL</div>
-              <div style={{ fontWeight: 700, fontSize: 15, color: "var(--ink)" }}>2026-27 sanctioned intake · 5 BTEUP branches</div>
+              <div style={{ fontWeight: 700, fontSize: 15, color: "var(--ink)" }}>2026-27 sanctioned intake · 4 BTEUP branches</div>
               <div className="serif" style={{
                 fontStyle: "italic", fontWeight: 400, fontSize: 36,
                 color: "var(--brand)", letterSpacing: "-0.02em",
                 textAlign: "right",
               }}>
-                {sanctionedSeats}
+                {totalSeats}
               </div>
             </div>
           </div>
-
-          {/* The total above is the regulatory figure — the intake AICTE and
-              BTEUP have sanctioned, which does not change when a branch stops
-              admitting. This line is the number an applicant actually needs.
-              3 Sep 2026. */}
-          <p style={{
-            maxWidth: 980, margin: "16px auto 0",
-            color: "var(--ink-2)", fontSize: 13.5, lineHeight: 1.65, textAlign: "center",
-          }}>
-            {sanctionedSeats} is the sanctioned intake on the AICTE / BTEUP approval. Seats a 2026-27 applicant can apply for: <strong style={{ color: "var(--ink)" }}>{openSeats} across four branches</strong> — Dairy Engineering is closed to new admissions and is teaching out the cohort that entered in 2025-26.
-          </p>
 
           <div style={{ marginTop: 18, textAlign: "center" }}>
             <Link href="/courses" className="btn btn-ghost btn-sm">

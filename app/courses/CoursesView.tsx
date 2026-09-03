@@ -2,13 +2,12 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { DATA, admittingOf } from "@/lib/data";
+import { DATA, PUBLIC_BRANCHES } from "@/lib/data";
 import { CrossfadeSlider } from "@/components/ui/CrossfadeSlider";
 import { ArrowIcon } from "@/components/shell/Icons";
 
 const BRANCH_ICONS: Record<string, string> = {
   "355": "M4 5h16v10H4zM2 19h20M9 9l2 2 4-4",
-  "327": "M8 3h8l1 4-1 14H8L7 7l1-4zM10 11h4",
   "322": "M3 21h18M5 21V11l7-6 7 6v10M9 21v-6h6v6",
   "328": "M11 2L4 14h6l-1 8 8-12h-6l1-8z",
   "343": "M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3M9 12a3 3 0 106 0 3 3 0 00-6 0z",
@@ -17,26 +16,16 @@ const BRANCH_ICONS: Record<string, string> = {
 export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
   // Live branches arrive as a prop from app/courses/page.tsx (server)
   // when the backend has rows; otherwise we fall back to the static
-  // lib/data.ts list. The same shape (camelCase Branch) is used in
-  // both cases so the rest of this file doesn't have to change.
-  const list = props?.branches && props.branches.length > 0 ? props.branches : DATA.branches;
-  // The index below shows every branch BIPE runs — a closed branch keeps its
-  // row and its link through to the detail page, because there are students
-  // mid-course in it. `admittingList` is what a new applicant can actually
-  // choose, and it drives the numbering, the counts and the CTA. 3 Sep 2026.
-  const admittingList = admittingOf(list);
-  const firstAdmitting = admittingList[0] ?? list[0];
-  // Opens on the first branch a visitor can actually apply to, not on
-  // list[0]. Branch ORDER is CMS-supplied (order_index), so seeding the
-  // panel from list[0] meant one reordering in the CMS could land a
-  // closed branch — "Closed to new admissions", no Apply button — as the
-  // featured card of the whole catalogue. 3 Sep 2026.
-  const [active, setActive] = useState<string>(firstAdmitting.code);
+  // list. PUBLIC_BRANCHES, not DATA.branches — the fallback has to be the
+  // same set of branches the server would have sent. The same shape
+  // (camelCase Branch) is used in both cases so the rest of this file
+  // doesn't have to change.
+  const list = props?.branches && props.branches.length > 0 ? props.branches : PUBLIC_BRANCHES;
+  const first = list[0];
+  const [active, setActive] = useState<string>(first.code);
 
-  // Ensure active is in the visible list; if not, fall back to the first
-  // admitting branch for the same reason.
-  const visibleActive = list.find((b) => b.code === active) ?? firstAdmitting;
-  const b = visibleActive;
+  // Ensure active is in the visible list; if not, fall back to the first.
+  const b = list.find((x) => x.code === active) ?? first;
 
   return (
     <section
@@ -119,7 +108,7 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                 maxWidth: "52ch",
               }}
             >
-              Four 3-year branches admit for the 2026-27 session — browse the index, watch the panel update. Dairy Engineering is listed too because BIPE still teaches it, but it closed to new admissions after the 2025-26 intake.
+              Four 3-year BTEUP branches, all on the same Phoolpur campus — browse the index, watch the panel update.
             </p>
           </div>
           <div
@@ -148,12 +137,6 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
           <div style={{ display: "flex", flexDirection: "column" }}>
             {list.map((br, i) => {
               const on = br.code === b.code;
-              const closed = !!br.admissions;
-              // Numbered over the admitting branches only, so the sequence a
-              // visitor scans (01-04) is exactly the set they can rank in
-              // counselling; a closed branch gets an em dash instead of a
-              // position in that list.
-              const rank = admittingList.indexOf(br);
               return (
                 <div
                   key={br.code}
@@ -213,16 +196,14 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                       fontStyle: "italic",
                     }}
                   >
-                    {rank >= 0 ? String(rank + 1).padStart(2, "0") : "—"}
+                    {String(i + 1).padStart(2, "0")}
                   </div>
                   <div>
                     <div
                       style={{
                         fontWeight: 600,
                         fontSize: 19,
-                        color: closed
-                          ? "color-mix(in oklab, var(--paper) 72%, transparent)"
-                          : "var(--paper)",
+                        color: "var(--paper)",
                         letterSpacing: "-0.01em",
                       }}
                     >
@@ -239,37 +220,12 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                     >
                       {br.hi}
                     </div>
-                    {closed && br.admissions && (
-                      <div
-                        style={{
-                          marginTop: 6,
-                          fontFamily: "var(--font-mono)",
-                          fontSize: 10,
-                          letterSpacing: "0.12em",
-                          textTransform: "uppercase",
-                          color: "var(--accent)",
-                        }}
-                      >
-                        No intake from {br.admissions.closedFrom}
-                      </div>
-                    )}
                   </div>
                   <div className="row" style={{ gap: 8, alignItems: "center" }}>
                     {br.tag && (
                       <span
-                        className={closed ? "pill" : "pill pill-accent"}
-                        style={
-                          closed
-                            ? {
-                                fontSize: 9,
-                                padding: "3px 8px",
-                                background: "transparent",
-                                color: "color-mix(in oklab, var(--paper) 80%, transparent)",
-                                border:
-                                  "1px solid color-mix(in oklab, var(--paper) 38%, transparent)",
-                              }
-                            : { fontSize: 9, padding: "3px 8px" }
-                        }
+                        className="pill pill-accent"
+                        style={{ fontSize: 9, padding: "3px 8px" }}
                       >
                         {br.tag}
                       </span>
@@ -351,17 +307,8 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                   <div className="row" style={{ gap: 6 }}>
                     {b.tag && (
                       <span
-                        className={b.admissions ? "pill" : "pill pill-accent"}
-                        style={
-                          b.admissions
-                            ? {
-                                background: "color-mix(in oklab, var(--accent) 16%, var(--white))",
-                                color: "var(--accent-deep)",
-                                border: "1px solid color-mix(in oklab, var(--accent) 45%, transparent)",
-                                fontWeight: 700,
-                              }
-                            : undefined
-                        }
+                        className="pill pill-accent"
+                        style={{}}
                       >
                         {b.tag}
                       </span>
@@ -412,48 +359,6 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                   {b.hi}
                 </div>
 
-                {/* Closure notice. Driven off b.admissions, never off a
-                    slug — when the next branch closes it gets this state for
-                    free. Sits above the description and the stats because the
-                    panel is the last thing read before the Apply button, so
-                    "you cannot apply to this one" has to land before the seat
-                    count does. Kept to a fact line on purpose: b.desc, right
-                    below, already carries the taught-out reassurance in prose,
-                    and repeating it twice in one card reads like a bug. What
-                    the prose does NOT say — and what belongs on the seed side
-                    rather than in an editable CMS field — is the counselling
-                    instruction, so that is the sentence this owns. 3 Sep 2026. */}
-                {b.admissions && (
-                  <div
-                    style={{
-                      position: "relative",
-                      marginTop: 18,
-                      padding: "14px 16px",
-                      borderRadius: 12,
-                      border: "1px solid color-mix(in oklab, var(--accent) 45%, transparent)",
-                      background: "color-mix(in oklab, var(--accent) 10%, var(--white))",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 10,
-                        letterSpacing: "0.16em",
-                        textTransform: "uppercase",
-                        fontWeight: 700,
-                        color: "var(--accent-deep)",
-                      }}
-                    >
-                      Closed to new admissions
-                    </div>
-                    <p style={{ margin: "8px 0 0", fontSize: 13.5, lineHeight: 1.6, color: "var(--ink-2)" }}>
-                      Last intake {b.admissions.lastIntake} · no intake from{" "}
-                      {b.admissions.closedFrom} · final cohort graduates{" "}
-                      {b.admissions.finalCohortGraduates}. Do not list this branch as a choice for
-                      BIPE in JEECUP counselling.
-                    </p>
-                  </div>
-                )}
 
                 <p
                   style={{
@@ -483,9 +388,7 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                   {(
                     [
                       ["Duration", "3 YR · 6 SEM"],
-                      // A seat count on a closed branch is the one number
-                      // that could still be read as "60 going spare".
-                      b.admissions ? ["Intake", "CLOSED"] : ["Seats", `${b.seats}`],
+                      ["Seats", `${b.seats}`],
                       ["Fee/yr", `₹${b.fee}`],
                     ] as [string, string][]
                   ).map(([k, v], j) => (
@@ -516,23 +419,9 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
                 </div>
 
                 <div className="row" style={{ marginTop: 24, gap: 8, position: "relative", flexWrap: "wrap" }}>
-                  {b.admissions ? (
-                    // No Apply button on a closed branch. The replacement is
-                    // in-page rather than a route change — it swings the
-                    // panel to the first branch they can actually apply to.
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      onClick={() => setActive(firstAdmitting.code)}
-                      style={{ whiteSpace: "normal", textAlign: "left" }}
-                    >
-                      See the {admittingList.length} branches BIPE admits to <ArrowIcon />
-                    </button>
-                  ) : (
-                    <Link href="/apply" className="btn btn-primary">
-                      Apply for this branch <ArrowIcon />
-                    </Link>
-                  )}
+                  <Link href="/apply" className="btn btn-primary">
+                    Apply for this branch <ArrowIcon />
+                  </Link>
                   <Link href={`/courses/${b.slug}`} className="btn btn-ghost">
                     View {b.name} diploma <ArrowIcon />
                   </Link>
@@ -573,18 +462,9 @@ export function CoursesView(props: { branches?: typeof DATA.branches } = {}) {
               >
                 Same campus · Same mentors
               </span>
-              {/* "All five" stays, 3 Sep 2026. This is a statement about what
-                  BIPE runs and where it teaches it — including the Dairy cohort
-                  still on campus — not a menu of things to choose from, so the
-                  institution-context count is the true one here. It does sit
-                  directly under the chooser, though, and the sentence ends on
-                  "you graduate with", so the five is spelled out into its four
-                  + one rather than left for the reader to split. */}
               <div style={{ marginTop: 6 }}>
-                All five branches BIPE runs — the four that take new admissions and the Dairy
-                Engineering batch finishing in 2028 — share the same Phoolpur campus, library and
-                faculty mentorship structure. The BTEUP diploma you graduate with is identical,
-                regardless of branch.
+                All four branches share the same Phoolpur campus, library and faculty mentorship
+                structure. The BTEUP diploma you graduate with is identical, regardless of branch.
               </div>
             </div>
           </div>

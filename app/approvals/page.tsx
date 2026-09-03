@@ -86,24 +86,15 @@ const APPROVALS: Approval[] = [
   },
 ];
 
-// This matrix mirrors the AICTE EoA letter, so the Dairy row and the 480
-// total STAY until the seat-surrender letter lands — see the note in
-// BRANCH_CLOSURES (lib/data.ts). But a sanctioned seat is not an
-// available seat: without `note` this table silently reads as an offer
-// of 60 Dairy seats to a family choosing in JEECUP counselling.
-// 3 Sep 2026.
-const SEAT_MATRIX: { name: string; code: string; intake: string; note?: string }[] = [
+const SEAT_MATRIX: { name: string; code: string; intake: string }[] = [
   { name: "Civil Engineering", code: "322", intake: "120" },
   { name: "Electrical Engineering", code: "328", intake: "120" },
   { name: "Mechanical Engineering (Production)", code: "343", intake: "120" },
   { name: "Computer Science & Engineering", code: "355", intake: "60" },
-  { name: "Dairy Engineering", code: "327", intake: "60", note: "Sanctioned but closed to new admissions from 2026-27 — last intake 2025-26, final cohort graduates 2028" },
+  { name: "Dairy Engineering", code: "327", intake: "60" },
 ];
 
 const DISCLOSURE: { num: string; label: string }[] = [
-  // Label sharpened 3 Sep 2026: "Total seats" read as availability. The
-  // number is the AICTE-sanctioned intake and stays 480; 420 of it is
-  // open to a 2026-27 applicant (Dairy closed to admissions).
   { num: "480", label: "Sanctioned seats 2026-27" },
   { num: "40", label: "Faculty" },
   { num: "6", label: "Acres campus" },
@@ -423,14 +414,7 @@ export default function Page() {
                 alignItems: "center",
               }}>
                 <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, fontWeight: 700, color: "var(--brand)", minWidth: 40 }}>{row.code}</div>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 16 }}>{row.name}</div>
-                  {row.note && (
-                    <div style={{ fontSize: 12.5, color: "var(--ink-3)", marginTop: 4, lineHeight: 1.45, maxWidth: "48ch" }}>
-                      {row.note}
-                    </div>
-                  )}
-                </div>
+                <div style={{ fontWeight: 600, fontSize: 16 }}>{row.name}</div>
                 <div className="serif" style={{ fontStyle: "italic", fontWeight: 400, fontSize: 28, color: "var(--ink)", letterSpacing: "-0.01em" }}>{row.intake}</div>
               </div>
             ))}

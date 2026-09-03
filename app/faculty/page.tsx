@@ -57,13 +57,33 @@ const FACULTY_JSON_LD = {
   },
 };
 
+// The four teaching departments that get a section of their own below.
 const DEPT_ORDER: Department[] = [
   "Electrical",
   "Civil",
   "Mechanical",
   "Computer Science",
-  "Dairy",
 ];
+
+const DEPT_BLOCKS = new Set<Department>(DEPT_ORDER);
+
+/**
+ * Academic faculty whose department has no block of its own above.
+ *
+ * Nobody is dropped from the roster: every name, designation and
+ * qualification in lib/faculty.ts still renders on this page — these
+ * cards are simply grouped under a plain heading instead of a
+ * department one. Leadership and office staff have their own sections
+ * elsewhere on the page, so they are excluded here.
+ */
+const OTHER_ACADEMIC = FACULTY.filter(
+  (f) =>
+    !f.isHOD &&
+    !f.isLeadership &&
+    f.department !== "Leadership" &&
+    f.department !== "Office" &&
+    !DEPT_BLOCKS.has(f.department),
+);
 
 const PRINCIPAL = FACULTY.find((f) => f.designation === "Principal");
 const OFFICERS = FACULTY.filter((f) => f.isLeadership && f.designation !== "Principal");
@@ -427,14 +447,11 @@ export default function Page() {
           >
             {[
               { num: TOTAL_FACULTY, lbl: "academic faculty", sub: "Named on this page" },
-              { num: 5, lbl: "departments", sub: "BTEUP-affiliated" },
+              { num: DEPT_ORDER.length, lbl: "departments", sub: "BTEUP-affiliated" },
               { num: TOTAL_PUBLICATIONS, lbl: "papers published", sub: "Journals + conferences" },
-              // Derived, not hardcoded. This used to read 5 on the assumption
-              // that a Dairy HOD existed but was unpublished; the owner
-              // confirmed on 3 Sep 2026 that there is no Dairy HOD, so the
-              // roster's four was right and the headline was wrong. Reading
-              // HODS.length keeps the two in step if that ever changes.
-              { num: HODS.length, lbl: "department heads", sub: "Across five departments" },
+              // Derived, not hardcoded, so the headline and the roster
+              // stay in step if a head is ever added or moved.
+              { num: HODS.length, lbl: "department heads", sub: "One per department" },
             ].map((s) => (
               <div key={s.lbl}>
                 <div
@@ -909,6 +926,66 @@ export default function Page() {
           </section>
         );
       })}
+
+      {/* ============================================================ */}
+      {/* 5b. REMAINING ACADEMIC FACULTY                                */}
+      {/*     Same card, same detail — grouped under a plain heading    */}
+      {/*     rather than a department one.                             */}
+      {/* ============================================================ */}
+      {OTHER_ACADEMIC.length > 0 && (
+        <section
+          className="section"
+          style={{ background: DEPT_ORDER.length % 2 === 1 ? "var(--paper-2)" : "var(--paper)" }}
+        >
+          <div className="container">
+            <div
+              style={{
+                display: "flex",
+                alignItems: "end",
+                justifyContent: "space-between",
+                gap: 20,
+                marginBottom: 32,
+                paddingBottom: 18,
+                borderBottom: "1px solid var(--line)",
+                flexWrap: "wrap",
+              }}
+            >
+              <div>
+                <div className="eyebrow" style={{ color: "var(--brand)", fontWeight: 700 }}>
+                  / Faculty /
+                </div>
+                <h2 className="bipe-h2" style={{ marginTop: 12, maxWidth: "24ch" }}>
+                  Also teaching at BIPE
+                </h2>
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: "var(--ink-3)",
+                  paddingBottom: 8,
+                }}
+              >
+                {OTHER_ACADEMIC.length} member{OTHER_ACADEMIC.length === 1 ? "" : "s"}
+              </div>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 360px))",
+                gap: 16,
+                justifyContent: "start",
+              }}
+            >
+              {OTHER_ACADEMIC.map((f) => (
+                <PortraitCard key={f.id} f={f} size={320} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ============================================================ */}
       {/* 6. RESEARCH HIGHLIGHTS                                       */}

@@ -3,6 +3,7 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
+import { BRANCH_OPTIONS } from "@/lib/formOptions";
 import { ArrowIcon } from "@/components/shell/Icons";
 import { Honeypot } from "@/components/shell/Honeypot";
 import { track } from "@/lib/analytics";
@@ -132,8 +133,13 @@ export const InlineApply = () => {
                   onChange={e => setForm({ ...form, branch: e.target.value })}
                   style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", color: "var(--paper)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)" }}
                 >
-                  {DATA.branches.map(b => <option key={b.code} value={b.name} style={{ color: "var(--ink)" }}>{b.name}</option>)}
-                  <option value="Not sure yet — guide me" style={{ color: "var(--ink)" }}>Not sure yet — guide me</option>
+                  {/* BRANCH_OPTIONS, not DATA.branches — this is a form the
+                      public fills in, so it must offer exactly what the other
+                      six forms offer. Mapping the raw branch array here made
+                      this select the one place a retired branch still showed
+                      up, because the file never names it and so never turned
+                      up in a content search. 3 Sep 2026. */}
+                  {BRANCH_OPTIONS.map(b => <option key={b} value={b} style={{ color: "var(--ink)" }}>{b}</option>)}
                 </select>
               </div>
               <button type="submit" disabled={send === "submitting"} className="btn btn-primary btn-lg" style={{ justifyContent: "center" }}>

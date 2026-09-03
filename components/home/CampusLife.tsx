@@ -25,26 +25,20 @@ export const CampusLife = ({ items }: { items?: Facility[] } = {}) => (
           facilities hub) — taps become navigation instead of nothing. */}
       <div className="reveal bipe-collage" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gridTemplateRows: "260px 200px", gap: 14 }}>
         <Img href="/campus" src={BIPE_IMG.workshop} alt="BIPE mechanical workshop — machining bay with lathes and milling machines" label="WORKSHOP · MACHINING BAY" style={{ gridRow: "span 2", height: "100%" }} />
-        {/* 3 Sep 2026 · the photo is a real BIPE dairy-lab frame and stays.
-            The alt used to run "one of only four BTEUP dairy diploma
-            programmes in Uttar Pradesh" — true, but on the homepage collage
-            that rarity line is a reason-to-choose-us, and Dairy Engineering
-            took its last intake in 2025-26. Alt + label now describe the lab
-            and who is still in it. */}
-        <Img href="/campus" src={BIPE_IMG.dairy} alt="BIPE dairy lab — milk-quality benches used by the final Dairy Engineering batch, which graduates in 2028" label="DAIRY LAB · FINAL BATCH" style={{ height: "100%" }} />
+        <Img href="/campus" src={BIPE_IMG.civil} alt="BIPE civil engineering survey yard — students running a levelling traverse with auto levels and staves" label="CIVIL · SURVEY YARD" style={{ height: "100%" }} />
         <Img href="/campus" src={BIPE_IMG.computerLab} alt="BIPE 120-computer programming lab for the Computer Science diploma" label="120-COMPUTER LAB" style={{ height: "100%" }} />
         <Img href="/campus" src={BIPE_IMG.hostel} alt="BIPE student hostel Block A on the Phoolpur campus" label="HOSTEL · BLOCK A" style={{ height: "100%" }} />
         <Img href="/campus" src={BIPE_IMG.library} alt="BIPE library and reading room" label="LIBRARY" style={{ height: "100%" }} />
       </div>
       <div className="grid bipe-grid-4" style={{ gridTemplateColumns: "repeat(4, 1fr)", marginTop: 24 }}>
-        {/* slice(0, 8), not 4. BIPE has FIVE branches and the first five
-            tiles are branch labs, so a 4-item cut always hid a branch's
-            facility — Civil Survey Yard was invisible site-wide, since
-            /campus groups its labs differently ("Civil Engineering") and
-            never uses these names. Eight items fill exactly two rows of
-            the repeat(4, 1fr) grid, so nothing is hidden and the layout
-            stays square. DATA.facilities is ordered branch-labs-first so
-            a narrower cut would still lead with them. 3 Sep 2026. */}
+        {/* slice(0, 8), not 4. The leading tiles in DATA.facilities are
+            branch labs, so a 4-item cut always hid one of them — Civil
+            Survey Yard was invisible site-wide, since /campus groups its
+            labs differently ("Civil Engineering") and never uses these
+            names. Eight items fill exactly two rows of the repeat(4, 1fr)
+            grid, so nothing is hidden and the layout stays square.
+            DATA.facilities is ordered branch-labs-first so a narrower cut
+            would still lead with them. 3 Sep 2026. */}
         {(items && items.length > 0 ? items : DATA.facilities).slice(0, 8).map((f, i) => (
           <div key={i} className="reveal" style={{ transitionDelay: `${i * 40}ms` }}>
             <div className="eyebrow" style={{ color: "var(--brand)" }}>{f.count}</div>

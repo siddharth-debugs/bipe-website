@@ -150,7 +150,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     quickStats: [
       { label: "Who was eligible", value: "All states", sub: "Bihar, Jharkhand, MP + missed R1–3" },
       { label: "Category", value: "Open / General", sub: "no UP domicile certificate needed" },
-      { label: "BIPE code", value: "4455", sub: "4 branches admitting" },
+      { label: "BIPE code", value: "4455", sub: "4 BTEUP diploma branches" },
       { label: "Classes began", value: "1 August", sub: "late joiners catch up with support" },
     ],
     tables: [
@@ -199,7 +199,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "03",
         title: "How choice-filling worked — code 4455",
-        body: "In JEECUP choice-filling you searched for BIPE Phoolpur, Varanasi or entered institute code 4455 directly, and listed it against every branch you would accept — CSE, Mechanical (Production), Electrical, Civil. Dairy Engineering was not on offer: it took its last intake in 2025-26. Single-choice filling was the most common reason candidates missed a seat.",
+        body: "In JEECUP choice-filling you searched for BIPE Phoolpur, Varanasi or entered institute code 4455 directly, and listed it against every branch you would accept — CSE, Mechanical (Production), Electrical, Civil. Single-choice filling was the most common reason candidates missed a seat.",
       },
       {
         n: "04",
@@ -244,7 +244,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Which BIPE branches are open in Round 4?",
-        a: "Four BTEUP diploma branches at BIPE (code 4455) — Computer Science & Engineering, Mechanical (Production), Electrical and Civil — take part in JEECUP counselling. Dairy Engineering took its last intake in 2025-26 and is closed to new admissions; its enrolled cohort is taught out to 2028. Availability by branch depended on how Phase-1 seats filled; admission to BIPE for session 2026-27 is now closed and there are no seats left to offer. WhatsApp +91-7310077788 if you would like a branch-by-branch read ahead of the 2027-28 cycle.",
+        a: "Four BTEUP diploma branches at BIPE (code 4455) — Computer Science & Engineering, Mechanical (Production), Electrical and Civil — take part in JEECUP counselling. Availability by branch depended on how Phase-1 seats filled; admission to BIPE for session 2026-27 is now closed and there are no seats left to offer. WhatsApp +91-7310077788 if you would like a branch-by-branch read ahead of the 2027-28 cycle.",
       },
       {
         q: "Round 4 me kaun apply kar sakta hai?",
@@ -533,7 +533,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     faqs: [
       {
         q: "What rank do I need for BIPE?",
-        a: "BIPE's wider rank band typically accommodates ranks from below 1,000 up to about 50,000+ depending on branch and counselling round. Popular branches (CSE, Mechanical) at BIPE typically settle in Rounds 1-3. Rarer branches (Dairy Engineering) may open seats in later rounds. See /jeecup-cutoff-2026-bipe-vs-government for the branch-wise framework.",
+        a: "BIPE's wider rank band typically accommodates ranks from below 1,000 up to about 50,000+ depending on branch and counselling round. Popular branches (CSE, Mechanical) at BIPE typically settle in Rounds 1-3, and later rounds can still open seats across branches. See /jeecup-cutoff-2026-bipe-vs-government for the branch-wise framework.",
       },
       {
         q: "I got 0 marks in one section — am I disqualified?",
@@ -619,7 +619,6 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
           ["Mechanical · Production (113)", "1,58,221", "1,68,298"],
           ["Electrical Engineering (105)", "1,57,754", "1,66,491"],
           ["Civil Engineering (102)", "1,57,313", "1,66,030"],
-          ["Dairy Engineering (123)", "— (new branch)", "1,47,826"],
         ],
         note: "Lateral entry (Group K) closes far tighter — roughly 1,750–7,500 in recent years, with wide variation by branch. Full branch + lateral breakdown with admission counts:",
         noteLink: { label: "See the JEECUP rank-list analysis", href: "/blog/jeecup-rank-vs-bipe-4455-cutoffs-2024-2025" },
@@ -644,7 +643,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "04",
         title: "Shortlist branches before choice-filling opens",
-        body: "Don't wait for the window to decide. Make a ranked branch list now, and add BIPE (code 4455) against every branch you'd accept — many applicants list 4455 against all four branches BIPE admits to in 2026-27 so a lower rank still lands a seat. Leave Dairy Engineering off the list — it is closed to new admissions from 2026-27. See our 5-round counselling guide at /jeecup-counselling for the ordering strategy.",
+        body: "Don't wait for the window to decide. Make a ranked branch list now, and add BIPE (code 4455) against every branch you'd accept — many applicants list 4455 against all four branches so a lower rank still lands a seat. See our 5-round counselling guide at /jeecup-counselling for the ordering strategy.",
       },
       {
         n: "05",
@@ -679,7 +678,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "Rank kitni honi chahiye BIPE ke liye?",
-        a: "Group A me agar aapki All-India rank 1,30,000 se kam hai to BIPE ki chaaron admitting branches me achhi chance hai; 1,00,000 se kam hai to baad ke rounds me bhi margin hai; 50,000 se kam hai to in chaar me apni pasand ki branch chun sakte hain. 2025-26 me sabhi branches 1,47,000–1,69,000 ke beech band hui thi — lekin Dairy Engineering ab naye admission nahi leti (aakhri intake 2025-26), isliye 2026-27 ki choice list me sirf Civil, Electrical, Mechanical (Production) aur Computer Science & Engineering rakhein. Apni exact rank +91-7310077788 par WhatsApp karein.",
+        a: "Group A me agar aapki All-India rank 1,30,000 se kam hai to BIPE ki chaaron branches me achhi chance hai; 1,00,000 se kam hai to baad ke rounds me bhi margin hai; 50,000 se kam hai to in chaar me apni pasand ki branch chun sakte hain. 2025-26 me sabhi branches 1,66,000–1,69,000 ke beech band hui thi. Apni exact rank +91-7310077788 par WhatsApp karein.",
       },
     ],
     ctaTitle: "Know your rank — now place it right.",
@@ -1391,7 +1390,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     faqs: [
       {
         q: "My JEECUP rank is higher than I expected — what should I aim for?",
-        a: "If your rank is below 5,000: top-tier government polytechnics are open. 5,000-20,000: Eastern UP government polytechnics + BIPE for popular branches. 20,000-50,000: BIPE comfortably for most branches. 50,000+: BIPE for rarer branches (Dairy, sometimes Civil). WhatsApp +91-7310077788 for branch-by-branch honest interpretation.",
+        a: "If your rank is below 5,000: top-tier government polytechnics are open. 5,000-20,000: Eastern UP government polytechnics + BIPE for popular branches. 20,000-50,000: BIPE comfortably for most branches. 50,000+: BIPE stays in range across its branches — apply early, since availability tightens in the later rounds. WhatsApp +91-7310077788 for branch-by-branch honest interpretation.",
       },
       {
         q: "My JEECUP rank is lower than I hoped — what are my options?",

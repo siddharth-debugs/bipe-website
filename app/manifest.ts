@@ -26,12 +26,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "BIPE Varanasi — Banaras Institute of Polytechnic & Engineering",
     short_name: "BIPE",
-    // 3 Sep 2026 — was "across 5 branches incl. Dairy". The install prompt
-    // is the shortest admission pitch on the site and Dairy stopped
-    // admitting from 2026-27, so the branch count here tracks what an
-    // applicant can actually choose (4), not what the institute runs (5).
     description:
-      "AICTE-approved polytechnic college in Varanasi. BTEUP-affiliated diploma engineering — admissions open in 4 branches for 2026-27. JEECUP code 4455. AFRC ₹30,150/year.",
+      "AICTE-approved polytechnic college in Varanasi. BTEUP-affiliated diploma engineering across 4 branches — Civil, Electrical, Mechanical (Production) and Computer Science. JEECUP code 4455. AFRC ₹30,150/year.",
     start_url: "/",
     scope: "/",
     display: "standalone",

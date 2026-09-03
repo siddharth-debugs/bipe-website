@@ -110,12 +110,9 @@ export const ROUTES: Record<RouteKey, {
     // colleges in Varanasi" verbatim (1,000/mo) in addition to the
     // original "polytechnic college in Varanasi". Drops "diploma
     // engineering" boilerplate for a tighter sentence.
-    // 3 Sep 2026 · two rulings landed on this one sentence: Dairy closed
-    // to new admissions (so "5 branches including rare Dairy" invites a
-    // choice nobody can make), and session 2026-27 admission closed. Four
-    // is the number a new applicant can act on — see ADMITTING_BRANCHES —
-    // and the cycle status has to travel with it or the count reads as an
-    // open offer.
+    // 3 Sep 2026 · session 2026-27 admission closed, so the cycle status
+    // now travels with the branch count — otherwise "4 BTEUP diploma
+    // branches" reads as an open offer to anyone landing here in September.
     description: "Top polytechnic & engineering college in Varanasi — AICTE-approved, 4 BTEUP diploma branches. JEECUP 4455. 2026-27 admission closed — enquire for 2027-28.",
     keywords: [
       "BIPE Varanasi",
@@ -150,16 +147,8 @@ export const ROUTES: Record<RouteKey, {
     // leads with the literal phrase. "Diploma courses" stays in the
     // description for the 5,400/mo "what is polytechnic courses"
     // cluster too.
-    // 3 Sep 2026 · the "incl. Dairy" tail is gone from the title — a
-    // course list reads as a menu of what you can still apply to, and
-    // Dairy Engineering closed to new admissions from 2026-27. The word
-    // "Dairy" is deliberately KEPT in the description, attached to the
-    // closure: this is the one ROUTES entry a site search or Cmd-K
-    // query for "dairy" resolves to (the branch page lives under the
-    // dynamic /courses/[slug] route and is not in this map), so the
-    // answer a searcher gets should be "closed", not nothing.
     title: "Polytechnic Courses in Varanasi · 4 BTEUP Branches · JEECUP 4455 | BIPE",
-    description: "Polytechnic course list at BIPE Varanasi — 4 branches: Civil, CSE, Electrical, Mechanical Production. Dairy closed to new admissions.",
+    description: "Polytechnic course list at BIPE Varanasi — 4 BTEUP branches: Civil, CSE, Electrical, Mechanical (Production). AFRC ₹30,150/year · JEECUP 4455.",
   },
   admission: {
     path: "/admission",
@@ -239,18 +228,12 @@ export const ROUTES: Record<RouteKey, {
   },
   campus: {
     path: "/campus",
-    // CTR rewrite 28 May 2026 · v2 dropped the "Dairy Plant" claim
-    // from title + description after a content honesty audit
-    // confirmed BIPE does not operate its own pilot dairy plant.
-    // Replaced with the chemistry / hydraulics labs (which DO exist
-    // on campus and serve Dairy Engineering students via the
-    // milk-quality and process-fluid modules). Other specifics
-    // (120-PC, mechanical workshop, library, hostel) are unchanged
-    // and still outperform a generic "Six acres" framing.
-    // 3 Sep 2026 · still accurate after the Dairy admission closure —
-    // those labs keep running the milk-quality modules for the cohort
-    // graduating in 2028. Nothing here to unwind; noting it so the
-    // next reader doesn't "fix" a true sentence.
+    // CTR rewrite 28 May 2026 · v2 dropped a pilot-plant claim from
+    // title + description after a content honesty audit confirmed BIPE
+    // does not operate one. Replaced with the chemistry / hydraulics
+    // labs, which DO exist on campus. Other specifics (120-PC,
+    // mechanical workshop, library, hostel) are unchanged and still
+    // outperform a generic "Six acres" framing.
     title: "BIPE Campus · 6-Acre Phoolpur · 120-PC Lab, Workshops, Hostel",
     description: "Six-acre BIPE Phoolpur campus: 120-PC programming lab, mechanical workshop, chemistry & hydraulics labs, electrical lab, 8,428-volume library, boys' hostel, sports ground.",
   },
@@ -318,7 +301,7 @@ export const ROUTES: Record<RouteKey, {
   faculty: {
     path: "/faculty",
     title: "Faculty · 40 BTEUP-recognised mentors · 1:20 ratio | BIPE",
-    description: "40 BTEUP-recognised faculty across 5 departments. 1:20 mentor ratio with periodic home visits. AICTE FDP-trained, OBE-aligned pedagogy.",
+    description: "40 BTEUP-recognised faculty across four engineering departments. 1:20 mentor ratio with periodic home visits. AICTE FDP-trained, OBE-aligned pedagogy.",
   },
   events: {
     path: "/events",
@@ -525,10 +508,6 @@ export const ROUTES: Record<RouteKey, {
       "diploma college Ghazipur",
       "BIPE Ghazipur",
       "polytechnic near Ghazipur",
-      // 3 Sep 2026 · was "Dairy Engineering Ghazipur". Pulling dairy
-      // searchers onto a page whose only dairy programme is closed to
-      // new admissions is a wasted click for them and a bad-faith one
-      // for us; swapped for the branch this catchment can actually join.
       "Mechanical diploma Ghazipur",
       "ग़ाज़ीपुर पॉलिटेक्निक",
     ],
@@ -827,11 +806,6 @@ export const ROUTES: Record<RouteKey, {
   jeecupRankPredictor: {
     path: "/jeecup-rank-predictor-2026",
     title: "JEECUP Rank Predictor 2026 · What Your Rank Opens + BIPE Cutoffs | 4455",
-    // 3 Sep 2026 · Dairy dropped from the closing-rank list. A reader
-    // on a rank-predictor page is deciding what to put in their JEECUP
-    // choice order, so a branch named here reads as one to rank — and
-    // Dairy Engineering has no 2026-27 intake to rank for. Its 2025-26
-    // closing rank is history, not a target.
     description: "JEECUP 2026 rank guide — what each rank band realistically opens, plus BIPE 4455's filed closing ranks (CSE 1,68,929 · Mechanical · Electrical · Civil).",
     keywords: [
       "JEECUP rank predictor",
