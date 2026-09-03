@@ -98,7 +98,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What does the JEECUP Group A exam actually cover?",
-    a: "Group A — the polytechnic engineering paper — is a Class-10-syllabus test in Mathematics, Physics and Chemistry. It's a 3-hour computer-based test (CBT), multiple choice, with negative marking. The syllabus is the standard NCERT Class 9–10 maths and science curriculum — no advanced topics. There are other JEECUP groups (B–K) for specialised tracks like agriculture and pharmacy, but Group A is the route into the five BTEUP branches at BIPE.",
+    a: "Group A — the polytechnic engineering paper — is a Class-10-syllabus test in Mathematics, Physics and Chemistry. It's a 150-minute computer-based test (CBT) — 100 multiple-choice questions, 4 marks each, and no negative marking, so there is no penalty for attempting every question. The syllabus is the standard NCERT Class 9–10 maths and science curriculum — no advanced topics. There are other JEECUP groups (B–K) for specialised tracks like agriculture and pharmacy, but Group A is the route into the five BTEUP branches at BIPE.",
   },
   {
     q: "Do I have to travel to Lucknow for counselling?",

@@ -9,7 +9,7 @@ const ROWS: { label: string; jeecup: string; bcece: string }[] = [
   { label: "Conducting body", jeecup: "JEEC-UP, Government of Uttar Pradesh", bcece: "BCECE Board, Government of Bihar" },
   { label: "Polytechnic seats covered", jeecup: "All AICTE-approved UP polytechnics — government, government-aided and private (incl. BIPE 4455)", bcece: "Bihar government polytechnics + a handful of private polytechnics in Bihar" },
   { label: "Eligibility for diploma (Group A)", jeecup: "Class 10 pass with Maths and Science. Open to candidates from any state.", bcece: "Class 10 pass with Maths and Science. Bihar residence is preferred but not strictly required for the entrance itself." },
-  { label: "Exam pattern", jeecup: "Computer-based · 100 MCQ · 3 hours · Class-10 Maths + Physics + Chemistry", bcece: "Pen-and-paper or CBT depending on year · Maths + Physics + Chemistry at Class-10 level" },
+  { label: "Exam pattern", jeecup: "Computer-based · 100 MCQ · 150 minutes · no negative marking · Class-10 Maths + Physics + Chemistry", bcece: "Pen-and-paper or CBT depending on year · Maths + Physics + Chemistry at Class-10 level" },
   { label: "Typical exam window", jeecup: "Application Jan–Apr · Exam May–Jun · Result Jun–Jul", bcece: "Application Feb–Apr · Exam May–Jul · Result Jul" },
   { label: "Counselling", jeecup: "Online choice-filling, multiple rounds Jun–Sep", bcece: "Online choice-filling under DCECE, multiple rounds Jul–Sep" },
   { label: "Hindi medium", jeecup: "Yes — bilingual question paper", bcece: "Yes — bilingual question paper" },

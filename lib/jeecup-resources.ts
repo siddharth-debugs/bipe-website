@@ -1050,7 +1050,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
       {
         q: "How much weightage does each subject carry in Group A?",
-        a: "Mathematics 50 questions (50%), Physics 25 questions (25%), Chemistry 25 questions (25%). Total 100 questions, 100 marks (1 mark per question). Negative marking applies — typically -0.25 to -0.33 per wrong answer depending on the cycle's policy.",
+        a: "Group A is split half and half: Mathematics 50 questions, Physics and Chemistry 50 between them. 100 questions in total, 4 marks each, so 400 marks. There is no negative marking — the official brochure states that no negative mark is given for any wrong answer, so attempt all 100.",
       },
       {
         q: "Do I need to study Class 11-12 Maths/Physics/Chemistry for JEECUP Group A?",
@@ -1262,12 +1262,12 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     eyebrow: "JEECUP 2026 · EXAM PATTERN",
     headline: "JEECUP 2026 exam pattern —",
     headlineAccent: "format, timing, marking.",
-    lead: "JEECUP 2026 is a Computer-Based Test (CBT) — multiple-choice questions across Maths, Physics and Chemistry for Group A. 100 questions, 150 minutes, negative marking. This page covers the exam format, marking scheme, what the CBT interface actually looks like, and tips for navigating it efficiently.",
+    lead: "JEECUP 2026 is a Computer-Based Test (CBT) — multiple-choice questions across Maths, Physics and Chemistry for Group A. 100 questions, 150 minutes, 4 marks each, no negative marking, negative marking. This page covers the exam format, marking scheme, what the CBT interface actually looks like, and tips for navigating it efficiently.",
     quickStats: [
       { label: "Format", value: "Computer-Based Test", sub: "All questions on screen · click-to-answer" },
       { label: "Questions", value: "100", sub: "Multiple-choice · 4 options each" },
       { label: "Duration", value: "150 min", sub: "2.5 hours · no break" },
-      { label: "Marking", value: "+1 / -0.25", sub: "Per correct / wrong · varies by cycle" },
+      { label: "Marking", value: "+4 / no negative", sub: "Per correct answer · nothing deducted" },
     ],
     steps: [
       {
@@ -1278,7 +1278,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       {
         n: "02",
         title: "Marking scheme — positive vs negative",
-        body: "Correct answer: +1 mark (some cycles +4 for harder questions — confirm current cycle). Wrong answer: -0.25 mark (negative marking · standard JEECUP rule). Unattempted: 0 marks. Total possible: 100. Total possible loss from negatives: -25 if you got everything wrong (rare). Practical strategy: skip questions you're <50% sure about — negative marking penalises guessing.",
+        body: "Correct answer: +4 marks. Wrong answer: 0 — the official brochure states no negative mark is given for any wrong answer. Unattempted: 0. Total possible: 400 across 100 questions. Practical strategy: attempt every question. With nothing deducted for a wrong answer, leaving a blank can only cost you marks, so make your best guess on anything you cannot solve.",
       },
       {
         n: "03",
@@ -1307,8 +1307,8 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
         a: "Yes. Since 2017, JEECUP has been entirely CBT. No pen-and-paper option exists. If you're not comfortable with computers, practice the CBT format using mock tests on simulators (NTA mocks are free) — by exam day, the interface should feel natural.",
       },
       {
-        q: "What is the exact negative marking policy?",
-        a: "JEECUP applies -0.25 marks for each wrong answer (this is the standard rule, but always verify with the current-cycle notification). Some questions in harder groups may have different ratios, but Group A consistently follows the -0.25 standard. Unanswered questions are 0 — no negative marking for skipping.",
+        q: "Is there negative marking in JEECUP?",
+        a: "No. The official UPJEE information brochure states plainly that no negative mark is given for any wrong answer, and it says so for every computer-based group including Group A. A correct answer earns 4 marks and a wrong one earns nothing — it does not cost you anything. If a question is later found to be defective, or two of its options are correct, every candidate who attempted it is awarded the full 4 marks. Verify against the current-cycle brochure before each cycle.",
       },
       {
         q: "Can I use a calculator during the exam?",

@@ -393,7 +393,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       { label: "Released", value: "~2 months post-exam", sub: "Watch bteup.ac.in" },
       { label: "Where", value: "bteup.ac.in", sub: "Result tab · student portal" },
       { label: "Marksheet", value: "Downloadable PDF", sub: "Hard copy from BIPE later" },
-      { label: "Pass mark", value: "Per subject · varies", sub: "Typically 33% theory, 40% practical" },
+      { label: "Pass mark", value: "40% in each component", sub: "Internal and external counted separately" },
     ],
     steps: [
       {
@@ -450,7 +450,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "What if I have a backlog after the diploma?",
-        a: "You CANNOT graduate with active backlogs. Clear them through supplementary cycles (held twice a year — July for odd-sem backlogs, January for even-sem backlogs). Up to 2 backlogs per cycle, supplementary fees apply per subject. BIPE's academic office tracks every student's backlog status — talk to your branch in-charge for a personalised supplementary plan.",
+        a: "You CANNOT graduate with active backlogs. Clear them through the back-paper sittings, which run inside the two main exam windows rather than as a separate cycle. BTEUP does not publish a maximum number of back subjects per sitting — its own fee schedule charges a flat fee for up to two and a per-subject fee beyond that. What is capped is TIME: a 3-year diploma must be completed within 6 academic sessions. BIPE's academic office tracks every student's backlog status — talk to your branch in-charge for a personalised supplementary plan.",
       },
     ],
     ctaTitle: "Result not what you hoped?",
@@ -680,7 +680,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     quickStats: [
       { label: "Total semesters", value: "6", sub: "3 years · 2 semesters per year" },
       { label: "Per branch", value: "5-7 theory + 4-6 practical", sub: "Per semester · varies by year" },
-      { label: "Marking split", value: "70 external + 30 internal", sub: "Per theory subject · typical" },
+      { label: "Marking split", value: "60 external + 40 internal", sub: "Per theory subject · practicals inverted" },
       { label: "Official source", value: "bteup.ac.in", sub: "Notice Board · Curriculum tab" },
     ],
     // Branch-specific syllabus content (semester-by-semester subject lists)
@@ -745,7 +745,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       {
         n: "04",
         title: "Map the theory + practical weightage per subject",
-        body: "Standard BTEUP marking split is 70 external + 30 internal for theory subjects. Practical subjects often have 50 external + 50 internal. Internal marks come from class tests, assignments, and attendance. Plan your prep accordingly — practicals are won by lab regularity, theory by exam-week revision.",
+        body: "On the current BTEUP scheme a 100-mark theory subject is 60 external (a 3-hour board paper) + 40 internal. Practical subjects are the inverse: 40 external + 60 internal. You must clear at least 40% in each component separately — a strong sessional score will not carry a failed board paper, and vice versa. Internal marks come from class tests, assignments and attendance, so practicals are won by lab regularity and theory by exam-week revision.",
       },
       {
         n: "05",
@@ -789,7 +789,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       },
       {
         q: "How much weightage do BTEUP internal marks carry?",
-        a: "Typically 30% for theory subjects, 50% for practical. Internal marks come from: class tests (~40%), assignments (~30%), attendance (~20%), behaviour / class participation (~10%). At BIPE, attendance < 75% in a subject can disqualify you from the BTEUP external exam — so attendance is the single biggest factor in internals.",
+        a: "You need at least 40% in the internal component and 40% in the external component, counted separately, for both theory and practical subjects. Internal marks come from: class tests (~40%), assignments (~30%), attendance (~20%), behaviour / class participation (~10%). At BIPE, attendance < 75% in a subject can disqualify you from the BTEUP external exam — so attendance is the single biggest factor in internals.",
       },
       {
         q: "Does BIPE provide a simplified BTEUP syllabus per branch?",
@@ -823,7 +823,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
       { label: "Cycles per year", value: "2", sub: "July (for odd-sem backlogs) + January (even-sem)" },
       { label: "Fee per paper", value: "₹200-500", sub: "Plus admin charges · varies by cycle" },
       { label: "Window", value: "~2 weeks", sub: "Per cycle · strict deadline" },
-      { label: "Max backlog", value: "All semester subjects", sub: "Yes — even full-semester re-attempt is allowed" },
+      { label: "Max backlog", value: "No published cap", sub: "Limit is time — 6 sessions for a 3-year diploma" },
     ],
     steps: [
       {
@@ -892,8 +892,8 @@ export const BTEUP_RESOURCES: BteupResource[] = [
         a: "Not necessarily. If you clear the back paper in the FIRST supplementary cycle (July or January immediately after the failed semester), graduation timeline isn't affected. If you carry the backlog to multiple supplementary cycles or final-semester subjects fail, then graduation is delayed by ~6 months per failed cycle. The first supplementary is the critical one.",
       },
       {
-        q: "What if I have backlogs in more than 2 subjects per semester?",
-        a: "Up to 4 backlogs per semester is administratively manageable through supplementary. Beyond that, BTEUP may flag your enrolment for review — typically a meeting with the BIPE principal + academic dean to assess whether continued enrolment makes sense or whether re-attempting the semester from scratch is better. Rare scenario, but worth knowing.",
+        q: "What if I have backlogs in several subjects?",
+        a: "BTEUP publishes no cap on the number of back subjects you may register for in one sitting, and no rule that a given number of backlogs blocks promotion — the board's own fee schedule explicitly prices more than two. The real constraint is time: a 3-year diploma must be completed within 6 academic sessions. If your backlog list is long, the practical question is whether you can clear it inside that window, which is a conversation to have with the BIPE academic office rather than a number to look up. Rare scenario, but worth knowing.",
       },
     ],
     ctaTitle: "Got a back paper to clear?",
@@ -922,7 +922,7 @@ export const BTEUP_RESOURCES: BteupResource[] = [
     lead: "BTEUP uses a 10-point grading scale alongside raw marks. Your final diploma marksheet shows subject-wise grades, SGPA (per semester) and CGPA (cumulative across 6 semesters). This page explains the mark-to-grade mapping, the SGPA / CGPA formulas, and how to convert CGPA to percentage for B.Tech lateral-entry forms.",
     quickStats: [
       { label: "Grading scale", value: "10-point", sub: "A+ down to F" },
-      { label: "Pass mark", value: "33% theory · 40% practical", sub: "Per subject · typical" },
+      { label: "Pass mark", value: "40% in each component", sub: "Internal and external counted separately" },
       { label: "CGPA range", value: "0 to 10", sub: "Higher is better · 6.0+ for placements" },
       { label: "Percentage formula", value: "CGPA × 9.5", sub: "AICTE-prescribed conversion" },
     ],

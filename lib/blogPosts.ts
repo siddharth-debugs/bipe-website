@@ -1841,7 +1841,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>Confirmation slip</strong> — download immediately after payment. Carries your Application Number, transaction ID, and the option to print.",
           "<strong>Admit card</strong> — released 7–10 days before the exam date. Download separately when announced.",
-          "<strong>Exam</strong> — held at the exam centre you preferred (subject to capacity). 3-hour CBT, Class-10 syllabus in maths/physics/chemistry.",
+          "<strong>Exam</strong> — held at the exam centre you preferred (subject to capacity). 150-minute CBT, Class-10 syllabus in maths/physics/chemistry, no negative marking.",
           "<strong>Results</strong> — declared roughly 2–3 weeks after the exam. Your rank determines counselling order.",
           "<strong>Counselling</strong> — separate cycle, starts roughly a month after results. This is where you fill institute choices including <strong>BIPE 4455</strong>. See <a href=\"/jeecup\">/jeecup</a> for the full counselling walkthrough.",
         ],
@@ -3215,7 +3215,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "Each semester has about <strong>6 subjects</strong> — a mix of theory, practical (lab) and workshop. Theory subjects have an end-semester written exam (worth ~80 marks) plus internal sessional assessment (~20 marks). Practical and workshop subjects have a viva-voce + practical exam at the end of semester (~50 marks) plus sessional (~50 marks). Pass marks are typically 33% in theory and 50% in practical / sessional components.",
+          "Each semester has about <strong>6 subjects</strong> — a mix of theory, practical (lab) and workshop. Theory subjects have an end-semester written exam worth 60 marks plus internal sessional assessment worth 40. Practical and workshop subjects are the inverse — a 40-mark practical exam and viva plus 60 marks of sessional. Pass marks are typically 33% in theory and 50% in practical / sessional components.",
       },
       {
         type: "callout",
@@ -3374,12 +3374,12 @@ export const BLOG_POSTS: BlogPost[] = [
           "Marks distribution in a typical BTE UP polytechnic subject. Theory subjects (e.g. Engineering Mathematics) and practical / lab subjects (e.g. Machine Shop Lab) follow different splits — both add up to 100 marks per subject.",
         headers: ["Component", "Theory subject", "Practical / Lab subject"],
         rows: [
-          ["End-semester written exam", "80 marks (external)", "—"],
-          ["End-semester practical / viva", "—", "50 marks (external)"],
-          ["Internal sessional (tests + tutorials + attendance)", "20 marks (internal)", "—"],
-          ["Internal sessional (journal + viva + attendance)", "—", "50 marks (internal)"],
+          ["End-semester written exam", "60 marks (external)", "—"],
+          ["End-semester practical / viva", "—", "40 marks (external)"],
+          ["Internal sessional (tests + tutorials + attendance)", "40 marks (internal)", "—"],
+          ["Internal sessional (journal + viva + attendance)", "—", "60 marks (internal)"],
           ["Total", "100 marks", "100 marks"],
-          ["Pass criterion", "33% in external + 40% aggregate", "50% in external + 50% aggregate"],
+          ["Pass criterion", "40% in each component", "40% in each component"],
         ],
       },
       {

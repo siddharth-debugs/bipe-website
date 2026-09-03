@@ -68,7 +68,7 @@ const FAQS: { q: string; a: string }[] = [
   // hindi" / "UP government scholarship कितनी" / "BIPE scholarship"
   {
     q: "SC/ST students के लिए BIPE में क्या scholarship है?",
-    a: "UP Government का post-matric scholarship — SC/ST students को full tuition reimbursement मिलती है (income ceiling के अंदर — currently ₹2 lakh family income). Apply scholarship.up.gov.in portal पर admission के बाद होता है। BIPE की scholarships team पूरी process में मदद करती है — हर साल हम सैकड़ों applications भरवाते हैं।",
+    a: "UP Government का post-matric scholarship — SC/ST students को full tuition reimbursement मिलती है (income ceiling के अंदर — SC/ST के लिए currently ₹2.5 lakh family income; OBC / Minority के लिए ₹2 lakh). Apply scholarship.up.gov.in portal पर admission के बाद होता है। BIPE की scholarships team पूरी process में मदद करती है — हर साल हम सैकड़ों applications भरवाते हैं।",
   },
   {
     q: "BIPE merit scholarship क्या है — कितनी मिलती है?",
