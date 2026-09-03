@@ -195,7 +195,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Jaunpur has Government Polytechnic Jaunpur and a few smaller private options. The local government polytechnic is well respected, and for cost-binding families it remains a strong choice. BIPE's differentiators are placement intensity, on-campus hostel, smaller cohort and the Dairy Engineering moat — see /private-vs-government-polytechnic for the honest comparison.",
     transitNarrative:
-      "From Jaunpur, the easiest route is the express train to Varanasi Cantt — 45 minutes, multiple departures throughout the day. Shared cabs and state-roadways buses run continuously on NH-19. From Varanasi Cantt to Phoolpur is a 45-minute shared auto or BIPE's free Saturday shuttle. Book a visit and we'll pre-confirm a seat on the shuttle.",
+      "From Jaunpur, the easiest route is the express train to Varanasi Cantt — 45 minutes, multiple departures throughout the day. Shared cabs and state-roadways buses run continuously on NH-19. From Varanasi Cantt to Phoolpur is a 35-45 minute ride by shared auto or app-cab, roughly ₹300-500. Book a visit and we'll send the campus pin to your driver.",
     faqs: [
       {
         q: "How does BIPE compare with Government Polytechnic Jaunpur?",
@@ -263,7 +263,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Ghazipur has Government Polytechnic Ghazipur and a small private polytechnic ecosystem. For cost-binding families with a Ghazipur-domicile candidate scoring high enough in JEECUP for a government seat, that path remains the right choice. BIPE serves the Ghazipur families who want denser placement infrastructure, smaller cohorts, on-campus hostel, or specifically the Dairy Engineering branch.",
     transitNarrative:
-      "Trains from Ghazipur City to Varanasi Cantt run frequently and take 90 minutes. State-roadways buses on NH-29 take roughly 2 hours. From Varanasi Cantt to Phoolpur, a shared auto or BIPE's free Saturday shuttle covers the final 14 km in 35-45 minutes. Book a campus visit and we'll arrange the Cantt-to-Phoolpur leg.",
+      "Trains from Ghazipur City to Varanasi Cantt run frequently and take 90 minutes. State-roadways buses on NH-29 take roughly 2 hours. From Varanasi Cantt to Phoolpur, a shared auto or app-cab covers the final 14 km in 35-45 minutes for roughly ₹300-500. Book a campus visit and we'll arrange the Cantt-to-Phoolpur leg.",
     faqs: [
       {
         q: "How long is the journey from Ghazipur to BIPE?",
@@ -331,7 +331,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Azamgarh has Government Polytechnic Azamgarh and a handful of private polytechnic options. Government seats are limited and admission is rank-dependent through JEECUP. Many Azamgarh students who can't secure a government seat or who specifically want the Dairy Engineering branch turn to BIPE Phoolpur. For families with cost as the primary constraint, government remains the right choice — see /private-vs-government-polytechnic for the framework.",
     transitNarrative:
-      "Trains from Azamgarh to Varanasi via Mau Junction take 2.5 hours. State-roadways buses on NH-233 take 3 hours. The Cantt-to-Phoolpur final leg is 14 km — shared auto, taxi, or BIPE's free Saturday admission-season shuttle. Door-to-door, a Saturday visit from Azamgarh and back is 8-9 hours including the campus tour. Plan for an overnight stay or split the trip across two days.",
+      "Trains from Azamgarh to Varanasi via Mau Junction take 2.5 hours. State-roadways buses on NH-233 take 3 hours. The Cantt-to-Phoolpur final leg is 14 km — shared auto, taxi or app-cab, roughly ₹300-500. Door-to-door, a Saturday visit from Azamgarh and back is 8-9 hours including the campus tour. Plan for an overnight stay or split the trip across two days.",
     faqs: [
       {
         q: "Azamgarh to BIPE is 3 hours by road — is this manageable for a 3-year diploma?",
@@ -399,7 +399,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Mau has limited local polytechnic infrastructure — most technical-education aspirants travel to nearby districts (Azamgarh, Varanasi, Ballia, Ghazipur). BIPE Phoolpur is among the closest 5-branch private polytechnic options with full hostel residence. Government Polytechnic seats in the broader region are available but rank-competitive.",
     transitNarrative:
-      "Mau Junction has frequent trains to Varanasi Cantt — 1.5 to 2 hours depending on the service. Road via NH-29 through Ghazipur takes ~2.5 hours. From Varanasi Cantt to Phoolpur is the standard 14-km shared-auto or BIPE shuttle leg. WhatsApp the admission office before a visit to confirm shuttle availability on your travel day.",
+      "Mau Junction has frequent trains to Varanasi Cantt — 1.5 to 2 hours depending on the service. Road via NH-29 through Ghazipur takes ~2.5 hours. From Varanasi Cantt to Phoolpur is the standard 14-km leg by shared auto or app-cab (~35 min, roughly ₹300-500). WhatsApp the admission office before a visit and we'll share the campus pin and the easiest route from Cantt.",
     faqs: [
       {
         q: "Mau is a smaller district — does BIPE have students from here?",
@@ -535,7 +535,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Chandauli has Government Polytechnic Chandauli serving the district. The institute is BTE UP-affiliated and follows the standard UP government polytechnic fee structure. For Chandauli students with a strong JEECUP rank who want the standard 3-4 engineering branches and live in the city, the government route is the right choice. BIPE serves the broader Chandauli district — particularly outer-block students who need hostel access, and any student wanting the Dairy Engineering branch (not commonly available at the local government polytechnic).",
     transitNarrative:
-      "From Chandauli, the DDU railway junction provides frequent passenger trains to Varanasi Cantt in 25-30 minutes. State-roadways buses on NH-7 take 75 minutes. Many Chandauli students at BIPE travel via DDU train + shared auto from Cantt to Phoolpur (45 min). Free BIPE shuttle from Varanasi Cantt on Saturdays during admission season — WhatsApp +91-7310077788 to book.",
+      "From Chandauli, the DDU railway junction provides frequent passenger trains to Varanasi Cantt in 25-30 minutes. State-roadways buses on NH-7 take 75 minutes. Many Chandauli students at BIPE travel via DDU train + shared auto from Cantt to Phoolpur (45 min). From Cantt to Phoolpur is ~14 km by shared auto or app-cab, roughly ₹300-500 — WhatsApp +91-7310077788 and BIPE will share the campus pin and the easiest route.",
     faqs: [
       {
         q: "How far is Chandauli from BIPE Phoolpur — and is daily commute viable?",
@@ -603,7 +603,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Ballia has Government Polytechnic Ballia and a small private polytechnic ecosystem. The local government polytechnic is the natural first choice for cost-binding families with strong-enough JEECUP rank. Many Ballia students who can't secure their preferred branch locally — or who specifically want Dairy Engineering, or who want a denser placement-cell pipeline — move to BIPE Phoolpur with hostel residence.",
     transitNarrative:
-      "Ballia Junction has frequent express trains to Varanasi Cantt — 3 hours typical. State-roadways buses on NH-19 via Ghazipur take 3.5 hours. From Cantt to Phoolpur is the standard 14-km final leg by shared auto or BIPE shuttle (free on Saturdays during admission season). Door-to-door Ballia → BIPE is about 4-4.5 hours. Plan an overnight stay for the first visit; we can help arrange a hostel trial during the visit.",
+      "Ballia Junction has frequent express trains to Varanasi Cantt — 3 hours typical. State-roadways buses on NH-19 via Ghazipur take 3.5 hours. From Cantt to Phoolpur is the standard 14-km final leg by shared auto or app-cab, roughly ₹300-500. Door-to-door Ballia → BIPE is about 4-4.5 hours. Plan an overnight stay for the first visit; we can help arrange a hostel trial during the visit.",
     faqs: [
       {
         q: "Ballia to BIPE is 3+ hours by train — how often do students travel home?",
@@ -671,7 +671,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Sonbhadra has Government Polytechnic Sonbhadra (Robertsganj) and a few smaller private options serving the district. Government polytechnic seats are rank-competitive given the strong industrial demand for technical diploma holders. BIPE serves Sonbhadra families who can't secure their preferred branch locally, who specifically want Dairy Engineering, or who want a denser placement-cell pipeline that includes private-industry recruiters alongside the regional government pathway.",
     transitNarrative:
-      "From Sonbhadra, the Renukoot-Mirzapur road via NH-39 is the primary route — ~3 hours by bus or private vehicle. Trains via Robertsganj station to Varanasi (3 hours) are an alternative; check the Renukoot-Mirzapur line for direct services. From Varanasi Cantt to Phoolpur, standard 14-km final leg by shared auto or BIPE shuttle. Plan an overnight for the first visit — door-to-door is 4-4.5 hours.",
+      "From Sonbhadra, the Renukoot-Mirzapur road via NH-39 is the primary route — ~3 hours by bus or private vehicle. Trains via Robertsganj station to Varanasi (3 hours) are an alternative; check the Renukoot-Mirzapur line for direct services. From Varanasi Cantt to Phoolpur, standard 14-km final leg by shared auto or app-cab, roughly ₹300-500. Plan an overnight for the first visit — door-to-door is 4-4.5 hours.",
     faqs: [
       {
         q: "Does BIPE prepare students for jobs at NTPC, Hindalco, and other Sonbhadra industries?",
@@ -739,7 +739,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Sultanpur has Government Polytechnic Sultanpur and a small private polytechnic ecosystem. The government polytechnic is the natural first choice for cost-binding families with strong-enough JEECUP rank. Many Sultanpur students who don't secure their preferred branch locally either go to the larger Allahabad / Lucknow government polytechnics (more rank-competitive) or to private polytechnics with hostel residence — BIPE Phoolpur is the structural fit for the latter.",
     transitNarrative:
-      "Sultanpur Junction has frequent express trains to Varanasi Cantt — 3.5 hours typical. State-roadways buses via Pratapgarh and Jaunpur take ~4 hours. From Cantt to Phoolpur is the standard 14-km final leg by shared auto or BIPE shuttle. Door-to-door Sultanpur to BIPE is about 4.5-5 hours. Plan an overnight stay for the first visit; the BIPE office can help with hostel-trial arrangements.",
+      "Sultanpur Junction has frequent express trains to Varanasi Cantt — 3.5 hours typical. State-roadways buses via Pratapgarh and Jaunpur take ~4 hours. From Cantt to Phoolpur is the standard 14-km final leg by shared auto or app-cab, roughly ₹300-500. Door-to-door Sultanpur to BIPE is about 4.5-5 hours. Plan an overnight stay for the first visit; the BIPE office can help with hostel-trial arrangements.",
     faqs: [
       {
         q: "Sultanpur is closer to Lucknow than Varanasi — why BIPE instead of GP Lucknow?",
@@ -875,7 +875,7 @@ export const CATCHMENTS: Catchment[] = [
     localContext:
       "Gorakhpur has Government Polytechnic Gorakhpur, Madan Mohan Malaviya University of Technology (degree-level) and a substantial private polytechnic ecosystem within the city. For cost-binding Gorakhpur families with strong JEECUP rank, the local government polytechnic is the natural choice. BIPE serves Gorakhpur students who don't secure their preferred branch locally, who specifically want Dairy Engineering, or who want the documented placement-cell pipeline that includes diverse private-industry recruiters alongside the regional government pathway.",
     transitNarrative:
-      "Gorakhpur Junction has frequent express trains to Varanasi Cantt — 4 hours typical via the Gorakhpur-Mau-Ghazipur-Varanasi line. State-roadways buses via NH-29 through Azamgarh take ~5 hours. From Varanasi Cantt to Phoolpur, standard 14-km final leg by shared auto or BIPE's free Saturday shuttle. Door-to-door Gorakhpur to BIPE is about 5-5.5 hours. Plan an overnight stay for the first visit; we'll help arrange hostel-trial accommodation.",
+      "Gorakhpur Junction has frequent express trains to Varanasi Cantt — 4 hours typical via the Gorakhpur-Mau-Ghazipur-Varanasi line. State-roadways buses via NH-29 through Azamgarh take ~5 hours. From Varanasi Cantt to Phoolpur, standard 14-km final leg by shared auto or app-cab, roughly ₹300-500. Door-to-door Gorakhpur to BIPE is about 5-5.5 hours. Plan an overnight stay for the first visit; we'll help arrange hostel-trial accommodation.",
     faqs: [
       {
         q: "Gorakhpur has its own established government polytechnic — why consider BIPE?",
