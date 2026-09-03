@@ -106,7 +106,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What if my JEECUP rank doesn't reach BIPE this round?",
-    a: "JEECUP runs multiple counselling rounds (typically 3–5 main rounds plus a special/spot round). Many students secure a BIPE seat in later rounds even if the first round doesn't go their way. Keep BIPE 4455 in your choice list across all rounds, and stay in touch with admissions — they track the cutoff movement and advise on the highest-probability branch for your rank.",
+    a: "JEECUP runs five counselling rounds across two phases — Rounds 1-3 for UP-domicile candidates, Rounds 4-5 open to all states. Many students secure a BIPE seat in the later rounds even if the first doesn't go their way. Keep BIPE 4455 in your choice list across all rounds, and stay in touch with admissions — they track the cutoff movement and advise on the highest-probability branch for your rank.",
   },
   // ─── Hindi vernacular Q&As — same audience cluster as /fees page ───
   {

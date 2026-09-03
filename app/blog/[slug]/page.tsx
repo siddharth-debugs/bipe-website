@@ -17,7 +17,10 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return {};
+  // notFound(), not `return {}` — see the same fix in
+  // app/courses/[branch]/page.tsx. An empty metadata object let unknown
+  // slugs serve HTTP 200 with the homepage title and `index, follow`.
+  if (!post) notFound();
   const path = `/blog/${post.slug}`;
 
   // hreflang: a post with no translation sibling declares only its OWN

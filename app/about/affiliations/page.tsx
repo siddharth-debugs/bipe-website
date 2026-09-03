@@ -112,7 +112,15 @@ const AFFILIATIONS: Affiliation[] = [
     ourCode: "/poly/4455",
     verifyUrl: "https://urise.up.gov.in/poly/4455",
     verifyLabel: "urise.up.gov.in/poly/4455",
-    note: "Direct deep-link to BIPE's listing. Shows institute name, branches, district, and current approval status.",
+    // 3 Sep 2026: urise.up.gov.in's TLS certificate expired 19 Aug 2026
+    // (CN=urise.up.gov.in, notAfter=Aug 19 2026), so browsers show a
+    // security interstitial before the page loads. That is the UP
+    // government's server, not ours, and BIPE cannot renew it — but this
+    // is precisely the link whose job is letting a parent verify code
+    // 4455 on an official portal, so an unexplained red warning damages
+    // the trust it exists to build. Saying so plainly is the honest fix.
+    // REMOVE THIS SENTENCE once the portal serves a valid certificate.
+    note: "Direct deep-link to BIPE's listing. Shows institute name, branches, district, and current approval status. Note: the UP government portal's security certificate expired in August 2026, so your browser may warn you before the page opens — that warning is about the government's server, not about BIPE, and the listing itself is genuine.",
   },
   {
     id: "irdt",

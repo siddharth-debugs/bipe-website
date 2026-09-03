@@ -22,7 +22,12 @@ export async function generateMetadata(
   const { branch } = await params;
   const branches = await getBranchesMapped();
   const b = branches.find((x) => x.slug === branch);
-  if (!b) return {};
+  // notFound(), not `return {}`. These routes render dynamically (the root
+  // layout awaits headers() for x-pathname), so metadata resolves before
+  // the page body — an empty object here silently inherited the layout's
+  // HOMEPAGE title, canonical and `index, follow`, and the shell flushed
+  // HTTP 200. Result: unknown slugs were indexable soft-404s. 3 Sep 2026.
+  if (!b) notFound();
   const path = `/courses/${b.slug}`;
   // May 2026 keyword research: "diploma in civil engineering" 9,900/mo,
   // "diploma in computer science" 9,900/mo, "diploma in mechanical

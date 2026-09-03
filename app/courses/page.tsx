@@ -5,6 +5,7 @@ import { metadataFor } from "@/lib/seo";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon, PhoneIcon } from "@/components/shell/Icons";
 import { CoursesView } from "./CoursesView";
+import { PLACEMENT_STATS } from "@/lib/placement-stats";
 
 export async function generateMetadata(): Promise<Metadata> { return metadataFor("courses"); }
 
@@ -22,7 +23,13 @@ const PATHWAY_TIPS: { num: string; title: string; body: string }[] = [
   {
     num: "03",
     title: "Look at the workshop, not the cut-off.",
-    body: "Walk through the lab the branch lives in. Three years on a CNC, behind a survey instrument or beside a pasteuriser shape the engineer you become — far more than where you ranked at 16.",
+    // "beside a pasteuriser" removed 3 Sep 2026. The sentence invites a
+    // family to walk BIPE's own labs, so naming a pasteuriser asserted
+    // equipment BIPE does not own — contradicted one click away on
+    // /courses/dairy-engineering ("BIPE does not run its own pilot
+    // plant"). The milk-analysis bench is real; see lib/data.ts dairy
+    // facilities. Keep this triad to kit BIPE actually has.
+    body: "Walk through the lab the branch lives in. Three years on a CNC, behind a survey instrument or over a milk-analysis bench shape the engineer you become — far more than where you ranked at 16.",
   },
   {
     num: "04",
@@ -70,7 +77,13 @@ export default async function Page() {
     getRecruiters(),
   ]);
   const totalSeats = branches.reduce((s, b) => s + b.seats, 0);
-  const recruiterCount = liveRecruiters.length || DATA.recruiters.length;
+  // Recruiter COUNT must come from PLACEMENT_STATS, never from the length
+  // of the CMS logo strip. Until 3 Sep 2026 this counted live rows, so
+  // /courses published "18+ verified recruiters" while /placements,
+  // /alumni, /why-bipe and llms.txt all published 44 — and the number
+  // moved whenever someone added or removed a marquee logo. The CMS
+  // recruiters table is a curated display list, not a census.
+  const recruiterCount = PLACEMENT_STATS.totalRecruiters;
 
   return (
     <div className="page-enter">

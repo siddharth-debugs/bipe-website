@@ -231,7 +231,7 @@ const PROGRAMS: Program[] = [
 
 const CELL_POINTS: { num: string; title: string; body: string }[] = [
   { num: "01", title: "Curate the recruiter pipeline", body: "Relationships built over sixteen years across mechanical, electrical, civil, dairy and IT verticals — kept warm with quarterly outreach." },
-  { num: "02", title: "Train every cohort", body: "Six pre-placement programmes run on rotation — workshop, lecture series, mock interviews, AMCAT, tech talks." },
+  { num: "02", title: "Train every cohort", body: "Five pre-placement programmes run on rotation — workshop, lecture series, mock interviews, AMCAT, tech talks." },
   { num: "03", title: "Verify every placement", body: `Only joining-letter-confirmed offers count toward the public number. The ${formatPlacements(PLACEMENT_STATS.totalPlacements)} figure is auditable, not aspirational.` },
   { num: "04", title: "Track the alumni", body: "Quarterly outreach to keep the network warm and the recruiter pipeline fresh — alumni open most of the new doors." },
 ];
@@ -637,7 +637,7 @@ export default async function Page() {
             color: "color-mix(in oklab, var(--paper) 50%, transparent)",
             textAlign: "right",
           }}>
-            All names cross-checked against placement-cell records · 2010–2024
+            All names cross-checked against placement-cell records · {PLACEMENT_STATS.startYear}–{PLACEMENT_STATS.endYear}
           </div>
         </div>
       </section>
