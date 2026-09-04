@@ -116,7 +116,7 @@ const FAQS = [
   },
   {
     q: "The government polytechnic near me doesn't offer the branch I want. What are my options?",
-    a: "This is the most common reason Eastern UP families end up at a private polytechnic, and it is a better reason than rank alone. Most district government polytechnics run three standard branches (Civil, Electrical, Mechanical) at fixed per-branch capacity, and Government Polytechnic Kuru Pindra — the only general government polytechnic inside Varanasi district — runs just two, Electrical and Textile, with 60 seats in total. If your branch isn't on that list, no rank secures it. BIPE runs four branches across 420 seats: Civil (120), Electrical (120), Mechanical Engineering (Production) (120) and Computer Science & Engineering (60) — Computer Science in particular is thinly covered by the government polytechnics in this belt. Seat depth is also why BIPE's branch-wise availability persists into the later JEECUP rounds instead of closing in Round 1.",
+    a: "This is the most common reason Eastern UP families end up at a private polytechnic, and it is a better reason than rank alone. Most district government polytechnics run three standard branches (Civil, Electrical, Mechanical) at fixed per-branch capacity, and Government Polytechnic Kuru Pindra — the only general government polytechnic inside Varanasi district — runs just two, Electrical and Textile, with 60 seats in total. If your branch isn't on that list, no rank secures it. BIPE runs four branches across 480 seats: Civil (120), Electrical (120), Mechanical Engineering (Production) (120) and Computer Science & Engineering (120) — Computer Science in particular is thinly covered by the government polytechnics in this belt. Seat depth is also why BIPE's branch-wise availability persists into the later JEECUP rounds instead of closing in Round 1.",
   },
 ];
 
@@ -354,7 +354,7 @@ export default function Page() {
               </h3>
               <ul style={{ marginTop: 14, paddingLeft: 20, color: "var(--ink-2)", fontSize: 14, lineHeight: 1.7 }}>
                 <li>Your rank doesn&rsquo;t safely secure your preferred branch at a government polytechnic</li>
-                <li>You want real branch choice — 420 seats across four branches, where the nearest government polytechnic (Kuru Pindra) admits 60 students in total</li>
+                <li>You want real branch choice — 480 seats across four branches, where the nearest government polytechnic (Kuru Pindra) admits 60 students in total</li>
                 <li>You&rsquo;re from outside Varanasi city — hostel access is essential</li>
                 <li>You want documented placement infrastructure ({_placed} verified placements at {_recruiters} recruiters)</li>
                 <li>Smaller cohort + named faculty mentors matters to your learning</li>

@@ -47,7 +47,7 @@ const KEY_DIFFS = [
     heading: "Branch portfolio",
     govt: "Varies by institute; commonly 3-5 standard engineering branches",
     aided: "Varies; some aided institutes offer specialised branches",
-    private: "Varies widely by institute, and seat depth varies with it. BIPE runs four branches across 420 seats — Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering — so per-branch availability holds into the later JEECUP rounds",
+    private: "Varies widely by institute, and seat depth varies with it. BIPE runs four branches across 480 seats — Civil, Electrical, Mechanical Engineering (Production) and Computer Science & Engineering — so per-branch availability holds into the later JEECUP rounds",
   },
 ];
 
@@ -224,7 +224,7 @@ export default function Page() {
                 <li>Fee is the only thing pulling you toward aided — BIPE&rsquo;s AFRC-approved ₹30,150/year sits at the low end of the private band, and UP Post-Matric reimburses tuition in full for eligible SC / ST students</li>
                 <li>You need hostel access on-campus (BIPE&rsquo;s Phoolpur hostel)</li>
                 <li>You want documented placement infrastructure ({_placed} verified placements at {_recruiters} recruiters)</li>
-                <li>You&rsquo;re from Eastern UP and BIPE is the geographically practical four-branch option (420 seats)</li>
+                <li>You&rsquo;re from Eastern UP and BIPE is the geographically practical four-branch option (480 seats)</li>
               </ul>
             </article>
           </div>
