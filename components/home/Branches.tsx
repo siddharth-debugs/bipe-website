@@ -244,7 +244,16 @@ export const Branches = ({
         {/* Sanctioned-seats callout · preserved from the previous version.
             Acts as a trust-signal hook into /approvals; doesn't compete
             with the branch-card grid above visually (dashed border, different
-            tone). */}
+            tone).
+
+            480, NOT the 420 the four cards above sum to. Owner ruling
+            4 Sep 2026: "Intake strength will remain 480, dairy seats will
+            be adjusted in some other branch." The sanctioned intake is
+            unchanged by the Dairy closure — the 60 seats are being moved
+            to another branch, not surrendered. Once that reallocation is
+            settled, DATA.branches seat counts change and PUBLIC_SEATS
+            becomes 480 too, closing the gap. Do NOT "reconcile" this down
+            to 420: that understates the institution's approved capacity. */}
         <Link
           href="/approvals"
           style={{
@@ -262,7 +271,7 @@ export const Branches = ({
           <div className="between">
             <div>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>
-                420 sanctioned seats · 2026-27
+                480 sanctioned seats · 2026-27
               </div>
               <div
                 style={{

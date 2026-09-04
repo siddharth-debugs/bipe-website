@@ -49,6 +49,24 @@ Asked "how many branches does BIPE offer?", a model reading this domain sees bot
 
 ## Confirmed defects (8)
 
+> **CORRECTION, 4 Sep 2026 — finding 7 is WITHDRAWN.** It claimed the homepage's
+> "480 sanctioned seats" contradicted the four-branch 420-seat grid and should read 420.
+> The owner ruled otherwise: *"Intake strength will remain 480, dairy seats will be
+> adjusted in some other branch."* The sanctioned intake is **unchanged** by the Dairy
+> closure — the 60 seats are being reallocated to another branch, not surrendered.
+> The homepage figure has been reverted to 480 and the reasoning recorded in the
+> component. **Do NOT change it to 420** — that understates approved capacity.
+>
+> **What this opens instead:** once the owner names the branch that absorbs the 60 seats,
+> `DATA.branches` seat counts change, `PUBLIC_SEATS` becomes 480, and every public
+> "420 seats across four branches" claim needs updating in the same pass —
+> `app/campus/page.tsx:32`, `app/private-vs-government-polytechnic/page.tsx:104`
+> (which also lists the per-branch split), `app/aided-polytechnic-uttar-pradesh/page.tsx:50,227`,
+> `app/government-polytechnic-in-eastern-up/page.tsx:357`, `app/courses/page.tsx:76`,
+> `lib/blogPosts.ts:2474` (Hindi "चार branches, 420 सीटें"), and the doc block at
+> `lib/data.ts:530-531`. That is a blocked task, not a defect: it needs the allocation first.
+
+
 All are repo-side. All are count or tense corrections. None names a branch or announces anything.
 
 | # | File | Says now | Should say |
@@ -59,7 +77,7 @@ All are repo-side. All are count or tense corrections. None names a branch or an
 | 4 | `components/home/Countdown.tsx` :65, :76 | what is open before you travel / Apply now | closed / Enquire for 2027-28 |
 | 5 | `app/placements/page.tsx` :1303 | 44 recruiters | 46, read from the module |
 | 6 | `app/mandatory-disclosure/page.tsx` :124 | 40 faculty across five departments | four departments |
-| 7 | `components/home/Branches.tsx` :265 | 480 sanctioned seats | 420 |
+| 7 | `components/home/Branches.tsx` :265 | ~~480 sanctioned seats~~ | **WITHDRAWN — see below** |
 | 8 | `lib/jeecup-resources.ts` :490, :494 | talk to us about a seat | about session 2027-28 |
 
 ### 1. Every blog post (18 indexed pages) tells crawlers BIPE has FIVE diploma branches
