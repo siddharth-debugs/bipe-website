@@ -231,6 +231,28 @@ Replace "about a seat" with the closure + next-cycle framing in both places: her
 
 ---
 
+## RESOLVED 4 Sep 2026 — the seat question, and a divergence that is now deliberate
+
+The owner ruled on both open seat questions:
+
+1. *"Intake strength will remain 480, dairy seats will be adjusted in some other branch."*
+   Then: **Computer Science takes them — CSE 60 → 120.** Applied in `26ad62b` + `fb046ea`
+   (seed, CMS row, and every public claim in one pass); the four public branches now total 480.
+2. *"No it is not approved, do not update approvals."* The reallocation is **NOT yet approved
+   by AICTE/BTEUP.**
+
+**So the public site and the statutory pages now state different Computer Science intakes,
+on purpose.** `/courses` and every marketing surface say 120; `/approvals` and
+`/mandatory-disclosure` §06 keep the 2026-27 EoA record (CSE 60, Dairy 60, total 480).
+A comment at the top of `app/approvals/page.tsx` SEAT_MATRIX records this.
+
+**Do not "reconcile" either side to the other.** Both directions are wrong until a revised
+EoA lands — at which point the seat matrix and the `/mandatory-disclosure` intake sentence
+move to 120 together, and only then.
+
+Be aware this is a live contradiction an answer engine can see (60 on the statutory page,
+120 elsewhere). It is an accepted, owner-known trade-off, not an oversight.
+
 ## One finding was REFUTED — and it needs an owner decision, not a code change
 
 An agent flagged that `/approvals` and `/mandatory-disclosure` §06 still present five branches, 480 sanctioned seats, and a Dairy Engineering row with 60 seats, while the JSON-LD on those same pages emits four.
