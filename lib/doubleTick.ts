@@ -167,6 +167,29 @@ export async function sendDoubleTickTemplate(
 const DEFAULT_TEMPLATE_NAME = "enquiry_s_v1_submitted";
 
 /**
+ * 4 Sep 2026 — the alumni-introduction flow is the only path that still
+ * sends from the website (every other enquirer ack comes from the Sampark
+ * CRM since ac7a889). It was dark on both legs: resolveTemplateName had no
+ * "alumni-contact" case (visitor ack silently skipped) and the admin ping
+ * pushed 4 placeholders into the 2-real-slot legacy template above
+ * (vendor-rejected). Both now ride purpose-built UTILITY templates on the
+ * BIPE WABA (917310077788). Placeholder COUNT must equal the template's
+ * slot count or Double Tick rejects the send — keep these in sync.
+ *
+ * Visitor ack — bilingual, six slots:
+ *   {{1}} first name   {{2}} alumnus name   {{3}} reference ID   (English)
+ *   {{4}} first name   {{5}} alumnus name   {{6}} reference ID   (Hindi)
+ *   The 48-hour callback window is literal text in the body.
+ */
+const ALUMNI_INTRO_VISITOR_TEMPLATE = "bipe_alumni_intro_received_v1";
+/**
+ * Admin alert — five slots:
+ *   {{1}} reference ID  {{2}} visitor name  {{3}} visitor phone
+ *   {{4}} alumnus (name, branch, year, company)  {{5}} purpose (+ note, email)
+ */
+const ALUMNI_INTRO_ADMIN_TEMPLATE = "bipe_alumni_intro_admin_v1";
+
+/**
  * Form-type → short code used in the reference ID middle segment.
  * Kept terse so the operator-facing ref reads cleanly when it
  * surfaces in the WhatsApp body. */
@@ -220,8 +243,12 @@ export function fireSubmissionConfirmation(args: {
   /** Submission ID from the backend (used in the reference ID at
    *  placeholder {{2}}). Defaults to "00" when missing. */
   submissionId?: number | string;
-  /** Callback timeline in hours. Defaults to "24". */
+  /** Callback timeline in hours. Defaults to "24". Ignored for
+   *  alumni-contact (the 48h window is literal text in that template). */
   callbackHours?: string;
+  /** alumni-contact only: the alumnus the visitor asked to be introduced
+   *  to. Fills {{2}} / {{5}} of bipe_alumni_intro_received_v1. */
+  alumniName?: string;
 }): void {
   const templateName = resolveTemplateName(args.formType);
   if (!templateName) return; // Template lookup failed AND no default
@@ -231,12 +258,25 @@ export function fireSubmissionConfirmation(args: {
     args.formType,
     args.submissionId ?? "00",
   );
-  const course = args.branch?.trim() || "General enquiry";
-  const callbackHours = args.callbackHours || "24";
 
-  // 4-placeholder body per the approved enquiry_s_v1_submitted
-  // template. Order matters — DT maps positionally to {{1}}..{{4}}.
-  const placeholders = [firstName, referenceId, course, callbackHours];
+  // Order matters — DT maps positionally to {{1}}..{{n}} — and the COUNT
+  // must equal the template's slot count or the vendor rejects the send.
+  let placeholders: string[];
+  if (args.formType === "alumni-contact") {
+    // bipe_alumni_intro_received_v1: six slots, see the contract above.
+    const alumnus = args.alumniName?.trim() || "the alumnus you selected";
+    placeholders = [
+      firstName, alumnus, referenceId,
+      firstName, alumnus, referenceId,
+    ];
+  } else {
+    // enquiry_s_v1_submitted: {{1}} name {{2}} ref {{3}} course {{4}} hours.
+    // Dormant since ac7a889 (the CRM acks these forms) — kept so an
+    // operator-set DOUBLETICK_TEMPLATE_* override still has a contract.
+    const course = args.branch?.trim() || "General enquiry";
+    const callbackHours = args.callbackHours || "24";
+    placeholders = [firstName, referenceId, course, callbackHours];
+  }
 
   sendDoubleTickTemplate({
     to: args.phone,
@@ -307,17 +347,14 @@ export function fireAlumniIntroAdminNotification(args: {
 
   const templateName =
     process.env.DOUBLETICK_TEMPLATE_ALUMNI_CONTACT_ADMIN ||
-    DEFAULT_TEMPLATE_NAME;
+    ALUMNI_INTRO_ADMIN_TEMPLATE;
 
   const refId = buildReferenceId("alumni-contact", args.refSuffix);
 
-  // Cram the full request into the {{3}} placeholder. With the default
-  // enquiry_s_v1_submitted template the admin will read this rendered
-  // as "...interest in {summary}..." — awkward grammatically but every
-  // field they need to verify is there. Once a dedicated admin
-  // template is approved (with one placeholder per field), set
-  // DOUBLETICK_TEMPLATE_ALUMNI_CONTACT_ADMIN and update the
-  // placeholders array to match.
+  // bipe_alumni_intro_admin_v1 — one slot per field the admin needs on
+  // the verification call (contract at the top of this file). Values are
+  // trimmed to WhatsApp's per-variable limit and kept single-line: a
+  // newline inside a variable is rejected by the vendor.
   const alumnusDetail = [
     args.alumniName,
     args.alumniBranch,
@@ -326,21 +363,23 @@ export function fireAlumniIntroAdminNotification(args: {
   ]
     .filter((p): p is string => !!p && p.length > 0)
     .join(", ");
-  const summary = [
-    `${args.visitorName} (${args.visitorPhone}) wants intro to ${alumnusDetail} [#${args.alumniId}]`,
-    `Purpose: ${args.purpose}`,
+  const oneLine = (v: string, max: number) =>
+    v.replace(/\s+/g, " ").trim().slice(0, max);
+  const purposeLine = [
+    args.purpose,
     args.purposeNote ? `Note: ${args.purposeNote}` : null,
     args.visitorEmail ? `Email: ${args.visitorEmail}` : null,
   ]
     .filter((p): p is string => !!p && p.length > 0)
-    .join(". ")
-    .replace(/\s+/g, " ")
-    .slice(0, 700);
+    .join(" — ");
 
-  // {{4}} = "now" so the admin reads it as urgent. With a dedicated
-  // template later, this placeholder slot can move to something
-  // semantically correct (e.g. a deadline field).
-  const placeholders = ["BIPE Admin", refId, summary, "now"];
+  const placeholders = [
+    refId,
+    oneLine(args.visitorName, 80),
+    oneLine(args.visitorPhone, 20),
+    oneLine(`${alumnusDetail} [#${args.alumniId}]`, 200),
+    oneLine(purposeLine, 400),
+  ];
 
   sendDoubleTickTemplate({
     to: adminNumber,
@@ -462,6 +501,14 @@ function resolveTemplateName(
       return (
         process.env.DOUBLETICK_TEMPLATE_ENQUIRY_RECEIVED ||
         DEFAULT_TEMPLATE_NAME
+      );
+    case "alumni-contact":
+      // Never fell through to the legacy default: that template has only
+      // two real slots and a course line that makes no sense for an
+      // introduction request. Dedicated six-slot template since 4 Sep 2026.
+      return (
+        process.env.DOUBLETICK_TEMPLATE_ALUMNI_CONTACT_RECEIVED ||
+        ALUMNI_INTRO_VISITOR_TEMPLATE
       );
   }
 }

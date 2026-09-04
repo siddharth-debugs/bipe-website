@@ -207,17 +207,15 @@ export async function POST(req: Request) {
     }));
 
     // 2. WhatsApp the visitor with the same ref so they can quote
-    //    it when admin calls back to verify. {{3}} = "Intro with
-    //    {Name}", {{4}} = 48h because verification touches both
-    //    sides.
-    const introLabel = `Intro with ${d.alumniName}`.slice(0, 60);
+    //    it when the placement cell calls back to verify. Rides the
+    //    six-slot bipe_alumni_intro_received_v1 template (4 Sep 2026);
+    //    the 48-hour window is literal text in that body.
     after(() => fireSubmissionConfirmation({
       formType: "alumni-contact",
       phone: d.phone,
       name: d.name,
-      branch: introLabel,
+      alumniName: d.alumniName,
       submissionId: refSuffix,
-      callbackHours: "48",
     }));
 
     return NextResponse.json({ ok: true, id: refSuffix });
