@@ -341,7 +341,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               <ArrowIcon size={12} />
             </Link>
           </div>
-          <Col heading="Academics" items={[["All branches", "/courses"], ["Placements", "/placements"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
+          <Col heading="Academics" items={[["All branches", "/courses"], ["Placements", "/placements"], ["Alumni", "/alumni"], ["Computer Science & Engineering", "/courses/computer-science-engineering"], ["Civil Engineering", "/courses/civil-engineering"], ["Electrical Engineering", "/courses/electrical-engineering"], ["Mechanical Engineering (Production)", "/courses/mechanical-engineering-production"]]} />
           {/* Admission column — 2026-05-20: added JEECUP Counselling
               (high-value 18,100/mo head term page that had no footer
               link previously) and JEECUP from Bihar (geo landing). */}
@@ -350,7 +350,7 @@ export const Footer = ({ contact }: { contact?: FooterContact } = {}) => {
               Approvals (consolidated 7-affiliation page) and Why BIPE
               (category-leader brand page). Both were route-live but
               unlinked. */}
-          <Col heading="About & Campus" items={[["About", "/about"], ["Affiliations & Approvals", "/about/affiliations"], ["Why BIPE", "/why-bipe"], ["Private vs Government", "/private-vs-government-polytechnic"], ["Chairman", "/chairman"], ["Director", "/director"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Alumni", "/alumni"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
+          <Col heading="About & Campus" items={[["About", "/about"], ["Affiliations & Approvals", "/about/affiliations"], ["Why BIPE", "/why-bipe"], ["Private vs Government", "/private-vs-government-polytechnic"], ["Chairman", "/chairman"], ["Director", "/director"], ["Principal", "/principal"], ["Teaching", "/teaching"], ["Facilities", "/campus"], ["Hostel", "/hostel"], ["Faculty", "/faculty"], ["Events", "/events"], ["FAQ", "/faq"], ["Blog", "/blog"]]} />
           {/* Compliances — 2026-05-20: added AI Policy (route exists,
               required reading for AI-content disclosure but had no nav
               entry). */}
