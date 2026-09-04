@@ -101,7 +101,7 @@ const DIFFERENCES: DifferenceRow[] = [
   {
     topic: "Branch availability & seat depth",
     bipe:
-      "480 seats across four branches — Civil (120), Electrical (120), Mechanical Engineering Production (120) and Computer Science & Engineering (120) — and branch-wise availability that persists into the later JEECUP rounds rather than closing in Round 1. In practice that means the branch you actually want stays reachable at a wider rank band.",
+      "420 seats across four branches — Civil (120), Electrical (120), Mechanical Engineering Production (120) and Computer Science & Engineering (60) — and branch-wise availability that persists into the later JEECUP rounds rather than closing in Round 1. In practice that means the branch you actually want stays reachable at a wider rank band.",
     context:
       "Government Polytechnic Varanasi offers the standard four engineering branches, with fixed per-branch capacity that fills sharply by rank in Round 1. Verify the current branch list and intake with the institute directly before choice-filling.",
     verifyLabel: "See the four branches",

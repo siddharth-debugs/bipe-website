@@ -2190,7 +2190,7 @@ export const BLOG_POSTS: BlogPost[] = [
         items: [
           "<strong>Eastern UP recruitment</strong>. Recruiters who hire at BIPE (Mahindra, Tata Steel, BEL, Indian Railways, UPPCL, JBM, Motherson, Amul) hire across branches. Your branch matters less than your performance and your willingness to relocate.",
           "<strong>Rural campus, low fee</strong>. BIPE is AFRC-approved at ₹30,150/year. That's substantially lower than urban polytechnics with similar approvals — and the campus is six acres in Phoolpur with on-campus hostel for boys.",
-          "<strong>Lab time is shared, not rationed</strong>. The eight-section workshop, the 120-system computer lab and the survey yard serve all four branches at BIPE 4455 — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering, 480 seats in total — so choosing by interest still gets you hands-on hours on real equipment.",
+          "<strong>Lab time is shared, not rationed</strong>. The eight-section workshop, the 120-system computer lab and the survey yard serve all four branches at BIPE 4455 — Civil, Electrical, Mechanical (Production) and Computer Science &amp; Engineering, 420 seats in total — so choosing by interest still gets you hands-on hours on real equipment.",
         ],
       },
       {
@@ -2348,12 +2348,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "BTEUP के तहत 20+ शाखाएँ (branches) उपलब्ध हैं, लेकिन सबसे लोकप्रिय और प्लेसमेंट के नज़रिए से मजबूत 4 ये हैं — ये चारों <a href=\"/courses\">बीआईपीई वाराणसी</a> में चलती हैं, कुल <strong>480 सीटें</strong>:",
+          "BTEUP के तहत 20+ शाखाएँ (branches) उपलब्ध हैं, लेकिन सबसे लोकप्रिय और प्लेसमेंट के नज़रिए से मजबूत 4 ये हैं — ये चारों <a href=\"/courses\">बीआईपीई वाराणसी</a> में चलती हैं, कुल <strong>420 सीटें</strong>:",
       },
       {
         type: "table",
         caption:
-          "बीआईपीई की चारों शाखाएँ — BTEUP कोड, सीटें, और कैरियर का संकेत। कुल 480 सीटें।",
+          "बीआईपीई की चारों शाखाएँ — BTEUP कोड, सीटें, और कैरियर का संकेत। कुल 420 सीटें।",
         headers: [
           "ब्रांच (हिन्दी)",
           "ब्रांच (अंग्रेज़ी)",
@@ -2471,7 +2471,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "<strong>Boys' hostel on-campus</strong> — furnished कमरे, mess, 24×7 security, resident warden।",
           "<strong>1:20 mentor ratio</strong> — हर faculty member 20 छात्रों की एक cohort का mentor है।",
           "<strong>Eastern UP catchment</strong> — वाराणसी, मऊ, ग़ाज़ीपुर, आज़मगढ़, मिर्ज़ापुर, और बिहार से 100+ छात्र हर साल।",
-          "<strong>चार branches, 480 सीटें</strong> — Civil, Electrical, Mechanical (Production), Computer Science — आठ-section वाली workshop, 120-system computer lab और survey yard सबके लिए।",
+          "<strong>चार branches, 420 सीटें</strong> — Civil, Electrical, Mechanical (Production), Computer Science — आठ-section वाली workshop, 120-system computer lab और survey yard सबके लिए।",
         ],
       },
       {

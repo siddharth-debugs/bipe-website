@@ -86,17 +86,16 @@ const APPROVALS: Approval[] = [
   },
 ];
 
-/* THE APPROVAL RECORD — do NOT reconcile this to the public site.
-   These are the 2026-27 AICTE EoA figures: Computer Science 60 and Dairy
-   Engineering 60. Since 4 Sep 2026 the public site publishes Computer
-   Science at 120, because the owner reallocated the retired branch's
-   intake to it — but the owner confirmed the same day that the move is
-   NOT yet approved by AICTE/BTEUP ("No it is not approved, do not update
-   approvals"). This page reproduces what was sanctioned; the rest of the
-   site states the current allocation. They are meant to differ until a
-   revised EoA lands, at which point this matrix and the intake sentence
-   on /mandatory-disclosure move together. Do not "fix" either side to
-   match the other. */
+/* THE APPROVAL RECORD — 2026-27 AICTE EoA: Computer Science 60, Dairy
+   Engineering 60, 480 total. The site agrees with it everywhere.
+   On 4 Sep 2026 the owner reallocated the retired branch's 60 seats to
+   Computer Science and it shipped briefly, leaving this page at 60 while
+   the public site said 120. The owner then ruled the move is NOT approved
+   by AICTE/BTEUP and "hold CSE at 60 until approval comes", so the public
+   figure was rolled back and there is no divergence to reconcile.
+   When a revised EoA arrives, THIS MATRIX AND THE PUBLIC SEAT COUNTS MOVE
+   TOGETHER — never one without the other, in either direction. See the
+   HOLD note in lib/data.ts for the full edit list. */
 const SEAT_MATRIX: { name: string; code: string; intake: string }[] = [
   { name: "Civil Engineering", code: "322", intake: "120" },
   { name: "Electrical Engineering", code: "328", intake: "120" },

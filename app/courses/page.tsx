@@ -73,8 +73,7 @@ export default async function Page() {
     getBranchesMapped(),
     getRecruiters(),
   ]);
-  // Seat total is summed over the branches this page actually lists (480
-  // since the 4 Sep 2026 reallocation put the freed intake into CSE),
+  // Seat total is summed over the branches this page actually lists (420),
   // not carried as a literal — and computed from the live CMS list rather
   // than the PUBLIC_SEATS constant so a seat edit in the CMS still flows
   // through. The sanctioned AICTE figure belongs only on /approvals and

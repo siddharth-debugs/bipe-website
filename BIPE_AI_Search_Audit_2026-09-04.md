@@ -231,27 +231,40 @@ Replace "about a seat" with the closure + next-cycle framing in both places: her
 
 ---
 
-## RESOLVED 4 Sep 2026 — the seat question, and a divergence that is now deliberate
+## RESOLVED 4 Sep 2026 — the seat question, and why CSE is held at 60
 
-The owner ruled on both open seat questions:
+Three owner rulings, in order, all verbatim:
 
 1. *"Intake strength will remain 480, dairy seats will be adjusted in some other branch."*
-   Then: **Computer Science takes them — CSE 60 → 120.** Applied in `26ad62b` + `fb046ea`
-   (seed, CMS row, and every public claim in one pass); the four public branches now total 480.
-2. *"No it is not approved, do not update approvals."* The reallocation is **NOT yet approved
-   by AICTE/BTEUP.**
+   The Dairy closure does **not** cut approved capacity — so never publish 420 as the
+   sanctioned figure. (This is why audit finding 7 was withdrawn.)
+2. *"Computer Science, make it 120."* Applied in `26ad62b` + `fb046ea` — seed, CMS row and
+   every public claim in one pass.
+3. *"No it is not approved, do not update approvals."* then **"hold CSE at 60 until approval
+   comes."** AICTE/BTEUP has not sanctioned the reallocation, and publishing 120 would state
+   an intake above the approved figure for that branch. **Rolled back.**
 
-**So the public site and the statutory pages now state different Computer Science intakes,
-on purpose.** `/courses` and every marketing surface say 120; `/approvals` and
-`/mandatory-disclosure` §06 keep the 2026-27 EoA record (CSE 60, Dairy 60, total 480).
-A comment at the top of `app/approvals/page.tsx` SEAT_MATRIX records this.
+**Current state — everything agrees, there is no divergence:** Computer Science 60,
+Civil 120, Electrical 120, Mechanical 120 → 420 published across four branches, against
+**480 sanctioned** (the retired branch still holds 60 in the approval record). The homepage
+callout correctly prints 480; that gap between 480 sanctioned and 420 published is expected
+and documented, not a defect.
 
-**Do not "reconcile" either side to the other.** Both directions are wrong until a revised
-EoA lands — at which point the seat matrix and the `/mandatory-disclosure` intake sentence
-move to 120 together, and only then.
+**Do NOT "fix" any of this:**
+- Never change a 480 sanctioned figure to 420 — it understates approved capacity.
+- Never raise the public Computer Science figure to 120 — it is held pending approval.
+- Never edit `/approvals` or `/mandatory-disclosure` §06 to match a public number.
 
-Be aware this is a live contradiction an answer engine can see (60 on the statutory page,
-120 elsewhere). It is an accepted, owner-known trade-off, not an oversight.
+When a revised EoA lands, the whole set moves together in one commit: seed (CSE 120, retired
+branch 0), the CMS branch row, the nine hardcoded public claims, and only then the seat matrix
+and the `/mandatory-disclosure` intake sentence. `lib/data.ts` carries the HOLD note with the
+full edit list; `app/approvals/page.tsx` carries the matching note above `SEAT_MATRIX`.
+`git show fb046ea 26ad62b` is the exact edit list, already written once.
+
+**CMS gotcha, proven twice today:** `app/llms.txt/route.ts` asserts the CMS branch row against
+the seed at build time and *fails the build* on divergence — in both directions. A seat change
+must move the CMS row and the seed in the same pass. This session cannot write the CMS (admin
+proxy returns 401); route it to the owner.
 
 ## One finding was REFUTED — and it needs an owner decision, not a code change
 

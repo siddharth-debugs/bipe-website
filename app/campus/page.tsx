@@ -29,7 +29,7 @@ const STATS: { num: string; suffix?: string; label: string; sub: string }[] = [
   { num: "120", suffix: "+", label: "Networked PCs", sub: "Computer centre" },
   { num: "100", label: "Mbps internet", sub: "Firewalled · 100% Wi-Fi" },
   { num: "40", label: "Faculty", sub: "1:20 mentor ratio" },
-  { num: "4", label: "BTEUP branches", sub: "480 seats · JEECUP 4455" },
+  { num: "4", label: "BTEUP branches", sub: "420 seats · JEECUP 4455" },
 ];
 
 const LIB_PILLS: string[] = [
