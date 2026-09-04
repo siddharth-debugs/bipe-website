@@ -207,6 +207,15 @@ const FORM_TYPE_CODE: Record<
 };
 
 /**
+ * The reference an alumni-intro visitor is quoted, shared by all three
+ * places that mention it: their WhatsApp ack, the admin alert, and the
+ * stored submission. One formatter so the three can never drift.
+ */
+export function alumniIntroRef(suffix: string): string {
+  return buildReferenceId("alumni-contact", suffix);
+}
+
+/**
  * Build the BIPE/TYPE/YYYY/NN reference ID. NN is zero-padded to at
  * least two digits.
  */

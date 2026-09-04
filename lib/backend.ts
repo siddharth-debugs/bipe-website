@@ -18,16 +18,21 @@
 
 type IngestKind = "apply" | "contact" | "enquiry" | "visit";
 
-// 29 May 2026 — alumni introduction requests deliberately bypass this
-// backend ingest path. Per user direction, those requests are sent
-// straight to the admin's WhatsApp number via Double Tick instead of
-// being recorded as backend submission rows. See:
+// Alumni introduction requests (/alumni) have no ingest kind of their own.
+// From 29 May to 4 Sep 2026 they were not stored AT ALL — WhatsApp to the
+// admin was the only record, so losing that message lost the request. They
+// now ride the "enquiry" kind with source "alumni-intro" (owner: "alumni
+// requests should be stored somewhere"), the same trick the Early Seat
+// Registration campaign uses, so no new Django model was needed. The Inbox
+// keys off that source to show them under their own chip and keep them out
+// of the admissions lead stream — which is what the original 29 May
+// direction ("don't show this as a new row in the backend dashboard")
+// actually asked for. See:
 //   * app/api/submit/route.ts        — "alumni-contact" branch
-//   * lib/doubleTick.ts              — fireAlumniIntroAdminNotification
-//
-// If you ever want to bring these back into the Django dashboard, add
-// "alumni-contact" to IngestKind above and re-wire the forwardToBackend
-// call in the route.
+//   * app/admin/dashboard/inbox      — isAlumniIntro
+// Give them a real "alumni-contact" kind here (plus a Django model,
+// migration and list endpoint) if the detail now packed into `message`
+// ever needs to be queryable.
 
 const HEADER = "X-Bipe-Submit-Token";
 

@@ -27,6 +27,7 @@ import {
   MessageCircle,
   RefreshCcw,
   Sparkles,
+  Users,
 } from "lucide-react";
 
 import {
@@ -70,6 +71,16 @@ const KIND_META: Record<
 // the general enquiry stream.
 const isEarlyReg = (g: LeadGroup): boolean =>
   g.rows.some((r) => r.kind === "enquiry" && r.source === "early-registration");
+
+// An /alumni introduction request. Stored from 4 Sep 2026 on the "enquiry"
+// kind with this source rather than a backend kind of its own. Unlike Early
+// Reg these are NOT admissions leads — nobody should call them about a seat
+// — so they are hidden from "All" and from the Enquiry chip and surface
+// ONLY under their own chip. That is the 29 May direction ("don't show this
+// as a new row in the backend dashboard") honoured while still keeping the
+// record, which WhatsApp alone used to hold.
+const isAlumniIntro = (g: LeadGroup): boolean =>
+  g.rows.some((r) => r.kind === "enquiry" && r.source === "alumni-intro");
 
 const STATUS_BUCKETS: { value: StatusBucket; label: string }[] = [
   { value: "all", label: "All" },
@@ -129,7 +140,8 @@ export default function InboxPage() {
   const searchParams = useSearchParams();
   const initialKind = (() => {
     const k = searchParams.get("kind");
-    return k === "apply" || k === "contact" || k === "enquiry" || k === "visit" || k === "early"
+    return k === "apply" || k === "contact" || k === "enquiry" || k === "visit" ||
+      k === "early" || k === "alumni"
       ? k
       : "all";
   })();
@@ -143,7 +155,7 @@ export default function InboxPage() {
       ? (b as StatusBucket)
       : "all";
   })();
-  const [kindFilter, setKindFilter] = useState<"all" | Kind | "early">(initialKind);
+  const [kindFilter, setKindFilter] = useState<"all" | Kind | "early" | "alumni">(initialKind);
   const [bucket, setBucket] = useState<StatusBucket>(initialBucket);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -222,11 +234,17 @@ export default function InboxPage() {
   }, [groups]);
 
   const earlyCount = useMemo(() => groups.filter(isEarlyReg).length, [groups]);
+  const alumniCount = useMemo(() => groups.filter(isAlumniIntro).length, [groups]);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return groups.filter((g) => {
-      if (kindFilter === "early") {
+      if (kindFilter === "alumni") {
+        if (!isAlumniIntro(g)) return false;
+      } else if (isAlumniIntro(g)) {
+        // Never in the admissions stream — not even under "All".
+        return false;
+      } else if (kindFilter === "early") {
         if (!isEarlyReg(g)) return false;
       } else if (kindFilter !== "all" && g.kindCounts[kindFilter] === 0) return false;
       if (bucket !== "all" && statusBucket(g) !== bucket) return false;
@@ -332,7 +350,7 @@ export default function InboxPage() {
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <KindChip
             label="All"
-            count={groups.length}
+            count={groups.length - alumniCount}
             Icon={InboxIcon}
             active={kindFilter === "all"}
             onClick={() => setKindFilter("all")}
@@ -356,6 +374,13 @@ export default function InboxPage() {
             Icon={Sparkles}
             active={kindFilter === "early"}
             onClick={() => setKindFilter("early")}
+          />
+          <KindChip
+            label="Alumni Intro"
+            count={alumniCount}
+            Icon={Users}
+            active={kindFilter === "alumni"}
+            onClick={() => setKindFilter("alumni")}
           />
         </div>
 

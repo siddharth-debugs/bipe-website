@@ -10,6 +10,7 @@ import { forwardToBackend } from "@/lib/backend";
 import { forwardLeadToCrm } from "@/lib/crm-forward";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import {
+  alumniIntroRef,
   fireAlumniIntroAdminNotification,
   fireSubmissionConfirmation,
 } from "@/lib/doubleTick";
@@ -216,6 +217,37 @@ export async function POST(req: Request) {
       name: d.name,
       alumniName: d.alumniName,
       submissionId: refSuffix,
+    }));
+
+    // 3. Persist it. Until 4 Sep 2026 nothing was stored at all — the
+    //    admin's WhatsApp was the ONLY record, so a deleted or lost
+    //    message lost the request outright (owner: "alumni requests
+    //    should be stored somewhere"). It rides the `enquiry` ingest with
+    //    source "alumni-intro" rather than a new backend kind, exactly as
+    //    the Early Seat Registration campaign does — no Django migration,
+    //    and the Inbox keeps them OUT of the admissions lead stream (they
+    //    show only under their own chip), which is what the 29 May
+    //    direction asked for. after() so the send is awaited, not frozen
+    //    mid-flight; a storage failure logs and never fails the visitor's
+    //    request, because the WhatsApp legs above have already fired.
+    const alumnusLine = [d.alumniName, d.alumniBranch, d.alumniYear, d.alumniCompany]
+      .filter((v): v is string => !!v && v.length > 0)
+      .join(", ");
+    after(() => forwardToBackend("enquiry", {
+      name: d.name,
+      phone: d.phone,
+      email: d.email ?? "",
+      // Deliberately blank: the alumnus's branch is NOT the visitor's
+      // branch of interest, and this column feeds admissions reporting.
+      branch: "",
+      source: "alumni-intro",
+      message: [
+        `Alumni introduction request ${alumniIntroRef(refSuffix)}`,
+        `Wants an introduction to: ${alumnusLine} [#${d.alumniId}]`,
+        `Purpose: ${d.purpose}`,
+        d.purposeNote ? `Note: ${d.purposeNote}` : null,
+      ].filter(Boolean).join("\n").slice(0, 1000),
+      consent: d.consent,
     }));
 
     return NextResponse.json({ ok: true, id: refSuffix });
