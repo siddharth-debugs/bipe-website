@@ -2,7 +2,6 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
 import { forwardToBackend } from "@/lib/backend";
 import { forwardLeadToCrm } from "@/lib/crm-forward";
-import { fireMetaLeadAdminNotification } from "@/lib/doubleTick";
 import { BRANCH_OPTIONS_ALL } from "@/lib/formOptions";
 
 export const runtime = "nodejs";
@@ -221,9 +220,8 @@ async function processLead(leadgenId: string, pageToken: string): Promise<void> 
     .slice(0, 1000);
 
   // 1) Same admin inbox as every website enquiry. Phone is required by the
-  //    backend serializer — a lead with an unparseable number still reaches
-  //    the admin via WhatsApp below, and stays in Meta's Leads Center.
-  let submissionId: number | null = null;
+  //    backend serializer — a lead with an unparseable number is logged
+  //    loudly below and stays in Meta's Leads Center (its only copy).
   if (phone10) {
     const r = await forwardToBackend("enquiry", {
       name,
@@ -234,8 +232,7 @@ async function processLead(leadgenId: string, pageToken: string): Promise<void> 
       message,
       consent: true, // the Instant Form carries the privacy-policy consent step
     });
-    if (r.ok) submissionId = r.id;
-    else console.warn(`[meta-leads] backend ingest failed for lead ${leadgenId}: ${r.error}`);
+    if (!r.ok) console.warn(`[meta-leads] backend ingest failed for lead ${leadgenId}: ${r.error}`);
     // Land it in the Sampark CRM too (2026-08-17) — until now Meta ad leads
     // stopped at the website inbox and never reached the consultants'
     // queues, callbacks, or the auto-ack. Deliberately NOT gated on r.ok:
@@ -247,19 +244,14 @@ async function processLead(leadgenId: string, pageToken: string): Promise<void> 
       backendId: r.ok ? r.id : undefined,
     });
   } else {
-    console.warn(`[meta-leads] lead ${leadgenId} has no usable Indian mobile ("${phoneRaw}") — skipping backend ingest, admin ping still fires`);
+    console.warn(`[meta-leads] lead ${leadgenId} has no usable Indian mobile ("${phoneRaw}") — skipping backend + CRM ingest — it exists ONLY in Meta's Leads Center, pull it by hand`);
   }
 
-  // 2) Admin WhatsApp — unconditional: this is the speed-to-lead safety net.
-  fireMetaLeadAdminNotification({
-    refSuffix: submissionId !== null ? String(submissionId) : "00",
-    name,
-    phone: phone10 || phoneRaw || "no phone",
-    email: email || undefined,
-    city: city || undefined,
-    branch: branch || branchAnswer || undefined,
-    campaign: campaign || undefined,
-  });
+  // 2) Admin WhatsApp ping — RETIRED 4 Sep 2026 (owner decision). It pushed
+  //    the legacy 4-placeholder contract into a 2-slot template, so it never
+  //    delivered; since 17 Aug the Sampark CRM alerts the consultants itself
+  //    (bipe_lead_alert / bipe_new_enquiry_alert) as soon as the forward
+  //    above lands. Speed-to-lead lives in the CRM now, not here.
 
   // 3) Student confirmation now comes from the Sampark CRM's auto-ack
   //    (bipe_enquiry_response on the BIPE number) when the forward above
