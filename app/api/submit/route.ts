@@ -249,6 +249,13 @@ export async function POST(req: Request) {
       ].filter(Boolean).join("\n").slice(0, 1000),
       consent: d.consent,
     }));
+    // RETENTION: this row holds a visitor's name, phone, e-mail and stated
+    // purpose, and the visitor is often a minor (BIPE markets to 10th-pass
+    // students). Proposed policy — 540 days then ANONYMISE, matching the
+    // trust's existing dpdp.data_retention_policies "lost_inquiry" rule.
+    // NOT ENFORCED: the CRM's retention jobs run on a different server and
+    // do not reach this backend, so nothing expires these rows today. See
+    // BIPE_Data_Retention_Policy.md §4 for what the backend must add.
 
     return NextResponse.json({ ok: true, id: refSuffix });
   }
