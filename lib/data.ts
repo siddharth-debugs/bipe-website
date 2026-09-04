@@ -300,7 +300,7 @@ export const DATA: DataShape = {
     {
       code: "355", slug: "computer-science-engineering",
       name: "Computer Science & Engineering", hi: "कंप्यूटर साइंस एंड इंजीनियरिंग",
-      seats: 60, fee: "30,150",
+      seats: 120, fee: "30,150",
       desc: "Programming, data structures, networks, AI/ML — taught with our 120-computer lab. Strong B.Tech CSE pathway.",
       tag: "Popular", color: 1,
       thumbnail: {
@@ -316,7 +316,7 @@ export const DATA: DataShape = {
     {
       code: "327", slug: "dairy-engineering",
       name: "Dairy Engineering", hi: "डेयरी इंजीनियरिंग",
-      seats: 60, fee: "30,150",
+      seats: 0, fee: "30,150",
       desc: "Milk processing, dairy machinery, refrigeration, microbiology and quality assurance.",
       // Retired from every public surface 3 Sep 2026. Retained here only
       // because /approvals and /mandatory-disclosure publish the sanctioned
@@ -527,8 +527,15 @@ export const DATA: DataShape = {
 /**
  * ── Public branches vs. sanctioned branches ─────────────────────────
  *
- * BIPE is SANCTIONED for five BTEUP branches and 480 seats. It PUBLISHES
- * four, 420 seats. Those are two different true numbers and they are not
+ * BIPE is SANCTIONED for 480 seats. Since the 4 Sep 2026 reallocation
+ * (owner: "Intake strength will remain 480, dairy seats will be adjusted in
+ * some other branch" — Computer Science named the same day), the four public
+ * branches carry all 480: CSE 120, Civil 120, Electrical 120, Mechanical 120.
+ * The retired branch is held at 0 so SANCTIONED_SEATS still totals 480.
+ * NOTE: /approvals and /mandatory-disclosure reproduce the 2026-27 AICTE EoA,
+ * which sanctioned CSE 60 + Dairy 60 — those pages are hardcoded and are
+ * deliberately NOT derived from here. They are the approval record; this is
+ * the current allocation. Two different true numbers and they are not
  * interchangeable — the same trap as the three recruiter counts.
  *
  *   PUBLIC_BRANCHES  → what the site shows (4). Use for every visitor-
