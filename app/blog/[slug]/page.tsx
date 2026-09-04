@@ -89,14 +89,14 @@ function withInlineCta(sections: BlogSection[], hi: boolean): BlogSection[] {
     ? {
         type: "cta",
         title: "पॉलिटेक्निक डिप्लोमा का सोच रहे हैं? 2027-28 के लिए BIPE से अभी बात करें।",
-        body: "AICTE-approved · BTEUP code 4455 · Phoolpur, Varanasi में 5 diploma branches। 2026-27 के admission बंद हो चुके हैं — अगले सत्र (2027-28) के लिए admission team से हिंदी में बात करें, कोई pressure नहीं।",
+        body: "AICTE-approved · BTEUP code 4455 · Phoolpur, Varanasi में 4 diploma branches। 2026-27 के admission बंद हो चुके हैं — अगले सत्र (2027-28) के लिए admission team से हिंदी में बात करें, कोई pressure नहीं।",
         applyLabel: "2027-28 के लिए enquiry करें",
         waLabel: "WhatsApp पर बात करें",
       }
     : {
         type: "cta",
         title: "Planning your polytechnic diploma? Talk to BIPE about 2027-28.",
-        body: "AICTE-approved · BTEUP code 4455 · five diploma branches in Phoolpur, Varanasi. Admissions for 2026-27 have closed — talk to us in Hindi or English about the next session, no pressure.",
+        body: "AICTE-approved · BTEUP code 4455 · four diploma branches in Phoolpur, Varanasi. Admissions for 2026-27 have closed — talk to us in Hindi or English about the next session, no pressure.",
       };
   return [...sections.slice(0, at), cta, ...sections.slice(at)];
 }
@@ -545,7 +545,7 @@ export default async function BlogPostPage(
                 Visit the campus <ArrowIcon />
               </Link>
               <Link href="/courses" className="btn btn-ghost">
-                View all 5 polytechnic branches <ArrowIcon />
+                View all 4 polytechnic branches <ArrowIcon />
               </Link>
             </div>
           </div>

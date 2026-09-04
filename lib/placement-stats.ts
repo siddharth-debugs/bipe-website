@@ -136,20 +136,20 @@ export const PLACEMENT_STATS = {
   /** "1,363" — the verified placements number. Used on hero strips
    *  AND structured data, because it's both round AND defensible. */
   totalPlacements: PLACEMENT_VERIFIED.totalPlacements,
-  /** "44" — marketing claim used in headline copy. Falls back to the
+  /** "46" — marketing claim used in headline copy. Falls back to the
    *  verified distinct-recruiter count if the canonical drops below. */
   totalRecruiters: Math.max(
     PLACEMENT_CANONICAL.totalRecruiters,
     PLACEMENT_VERIFIED.distinctRecruiters,
   ),
-  /** "47" — exact count from the file. Use this for "Drives
+  /** "51" — exact count from the file. Use this for "Drives
    *  documented" tiles. */
   totalDrives: PLACEMENT_VERIFIED.totalDrives,
   /** "Vikas Group" — top single recruiter. */
   topRecruiterName: PLACEMENT_VERIFIED.topRecruiter.name,
   /** "202" — placements at the top recruiter. */
   topRecruiterCount: PLACEMENT_VERIFIED.topRecruiter.count,
-  /** "2016" – "2025" range. */
+  /** "2016" – "2026" range. */
   startYear: PLACEMENT_VERIFIED.startYear,
   endYear: PLACEMENT_VERIFIED.endYear,
   yearsOnRecord: PLACEMENT_VERIFIED.yearsOnRecord,

@@ -1300,7 +1300,7 @@ export default async function Page() {
                 <div className="row" style={{ marginTop: 48, gap: 24, flexWrap: "wrap", alignItems: "center" }}>
                   {[
                     { num: formatPlacements(PLACEMENT_STATS.totalPlacements), l: "placed" },
-                    { num: "44", l: "recruiters" },
+                    { num: String(PLACEMENT_STATS.totalRecruiters), l: "recruiters" },
                     { num: "16", l: "years" },
                     { num: "2200+", l: "alumni" },
                   ].map((s, i) => (

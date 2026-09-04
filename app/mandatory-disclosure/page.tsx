@@ -114,14 +114,17 @@ const SECTIONS: Section[] = [
     title: "Faculty — count, qualifications, ratio",
     body: (
       <>
-        {/* Five departments, not four. This is an Annexure-18 filing:
-            §06 above declares five sanctioned branches, lib/faculty.ts
-            carries three named Dairy Engineering lecturers, and the
-            /faculty roster renders them. Stating four here to match the
-            public site would contradict both and understate the
-            declared faculty. Compliance pages track the approval and the
-            payroll, not the marketing. 3 Sep 2026. */}
-        <p><strong>40 BTEUP-recognised faculty</strong> across five departments (Computer Science, Civil, Electrical, Mechanical, Dairy Engineering) — one per BTEUP-affiliated branch.</p>
+        {/* FOUR departments. This is a staffing statement, and it must
+            agree with the Annexure-18 §7 roster this section links to:
+            lib/faculty.ts carries no Dairy department — the three former
+            Dairy lecturers were reassigned to Mechanical on 3 Sep 2026
+            (a766a8a), so /faculty renders four. The earlier note here
+            claimed the roster still listed them; that ceased to be true
+            the same day. §06's sanctioned-branch declaration is a
+            separate claim about the approval and is deliberately
+            unchanged — the approval and the payroll are different
+            filings. 4 Sep 2026. */}
+        <p><strong>40 BTEUP-recognised faculty</strong> across four departments (Computer Science, Civil, Electrical, Mechanical).</p>
         <p>Mentor-to-student ratio: <strong>1:20</strong> across the diploma. Faculty are AICTE-FDP trained and OBE-aligned.</p>
         <p>The department-wise roster required by AICTE Annexure-18 §7 — every academic faculty member&rsquo;s name, designation, qualification and experience — is published in full on the <Link href="/faculty">Faculty page</Link>.</p>
         <p style={{ fontStyle: "italic", color: "var(--ink-3)" }}>The one Annexure-18 field not carried there is date of appointment; joining dates are available on request from <a href={`mailto:${DATA.contact.email}`}>{DATA.contact.email}</a>.</p>

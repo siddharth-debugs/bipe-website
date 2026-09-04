@@ -2460,7 +2460,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "p",
         html:
-          "बीआईपीई (Banaras Institute of Polytechnic & Engineering) — JEECUP संस्थान कोड <strong>4455</strong> — वाराणसी के फूलपुर तहसील में 6 एकड़ के campus पर स्थित है। 16 साल का track record, 1,363 verified alumni placements, और 5 BTEUP-affiliated branches — जिनमें से 4 में 2026-27 में admission है। प्रमुख विशेषताएँ:",
+          "बीआईपीई (Banaras Institute of Polytechnic & Engineering) — JEECUP संस्थान कोड <strong>4455</strong> — वाराणसी के फूलपुर तहसील में 6 एकड़ के campus पर स्थित है। 16 साल का track record, 1,363 verified alumni placements, और 4 BTEUP-affiliated branches। प्रमुख विशेषताएँ:",
       },
       {
         type: "ul",

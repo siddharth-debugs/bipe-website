@@ -243,7 +243,7 @@ export const Branches = ({
 
         {/* Sanctioned-seats callout · preserved from the previous version.
             Acts as a trust-signal hook into /approvals; doesn't compete
-            with the 5-card grid above visually (dashed border, different
+            with the branch-card grid above visually (dashed border, different
             tone). */}
         <Link
           href="/approvals"
@@ -262,7 +262,7 @@ export const Branches = ({
           <div className="between">
             <div>
               <div className="eyebrow" style={{ color: "var(--accent)" }}>
-                480 sanctioned seats · 2026-27
+                420 sanctioned seats · 2026-27
               </div>
               <div
                 style={{

@@ -18,7 +18,7 @@ const BENEFITS = [
   {
     tag: "Admissions guidance",
     title: "We walk you through the next cycle",
-    body: "Our admissions team explains how admission to BIPE works — the five branches, the JEECUP route to code 4455, fees, hostel, and the documents to have ready before the next cycle opens. Free, on call or WhatsApp.",
+    body: "Our admissions team explains how admission to BIPE works — the four branches, the JEECUP route to code 4455, fees, hostel, and the documents to have ready before the next cycle opens. Free, on call or WhatsApp.",
   },
   {
     tag: "Popular branches fill first",

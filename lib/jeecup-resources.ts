@@ -126,7 +126,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     slug: "jeecup-round-4-2026",
     shortTitle: "JEECUP Round 4 · Phase 2",
     title: "JEECUP Round 4 2026 · Phase 2 Opened for ALL States (Bihar too) | BIPE 4455",
-    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1, open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, what has closed, and how to ask BIPE about a seat — code 4455.",
+    description: "JEECUP 2026 Round 4 (Phase 2) — the big re-opening after Round 1, open to other-state candidates (Bihar, Jharkhand, MP) and anyone who missed Rounds 1–3. Round-by-round eligibility, what closed when, and where the 2026-27 cycle ended — code 4455.",
     keywords: [
       "JEECUP round 4",
       "JEECUP round 4 2026",
@@ -487,11 +487,11 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
     headlineAccent: "check your rank card now.",
     heroAlert: {
       badge: "Result declared",
-      text: "JEECUP 2026 results are out. Check your rank on the official portal — then, with all five counselling rounds closed and classes under way, talk to BIPE admissions (code 4455) about a seat.",
+      text: "JEECUP 2026 results are out. Check your rank on the official portal — then, with all five counselling rounds closed and classes under way, admission to BIPE for session 2026-27 is closed. Talk to admissions (code 4455) about session 2027-28 through JEECUP 2027.",
       primary: { label: "Check on JEECUP portal →", href: "https://jeecup.admissions.nic.in" },
       secondary: { label: "Admissions enquiry →", href: "/early-registration" },
     },
-    lead: "JEECUP 2026 results are out. Log in at jeecup.admissions.nic.in to see your raw marks, percentile, all-India rank, category rank (if applicable), and to download your rank card. This page walks through the check process and explains what each number means for counselling — and how to talk to BIPE about a seat now that the session has begun.",
+    lead: "JEECUP 2026 results are out. Log in at jeecup.admissions.nic.in to see your raw marks, percentile, all-India rank, category rank (if applicable), and to download your rank card. This page walks through the check process and explains what each number means for counselling — and what your rank means for planning the JEECUP 2027 cycle, now that session 2026-27 has closed.",
     quickStats: [
       { label: "Status", value: "Result declared", sub: "Out now — check the portal" },
       { label: "Where", value: "jeecup.admissions.nic.in", sub: "Result tab" },
@@ -682,7 +682,7 @@ export const JEECUP_RESOURCES: JeecupResource[] = [
       },
     ],
     ctaTitle: "Know your rank — now place it right.",
-    ctaBody: "Send us your JEECUP rank and we'll tell you, honestly, which branches are realistic at BIPE and how to order your counselling choices to land one. Free, in English or Hindi — and we'll hold your preferred branch with Early Seat Registration while the rounds run.",
+    ctaBody: "Send us your JEECUP rank and we'll give you an honest read on which branches at BIPE your band reaches. JEECUP 2026 counselling has concluded and admission for session 2026-27 is closed — treat this as a reference for ordering your choices in the JEECUP 2027 cycle, for session 2027-28. Free, in English or Hindi.",
   },
 
   // ─────────────────────────────────────────────────────────────────

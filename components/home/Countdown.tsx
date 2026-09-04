@@ -62,7 +62,7 @@ export const Countdown = () => {
                   Classes have <span className="serif">begun.</span>
                 </h2>
                 <p className="lead" style={{ marginTop: 14 }} suppressHydrationWarning>
-                  The 2026-27 session started on 1 August, and JEECUP counselling has now concluded — <strong>Round 5 was the final round</strong>, and it closed in mid-August. If you are still without a seat, talk to BIPE admissions (code 4455): they will tell you honestly what is open before you travel.
+                  The 2026-27 session started on 1 August, and JEECUP counselling has now concluded — <strong>Round 5 was the final round</strong>, and it closed in mid-August. Admission to BIPE for session 2026-27 is closed — there is no seat to offer this session. If you are planning session 2027-28, BIPE admissions (code 4455) will walk you through JEECUP 2027.
                 </p>
               </>
             ) : (
@@ -73,7 +73,7 @@ export const Countdown = () => {
             )}
 
             <div className="row" style={{ marginTop: 22, flexWrap: "wrap" }}>
-              <Link href="/apply" className="btn btn-primary">Apply now <ArrowIcon /></Link>
+              <Link href="/apply" className="btn btn-primary">Enquire for 2027-28 <ArrowIcon /></Link>
               <Link href="/jeecup" className="btn btn-ghost">JEECUP guide</Link>
             </div>
           </div>

@@ -84,7 +84,7 @@ export default function BranchesAdmin() {
   return (
     <>
       <PageHeader eyebrow="Content · Branches" title="Diploma" accent="branches."
-        description="The five BTEUP branches shown across the site. Overrides the static lib/data.ts list when present." />
+        description="The BTEUP branches shown across the site. Overrides the static lib/data.ts list when present." />
       {err && <Banner kind="error" onDismiss={() => setErr(null)}>{err}</Banner>}
       {msg && <Banner kind="ok" onDismiss={() => setMsg(null)}>{msg}</Banner>}
 

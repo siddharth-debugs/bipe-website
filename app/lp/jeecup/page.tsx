@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 // ad) use. See app/placements/page.tsx for the same resolution.
 const TRUST: [string, string][] = [
   ["AICTE-approved", "Permanent ID 1-488233171"],
-  ["BTEUP · code 4455", "5 diploma branches"],
+  ["BTEUP · code 4455", "4 diploma branches"],
   [`${formatPlacements(PLACEMENT_STATS.totalPlacements)}+ placements`, "TPO-verified · Mahindra · Tata · BEL"],
   ["Since 2010", "16 years on record"],
 ];

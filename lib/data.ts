@@ -292,7 +292,7 @@ export const DATA: DataShape = {
     { num: _placed, label: "Placements · TPO-verified", sub: "Across the 2,200+ alumni network since 2010" },
     // Counts what a visitor can act on. The AICTE-sanctioned figure lives
     // on /approvals and /mandatory-disclosure, where it belongs.
-    { num: "4", label: "Branches admitting 2026-27", sub: "BTEUP-affiliated · JEECUP code 4455" },
+    { num: "4", label: "Diploma branches", sub: "BTEUP-affiliated · JEECUP code 4455" },
     { num: "1:20", label: "Mentor : student ratio", sub: "with home visits" },
     { num: "6", label: "Acre Phoolpur campus", sub: "hostel & labs" },
   ],
