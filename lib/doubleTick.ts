@@ -249,9 +249,10 @@ export function fireSubmissionConfirmation(args: {
   /** alumni-contact only: the alumnus the visitor asked to be introduced
    *  to. Fills {{2}} / {{5}} of bipe_alumni_intro_received_v1. */
   alumniName?: string;
-}): void {
+}): Promise<void> {
   const templateName = resolveTemplateName(args.formType);
-  if (!templateName) return; // Template lookup failed AND no default
+  // Template lookup failed AND no default.
+  if (!templateName) return Promise.resolve();
 
   const firstName = args.name.trim().split(/\s+/)[0] || args.name.trim();
   const referenceId = buildReferenceId(
@@ -278,7 +279,13 @@ export function fireSubmissionConfirmation(args: {
     placeholders = [firstName, referenceId, course, callbackHours];
   }
 
-  sendDoubleTickTemplate({
+  // MUST return the promise. The caller wraps this in next/server's
+  // after(), which only keeps the function alive for the promise the
+  // callback RETURNS — a floating .then() chain is killed when Vercel
+  // freezes the lambda after the response, exactly as 61615d8 found for
+  // the CRM forward. 33fb114 wrapped these calls in after() but left them
+  // returning void, so the wrap was inert and no WhatsApp ever sent.
+  return sendDoubleTickTemplate({
     to: args.phone,
     templateName,
     placeholders,
@@ -336,13 +343,13 @@ export function fireAlumniIntroAdminNotification(args: {
   alumniBranch?: string;
   alumniYear?: string;
   alumniCompany?: string;
-}): void {
+}): Promise<void> {
   const adminNumber = process.env.DOUBLETICK_ADMIN_NUMBER;
   if (!adminNumber) {
     console.warn(
       "[doubleTick] ALUMNI INTRO REQUEST RECEIVED but DOUBLETICK_ADMIN_NUMBER is missing — admin will NOT be notified. Configure the env var to restore the audit trail.",
     );
-    return;
+    return Promise.resolve();
   }
 
   const templateName =
@@ -381,7 +388,8 @@ export function fireAlumniIntroAdminNotification(args: {
     oneLine(purposeLine, 400),
   ];
 
-  sendDoubleTickTemplate({
+  // Returned, not floated — see the note in fireSubmissionConfirmation.
+  return sendDoubleTickTemplate({
     to: adminNumber,
     templateName,
     placeholders,
