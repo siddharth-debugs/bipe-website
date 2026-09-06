@@ -76,10 +76,11 @@ const isEarlyReg = (g: LeadGroup): boolean =>
 // An /alumni introduction request. Stored from 4 Sep 2026 on the "enquiry"
 // kind with this source rather than a backend kind of its own. Unlike Early
 // Reg these are NOT admissions leads — nobody should call them about a seat
-// — so they are hidden from "All" and from the Enquiry chip and surface
-// ONLY under their own chip. That is the 29 May direction ("don't show this
-// as a new row in the backend dashboard") honoured while still keeping the
-// record, which WhatsApp alone used to hold.
+// — so they are hidden from "All" and from the Enquiry chip, surfacing under
+// their own chip or an active search. That is the 29 May direction ("don't
+// show this as a new row in the backend dashboard") honoured while still
+// keeping the record, which WhatsApp alone used to hold — and still findable
+// by someone who goes looking for a specific person.
 // The submit route refuses this source from a client, so reaching here means
 // the alumni-contact branch really did write it (see SERVER_ONLY_SOURCES).
 const isAlumniIntro = (g: LeadGroup): boolean =>
@@ -296,8 +297,19 @@ export default function InboxPage() {
       if (kindFilter === "alumni") {
         if (!isAlumniIntro(g)) return false;
       } else if (isAlumniIntro(g)) {
-        // Never in the admissions stream — not even under "All".
-        return false;
+        // Not admissions leads — nobody should call them about a seat — so
+        // they stay out of every other chip, including "All" (29 May ruling).
+        //
+        // EXCEPT under an active search, which reaches them like it reaches
+        // spam. Someone typing a phone number is looking for that person, and
+        // returning nothing tells them no such record exists — which was a
+        // lie: an alumni request holds a real name, phone and stated purpose.
+        //
+        // Conditional INSIDE this branch rather than on the `else if` itself:
+        // widening the condition would let alumni groups fall through to the
+        // early-reg and per-kind tests below, which is a different rule
+        // decided by line order rather than by intent.
+        if (!q) return false;
       } else if (kindFilter === "early") {
         if (!isEarlyReg(g)) return false;
       } else if (kindFilter !== "all" && g.kindCounts[kindFilter] === 0) return false;
