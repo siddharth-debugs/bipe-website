@@ -119,6 +119,13 @@ export default async function HomePage() {
           Schedule + copy live in lib/jeecupBannerRounds.ts; the client component
           re-checks the live clock so it flips at the exact IST threshold with no
           manual edits. The server passes the build-time round so hydration matches. */}
+      {/* eslint-disable-next-line react-hooks/purity --
+      this file is a Server Component (no "use client"), so this render
+      happens once on the server and the clock read is the intended
+      mechanism: it hands the client component a build-time value to
+      hydrate against, exactly as the note above describes. The rule's
+      hazard -- a render whose output silently drifts between client
+      renders -- cannot arise here. */}
       <JeecupCounsellingBanner initialN={bannerRoundAt(Date.now())?.n ?? 0} />
       {/* Director appointment announcement (Aug 2026). Placed here, directly
           under the counselling banner, because it is time-sensitive news and

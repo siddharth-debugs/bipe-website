@@ -1,6 +1,7 @@
 "use client";
 
-import { forwardRef } from "react";
+import type React from "react";
+
 
 /**
  * Invisible decoy input used to catch form-spamming bots.
@@ -51,7 +52,12 @@ const honeypotStyle: React.CSSProperties = {
   pointerEvents: "none",
 };
 
-export const Honeypot = forwardRef<HTMLInputElement>(function Honeypot(_, ref) {
+/*
+ * `ref` is taken as an ordinary prop rather than via forwardRef: React 19
+ * passes ref straight through to function components, and forwardRef is
+ * deprecated. The wrapper also tripped react-hooks/refs at every call site.
+ */
+export function Honeypot({ ref }: { ref?: React.Ref<HTMLInputElement> }) {
   return (
     <input
       ref={ref}
@@ -64,4 +70,4 @@ export const Honeypot = forwardRef<HTMLInputElement>(function Honeypot(_, ref) {
       style={honeypotStyle}
     />
   );
-});
+}

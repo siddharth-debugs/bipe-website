@@ -11,9 +11,19 @@ const Cell = ({ v, l }: { v: number; l: string }) => (
   </span>
 );
 
+// Both clock reads are captured at module evaluation rather than during
+// render. Reading the clock while rendering is impure -- it makes the
+// render's output depend on when React happened to call it, which is what
+// react-hooks/purity flags. The interval below is what keeps the strip
+// live; the seed only has to be a fixed starting point. (The digits carry
+// suppressHydrationWarning, so a server/client seed difference was already
+// expected and handled here.)
+const TARGET = new Date("2026-08-01T00:00:00").getTime();
+const SEED_NOW = Date.now();
+
 export function AdmStrip() {
-  const target = new Date("2026-08-01T00:00:00").getTime();
-  const [now, setNow] = useState(Date.now());
+  const target = TARGET;
+  const [now, setNow] = useState(SEED_NOW);
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
