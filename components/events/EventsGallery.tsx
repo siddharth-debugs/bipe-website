@@ -36,11 +36,13 @@ export function EventsGallery() {
   }, [category, year]);
 
   // Reset lightbox if its target falls outside the filtered set
-  React.useEffect(() => {
-    if (lightboxIndex !== null && lightboxIndex >= filtered.length) {
-      setLightboxIndex(null);
-    }
-  }, [filtered.length, lightboxIndex]);
+  // Self-clearing correction, so it belongs in render rather than an
+  // effect: dropping the index makes the condition false, and React
+  // re-runs the render immediately instead of painting a lightbox that
+  // points past the end of the filtered list for one frame.
+  if (lightboxIndex !== null && lightboxIndex >= filtered.length) {
+    setLightboxIndex(null);
+  }
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { All: EVENT_PHOTOS.length };

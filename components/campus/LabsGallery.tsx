@@ -64,9 +64,11 @@ export function LabsGallery() {
   // Reset paging window each time the user picks a different tab — they
   // expect "show me the start of THIS category", not the leftover offset
   // from the previous filter.
-  useEffect(() => {
+  const [lastActive, setLastActive] = useState(active);
+  if (active !== lastActive) {
+    setLastActive(active);
     setVisible(PAGE_SIZE);
-  }, [active]);
+  }
 
   // Photos passed to the lightbox are the full filtered list, so left/
   // right navigation isn't truncated by the visible window.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { useHydrated } from "@/lib/useHydrated";
 import { useRouter } from "next/navigation";
 import { BLOG_POSTS } from "@/lib/blogPosts";
 import { ROUTES, type RouteKey } from "@/lib/routes";
@@ -82,18 +83,17 @@ export function CommandK() {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isMac, setIsMac] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
-  // Detect platform once on mount — purely cosmetic (shows ⌘K vs Ctrl+K
-  // in the affordance pill). The keyboard listener accepts both.
-  useEffect(() => {
-    setIsMac(
-      typeof navigator !== "undefined" &&
-        /Mac|iPhone|iPod|iPad/i.test(navigator.platform || navigator.userAgent),
-    );
-  }, []);
+  // Platform detection — purely cosmetic (shows ⌘K vs Ctrl+K in the
+  // affordance pill). The keyboard listener accepts both. Reads false until
+  // hydration so the server HTML and first paint agree; see lib/useHydrated.
+  const hydrated = useHydrated();
+  const isMac =
+    hydrated &&
+    typeof navigator !== "undefined" &&
+    /Mac|iPhone|iPod|iPad/i.test(navigator.platform || navigator.userAgent);
 
   // Global open/close hotkey + custom-event opener for the Nav button.
   useEffect(() => {
@@ -115,12 +115,23 @@ export function CommandK() {
   }, []);
 
   // When open, lock body scroll, reset state, focus the input.
+  // Clearing the query belongs with the state, not with the DOM work: the
+  // effect below keeps the body-scroll lock and the focus call, which are
+  // genuine external-system synchronisation, while the reset is adjusted
+  // during render so the previous session's query is never painted.
+  const [lastOpen, setLastOpen] = useState(open);
+  if (open !== lastOpen) {
+    setLastOpen(open);
+    if (open) {
+      setQ("");
+      setSelectedIndex(0);
+    }
+  }
+
   useEffect(() => {
     if (open) {
       const prevOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
-      setQ("");
-      setSelectedIndex(0);
       requestAnimationFrame(() => inputRef.current?.focus());
       return () => {
         document.body.style.overflow = prevOverflow;
@@ -164,9 +175,11 @@ export function CommandK() {
   }, [trimmed]);
 
   // Reset selection whenever the query changes.
-  useEffect(() => {
+  const [lastTrimmed, setLastTrimmed] = useState(trimmed);
+  if (trimmed !== lastTrimmed) {
+    setLastTrimmed(trimmed);
     setSelectedIndex(0);
-  }, [trimmed]);
+  }
 
   // Combined list for keyboard navigation (Quick Links when empty,
   // search results otherwise).

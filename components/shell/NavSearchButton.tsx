@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useHydrated } from "@/lib/useHydrated";
 
 /**
  * NavSearchButton — visible affordance in the navbar that opens the ⌘K
@@ -39,13 +39,13 @@ function SearchIcon() {
 }
 
 export function NavSearchButton() {
-  const [isMac, setIsMac] = useState(false);
-  useEffect(() => {
-    setIsMac(
-      typeof navigator !== "undefined" &&
-        /Mac|iPhone|iPod|iPad/i.test(navigator.platform || navigator.userAgent),
-    );
-  }, []);
+  // Reads false until hydration so the server HTML and the first client
+  // paint agree on the shortcut hint; see lib/useHydrated.
+  const hydrated = useHydrated();
+  const isMac =
+    hydrated &&
+    typeof navigator !== "undefined" &&
+    /Mac|iPhone|iPod|iPad/i.test(navigator.platform || navigator.userAgent);
 
   const open = () => {
     window.dispatchEvent(new CustomEvent("bipe:cmdk-open"));
