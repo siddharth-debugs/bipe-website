@@ -47,6 +47,16 @@ export function Counter({ to, duration = 1200, suffix = "" }: { to: string; dura
     const num = parseTarget(to);
     // Rewind to 0 only now — after hydration, so the server HTML and the
     // pre-hydration paint both kept the real number.
+    //
+    // This one setState genuinely belongs in the effect body, so it is
+    // suppressed rather than moved. Its timing is the entire point: it has
+    // to land after hydration (or SSR would emit 0 and the real number would
+    // never be in the markup) but before the element scrolls into view (or
+    // the viewer sees the number drop from its real value to 0 and count
+    // back up). Deriving it during render would put 0 in the server HTML;
+    // dropping it would move the rewind to the moment of intersection, which
+    // is exactly when it is visible.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setVal(0);
 
     let raf = 0;
