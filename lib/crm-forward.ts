@@ -72,7 +72,20 @@ export async function forwardLeadToCrm(
     return { ok: false, error: "not_configured" };
   }
 
-  const phone = String(input.phone || "").replace(/\D/g, "").replace(/^91/, "");
+  // Strip a country code / trunk prefix only when the LENGTH says there is
+  // one. This was `.replace(/^91/, "")`, applied unconditionally, so a valid
+  // 10-digit mobile that merely begins 91 — the 9174 / 9198 / 9199 series are
+  // live — was cut to 8 digits and rejected as invalid_phone below. That lead
+  // never reached the CRM, and since the CRM forward is what fires the
+  // visitor's WhatsApp ack (ac7a889), the student was never contacted at all:
+  // they saw the normal success screen and a reference number, and heard
+  // nothing again. Silent by construction — this result is discarded inside
+  // after(), and nothing in the codebase reads a CRM lead back.
+  //
+  // Same rule as normalisePhone() in lib/admin/leads.ts (keep the last 10);
+  // not imported because that module belongs to the client admin bundle.
+  const digits = String(input.phone || "").replace(/\D/g, "");
+  const phone = digits.length > 10 ? digits.slice(-10) : digits;
   if (phone.length !== 10 || !"6789".includes(phone[0])) {
     return { ok: false, error: "invalid_phone" };
   }
