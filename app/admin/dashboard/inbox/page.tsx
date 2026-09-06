@@ -275,16 +275,20 @@ export default function InboxPage() {
 
   const earlyCount = useMemo(() => groups.filter(isEarlyReg).length, [groups]);
   const alumniCount = useMemo(() => groups.filter(isAlumniIntro).length, [groups]);
-  // How many groups the spam toggle is actually removing from the current
-  // stream. Excludes alumni-intro because those never appear here anyway, so
-  // counting them would advertise hidden rows the toggle cannot reveal.
-  const spamCount = useMemo(
-    () => groups.filter((g) => !isAlumniIntro(g) && statusBucket(g) === "spam").length,
-    [groups],
-  );
+  const q = search.trim().toLowerCase();
 
-  const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
+  // Everything the current view shows EXCEPT the spam toggle's effect. Both
+  // the count and the visible list derive from this single pass, so the
+  // number the toggle states is exactly the number it removes. The previous
+  // count was computed from its own predicate and disagreed with the filter
+  // in the alumni-intro view: it excluded alumni-intro on the grounds that
+  // those "never appear here anyway", which holds for the admissions stream
+  // but not under kindFilter === "alumni", where they are the whole list. A
+  // spam-marked alumni lead was therefore hidden with the count reading 0 and
+  // the toggle unrendered — hidden rows with nothing disclosing them and no
+  // control to bring them back, which is the one thing this feature set out
+  // not to do.
+  const beforeSpamFilter = useMemo(() => {
     return groups.filter((g) => {
       if (kindFilter === "alumni") {
         if (!isAlumniIntro(g)) return false;
@@ -295,20 +299,6 @@ export default function InboxPage() {
         if (!isEarlyReg(g)) return false;
       } else if (kindFilter !== "all" && g.kindCounts[kindFilter] === 0) return false;
       if (bucket !== "all" && statusBucket(g) !== bucket) return false;
-      // Test runs and junk are marked spam by an operator, via a follow-up in
-      // the lead drawer. That is the only marker on this page a visitor
-      // cannot forge — it is written through the authenticated admin API
-      // rather than derived from the submission payload — and it lives on
-      // every kind, including visit, which carries no `source`.
-      //
-      // Hidden by default, but never unrecoverably: the toggle is visible and
-      // states the count, the Spam bucket still lists them, and an active
-      // search always reaches them. That search exemption is the important
-      // one — a real lead marked spam by mistake has to stay findable by
-      // phone or name, or it is lost as completely as if it had been deleted.
-      if (hideSpam && !q && bucket !== "spam" && statusBucket(g) === "spam") {
-        return false;
-      }
       if (q) {
         const hay = [
           g.name,
@@ -329,7 +319,37 @@ export default function InboxPage() {
       }
       return true;
     });
-  }, [groups, kindFilter, bucket, search, hideSpam]);
+  }, [groups, kindFilter, bucket, q]);
+
+  // Searching and the Spam bucket both exempt spam rows from hiding, so the
+  // toggle does nothing in those views. It is not rendered there rather than
+  // sitting inert claiming to hide a count it is not hiding.
+  const spamToggleApplies = !q && bucket !== "spam";
+  const hideSpamActive = hideSpam && spamToggleApplies;
+
+  // Test runs and junk are marked spam by an operator, via a follow-up in the
+  // lead drawer. That is the only marker on this page a visitor cannot forge
+  // — it is written through the authenticated admin API rather than derived
+  // from the submission payload — and it lives on every kind, including
+  // visit, which carries no `source`.
+  //
+  // Hidden by default, but never unrecoverably: the toggle is visible and
+  // states the count, the Spam bucket still lists them, and an active search
+  // always reaches them. That search exemption is the important one — a real
+  // lead marked spam by mistake has to stay findable by phone or name, or it
+  // is lost as completely as if it had been deleted.
+  const spamCount = useMemo(
+    () => beforeSpamFilter.filter((g) => statusBucket(g) === "spam").length,
+    [beforeSpamFilter],
+  );
+
+  const filtered = useMemo(
+    () =>
+      hideSpamActive
+        ? beforeSpamFilter.filter((g) => statusBucket(g) !== "spam")
+        : beforeSpamFilter,
+    [beforeSpamFilter, hideSpamActive],
+  );
 
   // Adjusts state during render rather than in an effect -- React's
   // documented answer for "a prop changed, derive fresh state from it"
@@ -501,11 +521,12 @@ export default function InboxPage() {
           ))}
         </div>
 
-        {/* Spam / test visibility. Rendered only when something is actually
-            being hidden, so the control shows up exactly when it has an
-            effect and the count discloses the hidden rows rather than
-            leaving them silently absent. */}
-        {spamCount > 0 && (
+        {/* Spam / test visibility. Rendered only where the toggle has an
+            effect — not while searching or in the Spam bucket, both of which
+            exempt spam rows from hiding — and only when this view actually
+            holds some. The count comes from the same pass that builds the
+            list, so it always matches what is being hidden. */}
+        {spamToggleApplies && spamCount > 0 && (
           <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
             <button
               type="button"
@@ -516,7 +537,7 @@ export default function InboxPage() {
             >
               {hideSpam
                 ? `Hiding ${spamCount} spam / test ${spamCount === 1 ? "lead" : "leads"} — show`
-                : "Showing spam / test leads — hide"}
+                : `Showing ${spamCount} spam / test ${spamCount === 1 ? "lead" : "leads"} — hide`}
             </button>
             <span style={{ fontSize: 11.5, color: "var(--ink-3)" }}>
               Marked from a lead&apos;s follow-up. Search always reaches them.
