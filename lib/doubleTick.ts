@@ -17,8 +17,13 @@
  * Configuration via environment variables:
  *   DOUBLETICK_API_KEY                       — required (no fallback)
  *   DOUBLETICK_FROM_NUMBER                   — BIPE WhatsApp Business
- *                                              sender number, e.g.
- *                                              "919415202879"
+ *                                              sender (the WABA handset):
+ *                                              "917310077788". NOT the
+ *                                              919415202879 call line —
+ *                                              that is what
+ *                                              DOUBLETICK_ADMIN_NUMBER
+ *                                              uses, and DT cannot send
+ *                                              from a number to itself.
  *   DOUBLETICK_TEMPLATE_APPLY_RECEIVED       — template for /apply
  *   DOUBLETICK_TEMPLATE_ENQUIRY_RECEIVED     — template for /contact +
  *                                              /visit (Enquiry flow)
@@ -234,10 +239,19 @@ function buildReferenceId(
 
 /**
  * Best-effort: fire the appropriate template after a successful form
- * submission. Always returns void — failures are swallowed and
- * logged. Designed to be invoked WITHOUT await from /api/submit
- * (the caller continues responding to the user while DT fires in
- * the background).
+ * submission. Failures are swallowed and logged, so the visitor's
+ * response is never affected by a DT outage.
+ *
+ * MUST be called inside next/server's after(), AND the promise it
+ * returns must reach after()'s callback — use a concise arrow body
+ * (`after(() => fireSubmissionConfirmation({...}))`), never a braced
+ * one that drops the return value. after() only keeps the function
+ * alive for the promise its callback RETURNS; given undefined it
+ * resolves immediately and Vercel freezes the lambda mid-fetch, so
+ * nothing sends and nothing logs either — the .then() that would have
+ * warned never runs. That was the defect in 33fb114 (silent since
+ * May), fixed in 6ce21cf. Do not "simplify" this back to
+ * fire-and-forget.
  */
 export function fireSubmissionConfirmation(args: {
   /** Submission type. Routes to the right env-var template override
@@ -325,10 +339,12 @@ export function fireSubmissionConfirmation(args: {
  *     notifications. MUST differ from DOUBLETICK_FROM_NUMBER (DT
  *     can't send from a number to itself).
  *   DOUBLETICK_TEMPLATE_ALUMNI_CONTACT_ADMIN     — optional override;
- *     defaults to DEFAULT_TEMPLATE_NAME so the flow ships without
- *     waiting for a dedicated admin template to be approved. Approve
- *     a purpose-built template later (with one placeholder per
- *     visitor + alumnus + purpose field) for cleaner copy.
+ *     defaults to ALUMNI_INTRO_ADMIN_TEMPLATE (five slots — contract at
+ *     the top of this file). Any override MUST have exactly five body
+ *     placeholders to match the array built below, or DT rejects the
+ *     send. Never point it at DEFAULT_TEMPLATE_NAME: that legacy
+ *     template has two real slots and was rejected on every attempt
+ *     from this path.
  *
  * Failure mode: any DT error (network, missing env var, template
  * rejection) is logged and swallowed. The visitor's response stays
