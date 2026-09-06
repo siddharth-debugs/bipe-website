@@ -15,7 +15,19 @@ name: CI · lint + typecheck + build
 #
 # Triggers:
 #   - push to main          (catch issues that landed already)
-#   - pull_request           (catch issues before merge)
+#   - pull_request           (catch issues before merge, ANY base branch)
+#   - workflow_dispatch      (manual re-run without pushing)
+#
+#   `pull_request` deliberately carries no `branches:` filter. That filter
+#   matches the BASE branch, so a stacked PR — one opened against another
+#   feature branch rather than against main — got no checks at all. That
+#   happened on 6 Sep 2026: PR #6 sat on PR #5's branch and never ran
+#   typecheck or build, which meant the larger and riskier of the two
+#   changes was the one going unverified. Retargeting a PR to main does not
+#   rescue it either: changing the base fires `pull_request: edited`, and
+#   the default activity types are opened / synchronize / reopened, so no
+#   run is queued until the next push. Running on every PR regardless of
+#   base costs a couple of runner minutes and removes the whole trap.
 #
 # Cost:
 #   - Runs ~2 minutes on a public-repo GitHub-hosted runner.
@@ -52,7 +64,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   typecheck-and-build:
