@@ -8,6 +8,7 @@ import {
 } from "@/lib/validation";
 import { forwardToBackend } from "@/lib/backend";
 import { forwardLeadToCrm } from "@/lib/crm-forward";
+import { SERVER_ONLY_SOURCES, SOURCE_ALUMNI_INTRO } from "@/lib/formOptions";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import {
   alumniIntroRef,
@@ -139,12 +140,31 @@ export async function POST(req: Request) {
       );
     }
     const d = result.data;
+    // enquiry is the ONLY kind whose `source` is free text — apply and contact
+    // validate against the SOURCE_OPTIONS enum, and visit has no source at all.
+    // The Inbox classifies rows by that string, and an alumni-intro group is
+    // dropped from every admissions view, so a visitor POSTing
+    // {formType:"enquiry", source:"alumni-intro"} could hide their own
+    // submission from the people who triage it while still landing a CRM lead
+    // and a WhatsApp send. Only the alumni-contact branch below may set it.
+    //
+    // Neutralised rather than rejected: a genuine submission still lands and
+    // the visitor still gets their callback — it simply cannot claim a
+    // classification the server owns. Logged so a real attempt is visible.
+    const claimedSource = d.source ?? "";
+    const forgedSource = SERVER_ONLY_SOURCES.includes(claimedSource);
+    if (forgedSource) {
+      console.warn(
+        `[submit] enquiry claimed server-only source "${claimedSource}" — neutralised`,
+      );
+    }
+    const safeSource = forgedSource ? "" : claimedSource;
     const r = await forwardToBackend("enquiry", {
       name: d.name,
       phone: d.phone,
       email: d.email ?? "",
       branch: d.branch ?? "",
-      source: d.source || "inquiry-modal",
+      source: safeSource || "inquiry-modal",
       message: d.message ?? "",
       consent: d.consent ?? false,
     });
@@ -157,7 +177,10 @@ export async function POST(req: Request) {
       // FROZEN sample text), so the vendor rejected every send anyway.
       after(() => forwardLeadToCrm({
         name: d.name, phone: d.phone, email: d.email ?? "",
-        branch: d.branch ?? "", formType: "enquiry", source: d.source,
+        // safeSource, not d.source — lib/crm-forward.ts interpolates this
+        // straight into Sampark's own attribution field, so a forged value
+        // would pollute an external system too.
+        branch: d.branch ?? "", formType: "enquiry", source: safeSource,
         backendId: r.id,
         attribution: (body as { attribution?: unknown }).attribution,
       }));
@@ -240,7 +263,7 @@ export async function POST(req: Request) {
       // Deliberately blank: the alumnus's branch is NOT the visitor's
       // branch of interest, and this column feeds admissions reporting.
       branch: "",
-      source: "alumni-intro",
+      source: SOURCE_ALUMNI_INTRO,
       message: [
         `Alumni introduction request ${alumniIntroRef(refSuffix)}`,
         `Wants an introduction to: ${alumnusLine} [#${d.alumniId}]`,

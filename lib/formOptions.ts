@@ -65,3 +65,28 @@ export const SOURCE_OPTIONS = [
   "JEECUP guide",
   "Other",
 ] as const;
+
+/**
+ * The `source` an /alumni introduction request is stored under.
+ *
+ * Written ONLY by the alumni-contact branch of /api/submit. The admin Inbox
+ * classifies rows by this value and drops those groups out of every
+ * admissions view, so it decides whether a submission is triaged at all.
+ *
+ * Named here rather than repeated as a literal because it is now load-bearing
+ * in three places — the writer, the guard that stops a client claiming it, and
+ * the Inbox predicate that reads it.
+ */
+export const SOURCE_ALUMNI_INTRO = "alumni-intro";
+
+/**
+ * Sources only the server may set. A client sending one of these on the
+ * enquiry form (the one kind whose `source` is free text rather than the
+ * SOURCE_OPTIONS enum) is refused — see the enquiry branch of
+ * app/api/submit/route.ts.
+ *
+ * NOT the place for "early-registration": that one is legitimately set by the
+ * client at app/early-registration/EarlyRegistrationForm.tsx, and an early-reg
+ * group still appears under "All" in the Inbox, so claiming it hides nothing.
+ */
+export const SERVER_ONLY_SOURCES: readonly string[] = [SOURCE_ALUMNI_INTRO];

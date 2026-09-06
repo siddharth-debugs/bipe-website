@@ -49,6 +49,7 @@ import {
   type StatusBucket,
 } from "@/lib/admin/leads";
 import { formatDate } from "@/lib/admin/utils";
+import { SOURCE_ALUMNI_INTRO } from "@/lib/formOptions";
 
 import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { SearchInput } from "@/components/admin/ui/SearchInput";
@@ -79,8 +80,10 @@ const isEarlyReg = (g: LeadGroup): boolean =>
 // ONLY under their own chip. That is the 29 May direction ("don't show this
 // as a new row in the backend dashboard") honoured while still keeping the
 // record, which WhatsApp alone used to hold.
+// The submit route refuses this source from a client, so reaching here means
+// the alumni-contact branch really did write it (see SERVER_ONLY_SOURCES).
 const isAlumniIntro = (g: LeadGroup): boolean =>
-  g.rows.some((r) => r.kind === "enquiry" && r.source === "alumni-intro");
+  g.rows.some((r) => r.kind === "enquiry" && r.source === SOURCE_ALUMNI_INTRO);
 
 const STATUS_BUCKETS: { value: StatusBucket; label: string }[] = [
   { value: "all", label: "All" },
