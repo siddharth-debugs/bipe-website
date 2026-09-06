@@ -303,9 +303,19 @@ export default function InboxPage() {
     });
   }, [groups, kindFilter, bucket, search]);
 
-  useEffect(() => {
+  // Adjusts state during render rather than in an effect -- React's
+  // documented answer for "a prop changed, derive fresh state from it"
+  // (react.dev/learn/you-might-not-need-an-effect). React discards and
+  // re-runs the render immediately, so the stale values are never painted.
+  const [lastFilters, setLastFilters] = useState({ kindFilter, bucket, search });
+  if (
+    kindFilter !== lastFilters.kindFilter ||
+    bucket !== lastFilters.bucket ||
+    search !== lastFilters.search
+  ) {
+    setLastFilters({ kindFilter, bucket, search });
     setPage(1);
-  }, [kindFilter, bucket, search]);
+  }
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageRows = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);

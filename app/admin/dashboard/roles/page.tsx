@@ -248,16 +248,23 @@ function RoleEditorSheet({
   const isSuperadmin = role?.name === "Superadmin";
   const isSystem = role && SYSTEM_ROLES.has(role.name);
 
-  useEffect(() => {
-    if (!open) return;
-    if (role) {
-      setName(role.name);
-      setAccess(rolePermsToAccess(role.permission_codes));
-    } else {
-      setName("");
-      setAccess(emptyAccess());
+  // Adjusts state during render rather than in an effect -- React's
+  // documented answer for "a prop changed, derive fresh state from it"
+  // (react.dev/learn/you-might-not-need-an-effect). React discards and
+  // re-runs the render immediately, so the stale values are never painted.
+  const [lastOpened, setLastOpened] = useState<{ open: boolean; role: typeof role }>({ open, role });
+  if (open !== lastOpened.open || role !== lastOpened.role) {
+    setLastOpened({ open, role });
+    if (open) {
+      if (role) {
+        setName(role.name);
+        setAccess(rolePermsToAccess(role.permission_codes));
+      } else {
+        setName("");
+        setAccess(emptyAccess());
+      }
     }
-  }, [open, role]);
+  }
 
   function setModuleAccess(key: ModuleKey, value: Access) {
     setAccess((a) => ({ ...a, [key]: value }));
