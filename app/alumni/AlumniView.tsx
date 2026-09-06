@@ -1033,7 +1033,6 @@ export function AlumniView({ alumni: _backendAlumni }: { alumni?: Alumnus[] } = 
       {requestedAlumni && (
         <AlumniContactRequestModal
           alumnus={requestedAlumni}
-          open={requestedAlumni !== null}
           onClose={() => setRequestedAlumni(null)}
         />
       )}
