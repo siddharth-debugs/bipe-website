@@ -60,7 +60,8 @@ function courseFromBranch(branch?: string): string {
   return BRANCH_TO_COURSE[b] || "";
 }
 
-export async function forwardLeadToCrm(
+/** The delivery itself. Call forwardLeadToCrm — it wraps this with the alarm. */
+async function deliverLeadToCrm(
   input: CrmForwardInput,
 ): Promise<CrmForwardResult> {
   const url = (process.env.BIPE_CRM_WEBHOOK_URL || "").trim();
@@ -128,4 +129,52 @@ export async function forwardLeadToCrm(
     }
   }
   return { ok: false, error: "unreachable" };
+}
+
+/** Last 4 digits only. Enough to match a row by eye, not a usable identifier. */
+function maskPhone(raw: string | null | undefined): string {
+  const d = String(raw || "").replace(/\D/g, "");
+  return d.length >= 4 ? `••••••${d.slice(-4)}` : "(no digits)";
+}
+
+/**
+ * Forward a lead to the Sampark CRM, and SAY SO when it does not arrive.
+ *
+ * Every caller passes this to next/server's after() and discards the result,
+ * which is how a lead-losing bug ran unnoticed: deliverLeadToCrm returned
+ * {ok:false,error:"invalid_phone"} for every mobile beginning 91 (fixed in
+ * 873804a) and had no way to tell anyone. Three of its failure paths —
+ * invalid_phone, invalid_name, unreachable — logged nothing at all, and the
+ * two that did log named neither the lead nor the submission.
+ *
+ * So the alarm lives here rather than at the five call sites: one choke point
+ * that a new caller inherits for free. That matters in this codebase — the
+ * near-identical fan-out in app/api/submit/route.ts has already shipped a
+ * missed-one-branch bug once (61615d8 wrapped three form types in after() and
+ * left contact behind).
+ *
+ * This is a FAILURE ALARM, not a reconciliation. It catches a forward that
+ * fails; it cannot catch one that succeeds into the wrong place, and it says
+ * nothing about leads the CRM accepted and then lost. A real reconciliation
+ * needs a readable count on the Sampark side, which does not exist today —
+ * BIPE_CRM_WEBHOOK_URL is a write-only ingest endpoint.
+ *
+ * not_configured stays a warn, not an error: it is the documented local and
+ * preview state (.env.example), and firing the alarm there would train
+ * everyone to ignore it.
+ */
+export async function forwardLeadToCrm(
+  input: CrmForwardInput,
+): Promise<CrmForwardResult> {
+  const result = await deliverLeadToCrm(input);
+  if (!result.ok && result.error !== "not_configured") {
+    const reason = result.error ?? `http_${result.status ?? "unknown"}`;
+    // One greppable prefix, and the backend id so the row can be found in the
+    // Inbox. Phone is masked — this line goes to a log, and the id is the
+    // correlation key that actually matters.
+    console.error(
+      `[crm-forward] LEAD NOT DELIVERED — reason=${reason} formType=${input.formType} backendId=${input.backendId ?? "none"} phone=${maskPhone(input.phone)}`,
+    );
+  }
+  return result;
 }
