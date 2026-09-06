@@ -74,9 +74,36 @@ export default function UsersPage() {
     }
   }
 
+  // Fetches inline rather than through refresh(): refresh() opens with a
+  // synchronous setLoading(true)/setErr(null) prologue, and setState reached
+  // synchronously from an effect body is what react-hooks/set-state-in-effect
+  // flags. That prologue now lives where it belongs -- on mount `loading`
+  // already initialises to true, and on a filter change the Select's own
+  // handler raises it, so the spinner is driven by the interaction that
+  // causes the refetch rather than by the effect performing it. The cancelled
+  // flag also makes a filter switched twice in quick succession safe: the
+  // superseded response can no longer land after the newer one.
   useEffect(() => {
-    refresh();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    let cancelled = false;
+    void (async () => {
+      try {
+        const [u, r] = await Promise.all([
+          listUsers({
+            active: activeFilter === "all" ? undefined : activeFilter === "active",
+          }),
+          listRoles(),
+        ]);
+        if (!cancelled) {
+          setUsers(u);
+          setRoles(r);
+        }
+      } catch (e) {
+        if (!cancelled) setErr(e instanceof Error ? e.message : "Failed to load");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
   }, [activeFilter]);
 
   function openNew() {
@@ -210,7 +237,16 @@ export default function UsersPage() {
         searchPlaceholder="Search by name, phone, email…"
         toolbar={
           <>
-            <Select value={activeFilter} onValueChange={(v) => setActiveFilter(v as typeof activeFilter)}>
+            <Select
+              value={activeFilter}
+              onValueChange={(v) => {
+                // Raise the spinner here, from the interaction that causes the
+                // refetch, rather than inside the effect that performs it.
+                setLoading(true);
+                setErr(null);
+                setActiveFilter(v as typeof activeFilter);
+              }}
+            >
               <SelectTrigger className="w-[160px]">
                 <SelectValue />
               </SelectTrigger>
