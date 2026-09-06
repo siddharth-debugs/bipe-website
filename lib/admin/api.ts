@@ -1,3 +1,5 @@
+import { ResponseCache } from "./responseCache";
+
 /**
  * Thin client for the BIPE DRF backend.
  *
@@ -20,6 +22,23 @@ export const API_BASE_URL =
 
 const ACCESS_KEY = "bipe.access";
 const REFRESH_KEY = "bipe.refresh";
+
+/**
+ * Cache of GET responses, shared by every admin screen. See
+ * lib/admin/responseCache.ts for the rules — the short version is that a
+ * write empties it, signing in or out empties it, and entries expire on
+ * their own after 20 seconds.
+ *
+ * Exported so the two Refresh buttons (Inbox and Users) can empty it before
+ * they reload: a person pressing Refresh is asking for the current truth,
+ * and serving them a cached copy would make the button a lie.
+ *
+ * Browser-only, enforced at the call site in api(). A module-level Map on
+ * the server would be shared across every request the server handles, which
+ * is one operator's data reaching another's screen — the cache is never
+ * populated there.
+ */
+export const responseCache = new ResponseCache();
 
 export class ApiError extends Error {
   status: number;
@@ -48,11 +67,16 @@ export const Tokens = {
     if (!isBrowser()) return;
     localStorage.setItem(ACCESS_KEY, access);
     if (refresh) localStorage.setItem(REFRESH_KEY, refresh);
+    // A new token can mean a new person at this browser. Nothing cached for
+    // the previous one may survive that. (It also fires on a routine token
+    // refresh for the same user, where the only cost is one refetch.)
+    responseCache.clear();
   },
   clear() {
     if (!isBrowser()) return;
     localStorage.removeItem(ACCESS_KEY);
     localStorage.removeItem(REFRESH_KEY);
+    responseCache.clear();
   },
 };
 
@@ -86,6 +110,7 @@ export async function api<T = unknown>(
   opts: RequestOptions = {},
 ): Promise<T> {
   const { method = "GET", body, searchParams, authed = true } = opts;
+  const isRead = method === "GET";
 
   // API_BASE_URL may be absolute (http://...) or relative (/api/admin).
   // For relative paths, anchor against window.location so URL() can parse.
@@ -98,6 +123,15 @@ export async function api<T = unknown>(
       if (v === undefined || v === "") continue;
       url.searchParams.set(k, String(v));
     }
+  }
+
+  // Served from the shared cache when it is a GET and we have a live copy.
+  // The full URL — path plus query string — is the key, so /content/faculty/
+  // and /content/faculty/?page=2 are correctly different entries.
+  const cacheKey = url.toString();
+  if (isRead && isBrowser()) {
+    const cached = responseCache.get(cacheKey);
+    if (cached.hit) return cached.data as T;
   }
 
   const headers: Record<string, string> = { "Content-Type": "application/json" };
@@ -126,6 +160,14 @@ export async function api<T = unknown>(
     }
   }
 
+  // Anything that is not a GET may have changed anything. Empty the whole
+  // cache, and do it whatever the response was: a write that failed leaves
+  // the server in a state we did not predict either, and the only cost of
+  // being wrong in this direction is one refetch.
+  //
+  // Placed before the error check below so a rejected write clears it too.
+  if (!isRead) responseCache.clear();
+
   let data: unknown = null;
   if (res.status !== 204) {
     const txt = await res.text();
@@ -140,6 +182,10 @@ export async function api<T = unknown>(
     const msg = extractErrorMessage(data, res.status);
     throw new ApiError(msg, res.status, data);
   }
+
+  // Only successful reads are stored — the throw above means an error body
+  // never reaches this line.
+  if (isRead && isBrowser()) responseCache.set(cacheKey, data);
 
   return data as T;
 }

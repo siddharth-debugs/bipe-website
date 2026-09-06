@@ -39,6 +39,7 @@ import {
   type Paginated,
   type VisitSubmission,
 } from "@/lib/admin/api";
+import { responseCache } from "@/lib/admin/api";
 import {
   buildLeadGroups,
   normalisePhone,
@@ -211,6 +212,12 @@ export default function InboxPage() {
   const [hideSpam, setHideSpam] = useState(true);
 
   async function load() {
+    // Pressing Refresh is a request for the current truth, so the cached
+    // copies go first — otherwise the button would quietly re-render the
+    // same rows it already had. (Saving a follow-up clears the cache by
+    // itself; this is for the case where nothing was changed here and the
+    // operator wants to see someone else's work.)
+    responseCache.clear();
     setLoading(true);
     setErr(null);
     try {

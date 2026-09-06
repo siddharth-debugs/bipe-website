@@ -78,9 +78,30 @@ passes against both versions — the old layout revealed everything at once, so
 the new layout against the opposite mistake: showing gated links before the
 permissions are known.
 
-A trap worth knowing if you extend that spec. Playwright checks the **most
-recently registered** route first, so broad handlers must be registered before
-narrow ones. The first draft registered the catch-all `**/api/admin/**` last;
+### The admin response cache was checked the same way
+
+`lib/admin/responseCache.ts` and its wiring in `lib/admin/api.ts` are the one
+place where a bug costs an operator a saved edit rather than a slow page, so
+each rule was verified by breaking it and watching the right test go red:
+
+| Break | Test that caught it |
+|---|---|
+| Writes no longer empty the cache | goes back to the network after a write (+2 more) |
+| Signing out no longer empties it | drops everything when the operator signs out |
+| Failed reads get stored | never stores a failed read |
+| The cache is never consulted | asks the network once for two identical GETs |
+| Reads hand out the stored object | does not hand out the object it is holding |
+| Writes keep the caller's object | does not keep a reference to what the caller stored |
+
+`lib/admin/api.cache.test.ts` stubs `fetch`, `window` and `localStorage` to
+reach the browser-only path from Node. That is deliberate: the cache is gated
+on `isBrowser()` so a module-level `Map` can never be shared between two
+people's requests on the server, and the wiring is what the tests need to
+reach.
+
+A trap worth knowing if you extend the admin-shell spec. Playwright checks the
+**most recently registered** route first, so broad handlers must be registered
+before narrow ones. The first draft registered the catch-all `**/api/admin/**` last;
 it answered `/auth/me/` instantly with the wrong shape, the deliberate delay
 never happened, and the test passed against the very layout it was written to
 catch. Registration order is now commented in the spec.
