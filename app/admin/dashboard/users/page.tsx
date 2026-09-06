@@ -3,6 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
 
+import { responseCache } from "@/lib/admin/api";
 import { PageHeader } from "@/components/admin/ui/PageHeader";
 import { Banner } from "@/components/admin/common/Toolkit";
 
@@ -56,6 +57,11 @@ export default function UsersPage() {
   const [editorUser, setEditorUser] = useState<AdminUser | null>(null);
 
   async function refresh() {
+    // Backs the Refresh button, so the cached copies go first — a person
+    // pressing Refresh wants the current truth, not the rows they already
+    // had. Also called after a save or a deactivate, where the write has
+    // already emptied the cache and this is a harmless no-op.
+    responseCache.clear();
     setLoading(true);
     setErr(null);
     try {
