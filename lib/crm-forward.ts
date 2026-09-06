@@ -53,6 +53,59 @@ export interface CrmForwardResult {
   ok: boolean;
   status?: number;
   error?: string;
+  /** Sampark's own reference for the lead. Present only on confirmed delivery. */
+  inquiryCode?: string;
+  /** false when Sampark matched an existing lead instead of creating one. */
+  created?: boolean;
+  /** Consultant the CRM assigned it to, or null when it landed unassigned. */
+  assignedConsultantId?: number | null;
+}
+
+/**
+ * What the Sampark webhook answers, mirroring BiteLeadWebhookView in the CRM
+ * repo (integrations/bite_leads/views.py).
+ *
+ * The important part: it returns HTTP 200 for BOTH outcomes. A lead it
+ * ingested comes back with an inquiry_code; a lead it DECLINED comes back as
+ * {success: true, skipped: true, reason: "..."} — also 200. Treating resp.ok
+ * as delivery therefore counts a declined lead as a delivered one, which is
+ * the same shape of silent loss as the phone bug in 873804a.
+ */
+export type CrmAck = {
+  success?: boolean;
+  skipped?: boolean;
+  reason?: string;
+  inquiry_code?: string;
+  created?: boolean;
+  assigned_consultant_id?: number | null;
+  touchpoints?: number;
+};
+
+/**
+ * Decide from Sampark's answer whether the lead actually landed.
+ *
+ * Exported for lib/crm-forward.test.ts. This is the SECOND place a lead can be
+ * lost without anyone noticing — the first was the phone normaliser (873804a).
+ * Both share a shape: a success-looking result that isn't one. Here it is an
+ * HTTP 200 carrying skipped:true, which the site used to count as delivered
+ * because it never read the body.
+ *
+ * An absent or unparseable body is treated as delivered: the CRM returned 2xx,
+ * and refusing to believe it would raise false alarms on every lead. Only an
+ * explicit skipped:true means "not taken".
+ */
+export function readCrmAck(ack: CrmAck | null):
+  | { delivered: true; inquiryCode?: string; created?: boolean; assignedConsultantId: number | null }
+  | { delivered: false; reason: string } {
+  if (ack?.skipped) {
+    return { delivered: false, reason: `crm_skipped_${ack.reason || "unspecified"}` };
+  }
+  return {
+    delivered: true,
+    inquiryCode: ack?.inquiry_code,
+    created: ack?.created,
+    assignedConsultantId: ack?.assigned_consultant_id ?? null,
+  };
 }
 
 /**
@@ -137,7 +190,38 @@ async function deliverLeadToCrm(
         // Non-2xx is a CRM verdict (validation etc.) — retry won't help.
         return { ok: false, status: resp.status };
       }
-      return { ok: true, status: resp.status };
+      // A 200 is not delivery on its own — Sampark answers 200 when it
+      // declines a lead too. Read what it actually said.
+      const verdict = readCrmAck(
+        (await resp.json().catch(() => null)) as CrmAck | null,
+      );
+
+      if (!verdict.delivered) {
+        // Accepted the request, did NOT take the lead (today the only reason
+        // is invalid_phone). No consultant will ever see it, and the visitor
+        // gets no WhatsApp either, because the CRM sends that on ingest.
+        // Returned as a failure so the alarm names it.
+        return { ok: false, status: resp.status, error: verdict.reason };
+      }
+
+      // Positive confirmation, per lead: Sampark's own code for it, whether it
+      // was newly created or matched to an existing prospect, and the
+      // consultant it landed with. This is the answer to "did it actually
+      // arrive" — previously the body was discarded, so the only evidence was
+      // the absence of an error.
+      console.log(
+        `[crm-forward] DELIVERED — backendId=${input.backendId ?? "none"}` +
+          ` inquiryCode=${verdict.inquiryCode || "not-returned"}` +
+          ` created=${verdict.created ?? "unknown"}` +
+          ` consultant=${verdict.assignedConsultantId ?? "unassigned"}`,
+      );
+      return {
+        ok: true,
+        status: resp.status,
+        inquiryCode: verdict.inquiryCode,
+        created: verdict.created,
+        assignedConsultantId: verdict.assignedConsultantId,
+      };
     } catch (err) {
       const msg = err instanceof Error ? err.message : "fetch_error";
       console.error(`[crm-forward] attempt ${attempt} error`, msg);

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normaliseCrmPhone, isDeliverableMobile } from "./crm-forward";
+import { normaliseCrmPhone, isDeliverableMobile, readCrmAck } from "./crm-forward";
 
 /**
  * These exist because of a real incident, not for coverage.
@@ -64,5 +64,63 @@ describe("isDeliverableMobile", () => {
 
   it("does not throw on an empty string (phone[0] is undefined)", () => {
     expect(() => isDeliverableMobile("")).not.toThrow();
+  });
+});
+
+/**
+ * The second way a lead can vanish without anyone noticing.
+ *
+ * Sampark's webhook answers HTTP 200 for BOTH outcomes: a lead it ingested,
+ * and a lead it declined ({success: true, skipped: true, reason: "..."}). The
+ * site used to return {ok: true} on any 2xx without reading the body, so a
+ * declined lead was recorded as a delivered one — no consultant would ever see
+ * it, and the visitor would get no WhatsApp, because the CRM sends that ack on
+ * ingest.
+ *
+ * Contract mirrored from BiteLeadWebhookView in the CRM repo,
+ * integrations/bite_leads/views.py.
+ */
+describe("readCrmAck", () => {
+  it("treats a skipped lead as NOT delivered", () => {
+    const v = readCrmAck({ success: true, skipped: true, reason: "invalid_phone" });
+    expect(v.delivered).toBe(false);
+    if (!v.delivered) expect(v.reason).toBe("crm_skipped_invalid_phone");
+  });
+
+  it("still reports a skip that gives no reason", () => {
+    const v = readCrmAck({ success: true, skipped: true });
+    expect(v.delivered).toBe(false);
+    if (!v.delivered) expect(v.reason).toBe("crm_skipped_unspecified");
+  });
+
+  it("carries the CRM's own confirmation through on delivery", () => {
+    const v = readCrmAck({
+      success: true,
+      inquiry_code: "SMP-2026-0912",
+      created: true,
+      assigned_consultant_id: 7,
+    });
+    expect(v.delivered).toBe(true);
+    if (v.delivered) {
+      expect(v.inquiryCode).toBe("SMP-2026-0912");
+      expect(v.created).toBe(true);
+      expect(v.assignedConsultantId).toBe(7);
+    }
+  });
+
+  it("reports an unassigned lead as delivered, not failed", () => {
+    // Colleges running in POOL mode land leads unassigned on purpose (ADR
+    // 0007) — consultants claim them. That is delivery, not a failure.
+    const v = readCrmAck({ success: true, inquiry_code: "SMP-1", assigned_consultant_id: null });
+    expect(v.delivered).toBe(true);
+    if (v.delivered) expect(v.assignedConsultantId).toBeNull();
+  });
+
+  it("believes a 2xx whose body is missing or unparseable", () => {
+    // Only an explicit skipped:true means "not taken". Disbelieving a bare 2xx
+    // would fire the alarm on every lead.
+    for (const ack of [null, {}, { success: true }]) {
+      expect(readCrmAck(ack).delivered, JSON.stringify(ack)).toBe(true);
+    }
   });
 });
