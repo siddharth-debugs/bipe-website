@@ -146,7 +146,19 @@ export function DataTable<T extends BaseRow>({
     }
   }
 
+  // This is a dependency-driven refetch: whenever params (page, ordering,
+  // filters) or resource changes, a new request starts and the table must
+  // show it as pending from that moment. load()'s synchronous
+  // setLoading(true)/setErr(null) prologue is therefore load-bearing here,
+  // which is what set-state-in-effect flags -- but neither alternative the
+  // rule points at fits. It cannot move to an event handler: params is
+  // driven from eight call sites (pagination, sorting, every mutation, the
+  // refresh button), and load() is shared with all of them. It cannot be
+  // derived during render either, since "a request is in flight" is not a
+  // function of the props. The cost is one extra render per refetch, which
+  // is the intended behaviour, not a cascade.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params, resource]);

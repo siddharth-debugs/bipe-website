@@ -149,7 +149,14 @@ export function FollowUpSection({
     }
   }, [leadKey, notify]);
 
+  // Same dependency-driven refetch as DataTable: load() is rebuilt when
+  // leadKey changes, so selecting a different lead must show the follow-up
+  // list as pending immediately. load()'s synchronous setLoading(true)
+  // prologue is what set-state-in-effect flags; there is no event handler to
+  // move it to, since the refetch is caused by the parent swapping leadKey,
+  // and pending-ness cannot be derived from props.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void load();
   }, [load]);
 

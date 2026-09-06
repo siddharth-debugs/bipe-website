@@ -63,7 +63,17 @@ export default function PageDetail() {
       setLoading(false);
     }
   }
-  useEffect(() => { refresh(); /* eslint-disable-line react-hooks/exhaustive-deps */ }, [slug]);
+  // Dependency-driven refetch, as in components/admin/DataTable.tsx: moving
+  // between pages in the admin changes `slug` without remounting, so a new
+  // request starts and the editor must read as pending from that moment.
+  // refresh()'s synchronous setLoading(true)/setErr(null) prologue is what
+  // set-state-in-effect flags, and there is no event handler to move it to --
+  // the refetch is caused by a route change, not a click.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    refresh();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
 
   if (!pageDef) {
     return (
@@ -474,9 +484,13 @@ function TextBlockEditor({ content, onChange }: { content: TextBlockContent; onC
 // ─── Generic editor (JSON) ────────────────────────────────────────────
 
 function GenericEditor({ content, onChange }: { content: Record<string, unknown>; onChange: (c: Record<string, unknown>) => void }) {
+  // Seeded from `content` directly. A mount effect used to re-set exactly
+  // what this initialiser already computes, which was both redundant and a
+  // set-state-in-effect violation; it is deliberately not replaced, since
+  // re-syncing on later `content` changes would clobber whatever the user is
+  // mid-way through typing into the textarea.
   const [text, setText] = useState(() => JSON.stringify(content ?? {}, null, 2));
   const [parseErr, setParseErr] = useState<string | null>(null);
-  useEffect(() => { setText(JSON.stringify(content ?? {}, null, 2)); /* eslint-disable-next-line */ }, []);
 
   function onChangeText(v: string) {
     setText(v);
