@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
+import { useHydrated } from "@/lib/useHydrated";
 
 /**
  * Interactive checklist used inside BteupResourceTemplate.
@@ -38,34 +39,52 @@ export interface BteupChecklistProps {
 const STORAGE_PREFIX = "bipe.checklist.";
 
 export default function BteupChecklist({ slug, items }: BteupChecklistProps) {
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
   const storageKey = STORAGE_PREFIX + slug;
 
-  // Hydrate from localStorage on mount. Guarded against malformed JSON
-  // (which would happen if a future schema change rewrites the shape).
-  useEffect(() => {
+  // Read the saved ticks once hydration has happened, rather than correcting
+  // state from a mount effect (react-hooks/set-state-in-effect). Empty on the
+  // server and on the first client paint, so the markup matches either way --
+  // the same guarantee the effect gave, without the extra render pass.
+  // Guarded against malformed JSON (which would happen if a future schema
+  // change rewrites the shape).
+  const hydrated = useHydrated();
+  const stored = useMemo<Record<string, boolean>>(() => {
+    if (!hydrated) return {};
     try {
       const raw = window.localStorage.getItem(storageKey);
-      if (!raw) return;
+      if (!raw) return {};
       const parsed = JSON.parse(raw);
-      if (parsed && typeof parsed === "object") {
-        setChecked(parsed as Record<string, boolean>);
-      }
+      return parsed && typeof parsed === "object"
+        ? (parsed as Record<string, boolean>)
+        : {};
     } catch {
       // Ignore malformed JSON; treat as empty.
+      return {};
     }
-  }, [storageKey]);
+  }, [hydrated, storageKey]);
+
+  // Ticks made in this session take precedence over what was stored; null
+  // means "nothing ticked yet here", so the stored set shows through.
+  const [session, setSession] = useState<Record<string, boolean> | null>(null);
+
+  // A different checklist means a different saved set: drop this session's
+  // ticks so they cannot leak across slugs, as the keyed effect used to.
+  const [lastKey, setLastKey] = useState(storageKey);
+  if (storageKey !== lastKey) {
+    setLastKey(storageKey);
+    setSession(null);
+  }
+
+  const checked = session ?? stored;
 
   function toggle(item: string) {
-    setChecked((prev) => {
-      const next = { ...prev, [item]: !prev[item] };
-      try {
-        window.localStorage.setItem(storageKey, JSON.stringify(next));
-      } catch {
-        // Quota-exceeded or private-mode -- silently degrade to in-memory.
-      }
-      return next;
-    });
+    const next = { ...checked, [item]: !checked[item] };
+    setSession(next);
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(next));
+    } catch {
+      // Quota-exceeded or private-mode -- silently degrade to in-memory.
+    }
   }
 
   return (
