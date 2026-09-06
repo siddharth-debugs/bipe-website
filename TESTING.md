@@ -43,6 +43,7 @@ two forms that take money-path enquiries.
 | --- | --- |
 | `e2e/apply.spec.ts` | Submitting the admissions form and being greeted by first name; an invalid phone keeping you on the form and sending nothing; a 10-digit mobile beginning 91 being accepted end to end. |
 | `e2e/alumni.spec.ts` | Choosing a purpose in the introduction modal reveals the note field; reopening always starts from a clean form. |
+| `e2e/admin-shell.spec.ts` | The dashboard sidebar is on screen while `/auth/me/` is still in flight; the permission-gated links stay hidden until it answers. |
 
 ### Nothing here can create a real lead
 
@@ -67,14 +68,38 @@ passes today because `AlumniView` unmounts the modal on close, so React
 discards the state whatever the component does. It is kept as a guard on that
 wiring, not on the reset code, and says so in a comment.
 
+`draws the sidebar while the permission check is still in flight` was checked
+the same way: reverting `app/admin/dashboard/layout.tsx` to the version that
+waited for `/auth/me/` turns it red, and restoring the fix turns it green.
+
+Its sibling, `reveals the permission-gated links only once the check returns`,
+passes against both versions — the old layout revealed everything at once, so
+"hidden, then visible" was trivially true there. It is kept because it guards
+the new layout against the opposite mistake: showing gated links before the
+permissions are known.
+
+A trap worth knowing if you extend that spec. Playwright checks the **most
+recently registered** route first, so broad handlers must be registered before
+narrow ones. The first draft registered the catch-all `**/api/admin/**` last;
+it answered `/auth/me/` instantly with the wrong shape, the deliberate delay
+never happened, and the test passed against the very layout it was written to
+catch. Registration order is now commented in the spec.
+
 ## What is still NOT covered
 
 Worth knowing before trusting a green run:
 
 - **No component tests.** Nothing renders a component in isolation; the
   browser suite covers only the two forms, through the whole app.
-- **No other pages.** Nothing exercises the admin dashboard, the inbox, the
-  blog or any of the 40+ marketing routes beyond the fact that they build.
+- **No other pages.** Beyond the dashboard shell above, nothing exercises the
+  admin panel's screens — the inbox, the content editors, the user and role
+  management — nor the blog or any of the 40+ marketing routes, beyond the
+  fact that they build.
+- **Analytics gating is not tested.** `PublicTelemetry` renders no tracker on
+  `/admin`, and `lib/adminPath.test.ts` covers the path rule it uses, but no
+  test asserts the browser makes no request to Google or Meta from a dashboard
+  page. That check needs network assertions against a build with the analytics
+  IDs set; it was verified by hand (Sep 2026) and is not automated.
 - **No API route tests.** `app/api/submit` is untested; it needs request
   mocking and the backend/CRM calls stubbed. The browser suite deliberately
   fakes this boundary rather than crossing it.
