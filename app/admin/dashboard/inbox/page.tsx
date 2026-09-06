@@ -305,10 +305,18 @@ export default function InboxPage() {
         // returning nothing tells them no such record exists — which was a
         // lie: an alumni request holds a real name, phone and stated purpose.
         //
-        // Conditional INSIDE this branch rather than on the `else if` itself:
-        // widening the condition would let alumni groups fall through to the
-        // early-reg and per-kind tests below, which is a different rule
-        // decided by line order rather than by intent.
+        // Note what the placement inside this branch actually does: a
+        // matching group exits the if/else chain HERE, so it skips the
+        // early-reg and per-kind tests below. Under an active search these
+        // therefore surface under EVERY chip, not only their own — search
+        // the phone with the Visit chip selected and this enquiry-sourced
+        // group is among the results.
+        //
+        // That is the intent, not an oversight: someone typing a phone
+        // number is looking for a person, not for a submission kind, and a
+        // chip that silently withholds the one record holding that name is
+        // the same lie as returning nothing. Narrow it to `!q || kindFilter
+        // !== "all"` if the chip should ever win instead.
         if (!q) return false;
       } else if (kindFilter === "early") {
         if (!isEarlyReg(g)) return false;
