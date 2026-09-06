@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useNow } from "@/lib/useNow";
 import { DATA } from "@/lib/data";
 import { LP_PHASES, phaseIndexAt } from "./lpSchedule";
 
@@ -17,11 +17,10 @@ import { LP_PHASES, phaseIndexAt } from "./lpSchedule";
  * August, so the page must keep making sense.
  */
 export default function LpScheduleNote({ initialIndex }: { initialIndex: number }) {
-  const [i, setI] = useState(initialIndex);
-
-  useEffect(() => {
-    setI(phaseIndexAt(Date.now()));
-  }, []);
+  // Server HTML and the hydration pass both use initialIndex; the live
+  // clock rolls the phase immediately after mount. See lib/useNow.ts.
+  const now = useNow();
+  const i = now === null ? initialIndex : phaseIndexAt(now);
 
   const p = LP_PHASES[i];
 

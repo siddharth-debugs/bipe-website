@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useNow } from "@/lib/useNow";
 import { DATA } from "@/lib/data";
 import { bannerRoundAt, type BannerRound } from "@/lib/jeecupBannerRounds";
 
@@ -22,11 +22,11 @@ import { bannerRoundAt, type BannerRound } from "@/lib/jeecupBannerRounds";
  * cause a hydration mismatch; a FAB popping in a frame late is imperceptible.
  */
 export function CallFAB() {
-  const [round, setRound] = useState<BannerRound | null>(null);
-
-  useEffect(() => {
-    setRound(bannerRoundAt(Date.now()));
-  }, []);
+  // null through SSR and hydration, so the pill is absent from the server
+  // HTML and the first client paint exactly as before; the live clock
+  // arrives immediately after mount. See lib/useNow.ts.
+  const now = useNow();
+  const round = now === null ? null : bannerRoundAt(now);
 
   if (!round) return null;
 

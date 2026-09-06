@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
+import { useNow } from "@/lib/useNow";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/shell/Icons";
 
@@ -29,12 +30,11 @@ export const Countdown = () => {
   const target = useMemo(() => new Date(START).getTime(), []);
   // Start from the build-time comparison so SSR and first paint match,
   // then let the interval correct it on the client.
-  const [now, setNow] = useState(target);
-  useEffect(() => {
-    setNow(Date.now());
-    const id = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(id);
-  }, []);
+  // Ticks once a second, and reads null through SSR and hydration so the
+  // server render and first client paint both fall back to `target` exactly
+  // as the previous seed did. See lib/useNow.ts.
+  const liveNow = useNow(1000);
+  const now = liveNow ?? target;
 
   const diff = target - now;
   const started = diff <= 0;
