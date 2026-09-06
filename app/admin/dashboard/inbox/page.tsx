@@ -201,6 +201,10 @@ export default function InboxPage() {
   const [page, setPage] = useState(1);
   const [drawerKey, setDrawerKey] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
+  // Default ON: staff verifying the forms end to end leave real submissions
+  // behind, and those should not sit in the admissions stream. Deliberately a
+  // toggle and not a hard exclusion — see the filter below for why.
+  const [hideSpam, setHideSpam] = useState(true);
 
   async function load() {
     setLoading(true);
@@ -271,6 +275,13 @@ export default function InboxPage() {
 
   const earlyCount = useMemo(() => groups.filter(isEarlyReg).length, [groups]);
   const alumniCount = useMemo(() => groups.filter(isAlumniIntro).length, [groups]);
+  // How many groups the spam toggle is actually removing from the current
+  // stream. Excludes alumni-intro because those never appear here anyway, so
+  // counting them would advertise hidden rows the toggle cannot reveal.
+  const spamCount = useMemo(
+    () => groups.filter((g) => !isAlumniIntro(g) && statusBucket(g) === "spam").length,
+    [groups],
+  );
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -284,6 +295,20 @@ export default function InboxPage() {
         if (!isEarlyReg(g)) return false;
       } else if (kindFilter !== "all" && g.kindCounts[kindFilter] === 0) return false;
       if (bucket !== "all" && statusBucket(g) !== bucket) return false;
+      // Test runs and junk are marked spam by an operator, via a follow-up in
+      // the lead drawer. That is the only marker on this page a visitor
+      // cannot forge — it is written through the authenticated admin API
+      // rather than derived from the submission payload — and it lives on
+      // every kind, including visit, which carries no `source`.
+      //
+      // Hidden by default, but never unrecoverably: the toggle is visible and
+      // states the count, the Spam bucket still lists them, and an active
+      // search always reaches them. That search exemption is the important
+      // one — a real lead marked spam by mistake has to stay findable by
+      // phone or name, or it is lost as completely as if it had been deleted.
+      if (hideSpam && !q && bucket !== "spam" && statusBucket(g) === "spam") {
+        return false;
+      }
       if (q) {
         const hay = [
           g.name,
@@ -294,6 +319,9 @@ export default function InboxPage() {
             if (r.kind === "contact" || r.kind === "enquiry") return r.message ?? "";
             return r.notes ?? "";
           }),
+          // Where an operator records WHY a lead was marked spam. Searchable
+          // so a hidden group can be found by that reason, not only by phone.
+          ...g.rows.map((r) => r.admin_notes ?? ""),
         ]
           .join(" ")
           .toLowerCase();
@@ -301,19 +329,20 @@ export default function InboxPage() {
       }
       return true;
     });
-  }, [groups, kindFilter, bucket, search]);
+  }, [groups, kindFilter, bucket, search, hideSpam]);
 
   // Adjusts state during render rather than in an effect -- React's
   // documented answer for "a prop changed, derive fresh state from it"
   // (react.dev/learn/you-might-not-need-an-effect). React discards and
   // re-runs the render immediately, so the stale values are never painted.
-  const [lastFilters, setLastFilters] = useState({ kindFilter, bucket, search });
+  const [lastFilters, setLastFilters] = useState({ kindFilter, bucket, search, hideSpam });
   if (
     kindFilter !== lastFilters.kindFilter ||
     bucket !== lastFilters.bucket ||
-    search !== lastFilters.search
+    search !== lastFilters.search ||
+    hideSpam !== lastFilters.hideSpam
   ) {
-    setLastFilters({ kindFilter, bucket, search });
+    setLastFilters({ kindFilter, bucket, search, hideSpam });
     setPage(1);
   }
 
@@ -471,6 +500,29 @@ export default function InboxPage() {
             </button>
           ))}
         </div>
+
+        {/* Spam / test visibility. Rendered only when something is actually
+            being hidden, so the control shows up exactly when it has an
+            effect and the count discloses the hidden rows rather than
+            leaving them silently absent. */}
+        {spamCount > 0 && (
+          <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+            <button
+              type="button"
+              onClick={() => setHideSpam((v) => !v)}
+              className="admin-btn-soft"
+              aria-pressed={hideSpam}
+              style={{ padding: "6px 12px", fontSize: 12 }}
+            >
+              {hideSpam
+                ? `Hiding ${spamCount} spam / test ${spamCount === 1 ? "lead" : "leads"} — show`
+                : "Showing spam / test leads — hide"}
+            </button>
+            <span style={{ fontSize: 11.5, color: "var(--ink-3)" }}>
+              Marked from a lead&apos;s follow-up. Search always reaches them.
+            </span>
+          </div>
+        )}
 
         {/* Filters row */}
         <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
