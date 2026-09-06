@@ -1,13 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Instrument_Serif, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
-import { headers } from "next/headers";
 import { LangProvider } from "@/lib/lang";
 import { ConditionalChrome } from "@/components/shell/ConditionalChrome";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
-import { getPostBySlug } from "@/lib/blogPosts";
 // Every analytics tracker — Vercel Analytics, GA4, Clarity, the Meta
 // Pixel, the fbclid capture and the outbound-click tracker — now mounts
 // through this one component, which renders nothing on /admin. They used
@@ -423,7 +421,35 @@ export const viewport: Viewport = {
   themeColor: "#283e7a",
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+/**
+ * The site's entire HTML document — <html> through </html>, fonts, metadata,
+ * JSON-LD, providers and telemetry.
+ *
+ * This lives outside app/ because there are now TWO root layouts, one per
+ * top-level route group, and they must not drift apart. app/(site)/layout.tsx
+ * and app/(blog)/layout.tsx are both a handful of lines that render this.
+ *
+ * Why two root layouts at all: <html lang> can only be set by a root layout,
+ * and the Hindi blog posts need theirs to say hi-IN. The only way for a
+ * layout to know which post it is rendering is to read the request path from
+ * a header — and reading a header opts every route beneath that layout into
+ * per-request rendering. With one shared root layout that meant the whole
+ * site: 105 of 111 route patterns rendered fresh for every visitor, none of
+ * them cacheable at the edge (Sep 2026 performance audit, finding F6).
+ *
+ * Splitting the groups confines that cost to the blog, which is the only
+ * part that needs it. Everything else is prerendered.
+ *
+ * `lang` is the one thing the two callers differ on, so it is the one thing
+ * this takes as a prop.
+ */
+export default async function RootDocument({
+  children,
+  lang,
+}: {
+  children: React.ReactNode;
+  lang: string;
+}) {
   // Server-fetch live contact + branches once per request. Both feed
   // the JSON-LD payload (kept honest with admin edits) and the live
   // contact info is also threaded through ConditionalChrome → Footer.
@@ -446,21 +472,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   };
   const orgJsonLd = buildOrgJsonLd(liveBranches, liveContact);
 
-  // Per-route <html lang>. App Router renders a single <html> here in the
-  // root layout, so without the request path it can't know a Hindi blog
-  // post should be served as lang="hi-IN". middleware.ts forwards the path
-  // as the `x-pathname` header; for /blog/<slug> we use the post's own
-  // declared language (blogPosts.ts `lang`), else the site default en-IN.
-  // This makes the container lang agree with the post's self-referencing
-  // hi-IN hreflang — clearing the Semrush hreflang language-mismatch. Reading
-  // a header opts routes into dynamic rendering (accepted trade, Aug 2026
-  // audit); the live-data fetches above stay tag-cached (revalidate 300).
-  const pathname = (await headers()).get("x-pathname") ?? "";
-  const blogSlug = pathname.match(/^\/blog\/([^/?#]+)/)?.[1];
-  const htmlLang = (blogSlug ? getPostBySlug(blogSlug)?.lang : undefined) ?? "en-IN";
-
   return (
-    <html lang={htmlLang}>
+    <html lang={lang}>
+      {/*
+        eslint-disable-next-line @next/next/no-head-element --
+        The rule points at `next/head`, which is a Pages Router API and does
+        not exist in the App Router. A raw <head> is the correct and only way
+        to do this in an App Router root layout, and this IS one — it was
+        app/layout.tsx until the route-group split moved the shared document
+        here so two root layouts could share it. The rule recognises the file
+        path, not the role, so moving the file is what made it fire; the
+        markup did not change.
+      */}
       <head>
         {/*
           Preconnect hints (Phase 2 SEO audit May 2026 — BIPE had 0
