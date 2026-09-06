@@ -121,7 +121,13 @@ export function Nav() {
   const C = DATA.contact;
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-  React.useEffect(() => { setDrawerOpen(false); }, [pathname]);
+  // Close the drawer on navigation. Adjusted during render rather than in
+  // an effect so the drawer is never painted open over the new route.
+  const [lastPathname, setLastPathname] = React.useState(pathname);
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname);
+    setDrawerOpen(false);
+  }
   React.useEffect(() => {
     if (typeof document === "undefined") return;
     document.body.style.overflow = drawerOpen ? "hidden" : "";

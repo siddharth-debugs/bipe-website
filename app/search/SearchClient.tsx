@@ -28,10 +28,14 @@ export function SearchClient() {
   const [q, setQ] = useState(initialQ);
 
   // Keep local input in sync if the URL ?q= changes (e.g. someone
-  // pastes a new search URL or hits browser back/forward).
-  useEffect(() => {
-    setQ(params.get("q") ?? "");
-  }, [params]);
+  // pastes a new search URL or hits browser back/forward). Adjusted during
+  // render rather than in an effect, so the stale query is never painted.
+  const urlQ = params.get("q") ?? "";
+  const [lastUrlQ, setLastUrlQ] = useState(urlQ);
+  if (urlQ !== lastUrlQ) {
+    setLastUrlQ(urlQ);
+    setQ(urlQ);
+  }
 
   const trimmed = q.trim();
 

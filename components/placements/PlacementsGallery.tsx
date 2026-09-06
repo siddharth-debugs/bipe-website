@@ -52,11 +52,14 @@ export function PlacementsGallery() {
     });
   }, [PLACEMENT_PHOTOS, branch, year]);
 
-  React.useEffect(() => {
-    if (lightboxIndex !== null && lightboxIndex >= filtered.length) {
-      setLightboxIndex(null);
-    }
-  }, [filtered.length, lightboxIndex]);
+  // Reset lightbox if its target falls outside the filtered set
+  // Self-clearing correction, so it belongs in render rather than an
+  // effect: dropping the index makes the condition false, and React
+  // re-runs the render immediately instead of painting a lightbox that
+  // points past the end of the filtered list for one frame.
+  if (lightboxIndex !== null && lightboxIndex >= filtered.length) {
+    setLightboxIndex(null);
+  }
 
   const branchCounts = useMemo(() => {
     const c: Record<string, number> = { All: PLACEMENT_PHOTOS.length };
