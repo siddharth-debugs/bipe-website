@@ -112,8 +112,6 @@ export interface JeecupResource {
   ctaBody: string;
 }
 
-/* eslint-disable max-len */
-
 export const JEECUP_RESOURCES: JeecupResource[] = [
   // ─────────────────────────────────────────────────────────────────
   // JEECUP Round 4 (Phase 2) — the strategic re-opening. Placed first so it

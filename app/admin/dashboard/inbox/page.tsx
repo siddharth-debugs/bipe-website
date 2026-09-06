@@ -202,7 +202,6 @@ export default function InboxPage() {
 
   useEffect(() => {
     void load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const groups: LeadGroup[] = useMemo(

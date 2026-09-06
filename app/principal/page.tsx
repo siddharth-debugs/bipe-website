@@ -300,7 +300,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Each promise below is verifiable on a single page of this site — or by writing to the Principal's office for documents on letterhead.
+              Each promise below is verifiable on a single page of this site — or by writing to the Principal&apos;s office for documents on letterhead.
             </p>
           </div>
 

@@ -320,11 +320,11 @@ export default function Page() {
                   lineHeight: 1.1, color: "var(--ink)",
                   marginTop: 14, maxWidth: "20ch",
                 }}>
-                  Don't have a document?{" "}
-                  <span style={{ color: "var(--brand)" }}>Don't skip applying — call us first.</span>
+                  Don&apos;t have a document?{" "}
+                  <span style={{ color: "var(--brand)" }}>Don&apos;t skip applying — call us first.</span>
                 </p>
                 <p style={{ marginTop: 18, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.7, maxWidth: "44ch" }}>
-                  Duplicates and replacements can usually be arranged before the verification window closes. Most "missing-paper" panics resolve in a single phone call to admissions.
+                  Duplicates and replacements can usually be arranged before the verification window closes. Most &quot;missing-paper&quot; panics resolve in a single phone call to admissions.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

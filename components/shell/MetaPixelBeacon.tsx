@@ -94,6 +94,10 @@ export default function MetaPixelBeacon() {
       {/* <noscript> fallback — JS-disabled visitors still register a
           PageView via the 1x1 tracking GIF. */}
       <noscript>
+        {/* eslint-disable-next-line @next/next/no-img-element --
+            next/image is unusable inside <noscript>: it needs the React
+            runtime this fallback exists to work without. A raw 1x1 GIF is
+            the only thing that can fire here. */}
         <img
           height="1"
           width="1"

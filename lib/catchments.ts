@@ -91,8 +91,6 @@ export interface Catchment {
   };
 }
 
-/* eslint-disable max-len */
-
 export const CATCHMENTS: Catchment[] = [
   // ─────────────────────────────────────────────────────────────────
   {

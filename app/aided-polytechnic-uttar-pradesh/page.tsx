@@ -136,7 +136,7 @@ export default function Page() {
       {/* WHAT IT IS */}
       <section className="section" style={{ background: "var(--paper-2)" }}>
         <div className="container">
-          <div className="eyebrow">What "aided" means · plain English</div>
+          <div className="eyebrow">What &quot;aided&quot; means · plain English</div>
           <h2 className="bipe-h1" style={{ marginTop: 14, maxWidth: "30ch" }}>
             Government-funded.{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
