@@ -57,7 +57,10 @@ name: CI · lint + typecheck + build
 #   cannot fix.
 #
 # What it does NOT do (intentionally):
-#   - Run tests — none exist yet in this repo.
+#   - Run component or end-to-end tests — neither exists yet. The unit suite
+#     added 6 Sep 2026 covers pure logic in lib/ only; TESTING.md lists the
+#     gaps, which are real: nothing here proves a button renders or a form
+#     submits.
 #   - Deploy. Vercel handles deploys; this workflow only validates.
 
 on:
@@ -101,6 +104,11 @@ jobs:
         # See the ESLint note in the header for what does and does not
         # fail this step.
         run: npm run lint
+
+      - name: Unit tests
+        # Pure-logic suite (Vitest). Runs in about a second; see TESTING.md for
+        # what it covers and, more importantly, what it does not.
+        run: npm test
 
       - name: Next.js build
         # Belt-and-suspenders — catches anything tsc misses (Next
