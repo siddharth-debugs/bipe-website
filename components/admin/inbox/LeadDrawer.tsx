@@ -78,15 +78,22 @@ export function LeadDrawer({
   onLeadUpdated,
   onDeleteRow,
 }: Props) {
-  const [derivedStatus, setDerivedStatus] = useState<LeadStatus>("new");
-  const [derivedInterest, setDerivedInterest] = useState<string>("");
+  const [derivedStatus, setDerivedStatus] = useState<LeadStatus>(group?.status || "new");
+  const [derivedInterest, setDerivedInterest] = useState<string>(group?.interestCourse || "");
 
-  useEffect(() => {
+  // Adjusts state during render rather than in an effect -- React's
+  // documented answer for "a prop changed, derive fresh state from it"
+  // (react.dev/learn/you-might-not-need-an-effect). The useState seeds
+  // above cover the first render, which the replaced effect handled by
+  // firing once on mount.
+  const [lastGroup, setLastGroup] = useState(group);
+  if (group !== lastGroup) {
+    setLastGroup(group);
     if (group) {
       setDerivedStatus(group.status || "new");
       setDerivedInterest(group.interestCourse || "");
     }
-  }, [group]);
+  }
 
   if (!group) return null;
 

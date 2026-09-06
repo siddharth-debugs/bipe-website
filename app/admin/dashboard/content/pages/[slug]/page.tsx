@@ -156,14 +156,25 @@ function SectionEditor({
   // Local copy of the row that the form mutates. Re-syncs whenever the
   // upstream row identity changes (i.e. the active tab switches, or a
   // refresh brings down fresh data after save).
-  const [content, setContent] = useState<Record<string, unknown>>({});
-  const [isPublished, setIsPublished] = useState(true);
+  const [content, setContent] = useState<Record<string, unknown>>(
+    () => (row?.content as Record<string, unknown>) ?? {},
+  );
+  const [isPublished, setIsPublished] = useState(() => row?.is_published ?? true);
   const [saving, setSaving] = useState(false);
 
-  useEffect(() => {
+  // Adjusts state during render rather than in an effect -- React's
+  // documented answer for "a prop changed, derive fresh state from it"
+  // (react.dev/learn/you-might-not-need-an-effect). The useState seeds
+  // above cover the first render, which the replaced effect handled by
+  // firing once on mount.
+  // Keyed on the same pair the effect listed as its deps.
+  const rowKey = `${row?.id ?? ""}:${row?.section_key ?? ""}`;
+  const [lastRowKey, setLastRowKey] = useState(rowKey);
+  if (rowKey !== lastRowKey) {
+    setLastRowKey(rowKey);
     setContent((row?.content as Record<string, unknown>) ?? {});
     setIsPublished(row?.is_published ?? true);
-  }, [row?.id, row?.section_key]);
+  }
 
   async function save() {
     setSaving(true);

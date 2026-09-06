@@ -298,28 +298,35 @@ function UserEditorSheet({
   const [form, setForm] = useState<AdminUserWrite>({});
   const [saving, setSaving] = useState(false);
 
-  useEffect(() => {
-    if (!open) return;
-    if (user) {
-      setForm({
-        phone: user.username,
-        display_name: user.profile?.display_name ?? "",
-        email: user.email,
-        is_active: user.is_active,
-        primary_role_id: user.profile?.primary_role ?? null,
-        role_ids: user.role_summary.map((r) => r.id),
-      });
-    } else {
-      setForm({
-        phone: "",
-        display_name: "",
-        email: "",
-        is_active: true,
-        primary_role_id: null,
-        role_ids: [],
-      });
+  // Adjusts state during render rather than in an effect -- React's
+  // documented answer for "a prop changed, derive fresh state from it"
+  // (react.dev/learn/you-might-not-need-an-effect). React discards and
+  // re-runs the render immediately, so the stale values are never painted.
+  const [lastOpened, setLastOpened] = useState<{ open: boolean; user: typeof user }>({ open, user });
+  if (open !== lastOpened.open || user !== lastOpened.user) {
+    setLastOpened({ open, user });
+    if (open) {
+      if (user) {
+        setForm({
+          phone: user.username,
+          display_name: user.profile?.display_name ?? "",
+          email: user.email,
+          is_active: user.is_active,
+          primary_role_id: user.profile?.primary_role ?? null,
+          role_ids: user.role_summary.map((r) => r.id),
+        });
+      } else {
+        setForm({
+          phone: "",
+          display_name: "",
+          email: "",
+          is_active: true,
+          primary_role_id: null,
+          role_ids: [],
+        });
+      }
     }
-  }, [user, open]);
+  }
 
   function set<K extends keyof AdminUserWrite>(k: K, v: AdminUserWrite[K]) {
     setForm((f) => ({ ...f, [k]: v }));

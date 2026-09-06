@@ -255,10 +255,16 @@ function RemarksEditor({
   const [save, setSave] = useState<SaveState>({ kind: "idle" });
 
   // Reset the draft whenever the user opens a different row.
-  useEffect(() => {
+  // Adjusts state during render rather than in an effect -- React's
+  // documented answer for "a prop changed, derive fresh state from it"
+  // (react.dev/learn/you-might-not-need-an-effect). React discards and
+  // re-runs the render immediately, so the stale values are never painted.
+  const [lastRow, setLastRow] = useState<{ rowId: typeof rowId; value: typeof value }>({ rowId, value });
+  if (rowId !== lastRow.rowId || value !== lastRow.value) {
+    setLastRow({ rowId, value });
     setDraft(value);
     setSave({ kind: "idle" });
-  }, [rowId, value]);
+  }
 
   const dirty = draft !== value;
 
