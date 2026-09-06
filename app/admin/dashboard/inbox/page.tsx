@@ -126,12 +126,52 @@ async function fetchAllPages<T>(
   return all;
 }
 
+/**
+ * Fetch every inbox endpoint and shape the result.
+ *
+ * Split out of the component's load() so it holds no state of its own: the
+ * mount effect can call it without dragging load()'s synchronous
+ * setLoading(true)/setErr(null) prologue into the effect body, while the
+ * refresh path keeps using load(). Both callers share this one copy.
+ */
+async function fetchInbox(): Promise<{
+  merged: AnyRow[];
+  byKey: Record<string, FollowUp[]>;
+}> {
+  // Every endpoint is fetched across ALL its pages — the backend
+  // caps page size at ~25, so a single request would truncate the
+  // follow-ups (53 of them) and the larger submission kinds.
+  const [a, c, e, v, fuList] = await Promise.all([
+    fetchAllPages<ApplySubmission>("/submissions/apply/"),
+    fetchAllPages<ContactSubmission>("/submissions/contact/"),
+    fetchAllPages<EnquirySubmission>("/submissions/enquiry/"),
+    fetchAllPages<VisitSubmission>("/submissions/visit/"),
+    fetchAllPages<FollowUp>("/submissions/follow-ups/"),
+  ]);
+  const merged: AnyRow[] = [
+    ...a.map((r) => ({ ...r, kind: "apply" as const })),
+    ...c.map((r) => ({ ...r, kind: "contact" as const })),
+    ...e.map((r) => ({ ...r, kind: "enquiry" as const })),
+    ...v.map((r) => ({ ...r, kind: "visit" as const })),
+  ];
+  const byKey: Record<string, FollowUp[]> = {};
+  for (const f of fuList) {
+    const key = normalisePhone(f.leadKey);
+    (byKey[key] ||= []).push(f);
+  }
+  // ensure newest-first inside each bucket
+  for (const k of Object.keys(byKey)) {
+    byKey[k].sort((x, y) => y.createdAt.localeCompare(x.createdAt));
+  }
+  return { merged, byKey };
+}
+
 export default function InboxPage() {
   const [rows, setRows] = useState<AnyRow[]>([]);
   const [followUpsByKey, setFollowUpsByKey] = useState<
     Record<string, FollowUp[]>
   >({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
 
   // Initial filters honour ?kind=… and ?bucket=… so the dashboard
@@ -166,31 +206,7 @@ export default function InboxPage() {
     setLoading(true);
     setErr(null);
     try {
-      // Every endpoint is fetched across ALL its pages — the backend
-      // caps page size at ~25, so a single request would truncate the
-      // follow-ups (53 of them) and the larger submission kinds.
-      const [a, c, e, v, fuList] = await Promise.all([
-        fetchAllPages<ApplySubmission>("/submissions/apply/"),
-        fetchAllPages<ContactSubmission>("/submissions/contact/"),
-        fetchAllPages<EnquirySubmission>("/submissions/enquiry/"),
-        fetchAllPages<VisitSubmission>("/submissions/visit/"),
-        fetchAllPages<FollowUp>("/submissions/follow-ups/"),
-      ]);
-      const merged: AnyRow[] = [
-        ...a.map((r) => ({ ...r, kind: "apply" as const })),
-        ...c.map((r) => ({ ...r, kind: "contact" as const })),
-        ...e.map((r) => ({ ...r, kind: "enquiry" as const })),
-        ...v.map((r) => ({ ...r, kind: "visit" as const })),
-      ];
-      const byKey: Record<string, FollowUp[]> = {};
-      for (const f of fuList) {
-        const key = normalisePhone(f.leadKey);
-        (byKey[key] ||= []).push(f);
-      }
-      // ensure newest-first inside each bucket
-      for (const k of Object.keys(byKey)) {
-        byKey[k].sort((x, y) => y.createdAt.localeCompare(x.createdAt));
-      }
+      const { merged, byKey } = await fetchInbox();
       setRows(merged);
       setFollowUpsByKey(byKey);
     } catch (e2) {
@@ -200,8 +216,29 @@ export default function InboxPage() {
     }
   }
 
+  // The mount load calls fetchInbox() directly rather than load(): load()
+  // opens with a synchronous setLoading(true)/setErr(null) prologue, and
+  // setState reached synchronously from an effect body is what
+  // react-hooks/set-state-in-effect flags. `loading` now initialises to true
+  // instead, so the first paint still shows the spinner. The cancelled flag
+  // also stops a slow inbox fetch from setting state after the admin has
+  // navigated away.
   useEffect(() => {
-    void load();
+    let cancelled = false;
+    void (async () => {
+      try {
+        const { merged, byKey } = await fetchInbox();
+        if (!cancelled) {
+          setRows(merged);
+          setFollowUpsByKey(byKey);
+        }
+      } catch (e2) {
+        if (!cancelled) setErr(e2 instanceof Error ? e2.message : "Could not load the inbox.");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
   }, []);
 
   const groups: LeadGroup[] = useMemo(

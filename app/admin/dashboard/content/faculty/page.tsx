@@ -35,7 +35,28 @@ export default function FacultyAdmin() {
     catch (e) { setErr(e instanceof Error ? e.message : "Failed"); }
     finally { setLoading(false); }
   }
-  useEffect(() => { refresh(); }, []);
+  // The initial load runs inline rather than through refresh(): refresh()
+  // opens with a synchronous setLoading(true)/setErr(null) prologue, and
+  // setState reached synchronously from an effect body is exactly what
+  // react-hooks/set-state-in-effect flags. That prologue is redundant on
+  // mount anyway -- `loading` already initialises to true. The cancelled
+  // flag is a real fix rather than lint appeasement: without it a slow
+  // response resolves after the admin has navigated away and sets state on
+  // an unmounted page.
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        const rows = await Faculty.list();
+        if (!cancelled) setRows(rows);
+      } catch (e) {
+        if (!cancelled) setErr(e instanceof Error ? e.message : "Failed");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
 
   async function togglePub(r: FacultyRow) {
     try { await Faculty.update(r.id, { is_published: !r.is_published }); refresh(); }
