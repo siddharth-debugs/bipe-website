@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useNow } from "@/lib/useNow";
 import Link from "next/link";
 import { DATA } from "@/lib/data";
 import { BANNER_ROUNDS, bannerRoundAt } from "@/lib/jeecupBannerRounds";
@@ -19,12 +19,11 @@ import { BANNER_ROUNDS, bannerRoundAt } from "@/lib/jeecupBannerRounds";
  * passed. `0` means "hidden" (before/after the campaign).
  */
 export function JeecupCounsellingBanner({ initialN }: { initialN: number }) {
-  const [n, setN] = useState(initialN);
-
-  useEffect(() => {
-    const live = bannerRoundAt(Date.now());
-    setN(live ? live.n : 0);
-  }, []);
+  // Server HTML and the hydration pass both use initialN, so the markup
+  // matches; once mounted the live clock takes over and rolls the round.
+  // See lib/useNow.ts.
+  const now = useNow();
+  const n = now === null ? initialN : bannerRoundAt(now)?.n ?? 0;
 
   const round = BANNER_ROUNDS.find((r) => r.n === n);
   if (!round) return null;
