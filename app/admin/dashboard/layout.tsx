@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Tokens, api, logout, hasPerm, type Me } from "@/lib/admin/api";
+import { useSignedIn } from "@/lib/admin/useSignedIn";
 import {
   LayoutDashboard,
   Inbox,
@@ -38,8 +39,30 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const router = useRouter();
   const pathname = usePathname();
   const [me, setMe] = useState<Me | null>(null);
-  const [ready, setReady] = useState(false);
+  // Read at render time, so the shell knows who it is drawing for before any
+  // effect has run. Set only when the server rejects a token we did have.
+  const hasToken = useSignedIn();
+  const [tokenRejected, setTokenRejected] = useState(false);
 
+  // Who is this, and what are they allowed to see?
+  //
+  // This used to hold the whole dashboard back: the layout rendered a bare
+  // skeleton until /auth/me/ answered. That cost far more than the one
+  // request. Because the page inside had not mounted, it had not started
+  // loading its own data either — so the two waits ran back to back rather
+  // than side by side, and the operator watched a blank screen through both
+  // (Sep 2026 performance audit, finding F2).
+  //
+  // Now the shell renders immediately and this fetch resolves alongside the
+  // page's own. React runs a child's effects before its parent's, so the
+  // page has already fired its requests by the time this one leaves.
+  //
+  // Nothing is disclosed early by doing so. The sidebar's permission-gated
+  // links stay hidden while `me` is null — hasPerm(null, …) is false — and
+  // every figure on screen arrives from an API that checks the token itself.
+  // A visitor with no token, or a stale one, is redirected below; they get
+  // one wasted unauthenticated request from the page underneath on the way
+  // out, which is a fair price for not stalling every signed-in load.
   useEffect(() => {
     if (!Tokens.access()) {
       router.replace("/admin");
@@ -49,9 +72,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       .then((u) => setMe(u))
       .catch(() => {
         Tokens.clear();
+        setTokenRejected(true);
         router.replace("/admin");
-      })
-      .finally(() => setReady(true));
+      });
   }, [router]);
 
   async function onLogout() {
@@ -59,24 +82,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     router.replace("/admin");
   }
 
-  if (!ready) {
-    return (
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "grid",
-          placeItems: "center",
-          color: "var(--ink-3)",
-          fontFamily: "var(--font-mono)",
-          fontSize: 11,
-          letterSpacing: "0.18em",
-          background: "var(--paper)",
-        }}
-      >
-        <span className="admin-skel" style={{ width: 80, height: 6 }} />
-      </div>
-    );
-  }
+  // Signed out — either no token at all, or one the server refused. The
+  // redirect is already in flight; painting the dashboard chrome on the way
+  // to the login screen would only flash.
+  if (!hasToken || tokenRejected) return null;
 
   return (
     <div
@@ -203,6 +212,32 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             borderTop: "1px dashed var(--line-2)",
           }}
         >
+          {/*
+            The signed-in user's chip. `me` arrives a moment after the shell
+            now that the layout no longer waits for it, so the placeholder
+            below holds the exact same space — otherwise Sign out would jump
+            down the sidebar the instant /auth/me/ answered.
+          */}
+          {!me && (
+            <div
+              aria-hidden="true"
+              style={{
+                padding: "10px 14px",
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <span
+                className="admin-skel"
+                style={{ width: 32, height: 32, borderRadius: 8, flexShrink: 0 }}
+              />
+              <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+                <span className="admin-skel" style={{ width: 92, height: 8 }} />
+                <span className="admin-skel" style={{ width: 64, height: 7 }} />
+              </div>
+            </div>
+          )}
           {me && (
             <div
               style={{

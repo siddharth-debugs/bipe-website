@@ -8,18 +8,12 @@ import { ConditionalChrome } from "@/components/shell/ConditionalChrome";
 import { ROUTES, SITE_URL } from "@/lib/routes";
 import { DATA } from "@/lib/data";
 import { getPostBySlug } from "@/lib/blogPosts";
-// AnalyticsBeacon is a client component that defers Vercel Analytics
-// via dynamic({ ssr: false }) — Next.js forbids that flag inside Server
-// Components (which RootLayout is), so the wrapper exists to sidestep
-// the restriction. See components/shell/AnalyticsBeacon.tsx for the
-// INP-driven rationale (May 2026 CWV report).
-import AnalyticsBeacon from "@/components/shell/AnalyticsBeacon";
-import GoogleAnalyticsBeacon from "@/components/shell/GoogleAnalyticsBeacon";
-import MicrosoftClarityBeacon from "@/components/shell/MicrosoftClarityBeacon";
-import ClaritySessionTags from "@/components/shell/ClaritySessionTags";
-import MetaPixelBeacon from "@/components/shell/MetaPixelBeacon";
-import FbclidCapture from "@/components/shell/FbclidCapture";
-import OutboundTracker from "@/components/shell/OutboundTracker";
+// Every analytics tracker — Vercel Analytics, GA4, Clarity, the Meta
+// Pixel, the fbclid capture and the outbound-click tracker — now mounts
+// through this one component, which renders nothing on /admin. They used
+// to sit loose at the bottom of the <body> and ran on the dashboard too.
+// See components/shell/PublicTelemetry.tsx.
+import { PublicTelemetry } from "@/components/shell/PublicTelemetry";
 import { getContact, getBranchesMapped } from "@/lib/content";
 import { aggregateRatingSchema } from "@/lib/reviews";
 import type { Branch } from "@/lib/data";
@@ -543,14 +537,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </a>
         <LangProvider>
           <ConditionalChrome contact={footerContact}>{children}</ConditionalChrome>
-          <ClaritySessionTags />
+          {/*
+            Every analytics tracker, in one component that renders nothing
+            on /admin. See components/shell/PublicTelemetry.tsx — it stays
+            inside LangProvider because ClaritySessionTags tags the session
+            with the visitor's chosen language.
+          */}
+          <PublicTelemetry />
         </LangProvider>
-        <AnalyticsBeacon />
-        <GoogleAnalyticsBeacon />
-        <MicrosoftClarityBeacon />
-        <MetaPixelBeacon />
-        <FbclidCapture />
-        <OutboundTracker />
       </body>
     </html>
   );
