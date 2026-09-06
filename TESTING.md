@@ -93,6 +93,25 @@ each rule was verified by breaking it and watching the right test go red:
 | Reads hand out the stored object | does not hand out the object it is holding |
 | Writes keep the caller's object | does not keep a reference to what the caller stored |
 
+### The shared lead fetch was checked the same way
+
+`lib/admin/inboxData.test.ts` covers the page-walking the Overview was
+missing — the backend caps a list response at about 25 rows and hands back a
+`next` link, so a caller that fetches once counts a fraction of the data and
+reports it as the whole. Broken and confirmed red:
+
+| Break | Test that caught it |
+|---|---|
+| Stop walking pages (the exact Overview bug) | keeps asking while the API says there is more, +2 |
+| Remove the runaway-loop guard | gives up rather than looping forever |
+| Group follow-ups by raw phone, unnormalised | groups follow-ups by normalised phone |
+
+One note on fixtures, since it cost a red run: `fetchInbox` hits five
+endpoints and the follow-ups one returns a different shape from the four
+submission ones, so a single canned response for all of them is not a valid
+fixture. The first draft failed on a missing `createdAt` — the fixture's
+fault, not the code's. `stubByPath` in that file exists for this reason.
+
 `lib/admin/api.cache.test.ts` stubs `fetch`, `window` and `localStorage` to
 reach the browser-only path from Node. That is deliberate: the cache is gated
 on `isBrowser()` so a module-level `Map` can never be shared between two

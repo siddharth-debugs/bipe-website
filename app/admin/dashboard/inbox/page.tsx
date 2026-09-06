@@ -30,19 +30,10 @@ import {
   Users,
 } from "lucide-react";
 
-import {
-  api,
-  type ApplySubmission,
-  type ContactSubmission,
-  type EnquirySubmission,
-  type FollowUp,
-  type Paginated,
-  type VisitSubmission,
-} from "@/lib/admin/api";
-import { responseCache } from "@/lib/admin/api";
+import { api, responseCache, type FollowUp } from "@/lib/admin/api";
+import { fetchInbox } from "@/lib/admin/inboxData";
 import {
   buildLeadGroups,
-  normalisePhone,
   statusBucket,
   type AnyRow,
   type Kind,
@@ -97,79 +88,6 @@ const STATUS_BUCKETS: { value: StatusBucket; label: string }[] = [
 ];
 
 const PAGE_SIZE = 25;
-
-/**
- * Fetch EVERY page of a paginated DRF list endpoint.
- *
- * The backend caps each list response at ~25 rows regardless of the
- * requested `page_size`, returning a `next` link for the remainder.
- * A single fetch therefore only sees the most-recent page. That
- * silently dropped follow-ups beyond the first 25 — so any lead whose
- * latest follow-up sat on page 2+ rendered as "New" even though its
- * status was saved (bug found 1 Jun 2026: 53 follow-ups, only 25
- * fetched). Walk `next` until the API runs out of pages.
- */
-async function fetchAllPages<T>(
-  path: string,
-  ordering = "-created_at",
-): Promise<T[]> {
-  const all: T[] = [];
-  let page = 1;
-  // Hard stop so a misbehaving API can never loop forever.
-  for (let guard = 0; guard < 100; guard++) {
-    const res = await api<Paginated<T> | T[]>(path, {
-      searchParams: { page, page_size: 500, ordering },
-    });
-    if (Array.isArray(res)) {
-      all.push(...res);
-      break;
-    }
-    all.push(...(res.results ?? []));
-    if (!res.next) break;
-    page += 1;
-  }
-  return all;
-}
-
-/**
- * Fetch every inbox endpoint and shape the result.
- *
- * Split out of the component's load() so it holds no state of its own: the
- * mount effect can call it without dragging load()'s synchronous
- * setLoading(true)/setErr(null) prologue into the effect body, while the
- * refresh path keeps using load(). Both callers share this one copy.
- */
-async function fetchInbox(): Promise<{
-  merged: AnyRow[];
-  byKey: Record<string, FollowUp[]>;
-}> {
-  // Every endpoint is fetched across ALL its pages — the backend
-  // caps page size at ~25, so a single request would truncate the
-  // follow-ups (53 of them) and the larger submission kinds.
-  const [a, c, e, v, fuList] = await Promise.all([
-    fetchAllPages<ApplySubmission>("/submissions/apply/"),
-    fetchAllPages<ContactSubmission>("/submissions/contact/"),
-    fetchAllPages<EnquirySubmission>("/submissions/enquiry/"),
-    fetchAllPages<VisitSubmission>("/submissions/visit/"),
-    fetchAllPages<FollowUp>("/submissions/follow-ups/"),
-  ]);
-  const merged: AnyRow[] = [
-    ...a.map((r) => ({ ...r, kind: "apply" as const })),
-    ...c.map((r) => ({ ...r, kind: "contact" as const })),
-    ...e.map((r) => ({ ...r, kind: "enquiry" as const })),
-    ...v.map((r) => ({ ...r, kind: "visit" as const })),
-  ];
-  const byKey: Record<string, FollowUp[]> = {};
-  for (const f of fuList) {
-    const key = normalisePhone(f.leadKey);
-    (byKey[key] ||= []).push(f);
-  }
-  // ensure newest-first inside each bucket
-  for (const k of Object.keys(byKey)) {
-    byKey[k].sort((x, y) => y.createdAt.localeCompare(x.createdAt));
-  }
-  return { merged, byKey };
-}
 
 export default function InboxPage() {
   const [rows, setRows] = useState<AnyRow[]>([]);
