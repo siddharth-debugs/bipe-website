@@ -115,6 +115,13 @@ export default function Page() {
             {/* Live counselling-schedule strip — rolls Round 3 → allotment →
                 spot window on the exact IST dates, so the page always agrees
                 with whichever schedule-phased ad brought the click here. */}
+            {/* eslint-disable-next-line react-hooks/purity --
+            this file is a Server Component (no "use client"), so this render
+            happens once on the server and the clock read is the intended
+            mechanism: it hands the client component a build-time value to
+            hydrate against, exactly as the note above describes. The rule's
+            hazard -- a render whose output silently drifts between client
+            renders -- cannot arise here. */}
             <LpScheduleNote initialIndex={phaseIndexAt(Date.now())} />
 
             <div style={{ marginTop: 24, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>

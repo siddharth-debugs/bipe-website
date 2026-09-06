@@ -123,6 +123,13 @@ export default function LpLeadForm() {
   }
 
   return (
+    // False positive via react-hook-form. The rule sees a function that reads
+    // a ref (onSubmit reads the honeypot's current value) being passed to
+    // handleSubmit() during render, and cannot tell that handleSubmit RETURNS
+    // a submit handler rather than calling it. onSubmit runs only on form
+    // submission, never during render, so the stale-render hazard the rule
+    // guards against cannot occur here.
+    // eslint-disable-next-line react-hooks/refs
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <Honeypot ref={honeypot} />
       <div className={err("name") ? "field field-error" : "field"}>
