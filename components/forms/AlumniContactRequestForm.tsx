@@ -44,7 +44,6 @@ export type AlumniTarget = {
 
 interface Props {
   alumnus: AlumniTarget;
-  open: boolean;
   onClose: () => void;
 }
 
@@ -54,7 +53,7 @@ type SubmitState =
   | { state: "success"; firstName: string }
   | { state: "error"; message: string };
 
-export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
+export function AlumniContactRequestModal({ alumnus, onClose }: Props) {
   const honeypotRef = useRef<HTMLInputElement | null>(null);
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const [status, setStatus] = useState<SubmitState>({ state: "idle" });
@@ -63,7 +62,6 @@ export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
     register,
     control,
     handleSubmit,
-    reset,
     setValue,
     setError,
     formState: { errors, isSubmitting },
@@ -86,41 +84,37 @@ export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
     mode: "onTouched",
   });
 
-  // When the modal is reopened for a different alumnus, refresh the
-  // hidden alumni fields so the payload matches the current target.
+  // Keep the hidden alumni fields matching the current target. This only
+  // matters if the parent ever swaps `alumnus` without remounting; it costs
+  // nothing if it does not.
   useEffect(() => {
-    if (!open) return;
     setValue("alumniId", alumnus.id);
     setValue("alumniName", alumnus.name);
     setValue("alumniBranch", alumnus.branch ?? "");
     setValue("alumniYear", alumnus.year ? String(alumnus.year) : "");
     setValue("alumniCompany", alumnus.company ?? "");
-  }, [open, alumnus, setValue]);
+  }, [alumnus, setValue]);
 
-  // Reset internal state when the modal is dismissed. Split in two: clearing
-  // our own status is state derived from `open`, so it is adjusted during
-  // render (react.dev/learn/you-might-not-need-an-effect), while reset() is an
-  // imperative call into react-hook-form's own store -- an external system,
-  // which is what effects are actually for -- and stays in one.
-  const [lastOpen, setLastOpen] = useState(open);
-  if (open !== lastOpen) {
-    setLastOpen(open);
-    if (!open) setStatus({ state: "idle" });
-  }
-
-  useEffect(() => {
-    if (!open) reset();
-  }, [open, reset]);
+  // NO dismiss-reset here, deliberately. AlumniView renders this as
+  // `{requestedAlumni && <AlumniContactRequestModal …/>}`, so closing unmounts
+  // the component and React discards every piece of its state — the form
+  // values, the submit status, all of it. A reset would be unreachable code.
+  //
+  // This is a real dependency on the parent, not an accident: if the modal is
+  // ever changed to stay mounted while closed (for an exit animation, say),
+  // one visitor's answers would carry into the next visitor's form, and a
+  // reset has to come back with that change. e2e/alumni.spec.ts covers the
+  // behaviour end to end, so that regression fails a check rather than
+  // reaching anyone.
 
   // Close on Escape.
   useEffect(() => {
-    if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
+  }, [onClose]);
 
   // useWatch rather than useForm's watch(): watch() returns a subscription
   // function the React Compiler cannot memoize safely, so it bails out of
@@ -183,8 +177,6 @@ export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
     const e = errors[k as keyof typeof errors];
     return e?.message ? String(e.message) : undefined;
   };
-
-  if (!open) return null;
 
   // Subtitle string — branch · year · company, falling back gracefully.
   const subtitleParts = [
