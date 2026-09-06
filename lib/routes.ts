@@ -35,6 +35,9 @@ export type RouteKey =
   | "bteupColleges" | "bteupMigration" | "bteupDuplicateMarksheet";
 
 // 2026-06-01 — flipped from "https://www.bipevns.org" to apex.
+// 2026-09-06 — canonical moved to the .ac.in domain. bipevns.org now
+// 301s here; it is NOT retired (api.bipevns.org, the social handle
+// "bipevns", and the GSC/Meta verification tags all still use it).
 // Vercel's domain config enforces www → apex (308). Every canonical
 // URL, sitemap entry, OG URL and Schema @id derives from this
 // constant, so the previous www value emitted canonicals that the
@@ -42,7 +45,7 @@ export type RouteKey =
 // "Redirect error" because canonicals must resolve to a 200 directly.
 // Apex matches what Vercel serves and what users actually land on
 // after the redirect.
-export const SITE_URL = "https://bipevns.org";
+export const SITE_URL = "https://bipe.ac.in";
 
 export const ROUTES: Record<RouteKey, {
   path: string;
@@ -382,8 +385,8 @@ export const ROUTES: Record<RouteKey, {
   },
   terms: {
     path: "/terms",
-    title: "Terms of Use — bipevns.org | BIPE Varanasi",
-    description: "Terms governing the use of bipevns.org and BIPE digital services. Includes IT Rules 2021 grievance officer details.",
+    title: "Terms of Use — bipe.ac.in | BIPE Varanasi",
+    description: "Terms governing the use of bipe.ac.in and BIPE digital services. Includes IT Rules 2021 grievance officer details.",
   },
   antiRagging: {
     path: "/anti-ragging",

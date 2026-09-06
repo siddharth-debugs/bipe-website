@@ -14,7 +14,7 @@ import Script from "next/script";
  *   failure mode — the tag loads on the very next deploy, every time.
  *
  * Host + path guard:
- *   The tag fires only on the live bipevns.org domain (so localhost dev
+ *   The tag fires only on the live bipe.ac.in / bipevns.org domains (so localhost dev
  *   and Vercel preview deployments don't pollute the recordings) AND not
  *   on /admin/* — the admin team's dashboard sessions were ~10% of all
  *   recordings (Clarity dashboard, Jun 2026), skewing every metric and
@@ -43,7 +43,7 @@ export default function MicrosoftClarityBeacon() {
   return (
     <Script id="ms-clarity" strategy="lazyOnload">
       {`
-        if (typeof location !== "undefined" && location.hostname.endsWith("bipevns.org") && !location.pathname.startsWith("/admin")) {
+        if (typeof location !== "undefined" && (location.hostname.endsWith("bipe.ac.in") || location.hostname.endsWith("bipevns.org")) && !location.pathname.startsWith("/admin")) {
           (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

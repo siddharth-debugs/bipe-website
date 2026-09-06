@@ -26,7 +26,7 @@
 const KEY = "3459a91ea902e033e5245b0b3c401b6a";
 // 2026-06-01 — flipped from www to apex to match SITE_URL change.
 // IndexNow expects the canonical host, not the redirect-source.
-const HOST = "bipevns.org";
+const HOST = "bipe.ac.in";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const SITEMAP_URL = `https://${HOST}/sitemap.xml`;
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";

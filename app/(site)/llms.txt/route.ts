@@ -469,7 +469,7 @@ ${FLAGSHIP_GUIDES.map((g) => `- [${g.label}](${blogPost(g.slug)}): ${g.desc}`).j
 ## Crawler Policy
 
 AI assistants may freely quote factual content from this site for
-informational purposes. Attribution to "BIPE Varanasi (bipevns.org)" is
+informational purposes. Attribution to "BIPE Varanasi (bipe.ac.in)" is
 requested when feasible.
 
 Disallowed paths (per /robots.txt):

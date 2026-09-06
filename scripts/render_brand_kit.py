@@ -387,7 +387,7 @@ def main():
     c.setAuthor("Banaras Institute of Polytechnic & Engineering")
     c.setSubject("Logo, palette and typography reference")
     c.setKeywords("BIPE, brand, logo, palette, typography")
-    c.setCreator("bipevns.org")
+    c.setCreator("bipe.ac.in")
 
     draw_background(c)
     draw_header(c)

@@ -36,7 +36,7 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     /** Microsoft Clarity queue/API — present only on the live host
-     *  (the beacon injects it for bipevns.org only). */
+     *  (the beacon injects it for bipe.ac.in / bipevns.org only). */
     clarity?: (...args: unknown[]) => void;
   }
 }
@@ -50,7 +50,7 @@ export type AnalyticsParams = Record<string, string | number | boolean | undefin
  * can be filtered the same way — e.g. "show recordings where
  * application_submit_success fired", or "filter to programme = Civil
  * Engineering". No-ops when Clarity isn't loaded (localhost / Vercel
- * preview — the beacon only injects on the live bipevns.org host) and
+ * preview — the beacon only injects on the live bipe.ac.in / bipevns.org hosts) and
  * never throws. Clarity API ref: clarity("set", key, value) for tags,
  * clarity("event", name) for custom events.
  */

@@ -134,7 +134,7 @@ export default function OverviewPage() {
         eyebrow="Overview"
         title="Submissions"
         accent="at a glance."
-        description="Live counts across the four forms on bipevns.org. Leads are deduplicated by phone — the same prospect across Apply / Contact / Enquiry / Visit counts as one."
+        description="Live counts across the four forms on bipe.ac.in. Leads are deduplicated by phone — the same prospect across Apply / Contact / Enquiry / Visit counts as one."
         right={
           <>
             <Pill tone="brand" noDot>

@@ -52,7 +52,7 @@ export default function ClaritySessionTags() {
         try {
           const host = new URL(document.referrer).hostname.replace(/^www\./, "");
           // Internal navigation isn't a "source".
-          source = host.endsWith("bipevns.org") ? null : host;
+          source = (host.endsWith("bipe.ac.in") || host.endsWith("bipevns.org")) ? null : host;
         } catch {
           /* malformed referrer — ignore */
         }

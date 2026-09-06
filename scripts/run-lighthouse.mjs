@@ -33,11 +33,11 @@ const CHROME_PATH =
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const PAGES = [
-  { name: "home",                url: "https://bipevns.org/" },
-  { name: "admission",           url: "https://bipevns.org/admission" },
-  { name: "jeecup",              url: "https://bipevns.org/jeecup" },
-  { name: "jeecup-counselling",  url: "https://bipevns.org/jeecup-counselling" },
-  { name: "about",               url: "https://bipevns.org/about" },
+  { name: "home",                url: "https://bipe.ac.in/" },
+  { name: "admission",           url: "https://bipe.ac.in/admission" },
+  { name: "jeecup",              url: "https://bipe.ac.in/jeecup" },
+  { name: "jeecup-counselling",  url: "https://bipe.ac.in/jeecup-counselling" },
+  { name: "about",               url: "https://bipe.ac.in/about" },
 ];
 
 if (!fs.existsSync(CHROME_PATH)) {

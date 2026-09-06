@@ -25,7 +25,7 @@ export default function Page() {
           <h1 className="bipe-h1" style={{ marginTop: 18, maxWidth: "22ch" }}>
             Terms governing{" "}
             <span className="serif" style={{ color: "var(--brand)", fontStyle: "italic", fontWeight: 400 }}>
-              the use of bipevns.org.
+              the use of bipe.ac.in.
             </span>
           </h1>
           <p className="lead" style={{ marginTop: 22, maxWidth: "62ch" }}>
@@ -39,7 +39,7 @@ export default function Page() {
           {[
             {
               h: "Use of the website",
-              b: "Information on bipevns.org is provided for general guidance about BIPE’s academic programmes, admission process, fees, campus and approvals. You may not scrape, mirror, or republish substantial portions of the site without written permission from the Principal’s office.",
+              b: "Information on bipe.ac.in is provided for general guidance about BIPE’s academic programmes, admission process, fees, campus and approvals. You may not scrape, mirror, or republish substantial portions of the site without written permission from the Principal’s office.",
             },
             {
               h: "Accuracy and currency",
