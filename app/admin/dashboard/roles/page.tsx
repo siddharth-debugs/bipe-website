@@ -79,7 +79,26 @@ export default function RolesPage() {
     }
   }
 
-  useEffect(() => { refresh(); }, []);
+  // Initial load runs inline rather than through the shared loader: that
+  // loader opens with a synchronous setLoading(true)/setErr(null) prologue,
+  // and setState reached synchronously from an effect body is what
+  // react-hooks/set-state-in-effect flags. The prologue is redundant on
+  // mount -- `loading` already initialises to true. The cancelled flag also
+  // stops a slow response from setting state after the admin navigates away.
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        const rs = await listRoles();
+        if (!cancelled) setRoles(rs);
+      } catch (e) {
+        if (!cancelled) setErr(e instanceof Error ? e.message : "Failed to load");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
 
   function openNew() {
     setEditorRole(null);
