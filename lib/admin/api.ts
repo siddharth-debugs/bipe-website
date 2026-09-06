@@ -80,16 +80,71 @@ export const Tokens = {
   },
 };
 
+/**
+ * End the session and get the operator to the login screen.
+ *
+ * Until now nothing did the second half. When a token expired, refreshAccess()
+ * cleared the tokens and returned null, every caller's request failed, and the
+ * dashboard sat there rendering its zero states — "0 new · 0 leads · All leads
+ * · 0" — with no indication that anything was wrong. To an admissions operator
+ * that reads as the leads having vanished, which is about the most alarming
+ * thing this panel could say and was not even true.
+ *
+ * The layout does redirect on a rejected token, but only from its one mount
+ * check of /auth/me/. A session that dies later, with the tab already open, was
+ * never anyone's job to notice.
+ *
+ * A hard navigation rather than the router, for two reasons: this module has no
+ * router to reach, and a full load is the right thing for a sign-out anyway —
+ * nothing in memory survives to leak into the next person's session.
+ */
+let endingSession = false;
+
+function endSession(): void {
+  Tokens.clear();
+  if (!isBrowser() || endingSession) return;
+  // Already on the login screen; there is nowhere to send them.
+  if (window.location.pathname === "/admin") return;
+  endingSession = true;
+  // replace(), not assign(): Back should not return to a dead dashboard.
+  window.location.replace("/admin");
+}
+
+/**
+ * One refresh at a time, however many requests hit a 401 together.
+ *
+ * The Inbox fires five endpoints at once and the layout adds a sixth. When a
+ * token expires they all 401 in the same tick, and each used to start its own
+ * refresh — six POSTs to /auth/refresh/ for one dead session, all racing to
+ * write the same tokens. Callers now share whichever attempt is in flight.
+ */
+let refreshInFlight: Promise<string | null> | null = null;
+
 async function refreshAccess(): Promise<string | null> {
+  if (refreshInFlight) return refreshInFlight;
+  refreshInFlight = performRefresh();
+  try {
+    return await refreshInFlight;
+  } finally {
+    refreshInFlight = null;
+  }
+}
+
+async function performRefresh(): Promise<string | null> {
   const r = Tokens.refresh();
-  if (!r) return null;
+  if (!r) {
+    endSession();
+    return null;
+  }
   const res = await fetch(`${API_BASE_URL}/auth/refresh/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ refresh: r }),
   });
   if (!res.ok) {
-    Tokens.clear();
+    // The server has refused the refresh token too. There is no way back to a
+    // working session from here, so stop pretending there is one.
+    endSession();
     return null;
   }
   const data = (await res.json()) as { access: string; refresh?: string };
