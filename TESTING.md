@@ -93,6 +93,28 @@ each rule was verified by breaking it and watching the right test go red:
 | Reads hand out the stored object | does not hand out the object it is holding |
 | Writes keep the caller's object | does not keep a reference to what the caller stored |
 
+### Session expiry was found from a screenshot, not a test
+
+`lib/admin/api.session.test.ts` covers what happens when the backend stops
+accepting a token. That path had no coverage at all, and the bug it now pins
+was found by looking at a real browser console: an operator's token expired
+with the tab open, every request 401'd, the refresh 401'd too — and the
+dashboard carried on rendering "0 new · 0 leads" as if that were the data.
+
+Broken and confirmed red:
+
+| Break | Test that caught it |
+|---|---|
+| Clear the tokens but never navigate (the original bug) | sends the operator to the login screen, +2 |
+| One refresh attempt per failed request | refreshes once for a burst, not once each |
+| Redirect even when already on /admin | does not redirect when already on the login screen |
+
+A fixture note that cost a red run, and the same shape as the one below: the
+fake `Response` first had only `text()`. Every test passed except the one
+exercising a *successful* refresh, because that is the only path calling
+`json()`. A stub that is missing a method fails narrowly and looks like a code
+bug.
+
 ### The shared lead fetch was checked the same way
 
 `lib/admin/inboxData.test.ts` covers the page-walking the Overview was
