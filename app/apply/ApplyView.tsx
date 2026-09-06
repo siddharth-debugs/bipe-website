@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { useForm, Controller, type SubmitHandler } from "react-hook-form";
+import { useForm, useWatch, Controller, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
@@ -32,7 +32,6 @@ export function ApplyView() {
     register,
     control,
     handleSubmit,
-    watch,
     formState: { errors, isSubmitting },
     setError,
   } = useForm<ApplyFormData>({
@@ -41,7 +40,12 @@ export function ApplyView() {
     mode: "onTouched",
   });
 
-  const name = watch("name");
+  // useWatch rather than useForm's watch(): watch() returns a subscription
+  // function the React Compiler cannot memoize safely, so it bails out of
+  // optimising this whole component (react-hooks/incompatible-library).
+  // useWatch is react-hook-form's hook form of the same read and subscribes
+  // through `control`, which the compiler handles.
+  const name = useWatch({ control, name: "name" });
 
   const onSubmit: SubmitHandler<ApplyFormData> = async (data) => {
     setSubmitStatus({ state: "submitting" });
@@ -170,6 +174,14 @@ export function ApplyView() {
   return (
     <section id="apply-form" className="section" style={{ position: "relative", overflow: "hidden", paddingTop: 32, scrollMarginTop: 80 }}>
       <div className="container" style={{ maxWidth: 820 }}>
+        {/* False positive via react-hook-form. The rule sees a function that reads
+            a ref (onSubmit reads the honeypot's current value) being passed to
+            handleSubmit() during render, and cannot tell that handleSubmit RETURNS
+            a submit handler rather than calling it. onSubmit runs only on form
+            submission, never during render, so the stale-render hazard the rule
+            guards against cannot occur here. Surfaced once useWatch let the
+            compiler start optimising this component at all. */}
+        {/* eslint-disable-next-line react-hooks/refs */}
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <Honeypot ref={honeypotRef} />
           <div style={{

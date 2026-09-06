@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useForm, useWatch, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Honeypot } from "@/components/shell/Honeypot";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
@@ -61,9 +61,9 @@ export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
 
   const {
     register,
+    control,
     handleSubmit,
     reset,
-    watch,
     setValue,
     setError,
     formState: { errors, isSubmitting },
@@ -97,12 +97,19 @@ export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
     setValue("alumniCompany", alumnus.company ?? "");
   }, [open, alumnus, setValue]);
 
-  // Reset internal state when the modal is dismissed.
+  // Reset internal state when the modal is dismissed. Split in two: clearing
+  // our own status is state derived from `open`, so it is adjusted during
+  // render (react.dev/learn/you-might-not-need-an-effect), while reset() is an
+  // imperative call into react-hook-form's own store -- an external system,
+  // which is what effects are actually for -- and stays in one.
+  const [lastOpen, setLastOpen] = useState(open);
+  if (open !== lastOpen) {
+    setLastOpen(open);
+    if (!open) setStatus({ state: "idle" });
+  }
+
   useEffect(() => {
-    if (!open) {
-      setStatus({ state: "idle" });
-      reset();
-    }
+    if (!open) reset();
   }, [open, reset]);
 
   // Close on Escape.
@@ -115,7 +122,12 @@ export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  const purpose = watch("purpose");
+  // useWatch rather than useForm's watch(): watch() returns a subscription
+  // function the React Compiler cannot memoize safely, so it bails out of
+  // optimising this whole component (react-hooks/incompatible-library).
+  // useWatch is react-hook-form's hook form of the same read and subscribes
+  // through `control`, which the compiler handles.
+  const purpose = useWatch({ control, name: "purpose" });
 
   const onSubmit: SubmitHandler<AlumniContactRequestData> = async (data) => {
     setStatus({ state: "submitting" });
@@ -287,6 +299,14 @@ export function AlumniContactRequestModal({ alumnus, open, onClose }: Props) {
             </div>
           </div>
         ) : (
+          // False positive via react-hook-form. The rule sees a function that reads
+          // a ref (onSubmit reads the honeypot's current value) being passed to
+          // handleSubmit() during render, and cannot tell that handleSubmit RETURNS
+          // a submit handler rather than calling it. onSubmit runs only on form
+          // submission, never during render, so the stale-render hazard the rule
+          // guards against cannot occur here. Surfaced once useWatch let the
+          // compiler start optimising this component at all.
+          // eslint-disable-next-line react-hooks/refs
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="inq-form">
             <Honeypot ref={honeypotRef} />
 
