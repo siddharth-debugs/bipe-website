@@ -379,11 +379,16 @@ export const metadata: Metadata = {
     languages: { "en-IN": "/" },
   },
   robots: { index: true, follow: true },
-  // Backup ownership verification for the GSC URL-prefix property
-  // (https://www.bipevns.org/). The Domain property bipevns.org is
-  // verified via DNS TXT on Wix; this <meta> gives a second,
-  // code-side verification path so we don't lose GSC access if the
-  // DNS record gets edited by mistake.
+  // Backup ownership verification for the bipe.ac.in Domain property.
+  // That property is verified by DNS TXT in Vercel's DNS panel; this
+  // <meta> is a second, code-side path so we don't lose GSC access if
+  // the TXT record gets edited by mistake.
+  //
+  // 2026-09-06 — was the bipevns.org token (OZV4dGpm…), pointing at the
+  // https://www.bipevns.org/ URL-prefix property. That host now 308s to
+  // bipe.ac.in, so Google can no longer read its HTML and the tag had
+  // stopped verifying anything. bipevns.org itself stays verified via
+  // its three DNS TXT records at Wix — do not remove those.
   //
   // facebook-domain-verification: verifies the domain in Meta Business
   // Manager — the prerequisite for configuring the Meta Pixel / ads /
@@ -398,7 +403,7 @@ export const metadata: Metadata = {
   //     verification before the new one is confirmed. Drop it once
   //     bipe.ac.in shows Verified in Business Settings.
   verification: {
-    google: "OZV4dGpmUItyv5MzDzQ7WxFZDyhNja62R_rP1joizYY",
+    google: "6kLRIW93R57H8plgXE89uhsXyry7uFCtqTEj8SVVVQ4",
     other: {
       "facebook-domain-verification": [
         "vqexpc0p3rypws1kc89ryreec3rydg",
