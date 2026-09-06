@@ -154,7 +154,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                BIPE holds AICTE permanent recognition, BTEUP affiliation under JEECUP code 4455 and active AISHE registration. Documents are public; copies are available on request from the Principal's office.
+                BIPE holds AICTE permanent recognition, BTEUP affiliation under JEECUP code 4455 and active AISHE registration. Documents are public; copies are available on request from the Principal&apos;s office.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap", alignItems: "center" }}>
                 <span className="pill pill-accent">EoA · 16 MAR 2026</span>
@@ -259,7 +259,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Where a public portal exists, the verify link is one click away. Where it doesn't, the certificate is available on written request to the Principal's office.
+              Where a public portal exists, the verify link is one click away. Where it doesn&apos;t, the certificate is available on written request to the Principal&apos;s office.
             </p>
           </div>
 
@@ -568,7 +568,7 @@ export default function Page() {
               <div>
                 <div className="eyebrow" style={{ color: "var(--accent)" }}>Verify independently</div>
                 <h2 style={{ fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.08, fontWeight: 600, letterSpacing: "-0.02em", marginTop: 14, color: "var(--paper)", maxWidth: "20ch" }}>
-                  Don't take our word for it.{" "}
+                  Don&apos;t take our word for it.{" "}
                   <span className="serif" style={{ color: "var(--accent)", fontStyle: "italic", fontWeight: 400 }}>
                     Check the portals.
                   </span>

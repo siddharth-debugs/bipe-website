@@ -107,7 +107,6 @@ export function InquiryModal() {
     document.addEventListener("mouseout", onExitIntent);
     return cleanup;
     // Re-evaluate on SPA navigation so route + cap checks apply per page.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   function close() {

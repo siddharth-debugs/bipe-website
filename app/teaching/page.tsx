@@ -74,7 +74,7 @@ export default function Page() {
                 </span>
               </h1>
               <p className="lead" style={{ marginTop: 22, maxWidth: "52ch" }}>
-                The pedagogy we use to take a 10th-pass aspirant from rural India and turn them, in three years, into a diploma engineer who can hold a tool, read a drawing, run a small team and walk into an employer's interview without translation.
+                The pedagogy we use to take a 10th-pass aspirant from rural India and turn them, in three years, into a diploma engineer who can hold a tool, read a drawing, run a small team and walk into an employer&apos;s interview without translation.
               </p>
               <div className="row" style={{ marginTop: 28, gap: 12, flexWrap: "wrap" }}>
                 <Link href="/courses" className="btn btn-primary">Explore courses <ArrowIcon size={14} /></Link>
@@ -342,7 +342,7 @@ export default function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              Five principles, reviewed annually, that govern how AI tools enter the classroom — and how they don't.
+              Five principles, reviewed annually, that govern how AI tools enter the classroom — and how they don&apos;t.
             </p>
           </div>
 

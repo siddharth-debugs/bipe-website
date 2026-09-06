@@ -73,7 +73,6 @@ export default function ClaritySessionTags() {
       /* analytics must never throw */
     }
     // Run once on mount — the entry URL/referrer defines the session source.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;

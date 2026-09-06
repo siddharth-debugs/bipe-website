@@ -156,6 +156,12 @@ export default function GoogleAnalyticsBeacon() {
         default). Initialised BEFORE gtag.js so the GA4 loader reads
         the consent state correctly on first event dispatch.
       */}
+      {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document --
+          false positive: the rule checks which FILE the <Script> literal sits in, not
+          where it renders. This component is rendered from app/layout.tsx (see its
+          <GoogleAnalyticsBeacon /> in the body), which is exactly where
+          beforeInteractive is valid. The strategy is load-bearing: Consent Mode v2
+          must initialise before gtag.js, per the comment above. */}
       <Script id="ga4-consent-default" strategy="beforeInteractive">
         {`
           window.dataLayer = window.dataLayer || [];

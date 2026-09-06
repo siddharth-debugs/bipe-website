@@ -77,10 +77,14 @@ export default function AlumniAdmin() {
   const columns: ColumnDef<AlumnusRow>[] = [
     { id: "photo", header: "", enableSorting: false,
       cell: ({ row }) => row.original.photo_url ? (
-        // eslint-disable-next-line @next/next/no-img-element
         // alt = alumnus name so a screen reader on the avatar cell
         // announces who the row represents — the name column repeats
         // it, which is the standard table-avatar a11y pattern.
+        //
+        // next/image is not usable here: photo_url is an arbitrary
+        // operator-supplied remote URL, so it has no configured remote
+        // pattern and no known intrinsic size.
+        // eslint-disable-next-line @next/next/no-img-element
         <img src={row.original.photo_url} alt={`${row.original.name} avatar`} style={{ height: 36, width: 36, borderRadius: "50%", objectFit: "cover", border: "1px solid var(--line)" }} />
       ) : (
         <div style={{ height: 36, width: 36, borderRadius: "50%", background: "var(--paper-2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--ink-3)", fontSize: 11, fontWeight: 600 }}>

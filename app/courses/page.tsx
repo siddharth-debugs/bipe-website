@@ -831,7 +831,7 @@ export default async function Page() {
               </h2>
             </div>
             <p style={{ color: "var(--ink-2)", maxWidth: "44ch", justifySelf: "end", textAlign: "right" }}>
-              The cut-off doesn't decide your branch — your hands do. Four small rules our admissions counsellors share with every family that walks in.
+              The cut-off doesn&apos;t decide your branch — your hands do. Four small rules our admissions counsellors share with every family that walks in.
             </p>
           </div>
 
@@ -1102,7 +1102,7 @@ export default async function Page() {
                       maxWidth: "44ch",
                     }}
                   >
-                    Apply once on JEECUP, choose any of our four branches in counselling, and start the diploma in August. We'll meet you wherever you are in the decision.
+                    Apply once on JEECUP, choose any of our four branches in counselling, and start the diploma in August. We&apos;ll meet you wherever you are in the decision.
                   </p>
                 </div>
 

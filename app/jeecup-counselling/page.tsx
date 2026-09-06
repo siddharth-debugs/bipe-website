@@ -751,7 +751,7 @@ export default function Page() {
                     maxWidth: "46ch",
                   }}
                 >
-                  Counselling rules change year to year. If you're a real-time candidate during a
+                  Counselling rules change year to year. If you&apos;re a real-time candidate during a
                   2026 round window, talk to the admissions team — Hindi or English, on
                   WhatsApp or phone — before you submit choices. Free, no obligation.
                 </p>

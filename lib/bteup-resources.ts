@@ -103,8 +103,6 @@ export interface BteupResource {
 // here — see the note on SUBJECT_COUNTS in lib/branchContent.ts.
 import { SUBJECTS_PER_SEMESTER } from "@/lib/branchContent";
 
-/* eslint-disable max-len */
-
 export const BTEUP_RESOURCES: BteupResource[] = [
   // ─────────────────────────────────────────────────────────────────
   {
