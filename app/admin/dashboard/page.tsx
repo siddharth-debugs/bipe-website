@@ -23,18 +23,13 @@ import type { LucideIcon } from "lucide-react";
 
 import {
   api,
-  type ApplySubmission,
-  type ContactSubmission,
-  type EnquirySubmission,
   type FollowUp,
-  type Paginated,
   type Summary,
   type SummaryByForm,
-  type VisitSubmission,
 } from "@/lib/admin/api";
+import { fetchInbox } from "@/lib/admin/inboxData";
 import {
   buildLeadGroups,
-  normalisePhone,
   statusBucket,
   type AnyRow,
   type StatusBucket,
@@ -72,8 +67,6 @@ const BUCKET_META: Record<
   spam: { label: "Spam", tone: "danger" },
 };
 
-const PER_KIND_FETCH = 200;
-
 export default function OverviewPage() {
   const [summary, setSummary] = useState<Summary | null>(null);
   const [rows, setRows] = useState<AnyRow[]>([]);
@@ -85,40 +78,26 @@ export default function OverviewPage() {
   useEffect(() => {
     async function load() {
       try {
-        const [s, a, c, e, v, fu] = await Promise.all([
+        // The lead rows come from the same fetch the Inbox uses, so the two
+        // pages count from identical data — see lib/admin/inboxData.ts.
+        //
+        // This page used to ask each endpoint for one page of 200 and take
+        // what came back. The backend caps a list response at about 25 rows,
+        // so the "X new / Y leads" pills and the status strip below were
+        // computed from roughly a hundred submissions and 25 follow-ups no
+        // matter how many existed. They under-counted leads and, because a
+        // lead with no visible follow-up reads as "new", over-counted new
+        // ones. The per-kind cards were right the whole time, which made the
+        // disagreement look like phone de-duplication rather than a bug.
+        //
+        // The summary endpoint still supplies those per-kind cards: it counts
+        // raw submissions, which is what they show, and it is authoritative
+        // for that in a way a walked list is not.
+        const [s, { merged, byKey }] = await Promise.all([
           api<Summary>("/submissions/summary/"),
-          api<Paginated<ApplySubmission>>("/submissions/apply/", {
-            searchParams: { page_size: PER_KIND_FETCH, ordering: "-created_at" },
-          }),
-          api<Paginated<ContactSubmission>>("/submissions/contact/", {
-            searchParams: { page_size: PER_KIND_FETCH, ordering: "-created_at" },
-          }),
-          api<Paginated<EnquirySubmission>>("/submissions/enquiry/", {
-            searchParams: { page_size: PER_KIND_FETCH, ordering: "-created_at" },
-          }),
-          api<Paginated<VisitSubmission>>("/submissions/visit/", {
-            searchParams: { page_size: PER_KIND_FETCH, ordering: "-created_at" },
-          }),
-          api<Paginated<FollowUp> | FollowUp[]>("/submissions/follow-ups/", {
-            searchParams: { page_size: 500, ordering: "-created_at" },
-          }),
+          fetchInbox(),
         ]);
         setSummary(s);
-        const merged: AnyRow[] = [
-          ...a.results.map((r) => ({ ...r, kind: "apply" as const })),
-          ...c.results.map((r) => ({ ...r, kind: "contact" as const })),
-          ...e.results.map((r) => ({ ...r, kind: "enquiry" as const })),
-          ...v.results.map((r) => ({ ...r, kind: "visit" as const })),
-        ];
-        const fuList = Array.isArray(fu) ? fu : fu.results ?? [];
-        const byKey: Record<string, FollowUp[]> = {};
-        for (const f of fuList) {
-          const key = normalisePhone(f.leadKey);
-          (byKey[key] ||= []).push(f);
-        }
-        for (const k of Object.keys(byKey)) {
-          byKey[k].sort((x, y) => y.createdAt.localeCompare(x.createdAt));
-        }
         setRows(merged);
         setFollowUpsByKey(byKey);
       } catch (e2) {
