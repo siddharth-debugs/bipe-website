@@ -385,14 +385,25 @@ export const metadata: Metadata = {
   // code-side verification path so we don't lose GSC access if the
   // DNS record gets edited by mistake.
   //
-  // facebook-domain-verification (Jun 2026): verifies bipevns.org in Meta
-  // Business Manager — the prerequisite for configuring the Meta Pixel /
-  // ads / catalog against this domain. Emitted via verification.other as
-  // <meta name="facebook-domain-verification" content="…">.
+  // facebook-domain-verification: verifies the domain in Meta Business
+  // Manager — the prerequisite for configuring the Meta Pixel / ads /
+  // catalog against it. Emitted via verification.other as
+  // <meta name="facebook-domain-verification" content="…">; an array
+  // emits one tag per token, which is how both domains stay verified.
+  //
+  //   vqexpc… (Sep 2026) — bipe.ac.in, the canonical domain.
+  //   ssks90… (Jun 2026) — bipevns.org. Meta can no longer re-check it
+  //     (the domain 301s away, so its HTML is unreachable), but the tag
+  //     costs nothing and removing it early would drop the old domain's
+  //     verification before the new one is confirmed. Drop it once
+  //     bipe.ac.in shows Verified in Business Settings.
   verification: {
     google: "OZV4dGpmUItyv5MzDzQ7WxFZDyhNja62R_rP1joizYY",
     other: {
-      "facebook-domain-verification": "ssks90718djt8yzmo4m5lt085ohv7l",
+      "facebook-domain-verification": [
+        "vqexpc0p3rypws1kc89ryreec3rydg",
+        "ssks90718djt8yzmo4m5lt085ohv7l",
+      ],
     },
   },
   openGraph: {
