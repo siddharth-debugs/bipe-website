@@ -1,4 +1,4 @@
-name: CI · typecheck + build
+name: CI · lint + typecheck + build
 
 # Why this exists:
 #
@@ -9,9 +9,9 @@ name: CI · typecheck + build
 #   the previous deployment stayed live, and production returned 404
 #   for the new route until a hotfix went in.
 #
-#   This workflow runs `npx tsc --noEmit` + `npm run build` on every
-#   push and PR so the same class of error fails loudly in GitHub's
-#   PR check UI, before Vercel ever tries.
+#   This workflow runs `npx tsc --noEmit` + `npm run lint` +
+#   `npm run build` on every push and PR so the same class of error
+#   fails loudly in GitHub's PR check UI, before Vercel ever tries.
 #
 # Triggers:
 #   - push to main          (catch issues that landed already)
@@ -21,11 +21,31 @@ name: CI · typecheck + build
 #   - Runs ~2 minutes on a public-repo GitHub-hosted runner.
 #   - Free under the 2,000-minute / month limit for personal accounts.
 #
+# ESLint (added 6 Sep 2026):
+#
+#   This block used to say ESLint was deliberately excluded because it
+#   "currently fails on a backlog of legacy warnings. Add later as a
+#   separate workflow once the backlog is cleared." The backlog is now
+#   cleared — 65 errors to 0 — so that condition is met and the plan is
+#   carried out here.
+#
+#   It lands as a step in this job rather than as a separate workflow:
+#   a second workflow would repeat the checkout, the Node setup and a
+#   full `npm ci` to save nothing, and would report as a second check
+#   with the same pass/fail meaning.
+#
+#   `npm run lint` fails the job on ESLint ERRORS only. Warnings do not
+#   affect its exit code, and three are currently expected — all
+#   react-hooks/incompatible-library, reporting that react-hook-form's
+#   and TanStack Table's APIs return values the React Compiler cannot
+#   memoize. Those are third-party interop facts rather than defects
+#   here, and they will clear when those libraries ship compiler-
+#   compatible releases. Do NOT add --max-warnings 0 to make them fail
+#   without first clearing them, or CI goes red on something this repo
+#   cannot fix.
+#
 # What it does NOT do (intentionally):
 #   - Run tests — none exist yet in this repo.
-#   - Run ESLint — `next lint` is wired in package.json but is opt-in
-#     and currently fails on a backlog of legacy warnings. Add later
-#     as a separate workflow once the backlog is cleared.
 #   - Deploy. Vercel handles deploys; this workflow only validates.
 
 on:
@@ -36,6 +56,10 @@ on:
 
 jobs:
   typecheck-and-build:
+    # The job name is the string GitHub shows as the check, and is what a
+    # required-status-check setting would refer to. It is deliberately left
+    # as-is now that this job also lints, so no branch-protection rule
+    # silently stops matching. Rename it and the setting together.
     name: Typecheck + Next build
     runs-on: ubuntu-latest
 
@@ -58,6 +82,13 @@ jobs:
         # TypeScript error in a new page silently breaks the Vercel
         # build. `tsc --noEmit` catches the same error in ~30 seconds.
         run: npx tsc --noEmit
+
+      - name: ESLint
+        # Runs after typecheck so the more severe failure reports first,
+        # and before the build because it is much the cheaper of the two.
+        # See the ESLint note in the header for what does and does not
+        # fail this step.
+        run: npm run lint
 
       - name: Next.js build
         # Belt-and-suspenders — catches anything tsc misses (Next
