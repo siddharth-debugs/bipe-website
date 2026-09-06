@@ -1,0 +1,45 @@
+name: CRM arrivals check
+
+# Are website enquiries still reaching the Sampark CRM?
+#
+# Until 2026-09-06 nothing could answer that. The CRM webhook was write-only,
+# so a lead lost between the site and the CRM was invisible from both ends — and
+# one was: a bug that mangled mobiles beginning 91 dropped those students
+# silently, and they saw a success screen while no counsellor ever saw them.
+#
+# This runs the one-sided anomaly check in scripts/check-crm-arrivals.mjs. It
+# reads how many leads ARRIVED and compares today against the trailing week. It
+# is not a two-sided reconciliation — the SENT number lives behind an
+# OTP-to-a-phone login no scheduled job can complete. The script's closing note
+# says what would change that.
+#
+# A red run means "look at this", not "the CRM is down". The job also fails when
+# the CHECK could not run, which the log distinguishes.
+#
+# SETUP (one time): add BIPE_CRM_API_KEY to the repo's Actions secrets — the
+# same value already set in Vercel. Nothing else is needed; the endpoint URL is
+# public and lives below.
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # daily at 05:00 UTC / 10:30 IST — after the morning intake
+  workflow_dispatch: # run by hand from the Actions tab any time
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check arrivals against the trailing week
+        env:
+          BIPE_CRM_COUNT_URL: https://crm-backend.bitevns.org/api/v1/integrations/bite-leads/count/
+          BIPE_CRM_API_KEY: ${{ secrets.BIPE_CRM_API_KEY }}
+          BIPE_CRM_COLLEGE: BIPE
+        run: node scripts/check-crm-arrivals.mjs
