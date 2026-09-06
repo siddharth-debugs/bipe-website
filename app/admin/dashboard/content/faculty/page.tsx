@@ -137,14 +137,23 @@ function Editor({
   const [form, setForm] = useState<FacultyWrite>({});
   const [saving, setSaving] = useState(false);
 
-  useEffect(() => {
-    if (!open) return;
-    setForm(row ? { ...row } : {
-      name: "", designation: "", department: "", qualifications: "",
-      experience_years: null, bio: "", photo_url: "", email: "", linkedin_url: "",
-      is_principal: false, is_hod: false, is_published: true, sort_order: 0,
-    });
-  }, [open, row]);
+  // Reset the form when the dialog opens, and when it is opened on a
+  // different row. This adjusts state during render instead of in an effect,
+  // which is React's documented answer for "a prop changed, derive fresh
+  // state from it" (react.dev/learn/you-might-not-need-an-effect). React
+  // discards and re-runs the render immediately, so unlike the effect this
+  // replaces, the previously edited row's values are never painted first.
+  const [lastOpened, setLastOpened] = useState<{ open: boolean; row: typeof row }>({ open, row });
+  if (open !== lastOpened.open || row !== lastOpened.row) {
+    setLastOpened({ open, row });
+    if (open) {
+      setForm(row ? { ...row } : {
+        name: "", designation: "", department: "", qualifications: "",
+        experience_years: null, bio: "", photo_url: "", email: "", linkedin_url: "",
+        is_principal: false, is_hod: false, is_published: true, sort_order: 0,
+      });
+    }
+  }
   function set<K extends keyof FacultyWrite>(k: K, v: FacultyWrite[K]) { setForm((f) => ({ ...f, [k]: v })); }
 
   async function onSave() {
