@@ -133,14 +133,21 @@ function EventSheet({
   const [form, setForm] = useState<EventWrite>({});
   const [saving, setSaving] = useState(false);
 
-  useEffect(() => {
-    if (!open) return;
-    setForm(row ? { ...row } : {
-      date: new Date().toISOString().slice(0, 10),
-      tag: "Announcement", title: "", body: "", link_url: "", image_url: "",
-      is_published: true, sort_order: 0,
-    });
-  }, [open, row]);
+  // Reset the form when the dialog opens, and when it is opened on a
+  // different row. Adjusts state during render instead of in an effect --
+  // React's documented answer for "a prop changed, derive fresh state from
+  // it" (react.dev/learn/you-might-not-need-an-effect).
+  const [lastOpened, setLastOpened] = useState<{ open: boolean; row: typeof row }>({ open, row });
+  if (open !== lastOpened.open || row !== lastOpened.row) {
+    setLastOpened({ open, row });
+    if (open) {
+      setForm(row ? { ...row } : {
+        date: new Date().toISOString().slice(0, 10),
+        tag: "Announcement", title: "", body: "", link_url: "", image_url: "",
+        is_published: true, sort_order: 0,
+      });
+    }
+  }
   function set<K extends keyof EventWrite>(k: K, v: EventWrite[K]) { setForm((f) => ({ ...f, [k]: v })); }
 
   async function onSave() {
