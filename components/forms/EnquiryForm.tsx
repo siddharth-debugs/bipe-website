@@ -7,6 +7,8 @@ import { DATA } from "@/lib/data";
 import { ArrowIcon, WhatsAppIcon } from "@/components/shell/Icons";
 import { FormSelect } from "@/components/ui/FormSelect";
 import { Honeypot } from "@/components/shell/Honeypot";
+import { SeasonNotice } from "@/components/forms/SeasonNotice";
+import { CONSENT_SESSION, SUCCESS_SEASON_NOTE } from "@/lib/admissionSeason";
 import { track } from "@/lib/analytics";
 import { trackMetaEvent } from "@/lib/metaEvents";
 import {
@@ -80,7 +82,7 @@ const CONTEXT_COPY: Record<
       "I agree to be contacted by BIPE Admissions on the mobile number above for the purpose of this query. We'll never share your details with third parties.",
     successHeadline: "Thanks,",
     successBody: (phone: string) =>
-      `Admissions has your message. We'll call ${phone} within 24 hours, Monday to Saturday — in Hindi or English.`,
+      `Admissions has your message. We'll call ${phone} within 24 hours, Monday to Saturday — in Hindi or English. ${SUCCESS_SEASON_NOTE}`,
     successCtaAgain: "Send another",
     successErrorLabel: "Could not send. Please try again.",
     gtagEvent: "contact_submit",
@@ -90,11 +92,14 @@ const CONTEXT_COPY: Record<
     submitLoadingLabel: "Sending…",
     messagePlaceholder:
       "Your preferred date & slot (e.g. \"Sat 12 Jul, 11 AM\") + who's coming. Admissions will confirm by phone.",
-    consentText:
-      "I agree that BIPE may contact me about this visit and 2026-27 admissions. No spam, ever.",
+    // 7 Sep 2026 — this named "2026-27 admissions", the CLOSED session, in
+    // the small print people tick without reading. Now sourced from
+    // lib/admissionSeason.ts so it rolls with the cycle instead of going
+    // stale in place.
+    consentText: `I agree that BIPE may contact me about this visit and ${CONSENT_SESSION}. No spam, ever.`,
     successHeadline: "Got it,",
     successBody: (phone: string) =>
-      `Your visit request is in. We'll call ${phone} within a working day to lock the date, slot and faculty mentor for your chosen branch — in Hindi or English.`,
+      `Your visit request is in. We'll call ${phone} within a working day to lock the date, slot and faculty mentor for your chosen branch — in Hindi or English. ${SUCCESS_SEASON_NOTE}`,
     successCtaAgain: "Request another visit",
     successErrorLabel: "Could not send. Please try again or WhatsApp us.",
     gtagEvent: "visit_submit",
@@ -310,6 +315,11 @@ export function EnquiryForm({ context = "contact" }: EnquiryFormProps = {}) {
     // eslint-disable-next-line react-hooks/refs
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <Honeypot ref={honeypotRef} />
+      {/* Above the first field on both /contact and /visit. The bar at
+          the top of the page can be dismissed; this cannot. */}
+      <div style={{ marginBottom: 18 }}>
+        <SeasonNotice />
+      </div>
       <div
         className="bipe-form-row"
         style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}

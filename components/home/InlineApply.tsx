@@ -6,6 +6,8 @@ import { DATA } from "@/lib/data";
 import { BRANCH_OPTIONS } from "@/lib/formOptions";
 import { ArrowIcon } from "@/components/shell/Icons";
 import { Honeypot } from "@/components/shell/Honeypot";
+import { SeasonNotice } from "@/components/forms/SeasonNotice";
+import { OPEN_SESSION, SUCCESS_SEASON_NOTE } from "@/lib/admissionSeason";
 import { track } from "@/lib/analytics";
 import { trackMetaEvent } from "@/lib/metaEvents";
 
@@ -74,7 +76,7 @@ export const InlineApply = () => {
             <div className="pill" style={{ background: "color-mix(in oklab, var(--paper) 12%, transparent)", color: "var(--paper)" }}>Quick Enquiry · 30 seconds</div>
             <h2 className="bipe-h2" style={{ color: "var(--paper)", marginTop: 18 }}>Two paths to BIPE.</h2>
             <p style={{ color: "color-mix(in oklab, var(--paper) 75%, transparent)", marginTop: 14, lineHeight: 1.55, maxWidth: "42ch" }}>
-              <span className="serif" style={{ fontSize: 24, color: "var(--accent)" }}>Apply</span> via JEECUP code 4455 — or <span className="serif" style={{ fontSize: 24, color: "var(--accent)" }}>visit</span> the campus first. We&apos;ll guide you through both.
+              <span className="serif" style={{ fontSize: 24, color: "var(--accent)" }}>Enquire</span> for {OPEN_SESSION} via JEECUP code 4455 — or <span className="serif" style={{ fontSize: 24, color: "var(--accent)" }}>visit</span> the campus first. We&apos;ll guide you through both.
             </p>
             <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 10, fontSize: 13, opacity: 0.8 }}>
               <div className="row" style={{ alignItems: "center", gap: 10 }}><span style={{ color: "var(--accent)" }}>✓</span> Free guidance call within 24 hours</div>
@@ -86,14 +88,17 @@ export const InlineApply = () => {
             <div style={{ background: "color-mix(in oklab, var(--paper) 8%, transparent)", border: "1px solid color-mix(in oklab, var(--paper) 18%, transparent)", borderRadius: 18, padding: 32, textAlign: "center" }}>
               <div style={{ fontSize: 48 }}>✉</div>
               <h3 className="bipe-h3" style={{ color: "var(--paper)", marginTop: 8 }}>Got it, {form.name.split(" ")[0] || "friend"}.</h3>
-              <p style={{ color: "color-mix(in oklab, var(--paper) 75%, transparent)", marginTop: 8, fontSize: 14 }}>We&apos;ll call {form.phone || "you"} within 24 hours about {form.branch}.</p>
+              <p style={{ color: "color-mix(in oklab, var(--paper) 75%, transparent)", marginTop: 8, fontSize: 14 }}>We&apos;ll call {form.phone || "you"} within 24 hours about {form.branch}. {SUCCESS_SEASON_NOTE}</p>
               <Link href="/apply" className="btn btn-primary" style={{ marginTop: 18 }}>Open full Apply form</Link>
             </div>
           ) : (
             <form onSubmit={submit} style={{ background: "color-mix(in oklab, var(--paper) 6%, transparent)", border: "1px solid color-mix(in oklab, var(--paper) 14%, transparent)", borderRadius: 18, padding: 24, display: "flex", flexDirection: "column", gap: 14 }}>
               <Honeypot ref={honeypotRef} />
+              {/* The visitor is about to hand over a phone number — say which
+                  session this is for before they do, not after. */}
+              <SeasonNotice tone="dark" />
               <div className="row" style={{ gap: 6 }}>
-                {([["visit", "Book visit"], ["apply", "Apply now"]] as [string, string][]).map(([v, l]) => (
+                {([["visit", "Book visit"], ["apply", `Enquire · ${OPEN_SESSION}`]] as [string, string][]).map(([v, l]) => (
                   <button key={v} type="button" onClick={() => setForm({ ...form, mode: v })}
                     style={{ flex: 1, padding: "10px 14px", borderRadius: 10, border: "1px solid " + (form.mode === v ? "var(--accent)" : "transparent"), background: form.mode === v ? "color-mix(in oklab, var(--accent) 22%, transparent)" : "transparent", color: "var(--paper)", fontWeight: 500, fontSize: 14, cursor: "pointer" }}>{l}</button>
                 ))}
@@ -147,7 +152,7 @@ export const InlineApply = () => {
                   ? "Sending…"
                   : form.mode === "visit"
                     ? "Book my visit"
-                    : "Start application"} <ArrowIcon />
+                    : `Send my ${OPEN_SESSION} enquiry`} <ArrowIcon />
               </button>
               {send === "error" && (
                 <div role="alert" style={{ fontSize: 12, color: "color-mix(in oklab, var(--accent) 80%, #fff)", textAlign: "center" }}>

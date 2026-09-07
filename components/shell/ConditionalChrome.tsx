@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
+import { AdmissionSeasonBar } from "./AdmissionSeasonBar";
 import { Nav } from "./Nav";
 import { Footer, type FooterContact } from "./Footer";
 import { RevealObserver } from "@/components/ui/RevealObserver";
@@ -58,6 +59,11 @@ export function ConditionalChrome({
 
   return (
     <>
+      {/* Above <Nav> so the admission cycle is the first thing on the page.
+          Replaces JeecupCounsellingBanner, which was round-driven and hid
+          itself on 16 Aug, leaving the top of the site silent about the
+          closed session. See components/shell/AdmissionSeasonBar.tsx. */}
+      <AdmissionSeasonBar />
       <Nav />
       <TrustBadgeStrip />
       <main id="main-content" tabIndex={-1}>{children}</main>

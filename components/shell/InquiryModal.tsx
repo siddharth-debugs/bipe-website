@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { FormSelect } from "@/components/ui/FormSelect";
+import { SUCCESS_SEASON_NOTE } from "@/lib/admissionSeason";
 import {
   WhatsAppForm,
   type WhatsAppFormRenderProps,
@@ -171,7 +172,7 @@ export function InquiryModal() {
               </svg>
             </div>
             <h3>Thank you, {successName}!</h3>
-            <p>Our admissions team will call you back shortly.</p>
+            <p>Our admissions team will call you back shortly. {SUCCESS_SEASON_NOTE}</p>
           </div>
         ) : (
           <WhatsAppForm

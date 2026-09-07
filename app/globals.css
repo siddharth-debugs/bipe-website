@@ -77,6 +77,115 @@
    Inspired by BITE's site-wide trust band — BIPE version uses 6
    credential pills, each linking to its source-of-truth page.
    Mobile: horizontal scroll with snap points. Desktop: single row. */
+/* Admission-cycle status bar · Sep 2026.
+   Sits above <Nav>, so it is the first band on every public page. Dark
+   ink ground with the accent hairline, deliberately echoing the retired
+   JeecupCounsellingBanner it replaces — returning visitors read it as the
+   same announcement slot rather than a new interruption. One line, ~40px,
+   so it informs without pushing the hero below the fold. */
+.season-bar {
+  background: var(--ink, #0A1A3F);
+  color: var(--paper, #F6F4EE);
+  border-top: 3px solid var(--accent, #c8a951);
+}
+.season-bar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 9px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.season-bar-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.season-bar-status {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent, #c8a951);
+  font-weight: 600;
+}
+.season-bar-sep { opacity: 0.4; }
+.season-bar-action { color: color-mix(in oklab, var(--paper, #F6F4EE) 88%, transparent); }
+
+.season-bar-cta {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink, #0A1A3F);
+  background: var(--accent, #c8a951);
+  padding: 5px 13px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: filter 0.15s ease;
+}
+.season-bar-cta:hover { filter: brightness(1.08); }
+.season-bar-cta:focus-visible {
+  outline: 2px solid var(--paper, #F6F4EE);
+  outline-offset: 2px;
+}
+
+.season-bar-close {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+  color: color-mix(in oklab, var(--paper, #F6F4EE) 55%, transparent);
+  line-height: 0;
+  border-radius: 4px;
+}
+.season-bar-close:hover { color: var(--paper, #F6F4EE); }
+.season-bar-close:focus-visible {
+  outline: 2px solid var(--accent, #c8a951);
+  outline-offset: 1px;
+}
+.season-bar-inner { position: relative; }
+
+@media (max-width: 640px) {
+  .season-bar-inner { padding: 9px 40px 9px 16px; gap: 9px; }
+  .season-bar-text { font-size: 12.5px; }
+  .season-bar-status { font-size: 11px; }
+  /* The two halves stack at this width, which leaves the separator
+     orphaned at the end of the first line. */
+  .season-bar-sep { display: none; }
+}
+
+/* One-line season notice inside every lead form, above the first field.
+   Shown regardless of whether the bar above was dismissed — this is the
+   moment the visitor is actually committing details. */
+.season-note {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in oklab, var(--accent, #c8a951) 45%, transparent);
+  background: color-mix(in oklab, var(--accent, #c8a951) 12%, transparent);
+  color: inherit;
+}
+.season-note-mark {
+  flex-shrink: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-weight: 700;
+  color: var(--accent, #c8a951);
+}
+
 /* Direction A · verified-badge upgrade · May 2026.
    Each credential renders as a bordered card with a verified tick
    mark (gold-filled circle with white check). Two-line content:

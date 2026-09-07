@@ -139,15 +139,18 @@ export function Nav() {
     <nav className="nav">
       <div className="nav-utility">
         <div className="nav-utility-inner">
+          {/* 7 Sep 2026 — the admission-cycle status used to live here, as
+              "2026-27 Admissions Closed · 2027-28 enquiries welcome". It read
+              correctly on desktop but this whole strip is display:none below
+              860px (globals.css), so every phone visitor — most of BIPE's
+              traffic — got no cycle notice above the fold at all.
+
+              The status moved to <AdmissionSeasonBar />, which renders above
+              <Nav> at every width and reads from lib/admissionSeason.ts. Left
+              here would double the message on desktop, so only the JEECUP
+              code remains. */}
           <div className="nav-utility-left">
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 0 3px color-mix(in oklab, var(--accent) 22%, transparent)" }} />
-              <span style={{ textTransform: "uppercase", color: "var(--accent)", fontWeight: 600 }}>2026-27 Admissions Closed</span>
-            </span>
-            <span className="nav-utility-divider" />
             <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>JEECUP {C.jeecup}</span>
-            <span className="nav-utility-divider" />
-            <span style={{ textTransform: "uppercase", color: "var(--paper)", fontWeight: 600 }}>2027-28 enquiries welcome</span>
           </div>
           <div className="nav-utility-right">
             <a href={`tel:${C.phone}`} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { FORM_SEASON_NOTICE_SHORT } from "@/lib/admissionSeason";
 import {
   WhatsAppForm,
   type WhatsAppFormRenderProps,
@@ -85,6 +86,9 @@ export function WhatsAppFAB() {
             <div>
               <div className="wa-panel-title">BIPE Sampark</div>
               <div className="wa-panel-sub">Admission Enquiry &amp; Assistance</div>
+              {/* The FAB is reachable from every page and was the one lead
+                  surface with no cycle context at all. */}
+              <div className="wa-panel-sub" style={{ opacity: 0.85 }}>{FORM_SEASON_NOTICE_SHORT}</div>
             </div>
           </div>
 
