@@ -1,16 +1,27 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-10-22T09:31:11.577Z",
+    "lastUpdated": "2026-10-24T08:58:41.676Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
   },
   "rating": 4.5,
-  "reviewCount": 442,
+  "reviewCount": 443,
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT2tWUFMySlBPVlZmVWpkbGNqRnBOalJZWjBsa05uYxAB",
+      "rating": 5,
+      "text": "Good college , good environment and all lab available\nIndustrial visits are organized here for second-year students.",
+      "publishTime": "2026-10-06T10:47:01.246840271Z",
+      "relativeTime": "2 weeks ago",
+      "author": {
+        "name": "Nikesh Gupta",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLaWPga4rZv7P8RTf6TiYSABYdUB0jvRZeYz6SArRF2qt0UVg=s128-c0x00000000-cc-rp-mo"
+      }
+    },
     {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT2xkQlJVMUJSekpGUmtNd1YySTVZM2xWY2t4QmJWRRAB",
       "rating": 5,
@@ -42,17 +53,6 @@
       "author": {
         "name": "VINAY VISHWAKARMA",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIOXpiBSs11l0U6iywWm-vGf2fdunH2FT3m-Jd0DFiEDU3Y8A=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT2xKclZIWTNVSEl4VkZWaE1sSnVhbmx4VUdscmNXYxAB",
-      "rating": 5,
-      "text": "\"If you are looking for a college that prioritizes your career, BIPE is a fantastic choice. The placement cell is proactive and brings in top-tier companies. Unlike other institutions, their comprehensive corporate training starts as early as the first year. The coursework is rigorous but practical, focusing heavily on real-world case studies rather than just rote learning. The campus itself is peaceful and green, providing a great environment to focus on studies.\"",
-      "publishTime": "2026-05-21T13:05:10.390803119Z",
-      "relativeTime": "5 months ago",
-      "author": {
-        "name": "Poonam srivastava",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLCP4QxdZ6MMKrONgeIu85UPKlmUOIs_Vsac_sQAo4nqe3luA=s128-c0x00000000-cc-rp-mo"
       }
     },
     {
