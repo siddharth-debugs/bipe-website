@@ -1,16 +1,27 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-10-26T10:20:48.971Z",
+    "lastUpdated": "2026-10-27T09:55:44.142Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
   },
   "rating": 4.5,
-  "reviewCount": 445,
+  "reviewCount": 446,
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT21wRVRETnBaemRpWnpKQlVVUTNXVkZHWDFscFdIYxAB",
+      "rating": 5,
+      "text": "I am very happy with my experience at this college . Because in my college teachers are very supportive and knowlegable.\nThey don't only teach us they also support us in doing our best",
+      "publishTime": "2026-10-08T09:40:45.180641933Z",
+      "relativeTime": "2 weeks ago",
+      "author": {
+        "name": "Sanju Singh",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocK-R8c8J9jT__QhkHiBpiU2n94OTxsqrXgg9kpVSQExcS1zlg=s128-c0x00000000-cc-rp-mo"
+      }
+    },
     {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT2tWUFMySlBPVlZmVWpkbGNqRnBOalJZWjBsa05uYxAB",
       "rating": 5,
@@ -42,17 +53,6 @@
       "author": {
         "name": "Bhumihar shivbrat Rai",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUXGNuPhnlk6JZq9pa3PWMwuh1p1Ez90xnPQgW-H-7W8Ze-ee1meQ=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT2tsUVNubFBWSFZ5YkhOUmFWaGZhRXcwYlhoQk9WRRAB",
-      "rating": 5,
-      "text": "Highly recommended institute for Civil Engineering! I completed my course here and had a wonderful learning experience. The faculty is supportive, the labs are well-equipped, and the environment is highly conducive to academic growth. Great place to build a strong foundation in engineering.\"",
-      "publishTime": "2026-07-19T07:57:43.549846331Z",
-      "relativeTime": "3 months ago",
-      "author": {
-        "name": "VINAY VISHWAKARMA",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocIOXpiBSs11l0U6iywWm-vGf2fdunH2FT3m-Jd0DFiEDU3Y8A=s128-c0x00000000-cc-rp-mo"
       }
     },
     {
