@@ -1,13 +1,13 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-11-02T12:42:48.286Z",
+    "lastUpdated": "2026-11-03T12:08:21.025Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
   },
   "rating": 4.5,
-  "reviewCount": 449,
+  "reviewCount": 448,
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
@@ -27,7 +27,7 @@
       "rating": 5,
       "text": "Good college , good environment and all lab available\nIndustrial visits are organized here for second-year students.",
       "publishTime": "2026-10-06T10:47:01.246840271Z",
-      "relativeTime": "3 weeks ago",
+      "relativeTime": "4 weeks ago",
       "author": {
         "name": "Nikesh Gupta",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLaWPga4rZv7P8RTf6TiYSABYdUB0jvRZeYz6SArRF2qt0UVg=s128-c0x00000000-cc-rp-mo"
