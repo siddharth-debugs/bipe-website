@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-11-12T13:01:03.710Z",
+    "lastUpdated": "2026-11-13T12:26:17.462Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
@@ -34,17 +34,6 @@
       }
     },
     {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT2tWUFMySlBPVlZmVWpkbGNqRnBOalJZWjBsa05uYxAB",
-      "rating": 5,
-      "text": "Good college , good environment and all lab available\nIndustrial visits are organized here for second-year students.",
-      "publishTime": "2026-10-06T10:47:01.246840271Z",
-      "relativeTime": "a month ago",
-      "author": {
-        "name": "Nikesh Gupta",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocLaWPga4rZv7P8RTf6TiYSABYdUB0jvRZeYz6SArRF2qt0UVg=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
       "id": "Ci9DQUlRQUNvZENodHljRjlvT2xkQlJVMUJSekpGUmtNd1YySTVZM2xWY2t4QmJWRRAB",
       "rating": 5,
       "text": "I am a 2022 Mechanical Engineering from Banaras Institute of Polytechnic & Engineering, Varanasi. My experience at this college was very positive. The faculty members were supportive, knowledgeable, and always encouraged us to improve both our technical knowledge and practical skills.\nNumber 1 college in varanasi",
@@ -64,6 +53,17 @@
       "author": {
         "name": "Bhumihar shivbrat Rai",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUXGNuPhnlk6JZq9pa3PWMwuh1p1Ez90xnPQgW-H-7W8Ze-ee1meQ=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT210MFFsZG5SVk5uTlRsRmVXSTRTVGhpZFZvdE0xRRAB",
+      "rating": 5,
+      "text": "Overall, my experience at this college was very positive, though there is always room for improvement.\nExcellent faculty who give 100% effort, great lab facilities, and a very safe, ragging-free campus environment. The location is also very convenient with easy access to public transport.\nIf you are serious about your studies and career, the academic and placement quality makes it completely worth the investment.\"",
+      "publishTime": "2026-05-21T05:58:20.015667159Z",
+      "relativeTime": "5 months ago",
+      "author": {
+        "name": "Jaideep Chitranshh",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUdnBz5FdOczyGqX0Okep4ql-igJTkAfk3cXlKHJmK8zcb-fd2W=s128-c0x00000000-cc-rp-mo"
       }
     }
   ]
