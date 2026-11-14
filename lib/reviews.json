@@ -1,13 +1,13 @@
 {
   "_meta": {
     "source": "google-places-api",
-    "lastUpdated": "2026-11-13T12:26:17.462Z",
+    "lastUpdated": "2026-11-14T11:38:52.054Z",
     "placeId": "ChIJ6WNsfIgrkDkRVHeOtkkpVtI",
     "displayName": "Banaras Institute of Polytechnic & Engineering",
     "apiRevision": "places/v1"
   },
   "rating": 4.5,
-  "reviewCount": 446,
+  "reviewCount": 447,
   "bestRating": 5,
   "worstRating": 1,
   "reviews": [
@@ -16,10 +16,21 @@
       "rating": 5,
       "text": "My experience at this engineering college has been good. The faculty members are supportive and helpful. The college provides a good learning environment, proper facilities, and opportunities to improve technical skills. Overall, I am satisfied with the teaching and educational environment of the college.",
       "publishTime": "2026-10-31T10:24:47.684600820Z",
-      "relativeTime": "a week ago",
+      "relativeTime": "2 weeks ago",
       "author": {
         "name": "Tanu Patel",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjXvIZBo6HlbdlG4rob5cTNoWShUgdgtvYBeqYo2du4xBhIkidU=s128-c0x00000000-cc-rp-mo"
+      }
+    },
+    {
+      "id": "Ci9DQUlRQUNvZENodHljRjlvT201SVZrTTBlamhHV1ZoQmFtNUpWVEZMV0dwelduYxAB",
+      "rating": 5,
+      "text": "BIPE College, Varanasi is a good place for students to learn and grow. The college provides a learning environment where students can focus on their studies and develop their skills. Overall, it is a good experience, and I would recommend this college to students looking for educational opportunities.",
+      "publishTime": "2026-10-25T12:56:58.250353395Z",
+      "relativeTime": "2 weeks ago",
+      "author": {
+        "name": "Sarvjeet Patel",
+        "profilePhotoUrl": "https://lh3.googleusercontent.com/a/ACg8ocII69abL2FF5W1AdUiaSG8zU4LZ-AOWwaxyWtsPXc-C42Lp7A=s128-c0x00000000-cc-rp-mo"
       }
     },
     {
@@ -53,17 +64,6 @@
       "author": {
         "name": "Bhumihar shivbrat Rai",
         "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUXGNuPhnlk6JZq9pa3PWMwuh1p1Ez90xnPQgW-H-7W8Ze-ee1meQ=s128-c0x00000000-cc-rp-mo"
-      }
-    },
-    {
-      "id": "Ci9DQUlRQUNvZENodHljRjlvT210MFFsZG5SVk5uTlRsRmVXSTRTVGhpZFZvdE0xRRAB",
-      "rating": 5,
-      "text": "Overall, my experience at this college was very positive, though there is always room for improvement.\nExcellent faculty who give 100% effort, great lab facilities, and a very safe, ragging-free campus environment. The location is also very convenient with easy access to public transport.\nIf you are serious about your studies and career, the academic and placement quality makes it completely worth the investment.\"",
-      "publishTime": "2026-05-21T05:58:20.015667159Z",
-      "relativeTime": "5 months ago",
-      "author": {
-        "name": "Jaideep Chitranshh",
-        "profilePhotoUrl": "https://lh3.googleusercontent.com/a-/ALV-UjUdnBz5FdOczyGqX0Okep4ql-igJTkAfk3cXlKHJmK8zcb-fd2W=s128-c0x00000000-cc-rp-mo"
       }
     }
   ]
